@@ -1,48 +1,30 @@
+{% from "components/lists/_macro.njk" import onsList %}
+
 {% set page = { 
-    "title": "Prototype Example",
-    "language": {
-        "languages": [
-            {
-                "url": "#",
-                "ISOCode": "en-GB",
-                "text": "English",
-                "buttonAriaLabel": "Language selector. Current language: English",
-                "chooseLanguage": "Choose language",
-                "current": true
-            },
-            {
-                "url": "#",
-                "ISOCode": "cy",
-                "text": "Cymraeg",
-                "buttonAriaLabel": "Dewisydd iaith. Iaith gyfredol: Cymraeg",
-                "chooseLanguage": "Dewiswch iaith",
-                "current": false
-            }
-        ]
-    },
+    "title": "ONS Prototypes",
     "footer": {
-        "rows": [
-            {
-                "items": [
-                    {
-                        "text": "Cysyllwch a ni",
-                        "url": "#"
-                    },
-                    {
-                        "text": "Cwcis ac preifatrwydd",
-                        "url": "#"
-                    }
-                ]
-            }
-        ],
         "OGLLink": {
-            "pre": "Mae'r holl gynnwys ar gael o dan y",
-            "link": "Drwydded Llywodraeth Leol v3.0",
-            "url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
-            "post": ", oni bai y nodir fel arall"
+            "pre": 'All content is available under the',
+            "link": 'Open Government Licence v3.0',
+            "url": 'https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/',
+            "post": ', except where otherwise stated'
         }
     }
 } %}
 {% block content %}
-<h1>Yes</h1>
+{% set groups = helpers.navigationHelper({ 
+    "pages": pageInfo.siteMap,
+    "ignorePaths": ["/"]
+}) %}
+{% for group in groups %}
+    <section>
+        <h1 class="u-fs-m">{{ group.title }}</h1>
+        {{ 
+            onsList({
+                "classes": "list--bare",
+                "items": group.items
+            })
+        }}
+    </section>
+{% endfor %}
 {% endblock %}
