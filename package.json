@@ -72,6 +72,7 @@
     "pretty": "^2.0.0",
     "print-error": "^0.1.17",
     "progress-bar-webpack-plugin": "^1.12.1",
+    "remark": "^10.0.1",
     "sass-lint": "^1.12.1",
     "sass-loader": "^7.1.0",
     "url-loader": "^1.1.2",
@@ -83,6 +84,8 @@
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
-    "@ons/design-system": "^0.1.0"
+    "remark-cli": "^6.0.1",
+    "remark-lint": "^6.0.4",
+    "remark-preset-lint-recommended": "^3.0.2"
   }
 }
