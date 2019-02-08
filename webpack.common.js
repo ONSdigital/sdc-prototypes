@@ -3,6 +3,11 @@ import glob from 'glob';
 import { NoEmitOnErrorsPlugin, NamedModulesPlugin } from 'webpack';
 import ProgressBarPlugin from 'progress-bar-webpack-plugin';
 import CircularDependencyPlugin from 'circular-dependency-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import FixStyleOnlyEntriesPlugin from 'webpack-fix-style-only-entries';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
+
+import postcssPlugins from './postcss.config';
 
 const OUT_DIR = 'build';
 
@@ -11,6 +16,8 @@ export default function(mode) {
 
   return {
     context: `${__dirname}/src`,
+
+    mode,
     
     entry: {
       html: glob.sync('./**/*.{njk,html}', { cwd: 'src', ignore: './**/_*.{njk,html}' })
@@ -60,6 +67,35 @@ export default function(mode) {
             }
           ]
         },
+        // Styles
+        {
+          test: /\.scss$/,
+          use: [
+            MiniCssExtractPlugin.loader,
+            {
+              loader: 'css-loader',
+              options: {
+                sourceMap: false,
+                importLoaders: 1
+              }
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                indent: 'postcss',
+                plugins: postcssPlugins
+              }
+            },
+            {
+              loader: 'sass-loader',
+              options: {
+                sourceMap: false,
+                precision: 8,
+                includePaths: [path.join(process.cwd(), 'src/scss')],
+              }
+            }
+          ]
+        }
       ]
     },
 
@@ -73,7 +109,57 @@ export default function(mode) {
       new CircularDependencyPlugin({
         exclude: /(\\|\/)node_modules(\\|\/)/,
         failOnError: false
-      })
+      }),
+
+      new MiniCssExtractPlugin({
+        filename: '[name].css',
+        chunkFilename: '[name].css'
+      }),
+
+      new FixStyleOnlyEntriesPlugin({
+        extensions: ['scss', 'njk', 'html'],
+        silent: true
+      }),
+
+      new CopyWebpackPlugin(
+        [
+          {
+            context: '../node_modules/@ons/design-system/',
+            from: {
+              glob: 'css/**/*',
+              dot: true
+            }
+          },
+          {
+            context: '../node_modules/@ons/design-system/',
+            from: {
+              glob: 'scripts/**/*',
+              dot: true
+            }
+          },
+          {
+            context: '../node_modules/@ons/design-system/',
+            from: {
+              glob: 'fonts/**/*',
+              dot: true
+            }
+          },
+          {
+            context: '../node_modules/@ons/design-system/',
+            from: {
+              glob: 'img/**/*',
+              dot: true
+            }
+          },
+          {
+            context: '../node_modules/@ons/design-system/',
+            from: {
+              glob: 'favicons/**/*',
+              dot: true
+            }
+          }
+        ]
+      )
     ]
   };
 };

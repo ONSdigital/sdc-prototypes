@@ -2006,10 +2006,15 @@ copy-webpack-plugin@^4.6.0:
     p-limit "^1.0.0"
     serialize-javascript "^1.4.0"
 
-core-js@^2.5.7, core-js@^2.6.0:
+core-js@^2.5.7:
   version "2.6.3"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.3.tgz#4b70938bdffdaf64931e66e2db158f0892289c49"
   integrity sha512-l00tmFFZOBHtYhN4Cz7k32VM7vTn3rE2ANjQDxdEN6zmXZ/xq1jQuutnmHvMG1ZJ7xd72+TA5YpUK8wz3rWsfQ==
+
+core-js@^2.6.0:
+  version "2.6.4"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.4.tgz#b8897c062c4d769dd30a0ac5c73976c47f92ea0d"
+  integrity sha512-05qQ5hXShcqGkPZpXEFLIpxayZscVD2kuMBZewxiIPPEagukO4mqgPA9CWhUvFBJfy3ODdK2p9xyHh7FTU9/7A==
 
 core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
@@ -5984,17 +5989,6 @@ path-type@^3.0.0:
   dependencies:
     pify "^3.0.0"
 
-"patterns-library-and-prototype-kit-base@https://github.com/ONSdigital/pattern-library-v2":
-  version "1.0.0"
-  resolved "https://github.com/ONSdigital/pattern-library-v2#d18a480fe97879d72446ee8e09ea52c904a3796b"
-  dependencies:
-    a11y-dialog "^5.2.0"
-    core-js "^2.6.0"
-    mdn-polyfills "^5.14.0"
-    normalize-scss "^7.0.1"
-    throttle-typescript "^1.0.1"
-    whatwg-fetch "^3.0.0"
-
 pbkdf2@^3.0.3:
   version "3.0.17"
   resolved "https://registry.yarnpkg.com/pbkdf2/-/pbkdf2-3.0.17.tgz#976c206530617b14ebb32114239f7b09336e93a6"
@@ -8374,6 +8368,11 @@ webpack-dev-server@^3.1.14:
     webpack-dev-middleware "3.4.0"
     webpack-log "^2.0.0"
     yargs "12.0.2"
+
+webpack-fix-style-only-entries@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/webpack-fix-style-only-entries/-/webpack-fix-style-only-entries-0.2.0.tgz#87b11a0eee21c2fe6191a50d478d69eb70815957"
+  integrity sha512-3EKneRqg1NI5iQro9tFq3W0hYNu7iH2ZvTB7CbTQMUymsouZZd1elsDIYh8KUqCQj7O+/QySepHM80FcWi4O0Q==
 
 webpack-livereload-plugin@^2.2.0:
   version "2.2.0"
