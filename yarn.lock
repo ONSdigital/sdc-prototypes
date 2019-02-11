@@ -659,10 +659,10 @@
     log-update "^2.3.0"
     strip-ansi "^3.0.1"
 
-"@ons/design-system@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-0.1.1.tgz#41e4e7a92f7b709b60a96af698563fde7ed6b656"
-  integrity sha512-jxNiptxMqT7BDxAllH+7r9laCUThtfkmlCzuGxt58j6hIUShvNEk62SusC7ZHb7VqrxGHI3zTyKbouHhDnfXpQ==
+"@ons/design-system/0.1.5@npm:@ons/design-system@0.1.5":
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-0.1.5.tgz#84f2599431f6db53f3ef49b23b149f003f63e761"
+  integrity sha512-FEjIObDpLgbzWgZ45B7BwRI/fryrAltd28EF86EtL0Lw7r/dsBR5SEZnBV0zCfmE/SEiS8onc9WxXYyxfC8frA==
   dependencies:
     a11y-dialog "^5.2.0"
     core-js "^2.6.0"

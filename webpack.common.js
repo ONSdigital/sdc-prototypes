@@ -153,35 +153,35 @@ export default function(mode) {
           {
             context: '../node_modules/@ons/design-system/',
             from: {
-              glob: 'css/**/*',
+              glob: '**/css/**/*',
               dot: true
             }
           },
           {
             context: '../node_modules/@ons/design-system/',
             from: {
-              glob: 'scripts/**/*',
+              glob: '**/scripts/**/*',
               dot: true
             }
           },
           {
             context: '../node_modules/@ons/design-system/',
             from: {
-              glob: 'fonts/**/*',
+              glob: '**/fonts/**/*',
               dot: true
             }
           },
           {
             context: '../node_modules/@ons/design-system/',
             from: {
-              glob: 'img/**/*',
+              glob: '**/img/**/*',
               dot: true
             }
           },
           {
             context: '../node_modules/@ons/design-system/',
             from: {
-              glob: 'favicons/**/*',
+              glob: '**/favicons/**/*',
               dot: true
             }
           }
