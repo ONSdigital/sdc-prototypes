@@ -20,6 +20,7 @@ export default function(mode) {
     mode,
     
     entry: {
+      scripts: glob.sync('./**/*.js', { cwd: 'src', ignore: './**/_*.js' }),
       styles: glob.sync('./**/*.scss', { cwd: 'src', ignore: './**/_*.scss' }),
       html: glob.sync('./**/*.{njk,html}', { cwd: 'src', ignore: './**/_*.{njk,html}' })
     },
@@ -95,6 +96,37 @@ export default function(mode) {
               }
             }
           ]
+        },
+        // Script
+        {
+          test: /\.js$/,
+          exclude: /(node_modules)/,
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                name: '[path][name].js'
+              }
+            },
+            {
+              loader: 'babel-loader',
+              options: {
+                babelrc: false,
+                presets: [
+                  [
+                    '@babel/preset-env',
+                    {
+                      modules: false,
+                      targets: {
+                        browsers: ['last 3 versions']
+                      }
+                    }
+                  ]
+                ],
+                plugins: ['@babel/plugin-syntax-dynamic-import', '@babel/plugin-proposal-class-properties']
+              }
+            }
+          ]
         }
       ]
     },
@@ -112,7 +144,7 @@ export default function(mode) {
       }),
 
       new FixStyleOnlyEntriesPlugin({
-        extensions: ['scss', 'njk', 'html'],
+        extensions: ['scss', 'njk', 'html', 'js'],
         silent: true
       }),
 
