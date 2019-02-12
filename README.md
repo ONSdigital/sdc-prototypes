@@ -6,7 +6,22 @@ A prototyping kit that uses the [ONS Design System](https://ons-design-system.ne
 
 ## Using this prototype kit
 
-Before using this kit please fork it for your individual team.
+Before using this kit please fork it for your individual team. (Note: GitHub does not allow forking of your own repositories so this is the closest possible way of doing it)
+
+```bash
+git clone https://github.com/ONSdigital/prototype-kit <your-fork-name>
+cd <your-for-name>
+git remote set-url origin https://github.com/ONSdigital/<your-fork-name>
+git remote add upstream https://github.com/ONSdigital/prototype-kit
+git push origin master
+git push --all
+```
+
+### Applying updates from the original repository
+```bash
+git pull upstream master
+```
+
 
 ## Installing and using different Design System versions per prototype
 
