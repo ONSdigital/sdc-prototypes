@@ -2,7 +2,11 @@
 
 **Work in Progress**
 
-A prototyping kit that uses the [ONS Design System](https://ons-design-system.netlify.com/) [(GitHub)](https://github.com/ONSdigital/pattern-library-v2). 
+A prototyping kit that uses the [ONS Design System](https://ons-design-system.netlify.com/) [(GitHub)](https://github.com/ONSdigital/pattern-library-v2).
+
+## Using this prototype kit
+
+Before using this kit please fork it for your individual team.
 
 ## Installing and using different Design System versions per prototype
 
