@@ -1,0 +1,57 @@
+---
+title: National Identity Typeahead
+group: Typeaheads
+version: 0.1.5
+layout: national-identity-typeahead/views/_master
+---
+{% from "components/field/_macro.njk" import onsField %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% block content %}
+    <form action="{{ pageInfo.parentPath }}/date-of-birth.html">
+       {% call onsField({
+           "id": "name",
+           "legend": "<h1>What is your name?</h1>",
+           "classes": "u-mb-xl"
+       }) %}
+            {{
+                onsInput({
+                    "id": "first-name",
+                    "name": "first-name",
+                    "fieldClasses": "u-mb-m",
+                    "label": {
+                        "text": "First or given name"
+                    }
+                })
+            }}
+            {{
+                onsInput({
+                    "id": "middle-name",
+                    "name": "middle-name",
+                    "fieldClasses": "u-mb-m",
+                    "label": {
+                        "text": "Middle names"
+                    }
+                })
+            }}
+            {{
+                onsInput({
+                    "id": "last-name",
+                    "name": "last-name",
+                    "fieldClasses": "u-mb-m",
+                    "label": {
+                        "text": "Surname or family name"
+                    }
+                })
+            }}
+        {% endcall %}
+        {{
+            onsButton({
+                "text": "Save and continue"
+            })
+        }}
+    </form>
+{% endblock %}
+
+
