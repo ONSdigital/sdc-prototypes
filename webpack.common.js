@@ -91,6 +91,7 @@ export default function(mode) {
               options: {
                 searchPaths: [
                   `${__dirname}/src`,
+                  `${__dirname}/src/prototypes`,
                   `${__dirname}/node_modules/@ons/design-system`
                 ],
                 layoutPath: 'prototypes',

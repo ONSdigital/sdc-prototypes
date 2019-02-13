@@ -1,8 +1,38 @@
 ---
-version: 0.1.5
+version: 0.1.6
 layout: national-identity-typeahead/views/_master
 ---
+{% from "components/date-input/_macro.njk" import onsDateInput %}
+{% from "components/button/_macro.njk" import onsButton %}
+
 {% block content %}
     <a href="#" class="js-previous">Previous</a>
-    
+    <form action="{{ pageInfo.parentPath }}/address.html">
+        {{
+            onsDateInput({
+                "id": "dob",
+                "legend": "<h1>What is your date of birth?</h1>",
+                "classes": "u-mt-m u-mb-xl",
+                "description": "For example, 31 3 1980",
+                "day": {
+                    "label": "Day",
+                    "name": "dob-day"
+                },
+                "month": {
+                    "label": "Month",
+                    "name": "dob-month"
+                },
+                "year": {
+                    "label": "Year",
+                    "name": "dob-year"
+                }
+            })
+        }}
+
+        {{
+            onsButton({
+                "text": "Save and continue"
+            })
+        }}
+    </form>
 {% endblock %}

@@ -1,0 +1,30 @@
+---
+version: 0.1.6
+layout: national-identity-typeahead/views/_master
+---
+{% from "national-identity-typeahead/views/_address-input.njk" import prototypeAddressInput %}
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% block content %}
+    <a href="#" class="js-previous">Previous</a>
+    <form action="{{ pageInfo.parentPath }}/date-of-birth.html">
+        
+        {{
+            prototypeAddressInput({
+                "id": "address",
+                "classes": "u-mt-m u-mb-xl",
+                "label": {
+                    "text": "<h1>What is your address?</h1>"
+                },
+                "line1": {
+                    "label": "Building and street <span class=\"u-vh\">line 1 of 2</span>"
+                }
+            })
+        }}
+        {{
+            onsButton({
+                "text": "Save and continue"
+            })
+        }}
+    </form>
+{% endblock %}
