@@ -1,4 +1,5 @@
 import * as path from 'path';
+import * as fs from 'fs';
 import glob from 'glob';
 import { NoEmitOnErrorsPlugin, NamedModulesPlugin } from 'webpack';
 import ProgressBarPlugin from 'progress-bar-webpack-plugin';
@@ -11,6 +12,36 @@ import postcssPlugins from './postcss.config';
 
 const OUT_DIR = 'build';
 
+
+function formDirectory(startPath, scripts) {
+  if (!fs.existsSync(startPath)) {
+    return;
+  }
+
+  const files = fs.readdirSync(startPath);
+
+  files.forEach(file => {
+    const filePath = path.join(startPath, file);
+    const statistics = fs.lstatSync(filePath);
+
+    if(statistics.isDirectory()) {
+      formDirectory(filePath, scripts);
+    } else if (file === 'index.js') {
+      const path = startPath.replace('src/', '');
+      scripts[`${path}/${file.replace('.js', '')}`] = `./${path}/${file}`;
+    }
+  });
+}
+
+function generateScriptEntries() {
+  const scripts = {};
+
+  formDirectory('./src/prototypes', scripts);
+
+  return scripts;
+}
+
+
 export default function(mode) {
   const devMode = mode === 'development';
 
@@ -20,7 +51,7 @@ export default function(mode) {
     mode,
     
     entry: {
-      scripts: glob.sync('./**/*.js', { cwd: 'src', ignore: './**/_*.js' }),
+      ...generateScriptEntries(),
       styles: glob.sync('./**/*.scss', { cwd: 'src', ignore: './**/_*.scss' }),
       html: glob.sync('./**/*.{njk,html}', { cwd: 'src', ignore: './**/_*.{njk,html}' })
     },
@@ -34,7 +65,9 @@ export default function(mode) {
     resolve: {
       extensions: ['.js', '.njk', '.html', '.scss'],
       modules: ['./node_modules'],
-      alias: {}
+      alias: {
+        helpers: path.resolve(__dirname, './src/helpers')
+      }
     },
 
     resolveLoader: {
@@ -60,7 +93,7 @@ export default function(mode) {
                   `${__dirname}/src`,
                   `${__dirname}/node_modules/@ons/design-system`
                 ],
-                layoutPath: 'views/layouts',
+                layoutPath: 'prototypes',
                 defaultLayout: 'page-templates/_template.njk',
                 context: {
                   devMode
@@ -103,12 +136,6 @@ export default function(mode) {
           exclude: /(node_modules)/,
           use: [
             {
-              loader: 'file-loader',
-              options: {
-                name: '[path][name].js'
-              }
-            },
-            {
               loader: 'babel-loader',
               options: {
                 babelrc: false,
@@ -144,7 +171,7 @@ export default function(mode) {
       }),
 
       new FixStyleOnlyEntriesPlugin({
-        extensions: ['scss', 'njk', 'html', 'js'],
+        extensions: ['scss', 'njk', 'html'],
         silent: true
       }),
 
