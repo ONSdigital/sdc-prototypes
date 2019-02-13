@@ -10,7 +10,7 @@ Before using this kit please fork it for your individual team. (Note: GitHub doe
 
 ```bash
 git clone https://github.com/ONSdigital/prototype-kit <your-fork-name>
-cd <your-for-name>
+cd <your-fokr-name>
 git remote set-url origin https://github.com/ONSdigital/<your-fork-name>
 git remote add upstream https://github.com/ONSdigital/prototype-kit
 git push origin master

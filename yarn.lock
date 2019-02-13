@@ -671,6 +671,18 @@
     throttle-typescript "^1.0.1"
     whatwg-fetch "^3.0.0"
 
+"@ons/design-system/0.1.6@npm:@ons/design-system@0.1.6":
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-0.1.6.tgz#d1a36749d1ace7fc78d98e5a8721af8955e9124a"
+  integrity sha512-47nG0sykORUh6d/y82q8xuh6HUBDCUCzxMxWjVKKFZGUiu4PZNKYeBd5333GMbtyj/rfg0k4DWYJH0FZPz79OQ==
+  dependencies:
+    a11y-dialog "^5.2.0"
+    core-js "^2.6.0"
+    mdn-polyfills "^5.14.0"
+    normalize-scss "^7.0.1"
+    throttle-typescript "^1.0.1"
+    whatwg-fetch "^3.0.0"
+
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@samverschueren/stream-to-observable/-/stream-to-observable-0.3.0.tgz#ecdf48d532c58ea477acfcab80348424f8d0662f"
