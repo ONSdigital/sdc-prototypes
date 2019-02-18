@@ -1,0 +1,50 @@
+---
+version: 0.1.11
+layout: typeaheads/views/_master
+---
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+
+{% block content %}
+    <a href="{{ pageInfo.parentPath }}/ethnic-group.html">Previous</a>
+    <form action="{{ pageInfo.parentPath }}/job-title.html">
+        {{ 
+            onsRadios({
+                "legend": "<h1>In your main job, what is your employment status?</h1>",
+                "name": "employment-status",
+                "classes": "u-mb-xl u-mt-m",
+                "radios": [
+                    {
+                        "id": "employee",
+                        "label": {
+                            "text": "Employee"
+                        },
+                        "value": "employee",
+                        "name": "employee"
+                    },
+                    {
+                        "id": "self-employed-no-employees",
+                        "label": {
+                            "text": "Self-employed or freelance without employees"
+                        },
+                        "value": "self-employed-no-employees",
+                        "name": "self-employed-no-employees"
+                    },
+                    {
+                        "id": "self-employed-employees",
+                        "label": {
+                            "text": "Self-employed with employees"
+                        },
+                        "value": "self-employed-employees",
+                        "name": "self-employed-employees"
+                    }
+                ]
+            }) 
+        }}
+        {{
+            onsButton({
+                "text": "Save and continue"
+            })
+        }}
+    </form>
+{% endblock %}

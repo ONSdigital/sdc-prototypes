@@ -1,0 +1,67 @@
+---
+version: 0.1.11
+layout: typeaheads/views/_master
+---
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
+
+{% block content %}
+    <a href="{{ pageInfo.parentPath }}/country-of-birth.html">Previous</a>
+    <form action="{{ pageInfo.parentPath }}/national-identity.html">
+        <h1 class="u-mt-m">What passport do you hold?</h1>
+        {{ 
+            onsCheckboxes({
+                "legend": "Select all that apply",
+                "name": "passport",
+                "classes": "u-mb-xl",
+                "checkboxes": [
+                    {
+                        "id": "united-kingdom",
+                        "label": {
+                            "text": "United Kingdom"
+                        },
+                        "value": "united-kingdom",
+                        "name": "united-kingdom"
+                    },
+                    {
+                        "id": "ireland",
+                        "label": {
+                            "text": "Ireland"
+                        },
+                        "value": "ireland",
+                        "name": "ireland"
+                    },
+                    {
+                        "id": "other",
+                        "label": {
+                            "text": "Other"
+                        },
+                        "value": "other",
+                        "name": "other",
+                        "attributes": {
+                            "data-other-url": pageInfo.parentPath + "/passport-other.html"
+                        }
+                    }
+                ],
+                "mutuallyExclusive": {
+                    "or": 'Or',
+                    "deselectMessage": 'Selecting this will uncheck all other checkboxes',
+                    "deselectAdjective": 'deselected',
+                    "checkbox": {
+                        "id": "none",
+                        "label": {
+                            "text": "None"
+                        },
+                        "value": "none",
+                        "name": "none"
+                    }
+                }
+            }) 
+        }}
+        {{
+            onsButton({
+                "text": "Save and continue"
+            })
+        }}
+    </form>
+{% endblock %}

@@ -1,12 +1,12 @@
 ---
-version: 0.1.6
-layout: national-identity-typeahead/views/_master
+version: 0.1.11
+layout: typeaheads/views/_master
 ---
 {% from "components/date-input/_macro.njk" import onsDateInput %}
 {% from "components/button/_macro.njk" import onsButton %}
 
 {% block content %}
-    <a href="#" class="js-previous">Previous</a>
+    <a href="{{ pageInfo.parentPath }}">Previous</a>
     <form action="{{ pageInfo.parentPath }}/address.html">
         {{
             onsDateInput({

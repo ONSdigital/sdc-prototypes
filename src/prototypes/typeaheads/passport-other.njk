@@ -1,0 +1,41 @@
+---
+version: 0.1.11
+layout: typeaheads/views/_master
+---
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "typeaheads/components/typeahead/_macro.njk" import prototypeTypeahead %}
+
+{% block content %}
+    <a href="{{ pageInfo.parentPath }}/passport.html">Previous</a>
+    <form action="{{ pageInfo.parentPath }}/national-identity.html">
+        <h1 class="u-mt-m">You selected ‘Other’ for the passport you hold, can you specify this further?</h1>
+        {{
+            prototypeTypeahead({
+                "id": "passport-other",
+                "classes": "u-mt-m u-mb-xl",
+                "label": {
+                    "text": "Enter the country where your passport was issued"
+                },
+                "instructions": "Use up and down keys to navigate results once you\'ve typed more than two characters. Use the enter key to select a result. Touch device users, explore by touch or with swipe gestures.",
+                "content": {
+                    "no_results": "No results found",
+                    "aria_no_results": "No results found for the query",
+                    "aria_you_have_selected": "You have selected",
+                    "aria_found_by_alternative_name": "found by alternative name",
+                    "aria_min_chars": "Type in 2 or more characters for results.",
+                    "aria_one_result": "There is one result available.",
+                    "aria_n_results": "There are {n} results available.",
+                    "aria_limited_results": "Results have been limited to 10 results. Type more characters to refine your search.",
+                    "more_results": "Continue typing to refine results"
+                },
+                "autocomplete": "off",
+                "apiUrl": "https://ons-typeahead-prototypes.herokuapp.com/passport"
+            })
+        }}
+        {{
+            onsButton({
+                "text": "Save and continue"
+            })
+        }}
+    </form>
+{% endblock %}

@@ -1,0 +1,89 @@
+---
+version: 0.1.11
+layout: typeaheads/views/_master
+---
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/details/_macro.njk" import onsDetails %}
+
+{% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
+
+{% block content %}
+    <a href="{{ pageInfo.parentPath }}/passport.html">Previous</a>
+    <form action="{{ pageInfo.parentPath }}/ethnic-group.html">
+        <h1 class="u-mt-m">How would you describe your national identity?</h1>
+        {{
+            onsDetails({
+                "id": "what-is-a-national-identity",
+                "classes": "u-mb-m",
+                "title": "What is a national identity?",
+                "content": "<p></p>",
+                "buttonClose": "Hide this"
+            })
+        }}
+        {{ 
+            onsCheckboxes({
+                "legend": "Select all that apply",
+                "name": "national-identity",
+                "classes": "u-mb-xl",
+                "checkboxes": [
+                    {
+                        "id": "english",
+                        "label": {
+                            "text": "English"
+                        },
+                        "value": "english",
+                        "name": "english"
+                    },
+                    {
+                        "id": "welsh",
+                        "label": {
+                            "text": "Welsh"
+                        },
+                        "value": "welsh",
+                        "name": "welsh"
+                    },
+                     {
+                        "id": "scottish",
+                        "label": {
+                            "text": "Scottish"
+                        },
+                        "value": "scottish",
+                        "name": "scottish"
+                    },
+                    {
+                        "id": "northern-irish",
+                        "label": {
+                            "text": "Northern Irish"
+                        },
+                        "value": "northern-irish",
+                        "name": "northern-irish"
+                    },
+                    {
+                        "id": "british",
+                        "label": {
+                            "text": "British"
+                        },
+                        "value": "british",
+                        "name": "british"
+                    },
+                    {
+                        "id": "other",
+                        "label": {
+                            "text": "Other"
+                        },
+                        "value": "other",
+                        "name": "other",
+                        "attributes": {
+                            "data-other-url": pageInfo.parentPath + "/passport-other.html"
+                        }
+                    }
+                ]
+            }) 
+        }}
+        {{
+            onsButton({
+                "text": "Save and continue"
+            })
+        }}
+    </form>
+{% endblock %}

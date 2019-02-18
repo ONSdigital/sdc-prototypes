@@ -1,0 +1,86 @@
+---
+version: 0.1.11
+layout: typeaheads/views/_master
+---
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+
+{% block content %}
+    <a href="{{ pageInfo.parentPath }}/national-identity.html">Previous</a>
+    <form action="{{ pageInfo.parentPath }}/ethnic-group.html">
+        {{ 
+            onsRadios({
+                "legend": "<h1>What is your ethnic group?</h1>",
+                "name": "ethnic-group",
+                "classes": "u-mb-xl u-mt-m",
+                "radios": [
+                    {
+                        "id": "white",
+                        "label": {
+                            "text": "White",
+                            "description": "Includes British, Northern Irish, Irish, Gypsy, Irish Traveller, Roma or any other White background"
+                        },
+                        "value": "white",
+                        "name": "white",
+                        "attributes": {
+                            "data-action-url": pageInfo.parentPath + "/ethnic-group-white.html"
+                        }
+                    },
+                    {
+                        "id": "mixed",
+                        "label": {
+                            "text": "Mixed or Multiple ethnic groups",
+                            "description": "Includes White and Black Caribbean, White and Black African, White and Asian or any other Mixed or Multiple background"
+                        },
+                        "value": "mixed",
+                        "name": "mixed",
+                        "attributes": {
+                            "data-action-url": pageInfo.parentPath + "/ethnic-group-mixed.html"
+                        }
+                    },
+                    {
+                        "id": "asian",
+                        "label": {
+                            "text": "Asian or Asian British",
+                            "description": "Includes Indian, Pakistani, Bangladeshi, Chinese or any other Asian background"
+                        },
+                        "value": "asian",
+                        "name": "asian",
+                        "attributes": {
+                            "data-action-url": pageInfo.parentPath + "/ethnic-group-asian.html"
+                        }
+                    },
+                    {
+                        "id": "black",
+                        "label": {
+                            "text": "Black, Caribbean, African or Black British",
+                            "description": "Includes Indian, Pakistani, Bangladeshi, Chinese or any other Asian background"
+                        },
+                        "value": "black",
+                        "name": "black",
+                        "attributes": {
+                            "data-action-url": pageInfo.parentPath + "/ethnic-group-black.html"
+                        }
+                    },
+                    {
+                        "id": "other",
+                        "label": {
+                            "text": "Other ethnic group",
+                            "description": "Includes Arab or any other ethnic group"
+                        },
+                        "value": "other",
+                        "name": "other",
+                        "attributes": {
+                            "data-other-url": pageInfo.parentPath + "/ethnic-group-other.html"
+                        }
+                    }
+                ]
+            }) 
+        }}
+        {{
+            onsButton({
+                "text": "Save and continue"
+            })
+        }}
+    </form>
+{% endblock %}

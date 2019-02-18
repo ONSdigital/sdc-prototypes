@@ -1,0 +1,73 @@
+---
+version: 0.1.11
+layout: typeaheads/views/_master
+---
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+
+{% block content %}
+    <a href="{{ pageInfo.parentPath }}/ethnic-group.html">Previous</a>
+    <form action="{{ pageInfo.parentPath }}/employment-status.html">
+        {{ 
+            onsRadios({
+                "legend": "<h1>Which of these best describes your White ethnic group or background?</h1>",
+                "name": "ethnic-group-white",
+                "classes": "u-mb-xl u-mt-m",
+                "radios": [
+                    {
+                        "id": "a",
+                        "label": {
+                            "text": "English, Welsh, Scottish, Northern Irish or British"
+                        },
+                        "value": "a",
+                        "name": "a"
+                       
+                    },
+                    {
+                        "id": "b",
+                        "label": {
+                            "text": "Irish"
+                        },
+                        "value": "b",
+                        "name": "b"
+                       
+                    },
+                    {
+                        "id": "c",
+                        "label": {
+                            "text": "Gypsy or Irish Traveler"
+                        },
+                        "value": "c",
+                        "name": "c"
+                       
+                    },
+                    {
+                        "id": "d",
+                        "label": {
+                            "text": "Roma"
+                        },
+                        "value": "d",
+                        "name": "d"
+                       
+                    },
+                    {
+                        "id": "other",
+                        "label": {
+                            "text": "Other White ethnic group or background "
+                        },
+                        "value": "other",
+                        "name": "other",
+                        "attributes": {
+                            "data-other-url": pageInfo.parentPath + "/ethnic-group-white-other.html"
+                        }
+                    }
+                ]
+            }) 
+        }}
+        {{
+            onsButton({
+                "text": "Save and continue"
+            })
+        }}
+    </form>
+{% endblock %}

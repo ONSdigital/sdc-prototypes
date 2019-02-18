@@ -1,0 +1,18 @@
+---
+version: 0.1.11
+layout: typeaheads/views/_master
+---
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% block content %}
+    <a href="{{ pageInfo.parentPath }}/job-title.html">Previous</a>
+    <form action="/">
+        <h1 class="u-mt-m">Your answers</h1>
+        
+        {{
+            onsButton({
+                "text": "Save and continue"
+            })
+        }}
+    </form>
+{% endblock %}

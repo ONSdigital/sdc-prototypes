@@ -1,4 +1,8 @@
-{% extends "page-templates/_template.njk"  %}
+{% extends "page-templates/_template.njk" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/prototypes/typeaheads/styles.css" />
+{% endblock %}
 
 {% set page = { 
     "title": "National Identity Typeahead",
