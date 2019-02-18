@@ -669,23 +669,10 @@
     log-update "^2.3.0"
     strip-ansi "^3.0.1"
 
-"@ons/design-system/0.1.10@npm:@ons/design-system@0.1.10":
-  version "0.1.10"
-  resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-0.1.10.tgz#48c9095e411bfa47a0fe25660554ff1538e7c9df"
-  integrity sha512-fejta3/9DRhFufalzE7CGfcPUjX/j4A8O3vBaoF4GDbSNdAdz/s9/2K54vOsKmlZ2bgNyf+5Y4ITYuSzwJcCmw==
-  dependencies:
-    a11y-dialog "^5.2.0"
-    abortcontroller-polyfill "^1.2.3"
-    core-js "^2.6.0"
-    mdn-polyfills "^5.14.0"
-    normalize-scss "^7.0.1"
-    throttle-typescript "^1.0.1"
-    whatwg-fetch "^3.0.0"
-
-"@ons/design-system/0.1.11@npm:@ons/design-system@0.1.11":
-  version "0.1.11"
-  resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-0.1.11.tgz#a6ba54e5e387dd0645f621594d1e764219d33e23"
-  integrity sha512-MYxg7XHP10KE1kIcAFqw/FrnJnnayUq+erWLMRDKEo0QQzpjER+3w5rvefzuHJLSJ4DCP6DYmnc5XsJj1ue9vg==
+"@ons/design-system/0.1.12@npm:@ons/design-system@0.1.12":
+  version "0.1.12"
+  resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-0.1.12.tgz#bc7a812072a79752bbf7839d00b1734f14fc4532"
+  integrity sha512-FEZIOkIXfZsBTGOR5umCq54dBGZEJd6BHx+8d5081E0wjDwlxA7OD68lQ1f1m/DpUqc35zyajAmKyHb4eFk12A==
   dependencies:
     a11y-dialog "^5.2.0"
     abortcontroller-polyfill "^1.2.3"
@@ -701,55 +688,6 @@
   integrity sha512-FEjIObDpLgbzWgZ45B7BwRI/fryrAltd28EF86EtL0Lw7r/dsBR5SEZnBV0zCfmE/SEiS8onc9WxXYyxfC8frA==
   dependencies:
     a11y-dialog "^5.2.0"
-    core-js "^2.6.0"
-    mdn-polyfills "^5.14.0"
-    normalize-scss "^7.0.1"
-    throttle-typescript "^1.0.1"
-    whatwg-fetch "^3.0.0"
-
-"@ons/design-system/0.1.6@npm:@ons/design-system@0.1.6":
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-0.1.6.tgz#d1a36749d1ace7fc78d98e5a8721af8955e9124a"
-  integrity sha512-47nG0sykORUh6d/y82q8xuh6HUBDCUCzxMxWjVKKFZGUiu4PZNKYeBd5333GMbtyj/rfg0k4DWYJH0FZPz79OQ==
-  dependencies:
-    a11y-dialog "^5.2.0"
-    core-js "^2.6.0"
-    mdn-polyfills "^5.14.0"
-    normalize-scss "^7.0.1"
-    throttle-typescript "^1.0.1"
-    whatwg-fetch "^3.0.0"
-
-"@ons/design-system/0.1.7@npm:@ons/design-system@0.1.7":
-  version "0.1.7"
-  resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-0.1.7.tgz#58a184d0150c0bf0ae6eedfa46ff275fdc71e6a6"
-  integrity sha512-kXloniyr78K+JfHjHOl+HyOC8bDmtkVelbwv70QYQ6tK+8QM0kRX+xDQYnNG97E1XgbbZ2/dsyUEYr/zsWvWSg==
-  dependencies:
-    a11y-dialog "^5.2.0"
-    core-js "^2.6.0"
-    mdn-polyfills "^5.14.0"
-    normalize-scss "^7.0.1"
-    throttle-typescript "^1.0.1"
-    whatwg-fetch "^3.0.0"
-
-"@ons/design-system/0.1.8@npm:@ons/design-system@0.1.8":
-  version "0.1.8"
-  resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-0.1.8.tgz#748ff0765346306cea9f7d385f08df8add64ae8c"
-  integrity sha512-XJ9jnNsjIMcYoammlzAPPSqFP9bm7CbiTHsK+1rcEf8OpJ0jc+Kr/E0507eAGsXudot6mqKkIwqgrIJmt4yvbw==
-  dependencies:
-    a11y-dialog "^5.2.0"
-    core-js "^2.6.0"
-    mdn-polyfills "^5.14.0"
-    normalize-scss "^7.0.1"
-    throttle-typescript "^1.0.1"
-    whatwg-fetch "^3.0.0"
-
-"@ons/design-system/0.1.9@npm:@ons/design-system@0.1.9":
-  version "0.1.9"
-  resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-0.1.9.tgz#b24e574bcb3321b87e42ff1907a8cd58d5b8bb5d"
-  integrity sha512-ZHUZ338MjZ5vSIGYFmlY0OnKGgDBkYUyCMLrMh0wwKO+M0nX2QJqDLy411AuQsC2qNE+sthT03VLA+3pqln48g==
-  dependencies:
-    a11y-dialog "^5.2.0"
-    abortcontroller-polyfill "^1.2.3"
     core-js "^2.6.0"
     mdn-polyfills "^5.14.0"
     normalize-scss "^7.0.1"

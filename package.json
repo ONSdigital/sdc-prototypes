@@ -86,12 +86,7 @@
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
-    "@ons/design-system/0.1.10": "npm:@ons/design-system@0.1.10",
-    "@ons/design-system/0.1.11": "npm:@ons/design-system@0.1.11",
-    "@ons/design-system/0.1.5": "npm:@ons/design-system@0.1.5",
-    "@ons/design-system/0.1.6": "npm:@ons/design-system@0.1.6",
-    "@ons/design-system/0.1.7": "npm:@ons/design-system@0.1.7",
-    "@ons/design-system/0.1.8": "npm:@ons/design-system@0.1.8",
-    "@ons/design-system/0.1.9": "npm:@ons/design-system@0.1.9"
+    "@ons/design-system/0.1.12": "npm:@ons/design-system@0.1.12",
+    "@ons/design-system/0.1.5": "npm:@ons/design-system@0.1.5"
   }
 }
