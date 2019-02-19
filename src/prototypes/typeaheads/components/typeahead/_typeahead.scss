@@ -7,11 +7,15 @@
   position: relative;
 
   &__combobox {
-    display: table;
+    
     border-radius: $input-radius;
 
     &--focused {
       box-shadow: 0 0 0 3px $color-focus;
+    }
+
+    @include mq(m) {
+      display: table;
     }
   }
 
