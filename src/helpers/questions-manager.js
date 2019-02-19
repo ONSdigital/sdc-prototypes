@@ -1,6 +1,13 @@
 class QuestionManager {
   constructor() {
     this.url = window.location.pathname;
+
+    const lastCharIndex = this.url.length - 1;
+
+    if (this.url.charAt(lastCharIndex) === '/') {
+      this.url = this.url.slice(0, lastCharIndex);
+    }
+
     this.title = [...document.getElementsByTagName('H1')].find(h1 => !h1.classList.contains('header__title')).innerText;
     this.inputs = [
       ...document.getElementsByTagName('INPUT'),
