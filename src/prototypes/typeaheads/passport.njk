@@ -6,7 +6,7 @@ layout: typeaheads/views/_master
 {% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
 
 {% block content %}
-    <a href="{{ pageInfo.parentPath }}/country-of-birth.html">Previous</a>
+    <a class="js-previous" href="{{ pageInfo.parentPath }}/country-of-birth.html">Previous</a>
     <form action="{{ pageInfo.parentPath }}/national-identity.html">
         <h1 class="u-mt-m">What passport do you hold?</h1>
         {{ 

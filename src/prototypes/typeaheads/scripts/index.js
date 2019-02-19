@@ -1,6 +1,11 @@
+import 'helpers/previous-link';
 import 'helpers/questions-manager';
 import '../components/typeahead/typeahead';
 import '../components/address-input/address-input';
+
+import SummaryManager from 'helpers/summary-manager';
+import summaryTemplate from '!nunjucks-loader!@ons/design-system/0.1.12/components/summary/_template.njk';
+
 
 const form = document.getElementsByTagName('FORM')[0];
 const otherCheckbox = document.getElementById('other');
@@ -13,14 +18,29 @@ function handleSubmit() {
 
     form.action = otherCheckbox.checked ? otherAction : originalAction;
     form.setAttribute('data-original-action', originalAction);
+
+    if (!otherCheckbox.checked) {
+      sessionStorage.removeItem(otherAction);
+    }
   }
 
   const selectedEthnicGroupInput = ethnicGroupInputs.find(input => input.checked);
+  const unselectedEthnicGroupInputs = ethnicGroupInputs.filter(input => !input.checked);
 
   if (selectedEthnicGroupInput) {
     form.action = selectedEthnicGroupInput.getAttribute('data-action-url');
   }
+
+  unselectedEthnicGroupInputs.forEach(input => {
+    const action = input.getAttribute('data-action-url');
+    sessionStorage.removeItem(action);
+  });
 }
 
 form.addEventListener('submit', handleSubmit);
 
+const summaryPlaceholder = document.querySelector('.js-summary');
+
+if (summaryPlaceholder) {
+  new SummaryManager(summaryPlaceholder, summaryTemplate);
+}

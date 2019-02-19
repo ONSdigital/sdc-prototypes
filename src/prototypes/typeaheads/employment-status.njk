@@ -6,7 +6,7 @@ layout: typeaheads/views/_master
 {% from "components/radios/_macro.njk" import onsRadios %}
 
 {% block content %}
-    <a href="{{ pageInfo.parentPath }}/ethnic-group.html">Previous</a>
+    <a class="js-previous" href="{{ pageInfo.parentPath }}/ethnic-group.html">Previous</a>
     <form action="{{ pageInfo.parentPath }}/job-title.html">
         {{ 
             onsRadios({

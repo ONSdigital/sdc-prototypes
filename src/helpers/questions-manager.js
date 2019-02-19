@@ -16,6 +16,12 @@ class QuestionManager {
       this.legend = legend.innerText;
     }
 
+    const previousLink = document.querySelector('.js-previous');
+
+    if (previousLink) {
+      this.previousUrl = previousLink.getAttribute('href');
+    }
+
     this.form.addEventListener('submit', this.handleSubmit.bind(this));
 
     this.setValues();
@@ -56,7 +62,8 @@ class QuestionManager {
         legend: this.legend,
         inputs: [],
         action: this.form.action,
-        originalAction: this.form.getAttribute('data-original-action')
+        originalAction: this.form.getAttribute('data-original-action'),
+        previousUrl: this.previousUrl
       };
 
       this.inputs.forEach(input => {
@@ -78,8 +85,9 @@ class QuestionManager {
           const labelElement = document.querySelector(`label[for="${id}"]`);
 
           let label;
+
           if (labelElement) {
-            label = labelElement.innerText;
+            label = labelElement.innerHTML.match(/([A-Za-z\s])*(?![^<]*>|[^<>]*<\/)/)[0].trim();
           }
 
           question.inputs.push({
@@ -97,4 +105,5 @@ class QuestionManager {
   }
 }
 
-new QuestionManager();
+// Allow previous links to be updated first
+setTimeout(() => new QuestionManager());

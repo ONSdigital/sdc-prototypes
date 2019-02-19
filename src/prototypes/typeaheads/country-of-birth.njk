@@ -6,7 +6,7 @@ layout: typeaheads/views/_master
 {% from "typeaheads/components/typeahead/_macro.njk" import prototypeTypeahead %}
 
 {% block content %}
-    <a href="{{ pageInfo.parentPath }}/address.html">Previous</a>
+    <a class="js-previous" href="{{ pageInfo.parentPath }}/address.html">Previous</a>
     <form action="{{ pageInfo.parentPath }}/passport.html">
         <h1 class="u-mt-m">What is your country of birth?</h1>
         {{

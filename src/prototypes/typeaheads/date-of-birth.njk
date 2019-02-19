@@ -6,7 +6,7 @@ layout: typeaheads/views/_master
 {% from "components/button/_macro.njk" import onsButton %}
 
 {% block content %}
-    <a href="{{ pageInfo.parentPath }}">Previous</a>
+    <a class="js-previous" href="{{ pageInfo.parentPath }}">Previous</a>
     <form action="{{ pageInfo.parentPath }}/address.html">
         {{
             onsDateInput({
@@ -16,15 +16,23 @@ layout: typeaheads/views/_master
                 "description": "For example, 31 3 1980",
                 "day": {
                     "label": "Day",
-                    "name": "dob-day"
+                    "name": "dob-day",
+                    "attributes": {
+                        "autocomplete": "bday-day"
+                    }
                 },
                 "month": {
                     "label": "Month",
-                    "name": "dob-month"
+                    "name": "dob-month",
+                    "attributes": {
+                        "autocomplete": "bday-month"
+                    }
                 },
                 "year": {
                     "label": "Year",
-                    "name": "dob-year"
+                    "attributes": {
+                        "autocomplete": "bday-year"
+                    }
                 }
             })
         }}

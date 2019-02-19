@@ -6,7 +6,7 @@ layout: typeaheads/views/_master
 {% from "typeaheads/components/typeahead/_macro.njk" import prototypeTypeahead %}
 
 {% block content %}
-    <a href="{{ pageInfo.parentPath }}/employment-status.html">Previous</a>
+    <a class="js-previous" href="{{ pageInfo.parentPath }}/employment-status.html">Previous</a>
     <form action="{{ pageInfo.parentPath }}/job-description.html">
         <h1 class="u-mt-m">In your main job, what is your job title?</h1>
         {{

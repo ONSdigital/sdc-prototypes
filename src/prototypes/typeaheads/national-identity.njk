@@ -8,7 +8,7 @@ layout: typeaheads/views/_master
 {% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
 
 {% block content %}
-    <a href="{{ pageInfo.parentPath }}/passport.html">Previous</a>
+    <a class="js-previous" href="{{ pageInfo.parentPath }}/passport.html">Previous</a>
     <form action="{{ pageInfo.parentPath }}/ethnic-group.html">
         <h1 class="u-mt-m">How would you describe your national identity?</h1>
         {{
@@ -74,7 +74,7 @@ layout: typeaheads/views/_master
                         "value": "other",
                         "name": "other",
                         "attributes": {
-                            "data-other-url": pageInfo.parentPath + "/passport-other.html"
+                            "data-other-url": pageInfo.parentPath + "/national-identity-other.html"
                         }
                     }
                 ]

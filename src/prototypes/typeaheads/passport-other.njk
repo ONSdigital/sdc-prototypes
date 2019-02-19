@@ -6,8 +6,8 @@ layout: typeaheads/views/_master
 {% from "typeaheads/components/typeahead/_macro.njk" import prototypeTypeahead %}
 
 {% block content %}
-    <a href="{{ pageInfo.parentPath }}/passport.html">Previous</a>
-    <form action="{{ pageInfo.parentPath }}/national-identity.html">
+    <a class="js-previous" href="{{ pageInfo.parentPath }}/passport.html">Previous</a>
+    <form action="{{ pageInfo.parentPath }}/national-identity.html?previous={{ pageInfo.path }}.html">
         <h1 class="u-mt-m">You selected ‘Other’ for the passport you hold, can you specify this further?</h1>
         {{
             prototypeTypeahead({

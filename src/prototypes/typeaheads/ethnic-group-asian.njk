@@ -6,8 +6,8 @@ layout: typeaheads/views/_master
 {% from "components/radios/_macro.njk" import onsRadios %}
 
 {% block content %}
-    <a href="{{ pageInfo.parentPath }}/ethnic-group.html">Previous</a>
-    <form action="{{ pageInfo.parentPath }}/employment-status.html">
+    <a class="js-previous" href="{{ pageInfo.parentPath }}/ethnic-group.html">Previous</a>
+    <form action="{{ pageInfo.parentPath }}/employment-status.html?previous={{ pageInfo.path }}.html">
         {{ 
             onsRadios({
                 "legend": "<h1>Which of these best describes your Asian ethnic group or background?</h1>",

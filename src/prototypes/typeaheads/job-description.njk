@@ -6,7 +6,7 @@ layout: typeaheads/views/_master
 {% from "components/textarea/_macro.njk" import onsTextarea %}
 
 {% block content %}
-    <a href="{{ pageInfo.parentPath }}/job-title.html">Previous</a>
+    <a class="js-previous" href="{{ pageInfo.parentPath }}/job-title.html">Previous</a>
     <form action="{{ pageInfo.parentPath }}/summary.html">
         <h1 class="u-mt-m">Can you briefly  describe what you do in your main job?</h1>
         {{
