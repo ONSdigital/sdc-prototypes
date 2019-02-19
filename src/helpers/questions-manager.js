@@ -1,3 +1,4 @@
+import domready from 'helpers/domready';
 class QuestionManager {
   constructor() {
     this.url = window.location.pathname;
@@ -113,4 +114,4 @@ class QuestionManager {
 }
 
 // Allow previous links to be updated first
-setTimeout(() => new QuestionManager());
+domready(() => setTimeout(() => new QuestionManager()));
