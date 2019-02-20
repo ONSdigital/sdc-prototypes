@@ -2,7 +2,7 @@ export default class SummaryManager {
   constructor(placeholder, template) {
     this.placeholder = placeholder;
     this.template = template;
-    this.basePath = placeholder.getAttribute('data-base-path');
+    this.basePath = window.location.pathname.split('/').filter(part => !part.includes('.html')).join('/');
 
     this.config = {
       params: {

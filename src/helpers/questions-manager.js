@@ -65,53 +65,65 @@ class QuestionManager {
 
     // Wait until next event loop cycle to allow any modifications to the form to complete
     setTimeout(() => {
-      const question = {
-        title: this.title,
-        legend: this.legend,
-        inputs: [],
-        action: this.form.action,
-        originalAction: this.form.getAttribute('data-original-action'),
-        previousUrl: this.previousUrl
-      };
+      if (this.form.action === `${window.location.origin}/`) {
+        this.clearFormData();
+      } else {
+        const question = {
+          title: this.title,
+          legend: this.legend,
+          inputs: [],
+          action: this.form.action,
+          originalAction: this.form.getAttribute('data-original-action'),
+          previousUrl: this.previousUrl
+        };
 
-      this.inputs.forEach(input => {
-        let value;
+        this.inputs.forEach(input => {
+          let value;
 
-        switch (input.type) {
-          case 'checkbox':
-          case 'radio': {
-            value = input.checked;
-            break;
-          }
-          default: {
-            value = input.value;
-          }
-        }
-
-        if (value != undefined) {
-          const id = input.id;
-          const labelElement = document.querySelector(`label[for="${id}"]`);
-
-          let label;
-
-          if (labelElement) {
-            label = labelElement.innerHTML.match(/([A-Za-z\s])*(?![^<]*>|[^<>]*<\/)/)[0].trim();
+          switch (input.type) {
+            case 'checkbox':
+            case 'radio': {
+              value = input.checked;
+              break;
+            }
+            default: {
+              value = input.value;
+            }
           }
 
-          question.inputs.push({
-            id: input.id,
-            value,
-            label
-          });
-        }
-      });
+          if (value != undefined) {
+            const id = input.id;
+            const labelElement = document.querySelector(`label[for="${id}"]`);
 
-      window.sessionStorage.setItem(this.url, JSON.stringify(question));
+            let label;
+
+            if (labelElement) {
+              label = labelElement.innerHTML.match(/([A-Za-z\s])*(?![^<]*>|[^<>]*<\/)/)[0].trim();
+            }
+
+            question.inputs.push({
+              id: input.id,
+              value,
+              label
+            });
+          }
+        });
+
+        window.sessionStorage.setItem(this.url, JSON.stringify(question));
+      }
 
       window.location = this.form.action;
     });
   }
+
+  clearFormData() {
+    const rootURL = window.location.pathname.split('/').filter(part => !part.includes('.html')).join('/');
+
+    Object.keys(sessionStorage).filter(key => key.includes(rootURL)).forEach(key => sessionStorage.removeItem(key));
+  }
 }
+
+
 
 // Allow previous links to be updated first
 domready(() => setTimeout(() => new QuestionManager()));
