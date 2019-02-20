@@ -6,9 +6,9 @@ layout: typeaheads/views/_master
 {% from "typeaheads/components/typeahead/_macro.njk" import prototypeTypeahead %}
 
 {% block content %}
-    <a class="js-previous" href="{{ pageInfo.parentPath }}/ethnic-group-white.html">Previous</a>
+    <a class="previous-link js-previous" href="{{ pageInfo.parentPath }}/ethnic-group-white.html">Previous</a>
     <form action="{{ pageInfo.parentPath }}/employment-status.html?previous={{ pageInfo.path }}.html">
-        <h1 class="u-mt-m">You selected ‘Other White background’ for your White ethnic group, can you specify this further?</h1>
+        <h1 class="u-mt-s">You selected ‘Other White background’ for your White ethnic group, can you specify this further?</h1>
         {{
             prototypeTypeahead({
                 "id": "ethnic-group-white-other",

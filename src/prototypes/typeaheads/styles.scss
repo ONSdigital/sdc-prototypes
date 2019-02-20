@@ -1,2 +1,7 @@
 @import 'components/typeahead/typeahead';
 @import 'components/address-input/address-input';
+
+.previous-link {
+  display: table;
+  line-height: 1;
+}

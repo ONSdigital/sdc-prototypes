@@ -6,9 +6,9 @@ layout: typeaheads/views/_master
 {% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
 
 {% block content %}
-    <a class="js-previous" href="{{ pageInfo.parentPath }}/country-of-birth.html">Previous</a>
+    <a class="previous-link js-previous" href="{{ pageInfo.parentPath }}/country-of-birth.html">Previous</a>
     <form action="{{ pageInfo.parentPath }}/national-identity.html">
-        <h1 class="u-mt-m">What passport do you hold?</h1>
+        <h1 class="u-mt-s">What passport do you hold?</h1>
         {{ 
             onsCheckboxes({
                 "legend": "Select all that apply",

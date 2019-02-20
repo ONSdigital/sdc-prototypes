@@ -8,9 +8,9 @@ layout: typeaheads/views/_master
 {% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
 
 {% block content %}
-    <a class="js-previous" href="{{ pageInfo.parentPath }}/passport.html">Previous</a>
+    <a class="previous-link js-previous" href="{{ pageInfo.parentPath }}/passport.html">Previous</a>
     <form action="{{ pageInfo.parentPath }}/ethnic-group.html">
-        <h1 class="u-mt-m">How would you describe your national identity?</h1>
+        <h1 class="u-mt-s">How would you describe your national identity?</h1>
         {{
             onsDetails({
                 "id": "what-is-a-national-identity",

@@ -6,12 +6,12 @@ layout: typeaheads/views/_master
 {% from "components/button/_macro.njk" import onsButton %}
 
 {% block content %}
-    <a class="js-previous" href="{{ pageInfo.parentPath }}/date-of-birth.html">Previous</a>
+    <a class="previous-link js-previous" href="{{ pageInfo.parentPath }}/date-of-birth.html">Previous</a>
     <form action="{{ pageInfo.parentPath }}/country-of-birth.html">
         {{
             prototypeAddressInput({
                 "id": "address",
-                "classes": "u-mt-m u-mb-xl",
+                "classes": "u-mt-s u-mb-xl",
                 "label": {
                     "text": "<h1>What is your address?</h1>"
                 },

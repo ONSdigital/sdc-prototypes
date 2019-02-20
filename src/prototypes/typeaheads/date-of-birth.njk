@@ -6,13 +6,13 @@ layout: typeaheads/views/_master
 {% from "components/button/_macro.njk" import onsButton %}
 
 {% block content %}
-    <a class="js-previous" href="{{ pageInfo.parentPath }}">Previous</a>
+    <a class="previous-link js-previous" href="{{ pageInfo.parentPath }}">Previous</a>
     <form action="{{ pageInfo.parentPath }}/address.html">
         {{
             onsDateInput({
                 "id": "dob",
                 "legend": "<h1>What is your date of birth?</h1>",
-                "classes": "u-mt-m u-mb-xl",
+                "classes": "u-mt-s u-mb-xl",
                 "description": "For example, 31 3 1980",
                 "day": {
                     "label": "Day",
