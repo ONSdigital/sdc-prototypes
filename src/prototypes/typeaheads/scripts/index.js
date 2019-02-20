@@ -4,7 +4,7 @@ import '../components/typeahead/typeahead';
 import '../components/address-input/address-input';
 
 import SummaryManager from 'helpers/summary-manager';
-import summaryTemplate from '!nunjucks-loader!@ons/design-system/0.1.12/components/summary/_template.njk';
+import summaryTemplate from '!nunjucks-loader!@ons/design-system/0.1.13/components/summary/_template.njk';
 
 
 const form = document.getElementsByTagName('FORM')[0];

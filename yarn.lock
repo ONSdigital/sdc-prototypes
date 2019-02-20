@@ -669,10 +669,10 @@
     log-update "^2.3.0"
     strip-ansi "^3.0.1"
 
-"@ons/design-system/0.1.12@npm:@ons/design-system@0.1.12":
-  version "0.1.12"
-  resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-0.1.12.tgz#bc7a812072a79752bbf7839d00b1734f14fc4532"
-  integrity sha512-FEZIOkIXfZsBTGOR5umCq54dBGZEJd6BHx+8d5081E0wjDwlxA7OD68lQ1f1m/DpUqc35zyajAmKyHb4eFk12A==
+"@ons/design-system/0.1.13@npm:@ons/design-system@0.1.13":
+  version "0.1.13"
+  resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-0.1.13.tgz#b2a819a045facdaf023933e243d76ed08e5571ca"
+  integrity sha512-qDTKhy/5X8FHvjsFgbjzPXo4emr6R/2FxYbyVrRe1k+/Y+Op/TeFN+SSIjQM3AUlGre6JLE43zDgj0+LBRqh+Q==
   dependencies:
     a11y-dialog "^5.2.0"
     abortcontroller-polyfill "^1.2.3"
