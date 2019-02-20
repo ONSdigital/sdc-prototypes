@@ -364,7 +364,7 @@ export default class TypeaheadCore {
 
         if (this.numberOfResults < this.foundResults) {
           const listElement = document.createElement('li');
-          listElement.className = `${classTypeaheadOption} ${classTypeaheadOptionMoreResults} pluto`;
+          listElement.className = `${classTypeaheadOption} ${classTypeaheadOptionMoreResults} u-fs-b`;
           listElement.setAttribute('tabindex', '-1');
           listElement.setAttribute('aria-hidden', 'true');
           listElement.innerHTML = this.content.more_results;

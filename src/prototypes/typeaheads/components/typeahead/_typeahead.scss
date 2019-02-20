@@ -42,7 +42,7 @@
 
     list-style: none;
 
-    border: 1px solid $color-borders;
+    border: 1px solid $color-input;
     border-top: 0;
     border-bottom-left-radius: $input-radius;
     border-bottom-right-radius: $input-radius;
@@ -60,10 +60,10 @@
     cursor: pointer;
 
     &:not(:last-child) {
-      border-bottom: 1px solid $color-grey-3;
+      border-bottom: 1px solid $color-input;
     }
 
-    &:not(&--no-results, &--more-results):hover,
+    &:not(&--no-results):not(&--more-results):hover,
     &--focused:not(&--no-results) {
       border-color: $color-blue;
       background: $color-blue;
@@ -74,6 +74,12 @@
     &--more-results {
       background: $color-grey-3;
       cursor: not-allowed;
+    }
+  }
+
+  &__combobox--focused & {
+    &__listbox {
+      border-color: $color-input;
     }
   }
 
