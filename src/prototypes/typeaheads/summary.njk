@@ -4,19 +4,15 @@ layout: typeaheads/views/_master
 ---
 {% from "components/button/_macro.njk" import onsButton %}
 
-{% block main %}
-    <div class="page__container container u-mt-s">
-        <main id="main-content" role="main" class="page__main">
-            <a class="js-previous" href="{{ pageInfo.parentPath }}/job-title.html">Previous</a>
-            <form action="/">
-                <h1 class="u-mt-m">Your answers</h1>
-                <div class="js-summary" data-base-path="{{ pageInfo.parentPath }}"></div>
-                {{
-                    onsButton({
-                        "text": "Save and continue"
-                    })
-                }}
-            </form>
-        </main>
-    </div>
+{% block content %}
+    <a class="js-previous" href="{{ pageInfo.parentPath }}/job-title.html">Previous</a>
+    <form action="/">
+        <h1 class="u-mt-m">Your answers</h1>
+        <div class="js-summary u-mb-xl" data-base-path="{{ pageInfo.parentPath }}"></div>
+        {{
+            onsButton({
+                "text": "Continue"
+            })
+        }}
+    </form>
 {% endblock %}
