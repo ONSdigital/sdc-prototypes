@@ -2,6 +2,7 @@ import domready from 'helpers/domready';
 class QuestionManager {
   constructor() {
     this.url = window.location.pathname;
+    this.rootURL = window.location.pathname.split('/').filter(part => !part.includes('.html')).join('/');
 
     const lastCharIndex = this.url.length - 1;
 
@@ -31,6 +32,10 @@ class QuestionManager {
     }
 
     this.form.addEventListener('submit', this.handleSubmit.bind(this));
+
+    if (!this.url.includes('.html') && !document.referrer.includes(this.rootURL)) {
+      this.clearFormData();
+    }
 
     this.setValues();
   }
@@ -117,9 +122,7 @@ class QuestionManager {
   }
 
   clearFormData() {
-    const rootURL = window.location.pathname.split('/').filter(part => !part.includes('.html')).join('/');
-
-    Object.keys(sessionStorage).filter(key => key.includes(rootURL)).forEach(key => sessionStorage.removeItem(key));
+    Object.keys(sessionStorage).filter(key => key.includes(this.rootURL)).forEach(key => sessionStorage.removeItem(key));
   }
 }
 
