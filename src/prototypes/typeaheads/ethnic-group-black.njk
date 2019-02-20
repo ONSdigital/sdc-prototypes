@@ -10,14 +10,14 @@ layout: typeaheads/views/_master
     <form action="{{ pageInfo.parentPath }}/employment-status.html?previous={{ pageInfo.path }}.html">
         {{ 
             onsRadios({
-                "legend": "<h1>Which of these best describes your Black ethnic group or background?</h1>",
+                "legend": "<h1>Which one best describes your Black, African, Caribbean or Black British ethnic group or background?</h1>",
                 "name": "ethnic-group-black",
                 "classes": "u-mb-xl u-mt-m",
                 "radios": [
                     {
                         "id": "a",
                         "label": {
-                            "text": "English, Welsh, Scottish, Northern Irish or British"
+                            "text": "African"
                         },
                         "value": "a",
                         "name": "a"
@@ -26,34 +26,16 @@ layout: typeaheads/views/_master
                     {
                         "id": "b",
                         "label": {
-                            "text": "Irish"
+                            "text": "Caribbean"
                         },
                         "value": "b",
                         "name": "b"
                        
                     },
                     {
-                        "id": "c",
-                        "label": {
-                            "text": "Gypsy or Irish Traveler"
-                        },
-                        "value": "c",
-                        "name": "c"
-                       
-                    },
-                    {
-                        "id": "d",
-                        "label": {
-                            "text": "Roma"
-                        },
-                        "value": "d",
-                        "name": "d"
-                       
-                    },
-                    {
                         "id": "other",
                         "label": {
-                            "text": "Other Black ethnic group or background "
+                            "text": "Any other Black, African or Caribbean background"
                         },
                         "value": "other",
                         "name": "other",
