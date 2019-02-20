@@ -151,7 +151,7 @@ export default class TypeaheadCore {
   handleFocus() {
     clearTimeout(this.blurTimeout);
     this.combobox.classList.add(classTypeaheadComboboxFocused);
-    this.getSuggestions();
+    this.getSuggestions(true);
   }
 
   handleBlur() {
@@ -203,12 +203,12 @@ export default class TypeaheadCore {
     }
   }
 
-  getSuggestions() {
+  getSuggestions(force) {
     if (!this.settingResult) {
       const query = this.input.value;
       const sanitisedQuery = this.sanitiseText(query);
-
-      if (sanitisedQuery !== this.sanitisedQuery || !this.resultSelected) {
+      
+      if (sanitisedQuery !== this.sanitisedQuery || (force && !this.resultSelected)) {
         this.unsetResults();
         this.setAriaStatus();
 

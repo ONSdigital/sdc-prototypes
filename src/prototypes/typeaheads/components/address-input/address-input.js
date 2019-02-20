@@ -1,3 +1,4 @@
+
 import TypeaheadCore from '../typeahead/typeahead-core';
 
 import domReady from 'helpers/domready';
@@ -36,6 +37,7 @@ class AddressInput {
     this.currentQuery = null;
     this.fetch = null;
     this.currentResults = [];
+    this.errored = false;
 
     // Initialise typeahead
     this.typeahead = new  TypeaheadCore({
@@ -69,6 +71,10 @@ class AddressInput {
 
     if (clearInputs) {
       this.typeahead.unsetResults();
+    }
+
+    if (manual) {
+      this.typeahead.input.value = '';
     }
     
     this.manualMode = manual;
@@ -177,10 +183,23 @@ class AddressInput {
     this.clearManualInputs();
   }
 
-  onError(error) {
-    console.log(error);
-    alert('There was error looking up your address. Please enter your address manually');
-    this.setManualMode(true);
+  onError() {
+    if (this.fetch) {
+      this.fetch.abort();
+    }
+
+    // Prevent error message from firing twice
+    if (!this.errored) {
+      this.errored = true;
+
+      setTimeout(() => {
+        alert('There was error looking up your address. Please enter your address manually');
+
+        this.setManualMode(true);
+
+        this.errored = false;
+      });
+    }
   }
 }
 
@@ -190,4 +209,4 @@ function addressInput() {
   addressInputs.forEach(addressInput => new AddressInput(addressInput));
 }
 
-domReady(addressInput);
+domReady(() =>setTimeout(addressInput));
