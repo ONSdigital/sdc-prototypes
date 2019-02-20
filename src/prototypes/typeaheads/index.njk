@@ -52,6 +52,12 @@ layout: typeaheads/views/_master
             })
         }}
     </form>
+    <script>
+        // Wake up heroku instance
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("GET", "https://ons-typeahead-prototypes.herokuapp.com");
+        xhttp.send();
+    </script>
 {% endblock %}
 
 
