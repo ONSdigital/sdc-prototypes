@@ -8,7 +8,7 @@ layout: typeaheads/views/_master
 {% block content %}
     <a class="previous-link js-previous" href="{{ pageInfo.parentPath }}/national-identity.html">Previous</a>
     <form action="{{ pageInfo.parentPath }}/ethnic-group.html?previous={{ pageInfo.path }}.html">
-        <h1 class="u-mt-s">You selected ‘Other’ for your national identity, can you specify this further?</h1>
+        <h1 class="u-fs-l u-mt-s">You selected ‘Other’ for your national identity, can you specify this further?</h1>
         {{
             prototypeTypeahead({
                 "id": "passport-other",
