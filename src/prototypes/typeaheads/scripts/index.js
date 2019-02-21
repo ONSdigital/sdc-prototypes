@@ -1,9 +1,8 @@
 import 'helpers/previous-link';
-import 'helpers/questions-manager';
 import '../components/typeahead/typeahead';
 import '../components/address-input/address-input';
-
-import SummaryManager from 'helpers/summary-manager';
+import './questions-manager';
+import SummaryManager from './summary-manager';
 import summaryTemplate from '!nunjucks-loader!@ons/design-system/0.1.13/components/summary/_template.njk';
 
 

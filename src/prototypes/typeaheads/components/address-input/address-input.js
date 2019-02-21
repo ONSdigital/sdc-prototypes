@@ -209,4 +209,4 @@ function addressInput() {
   addressInputs.forEach(addressInput => new AddressInput(addressInput));
 }
 
-domReady(() =>setTimeout(addressInput));
+domReady(() => setTimeout(addressInput, 10));
