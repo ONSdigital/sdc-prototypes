@@ -12,8 +12,7 @@ layout: typeaheads/views/_master
     <form action="{{ pageInfo.parentPath }}/date-of-birth.html">
        {% call onsField({
            "id": "name",
-           "legend": "<h1 class=\"u-fs-l\">What is your name?</h1>",
-           "classes": "u-mb-xl"
+           "legend": "<h1 class=\"u-fs-l\">What is your name?</h1>"
        }) %}
             {{
                 onsInput({
@@ -39,7 +38,6 @@ layout: typeaheads/views/_master
                 onsInput({
                     "id": "last-name",
                     "name": "last-name",
-                    "fieldClasses": "u-mb-m",
                     "label": {
                         "text": "Surname or family name"
                     }
@@ -48,7 +46,8 @@ layout: typeaheads/views/_master
         {% endcall %}
         {{
             onsButton({
-                "text": "Save and continue"
+                "text": "Save and continue",
+                "classes": "u-mt-l"
             })
         }}
     </form>
