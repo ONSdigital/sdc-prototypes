@@ -86,7 +86,7 @@
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
-    "@ons/design-system/0.1.14": "npm:@ons/design-system@0.1.14",
+    "@ons/design-system/0.1.17": "npm:@ons/design-system@0.1.17",
     "@ons/design-system/0.1.5": "npm:@ons/design-system@0.1.5"
   }
 }
