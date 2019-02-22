@@ -19,8 +19,7 @@
                         "text": params.line1.label
                     },
                     "classes": "input--w-20@m js-address-line-1",
-                    "name": params.id + "-line-1",
-                    "fieldClasses": "u-mb-s"
+                    "name": params.id + "-line-1"
                 })
             }}
             {{
@@ -31,8 +30,7 @@
                         "classes": "u-vh"
                     },
                     "classes": "input--w-20@m js-address-line-2",
-                    "name": params.id + "-line-2",
-                    "fieldClasses": "u-mb-s"
+                    "name": params.id + "-line-2"
                 })
             }}
             {{
@@ -42,8 +40,7 @@
                         "text": params.town.label
                     },
                     "classes": "js-address-town",
-                    "name": params.id + "-town",
-                    "fieldClasses": "u-mb-s"
+                    "name": params.id + "-town"
                 })
             }}
             {{
@@ -53,8 +50,7 @@
                         "text": params.county.label
                     },
                     "classes": "js-address-county",
-                    "name": params.id + "-county",
-                    "fieldClasses": "u-mb-s"
+                    "name": params.id + "-county"
                 })
             }}
             {{
@@ -64,11 +60,10 @@
                         "text": params.postcode.label
                     },
                     "classes": "input--w-5 js-address-postcode",
-                    "name": params.id + "-postcode",
-                    "fieldClasses": "u-mb-m"
+                    "name": params.id + "-postcode"
                 })
             }}
-            <div class="u-d-no js-address-search-btn-container">
+            <div class="u-d-no u-mt-s js-address-search-btn-container">
                 {{
                     onsButton({
                         "text": params.searchButton,
@@ -83,7 +78,7 @@
             {{
                 prototypeTypeahead({
                     "id": params.id + "-typeahead",
-                    "classes": "address-input__typeahead js-address-typeahead u-mb-m",
+                    "classes": "address-input__typeahead js-address-typeahead",
                     "inputClasses": "input--w-30",
                     "label": {
                         "text": params.typeahead.label.text
@@ -98,7 +93,7 @@
                 onsButton({
                     "text": params.manualButton,
                     "type": "button",
-                    "classes": "btn--secondary btn--small js-address-manual-btn"
+                    "classes": "btn--secondary btn--small u-mt-s js-address-manual-btn"
                 })
             }}
         </div>
