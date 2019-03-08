@@ -676,12 +676,11 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@ons/design-system/0.1.17@npm:@ons/design-system@0.1.17":
-  version "0.1.17"
-  resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-0.1.17.tgz#e3a8ce7e4392ab19bd9be4cf44c26c164f4c832b"
-  integrity sha512-9yXuqH2dG8y3hZVqspcRfdFL/zZjpCuaIu42aPUZS2EoWkFxEZn7tWqHKTOqKIbMp4eXNfExCf7m0AtEWbk1AA==
+"@ons/design-system/0.3.0@npm:@ons/design-system@0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-0.3.0.tgz#4030fae5107c9186418d98090aa116370fdaf9ed"
+  integrity sha512-rH9O/uq4LwaMD1AZLNm5dRwQ75EQGQIlRZoGhSzZW2byv4jRdax4w0p2DBILenCX6uuQomJiZFxQkwoBbr1zgQ==
   dependencies:
-    a11y-dialog "^5.2.0"
     abortcontroller-polyfill "^1.2.3"
     core-js "^2.6.0"
     mdn-polyfills "^5.14.0"
@@ -898,11 +897,6 @@ a-sync-waterfall@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/a-sync-waterfall/-/a-sync-waterfall-1.0.1.tgz#75b6b6aa72598b497a125e7a2770f14f4c8a1fa7"
   integrity sha512-RYTOHHdWipFUliRFMCS4X2Yn2X8M87V/OpSqWzKKOGhzqyUxzyVmhHDH9sAvG+ZuQf/TAOFsLCpMw09I1ufUnA==
-
-a11y-dialog@^5.2.0:
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/a11y-dialog/-/a11y-dialog-5.2.0.tgz#bc3f9ccb7154a840bffd61b9385edbd093f7f209"
-  integrity sha512-vymlarVdoDKNwQPq513D5IANZu7fdOiWjQJG0FuEFI77RfJUGrxpfI6puwXy7hxKmVTSf4bNq6ZgCb+EikIl8g==
 
 abbrev@1:
   version "1.1.1"
@@ -2094,9 +2088,9 @@ core-js@^2.5.7:
   integrity sha512-l00tmFFZOBHtYhN4Cz7k32VM7vTn3rE2ANjQDxdEN6zmXZ/xq1jQuutnmHvMG1ZJ7xd72+TA5YpUK8wz3rWsfQ==
 
 core-js@^2.6.0:
-  version "2.6.4"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.4.tgz#b8897c062c4d769dd30a0ac5c73976c47f92ea0d"
-  integrity sha512-05qQ5hXShcqGkPZpXEFLIpxayZscVD2kuMBZewxiIPPEagukO4mqgPA9CWhUvFBJfy3ODdK2p9xyHh7FTU9/7A==
+  version "2.6.5"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.5.tgz#44bc8d249e7fb2ff5d00e0341a7ffb94fbf67895"
+  integrity sha512-klh/kDpwX8hryYL14M9w/xei6vrv6sE8gTHDG7/T/+SEovB/G4ejwcfE/CBzO6Edsu+OETZMZ3wcX/EjUkrl5A==
 
 core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
@@ -5199,9 +5193,9 @@ mdn-data@~1.1.0:
   integrity sha512-FSYbp3lyKjyj3E7fMl6rYvUdX0FBXaluGqlFoYESWQlyUTq8R+wp0rkFxoYFqZlHCvsUXGjyJmLQSnXToYhOSA==
 
 mdn-polyfills@^5.14.0:
-  version "5.15.0"
-  resolved "https://registry.yarnpkg.com/mdn-polyfills/-/mdn-polyfills-5.15.0.tgz#ee0812604b1f922a6b83ee879e3466483b394bb1"
-  integrity sha512-xnHoz63bS0IpyRwmSFAUEHnx8g2nuC7TbavgtoJYVStg2i32gHnD9o8orjMuQsvltANt+2xPHWGeKgyXWCZV3g==
+  version "5.16.0"
+  resolved "https://registry.yarnpkg.com/mdn-polyfills/-/mdn-polyfills-5.16.0.tgz#f44a0c37a47158e1b1c748ac03d9c1be63ad89f7"
+  integrity sha512-1rMxLgeYCwW4a8sUvoyLY7wCdKgMVQdS6me52D0a5lvuTUEAn3Mhi5gFN+9kI0jfea1TUepq72K1AgmbIt2ffw==
 
 media-typer@0.3.0:
   version "0.3.0"
