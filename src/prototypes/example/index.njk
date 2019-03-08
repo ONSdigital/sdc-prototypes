@@ -1,7 +1,7 @@
 ---
 group: Examples
 title: Example
-version: 0.1.17
+version: 0.3.0
 ---
 {% from "components/input/_macro.njk" import onsInput %}
 {% from "components/button/_macro.njk" import onsButton %}
@@ -23,7 +23,7 @@ version: 0.1.17
 {% endblock %}
 
 {% block content %}
-    <form>
+    <form class="u-mt-m">
         <h1>What is your name?</h1>
         {{
             onsInput({
@@ -45,7 +45,8 @@ version: 0.1.17
         }}
         {{
             onsButton({
-                "text": "Save and continue"
+                "text": "Save and continue",
+                "classes": "u-mt-l"
             })
         }}
     </form>
