@@ -5,7 +5,7 @@ version: 0.3.0
 layout: address-lookup/views/_master
 ---
 
-{% from "typeaheads/components/address-input/_macro.njk" import prototypeAddressInput %}
+{% from "address-lookup/components/address-input/_macro.njk" import prototypeAddressInput %}
 {% from "components/button/_macro.njk" import onsButton %}
 
 {% block content %}
@@ -35,7 +35,7 @@ layout: address-lookup/views/_master
                 },
                 "typeahead": {
                     "label": {
-                        "text": "Please enter your address"
+                        "text": "Enter part of an address or postcode to begin"
                     },
                     "instructions": "Use up and down keys to navigate results once you\'ve typed more than two characters. Use the enter key to select a result. Touch device users, explore by touch or with swipe gestures.",
                     "content": {

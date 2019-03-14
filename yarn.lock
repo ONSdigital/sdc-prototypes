@@ -2555,6 +2555,13 @@ detect-node@^2.0.4:
   resolved "https://registry.yarnpkg.com/detect-node/-/detect-node-2.0.4.tgz#014ee8f8f669c5c58023da64b8179c083a28c46c"
   integrity sha512-ZIzRpLJrOj7jjP2miAtgqIfmzbxa4ZOr5jJc601zklsfEx9oTzmmj2nVpIPRpNlRTIh8lc1kyViIY7BWSGNmKw==
 
+dice-coefficient@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/dice-coefficient/-/dice-coefficient-1.0.3.tgz#d49a2742c554f789696111a0b9d398fc705c14fc"
+  integrity sha512-Ub1z+1ZP69yc9fRQEu1y7WE6QglUVPDaIbI0NxgpcE+rxuyJYx115LyN8gS1DO0su3QO1nql7DLlq6jAahcDbQ==
+  dependencies:
+    n-gram "^1.0.0"
+
 diffie-hellman@^5.0.0:
   version "5.0.3"
   resolved "https://registry.yarnpkg.com/diffie-hellman/-/diffie-hellman-5.0.3.tgz#40e8ee98f55a2149607146921c63e1ae5f3d2875"
@@ -5463,6 +5470,11 @@ mute-stream@0.0.7:
   resolved "https://registry.yarnpkg.com/mute-stream/-/mute-stream-0.0.7.tgz#3075ce93bc21b8fab43e1bc4da7e8115ed1e7bab"
   integrity sha1-MHXOk7whuPq0PhvE2n6BFe0ee6s=
 
+n-gram@^1.0.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/n-gram/-/n-gram-1.1.0.tgz#c07fb7d6d59aa42d10fbf680fc4c46a30766c1ee"
+  integrity sha512-S5dWZFQxmEVf7cfyxK9sVyvB0mmTxgL6z9Ww77q20oG8fidOgkwZqsgj7+4DkZVqxdE/Y+0KLU55yw08ssKqkA==
+
 nan@^2.10.0, nan@^2.9.2:
   version "2.12.1"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.12.1.tgz#7b1aa193e9aa86057e3c7bbd0ac448e770925552"
@@ -7838,6 +7850,11 @@ sockjs@0.3.19:
   dependencies:
     faye-websocket "^0.10.0"
     uuid "^3.0.1"
+
+sort-by-typescript@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/sort-by-typescript/-/sort-by-typescript-1.0.2.tgz#012d193aebb3a0168402316e7d619b78749430da"
+  integrity sha512-LwYGcgQnvvjRTzgqpAg4Y60NBDjJAGfIZtkQ7acIFEHNeQxMHV9LSa8edOUx4rtuD68if8ObeHZYT5XuGasddA==
 
 source-list-map@^2.0.0:
   version "2.0.1"
