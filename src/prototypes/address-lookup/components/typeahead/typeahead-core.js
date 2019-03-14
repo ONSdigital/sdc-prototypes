@@ -160,10 +160,12 @@ export default class TypeaheadCore {
     clearTimeout(this.blurTimeout);
     this.blurring = true;
 
-    const exactMatchIndex = this.results.map(result => result.sanitisedText).indexOf(this.sanitisedQuery);
+    if (this.results) {
+      const exactMatchIndex = this.results.map(result => result.sanitisedText).indexOf(this.sanitisedQuery);
 
-    if (exactMatchIndex !== -1) {
-      this.selectResult(exactMatchIndex);
+      if (exactMatchIndex !== -1) {
+        this.selectResult(exactMatchIndex);
+      }
     }
 
     this.blurTimeout = setTimeout(() => {

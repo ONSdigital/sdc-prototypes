@@ -89,7 +89,10 @@ class AddressInput {
   suggestAddresses(query) {
     return new Promise((resolve, reject) => {
       if (this.currentQuery === query && this.currentQuery.length && this.currentResults.length) {
-        resolve(this.currentResults);
+        resolve({
+          results: this.currentResults,
+          totalResults: this.currentResults.length
+        });
       } else {
         this.currentQuery = query;
         this.currentResults = [];
