@@ -10,7 +10,7 @@
   },
   "scripts": {
     "start": "rm -rf build && yarn webpack-dev-server --host 0.0.0.0 --watch --config webpack.dev.babel.js",
-    "build": "echo $NODE_ENV && rm -rf build && yarn webpack --config webpack.prod.babel.js",
+    "build": "rm -rf build && yarn webpack --config webpack.prod.babel.js",
     "lint-staged": "lint-staged"
   },
   "browserslist": [
