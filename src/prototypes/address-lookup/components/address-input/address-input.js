@@ -230,7 +230,13 @@ class AddressInput {
 
   setAddress(data, resolve) {
     this.clearManualInputs(false);
-    this.line1.value = data.Line1;
+
+    if (data.Company) {
+      this.line1.value = `${data.Company}, ${data.Line1}`;
+    } else {
+      this.line1.value = data.Line1;
+    }
+    
     this.line2.value = data.Line2;
     this.town.value = data.City;
     this.county.value = data.AdminAreaName;

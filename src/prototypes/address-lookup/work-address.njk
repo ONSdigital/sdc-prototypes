@@ -9,13 +9,14 @@ layout: address-lookup/views/_master
 {% from "components/button/_macro.njk" import onsButton %}
 
 {% block content %}
-    <form action="{{ pageInfo.parentPath }}/previous-address.html">
+    <a class="previous-link js-previous" href="{{ pageInfo.parentPath }}/previous-address.html">Previous</a>
+    <form action="{{ pageInfo.parentPath }}/summary.html">
         {{
             prototypeAddressInput({
                 "id": "address",
                 "classes": "u-mt-s",
                 "label": {
-                    "text": "<h1 class=\"u-fs-l\">What is your address?</h1>"
+                    "text": "<h1 class=\"u-fs-l\">What is the address of your workplace?</h1>"
                 },
                 "line1": {
                     "label": "Building and street <span class=\"u-vh\">line 1 of 2</span>"
