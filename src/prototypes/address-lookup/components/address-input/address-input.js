@@ -218,7 +218,7 @@ class AddressInput {
     return new Promise((resolve, reject) => {
       const result = this.currentResults.find(currentResult => currentResult.value === selectedResult.value);
 
-      if (result.type === 'Postcode') {
+      if (result.type !== 'Address') {
         this.findAddress(null, result.value).then(results => {
           this.typeahead.handleResults(results);
           resolve();

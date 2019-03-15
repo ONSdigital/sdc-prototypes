@@ -457,7 +457,7 @@ export default class TypeaheadCore {
 
       let ariaAlternativeMessage = '';
 
-      if (!result.sanitisedText.includes(this.sanitisedQuery)) {
+      if (!result.sanitisedText.includes(this.sanitisedQuery) && result.sanitisedAlternatives) {
         const alternativeMatch = result.sanitisedAlternatives.find(alternative => alternative.includes(this.sanitisedQuery));
 
         if (alternativeMatch) {
