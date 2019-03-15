@@ -15,6 +15,7 @@ const key = 'wn93-bh24-pf98-bg95';
 const addressReplaceChars = [','];
 
 const classAddress = 'js-address';
+const classOrganisation = 'js-address-organisation';
 const classLine1 = 'js-address-line-1';
 const classLine2 = 'js-address-line-2';
 const classTown = 'js-address-town';
@@ -28,6 +29,7 @@ const classTypeahead = 'js-address-typeahead';
 class AddressInput {
   constructor(context) {
     this.context = context;
+    this.organisation = context.querySelector(`.${classOrganisation}`);
     this.line1 = context.querySelector(`.${classLine1}`);
     this.line2 = context.querySelector(`.${classLine2}`);
     this.town = context.querySelector(`.${classTown}`);
@@ -234,12 +236,11 @@ class AddressInput {
   setAddress(data, resolve) {
     this.clearManualInputs(false);
 
-    if (data.Company) {
-      this.line1.value = `${data.Company}, ${data.Line1}`;
-    } else {
-      this.line1.value = data.Line1;
+    if (data.Company && this.organisation) {
+      this.organisation.value = data.Company;
     }
-    
+
+    this.line1.value = data.Line1;
     this.line2.value = data.Line2;
     this.town.value = data.City;
     this.county.value = data.AdminAreaName;
