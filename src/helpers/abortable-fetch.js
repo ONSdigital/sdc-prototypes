@@ -33,14 +33,17 @@ export default class AbortableFetch {
 }
 
 function abortableFetch(url, options) {
-  return window.fetch(url, options).then(response => {
-    if (response.status >= 200 && response.status < 300) {
-      return response;
-    } else {
-      console.log(response);
-      const error = new Error(response.statusText);
-      error.response = response;
+  return window.fetch(url, options)
+    .then(response => {
+      if (response.ok) {
+        return response;
+      } else {
+        const error = new Error(response.statusText);
+        error.response = response;
+        throw error;
+      }
+    })
+    .catch(error => {
       throw error;
-    }
-  });
+    });
 }

@@ -9,4 +9,3 @@ domready(() => {
     previousLinks.forEach(link => link.setAttribute('href', previousURL));
   }
 });
-

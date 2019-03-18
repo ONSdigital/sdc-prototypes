@@ -1,0 +1,113 @@
+{% from "components/field/_macro.njk" import onsField %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "../typeahead/_macro.njk" import prototypeTypeahead %}
+
+{% macro prototypeAddressInput(params) %}
+    {% call onsField({ 
+        "id": params.id,
+        "classes": "address-input js-address" + (" " + params.classes if params.classes),
+        "legendClasses": params.legendClasses,
+        "legend": params.label.text,
+        "description": params.label.description
+    }) %}
+        <div class="address-input__manual">
+            {% if params.organisation.label %}
+                {{
+                    onsInput({
+                        "id": params.id + "-organisation",
+                        "label": {
+                            "text": params.organisation.label
+                        },
+                        "classes": "input--w-20@m js-address-organisation",
+                        "name": params.id + "-organisation"
+                    })
+                }}
+            {% endif %}
+            {{
+                onsInput({
+                    "id": params.id + "-line-1",
+                    "label": {
+                        "text": params.line1.label
+                    },
+                    "classes": "input--w-20@m js-address-line-1",
+                    "name": params.id + "-line-1"
+                })
+            }}
+            {{
+                onsInput({
+                    "id": params.id + "-line-2",
+                    "label": {
+                        "text": params.line2.label,
+                        "classes": "u-vh"
+                    },
+                    "classes": "input--w-20@m js-address-line-2",
+                    "name": params.id + "-line-2"
+                })
+            }}
+            {{
+                onsInput({
+                    "id": params.id + "-town",
+                    "label": {
+                        "text": params.town.label
+                    },
+                    "classes": "js-address-town",
+                    "name": params.id + "-town"
+                })
+            }}
+            {{
+                onsInput({
+                    "id": params.id + "-county",
+                    "label": {
+                        "text": params.county.label
+                    },
+                    "classes": "js-address-county",
+                    "name": params.id + "-county"
+                })
+            }}
+            {{
+                onsInput({
+                    "id": params.id + "-postcode",
+                    "label": {
+                        "text": params.postcode.label
+                    },
+                    "classes": "input--w-5 js-address-postcode",
+                    "name": params.id + "-postcode"
+                })
+            }}
+            <div class="u-d-no u-mt-s js-address-search-btn-container">
+                {{
+                    onsButton({
+                        "text": params.searchButton,
+                        "type": "button",
+                        "classes": "btn--secondary btn--small js-address-search-btn"
+                    })
+                }}
+            </div>
+        </div>
+
+        <div class="address-input__search">
+            {{
+                prototypeTypeahead({
+                    "id": params.id + "-typeahead",
+                    "classes": "address-input__typeahead js-address-typeahead",
+                    "inputClasses": "input--w-30",
+                    "label": {
+                        "text": params.typeahead.label.text
+                    },
+                    "instructions": params.typeahead.instructions,
+                    "content": params.typeahead.content,
+                    "autocomplete": params.typeahead.autocomplete,
+                    "externalInitialiser": true
+                })
+            }}
+            {{
+                onsButton({
+                    "text": params.manualButton,
+                    "type": "button",
+                    "classes": "btn--secondary btn--small u-mt-s js-address-manual-btn"
+                })
+            }}
+        </div>
+    {% endcall %}
+{% endmacro %}
