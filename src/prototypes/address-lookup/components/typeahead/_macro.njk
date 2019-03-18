@@ -1,0 +1,52 @@
+{% from "components/label/_macro.njk" import onsLabel %}
+{% from "components/input/_macro.njk" import onsInput %}
+
+{% macro prototypeTypeahead(params) %}
+    <div class="typeahead{% if not params.externalInitialiser %} js-typeahead{% endif %}{% if params.classes %} {{ params.classes }}{% endif %}" data-content="{{ params.content | dump }}" data-api-url="{{ params.apiUrl }}">
+        {{
+            onsLabel({
+                "for": params.id + "-input",
+                "text": params.label.text,
+                "classes": "js-typeahead-label"
+            })
+        }}
+        <div class="typeahead__combobox js-typeahead-combobox" role="combobox" aria-has-popup="{{ params.id }}-listbox" aria-expanded="false">
+            {% if not params.externalInitialiser %}
+                {{
+                    onsInput({
+                        "id": params.id + "-code",
+                        "name": params.id + "-code",
+                        "classes": "js-typeahead-code",
+                        "type": "hidden",
+                        "noField": true
+                    })
+                }}
+            {% endif %}
+            {{
+                onsInput({
+                    "id": params.id + "-preview",
+                    "classes": "typeahead__preview js-typeahead-preview" + (" " + params.inputClasses if params.inputClasses),
+                    "attributes": {
+                        "readonly": true,
+                        "aria-hidden": true,
+                        "tabindex": -1
+                    }
+                })
+            }}
+            {{
+                onsInput({
+                    "id": params.id + "-input",
+                    "classes": "typeahead__input js-typeahead-input" + (" " + params.inputClasses if params.inputClasses),
+                    "fieldClasses": "u-mt-no",
+                    "name": params.id + "-input",
+                    "attributes": {
+                        "data-autocomplete": params.autocomplete
+                    }
+                })
+            }}
+            <div class="typeahead__instructions u-vh js-typeahead-instructions" id="{{ params.id }}-instructions">{{ params.instructions }}</div>
+            <ul class="typeahead__listbox js-typeahead-listbox" role="listbox" id="{{ params.id }}-listbox"></ul>
+            <div class="typeahead__status u-vh js-typeahead-aria-status" aria-live="polite" role="status"></div> 
+        </div>
+    </div>
+{% endmacro %}
