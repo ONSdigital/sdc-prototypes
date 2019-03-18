@@ -12,6 +12,18 @@
         "description": params.label.description
     }) %}
         <div class="address-input__manual">
+            {% if params.organisation.label %}
+                {{
+                    onsInput({
+                        "id": params.id + "-organisation",
+                        "label": {
+                            "text": params.organisation.label
+                        },
+                        "classes": "input--w-20@m js-address-organisation",
+                        "name": params.id + "-organisation"
+                    })
+                }}
+            {% endif %}
             {{
                 onsInput({
                     "id": params.id + "-line-1",

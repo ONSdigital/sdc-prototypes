@@ -15,7 +15,14 @@
     }
   }
 
-  &__typeahead .typeahead__combobox {
-    width: 100%;
+  &__typeahead {
+    .typeahead__combobox
+    .typeahead__listbox {
+      width: 100%;
+    }
+
+    .typeahead__combobox {
+      display: block;
+    }
   }
 }

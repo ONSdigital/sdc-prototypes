@@ -7,7 +7,7 @@
   position: relative;
 
   &__combobox {
-    
+    display: inline-block;
     border-radius: $input-radius;
 
     &--focused {

@@ -3,8 +3,7 @@ import '../components/typeahead/typeahead';
 import '../components/address-input/address-input';
 import './questions-manager';
 import SummaryManager from './summary-manager';
-import summaryTemplate from '!nunjucks-loader!@ons/design-system/0.1.17/components/summary/_template.njk';
-
+import summaryTemplate from '!nunjucks-loader!../views/partials/_summary.njk';
 
 const form = document.getElementsByTagName('FORM')[0];
 const otherCheckbox = document.getElementById('other');

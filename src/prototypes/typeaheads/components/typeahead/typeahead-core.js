@@ -1,4 +1,6 @@
 import AbortableFetch from 'helpers/abortable-fetch';
+import formBodyFromObject from 'helpers/form-body-from-object';
+import { sanitiseTypeaheadText } from './typeahead-helpers';
 
 const classTypeaheadCombobox = 'js-typeahead-combobox';
 const classTypeaheadLabel = 'js-typeahead-label';
@@ -158,10 +160,12 @@ export default class TypeaheadCore {
     clearTimeout(this.blurTimeout);
     this.blurring = true;
 
-    const exactMatchIndex = this.results.map(result => result.sanitisedText).indexOf(this.sanitisedQuery);
+    if (this.results) {
+      const exactMatchIndex = this.results.map(result => result.sanitisedText).indexOf(this.sanitisedQuery);
 
-    if (exactMatchIndex !== -1) {
-      this.selectResult(exactMatchIndex);
+      if (exactMatchIndex !== -1) {
+        this.selectResult(exactMatchIndex);
+      }
     }
 
     this.blurTimeout = setTimeout(() => {
@@ -206,7 +210,7 @@ export default class TypeaheadCore {
   getSuggestions(force) {
     if (!this.settingResult) {
       const query = this.input.value;
-      const sanitisedQuery = this.sanitiseText(query);
+      const sanitisedQuery = sanitiseTypeaheadText(query, this.sanitisedQueryReplaceChars);
       
       if (sanitisedQuery !== this.sanitisedQuery || (force && !this.resultSelected)) {
         this.unsetResults();
@@ -217,16 +221,9 @@ export default class TypeaheadCore {
        
         if(this.sanitisedQuery.length >= this.minChars) {
           this.fetchSuggestions(this.sanitisedQuery)
-            .then(result => {
-             
-              this.foundResults = result.totalResults;
-              this.results = result.results;
-              this.numberOfResults = Math.max(this.results.length, 0);
-
-              this.handleResults();
-            })
+            .then(this.handleResults.bind(this))
             .catch(error => {
-              if (this.onError) {
+              if (error.name !== 'AbortError' && this.onError) {
                 this.onError(error);
               }
             });
@@ -249,7 +246,7 @@ export default class TypeaheadCore {
         this.fetch.abort();
       }
 
-      const body = Object.keys(query).map(key => `${encodeURIComponent(key)}=${encodeURIComponent(query[key])}`).join('&');
+      const body = formBodyFromObject(query);
 
       this.fetch = new AbortableFetch(this.apiUrl, { 
         method: 'POST',
@@ -266,11 +263,11 @@ export default class TypeaheadCore {
           const results = data.results;
 
           results.forEach(result => {
-            result.sanitisedText = this.sanitiseText(result[this.lang]);
+            result.sanitisedText = sanitiseTypeaheadText(result[this.lang], this.sanitisedQueryReplaceChars);
 
             if (this.lang !== 'en-gb') {
               const english = result['en-gb'];
-              const sanitisedAlternative =  this.sanitiseText(english);
+              const sanitisedAlternative =  sanitiseTypeaheadText(english, this.sanitisedQueryReplaceChars);
 
               if (sanitisedAlternative.match(sanitisedQuery)) {
                 result.alternatives = [english];
@@ -289,16 +286,6 @@ export default class TypeaheadCore {
         })
         .catch(reject);
     });
-  }
-
-  sanitiseText(query) {
-    let sanitisedQuery = query.toLowerCase().replace(/\s\s+/g, ' ').trim();
-
-    this.sanitisedQueryReplaceChars.forEach(char => {
-      sanitisedQuery = sanitisedQuery.replace(new RegExp(char, 'g'), '');
-    });
-
-    return sanitisedQuery;
   }
 
   unsetResults() {
@@ -324,7 +311,11 @@ export default class TypeaheadCore {
     }
   }
 
-  handleResults() {
+  handleResults(result) {
+    this.foundResults = result.totalResults;
+    this.results = result.results;
+    this.numberOfResults = Math.max(this.results.length, 0);
+
     if (!this.deleting || (this.numberOfResults && this.deleting)) {
       if (this.numberOfResults.length === 1 && this.results[0].sanitisedText === this.sanitisedQuery) {
         this.clearListbox(true);
@@ -332,8 +323,8 @@ export default class TypeaheadCore {
       } else {
         this.listbox.innerHTML = '';
         this.resultOptions = this.results.map((result, index) => {
-          let innerHTML = this.emboldenMatch(result[this.lang], this.query);
           let ariaLabel = result[this.lang];
+          let innerHTML = this.emboldenMatch(ariaLabel, this.query);
 
           if (Array.isArray(result.sanitisedAlternatives)) {
             const alternativeMatch = result.sanitisedAlternatives.find(alternative => alternative !== result.sanitisedText && alternative.includes(this.sanitisedQuery));
@@ -451,8 +442,12 @@ export default class TypeaheadCore {
 
       const result = this.results[index || this.highlightedResultIndex || 0];
 
-      this.input.value = result[this.lang];
-      this.query = result[this.lang];
+      // TODO: This condition should be removed if we go with the internal address lookup API, or made configurable if we use a third party API
+      if (!result.type === 'Postcode') {
+        this.input.value = result[this.lang];
+        this.query = result[this.lang];
+      }
+
       this.resultSelected = true;
 
       this.onSelect(result).then(() => {
@@ -462,7 +457,7 @@ export default class TypeaheadCore {
 
       let ariaAlternativeMessage = '';
 
-      if (!result.sanitisedText.includes(this.sanitisedQuery)) {
+      if (!result.sanitisedText.includes(this.sanitisedQuery) && result.sanitisedAlternatives) {
         const alternativeMatch = result.sanitisedAlternatives.find(alternative => alternative.includes(this.sanitisedQuery));
 
         if (alternativeMatch) {
