@@ -21,7 +21,7 @@ export default class SummaryManager {
     // Filter out questions with no answers and map questions
     const unsortedQuestions = keys.filter(key => {
       const data = JSON.parse(sessionStorage.getItem(key));
-      const inputs = data.inputs.filter(input => input.label && input.value);
+      const inputs = data.inputs.filter(input => input.label);
       return inputs.length;
     }).map(key => ({ key, ...JSON.parse(sessionStorage.getItem(key)) }));
 
@@ -49,7 +49,11 @@ export default class SummaryManager {
         joinString = ' ';
       }
 
-      const answer = answers.join(joinString);
+      let answer = answers.join(joinString);
+
+      if (!answer) {
+        answer = 'No answer provided';
+      }
       
       const item = {
         questions: [

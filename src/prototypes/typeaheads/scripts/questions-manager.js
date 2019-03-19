@@ -96,22 +96,20 @@ class QuestionManager {
             }
           }
 
-          if (value != undefined) {
-            const id = input.id;
-            const labelElement = document.querySelector(`label[for="${id}"]`);
+          const id = input.id;
+          const labelElement = document.querySelector(`label[for="${id}"]`);
 
-            let label;
+          let label;
 
-            if (labelElement) {
-              label = labelElement.innerHTML.match(/([A-Za-z\s])*(?![^<]*>|[^<>]*<\/)/)[0].trim();
-            }
-
-            question.inputs.push({
-              id: input.id,
-              value,
-              label
-            });
+          if (labelElement) {
+            label = labelElement.innerHTML.match(/([A-Za-z\s])*(?![^<]*>|[^<>]*<\/)/)[0].trim();
           }
+
+          question.inputs.push({
+            id: input.id,
+            value,
+            label
+          });
         });
 
         window.sessionStorage.setItem(this.url, JSON.stringify(question));
