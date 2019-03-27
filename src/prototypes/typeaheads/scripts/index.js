@@ -12,7 +12,7 @@ const ethnicGroupInputs = [...document.querySelectorAll('input[name="ethnic-grou
 function handleSubmit() {
   if (otherCheckbox) {
     const originalAction = form.getAttribute('data-original-action') || form.getAttribute('action');
-    const otherAction = otherCheckbox.getAttribute('data-other-url');
+    const otherAction = otherCheckbox.getAttribute('data-action-url');
 
     form.action = otherCheckbox.checked ? otherAction : originalAction;
     form.setAttribute('data-original-action', originalAction);
