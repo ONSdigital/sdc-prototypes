@@ -95,6 +95,7 @@ export default class TypeaheadCore {
     this.input.addEventListener('input', this.handleChange.bind(this));
     this.input.addEventListener('focus', this.handleFocus.bind(this));
     this.input.addEventListener('blur', this.handleBlur.bind(this));
+    this.input.addEventListener('click', this.handleClick.bind(this));
 
     this.listbox.addEventListener('mouseover', this.handleMouseover.bind(this));
     this.listbox.addEventListener('mouseout', this.handleMouseout.bind(this));
@@ -189,6 +190,10 @@ export default class TypeaheadCore {
     if (focusedItem) {
       focusedItem.classList.add(classTypeaheadOptionFocused);
     }
+  }
+
+  handleClick() {
+    this.selectResult();
   }
 
   navigateResults(direction) {
