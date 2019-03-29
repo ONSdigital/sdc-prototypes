@@ -6,8 +6,8 @@ layout: typeaheads/views/_master
 {% from "components/button/_macro.njk" import onsButton %}
 
 {% block content %}
-    <a class="previous-link js-previous" href="{{ pageInfo.parentPath }}">Previous</a>
-    <form action="{{ pageInfo.parentPath }}/address.html">
+    <a class="previous-link js-previous" href="{{ pageInfo.parentPath }}/name.html">Previous</a>
+    <form action="{{ pageInfo.parentPath }}/address-check.html">
         {{
             onsDateInput({
                 "id": "dob",

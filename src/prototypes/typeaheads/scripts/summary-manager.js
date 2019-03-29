@@ -16,7 +16,7 @@ export default class SummaryManager {
 
   setConfig() {
     // Filter out only session storage keys for this prototype
-    const keys = Object.keys(sessionStorage).filter(key => key.toLowerCase().includes(this.basePath));
+    const keys = Object.keys(sessionStorage).filter(key => key !== this.basePath && key.toLowerCase().includes(this.basePath));
 
     // Filter out questions with no answers and map questions
     const unsortedQuestions = keys.filter(key => {
@@ -26,24 +26,50 @@ export default class SummaryManager {
     }).map(key => ({ key, ...JSON.parse(sessionStorage.getItem(key)) }));
 
 
-    const firstQuestion = unsortedQuestions.find(question => !question.previousUrl);
-    const remainingUnsortedQuestions = unsortedQuestions.filter(question => question.previousUrl).length;
+    const firstQuestion = unsortedQuestions.find(question => !question.previousURL);
+    const remainingUnsortedQuestions = unsortedQuestions.filter(question => question.previousURL).length;
 
     const questions = [firstQuestion];
   
     for (let i = 0; i < remainingUnsortedQuestions; i++) {
       const lastQuestionKey = questions[questions.length - 1].key;
 
-      const nextQuestion = unsortedQuestions.find(question => question.previousUrl === lastQuestionKey);
+      const nextQuestion = unsortedQuestions.find(question => question.previousURL === lastQuestionKey);
 
       questions.push(nextQuestion);
     }
 
     questions.forEach(question => {
-      const answers = question.inputs.filter(input => input.label && input.value).map(input => input.value === true ? input.label : input.value);
+      let answers = question.inputs.filter(input => input.label && input.value).map(input => input.value === true ? input.label : input.value);
       let joinString;
 
-      if (answers.length > 3 ||  question.inputs.find(input => input.value === true)) {
+      if (answers.length === 1) {
+        const answer = answers[0];
+
+        if (answer.includes('{pipe}')) {
+          const templateParts = answer.replace('{/pipe}', '').split('{pipe}');
+
+          const templatedAnswer = templateParts.map(part => {
+            const pipedAnswer = sessionStorage.getItem(part);
+
+            if (pipedAnswer) {
+              return JSON.parse(pipedAnswer).inputs.find(input => input.label).value;
+            } else {
+              return part;
+            }
+          }).join('');
+
+          answers = [templatedAnswer];
+        } else {
+          const pipedAnswer = sessionStorage.getItem(answer);
+
+          if (pipedAnswer) {
+            answers = JSON.parse(pipedAnswer).inputs.filter(input => input.label && input.value).map(input => input.value === true ? input.label : input.value);
+          } 
+        }
+      }
+
+      if (answers.length > 3 || question.inputs.find(input => input.value === true)) {
         joinString = '<br>';
       } else {
         joinString = ' ';
@@ -63,7 +89,7 @@ export default class SummaryManager {
             action: {
               text: 'Change',
               ariaLabel: 'Change answer',
-              url: question.key
+              url: `${question.key}?edit=true`
             }
           }]
       };

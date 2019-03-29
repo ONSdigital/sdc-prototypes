@@ -24,17 +24,6 @@
             {% endif %}
             {{
                 onsInput({
-                    "id": params.id + "-preview",
-                    "classes": "typeahead__preview js-typeahead-preview" + (" " + params.inputClasses if params.inputClasses),
-                    "attributes": {
-                        "readonly": true,
-                        "aria-hidden": true,
-                        "tabindex": -1
-                    }
-                })
-            }}
-            {{
-                onsInput({
                     "id": params.id + "-input",
                     "classes": "typeahead__input js-typeahead-input" + (" " + params.inputClasses if params.inputClasses),
                     "fieldClasses": "u-mt-no",

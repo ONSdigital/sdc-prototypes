@@ -6,14 +6,14 @@ layout: typeaheads/views/_master
 {% from "components/button/_macro.njk" import onsButton %}
 
 {% block content %}
-    <a class="previous-link js-previous" href="{{ pageInfo.parentPath }}/date-of-birth.html">Previous</a>
-    <form action="{{ pageInfo.parentPath }}/country-of-birth.html">
+    <a class="previous-link js-previous" href="{{ pageInfo.parentPath }}/one-year-ago-address.html">Previous</a>
+    <form action="{{ pageInfo.parentPath }}/employment-status.html?previous={{ pageInfo.path }}.html">
         {{
             prototypeAddressInput({
                 "id": "address",
                 "classes": "u-mt-s",
                 "label": {
-                    "text": "<h1 class=\"u-fs-l\">What is your address?</h1>"
+                    "text": "<h1 class=\"u-fs-l\">What was your student term-time or boarding school one year ago?</h1>"
                 },
                 "line1": {
                     "label": "Building and street <span class=\"u-vh\">line 1 of 2</span>"
@@ -32,7 +32,7 @@ layout: typeaheads/views/_master
                 },
                 "typeahead": {
                     "label": {
-                        "text": "Please enter your postcode"
+                        "text": "Please enter details of your address one year ago"
                     },
                     "instructions": "Use up and down keys to navigate results once you\'ve typed more than two characters. Use the enter key to select a result. Touch device users, explore by touch or with swipe gestures.",
                     "content": {

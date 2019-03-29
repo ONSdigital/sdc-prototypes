@@ -6,7 +6,7 @@ layout: typeaheads/views/_master
 {% from "components/radios/_macro.njk" import onsRadios %}
 
 {% block content %}
-    <a class="previous-link js-previous" href="{{ pageInfo.parentPath }}/address.html">Previous</a>
+    <a class="previous-link js-previous" href="{{ pageInfo.parentPath }}/student-check.html">Previous</a>
     <form action="{{ pageInfo.parentPath }}/passport.html">
         {{ 
             onsRadios({
@@ -19,23 +19,20 @@ layout: typeaheads/views/_master
                         "label": {
                             "text": "England"
                         },
-                        "value": "england",
-                        "name": "england"
+                        "name": "England"
                     },
                     {
                         "id": "wales",
                         "label": {
                             "text": "Wales"
                         },
-                        "value": "wales",
-                        "name": "wales"
+                        "name": "Wales"
                     },
                      {
                         "id": "scotland",
                         "label": {
                             "text": "Scotland"
                         },
-                        "value": "scotland",
                         "name": "scotland"
                     },
                     {
@@ -43,7 +40,6 @@ layout: typeaheads/views/_master
                         "label": {
                             "text": "Northern Ireland"
                         },
-                        "value": "northern-ireland",
                         "name": "northern-ireland"
                     },
                     {
@@ -51,7 +47,6 @@ layout: typeaheads/views/_master
                         "label": {
                             "text": "Republic of Ireland"
                         },
-                        "value": "replublic-of-ireland",
                         "name": "replublic-of-ireland"
                     },
                     {
@@ -59,7 +54,6 @@ layout: typeaheads/views/_master
                         "label": {
                             "text": "Elsewhere"
                         },
-                        "value": "elsewhere",
                         "name": "elsewhere",
                         "attributes": {
                             "data-action-url": pageInfo.parentPath + "/country-of-birth-other.html"

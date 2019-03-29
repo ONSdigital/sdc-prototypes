@@ -7,20 +7,21 @@ layout: typeaheads/views/_master
 
 {% block content %}
     <a class="previous-link js-previous" href="{{ pageInfo.parentPath }}/ethnic-group.html">Previous</a>
-    <form action="{{ pageInfo.parentPath }}/employment-status.html">
+    <form action="{{ pageInfo.parentPath }}/one-year-ago-address.html">
         {{ 
             onsCheckboxes({
-                "legend": "<h1 class=\"u-fs-l\">What is your religion?</h1>",
+                "legend": "What is your religion?",
+                "description": "This question is voluntary",
                 "name": "religion",
                 "classes": "u-mt-s",
                 "checkboxesLabel": "Select one option only",
+                "questionMode": true,
                 "checkboxes": [
                     {
                         "id": "none",
                         "label": {
                             "text": "No religion"
                         },
-                        "value": "none",
                         "name": "none"
                     },
                     {
@@ -29,7 +30,6 @@ layout: typeaheads/views/_master
                             "text": "Christian",
                             "description": "Including Church of England, Catholic, Protestant and all other Christian denominations"
                         },
-                        "value": "christian",
                         "name": "christian"
                     },
                     {
@@ -37,7 +37,6 @@ layout: typeaheads/views/_master
                         "label": {
                             "text": "Buddhist"
                         },
-                        "value": "buddhist",
                         "name": "buddhist"
                     },
                     {
@@ -45,7 +44,6 @@ layout: typeaheads/views/_master
                         "label": {
                             "text": "Hindu"
                         },
-                        "value": "hindu",
                         "name": "hindu"
                     },
                     {
@@ -53,7 +51,6 @@ layout: typeaheads/views/_master
                         "label": {
                             "text": "Jewish"
                         },
-                        "value": "jewish",
                         "name": "jewish"
                     },
                     {
@@ -61,7 +58,6 @@ layout: typeaheads/views/_master
                         "label": {
                             "text": "Muslim"
                         },
-                        "value": "muslim",
                         "name": "muslim"
                     },
                     {
@@ -69,7 +65,6 @@ layout: typeaheads/views/_master
                         "label": {
                             "text": "Sikh"
                         },
-                        "value": "sikh",
                         "name": "sikh"
                     },
                     {
@@ -77,7 +72,6 @@ layout: typeaheads/views/_master
                         "label": {
                             "text": "Any other religion"
                         },
-                        "value": "other",
                         "name": "other",
                         "attributes": {
                             "data-action-url": pageInfo.parentPath + "/religion-other.html"

@@ -5,7 +5,6 @@ import { sanitiseTypeaheadText } from './typeahead-helpers';
 const classTypeaheadCombobox = 'js-typeahead-combobox';
 const classTypeaheadLabel = 'js-typeahead-label';
 const classTypeaheadInput = 'js-typeahead-input';
-const classTypeaheadPreview = 'js-typeahead-preview';
 const classTypeaheadInstructions = 'js-typeahead-instructions';
 const classTypeaheadListbox = 'js-typeahead-listbox';
 const classTypeaheadAriaStatus = 'js-typeahead-aria-status';
@@ -36,7 +35,6 @@ export default class TypeaheadCore {
     this.combobox = context.querySelector(`.${classTypeaheadCombobox}`);
     this.label = context.querySelector(`.${classTypeaheadLabel}`);
     this.input = context.querySelector(`.${classTypeaheadInput}`);
-    this.preview = context.querySelector(`.${classTypeaheadPreview}`);
     this.listbox = context.querySelector(`.${classTypeaheadListbox}`);
     this.instructions = context.querySelector(`.${classTypeaheadInstructions}`);
     this.ariaStatus = context.querySelector(`.${classTypeaheadAriaStatus}`);
@@ -95,7 +93,6 @@ export default class TypeaheadCore {
     this.input.addEventListener('input', this.handleChange.bind(this));
     this.input.addEventListener('focus', this.handleFocus.bind(this));
     this.input.addEventListener('blur', this.handleBlur.bind(this));
-    this.input.addEventListener('click', this.handleClick.bind(this));
 
     this.listbox.addEventListener('mouseover', this.handleMouseover.bind(this));
     this.listbox.addEventListener('mouseout', this.handleMouseout.bind(this));
@@ -145,7 +142,6 @@ export default class TypeaheadCore {
   }
 
   handleChange() {
-    this.clearPreview();
     if (!this.blurring) {
       this.getSuggestions();
     }
@@ -170,7 +166,6 @@ export default class TypeaheadCore {
     }
 
     this.blurTimeout = setTimeout(() => {
-      this.clearPreview();
       this.combobox.classList.remove(classTypeaheadComboboxFocused);
       this.blurring = false;
     }, 300);
@@ -190,10 +185,6 @@ export default class TypeaheadCore {
     if (focusedItem) {
       focusedItem.classList.add(classTypeaheadOptionFocused);
     }
-  }
-
-  handleClick() {
-    this.selectResult();
   }
 
   navigateResults(direction) {
@@ -234,7 +225,6 @@ export default class TypeaheadCore {
             });
         } else {
           this.clearListbox();
-          this.clearPreview();
         }
       }
     }
@@ -301,8 +291,6 @@ export default class TypeaheadCore {
     if (this.onUnsetResult) {
       this.onUnsetResult();
     } 
-    
-    this.clearPreview();
   }
 
   clearListbox(preventAriaStatusUpdate) {
@@ -397,20 +385,7 @@ export default class TypeaheadCore {
         }
       });
 
-      this.setPreview(index);
       this.setAriaStatus();
-    }
-  }
-
-  setPreview(index) {
-    const result = this.results[index || 0];
-    const resultText = result[this.lang];
-    const queryIndex = resultText.toLowerCase().indexOf(this.query.toLowerCase());
-
-    if (queryIndex === 0 && this.query.length !== resultText.length) {
-      this.preview.value = `${this.query}${resultText.slice(this.query.length)}`;
-    } else {
-      this.clearPreview();
     }
   }
 
@@ -435,10 +410,6 @@ export default class TypeaheadCore {
     }
 
     this.ariaStatus.innerHTML = content;
-  }
-
-  clearPreview() {
-    this.preview.value = '';
   }
 
   selectResult(index) {
@@ -473,7 +444,6 @@ export default class TypeaheadCore {
       const ariaMessage = `${this.content.aria_you_have_selected}: ${result[this.lang]}${ariaAlternativeMessage}.`;
 
       this.clearListbox();
-      this.clearPreview();
       this.setAriaStatus(ariaMessage);
     }
   }

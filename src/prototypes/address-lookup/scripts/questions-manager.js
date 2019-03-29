@@ -28,7 +28,7 @@ class QuestionManager {
     const previousLink = document.querySelector('.js-previous');
 
     if (previousLink) {
-      this.previousUrl = previousLink.getAttribute('href');
+      this.previousURL = previousLink.getAttribute('href');
     }
 
     this.form.addEventListener('submit', this.handleSubmit.bind(this));
@@ -79,7 +79,7 @@ class QuestionManager {
           inputs: [],
           action: this.form.action,
           originalAction: this.form.getAttribute('data-original-action'),
-          previousUrl: this.previousUrl
+          previousURL: this.previousURL
         };
 
         this.inputs.forEach(input => {

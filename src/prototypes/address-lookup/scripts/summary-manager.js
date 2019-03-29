@@ -26,15 +26,15 @@ export default class SummaryManager {
     }).map(key => ({ key, ...JSON.parse(sessionStorage.getItem(key)) }));
 
 
-    const firstQuestion = unsortedQuestions.find(question => !question.previousUrl);
-    const remainingUnsortedQuestions = unsortedQuestions.filter(question => question.previousUrl).length;
+    const firstQuestion = unsortedQuestions.find(question => !question.previousURL);
+    const remainingUnsortedQuestions = unsortedQuestions.filter(question => question.previousURL).length;
 
     const questions = [firstQuestion];
   
     for (let i = 0; i < remainingUnsortedQuestions; i++) {
       const lastQuestionKey = questions[questions.length - 1].key;
 
-      const nextQuestion = unsortedQuestions.find(question => question.previousUrl === lastQuestionKey);
+      const nextQuestion = unsortedQuestions.find(question => question.previousURL === lastQuestionKey);
 
       questions.push(nextQuestion);
     }

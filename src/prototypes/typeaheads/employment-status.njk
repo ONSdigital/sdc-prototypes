@@ -6,11 +6,11 @@ layout: typeaheads/views/_master
 {% from "components/radios/_macro.njk" import onsRadios %}
 
 {% block content %}
-    <a class="previous-link js-previous" href="{{ pageInfo.parentPath }}/religion.html">Previous</a>
-    <form action="{{ pageInfo.parentPath }}/job-title.html">
+    <a class="previous-link js-previous" href="{{ pageInfo.parentPath }}/one-year-ago-address.html">Previous</a>
+    <form action="{{ pageInfo.parentPath }}/summary.html">
         {{ 
             onsRadios({
-                "legend": "<h1 class=\"u-fs-l\">In your main job, what is your employment status?</h1>",
+                "legend": "<h1 class=\"u-fs-l\">What is your employment status?</h1>",
                 "name": "employment-status",
                 "classes": "u-mt-m",
                 "radios": [
@@ -19,24 +19,44 @@ layout: typeaheads/views/_master
                         "label": {
                             "text": "Employee"
                         },
-                        "value": "employee",
-                        "name": "employee"
+                        "name": "employee",
+                        "attributes": {
+                            "data-action-url": pageInfo.parentPath  + "/job-title.html"
+                        }
                     },
                     {
                         "id": "self-employed-no-employees",
                         "label": {
                             "text": "Self-employed or freelance without employees"
                         },
-                        "value": "self-employed-no-employees",
-                        "name": "self-employed-no-employees"
+                        "name": "self-employed-no-employees",
+                         "attributes": {
+                            "data-action-url": pageInfo.parentPath  + "/job-title.html"
+                        }
                     },
                     {
                         "id": "self-employed-employees",
                         "label": {
                             "text": "Self-employed with employees"
                         },
-                        "value": "self-employed-employees",
-                        "name": "self-employed-employees"
+                        "name": "self-employed-employees",
+                        "attributes": {
+                            "data-action-url": pageInfo.parentPath  + "/job-title.html"
+                        }
+                    },
+                    {
+                        "id": "unemployed",
+                        "label": {
+                            "text": "Unemployed"
+                        },
+                        "name": "unemployed"
+                    },
+                    {
+                        "id": "retired",
+                        "label": {
+                            "text": "Retired"
+                        },
+                        "name": "retired"
                     }
                 ]
             }) 

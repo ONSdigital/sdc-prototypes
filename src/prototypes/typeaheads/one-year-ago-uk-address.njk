@@ -1,21 +1,19 @@
 ---
-title: Typeaheads
-group: Typeaheads
 version: 0.3.0
 layout: typeaheads/views/_master
 ---
-{% from "components/button/_macro.njk" import onsButton %}
 {% from "typeaheads/components/address-input/_macro.njk" import prototypeAddressInput %}
+{% from "components/button/_macro.njk" import onsButton %}
 
 {% block content %}
-    <form action="{{ pageInfo.parentPath }}/name.html">
+    <a class="previous-link js-previous" href="{{ pageInfo.parentPath }}/one-year-ago-address.html">Previous</a>
+    <form action="{{ pageInfo.parentPath }}/employment-status.html?previous={{ pageInfo.path }}.html">
         {{
             prototypeAddressInput({
                 "id": "address",
-                "questionMode": true,
+                "classes": "u-mt-s",
                 "label": {
-                    "text": "Initialise prototype",
-                    "description": "The researcher testing this prototype should ask the person they are testing with for their address and fill this in for them before handing over the prototype."
+                    "text": "<h1 class=\"u-fs-l\">What was your UK address one year ago?</h1>"
                 },
                 "line1": {
                     "label": "Building and street <span class=\"u-vh\">line 1 of 2</span>"
@@ -34,7 +32,7 @@ layout: typeaheads/views/_master
                 },
                 "typeahead": {
                     "label": {
-                        "text": "Please enter your address or postcode"
+                        "text": "Please enter details of your address one year ago"
                     },
                     "instructions": "Use up and down keys to navigate results once you\'ve typed more than two characters. Use the enter key to select a result. Touch device users, explore by touch or with swipe gestures.",
                     "content": {
@@ -55,23 +53,11 @@ layout: typeaheads/views/_master
                 "manualButton": "Manually enter address"
             })
         }}
-
-        <p class="u-mt-m"><em>Or</em><br>
-            {{ onsButton({
-                "text": "Use dummy address",
-                "classes": "btn--small u-mt-s js-set-dummy-address"
-              }) }}
-        </p>
-        
-        {{ onsButton({
-                "text": "Start",
+        {{
+            onsButton({
+                "text": "Save and continue",
                 "classes": "u-mt-l"
-        }) }}
+            })
+        }}
     </form>
-    <script>
-        // Wake up heroku instance
-        var xhttp = new XMLHttpRequest();
-        xhttp.open("GET", "https://ons-typeahead-prototypes.herokuapp.com");
-        xhttp.send();
-    </script>
 {% endblock %}

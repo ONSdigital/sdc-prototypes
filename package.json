@@ -88,6 +88,7 @@
   },
   "dependencies": {
     "@ons/design-system/0.3.0": "npm:@ons/design-system@0.3.0",
-    "dice-coefficient": "^1.0.3"
+    "dice-coefficient": "^1.0.3",
+    "querystring-helpers": "^1.0.0"
   }
 }

@@ -8,13 +8,13 @@ layout: typeaheads/views/_master
 {% block content %}
     <a class="previous-link js-previous" href="{{ pageInfo.parentPath }}/ethnic-group-white.html">Previous</a>
     <form action="{{ pageInfo.parentPath }}/religion.html?previous={{ pageInfo.path }}.html">
-        <h1 class="u-fs-l u-mt-s">You selected ‘Other White background’ for your White ethnic group, can you specify this further?</h1>
+        <h1 class="u-fs-l u-mt-s">What is your White ethnic group or background?</h1>
         {{
             prototypeTypeahead({
                 "id": "ethnic-group-white-other",
                 "classes": "u-mt-m",
                 "label": {
-                    "text": "Enter your ethnic group or background"
+                    "text": "Enter your White ethnic group or background"
                 },
                 "instructions": "Use up and down keys to navigate results once you\'ve typed more than two characters. Use the enter key to select a result. Touch device users, explore by touch or with swipe gestures.",
                 "content": {
