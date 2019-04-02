@@ -7,8 +7,9 @@ function setCensusAddress() {
     const questionKey = input.getAttribute('data-census-address');
     const address = JSON.parse(sessionStorage.getItem(questionKey));
     const label = document.querySelector(`label[for=${input.id}]`);
+    const addressParts = [address.inputs[0].value, address.inputs[1].value].filter(value => value);
 
-    label.innerHTML = `${address.inputs[0].value}, ${address.inputs[1].value}`;
+    label.innerHTML = addressParts.join(', ');
     input.value = questionKey;
   }
 }

@@ -39,6 +39,7 @@ class AddressInput {
     this.searchButtonContainer = context.querySelector(`.${classSearchButtonContainer}`);
     this.searchButton = context.querySelector(`.${classSearchButton}`);
     this.manualButton = context.querySelector(`.${classManualButton}`);
+    this.form = context.closest('form');
 
     // State
     this.manualMode = true;
@@ -249,8 +250,13 @@ class AddressInput {
     
    
     this.triggerManualInputsChanges();
-    this.toggleMode(false);
-    resolve();
+    
+    if (this.form) {
+      this.form.submit();
+    } else {
+      this.toggleMode(false);
+      resolve();
+    }
   }
 
   clearManualInputs(triggerChange = true) {

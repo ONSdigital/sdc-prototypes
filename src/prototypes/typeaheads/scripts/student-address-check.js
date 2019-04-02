@@ -6,6 +6,7 @@ function studentAddressCheck() {
   if (destination) {
     const key = destination.getAttribute('data-census-address');
     const address = JSON.parse(sessionStorage.getItem(key));
+    const addressParts = [address.inputs[0].value, address.inputs[1].value].filter(value => value);
 
     const params = {
       id: 'student-address-check',
@@ -14,7 +15,7 @@ function studentAddressCheck() {
         {
           id: 'home',
           label: {
-            text: `${address.inputs[0].value}, ${address.inputs[1].value}`
+            text: addressParts.join(', ')
           },
           value: key
         }
@@ -57,6 +58,7 @@ function studentAddressCheck() {
       label: {
         text: 'Another address'
       },
+      value: destination.getAttribute('data-student-address'),
       attributes: {
         'data-action-url': destination.getAttribute('data-student-address')
       }

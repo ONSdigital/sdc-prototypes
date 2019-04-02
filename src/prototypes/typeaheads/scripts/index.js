@@ -8,6 +8,7 @@ import './piping';
 import './student-address-check';
 import './address-initialiser';
 import './one-year-ago-census-address';
+import './address-confirmer';
 
 const summaryPlaceholder = document.querySelector('.js-summary');
 

@@ -19,6 +19,7 @@ class QuestionManager {
     ];
 
     this.form = document.getElementsByTagName('FORM')[0];
+    this.hideFromSummary = this.form.classList.contains('js-question-no-summary');
     this.actionChangingInputs = [...this.form.querySelectorAll('input[data-action-url]')];
 
     const legend = document.querySelector('.field__legend');
@@ -87,7 +88,8 @@ class QuestionManager {
           inputs: [],
           previousURL: this.previousURL,
           originalPreviousURL: this.originalPreviousURL,
-          url: this.url
+          url: this.url,
+          hideFromSummary: this.hideFromSummary
         };
 
         let action, originalAction;
@@ -121,7 +123,7 @@ class QuestionManager {
                   this.addAnswer(this.form.action);
                 }
               } else {
-                if (inputAction) {
+                if (inputAction && inputAction !== this.previousURL) {
                   this.removeAnswer(inputAction);
                 }
               }
@@ -154,7 +156,9 @@ class QuestionManager {
           this.form.removeAttribute('data-original-action');
         }
 
-        window.sessionStorage.setItem(this.url, JSON.stringify(question));
+        if (this.form.action.replace(window.location.origin, '') !== this.previousURL) {
+          window.sessionStorage.setItem(this.url, JSON.stringify(question));
+        }
       }
 
       const isEditing = new URLSearchParams(window.location.search).get('edit');

@@ -39,7 +39,7 @@ export default class SummaryManager {
       questions.push(nextQuestion);
     }
 
-    questions.forEach(question => {
+    questions.filter(question => !question.hideFromSummary).forEach(question => {
       let answers = question.inputs.filter(input => input.label && input.value).map(input => input.value === true ? input.label : input.value);
       let joinString;
 
