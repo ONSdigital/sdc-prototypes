@@ -252,7 +252,7 @@ class AddressInput {
     this.triggerManualInputsChanges();
     
     if (this.form) {
-      this.form.submit();
+      this.form.dispatchEvent(new Event('submit'));
     } else {
       this.toggleMode(false);
       resolve();
