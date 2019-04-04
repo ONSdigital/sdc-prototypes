@@ -1,4 +1,5 @@
 import domready from 'helpers/domready';
+import addressToDisplay from './address-to-display';
 
 function setCensusAddress() {
   const input = document.querySelector('.js-one-year-ago-census-address');
@@ -7,9 +8,8 @@ function setCensusAddress() {
     const questionKey = input.getAttribute('data-census-address');
     const address = JSON.parse(sessionStorage.getItem(questionKey));
     const label = document.querySelector(`label[for=${input.id}]`);
-    const addressParts = [address.inputs[0].value, address.inputs[1].value].filter(value => value);
 
-    label.innerHTML = addressParts.join(', ');
+    label.innerHTML = addressToDisplay(address.inputs);
     input.value = questionKey;
   }
 }

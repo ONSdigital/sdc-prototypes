@@ -11,7 +11,8 @@ layout: typeaheads/views/_master
         <fieldset class="u-mt-s">
             <legend><h1 class="u-fs-l">Can you confirm this address is correct?</h1></legend>
             <p class="js-address-confirm" data-address-input-url="{{ pageInfo.parentPath }}/one-year-ago-uk-address.html"></p>
-            {{ onsRadios({ 
+            {{ onsRadios({
+                "name": "address-confirm",
                 "radios": [
                     {
                         "id": "yes",

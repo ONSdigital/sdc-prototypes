@@ -1,4 +1,5 @@
 import domready from 'helpers/domready';
+import addressToDisplay from './address-to-display';
 
 function studentAddressCheck() {
   const destination = document.querySelector('.js-student-address-check');
@@ -6,7 +7,6 @@ function studentAddressCheck() {
   if (destination) {
     const key = destination.getAttribute('data-census-address');
     const address = JSON.parse(sessionStorage.getItem(key));
-    const addressParts = [address.inputs[0].value, address.inputs[1].value].filter(value => value);
 
     const params = {
       id: 'student-address-check',
@@ -15,7 +15,7 @@ function studentAddressCheck() {
         {
           id: 'home',
           label: {
-            text: addressParts.join(', ')
+            text: addressToDisplay(address.inputs)
           },
           value: key
         }
@@ -42,12 +42,12 @@ function studentAddressCheck() {
     const savedAddress = sessionStorage.getItem(addressKey);
 
     if (savedAddress) {
-      const question = JSON.parse(savedAddress);
+      const address = JSON.parse(savedAddress);
 
       params.radios.push({
         id: 'address',
         label: {
-          text: `${question.inputs[0].value}, ${question.inputs[1].value}`
+          text: addressToDisplay(address.inputs)
         },
         value: addressKey
       });

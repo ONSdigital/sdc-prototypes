@@ -9,7 +9,7 @@ function addressConfirmer() {
     const data = sessionStorage.getItem(key);
 
     if (data) {
-      const address = JSON.parse(data).inputs.map(input => input.value).filter(value => value);
+      const address = JSON.parse(data).inputs.filter(input => !input.isTypeahead).map(input => input.value).filter(value => value);
 
       context.innerHTML = address.join('<br>');
     }

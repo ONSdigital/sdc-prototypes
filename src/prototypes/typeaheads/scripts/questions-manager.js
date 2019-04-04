@@ -101,7 +101,7 @@ class QuestionManager {
           const id = input.id;
           const labelElement = document.querySelector(`label[for="${id}"]`);
 
-          let label;
+          let label, isTypeahead;
 
           if (labelElement) {
             label = [...labelElement.childNodes].filter(node => node.nodeType === 3 && node.textContent.trim())[0].textContent.trim();
@@ -131,6 +131,8 @@ class QuestionManager {
             }
             default: {
               value = input.value;
+
+              isTypeahead = input.classList.contains('js-typeahead-input');
             }
           }
 
@@ -138,7 +140,8 @@ class QuestionManager {
             id: input.id,
             value,
             checked,
-            label
+            label,
+            isTypeahead
           });
         });
 
