@@ -157,14 +157,6 @@ export default class TypeaheadCore {
     clearTimeout(this.blurTimeout);
     this.blurring = true;
 
-    if (this.results) {
-      const exactMatchIndex = this.results.map(result => result.sanitisedText).indexOf(this.sanitisedQuery);
-
-      if (exactMatchIndex !== -1) {
-        this.selectResult(exactMatchIndex);
-      }
-    }
-
     this.blurTimeout = setTimeout(() => {
       this.combobox.classList.remove(classTypeaheadComboboxFocused);
       this.blurring = false;
