@@ -250,13 +250,8 @@ class AddressInput {
     
    
     this.triggerManualInputsChanges();
-    
-    if (this.form) {
-      this.form.dispatchEvent(new Event('submit'));
-    } else {
-      this.toggleMode(false);
-      resolve();
-    }
+
+    resolve();
   }
 
   clearManualInputs(triggerChange = true) {
