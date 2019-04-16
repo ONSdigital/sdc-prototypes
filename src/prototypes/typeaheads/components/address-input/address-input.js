@@ -11,7 +11,7 @@ import { sortBy } from 'sort-by-typescript';
 
 const lookupURL = 'https://api.addressy.com/Capture/Interactive/Find/v1.10/json3.ws';
 const retrieveURL = 'https://api.addressy.com/Capture/Interactive/Retrieve/v1.10/json3.ws';
-const key = 'wn93-bh24-pf98-bg95';
+const key = 'PX89-AK69-ZC12-MY95';
 const addressReplaceChars = [','];
 
 const classAddress = 'js-address';
