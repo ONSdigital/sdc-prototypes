@@ -11,9 +11,8 @@ const classTypeaheadAriaStatus = 'js-typeahead-aria-status';
 
 const classTypeaheadOption = 'typeahead__option';
 const classTypeaheadOptionFocused = `${classTypeaheadOption}--focused`;
-const classTypeaheadOptionNoResults = `${classTypeaheadOption}--no-results`;
-const classTypeaheadOptionMoreResults = `${classTypeaheadOption}--more-results`;
-const classTypeaheadComboboxFocused = 'typeahead__combobox--focused';
+const classTypeaheadOptionNoResults = `${classTypeaheadOption}--no-results u-fs-s`;
+const classTypeaheadOptionMoreResults = `${classTypeaheadOption}--more-results u-fs-s`;
 const classTypeaheadHasResults = 'typeahead--has-results';
 
 const KEYCODE = {
@@ -149,7 +148,6 @@ export default class TypeaheadCore {
 
   handleFocus() {
     clearTimeout(this.blurTimeout);
-    this.combobox.classList.add(classTypeaheadComboboxFocused);
     this.getSuggestions(true);
   }
 
@@ -158,7 +156,6 @@ export default class TypeaheadCore {
     this.blurring = true;
 
     this.blurTimeout = setTimeout(() => {
-      this.combobox.classList.remove(classTypeaheadComboboxFocused);
       this.blurring = false;
     }, 300);
   }

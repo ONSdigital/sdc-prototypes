@@ -34,7 +34,10 @@
                 })
             }}
             <div class="typeahead__instructions u-vh js-typeahead-instructions" id="{{ params.id }}-instructions">{{ params.instructions }}</div>
-            <ul class="typeahead__listbox js-typeahead-listbox" role="listbox" id="{{ params.id }}-listbox"></ul>
+            <div class="typeahead__results js-typeahead-results">
+                <header class="typeahead__results-title u-fs-s">{{ params.content.results_title }}</header>
+                <ul class="typeahead__listbox js-typeahead-listbox" role="listbox" id="{{ params.id }}-listbox"></ul>
+            </div>
             <div class="typeahead__status u-vh js-typeahead-aria-status" aria-live="polite" role="status"></div> 
         </div>
     </div>
