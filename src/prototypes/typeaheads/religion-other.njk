@@ -8,7 +8,7 @@ layout: typeaheads/views/_master
 {% block content %}
     <a class="previous-link js-previous" href="{{ pageInfo.parentPath }}/religion.html">Previous</a>
     <form action="{{ pageInfo.parentPath }}/one-year-ago-address.html?previous={{ pageInfo.path }}.html">
-        <h1 class="u-fs-l u-mt-s">What is your religion?</h1>
+        <h1 class="u-fs-l u-mt-s">You selected “Other”. What is your religion?</h1>
         {{
             prototypeTypeahead({
                 "id": "religion-other",
