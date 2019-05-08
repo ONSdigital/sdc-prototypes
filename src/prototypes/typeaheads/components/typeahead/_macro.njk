@@ -10,7 +10,7 @@
                 "classes": "js-typeahead-label"
             })
         }}
-        <div class="typeahead__combobox js-typeahead-combobox" role="combobox" aria-has-popup="{{ params.id }}-listbox" aria-expanded="false">
+        <div class="typeahead__combobox js-typeahead-combobox">
             {% if not params.externalInitialiser %}
                 {{
                     onsInput({
@@ -29,16 +29,24 @@
                     "fieldClasses": "u-mt-no",
                     "name": params.id + "-input",
                     "attributes": {
-                        "data-autocomplete": params.autocomplete
+                        "data-autocomplete": params.autocomplete,
+                        "role": "combobox",
+                        "aria-expanded": "false",
+                        "aria-has-popup": "true",
+                        "aria-owns": params.id + "-listbox",
+                        "aria-autocomplete": "list",
+                        "aria-describedby": params.id + "-instructions"
                     }
                 })
             }}
-            <div class="typeahead__instructions u-vh js-typeahead-instructions" id="{{ params.id }}-instructions">{{ params.instructions }}</div>
+            
             <div class="typeahead__results js-typeahead-results">
                 <header class="typeahead__results-title u-fs-s">{{ params.content.results_title }}</header>
-                <ul class="typeahead__listbox js-typeahead-listbox" role="listbox" id="{{ params.id }}-listbox"></ul>
+                <ul class="typeahead__listbox js-typeahead-listbox" role="listbox" id="{{ params.id }}-listbox" tabindex="-1"></ul>
             </div>
-            <div class="typeahead__status u-vh js-typeahead-aria-status" aria-live="polite" role="status"></div> 
+
+            <div class="typeahead__instructions u-vh js-typeahead-instructions" id="{{ params.id }}-instructions" tabindex="-1">{{ params.instructions }}</div>
+            <div class="typeahead__status u-vh js-typeahead-aria-status" aria-live="polite" role="status" tabindex="-1"></div> 
         </div>
     </div>
 {% endmacro %}

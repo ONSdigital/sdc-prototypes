@@ -1,8 +1,9 @@
+// https://www.w3.org/TR/wai-aria-practices/examples/combobox/aria1.0pattern/combobox-autocomplete-list.html
+
 import AbortableFetch from 'helpers/abortable-fetch';
 import formBodyFromObject from 'helpers/form-body-from-object';
 import { sanitiseTypeaheadText } from './typeahead-helpers';
 
-const classTypeaheadCombobox = 'js-typeahead-combobox';
 const classTypeaheadLabel = 'js-typeahead-label';
 const classTypeaheadInput = 'js-typeahead-input';
 const classTypeaheadInstructions = 'js-typeahead-instructions';
@@ -31,7 +32,6 @@ export default class TypeaheadCore {
   constructor({ context, apiUrl, onSelect, onUnsetResult, onError, minChars, resultLimit, sanitisedQueryReplaceChars = [], suggestionFunction }) {
     // DOM Elements
     this.context = context;
-    this.combobox = context.querySelector(`.${classTypeaheadCombobox}`);
     this.label = context.querySelector(`.${classTypeaheadLabel}`);
     this.input = context.querySelector(`.${classTypeaheadInput}`);
     this.listbox = context.querySelector(`.${classTypeaheadListbox}`);
@@ -291,7 +291,7 @@ export default class TypeaheadCore {
     this.listbox.innerHTML = '';
     this.context.classList.remove(classTypeaheadHasResults);
     this.input.removeAttribute('aria-activedescendant');
-    this.combobox.removeAttribute('aria-expanded');
+    this.input.removeAttribute('aria-expanded');
 
     if (!preventAriaStatusUpdate) {
       this.setAriaStatus();
@@ -327,7 +327,6 @@ export default class TypeaheadCore {
           listElement.className = classTypeaheadOption;
           listElement.setAttribute('id', `${this.listboxId}__option--${index}`);
           listElement.setAttribute('role', 'option');
-          listElement.setAttribute('tabindex', '-1');
           listElement.setAttribute('aria-label', ariaLabel);
           listElement.innerHTML = innerHTML;
 
@@ -343,7 +342,6 @@ export default class TypeaheadCore {
         if (this.numberOfResults < this.foundResults) {
           const listElement = document.createElement('li');
           listElement.className = `${classTypeaheadOption} ${classTypeaheadOptionMoreResults} u-fs-b`;
-          listElement.setAttribute('tabindex', '-1');
           listElement.setAttribute('aria-hidden', 'true');
           listElement.innerHTML = this.content.more_results;
           this.listbox.appendChild(listElement);
@@ -353,14 +351,14 @@ export default class TypeaheadCore {
 
         if (this.numberOfResults || this.content.no_results) {
           this.context.classList.add(classTypeaheadHasResults);
-          this.combobox.setAttribute('aria-expanded', true);
+          this.input.setAttribute('aria-expanded', true);
         }
       }
     }
 
     if (this.numberOfResults === 0 && this.content.no_results) {
       this.listbox.innerHTML = `<li class="${classTypeaheadOption} ${classTypeaheadOptionNoResults}">${this.content.no_results}</li>`;
-      this.combobox.setAttribute('aria-expanded', true);
+      this.input.setAttribute('aria-expanded', true);
     }
   }
 
