@@ -1,0 +1,26 @@
+
+{% extends "page-templates/_template.njk" %}
+
+{% set page = { 
+    "title": "Census Website Prototype",
+    "footer": {
+        "OGLLink": {
+            "pre": 'All content is available under the',
+            "link": 'Open Government Licence v3.0',
+            "url": 'https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/',
+            "post": ', except where otherwise stated'
+        }
+    }
+} %}
+
+
+{% block head %}
+    <link rel="stylesheet" href="/prototypes/census-website/styles.css" />
+{% endblock %}
+
+{% block page %}
+{% endblock %}
+
+{% block bodyEnd %}
+    <script src="/prototypes/census-website/index.js"></script>
+{% endblock %}
