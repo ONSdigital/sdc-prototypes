@@ -50,10 +50,9 @@ layout: typeaheads/views/_master
                         "name": "replublic-of-ireland"
                     },
                     {
-                        "preLabel": "Or",
                         "id": "other",
                         "label": {
-                            "text": "Other",
+                            "text": "Elsewhere",
                             "description": "You can enter this on the next question"
                         },
                         "name": "elsewhere",
@@ -71,4 +70,5 @@ layout: typeaheads/views/_master
             })
         }}
     </form>
+    {% include "typeaheads/views/partials/_heroku-waker.njk" %}
 {% endblock %}

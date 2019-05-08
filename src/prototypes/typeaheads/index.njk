@@ -69,10 +69,5 @@ layout: typeaheads/views/_master
                 "classes": "u-mt-l"
         }) }}
     </form>
-    <script>
-        // Wake up heroku instance
-        var xhttp = new XMLHttpRequest();
-        xhttp.open("GET", "https://ons-typeahead-prototypes.herokuapp.com");
-        xhttp.send();
-    </script>
+    {% include "typeaheads/views/partials/_heroku-waker.njk" %}
 {% endblock %}

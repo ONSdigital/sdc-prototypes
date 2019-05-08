@@ -345,14 +345,18 @@ export default class TypeaheadCore {
         }
 
         this.setHighlightedResult(null);
+        
         this.combobox.setAttribute('aria-expanded', true);
-        this.context.classList.add(classTypeaheadHasResults);
       }
     }
 
     if (this.numberOfResults === 0 && this.content.no_results) {
       this.listbox.innerHTML = `<li class="${classTypeaheadOption} ${classTypeaheadOptionNoResults}">${this.content.no_results}</li>`;
       this.combobox.setAttribute('aria-expanded', true);
+      this.context.classList.add(classTypeaheadHasResults);
+    }
+
+    if (this.numberOfResults || this.content.no_results) {
       this.context.classList.add(classTypeaheadHasResults);
     }
   }
