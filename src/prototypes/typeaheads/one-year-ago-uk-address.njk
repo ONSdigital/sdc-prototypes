@@ -1,11 +1,11 @@
 ---
-version: 0.5.0
+version: 5.0.1
 layout: typeaheads/views/_master
 ---
 {% from "typeaheads/components/address-input/_macro.njk" import prototypeAddressInput %}
 {% from "components/button/_macro.njk" import onsButton %}
 
-{% block content %}
+{% block main %}
     <a class="previous-link js-previous" href="{{ pageInfo.parentPath }}/one-year-ago-address.html">Previous</a>
     <form action="{{ pageInfo.parentPath }}/one-year-ago-uk-address-confirm.html">
         {{

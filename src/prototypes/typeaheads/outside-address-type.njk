@@ -1,11 +1,11 @@
 ---
-version: 0.5.0
+version: 5.0.1
 layout: typeaheads/views/_master
 ---
 {% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
 {% from "components/button/_macro.njk" import onsButton %}
 
-{% block content %}
+{% block main %}
     <a class="previous-link js-previous" href="{{ pageInfo.parentPath }}/address-country.html">Previous</a>
     <form action="{{ pageInfo.parentPath }}/student-check.html?previous={{ pageInfo.path }}.html">
         <h1 class="u-fs-l u-mt-s question__title js-piped-answer" data-question-to-pipe="{{ pageInfo.parentPath }}/address-country.html">What type of address is your address in <em>{x}</em>?</h1>

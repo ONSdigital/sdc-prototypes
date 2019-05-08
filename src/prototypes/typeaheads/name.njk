@@ -1,12 +1,12 @@
 ---
-version: 0.5.0
+version: 5.0.1
 layout: typeaheads/views/_master
 ---
 {% from "components/field/_macro.njk" import onsField %}
 {% from "components/input/_macro.njk" import onsInput %}
 {% from "components/button/_macro.njk" import onsButton %}
 
-{% block content %}
+{% block main %}
     <form action="{{ pageInfo.parentPath }}/date-of-birth.html">
        {% call onsField({
            "id": "name",

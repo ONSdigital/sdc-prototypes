@@ -74,6 +74,11 @@ export default class TypeaheadCore {
     this.sanitisedQueryReplaceChars = sanitisedQueryReplaceChars;
     this.lang = document.documentElement.getAttribute('lang').toLowerCase();
 
+    // Temporary fix as runner doesn't use full lang code
+    if (this.lang === 'en') {
+      this.lang = 'en-gb';
+    }
+
     // Modify DOM
     this.label.setAttribute('for', this.input.getAttribute('id'));
     this.input.setAttribute('aria-autocomplete', 'list');
@@ -345,19 +350,17 @@ export default class TypeaheadCore {
         }
 
         this.setHighlightedResult(null);
-        
-        this.combobox.setAttribute('aria-expanded', true);
+
+        if (this.numberOfResults || this.content.no_results) {
+          this.context.classList.add(classTypeaheadHasResults);
+          this.combobox.setAttribute('aria-expanded', true);
+        }
       }
     }
 
     if (this.numberOfResults === 0 && this.content.no_results) {
       this.listbox.innerHTML = `<li class="${classTypeaheadOption} ${classTypeaheadOptionNoResults}">${this.content.no_results}</li>`;
       this.combobox.setAttribute('aria-expanded', true);
-      this.context.classList.add(classTypeaheadHasResults);
-    }
-
-    if (this.numberOfResults || this.content.no_results) {
-      this.context.classList.add(classTypeaheadHasResults);
     }
   }
 

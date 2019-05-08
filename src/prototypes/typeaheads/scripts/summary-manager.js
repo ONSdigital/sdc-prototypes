@@ -6,7 +6,7 @@ export default class SummaryManager {
 
     this.config = {
       params: {
-        items: []
+        rows: []
       }
     };
 
@@ -75,30 +75,37 @@ export default class SummaryManager {
         joinString = ' ';
       }
 
-      let answer = answers.join(joinString);
 
-      if (!answer) {
-        answer = 'No answer provided';
+      const value = {
+        text: answers.join(joinString)
+      };
+
+      if (!value.text) {
+        value.tex = 'No answer provided';
       }
       
-      const item = {
-        questions: [
+      const row = {
+        title: question.title,
+        rowItems: [
           {
-            question: question.title,
-            answer,
-            action: {
-              text: 'Change',
-              ariaLabel: 'Change answer',
-              url: `${question.key}?edit=true`
-            }
+            values: [value],
+            actions: [
+              {
+                text: 'Change',
+                ariaLabel: 'Change answer',
+                url: `${question.key}?edit=true`
+              }
+            ]
           }]
       };
 
-      this.config.params.items.push(item);
+      this.config.params.rows.push(row);
     });
   }
 
   render() {
+
+    console.log(this.config);
     const html = this.template.render(this.config);
 
     this.placeholder.innerHTML = html;

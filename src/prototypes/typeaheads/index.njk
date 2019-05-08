@@ -1,13 +1,13 @@
 ---
 title: Typeaheads
 group: Typeaheads
-version: 0.5.0
+version: 5.0.1
 layout: typeaheads/views/_master
 ---
 {% from "components/button/_macro.njk" import onsButton %}
 {% from "typeaheads/components/address-input/_macro.njk" import prototypeAddressInput %}
 
-{% block content %}
+{% block main %}
     <form action="{{ pageInfo.parentPath }}/name.html">
         {{
             prototypeAddressInput({
