@@ -3,13 +3,13 @@ version: 5.0.1
 layout: typeaheads/views/_master
 ---
 {% from "components/button/_macro.njk" import onsButton %}
-{% from "typeaheads/views/partials/_radios-with-or.njk" import onsRadiosWithOr %}
+{% from "components/radios/_macro.njk" import onsRadios %}
 
 {% block main %}
     <a class="previous-link js-previous" href="{{ pageInfo.parentPath }}/student-check.html">Previous</a>
     <form action="{{ pageInfo.parentPath }}/passport.html">
         {{ 
-            onsRadiosWithOr({
+            onsRadios({
                 "legend": " <h1 class=\"u-fs-l\">What is your country of birth?</h1>",
                 "name": "country-of-birth",
                 "classes": "u-mt-s",
