@@ -1,0 +1,109 @@
+---
+version: 4.1.0
+layout: census-website/views/_master
+---
+
+{% from "components/card/_macro.njk" import onsCard %}
+
+{% block page %}
+<div class="page__container {{ containerClasses }}">
+    <div class="grid">
+        <main id="main-content" class="{{ pageClasses }}">
+                <div class="hero-image" role="banner">
+                <div class="container">
+                    <div class="hero-text">
+                        <h1 class="hero--header">Make it count</h1>
+                        <button type="button" class="btn">Take part in the Census rehearsal</button>
+                    </div>
+                    </div>
+                </div>    
+        </main>
+        <div class="container">
+                <div class="grid grid--flex grid--column@xs@s u-mt-l">
+                    <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
+                        {{-
+                            onsCard({
+                                "title": 'What is the census rehearsal?',
+                                "url": 'census-website/about-the-census.html',
+                                "text": 'About the census rehearsal' 
+                              
+                            })
+                        }}
+                    </div>
+                    <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
+                        {{- 
+                            onsCard({
+                                "title": 'Who needs to take part',
+                                "url": '#',
+                                "text": 'Who we are asking to participate in the rehearsal and why'
+                            })
+                        }}
+                    </div>
+                    <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
+                        {{-
+                            onsCard({
+                                "title": 'Request an access code or paper form',
+                                "url": '#',
+                                "text": 'The most accurate and greographical dataset of addresses and properties in the UK.'
+                            })
+                        }}
+                    </div>
+                    </div>
+                    <div class="grid grid--flex grid--column@xs@s u-mt-l u-mb-l">
+                        <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
+                            <div class="card card-cta">
+                                <h3 class="u-fs-m u-mb-xs">
+                                    Your information is safe
+                                </h3>
+                                <div style="font-size:2em; font-weight:bold;line-height: 1.3em;color:white;">Persuasive content e.g. the positives about how census data improves living</div>
+                            </div>
+                        </div>
+                    </div>
+                
+                <div class="grid grid--flex grid--column@xs@s u-mt-l u-mb-l">
+                    <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
+                        {{-
+                            onsCard({
+                                "title": 'What is the census rehearsal?',
+                                "url": 'census-website/about-the-census.html',
+                                "text": 'About the census rehearsal' 
+                              
+                            })
+                        }}
+                    </div>
+                    <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
+                        {{- 
+                            onsCard({
+                                "title": 'Who needs to take part',
+                                "url": '#',
+                                "text": 'Who we are asking to participate in the rehearsal and why'
+                            })
+                        }}
+                    </div>
+                    <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
+                        {{-
+                            onsCard({
+                                "title": 'Request an access code or paper form',
+                                "url": '#',
+                                "text": 'The most accurate and greographical dataset of addresses and properties in the UK.'
+                            })
+                        }}
+                    </div>
+                    </div>
+
+                   <div class="u-mb-l"> 
+                   <img src="https://via.placeholder.com/1500x600"/>
+                   </div>
+                   <div class="grid grid--flex grid--column@xs@s u-mt-l u-mb-l">
+                        <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
+                            <div class="card card-cta">
+                                <h3 class="u-fs-m u-mb-xs">
+                                    Ready to take part?
+                                </h3>
+                                <a href="#" style="font-size:2em; font-weight:bold;line-height: 1.3em;color:white;text-decoration:underline;cursor:pointer;">Start your census survey</a>
+                            </div>
+                        </div>
+                    </div>
+    </div>
+</div>
+{% endblock %}

@@ -7,44 +7,106 @@ layout: census-website/views/_master
 {% from "components/card/_macro.njk" import onsCard %}
 
 {% block page %}
-<div class="page__container container {{ containerClasses }}">
-    <div class="grid">
-        <div class="grid__col">
-            <main id="main-content" class="page__main {{ pageClasses }}">
-                {% from "components/panel/_macro.njk" import onsPanel %}
-                {{ 
-                    onsPanel({
-                        body: "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <ul><li>VAT</li><li>Internet sales</li></ul></p>"
-                    }) 
-                }}
+<div class="page__container {{ containerClasses }}">
+<div class="grid">
+        <div class="grid__col u-mb-l">
+            <main id="main-content" class="{{ pageClasses }}">
+                <div style="background-color:#F0F0F0;" class="u-pb-l">
+                <div class="container">
+                    <div class="col-8@m">
+                            {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+                            {{ 
+                                onsBreadcrumb({
+                                    "ariaLabel": 'Breadcrumb',
+                                    "itemsList": [
+                                        {
+                                            "url": '/',
+                                            "text": 'Home'
+                                        },
+                                        {
+                                            "url": '',
+                                            "text": 'Taking part in the census',
+                                            "current": true
+
+                                        }
+                                    ]
+                                }) 
+                            }}
+
+                            <h1>Taking part in the census</h1>
+                            <p>If you live in one of the selected rehearsal areas, you should have received a letter from the ONS with a unique code to access your rehearsal questionnaire.</p>
+                            
+                            <!--NEW PANEL CTA STYLE-->
+                            <div class="col-9@m col-12@s">
+                                <div class="panel__cta">
+                                    <div class="panel__body">
+                                        <p style="font-weight:bold; font-size:1.3em;">Ready to take part? <a href='#' style="color:white;">Start your census survey</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                </div>
+                <div class="container">
                 <div class="grid grid--flex grid--column@xs@s u-mt-l">
                     <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
                         {{-
                             onsCard({
-                                "title": 'About the census',
+                                "title": 'What is the census rehearsal?',
                                 "url": 'census-website/about-the-census.html',
-                                "text": 'Blah blah blah'
+                                "text": 'About the census rehearsal' 
+                              
                             })
                         }}
                     </div>
                     <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
                         {{- 
                             onsCard({
-                                "title": 'Record management',
+                                "title": 'Who needs to take part',
                                 "url": '#',
-                                "text": 'Edit, create new records and view the editing history of businesses.'
+                                "text": 'Who we are asking to participate in the rehearsal and why'
                             })
                         }}
                     </div>
                     <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
                         {{-
                             onsCard({
-                                "title": 'Address index',
+                                "title": 'Request an access code or paper form',
                                 "url": '#',
                                 "text": 'The most accurate and greographical dataset of addresses and properties in the UK.'
                             })
                         }}
                     </div>
+                    </div>
+                    <div class="grid grid--flex grid--column@xs@s u-mt-l u-mb-l">
+                    <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
+                        {{-
+                            onsCard({
+                                "title": 'Get help to complete your census',
+                                "url": '#',
+                                "text": 'The most accurate and greographical dataset of addresses and properties in the UK.'
+                            })
+                        }}
+                    </div>
+                    <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
+                        {{-
+                            onsCard({
+                                "title": 'Privacy, security and confidentiality',
+                                "url": '#',
+                                "text": 'The most accurate and greographical dataset of addresses and properties in the UK.'
+                            })
+                        }}
+                    </div>
+                    <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
+                        <div class="card card-cta">
+                        <h3 class="u-fs-m u-mb-xs">
+                            Ready to take part?
+                        </h3>
+                        <a href="#" style="font-size:2.2em; font-weight:bold;line-height: 1.3em;color:white;text-decoration:underline;cursor:pointer;">Start your census survey</a>
+                        </div>
+                    </div>
+                </div>
+                
                 </div>
             </main>
         </div>

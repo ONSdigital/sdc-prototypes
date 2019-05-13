@@ -2,7 +2,7 @@
 {% extends "page-templates/_template.njk" %}
 
 {% set page = { 
-    "title": "Census Website Prototype",
+    "title": "Census 2021",
     "footer": {
         "OGLLink": {
             "pre": 'All content is available under the',
@@ -10,7 +10,28 @@
             "url": 'https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/',
             "post": ', except where otherwise stated'
         }
-    }
+    },
+    "navigation": {
+            "id": "main-nav",
+            "ariaLabel": "Main menu",
+            "ariraListLabel": "Navigation menu",
+            "currentPath": "/get-started",
+            "itemsList": [
+                {
+                    "title": "About the census",
+                    "path": "#"
+                },
+                {
+                    "title": "Taking part in the rehearsal",
+                    "path": "census-website/index.html"
+                },
+                {
+                    "title": "Contact us",
+                    "path": "#"
+                }
+            ]
+        }
+
 } %}
 
 

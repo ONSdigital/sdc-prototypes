@@ -1,0 +1,94 @@
+---
+version: 4.1.0
+layout: census-website/views/_master
+---
+
+{% from "components/card/_macro.njk" import onsCard %}
+
+{% block page %}
+<div class="page__container container {{ containerClasses }}">
+                        <div class="col-7@m">
+                            {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+                                {{ 
+                                    onsBreadcrumb({
+                                        "ariaLabel": 'Breadcrumb',
+                                        "itemsList": [
+                                            {
+                                                "url": '/',
+                                                "text": 'Home'
+                                            },
+                                            {
+                                                "url": '',
+                                                "text": 'Help with your census'
+
+                                            },
+                                            {
+                                                "url": '',
+                                                "text": 'Individual questions (P & 1 - 51)'
+
+                                            },
+                                            {
+                                                "url": '',
+                                                "text": 'Which of the following best describes your sexual orientation?',
+                                                "current": true
+                                            }
+                                        ]
+                                    }) 
+                                }}
+                                </div>
+                                <div class="grid">
+                <div class="grid__col col-7@m">
+                    <main id="main-content" class=" {{ pageClasses }}">
+                                <h1 class="u-mb-l">Which of the following best describes your sexual orientation?</h1>
+                                <div class="u-mb-m">
+                                {% from "components/panel/_macro.njk" import onsPanel %}
+                                    {{ 
+                                        onsPanel({
+                                            body: "<p>Question <strong>26</strong> on the paper questionnaire.</p>"
+                                        }) 
+                                    }}
+                                    </div>
+                                    <div class="u-mb-xs">
+                                        {% from "components/details/_macro.njk" import onsDetails %}
+                                            {{
+                                                onsDetails({
+                                                    "id": "details",
+                                                    "title": "Why we ask this question?",
+                                                    "content": "<p>A typical photovoltaic system employs solar panels, each comprising a number of solar cells, which generate electrical power. PV installations may be ground-mounted, rooftop mounted or wall mounted. The mount may be fixed, or use a solar tracker to follow the sun across the sky.</p>",
+                                                    "button": {
+                                                        "close": "Hide this"
+                                                    }
+                                                })
+                                            }}
+                                    </div>        
+                                
+                                <p>This question is voluntary. If you’d rather not answer, you can leave it blank. It is for you to decide how to answer this question. If your identity is not listed, tick ‘Other’ and enter your preferred answer. If there is not enough space, enter as much as the space allows. </p> 
+
+                                <h3>Don’t record your trans identity here</h3>
+                                <p>This question doesn’t relate to being trans or transgender.</p>
+                                <div class="u-mb-m">
+                                {% from "components/panel/_macro.njk" import onsPanel %}
+                                    {{ 
+                                        onsPanel({
+                                            body: "<p>If you prefer to keep your answers private from people you live with, you can <a href='#'>complete your own individual census form.</a></p>"
+                                        }) 
+                                    }}
+                                    </div>
+                    </main>
+                </div>
+                <div class="grid__col col-4@m push-1@m">
+                    <div style="border-top:5px solid purple;padding:15px 0;">
+                        <h3>Related content</h3>
+                        <ul class="list list--bare">
+                            <li><a href="#">About the census</a></li>
+                            <li><a href="#">What we ask you</a></li>
+                            <li><a href="#">Help and support</a></li>
+                            <li><a href="#">Contact us</a></li>
+                        </ul>
+                        
+                    
+                    </div>
+                </div>
+        </div>
+</div>
+{% endblock %}
