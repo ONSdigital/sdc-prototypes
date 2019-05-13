@@ -1,4 +1,6 @@
-
+.intro--banner{
+  background-color:#F0F0F0;
+}
 .panel__cta{
   background: purple;
   color: white;
@@ -20,7 +22,7 @@ border: none;
 }
 
 .hero-image {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)),url('images/group.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)),url(images/group.jpg);
   height: 45vh;
   background-position: center;
   background-repeat: no-repeat;

@@ -8,16 +8,18 @@ layout: census-website/views/_master
 {% block page %}
 <div class="page__container {{ containerClasses }}">
     <div class="grid">
+        <!--Main Banner-->
         <main id="main-content" class="{{ pageClasses }}">
                 <div class="hero-image" role="banner">
-                <div class="container">
-                    <div class="hero-text">
-                        <h1 class="hero--header">Make it count</h1>
-                        <button type="button" class="btn">Take part in the Census rehearsal</button>
-                    </div>
+                    <div class="container">
+                        <div class="hero-text">
+                            <h1 class="hero--header">Make it count</h1>
+                            <button type="button" class="btn">Take part in the Census rehearsal</button>
+                        </div>
                     </div>
                 </div>    
-        </main>
+        </main>  <!--Main Banner end-->
+
         <div class="container">
                 <div class="grid grid--flex grid--column@xs@s u-mt-l">
                     <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
@@ -92,7 +94,7 @@ layout: census-website/views/_master
                     </div>
 
                    <div class="u-mb-l"> 
-                   <img src="https://via.placeholder.com/1500x600"/>
+                        <img src="https://via.placeholder.com/1500x600"/>
                    </div>
                    <div class="grid grid--flex grid--column@xs@s u-mt-l u-mb-l">
                         <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
@@ -104,6 +106,6 @@ layout: census-website/views/_master
                             </div>
                         </div>
                     </div>
-    </div>
+        </div>
 </div>
 {% endblock %}

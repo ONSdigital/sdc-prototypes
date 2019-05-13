@@ -8,10 +8,10 @@ layout: census-website/views/_master
 
 {% block page %}
 <div class="page__container {{ containerClasses }}">
-<div class="grid">
+    <div class="grid">
         <div class="grid__col u-mb-l">
             <main id="main-content" class="{{ pageClasses }}">
-                <div style="background-color:#F0F0F0;" class="u-pb-l">
+                <div class="intro--banner u-pb-m">
                 <div class="container">
                     <div class="col-8@m">
                             {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
@@ -34,13 +34,13 @@ layout: census-website/views/_master
                             }}
 
                             <h1>Taking part in the census</h1>
-                            <p>If you live in one of the selected rehearsal areas, you should have received a letter from the ONS with a unique code to access your rehearsal questionnaire.</p>
+                            <p>If you live in <a href="#">one of the selected rehearsal areas</a>, you should have received a letter from the ONS with a unique code to access your rehearsal questionnaire.</p>
                             
                             <!--NEW PANEL CTA STYLE-->
                             <div class="col-9@m col-12@s">
                                 <div class="panel__cta">
                                     <div class="panel__body">
-                                        <p style="font-weight:bold; font-size:1.3em;">Ready to take part? <a href='#' style="color:white;">Start your census survey</a></p>
+                                        <p style="font-weight:bold; font-size:1.3em;">Ready to take part? <a href='#' aria-labelledby="Start your census" style="color:white;">Start your census survey</a></p>
                                     </div>
                                 </div>
                             </div>
