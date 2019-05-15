@@ -69,6 +69,22 @@ border: none;
   font-size:50px;
 }
 
+
+/* Overrides for headings issue: https://github.com/ONSdigital/design-system/issues/371 */
+#main-content h1 {
+    font-size: 1.55555556rem; 
+}
+#main-content h2 {
+    font-size: 1.222222rem;
+}
+#main-content h3 {
+  font-size: 1rem;
+}
+
+#main-content .card h3 {
+  font-size:1.222rem; /* Removed after next release of design system v7 */
+}
+
 @media only screen and (max-width: 600px) {
   .hero-image{
     height: 25vh;
