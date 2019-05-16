@@ -48,7 +48,7 @@ border: none;
   background-color:purple;
   text-align: center;
   cursor: pointer;
-  font-size: 30px;
+  font-size: 1.2rem;
 }
 
 .hero-text button:hover {
@@ -81,8 +81,12 @@ border: none;
   font-size: 1rem;
 }
 
-#main-content .card h3 {
-  font-size:1.222rem; /* Removed after next release of design system v7 */
+.card h3 {
+  font-size: 1.222rem!important; /* Removed after next release of design system v7 */
+}
+
+#main-content .hero-image h1 {
+  font-size: 2rem;
 }
 
 @media only screen and (max-width: 600px) {
