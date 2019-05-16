@@ -1,0 +1,13 @@
+@import 'node_modules/@ons/design-system/7.0.0/scss/vars/colors';
+
+.uac-entry {
+  display: inline-block;
+  position: relative;
+  padding: 1rem;
+  border: 8px solid $color-dark-blue;
+
+  &__input {
+    max-width: 12.7em;
+    font-weight: bold;
+  }
+}
