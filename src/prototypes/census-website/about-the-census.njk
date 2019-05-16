@@ -10,27 +10,30 @@ layout: census-website/views/_master
     <div class="grid">
         <div class="grid__col u-mb-l">
             <main id="main-content" class="{{ pageClasses }}">
-                <div class="container">
-                    <div class="col-8@m">
-                        {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
-                        {{ 
-                            onsBreadcrumb({
-                                "ariaLabel": 'Breadcrumb',
-                                "itemsList": [
-                                    {
-                                        "url": 'index.html',
-                                        "text": 'Home'
-                                    },
-                                    {
-                                        "url": '',
-                                        "text": 'About the census',
-                                        "current": true
+                <div class="intro--banner u-pb-m">
+                    <div class="container">
+                        <div class="col-8@m">
+                            {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+                            {{ 
+                                onsBreadcrumb({
+                                    "ariaLabel": 'Breadcrumb',
+                                    "itemsList": [
+                                        {
+                                            "url": 'index.html',
+                                            "text": 'Home'
+                                        },
+                                        {
+                                            "url": '',
+                                            "text": 'About the census',
+                                            "current": true
 
-                                    }
-                                ]
-                            }) 
-                        }}
-                        <h1>About the census</h1>
+                                        }
+                                    ]
+                                }) 
+                            }}
+                            <h1>About the census</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="container">
@@ -89,13 +92,13 @@ layout: census-website/views/_master
                             onsCard({
                                 "title": 'Privacy, security and confidentiality',
                                 "url": '#',
-                                "text": 'The most accurate and greographical dataset of addresses and properties in the UK.'
+                                "text": 'description'
                             })
                         }}
                     </div>
                     </div>
-                    <div class="container">
-                    <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
+                    <div>
+                    <div class="u-pl-no grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
                         <div class="card card-cta">
                         <h3 class="u-fs-m u-mb-xs">
                             Ready to take part?
