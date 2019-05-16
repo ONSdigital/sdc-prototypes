@@ -1,4 +1,7 @@
 @import 'node_modules/@ons/design-system/7.0.0/scss/vars/colors';
+@import 'node_modules/@ons/design-system/7.0.0/scss/vars/grid';
+@import 'node_modules/@ons/design-system/7.0.0/scss/helpers/mq';
+
 
 .uac-entry {
   display: inline-block;
@@ -7,7 +10,25 @@
   border: 8px solid $color-dark-blue;
 
   &__input {
-    max-width: 12.7em;
+    max-width: 12.6em;
     font-weight: bold;
+
+    @media all and (min-width: 375px) {
+      font-size: 22px;
+    }
+
+    @media all and (min-width: 425px) {
+      width: 14em !important;
+      max-width: 14em;
+      font-size: 24px;
+      letter-spacing: .06em;
+    }
+
+    @include mq('s') {
+      width: 16em !important;
+      max-width: 16em;
+      font-size: 24px;
+      letter-spacing: .15em;
+    }
   }
 }
