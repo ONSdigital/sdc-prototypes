@@ -1,3 +1,10 @@
+.bg-blue{
+  background: #483698!important;
+}
+.cta-banner{
+  display: none;
+}
+
 .intro--banner{
   background-color:#F0F0F0;
 }
@@ -12,6 +19,7 @@
   flex-direction: column;
   justify-content: center;
 border: none;
+min-height: 250px;
 
 }
 .header__bottom{
@@ -69,7 +77,17 @@ border: none;
   font-size:50px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 680px) {
+  .cta-banner{
+    background: #483698;
+    padding: 10px 0;
+    display: block;
+    font-weight: bold;
+    border-top: 1px solid hsla(0,0%,100%,.5);
+  }
+  .cta-banner a{
+    color: white;
+  }
   .hero-image{
     height: 25vh;
   }
