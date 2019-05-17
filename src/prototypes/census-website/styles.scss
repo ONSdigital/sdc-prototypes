@@ -1,0 +1,108 @@
+.intro--banner{
+  background-color:#F0F0F0;
+}
+.panel__cta{
+  background: purple;
+  color: white;
+}
+.card-cta{
+  background: purple;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+border: none;
+
+}
+.header__bottom{
+  background: purple;
+}
+.header__main{
+  background: purple;
+}
+
+.hero-image {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)),url(images/group.jpg);
+  height: 45vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.hero-text button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 15px 25px;
+  color: white;
+  background-color:purple;
+  text-align: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.hero-text button:hover {
+  background-color: #555;
+  color: white;
+}
+
+.panel__body strong{
+  width: 45px;
+  background: white;
+  text-align: center;
+  padding: 5px 5px;
+  border: solid purple 2px;
+  font-weight: bold;
+  border-radius: 3px;
+}
+.hero--header{
+  font-size:50px;
+}
+
+
+/* Overrides for headings issue: https://github.com/ONSdigital/design-system/issues/371 */
+#main-content h1 {
+    font-size: 1.55555556rem; 
+}
+#main-content h2 {
+    font-size: 1.222222rem;
+}
+#main-content h3 {
+  font-size: 1rem;
+}
+
+.card h3 {
+  font-size: 1.222rem!important; /* Removed after next release of design system v7 */
+}
+
+#main-content .hero-image h1 {
+  font-size: 2rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .hero-image{
+    height: 25vh;
+  }
+  .hero-text{
+    width: 90vw;
+
+  }
+  .hero-text button{
+    font-size: 25px;
+  }
+  .hero--header{
+    font-size:30px;
+    margin-bottom: 10px;
+  }
+  
+}
