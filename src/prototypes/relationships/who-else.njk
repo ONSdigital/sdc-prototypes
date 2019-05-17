@@ -1,0 +1,53 @@
+---
+title: Relationships
+group: Components
+version: 7.0.1
+layout: relationships/views/_master
+---
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/input/_macro.njk" import onsInput %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action": "/prototypes/relationships/does-anyone-else-live-here.html"
+    }
+} %}
+
+{% block main %}
+    <a href="/prototypes/does-anyone-else-live-here.html">Previous</a>
+    {% call onsQuestion({
+        "title": "Who else do you need to add to 2 Example Address?",
+        "useFieldset": true,
+        "classes": "js-person"
+    }) %}
+        {{ onsInput({
+            "id": "first-name",
+            "label": {
+                "text": "First name"
+            }
+        }) }}
+
+        {{ onsInput({
+            "id": "middle-name",
+            "label": {
+                "text": "Middle name(s)"
+            }
+        }) }}
+
+        {{ onsInput({
+            "id": "last-name",
+            "label": {
+                "text": "Last name"
+            }
+        }) }}
+    {% endcall %}
+
+    <a href="/prototypes/does-anyone-else-live-here.html">Cancel and return to previous question</a>
+
+    {{ onsButton({
+        "text": "Continue",
+        "classes": "u-mt-m u-mb-xl"
+    }) }}
+{% endblock %}
