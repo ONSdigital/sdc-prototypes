@@ -1,5 +1,5 @@
 ---
-version: 4.1.0
+version: 7.0.0
 layout: census-website/views/_master
 ---
 
@@ -15,27 +15,30 @@ layout: census-website/views/_master
     <div class="grid">
         <div class="grid__col u-mb-l">
             <main id="main-content" class="{{ pageClasses }}">
-                <div class="container">
-                    <div class="col-8@m">
-                        {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
-                        {{ 
-                            onsBreadcrumb({
-                                "ariaLabel": 'Breadcrumb',
-                                "itemsList": [
-                                    {
-                                        "url": 'index.html',
-                                        "text": 'Home'
-                                    },
-                                    {
-                                        "url": '',
-                                        "text": 'About the census',
-                                        "current": true
+                <div class="intro--banner u-pb-m">
+                    <div class="container">
+                        <div class="col-8@m">
+                            {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+                            {{ 
+                                onsBreadcrumb({
+                                    "ariaLabel": 'Breadcrumb',
+                                    "itemsList": [
+                                        {
+                                            "url": 'index.html',
+                                            "text": 'Home'
+                                        },
+                                        {
+                                            "url": '',
+                                            "text": 'About the census',
+                                            "current": true
 
-                                    }
-                                ]
-                            }) 
-                        }}
-                        <h1>About the census</h1>
+                                        }
+                                    ]
+                                }) 
+                            }}
+                            <h1>About the census</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="container">
@@ -44,7 +47,7 @@ layout: census-website/views/_master
                         {{-
                             onsCard({
                                 "title": 'What is the census?',
-                                "url": 'what-is-the-census.html',
+                                "url": 'what-is-the-census',
                                 "text": 'description' 
                               
                             })
@@ -54,9 +57,9 @@ layout: census-website/views/_master
                         {{- 
                             onsCard({
                                 "classes": 'u-fs-r',
-                                "title": 'Who needs to take part',
-                                "url": 'who-needs-to-take-part.html',
-                                "text": 'Who we are asking to participate in the rehearsal and why'
+                                "title": 'The 2019 rehearsal',
+                                "url": '#',
+                                "text": 'Who we are asking to participate in a rehearsal and why'
                             })
                         }}
                     </div>
@@ -70,22 +73,22 @@ layout: census-website/views/_master
                     </div>
                     
                     </div>
-                    <div class="grid grid--flex grid--column@xs@s u-mt-l u-mb-l">
+                    <div class="grid grid--flex grid--column@xs@s u-mt-l u-mb-l">  
                     <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
                         {{-
                             onsCard({
-                                "title": 'Get help to complete your census',
+                                "title": 'The census laws',
                                 "url": '#',
-                                "text": 'The most accurate and greographical dataset of addresses and properties in the UK.'
+                                "text": ''
                             })
                         }}
-                    </div>
+                    </div> 
                     <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
                         {{-
                             onsCard({
                                 "title": 'Privacy, security and confidentiality',
                                 "url": '#',
-                                "text": 'The most accurate and greographical dataset of addresses and properties in the UK.'
+                                "text": 'description'
                             })
                         }}
                     </div>

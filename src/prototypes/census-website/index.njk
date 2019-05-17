@@ -1,7 +1,5 @@
 ---
-group: Census Website
-title: Individual response journey
-version: 4.1.0
+version: 7.0.0
 layout: census-website/views/_master
 ---
 
@@ -27,8 +25,38 @@ layout: census-website/views/_master
                     </div>    
             </main>  <!--Main Banner end-->
 
-            <div class="container">
-                    <div class="grid grid--flex grid--column@xs@s u-mt-l">
+        <div class="container">
+                <div class="grid grid--flex grid--column@xs@s u-mt-l">
+                    <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
+                        {{-
+                            onsCard({
+                                "title": 'What is the census?',
+                                "url": '/prototypes/census-website/what-is-the-census',
+                                "text": 'About the census' 
+                              
+                            })
+                        }}
+                    </div>
+                    <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
+                        {{- 
+                            onsCard({
+                                "title": 'Who needs to take part',
+                                "url": '#',
+                                "text": 'Who we are asking to participate in the rehearsal and why'
+                            })
+                        }}
+                    </div>
+                    <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
+                        {{-
+                            onsCard({
+                                "title": 'Request an access code or paper form',
+                                "url": '#',
+                                "text": 'The most accurate and greographical dataset of addresses and properties in the UK.'
+                            })
+                        }}
+                    </div>
+                    </div>
+                    <div class="grid grid--flex grid--column@xs@s u-mt-l u-mb-l">
                         <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
                             {{-
                                 onsCard({
