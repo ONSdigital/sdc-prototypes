@@ -1,0 +1,32 @@
+---
+title: Access code sent to mobile number
+group: Census
+version: 7.0.0
+layout: rh-census/views/_master
+---
+{% from "prototypes/rh-census/components/uac-entry/_macro.njk" import onsUACEntry %}
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action": "/prototypes/rh-census/"
+    }
+} %}
+
+{% block main %}
+    <h1 class="u-mt-l">We have sent the access code to</h1>
+
+    <p>example@example.co.uk</p>
+    <p>An email with the code should arrive shortly. Once you get the code, you can begin completing the survey.</p>
+
+    {{ onsButton({
+        "text": "Start survey",
+        "classes": "u-mb-xl"
+    }) }}
+
+    <h2 class="u-fs-r--b u-mb-no">Not received your code?</h2>
+    <p>
+        <a href="/prototypes/rh-census/confirm-email-address.html">Send a new code</a>
+    </p>
+{% endblock %}

@@ -1,0 +1,61 @@
+---
+title: Confirm email address
+group: Census
+version: 7.0.0
+layout: rh-census/views/_master
+---
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "prototypes/rh-census/components/uac-entry/_macro.njk" import onsUACEntry %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action": "/prototypes/rh-census/code-sent-email-address.html"
+    }
+} %}
+
+{% block main %}
+    <a class="previous-link js-previous" href="{{ pageInfo.parentPath }}">Previous</a>
+    {% call onsQuestion({
+        "title": "Can you confirm this email address is correct?",
+        "useFieldset": true
+    }) %}
+
+    <p>
+        example@example.co.uk
+    </p>
+
+    {% from "components/radios/_macro.njk" import onsRadios %}
+    {{ 
+        onsRadios({
+            "name": "confirm",
+            "radios": [
+                {
+                    "id": "yes",
+                    "label": {
+                        "text": "Yes, send the email now"
+                    },
+                    "value": "yes"
+                },
+                {
+                    "id": "no",
+                    "label": {
+                        "text": "No, I need to change it"
+                    },
+                    "value": "no"
+                }
+            ]
+        }) 
+    }}
+    {% endcall %}
+
+    {{
+        onsButton({
+            "text": "Continue",
+            "classes": "u-mt-l"
+        })
+    }}
+
+{% endblock %}
