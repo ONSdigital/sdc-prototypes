@@ -1,17 +1,18 @@
 ---
-version: 0.5.0
-layout: address-lookup/views/_master
+version: 5.0.1
+layout: typeaheads/views/_master
 ---
 {% from "components/button/_macro.njk" import onsButton %}
 
-{% block content %}
-    <a class="previous-link js-previous" href="{{ pageInfo.parentPath }}/work-address.html">Previous</a>
+{% block main %}
+    <a class="previous-link js-previous" href="{{ pageInfo.parentPath }}/employment-status.html">Previous</a>
     <form action="/">
         <h1 class="u-fs-l u-mt-s">Your answers</h1>
         <div class="js-summary"></div>
         {{
             onsButton({
-                "text": "Continue"
+                "text": "Continue",
+                "classes": "u-mt-m"
             })
         }}
     </form>

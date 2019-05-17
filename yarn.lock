@@ -716,11 +716,16 @@
     normalize-scss "^7.0.1"
     throttle-typescript "^1.0.1"
     whatwg-fetch "^3.0.0"
-
+    
 "@ons/design-system/4.1.0@npm:@ons/design-system@4.1.0":
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-4.1.0.tgz#3d8c5c09642ee90bee5b6fc2d5b509b59b245491"
   integrity sha512-HtKHQsJ8hYwJHutFg2TaxkE3vblq01mlrA5IQtN+ywCsJJVb4+xb/K1T8+ZhLqVbVOgkJFxnYBEGc/lZmMS/kw==
+
+"@ons/design-system/5.0.1@npm:@ons/design-system@5.0.1":
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-5.0.1.tgz#1ee1a88d951931ae95069a2e07a3bc177d6b6e80"
+  integrity sha512-W3MTv8/m2k4lxuQHeo69UUIawOxhQdrsO65S1fDwPTVjVRJ9pfJAcTnM8za+vXHeLkdQHnvAcuhAGGvrWunriA==
 
 "@ons/design-system/7.0.0@npm:@ons/design-system@7.0.0":
   version "7.0.0"
@@ -6908,6 +6913,11 @@ querystring-es3@^0.2.0:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/querystring-es3/-/querystring-es3-0.2.1.tgz#9ec61f79049875707d69414596fd907a4d711e73"
   integrity sha1-nsYfeQSYdXB9aUFFlv2Qek1xHnM=
+
+querystring-helpers@^1.0.0:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/querystring-helpers/-/querystring-helpers-1.0.2.tgz#842cabff87f528806ca2adf5e97d5a68803760be"
+  integrity sha512-zV250WE7oaT4c9CqYZ+f+Jnloco4z3s77Ib0YK7TfSslAVhU6jFyE0NXCptB9jElIU5YXuDjTrrxm/kg2NMs6g==
 
 querystring@0.2.0:
   version "0.2.0"
