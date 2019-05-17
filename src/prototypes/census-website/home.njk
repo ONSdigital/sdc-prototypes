@@ -1,5 +1,5 @@
 ---
-group: Census
+group: Census Website
 title: Individual response journey
 version: 4.1.0
 layout: census-website/views/_master
@@ -20,12 +20,12 @@ layout: census-website/views/_master
                                     "ariaLabel": 'Breadcrumb',
                                     "itemsList": [
                                         {
-                                            "url": '/prototypes/census-website/',
+                                            "url": '/index.html',
                                             "text": 'Home'
                                         },
                                         {
                                             "url": '',
-                                            "text": 'Taking part in the census rehearsal',
+                                            "text": 'Taking part in the census',
                                             "current": true
 
                                         }
@@ -33,7 +33,7 @@ layout: census-website/views/_master
                                 }) 
                             }}
 
-                            <h1>Taking part in the census rehearsal</h1>
+                            <h1>Taking part in the census</h1>
                             <p>If you live in <a href="#">one of the selected rehearsal areas</a>, you should have received a letter from the ONS with a unique code to access your rehearsal questionnaire.</p>
                             
                             <!--NEW PANEL CTA STYLE-->
@@ -50,10 +50,10 @@ layout: census-website/views/_master
                 <div class="container">
                 <div class="grid grid--flex grid--column@xs@s u-mt-l">
                     <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
-                        {{-                            
+                        {{-
                             onsCard({
                                 "title": 'What is the census rehearsal?',
-                                "url": '#',
+                                "url": 'census-website/about-the-census.html',
                                 "text": 'About the census rehearsal' 
                               
                             })
@@ -62,9 +62,8 @@ layout: census-website/views/_master
                     <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
                         {{- 
                             onsCard({
-                                "classes": 'u-fs-r',
                                 "title": 'Who needs to take part',
-                                "url": 'who-needs-to-take-part.html',
+                                "url": '#',
                                 "text": 'Who we are asking to participate in the rehearsal and why'
                             })
                         }}

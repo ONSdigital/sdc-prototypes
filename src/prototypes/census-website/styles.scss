@@ -48,7 +48,7 @@ border: none;
   background-color:purple;
   text-align: center;
   cursor: pointer;
-  font-size: 30px;
+  font-size: 1.2rem;
 }
 
 .hero-text button:hover {
@@ -67,6 +67,26 @@ border: none;
 }
 .hero--header{
   font-size:50px;
+}
+
+
+/* Overrides for headings issue: https://github.com/ONSdigital/design-system/issues/371 */
+#main-content h1 {
+    font-size: 1.55555556rem; 
+}
+#main-content h2 {
+    font-size: 1.222222rem;
+}
+#main-content h3 {
+  font-size: 1rem;
+}
+
+.card h3 {
+  font-size: 1.222rem!important; /* Removed after next release of design system v7 */
+}
+
+#main-content .hero-image h1 {
+  font-size: 2rem;
 }
 
 @media only screen and (max-width: 600px) {

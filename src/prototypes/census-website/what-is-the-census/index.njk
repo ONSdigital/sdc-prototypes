@@ -1,0 +1,77 @@
+---
+version: 4.1.0
+layout: census-website/views/_master
+---
+
+{% from "components/card/_macro.njk" import onsCard %}
+
+{% block page %}
+<div class="page__container container {{ containerClasses }}">
+        {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+                                {{ 
+                                    onsBreadcrumb({
+                                        "ariaLabel": 'Breadcrumb',
+                                        "itemsList": [
+                                            {
+                                                "url": 'index.html',
+                                                "text": 'Home'
+                                            },
+                                            {
+                                                "url": 'about-the-census.html',
+                                                "text": 'About the census'
+                                            },                                            
+                                            {
+                                                "url": '',
+                                                "text": 'What is the census?',
+                                                "current": true                                                
+
+                                            }
+                                        ]
+                                    }) 
+                                }}
+                                <div class="grid">
+                <div class="grid__col col-7@m">
+                    <main id="main-content" class=" {{ pageClasses }}">
+                                <h1 class="u-mb-l u-fs-l">What is the census?</h1>
+                                <div class="u-mb-xs" style="font-weight:bold;">Contents</div>
+                                <ul class="list list--bare">
+                                    <li>— Overview</li>
+                                    <li>— <a href="what-is-the-census/why-we-need-a-census.html">Why we need a census</a></li>
+                                    <li>— <a href="#">What the census is for</a></li>
+                                    <li>— <a href="#">How your information is used</a></li>
+                                </ul>
+                                <div class="u-mt-l">
+                                     <hr class="footer__hr" style="margin-bottom: 0;">
+                                </div>
+                                </div>
+                                </main>
+
+                        <div class="grid__col col-7@m u-mt-s">
+                    <main id="main-content" class=" {{ pageClasses }}">
+                        <p>The census is a count of people and housing in England and Wales. It helps councils and governments make decisions about how to share public money and where to spend it.</p>
+                        <p>Information from the census helps to show where we need things like hospital beds, doctors’ surgeries, and support for the elderly and vulnerable. It also helps plan for schools, bus routes, new roads and investment in jobs. Census information affects how our government looks after its population.</p> 
+                    </main>
+                </div>
+                <div class="grid__col col-4@m push-1@m">
+                    <div style="border-top:5px solid purple;padding:15px 0;">
+                        <h3>Related content</h3>
+                            <ul class="list list--bare">
+                                <li><a href="#">About the census</a></li>
+                                <li><a href="#">What we ask you</a></li>
+                                <li><a href="#">Help and support</a></li>
+                                <li><a href="#">Contact us</a></li>
+                            </ul>
+                        <div class="u-mb-m">
+                            <hr class="footer__hr">
+                        </div>
+                        <div class="card card-cta">
+                            <h3 class="u-fs-m u-mb-xs">
+                                Ready to take part?
+                            </h3>
+                            <a href="#" style="font-size:2.2em; font-weight:bold;line-height: 1.3em;color:white;text-decoration:underline;cursor:pointer;">Start your census survey</a>
+                        </div>
+                    </div>
+                </div>
+        </div>
+</div>
+{% endblock %}
