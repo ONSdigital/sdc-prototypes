@@ -1,0 +1,41 @@
+---
+title: Respondent Home
+group: Census
+version: 7.0.0
+layout: rh-census/views/_master
+---
+{% from "prototypes/rh-census/components/uac-entry/_macro.njk" import onsUACEntry %}
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action": "https://deploy-preview-137--eq-prototypes.netlify.com/your-household-v12/confirm-address/"
+    }
+} %}
+
+{% block main %}
+    <h1 class="u-mt-l">Enter your code to access the Census</h1>
+
+    {{ onsUACEntry({
+        "id": "uac",
+        "name": "uac",
+        "label": {
+            "text": "Enter your code",
+            "description": "The 16 character code is printed on the letter"
+        }
+    }) }}
+
+    <p class="u-mt-m"><span class="icon--lock"></span>Your personal information is protected by law and will be kept confidential</p>
+
+    {{ onsButton({
+        "text": "Submit code",
+        "classes": "u-mb-xl"
+    }) }}
+
+    <h2 class="u-fs-r--b u-mb-no">Don't have a code?</h2>
+    <p>
+        You can request a new code if you have lost, forgotten or not recieved an access code.<br>
+        <a href="#">Request a new code to start a new survey</a>
+    </p>
+{% endblock %}
