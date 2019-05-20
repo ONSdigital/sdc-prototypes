@@ -11,12 +11,12 @@ layout: relationships/views/_master
 {% set form =  {
     "method": "GET",
     "attributes": {
-        "action": "/prototypes/relationships/does-anyone-else-live-here.html"
+        "action": pageInfo.parentPath + "/does-anyone-else-live-here.html"
     }
 } %}
 
 {% block main %}
-    <a href="/prototypes/does-anyone-else-live-here.html">Previous</a>
+    <a href="{{ pageInfo.parentPath }}/does-anyone-else-live-here.html">Previous</a>
     {% call onsQuestion({
         "title": "Who else do you need to add to 2 Example Address?",
         "useFieldset": true,
@@ -44,7 +44,9 @@ layout: relationships/views/_master
         }) }}
     {% endcall %}
 
-    <a href="/prototypes/does-anyone-else-live-here.html">Cancel and return to previous question</a>
+    <p class="u-mt-s">
+        <a href="{{ pageInfo.parentPath }}/does-anyone-else-live-here.html">Cancel and return to previous question</a>
+    </p>
 
     {{ onsButton({
         "text": "Continue",

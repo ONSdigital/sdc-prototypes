@@ -11,12 +11,12 @@ layout: relationships/views/_master
 {% set form =  {
     "method": "GET",
     "attributes": {
-        "action": "/prototypes/relationships/does-anyone-else-live-here.html"
+        "action": pageInfo.parentPath + "/does-anyone-else-live-here.html"
     }
 } %}
 
 {% block main %}
-    <a href="/prototypes/relationships">Previous</a>
+    <a href="{{ pageInfo.parentPath }}">Previous</a>
     {% call onsQuestion({
         "title": "What is your name?",
         "useFieldset": true,

@@ -1,5 +1,5 @@
 import { getQueryStringParams } from 'querystring-helpers';
-import UUID from 'uuid/v5';
+import UUID from 'uuid/v4';
 import { sortBy } from 'sort-by-typescript';
 
 class Person {
@@ -18,7 +18,7 @@ class Person {
     const params = getQueryStringParams();
 
     if (params.person_id) {
-      this.person = this.getPeople().filter(person => person.id === params.person_id);
+      this.person = this.people.find(person => person.id === params.person_id);
 
       this.inputs.forEach(input => {
         input.value = this.person[input.id];
@@ -29,7 +29,7 @@ class Person {
   handleSubmit() {
     if (!this.person) {
       this.person = {
-        id: UUID.URL,
+        id: UUID(),
         sort_order: this.people.length,
         is_you: this.isYou
       };

@@ -8,8 +8,15 @@ layout: relationships/views/_master
 {% from "components/button/_macro.njk" import onsButton %}
 {% from "components/radios/_macro.njk" import onsRadios %}
 
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.parentPath + "/relationships-intro.html"
+    }
+} %}
+
 {% block main %}
-    <a href="/prototypes/relationships/your-name.html">Previous</a>
+    <a href="{{ pageInfo.parentPath }}/your-name.html">Previous</a>
     {% call onsQuestion({
         "title": "Does anyone else live at 2 Example Address?",
         "useFieldset": true
@@ -20,6 +27,7 @@ layout: relationships/views/_master
             "noField": true,
             "id": "does-anyone-else-live-here",
             "name": "does-anyone-else-live-here",
+            "classes": "js-people-check",
             "radios": [
                 {
                     "id": "yes",
@@ -27,6 +35,9 @@ layout: relationships/views/_master
                         "text": "Yes, I need to add a second person",
                         "description": "Include partners, children, babies born on or before 3 February 2019, housemates, tenants and lodgers, students and schoolchildren who live away from home during term time, where this is their permanent or family home",
                         "classes": "js-another-person"
+                    },
+                    "attributes": {
+                        "data-action": pageInfo.parentPath + "/who-else.html"
                     }
                 },
                 {

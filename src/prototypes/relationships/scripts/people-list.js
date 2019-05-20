@@ -1,5 +1,7 @@
 import template from '!nunjucks-loader!../views/partials/_people-list.njk';
 
+import { buildQueryStringParams } from 'querystring-helpers';
+
 class PeopleList {
   constructor(context) {
     this.context = context;
@@ -11,15 +13,11 @@ class PeopleList {
 
   render() {
     const params = {
+      classes: 'u-mb-s',
       rows: this.people.map(this.mapPerson.bind(this))
     };
 
-    console.log(params);
-
-    console.log(template);
-
-    const html = template.render(params);
-
+    this.context.innerHTML = template.render({ params });
   }
 
   mapPerson(person) {
@@ -40,7 +38,7 @@ class PeopleList {
             {
               text: 'Change',
               ariaLabel: `Change details for ${person.display_name}`,
-              url: `/prototypes/relationships/${url}.html?person_id=${person.id}`
+              url: `/prototypes/relationships/${url}.html${buildQueryStringParams({ person_id: person.id, previous: window.location.pathname, action: window.location.pathname })}`
             }
           ]
         }
