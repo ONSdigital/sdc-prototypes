@@ -17,18 +17,18 @@ layout: typeaheads/views/_master
                     {
                         "id": "a",
                         "label": {
-                            "text": "African"
+                            "text": "African",
+                            "description": "You can enter this on the next question"
                         },
-                        "name": "a"
-                       
+                        "attributes": {
+                            "data-action-url": pageInfo.parentPath + "/ethnic-group-african-other.html"
+                        }
                     },
                     {
                         "id": "b",
                         "label": {
                             "text": "Caribbean"
-                        },
-                        "name": "b"
-                       
+                        }
                     },
                     {
                         "id": "other",
@@ -36,7 +36,6 @@ layout: typeaheads/views/_master
                             "text": "Any other Black, African or Caribbean background",
                             "description": "You can enter this on the next question"
                         },
-                        "name": "other",
                         "attributes": {
                             "data-action-url": pageInfo.parentPath + "/ethnic-group-black-other.html"
                         }
