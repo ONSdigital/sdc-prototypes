@@ -8,7 +8,7 @@ layout: typeaheads/views/_master
 {% block main %}
     <a class="previous-link js-previous" href="{{ pageInfo.parentPath }}/passport.html">Previous</a>
     <form action="{{ pageInfo.parentPath }}/national-identity.html?previous={{ pageInfo.path }}.html">
-        <h1 class="u-fs-l u-mt-s">You selected “Other”. What other passports do you hold?</h1>
+        <h1 class="u-fs-l u-mt-s">What other passports do you hold?</h1>
         {{
             prototypeTypeahead({
                 "id": "passport-other",

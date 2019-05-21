@@ -8,7 +8,7 @@ layout: typeaheads/views/_master
 {% block main %}
     <a class="previous-link js-previous" href="{{ pageInfo.parentPath }}/one-year-ago-address.html">Previous</a>
     <form action="{{ pageInfo.parentPath }}/one-year-ago-outside-address-type.html">
-        <h1 class="u-fs-l u-mt-s">You selected “Another address outside the UK”. In which country outside of the UK was your usual address one year ago?</h1>
+        <h1 class="u-fs-l u-mt-s">In which country outside of the UK was your usual address one year ago?</h1>
         {{
             prototypeTypeahead({
                 "id": "address-country",
