@@ -9,12 +9,14 @@ const classTypeaheadInput = 'js-typeahead-input';
 const classTypeaheadInstructions = 'js-typeahead-instructions';
 const classTypeaheadListbox = 'js-typeahead-listbox';
 const classTypeaheadAriaStatus = 'js-typeahead-aria-status';
+const classTypeaheadErrorPanel = 'js-typeahead-error-panel';
 
 const classTypeaheadOption = 'typeahead__option';
 const classTypeaheadOptionFocused = `${classTypeaheadOption}--focused`;
 const classTypeaheadOptionNoResults = `${classTypeaheadOption}--no-results u-fs-s`;
 const classTypeaheadOptionMoreResults = `${classTypeaheadOption}--more-results u-fs-s`;
 const classTypeaheadHasResults = 'typeahead--has-results';
+const classPanelOff = 'panel--off';
 
 const KEYCODE = {
   BACK_SPACE: 8,
@@ -29,7 +31,7 @@ const KEYCODE = {
 };
 
 export default class TypeaheadCore {
-  constructor({ context, apiUrl, onSelect, onUnsetResult, onError, minChars, resultLimit, sanitisedQueryReplaceChars = [], suggestionFunction }) {
+  constructor({ context, apiUrl, onSelect, onUnsetResult, onError, minChars, resultLimit, sanitisedQueryReplaceChars = [], suggestionFunction, suggestOnBoot }) {
     // DOM Elements
     this.context = context;
     this.label = context.querySelector(`.${classTypeaheadLabel}`);
@@ -37,6 +39,7 @@ export default class TypeaheadCore {
     this.listbox = context.querySelector(`.${classTypeaheadListbox}`);
     this.instructions = context.querySelector(`.${classTypeaheadInstructions}`);
     this.ariaStatus = context.querySelector(`.${classTypeaheadAriaStatus}`);
+    this.errorPanel = context.querySelector(`.${classTypeaheadErrorPanel}`);
 
     // Suggestion URL
     this.apiUrl = apiUrl || context.getAttribute('data-api-url');
@@ -51,6 +54,7 @@ export default class TypeaheadCore {
     this.listboxId = this.listbox.getAttribute('id');
     this.minChars = minChars || 2;
     this.resultLimit = resultLimit || null;
+    this.suggestOnBoot = suggestOnBoot;
 
     if (suggestionFunction) {
       this.fetchSuggestions = suggestionFunction;
@@ -89,6 +93,10 @@ export default class TypeaheadCore {
 
     // Bind event listeners
     this.bindEventListeners();
+
+    if (this.suggestOnBoot) {
+      this.handleChange();
+    }
   }
 
   bindEventListeners() {
@@ -460,6 +468,12 @@ export default class TypeaheadCore {
       return `${before}<em>${match}</em>${after}`;
     } else {
       return string;
+    }
+  }
+
+  showErrorPanel() {
+    if (this.errorPanel) {
+      this.errorPanel.classList.remove(classPanelOff);
     }
   }
 }

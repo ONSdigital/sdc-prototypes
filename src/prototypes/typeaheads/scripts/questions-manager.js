@@ -79,105 +79,108 @@ class QuestionManager {
 
     // Wait until next event loop cycle to allow any modifications to the form to complete
     setTimeout(() => {
-      if (this.form.action === `${window.location.origin}/`) {
-        this.clearFormData();
-      } else {
-        let question = {
-          title: this.title,
-          legend: this.legend,
-          inputs: [],
-          previousURL: this.previousURL,
-          originalPreviousURL: this.originalPreviousURL,
-          url: this.url,
-          hideFromSummary: this.hideFromSummary
-        };
-
-        let action, originalAction;
-
-        this.inputs.forEach(input => {
-          const checked = input.checked;
-          let value;
-
-          const id = input.id;
-          const labelElement = document.querySelector(`label[for="${id}"]`);
-
-          let label, isTypeahead;
-
-          if (labelElement) {
-            label = [...labelElement.childNodes].filter(node => node.nodeType === 3 && node.textContent.trim())[0].textContent.trim();
-          }
-
-          switch (input.type) {
-            case 'checkbox':
-            case 'radio': {
-              const inputAction = input.getAttribute('data-action-url');
-
-              if (checked) {
-                value = input.value || label;
-
-                if (inputAction) {
-                  originalAction = this.form.getAttribute('data-original-action') || this.form.getAttribute('action');
-                  action = inputAction;
-                  this.addAnswer(inputAction);
-                } else {
-                  this.addAnswer(this.form.action);
-                }
-              } else {
-                if (inputAction && inputAction !== this.previousURL) {
-                  this.removeAnswer(inputAction);
-                }
-              }
-              break;
-            }
-            default: {
-              value = input.value;
-
-              isTypeahead = input.classList.contains('js-typeahead-input');
-            }
-          }
-
-          question.inputs.push({
-            id: input.id,
-            value,
-            checked,
-            label,
-            isTypeahead
-          });
-        });
-
-        question = {
-          ...question,
-          action: this.form.action
-        };
-
-        if (originalAction) {
-          this.form.setAttribute('data-original-action', originalAction);
-          this.form.action = action;
-          question.originalAction = originalAction;
-        } else if (!action && this.form.hasAttribute('data-original-action')) {
-          this.form.action = this.form.getAttribute('data-original-action');
-          this.form.removeAttribute('data-original-action');
-        }
-
-        if (this.form.action.replace(window.location.origin, '') !== this.previousURL) {
-          window.sessionStorage.setItem(this.url, JSON.stringify(question));
-        }
-      }
-
-      const isEditing = new URLSearchParams(window.location.search).get('edit');
-
-      if (isEditing) {
-        const key = getBaseURL(this.form.action).replace(window.location.origin, '');
-
-        if (sessionStorage.getItem(key)) {
-          window.location = `${this.rootURL}/summary.html`;
+      if (!window.DONT_SUBMIT) {
+        if (this.form.action === `${window.location.origin}/`) {
+          this.clearFormData();
         } else {
-          window.location = setQueryStringParams({ edit: true }, this.form.action);
+          let question = {
+            title: this.title,
+            legend: this.legend,
+            inputs: [],
+            previousURL: this.previousURL,
+            originalPreviousURL: this.originalPreviousURL,
+            url: this.url,
+            hideFromSummary: this.hideFromSummary
+          };
+
+          let action, originalAction;
+
+          this.inputs.forEach(input => {
+            const checked = input.checked;
+            let value;
+
+            const id = input.id;
+            const labelElement = document.querySelector(`label[for="${id}"]`);
+
+            let label, isTypeahead;
+
+            if (labelElement) {
+              label = [...labelElement.childNodes].filter(node => node.nodeType === 3 && node.textContent.trim())[0].textContent.trim();
+            }
+
+            switch (input.type) {
+              case 'checkbox':
+              case 'radio': {
+                const inputAction = input.getAttribute('data-action-url');
+
+                if (checked) {
+                  value = input.value || label;
+
+                  if (inputAction) {
+                    originalAction = this.form.getAttribute('data-original-action') || this.form.getAttribute('action');
+                    action = inputAction;
+                    this.addAnswer(inputAction);
+                  } else {
+                    this.addAnswer(this.form.action);
+                  }
+                } else {
+                  if (inputAction && inputAction !== this.previousURL) {
+                    this.removeAnswer(inputAction);
+                  }
+                }
+                break;
+              }
+              default: {
+                value = input.value;
+
+                isTypeahead = input.classList.contains('js-typeahead-input');
+              }
+            }
+
+            question.inputs.push({
+              id: input.id,
+              value,
+              checked,
+              label,
+              isTypeahead
+            });
+          });
+
+          question = {
+            ...question,
+            action: this.form.action
+          };
+
+          if (originalAction) {
+            this.form.setAttribute('data-original-action', originalAction);
+            this.form.action = action;
+            question.originalAction = originalAction;
+          } else if (!action && this.form.hasAttribute('data-original-action')) {
+            this.form.action = this.form.getAttribute('data-original-action');
+            this.form.removeAttribute('data-original-action');
+          }
+
+          if (this.form.action.replace(window.location.origin, '') !== this.previousURL) {
+            window.sessionStorage.setItem(this.url, JSON.stringify(question));
+          }
         }
-      } else {
-        window.location = this.form.action;
+
+        const isEditing = new URLSearchParams(window.location.search).get('edit');
+
+        if (isEditing) {
+          const key = getBaseURL(this.form.action).replace(window.location.origin, '');
+
+          if (sessionStorage.getItem(key)) {
+            window.location = `${this.rootURL}/summary.html`;
+          } else {
+            window.location = setQueryStringParams({ edit: true }, this.form.action);
+          }
+        } else {
+          window.location = this.form.action;
+        }
       }
     });
+    
   }
 
   clearFormData() {
