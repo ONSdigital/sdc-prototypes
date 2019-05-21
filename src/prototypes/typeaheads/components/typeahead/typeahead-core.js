@@ -146,8 +146,10 @@ export default class TypeaheadCore {
   }
 
   handleChange() {
-    if (!this.blurring) {
+    if (!this.blurring && this.input.value.trim()) {
       this.getSuggestions();
+    } else {
+      this.abortFetch();
     }
   }
 
@@ -231,9 +233,7 @@ export default class TypeaheadCore {
         lang: this.lang
       };
 
-      if (this.fetch && this.fetch.status !== 'DONE') {
-        this.fetch.abort();
-      }
+      this.abortFetch();
 
       const body = formBodyFromObject(query);
 
@@ -275,6 +275,12 @@ export default class TypeaheadCore {
         })
         .catch(reject);
     });
+  }
+
+  abortFetch() {
+    if (this.fetch && this.fetch.status !== 'DONE') {
+      this.fetch.abort();
+    }
   }
 
   unsetResults() {
@@ -349,10 +355,8 @@ export default class TypeaheadCore {
 
         this.setHighlightedResult(null);
 
-        if (this.numberOfResults || this.content.no_results) {
-          this.context.classList.add(classTypeaheadHasResults);
-          this.input.setAttribute('aria-expanded', true);
-        }
+        this.input.setAttribute('aria-expanded', this.numberOfResults);
+        this.context.classList[this.numberOfResults ? 'add' : 'remove'](classTypeaheadHasResults);
       }
     }
 
