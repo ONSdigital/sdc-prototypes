@@ -47,9 +47,10 @@ class AddressInput {
     this.fetch = null;
     this.currentResults = [];
     this.errored = false;
+    this.addressSelected = false;
 
     // Initialise typeahead
-    this.typeahead = new  TypeaheadCore({
+    this.typeahead = new TypeaheadCore({
       context: context.querySelector(`.${classTypeahead}`),
       onSelect: this.onAddressSelect.bind(this),
       onUnsetResult: this.onUnsetAddress.bind(this),
@@ -57,7 +58,8 @@ class AddressInput {
       onError: this.onError.bind(this),
       sanitisedQueryReplaceChars: addressReplaceChars,
       resultLimit: 10,
-      minChars: 2
+      minChars: 2,
+      suggestOnBoot: true
     });
 
     this.searchButtonContainer.classList.remove('u-d-no');
@@ -65,6 +67,10 @@ class AddressInput {
     // Bind Event Listeners
     this.searchButton.addEventListener('click', this.toggleMode.bind(this));
     this.manualButton.addEventListener('click', this.toggleMode.bind(this));
+
+    if (this.form) {
+      this.form.addEventListener('submit', this.handleSubmit.bind(this));
+    }
 
     if (!(this.line1.value || this.line2.value || this.town.value || this.county.value || this.county.value)) {
       this.toggleMode();
@@ -251,6 +257,8 @@ class AddressInput {
    
     this.triggerManualInputsChanges();
 
+    this.addressSelected = true;
+
     resolve();
   }
 
@@ -262,6 +270,8 @@ class AddressInput {
     if (triggerChange) {
       this.triggerManualInputsChanges();
     }
+
+    this.addressSelected = false;
   }
 
   triggerManualInputsChanges() {
@@ -282,12 +292,26 @@ class AddressInput {
       this.errored = true;
 
       setTimeout(() => {
-        alert('There was error looking up your address. Please enter your address manually');
+        alert('There was error looking up your address. Enter your address manually');
 
         this.setManualMode(true);
 
         this.errored = false;
       });
+    }
+  }
+
+  handleSubmit(event) {
+    if(!this.manualMode && this.typeahead.input.value.trim() && !this.addressSelected) {
+      event.preventDefault();
+
+      window.DONT_SUBMIT = true;
+
+      this.typeahead.showErrorPanel();
+      this.typeahead.setAriaStatus('There is an error. Select an address to continue.');
+      console.log('YES')
+    } else {
+      window.DONT_SUBMIT = false;
     }
   }
 }
