@@ -19,16 +19,19 @@ layout: typeaheads/views/_master
                         "label": {
                             "text": "African"
                         },
-                        "name": "a"
-                       
+                        "other": {
+                            "id": "african",
+                            "name": "african",
+                            "label": {
+                                "text": "Please specify your African background"
+                            }
+                        }
                     },
                     {
                         "id": "b",
                         "label": {
                             "text": "Caribbean"
-                        },
-                        "name": "b"
-                       
+                        }
                     },
                     {
                         "id": "other",
@@ -36,7 +39,6 @@ layout: typeaheads/views/_master
                             "text": "Any other Black, African or Caribbean background",
                             "description": "You can enter this on the next question"
                         },
-                        "name": "other",
                         "attributes": {
                             "data-action-url": pageInfo.parentPath + "/ethnic-group-black-other.html"
                         }
