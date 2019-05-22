@@ -6,7 +6,7 @@ layout: census-website/views/_master
 ---
 
 {% from "components/card/_macro.njk" import onsCard %}
-
+{% from "components/button/_macro.njk" import onsButton %}
 {% block page %}
 <!--<div class="cta-banner">
     <div class="container">
@@ -20,8 +20,14 @@ layout: census-website/views/_master
                     <div class="hero-image" role="banner">
                         <div class="container">
                             <div class="hero-text">
-                                <h1 class="hero--header">Make it count</h1>
-                                <button type="button" class="btn">Take part in the Census rehearsal</button>
+                                <h1 class="hero--header">We count</h1>
+                                <p class="u-fs-r--b">Be counted in the census and make a difference to your future</p>
+                                <a href="#">link{{ 
+                                    onsButton({
+                                        "type": 'button',
+                                        "text": 'Start survey'
+                                    }) 
+                                }}</a>
                             </div>
                         </div>
                     </div>    
@@ -33,7 +39,7 @@ layout: census-website/views/_master
                         {{-
                             onsCard({
                                 "title": 'What is the census?',
-                                "url": '/prototypes/census-website/what-is-the-census',
+                                "url": '/prototypes/census-website/about-the-census/what-is-the-census',
                                 "text": 'About the census' 
                               
                             })

@@ -5,6 +5,8 @@ layout: census-website/views/_master
 
 {% from "components/card/_macro.njk" import onsCard %}
 
+
+
 {% block page %}
 <div class="page__container container {{ containerClasses }}">
         {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
@@ -18,13 +20,8 @@ layout: census-website/views/_master
                                             },
                                             {
                                                 "url": 'about-the-census.html',
-                                                "text": 'About the census'
-                                            },                                            
-                                            {
-                                                "url": '',
                                                 "text": 'What is the census?',
-                                                "current": true                                                
-
+                                                "current": true
                                             }
                                         ]
                                     }) 
@@ -32,7 +29,7 @@ layout: census-website/views/_master
                                 <div class="grid">
                 <div class="grid__col col-7@m">
                     <main id="main-content" class=" {{ pageClasses }}">
-                                <h1 class="u-mb-l u-fs-l">What is the census?</h1>
+                                <h1 class="u-mb-l u-fs-l">Why we need a census</h1>
                                 <div class="u-mb-xs" style="font-weight:bold;">Contents</div>
                                 <ul class="list list--bare">
                                     <li>— Overview</li>

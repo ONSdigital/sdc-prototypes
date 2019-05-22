@@ -7,6 +7,8 @@ layout: census-website/views/_master
 
 {% from "components/card/_macro.njk" import onsCard %}
 
+
+
 {% block page %}
 <div class="cta-banner">
     <div class="container">
@@ -17,7 +19,7 @@ layout: census-website/views/_master
     <div class="grid">
         <div class="grid__col u-mb-l">
             <main id="main-content" class="{{ pageClasses }}">
-                <div class="intro--banner u-pb-m">
+                <div>
                     <div class="container">
                         <div class="col-8@m">
                             {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
@@ -39,7 +41,6 @@ layout: census-website/views/_master
                                 }) 
                             }}
                             <h1>About the census</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                         </div>
                     </div>
                 </div>
@@ -49,8 +50,8 @@ layout: census-website/views/_master
                         {{-
                             onsCard({
                                 "title": 'What is the census?',
-                                "url": 'what-is-the-census',
-                                "text": 'description' 
+                                "url": 'about-the-census/what-is-the-census',
+                                "text": 'Why we need a census and how the data is used' 
                               
                             })
                         }}
@@ -59,19 +60,21 @@ layout: census-website/views/_master
                         {{- 
                             onsCard({
                                 "classes": 'u-fs-r',
-                                "title": 'The 2019 rehearsal',
+                                "title": 'About the rehearsal',
                                 "url": '#',
-                                "text": 'Who we are asking to participate in a rehearsal and why'
+                                "text": 'Why we need a rehearsal and when and where it will be happening'
                             })
                         }}
                     </div>
                     <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
-                        <div class="card card-cta">
-                        <h3 class="u-fs-m u-mb-xs">
-                            Ready to take part?
-                        </h3>
-                        <a href="#" style="font-size:2.2em; font-weight:bold;line-height: 1.3em;color:white;text-decoration:underline;cursor:pointer;">Start your census survey</a>
-                        </div>
+                        {{- 
+                            onsCard({
+                                "classes": 'u-fs-r',
+                                "title": 'Why we ask these questions',
+                                "url": '#',
+                                "text": 'Reasons why we ask particular questions in the census'
+                            })
+                        }}
                     </div>
                     
                     </div>
@@ -79,27 +82,27 @@ layout: census-website/views/_master
                     <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
                         {{-
                             onsCard({
-                                "title": 'The census laws',
+                                "title": 'The law',
                                 "url": '#',
-                                "text": ''
+                                "text": 'The census laws and legislation'
                             })
                         }}
                     </div> 
                     <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
                         {{-
                             onsCard({
-                                "title": 'Privacy, security and confidentiality',
+                                "title": 'Privacy and security',
                                 "url": '#',
-                                "text": 'description'
+                                "text": 'How your data is secured and stored'
                             })
                         }}
                     </div>
                     <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
                         {{-
                             onsCard({
-                                "title": 'Request an access code or paper form',
+                                "title": 'Confidentiality',
                                 "url": '#',
-                                "text": 'The most accurate and greographical dataset of addresses and properties in the UK.'
+                                "text": 'How we keep your private information confidential'
                             })
                         }}
                     </div>

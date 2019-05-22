@@ -12,6 +12,12 @@
   background: purple;
   color: white;
 }
+
+.card {
+  border:none;
+  padding:0;
+}
+
 .card-cta{
   background: purple;
   color: white;
@@ -47,22 +53,6 @@ min-height: 240px;
   color: white;
 }
 
-.hero-text button {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 15px 25px;
-  color: white;
-  background-color:purple;
-  text-align: center;
-  cursor: pointer;
-  font-size: 1.2rem;
-}
-
-.hero-text button:hover {
-  background-color: #555;
-  color: white;
-}
 
 .panel__body strong{
   width: 45px;

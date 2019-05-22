@@ -1,0 +1,120 @@
+---
+title: Campaign Website
+group: Census
+version: 7.0.0
+layout: census-website/views/_master
+---
+
+{% from "components/card/_macro.njk" import onsCard %}
+
+
+
+{% block page %}
+<div class="cta-banner">
+    <div class="container">
+        <a href=""#>Start your census rehearsal</a>
+    </div>
+</div>
+<div class="page__container {{ containerClasses }}">
+    <div class="grid">
+        <div class="grid__col u-mb-l">
+            <main id="main-content" class="{{ pageClasses }}">
+                <div>
+                    <div class="container">
+                        <div class="col-8@m">
+                            {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+                            {{ 
+                                onsBreadcrumb({
+                                    "ariaLabel": 'Breadcrumb',
+                                    "itemsList": [
+                                        {
+                                            "url": 'index.html',
+                                            "text": 'Home'
+                                        },
+                                        {
+                                            "url": '../about-the-census',
+                                            "text": 'About the census'
+                                        },
+                                        {
+                                            "url": '',
+                                            "text": 'What is the census?',
+                                            "current": true
+
+                                        }
+                                    ]
+                                }) 
+                            }}
+                            <h1>What is the census?</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                <div class="grid u-mt-l">
+                    <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
+                        {{-
+                            onsCard({
+                                "title": 'Why we need a census?',
+                                "url": 'what-is-the-census/why-we-need-a-census/',
+                                "text": '' 
+                              
+                            })
+                        }}
+                    </div>
+                    <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
+                        {{- 
+                            onsCard({
+                                "classes": 'u-fs-r',
+                                "title": 'Why is the census so important?',
+                                "url": '#',
+                                "text": ''
+                            })
+                        }}
+                    </div>
+                    <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
+                        {{- 
+                            onsCard({
+                                "classes": 'u-fs-r',
+                                "title": 'How old is the census?',
+                                "url": '#',
+                                "text": ''
+                            })
+                        }}
+                    </div>
+                    
+                    </div>
+                    <div class="grid">  
+                    <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
+                        {{-
+                            onsCard({
+                                "title": 'Do all countries have a census?',
+                                "url": '#',
+                                "text": ''
+                            })
+                        }}
+                    </div> 
+                    <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
+                        {{-
+                            onsCard({
+                                "title": 'Why we need a rehearsal',
+                                "url": '#',
+                                "text": ''
+                            })
+                        }}
+                    </div>
+                    <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
+                        {{-
+                            onsCard({
+                                "title": '',
+                                "url": '#',
+                                "text": ''
+                            })
+                        }}
+                    </div>
+                </div>
+                
+                </div>
+            </main>
+        </div>
+    </div>
+</div>
+{% endblock %}
