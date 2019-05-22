@@ -1,0 +1,72 @@
+---
+version: 7.0.0
+layout: census-website/views/_master
+---
+
+{% from "components/card/_macro.njk" import onsCard %}
+
+
+
+{% block page %}
+<div class="page__container container {{ containerClasses }}">
+    {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+    {{ 
+        onsBreadcrumb({
+            "ariaLabel": 'Breadcrumb',
+            "itemsList": [
+                {
+                    "url": '/prototypes/census-website/',
+                    "text": 'Home'
+                },
+                {
+                    "url": '/prototypes/census-website/about-the-census',
+                    "text": 'About the census'
+                },
+                {
+                    "url": '/prototypes/census-website/about-the-census/what-is-the-census',
+                    "text": 'What is the census?'
+                },
+                {
+                    "text": 'Do all countries have a census?',
+                    "current": true
+                }
+            ]
+        }) 
+    }}
+    <div class="grid">
+                <div class="grid__col col-7@m">
+                    <main id="main-content" class="{{ pageClasses }}">
+                        <h1 class="u-mb-l u-fs-l">Do all countries have a census?</h1>
+                        
+                    </main>
+                    <main id="main-content" class="u-mt-s u-mb-xl {{ pageClasses }}">
+                        <p>The census is how we count people and find out how they live. The information we collect helps to build a picture of our society.</p>
+                        <p>The UN recommends that countries hold a census at least once every 10 years. That’s what happens here in the United Kingdom, where we have three separate censuses:</p>
+                        <ul>
+                            <li>The England and Wales census is run by the <a href="">Office for National Statistics</a></li>
+                            <li>Northern Ireland’s census is run by the <a href="">Northern Ireland Statistics and Research Agency</a></li>
+                            <li>Scotland’s census is run by the <a href="">National Records for Scotland</a></li>
+                            
+                        </ul>
+                        </main>
+                </div>
+                <div class="grid__col col-4@m push-1@m">
+                    <div style="border-top:5px solid purple;padding:15px 0;">
+                        <h3>Related content</h3>
+                            <ul class="list list--bare">
+                                <li><a href="#">About the census</a></li>
+                                <li><a href="#">What we ask you</a></li>
+                                <li><a href="#">Help and support</a></li>
+                            </ul>
+                        <div class="u-mb-m">
+                            <hr class="footer__hr">
+                            <ul class="list list--bare">
+                                <li><a href="#">Contact us</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+        </div>
+</div>
+{% endblock %}

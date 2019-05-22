@@ -1,0 +1,115 @@
+---
+version: 7.0.0
+layout: census-website/views/_master
+---
+
+{% from "components/card/_macro.njk" import onsCard %}
+
+
+
+{% block page %}
+<div class="page__container container {{ containerClasses }}">
+    {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+    {{ 
+        onsBreadcrumb({
+            "ariaLabel": 'Breadcrumb',
+            "itemsList": [
+                {
+                    "url": '/prototypes/census-website/',
+                    "text": 'Home'
+                },
+                {
+                    "url": '/prototypes/census-website/about-the-census',
+                    "text": 'About the census'
+                },
+                {
+                    "url": '/prototypes/census-website/about-the-census/what-is-the-census',
+                    "text": 'What is the census?'
+                },
+                {
+                    "text": 'Why do we need a rehearsal?',
+                    "current": true
+                }
+            ]
+        }) 
+    }}
+    <div class="grid">
+                <div class="grid__col col-7@m">
+                    <main id="main-content" class="{{ pageClasses }}">
+                        <h1 class="u-mb-l u-fs-l">Why do we need a rehearsal?</h1>
+                        <div class="u-mb-xs" style="font-weight:bold;">FAQs</div>
+                        <ul class="list list--bare">
+                            <li>— <a href="#whats-the-2019-rehearsal-for">What’s the 2019 Rehearsal for?</a></li>
+                            <li>— <a href="#havent-i-already-done-a-survey-like-this">Haven’t I already done a survey like this?</a></li>
+                            <li>— <a href="#havent-you-already-done-a-census-test">Haven’t you already done a census test?</a></li>
+                            <li>— <a href="#why-do-you-need-a-rehearsal">After years of running censuses, why do you need a rehearsal?</a></li>
+                            <li>— <a href="#why-should-i-take-part">Why should I take part?</a></li>
+                            <li>— <a href="#do-i-have-to-do-it">Do I have to do the census rehearsal?</a></li>
+                            <li>— <a href="#what-happens-if-i-dont">What happens if I don't do it?</a></li>                        
+                            </ul>
+                        <div class="u-mt-l">
+                            <hr class="footer__hr" style="margin-bottom: 0;">
+                        </div>
+                    </main>
+                    <main id="main-content" class="u-mt-s u-mb-xl {{ pageClasses }}">
+                    <a name="whats-the-2019-rehearsal-for"></a>
+                    <h2>What’s the 2019 Rehearsal for?</h2>
+                        <p>We’re holding the 2019 Rehearsal in Carlisle, Ceredigion, Hackney and Tower Hamlets to make sure that the census in 2021 runs smoothly.</p>
+                        <p>The rehearsal helps us check that our plans work. The census is importantto the country, so we have to get it right. That’s why we test everything carefully.</p>
+                    <a name="havent-i-already-done-a-survey-like-this"></a>
+                    <h2>Haven’t I already done a survey like this?</h2>
+                        <p>You may have. We run the census in England and Wales. We also run somesocial and business surveys that you might have helped with. We do the Labour Force Survey, Household Assets Survey, and the Living Cost and Food Survey, among others.</p>
+                        <p>These surveys ask different questions, and the information is used for different things. If you’ve answered a survey, thank you so much. But if we’ve asked you to take part, we’d still like your response to the 2019 Rehearsal.</p>
+                        <p><a href="#">More about ONS surveys</a></p>
+                    <a name="havent-you-already-done-a-census-test"></a>
+                    <h2>Haven’t you already done a census test?</h2>
+                        <p>Yes, we've been testing parts of our system for the last three years. We’vemade changes based on what we’ve learned, and now we're rehearsing the whole census process to make sure it all works.</p>
+                        <p><a href="#"></a>Here are some examples:</p>
+                        <ul>
+                            <li><strong>Central government</strong> uses the numbers to share out public money between councils.</li>
+                            <li><strong>Councils and government departments</strong> use the numbers to make plans and policies. Almost all public services use census numbers.</li>
+                            <li><strong>Charities</strong> use the numbers to find out where there are people who need extra help</li>
+                            <li><strong>Companies</strong> use the numbers to plan where to build shops and businesses</li>
+                            <li><strong>Researchers and academics</strong> use the information to understand the changes in our society and how it may change in the future</li>
+                        </ul>
+                    <a name="why-do-you-need-a-rehearsal"></a>
+                    <h2>After years of running censuses, why do you need a rehearsal?</h2>
+                        <p>We’re holding the 2019 Rehearsal in Carlisle, Ceredigion, Hackney and Tower Hamlets to make sure that the census in 2021 runs smoothly.</p>
+                        <p>The rehearsal helps us check that our plans work. The census is important to the country, so we have to get it right. That’s why we test everything carefully.</p>
+                    <a name="why-should-i-take-part"></a>
+                    <h2>Why should I take part?</h2>
+                        <p>The 2019 Rehearsal is your chance to help us make sure the census in 2021 is as good as it can be.</p>
+                        <p>The country uses census information to make plans and decisions. By taking part in this rehearsal, you’ll be helping us do two important things:</p>
+                        <ul>
+                            <li>making sure the census includes everyone</li>
+                            <li>making sure the census gives us high quality information</li>
+                        </ul>
+                    <a name="do-i-have-to-do-it"></a>    
+                    <h2>Do I have to do the census rehearsal?</h2>
+                        <p>By taking part in the rehearsal, you'll help us with our preparations for the census in 2021. You don't have to but, if you’ve been invited, we’d be grateful if you did.</p>
+                        <p>Testing our processes will help us make sure the census in 2021 is easier to do and better for everyone. We can only do this if people take part in the rehearsal.</p>                                                
+                    <a name="what-happens-if-i-dont"></a>    
+                    <h2>What happens if I don't do it?</h2>
+                        <p>If you don't take part, you may have a member of our field staff knock on your door to talk about the census. The best way to avoid this is by filling in the form online or on paper. If you have any concerns, <a href="/contact-us/">just call us.</a></p>                      
+                    </main>
+                </div>
+                <div class="grid__col col-4@m push-1@m">
+                    <div style="border-top:5px solid purple;padding:15px 0;">
+                        <h3>Related content</h3>
+                            <ul class="list list--bare">
+                                <li><a href="#">About the census</a></li>
+                                <li><a href="#">What we ask you</a></li>
+                                <li><a href="#">Help and support</a></li>
+                            </ul>
+                        <div class="u-mb-m">
+                            <hr class="footer__hr">
+                            <ul class="list list--bare">
+                                <li><a href="#">Contact us</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+        </div>
+</div>
+{% endblock %}

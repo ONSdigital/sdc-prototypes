@@ -9,42 +9,46 @@ layout: census-website/views/_master
 
 {% block page %}
 <div class="page__container container {{ containerClasses }}">
-        {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
-                                {{ 
-                                    onsBreadcrumb({
-                                        "ariaLabel": 'Breadcrumb',
-                                        "itemsList": [
-                                            {
-                                                "url": 'index.html',
-                                                "text": 'Home'
-                                            },
-                                            {
-                                                "url": 'about-the-census.html',
-                                                "text": 'What is the census?',
-                                                "current": true
-                                            }
-                                        ]
-                                    }) 
-                                }}
-                                <div class="grid">
+    {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+    {{ 
+        onsBreadcrumb({
+            "ariaLabel": 'Breadcrumb',
+            "itemsList": [
+                {
+                    "url": '/prototypes/census-website/',
+                    "text": 'Home'
+                },
+                {
+                    "url": '/prototypes/census-website/about-the-census',
+                    "text": 'About the census'
+                },
+                {
+                    "url": '/prototypes/census-website/about-the-census/what-is-the-census',
+                    "text": 'What is the census?'
+                },
+                {
+                    "text": 'Why do we need a census?',
+                    "current": true
+                }
+            ]
+        }) 
+    }}
+    <div class="grid">
                 <div class="grid__col col-7@m">
-                    <main id="main-content" class=" {{ pageClasses }}">
-                                <h1 class="u-mb-l u-fs-l">Why we need a census</h1>
-                                <div class="u-mb-xs" style="font-weight:bold;">FAQs</div>
-                                <ul class="list list--bare">
-                                    <li>— <a href="#whats-the-census-for">What’s the census for?</a></li>
-                                    <li>— <a href="#what-do-the-numbers-tell-us">What do the numbers tell us?</a></li>
-                                    <li>— <a href="#who-uses-the-numbers">Who uses the numbers?</a></li>
-                                    <li>— <a href="#cant-you-get-this-information-from-anywhere-else">Can't you get this information from anywhere else?</a></li>
-                                </ul>
-                                <div class="u-mt-l">
-                                     <hr class="footer__hr" style="margin-bottom: 0;">
-                                </div>
-                                </div>
-                                </main>
-
-                        <div class="grid__col col-7@m u-mt-s">
-                    <main id="main-content" class=" {{ pageClasses }}">
+                    <main id="main-content" class="{{ pageClasses }}">
+                        <h1 class="u-mb-l u-fs-l">Why do we need a census?</h1>
+                        <div class="u-mb-xs" style="font-weight:bold;">FAQs</div>
+                        <ul class="list list--bare">
+                            <li>— <a href="#whats-the-census-for">What’s the census for?</a></li>
+                            <li>— <a href="#what-do-the-numbers-tell-us">What do the numbers tell us?</a></li>
+                            <li>— <a href="#who-uses-the-numbers">Who uses the numbers?</a></li>
+                            <li>— <a href="#cant-you-get-the-information-from-somewhere-else">Can't you get this information from somewhere else?</a></li>
+                        </ul>
+                        <div class="u-mt-l">
+                            <hr class="footer__hr" style="margin-bottom: 0;">
+                        </div>
+                    </main>
+                    <main id="main-content" class="u-mt-s u-mb-xl {{ pageClasses }}">
                     <a name="whats-the-census-for"></a>
                     <h2>What’s the census for?</h2>
                         <p>The census is how we count people and find out how they live. The information we collect helps to build a picture of our society.</p>
@@ -75,6 +79,11 @@ layout: census-website/views/_master
                             <li><strong>Companies</strong> use the numbers to plan where to build shops and businesses</li>
                             <li><strong>Researchers and academics</strong> use the information to understand the changes in our society and how it may change in the future</li>
                         </ul>
+                    <a name="cant-you-get-the-information-from-somewhere-else"></a>
+                    <h2>Can’t you get the information from somewhere else?</h2>
+                        <p>Not yet. The census is still the best way to get the detailed information that society needs.</p>
+                        <p>We are working on ways we might be able to replace the census in the future – by using information from other sources, like government departments.</p>
+                        <p>Find out more about <a href="#">our work to find other sources of information.</a></p>
                     </main>
                 </div>
                 <div class="grid__col col-4@m push-1@m">
@@ -84,17 +93,14 @@ layout: census-website/views/_master
                                 <li><a href="#">About the census</a></li>
                                 <li><a href="#">What we ask you</a></li>
                                 <li><a href="#">Help and support</a></li>
-                                <li><a href="#">Contact us</a></li>
                             </ul>
                         <div class="u-mb-m">
                             <hr class="footer__hr">
+                            <ul class="list list--bare">
+                                <li><a href="#">Contact us</a></li>
+                            </ul>
                         </div>
-                        <div class="card card-cta">
-                            <h3 class="u-fs-m u-mb-xs">
-                                Ready to take part?
-                            </h3>
-                            <a href="#" style="font-size:2.2em; font-weight:bold;line-height: 1.3em;color:white;text-decoration:underline;cursor:pointer;">Start your census survey</a>
-                        </div>
+
                     </div>
                 </div>
         </div>

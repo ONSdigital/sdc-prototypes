@@ -1,0 +1,66 @@
+---
+version: 7.0.0
+layout: census-website/views/_master
+---
+
+{% from "components/card/_macro.njk" import onsCard %}
+
+
+
+{% block page %}
+<div class="page__container container {{ containerClasses }}">
+    {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+    {{ 
+        onsBreadcrumb({
+            "ariaLabel": 'Breadcrumb',
+            "itemsList": [
+                {
+                    "url": '/prototypes/census-website/',
+                    "text": 'Home'
+                },
+                {
+                    "url": '/prototypes/census-website/about-the-census',
+                    "text": 'About the census'
+                },
+                {
+                    "url": '/prototypes/census-website/about-the-census/what-is-the-census',
+                    "text": 'What is the census?'
+                },
+                {
+                    "text": 'How old is the census?',
+                    "current": true
+                }
+            ]
+        }) 
+    }}
+    <div class="grid">
+                <div class="grid__col col-7@m">
+                    <main id="main-content" class="{{ pageClasses }}">
+                        <h1 class="u-mb-l u-fs-l">How old is the census?</h1>
+
+                    </main>
+                    <main id="main-content" class="u-mt-s u-mb-xl {{ pageClasses }}">
+                        <p>The census in England and Wales is almost 220 years old.</p>
+                        <p>It’s happened every 10 years since 1801, except in 1941 during WWII. Since then it’s given us a regular picture of our society, our people and how we live. </p>
+                    </main>
+                </div>
+                <div class="grid__col col-4@m push-1@m">
+                    <div style="border-top:5px solid purple;padding:15px 0;">
+                        <h3>Related content</h3>
+                            <ul class="list list--bare">
+                                <li><a href="#">About the census</a></li>
+                                <li><a href="#">What we ask you</a></li>
+                                <li><a href="#">Help and support</a></li>
+                            </ul>
+                        <div class="u-mb-m">
+                            <hr class="footer__hr">
+                            <ul class="list list--bare">
+                                <li><a href="#">Contact us</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+        </div>
+</div>
+{% endblock %}

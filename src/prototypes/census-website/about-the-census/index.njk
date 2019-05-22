@@ -28,7 +28,7 @@ layout: census-website/views/_master
                                     "ariaLabel": 'Breadcrumb',
                                     "itemsList": [
                                         {
-                                            "url": 'index.html',
+                                            "url": pageInfo.parentPath,
                                             "text": 'Home'
                                         },
                                         {
@@ -50,7 +50,7 @@ layout: census-website/views/_master
                         {{-
                             onsCard({
                                 "title": 'What is the census?',
-                                "url": '/about-the-census/what-is-the-census',
+                                "url": pageInfo.parentPath + '/what-is-the-census',
                                 "text": 'Why we need a census and how the data is used' 
                               
                             })
