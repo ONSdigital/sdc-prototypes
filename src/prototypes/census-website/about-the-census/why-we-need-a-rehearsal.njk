@@ -1,0 +1,81 @@
+---
+version: 7.0.0
+layout: census-website/views/_master
+---
+
+{% from "components/card/_macro.njk" import onsCard %}
+
+{% block page %}
+<div class="page__container container {{ containerClasses }}">
+        {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+                                {{ 
+                                    onsBreadcrumb({
+                                        "ariaLabel": 'Breadcrumb',
+                                        "itemsList": [
+                                            {
+                                                "url": '',
+                                                "text": 'Home'
+                                            },
+                                            {
+                                                "url": 'index.html',
+                                                "text": 'About the census'
+                                            },                                            
+                                            {
+                                                "url": '',
+                                                "text": 'Why we need a census rehearsal?',
+                                                "current": true                                                
+
+                                            }
+                                        ]
+                                    }) 
+                                }}
+                                <div class="grid">
+                <div class="grid__col col-7@m">
+                    <main id="main-content" class=" {{ pageClasses }}">
+                        <h1 class="u-mb-l u-fs-l">Why we need a census rehearsal?</h1>
+                        <div class="u-mb-xs" style="font-weight:bold;">Contents</div>
+                        <ul class="list list--bare">
+                            <li>— Overview</li>
+                            <li>— <a href="#">What's the 2019 Rehearsal for?</a></li>
+                            <li>— <a href="#">Haven't I already done a survey like this?</a></li>
+                            <li>— <a href="#">Haven't you already done a census test?</a></li>
+                            <li>— <a href="#">After years of running censuses, why do you need a rehearsal?</a></li>
+                            <li>— <a href="#">Why should I take part?</a></li>
+                            <li>— <a href="#">Do I have to do the census rehearsal?</a></li>
+                            <li>— <a href="#">What happens if I don't do it?</a></li>
+                            <li>— <a href="#">Will I have to do the census is 2021?</a></li>
+                        </ul>
+                        <div class="u-mt-l">
+                                <hr class="footer__hr" style="margin-bottom: 0;">
+                        </div>
+                    </main>
+                </div>
+                <div class="grid__col col-7@m u-mt-s">
+                    <main id="main-content" class=" {{ pageClasses }}">
+                        <p>The census is a count of people and housing in England and Wales. It helps councils and governments make decisions about how to share public money and where to spend it.</p>
+                        <p>Information from the census helps to show where we need things like hospital beds, doctors’ surgeries, and support for the elderly and vulnerable. It also helps plan for schools, bus routes, new roads and investment in jobs. Census information affects how our government looks after its population.</p> 
+                    </main>
+                </div>
+                <div class="grid__col col-4@m push-1@m">
+                    <div style="border-top:5px solid purple;padding:15px 0;">
+                        <h3>Related content</h3>
+                            <ul class="list list--bare">
+                                <li><a href="#">About the census</a></li>
+                                <li><a href="#">What we ask you</a></li>
+                                <li><a href="#">Help and support</a></li>
+                                <li><a href="#">Contact us</a></li>
+                            </ul>
+                        <div class="u-mb-m">
+                            <hr class="footer__hr">
+                        </div>
+                        <div class="card card-cta">
+                            <h3 class="u-fs-m u-mb-xs">
+                                Ready to take part?
+                            </h3>
+                            <a href="#" style="font-size:2.2em; font-weight:bold;line-height: 1.3em;color:white;text-decoration:underline;cursor:pointer;">Start your census survey</a>
+                        </div>
+                    </div>
+                </div>
+        </div>
+</div>
+{% endblock %}

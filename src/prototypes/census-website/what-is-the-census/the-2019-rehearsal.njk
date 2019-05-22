@@ -18,8 +18,12 @@ layout: census-website/views/_master
                         },
                         {
                             "url": 'about-the-census.html',
-                            "text": 'About the census',
-                                "current": true                                                
+                            "text": 'About the census'
+                        },                                            
+                        {
+                            "url": '',
+                            "text": 'The 2019 Census rehearsal',
+                            "current": true                                                
 
                         }
                     ]
@@ -31,11 +35,11 @@ layout: census-website/views/_master
                 <h1 class="u-mb-l u-fs-l">About the census?</h1>
                 <div class="u-mb-xs" style="font-weight:bold;">Contents</div>
                 <ul class="list list--bare">
-                    <li>— What is the census?</li>
+                    <li>— <a href="index.html">Overview</a></li>
                     <li>— <a href="why-info-important.html">Why the information we collect is important</a></li>
-                    <li>— <a href="who-uses-data.html">Who uses the data</a></li>
-                    <li>— <a href="the-2019-rehearsal.html">The 2019 Census rehearsal</a></li>
-                    <li>— <a href="online-census.html">Online Census</a></li>
+                    <li>— <a href="who-uses-data.html">Who uses the data?</a></li>
+                    <li>— The 2019 Census rehearsal</li>
+                    <li>— <a href="online-census.html">Online census</a></li>
                 </ul>
                 <div class="u-mt-l">
                         <hr class="footer__hr" style="margin-bottom: 0;">
@@ -43,10 +47,22 @@ layout: census-website/views/_master
             </main>
             <div class="u-mt-s">
                 <main id="main-content" class=" {{ pageClasses }}">
-                    <h2>What is the census?</h2>
-                    <p>The census is a count of all the people and housing in England and Wales, run by the Office for National Statistics. It’s happened every 10 years since 1801, except during World War 2 in 1941. This balances the difficulty of running a census and getting the information we need. </p>
+                    <h2>The 2019 Census rehearsal</h2
+                    <p>We’re holding a 2019 Rehearsal to make sure the process for Census 2021 works. We have chosen four areas to take part in the rehearsal:</p>
+                    <ul>
+                        <li>Carlisle</li>
+                        <li>Ceredigion</li>
+                        <li>Hackney</li>
+                        <li>Tower Hamlets</li>
+                    </ul>
+                    <p>We've been testing parts of our system for the last three years and have made changes based on what we’ve learned. Now we're rehearsing the whole census process. Technology has changed a lot since the 2011 Census, which is why we need a rehearsal.</p>
+
+                    <p>Testing our processes will help us make sure Census 2021 is easier to do and better for everyone. We can only do this if people take part in the rehearsal. You do not have to but if you’re invited, we’d be grateful if you take part.</p> 
+                    
+                    <p>If you have any questions or concerns about taking part, please <a href="#">contact us.</a> If you take part in the Census rehearsal you will still need to fill out the census in 2021.</p>                       
+                    
                 </main>
-            </div>   
+            </div>
         </div>
         <div class="grid__col col-4@m push-1@m">
             <div style="border-top:5px solid purple;padding:15px 0;">
@@ -58,7 +74,7 @@ layout: census-website/views/_master
                         <li><a href="#">Contact us</a></li>
                     </ul>
             </div>
-        </div>      
+        </div>
     </div>
 </div>
 {% endblock %}

@@ -1,0 +1,76 @@
+---
+version: 7.0.0
+layout: census-website/views/_master
+---
+
+{% from "components/card/_macro.njk" import onsCard %}
+
+{% block page %}
+<div class="page__container container {{ containerClasses }}">
+        {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/prototypes/census-website/index.html',
+                            "text": 'Home'
+                        },
+                        {
+                            "url": 'about-the-census.html',
+                            "text": 'About the census'
+                        },                                            
+                        {
+                            "url": '',
+                            "text": 'Who uses the data?',
+                            "current": true                                                
+
+                        }
+                    ]
+                }) 
+            }}
+    <div class="grid">
+        <div class="grid__col col-7@m">
+            <main id="main-content" class=" {{ pageClasses }}">
+                <h1 class="u-mb-l u-fs-l">About the census?</h1>
+                <div class="u-mb-xs" style="font-weight:bold;">Contents</div>
+                <ul class="list list--bare">
+                    <li>— <a href="index.html">Overview</a></li>
+                    <li>— <a href="why-info-important.html">Why the information we collect is important</a></li>
+                    <li>— Who uses the data?</li>
+                    <li>— <a href="the-2019-rehearsal.html">The 2019 Census rehearsal</a></li>
+                    <li>— <a href="online-census.html">Online census</a></li>
+                </ul>
+                <div class="u-mt-l">
+                        <hr class="footer__hr" style="margin-bottom: 0;">
+                </div>
+            </main>
+            <div class="u-mt-s">
+                <main id="main-content" class=" {{ pageClasses }}">
+                    <h2>Who uses the data?</h2>                      
+                    <p>Different organisations use information from the census for planning and policy making. For example, the data is used by:</p>
+                    <ul>
+                        <li>central government to share out public money between councils</li>
+                        <li>councils and government departments to make plans and policies</li>
+                        <li>charities to find out where there are people who need extra help</li>
+                        <li>companies to plan where to build shops and businesses</li>
+                        <li>researchers and academics to understand current and future changes in our society</li>
+                    </ul>
+                    <p>We are working on ways we might be able to replace the census in the future, by using information from other sources, like government departments.</p>
+                </main>
+            </div>
+        </div>
+        <div class="grid__col col-4@m push-1@m">
+            <div style="border-top:5px solid purple;padding:15px 0;">
+                <h3>Related content</h3>
+                <ul class="list list--bare">
+                    <li><a href="#">About the census</a></li>
+                    <li><a href="#">What we ask you</a></li>
+                    <li><a href="#">Help and support</a></li>
+                    <li><a href="#">Contact us</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
