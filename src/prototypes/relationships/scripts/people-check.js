@@ -42,6 +42,9 @@ class PeopleCheck {
     });
 
     this.setYesRadioLabel();
+
+    this.form.addEventListener('submit', this.handleSubmit.bind(this));
+
   }
 
   setYesRadioLabel() {
@@ -56,6 +59,14 @@ class PeopleCheck {
     const action = event.target.getAttribute('data-action');
 
     this.form.setAttribute('action', action || this.originalAction);
+  }
+
+  handleSubmit(event) {
+    if (JSON.parse(sessionStorage.getItem('people')).length < 2 && this.radios[1].checked) {
+      event.preventDefault();
+
+      alert('For this prototype, you must add more than 2 people.');
+    }
   }
 }
 

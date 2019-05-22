@@ -19,10 +19,10 @@ class Relationship {
 
     if (event.target.value === 'unrelated') {
       this.question.innerHTML = this.titleUnrelated.replace('{x}', relationship);
-      this.display.innerHTML = this.displayUnrelated.replace('{x}', relationship);;
+      this.display.innerHTML = this.displayUnrelated.replace('{x}', relationship);
     } else {
       this.question.innerHTML = this.titleRelated.replace('{x}', relationship);
-      this.display.innerHTML = this.displayRelated.replace('{x}', relationship);;
+      this.display.innerHTML = this.displayRelated.replace('{x}', relationship);
     }
   }
 }

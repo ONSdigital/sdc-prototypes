@@ -9,13 +9,24 @@ layout: relationships/views/_master
 {% from "components/radios/_macro.njk" import onsRadios %}
 {% from "components/button/_macro.njk" import onsButton %}
 
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action": pageInfo.path + ".html"
+    }
+} %}
+
+
 {% block main %}
-    <a href="{{ pageInfo.parentPath }}/your-name.html">Previous</a>
+    <a href="{{ pageInfo.parentPath }}/relationships-intro.html">Previous</a>
     {% call onsQuestion({
         "title": "",
         "description": "Complete the sentence by selecting the appropriate relationship.",
         "useFieldset": true,
-        "classes": "js-relationship-page"
+        "classes": "js-relationship-page",
+        "attributes": {
+            "data-complete-url": pageInfo.parentPath + "/completed.html"
+        }
     }) %}
         <div class="relationship js-relationship js-relationship-page-relationship">
             {{ onsRadios({ 
@@ -119,4 +130,9 @@ layout: relationships/views/_master
             <p class="relationship__display js-relationship-display js-relationship-page-display"></p>
         </div>
     {% endcall %}
+
+    {{ onsButton({
+        "text": "Continue",
+        "classes": "u-mt-m u-mb-xl"
+    }) }}
 {% endblock %}

@@ -26,12 +26,13 @@ class Person {
     }
   }
 
-  handleSubmit() {
+  handleSubmit(event) {
     if (!this.person) {
       this.person = {
         id: UUID(),
         sort_order: this.people.length,
-        is_you: this.isYou
+        is_you: this.isYou,
+        relationships: [],
       };
     }
 
