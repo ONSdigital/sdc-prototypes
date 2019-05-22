@@ -21,7 +21,7 @@ layout: census-website/views/_master
             <main id="main-content" class="{{ pageClasses }}">
                 <div>
                     <div class="container">
-                        <div class="col-8@m">
+                        <div class="col-12@m">
                             {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
                             {{ 
                                 onsBreadcrumb({
@@ -45,17 +45,19 @@ layout: census-website/views/_master
                                 }) 
                             }}
                             <h1>What is the census?</h1>
+                            <p class="u-fs-r">The census is a count of people and housing in England and Wales. It helps councils and governments make decisions about how to share public money and where to spend it.</p>
+                            <p>Information from the census helps to show where we need things like hospital beds, doctors’ surgeries, and support for the elderly and vulnerable. It also helps plan for schools, bus routes, new roads and investment in jobs. Census information affects how our government looks after its population.<p>
                         </div>
                     </div>
                 </div>
                 <div class="container">
-                <div class="grid u-mt-l">
+                <div class="grid">
                     <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
                         {{-
                             onsCard({
                                 "title": 'Why we need a census?',
                                 "url": 'what-is-the-census/why-we-need-a-census/',
-                                "text": '' 
+                                "text": 'What the census is for and what the numbers tell us' 
                               
                             })
                         }}
@@ -66,7 +68,7 @@ layout: census-website/views/_master
                                 "classes": 'u-fs-r',
                                 "title": 'Why is the census so important?',
                                 "url": '#',
-                                "text": ''
+                                "text": 'Reasons why the census is such an important exercise to gather data'
                             })
                         }}
                     </div>
@@ -76,7 +78,7 @@ layout: census-website/views/_master
                                 "classes": 'u-fs-r',
                                 "title": 'How old is the census?',
                                 "url": '#',
-                                "text": ''
+                                "text": 'The history behind the census'
                             })
                         }}
                     </div>
