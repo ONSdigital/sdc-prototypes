@@ -9,24 +9,18 @@ layout: relationships/views/_master
 {% set form =  {
     "method": "GET",
     "attributes": {
-        "action": pageInfo.parentPath + "/your-name.html"
+        "action": pageInfo.parentPath + "/intro.html"
     }
 } %}
 
 {% block main %}
-    <h1 class="u-mt-l">People who live here</h1>
+    <h1 class="u-mt-l">Relationships Prototype</h1>
 
-    <p>In this section, we’re going to ask you about the people living or staying at 2 Example Address.</p>
-
-    <h2>Information you will need</h2>
-
-    <ul>
-        <li>Names of the people living at this address including anyone temporarily away or who has been or intends to be in the UK 3 months or more.</li>
-        <li>Names of visitors staying overnight at this address on 3 February 2019</li>
-    </ul>
+    <p>The purpose of this prototype is to test the relationships component for accessibility.<p>
+    <p>This prototype does <strong>NOT</strong> accurately represent the people who live here flow, or the behaviour of actually collecting the relationships and should not be used as a reference for these patterns.</p>
 
     {{ onsButton({
-        "text": "Continue",
+        "text": "Start prototype",
         "classes": "u-mt-m u-mb-xl"
     }) }}
 
