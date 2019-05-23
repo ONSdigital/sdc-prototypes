@@ -9,7 +9,7 @@ layout: address-lookup/views/_master
 {% from "components/button/_macro.njk" import onsButton %}
 
 {% block content %}
-    <a class="previous-link js-previous" href="{{ pageInfo.parentPath }}/previous-address.html">Previous</a>
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/previous-address.html">Previous</a>
     <form action="{{ pageInfo.parentPath }}/summary.html">
         {{
             prototypeAddressInput({
