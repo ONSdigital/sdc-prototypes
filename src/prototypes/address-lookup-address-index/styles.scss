@@ -1,0 +1,16 @@
+@import 'components/typeahead/typeahead';
+@import 'components/address-input/address-input';
+
+.panel {
+  &--off {
+    padding: 0;
+    border-left: 0;
+    background: transparent;
+  }
+
+  &--off & {
+    &__list {
+      display: none;
+    }
+  }
+}
