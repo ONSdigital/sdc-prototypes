@@ -7,11 +7,12 @@ import CircularDependencyPlugin from 'circular-dependency-plugin';
 import FixStyleOnlyEntriesPlugin from 'webpack-fix-style-only-entries';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import globImporter from 'node-sass-glob-importer';
+import ImageminPlugin from 'imagemin-webpack-plugin';
 
 import postcssPlugins from './postcss.config';
+import svgoConfig from './svgo-config';
 
 const OUT_DIR = 'build';
-
 
 function formDirectory(startPath, scripts) {
   if (!fs.existsSync(startPath)) {
@@ -214,7 +215,14 @@ export default function(mode) {
             }
           }
         ]
-      )
+      ),
+
+      new ImageminPlugin({
+        test: /\.(svg)$/i,
+        svgo: {
+          plugins: svgoConfig
+        }
+      })
     ]
   };
 };
