@@ -16,7 +16,7 @@ version: 0.5.0
 } %}
 {% block content %}
 {% set groups = helpers.navigationHelper({ 
-    "pages": pageInfo.siteMap,
+    "pages": pageInfo.siteMap[0].children,
     "ignorePaths": ["/"]
 }) %}
 {% for group in groups %}
