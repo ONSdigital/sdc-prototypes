@@ -91,6 +91,7 @@
     "@ons/design-system/0.5.0": "npm:@ons/design-system@0.5.0",
     "@ons/design-system/4.1.0": "npm:@ons/design-system@4.1.0",
     "@ons/design-system/7.0.0": "npm:@ons/design-system@7.0.0",
+    "@ons/design-system/7.0.2": "npm:@ons/design-system@7.0.2",
     "dice-coefficient": "^1.0.3"
   }
 }
