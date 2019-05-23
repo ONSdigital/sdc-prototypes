@@ -9,9 +9,7 @@ import formBodyFromObject from 'helpers/form-body-from-object';
 import dice from 'dice-coefficient';
 import { sortBy } from 'sort-by-typescript';
 
-const lookupURL = 'https://api.addressy.com/Capture/Interactive/Find/v1.10/json3.ws';
-const retrieveURL = 'https://api.addressy.com/Capture/Interactive/Retrieve/v1.10/json3.ws';
-const key = 'gw51-he54-ck31-ag93';
+const lookupURL = 'https://bambrp-address-lookup-api.gcp.dev.eq.ons.digital/address_api';
 const addressReplaceChars = [','];
 
 const classAddress = 'js-address';
@@ -58,7 +56,7 @@ class AddressInput {
       onError: this.onError.bind(this),
       sanitisedQueryReplaceChars: addressReplaceChars,
       resultLimit: 10,
-      minChars: 2,
+      minChars: 5,
       suggestOnBoot: true
     });
 
@@ -119,53 +117,24 @@ class AddressInput {
     });
   }
 
-  findAddress(text, id) {
+  findAddress(text) {
     return new Promise((resolve, reject) => {
-      const query = {
-        key,
-        text,
-        countries: 'gb',
-        language: 'en-gb'
-      };
-
-      if (id) {
-        query.container = id;
-      }
-
-      const body = formBodyFromObject(query);
-
-      this.fetch = new AbortableFetch(lookupURL, { 
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        body
+      this.fetch = new AbortableFetch(`${lookupURL}/?q=${text}`, { 
+        method: 'GET'
       });
 
       this.fetch.send()
         .then(async response => {
-          const data = (await response.json()).Items;
+          const data = (await response.json()).addresses;
 
-          if (data.length === 1 && data[0].Type === 'Postcode') {
-            this.findAddress(text, data[0].Id).then(resolve).catch(reject);
-          } else {
-            resolve(this.mapFindResults(data));
-          }
+          resolve(this.mapFindResults(data));
         })
         .catch(reject);
     });
   }
 
   mapFindResults(results) {
-    const mappedResults = results.map(result => {
-      let text;
-
-      if (result.Type === 'Postcode') {
-        text = `${result.Text} ${result.Description}`;
-      } else {
-        text = `${result.Text}, ${result.Description}`;
-      }
-
+    const mappedResults = results.map(text => {
       const sanitisedText = sanitiseTypeaheadText(text, addressReplaceChars);
 
       let queryIndex = sanitisedText.indexOf(this.currentQuery);
@@ -177,8 +146,6 @@ class AddressInput {
       const querySimilarity = dice(sanitisedText, this.currentQuery);
 
       return {
-        value: result.Id,
-        type: result.Type,
         'en-gb': text,
         sanitisedText,
         querySimilarity,
@@ -223,20 +190,20 @@ class AddressInput {
 
   onAddressSelect(selectedResult) {
     return new Promise((resolve, reject) => {
-      const result = this.currentResults.find(currentResult => currentResult.value === selectedResult.value);
+      // const result = this.currentResults.find(currentResult => currentResult.value === selectedResult.value);
 
-      if (result.type !== 'Address') {
-        this.findAddress(null, result.value).then(results => {
-          this.typeahead.handleResults(results);
-          resolve();
-        }).catch(reject);
-      } else {
-        this.retrieveAddress(result.value)
-          .then(data => {
-            this.setAddress(data, resolve);
-          })
-          .catch(reject);
-      }
+      // if (result.type !== 'Address') {
+      //   this.findAddress(null, result.value).then(results => {
+      //     this.typeahead.handleResults(results);
+      //     resolve();
+      //   }).catch(reject);
+      // } else {
+      //   this.retrieveAddress(result.value)
+      //     .then(data => {
+      //       this.setAddress(data, resolve);
+      //     })
+      //     .catch(reject);
+      // }
     });
   }
 
