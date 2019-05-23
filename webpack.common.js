@@ -213,6 +213,12 @@ export default function(mode) {
               glob: '**/favicons/**/*',
               dot: true
             }
+          },
+          {
+            from: {
+              glob: '**/img/**/*',
+              dot: true
+            }
           }
         ]
       ),
