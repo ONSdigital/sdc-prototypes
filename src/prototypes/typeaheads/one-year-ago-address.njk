@@ -6,7 +6,7 @@ layout: typeaheads/views/_master
 {% from "components/button/_macro.njk" import onsButton %}
 
 {% block main %}
-    <a class="previous-link js-previous" href="{{ pageInfo.parentPath }}/religion.html">Previous</a>
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/religion.html">Previous</a>
     <form action="{{ pageInfo.parentPath }}/employment-status.html">
         {{ onsRadios({
             "legend": "One year ago, what was your usual address?",

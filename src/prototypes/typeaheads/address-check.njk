@@ -7,7 +7,7 @@ layout: typeaheads/views/_master
 {% from "components/button/_macro.njk" import onsButton %}
 
 {% block main %}
-    <a class="previous-link js-previous" href="{{ pageInfo.parentPath }}/date-of-birth.html">Previous</a>
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/date-of-birth.html">Previous</a>
     <form action="{{ pageInfo.parentPath }}/student-check.html">
         <fieldset class="u-mt-s">
             <legend><h1 class="u-fs-l">Do you stay at another address for more than 30 days a year?</h1></legend>
