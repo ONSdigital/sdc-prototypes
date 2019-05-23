@@ -727,6 +727,11 @@
   resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-7.0.0.tgz#1a80136149c7544aa1ab93156103d4d3f7f0a97c"
   integrity sha512-rAqjng4L9HdsglFQJKgTDo7b0a5ANhWOYfdPDpuTgvmYeOkeiM+wxubKKUTpM9yCcppH/T6RXTCHraT9nWNX3A==
 
+"@ons/design-system/7.0.2@npm:@ons/design-system@7.0.2":
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-7.0.2.tgz#397b66bc2412981ba38e5ea50ced952985dcad53"
+  integrity sha512-dYH5Ov0i+z//jQ4tqzWzVdYY9yY8SoXFH+gYk6agzg111Y6AXDPOcmcVvG6mJV5zmpGnx1Gpz9W8gPHikkKrng==
+
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@samverschueren/stream-to-observable/-/stream-to-observable-0.3.0.tgz#ecdf48d532c58ea477acfcab80348424f8d0662f"
@@ -986,6 +991,11 @@ acorn@^6.0.5, acorn@^6.0.7:
   version "6.1.1"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-6.1.1.tgz#7d25ae05bb8ad1f9b699108e1094ecd7884adc1f"
   integrity sha512-jPTiwtOxaHNaAPg/dmrJ/beuzLRnXtB0kQPQ8JpotKJgTB6rX6c8mlf315941pyjBSaPg8NHXS9fhP4u17DpGA==
+
+add@^2.0.6:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/add/-/add-2.0.6.tgz#248f0a9f6e5a528ef2295dbeec30532130ae2235"
+  integrity sha1-JI8Kn25aUo7yKV2+7DBTITCuIjU=
 
 ajv-errors@^1.0.0:
   version "1.0.1"
@@ -9420,6 +9430,11 @@ yargs@^7.0.0:
     which-module "^1.0.0"
     y18n "^3.2.1"
     yargs-parser "^5.0.0"
+
+yarn@^1.16.0:
+  version "1.16.0"
+  resolved "https://registry.yarnpkg.com/yarn/-/yarn-1.16.0.tgz#5701b58ac555ff91f7b889b7d791b3dc86f8f999"
+  integrity sha512-cfemyGlnWKA1zopUUgebTPf8C4WkPIZ+TJmklwcEAJ4u6oWPtJeAzrsamaGGh/+b1XWe8W51yzAImC4AWbWR1g==
 
 yup@^0.26.10:
   version "0.26.10"
