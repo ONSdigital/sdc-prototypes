@@ -254,8 +254,9 @@ class AddressInput {
 
     this.postcode.value = data.PostalCode;
     
-   
+    
     this.triggerManualInputsChanges();
+    this.typeahead.hideErrorPanel();
 
     this.addressSelected = true;
 
@@ -309,7 +310,6 @@ class AddressInput {
 
       this.typeahead.showErrorPanel();
       this.typeahead.setAriaStatus('There is an error. Select an address to continue.');
-      console.log('YES')
     } else {
       window.DONT_SUBMIT = false;
     }

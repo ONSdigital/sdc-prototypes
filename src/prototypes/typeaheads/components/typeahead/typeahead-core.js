@@ -472,8 +472,16 @@ export default class TypeaheadCore {
   }
 
   showErrorPanel() {
+    this.setErrorPanelVisibility(true);
+  }
+
+  hideErrorPanel() {
+    this.setErrorPanelVisibility(false);
+  }
+
+  setErrorPanelVisibility(visible) {
     if (this.errorPanel) {
-      this.errorPanel.classList.remove(classPanelOff);
+      this.errorPanel.classList[visible ? 'remove' : 'add'](classPanelOff);
     }
   }
 }
