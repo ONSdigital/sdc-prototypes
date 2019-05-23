@@ -11,6 +11,6 @@ export default class UACEntry {
   }
 
   handleInput() {
-    this.input.value = this.input.value.replace(/\s/g, '').match(/.{1,4}/g).join('   ');
+    this.input.value = this.input.value.replace(/\s/g, '').match(/.{1,4}/g).join('  ');
   }
 }
