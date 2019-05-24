@@ -1,13 +1,13 @@
-@import 'node_modules/@ons/design-system/0.3.0/scss/vars/forms';
-@import 'node_modules/@ons/design-system/0.3.0/scss/vars/colors';
-@import 'node_modules/@ons/design-system/0.3.0/scss/vars/grid';
-@import 'node_modules/@ons/design-system/0.3.0/scss/helpers/mq';
+@import 'node_modules/@ons/design-system/0.5.0/scss/vars/forms';
+@import 'node_modules/@ons/design-system/0.5.0/scss/vars/colors';
+@import 'node_modules/@ons/design-system/0.5.0/scss/vars/grid';
+@import 'node_modules/@ons/design-system/0.5.0/scss/helpers/mq';
 
 .typeahead {
   position: relative;
 
   &__combobox {
-    
+    display: inline-block;
     border-radius: $input-radius;
 
     &--focused {

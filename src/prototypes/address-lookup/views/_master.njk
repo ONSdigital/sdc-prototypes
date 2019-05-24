@@ -1,7 +1,7 @@
 {% extends "page-templates/_template.njk" %}
 
 {% block head %}
-    <link rel="stylesheet" href="{{ pageInfo.parentPath }}/styles/styles.css" />
+    <link rel="stylesheet" href="{{ pageInfo.rootPath }}/styles/styles.css" />
 {% endblock %}
 
 {% set page = { 
@@ -17,5 +17,5 @@
 } %}
 
 {% block bodyEnd %}
-    <script src="{{ pageInfo.parentPath }}/scripts/index.js"></script>
+    <script src="{{ pageInfo.rootPath }}/scripts/index.js"></script>
 {% endblock %}

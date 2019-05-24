@@ -12,21 +12,16 @@
   &__input {
     max-width: 12.6em;
     font-weight: bold;
+    letter-spacing: .03em;
 
     @media all and (min-width: 375px) {
       font-size: 22px;
-    }
-
-    @media all and (min-width: 425px) {
-      width: 14em !important;
-      max-width: 14em;
-      font-size: 24px;
-      letter-spacing: .06em;
+      letter-spacing: .04em;
     }
 
     @include mq('s') {
-      width: 16em !important;
-      max-width: 16em;
+      width: 14.9em !important;
+      max-width: 14.9em;
       font-size: 24px;
       letter-spacing: .15em;
     }
