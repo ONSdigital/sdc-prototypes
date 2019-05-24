@@ -1,6 +1,4 @@
 ---
-title: Campaign Website
-group: Census
 version: 7.0.2
 layout: census-website/views/_master
 ---
@@ -34,11 +32,15 @@ layout: census-website/views/_master
                                             "text": 'About the census',
                                             "current": true
 
+
                                         }
+                                                                               
+                                        
+
                                     ]
                                 }) 
                             }}
-                            <h1>About the census</h1>
+                            <h1>Help with your the census</h1>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                         </div>
                     </div>
@@ -49,7 +51,7 @@ layout: census-website/views/_master
                         {{-
                             onsCard({
                                 "title": 'What is the census?',
-                                "url": 'what-is-the-census',
+                                "url": '/prototypes/census-website/what-is-the-census/index.html',
                                 "text": 'description' 
                               
                             })
@@ -59,9 +61,46 @@ layout: census-website/views/_master
                         {{- 
                             onsCard({
                                 "classes": 'u-fs-r',
-                                "title": 'The 2019 rehearsal',
+                                "title": 'Why is the census so important?',
                                 "url": '#',
                                 "text": 'Who we are asking to participate in a rehearsal and why'
+                            })
+                        }}
+                    </div>
+                    <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
+                        <div class="card">
+                            <h3 class="u-fs-m">
+                                <a href="#">
+                                Why we need a rehearsal?
+                                </a>
+                            </h3>
+                            <p>Description</p>
+                            <ul>
+                            <li><a href="#">What's the 2019 Rehearsal for?</a></li>
+                            <li><a href="do-i-have-to.html">Do I have to do the census rehearsal?</a></li>
+                            <li><a href="#">What happens if I don't do it?</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    
+                    </div>
+                    <div class="grid grid--flex grid--column@xs@s u-mt-l u-mb-l">  
+                    <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
+                        {{-
+                            onsCard({
+                                "title": 'Do all countries have a census?',
+                                "url": '#',
+                                "text": ''
+                            })
+                        }}
+                    </div> 
+                    <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
+                        {{-
+                            onsCard({
+                                "title": 'How old is the census?',
+                                "url": '#',
+                                "text": 'description'
                             })
                         }}
                     </div>
@@ -72,36 +111,6 @@ layout: census-website/views/_master
                         </h3>
                         <a href="#" style="font-size:2.2em; font-weight:bold;line-height: 1.3em;color:white;text-decoration:underline;cursor:pointer;">Start your census survey</a>
                         </div>
-                    </div>
-                    
-                    </div>
-                    <div class="grid grid--flex grid--column@xs@s u-mt-l u-mb-l">  
-                    <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
-                        {{-
-                            onsCard({
-                                "title": 'The census laws',
-                                "url": '#',
-                                "text": ''
-                            })
-                        }}
-                    </div> 
-                    <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
-                        {{-
-                            onsCard({
-                                "title": 'Privacy, security and confidentiality',
-                                "url": '#',
-                                "text": 'description'
-                            })
-                        }}
-                    </div>
-                    <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
-                        {{-
-                            onsCard({
-                                "title": 'Request an access code or paper form',
-                                "url": '#',
-                                "text": 'The most accurate and greographical dataset of addresses and properties in the UK.'
-                            })
-                        }}
                     </div>
                 </div>
                 
