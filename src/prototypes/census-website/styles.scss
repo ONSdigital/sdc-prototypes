@@ -5,6 +5,11 @@
   display: none;
 }
 
+.card {
+  border: none;
+  padding: 0;
+}
+
 .intro--banner{
   background-color:#F0F0F0;
 }
@@ -18,9 +23,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-border: none;
-min-height: 240px;
-
+  border: none;
+  min-height: 240px;
 }
 .header__bottom{
   background: purple;
@@ -47,23 +51,6 @@ min-height: 240px;
   color: white;
 }
 
-.hero-text button {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 15px 25px;
-  color: white;
-  background-color:purple;
-  text-align: center;
-  cursor: pointer;
-  font-size: 1.2rem;
-}
-
-.hero-text button:hover {
-  background-color: #555;
-  color: white;
-}
-
 .panel__body strong{
   width: 45px;
   background: white;
@@ -73,9 +60,7 @@ min-height: 240px;
   font-weight: bold;
   border-radius: 3px;
 }
-.hero--header{
-  font-size:50px;
-}
+
 
 @media only screen and (max-width: 680px) {
   .cta-banner{

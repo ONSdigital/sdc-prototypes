@@ -6,6 +6,7 @@ layout: census-website/views/_master
 ---
 
 {% from "components/card/_macro.njk" import onsCard %}
+{% from "components/button/_macro.njk" import onsButton %}
 
 {% block page %}
     <div class="page__container {{ containerClasses }}">
@@ -15,8 +16,14 @@ layout: census-website/views/_master
                     <div class="hero-image" role="banner">
                         <div class="container">
                             <div class="hero-text">
-                                <h1 class="hero--header">Make it count</h1>
-                                <button type="button" class="btn">Take part in the Census rehearsal</button>
+                                <h1 class="hero--header u-fs-xxl">We count</h1>
+                                <p class="u-fs-r">Inspiring tagline goes here</p>
+                                {{-
+                                    onsButton({
+                                        "text": "Start your census survey"
+                                    })
+                                }}
+                                
                             </div>
                         </div>
                     </div>    
@@ -48,7 +55,7 @@ layout: census-website/views/_master
                             onsCard({
                                 "title": 'Request an access code or paper form',
                                 "url": '#',
-                                "text": 'The most accurate and greographical dataset of addresses and properties in the UK.'
+                                "text": ''
                             })
                         }}
                     </div>
@@ -85,7 +92,7 @@ layout: census-website/views/_master
                         </div>
                         <div class="grid grid--flex grid--column@xs@s u-mt-l u-mb-l">
                             <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-8@m col-12@xs@s">
-                                <div class="card card-cta bg-blue">
+                                <div class="card card-cta bg-blue u-pl-m">
                                     <h3 class="u-fs-m u-mb-xs">
                                         Your information is safe
                                     </h3>
