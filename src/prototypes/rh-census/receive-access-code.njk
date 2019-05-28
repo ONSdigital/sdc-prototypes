@@ -12,14 +12,14 @@ layout: rh-census/views/_master
 {% set form =  {
     "method": "GET",
     "attributes": {
-        "action": "/prototypes/rh-census/enter-mobile-number.html"
+        "action": "/prototypes/rh-census/confirm-mobile-number.html"
     }
 } %}
 
 {% block main %}
     <a class="previous-link js-previous" href="{{ pageInfo.parentPath }}">Previous</a>
     {% call onsQuestion({
-        "title": "How do you want to receive the access code?",
+        "title": "How do you want to receive an access code?",
         "useFieldset": true
     }) %}
 
@@ -29,18 +29,35 @@ layout: rh-census/views/_master
             "name": "food",
             "radios": [
                 {
-                    "id": "text",
+                    "id": "text-checkbox",
                     "label": {
                         "text": "Text an access code"
                     },
-                    "value": "text"
+                    "value": "text",
+                    "other": {
+                        "id": "text-textbox",
+                        "type": "tel",
+                        "autocomplete": "tel",        
+                        "classes": "input--w-8",
+                        "label": {
+                            "text": "Enter mobile number"
+                        }
+                    }
                 },
                 {
-                    "id": "email",
+                    "id": "email-checkbox",
                     "label": {
                         "text": "Email an access code"
                     },
-                    "value": "email"
+                    "value": "text",
+                    "other": {
+                        "id": "email-textbox",
+                        "type": "email",
+                        "autocomplete": "email",
+                        "label": {
+                            "text": "Enter email address"
+                        }
+                    }
                 },
                 {
                     "id": "letter",

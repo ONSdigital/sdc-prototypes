@@ -15,27 +15,26 @@ layout: rh-census/views/_master
 } %}
 
 {% block main %}
-    <h1 class="u-mt-l">Enter your code to access the Census</h1>
+    <h1 class="u-mt-l">Enter your access code</h1>
 
     {{ onsUACEntry({
         "id": "uac",
         "name": "uac",
         "label": {
-            "text": "Enter your code",
-            "description": "The 16 character code is printed on the letter"
+            "text": "The 16 character code is printed on the letter"
         }
     }) }}
 
-    <p class="u-mt-m"><span class="icon--lock"></span>Your personal information is protected by law and will be kept confidential</p>
+    <p class="u-mt-m"><span class="icon--lock"></span>Your personal information is protected by law and will be kept confidential.</p>
 
     {{ onsButton({
-        "text": "Submit code",
+        "text": "Access survey",
         "classes": "u-mb-xl"
     }) }}
 
     <h2 class="u-fs-r--b u-mb-no">Don't have a code?</h2>
     <p>
-        You can request a new code if you have lost, forgotten or not recieved an access code.<br>
-        <a href="/prototypes/rh-census/address.html">Request a new code to start a new survey</a>
+        You can request a new code if you have lost, forgotten or not received an access code.<br>
+        <a href="/prototypes/rh-census/address.html">Request a new code to start a new survey.</a>
     </p>
 {% endblock %}

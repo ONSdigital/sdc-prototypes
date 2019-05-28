@@ -18,15 +18,11 @@ layout: rh-census/views/_master
     <h1 class="u-mt-l">We have sent the access code to</h1>
 
     <p>example@example.co.uk</p>
-    <p>An email with the code should arrive shortly. Once you get the code, you can begin completing the survey.</p>
 
-    {{ onsButton({
-        "text": "Start survey",
-        "classes": "u-mb-xl"
-    }) }}
+    <p>An email with the code should arrive shortly. Once you get the code, you can start the survey.</p>
 
-    <h2 class="u-fs-r--b u-mb-no">Not received your code?</h2>
-    <p>
-        <a href="/prototypes/rh-census/confirm-email-address.html">Send a new code</a>
-    </p>
+    <p><a href="/prototypes/rh-census/">Start survey</a></p>
+
+    <h2>Didn't receive an email?</h2>
+    <p>It can take a few minutes for the email to arrive. If it does not arrive, you can <a href="/prototypes/rh-census/confirm-email-address.html">request a new code</a>.</p>
 {% endblock %}
