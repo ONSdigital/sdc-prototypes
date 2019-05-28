@@ -1,0 +1,28 @@
+---
+title: Access code sent to mobile number
+group: Census
+version: 7.0.0
+layout: rh-census/views/_master
+---
+{% from "prototypes/rh-census/components/uac-entry/_macro.njk" import onsUACEntry %}
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action": "/prototypes/rh-census/"
+    }
+} %}
+
+{% block main %}
+    <h1 class="u-mt-l">We have sent an access code to</h1>
+
+    <p>07700 900 982</p>
+
+    <p>A text with the code should arrive shortly. Once you get the code, you can start the survey.</p>
+
+    <p><a href="/prototypes/rh-census/">Start survey</a></p>
+
+    <h2>Didn't receive a text?</h2>
+    <p>It can take a few minutes for the text to arrive. If it doesn't arrive, you can <a href="/prototypes/rh-census/confirm-mobile-number.html">request a new code</a>.</p>
+{% endblock %}

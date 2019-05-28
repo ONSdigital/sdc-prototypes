@@ -1,0 +1,52 @@
+---
+title: Enter address
+group: Census
+version: 7.0.0
+layout: rh-census/views/_master
+---
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "prototypes/rh-census/components/uac-entry/_macro.njk" import onsUACEntry %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action": "/prototypes/rh-census/confirm-address.html"
+    }
+} %}
+
+{% block main %}
+    <a class="previous-link js-previous" href="{{ pageInfo.parentPath }}">Previous</a>
+    {% call onsQuestion({
+        "title": "What is your address?"
+    }) %}
+    <p>We ask for this to check if your address is eligible for the census</p>
+    {% from "components/input/_macro.njk" import onsInput %}
+    {{ 
+        onsInput({
+            "id": "text",
+            "label": {
+                "text": "Enter part of your address or postcode"
+            }
+        })
+    }}
+    <h2 class="u-fs-m u-mt-m">Or</h2>
+    {{ 
+        onsButton({
+            "type": 'button',
+            "text": 'Manually enter address',
+            "classes": 'btn--secondary btn--small js-address-manual-btn'
+        }) 
+    }}
+    
+    {% endcall %}
+    
+    {{
+        onsButton({
+            "text": "Continue",
+            "classes": "u-mt-l"
+        })
+    }}
+    
+{% endblock %}
