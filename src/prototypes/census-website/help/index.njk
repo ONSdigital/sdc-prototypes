@@ -21,7 +21,7 @@ layout: census-website/views/_master
     <div class="grid">
         <div class="grid__col u-mb-l">
             <main id="main-content" class="{{ pageClasses }}">
-                <div class="intro--banner u-pb-m">
+                
                     <div class="container">
                         <div class="col-8@m">
                             {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
@@ -42,18 +42,18 @@ layout: census-website/views/_master
                                 }) 
                             }}
                             <h1>Help with your the census</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            
                         </div>
                     </div>
-                </div>
+                
                 <div class="container">
                 <div class="grid grid--flex grid--column@xs@s u-mt-l">
                     <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
                         {{-
                             onsCard({
-                                "title": 'What is the census?',
-                                "url": '/prototypes/census-website/what-is-the-census/index.html',
-                                "text": 'description' 
+                                "title": 'How to complete the census',
+                                "url": '/prototypes/census-website/help/how-to-complete-the-census/',
+                                "text": 'When to complete your census survey, how you can respond and how to get started.' 
                               
                             })
                         }}
@@ -62,49 +62,35 @@ layout: census-website/views/_master
                         {{- 
                             onsCard({
                                 "classes": 'u-fs-r',
-                                "title": 'Why is the census so important?',
+                                "title": 'Help with the questions',
                                 "url": '#',
-                                "text": 'Who we are asking to participate in a rehearsal and why'
+                                "text": 'Guidance on how to answer the questions in the census survey.'
                             })
                         }}
                     </div>
                     <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
-                        <div class="card">
-                            <h3 class="u-fs-m">
-                                <a href="#">
-                                Why we need a rehearsal?
-                                </a>
-                            </h3>
-                            <p>Description</p>
-                            <ul>
-                            <li><a href="#">What's the 2019 Rehearsal for?</a></li>
-                            <li><a href="do-i-have-to.html">Do I have to do the census rehearsal?</a></li>
-                            <li><a href="#">What happens if I don't do it?</a></li>
-                            </ul>
-                        </div>
+                        {{- 
+                            onsCard({
+                                "classes": 'u-fs-r',
+                                "title": 'Request a new access code or paper form',
+                                "url": '#',
+                                "text": "What to do if you\'ve lost your letter or do not want to complete online."
+                            })
+                        }}
                     </div>
                     
                     
                 </div>
-                <div class="grid grid--flex grid--column@xs@s col-8@s u-mt-l u-mb-l">  
+                <div class="grid grid--flex grid--column@xs@s col-4@s u-mt-l u-mb-l">  
                     <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
                         {{-
                             onsCard({
-                                "title": 'Do all countries have a census?',
+                                "title": 'Getting help to complete your census',
                                 "url": '#',
-                                "text": ''
+                                "text": 'Get help from our advisors face-to-face or over the phone.'
                             })
                         }}
                     </div> 
-                    <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
-                        {{-
-                            onsCard({
-                                "title": 'How old is the census?',
-                                "url": '#',
-                                "text": 'description'
-                            })
-                        }}
-                    </div>
                 </div>
                 
                 </div>

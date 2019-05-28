@@ -1,0 +1,102 @@
+---
+version: 7.0.2
+layout: census-website/views/_master
+---
+
+{% from "components/card/_macro.njk" import onsCard %}
+
+{% block page %}
+{% from "census-website/components/call-to-action/_macro.njk" import onsCallToAction %}
+{{-
+    onsCallToAction({
+        "headingText": "Ready to start your census survey?",
+        "paragraphText": "You'll need the access code from the letter we sent you.",
+        "button": {
+            "text": "Start survey",
+            "classes": 'btn--small'
+        }
+    })
+}}
+<div class="page__container container {{ containerClasses }}">
+        {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/prototypes/census-website/',
+                            "text": 'Home'
+                        },
+                        {
+                            "url": '/prototypes/census-website/help/',
+                            "text": 'Help with your census'
+                        },                        
+                        {
+                            "url": '/prototypes/census-website/help/how-to-complete-the-census',
+                            "text": 'How to complete the census'                                              
+                        },                        
+                        {
+                            "url": '',
+                            "text": 'Paper',
+                                "current": true                                                
+
+                        }
+                    ]
+                }) 
+            }}
+    <div class="grid">
+        <div class="grid__col col-7@m">
+            <main id="main-content" class=" {{ pageClasses }}">
+                <h1 class="u-mb-l u-fs-l">How to complete the census</h1>
+                <div class="u-mb-xs" style="font-weight:bold;">Contents</div>
+                <ul class="list list--bare">
+                    <li>— <a href="../../how-to-complete-the-census/">Overview</a></li>
+                    <li>— <a href="../online/">Online</a></li>
+                    <li>— On paper</li>
+                    <li>— <a href="the-2019-rehearsal.html">Who should complete the census</a></li>
+                </ul>
+                <div class="u-mt-l">
+                        <hr class="footer__hr" style="margin-bottom: 0;">
+                </div>
+            </main>
+            <div class="u-mt-s">
+                <main id="main-content" class=" {{ pageClasses }}">
+                    <h2>Completing the census on paper</h2>
+
+                    <p>The easiest and quickest way to complete the census is online, using the access code in the letter we sent you.</p>
+                    <p>It should take you no longer than 30 minutes to complete, and you can save your answers to return later by <a href="">re-entering your access code.</a></p>
+                    <h3>If you have not received a census letter</h3>
+                    <p>If you are the householder, <a href="/contact-us">contact us.</a></p>
+                    <p>If you are not the householder, speak to them to see if the census letter has arrived. You can use the access code on the letter to complete your section.</p>
+                    <p>If this is not possible, or you don't want the people you live with to see your answers you can <a href="">request a code to respond separately.</a></p>
+
+                    
+                </main>
+            </div> 
+            <div class="u-mt-l">
+                        <hr class="footer__hr" style="margin-bottom: 0;">
+                </div>  
+            
+            <div class="u-mt-s">
+                <div class="grid__col col-4@m" style="padding-left:0;">
+                  <a href="../" style="text-align:left;"><h2 class="u-mb-xs">< Previous</h2><p>Overview</p> </a>
+                </div>
+                <div class="grid__col col-4@m push-4@m col-5@xs push-1@xs" style="padding-left:0;">
+                <a href="why-info-important.html" style="text-align:right;"><h2 class="u-mb-xs">Next ></h2><p>On paper</p> </a>
+                </div>
+            </div>
+        </div>
+        <div class="grid__col col-4@m push-1@m">
+            <div style="border-top:5px solid purple;padding:15px 0;">
+                <h3>Related content</h3>
+                    <ul class="list list--bare">
+                        <li><a href="#">About the census</a></li>
+                        <li><a href="#">What we ask you</a></li>
+                        <li><a href="#">Help and support</a></li>
+                        <li><a href="#">Contact us</a></li>
+                    </ul>
+            </div>
+        </div>      
+    </div>
+</div>
+{% endblock %}
