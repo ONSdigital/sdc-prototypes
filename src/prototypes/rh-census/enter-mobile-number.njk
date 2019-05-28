@@ -1,5 +1,5 @@
 ---
-title: Enter your name
+title: Enter your mobile number
 group: Census
 version: 7.0.0
 layout: rh-census/views/_master
@@ -12,41 +12,28 @@ layout: rh-census/views/_master
 {% set form =  {
     "method": "GET",
     "attributes": {
-        "action": "/prototypes/rh-census/code-sent-letter.html"
+        "action": "/prototypes/rh-census/confirm-mobile-number.html"
     }
 } %}
 
 {% block main %}
     <a class="previous-link js-previous" href="{{ pageInfo.parentPath }}">Previous</a>
     {% call onsQuestion({
-        "title": "Who shall we address the letter to?",
+        "title": "What is your mobile phone number?",
         "useFieldset": true
     }) %}
+
+    <p>We will send an access code by text to this number</p>
 
     {% from "components/input/_macro.njk" import onsInput %}
     {{ 
         onsInput({
-            "id": "first-name",
+            "id": "telephone",
+            "type": "tel",
+            "autocomplete": "tel",        
+            "classes": "input--w-8",
             "label": {
-                "text": "First name"
-            }
-        }) 
-    }}
-
-    {{ 
-        onsInput({
-            "id": "middle-name",
-            "label": {
-                "text": "Middle name (optional)"
-            }
-        }) 
-    }}
-
-    {{ 
-        onsInput({
-            "id": "last-name",
-            "label": {
-                "text": "Last name"
+                "text": "Enter mobile number"
             }
         }) 
     }}

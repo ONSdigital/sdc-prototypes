@@ -21,6 +21,7 @@ layout: rh-census/views/_master
     {% call onsQuestion({
         "title": "What is your address?"
     }) %}
+    <p>We ask for this to check if your address is eligible for the census</p>
     {% from "components/input/_macro.njk" import onsInput %}
     {{ 
         onsInput({
@@ -30,12 +31,12 @@ layout: rh-census/views/_master
             }
         })
     }}
-
+    <h2 class="u-fs-m u-mt-m">Or</h2>
     {{ 
         onsButton({
             "type": 'button',
             "text": 'Manually enter address',
-            "classes": 'btn--secondary btn--small u-mt-s js-address-manual-btn'
+            "classes": 'btn--secondary btn--small js-address-manual-btn'
         }) 
     }}
     
