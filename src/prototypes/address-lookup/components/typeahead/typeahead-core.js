@@ -443,7 +443,7 @@ export default class TypeaheadCore {
       const result = this.results[index || this.highlightedResultIndex || 0];
 
       // TODO: This condition should be removed if we go with the internal address lookup API, or made configurable if we use a third party API
-      if (!result.type === 'Postcode') {
+      if (result.type !== 'Postcode') {
         this.input.value = result[this.lang];
         this.query = result[this.lang];
       }

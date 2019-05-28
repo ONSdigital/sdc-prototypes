@@ -1,0 +1,63 @@
+---
+version: 5.0.1
+layout: typeaheads/views/_master
+---
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+
+{% block main %}
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/ethnic-group.html">Previous</a>
+    <form action="{{ pageInfo.parentPath }}/religion.html?previous={{ pageInfo.path }}.html">
+        {{ 
+            onsRadios({
+                "legend": "<h1 class=\"u-fs-l\">Which one best describes your Mixed or Multiple ethnic group or background?</h1>",
+                "name": "ethnic-group-mixed",
+                "classes": "u-mt-s",
+                "radios": [
+                    {
+                        "id": "a",
+                        "label": {
+                            "text": "White and Black Caribbean"
+                        },
+                        "name": "a"
+                       
+                    },
+                    {
+                        "id": "b",
+                        "label": {
+                            "text": "White and Black African"
+                        },
+                        "name": "b"
+                       
+                    },
+                    {
+                        "id": "c",
+                        "label": {
+                            "text": "White and Asian"
+                        },
+                        "name": "c"
+                       
+                    },
+                    {
+                        "id": "other",
+                        "label": {
+                            "text": "Any other Mixed or Multiple background",
+                            "description": "You can enter this on the next question"
+                        },
+                        "name": "other",
+                        "attributes": {
+                            "data-action-url": pageInfo.parentPath + "/ethnic-group-mixed-other.html"
+                        }
+                    }
+                ]
+            }) 
+        }}
+        {{
+           onsButton({
+                "text": "Save and continue",
+                "classes": "u-mt-l"
+            })
+        }}
+    </form>
+    {% include "typeaheads/views/partials/_heroku-waker.njk" %}
+{% endblock %}

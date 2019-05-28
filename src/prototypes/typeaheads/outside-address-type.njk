@@ -1,0 +1,74 @@
+---
+version: 5.0.1
+layout: typeaheads/views/_master
+---
+{% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% block main %}
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/address-country.html">Previous</a>
+    <form action="{{ pageInfo.parentPath }}/student-check.html?previous={{ pageInfo.path }}.html">
+        <h1 class="u-fs-l u-mt-s question__title js-piped-answer" data-question-to-pipe="{{ pageInfo.parentPath }}/address-country.html">What type of address is your address in <em>{x}</em>?</h1>
+        {{ onsCheckboxes({
+            "checkboxesLabel": "Select all that apply",
+            "name": "outside-address-type",
+            "checkboxes": [
+                {
+                    "id": "armed-forces-base",
+                    "label": {
+                        "text": "Armed forces base address"
+                    }
+                },
+                {
+                    "id": "working-address",
+                    "label": {
+                        "text": "Another address when working away from home"
+                    }
+                },
+                {
+                    "id": "student-home",
+                    "label": {
+                        "text": "Student’s home address"
+                    }
+                },
+                {
+                    "id": "student-term",
+                    "label": {
+                        "text": "Student’s term-time address"
+                    }
+                },
+                {
+                    "id": "parent-guardian",
+                    "label": {
+                        "text": "Another parent or guardian’s address"
+                    }
+                },
+                {
+                    "id": "partner",
+                    "label": {
+                        "text": "Partner's address"
+                    }
+                },
+                {
+                    "id": "holiday-home",
+                    "label": {
+                        "text": "Holiday home"
+                    }
+                },
+                {
+                    "id": "other",
+                    "label": {
+                        "text": "Other"
+                    }
+                }
+            ]
+        }) }}
+        {{
+           onsButton({
+                "text": "Save and continue",
+                "classes": "u-mt-l"
+            })
+        }}
+    </form>
+    {% include "typeaheads/views/partials/_heroku-waker.njk" %}
+{% endblock %}

@@ -21,20 +21,20 @@ export default class SummaryManager {
     // Filter out questions with no answers and map questions
     const unsortedQuestions = keys.filter(key => {
       const data = JSON.parse(sessionStorage.getItem(key));
-      const inputs = data.inputs.filter(input => input.label && input.value);
+      const inputs = data.inputs.filter(input => input.label);
       return inputs.length;
     }).map(key => ({ key, ...JSON.parse(sessionStorage.getItem(key)) }));
 
 
-    const firstQuestion = unsortedQuestions.find(question => !question.previousUrl);
-    const remainingUnsortedQuestions = unsortedQuestions.filter(question => question.previousUrl).length;
+    const firstQuestion = unsortedQuestions.find(question => !question.previousURL);
+    const remainingUnsortedQuestions = unsortedQuestions.filter(question => question.previousURL).length;
 
     const questions = [firstQuestion];
   
     for (let i = 0; i < remainingUnsortedQuestions; i++) {
       const lastQuestionKey = questions[questions.length - 1].key;
 
-      const nextQuestion = unsortedQuestions.find(question => question.previousUrl === lastQuestionKey);
+      const nextQuestion = unsortedQuestions.find(question => question.previousURL === lastQuestionKey);
 
       questions.push(nextQuestion);
     }
@@ -49,7 +49,11 @@ export default class SummaryManager {
         joinString = ' ';
       }
 
-      const answer = answers.join(joinString);
+      let answer = answers.join(joinString);
+
+      if (!answer) {
+        answer = 'No answer provided';
+      }
       
       const item = {
         questions: [

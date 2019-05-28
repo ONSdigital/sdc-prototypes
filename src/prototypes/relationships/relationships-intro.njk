@@ -1,0 +1,29 @@
+---
+title: Relationships
+group: Components
+version: 7.0.1
+layout: relationships/views/_master
+---
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action": pageInfo.parentPath + "/relationship.html"
+    }
+} %}
+
+{% block main %}
+    <a href="{{ pageInfo.rootPath }}/does-anyone-else-live-here.html">Previous</a>
+
+    <h1 class="u-mt-s">Household relationships</h1>
+
+    <p>In this section, we’ll ask you how the people who usually live in this household are related to each other.</p>
+
+    <p>For the displayed household members, select the appropriate relationship from the options shown. The selected relationship will display at the bottom of the page for you to check.</p>
+
+    {{ onsButton({
+        "text": "Continue",
+        "classes": "u-mt-m u-mb-xl"
+    }) }}
+{% endblock %}
