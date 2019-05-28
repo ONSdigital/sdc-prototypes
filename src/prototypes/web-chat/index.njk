@@ -1,0 +1,104 @@
+---
+title: Web Chat
+group: Web Chat
+version: 7.0.0
+layout: web-chat/views/_master
+---
+{#{% from "prototypes/rh-census/components/uac-entry/_macro.njk" import onsUACEntry %}#}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/select/_macro.njk" import onsSelect %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action": "#"
+    }
+} %}
+
+{% block main %}
+    <h1 class="u-mt-l">Web Chat</h1>
+
+    {{ onsButton({
+        "text": "Open web chat",
+        "classes": "u-mb-xl js-activate-web-chat"
+    }) }}
+    
+    <div class="page-fix">
+        <div class="container">
+            <div class="web-chat-inner">
+                <div class="web-chat-form js-web-chat">
+                    <div class="web-chat-form__header">
+                        <h2 class="u-mb-no">How can we help?</h2>
+                        <p class="u-mb-no">Please enter your information to start a conversation</p>
+                    </div>
+                    
+                    <div class="web-chat-form__body">
+                        {{
+                            onsInput({
+                                "id": "name",
+                                "label": {
+                                    "text": "What is your name?"
+                                },
+                                "classes": "input--w-20@m js-name"
+                            })
+                        }}
+    
+                        {{
+                            onsInput({
+                                "id": "email",
+                                "label": {
+                                    "text": "Email address"
+                                },
+                                "classes": "input--w-20@m js-name"
+                            })
+                        }}
+    
+                        {{
+                            onsInput({
+                                "id": "country",
+                                "label": {
+                                    "text": "Country"
+                                },
+                                "classes": "input--w-20@m js-name"
+                            })
+                        }}
+
+                        {{
+                            onsSelect({
+                                "id": "query",
+                                "name": "query",
+                                "label": {
+                                    "text": "Type of query"
+                                },
+                                "options": [
+                                    {
+                                        "value": "",
+                                        "text": "Select an option",
+                                        "disabled": true,
+                                        "selected": true
+                                    },
+                                    {
+                                        "value": "help",
+                                        "text": "I need some help"
+                                    },
+                                    {
+                                        "value": "another",
+                                        "text": "Another option"
+                                    }
+                                ]
+                            })
+                        }}
+
+                        {{ onsButton({
+                            "text": "Start chat",
+                            "classes": "u-mb-m u-mt-m"
+                        }) }}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}
