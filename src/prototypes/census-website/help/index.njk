@@ -42,7 +42,7 @@ layout: census-website/views/_master
                                     ]
                                 }) 
                             }}
-                            <h1>Help with your the census</h1>
+                            <h1>Help with your census</h1>
                             
                         </div>
                     </div>
@@ -52,9 +52,9 @@ layout: census-website/views/_master
                     <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
                         {{-
                             onsCard({
-                                "title": 'How to complete the census',
+                                "title": 'How to complete your census',
                                 "url": '/prototypes/census-website/help/how-to-complete-the-census/',
-                                "text": 'When to complete your census survey, how you can respond and how to get started.' 
+                                "text": 'What you need to do to get started.' 
                               
                             })
                         }}
@@ -65,10 +65,20 @@ layout: census-website/views/_master
                                 "classes": 'u-fs-r',
                                 "title": 'Help with the questions',
                                 "url": '#',
-                                "text": 'Guidance on how to answer the questions in the census survey.'
+                                "text": 'Guidance on how to answer the questions in the census.'
                             })
                         }}
                     </div>
+                    <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
+                        {{-
+                            onsCard({
+                                "title": 'Getting help to complete your census',
+                                "url": '#',
+                                "text": 'You can get help from a friend or neighbour, or one of our advisors face-to-face or over the phone.'
+                            })
+                        }}
+                    </div> 
+                    {#
                     <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
                         {{- 
                             onsCard({
@@ -79,19 +89,11 @@ layout: census-website/views/_master
                             })
                         }}
                     </div>
-                    
+                    #}
                     
                 </div>
                 <div class="grid grid--flex grid--column@xs@s col-4@s u-mt-l u-mb-l">  
-                    <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
-                        {{-
-                            onsCard({
-                                "title": 'Getting help to complete your census',
-                                "url": '#',
-                                "text": 'Get help from our advisors face-to-face or over the phone.'
-                            })
-                        }}
-                    </div> 
+                    
                 </div>
                 
                 </div>
