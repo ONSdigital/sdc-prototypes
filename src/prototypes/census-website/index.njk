@@ -1,7 +1,7 @@
 ---
 title: Campaign Website
 group: Census
-version: 7.0.2
+version: 8.0.1
 layout: census-website/views/_master
 ---
 
@@ -20,15 +20,16 @@ layout: census-website/views/_master
                             <div class="hero-text">
                                 <h1 class="hero--header u-fs-xxl">We count</h1>
                                 <p class="u-fs-r">Inspiring tagline goes here</p>
-                                <button type="button" class="btn">
-                                    <span class="btn__inner icon--chevron-right-white icon--external-link">Start your census survey</span>
-                                </button>
+                                <a href="https://deploy-preview-28--sdc-prototypes.netlify.com/prototypes/rh-census/" role="button" class="btn">
+                                    <span class="btn__inner icon--chevron-right-white" style="padding-right:13px;">Start your census survey</span>
+                                </a>
                             </div>
                         </div>
                     </div>    
             </main>  <!--Main Banner end-->
 
         <div class="container">
+<<<<<<< HEAD
                 <div class="grid grid--flex grid--column@xs@s u-mt-xl">
                     <div class="grid__col u-flex-grow u-flex-no-basis@s col-12@xs@s">
                        <div class="card u-mb-l">
@@ -42,6 +43,28 @@ layout: census-website/views/_master
                             </ul>
                         </div>
                         
+=======
+        
+                <div class="grid grid--flex grid--column@xs@s u-mt-l">
+                    <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
+                        {{-
+                            onsCard({
+                                "title": 'What is the census?',
+                                "url": '/prototypes/census-website/what-is-the-census',
+                                "text": 'About the census' 
+                              
+                            })
+                        }}
+                    </div>
+                    <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
+                        {{- 
+                            onsCard({
+                                "title": 'Who needs to take part',
+                                "url": '#',
+                                "text": 'Who we are asking to participate in the rehearsal and why'
+                            })
+                        }}
+>>>>>>> 2d678f8afb7a622b960daf30212a8d13b191f5cf
                     </div>
                     <div class="grid__col u-flex-grow u-flex-no-basis@s col-12@xs@s">
                         <div class="card u-mb-l">
