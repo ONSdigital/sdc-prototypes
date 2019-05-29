@@ -19,7 +19,7 @@ layout: census-website/views/_master
                         <div class="container">
                             <div class="hero-text">
                                 <h1 class="hero--header u-fs-xxl">We count</h1>
-                                <p class="u-fs-r">Inspiring tagline goes here</p>
+                                <p class="u-fs-r">Campaign tagline goes here</p>
                                 <a href="https://deploy-preview-28--sdc-prototypes.netlify.com/prototypes/rh-census/" role="button" class="btn">
                                     <span class="btn__inner icon--chevron-right-white" style="padding-right:13px;">Start your census survey</span>
                                 </a>
@@ -32,24 +32,24 @@ layout: census-website/views/_master
         
                 <div class="grid grid--flex grid--column@xs@s u-mt-l">
                     <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
-                        {{-
-                            onsCard({
-                                "title": 'What is the census?',
-                                "url": '/prototypes/census-website/what-is-the-census',
-                                "text": 'About the census' 
-                              
-                            })
-                        }}
+                        <div class="card u-mb-l">
+                            <h3 class="u-fs-m">
+                                <a href="/prototypes/census-website/what-is-the-census/">What is the census?</a>
+                            </h3>
+                            <p>About the census and the 2019 rehearsal.</p>
+                            <ul class="list--bare">
+                                <li>— <a href="/prototypes/census-website/what-is-the-census/who-uses-data.html">What your information tells us</a></li>
+                            </ul>
+                        </div>
                     </div>
-
                     <div class="grid__col u-flex-grow u-flex-no-basis@s col-12@xs@s">
                         <div class="card u-mb-l">
                             <h3 class="u-fs-m">
-                                <a href="#">Who needs to take part</a>
+                                <a href="/prototypes/census-website/what-is-the-census/the-2019-rehearsal.html">Who needs to take part</a>
                             </h3>
                             <p>The 2019 Rehearsal is your chance to help us make sure the census in 2021 is as good as it can be.</p>
                             <ul class="list--bare">
-                                <li><a href="">The importance of taking part</a></li>
+                                <li>— <a href="/prototypes/census-website/what-is-the-census/why-info-important.html">The importance of taking part</a></li>
                             </ul>
                         </div>
                         
@@ -60,10 +60,8 @@ layout: census-website/views/_master
                             <h3 class="u-fs-m">
                                 <a href="#">Keeping your data secure</a>
                             </h3>
-                            <p>The census asks questions about you, your home and the people who live in it. That’s personal information and you can trust us to keep your information confidential, secure and safe.</p>
-                            <ul class="list--bare">
-                                <li><a href="">What your information tells us?</a></li>
-                            </ul>
+                            <p>You can trust us to keep your personal information confidential, secure and safe.</p>
+
                         </div>
                     </div>
                 </div>
@@ -120,7 +118,7 @@ layout: census-website/views/_master
                                 <h3 class="u-fs-m">
                                     <a href="/prototypes/census-website/help">Help with your census</a>
                                 </h3>
-                                <p>Lorem ipsum dolor sit amet, contetur adipiscing elit</p>
+                                <p>How to fill in your census survey or get help to complete it.</p>
                             </div>
                             <div class="card" style="padding: 1.3em;">
                                 <h3 class="">
