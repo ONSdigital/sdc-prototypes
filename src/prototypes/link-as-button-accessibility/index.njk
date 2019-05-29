@@ -1,0 +1,13 @@
+---
+title: Link as button accessibility
+group: Components
+version: 8.0.0
+---
+{% from "prototypes/link-as-button-accessibility/components/button/_macro.njk" import onsButton %}
+
+{% block main %}
+    {{ onsButton({
+        "text": "Start your survey",
+        "url": "#"
+    })}}
+{% endblock %}
