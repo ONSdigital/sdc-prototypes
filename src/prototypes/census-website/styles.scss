@@ -1,7 +1,65 @@
 @import 'components/**/*.scss';
 
+
+.stat-icon{
+  width: 70px;
+  height: 70px;
+  border: solid 3px;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+.stat-text{
+  font-size: 4em;
+  line-height: 1em;
+
+  & small{
+    font-size: 60%;
+    line-height: 0;
+  }
+}
+
+.img--box{
+  padding: 15px;
+    height: 190px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+.logo-text{
+  text-align: center;
+  font-size: 2.2em;
+  margin: 0;
+
+  & strong{
+font-size:1.3em;
+  }
+}
+.box-text{
+  font-size: 2.1em;
+    line-height: 1.1em;
+    font-weight: bold;
+    margin: 0 10px;;
+
+    & strong{
+      background: white;
+      color: #5073A5;
+      line-height: 1.4em;
+        }
+}
+
 .bg-blue{
   background: #483698!important;
+}
+
+.bg-purple{
+  background: purple!important;
+}
+
+.bg-grey{
+  background: #5073A5!important;
+}
+.bg-darkgrey{
+  background: #555555!important;
 }
 .cta-banner{
   display: none;
@@ -36,8 +94,8 @@
 }
 
 .hero-image {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)),url(images/group.jpg);
-  height: 45vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url(images/group.jpg);
+  height: 40vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -69,6 +127,10 @@
 
 
 @media only screen and (max-width: 680px) {
+
+  .grid{
+    margin-left: 0;
+  }
   .cta-banner{
     background: #483698;
     padding: 10px 0;
