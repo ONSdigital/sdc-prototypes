@@ -46,6 +46,26 @@
 
 .icon--chevron-right-white:after {
   background-image: url(img/icons/icons--chevron-right-white.svg);
+  margin: 0 0 0 .5rem;
+  -webkit-transform: none;
+  transform: none;
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  background-repeat: no-repeat;
+  background-size: 1rem 1rem;
+  content: "";
+  vertical-align: middle;
+}
+
+.btn--small .btn__inner {
+  padding: 0.5em 0.7em;
+}
+
+.btn--small > .icon--chevron-right-white:after {
+  width:.8rem;
+  height:.8rem;
+  background-size: .8rem .8rem;
 }
 
 .hero-text {
