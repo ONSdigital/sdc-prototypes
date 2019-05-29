@@ -9,6 +9,8 @@ layout: census-website/views/_master
 {% from "components/button/_macro.njk" import onsButton %}
 
 {% block page %}
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
     <div class="page__container {{ containerClasses }}">
         <div class="grid">
             <!--Main Banner-->
@@ -27,6 +29,21 @@ layout: census-website/views/_master
             </main>  <!--Main Banner end-->
 
         <div class="container">
+<<<<<<< HEAD
+                <div class="grid grid--flex grid--column@xs@s u-mt-xl">
+                    <div class="grid__col u-flex-grow u-flex-no-basis@s col-12@xs@s">
+                       <div class="card u-mb-l">
+                            <h3 class="u-fs-m">
+                                <a href="#">What is the census?</a>
+                            </h3>
+                            <p>The census is a count of all the people and housing in England and Wales, run by the Office for National Statistics.</p>
+                            <ul class="list--bare">
+                                <li><a href="">Who uses the data</a></li>
+                                <li><a href="">The 2019 Census rehearsal</a></li>
+                            </ul>
+                        </div>
+                        
+=======
         
                 <div class="grid grid--flex grid--column@xs@s u-mt-l">
                     <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
@@ -47,110 +64,141 @@ layout: census-website/views/_master
                                 "text": 'Who we are asking to participate in the rehearsal and why'
                             })
                         }}
+>>>>>>> 2d678f8afb7a622b960daf30212a8d13b191f5cf
                     </div>
+                    <div class="grid__col u-flex-grow u-flex-no-basis@s col-12@xs@s">
+                        <div class="card u-mb-l">
+                            <h3 class="u-fs-m">
+                                <a href="#">Who needs to take part?</a>
+                            </h3>
+                            <p>The 2019 Rehearsal is your chance to help us make sure the census in 2021 is as good as it can be.</p>
+                            <ul class="list--bare">
+                                <li><a href="">The importance of taking part</a></li>
+                                <li><a href="">Why should I take part?</a></li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+                    <div class="grid__col u-flex-grow u-flex-no-basis@s col-12@xs@s">
+                        
+                        <div class="card u-mb-l">
+                            <h3 class="u-fs-m">
+                                <a href="#">Keeping your data secure</a>
+                            </h3>
+                            <p>The census asks questions about you, your home and the people who live in it. That’s personal information and you can trust us to keep your information confidential, secure and safe. We take that very seriously.</p>
+                            <ul class="list--bare">
+                                <li><a href="">What we do the numbers tell us?</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <!--Purple banner-->
+                <div class="grid u-mt-l">
                     <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
-                        {{-
-                            onsCard({
-                                "title": 'Request an access code or paper form',
-                                "url": '#',
-                                "text": ''
-                            })
-                        }}
-                    </div>
-                    </div>
-                    <div class="grid grid--flex grid--column@xs@s u-mt-l u-mb-l">
-                        <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
-                            {{-
-                                onsCard({
-                                    "title": 'What is the census rehearsal?',
-                                    "url": 'about-the-census.html',
-                                    "text": 'About the census rehearsal' 
-                                
-                                })
-                            }}
-                        </div>
-                        <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
-                            {{- 
-                                onsCard({
-                                    "title": 'Who needs to take part',
-                                    "url": '#',
-                                    "text": 'Who we are asking to participate in the rehearsal and why'
-                                })
-                            }}
-                        </div>
-                        <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
-                            {{-
-                                onsCard({
-                                    "title": 'Help and guidance',
-                                    "url": 'help-guidance.html',
-                                    "text": 'Description here'
-                                })
-                            }}
-                        </div>
-                        </div>
-                        <div class="grid grid--flex grid--column@xs@s u-mt-l u-mb-l">
-                            <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-8@m col-12@xs@s">
-                                <div class="card card-cta bg-blue u-pl-m">
-                                    <h3 class="u-fs-m u-mb-xs">
-                                        Your information is safe
-                                    </h3>
-                                    <div style="font-size:2em; font-weight:bold;line-height: 1.3em;color:white;">Persuasive content e.g. the positives about how census data improves living</div>
+                        <div class="card card-cta bg-blue" style="padding: 2em 0;">
+                            <div class="container" style="padding:0;text-align: center;">
+                            <h2 class="u-mb-xs u-fs-xl">Making census count</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+                            <div class="grid u-mt-l">
+                                <div class="grid__col col-3@m" style="text-align: center;">
+                                    <i class="material-icons" style="font-size: 4em;">phonelink</i>
+                                        <p class="stat-text u-fs-m u-mb-xs">
+                                            80%
+                                        </p>
+                                    
+                                <p style="padding: 0 17px;">of users will fill out the form online</p>
                                 </div>
-                            </div>
-                            <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-4@m col-12@xs@s">
-                                <div class="card card-cta">
-                                    <h3 class="u-fs-m u-mb-xs">
-                                        Ready to take part?
-                                    </h3>
-                                    <a href="#" style="font-size:2em; font-weight:bold;line-height: 1.3em;color:white;text-decoration:underline;cursor:pointer;">Start your census survey</a>
+                                <div class="grid__col col-3@m" style="text-align: center;">
+                                    <i class="material-icons" style="font-size: 4em;">home</i>
+                                        <p class="stat-text u-fs-m u-mb-xs">
+                                            25<small>million</small>
+                                        </p>
+                                    
+                                    <p style="padding: 0 17px;">households will take  part in the census</p>
                                 </div>
+                                <div class="grid__col col-3@m" style="text-align: center;">
+                                    <i class="material-icons" style="font-size: 4em;">headset_mic</i>  
+                                        <p class="stat-text u-fs-m u-mb-xs">
+                                            223
+                                        </p>
+                                      
+                                    <p style="padding: 0 17px;">services are effected by the census</p>
+                                </div> 
+                                <div class="grid__col col-3@m" style="text-align: center;">
+                                    <i class="material-icons" style="font-size: 4em;">public</i>  
+                                        <p class="stat-text u-fs-m u-mb-xs">
+                                            100
+                                        </p>
+                                     
+                                    <p style="padding: 0 17px;">countries take part in their own census</p>
+                                </div>   
+                            </div> 
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container" style="padding:0;">
+                    <div class="grid u-mt-l u-mb-l">
+                        <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
+                            <div class="card" style="border-right:4px solid purple;padding:1.3em;">
+                                <h3 class="u-fs-m">
+                                    <a href="#">Help with your census</a>
+                                </h3>
+                                <p>Lorem ipsum dolor sit amet, contetur adipiscing elit</p>
+                            </div>
+                            <div class="card" style="padding: 1.3em;">
+                                <h3 class="">
+                                    Completing your census
+                                </h3>
+                                <ul class="list--bare">
+                                <li><a href="">Completing the online form</a></li>
+                                <li><a href="">Completing the paper form</a></li>
+                                <li><a href="">Who should complete the census</a></li>
+                                </ul>
+                            </div>
+                            <div class="card" style="padding: 1.3em;">
+                               <h3 class="">
+                                    Help with the questions
+                                </h3>
+                                <ul class="list--bare">
+                                <li><a href="">Issues with your address</a></li>
+                                <li><a href="">Accessing your online form</a></li>
+                                <li><a href="">Changes in your circumstance</a></li>
+                                </ul>
+                            </div>
+                            <div class="card" style="padding: 1.3em;">
+                                <h3 class="">
+                                    Request a new access code or paper form
+                                </h3>
+                                <ul class="list--bare">
+                                <li><a href="">I need a household form</a></li>
+                                <li><a href="">I need a personal form</a></li>
+                                </ul>
                             </div>
                         </div>
-                    
-                    <div class="grid grid--flex grid--column@xs@s u-mt-l u-mb-l">
                         <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
-                            {{-
-                                onsCard({
-                                    "title": 'What is the census rehearsal?',
-                                    "url": 'census-website/about-the-census.html',
-                                    "text": 'About the census rehearsal' 
-                                
-                                })
-                            }}
+                            
                         </div>
                         <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
-                            {{- 
-                                onsCard({
-                                    "title": 'Who needs to take part',
-                                    "url": '#',
-                                    "text": 'Who we are asking to participate in the rehearsal and why'
-                                })
-                            }}
-                        </div>
-                        <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
-                            {{-
-                                onsCard({
-                                    "title": 'Request an access code or paper form',
-                                    "url": '#',
-                                    "text": 'The most accurate and greographical dataset of addresses and properties in the UK.'
-                                })
-                            }}
+                            
                         </div>
                         </div>
 
-                    <div class="u-mb-l"> 
-                            <img src="https://via.placeholder.com/1500x600"/>
-                    </div>
-                    <div class="grid grid--flex grid--column@xs@s u-mt-l u-mb-l">
-                      <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
-                          <div class="card card-cta">
-                              <h3 class="u-fs-m u-mb-xs">
-                                  Ready to take part?
-                              </h3>
-                              <a href="#" style="font-size:2em; font-weight:bold;line-height: 1.3em;color:white;text-decoration:underline;cursor:pointer;">Start your census survey</a>
-                          </div>
-                      </div>
-                    </div>
+                 
+                    
               </div>
+                <!--<div class="grid u-mt-l">
+                    <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
+                        <div class="bg-darkgrey" style="padding: 25px 0; height: 80px;display: flex;width: 100%;align-items: center;">
+                            <div class="container" style="    padding: 0;text-align: center;display: flex;color: white;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#ffffff" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4 17h-8v-6h8v6zm-6-6v-2c0-1.104.897-2 2-2s2 .896 2 2v2h1v-2c0-1.656-1.343-3-3-3s-3 1.344-3 3v2h1z"/></svg>
+                            <div style="align-items: baseline;display: flex;margin-left: 2em;margin-top: .5em;">
+                            <h2>Your data is secure.</h2><p class="u-ml-s">Lorem ipsum dolor sit amet, consectetur adipiscing elit sit amet.</p>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>-->
     </div>
 {% endblock %}
