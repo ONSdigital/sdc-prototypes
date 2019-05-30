@@ -1,0 +1,25 @@
+---
+title: Web Chat
+group: Web Chat
+version: 7.0.0
+layout: web-chat/views/_master
+---
+{#{% from "prototypes/rh-census/components/uac-entry/_macro.njk" import onsUACEntry %}#}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/select/_macro.njk" import onsSelect %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action": "#"
+    }
+} %}
+
+{% block main %}
+
+    <h2 class="u-mt-m u-mb-no">Webchat</h2>
+    <p>Our advisers can help you with your census survey.</p>
+    <p>All webchat advisers are busy at the moment.</p>
+
+{% endblock %}
