@@ -28,7 +28,7 @@ function formDirectory(startPath, scripts) {
     if(statistics.isDirectory()) {
       formDirectory(filePath, scripts);
     } else if (file === 'index.js') {
-      const path = startPath.replace('src/', '');
+      const path = startPath.replace(/\\/g, '/').replace('src/', '');
       scripts[`${path}/${file.replace('.js', '')}`.replace(/\\/g, '/')] = `./${path}/${file}`.replace(/\\/g, '/');
     }
   });
