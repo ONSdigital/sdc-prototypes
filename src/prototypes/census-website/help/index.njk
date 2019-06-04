@@ -14,7 +14,7 @@ layout: census-website/views/_master
         "button": {
             "text": "Start survey",
             "classes": 'btn--small',
-            "url": "https://deploy-preview-28--sdc-prototypes.netlify.com/prototypes/rh-census/"
+            "href": "https://deploy-preview-28--sdc-prototypes.netlify.com/prototypes/rh-census/"
         }
     })
 }}
@@ -56,11 +56,13 @@ layout: census-website/views/_master
                                         How to complete your census
                                         </a>
                                     </h3>
-                                    <p class="u-mb-xs">What you need to do to get started.</p>
+                                    <p>What you need to do to get started.</p>
+                                    {#
                                     <ul class="list list--bare">
                                         <a href="#"><li>- Online form</li></a>
                                         <a href="#"><li>- Paper form</li></a>
                                     </ul>
+                                    #}
                                 </div>
                             </div>
                             <hr class="grid__col footer__hr u-mb-m" style="margin-left: 1em;width:100%;">
@@ -78,7 +80,7 @@ layout: census-website/views/_master
                                 {{-
                                     onsCard({
                                         "title": 'Getting help to complete your census',
-                                        "url": '#',
+                                        "url": '/prototypes/census-website/help/getting-help-to-complete-your-census/',
                                         "text": 'You can get help from a friend or neighbour, or one of our advisors face-to-face or over the phone.'
                                     })
                                 }}

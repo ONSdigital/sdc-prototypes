@@ -7,7 +7,7 @@
                 <p class="call-to-action__desc u-fs-r u-mb-no@s"><strong>{{ params.headingText }}</strong> {{ params.paragraphText }}</p>
             </div>
             <div class="grid__col col-auto u-flex-no-grow">
-                <a href="https://deploy-preview-28--sdc-prototypes.netlify.com/prototypes/rh-census/" role="button" class="btn{% if params.button.classes %} {{ params.button.classes }}{% endif %}">
+                <a href="{{ params.button.href }}" role="button" class="btn{% if params.button.classes %} {{ params.button.classes }}{% endif %}">
                     <span class="btn__inner icon--chevron-right-white">{{ params.button.text }}</span>
                 </a>
             </div>
