@@ -33,7 +33,7 @@ layout: census-website/views/_master
                         },                        
                         {
                             "url": '',
-                            "text": 'How to complete the census',
+                            "text": 'How to complete your census',
                                 "current": true                                                
 
                         }
@@ -43,22 +43,22 @@ layout: census-website/views/_master
     <div class="grid">
         <div class="grid__col col-7@m">
             <main id="main-content" class=" {{ pageClasses }}">
-                <h1 class="u-mb-l u-fs-l">How to complete the census</h1>
+                <h1 class="u-mb-l u-fs-l">How to complete your census</h1>
+                {#
                 <div class="u-mb-xs" style="font-weight:bold;">Contents</div>
                 <ul class="list list--bare">
                     <li>— Overview</li>
-                    <li>— <a href="/prototypes/census-website/help/how-to-complete-the-census/online/">Online</a></li>
-                    <li>— <a href="/prototypes/census-website/help/how-to-complete-the-census/paper/">On paper</a></li>
                     <li>— <a href="/prototypes/census-website/help/how-to-complete-the-census/who-should-complete/">Who should complete the census</a></li>
                 </ul>
                 <div class="u-mt-l">
                         <hr class="footer__hr" style="margin-bottom: 0;">
                 </div>
-            </main>
+                #}
+            </main> 
             <div class="u-mt-s">
                 <main id="main-content" class=" {{ pageClasses }}">
                     
-                    <p>When it is time to complete the census, we will send a letter to your household asking the the householder to complete the census survey on behalf of the household.</p>
+                    <p>We will send a letter to your household asking the householder, who is responsible for completing the census, to answer questions about the property and the individuals living there.</p>
                     {% from "components/details/_macro.njk" import onsDetails %}
                     {{
                         onsDetails({
@@ -68,8 +68,7 @@ layout: census-website/views/_master
                             "content": "<p>A <strong>household</strong> is either:</p>
                                         <ul>
                                             <li>one person living alone</li>
-                                            <li>a group or people (who don't have to be related) living at the same address who share cooking
-                                            facilities and share a living room, sitting room or dining area</li>
+                                            <li>a group of people (who don't have to be related) living at the same address who share cooking facilities and share a living or dining area</li>
                                         </ul>
                                         <p>The <strong>householder</strong> is a person who individually or jointly:</p>
                                         <ul>
@@ -81,21 +80,31 @@ layout: census-website/views/_master
                             }
                         })
                     }}
-                    <p>There are two methods to complete your census:</p>
-                    <ul>
-                        <li><a href="online/">online</a></li>
-                        <li><a href="paper/">on paper</a></li>
-                    </ul>
-                    <p>You can complete your census survey as soon as your letter arrives.</p>
-                    <p>You will just need to record the number of overnight visitors you expect to be visiting on 1 October 2019.</p>
+                    <p>To complete your census online, use the unique access code in the letter we sent the householder.</p>
+                    <p>Complete your census as soon as possible.</p>
+                    <p>If something changes once you have submitted or posted your form to us, don’t worry. You don’t need to tell us about the changes.</p>
+                    <p>If you are moving, then please fill out the census for the address where you will be on the 13 October 2019.</p>
+                    <p>It should take between 20 to 30 minutes to complete. You can save your answers and return to them later if you need to.</p>
+                    {% from "components/panel/_macro.njk" import onsPanel %}
+                    {{-
+                        onsPanel({
+                            "body": "Keep your unique access code safe as you will need it each time you return to the survey.",
+                            "classes": "u-mb-m"
+                        })
+                    }}
 
+                    <p>For help completing your census online, or to request a paper questionnaire, <a href="/prototypes/census-website/contact-us">contact us.</a></p>
+                    <h3 class="u-fs-m">I have not seen a census letter</h3>
+                    <p>If you are the householder and have not received a census letter, <a href="/prototypes/census-website/contact-us">contact&nbsp;us.</a></p>
+                    <p>If you are not the householder, you will need the unique access code to complete your individual questions. Check with the householder to see if they have the census letter with the unique access code.</p>
+                    <p>This may not be possible, or you may not want the people you live with to see your answers. You can <a href="https://deploy-preview-28--sdc-prototypes.netlify.com/prototypes/rh-census/address.html">request a code to respond separately</a>. We will send you a new access code by text.</p>
                     
                 </main>
             </div> 
             <div class="u-mt-l">
-                        <hr class="footer__hr" style="margin-bottom: 0;">
-                </div>  
-            
+            {#
+                <hr class="footer__hr" style="margin-bottom: 0;">
+            </div>  
             <div class="u-mt-s">
                 <div class="grid__col col-4@m" style="padding-left:0;">
                 
@@ -103,6 +112,7 @@ layout: census-website/views/_master
                 <div class="grid__col col-4@m push-4@m col-5@xs push-1@xs" style="padding-left:0;">
                   <a href="online/" style="text-align:right;"><h2 class="u-mb-xs">Next ></h2><p>Online</p> </a>
                 </div>
+                #}
             </div>
         </div>
         <div class="grid__col col-4@m push-1@m">
@@ -110,8 +120,7 @@ layout: census-website/views/_master
                 <h3>Related content</h3>
                     <ul class="list list--bare">
                         <li><a href="#">About the census</a></li>
-                        <li><a href="#">What we ask you</a></li>
-                        <li><a href="#">Help and support</a></li>
+                        <hr>
                         <li><a href="#">Contact us</a></li>
                     </ul>
             </div>

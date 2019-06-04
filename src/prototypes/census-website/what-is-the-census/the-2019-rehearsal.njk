@@ -58,7 +58,7 @@ layout: census-website/views/_master
             </main>
             <div class="u-mt-s">
                 <main id="main-content" class=" {{ pageClasses }}">
-                    <h2>The 2019 Census rehearsal</h2
+                    <h2>The 2019 Census Rehearsal</h2
                     <p>We’re holding a 2019 Rehearsal to make sure the process for Census 2021 works. We have chosen four areas to take part in the rehearsal:</p>
                     <ul>
                         <li>Carlisle</li>
@@ -70,8 +70,13 @@ layout: census-website/views/_master
 
                     <p>Testing our processes will help us make sure Census 2021 is easier to do and better for everyone. We can only do this if people take part in the rehearsal. You do not have to but if you’re invited, we’d be grateful if you take part.</p> 
                     
-                    <p>If you have any questions or concerns about taking part, please <a href="#">contact us.</a> If you take part in the Census rehearsal you will still need to fill out the census in 2021.</p>                       
-                    
+                    <p>If you have any questions or concerns about taking part, please <a href="#">contact us.</a></p>
+                    {% from "components/panel/_macro.njk" import onsPanel %}
+                    {{ 
+                        onsPanel({
+                            body: "<p>If you take part in the census rehearsal you will still need to fill out the census in 2021.</p>"
+                        }) 
+                    }}
                 </main>
             </div>
             <div class="u-mt-l">
