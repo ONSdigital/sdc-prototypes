@@ -9,15 +9,23 @@
     "url": "https://github.com/bameyrick"
   },
   "scripts": {
-    "start": "yarn rimraf build && yarn webpack-dev-server --host 0.0.0.0 --watch --config webpack.dev.babel.js",
-    "build": "yarn rimraf build && yarn webpack --config webpack.prod.babel.js",
-    "lint-staged": "lint-staged"
+    "start": "yarn tidy-clean && yarn webpack-dev-server --host 0.0.0.0 --watch --config webpack.dev.babel.js",
+    "build": "yarn tidy-clean && yarn webpack --config webpack.prod.babel.js",
+    "lint-staged": "lint-staged",
+    "tidy-clean": "yarn rimraf build",
+    "dedupe-deps": "npx yarn-deduplicate yarn.lock && yarn"
   },
   "browserslist": [
     "last 2 versions",
     "not ie < 11",
     "not ie_mob < 11"
   ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "post-checkout": "yarn tidy-clean && yarn check"
+    }
+  },
   "lint-staged": {
     "*.scss": [
       "prettier --print-width 140 --single-quote --parser postcss --write",
