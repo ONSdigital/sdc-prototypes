@@ -791,6 +791,11 @@
   resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-8.0.1.tgz#f1ed5a9b32bf1ef7452929573cf87390cb180415"
   integrity sha512-Cm3S94GUbGpi8/hZoDgC97oKw5N4ow3WOiqn8DFx/IDO/ECozwEpHdQa51haIDf9YnWRD7Vxs563BrsUx3hQzg==
 
+"@ons/design-system/8.0.2@npm:@ons/design-system@8.0.2":
+  version "8.0.2"
+  resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-8.0.2.tgz#554851b9204560b17df2a981613a7bcd4e1108fd"
+  integrity sha512-n5Cb/yyV0A7/xucx1+Lyl+twArV6mY9fHiHWWdhjh8n1+wKeZfdr+HRlzCe/HZmCAVR3Ivp8iZ50HOd2C6JWww==
+
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@samverschueren/stream-to-observable/-/stream-to-observable-0.3.0.tgz#ecdf48d532c58ea477acfcab80348424f8d0662f"
