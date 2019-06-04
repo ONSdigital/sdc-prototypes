@@ -58,7 +58,8 @@ layout: census-website/views/_master
             <div class="u-mt-s">
                 <main id="main-content" class=" {{ pageClasses }}">
                     
-                    <p>We will send a letter to your household asking the householder, who is responsible for completing the census, to answer questions about the property and the individuals living there.</p>
+                    <p>We will send a letter to your household asking the householder to answer questions about the property and the individuals living there.</p>
+                    <p>The householder is responsible for completing the census.</p>
                     {% from "components/details/_macro.njk" import onsDetails %}
                     {{
                         onsDetails({
@@ -82,8 +83,6 @@ layout: census-website/views/_master
                     }}
                     <p>To complete your census online, use the unique access code in the letter we sent the householder.</p>
                     <p>Complete your census as soon as possible.</p>
-                    <p>If something changes once you have submitted or posted your form to us, don’t worry. You don’t need to tell us about the changes.</p>
-                    <p>If you are moving, then please fill out the census for the address where you will be on the 13 October 2019.</p>
                     <p>It should take between 20 to 30 minutes to complete. You can save your answers and return to them later if you need to.</p>
                     {% from "components/panel/_macro.njk" import onsPanel %}
                     {{-
@@ -92,6 +91,8 @@ layout: census-website/views/_master
                             "classes": "u-mb-m"
                         })
                     }}
+<p>If something changes once you have submitted or posted your form to us, don’t worry. You don’t need to tell us about the changes.</p>
+                    <p>If you are moving, then please fill out the census for the address where you will be on the 13 October 2019.</p>
 
                     <p>For help completing your census online, or to request a paper questionnaire, <a href="/prototypes/census-website/contact-us">contact us.</a></p>
                     <h3 class="u-fs-m">I have not seen a census letter</h3>
