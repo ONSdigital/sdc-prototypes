@@ -1,51 +1,21 @@
 {% macro onsCallToAction(params) %}
+    {% from "prototypes/census-website/components/button/_macro.njk" import onsButton %}
 
-<div class="call-to-action">
-    <div class="container">
-        <div class="grid grid--flex grid--vertical-center grid--no-wrap@s">
-            <div class="grid__col col-auto u-flex-shrink@s">
-                <p class="call-to-action__desc u-fs-r u-mb-no@s"><strong>{{ params.headingText }}</strong> {{ params.paragraphText }}</p>
-            </div>
-            <div class="grid__col col-auto u-flex-no-grow">
-                <a href="{{ params.button.href }}" role="button" class="btn{% if params.button.classes %} {{ params.button.classes }}{% endif %}">
-                    <span class="btn__inner icon--chevron-right-white">{{ params.button.text }}</span>
-                </a>
+    <div class="call-to-action">
+        <div class="container">
+            <div class="grid grid--flex grid--vertical-center grid--no-wrap@s">
+                <div class="grid__col col-auto u-flex-shrink@s">
+                    <p class="call-to-action__desc u-fs-r u-mb-no@s"><strong>{{ params.headingText }}</strong> {{ params.paragraphText }}</p>
+                </div>
+                <div class="grid__col col-auto u-flex-no-grow">
+                    {{ onsButton({
+                        "text": "Start survey",
+                        "url": "#",
+                        "classes": "btn--small",
+                        "innerClasses": "icon--chevron-right-white"
+                    })}}
+                </div>
             </div>
         </div>
-
     </div>
-</div>
 {% endmacro %}
-{#
-  {% if params and params.classes %}
-    {% set utilityClasses  = ' ' + params.classes %}
-  {% endif %}
-
-  {% if params is not defined or params.title is not defined%}
-      {% set simpleClass = ' panel--simple' %}
-  {% endif %}
-
-  {% if params and params.type %}
-      {% set typeClass = ' panel--' + params.type %}
-  {% else %}
-      {% set typeClass = ' panel--info' %}
-  {% endif %}
-
-  {% if params and params.spacious %}
-      {% set spaciousClass = ' panel--spacious' %}
-  {% endif %}
-
-    <div 
-        class="panel{{ typeClass }}{{ simpleClass }}{{ spaciousClass }}{{ utilityClasses }}"
-        {% if params.attributes %}{% for attribute, value in (params.attributes.items() if params.attributes is mapping and params.attributes.items else params.attributes) %}{{attribute}}="{{value}}" {% endfor %}{% endif %}
-    >
-        {% if params and params.title %}
-            <div class="panel__header">
-                <div class="u-fs-r--b">{{ params.title | safe }}</div>
-            </div>
-        {% endif %}
-        <div class="panel__body">{{ (params.body if params else "") | safe }}
-            {{ caller() if caller }}
-        </div>
-    </div>
-#}

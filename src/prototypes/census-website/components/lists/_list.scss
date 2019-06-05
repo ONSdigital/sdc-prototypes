@@ -1,0 +1,69 @@
+@import 'node_modules/@ons/design-system/8.0.2/scss/helpers/mq';
+@import 'node_modules/@ons/design-system/8.0.2/scss/vars/grid';
+
+.list {
+  margin: 0 0 1rem;
+  padding: 0 0 0 1.5rem;
+}
+
+.list__item {
+  &:last-child {
+    margin: 0;
+  }
+}
+
+.list--bare {
+  list-style: none;
+  padding-left: 0;
+}
+
+.list--dashed {
+  @extend .list--bare;
+  .list__item {
+    margin-left: 25px;
+    &::before {
+      content: '— ';
+      margin-left: -25px;
+      padding-right: 5px;
+    }
+  }
+}
+
+$list-inline-spacing: 2rem;
+
+@include bp-suffix('list--inline') {
+  margin: 0 $list-inline-spacing / -2;
+
+  .list__item {
+    display: inline-block;
+    margin: 0 $list-inline-spacing / 2;
+  }
+}
+
+.list--boxes {
+  font-family: monaco, Consolas, 'Lucida Console', monospace;
+  list-style-type: none;
+  padding: 0;
+  margin: 1rem auto;
+  .list__item {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 0.4rem;
+    text-align: center;
+    margin: 0.2rem;
+    background: rgba(255, 255, 255, 0.5);
+    &:first-child {
+      margin-left: 0;
+    }
+    @include mq(m) {
+      padding: 0.5rem 1rem;
+      margin: 0 0.5rem;
+    }
+  }
+}
+
+.list--errors {
+  .list__item {
+    color: $color-red;
+  }
+}

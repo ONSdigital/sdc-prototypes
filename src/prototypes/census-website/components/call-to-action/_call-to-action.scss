@@ -1,7 +1,8 @@
+@import 'node_modules/@ons/design-system/8.0.2/scss/vars/colors';
+
 .call-to-action {
-  padding: .85rem 0;
-  background: rgba(227,77,219, 0.15);
-  border-bottom: 1px solid #ccc;
+  padding: 0.85rem 0;
+  background: $color-grey-5; //Change to $cta-bg for theming.
   &__desc {
     margin-bottom: 0.5rem;
   }

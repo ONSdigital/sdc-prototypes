@@ -1,0 +1,16 @@
+{% macro onsContentsList(params) %}
+  {% from "prototypes/census-website/components/lists/_macro.njk" import onsList %}
+  <aside class="contents-navigation-container" role="complementary">
+    <nav role="navigation" class="contents-list" aria-label="{{ params.ariaLabel }}">
+      <h2 class="contents-list__title u-fs-r--b">{{ params.title }}</h2>
+      {{ 
+          onsList({
+              "element": 'ol',
+              "classes": 'list--dashed',
+              "itemsList": params.itemsList
+          }) 
+      }}
+    </nav>
+  </aside>
+{% endmacro %}
+

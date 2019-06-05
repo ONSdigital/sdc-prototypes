@@ -4,9 +4,10 @@ layout: census-website/views/_master
 ---
 
 {% from "components/card/_macro.njk" import onsCard %}
+{% from "prototypes/census-website/components/call-to-action/_macro.njk" import onsCallToAction %}
+{% from "prototypes/census-website/components/contents-list/_macro.njk" import onsContentsList %}
 
 {% block page %}
-{% from "census-website/components/call-to-action/_macro.njk" import onsCallToAction %}
 {{-
     onsCallToAction({
         "headingText": "Ready to start your census survey?",
@@ -44,18 +45,35 @@ layout: census-website/views/_master
     <div class="grid">
         <div class="grid__col col-7@m">
             <main id="main-content" class=" {{ pageClasses }}">
-                <h1 class="u-mb-l u-fs-l">About the census</h1>
-                <div class="u-mb-xs" style="font-weight:bold;">Contents</div>
-                <ul class="list list--bare">
-                    <li>— <a href="/prototypes/census-website/what-is-the-census/">Overview</a></li>
-                    <li>— <a href="/prototypes/census-website/what-is-the-census/why-info-important.html">Why the information we collect is important</a></li>
-                    <li>— <a href="/prototypes/census-website/what-is-the-census/who-uses-data.html">Who uses the data</a></li>
-                    <li>— <a href="/prototypes/census-website/what-is-the-census/the-2019-rehearsal.html">The 2019 Census rehearsal</a></li>
-                    <li>— Online census</li>
-                </ul>
-                <div class="u-mt-l">
-                    <hr class="footer__hr" style="margin-bottom: 0;">
-                </div>
+                <h1 class="u-mb-l u-fs-xl">About the census</h1>
+                {{ 
+                    onsContentsList({
+                        "aria-label": 'Pages in this guide',
+                        "title": 'Contents',
+                        "itemsList": [
+                            {
+                                "url": '/prototypes/census-website/what-is-the-census/',
+                                "text": 'Overview'
+                            },
+                            {
+                                "url": '/prototypes/census-website/what-is-the-census/why-info-important.html',
+                                "text": 'Why the information we collect is important'
+                            },
+                            {
+                                "url": '/prototypes/census-website/what-is-the-census/who-uses-data.html',
+                                "text": 'Who uses the data'
+                            },
+                            {
+                                "url": '/prototypes/census-website/what-is-the-census/the-2019-rehearsal.html',
+                                "text": 'The 2019 Census rehearsal'
+                            },
+                            {
+                                "text": 'Online census',
+                                "current": true
+                            }
+                        ]
+                    }) 
+                }}
             </main>
             <div class="u-mt-s">
                 <main id="main-content" class=" {{ pageClasses }}">
