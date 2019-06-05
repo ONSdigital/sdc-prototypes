@@ -8,7 +8,7 @@ layout: typeaheads/views/_master
 {% from "typeaheads/components/address-input/_macro.njk" import prototypeAddressInput %}
 
 {% block main %}
-    <form action="{{ pageInfo.parentPath }}/name.html">
+    <form action="{{ pageInfo.rootPath }}/name.html">
         {{
             prototypeAddressInput({
                 "id": "address",

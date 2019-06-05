@@ -28,8 +28,8 @@ function formDirectory(startPath, scripts) {
     if(statistics.isDirectory()) {
       formDirectory(filePath, scripts);
     } else if (file === 'index.js') {
-      const path = startPath.replace('src/', '');
-      scripts[`${path}/${file.replace('.js', '')}`] = `./${path}/${file}`;
+      const path = startPath.replace(/\\/g, '/').replace('src/', '');
+      scripts[`${path}/${file.replace('.js', '')}`.replace(/\\/g, '/')] = `./${path}/${file}`.replace(/\\/g, '/');
     }
   });
 }
@@ -211,6 +211,12 @@ export default function(mode) {
             context: '../node_modules/@ons/design-system/',
             from: {
               glob: '**/favicons/**/*',
+              dot: true
+            }
+          },
+          {
+            from: {
+              glob: '**/img/**/*',
               dot: true
             }
           }

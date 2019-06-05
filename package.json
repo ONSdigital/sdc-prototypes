@@ -9,15 +9,23 @@
     "url": "https://github.com/bameyrick"
   },
   "scripts": {
-    "start": "rm -rf build && yarn webpack-dev-server --host 0.0.0.0 --watch --config webpack.dev.babel.js",
-    "build": "rm -rf build && yarn webpack --config webpack.prod.babel.js",
-    "lint-staged": "lint-staged"
+    "start": "yarn tidy-clean && yarn webpack-dev-server --host 0.0.0.0 --watch --config webpack.dev.babel.js",
+    "build": "yarn tidy-clean && yarn webpack --config webpack.prod.babel.js",
+    "lint-staged": "lint-staged",
+    "tidy-clean": "yarn rimraf build",
+    "dedupe-deps": "npx yarn-deduplicate yarn.lock && yarn"
   },
   "browserslist": [
     "last 2 versions",
     "not ie < 11",
     "not ie_mob < 11"
   ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "post-checkout": "yarn tidy-clean && yarn check"
+    }
+  },
   "lint-staged": {
     "*.scss": [
       "prettier --print-width 140 --single-quote --parser postcss --write",
@@ -76,6 +84,7 @@
     "remark-cli": "^6.0.1",
     "remark-lint": "^6.0.4",
     "remark-preset-lint-recommended": "^3.0.2",
+    "rimraf": "^2.6.3",
     "sass-lint": "^1.12.1",
     "sass-loader": "^7.1.0",
     "sort-by-typescript": "^1.0.2",
@@ -83,7 +92,7 @@
     "webpack": "^4.29.1",
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.1.14",
-    "webpack-fix-style-only-entries": "^0.2.0",
+    "webpack-fix-style-only-entries": "0.0.5",
     "webpack-livereload-plugin": "^2.2.0",
     "webpack-merge": "^4.2.1"
   },
@@ -94,6 +103,8 @@
     "@ons/design-system/5.0.1": "npm:@ons/design-system@5.0.1",
     "@ons/design-system/7.0.0": "npm:@ons/design-system@7.0.0",
     "@ons/design-system/7.0.1": "npm:@ons/design-system@7.0.1",
+    "@ons/design-system/8.0.0": "npm:@ons/design-system@8.0.0",
+    "@ons/design-system/8.0.1": "npm:@ons/design-system@8.0.1",
     "dice-coefficient": "^1.0.3",
     "querystring-helpers": "^1.0.2",
     "uuid": "^3.3.2"

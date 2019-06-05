@@ -6,7 +6,7 @@ layout: typeaheads/views/_master
 {% from "components/button/_macro.njk" import onsButton %}
 
 {% block main %}
-    <a class="previous-link js-previous" href="{{ pageInfo.parentPath }}/other-address.html">Previous</a>
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/other-address.html">Previous</a>
     <form class="js-question-no-summary" action="{{ pageInfo.parentPath }}/student-check.html?previous={{ pageInfo.path }}.html">
         <fieldset class="u-mt-s">
             <legend><h1 class="u-fs-l">Can you confirm this address is correct?</h1></legend>

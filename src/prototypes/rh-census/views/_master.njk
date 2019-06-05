@@ -1,11 +1,11 @@
 {% extends "page-templates/_template.njk" %}
 
 {% block head %}
-    <link rel="stylesheet" href="{{ pageInfo.parentPath }}/styles.css" />
+    <link rel="stylesheet" href="{{ pageInfo.rootPath }}/styles.css" />
 {% endblock %}
 
 {% set page = { 
-    "title": "Census 2019 Rehersal",
+    "title": "RH Prototype",
     "footer": {
         "rows": [
             {
@@ -35,5 +35,5 @@
 } %}
 
 {% block bodyEnd %}
-    <script src="{{ pageInfo.parentPath }}/index.js"></script>
+    <script src="{{ pageInfo.rootPath }}/index.js"></script>
 {% endblock %}
