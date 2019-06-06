@@ -1,0 +1,53 @@
+---
+version: 8.0.2
+---
+{% extends "prototypes/census-website/views/_master.njk" %}
+
+{% from "components/card/_macro.njk" import onsCard %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+{% from "prototypes/census-website/components/call-to-action/_macro.njk" import onsCallToAction %}
+{% from "prototypes/census-website/components/contents-list/_macro.njk" import onsContentsList %}
+
+{% block page %}
+{{-
+    onsCallToAction({
+        "headingText": "Ready to start your census survey?",
+        "paragraphText": "You'll need the access code from the letter we sent you.",
+        "button": {
+            "text": "Start survey",
+            "classes": 'btn--small',
+            "href": "https://deploy-preview-28--sdc-prototypes.netlify.com/prototypes/rh-census/"
+        }
+    })
+}}
+<div class="page__container container {{ containerClasses }}">
+    {{-
+        onsBreadcrumb({
+            "ariaLabel": 'Breadcrumb',
+            "itemsList": content.breadcrumbs.itemsList
+        }) 
+    }}
+    <div class="grid">
+        <div class="grid__col col-7@m">
+            <main id="main-content" class=" {{ pageClasses }}">
+                <h1 class="u-mb-l u-fs-xl">{{ content.title }}</h1>
+                {% if content.contentsList %}
+                    {{ 
+                        onsContentsList({
+                            "ariaLabel": 'Pages in this guide',
+                            "title": 'Contents',
+                            "itemsList": content.contentsList.itemsList
+                        }) 
+                    }}
+                {% endif %}
+                {% block content %}
+                {% endblock %}
+            </main>
+        </div>
+        <div class="grid__col col-4@m push-1@m">
+            {% block aside %}
+            {% endblock %}
+        </div>
+    </div>
+</div>
+{% endblock %}

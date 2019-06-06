@@ -1,98 +1,77 @@
 ---
 version: 8.0.2
-layout: census-website/views/_master
+layout: census-website/views/_page
 ---
 
-{% from "components/card/_macro.njk" import onsCard %}
-
-{% block page %}
-{% from "census-website/components/call-to-action/_macro.njk" import onsCallToAction %}
-{{-
-    onsCallToAction({
-        "headingText": "Ready to start your census survey?",
-        "paragraphText": "You'll need the access code from the letter we sent you.",
-        "button": {
-            "text": "Start survey",
-            "classes": 'btn--small',
-            "href": "https://deploy-preview-28--sdc-prototypes.netlify.com/prototypes/rh-census/"
-        }
-    })
-}}
-<div class="page__container container {{ containerClasses }}">
-        {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
-            {{ 
-                onsBreadcrumb({
-                    "ariaLabel": 'Breadcrumb',
-                    "itemsList": [
-                        {
-                            "url": '/prototypes/census-website/',
-                            "text": 'Home'
-                        },
-                        {
-                            "url": '/prototypes/census-website/what-is-the-census/',
-                            "text": 'About the census'
-                        },                                            
-                        {
-                            "url": '',
-                            "text": 'Why the information we collect is important',
-                            "current": true                                                
-
-                        }
-                    ]
-                }) 
-            }}
-    <div class="grid">
-        <div class="grid__col col-7@m">
-            <main id="main-content" class=" {{ pageClasses }}">
-                <h1 class="u-mb-l u-fs-l">About the census</h1>
-                <div class="u-mb-xs" style="font-weight:bold;">Contents</div>
-                <ul class="list list--bare">
-                    <li>— <a href="/prototypes/census-website/what-is-the-census/">Overview</a></li>
-                    <li>— Why the information we collect is important</li>
-                    <li>— <a href="/prototypes/census-website/what-is-the-census/who-uses-data.html">Who uses the data</a></li>
-                    <li>— <a href="/prototypes/census-website/what-is-the-census/the-2019-rehearsal.html">The 2019 Census rehearsal</a></li>
-                    <li>— <a href="/prototypes/census-website/what-is-the-census/online-census.html">Online census</a></li>
-                </ul>
-                <div class="u-mt-l">
-                   <hr class="footer__hr" style="margin-bottom: 0;">
-                </div>
-            </main>
-            <div class="u-mt-s">
-                <main id="main-content" class=" {{ pageClasses }}">
-                    <h2>Why the information we collect is important</h2>
-                    <p>The information and data we get from the census helps the government spend public money. It does this by:</p>
-                    <ul>
-                        <li>giving us detailed information we can't get from anywhere else</li>
-                        <li>including everyone in the country at the same time</li>
-                        <li>showing if people are being treated fairly and have the same access to help and services</li>
-                        <li>showing where we need things like hospital beds, doctors’ surgeries, schools, new roads and investment in jobs</li>
-                    </ul>
-                </main>
-            </div>
-            <div class="u-mt-l">
-                        <hr class="footer__hr" style="margin-bottom: 0;">
-                </div>  
-            
-            <div class="u-mt-s">
-                <div class="grid__col col-4@m col-5@xs" style="padding-left:0;">
-                <a href="/prototypes/census-website/what-is-the-census/" style="text-align:left;"><h2 class="u-mb-xs">< Previous</h2><p>Overview</p> </a>
-                </div>
-                <div class="grid__col col-4@m push-4@m col-5@xs push-1@xs" style="padding-left:0;">
-                <a href="/prototypes/census-website/what-is-the-census/who-uses-data.html" style="text-align:right;"><h2 class="u-mb-xs">Next ></h2><p>Who uses the data</p> </a>
-                </div>
-            </div>
-        </div>
-        <div class="grid__col col-4@m push-1@m">
-            <div style="border-top:5px solid purple;padding:15px 0;">
-                <h3>Related content</h3>
-                <ul class="list list--bare">
-                    <li><a href="#">About the census</a></li>
-                    <li><a href="#">What we ask you</a></li>
-                    <li><a href="#">Help and support</a></li>
-                    <li><a href="#">Contact us</a></li>
-                </ul>
-            </div>
-        </div>        
+{% set content = { 
+    "title": 'About the Census',
+    "breadcrumbs": {
+        "itemsList": [
+            {
+                "url": '/prototypes/census-website/',
+                "text": 'Home'
+            },
+            {
+                "url": '/prototypes/census-website/about-the-census/',
+                "text": 'About the census'
+            },                                            
+            {
+                "url": '',
+                "text": 'Why the information we collect is important',
+                "current": true                                            
+            }
+        ]
+    },
+    "contentsList": {
+        "itemsList": [
+            {
+                "url": '/prototypes/census-website/what-is-the-census/',
+                "text": 'Overview'
+            },
+            {
+                "text": 'Why the information we collect is important',
+                "current": true
+            },
+            {
+                "url": '/prototypes/census-website/what-is-the-census/who-uses-data.html',
+                "text": 'Who uses the data'
+            },
+            {
+                "url": '/prototypes/census-website/what-is-the-census/the-2019-rehearsal.html',
+                "text": 'The 2019 Census rehearsal'
+            },
+            {
+                "text": 'Online census',
+                "url": '/prototypes/census-website/what-is-the-census/online-census.html'
+            }
+        ]
+    }
+} %}
+{% block content %}
+    <h2>Why the information we collect is important</h2>
+    <p>The information and data we get from the census helps the government spend public money. It does this by:</p>
+    <ul>
+        <li>giving us detailed information we can't get from anywhere else</li>
+        <li>including everyone in the country at the same time</li>
+        <li>showing if people are being treated fairly and have the same access to help and services</li>
+        <li>showing where we need things like hospital beds, doctors’ surgeries, schools, new roads and investment in jobs</li>
+    </ul>
+    <div class="grid__col col-4@m col-5@xs" style="padding-left:0;">
+        <a href="/prototypes/census-website/what-is-the-census/" style="text-align:left;"><h2 class="u-mb-xs">< Previous</h2><p>Overview</p> </a>
     </div>
-</div>
+    <div class="grid__col col-4@m push-4@m col-5@xs push-1@xs" style="padding-left:0;">
+        <a href="/prototypes/census-website/what-is-the-census/who-uses-data.html" style="text-align:right;"><h2 class="u-mb-xs">Next ></h2><p>Who uses the data</p> </a>
+    </div>
 {% endblock %}
+{% block aside %}
+    <div style="border-top:5px solid purple;padding:15px 0;">
+        <h3>Related content</h3>
+        <ul class="list list--bare">
+            <li><a href="#">About the census</a></li>
+            <li><a href="#">What we ask you</a></li>
+            <li><a href="#">Help and support</a></li>
+            <li><a href="#">Contact us</a></li>
+        </ul>
+    </div>
+{% endblock %}
+

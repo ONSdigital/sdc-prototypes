@@ -2,7 +2,7 @@
   {% from "prototypes/census-website/components/lists/_macro.njk" import onsList %}
   <aside class="contents-navigation-container" role="complementary">
     <nav role="navigation" class="contents-list" aria-label="{{ params.ariaLabel }}">
-      <h2 class="contents-list__title u-fs-r--b">{{ params.title }}</h2>
+      <h2 class="contents-list__title u-fs-r--b u-mb-xs">{{ params.title }}</h2>
       {{ 
           onsList({
               "element": 'ol',
@@ -13,4 +13,3 @@
     </nav>
   </aside>
 {% endmacro %}
-

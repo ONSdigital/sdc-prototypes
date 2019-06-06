@@ -1,100 +1,81 @@
 ---
 version: 8.0.2
-layout: census-website/views/_master
+layout: census-website/views/_page
 ---
 
-{% from "components/card/_macro.njk" import onsCard %}
+{% set content = { 
+    "title": 'About the Census',
+    "breadcrumbs": {
+        "itemsList": [
+            {
+                "url": '/prototypes/census-website/',
+                "text": 'Home'
+            },
+            {
+                "url": '/prototypes/census-website/about-the-census/',
+                "text": 'About the census'
+            },                                            
+            {
+                "url": '',
+                "text": 'Who uses the data',
+                "current": true                                            
+            }
+        ]
+    },
+    "contentsList": {
+        "itemsList": [
+            {
+                "url": '/prototypes/census-website/what-is-the-census/',
+                "text": 'Overview'
+            },
+            {
+                "url": '/prototypes/census-website/what-is-the-census/why-info-important.html',
+                "text": 'Why the information we collect is important'
+            },
+            {
+                "text": 'Who uses the data',
+                "current": true
+            },
+            {
+                "url": '/prototypes/census-website/what-is-the-census/the-2019-rehearsal.html',
+                "text": 'The 2019 Census rehearsal'
+            },
+            {
+                "text": 'Online census',
+                "url": '/prototypes/census-website/what-is-the-census/online-census.html'
+            }
+        ]
+    }
+} %}
+{% block content %}
+    <h2>Who uses the data</h2>                      
+    <p>Different organisations use information from the census for planning and policy making. For example, the data is used by:</p>
+    <ul>
+        <li>central government to share out public money between councils</li>
+        <li>councils and government departments to make plans and policies</li>
+        <li>charities to find out where there are people who need extra help</li>
+        <li>companies to plan where to build shops and businesses</li>
+        <li>researchers and academics to understand current and future changes in our society</li>
+    </ul>
+    <p>We are working on ways we might be able to replace the census in the future, by using information from other sources, like government departments.</p>
 
-{% block page %}
-{% from "census-website/components/call-to-action/_macro.njk" import onsCallToAction %}
-{{-
-    onsCallToAction({
-        "headingText": "Ready to start your census survey?",
-        "paragraphText": "You'll need the access code from the letter we sent you.",
-        "button": {
-            "text": "Start survey",
-            "classes": 'btn--small',
-            "href": "https://deploy-preview-28--sdc-prototypes.netlify.com/prototypes/rh-census/"
-        }
-    })
-}}
-<div class="page__container container {{ containerClasses }}">
-        {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
-            {{ 
-                onsBreadcrumb({
-                    "ariaLabel": 'Breadcrumb',
-                    "itemsList": [
-                        {
-                            "url": '/prototypes/census-website/',
-                            "text": 'Home'
-                        },
-                        {
-                            "url": '/prototypes/census-website/what-is-the-census/',
-                            "text": 'About the census'
-                        },                                            
-                        {
-                            "url": '',
-                            "text": 'Who uses the data',
-                            "current": true                                                
 
-                        }
-                    ]
-                }) 
-            }}
-    <div class="grid">
-        <div class="grid__col col-7@m">
-            <main id="main-content" class=" {{ pageClasses }}">
-                <h1 class="u-mb-l u-fs-l">About the census</h1>
-                <div class="u-mb-xs" style="font-weight:bold;">Contents</div>
-                <ul class="list list--bare">
-                    <li>— <a href="/prototypes/census-website/what-is-the-census/">Overview</a></li>
-                    <li>— <a href="/prototypes/census-website/what-is-the-census/why-info-important.html">Why the information we collect is important</a></li>
-                    <li>— Who uses the data</li>
-                    <li>— <a href="/prototypes/census-website/what-is-the-census/the-2019-rehearsal.html">The 2019 Census rehearsal</a></li>
-                    <li>— <a href="/prototypes/census-website/what-is-the-census/online-census.html">Online census</a></li>
-                </ul>
-                <div class="u-mt-l">
-                        <hr class="footer__hr" style="margin-bottom: 0;">
-                </div>
-            </main>
-            <div class="u-mt-s">
-                <main id="main-content" class=" {{ pageClasses }}">
-                    <h2>Who uses the data</h2>                      
-                    <p>Different organisations use information from the census for planning and policy making. For example, the data is used by:</p>
-                    <ul>
-                        <li>central government to share out public money between councils</li>
-                        <li>councils and government departments to make plans and policies</li>
-                        <li>charities to find out where there are people who need extra help</li>
-                        <li>companies to plan where to build shops and businesses</li>
-                        <li>researchers and academics to understand current and future changes in our society</li>
-                    </ul>
-                    <p>We are working on ways we might be able to replace the census in the future, by using information from other sources, like government departments.</p>
-                </main>
-            </div>
-            <div class="u-mt-l">
-                        <hr class="footer__hr" style="margin-bottom: 0;">
-                </div>  
-            
-            <div class="u-mt-s">
-                <div class="grid__col col-4@m col-5@xs" style="padding-left:0;">
-                <a href="/prototypes/census-website/what-is-the-census/why-info-important.html" style="text-align:left;"><h2 class="u-mb-xs">< Previous</h2><p>Why the information we collect is important</p> </a>
-                </div>
-                <div class="grid__col col-4@m push-4@m col-5@xs push-1@xs" style="padding-left:0;">
-                <a href="/prototypes/census-website/what-is-the-census/the-2019-rehearsal.html" style="text-align:right;"><h2 class="u-mb-xs">Next ></h2><p>The 2019 Census rehearsal</p> </a>
-                </div>
-            </div>
-        </div>
-        <div class="grid__col col-4@m push-1@m">
-            <div style="border-top:5px solid purple;padding:15px 0;">
-                <h3>Related content</h3>
-                <ul class="list list--bare">
-                    <li><a href="#">About the census</a></li>
-                    <li><a href="#">What we ask you</a></li>
-                    <li><a href="#">Help and support</a></li>
-                    <li><a href="#">Contact us</a></li>
-                </ul>
-            </div>
-        </div>
+    <div class="grid__col col-4@m col-5@xs" style="padding-left:0;">
+        <a href="/prototypes/census-website/what-is-the-census/why-info-important.html" style="text-align:left;"><h2 class="u-mb-xs">< Previous</h2><p>Why the information we collect is important</p> </a>
     </div>
-</div>
+    <div class="grid__col col-4@m push-4@m col-5@xs push-1@xs" style="padding-left:0;">
+        <a href="/prototypes/census-website/what-is-the-census/the-2019-rehearsal.html" style="text-align:right;"><h2 class="u-mb-xs">Next ></h2><p>The 2019 Census rehearsal</p> </a>
+    </div>  
 {% endblock %}
+{% block aside %}
+    <div style="border-top:5px solid purple;padding:15px 0;">
+        <h3>Related content</h3>
+        <ul class="list list--bare">
+            <li><a href="#">About the census</a></li>
+            <li><a href="#">What we ask you</a></li>
+            <li><a href="#">Help and support</a></li>
+            <li><a href="#">Contact us</a></li>
+        </ul>
+    </div>
+{% endblock %}
+
