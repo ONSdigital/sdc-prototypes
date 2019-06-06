@@ -17,20 +17,18 @@ layout: rh-census/views/_master
 } %}
 
 {% block main %}
-    <a class="previous-link js-previous" href="{{ pageInfo.parentPath }}">Previous</a>
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/confirm-address.html">Previous</a>
     {% call onsQuestion({
         "title": "What is your mobile phone number?",
-        "useFieldset": true
+        "desciption": "We will send an access code by text to this number"
     }) %}
-
-    <p>We will send an access code by text to this number</p>
 
     {% from "components/input/_macro.njk" import onsInput %}
     {{ 
         onsInput({
             "id": "telephone",
             "type": "tel",
-            "autocomplete": "tel",        
+            "autocomplete": "tel",
             "classes": "input--w-8",
             "label": {
                 "text": "Enter mobile number"
