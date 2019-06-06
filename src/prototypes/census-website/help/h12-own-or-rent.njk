@@ -1,0 +1,123 @@
+---
+title: Campaign Website
+group: Census
+version: 8.0.1
+layout: census-website/views/_master
+---
+
+{% from "components/card/_macro.njk" import onsCard %}
+
+{% block page %}
+<div class="page__container container {{ containerClasses }}">
+                        <div class="col-7@m">
+                            {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+                                {{ 
+                                    onsBreadcrumb({
+                                        "ariaLabel": 'Breadcrumb',
+                                        "itemsList": [
+                                            {
+                                                "url": '/prototypes/census-website/index.html',
+                                                "text": 'Home'
+                                            },
+                                            {
+                                                "url": '/prototypes/census-website/help/',
+                                                "text": 'Help with your census'
+                                            },                                            
+                                            {
+                                                "url": '/prototypes/census-website/help/question-help.html',
+                                                "text": 'Help with the questions'
+                                            },
+                                            {
+                                                "url": '',
+                                                "text": 'H12 - Does your household own or rent this accommodation?',
+                                                "current": true
+                                            }
+                                        ]
+                                    }) 
+                                }}
+                                </div>
+                <div class="grid">
+                    <div class="grid__col col-7@m">
+                        <main id="main-content" class=" {{ pageClasses }}">
+                                    <h1 class="u-mb-m">H12 - Does your household own or rent this accommodation?</h1>
+                                    {#<div class="u-mb-m">
+                                    {% from "components/panel/_macro.njk" import onsPanel %}
+                                        {{ 
+                                            onsPanel({
+                                                body: "<p>If you’re not sure how to describe your accommodation, answer as best you can.</p>"
+                                            }) 
+                                        }}
+                                        </div>#}
+                                                                        {% from "components/details/_macro.njk" import onsDetails %}
+
+                                    {{
+                                        onsDetails({
+                                            "id": "details",
+                                            "title": "Why we ask this question",
+                                            "classes": "u-mb-m",
+                                            "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur snint occaecat cupidatat</p>
+                                            <p> non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occat in culpa qui officia deserunt mollit anim id est laborum.</p>
+</p>",
+                                            "button": {
+                                                "close": "Hide this"
+                                            }
+                                        })
+                                    }}          
+
+                                    <p>Select <strong>one answer only</strong> from these options:</p>
+                                    
+                                    <ul class="list">
+                                    <li><strong>owns outright:</strong> This is if you own your accommodation without a mortgage or loan. You should also select this if you’ve paid off your mortgage but have made an arrangement with the lender to continue to pay a small amount in return for them looking after the deeds.</li>
+                                    <li><strong>part- owns and part- rents (shared ownership):</strong> This is if you own part of your accommodation and also pay rent for part of it. You can part- own your property with or without a mortgage or loan.</li>
+                                    <li><strong> rents (with or without housing benefit):</strong> This is if you pay rent to a landlord to live in this property. Select this if you pay your rent yourself or if your rent is paid from housing benefit or universal credit.</li>
+                                    </ul>
+                                    
+                                    <p>Your landlord might be:</p>
+                                    <ul class="list">
+                                    <li>a housing association, housing co-operative, charitable trust, or registered social landlord</li>
+                                    <li>the council (local authority)</li>
+                                    <li>a private landlord or letting agency</li>
+                                    <li>an employer of a household member</li>
+                                    <li>a relative or friend</li>
+                                    <li>another person or organisation</li>
+                                    </ul>
+
+                                    <p><strong>Lives here rent- free:</strong> Select this option if you don’t own this accommodation and don’t pay rent to live here. You should still select this response if you don’t pay rent but do make a contribution towards household expenses. Some examples of rent-free living include:</p>
+
+                                    <ul class="list">
+                                    <li>a household paying no rent and living in a property owned by a family member or friend</li>
+                                    <li>someone paying no rent and living in thhe property of a deceased partner which is held in trust</li>
+                                    <li>someone paying no rent who is divorced/separated and living in a property which is owned solely by their ex-partner who no longer lives there</li>
+                                    </ul>
+
+                                    <p>Do not select this if your rent is paid by housing benefit. Choose <strong>Rents (with or without housing benefit)</strong> instead.</p>
+
+                                   <p><strong>Own your home with a lease:</strong> Select either <strong>Owns outright</strong> or <strong>Owns with a mortgage or loan</strong> depending on your circumstances. Whether or not you pay ground rent isn’t relevant to this question.</p>
+                                   
+                                   <div class="u-mb-m">
+                                    {% from "components/panel/_macro.njk" import onsPanel %}
+                                        {{ 
+                                            onsPanel({
+                                                body: "<p><strong>House-sharing:</strong> You can fill in a personal form if you prefer to keep your answers private from other people who live at your home.</p>"
+                                            }) 
+                                        }}
+                                    </div>
+                        </main>
+                </div>
+                <!--Right Sidbar-->
+                <div class="grid__col col-4@m push-1@m">
+                    <div style="border-top:5px solid purple;padding:15px 0;">
+                        <h3>Related content</h3>
+                        <ul class="list list--bare">
+                            <li><a href="#">About the census</a></li>
+                            <li><a href="#">What we ask you</a></li>
+                            <li><a href="#">Help and support</a></li>
+                            <li><a href="#">Contact us</a></li>
+                        </ul>
+                    </div>
+                </div> <!--Right Sidbar end-->
+        </div>
+</div>
+{% endblock %}
