@@ -8,6 +8,7 @@ version: 8.0.5
 {% from "prototypes/census-website/components/call-to-action/_macro.njk" import onsCallToAction %}
 {% from "prototypes/census-website/components/content-list/_macro.njk" import onsContentList %}
 {% from "prototypes/census-website/components/content-pagination/_macro.njk" import onsContentPagination %}
+{% from "prototypes/census-website/components/related-list/_macro.njk" import onsRelatedList %}
 
 {% block page %}
 {{-
@@ -56,6 +57,30 @@ version: 8.0.5
             </main>
         </div>
         <div class="grid__col col-4@m push-1@m">
+                {{-
+                    onsRelatedList({
+                        "id": 'related-list-block',
+                        "title": 'Related content',
+                        "itemsList": [
+                            {
+                                "url": '#',
+                                "text": 'About the census'
+                            },
+                            {
+                                "url": '#',
+                                "text": 'What we ask you'
+                            },
+                            {
+                                "url": '#',
+                                "text": 'Help and support'
+                            },
+                            {
+                                "url": '#',
+                                "text": 'Contact us'
+                            }
+                        ]
+                    }) 
+                }}
             {% block aside %}
             {% endblock %}
         </div>
