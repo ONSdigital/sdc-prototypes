@@ -48,6 +48,22 @@ layout: census-website/views/_page
 
             }
         ]
+    },
+    "contentPagination": {
+        "contentPaginationItems": [
+            {
+                "rel": 'previous',
+                "text": 'Previous',
+                "url": '/prototypes/census-website/what-is-the-census/who-uses-data.html',
+                "label": 'Who uses the data'
+            },
+            {
+                "rel": 'next',
+                "text": 'Next',
+                "url": '/prototypes/census-website/what-is-the-census/online-census.html',
+                "label": 'Online census'
+            }
+        ]
     }
 } %}
 {% block content %}
@@ -69,12 +85,6 @@ layout: census-website/views/_page
             body: "<p>If you take part in the census rehearsal you will still need to fill out the census in 2021.</p>"
         }) 
     }}
-    <div class="grid__col col-4@m col-5@xs" style="padding-left:0;">
-        <a href="/prototypes/census-website/what-is-the-census/who-uses-data.html" style="text-align:left;"><h2 class="u-mb-xs">< Previous</h2><p>Who uses the data</p> </a>
-    </div>
-    <div class="grid__col col-4@m push-4@m col-5@xs push-1@xs" style="padding-left:0;">
-        <a href="/prototypes/census-website/what-is-the-census/online-census.html" style="text-align:right;"><h2 class="u-mb-xs">Next ></h2><p>Online census</p> </a>
-    </div>
 {% endblock %}
 {% block aside %}
     <div style="border-top:5px solid purple;padding:15px 0;">

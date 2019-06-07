@@ -41,14 +41,21 @@ layout: census-website/views/_page
                 "url": '/prototypes/census-website/what-is-the-census/online-census.html'
             }
         ]
+    },
+    "contentPagination": {
+        "contentPaginationItems": [
+            {
+                "rel": 'next',
+                "text": 'Next',
+                "url": '/prototypes/census-website/what-is-the-census/why-info-important.html',
+                "label": 'Why the information we collect is important'
+            }
+        ]
     }
+
 } %}
 {% block content %}
-    <p>The census is a count of all the people and housing in England and Wales, run by the Office for National Statistics. It’s happened every 10 years since 1801, except during World War 2 in 1941. This balances the difficulty of running a census and getting the information we need. </p>
-    <div class="grid__col col-4@m" style="padding-left:0;"></div>
-    <div class="grid__col col-4@m push-4@m col-5@xs push-1@xs" style="padding-left:0;">
-        <a href="/prototypes/census-website/what-is-the-census/why-info-important.html" style="text-align:right;"><h2 class="u-mb-xs">Next ></h2><p>Why the information we collect is important</p> </a>
-    </div>
+    <p>The census is a count of all the people and housing in England and Wales, run by the Office for National Statistics. It’s happened every 10 years since 1801, except during World War 2 in 1941. This balances the difficulty of running a census and getting the information we need. </p>    
 {% endblock %}
 {% block aside %}
     <div style="border-top:5px solid purple;padding:15px 0;">

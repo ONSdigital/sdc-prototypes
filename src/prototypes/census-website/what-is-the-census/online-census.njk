@@ -46,15 +46,20 @@ layout: census-website/views/_page
                 "current": true
             }
         ]
+    },
+    "contentPagination": {
+        "contentPaginationItems": [
+            {
+                "rel": 'previous',
+                "text": 'Previous',
+                "url": '/prototypes/census-website/what-is-the-census/the-2019-rehearsal.html',
+                "label": 'The 2019 Census rehearsal'
+            }
+        ]
     }
 } %}
 {% block content %}
     <p>We would like as many people as possible to complete the census online. The information we need is easier to collect and better quality online. Using online forms is cheaper than using paper forms, so it's a better use of public money.</p>
-    <div class="grid__col col-4@m col-5@xs" style="padding-left:0;">
-        <a href="/prototypes/census-website/what-is-the-census/the-2019-rehearsal.html" style="text-align:left;"><h2 class="u-mb-xs">< Previous</h2><p>The 2019 Census rehearsal</p> </a>
-        </div>
-        <div class="grid__col col-4@m push-4@m" style="padding-left:0;">
-    </div>
 {% endblock %}
 {% block aside %}
     <div style="border-top:5px solid purple;padding:15px 0;">

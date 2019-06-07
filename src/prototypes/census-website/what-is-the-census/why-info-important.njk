@@ -46,6 +46,22 @@ layout: census-website/views/_page
                 "url": '/prototypes/census-website/what-is-the-census/online-census.html'
             }
         ]
+    },
+    "contentPagination": {
+        "contentPaginationItems": [
+            {
+                "rel": 'previous',
+                "text": 'Previous',
+                "url": '/prototypes/census-website/what-is-the-census/',
+                "label": 'Overview'
+            },
+            {
+                "rel": 'next',
+                "text": 'Next',
+                "url": '/prototypes/census-website/what-is-the-census/who-uses-data.html',
+                "label": 'Who uses the data'
+            }
+        ]
     }
 } %}
 {% block content %}
@@ -56,12 +72,6 @@ layout: census-website/views/_page
         <li>showing if people are being treated fairly and have the same access to help and services</li>
         <li>showing where we need things like hospital beds, doctors’ surgeries, schools, new roads and investment in jobs</li>
     </ul>
-    <div class="grid__col col-4@m col-5@xs" style="padding-left:0;">
-        <a href="/prototypes/census-website/what-is-the-census/" style="text-align:left;"><h2 class="u-mb-xs">< Previous</h2><p>Overview</p> </a>
-    </div>
-    <div class="grid__col col-4@m push-4@m col-5@xs push-1@xs" style="padding-left:0;">
-        <a href="/prototypes/census-website/what-is-the-census/who-uses-data.html" style="text-align:right;"><h2 class="u-mb-xs">Next ></h2><p>Who uses the data</p> </a>
-    </div>
 {% endblock %}
 {% block aside %}
     <div style="border-top:5px solid purple;padding:15px 0;">

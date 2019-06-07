@@ -6,7 +6,8 @@ version: 8.0.5
 {% from "components/card/_macro.njk" import onsCard %}
 {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
 {% from "prototypes/census-website/components/call-to-action/_macro.njk" import onsCallToAction %}
-{% from "prototypes/census-website/components/contents-list/_macro.njk" import onsContentsList %}
+{% from "prototypes/census-website/components/content-list/_macro.njk" import onsContentList %}
+{% from "prototypes/census-website/components/content-pagination/_macro.njk" import onsContentPagination %}
 
 {% block page %}
 {{-
@@ -32,19 +33,26 @@ version: 8.0.5
             <main id="main-content" class=" {{ pageClasses }}">
                 <h1 class="u-mb-l u-fs-xl">{{ content.title }}</h1>
                 {% if content.contentsList %}
-                    {{ 
-                        onsContentsList({
+                    {{-
+                        onsContentList({
                             "ariaLabel": 'Pages in this guide',
                             "title": 'Contents',
                             "itemsList": content.contentsList.itemsList
                         }) 
                     }}
                 {% endif %}
-                <section class="section-contents">
+                {% if content.contentsList %}<section class="section-contents">{% endif %}
                     {% if content.sectionTitle %}<h1 class="u-fs-l">{{ content.sectionTitle }}</h1>{% endif %}
-                    {% block content %}
-                    {% endblock %}
-                </section>
+                    {% block content %}{% endblock %}
+                    {% if content.contentPagination %}
+                        {{-
+                            onsContentPagination({
+                                "ariaLabel": 'Pages in this guide',
+                                "contentPaginationItems": content.contentPagination.contentPaginationItems
+                            }) 
+                        }}
+                    {% endif %}
+                {% if content.contentsList %}</section>{% endif %}
             </main>
         </div>
         <div class="grid__col col-4@m push-1@m">
