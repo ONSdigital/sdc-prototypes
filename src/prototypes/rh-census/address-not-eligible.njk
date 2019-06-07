@@ -1,0 +1,31 @@
+---
+title: Address not eligible
+group: Census
+version: 8.0.1
+layout: rh-census/views/_master
+---
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "prototypes/rh-census/components/uac-entry/_macro.njk" import onsUACEntry %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action": "/prototypes/rh-census/enter-mobile-number.html"
+    }
+} %}
+
+{% block main %}
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/address.html">Previous</a>
+    <h1 class="u-mt-">Your address is not part of the 2019 rehearsal</h1>
+        
+    <p>
+        1 Not in<br>
+        Rehearsal<br>
+        SA20 6PG
+    </p>
+
+    <p>Based on the address you have provided you are not required to take part. If this is incorrect you can <a href="#">enter your address</a> again or <a href="#">contact us</a> for help.</p>
+
+{% endblock %}
