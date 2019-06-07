@@ -1,5 +1,5 @@
 ---
-version: 8.0.2
+version: 8.0.5
 ---
 {% extends "prototypes/census-website/views/_master.njk" %}
 
@@ -40,8 +40,11 @@ version: 8.0.2
                         }) 
                     }}
                 {% endif %}
-                {% block content %}
-                {% endblock %}
+                <section class="section-contents">
+                    {% if content.sectionTitle %}<h1 class="u-fs-l">{{ content.sectionTitle }}</h1>{% endif %}
+                    {% block content %}
+                    {% endblock %}
+                </section>
             </main>
         </div>
         <div class="grid__col col-4@m push-1@m">
