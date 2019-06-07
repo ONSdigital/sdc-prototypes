@@ -20,7 +20,7 @@ layout: census-website/views/_master
 }}
 <div class="page__container {{ containerClasses }}">
     <div class="grid">
-        <div class="grid__col u-mb-l">
+        <div class="grid__col">
             <main id="main-content" class="{{ pageClasses }}">
                 
                     <div class="container">
@@ -78,6 +78,7 @@ layout: census-website/views/_master
                             })
                         }}
                     </div> 
+ 
                     {#
                     <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
                         {{- 
@@ -92,8 +93,12 @@ layout: census-website/views/_master
                     #}
                     
                 </div>
-                <div class="grid grid--flex grid--column@xs@s col-4@s u-mt-l u-mb-l">  
-                    
+                <div class="u-mt-l">
+                    <hr class="footer__hr" style="margin-bottom: 0;">
+                    <h2 class="u-fs-r--b u-mt-l u-mb-xs">Don't have an access code or letter?</h2>
+                    <p>You can <a href="/prototypes/rh-census/address.html">request a new code</a> to start a new survey if you have lost, forgotten or not received an access code.</p>
+                </div> 
+                </div>    
                 </div>
                 
                 </div>
