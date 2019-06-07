@@ -1,5 +1,9 @@
 @import 'components/**/*.scss';
 
+.header__logo {
+  width: 200px;
+}
+
 .stat-icon {
   width: 70px;
   height: 70px;
@@ -51,7 +55,7 @@
 }
 
 .bg-purple {
-  background: purple !important;
+  background: #93328e !important;
 }
 
 .bg-grey {
@@ -73,11 +77,11 @@
   background-color: #f0f0f0;
 }
 .panel__cta {
-  background: purple;
+  background: #93328e;
   color: white;
 }
 .card-cta {
-  background: purple;
+  background: #93328e;
   color: white;
   display: flex;
   flex-direction: column;
@@ -86,10 +90,17 @@
   min-height: 240px;
 }
 .header__bottom {
-  background: purple;
+  background: #93328e;
 }
 .header__main {
-  background: purple;
+  background: #93328e;
+}
+
+.header__title {
+  background: url('/prototypes/census-website/img/census-logo-white-landscape.svg') 0 0 no-repeat;
+  text-indent: -9999px;
+  height: 24px;
+  width: 227px;
 }
 
 .hero-image {
