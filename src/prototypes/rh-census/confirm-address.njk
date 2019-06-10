@@ -17,17 +17,12 @@ layout: rh-census/views/_master
 } %}
 
 {% block main %}
-    <a class="previous-link js-previous" href="{{ pageInfo.parentPath }}">Previous</a>
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/address.html">Previous</a>
     {% call onsQuestion({
         "title": "Is this address correct?",
+        "description": "<p class=\"js-address-confirm\" data-address-input-url=\"" + pageInfo.rootPath + "/address.html\">{x}</p>",
         "useFieldset": true
     }) %}
-
-    <p>
-        94 Osborne Road<br/>
-        Kingarth<br/>
-        PA20 6PG
-    </p>
 
     {% from "components/radios/_macro.njk" import onsRadios %}
     {{ 

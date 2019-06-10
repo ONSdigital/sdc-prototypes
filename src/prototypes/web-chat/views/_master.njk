@@ -1,11 +1,11 @@
 {% extends "page-templates/_template.njk" %}
 
 {% block head %}
-    <link rel="stylesheet" href="{{ pageInfo.rootPath }}/styles.css" />
+    <link rel="stylesheet" href="{{ pageInfo.parentPath }}/styles.css" />
 {% endblock %}
 
 {% set page = { 
-    "title": "Respondent Home Prototype",
+    "title": "Census 2019 Rehersal",
     "footer": {
         "rows": [
             {
@@ -35,5 +35,5 @@
 } %}
 
 {% block bodyEnd %}
-    <script src="{{ pageInfo.rootPath }}/index.js"></script>
+    <script src="{{ pageInfo.parentPath }}/index.js"></script>
 {% endblock %}
