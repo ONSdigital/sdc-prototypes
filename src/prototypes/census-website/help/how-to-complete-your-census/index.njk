@@ -1,0 +1,73 @@
+---
+version: 8.0.5
+layout: census-website/views/_page
+---
+
+{% set content = { 
+    "title": 'How to complete your census',
+    "breadcrumbs": {
+        "itemsList": [
+            {
+                "url": '/prototypes/census-website/',
+                "text": 'Home'
+            },
+            {
+                "url": '/prototypes/census-website/help/',
+                "text": 'Help with your census'
+            },
+            {
+                "url": '/prototypes/census-website/help/how-to-complete-your-census/',
+                "text": 'How to complete your census',
+                "current": true
+            }
+        ]
+    }
+} %}
+
+{% block content %}
+    <p>We will send a letter to your household asking the householder to answer questions about the property and the individuals living there.</p>
+    <p>The householder is responsible for completing the census.</p>
+    {% from "components/details/_macro.njk" import onsDetails %}
+    {{
+        onsDetails({
+            "id": "details",
+            "title": "What is a household and who is the householder?",
+            "classes": "u-mb-m",
+            "content": "<p>A <strong>household</strong> is either:</p>
+                        <ul>
+                            <li>one person living alone</li>
+                            <li>a group of people (who don't have to be related) living at the same address who share cooking facilities and share a living or dining area</li>
+                        </ul>
+                        <p>The <strong>householder</strong> is a person who individually or jointly:</p>
+                        <ul>
+                            <li>owns or rents the property</li>
+                            <li>is responsible for paying the household bills and expenses</li>
+                        </ul>",
+            "button": {
+                "close": "Hide this"
+            }
+        })
+    }}
+    <p>To <a href="https://sdc-prototypes.netlify.com/prototypes/rh-census/home.html">complete your census online</a>, use the unique access code in the letter we sent the householder.</p>
+    <img class="u-mb-s" src="../../img/letter-placeholder.png" width="280"/>
+    <p>Complete your census as soon as possible.</p>
+    <p>It should take between 20 to 30 minutes to complete. You can save your answers and return to them later if you need to.</p>
+    {% from "components/panel/_macro.njk" import onsPanel %}
+    {{-
+        onsPanel({
+            "body": "Keep your unique access code safe as you will need it each time you return to the survey.",
+            "classes": "u-mb-m"
+        })
+    }}
+    <p>If you need a paper questionnaire, <a href="/prototypes/census-website/contact-us/">contact us</a>.</p>
+    <h3 class="u-fs-m">Moving house?</h3>
+    <p>Fill out the census for the address where you will be on the 13 October 2019.</p>
+
+    <h3 class="u-fs-m">Not seen a census letter?</h3>
+    <p>If you are the householder and have not received a census letter, <a href="/prototypes/census-website/contact-us">contact&nbsp;us.</a></p>
+    <p>If you are not the householder, you will need the unique access code to complete your individual questions. Check with the householder to see if they have the census letter with the unique access code.</p>
+    <p>This may not be possible, or you may not want the people you live with to see your answers. You can <a href="https://deploy-preview-31--sdc-prototypes.netlify.com/prototypes/rh-census/address.html">request a code to respond separately</a>. We will send you a new access code by text.</p>
+    <h3 class="u-fs-m">Need help completing your census?</h3>
+    <p>If you need help answering the questions, there is <a href="/prototypes/census-website/help/help-with-the-questions">question guidance</a> available.</p>
+    <p>You can also <a href="/prototypes/census-website/help/getting-help-to-complete-your-census/">get someone to help you complete your census</a>.
+{% endblock %}
