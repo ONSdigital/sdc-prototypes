@@ -1,5 +1,5 @@
 ---
-version: 8.0.1
+version: 8.0.5
 layout: census-website/views/_master
 ---
 
@@ -64,7 +64,7 @@ layout: census-website/views/_master
                             onsCard({
                                 "classes": 'u-fs-r',
                                 "title": 'Help with the questions',
-                                "url": '#',
+                                "url": '/prototypes/census-website/help/question-help.html',
                                 "text": 'Guidance on how to answer the questions in the census.'
                             })
                         }}
@@ -73,7 +73,7 @@ layout: census-website/views/_master
                         {{-
                             onsCard({
                                 "title": 'Getting help to complete your census',
-                                "url": '#',
+                                "url": '/prototypes/census-website/help/getting-help-to-complete-your-census/',
                                 "text": 'You can get help from a friend or neighbour, or one of our advisors face-to-face or over the phone.'
                             })
                         }}
@@ -92,9 +92,16 @@ layout: census-website/views/_master
                     #}
                     
                 </div>
-                <div class="grid grid--flex grid--column@xs@s col-4@s u-mt-l u-mb-l">  
-                    
-                </div>
+                <div class="u-mt-l">
+                    <hr class="footer__hr" style="margin-bottom: 0;">
+                    <div class="grid">
+                      <div class="grid__col col-8@m">
+                        <h2 class="u-fs-r--b u-mt-l u-mb-xs">Don't have an access code or letter?</h2>
+                        <p>You can <a href="/prototypes/rh-census/address.html">request a new code</a> to start a new online census survey if you have lost, forgotten or not received an access code.</p>
+                        <p> Alternatively, you can <a href="/prototypes/census-website/contact-us.html">contact us</a> to request a paper questionnaire.</p>
+                      </div>
+                    </div>
+                  </div>
                 
                 </div>
             </main>

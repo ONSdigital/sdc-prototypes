@@ -44,22 +44,11 @@ layout: census-website/views/_master
     <div class="grid">
         <div class="grid__col col-7@m">
             <main id="main-content" class=" {{ pageClasses }}">
-                <h1 class="u-mb-l u-fs-l">How to complete your census</h1>
-                {#
-                <div class="u-mb-xs" style="font-weight:bold;">Contents</div>
-                <ul class="list list--bare">
-                    <li>— Overview</li>
-                    <li>— <a href="/prototypes/census-website/help/how-to-complete-the-census/who-should-complete/">Who should complete the census</a></li>
-                </ul>
-                <div class="u-mt-l">
-                        <hr class="footer__hr" style="margin-bottom: 0;">
-                </div>
-                #}
+                <h1>How to complete your census</h1>
             </main> 
             <div class="u-mt-s">
                 <main id="main-content" class=" {{ pageClasses }}">
-                    
-                    <p>We will send a letter to your household asking the householder to answer questions about the property and the individuals living there.</p>
+    <p>We will send a letter to your household asking the householder to answer questions about the property and the individuals living there.</p>
                     <p>The householder is responsible for completing the census.</p>
                     {% from "components/details/_macro.njk" import onsDetails %}
                     {{
@@ -82,7 +71,7 @@ layout: census-website/views/_master
                             }
                         })
                     }}
-                    <p>To <a href="https://deploy-preview-28--sdc-prototypes.netlify.com/prototypes/rh-census/">complete your census online</a>, use the unique access code in the letter we sent the householder.</p>
+                    <p>To <a href="https://deploy-preview-31--sdc-prototypes.netlify.com/prototypes/rh-census/home.html">complete your census online</a>, use the unique access code in the letter we sent the householder.</p>
                     <img class="u-mb-s" src="../../img/letter-placeholder.png" width="280"/>
                     <p>Complete your census as soon as possible.</p>
                     <p>It should take between 20 to 30 minutes to complete. You can save your answers and return to them later if you need to.</p>
@@ -100,31 +89,18 @@ layout: census-website/views/_master
                     <h3 class="u-fs-m">Not seen a census letter?</h3>
                     <p>If you are the householder and have not received a census letter, <a href="/prototypes/census-website/contact-us">contact&nbsp;us.</a></p>
                     <p>If you are not the householder, you will need the unique access code to complete your individual questions. Check with the householder to see if they have the census letter with the unique access code.</p>
-                    <p>This may not be possible, or you may not want the people you live with to see your answers. You can <a href="https://deploy-preview-28--sdc-prototypes.netlify.com/prototypes/rh-census/address.html">request a code to respond separately</a>. We will send you a new access code by text.</p>
+                    <p>This may not be possible, or you may not want the people you live with to see your answers. You can <a href="https://deploy-preview-31--sdc-prototypes.netlify.com/prototypes/rh-census/address.html">request a code to respond separately</a>. We will send you a new access code by text.</p>
                     <h3 class="u-fs-m">Need help completing your census?</h3>
                     <p>If you need help answering the questions, there is <a href="/prototypes/census-website/help/help-with-the-questions">question guidance</a> available.</p>
-                    <p>You can also <a href="">get someone to help you complete your census</a>.
-                </main>
+                    <p>You can also <a href="/prototypes/census-website/help/getting-help-to-complete-your-census/">get someone to help you complete your census</a>.
+                    </main>
             </div> 
-            <div class="u-mt-l">
-            {#
-                <hr class="footer__hr" style="margin-bottom: 0;">
-            </div>  
-            <div class="u-mt-s">
-                <div class="grid__col col-4@m" style="padding-left:0;">
-                
-                </div>
-                <div class="grid__col col-4@m push-4@m col-5@xs push-1@xs" style="padding-left:0;">
-                  <a href="online/" style="text-align:right;"><h2 class="u-mb-xs">Next ></h2><p>Online</p> </a>
-                </div>
-                #}
-            </div>
         </div>
         <div class="grid__col col-4@m push-1@m">
             <div style="border-top:5px solid purple;padding:15px 0;">
                 <h3>Related content</h3>
                     <ul class="list list--bare">
-                        <li><a href="#">Help with the questions</a></li>                        
+                        <li><a href="/prototypes/census-website/help/question-help.html">Help with the questions</a></li>                        
                         <li><a href="#">Getting help to complete your census</a></li>
                         <li><a href="#">About the census</a></li>
                         <hr>
