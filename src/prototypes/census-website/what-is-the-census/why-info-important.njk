@@ -34,7 +34,7 @@ layout: census-website/views/_master
                         },                                            
                         {
                             "url": '',
-                            "text": 'Why the information we collect is important',
+                            "text": 'Who should take part and why',
                             "current": true                                                
 
                         }
@@ -48,8 +48,8 @@ layout: census-website/views/_master
                 <div class="u-mb-xs" style="font-weight:bold;">Contents</div>
                 <ul class="list list--bare">
                     <li>— <a href="/prototypes/census-website/what-is-the-census/">Overview</a></li>
-                    <li>— Why the information we collect is important</li>
-                    <li>— <a href="/prototypes/census-website/what-is-the-census/who-uses-data.html">Who uses the data</a></li>
+                    <li>— Who should take part and why</li>
+                    <li>— <a href="/prototypes/census-website/what-is-the-census/who-uses-data.html">What happens to your information</a></li>
                     <li>— <a href="/prototypes/census-website/what-is-the-census/the-2019-rehearsal.html">The 2019 Census rehearsal</a></li>
                     <li>— <a href="/prototypes/census-website/what-is-the-census/online-census.html">Online census</a></li>
                 </ul>
@@ -59,7 +59,8 @@ layout: census-website/views/_master
             </main>
             <div class="u-mt-s">
                 <main id="main-content" class=" {{ pageClasses }}">
-                    <h2>Why the information we collect is important</h2>
+                    <h2>Who should take part and why</h2>
+                    <p>We ask everyone living in England and Wales for information about where they live and who they live with.</p>
                     <p>The information and data we get from the census helps the government spend public money. It does this by:</p>
                     <ul>
                         <li>giving us detailed information we can't get from anywhere else</li>
@@ -67,6 +68,12 @@ layout: census-website/views/_master
                         <li>showing if people are being treated fairly and have the same access to help and services</li>
                         <li>showing where we need things like hospital beds, doctors’ surgeries, schools, new roads and investment in jobs</li>
                     </ul>
+                    {% from "components/panel/_macro.njk" import onsPanel %}
+                    {{ 
+                        onsPanel({
+                            body: "<p>If you take part in the <a href=\"/prototypes/census-website/what-is-the-census/the-2019-rehearsal.html\">census rehearsal</a> you will still need to fill out the census in 2021.</p>"
+                        }) 
+                    }}
                 </main>
             </div>
             <div class="u-mt-l">
