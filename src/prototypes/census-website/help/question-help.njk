@@ -1,0 +1,242 @@
+---
+version: 8.0.5
+layout: census-website/views/_master
+---
+
+{% from "components/card/_macro.njk" import onsCard %}
+
+{% block page %}
+<div class="page__container container {{ containerClasses }}">
+        <div class="grid">
+                <div class="grid__col col-7@m">
+                {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+                                {{ 
+                                    onsBreadcrumb({
+                                        "ariaLabel": 'Breadcrumb',
+                                        "itemsList": [
+                                            {
+                                                "url": '#',
+                                                "text": 'Home'
+                                            },
+                                            {
+                                                "url": '#',
+                                                "text": 'Help with your census'
+                                            }, 
+                                            {
+                                                "url": '',
+                                                "text": 'Help with the questions',
+                                                "current": true
+                                            }
+                                        ]
+                                    }) 
+                                }}
+                </div>
+        </div>
+                                <div class="grid">
+                <div class="grid__col col-7@m">
+                <main id="main-content" class=" {{ pageClasses }}">
+                        <h1>Help with the census questions</h1>
+                    <div class="u-mb-xs" style="font-weight:bold;">Contents</div>
+                    <ul class="list list--bare">
+                        <li>Household questions help:</li>
+                        <li>- <a href="#house">Household and who lives here (H1 - H6)</a></li>
+                        <li>- <a href="#house2">Housing, sex and GI (H7 - H14)</a></li>
+                        <li class="u-mt-m">Individual questions help:</li>
+                        <li>- <a href="#individual">Name, date of birth and marital status (1 - 10)</a></li>
+                        <li>- <a href="#individual2">Language, religion and ethnicity (11 - 20)</a></li>
+                        <li>- <a href="#individual3">Address, health and sexual orientation (21 - 27)</a></li>
+                        <li>- <a href="#individual4">Education and employment (28 - 50)</a></li>
+                    </ul>
+                    <div class="u-mt-l">
+                            <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                    </div>
+                </main>
+                    <main id="main-content" class=" {{ pageClasses }}">
+
+                                <div id="house"><div>
+                                <h2 class="u-mt-l">Household questions</h2>
+                                <h3 class="u-mt-l">Household and who lives there (Paper questions H1 - H6)</h3>
+                                <ul class="list list--bare">
+                                    <li>H1 - <a href="">Who usually lives here?</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+
+                                    <li>H2 - <a href="">Counting everyone you included in question H1, how many people usually live here?</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    
+                                    <li>H3 - <a href="">Starting with yourself, list the names of all the people counted in question H2 including children, babies and lodgers</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+
+                                    <li>H4 - <a href="">Apart from everyone counted in question H2, who else is staying overnight here on 13 October 2019? These people are counted as visitors. Remember to include children and babies</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    
+                                    <li>H5 - <a href="">Counting only the people included in question H4, how many visitors are staying overnight here on 13 October 2019?</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    
+                                    <li>H6 - <a href="">How many members of this household related to each other?</a></li>
+                                </uL>
+
+                                <div id="house2"><div>
+                                <h3 class="u-mt-l">Housing, sex and GI (Paper questions H7 - H14)</h3>
+                                <ul class="list list--bare">
+                                    <li>H7 - <a href="h7-what-type-of-accommodation.html">What type of accommodation is this?</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    
+                                    <li>H8 - <a href="h8-rooms-behind-doors.html">Are all the rooms in this accommodation, including the kitchen, bathroom and toilet, behind a door that only this household can use?</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    
+                                    <li>H9 - <a href="h9-how-many-bedrooms.html">How many bedrooms are available for use only by this household?</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    
+                                    <li>H10 - <a href="h10-central-heating.html">What type of central heating does this accommodation have?</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    
+                                    <li>H11 - <a href="">If there is no one living here</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    
+                                    <li>H12 - <a href="h12-own-or-rent.html">Does your household own or rent this accommodation?</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    
+                                    <li>H13 - <a href="h13-who-is-your-landlord.html">Who is your landlord?</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    
+                                    <li>H14 - <a href="h14-cars-vans-owned.html">In total, how many cars or vans are owned, or available for use, by members of this household?</a></li>
+                                </uL>
+
+                                <div id="individual"><div>
+                                <h2 class="u-mt-xl">Individual questions</h2>
+                                <h3 class="u-mt-l">Name, date of birth and marital status (Paper questions P & 1-10)</h3>
+                                <ul class="list list--bare">
+                                <li>P. <a href="">Thinking about the people listed in question H3, are you Person 1?</a></li>
+                                <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                <ol class="list">
+                                </ul>
+                                    <ol class="list nested">
+                                    
+                                    <li><a href="">What is your name?</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    <li><a href="">What is your date of birth?</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    <li><a href="">What is your sex?</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    <li><a href="">On 13 October 2019, what is your legal marital or registered civil partnership status?</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    <li><a href="">Who is (was) your legal marriage or registered civil partnership to?</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    <li><a href="">Do you stay at another address for more than 30 days a year?</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    <li><a href="">What is that address?</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    <li><a href="">Are you a schoolchild or student in full-time education?</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    <li><a href="">During term time, where do you usually live?</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    <li><a href="">What is your country of birth?</a></li>              
+                                <div id="individual2"><div>
+                                <h3 class="u-mt-l">Language, religion and ethnicity (Paper questions 11-20)</h3>
+                                    <li><a href="">If you were born in the United Kingdom, when did you most recently arrive to live here?</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    <li><a href="">Including the time you have already spent here, how long do you intend to stay in the United Kingdom?</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    <li><a href="13-speak-welsh.html">WELSH LANGUAGE ONLY - Can you understand, speak, red or write Welsh?</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    <li><a href="">What is your main language?</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    <li><a href="">How well can you speak English?</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    <li><a href="">How would you describe your national identity</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    <li><a href="17-What-is-your-ethnic-group.html">What is your ethnic group?</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    <li><a href="">What is your religion?</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    <li><a href="">One year ago, what was your usual address?</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    <li><a href="">What passports do you hold?</a></li>
+                                <div id="individual3"><div>
+                                <h3 class="u-mt-l">Address, health and sexual orientation (Paper questions 21-27)</h3>
+                                <li><a href="">How is your health in general?</a></li>
+                                <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                <li><a href="">Do you have any physical or mental health conditions or illnesses lasting or epected to last 12 months or more?</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    <li><a href="">Do any of your conditions or illnesses reduce your ability ti carry out day-to-day activities?</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    <li><a href="">Do you look after, or give an help or support to, anyone because they have long-term physical or mental health conditions or illnesses, or problems related to old age?</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    <li><a href=""></a>BLANK</li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    <li><a href="">Which of the following best describes your sexual orientation?</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    <li><a href="">Is your gender the same as the sex you were registered at birth?</a></li>
+                                <div id="individual4"><div>
+                                <h3 class="u-mt-l">Education and employment (Paper questions 28-50)</h3>
+                                    <li>BLANK</li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    <li><a href="">Have you completed an apprenticeship?</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    <li><a href="">Have your achieved a qualification at degree level or above?</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    <li><a href="">Have you achieved any other qualifications?</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    <li><a href="">Have you previously served in the UK Armed Forces</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    <li><a href="">In the last seven days, were you doing any of the following?</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    <li><a href="">Which of the following describes what youe were doing in the last seven days?</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    <li><a href="">In the last four weeks, were you actively looking for any kind of paid work?</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    <li><a href="">If a job became available now, could you start it within two weeks?</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    <li><a href="">In the last seven days, were you waiting to start a job already accepted?</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    <li><a href="">Have you ever done any paid work?</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    <li><a href="">Answer the remaining questions for your main job or, if not working, your last main job</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    <li><a href="">In your main job, what is (was) your employment status?</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    <li><a href="">What is (was) the name of the organisation or business you work (worked) for?</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    <li><a href="">What is (was) your full job title?</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    <li><a href="">Briely descibe what you do (did) in your main job?</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    <li><a href="">What is (was) the main activity of your organisation, business or freelnace work?</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    <li><a href="">Do (did) you supervise or oversee the work of other employees on a day-to-day basis?</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    <li>BLANK</li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    <li><a href="">In your main job, how many hours a week do you usually work?</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    <li><a href="">How do you usually travel to work?</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    <li><a href="">Where do you mainly work?</a></li>
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    <li><a href="">What is the address of your workplace or depot?</a></li>
+                                </ul>
+
+                                <div class="u-mt-l"><a href="#top">Back to top</a></div>
+                    </main>
+                </div>
+                <div class="grid__col col-4@m push-1@m">
+                    <div style="border-top:5px solid purple;padding:15px 0;">
+                        <h3>Related content</h3>
+                            <ul class="list list--bare">
+                                <li><a href="#">About the census</a></li>
+                                <li><a href="#">Contact us</a></li>
+                            </ul>
+                         <!--<div class="u-mb-m">
+                            <hr class="footer__hr">
+                        </div>
+                       <div class="card card-cta">
+                            <h3 class="u-fs-m u-mb-xs">
+                                Ready to take part?
+                            </h3>
+                            <a href="#" style="font-size:2.2em; font-weight:bold;line-height: 1.3em;color:white;text-decoration:underline;cursor:pointer;">Start your census survey</a>
+                        </div>-->
+                    </div>
+                </div>
+        </div>
+</div>
+{% endblock %}
