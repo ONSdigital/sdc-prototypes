@@ -42,11 +42,16 @@ layout: census-website/views/_master
     <div class="grid">
         <div class="grid__col col-7@m">
             <main id="main-content" class=" {{ pageClasses }}">
+<<<<<<< Updated upstream
                 <h1 class="u-mb-l u-fs-l">Contact us</h1>
+=======
+                <h1 class="u-fs-xl">Contact us</h1>
+>>>>>>> Stashed changes
                 
             </main>
             <div class="u-mt-s u-mb-l">
                 <main id="main-content" class=" {{ pageClasses }}">
+<<<<<<< Updated upstream
                     <h2>Why the information we collect is important</h2>
                     <p>Census helpline is available from Friday 4 March to Sunday 15 May 2011.</p>
 <p><strong>Census helpline:</strong> 0300 0201 130 (option for English and Welsh)</p>
@@ -59,38 +64,146 @@ layout: census-website/views/_master
 
 
 <hr class="footer__hr" style="margin-bottom: 0;">
+=======
+                    <p>Census helpline is available from the 23 September to 17 November 2019.</p>
+
+    <h2 class="u-mt-l">Telephone</h2>
+    <div class="u-mb-m tel-block">
+        <p style="margin-bottom:2px;">Telephone:<strong></p><p style="margin-bottom:2px;">0800 XXX XXXX 
+        <small>(Option for English and Welsh)</small></strong> </p>
+    </div>
+    <div class="u-mb-m">
+                {% from "components/panel/_macro.njk" import onsPanel %}
+                    {{ 
+                    onsPanel({
+                        body: "<p>For althernative formats, such as braille call <strong>0800 XXX XXXX</strong></p>"
+                    }) 
+                }}
+            </div>
+
+<h3 class="u-mt-l u-mb-xs">Opening hours</h3>
+<p>Monday to Friday, 8 am to 7pm<br> Saturday, 8am to 4pm</p>
+<p><a href="">Find out about call charges</a></p>
+
+<h2 class="u-mt-xl">Textphone</h2>
+<div class="u-mb-m tel-block">
+    <p style="margin-bottom:2px;">Textphone:<strong></p><p style="margin-bottom:2px;">0800 XXX XXXX</strong> </p>
+</div>
+
+            <div class="u-mb-m">
+                {% from "components/panel/_macro.njk" import onsPanel %}
+                    {{ 
+                    onsPanel({
+                        body: "<p>Text relay (if you cannot hear or speak on the phone):<strong>XXXXX then 0800 XXX XXXX</strong></p>"
+                    }) 
+                }}
+            </div>
+
+
+<h2 class="u-mt-xl u-mb-xs">Web chat</h2>
+<p><a href="">Speak to an advisor</a></p>
+<h3 class="u-mb-xs">Opening hours</h3>
+<p>Monday to Friday 8am – 7pm<br> Saturday 8am - 4pm</p>
+
+<h2 class="u-mt-xl">Email enquiry</h2>
+{% from "components/select/_macro.njk" import onsSelect %}
+{{ 
+    onsSelect({
+        "id": "select",
+        "name": "select",
+        "label": {
+            "text": "What do you want to contact us about?"
+        },
+        "options": [
+            {
+                "value": "",
+                "text": "Select an option",
+                "disabled": true,
+                "selected": true
+            },
+            {
+                "value": "bart",
+                "text": "Bart Simpson"
+            },
+            {
+                "value": "homer",
+                "text": "Homer Simpson"
+            },
+            {
+                "value": "marge",
+                "text": "Marge Simpson"
+            },
+            {
+                "value": "lisa",
+                "text": "Lisa Simpson"
+            },
+            {
+                "value": "maggie",
+                "text": "Maggie Simpson"
+            },
+            {
+                "value": "ned",
+                "text": "Ned Flanders"
+            },
+            {
+                "value": "7-dwarves",
+                "text": "The 7 Dwarves: Grumpy, Happy, Sleepy, Bashful, Sneezy, Dopey, Doc"
+            }
+        ]
+    })
+}}
+
+
+
+
+<h2 class="u-mt-xl">Post</h2>
+<div class="tel-block">
+    <p>Government Buildings<br>
+    Cardiff Road<br>
+    Newport<br>
+    South Wales<br>
+    NP10 8XG</p>
+</div>
+
+<h2 class="u-mt-xl">Follow us</h2>
+<div style="display: flex;">
+    <div style="height:40px;width:40px;margin-right:10px;">
+        <a href=""><img src="img/facebook-logo.svg"></a>
+    </div> 
+    <div style="height:40px;width:40px;margin-right:10px;">
+        <a href=""><img src="img/twitter-logo.svg"></a>
+    </div> 
+    <div style="height:40px;width:40px;">
+        <a href=""><img src="img/linkedin.svg"></a>
+    </div>
+</div> 
+
+<hr class="footer__hr u-mt-l" style="margin-bottom: 0;">
+>>>>>>> Stashed changes
 
 <div class="u-mt-m">
 <h2 class="u-fs-l">Marketing materials</h2>
 <p>Select below the adertising materials you require</p>
 
     <div class="grid__col--flex u-mt-m">
-        <img src="https://via.placeholder.com/107x150/800080/800080" style="width:107px; height:150px;"> 
-        <div class="u-ml-s">
+        <img src="img/poster.jpg" style="width:107px; height:150px;border: 2px solid #cccccc;"> 
+        <div class="u-ml-s download">
             <a href="" class="u-fs-l@m u-fs-m@xs">Census awareness poster </a>
-            <p class="u-fs-s@xs u-fs-s@m u-mb-xs@xs u-mt-xs@xs">PDF, 890KB, 1 page</p>
+            <p class="u-fs-s@xs u-fs-s@m u-mb-xs@xs u-mt-xs@xs"><strong>PDF</strong> 890KB, 1 page</p>
             <p class="u-fs-s@xs u-fs-s@m">This file may not be suitable for users of assistive technology. <a href="">Request an accessible format.</a></p>
         </div>
     </div>
 <hr class="footer__hr u-mt-m" style="margin-bottom: 0;">
 
     <div class="grid__col--flex u-mt-m">
-        <img src="https://via.placeholder.com/107x150/555555/555555" style="width:107px; height:150px;"> 
-        <div class="u-ml-s">
+        <img src="img/poster2.jpg" style="width:107px; height:150px;border: 2px solid #cccccc;"> 
+        <div class="u-ml-s download">
             <a href="" class="u-fs-l@m u-fs-m@xs">Census Letterhead </a>
-            <p class="u-fs-s@xs u-fs-s@m u-mb-xs@xs u-mt-xs@xs">PDF, 330KB, 1 page</p>
+            <p class="u-fs-s@xs u-fs-s@m u-mb-xs@xs u-mt-xs@xs"><strong>PDF</strong> 330KB, 1 page</p>
             <p class="u-fs-s@xs u-fs-s@m">This file may not be suitable for users of assistive technology. <a href="">Request an accessible format.</a></p>
         </div>
     </div>
-<hr class="footer__hr u-mt-m" style="margin-bottom: 0;">
-<div class="grid__col--flex u-mt-m">
-        <img src="https://via.placeholder.com/107x150/800080/800080" style="width:107px; height:150px;"> 
-        <div class="u-ml-s">
-            <a href="" class="u-fs-l@m u-fs-m@xs">Census awareness poster </a>
-            <p class="u-fs-s@xs u-fs-s@m u-mb-xs@xs u-mt-xs@xs">PDF, 890KB, 1 page</p>
-            <p class="u-fs-s@xs u-fs-s@m">This file may not be suitable for users of assistive technology. <a href="">Request an accessible format.</a></p>
-        </div>
-    </div>
+
                    
                 </main>
             </div> 
