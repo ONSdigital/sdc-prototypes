@@ -13,12 +13,12 @@ layout: census-website/views/_page
                 "text": 'Home'
             },
             {
-                "url": '/prototypes/census-website/what-is-the-census/',
+                "url": '/prototypes/census-website/about-the-census/',
                 "text": 'About the census'
             },                                            
             {
                 "url": '',
-                "text": 'The 2019 Census rehearsal',
+                "text": 'The 2019 Census Rehearsal',
                 "current": true                                                
 
             }
@@ -27,24 +27,24 @@ layout: census-website/views/_page
     "contentsList": {
         "itemsList": [
             {
-                "url": '/prototypes/census-website/what-is-the-census/',
+                "url": '/prototypes/census-website/about-the-census/',
                 "text": 'Overview'
             },
             {
-                "url": '/prototypes/census-website/what-is-the-census/why-info-important.html',
-                "text": 'Why the information we collect is important'
+                "url": '/prototypes/census-website/about-the-census/who-should-take-part-and-why.html',
+                "text": 'Who should take part and why'
             },
             {
-                "url": '/prototypes/census-website/what-is-the-census/who-uses-data.html',
-                "text": 'Who uses the data'
+                "url": '/prototypes/census-website/about-the-census/what-happens-to-your-information.html',
+                "text": 'What happens to your information'
             },
             {
                 "current": true,
-                "text": 'The 2019 Census rehearsal'
+                "text": 'The 2019 Census Rehearsal'
             },
             {
                 "text": 'Online census',
-                "url": '/prototypes/census-website/what-is-the-census/online-census.html'
+                "url": '/prototypes/census-website/about-the-census/online-census.html'
 
             }
         ]
@@ -54,13 +54,13 @@ layout: census-website/views/_page
             {
                 "rel": 'previous',
                 "text": 'Previous',
-                "url": '/prototypes/census-website/what-is-the-census/who-uses-data.html',
-                "label": 'Who uses the data'
+                "url": '/prototypes/census-website/about-the-census/what-happens-to-your-information.html',
+                "label": 'What happens to your information'
             },
             {
                 "rel": 'next',
                 "text": 'Next',
-                "url": '/prototypes/census-website/what-is-the-census/online-census.html',
+                "url": '/prototypes/census-website/about-the-census/online-census.html',
                 "label": 'Online census'
             }
         ]
@@ -78,11 +78,6 @@ layout: census-website/views/_page
 
     <p>Testing our processes will help us make sure Census 2021 is easier to do and better for everyone. We can only do this if people take part in the rehearsal. You do not have to but if you’re invited, we’d be grateful if you take part.</p> 
     
-    <p>If you have any questions or concerns about taking part, please <a href="#">contact us.</a></p>
-    {% from "components/panel/_macro.njk" import onsPanel %}
-    {{ 
-        onsPanel({
-            body: "<p>If you take part in the census rehearsal you will still need to fill out the census in 2021.</p>"
-        }) 
-    }}
+    <p>If you have any questions or concerns about taking part, please <a href="/prototypes/census-website/contact-us/">contact us.</a></p>
+
 {% endblock %}

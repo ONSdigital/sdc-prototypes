@@ -1,0 +1,127 @@
+---
+title: Campaign Website
+group: Census
+version: 8.0.5
+layout: census-website/views/_master
+---
+
+{% from "components/card/_macro.njk" import onsCard %}
+
+{% block page %}
+<div class="page__container container {{ containerClasses }}">
+            <div class="grid">
+                <div class="grid__col col-7@m">
+                            {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+                                {{ 
+                                    onsBreadcrumb({
+                                        "ariaLabel": 'Breadcrumb',
+                                        "itemsList": [
+                                            {
+                                                "url": '/prototypes/census-website/index.html',
+                                                "text": 'Home'
+                                            },
+                                            {
+                                                "url": '/prototypes/census-website/help/',
+                                                "text": 'Help with your census'
+                                            },                                            
+                                            {
+                                                "url": '/prototypes/census-website/help/question-help.html',
+                                                "text": 'Help with the questions'
+                                            },
+                                            {
+                                                "url": '',
+                                                "text": 'H13 - Who is your landlord?',
+                                                "current": true
+                                            }
+                                        ]
+                                    }) 
+                                }}
+                                </div>
+                                </div>
+                <div class="grid">
+                    <div class="grid__col col-7@m">
+                        <main id="main-content" class=" {{ pageClasses }}">
+                                    <h1 class="u-mb-m">H13 - Who is your landlord?</h1>
+                                    {#<div class="u-mb-m">
+                                    {% from "components/panel/_macro.njk" import onsPanel %}
+                                        {{ 
+                                            onsPanel({
+                                                body: "<p>If you’re not sure how to describe your accommodation, answer as best you can.</p>"
+                                            }) 
+                                        }}
+                                        </div>#}
+                                                                        {% from "components/details/_macro.njk" import onsDetails %}
+
+                                    {{
+                                        onsDetails({
+                                            "id": "details",
+                                            "title": "Why we ask this question",
+                                            "classes": "u-mb-m",
+                                            "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur snint occaecat cupidatat</p>
+                                            <p> non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occat in culpa qui officia deserunt mollit anim id est laborum.</p>
+</p>",
+                                            "button": {
+                                                "close": "Hide this"
+                                            }
+                                        })
+                                    }}          
+                                    
+                                    <p><strong>Give one answer only.</strong> Only answer if you:</p> 
+
+                                    <ul class="list">
+                                    <li>live in rented accommodation</li>
+                                    <li>part - own and part - rent</li>
+                                    </ul>
+
+                                    
+                                    <p><strong>OR</strong></p>
+                                    
+
+                                    <ul class="list">
+                                    <li>live rent-free</li>
+                                    </ul>
+
+                                    <p>Your landlord is generally a person or organisation that owns your property and either</p>
+                                    <ul class="list">
+                                    <li>charges you rent to live there</li>
+                                    </ul>
+                                    
+                                   <ul class="list">
+                                    <p><strong>OR</strong></p>
+                                    </ul>
+
+                                    <ul class="list">
+                                    <li>lets you live there rent-free</li>
+                                    </ul>
+                                    
+                                    <p>Your landlord might be:</p>
+
+                                    <ul class="list">
+                                    <li>a housing association, housing co-operative, charitable trust, or registered social landlord</li>
+                                    <li>the council (local authority)</li>
+                                    <li>a private landlord or letting agency</li>
+                                    <li>an employer of a household member</li>
+                                    <li>a relative or friend</li>
+                                    <li>another person or organisation</li>
+                                    </ul>
+
+                                   <p><strong>ALMO:</strong> If your accommodation is managed by an Arms Length Management Organisation (ALMO), select <strong>Council (local authority).</strong></p>
+                        </main>
+                </div>
+                <!--Right Sidbar-->
+                <div class="grid__col col-4@m push-1@m">
+                    <div style="border-top:5px solid purple;padding:15px 0;">
+                        <h3>Related content</h3>
+                        <ul class="list list--bare">
+                            <li><a href="#">About the census</a></li>
+                            <li><a href="#">What we ask you</a></li>
+                            <li><a href="#">Help and support</a></li>
+                            <li><a href="#">Contact us</a></li>
+                        </ul>
+                    </div>
+                </div> <!--Right Sidbar end-->
+        </div>
+</div>
+{% endblock %}

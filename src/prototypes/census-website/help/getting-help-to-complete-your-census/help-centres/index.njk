@@ -1,0 +1,87 @@
+---
+version: 8.0.5
+layout: census-website/views/_page
+---
+
+{% set content = { 
+    "title": 'Getting help to complete your census',
+    "sectionTitle": 'Help centres',    
+    "breadcrumbs": {
+        "itemsList": [
+            {
+                "url": '/prototypes/census-website/',
+                "text": 'Home'
+            },
+            {
+                "url": '/prototypes/census-website/help/',
+                "text": 'Help with your census'
+            },            
+            {
+                "url": '/prototypes/census-website/help/getting-help-to-complete-your-census/',
+                "text": 'Getting help to complete your census'
+            },            
+            {
+                "url": '/prototypes/census-website/help/getting-help-to-complete-your-census/help-centres/',
+                "text": 'Help centres',
+                "current": true
+            }
+        ]
+    },
+    "contentsList": {
+        "itemsList": [
+            {
+                "text": 'Overview',
+                "url": '/prototypes/census-website/help/getting-help-to-complete-your-census/'
+            },
+            {
+                "text": 'Help centres',
+                "current": true
+            },
+            {
+                "url": '/prototypes/census-website/help/getting-help-to-complete-your-census/helping-someone-else/',
+                "text": 'Helping someone else fill in their census'
+            }
+        ]
+    },
+    "contentPagination": {
+        "contentPaginationItems": [
+            {
+                "rel": 'previous',
+                "text": 'Previous',
+                "url": '/prototypes/census-website/help/getting-help-to-complete-your-census/',
+                "label": 'Overview'
+            },
+            {
+                "rel": 'next',
+                "text": 'Next',
+                "url": '/prototypes/census-website/help/getting-help-to-complete-your-census/helping-someone-else/',
+                "label": 'Helping someone else fill in their census'
+            }
+        ]
+    }
+
+} %}
+{% block content %}
+    <p>Help is available at the following venues, between the hours of 9am - 5pm. </p>
+    <p>You will need to <a href="/prototypes/census-website/contact-us.html">contact us to make an appointment.</a></p>
+    <p>Our staff will offer you help to get online and fill in the census. You can take your own mobile device, or you can use a laptop or tablet provided at the venue.</p>
+    <p>You will need to have access to the information we ask for in the census. You can <a href="/prototypes/census-website/help/help-with-the-questions">find out what you will need in our guidance on the questions.</a></p>
+    <h2>Carlisle</h2>
+    <ul>
+        <li>Greystone Community Centre, Close St, Carlisle CA1 2HA</li>
+        <li>Harraby Community Centre, Edgehill Rd, Carlisle CA1 3SN</li>
+    </ul>
+    <h2>Ceredigion</h2>
+    <ul>
+        <li>Sir Geraint Evans Leisure Centre, South Rd, Aberaeron SA46 0DP</li>
+        <li>National Library of Wales, Penglais Rd, Aberystwyth SY23 3BU</li>
+    </ul>
+    <h2>Hackney</h2>
+    <ul>
+        <li>Clapton Library, Northwold Rd, Cazenove, London E5 8RA</li>
+    </ul>     
+    <h2>Tower Hamlets</h2>
+    <ul>
+        <li>St Matthias Community Centre, 113 Poplar High St, Poplar, London E14 0AE</li>
+    </ul> 
+{% endblock %}
