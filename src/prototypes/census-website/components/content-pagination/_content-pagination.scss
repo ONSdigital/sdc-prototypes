@@ -2,7 +2,7 @@
 
 .content-pagination {
   display: block;
-  margin: 1.5rem -0.5rem 2.5rem;
+  margin: 1.5rem 0 2.5rem;
 
   &__list {
     margin: 0;
@@ -11,15 +11,13 @@
   }
 
   &__item {
-    margin: 0 0 0.3rem;
+    margin: 0 0 1.5rem;
   }
 
   &__link {
-    display: block;
-    padding: 0.5rem;
+    display: inline-block;
     text-decoration: none;
     &:hover {
-      background: $color-grey-5;
       text-decoration: none;
     }
   }

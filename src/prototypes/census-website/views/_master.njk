@@ -2,7 +2,11 @@
 {% extends "page-templates/_template.njk" %}
 
 {% set page = { 
-    "title": "Census 2021",
+    "title": 'Census 2021',
+    "header": {
+        "classes": 'header--thin'
+    },
+    
     "footer": {
         "OGLLink": {
             "pre": 'All content is available under the',
@@ -13,9 +17,9 @@
     },
     
     "toggleButton": {
-            "text": "Menu",
-            "ariaLabel": "Toggle main navigation"
-        },
+        "text": "Menu",
+        "ariaLabel": "Toggle main navigation"
+    },
         
     "navigation": {
             "id": "main-nav",
