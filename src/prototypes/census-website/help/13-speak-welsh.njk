@@ -39,22 +39,14 @@ layout: census-website/views/_master
                 <div class="grid">
                     <div class="grid__col col-7@m">
                         <main id="main-content" class=" {{ pageClasses }}">
-                                    <h1 class="u-mb-m">13 - WELSH ONLY - Can you understand, speak, read or write Welsh?</h1>
-                                    {#<div class="u-mb-m">
-                                    {% from "components/panel/_macro.njk" import onsPanel %}
-                                        {{ 
-                                            onsPanel({
-                                                body: "<p>If you’re not sure how to describe your accommodation, answer as best you can.</p>"
-                                            }) 
-                                        }}
-                                        </div>#}
+                                    <h1 class="u-mb-m">13 - Can you understand, speak, read or write Welsh?</h1>
                                     {% from "components/details/_macro.njk" import onsDetails %}
 
                                     {{
                                         onsDetails({
                                             "id": "details",
                                             "title": "Why we ask this question",
-                                            "classes": "u-mb-m",
+                                            "classes": "u-mb-s",
                                             "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
                                             <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur snint occaecat cupidatat</p>
                                             <p> non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -64,6 +56,13 @@ layout: census-website/views/_master
                                                 "close": "Hide this"
                                             }
                                         })
+                                    }}
+                                    {% from "components/panel/_macro.njk" import onsPanel %}
+                                    {{ 
+                                        onsPanel({
+                                            "body": "<p>This question only applies to people living in Wales.</p>",
+                                            "classes": "u-mb-s"
+                                        }) 
                                     }}
                                               
                                     <h3>If you live in Wales</h3>
