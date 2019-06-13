@@ -1,5 +1,5 @@
 ---
-version: 8.0.5
+version: 9.0.0
 layout: census-website/views/_master
 ---
 
@@ -16,7 +16,7 @@ layout: census-website/views/_master
         "button": {
             "text": "Start survey",
             "classes": 'btn--small',
-            "href": "https://deploy-preview-28--sdc-prototypes.netlify.com/prototypes/rh-census/"
+            "href": "https://sdc-prototypes.netlify.com/prototypes/rh-census/home.html"
         }
     })
 }}
@@ -51,14 +51,14 @@ layout: census-website/views/_master
 
     <h2 class="u-mt-l">Telephone</h2>
     <div class="u-mb-m tel-block">
-        <p style="margin-bottom:2px;">Telephone:<strong></p><p style="margin-bottom:2px;">0800 XXX XXXX 
+        <p style="margin-bottom:2px;">Telephone:<strong></p><p style="margin-bottom:2px;">0800 000 XXXX 
         <small>(Option for English and Welsh)</small></strong> </p>
     </div>
     <div class="u-mb-m">
                 {% from "components/panel/_macro.njk" import onsPanel %}
                     {{ 
                     onsPanel({
-                        body: "<p>For althernative formats, such as braille call <strong>0800 XXX XXXX</strong></p>"
+                        body: "<p>For alternative formats, such as braille call <strong>0800 XXX XXXX</strong></p>"
                     }) 
                 }}
             </div>
@@ -117,13 +117,13 @@ layout: census-website/views/_master
 <h2 class="u-mt-xl">Follow us</h2>
 <div style="display: flex;">
     <div style="height:40px;width:40px;margin-right:10px;">
-        <a href=""><img src="img/facebook-logo.svg"></a>
+        <a href=""><img src="/prototypes/census-website/img/facebook-logo.svg"></a>
     </div> 
     <div style="height:40px;width:40px;margin-right:10px;">
-        <a href=""><img src="img/twitter-logo.svg"></a>
+        <a href=""><img src="/prototypes/census-website/img/twitter-logo.svg"></a>
     </div> 
     <div style="height:40px;width:40px;">
-        <a href=""><img src="img/linkedin.svg"></a>
+        <a href=""><img src="/prototypes/census-website/img/linkedin.svg"></a>
     </div>
 </div> 
 
@@ -131,10 +131,10 @@ layout: census-website/views/_master
 
 <div class="u-mt-m">
 <h2 class="u-fs-l">Marketing materials</h2>
-<p>Select below the adertising materials you require</p>
+<p>Select below the advertising materials you require</p>
 
     <div class="grid__col--flex u-mt-m">
-        <img src="img/poster.jpg" style="width:107px; height:150px;border: 2px solid #cccccc;"> 
+        <img src="/prototypes/census-website/img/poster.jpg" style="width:107px; height:150px;border: 2px solid #cccccc;"> 
         <div class="u-ml-s download">
             <a href="" class="u-fs-l@m u-fs-m@xs">Census awareness poster </a>
             <p class="u-fs-s@xs u-fs-s@m u-mb-xs@xs u-mt-xs@xs"><strong>PDF</strong> 890KB, 1 page</p>
@@ -144,7 +144,7 @@ layout: census-website/views/_master
 <hr class="footer__hr u-mt-m" style="margin-bottom: 0;">
 
     <div class="grid__col--flex u-mt-m">
-        <img src="img/poster2.jpg" style="width:107px; height:150px;border: 2px solid #cccccc;"> 
+        <img src="/prototypes/census-website/img/poster2.jpg" style="width:107px; height:150px;border: 2px solid #cccccc;"> 
         <div class="u-ml-s download">
             <a href="" class="u-fs-l@m u-fs-m@xs">Census Letterhead </a>
             <p class="u-fs-s@xs u-fs-s@m u-mb-xs@xs u-mt-xs@xs"><strong>PDF</strong> 330KB, 1 page</p>

@@ -1,5 +1,5 @@
 ---
-version: 8.0.5
+version: 9.0.0
 ---
 {% extends "prototypes/census-website/views/_master.njk" %}
 
@@ -29,7 +29,7 @@ version: 8.0.5
             "itemsList": content.breadcrumbs.itemsList
         }) 
     }}
-    <div class="grid">
+    <div class="grid u-mt-l@m">
         <div class="grid__col col-7@m">
             <main id="main-content" class=" {{ pageClasses }}">
                 <h1 class="u-mb-l u-fs-xl">{{ content.title }}</h1>
@@ -56,7 +56,7 @@ version: 8.0.5
                 {% if content.contentsList %}</section>{% endif %}
             </main>
         </div>
-        <div class="grid__col col-4@m push-1@m">
+        <div class="grid__col col-4@m push-1@m u-mt-xs">
                 {{-
                     onsRelatedList({
                         "id": 'related-list-block',

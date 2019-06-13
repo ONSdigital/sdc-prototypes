@@ -1,11 +1,13 @@
 @import 'components/**/*.scss';
 
+$purple: #93328e;
+
 .header__bottom {
-  background: purple;
+  background: $purple;
 }
 
 .header__main {
-  background: purple;
+  background: $purple;
 }
 
 .call-to-action {
@@ -138,7 +140,6 @@
 
 .btn--small > .icon--chevron-right-white:after {
   width: 0.8rem;
-  height: 0.8rem;
   background-size: 0.8rem 0.8rem;
 }
 
