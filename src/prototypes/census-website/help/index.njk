@@ -3,10 +3,10 @@ version: 9.0.0
 layout: census-website/views/_master
 ---
 
-{% from "components/card/_macro.njk" import onsCard %}
+{% from "prototypes/census-website/components/card/_macro.njk" import onsCard %}
 
 {% block page %}
-{% from "census-website/components/call-to-action/_macro.njk" import onsCallToAction %}
+{% from "prototypes/census-website/components/call-to-action/_macro.njk" import onsCallToAction %}
 {{-
     onsCallToAction({
         "headingText": "Ready to start your census survey?",
@@ -26,7 +26,7 @@ layout: census-website/views/_master
                     <div class="container">
                         <div class="col-8@m">
                             {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
-                            {{ 
+                            {{-
                                 onsBreadcrumb({
                                     "ariaLabel": 'Breadcrumb',
                                     "itemsList": [
@@ -41,7 +41,7 @@ layout: census-website/views/_master
                                         }
                                     ]
                                 }) 
-                            }}
+                            -}}
                             <h1 class="u-fs-xl">Help with your census</h1>
                             
                         </div>
@@ -63,9 +63,19 @@ layout: census-website/views/_master
                         {{- 
                             onsCard({
                                 "classes": 'u-fs-r',
-                                "title": 'Advice on census questions',
+                                "title": 'Help with the questions',
                                 "url": '/prototypes/census-website/help/question-help.html',
-                                "text": 'Guidance on how to answer questions.'
+                                "text": 'Guidance on how to answer the census questions.',
+                                "itemsList": [
+                                    {
+                                        "url": '/prototypes/census-website/help/finding-support-to-complete-your-census/help-centres/',
+                                        "text": 'Online survey'
+                                    },
+                                    {
+                                        "url": '/prototypes/census-website/help/finding-support-to-complete-your-census/helping-someone-else/',
+                                        "text": 'Paper questionnaire'
+                                    }
+                                ]                                
                             })
                         }}
                     </div>
@@ -74,22 +84,21 @@ layout: census-website/views/_master
                             onsCard({
                                 "title": 'Finding support to complete your census',
                                 "url": '/prototypes/census-website/help/finding-support-to-complete-your-census/',
-                                "text": 'You can get help from a friend or neighbour, or one of our advisors face-to-face or over the phone.'
+                                "text": 'You can get help from a friend or neighbour, or one of our advisors face-to-face or over the phone.',
+                                "itemsList": [
+                                    {
+                                        "url": '/prototypes/census-website/help/finding-support-to-complete-your-census/help-centres/',
+                                        "text": 'Help centres'
+                                    },
+                                    {
+                                        "url": '/prototypes/census-website/help/finding-support-to-complete-your-census/helping-someone-else/',
+                                        "text": 'Helping someone else fill in their census'
+                                    }
+                                ]
                             })
-                        }}
+                        }}                        
                     </div> 
-                    {#
-                    <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
-                        {{- 
-                            onsCard({
-                                "classes": 'u-fs-r',
-                                "title": 'Request a new access code or paper form',
-                                "url": '#',
-                                "text": "What to do if you\'ve lost your letter or do not want to complete online."
-                            })
-                        }}
-                    </div>
-                    #}
+
                     
                 </div>
                 <div class="u-mt-l">
