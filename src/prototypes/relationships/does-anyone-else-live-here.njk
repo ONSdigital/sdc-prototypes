@@ -11,7 +11,7 @@ layout: relationships/views/_master
 {% set form =  {
     "method": "GET",
     "attributes": {
-        "action":  pageInfo.parentPath + "/relationships-intro.html"
+        "action":  pageInfo.rootPath + "/relationships-intro.html"
     }
 } %}
 
@@ -37,7 +37,7 @@ layout: relationships/views/_master
                         "classes": "js-another-person"
                     },
                     "attributes": {
-                        "data-action": pageInfo.parentPath + "/who-else.html"
+                        "data-action": pageInfo.rootPath + "/who-else.html"
                     }
                 },
                 {
