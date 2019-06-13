@@ -89,6 +89,14 @@ $purple: #93328e;
 .intro--banner {
   background-color: #f0f0f0;
 }
+.panel--question strong {
+  background: white;
+  border: purple 2px solid;
+  border-radius: 4px;
+  padding: 0 3px;
+  margin-left: 3px;
+}
+
 .panel__cta {
   background: purple;
   color: white;
@@ -179,4 +187,74 @@ $purple: #93328e;
   color: white;
   width: auto;
   font-weight: bold;
+}
+ol.household {
+  list-style-type: none;
+  counter-reset: elementcounter;
+  padding-left: 0;
+}
+ol.household li {
+  margin-top: 1rem;
+}
+
+ol.household li a {
+  margin-left: 2.5rem;
+  display: block;
+  border-bottom: 1px solid lightgrey;
+  padding-bottom: 1rem;
+}
+
+ol.household li:before {
+  content: 'H' counter(elementcounter) '. ';
+  counter-increment: elementcounter;
+  font-weight: bold;
+  position: absolute;
+}
+
+ol.individual {
+  counter-reset: item;
+  margin: 0 0 1.5em;
+  padding: 0;
+  > li {
+    margin-top: 1rem;
+    counter-increment: item;
+    list-style-type: none;
+    &::before {
+      content: counter(item) '.';
+      display: inline-block;
+      font-weight: bold;
+      padding-right: 0.5rem;
+      counter-increment: elementcounter;
+      font-weight: bold;
+      position: absolute;
+    }
+    a {
+      margin-left: 2.2rem;
+      display: block;
+      border-bottom: 1px solid lightgrey;
+      padding-bottom: 1rem;
+    }
+  }
+}
+ol.individual-p {
+  > li {
+    margin-top: 1rem;
+    counter-increment: item;
+    list-style-type: none;
+    &::before {
+      content: 'P.';
+      display: inline-block;
+      font-weight: bold;
+      padding-right: 0.5rem;
+      counter-increment: elementcounter;
+      font-weight: bold;
+      position: absolute;
+    }
+    > a {
+      margin-left: 2.2rem;
+      display: block;
+      border-bottom: 1px solid lightgrey;
+      padding-bottom: 1rem;
+    }
+  }
 }

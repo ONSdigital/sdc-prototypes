@@ -65,7 +65,22 @@ layout: census-website/views/_master
 
 <h3 class="u-mt-l u-mb-xs">Opening hours</h3>
 <p>Monday to Friday, 8 am to 7pm<br> Saturday, 8am to 4pm</p>
-<p><a href="">Find out about call charges</a></p>
+{% from "components/details/_macro.njk" import onsDetails %}
+
+                                    {{
+                                        onsDetails({
+                                            "id": "details",
+                                            "title": "Find out about call charges",
+                                            "classes": "u-mb-m",
+                                            "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur snint occaecat cupidatat</p>
+                                            <p> non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occat in culpa qui officia deserunt mollit anim id est laborum.</p>",
+                                            "button": {
+                                                "close": "Hide this"
+                                            }
+                                        })
+                                    }}
 
 <h2 class="u-mt-xl">Textphone</h2>
 <div class="u-mb-m tel-block">
@@ -87,56 +102,8 @@ layout: census-website/views/_master
 <h3 class="u-mb-xs">Opening hours</h3>
 <p>Monday to Friday 8am – 7pm<br> Saturday 8am - 4pm</p>
 
-<h2 class="u-mt-xl">Email enquiry</h2>
-{% from "components/select/_macro.njk" import onsSelect %}
-{{ 
-    onsSelect({
-        "id": "select",
-        "name": "select",
-        "label": {
-            "text": "What do you want to contact us about?"
-        },
-        "options": [
-            {
-                "value": "",
-                "text": "Select an option",
-                "disabled": true,
-                "selected": true
-            },
-            {
-                "value": "bart",
-                "text": "Bart Simpson"
-            },
-            {
-                "value": "homer",
-                "text": "Homer Simpson"
-            },
-            {
-                "value": "marge",
-                "text": "Marge Simpson"
-            },
-            {
-                "value": "lisa",
-                "text": "Lisa Simpson"
-            },
-            {
-                "value": "maggie",
-                "text": "Maggie Simpson"
-            },
-            {
-                "value": "ned",
-                "text": "Ned Flanders"
-            },
-            {
-                "value": "7-dwarves",
-                "text": "The 7 Dwarves: Grumpy, Happy, Sleepy, Bashful, Sneezy, Dopey, Doc"
-            }
-        ]
-    })
-}}
-
-
-
+<h2 class="u-mt-xl u-mb-xs">Email enquiry</h2>
+<p><a href="">Get in touch</a></p>
 
 <h2 class="u-mt-xl">Post</h2>
 <div class="tel-block">
