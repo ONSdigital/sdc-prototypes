@@ -2,11 +2,34 @@
 {% extends "page-templates/_template.njk" %}
 
 {% set page = { 
-    "title": 'Census 2021',
+    "theme": "census",
     "header": {
-        "classes": 'header--thin'
+        "logoHref": "https://www.ons.gov.uk",
+        "titleLogo": "/img/census-logo-en.svg",
+        "titleLogoAlt": "Census 2021",
+        "titleLogoHref": "/prototypes/census-website/"
     },
-    
+    "title": "Census 2021",
+    "language": {
+        "languages": [
+            {
+                "url": "#",
+                "ISOCode": "en",
+                "text": "English",
+                "buttonAriaLabel": "Language selector. Current language: English",
+                "chooseLanguage": "Choose language",
+                "current": true
+            },
+            {
+                "url": "#",
+                "ISOCode": "cy",
+                "text": "Cymraeg",
+                "buttonAriaLabel": "Dewisydd iaith. Iaith gyfredol: Cymraeg",
+                "chooseLanguage": "Dewiswch iaith",
+                "current": false
+            }
+        ]
+    },
     "footer": {
         "OGLLink": {
             "pre": 'All content is available under the',
@@ -34,7 +57,7 @@
                 },
                 {
                     "title": "About the census",
-                    "url": "/prototypes/census-website/what-is-the-census"
+                    "url": "/prototypes/census-website/about-the-census"
                 },
                 {
                     "title": "Help with your census",
@@ -42,7 +65,7 @@
                 },
                 {
                     "title": "Contact us",
-                    "url": "/prototypes/census-website/contact-us"
+                    "url": "/prototypes/census-website/contact"
                 }
             ]
         }
