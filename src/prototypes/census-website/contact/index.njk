@@ -4,6 +4,7 @@ layout: census-website/views/_master
 ---
 
 {% from "components/card/_macro.njk" import onsCard %}
+{% from "census-website/components/downloads/_macro.njk" import onsDownloads %}
 
 {% block page %}
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -133,26 +134,35 @@ layout: census-website/views/_master
 <h2 class="u-fs-l">Marketing materials</h2>
 <p>Select below the advertising materials you require</p>
 
-    <div class="grid__col--flex u-mt-m">
-        <img src="/prototypes/census-website/img/poster.jpg" style="width:107px; height:150px;border: 2px solid #cccccc;"> 
-        <div class="u-ml-s download">
-            <a href="" class="u-fs-l@m u-fs-m@xs">Census awareness poster </a>
-            <p class="u-fs-s@xs u-fs-s@m u-mb-xs@xs u-mt-xs@xs"><strong>PDF</strong> 890KB, 1 page</p>
-            <p class="u-fs-s@xs u-fs-s@m">This file may not be suitable for users of assistive technology. <a href="">Request an accessible format.</a></p>
-        </div>
-    </div>
-<hr class="footer__hr u-mt-m" style="margin-bottom: 0;">
-
-    <div class="grid__col--flex u-mt-m">
-        <img src="/prototypes/census-website/img/poster2.jpg" style="width:107px; height:150px;border: 2px solid #cccccc;"> 
-        <div class="u-ml-s download">
-            <a href="" class="u-fs-l@m u-fs-m@xs">Census Letterhead </a>
-            <p class="u-fs-s@xs u-fs-s@m u-mb-xs@xs u-mt-xs@xs"><strong>PDF</strong> 330KB, 1 page</p>
-            <p class="u-fs-s@xs u-fs-s@m">This file may not be suitable for users of assistive technology. <a href="">Request an accessible format.</a></p>
-        </div>
-    </div>
-
-                   
+{{ onsDownloads({
+    "classes": "u-mt-m",
+    "downloads": [
+        {
+            "url": "#",
+            "thumbnail": "/prototypes/census-website/img/poster.jpg",
+            "title": "Census awareness poster",
+            "type": "Portable Document Format",
+            "typeAbbr": "PDF",
+            "fileSize": "890KB",
+            "pages": "1 page",
+            "accessibilityMessage": "This file may not be suitable for users of assistive technology.",
+            "accessibilityURL": "#",
+            "accessibilityLinkText": "Request an accessible format"
+        },
+        {
+            "url": "#",
+            "thumbnail": "/prototypes/census-website/img/poster2.jpg",
+            "title": "Census Letterhead",
+            "type": "Portable Document Format",
+            "typeAbbr": "PDF",
+            "fileSize": "330KB",
+            "pages": "1 page",
+            "accessibilityMessage": "This file may not be suitable for users of assistive technology.",
+            "accessibilityURL": "#",
+            "accessibilityLinkText": "Request an accessible format"
+        }
+    ]
+}) }}        
                 </main>
             </div> 
         </div>
