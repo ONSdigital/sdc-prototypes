@@ -24,7 +24,7 @@ layout: web-chat/views/_master
             })
         }}
 
-        {{
+        {#{{
             onsInput({
                 "id": "email",
                 "label": {
@@ -33,7 +33,7 @@ layout: web-chat/views/_master
                 },
                 "classes": "input--w-20@m js-name"
             })
-        }}
+        }}#}
 
         {{ 
             onsRadios({
@@ -213,11 +213,15 @@ layout: web-chat/views/_master
             onsButton({
                 "type": 'button',
                 "text": 'Close chat',
-                "classes": 'btn--secondary btn-group__btn u-mb-m u-mt-m'
+                "classes": 'btn--secondary btn-group__btn u-mb-m u-mt-m js-chat-close'
             }) 
         }}
 
     </div>
+
+    <script>
+        document.querySelector('.js-chat-close').addEventListener('click', function() { window.close() });
+    </script>
     
 {% endblock %}
 
