@@ -1,23 +1,23 @@
 ---
 title: Respondent Home
 group: Census
-version: 8.0.1
+version: 9.1.0
 layout: rh-census/views/_master
 ---
-{% from "prototypes/rh-census/components/uac-entry/_macro.njk" import onsUACEntry %}
+{% from "components/uac/_macro.njk" import onsUACInput %}
 {% from "components/button/_macro.njk" import onsButton %}
 
 {% set form =  {
     "method": "GET",
     "attributes": {
-        "action": "https://deploy-preview-137--eq-prototypes.netlify.com/your-household-v12/confirm-address/"
+        "action": "https://test-launcher.gcp.dev.eq.ons.digital/quick-launch?url=http://10.80.136.136/schemas/census/individual_gb_eng"
     }
 } %}
 
 {% block main %}
     <h1 class="u-mt-l">Start survey</h1>
 
-    {{ onsUACEntry({
+    {{ onsUACInput({
         "id": "uac",
         "name": "uac",
         "label": {
