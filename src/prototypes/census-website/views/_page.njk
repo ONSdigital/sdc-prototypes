@@ -5,6 +5,7 @@ version: 9.0.0
 
 {% from "components/card/_macro.njk" import onsCard %}
 {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+{% from "components/panel/_macro.njk" import onsPanel %}
 {% from "prototypes/census-website/components/call-to-action/_macro.njk" import onsCallToAction %}
 {% from "prototypes/census-website/components/content-list/_macro.njk" import onsContentList %}
 {% from "prototypes/census-website/components/content-pagination/_macro.njk" import onsContentPagination %}
@@ -34,6 +35,15 @@ version: 9.0.0
         <div class="grid__col col-7@m">
             <main id="main-content" class=" {{ pageClasses }}">
                 <h1 class="u-mb-l u-fs-xl">{{ content.title }}</h1>
+                {% if content.topPanel %}
+                    <div class="u-mb-l">
+                        {{ 
+                            onsPanel({
+                                body: content.topPanel.body
+                            })
+                        }}
+                    </div>
+                {% endif %}
                 {% if content.contentsList %}
                     {{-
                         onsContentList({
