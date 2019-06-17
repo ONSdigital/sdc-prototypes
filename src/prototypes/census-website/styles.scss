@@ -236,6 +236,7 @@ ol.individual {
     }
   }
 }
+
 ol.individual-p {
   > li {
     margin-top: 1rem;
@@ -252,6 +253,28 @@ ol.individual-p {
     }
     > a {
       margin-left: 2.2rem;
+      display: block;
+      border-bottom: 1px solid lightgrey;
+      padding-bottom: 1rem;
+    }
+  }
+}
+ul.online {
+  counter-reset: item;
+  margin: 0 0 1.5em;
+  padding: 0;
+  > li {
+    margin-top: 1rem;
+
+    list-style-type: none;
+    &::before {
+      display: inline-block;
+      font-weight: bold;
+      padding-right: 0.5rem;
+      font-weight: bold;
+      position: absolute;
+    }
+    a {
       display: block;
       border-bottom: 1px solid lightgrey;
       padding-bottom: 1rem;
