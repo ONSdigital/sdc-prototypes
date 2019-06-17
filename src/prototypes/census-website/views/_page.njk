@@ -32,7 +32,7 @@ version: 9.0.0
     <div class="grid u-mt-l@m">
         <div class="grid__col col-7@m">
             <main id="main-content" class=" {{ pageClasses }}">
-                <h1 class="u-mb-l u-fs-xl">{{ content.title }}</h1>
+                <h1 class="u-mb-l u-fs-xxl">{{ content.title }}</h1>
                 {% if content.contentsList %}
                     {{-
                         onsContentList({
@@ -43,7 +43,7 @@ version: 9.0.0
                     }}
                 {% endif %}
                 {% if content.contentsList %}<section class="section-contents">{% endif %}
-                    {% if content.sectionTitle %}<h1 class="u-fs-l">{{ content.sectionTitle }}</h1>{% endif %}
+                    {% if content.sectionTitle %}<h1>{{ content.sectionTitle }}</h1>{% endif %}
                     {% block content %}{% endblock %}
                     {% if content.contentPagination %}
                         {{-

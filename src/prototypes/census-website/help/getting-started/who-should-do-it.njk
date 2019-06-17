@@ -5,7 +5,7 @@ layout: census-website/views/_page
 
 {% set content = { 
     "title": 'Getting started',
-    "sectionTitle": "Overview",
+    "sectionTitle": "Who should do it?",
     "breadcrumbs": {
         "itemsList": [
             {
@@ -18,7 +18,10 @@ layout: census-website/views/_page
             },
             {
                 "url": '/prototypes/census-website/help/getting-started/',
-                "text": 'Getting started',
+                "text": 'Getting started'
+            },
+            {
+                "text": "Who should do it?",
                 "current": true
             }
         ]
@@ -27,15 +30,15 @@ layout: census-website/views/_page
         "itemsList": [
             {
                 "text": 'Overview',
-                "current": true
+                "url": '/prototypes/census-website/help/getting-started/'
             },
             {
                 "url": '/prototypes/census-website/help/getting-started/whats-on-the-form.html',
                 "text": 'What’s on the form?'
             },
             {
-                "url": '/prototypes/census-website/help/getting-started/who-should-do-it.html',
-                "text": 'Who should do it?'
+                "text": 'Who should do it?',
+                "current": true                                
             },
             {
                 "url": '/prototypes/census-website/help/getting-started/who-should-i-put-on-the-form.html',
@@ -50,25 +53,34 @@ layout: census-website/views/_page
     "contentPagination": {
         "contentPaginationItems": [
             {
-                "rel": 'next',
-                "text": 'Next',
+                "rel": 'previous',
+                "text": 'Previous',
                 "url": '/prototypes/census-website/help/getting-started/whats-on-the-form.html',
                 "label": 'What’s on the form?'
-            }
+            },            
+            {
+                "rel": 'next',
+                "text": 'Next',
+                "url": '/prototypes/census-website/help/getting-started/who-should-i-put-on-the-form.html',
+                "label": 'Who should I put on the form?'
+            }            
         ]
     }    
 } %}
 
 {% block content %}
-    <h2>Online</h2>
-    <p>Whether we sent you a letter or a paper form, it has a code on it. This is your unique access code. Use it to open an online form just for your household.</p> 
-    <p>Just enter the code and follow the simple instructions.</p> 
-
-    <h2>Paper</h2>
-    <p>If you have a paper form, just follow the instructions on your form. If you have a letter, you can:</p>
+    <p>A householder should fill in the form for the household.</p>
+    <h2>Who is a householder?</h2>
+    <p>A householder is a person who, individually or jointly:</p>
     <ul>
-        <li><a href="#">call us for a paper form</a><br>
-        OR</li>
-        <li><a href="#">order a paper form online</a></li>
+        <li>owns or rents the accommodation<br>
+        AND/OR</li>
+        <li>is responsible for paying the household bills and expenses</li>
     </ul>
-{% endblock %}
+    <h2>What is a household?</h2>
+    <p>A household is either:</p>
+    <ul>
+        <li>one person living alone<br>
+        OR</li>
+        <li>a group of people (who don’t have to be related) living at the same address who share cooking facilities and share a living room, sitting room or dining area</li>
+    </ul>{% endblock %}
