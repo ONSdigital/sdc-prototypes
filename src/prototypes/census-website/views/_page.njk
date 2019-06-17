@@ -9,6 +9,7 @@ version: 9.0.0
 {% from "prototypes/census-website/components/content-list/_macro.njk" import onsContentList %}
 {% from "prototypes/census-website/components/content-pagination/_macro.njk" import onsContentPagination %}
 {% from "prototypes/census-website/components/related-list/_macro.njk" import onsRelatedList %}
+{% from "prototypes/census-website/components/lists/_macro.njk" import onsList %}
 
 {% block page %}
 {{-
@@ -36,9 +37,9 @@ version: 9.0.0
                 {% if content.contentsList %}
                     {{-
                         onsContentList({
-                            "ariaLabel": 'Pages in this guide',
+                            "ariaLabel": content.contentsList.ariaLabel,
                             "title": 'Contents',
-                            "itemsList": content.contentsList.itemsList
+                            "lists": content.contentsList.lists
                         }) 
                     }}
                 {% endif %}

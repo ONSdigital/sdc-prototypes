@@ -17,6 +17,12 @@
   list-style: none;
 }
 
+.list--spacious {
+  .list__item {
+    margin: 0 0 1.5rem;
+  }
+}
+
 .list--dashed {
   @extend .list--bare;
   .list__item {
@@ -59,6 +65,19 @@ $list-inline-spacing: 2rem;
       padding: 0.5rem 1rem;
       margin: 0 0.5rem;
     }
+  }
+}
+
+.list--prefix {
+  @extend .list--bare;
+  & .list__prefix {
+    float: left;
+    margin: 0 0.5rem 0 0;
+    font-weight: 700;
+  }
+  & .list__link {
+    display: block;
+    overflow: hidden;
   }
 }
 
