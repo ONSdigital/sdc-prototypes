@@ -5,22 +5,34 @@
 {% endblock %}
 
 {% set page = { 
-    "title": "RH Prototype",
+    "theme": "census",
+    "header": {
+        "titleLogo": "/img/census-logo-en.svg",
+        "titleLogoAlt": "Census 2021"
+    },
     "footer": {
         "rows": [
             {
                 "itemsList": [
                     {
-                        "text": 'Contact us',
-                        "url": '#'
+                        "text": "About the census",
+                        "url": "/prototypes/census-website/about-the-census"
                     },
                     {
-                        "text": 'Cookies and privacy',
-                        "url": '#'
+                        "text": "Help with your census",
+                        "url": "/prototypes/census-website/help"
                     },
                     {
-                        "text": 'Terms and conditions',
-                        "url": '#'
+                        "text": "Contact us",
+                        "url": "#"
+                    },
+                    {
+                        "text": "Cookies and privacy",
+                        "url": "#"
+                    },
+                    {
+                        "text": "Terms and conditions",
+                        "url": "#"
                     }
                 ]
             }

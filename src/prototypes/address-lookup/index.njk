@@ -8,7 +8,7 @@ layout: address-lookup/views/_master
 {% from "components/button/_macro.njk" import onsButton %}
 
 {% block content %}
-    <form action="{{ pageInfo.parentPath }}/previous-address.html">
+    <form action="{{ pageInfo.rootPath }}/previous-address.html">
         {{
             prototypeAddressInput({
                 "id": "address",

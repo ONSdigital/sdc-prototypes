@@ -109,6 +109,7 @@
     "@ons/design-system/8.0.2": "npm:@ons/design-system@8.0.2",
     "@ons/design-system/8.0.5": "npm:@ons/design-system@8.0.5",
     "@ons/design-system/9.0.0": "npm:@ons/design-system@9.0.0",
+    "@ons/design-system/9.1.0": "npm:@ons/design-system@9.1.0",
     "dice-coefficient": "^1.0.3",
     "querystring-helpers": "^1.0.2",
     "uuid": "^3.3.2"
