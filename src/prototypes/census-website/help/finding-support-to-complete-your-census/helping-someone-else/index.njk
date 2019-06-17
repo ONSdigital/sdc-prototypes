@@ -1,0 +1,61 @@
+---
+version: 9.0.0
+layout: census-website/views/_page
+---
+
+{% set content = { 
+    "title": 'Finding support to complete your census',
+    "sectionTitle": 'Helping someone else fill in their census',    
+    "breadcrumbs": {
+        "itemsList": [
+            {
+                "url": '/prototypes/census-website/',
+                "text": 'Home'
+            },
+            {
+                "url": '/prototypes/census-website/help/',
+                "text": 'Help with your census'
+            },            
+            {
+                "url": '/prototypes/census-website/help/finding-support-to-complete-your-census/',
+                "text": 'Finding support to complete your census'
+            },            
+            {
+                "url": '/prototypes/census-website/help/finding-support-to-complete-your-census/helping-someone-else/',
+                "text": 'Helping someone else fill in their census',
+                "current": true
+            }
+        ]
+    },
+    "contentsList": {
+        "itemsList": [
+            {
+                "text": 'Overview',
+                "url": '/prototypes/census-website/help/finding-support-to-complete-your-census/'
+            },
+            {
+                "text": 'Help centres',
+                "url": '/prototypes/census-website/help/finding-support-to-complete-your-census/help-centres/'
+            },
+            {
+                "current": true,
+                "text": 'Helping someone else fill in their census'
+            }
+        ]
+    },
+    "contentPagination": {
+        "contentPaginationItems": [
+            {
+                "rel": 'previous',
+                "text": 'Previous',
+                "url": '/prototypes/census-website/help/finding-support-to-complete-your-census/help-centres/',
+                "label": 'Help centres'
+            }
+        ]
+    }
+
+} %}
+{% block content %}
+    <p>If someone is happy to give you their answers then you can fill out the survey for them.</p>
+    <p>If they are not able to give their own answers then you must make sure you answer with what you know to be true about them.</p>
+{% endblock %}

@@ -1,7 +1,7 @@
 ---
 title: Campaign Website
 group: Census
-version: 4.1.0
+version: 9.0.0
 layout: census-website/views/_master
 ---
 
@@ -16,22 +16,20 @@ layout: census-website/views/_master
                                         "ariaLabel": 'Breadcrumb',
                                         "itemsList": [
                                             {
-                                                "url": 'census-website',
+                                                "url": '/prototypes/census-website/index.html',
                                                 "text": 'Home'
                                             },
                                             {
-                                                "url": '',
+                                                "url": '/prototypes/census-website/help/',
                                                 "text": 'Help with your census'
-
+                                            },                                            
+                                            {
+                                                "url": '/prototypes/census-website/help/question-help.html',
+                                                "text": 'Help with the questions'
                                             },
                                             {
                                                 "url": '',
-                                                "text": 'Individual questions (P & 1 - 51)'
-
-                                            },
-                                            {
-                                                "url": '',
-                                                "text": 'Which of the following best describes your sexual orientation?',
+                                                "text": '26 - Which of the following best describes your sexual orientation?',
                                                 "current": true
                                             }
                                         ]
@@ -41,22 +39,23 @@ layout: census-website/views/_master
                 <div class="grid">
                     <div class="grid__col col-7@m">
                         <main id="main-content" class=" {{ pageClasses }}">
-                                    <h1 class="u-mb-l">Which of the following best describes your sexual orientation?</h1>
-                                    <div class="u-mb-m">
+                                    <h1 class="u-mb-m">26 - Which of the following best describes your sexual orientation?</h1>
+                                    {#<div class="u-mb-m">
                                     {% from "components/panel/_macro.njk" import onsPanel %}
                                         {{ 
                                             onsPanel({
-                                                body: "<p>Question <strong>26</strong> on the paper questionnaire.</p>"
+                                                body: "<p>If you’re not sure how to describe your accommodation, answer as best you can.</p>"
                                             }) 
                                         }}
-                                        </div>
-                                        <div class="u-mb-xs">
+                                        </div>#}
+                                    <div class="u-mb-xs">
                                                 {% from "components/details/_macro.njk" import onsDetails %}
                                                 {{
                                                     onsDetails({
                                                         "id": "details",
                                                         "title": "Why we ask this question?",
-                                                        "content": "<p>A typical photovoltaic system employs solar panels, each comprising a number of solar cells, which generate electrical power. PV installations may be ground-mounted, rooftop mounted or wall mounted. The mount may be fixed, or use a solar tracker to follow the sun across the sky.</p>",
+                                                        "classes": "u-mb-m",
+                                                        "content": "<p>We ask this question of people who are aged 16 years old and over.It’s up to you to decide how you answer this question. This question is voluntary, so you can leave it blank if you prefer.</p>",
                                                         "button": {
                                                             "close": "Hide this"
                                                         }
@@ -64,7 +63,19 @@ layout: census-website/views/_master
                                                 }}
                                         </div>        
                                     
-                                    <p>This question is voluntary. If you’d rather not answer, you can leave it blank. It is for you to decide how to answer this question. If your identity is not listed, tick ‘Other’ and enter your preferred answer. If there is not enough space, enter as much as the space allows. </p> 
+                                    <p>We ask this question of people who are aged 16 years old and over. </p> 
+                                    <p>It’s up to you to decide how you answer this question. This question is voluntary, so you can leave it blank if you prefer.</p>
+
+                                    <p>You can choose from the following options:</p>
+
+                                    <ul class="list">
+                                        <li><strong>“Heterosexual or Straight”</strong> –  means that a person is attracted to people of the opposite sex or gender</li>
+                                        <li><strong>“Gay or Lesbian”</strong> –  means that a person is attracted to people of the same sex or gender</li>
+                                        <li><strong>“Bisexual”</strong> –  means that a person is attracted to more than one sex or gender</li>
+                                        <li><strong>“Other sexual orientation”</strong> –  enter your answer, for example, pansexual or asexual</li>
+                                    </ul>
+
+                                    <p>Attraction could be emotional, romantic or sexual.</p>
 
                                     <h3>Don’t record your trans identity here</h3>
                                     <p>This question doesn’t relate to being trans or transgender.</p>
@@ -84,7 +95,6 @@ layout: census-website/views/_master
                         <h3>Related content</h3>
                         <ul class="list list--bare">
                             <li><a href="#">About the census</a></li>
-                            <li><a href="#">What we ask you</a></li>
                             <li><a href="#">Help and support</a></li>
                             <li><a href="#">Contact us</a></li>
                         </ul>

@@ -1,33 +1,146 @@
-.intro--banner{
-  background-color:#F0F0F0;
+@import 'components/**/*.scss';
+
+$purple: #93328e;
+
+.header__bottom {
+  background: $purple;
 }
-.panel__cta{
+
+.header__main {
+  background: $purple;
+}
+
+.call-to-action {
+  background: rgba(227, 77, 219, 0.15);
+}
+
+.stat-icon {
+  width: 70px;
+  height: 70px;
+  border: solid 3px;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.stat-text {
+  font-size: 4em;
+  line-height: 1em;
+
+  & small {
+    font-size: 60%;
+    line-height: 0;
+  }
+}
+
+.img--box {
+  padding: 15px;
+  height: 190px;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.logo-text {
+  text-align: center;
+  font-size: 2.2em;
+  margin: 0;
+
+  & strong {
+    font-size: 1.3em;
+  }
+}
+
+.box-text {
+  font-size: 2.1em;
+  line-height: 1.1em;
+  font-weight: bold;
+  margin: 0 10px;
+
+  & strong {
+    background: white;
+    color: #5073a5;
+    line-height: 1.4em;
+  }
+}
+
+.bg-blue {
+  background: #483698 !important;
+}
+
+.bg-purple {
+  background: purple !important;
+}
+
+.bg-grey {
+  background: #5073a5 !important;
+}
+.bg-darkgrey {
+  background: #555555 !important;
+}
+.cta-banner {
+  display: none;
+}
+
+.card {
+  border: none;
+  padding: 0;
+}
+
+.intro--banner {
+  background-color: #f0f0f0;
+}
+.panel--question strong {
+  background: white;
+  border: purple 2px solid;
+  border-radius: 4px;
+  padding: 0 3px;
+  margin-left: 3px;
+}
+
+.panel__cta {
   background: purple;
   color: white;
 }
-.card-cta{
+.card-cta {
   background: purple;
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
-border: none;
-
-}
-.header__bottom{
-  background: purple;
-}
-.header__main{
-  background: purple;
+  border: none;
+  min-height: 240px;
 }
 
 .hero-image {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)),url(images/group.jpg);
-  height: 45vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(images/group.jpg);
+  height: 40vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+}
+
+.icon--chevron-right-white:after {
+  background-image: url(img/icons/icons--chevron-right-white.svg);
+  margin: 0 0 0 0.5rem;
+  -webkit-transform: none;
+  transform: none;
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  background-repeat: no-repeat;
+  background-size: 1rem 1rem;
+  content: '';
+  vertical-align: middle;
+}
+
+.btn--small .btn__inner {
+  padding: 0.5em 0.7em;
+}
+
+.btn--small > .icon--chevron-right-white:after {
+  width: 0.8rem;
+  background-size: 0.8rem 0.8rem;
 }
 
 .hero-text {
@@ -39,70 +152,126 @@ border: none;
   color: white;
 }
 
-.hero-text button {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 15px 25px;
-  color: white;
-  background-color:purple;
-  text-align: center;
-  cursor: pointer;
-  font-size: 1.2rem;
-}
-
-.hero-text button:hover {
-  background-color: #555;
-  color: white;
-}
-
-.panel__body strong{
-  width: 45px;
-  background: white;
-  text-align: center;
-  padding: 5px 5px;
-  border: solid purple 2px;
-  font-weight: bold;
-  border-radius: 3px;
-}
-.hero--header{
-  font-size:50px;
-}
-
-
-/* Overrides for headings issue: https://github.com/ONSdigital/design-system/issues/371 */
-#main-content h1 {
-    font-size: 1.55555556rem; 
-}
-#main-content h2 {
-    font-size: 1.222222rem;
-}
-#main-content h3 {
-  font-size: 1rem;
-}
-
-.card h3 {
-  font-size: 1.222rem!important; /* Removed after next release of design system v7 */
-}
-
-#main-content .hero-image h1 {
-  font-size: 2rem;
-}
-
-@media only screen and (max-width: 600px) {
-  .hero-image{
+@media only screen and (max-width: 680px) {
+  .cta-banner {
+    background: #483698;
+    padding: 10px 0;
+    display: block;
+    font-weight: bold;
+    border-top: 1px solid hsla(0, 0%, 100%, 0.5);
+  }
+  .cta-banner a {
+    color: white;
+  }
+  .hero-image {
     height: 25vh;
   }
-  .hero-text{
+  .hero-text {
     width: 90vw;
-
   }
-  .hero-text button{
+  .hero-text button {
     font-size: 25px;
   }
-  .hero--header{
-    font-size:30px;
+  .hero--header {
+    font-size: 30px;
     margin-bottom: 10px;
   }
-  
+}
+.tel-block {
+  padding-left: 10px;
+  border-left: solid 1px grey;
+}
+
+ol.household {
+  list-style-type: none;
+  counter-reset: elementcounter;
+  padding-left: 0;
+}
+ol.household li {
+  margin-top: 1rem;
+}
+
+ol.household li a {
+  margin-left: 2.5rem;
+  display: block;
+  border-bottom: 1px solid lightgrey;
+  padding-bottom: 1rem;
+}
+
+ol.household li:before {
+  content: 'H' counter(elementcounter) '. ';
+  counter-increment: elementcounter;
+  font-weight: bold;
+  position: absolute;
+}
+
+ol.individual {
+  counter-reset: item;
+  margin: 0 0 1.5em;
+  padding: 0;
+  > li {
+    margin-top: 1rem;
+    counter-increment: item;
+    list-style-type: none;
+    &::before {
+      content: counter(item) '.';
+      display: inline-block;
+      font-weight: bold;
+      padding-right: 0.5rem;
+      counter-increment: elementcounter;
+      font-weight: bold;
+      position: absolute;
+    }
+    a {
+      margin-left: 2.2rem;
+      display: block;
+      border-bottom: 1px solid lightgrey;
+      padding-bottom: 1rem;
+    }
+  }
+}
+
+ol.individual-p {
+  > li {
+    margin-top: 1rem;
+    counter-increment: item;
+    list-style-type: none;
+    &::before {
+      content: 'P.';
+      display: inline-block;
+      font-weight: bold;
+      padding-right: 0.5rem;
+      counter-increment: elementcounter;
+      font-weight: bold;
+      position: absolute;
+    }
+    > a {
+      margin-left: 2.2rem;
+      display: block;
+      border-bottom: 1px solid lightgrey;
+      padding-bottom: 1rem;
+    }
+  }
+}
+ul.online {
+  counter-reset: item;
+  margin: 0 0 1.5em;
+  padding: 0;
+  > li {
+    margin-top: 1rem;
+
+    list-style-type: none;
+    &::before {
+      display: inline-block;
+      font-weight: bold;
+      padding-right: 0.5rem;
+      font-weight: bold;
+      position: absolute;
+    }
+    a {
+      display: block;
+      border-bottom: 1px solid lightgrey;
+      padding-bottom: 1rem;
+    }
+  }
 }

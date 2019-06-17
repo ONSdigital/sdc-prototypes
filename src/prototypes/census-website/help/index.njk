@@ -1,0 +1,120 @@
+---
+version: 9.0.0
+layout: census-website/views/_master
+---
+
+{% from "prototypes/census-website/components/card/_macro.njk" import onsCard %}
+
+{% block page %}
+{% from "prototypes/census-website/components/call-to-action/_macro.njk" import onsCallToAction %}
+{{-
+    onsCallToAction({
+        "headingText": "Ready to start your census survey?",
+        "paragraphText": "You'll need the access code from the letter we sent you.",
+        "button": {
+            "text": "Start survey",
+            "classes": 'btn--small',
+            "url": "https://sdc-prototypes.netlify.com/prototypes/rh-census/home.html"
+        }
+    })
+}}
+<div class="page__container {{ containerClasses }}">
+    <div class="grid">
+        <div class="grid__col u-mb-l">
+            <main id="main-content" class="{{ pageClasses }}">
+                
+                    <div class="container">
+                        <div class="col-8@m">
+                            {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+                            {{-
+                                onsBreadcrumb({
+                                    "ariaLabel": 'Breadcrumb',
+                                    "itemsList": [
+                                        {
+                                            "url": pageInfo.parentPath,
+                                            "text": 'Home'
+                                        },
+                                        {
+                                            "url": '',
+                                            "text": 'Help with your census',
+                                            "current": true
+                                        }
+                                    ]
+                                }) 
+                            -}}
+                            <h1 class="u-fs-xl u-mt-l@m">Help with your census</h1>
+                            
+                        </div>
+                    </div>
+                
+                <div class="container">
+                <div class="grid grid--flex grid--column@xs@s u-mt-l">
+                    <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
+                        {{-
+                            onsCard({
+                                "title": 'Getting started',
+                                "url": '/prototypes/census-website/help/getting-started/',
+                                "text": "Who should fill it in, what you need to get started, what to do if you don't have an access code."
+                              
+                            })
+                        }}
+                    </div>
+                    <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
+                        {{- 
+                            onsCard({
+                                "classes": 'u-fs-r',
+                                "title": 'Help with the questions',
+                                "url": '/prototypes/census-website/help/question-help.html',
+                                "text": 'Guidance on how to answer the census questions.',
+                                "itemsList": [
+                                    {
+                                        "url": '/prototypes/census-website/help/question-help-online.html',
+                                        "text": 'Online survey'
+                                    },
+                                    {
+                                        "url": '/prototypes/census-website/help/question-help.html',
+                                        "text": 'Paper questionnaire'
+                                    }
+                                ]                                
+                            })
+                        }}
+                    </div>
+                    <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
+                        {{-
+                            onsCard({
+                                "title": 'Finding support to complete your census',
+                                "url": '/prototypes/census-website/help/finding-support-to-complete-your-census/',
+                                "text": 'You can get help from a friend or neighbour, or one of our advisors face-to-face or over the phone.',
+                                "itemsList": [
+                                    {
+                                        "url": '/prototypes/census-website/help/finding-support-to-complete-your-census/help-centres/',
+                                        "text": 'Help centres'
+                                    },
+                                    {
+                                        "url": '/prototypes/census-website/help/finding-support-to-complete-your-census/helping-someone-else/',
+                                        "text": 'Helping someone else fill in their census'
+                                    }
+                                ]
+                            })
+                        }}                        
+                    </div> 
+
+                    
+                </div>
+                <div class="u-mt-l">
+                    <hr class="footer__hr" style="margin-bottom: 0;">
+                    <div class="grid">
+                      <div class="grid__col col-8@m">
+                        <h2 class="u-fs-r--b u-mt-l u-mb-xs">Don't have an access code or letter?</h2>
+                        <p>You can <a href="/prototypes/rh-census/address.html">request a new code</a> to start a new online census survey if you have lost, forgotten or not received an access code.</p>
+                        <p> Alternatively, you can <a href="/prototypes/census-website/contact.html">contact us</a> to request a paper questionnaire.</p>
+                      </div>
+                    </div>
+                  </div>
+                
+                </div>
+            </main>
+        </div>
+    </div>
+</div>
+{% endblock %}

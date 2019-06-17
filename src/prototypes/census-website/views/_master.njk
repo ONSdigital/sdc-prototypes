@@ -2,8 +2,34 @@
 {% extends "page-templates/_template.njk" %}
 
 {% set page = { 
+    "theme": "census",
+    "header": {
+        "logoHref": "https://www.ons.gov.uk",
+        "titleLogo": "/img/census-logo-en.svg",
+        "titleLogoAlt": "Census 2021",
+        "titleLogoHref": "/prototypes/census-website/"
+    },
     "title": "Census 2021",
-    "logoHref": "/prototypes/census-website",
+    "language": {
+        "languages": [
+            {
+                "url": "#",
+                "ISOCode": "en",
+                "text": "English",
+                "buttonAriaLabel": "Language selector. Current language: English",
+                "chooseLanguage": "Choose language",
+                "current": true
+            },
+            {
+                "url": "#",
+                "ISOCode": "cy",
+                "text": "Cymraeg",
+                "buttonAriaLabel": "Dewisydd iaith. Iaith gyfredol: Cymraeg",
+                "chooseLanguage": "Dewiswch iaith",
+                "current": false
+            }
+        ]
+    },
     "footer": {
         "OGLLink": {
             "pre": 'All content is available under the',
@@ -12,27 +38,34 @@
             "post": ', except where otherwise stated'
         }
     },
+    
     "toggleButton": {
-            "text": "Menu",
-            "ariaLabel": "Toggle main navigation"
-        },
+        "text": "Menu",
+        "ariaLabel": "Toggle main navigation"
+    },
+        
     "navigation": {
             "id": "main-nav",
             "ariaLabel": "Main menu",
             "ariaListLabel": "Navigation menu",
-            "currentPath": "/",
+            "currentPath": pageInfo.path,
+            "siteBasePath": pageInfo.rootPath,
             "itemsList": [
                 {
-                    "title": "About the census",
-                    "url": "/prototypes/census-website/about-the-census.html"
+                    "title": "Home",
+                    "url": "/prototypes/census-website"
                 },
                 {
-                    "title": "Taking part in the rehearsal",
-                    "url": "/prototypes/census-website/taking-part.html"
+                    "title": "About the census",
+                    "url": "/prototypes/census-website/about-the-census"
+                },
+                {
+                    "title": "Help with your census",
+                    "url": "/prototypes/census-website/help"
                 },
                 {
                     "title": "Contact us",
-                    "url": "#"
+                    "url": "/prototypes/census-website/contact"
                 }
             ]
         }

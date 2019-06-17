@@ -1,0 +1,114 @@
+---
+version: 9.0.0
+layout: census-website/views/_master
+---
+
+{% from "components/card/_macro.njk" import onsCard %}
+
+{% block page %}
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+{% from "census-website/components/call-to-action/_macro.njk" import onsCallToAction %}
+{{-
+    onsCallToAction({
+        "headingText": "Ready to start your census survey?",
+        "paragraphText": "You'll need the access code from the letter we sent you.",
+        "button": {
+            "text": "Start survey",
+            "classes": 'btn--small',
+            "href": "https://sdc-prototypes.netlify.com/prototypes/rh-census/home.html"
+        }
+    })
+}}
+<div class="page__container container {{ containerClasses }}">
+        {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/prototypes/census-website/index.html',
+                            "text": 'Home'
+                        },                                            
+                        {
+                            "url": '',
+                            "text": 'Contact us',
+                            "current": true                                                
+
+                        }
+                    ]
+                }) 
+            }}
+    <div class="grid">
+        <div class="grid__col col-7@m">
+            <main id="main-content" class=" {{ pageClasses }}">
+                <h1 class="u-mb-l u-fs-l">Contact us</h1>
+                
+            </main>
+            <div class="u-mt-s u-mb-l">
+                <main id="main-content" class=" {{ pageClasses }}">
+                    <h2>Why the information we collect is important</h2>
+                    <p>Census helpline is available from Friday 4 March to Sunday 15 May 2011.</p>
+<p><strong>Census helpline:</strong> 0300 0201 130 (option for English and Welsh)</p>
+<p><strong>The opening times are:</strong>
+<p>8am to 8pm, Monday to Friday</p> 
+<p> 9am to 4pm, Saturday and Sunday except</p> 
+<p> 8am to 8pm, census weekend 26/27 March 2011</p>
+<p><strong>Text Relay</strong> (for the deaf, hard of hearing and speech impaired): 18001 0300 0201 160 (English only)</p>
+<p><strong>Please note</strong> - calls may be monitored for training purposes</p>
+
+
+<hr class="footer__hr" style="margin-bottom: 0;">
+
+<div class="u-mt-m">
+<h2 class="u-fs-l">Marketing materials</h2>
+<p>Select below the adertising materials you require</p>
+
+    <div class="grid__col--flex u-mt-m">
+        <img src="https://via.placeholder.com/107x150/800080/800080" style="width:107px; height:150px;"> 
+        <div class="u-ml-s">
+            <a href="" class="u-fs-l@m u-fs-m@xs">Census awareness poster </a>
+            <p class="u-fs-s@xs u-fs-s@m u-mb-xs@xs u-mt-xs@xs">PDF, 890KB, 1 page</p>
+            <p class="u-fs-s@xs u-fs-s@m">This file may not be suitable for users of assistive technology. <a href="">Request an accessible format.</a></p>
+        </div>
+    </div>
+<hr class="footer__hr u-mt-m" style="margin-bottom: 0;">
+
+    <div class="grid__col--flex u-mt-m">
+        <img src="https://via.placeholder.com/107x150/555555/555555" style="width:107px; height:150px;"> 
+        <div class="u-ml-s">
+            <a href="" class="u-fs-l@m u-fs-m@xs">Census Letterhead </a>
+            <p class="u-fs-s@xs u-fs-s@m u-mb-xs@xs u-mt-xs@xs">PDF, 330KB, 1 page</p>
+            <p class="u-fs-s@xs u-fs-s@m">This file may not be suitable for users of assistive technology. <a href="">Request an accessible format.</a></p>
+        </div>
+    </div>
+<hr class="footer__hr u-mt-m" style="margin-bottom: 0;">
+<div class="grid__col--flex u-mt-m">
+        <img src="https://via.placeholder.com/107x150/800080/800080" style="width:107px; height:150px;"> 
+        <div class="u-ml-s">
+            <a href="" class="u-fs-l@m u-fs-m@xs">Census awareness poster </a>
+            <p class="u-fs-s@xs u-fs-s@m u-mb-xs@xs u-mt-xs@xs">PDF, 890KB, 1 page</p>
+            <p class="u-fs-s@xs u-fs-s@m">This file may not be suitable for users of assistive technology. <a href="">Request an accessible format.</a></p>
+        </div>
+    </div>
+                   
+                </main>
+            </div> 
+        </div>
+       
+       
+        <!--related sidebar-->
+        <div class="grid__col col-4@m push-1@m">
+            <div style="border-top:5px solid purple;padding:15px 0;">
+                <h3>Related content</h3>
+                <ul class="list list--bare">
+                    <li><a href="#">About the census</a></li>
+                    <li><a href="#">What we ask you</a></li>
+                    <li><a href="#">Help and support</a></li>
+                    <li><a href="#">Contact us</a></li>
+                </ul>
+            </div>
+        </div>        
+    </div>
+</div>
+{% endblock %}
