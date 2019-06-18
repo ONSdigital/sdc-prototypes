@@ -1,0 +1,93 @@
+---
+title: Campaign Website
+group: Census
+version: 9.0.0
+layout: census-website/views/_master
+---
+
+{% from "components/card/_macro.njk" import onsCard %}
+
+{% block page %}
+<div class="page__container container {{ containerClasses }}">
+                        <div class="col-7@m">
+                            {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+                                {{ 
+                                    onsBreadcrumb({
+                                        "ariaLabel": 'Breadcrumb',
+                                        "itemsList": [
+                                            {
+                                                "url": '/prototypes/census-website/index.html',
+                                                "text": 'Home'
+                                            },
+                                            {
+                                                "url": '/prototypes/census-website/help/',
+                                                "text": 'Help with your census'
+                                            },                                            
+                                            {
+                                                "url": '/prototypes/census-website/help/question-help.html',
+                                                "text": 'Help with the questions'
+                                            },
+                                            {
+                                                "url": '',
+                                                "text": '3 - What is your sex?',
+                                                "current": true
+                                            }
+                                        ]
+                                    }) 
+                                }}
+                                </div>
+                <div class="grid">
+                    <div class="grid__col col-7@m">
+                        <main id="main-content" class=" {{ pageClasses }}">
+                                    <h1 class="u-mb-m">3 - What is your sex?</h1>
+                                    {#<div class="u-mb-m">
+                                    {% from "components/panel/_macro.njk" import onsPanel %}
+                                        {{ 
+                                            onsPanel({
+                                                body: "<p>If you’re not sure how to describe your accommodation, answer as best you can.</p>"
+                                            }) 
+                                        }}
+                                        </div>#}
+                                    {% from "components/details/_macro.njk" import onsDetails %}
+
+                                    {{
+                                        onsDetails({
+                                            "id": "details",
+                                            "title": "Why we ask this question",
+                                            "classes": "u-mb-m",
+                                            "content": "<p>Because sex and gender are not the same. Society has recognised that services must be designed to support the trans population. The scale of the demand is not yet understood because the trans population has never before been reliably measured. That is why we have included a question about gender later in this census.</p>
+</p>",
+                                            "button": {
+                                                "close": "Hide this"
+                                            }
+                                        })
+                                    }}
+                                              
+                                    <p>Select either <strong>“Female”</strong> or <strong>“Male”</strong>  
+
+                                    <p>If your gender is different from your sex registered at birth, the answer you provide doesn’t need to be the same as your birth certificate.  Also, you don’t need a Gender Recognition Certificate (GRC).</p>
+
+                                    <p>If you’re not sure how to answer, for example you are intersex, you could use the sex registered on your official documents, such as passport or driving licence, or whichever answer you prefer.</p>
+
+                                    <p>If you consider intersex to be your identity, then you can record this at a later question on gender.</p> 
+
+                                    <h2>Answering on behalf of someone else</h2>
+                                    <p>If you’re answering for someone else, where possible you should ask them how they want to answer. If they’re away, select the answer you think they would choose. You don’t need to know whether they have a Gender Recognition Certificate.</p>
+
+                                    
+                        </main>
+                </div>
+                <!--Right Sidbar-->
+                <div class="grid__col col-4@m push-1@m">
+                    <div style="border-top:5px solid purple;padding:15px 0;">
+                        <h3>Related content</h3>
+                        <ul class="list list--bare">
+                            <li><a href="#">About the census</a></li>
+                            <li><a href="#">Help and support</a></li>
+                            <li><a href="#">Contact us</a></li>
+                        </ul>
+                    </div>
+                </div> <!--Right Sidbar end-->
+        </div>
+</div>
+{% endblock %}

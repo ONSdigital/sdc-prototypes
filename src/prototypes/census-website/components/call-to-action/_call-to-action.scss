@@ -1,0 +1,9 @@
+@import 'node_modules/@ons/design-system/8.0.2/scss/vars/colors';
+
+.call-to-action {
+  padding: 0.85rem 0;
+  background: $color-grey-5; //Change to $cta-bg for theming.
+  &__desc {
+    margin-bottom: 0.5rem;
+  }
+}

@@ -1,11 +1,10 @@
 ---
 title: Respondent Home
 group: Census
-version: 8.0.1
+version: 9.1.0
 layout: rh-census/views/_master
 ---
 {% from "components/lists/_macro.njk" import onsList %}
-
 
 {% block main %}
     {{ onsList({
@@ -22,6 +21,10 @@ layout: rh-census/views/_master
             {
                 "text": "Address not eligible page",
                 "url": pageInfo.rootPath + "/address-not-eligible.html"
+            },
+            {
+                "text": "Select survey and text message language",
+                "url": pageInfo.rootPath + "/select-language.html"
             }
         ]
     }) }}
