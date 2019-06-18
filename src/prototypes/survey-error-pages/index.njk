@@ -1,0 +1,27 @@
+---
+title: Survey Error Pages
+group: Error Pages
+version: 9.1.0
+layout: survey-error-pages/views/_master
+---
+{% from "components/lists/_macro.njk" import onsList %}
+
+{% block main %}
+    {{ onsList({
+        "classes": "u-mt-l",
+        "itemsList": [
+            {
+                "text": "404error",
+                "url": pageInfo.rootPath + "/404error.html"
+            },
+                        {
+                "text": "500error",
+                "url": pageInfo.rootPath + "/500error.html"
+            },
+                        {
+                "text": "503error",
+                "url": pageInfo.rootPath + "/503error.html"
+            }
+        ]
+    }) }}
+{% endblock %}
