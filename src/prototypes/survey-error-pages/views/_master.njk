@@ -1,5 +1,9 @@
 {% extends "page-templates/_template.njk" %}
 
+{% block head %}
+    <link rel="stylesheet" href="{{ pageInfo.rootPath }}/styles.css" />
+{% endblock %}
+
 {% set page = { 
     "title": "Service name",
     "footer": {
