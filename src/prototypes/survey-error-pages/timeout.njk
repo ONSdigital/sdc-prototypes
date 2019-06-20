@@ -8,10 +8,8 @@ layout: survey-error-pages/views/_master
    <h1>Your session has expired</h1>
     {% from "components/panel/_macro.njk" import onsPanel %}
     {% call onsPanel() %}
-        <p>To protect your information we have signed you out.</p>
+        <p>To protect your information we have timed you out.</p>
     {% endcall %}
     <br>
-   <p>Your progress has been saved and you will need to <a href="#">sign in</a> in order to access the survey.</p>
-   
-<p><a href="#">Sign in to access the survey</a></p>
+   <p>Your progress has been saved and you will need to <a href="#">enter your unique code</a> in order to access the survey.</p>
 {% endblock %}
