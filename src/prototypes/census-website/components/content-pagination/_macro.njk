@@ -16,7 +16,7 @@
                 {{ contentPaginationItem.text }}
               </span>
             </span>
-            <span class="content-pagination__link-divider u-vh">:</span>
+            <span class="content-pagination__link-divider u-vh">{{ contentPaginationItem.bridgingText | default("page in this guide is:") }}</span>
             <span class="content-pagination__link-label">{{ contentPaginationItem.label }}</span>
           </a>
         </li>
