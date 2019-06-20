@@ -1,0 +1,229 @@
+---
+title: Web Chat
+group: Web Chat
+version: 7.0.0
+layout: web-chat/views/_master
+---
+{#{% from "prototypes/rh-census/components/uac-entry/_macro.njk" import onsUACEntry %}#}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/select/_macro.njk" import onsSelect %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+
+{% block main %}
+    <div class="web-chat-form__body">
+    
+        {{
+            onsInput({
+                "id": "name",
+                "label": {
+                    "text": "Enter your name"
+                },
+                "classes": "input--w-20@m js-name"
+            })
+        }}
+
+        {#{{
+            onsInput({
+                "id": "email",
+                "label": {
+                    "text": "Enter your email address",
+                    "description": "We will send a copy of the chat to this address"
+                },
+                "classes": "input--w-20@m js-name"
+            })
+        }}#}
+
+        {{ 
+            onsRadios({
+                "legend": "Select your language",
+                "name": "food",
+                "radios": [
+                    {
+                        "id": "english",
+                        "label": {
+                            "text": "English"
+                        },
+                        "value": "help"
+                    },
+                    {
+                        "id": "welsh",
+                        "label": {
+                            "text": "Welsh"
+                        },
+                        "value": "form"
+                    }
+                ]
+            }) 
+        }}
+
+        {#{{
+            onsSelect({
+                "id": "query",
+                "name": "query",
+                "label": {
+                    "text": "Select your language"
+                },
+                "options": [
+                    {
+                        "value": "",
+                        "text": "Select an option",
+                        "disabled": true,
+                        "selected": true
+                    },
+                    {
+                        "value": "english",
+                        "text": "English"
+                    },
+                    {
+                        "value": "welsh",
+                        "text": "Welsh"
+                    }
+                ]
+            })
+        }}#}
+
+        {#{{
+            onsTextarea({
+                "id": "textarea-char-limit",
+                "name": "feedback-limited",
+                "classes": "input--w-30",
+                "label": {
+                    "text": "Your message"
+                },
+                "maxlength": 800,
+                "charCountSingular": "You have {x} character remaining",
+                "charCountPlural": "You have {x} characters remaining"
+            })
+        }}#}
+
+        {{ 
+            onsRadios({
+                "legend": "What type of query do you have",
+                "name": "food",
+                "radios": [
+                    {
+                        "id": "help",
+                        "label": {
+                            "text": "I need some help"
+                        },
+                        "value": "help"
+                    },
+                    {
+                        "id": "form",
+                        "label": {
+                            "text": "I have a query about a form"
+                        },
+                        "value": "form"
+                    },
+                    {
+                        "id": "technical",
+                        "label": {
+                            "text": "I have a technical question"
+                        },
+                        "value": "technical"
+                    },
+                    {
+                        "id": "complaint",
+                        "label": {
+                            "text": "I have a complaint"
+                        },
+                        "value": "complaint"
+                    },
+                    {
+                        "id": "address",
+                        "label": {
+                            "text": "I have a query about my address"
+                        },
+                        "value": "address"
+                    },
+                    {
+                        "id": "send-something",
+                        "label": {
+                            "text": "I need something sent to me"
+                        },
+                        "value": "send-something"
+                    },
+                    {
+                        "id": "face-to-face",
+                        "label": {
+                            "text": "I need face to face help"
+                        },
+                        "value": "face-to-face"
+                    }
+                ]
+            }) 
+        }}
+
+        {#{{
+            onsSelect({
+                "id": "query",
+                "name": "query",
+                "label": {
+                    "text": "Select your query type"
+                },
+                "options": [
+                    {
+                        "value": "",
+                        "text": "Select an option",
+                        "disabled": true,
+                        "selected": true
+                    },
+                    {
+                        "value": "help",
+                        "text": "I need some help"
+                    },
+                    {
+                        "value": "form",
+                        "text": "I have a query about a form"
+                    },
+                    {
+                        "value": "technical",
+                        "text": "I have a technical question"
+                    },
+                    {
+                        "value": "complaint",
+                        "text": "I have a complaint"
+                    },
+                    {
+                        "value": "address",
+                        "text": "I have a query about my address"
+                    },
+                    {
+                        "value": "send-something",
+                        "text": "I need something sent to me"
+                    },
+                    {
+                        "value": "face-to-face",
+                        "text": "I need face to face help"
+                    }
+                ]
+            })
+        }}#}
+
+        {{ 
+            onsButton({
+                "text": "Start chat",
+                "classes": "btn-group__btn u-mb-m u-mt-m"
+            }) 
+        
+        }}
+        {{ 
+            onsButton({
+                "type": 'button',
+                "text": 'Close chat',
+                "classes": 'btn--secondary btn-group__btn u-mb-m u-mt-m js-chat-close'
+            }) 
+        }}
+
+    </div>
+
+    <script>
+        document.querySelector('.js-chat-close').addEventListener('click', function() { window.close() });
+    </script>
+    
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

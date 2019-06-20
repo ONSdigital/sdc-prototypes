@@ -1,189 +1,404 @@
 ---
 version: 9.0.0
-layout: census-website/views/_master
+layout: census-website/views/_page
 ---
 
-{% from "components/card/_macro.njk" import onsCard %}
+{% set content = { 
+    "title": 'Help with your paper census questions',
+    "breadcrumbs": {
+        "itemsList": [
+            {
+                "url": '/prototypes/census-website/',
+                "text": 'Home'
+            },
+            {
+                "url": '/prototypes/census-website/help/',
+                "text": 'Help with your census'
+            },
+            {
+                "url": '/prototypes/census-website/help/question-help.html',
+                "text": 'Help with the paper questions',
+                "current": true
+            }
+        ]
+    },
+    "topPanel": {
+        "body": 'If you are completing the <strong>online</strong> version of the census questions <a href="question-help-online.html">see online census guidance here</a>.'
+    },
+    "contentsList": {
+        "ariaLabel": 'Links to page sections',
+        "lists": [
+            {
+                "listHeading": 'Household questions',
+                "itemsList": [
+                    {
+                        "url": '#household1',
+                        "text": 'Household and who lives here'
+                    },
+                    {
+                        "url": '#household2',
+                        "text": 'Housing, sex and GI'
+                    }
+                ]
+            },
+            {
+                "listHeading": 'Individual questions',
+                "itemsList": [  
+                    {
+                        "url": '#individual1',
+                        "text": 'Name, date of birth and marital status'
+                    },
+                    {
+                        "url": '#individual2',
+                        "text": 'Language, religion and ethnicity'
+                    },
+                    {
+                        "url": '#individual3',
+                        "text": 'Address, health and sexual orientation'
+                    },
+                    {
+                        "url": '#individual4',
+                        "text": 'Education and employment'
+                    }
+                ]    
+            } 
+        ]
+    }
 
-{% block page %}
-<div class="page__container container {{ containerClasses }}">
-        <div class="grid">
-                <div class="grid__col col-7@m">
-                {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
-                                {{ 
-                                    onsBreadcrumb({
-                                        "ariaLabel": 'Breadcrumb',
-                                        "itemsList": [
-                                            {
-                                                "url": '#',
-                                                "text": 'Home'
-                                            },
-                                            {
-                                                "url": '#',
-                                                "text": 'Help with your census'
-                                            }, 
-                                            {
-                                                "url": '',
-                                                "text": 'Help with the paper questions',
-                                                "current": true
-                                            }
-                                        ]
-                                    }) 
-                                }}
-                </div>
-        </div>
-                                <div class="grid">
-                <div class="grid__col col-7@m">
-                <main id="main-content" class=" {{ pageClasses }}">
-                        <div id="top"></a>
-                        <h1 class="u-mb-l u-fs-xl">Help with your paper census questions</h1>
-                        <div class="panel panel--info panel--simple u-mb-l">
-                                        <div class="panel__body">
-                                            <p>If you are completing the <strong>online</strong> version of the census questions <a href="question-help-online.html">see online census guidance here</a> 
-                                            </p>
-                                        </div>
-                                    </div>
-                    <div class="u-mb-xs" style="font-weight:bold;">Contents</div>
-                    <ul class="list list--bare">
-                        <li>Household questions help:</li>
-                        <li>- <a href="#house">Household and who lives here (H1 - H6)</a></li>
-                        <li>- <a href="#house2">Housing, sex and GI (H7 - H14)</a></li>
-                        <li class="u-mt-m">Individual questions help:</li>
-                        <li>- <a href="#individual">Name, date of birth and marital status (1 - 10)</a></li>
-                        <li>- <a href="#individual2">Language, religion and ethnicity (11 - 20)</a></li>
-                        <li>- <a href="#individual3">Address, health and sexual orientation (21 - 27)</a></li>
-                        <li>- <a href="#individual4">Education and employment (28 - 50)</a></li>
-                    </ul>
-                    <div class="u-mt-l">
-                            <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
-                    </div>
-                </main>
-                    <main id="main-content" class=" {{ pageClasses }}">
+} %}
+{% block content %}
+    <h2>Household questions</h2>
+    <h3 class="u-mt-m" id="household1">Household and who lives there</h3>
+    {{ 
+        onsList({
+            "element": 'ol',
+            "classes": 'list--prefix list--spacious',
+            "itemsList": [
+                {
+                    "url": '#',
+                    "text": 'Who usually lives here?',
+                    "prefix": 'H1'
+                },
+                {
+                    "url": '#',
+                    "text": 'Counting everyone you included in question H1, how many people usually live here?',
+                    "prefix": 'H2'
+                },
+                {
+                    "url": '#',
+                    "text": 'Starting with yourself, list the names of all the people counted in question H2 including children, babies and lodgers',
+                    "prefix": 'H3'
+                },
+                {
+                    "url": '#',
+                    "text": 'Apart from everyone counted in question H2, who else is staying overnight here on 13 October 2019? These people are counted as visitors. Remember to include children and babies',
+                    "prefix": 'H4'
+                },
+                {
+                    "url": '#',
+                    "text": 'Counting only the people included in question H4, how many visitors are staying overnight here on 13 October 2019?',
+                    "prefix": 'H5'
+                },
+                {
+                    "url": '#',
+                    "text": 'How many members of this household related to each other?',
+                    "prefix": 'H6'
+                }
+            ]
+        }) 
+    }}
+    <h3 class="u-mt-l" id="household2">Accommodation</h3>
+    {{ 
+        onsList({
+            "element": 'ol',
+            "classes": 'list--prefix list--spacious',
+            "itemsList": [
+                {
+                    "url": '#',
+                    "text": 'What type of accommodation is this?',
+                    "prefix": 'H7'
+                },
+                {
+                    "url": '#',
+                    "text": 'Are all the rooms in this accommodation, including the kitchen, bathroom and toilet, behind a door that only this household can use?',
+                    "prefix": 'H8'
+                },
+                {
+                    "url": '#',
+                    "text": 'How many bedrooms are available for use only by this household?',
+                    "prefix": 'H9'
+                },
+                {
+                    "url": '#',
+                    "text": 'What type of central heating does this accommodation have?',
+                    "prefix": 'H10'
+                },
+                {
+                    "url": '#',
+                    "text": 'If there is no one living here',
+                    "prefix": 'H11'
+                },
+                {
+                    "url": '#',
+                    "text": 'Does your household own or rent this accommodation?',
+                    "prefix": 'H12'
+                },
+                {
+                    "url": '#',
+                    "text": 'Who is your landlord?',
+                    "prefix": 'H13'
+                },
+                {
+                    "url": '#',
+                    "text": 'In total, how many cars or vans are owned, or available for use, by members of this household?',
+                    "prefix": 'H14'
+                }
+            ]
+        })
+    }}
 
-                                <div id="house"></div>
-                                <h1 class="u-mt-l">Household questions</h1>
-                                <h2 class="u-mt-m u-fs-m">Household and who lives there</h2>
-                                
-                                <ol class="list list--bare u-mt-m household">
-                                    <li><a href="">Who usually lives here?</a></li>
+    <h2 class="u-mt-xl">Individual questions</h2>
+    <h3 class="u-mt-m" id="individual1">Name, date of birth and marital status</h3>
+    {{ 
+        onsList({
+            "element": 'ol',
+            "classes": 'list--prefix list--spacious',
+            "itemsList": [
+                {
+                    "url": '#',
+                    "text": 'Thinking about the people listed in question H3, are you Person 1?',
+                    "prefix": 'P'
+                },
+                {
+                    "url": '#',
+                    "text": 'What is your name?',
+                    "prefix": '1'
+                },
+                {
+                    "url": '#',
+                    "text": 'What is your date of birth?',
+                    "prefix": '2'
+                },
+                {
+                    "url": '3-what-is-your-sex.html',
+                    "text": 'What is your sex?',
+                    "prefix": '3'
+                },
+                {
+                    "url": '#',
+                    "text": 'On 13 October 2019, what is your legal marital or registered civil partnership status?',
+                    "prefix": '4'
+                },
+                {
+                    "url": '#',
+                    "text": 'Who is (was) your legal marriage or registered civil partnership to?',
+                    "prefix": '5'
+                },
+                {
+                    "url": '#',
+                    "text": 'Do you stay at another address for more than 30 days a year?',
+                    "prefix": '6'
+                },
+                {
+                    "url": '#',
+                    "text": 'What is that address?',
+                    "prefix": '7'
+                },
+                {
+                    "url": '#',
+                    "text": 'Are you a schoolchild or student in full-time education?',
+                    "prefix": '8'
+                },
+                {
+                    "url": '#',
+                    "text": 'During term time, where do you usually live?',
+                    "prefix": '9'
+                },
+                {
+                    "url": '#',
+                    "text": 'What is your country of birth?',
+                    "prefix": '10'
+                }
+            ]
+        }) 
+    }}
+    <h3 class="u-mt-m" id="individual2">Language, religion and ethnicity </h3>
+    {{ 
+        onsList({
+            "element": 'ol',
+            "classes": 'list--prefix list--spacious',
+            "itemsList": [
+                {
+                    "url": '#',
+                    "text": 'If you were born in the United Kingdom, when did you most recently arrive to live here?',
+                    "prefix": '11'
+                },
+                {
+                    "url": '#',
+                    "text": 'Including the time you have already spent here, how long do you intend to stay in the United Kingdom?',
+                    "prefix": '12'
+                },
+                {
+                    "url": '13-speak-welsh.html',
+                    "text": 'Can you understand, speak, red or write Welsh?',
+                    "prefix": '13'
+                },
+                {
+                    "url": '#',
+                    "text": 'What is your main language?',
+                    "prefix": '14'
+                },
+                {
+                    "url": '#',
+                    "text": 'How well can you speak English?',
+                    "prefix": '15'
+                },
+                {
+                    "url": '#',
+                    "text": 'How would you describe your national identity',
+                    "prefix": '16'
+                },
+                {
+                    "url": '17-What-is-your-ethnic-group.html',
+                    "text": 'What is your ethnic group?',
+                    "prefix": '17'
+                },
+                {
+                    "url": '#',
+                    "text": 'What is your religion?',
+                    "prefix": '18'
+                },
+                {
+                    "url": '#',
+                    "text": 'One year ago, what was your usual address?',
+                    "prefix": '19'
+                },
+                {
+                    "url": '#',
+                    "text": 'What passports do you hold?',
+                    "prefix": '20'
+                }
+            ]
+        }) 
+    }}
+    <h3 class="u-mt-m" id="individual3">Address, health and sexual orientation</h3>
+    {{ 
+        onsList({
+            "element": 'ol',
+            "classes": 'list--prefix list--spacious',
+            "itemsList": [
+                {
+                    "url": '#',
+                    "text": 'How is your health in general?',
+                    "prefix": '21'
+                },
+                {
+                    "url": '#',
+                    "text": 'Do you have any physical or mental health conditions or illnesses lasting or epected to last 12 months or more?',
+                    "prefix": '22'
+                },
+                {
+                    "url": '#',
+                    "text": 'Do you look after, or give an help or support to, anyone because they have long-term physical or mental health conditions or illnesses, or problems related to old age?',
+                    "prefix": '23'
+                },
+                {
+                    "url": '#',
+                    "text": 'Do any of your conditions or illnesses reduce your ability ti carry out day-to-day activities?',
+                    "prefix": '24'
+                },
+                {
+                    "url": '#',
+                    "text": 'BLANK',
+                    "prefix": '25'
+                },
+                {
+                    "url": '26-sexual-orientation.html',
+                    "text": 'Which of the following best describes your sexual orientation?',
+                    "prefix": '26'
+                },
+                {
+                    "url": '27-gender-registered.html',
+                    "text": 'Is your gender the same as the sex you were registered at birth?',
+                    "prefix": '27'
+                }
+            ]
+        }) 
+    }}
+    <h3 class="u-mt-m" id="individual4">Education and employment</h3>
+    {{ 
+        onsList({
+            "element": 'ol',
+            "classes": 'list--prefix list--spacious',
+            "itemsList": [
+                {
+                    "url": '#',
+                    "text": 'BLANK',
+                    "prefix": '28'
+                },
+                {
+                    "url": '#',
+                    "text": 'Have you completed an apprenticeship?',
+                    "prefix": '29'
+                },
+                {
+                    "url": '#',
+                    "text": 'Have your achieved a qualification at degree level or above?',
+                    "prefix": '30'
+                },
+                {
+                    "url": '#',
+                    "text": 'ave you achieved any other qualifications?',
+                    "prefix": '31'
+                },
+                {
+                    "url": '#',
+                    "text": 'Have you previously served in the UK Armed Forces',
+                    "prefix": '32'
+                },
+                {
+                    "url": '#',
+                    "text": 'In the last seven days, were you doing any of the following?',
+                    "prefix": '33'
+                },
+                {
+                    "url": '#',
+                    "text": 'Which of the following describes what youe were doing in the last seven days?',
+                    "prefix": '34'
+                },
+                {
+                    "url": '#',
+                    "text": 'In the last four weeks, were you actively looking for any kind of paid work?',
+                    "prefix": '35'
+                },
+                {
+                    "url": '#',
+                    "text": 'If a job became available now, could you start it within two weeks?',
+                    "prefix": '36'
+                },
+                {
+                    "url": '#',
+                    "text": 'In the last seven days, were you waiting to start a job already accepted?',
+                    "prefix": '37'
+                },
+                {
+                    "url": '#',
+                    "text": 'Have you ever done any paid work?',
+                    "prefix": '38'
+                },
+                {
+                    "url": '#',
+                    "text": 'Answer the remaining questions for your main job or, if not working, your last main job',
+                    "prefix": '39'
+                },
+                {
+                    "url": '#',
+                    "text": 'In your main job, what is (was) your employment status?',
+                    "prefix": '40'
+                }         
+            ]
+        }) 
+    }}
 
-                                    <li><a href="">Counting everyone you included in question H1, how many people usually live here?</a></li>
-                                    
-                                    <li><a href="">Starting with yourself, list the names of all the people counted in question H2 including children, babies and lodgers</a></li>
 
-                                    <li><a href="">Apart from everyone counted in question H2, who else is staying overnight here on 13 October 2019? These people are counted as visitors. Remember to include children and babies</a></li>
-                                    
-                                    <li><a href="">Counting only the people included in question H4, how many visitors are staying overnight here on 13 October 2019?</a></li>
-                                    
-                                    <li><a href="">How many members of this household related to each other?</a></li>
-
-                                <div id="house2"><div>
-                                <h2 class="u-mt-l u-fs-m">Accommodation</h2>
-                                
-                                    <li><a href="h7-what-type-of-accommodation.html">What type of accommodation is this?</a></li>
-                                    
-                                    <li><a href="h8-rooms-behind-doors.html">Are all the rooms in this accommodation, including the kitchen, bathroom and toilet, behind a door that only this household can use?</a></li>
-                                    
-                                    <li><a href="h9-how-many-bedrooms.html">How many bedrooms are available for use only by this household?</a></li>
-                                    
-                                    <li><a href="h10-central-heating.html">What type of central heating does this accommodation have?</a></li>
-                                    
-                                    <li><a href="">If there is no one living here</a></li>
-                                    
-                                    <li><a href="h12-own-or-rent.html">Does your household own or rent this accommodation?</a></li>
-                                    
-                                    <li><a href="h13-who-is-your-landlord.html">Who is your landlord?</a></li>
-                                    
-                                    <li><a href="h14-cars-vans-owned.html">In total, how many cars or vans are owned, or available for use, by members of this household?</a></li>
-                                </ol>
-
-                                <div id="individual"><div>
-                                <h1 class="u-mt-xl">Individual questions</h1>
-                                <h2 class="u-mt-l u-fs-m">Name, date of birth and marital status</h2>
-                                
-                                <ol class="list list--bare u-mt-m individual-p">
-                                <li><a href="">Thinking about the people listed in question H3, are you Person 1?</a></li>
-                                </ol>
-                                <ol class="list nested individual">
-                                    <li><a href="">What is your name?</a></li>
-                                    <li><a href="">What is your date of birth?</a></li>
-                                    <li><a href="3-what-is-your-sex.html">What is your sex?</a></li>
-                                    <li><a href="">On 13 October 2019, what is your legal marital or registered civil partnership status?</a></li>
-                                    <li><a href="">Who is (was) your legal marriage or registered civil partnership to?</a></li>
-                                    <li><a href="">Do you stay at another address for more than 30 days a year?</a></li>
-                                    <li><a href="">What is that address?</a></li>
-                                    <li><a href="">Are you a schoolchild or student in full-time education?</a></li>
-                                    <li><a href="">During term time, where do you usually live?</a></li>
-                                    <li><a href="">What is your country of birth?</a></li>              
-                                <div id="individual2"></div>
-                                <h2 class="u-mt-l u-fs-m">Language, religion and ethnicity </h2>
-                                    <li><a href="">If you were born in the United Kingdom, when did you most recently arrive to live here?</a></li>
-                                    <li><a href="">Including the time you have already spent here, how long do you intend to stay in the United Kingdom?</a></li>
-                                    <li><a href="13-speak-welsh.html">WELSH LANGUAGE ONLY - Can you understand, speak, red or write Welsh?</a></li>
-                                    <li><a href="">What is your main language?</a></li>
-                                    <li><a href="">How well can you speak English?</a></li>
-                                    <li><a href="">How would you describe your national identity</a></li>
-                                    <li><a href="17-What-is-your-ethnic-group.html">What is your ethnic group?</a></li>
-                                    <li><a href="">What is your religion?</a></li>
-                                    <li><a href="">One year ago, what was your usual address?</a></li>
-                                    <li><a href="">What passports do you hold?</a></li>
-                                <div id="individual3"></div>
-                                <h2 class="u-mt-l u-fs-m">Address, health and sexual orientation</h2>
-                                <li><a href="">How is your health in general?</a></li>
-                                <li><a href="">Do you have any physical or mental health conditions or illnesses lasting or epected to last 12 months or more?</a></li>
-                                    <li><a href="">Do any of your conditions or illnesses reduce your ability ti carry out day-to-day activities?</a></li>
-                                    <li><a href="">Do you look after, or give an help or support to, anyone because they have long-term physical or mental health conditions or illnesses, or problems related to old age?</a></li>
-                                    <li><a href="">BLANK</a></li>
-                                    <li><a href="26-sexual-orientation.html">Which of the following best describes your sexual orientation?</a></li>
-                                    <li><a href="27-gender-registered.html">Is your gender the same as the sex you were registered at birth?</a></li>
-                                <div id="individual4"></div>
-                                <h2 class="u-mt-l u-fs-m">Education and employment</h2>
-                                    <li><a href="">BLANK</a></li>
-                                    <li><a href="">Have you completed an apprenticeship?</a></li>
-                                    <li><a href="">Have your achieved a qualification at degree level or above?</a></li>
-                                    <li><a href="">Have you achieved any other qualifications?</a></li>
-                                    <li><a href="">Have you previously served in the UK Armed Forces</a></li>
-                                    <li><a href="">In the last seven days, were you doing any of the following?</a></li>
-                                    <li><a href="">Which of the following describes what youe were doing in the last seven days?</a></li>
-                                    <li><a href="">In the last four weeks, were you actively looking for any kind of paid work?</a></li>
-                                    <li><a href="">If a job became available now, could you start it within two weeks?</a></li>
-                                    <li><a href="">In the last seven days, were you waiting to start a job already accepted?</a></li>
-                                    <li><a href="">Have you ever done any paid work?</a></li>
-                                    <li><a href="">Answer the remaining questions for your main job or, if not working, your last main job</a></li>
-                                    <li><a href="">In your main job, what is (was) your employment status?</a></li>
-                                    <li><a href="">What is (was) the name of the organisation or business you work (worked) for?</a></li>
-                                    <li><a href="">What is (was) your full job title?</a></li>
-                                    <li><a href="">Briely descibe what you do (did) in your main job?</a></li>
-                                    <li><a href="">What is (was) the main activity of your organisation, business or freelnace work?</a></li>
-                                    <li><a href="">Do (did) you supervise or oversee the work of other employees on a day-to-day basis?</a></li>
-                                    <li><a href="">BLANK</a></li>
-                                    <li><a href="">In your main job, how many hours a week do you usually work?</a></li>
-                                    <li><a href="">How do you usually travel to work?</a></li>
-                                    <li><a href="">Where do you mainly work?</a></li>
-                                    <li><a href="">What is the address of your workplace or depot?</a></li>
-                                </ul>
-
-                                <div class="u-mt-l"><a href="#top">Back to top</a></div>
-                    </main>
-                </div>
-                <div class="grid__col col-4@m push-1@m">
-                    <div style="border-top:5px solid purple;padding:15px 0;">
-                        <h3>Related content</h3>
-                            <ul class="list list--bare">
-                                <li><a href="#">About the census</a></li>
-                                <li><a href="#">Contact us</a></li>
-                            </ul>
-                         <!--<div class="u-mb-m">
-                            <hr class="footer__hr">
-                        </div>
-                       <div class="card card-cta">
-                            <h3 class="u-fs-m u-mb-xs">
-                                Ready to take part?
-                            </h3>
-                            <a href="#" style="font-size:2.2em; font-weight:bold;line-height: 1.3em;color:white;text-decoration:underline;cursor:pointer;">Start your census survey</a>
-                        </div>-->
-                    </div>
-                </div>
-        </div>
-</div>
 {% endblock %}

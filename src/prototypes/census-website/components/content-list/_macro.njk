@@ -2,14 +2,19 @@
   {% from "prototypes/census-website/components/lists/_macro.njk" import onsList %}
   <aside class="content-navigation-container" role="complementary">
     <nav role="navigation" class="content-list" aria-label="{{ params.ariaLabel }}">
-      <h2 class="content-list__title u-fs-r--b u-mb-xs">{{ params.title }}</h2>
-      {{ 
-          onsList({
-              "element": 'ol',
-              "classes": 'list--dashed',
-              "itemsList": params.itemsList
-          }) 
-      }}
+      <h2 class="content-list__title u-fs-r--b u-mb-s">{{ params.title }}</h2>
+      {% for list in params.lists %}
+        {% if list.listHeading %}
+          <h3 class="u-fs-r u-mb-xs">{{ list.listHeading }}:</h3>
+        {% endif %}
+        {{ 
+            onsList({
+                "element": 'ol',
+                "classes": 'list--dashed u-mb-m',
+                "itemsList": list.itemsList
+            }) 
+        }}
+      {% endfor %}
     </nav>
   </aside>
 {% endmacro %}
