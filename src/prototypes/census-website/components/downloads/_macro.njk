@@ -3,13 +3,13 @@
         {% for download in (params.downloads if params.downloads is iterable else params.downloads.items()) %}
             <section class="download">
                 <div class="download__thumbnail" aria-hidden="true">
-                    <a href="{{ download.url }}" class="download__thumbnail-link">
+                    <a href="{{ download.url }}" class="download__thumbnail-link" aria-label="{{ download.title }} {{ download.typeAbbr }}">
                         <img src="{{ download.thumbnail }}" />
                     </a>
                 </div>
                 <div class="download__details">
                     <h2 class="download__title">
-                        <a href="{{ download.url }}">{{ download.title }}</a>
+                        <a href="{{ download.url }}" aria-label="{{ download.title }} {{ download.typeAbbr }}">{{ download.title }}</a>
                     </h2>
                     <p class="download__metadata u-fs-s">
                         <abbr class="download__file-type" title="{{ download.type }}">{{ download.typeAbbr }}</abbr>{% if download.fileSize %}, {{ download.fileSize }}{% endif %}{% if download.pages %}, {{ download.pages }}{% endif %}
