@@ -1,5 +1,5 @@
 ---
-version: 9.2.0
+version: 10.0.0
 ---
 {% extends "prototypes/census-website/views/_master.njk" %}
 
@@ -8,7 +8,7 @@ version: 9.2.0
 {% from "components/panel/_macro.njk" import onsPanel %}
 {% from "components/call-to-action/_macro.njk" import onsCallToAction %}
 {% from "components/toc/_macro.njk" import onsTableOfContents %}
-{% from "prototypes/census-website/components/content-pagination/_macro.njk" import onsContentPagination %}
+{% from "components/content-pagination/_macro.njk" import onsContentPagination %}
 {% from "components/related-links/_macro.njk" import onsRelatedLinks %}
 {% from "components/lists/_macro.njk" import onsList %}
 
@@ -40,6 +40,7 @@ version: 9.2.0
                     <div class="u-mb-l">
                         {{ 
                             onsPanel({
+                                type: 'branded',
                                 body: content.topPanel.body
                             })
                         }}

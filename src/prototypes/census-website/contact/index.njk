@@ -1,5 +1,5 @@
 ---
-version: 9.2.0
+version: 10.0.0
 layout: census-website/views/_page
 ---
 
@@ -95,7 +95,7 @@ layout: census-website/views/_page
     <div class="u-mt-m">
     <h2 class="u-fs-l">Marketing materials</h2>
     <p>Select below the advertising materials you require</p>
-    {% from "prototypes/census-website/components/downloads/_macro.njk" import onsDownloads %}
+    {% from "components/downloads/_macro.njk" import onsDownloads %}
     {{ onsDownloads({
         "classes": "u-mt-m",
         "downloads": [
