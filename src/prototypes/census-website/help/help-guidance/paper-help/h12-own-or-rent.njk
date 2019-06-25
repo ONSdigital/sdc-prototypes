@@ -9,8 +9,7 @@ layout: census-website/views/_master
 
 {% block page %}
 <div class="page__container container {{ containerClasses }}">
-            <div class="grid">
-                <div class="grid__col col-7@m">
+                        <div class="col-7@m">
                             {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
                                 {{ 
                                     onsBreadcrumb({
@@ -25,23 +24,26 @@ layout: census-website/views/_master
                                                 "text": 'Help with your census'
                                             },                                            
                                             {
-                                                "url": '/prototypes/census-website/help/question-help.html',
+                                                "url": '/prototypes/census-website/help/index.html',
                                                 "text": 'Help with the questions'
                                             },
                                             {
+                                                "url": '/prototypes/census-website/help/help-guidance/paper-help/index.html',
+                                                "text": 'Help with your paper census questions'
+                                            },
+                                            {
                                                 "url": '',
-                                                "text": 'H13 - Who is your landlord?',
+                                                "text": 'H12 - Does your household own or rent this accommodation?',
                                                 "current": true
                                             }
                                         ]
                                     }) 
                                 }}
                                 </div>
-                                </div>
                 <div class="grid">
                     <div class="grid__col col-7@m">
                         <main id="main-content" class=" {{ pageClasses }}">
-                                    <h1 class="u-mb-m">H13 - Who is your landlord?</h1>
+                                    <h1 class="u-mb-m">H12 - Does your household own or rent this accommodation?</h1>
                                     {#<div class="u-mb-m">
                                     {% from "components/panel/_macro.njk" import onsPanel %}
                                         {{ 
@@ -67,37 +69,16 @@ layout: census-website/views/_master
                                             }
                                         })
                                     }}          
+
+                                    <p>Select <strong>one answer only</strong> from these options:</p>
                                     
-                                    <p><strong>Give one answer only.</strong> Only answer if you:</p> 
-
                                     <ul class="list">
-                                    <li>live in rented accommodation</li>
-                                    <li>part - own and part - rent</li>
-                                    </ul>
-
-                                    
-                                    <p><strong>OR</strong></p>
-                                    
-
-                                    <ul class="list">
-                                    <li>live rent-free</li>
-                                    </ul>
-
-                                    <p>Your landlord is generally a person or organisation that owns your property and either</p>
-                                    <ul class="list">
-                                    <li>charges you rent to live there</li>
-                                    </ul>
-                                    
-                                   <ul class="list">
-                                    <p><strong>OR</strong></p>
-                                    </ul>
-
-                                    <ul class="list">
-                                    <li>lets you live there rent-free</li>
+                                    <li><strong>owns outright:</strong> This is if you own your accommodation without a mortgage or loan. You should also select this if you’ve paid off your mortgage but have made an arrangement with the lender to continue to pay a small amount in return for them looking after the deeds.</li>
+                                    <li><strong>part- owns and part- rents (shared ownership):</strong> This is if you own part of your accommodation and also pay rent for part of it. You can part- own your property with or without a mortgage or loan.</li>
+                                    <li><strong> rents (with or without housing benefit):</strong> This is if you pay rent to a landlord to live in this property. Select this if you pay your rent yourself or if your rent is paid from housing benefit or universal credit.</li>
                                     </ul>
                                     
                                     <p>Your landlord might be:</p>
-
                                     <ul class="list">
                                     <li>a housing association, housing co-operative, charitable trust, or registered social landlord</li>
                                     <li>the council (local authority)</li>
@@ -107,7 +88,26 @@ layout: census-website/views/_master
                                     <li>another person or organisation</li>
                                     </ul>
 
-                                   <p><strong>ALMO:</strong> If your accommodation is managed by an Arms Length Management Organisation (ALMO), select <strong>Council (local authority).</strong></p>
+                                    <p><strong>Lives here rent- free:</strong> Select this option if you don’t own this accommodation and don’t pay rent to live here. You should still select this response if you don’t pay rent but do make a contribution towards household expenses. Some examples of rent-free living include:</p>
+
+                                    <ul class="list">
+                                    <li>a household paying no rent and living in a property owned by a family member or friend</li>
+                                    <li>someone paying no rent and living in thhe property of a deceased partner which is held in trust</li>
+                                    <li>someone paying no rent who is divorced/separated and living in a property which is owned solely by their ex-partner who no longer lives there</li>
+                                    </ul>
+
+                                    <p>Do not select this if your rent is paid by housing benefit. Choose <strong>Rents (with or without housing benefit)</strong> instead.</p>
+
+                                   <p><strong>Own your home with a lease:</strong> Select either <strong>Owns outright</strong> or <strong>Owns with a mortgage or loan</strong> depending on your circumstances. Whether or not you pay ground rent isn’t relevant to this question.</p>
+                                   
+                                   <div class="u-mb-m">
+                                    {% from "components/panel/_macro.njk" import onsPanel %}
+                                        {{ 
+                                            onsPanel({
+                                                body: "<p><strong>House-sharing:</strong> You can fill in a personal form if you prefer to keep your answers private from other people who live at your home.</p>"
+                                            }) 
+                                        }}
+                                    </div>
                         </main>
                 </div>
                 <!--Right Sidbar-->

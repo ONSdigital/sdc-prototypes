@@ -9,8 +9,7 @@ layout: census-website/views/_master
 
 {% block page %}
 <div class="page__container container {{ containerClasses }}">
-            <div class="grid">
-                <div class="grid__col col-7@m">
+                        <div class="col-7@m">
                             {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
                                 {{ 
                                     onsBreadcrumb({
@@ -25,23 +24,26 @@ layout: census-website/views/_master
                                                 "text": 'Help with your census'
                                             },                                            
                                             {
-                                                "url": '/prototypes/census-website/help/question-help.html',
+                                                "url": '/prototypes/census-website/help/index.html',
                                                 "text": 'Help with the questions'
                                             },
                                             {
+                                                "url": '/prototypes/census-website/help/help-guidance/paper-help/index.html',
+                                                "text": 'Help with your paper census questions'
+                                            },
+                                            {
                                                 "url": '',
-                                                "text": 'H8 - Are all the rooms in this accommodation, including the kitchen, bathroom and toilet, behind a door that only this household can use?',
+                                                "text": '26 - Which of the following best describes your sexual orientation?',
                                                 "current": true
                                             }
                                         ]
                                     }) 
                                 }}
                                 </div>
-                                </div>
                 <div class="grid">
                     <div class="grid__col col-7@m">
                         <main id="main-content" class=" {{ pageClasses }}">
-                                    <h1 class="u-mb-m">H8 - Are all the rooms in this accommodation, including the kitchen, bathroom and toilet, behind a door that only this household can use?</h1>
+                                    <h1 class="u-mb-m">26 - Which of the following best describes your sexual orientation?</h1>
                                     {#<div class="u-mb-m">
                                     {% from "components/panel/_macro.njk" import onsPanel %}
                                         {{ 
@@ -50,49 +52,45 @@ layout: census-website/views/_master
                                             }) 
                                         }}
                                         </div>#}
-                                                                        {% from "components/details/_macro.njk" import onsDetails %}
-
-                                    {{
-                                        onsDetails({
-                                            "id": "details",
-                                            "title": "Why we ask this question",
-                                            "classes": "u-mb-m",
-                                            "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur snint occaecat cupidatat</p>
-                                            <p> non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occat in culpa qui officia deserunt mollit anim id est laborum.</p>
-</p>",
-                                            "button": {
-                                                "close": "Hide this"
-                                            }
-                                        })
-                                    }}          
+                                    <div class="u-mb-xs">
+                                                {% from "components/details/_macro.njk" import onsDetails %}
+                                                {{
+                                                    onsDetails({
+                                                        "id": "details",
+                                                        "title": "Why we ask this question?",
+                                                        "classes": "u-mb-m",
+                                                        "content": "<p>We ask this question of people who are aged 16 years old and over.It’s up to you to decide how you answer this question. This question is voluntary, so you can leave it blank if you prefer.</p>",
+                                                        "button": {
+                                                            "close": "Hide this"
+                                                        }
+                                                    })
+                                                }}
+                                        </div>        
                                     
-                                    <p>Select <strong>“No”</strong> if you have to <strong>share</strong> any rooms with another household, for example a communal kitchen.</p> 
+                                    <p>We ask this question of people who are aged 16 years old and over. </p> 
+                                    <p>It’s up to you to decide how you answer this question. This question is voluntary, so you can leave it blank if you prefer.</p>
 
-                                    <p>Select <strong>"No"</strong> if you have to <strong>cross a space</strong> used by another household, for example crossing a landing to use your bathroom.</p> 
+                                    <p>You can choose from the following options:</p>
 
-                                    <p>Select <strong>"Yes"</strong> if all of the rooms are used only by this household, for example your flat has a front door and all the rooms you use are behind that front door.</p> 
+                                    <ul class="list">
+                                        <li><strong>“Heterosexual or Straight”</strong> –  means that a person is attracted to people of the opposite sex or gender</li>
+                                        <li><strong>“Gay or Lesbian”</strong> –  means that a person is attracted to people of the same sex or gender</li>
+                                        <li><strong>“Bisexual”</strong> –  means that a person is attracted to more than one sex or gender</li>
+                                        <li><strong>“Other sexual orientation”</strong> –  enter your answer, for example, pansexual or asexual</li>
+                                    </ul>
 
-                                    
-                                   
-                                   <div class="u-mb-m">
-                                    {% from "components/panel/_macro.njk" import onsPanel %}
-                                        {{ 
-                                            onsPanel({
-                                                body: "<p>If you’re not sure how to answer, choose as best you can.</p>"
-                                            }) 
-                                        }}
-                                    </div>
+                                    <p>Attraction could be emotional, romantic or sexual.</p>
 
-                                    {#<div class="u-mb-m">
+                                    <h3>Don’t record your trans identity here</h3>
+                                    <p>This question doesn’t relate to being trans or transgender.</p>
+                                    <div class="u-mb-m">
                                     {% from "components/panel/_macro.njk" import onsPanel %}
                                         {{ 
                                             onsPanel({
                                                 body: "<p>If you prefer to keep your answers private from people you live with, you can <a href='#'>complete your own individual census form.</a></p>"
                                             }) 
                                         }}
-                                        </div>#}
+                                        </div>
                         </main>
                 </div>
                 <!--Right Sidbar-->
@@ -101,7 +99,6 @@ layout: census-website/views/_master
                         <h3>Related content</h3>
                         <ul class="list list--bare">
                             <li><a href="#">About the census</a></li>
-                            <li><a href="#">What we ask you</a></li>
                             <li><a href="#">Help and support</a></li>
                             <li><a href="#">Contact us</a></li>
                         </ul>

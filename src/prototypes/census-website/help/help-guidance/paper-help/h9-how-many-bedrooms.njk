@@ -9,8 +9,7 @@ layout: census-website/views/_master
 
 {% block page %}
 <div class="page__container container {{ containerClasses }}">
-            <div class="grid">
-                <div class="grid__col col-7@m">
+                        <div class="col-7@m">
                             {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
                                 {{ 
                                     onsBreadcrumb({
@@ -25,23 +24,26 @@ layout: census-website/views/_master
                                                 "text": 'Help with your census'
                                             },                                            
                                             {
-                                                "url": '/prototypes/census-website/help/question-help.html',
+                                                "url": '/prototypes/census-website/help/index.html',
                                                 "text": 'Help with the questions'
                                             },
                                             {
+                                                "url": '/prototypes/census-website/help/help-guidance/paper-help/index.html',
+                                                "text": 'Help with your paper census questions'
+                                            },
+                                            {
                                                 "url": '',
-                                                "text": 'H10 - What type of central heating does this accommodation have?',
+                                                "text": 'H9 - How many bedrooms are available for use only by this household?',
                                                 "current": true
                                             }
                                         ]
                                     }) 
                                 }}
                                 </div>
-                                </div>
                 <div class="grid">
                     <div class="grid__col col-7@m">
                         <main id="main-content" class=" {{ pageClasses }}">
-                                    <h1 class="u-mb-m">H10 - What type of central heating does this accommodation have?</h1>
+                                    <h1 class="u-mb-m">H9 - How many bedrooms are available for use only by this household?</h1>
                                     {#<div class="u-mb-m">
                                     {% from "components/panel/_macro.njk" import onsPanel %}
                                         {{ 
@@ -66,28 +68,41 @@ layout: census-website/views/_master
                                                 "close": "Hide this"
                                             }
                                         })
-                                    }}          
+                                    }}         
                                     
-                                    <p>Central heating is a system for warming a building by heating water or air in one place, then piping it to, for example, radiators or vents.</p> 
+                                    <p>Include any rooms that are intended to be used as bedrooms.</p> 
 
-                                    <p>This question is only about systems that generate heat for <strong>more than one room.</strong></p> 
+                                    <p>This intention may have changed from when:</p>
+                                    
+                                    <ul class="list">
+                                    <li>the property was originally built</li>
+                                    <li>the room was converted</li>
+                                    </ul>
+                                    <p><strong>OR</strong></p>
+                                    <ul class="list">
+                                    <li>the use of the room permanently changed</li>
+                                    </ul>
 
-                                    <p><strong>Include</strong> systems that are not working or unused. You may choose more than one answer.</p> 
+                                    <h2 class="u-mt-l">Include as a bedroom, if the room was:</h2>
+                                    <ul class="list">
+                                    <li>built as a bedroom, and is used as one</li>
+                                    <li>built as a bedroom, and is used for something else like an office or den</li>
+                                    <li>built as a room with plumbing, for example, a bathroom or kitchen and converted to a bedroom</li>
+                                    <li>not built as any room at all, but is now used as a bedroom, for example, a loft or   garage conversion</li>
+                                    </ul>
 
-                                    <p><strong>Solar power (thermal):</strong> Only choose “Renewable energy” if your rooms are directly heated by the energy generated. Do not select it if it only heats water for your taps.</p>
-
-                                    <p><strong>Storage heaters:</strong> Choose Electric.</p>
-
-                                    <h2>Do not include:</h2>
-                                    <p><strong>Stoves, burners and open fires:</strong> If you have a fire in your living room not connected to any other rooms, don’t include it. Even though you may feel the benefit of the heat in another room, it’s not a system designed to heat multiple rooms.</p>
-
-                                    <p><strong>Plug-in heaters:</strong> This question is not asking about heaters that  that only warm one room.If you’re not sure, answer as best you can.</p>
+                                    <h2 class="u-mt-l">Do not include as a bedroom, if the room:</h2>
+                                    <ul class="list">
+                                    <li>was built as a bedroom and was then converted to a bathroom, wet room or kitchen</li>
+                                    <li>is used as a bedroom now, but its intended use is different, for example, a dining room, conservatory or lounge</li>
+                                    
+                                    </ul>
                                    
                                    <div class="u-mb-m">
                                     {% from "components/panel/_macro.njk" import onsPanel %}
                                         {{ 
                                             onsPanel({
-                                                body: "<p>If you’re not sure how to answer, choose as best you can.</p>"
+                                                body: "<p>If you’re not sure how to answer, imagine you’re selling the house; how many bedrooms would you advertise?</p>"
                                             }) 
                                         }}
                                     </div>

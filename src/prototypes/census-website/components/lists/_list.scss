@@ -19,7 +19,9 @@
 
 .list--spacious {
   .list__item {
-    margin: 0 0 1.5rem;
+    margin: 0;
+    border-bottom: 1px solid lightgrey;
+    padding: 1em 0;
   }
 }
 

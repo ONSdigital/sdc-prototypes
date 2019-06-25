@@ -9,7 +9,8 @@ layout: census-website/views/_master
 
 {% block page %}
 <div class="page__container container {{ containerClasses }}">
-                        <div class="col-7@m">
+            <div class="grid">
+                <div class="grid__col col-7@m">
                             {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
                                 {{ 
                                     onsBreadcrumb({
@@ -24,22 +25,27 @@ layout: census-website/views/_master
                                                 "text": 'Help with your census'
                                             },                                            
                                             {
-                                                "url": '/prototypes/census-website/help/question-help.html',
+                                                "url": '/prototypes/census-website/help/index.html',
                                                 "text": 'Help with the questions'
                                             },
                                             {
+                                                "url": '/prototypes/census-website/help/help-guidance/paper-help/index.html',
+                                                "text": 'Help with your paper census questions'
+                                            },
+                                            {
                                                 "url": '',
-                                                "text": '17 - What is your ethnic group?',
+                                                "text": 'H13 - Who is your landlord?',
                                                 "current": true
                                             }
                                         ]
                                     }) 
                                 }}
                                 </div>
+                                </div>
                 <div class="grid">
                     <div class="grid__col col-7@m">
                         <main id="main-content" class=" {{ pageClasses }}">
-                                    <h1 class="u-mb-m">17 - What is your ethnic group?</h1>
+                                    <h1 class="u-mb-m">H13 - Who is your landlord?</h1>
                                     {#<div class="u-mb-m">
                                     {% from "components/panel/_macro.njk" import onsPanel %}
                                         {{ 
@@ -48,7 +54,7 @@ layout: census-website/views/_master
                                             }) 
                                         }}
                                         </div>#}
-                                    {% from "components/details/_macro.njk" import onsDetails %}
+                                                                        {% from "components/details/_macro.njk" import onsDetails %}
 
                                     {{
                                         onsDetails({
@@ -64,31 +70,48 @@ layout: census-website/views/_master
                                                 "close": "Hide this"
                                             }
                                         })
-                                    }}
-                                              
-                                    <p>It’s up to you how you answer this question. Your ethnic group could be your cultural or family background. First, choose the group that best describes you:</p> 
+                                    }}          
+                                    
+                                    <p><strong>Give one answer only.</strong> Only answer if you:</p> 
 
                                     <ul class="list">
-                                        <li>White</li>
-                                        <li>Mixed or Multiple ethnic groups</li>
-                                        <li>Asian or Asian British</li>
-                                        <li>Black, Black British, Caribbean or African</li>
-                                        <li>Other ethnic group</li>
+                                    <li>live in rented accommodation</li>
+                                    <li>part - own and part - rent</li>
                                     </ul>
 
-                                    <p>Then choose one option within that group.</p>
-                                    <h2>If your ethnic group isn’t listed</h2>
-                                    <p>If there isn't an option that describes your ethnic group, choose the “Any other ethnic group” option and enter your ethnic group in the space provided.</p>
                                     
-                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
-                                    <h3>See repeating information for:</h3>
-                                    <ul class="list list--bare">
-                                        <li>- <a href="">Don’t want to share a form with your household?</a></li>
-                                        <li>- <a href="">Confidentiality</a></li>
-                                        <li>- <a href="">Answering for someone else</a></li>
-                                        <li>- <a href="">Completing online (add in ‘ethnic group’)</a></li>
-                                        <li>- <a href="">Completing on paper</a></li>
+                                    <p><strong>OR</strong></p>
+                                    
+
+                                    <ul class="list">
+                                    <li>live rent-free</li>
                                     </ul>
+
+                                    <p>Your landlord is generally a person or organisation that owns your property and either</p>
+                                    <ul class="list">
+                                    <li>charges you rent to live there</li>
+                                    </ul>
+                                    
+                                   <ul class="list">
+                                    <p><strong>OR</strong></p>
+                                    </ul>
+
+                                    <ul class="list">
+                                    <li>lets you live there rent-free</li>
+                                    </ul>
+                                    
+                                    <p>Your landlord might be:</p>
+
+                                    <ul class="list">
+                                    <li>a housing association, housing co-operative, charitable trust, or registered social landlord</li>
+                                    <li>the council (local authority)</li>
+                                    <li>a private landlord or letting agency</li>
+                                    <li>an employer of a household member</li>
+                                    <li>a relative or friend</li>
+                                    <li>another person or organisation</li>
+                                    </ul>
+
+                                   <p><strong>ALMO:</strong> If your accommodation is managed by an Arms Length Management Organisation (ALMO), select <strong>Council (local authority).</strong></p>
                         </main>
                 </div>
                 <!--Right Sidbar-->
@@ -97,6 +120,7 @@ layout: census-website/views/_master
                         <h3>Related content</h3>
                         <ul class="list list--bare">
                             <li><a href="#">About the census</a></li>
+                            <li><a href="#">What we ask you</a></li>
                             <li><a href="#">Help and support</a></li>
                             <li><a href="#">Contact us</a></li>
                         </ul>

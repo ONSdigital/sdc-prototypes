@@ -24,12 +24,16 @@ layout: census-website/views/_master
                                                 "text": 'Help with your census'
                                             },                                            
                                             {
-                                                "url": '/prototypes/census-website/help/question-help.html',
+                                                "url": '/prototypes/census-website/help/index.html',
                                                 "text": 'Help with the questions'
                                             },
                                             {
+                                                "url": '/prototypes/census-website/help/help-guidance/paper-help/index.html',
+                                                "text": 'Help with your paper census questions'
+                                            },
+                                            {
                                                 "url": '',
-                                                "text": 'H9 - How many bedrooms are available for use only by this household?',
+                                                "text": '13 - Can you understand, speak, read or write Welsh?',
                                                 "current": true
                                             }
                                         ]
@@ -39,7 +43,7 @@ layout: census-website/views/_master
                 <div class="grid">
                     <div class="grid__col col-7@m">
                         <main id="main-content" class=" {{ pageClasses }}">
-                                    <h1 class="u-mb-m">H9 - How many bedrooms are available for use only by this household?</h1>
+                                    <h1 class="u-mb-m">13 - WELSH ONLY - Can you understand, speak, read or write Welsh?</h1>
                                     {#<div class="u-mb-m">
                                     {% from "components/panel/_macro.njk" import onsPanel %}
                                         {{ 
@@ -48,7 +52,7 @@ layout: census-website/views/_master
                                             }) 
                                         }}
                                         </div>#}
-                                                                        {% from "components/details/_macro.njk" import onsDetails %}
+                                    {% from "components/details/_macro.njk" import onsDetails %}
 
                                     {{
                                         onsDetails({
@@ -64,53 +68,18 @@ layout: census-website/views/_master
                                                 "close": "Hide this"
                                             }
                                         })
-                                    }}         
+                                    }}
+                                              
+                                    <h3>If you live in Wales</h3>
+                                    <p>It’s up to you to decide whether you’re able to understand spoken Welsh, or you can speak, read or write Welsh. Choose all the options you believe to be right for you. If you can’t do any of these things, select <strong>“None of the above”</strong>.</p> 
+
+                                    <h2>Paper</h2>
+                                    <h3>For children and babies</h3>
+                                    <p>If a child is aged two years or under, you don’t need to answer this question for them.For those aged three years and above, only choose the option that show what they’re able to do <strong>now</strong>.</p>
+                                    <h3>If you live in England</h3>
+                                    <p>This question is not asked in England. We try to keep the England and Wales questionnaires the same where possible. However, this question is about the Welsh language and is only included on the questionnaire in Wales.</p> 
+
                                     
-                                    <p>Include any rooms that are intended to be used as bedrooms.</p> 
-
-                                    <p>This intention may have changed from when:</p>
-                                    
-                                    <ul class="list">
-                                    <li>the property was originally built</li>
-                                    <li>the room was converted</li>
-                                    </ul>
-                                    <p><strong>OR</strong></p>
-                                    <ul class="list">
-                                    <li>the use of the room permanently changed</li>
-                                    </ul>
-
-                                    <h2 class="u-mt-l">Include as a bedroom, if the room was:</h2>
-                                    <ul class="list">
-                                    <li>built as a bedroom, and is used as one</li>
-                                    <li>built as a bedroom, and is used for something else like an office or den</li>
-                                    <li>built as a room with plumbing, for example, a bathroom or kitchen and converted to a bedroom</li>
-                                    <li>not built as any room at all, but is now used as a bedroom, for example, a loft or   garage conversion</li>
-                                    </ul>
-
-                                    <h2 class="u-mt-l">Do not include as a bedroom, if the room:</h2>
-                                    <ul class="list">
-                                    <li>was built as a bedroom and was then converted to a bathroom, wet room or kitchen</li>
-                                    <li>is used as a bedroom now, but its intended use is different, for example, a dining room, conservatory or lounge</li>
-                                    
-                                    </ul>
-                                   
-                                   <div class="u-mb-m">
-                                    {% from "components/panel/_macro.njk" import onsPanel %}
-                                        {{ 
-                                            onsPanel({
-                                                body: "<p>If you’re not sure how to answer, imagine you’re selling the house; how many bedrooms would you advertise?</p>"
-                                            }) 
-                                        }}
-                                    </div>
-
-                                    {#<div class="u-mb-m">
-                                    {% from "components/panel/_macro.njk" import onsPanel %}
-                                        {{ 
-                                            onsPanel({
-                                                body: "<p>If you prefer to keep your answers private from people you live with, you can <a href='#'>complete your own individual census form.</a></p>"
-                                            }) 
-                                        }}
-                                        </div>#}
                         </main>
                 </div>
                 <!--Right Sidbar-->
@@ -119,7 +88,6 @@ layout: census-website/views/_master
                         <h3>Related content</h3>
                         <ul class="list list--bare">
                             <li><a href="#">About the census</a></li>
-                            <li><a href="#">What we ask you</a></li>
                             <li><a href="#">Help and support</a></li>
                             <li><a href="#">Contact us</a></li>
                         </ul>

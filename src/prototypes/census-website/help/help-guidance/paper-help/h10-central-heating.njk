@@ -9,7 +9,8 @@ layout: census-website/views/_master
 
 {% block page %}
 <div class="page__container container {{ containerClasses }}">
-                        <div class="col-7@m">
+            <div class="grid">
+                <div class="grid__col col-7@m">
                             {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
                                 {{ 
                                     onsBreadcrumb({
@@ -24,22 +25,27 @@ layout: census-website/views/_master
                                                 "text": 'Help with your census'
                                             },                                            
                                             {
-                                                "url": '/prototypes/census-website/help/question-help.html',
+                                                "url": '/prototypes/census-website/help/index.html',
                                                 "text": 'Help with the questions'
                                             },
                                             {
+                                                "url": '/prototypes/census-website/help/help-guidance/paper-help/index.html',
+                                                "text": 'Help with your paper census questions'
+                                            },
+                                            {
                                                 "url": '',
-                                                "text": 'H12 - Does your household own or rent this accommodation?',
+                                                "text": 'H10 - What type of central heating does this accommodation have?',
                                                 "current": true
                                             }
                                         ]
                                     }) 
                                 }}
                                 </div>
+                                </div>
                 <div class="grid">
                     <div class="grid__col col-7@m">
                         <main id="main-content" class=" {{ pageClasses }}">
-                                    <h1 class="u-mb-m">H12 - Does your household own or rent this accommodation?</h1>
+                                    <h1 class="u-mb-m">H10 - What type of central heating does this accommodation have?</h1>
                                     {#<div class="u-mb-m">
                                     {% from "components/panel/_macro.njk" import onsPanel %}
                                         {{ 
@@ -65,45 +71,39 @@ layout: census-website/views/_master
                                             }
                                         })
                                     }}          
-
-                                    <p>Select <strong>one answer only</strong> from these options:</p>
                                     
-                                    <ul class="list">
-                                    <li><strong>owns outright:</strong> This is if you own your accommodation without a mortgage or loan. You should also select this if you’ve paid off your mortgage but have made an arrangement with the lender to continue to pay a small amount in return for them looking after the deeds.</li>
-                                    <li><strong>part- owns and part- rents (shared ownership):</strong> This is if you own part of your accommodation and also pay rent for part of it. You can part- own your property with or without a mortgage or loan.</li>
-                                    <li><strong> rents (with or without housing benefit):</strong> This is if you pay rent to a landlord to live in this property. Select this if you pay your rent yourself or if your rent is paid from housing benefit or universal credit.</li>
-                                    </ul>
-                                    
-                                    <p>Your landlord might be:</p>
-                                    <ul class="list">
-                                    <li>a housing association, housing co-operative, charitable trust, or registered social landlord</li>
-                                    <li>the council (local authority)</li>
-                                    <li>a private landlord or letting agency</li>
-                                    <li>an employer of a household member</li>
-                                    <li>a relative or friend</li>
-                                    <li>another person or organisation</li>
-                                    </ul>
+                                    <p>Central heating is a system for warming a building by heating water or air in one place, then piping it to, for example, radiators or vents.</p> 
 
-                                    <p><strong>Lives here rent- free:</strong> Select this option if you don’t own this accommodation and don’t pay rent to live here. You should still select this response if you don’t pay rent but do make a contribution towards household expenses. Some examples of rent-free living include:</p>
+                                    <p>This question is only about systems that generate heat for <strong>more than one room.</strong></p> 
 
-                                    <ul class="list">
-                                    <li>a household paying no rent and living in a property owned by a family member or friend</li>
-                                    <li>someone paying no rent and living in thhe property of a deceased partner which is held in trust</li>
-                                    <li>someone paying no rent who is divorced/separated and living in a property which is owned solely by their ex-partner who no longer lives there</li>
-                                    </ul>
+                                    <p><strong>Include</strong> systems that are not working or unused. You may choose more than one answer.</p> 
 
-                                    <p>Do not select this if your rent is paid by housing benefit. Choose <strong>Rents (with or without housing benefit)</strong> instead.</p>
+                                    <p><strong>Solar power (thermal):</strong> Only choose “Renewable energy” if your rooms are directly heated by the energy generated. Do not select it if it only heats water for your taps.</p>
 
-                                   <p><strong>Own your home with a lease:</strong> Select either <strong>Owns outright</strong> or <strong>Owns with a mortgage or loan</strong> depending on your circumstances. Whether or not you pay ground rent isn’t relevant to this question.</p>
+                                    <p><strong>Storage heaters:</strong> Choose Electric.</p>
+
+                                    <h2>Do not include:</h2>
+                                    <p><strong>Stoves, burners and open fires:</strong> If you have a fire in your living room not connected to any other rooms, don’t include it. Even though you may feel the benefit of the heat in another room, it’s not a system designed to heat multiple rooms.</p>
+
+                                    <p><strong>Plug-in heaters:</strong> This question is not asking about heaters that  that only warm one room.If you’re not sure, answer as best you can.</p>
                                    
                                    <div class="u-mb-m">
                                     {% from "components/panel/_macro.njk" import onsPanel %}
                                         {{ 
                                             onsPanel({
-                                                body: "<p><strong>House-sharing:</strong> You can fill in a personal form if you prefer to keep your answers private from other people who live at your home.</p>"
+                                                body: "<p>If you’re not sure how to answer, choose as best you can.</p>"
                                             }) 
                                         }}
                                     </div>
+
+                                    {#<div class="u-mb-m">
+                                    {% from "components/panel/_macro.njk" import onsPanel %}
+                                        {{ 
+                                            onsPanel({
+                                                body: "<p>If you prefer to keep your answers private from people you live with, you can <a href='#'>complete your own individual census form.</a></p>"
+                                            }) 
+                                        }}
+                                        </div>#}
                         </main>
                 </div>
                 <!--Right Sidbar-->

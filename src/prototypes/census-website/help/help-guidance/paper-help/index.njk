@@ -8,22 +8,26 @@ layout: census-website/views/_page
     "breadcrumbs": {
         "itemsList": [
             {
-                "url": '/prototypes/census-website/',
+                "url": '#',
                 "text": 'Home'
             },
             {
-                "url": '/prototypes/census-website/help/',
+                "url": '#',
                 "text": 'Help with your census'
-            },
+            }, 
             {
-                "url": '/prototypes/census-website/help/question-help.html',
-                "text": 'Help with the paper questions',
+                "url": '/prototypes/census-website/help/help-guidance/index.html',
+                "text": 'Help with the census questions'
+            }, 
+            {
+                "url": '',
+                "text": 'Help with your paper census questions',
                 "current": true
             }
         ]
     },
     "topPanel": {
-        "body": 'If you are completing the <strong>online</strong> version of the census questions <a href="question-help-online.html">see online census guidance here</a>.'
+        "body": 'If you are completing the <strong>online</strong> version of the census questions <a href="/prototypes/census-website/help/help-guidance/online-help/index.html">see online census guidance here</a>.'
     },
     "contentsList": {
         "ariaLabel": 'Links to page sections',
@@ -37,7 +41,7 @@ layout: census-website/views/_page
                     },
                     {
                         "url": '#household2',
-                        "text": 'Housing, sex and GI'
+                        "text": 'Housing'
                     }
                 ]
             },
@@ -67,7 +71,7 @@ layout: census-website/views/_page
 
 } %}
 {% block content %}
-    <h2>Household questions</h2>
+    <h2>(H) Household questions</h2>
     <h3 class="u-mt-m" id="household1">Household and who lives there</h3>
     {{ 
         onsList({
@@ -343,12 +347,12 @@ layout: census-website/views/_page
                 },
                 {
                     "url": '#',
-                    "text": 'Have your achieved a qualification at degree level or above?',
+                    "text": 'Have you achieved a qualification at degree level or above?',
                     "prefix": '30'
                 },
                 {
                     "url": '#',
-                    "text": 'ave you achieved any other qualifications?',
+                    "text": 'Have you achieved any other qualifications?',
                     "prefix": '31'
                 },
                 {

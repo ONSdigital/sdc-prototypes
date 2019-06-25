@@ -24,12 +24,16 @@ layout: census-website/views/_master
                                                 "text": 'Help with your census'
                                             },                                            
                                             {
-                                                "url": '/prototypes/census-website/help/question-help.html',
+                                                "url": '/prototypes/census-website/help/index.html',
                                                 "text": 'Help with the questions'
                                             },
                                             {
+                                                "url": '/prototypes/census-website/help/help-guidance/paper-help/index.html',
+                                                "text": 'Help with your paper census questions'
+                                            },
+                                            {
                                                 "url": '',
-                                                "text": '13. Can you understand, speak, read or write Welsh?',
+                                                "text": '27 - Is your gender the same as the sex you were registered at birth?',
                                                 "current": true
                                             }
                                         ]
@@ -39,36 +43,36 @@ layout: census-website/views/_master
                 <div class="grid">
                     <div class="grid__col col-7@m">
                         <main id="main-content" class=" {{ pageClasses }}">
-                                    <h1 class="u-mb-m">13. Can you understand, speak, read or write Welsh?</h1>
+                                    <h1 class="u-mb-m">27 - Is your gender the same as the sex you were registered at birth?</h1>
+                                    {#<div class="u-mb-m">
+                                    {% from "components/panel/_macro.njk" import onsPanel %}
+                                        {{ 
+                                            onsPanel({
+                                                body: "<p>If you’re not sure how to describe your accommodation, answer as best you can.</p>"
+                                            }) 
+                                        }}
+                                        </div>#}
                                     {% from "components/details/_macro.njk" import onsDetails %}
 
                                     {{
                                         onsDetails({
                                             "id": "details",
                                             "title": "Why we ask this question",
-                                            "classes": "u-mb-s",
-                                            "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur snint occaecat cupidatat</p>
-                                            <p> non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occat in culpa qui officia deserunt mollit anim id est laborum.</p>
-</p>",
+                                            "classes": "u-mb-m",
+                                            "content": "<p>We ask this question of people who are aged 16 years old and over.It’s up to you to decide your gender.  Choose what you think best suits you. This question is voluntary, so you can leave it blank if you prefer.</p>",
                                             "button": {
                                                 "close": "Hide this"
                                             }
                                         })
                                     }}
-                                    {% from "components/panel/_macro.njk" import onsPanel %}
-                                    {{ 
-                                        onsPanel({
-                                            "body": "<p>This question only applies to people living in Wales.</p>",
-                                            "classes": "u-mb-s"
-                                        }) 
-                                    }}
                                               
-                                    <p>It’s up to you to decide whether you’re able to understand spoken Welsh, or you can speak, read or write Welsh. Choose all the options you believe to be right for you. If you can’t do any of these things, select <strong>“None of the above”</strong>.</p> 
+                                    
 
-                                    <h3>For children and babies</h3>
-                                    <p>If a child is aged two years or under, you don’t need to answer this question for them.For those aged three years and above, only choose the option that show what they’re able to do <strong>now</strong>.</p>
+                                    <p>Gender is about your identity.</p>
+
+                                    <p>If your gender is the same as the sex recorded on your birth certificate when you were born, tick <strong>“Yes”</strong>.</p>
+
+                                    <p>If the answer is “No”, fill in the term you prefer to identify your current gender.</p> 
                                     
                         </main>
                 </div>

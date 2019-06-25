@@ -24,12 +24,16 @@ layout: census-website/views/_master
                                                 "text": 'Help with your census'
                                             },                                            
                                             {
-                                                "url": '/prototypes/census-website/help/question-help.html',
+                                                "url": '/prototypes/census-website/help/index.html',
                                                 "text": 'Help with the questions'
                                             },
                                             {
+                                                "url": '/prototypes/census-website/help/help-guidance/paper-help/index.html',
+                                                "text": 'Help with your paper census questions'
+                                            },
+                                            {
                                                 "url": '',
-                                                "text": 'H14 - In total, how many cars or vans are owned, or available for use, by members of this household?',
+                                                "text": 'H7 - What type of accommodation is this?',
                                                 "current": true
                                             }
                                         ]
@@ -39,15 +43,7 @@ layout: census-website/views/_master
                 <div class="grid">
                     <div class="grid__col col-7@m">
                         <main id="main-content" class=" {{ pageClasses }}">
-                                    <h1 class="u-mb-m">H14 - In total, how many cars or vans are owned, or available for use, by members of this household?</h1>
-                                    {#<div class="u-mb-m">
-                                    {% from "components/panel/_macro.njk" import onsPanel %}
-                                        {{ 
-                                            onsPanel({
-                                                body: "<p>If you’re not sure how to describe your accommodation, answer as best you can.</p>"
-                                            }) 
-                                        }}
-                                        </div>#}
+                                    <h1 class="u-mb-m">H7 - What type of accommodation is this?</h1>
                                     {% from "components/details/_macro.njk" import onsDetails %}
 
                                     {{
@@ -65,39 +61,58 @@ layout: census-website/views/_master
                                             }
                                         })
                                     }}
+                                    {#<div class="u-mb-m">
+                                    {% from "components/panel/_macro.njk" import onsPanel %}
+                                        {{ 
+                                            onsPanel({
+                                                body: "<p>If you’re not sure how to describe your accommodation, answer as best you can.</p>"
+                                            }) 
+                                        }}
+                                        </div>#}
                                               
                                     
-                                    <p>Enter a total number of cars or vans that this household owns or are available for use. </p>
-                                    <p>Include those that are owned or available to members of <strong>your</strong> household only. </p>
-                                    <p>For example, you can include vehicles owned or used by your lodger, but <strong>don’t</strong> include vehicles owned or used by a visitor to your household.</p> 
+                                    <p>Choose your type of accommodation. If it's not exactly one of these, select the closest.</p> 
 
-                                    <p>Also include:</p>
+                                    <h2>Whole house or bungalow</h2>
+                                    <p>This is a property that hasn't been divided into separate flats or other units of accommodation.</p>
+
+                                    <p>There are three types of whole house or bungalow:</p>
                                     
                                     <ul class="list">
-                                    <li>pick-ups, campervans and motorhomes</li>
-                                    <li>vehicles that are temporarily not working, even if they failed their MOT</li>
+                                    <li><strong>detatched:</strong> None of the living accommodation is attached to another property. It also includes houses or bungalows that are joined only by a garage.</li>
+                                    <li><strong>semi-detatched:</strong> A house or bungalow that's joined to another house or bungalow on one side only.</li>
+                                    <li><strong>terraced:</strong> A house in a row of at least three properties that share common walls. This includes end-of-terrace houses.</li>
                                     </ul>
 
-                                    <p>Don’t include:</p>
-                                    
+                                    <h2>Flat, maisonette or apartment</h2>
+                                    <p>There are three types of flat, maisonette or apartment:</p>                                    
                                     <ul class="list">
-                                    <li>motorbikes, trikes, quad bikes or mobility vehicles</li>
-                                    <li>vehicles that have a SORN (Statutory Off R-road Notification)</li>
+                                    <li><strong>in a purpose built block of flats or tenement:</strong> Your accommodation is part of a building that’s been designed for use as a block of flats. This includes buildings that were originally designed for another purpose, but have since been converted into flats or apartments, for example schools, churches or warehouses. It doesn’t include houses converted into flats</li>
+                                    <li><strong>part of a converted or shared house (including bedsits):</strong> A house that’s been altered or divided to provide separate accommodation (such as flats or bedsits) for a number of households</li>
+                                    <li><strong>in a commercial building (for example, in an office building, hotel or over a shop):</strong> The living accommodation is part of a building which isn’t only residential – it has another purpose</li>
                                     </ul>
 
-                                    <h2>Work vehicles</h2>
-                                   <p>Only include these in your total if you can drive them for private use (social, domestic or pleasure).</p>
-
+                                    <h2>Mobile or temporary structure</h2>
+                                    <p>This includes caravans, campervans, converted railway carriages, houseboats, mobile homes, trailers or any other mobile or temporary structure.
+                                    </p>
+                                   
                                    <div class="u-mb-m">
                                     {% from "components/panel/_macro.njk" import onsPanel %}
                                         {{ 
                                             onsPanel({
-                                                body: "<p>Vehicles should be <strong>available to your household</strong>. If they are kept at another address, not easily accessed, then do not include them.</p>"
+                                                body: "<p>If you’re not sure how to describe your accommodation, answer as best you can.</p>"
                                             }) 
                                         }}
                                     </div>
 
-                                    
+                                    {#<div class="u-mb-m">
+                                    {% from "components/panel/_macro.njk" import onsPanel %}
+                                        {{ 
+                                            onsPanel({
+                                                body: "<p>If you prefer to keep your answers private from people you live with, you can <a href='#'>complete your own individual census form.</a></p>"
+                                            }) 
+                                        }}
+                                        </div>#}
                         </main>
                 </div>
                 <!--Right Sidbar-->
@@ -106,6 +121,7 @@ layout: census-website/views/_master
                         <h3>Related content</h3>
                         <ul class="list list--bare">
                             <li><a href="#">About the census</a></li>
+                            <li><a href="#">What we ask you</a></li>
                             <li><a href="#">Help and support</a></li>
                             <li><a href="#">Contact us</a></li>
                         </ul>

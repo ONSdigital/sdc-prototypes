@@ -24,12 +24,16 @@ layout: census-website/views/_master
                                                 "text": 'Help with your census'
                                             },                                            
                                             {
-                                                "url": '/prototypes/census-website/help/question-help.html',
+                                                "url": '/prototypes/census-website/help/index.html',
                                                 "text": 'Help with the questions'
                                             },
                                             {
+                                                "url": '/prototypes/census-website/help/help-guidance/paper-help/index.html',
+                                                "text": 'Help with your paper census questions'
+                                            },
+                                            {
                                                 "url": '',
-                                                "text": '27 - Is your gender the same as the sex you were registered at birth?',
+                                                "text": '3 - What is your sex?',
                                                 "current": true
                                             }
                                         ]
@@ -39,7 +43,7 @@ layout: census-website/views/_master
                 <div class="grid">
                     <div class="grid__col col-7@m">
                         <main id="main-content" class=" {{ pageClasses }}">
-                                    <h1 class="u-mb-m">27 - Is your gender the same as the sex you were registered at birth?</h1>
+                                    <h1 class="u-mb-m">3 - What is your sex?</h1>
                                     {#<div class="u-mb-m">
                                     {% from "components/panel/_macro.njk" import onsPanel %}
                                         {{ 
@@ -55,20 +59,25 @@ layout: census-website/views/_master
                                             "id": "details",
                                             "title": "Why we ask this question",
                                             "classes": "u-mb-m",
-                                            "content": "<p>We ask this question of people who are aged 16 years old and over.It’s up to you to decide your gender.  Choose what you think best suits you. This question is voluntary, so you can leave it blank if you prefer.</p>",
+                                            "content": "<p>Because sex and gender are not the same. Society has recognised that services must be designed to support the trans population. The scale of the demand is not yet understood because the trans population has never before been reliably measured. That is why we have included a question about gender later in this census.</p>
+</p>",
                                             "button": {
                                                 "close": "Hide this"
                                             }
                                         })
                                     }}
                                               
-                                    
+                                    <p>Select either <strong>“Female”</strong> or <strong>“Male”</strong>  
 
-                                    <p>Gender is about your identity.</p>
+                                    <p>If your gender is different from your sex registered at birth, the answer you provide doesn’t need to be the same as your birth certificate.  Also, you don’t need a Gender Recognition Certificate (GRC).</p>
 
-                                    <p>If your gender is the same as the sex recorded on your birth certificate when you were born, tick <strong>“Yes”</strong>.</p>
+                                    <p>If you’re not sure how to answer, for example you are intersex, you could use the sex registered on your official documents, such as passport or driving licence, or whichever answer you prefer.</p>
 
-                                    <p>If the answer is “No”, fill in the term you prefer to identify your current gender.</p> 
+                                    <p>If you consider intersex to be your identity, then you can record this at a later question on gender.</p> 
+
+                                    <h2>Answering on behalf of someone else</h2>
+                                    <p>If you’re answering for someone else, where possible you should ask them how they want to answer. If they’re away, select the answer you think they would choose. You don’t need to know whether they have a Gender Recognition Certificate.</p>
+
                                     
                         </main>
                 </div>

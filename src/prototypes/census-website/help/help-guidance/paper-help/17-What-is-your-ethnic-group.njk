@@ -24,12 +24,16 @@ layout: census-website/views/_master
                                                 "text": 'Help with your census'
                                             },                                            
                                             {
-                                                "url": '/prototypes/census-website/help/question-help.html',
+                                                "url": '/prototypes/census-website/help/index.html',
                                                 "text": 'Help with the questions'
                                             },
                                             {
+                                                "url": '/prototypes/census-website/help/help-guidance/paper-help/index.html',
+                                                "text": 'Help with your paper census questions'
+                                            },
+                                            {
                                                 "url": '',
-                                                "text": '3 - What is your sex?',
+                                                "text": '17 - What is your ethnic group?',
                                                 "current": true
                                             }
                                         ]
@@ -39,7 +43,7 @@ layout: census-website/views/_master
                 <div class="grid">
                     <div class="grid__col col-7@m">
                         <main id="main-content" class=" {{ pageClasses }}">
-                                    <h1 class="u-mb-m">3 - What is your sex?</h1>
+                                    <h1 class="u-mb-m">17 - What is your ethnic group?</h1>
                                     {#<div class="u-mb-m">
                                     {% from "components/panel/_macro.njk" import onsPanel %}
                                         {{ 
@@ -55,7 +59,10 @@ layout: census-website/views/_master
                                             "id": "details",
                                             "title": "Why we ask this question",
                                             "classes": "u-mb-m",
-                                            "content": "<p>Because sex and gender are not the same. Society has recognised that services must be designed to support the trans population. The scale of the demand is not yet understood because the trans population has never before been reliably measured. That is why we have included a question about gender later in this census.</p>
+                                            "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur snint occaecat cupidatat</p>
+                                            <p> non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occat in culpa qui officia deserunt mollit anim id est laborum.</p>
 </p>",
                                             "button": {
                                                 "close": "Hide this"
@@ -63,18 +70,29 @@ layout: census-website/views/_master
                                         })
                                     }}
                                               
-                                    <p>Select either <strong>“Female”</strong> or <strong>“Male”</strong>  
+                                    <p>It’s up to you how you answer this question. Your ethnic group could be your cultural or family background. First, choose the group that best describes you:</p> 
 
-                                    <p>If your gender is different from your sex registered at birth, the answer you provide doesn’t need to be the same as your birth certificate.  Also, you don’t need a Gender Recognition Certificate (GRC).</p>
+                                    <ul class="list">
+                                        <li>White</li>
+                                        <li>Mixed or Multiple ethnic groups</li>
+                                        <li>Asian or Asian British</li>
+                                        <li>Black, Black British, Caribbean or African</li>
+                                        <li>Other ethnic group</li>
+                                    </ul>
 
-                                    <p>If you’re not sure how to answer, for example you are intersex, you could use the sex registered on your official documents, such as passport or driving licence, or whichever answer you prefer.</p>
-
-                                    <p>If you consider intersex to be your identity, then you can record this at a later question on gender.</p> 
-
-                                    <h2>Answering on behalf of someone else</h2>
-                                    <p>If you’re answering for someone else, where possible you should ask them how they want to answer. If they’re away, select the answer you think they would choose. You don’t need to know whether they have a Gender Recognition Certificate.</p>
-
+                                    <p>Then choose one option within that group.</p>
+                                    <h2>If your ethnic group isn’t listed</h2>
+                                    <p>If there isn't an option that describes your ethnic group, choose the “Any other ethnic group” option and enter your ethnic group in the space provided.</p>
                                     
+                                    <hr class="footer__hr u-mb-s u-mt-s" style="margin-bottom: 0;">
+                                    <h3>See repeating information for:</h3>
+                                    <ul class="list list--bare">
+                                        <li>- <a href="">Don’t want to share a form with your household?</a></li>
+                                        <li>- <a href="">Confidentiality</a></li>
+                                        <li>- <a href="">Answering for someone else</a></li>
+                                        <li>- <a href="">Completing online (add in ‘ethnic group’)</a></li>
+                                        <li>- <a href="">Completing on paper</a></li>
+                                    </ul>
                         </main>
                 </div>
                 <!--Right Sidbar-->

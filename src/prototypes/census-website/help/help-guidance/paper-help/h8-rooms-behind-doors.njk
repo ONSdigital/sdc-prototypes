@@ -9,7 +9,8 @@ layout: census-website/views/_master
 
 {% block page %}
 <div class="page__container container {{ containerClasses }}">
-                        <div class="col-7@m">
+            <div class="grid">
+                <div class="grid__col col-7@m">
                             {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
                                 {{ 
                                     onsBreadcrumb({
@@ -24,23 +25,36 @@ layout: census-website/views/_master
                                                 "text": 'Help with your census'
                                             },                                            
                                             {
-                                                "url": '/prototypes/census-website/help/question-help.html',
+                                                "url": '/prototypes/census-website/help/index.html',
                                                 "text": 'Help with the questions'
                                             },
                                             {
+                                                "url": '/prototypes/census-website/help/help-guidance/paper-help/index.html',
+                                                "text": 'Help with your paper census questions'
+                                            },
+                                            {
                                                 "url": '',
-                                                "text": 'H7 - What type of accommodation is this?',
+                                                "text": 'H8 - Are all the rooms in this accommodation, including the kitchen, bathroom and toilet, behind a door that only this household can use?',
                                                 "current": true
                                             }
                                         ]
                                     }) 
                                 }}
                                 </div>
+                                </div>
                 <div class="grid">
                     <div class="grid__col col-7@m">
                         <main id="main-content" class=" {{ pageClasses }}">
-                                    <h1 class="u-mb-m">H7 - What type of accommodation is this?</h1>
-                                    {% from "components/details/_macro.njk" import onsDetails %}
+                                    <h1 class="u-mb-m">H8 - Are all the rooms in this accommodation, including the kitchen, bathroom and toilet, behind a door that only this household can use?</h1>
+                                    {#<div class="u-mb-m">
+                                    {% from "components/panel/_macro.njk" import onsPanel %}
+                                        {{ 
+                                            onsPanel({
+                                                body: "<p>If you’re not sure how to describe your accommodation, answer as best you can.</p>"
+                                            }) 
+                                        }}
+                                        </div>#}
+                                                                        {% from "components/details/_macro.njk" import onsDetails %}
 
                                     {{
                                         onsDetails({
@@ -56,47 +70,21 @@ layout: census-website/views/_master
                                                 "close": "Hide this"
                                             }
                                         })
-                                    }}
-                                    {#<div class="u-mb-m">
-                                    {% from "components/panel/_macro.njk" import onsPanel %}
-                                        {{ 
-                                            onsPanel({
-                                                body: "<p>If you’re not sure how to describe your accommodation, answer as best you can.</p>"
-                                            }) 
-                                        }}
-                                        </div>#}
-                                              
+                                    }}          
                                     
-                                    <p>Choose your type of accommodation. If it's not exactly one of these, select the closest.</p> 
+                                    <p>Select <strong>“No”</strong> if you have to <strong>share</strong> any rooms with another household, for example a communal kitchen.</p> 
 
-                                    <h2>Whole house or bungalow</h2>
-                                    <p>This is a property that hasn't been divided into separate flats or other units of accommodation.</p>
+                                    <p>Select <strong>"No"</strong> if you have to <strong>cross a space</strong> used by another household, for example crossing a landing to use your bathroom.</p> 
 
-                                    <p>There are three types of whole house or bungalow:</p>
+                                    <p>Select <strong>"Yes"</strong> if all of the rooms are used only by this household, for example your flat has a front door and all the rooms you use are behind that front door.</p> 
+
                                     
-                                    <ul class="list">
-                                    <li><strong>detatched:</strong> None of the living accommodation is attached to another property. It also includes houses or bungalows that are joined only by a garage.</li>
-                                    <li><strong>semi-detatched:</strong> A house or bungalow that's joined to another house or bungalow on one side only.</li>
-                                    <li><strong>terraced:</strong> A house in a row of at least three properties that share common walls. This includes end-of-terrace houses.</li>
-                                    </ul>
-
-                                    <h2>Flat, maisonette or apartment</h2>
-                                    <p>There are three types of flat, maisonette or apartment:</p>                                    
-                                    <ul class="list">
-                                    <li><strong>in a purpose built block of flats or tenement:</strong> Your accommodation is part of a building that’s been designed for use as a block of flats. This includes buildings that were originally designed for another purpose, but have since been converted into flats or apartments, for example schools, churches or warehouses. It doesn’t include houses converted into flats</li>
-                                    <li><strong>part of a converted or shared house (including bedsits):</strong> A house that’s been altered or divided to provide separate accommodation (such as flats or bedsits) for a number of households</li>
-                                    <li><strong>in a commercial building (for example, in an office building, hotel or over a shop):</strong> The living accommodation is part of a building which isn’t only residential – it has another purpose</li>
-                                    </ul>
-
-                                    <h2>Mobile or temporary structure</h2>
-                                    <p>This includes caravans, campervans, converted railway carriages, houseboats, mobile homes, trailers or any other mobile or temporary structure.
-                                    </p>
                                    
                                    <div class="u-mb-m">
                                     {% from "components/panel/_macro.njk" import onsPanel %}
                                         {{ 
                                             onsPanel({
-                                                body: "<p>If you’re not sure how to describe your accommodation, answer as best you can.</p>"
+                                                body: "<p>If you’re not sure how to answer, choose as best you can.</p>"
                                             }) 
                                         }}
                                     </div>

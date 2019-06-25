@@ -35,69 +35,47 @@ layout: census-website/views/_master
                                             "text": 'Home'
                                         },
                                         {
+                                                "url": '/prototypes/census-website/help/index.html',
+                                                "text": 'Help with your census'
+                                            }, 
+                                        {
                                             "url": '',
-                                            "text": 'Help with your census',
+                                            "text": 'Help with the census questions',
                                             "current": true
                                         }
                                     ]
                                 }) 
                             -}}
-                            <h1 class="u-fs-xxl u-mt-l@m">Help with your census</h1>
+                            <h1 class="u-fs-xxl u-mt-l@m col-8@m">Help with the census questions</h1>
                             
                         </div>
                     </div>
                 
                 <div class="container">
                 <div class="grid grid--flex grid--column@xs@s u-mt-l">
-                    <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
-                        {{-
-                            onsCard({
-                                "title": 'Getting started',
-                                "url": '/prototypes/census-website/help/getting-started/',
-                                "text": "Who should fill it in, what you need to get started, what to do if you don't have an access code."
-                              
-                            })
-                        }}
-                    </div>
-                    <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
+                    <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-4@m col-12@xs@s">
                         {{- 
                             onsCard({
                                 "classes": 'u-fs-r',
-                                "title": 'Help with the questions',
-                                "url": '/prototypes/census-website/help/help-guidance/index.html',
-                                "text": 'Guidance on how to answer the census questions.',
-                                "itemsList": [
-                                    {
-                                        "url": '/prototypes/census-website/help/help-guidance/online-help/index.html',
-                                        "text": 'Online survey'
-                                    },
-                                    {
-                                        "url": '/prototypes/census-website/help/help-guidance/paper-help/index.html',
-                                        "text": 'Paper questionnaire'
-                                    }
-                                ]                                
+                                "title": 'Help with your paper census questions',
+                                "url": '/prototypes/census-website/help/help-guidance/paper-help/index.html',
+                                "text": 'Guidance on how to answer your paper census questions.'
+                                                               
                             })
                         }}
                     </div>
-                    <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
-                        {{-
+                    <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-4@m push-1@m col-12@xs@s">
+                        {{- 
                             onsCard({
-                                "title": 'Finding support to complete your census',
-                                "url": '/prototypes/census-website/help/finding-support-to-complete-your-census/',
-                                "text": 'You can get help from a friend or neighbour, or one of our advisors face-to-face or over the phone.',
-                                "itemsList": [
-                                    {
-                                        "url": '/prototypes/census-website/help/finding-support-to-complete-your-census/help-centres/',
-                                        "text": 'Help centres'
-                                    },
-                                    {
-                                        "url": '/prototypes/census-website/help/finding-support-to-complete-your-census/helping-someone-else/',
-                                        "text": 'Helping someone else fill in their census'
-                                    }
-                                ]
+                                "classes": 'u-fs-r',
+                                "title": 'Help with your online census questions',
+                                "url": '/prototypes/census-website/help/help-guidance/online-help/index.html',
+                                "text": 'Guidance on how to answer your online census questions.'
+                                                               
                             })
-                        }}                        
-                    </div> 
+                        }}
+                    </div>
+                    
 
                     
                 </div>
