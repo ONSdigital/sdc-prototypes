@@ -1,0 +1,178 @@
+---
+title: Select your address
+group: Census
+version: 9.1.0
+layout: rh-census/views/_master
+---
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/select/_macro.njk" import onsSelect %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action": "/prototypes/rh-census/confirm-address.html"
+    }
+} %}
+
+{% block main %}
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/confirm-address.html">Previous</a>
+    {% call onsQuestion({
+        "title": "Select your address",
+        "useFieldset": true
+    }) %}
+
+    <h4 class="u-mb-no"><span class="u-vh">The </span>Postcode <span class="u-vh">you have entered is</span></h4>
+    <p>NP10 8XG <a href="/prototypes/rh-census/address-non-enhanced.html" class="u-ml-s">Change <span class="u-vh">to a different postcode</span></a></p>
+
+    {% from "components/select/_macro.njk" import onsSelect %}
+    {{ 
+        onsSelect({
+            "id": "select",
+            "name": "select",
+            "label": {
+                "text": "Select address"
+            },
+            "options": [
+                {
+                    "value": "",
+                    "text": "48 addresses found",
+                    "disabled": true,
+                    "selected": true
+                },
+                {
+                    "value": "1",
+                    "text": "392 Springfield Road, WATFORD WD85 1UK"
+                },
+                {
+                    "value": "2",
+                    "text": "38 North Street, FALKIRK FK71 4ND"
+                },
+                {
+                    "value": "3",
+                    "text": "8 Green Lane, SHREWSBURY SY25 1GQ"
+                },
+                {
+                    "value": "4",
+                    "text": "37 North Road, NEWCASTLE UPON TYNE NE11 7ZY"
+                },
+                {
+                    "value": "5",
+                    "text": "853 Alexander Road, BATH BA53 1LO"
+                },
+                {
+                    "value": "6",
+                    "text": "9885 Kings Road, DARTFORD DA94 4BR"
+                },
+                {
+                    "value": "7",
+                    "text": "7071 Kingsway, PERTH PH92 9YO"
+                },
+                {
+                    "value": "8",
+                    "text": "54 Grange Road, WALSALL WS76 8HM"
+                },
+                {
+                    "value": "8",
+                    "text": "53 High Street, NORTH WEST LONDON NW20 5KW"
+                },
+                {
+                    "value": "9",
+                    "text": "7501 Mill Road, GUILDFORD GU19 2WC"
+                },
+                {
+                    "value": "10",
+                    "text": "6 Park Road, KINGSTON UPON THAMES KT86 1WF"
+                },
+                {
+                    "value": "11",
+                    "text": "370 The Green, NEWPORT NP31 5EX"
+                },
+                {
+                    "value": "12",
+                    "text": "41 Park Avenue, DUMFRIES DG48 8IA"
+                },
+                {
+                    "value": "13",
+                    "text": "303 Queensway, HARROGATE HG2 4KA"
+                },
+                {
+                    "value": "14",
+                    "text": "221 Queen Street, DUDLEY DY86 0TL"
+                },
+                {
+                    "value": "1",
+                    "text": "392 Springfield Road, WATFORD WD85 1UK"
+                },
+                {
+                    "value": "2",
+                    "text": "38 North Street, FALKIRK FK71 4ND"
+                },
+                {
+                    "value": "3",
+                    "text": "8 Green Lane, SHREWSBURY SY25 1GQ"
+                },
+                {
+                    "value": "4",
+                    "text": "37 North Road, NEWCASTLE UPON TYNE NE11 7ZY"
+                },
+                {
+                    "value": "5",
+                    "text": "853 Alexander Road, BATH BA53 1LO"
+                },
+                {
+                    "value": "6",
+                    "text": "9885 Kings Road, DARTFORD DA94 4BR"
+                },
+                {
+                    "value": "7",
+                    "text": "7071 Kingsway, PERTH PH92 9YO"
+                },
+                {
+                    "value": "8",
+                    "text": "54 Grange Road, WALSALL WS76 8HM"
+                },
+                {
+                    "value": "8",
+                    "text": "53 High Street, NORTH WEST LONDON NW20 5KW"
+                },
+                {
+                    "value": "9",
+                    "text": "7501 Mill Road, GUILDFORD GU19 2WC"
+                },
+                {
+                    "value": "10",
+                    "text": "6 Park Road, KINGSTON UPON THAMES KT86 1WF"
+                },
+                {
+                    "value": "11",
+                    "text": "370 The Green, NEWPORT NP31 5EX"
+                },
+                {
+                    "value": "12",
+                    "text": "41 Park Avenue, DUMFRIES DG48 8IA"
+                },
+                {
+                    "value": "13",
+                    "text": "303 Queensway, HARROGATE HG2 4KA"
+                },
+                {
+                    "value": "14",
+                    "text": "221 Queen Street, DUDLEY DY86 0TL"
+                }
+            ]
+        })
+    }}
+    
+    {% endcall %}
+
+    <p class="u-mt-l"><a href="#">I can't find my address in the list</a></p>
+    
+    {{
+        onsButton({
+            "text": "Continue",
+            "classes": "u-mt-l"
+        })
+    }}
+    
+{% endblock %}
