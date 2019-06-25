@@ -13,6 +13,7 @@ version: 9.0.0
 {% from "prototypes/census-website/components/lists/_macro.njk" import onsList %}
 
 {% block page %}
+{% set pageClasses = "page__main" %}
 {{-
     onsCallToAction({
         "headingText": "Ready to start your census?",
