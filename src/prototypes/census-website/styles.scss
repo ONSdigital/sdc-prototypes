@@ -2,6 +2,10 @@
 
 $purple: #93328e;
 
+.grid--loose {
+  margin-left: -2rem; /* Remove after Design system issue #467 has been resolved */
+}
+
 .header__bottom {
   background: $purple;
 }
