@@ -1,0 +1,101 @@
+---
+version: 10.0.0
+layout: census-website/views/_page
+---
+
+{% set content = { 
+    "title": 'Getting started',
+    "sectionTitle": "Completing online",
+    "breadcrumbs": {
+        "itemsList": [
+            {
+                "url": '/prototypes/census-website/',
+                "text": 'Home'
+            },
+            {
+                "url": '/prototypes/census-website/help/',
+                "text": 'Help with your census'
+            },
+            {
+                "text": 'Completing online',
+                "current": true
+            }
+        ]
+    },
+    "contentsList": {
+        "ariaLabel": 'Pages in this guide',
+        "lists": [
+            {
+                "itemsList": [
+                    {
+                        "text": 'Overview',
+                        "url": '/prototypes/census-website/help/getting-started/'
+                    },
+                    {
+                        "text": 'How long will it take?',
+                        "url": '/prototypes/census-website/help/getting-started/how-long-will-it-take.html'
+                    },                          
+                    {
+                        "text": 'Completing online',
+                        "url": '/prototypes/census-website/help/getting-started/completing-online.html',
+                        "current": true                        
+                    },        
+                    {
+                        "text": 'Completing on paper',
+                        "url": '/prototypes/census-website/help/getting-started/completing-on-paper.html'
+                    },
+                    {
+                        "text": 'Who should complete the census',                        
+                        "url": '/prototypes/census-website/help/getting-started/who-should-do-it.html'
+                    },
+                    {
+                        "text": 'When to complete the census',                        
+                        "url": '/prototypes/census-website/help/getting-started/when-should-i-do-it.html'
+                    }
+                ]
+            }
+        ]
+    },
+    "contentPagination": {
+        "contentPaginationItems": [
+            {
+                "rel": 'next',
+                "text": 'Next',
+                "url": '/prototypes/census-website/help/getting-started/whats-on-the-form.html',
+                "label": 'What’s on the form?'
+            }
+        ]
+    }    
+} %}
+
+{% block content %}
+    <h2>What devices can I use?</h2>
+        <p>You can fill in the census rehearsal on a smartphone, laptop, tablet or PC.</p>
+    <h2>I have problems with my access code</h2>
+        <p>First, check you’ve entered the code correctly. You’ll find it on the letter we sent you. It’s not case sensitive and is made up of a mix of 16 letters and numbers.</p> 
+        <p>If you received a paper form – either a “Household questionnaire” or an “Individual questionnaire” - and you’d rather complete online, the code is printed on the top right-hand side of the form.</p>
+        <p>If you’ve tried a few times and it still doesn’t work, please request a new code.</p>
+        <p>If you can’t find your letter, request a new code.</p>
+    <h2>I have problems with my device or coverage</h2>
+        <p>If you have problems with your smartphone, laptop, tablet or PC, you can:</p>
+        <ul>
+            <li>use someone else’s smartphone or other device</li>
+            <li>attend one of our <a href="/prototypes/census-website/help/finding-support-to-complete-the-census">local venues</a> where staff can help you fill in online</li>
+            <li>use a public computer, for example in a library</li>
+        </ul>
+    <h2>I have problems with my online form</h2>
+        <h3>Timing out</h3>
+        <p>The form will time out after 45 minutes if you haven’t saved in that time. If nothing has been done with the form for a while, it may time out sooner. This is for the safety of your information.</p>
+        <h3>Crashing while filling it in</h3>
+            <p>Don’t worry. You can go back into the form using your unique access code.</p>
+            <p>The information you entered on all previous pages will have been saved. But you’ll have to enter the information again on the page that crashed.</p>
+            <p>If your form keeps on crashing, please <a href="/prototypes/census-website/contact/">contact us.</a></p>
+    <h2>I have more than one code - which do I use?</h2>
+        <p>You can use any code you receive. Just destroy the ones you don’t use.</p>
+        <p>Whichever code you use, you need to use the same code when returning to an online form you’ve already started.</p>
+        <p>If you have received a letter that has a different address to yours, please put it in a post box so it can get to the right person.</p>
+    <h2>I've submitted my form and things have changed</h2>
+        <code class="u-mb-m">Content missing from referenced CODEX</code>
+    <h2>The address on my letter is wrong</h2>
+        <code class="u-mb-m">Content missing from referenced CODEX</code>
+{% endblock %}

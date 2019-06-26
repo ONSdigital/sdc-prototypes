@@ -1,0 +1,114 @@
+---
+version: 10.0.0
+layout: census-website/views/_page
+---
+
+{% set content = { 
+    "title": 'Getting started',
+    "sectionTitle": "Completing on paper",
+    "breadcrumbs": {
+        "itemsList": [
+            {
+                "url": '/prototypes/census-website/',
+                "text": 'Home'
+            },
+            {
+                "url": '/prototypes/census-website/help/',
+                "text": 'Help with your census'
+            },
+            {
+                "text": 'Completing on paper',
+                "current": true
+            }
+        ]
+    },
+    "contentsList": {
+        "ariaLabel": 'Pages in this guide',
+        "lists": [
+            {
+                "itemsList": [
+                    {
+                        "text": 'Overview',
+                        "url": '/prototypes/census-website/help/getting-started/'
+                    },
+                    {
+                        "text": 'How long will it take?',
+                        "url": '/prototypes/census-website/help/getting-started/how-long-will-it-take.html'
+                    },                          
+                    {
+                        "text": 'Completing online',
+                        "url": '/prototypes/census-website/help/getting-started/completing-online.html'
+                    },        
+                    {
+                        "text": 'Completing on paper',
+                        "url": '/prototypes/census-website/help/getting-started/completing-on-paper.html',
+                        "current": true                        
+                    },
+                    {
+                        "url": '/prototypes/census-website/help/getting-started/who-should-do-it.html',
+                        "text": 'Who should complete the census'
+                    },
+                    {
+                        "url": '/prototypes/census-website/help/getting-started/when-should-i-do-it.html',
+                        "text": 'When to complete the census'
+                    }
+                ]
+            }
+        ]
+    },
+    "contentPagination": {
+        "contentPaginationItems": [
+            {
+                "rel": 'next',
+                "text": 'Next',
+                "url": '/prototypes/census-website/help/getting-started/whats-on-the-form.html',
+                "label": 'What’s on the form?'
+            }
+        ]
+    }    
+} %}
+
+{% block content %}
+    <h2>My address is wrong on the form</h2>
+        <p>Please write your correct address in the space provided on the form. Then return the whole form to us in the pre-paid envelope provided.</p>
+    <h2>I have two forms. Which do I use?</h2>
+        <p>You can use either form. It would be helpful if you could <a href="/prototypes/census-website/contact/">call our Contact Centre</a> to let them know you’ve received more than one form at your address, so they can amend our records.</p>
+        <p>You can then recycle the spare form, but remember to remove the front page with your details on first. Or you can hand it to a member of our staff if you prefer.</p>
+    <h2>Mistakes and changes</h2>
+        <h3>I’ve made a mistake on my form. What do I do?</h3>
+            <p>Don’t worry if you’ve spelt something wrong. You can correct mistakes on your paper form. Block out the box with the mistake and carry on writing in the next box.</p>
+            <p>If you’ve already posted the form back to us, we cannot return it to you. Please don’t worry. </p>
+            <p>For bigger mistakes, you could ask for a replacement form if you prefer, but you’d need to start again from the beginning.</p>
+        <h3>I’ve missed someone from my form. What do I do?</h3>
+            <p>If you’ve accidentally missed someone from your form and already sent it back, you can ask for a continuation form for you or them to complete. </p>
+            <p>Please return this in the separate envelope provided.</p>
+        <h3>I’ve returned my form, but something’s changed. Can I change my answers?</h3>
+            <p>No, but please don’t worry. You don’t need to tell us about any changes. Once you’ve posted your form back to us, it can’t be changed.</p>
+ <h2>How many people can I fit on a paper form?</h2>
+        <p>Up to five people. If there are more people in your household, you can do it online or <a href="/prototypes/census-website/contact/">order a continuation form.</a></p>
+    <h2>I can’t get to a post box</h2>
+        <p>You can:</p>
+        <ul>
+            <li>ask someone to post it for you; make sure the envelope is sealed</li>
+            <li>hand your completed form to our staff if they call at your home<br>
+            or</li>
+            <li>call us to see if someone can collect it</li>
+        </ul>
+    <h2>Tips for filling in a paper form</h2>
+    <ul>
+        <li>Write your answers in blue or black ink</li>
+        <li>Include everyone living or staying at your household on the rehearsal night of Sunday 13 October 2019</li>
+        <li>Use capital letters, or tick the boxes as instructed</li>
+        <li>Use one character for each box</li>
+        <li>You can shorten words, for example “Rd” for “Road” or “St” for “Street”; give as much detail as you can</li>
+    </ul>
+    <h2>Tips for returning paper forms</h2>
+    <ul>
+        <li>Check you’ve signed the declaration on page one</li>
+        <li><strong>Do not send us anything else</strong> – only your completed form</li>
+        <li>Use the pre-paid envelope you received with the form</li>
+        <li>Ensure the return address is clearly visible through the envelope window</li>
+        <li>Post your form back to us <strong>as soon as you can</strong></li>
+    </ul> 
+
+{% endblock %}
