@@ -1,5 +1,5 @@
 ---
-version: 9.0.0
+version: 10.0.0
 layout: census-website/views/_page
 ---
 
@@ -28,25 +28,29 @@ layout: census-website/views/_page
         ]
     },
     "contentsList": {
-        "itemsList": [
+        "lists": [
             {
-                "text": 'Overview',
-                "url": '/prototypes/census-website/help/finding-support-to-complete-your-census/'
-            },
-            {
-                "text": 'Help centres',
-                "url": '/prototypes/census-website/help/finding-support-to-complete-your-census/help-centres/'
-            },
-            {
-                "current": true,
-                "text": 'Helping someone else fill in their census'
+                "itemsList": [
+                    {
+                        "text": 'Overview',
+                        "url": '/prototypes/census-website/help/finding-support-to-complete-your-census/'
+                    },
+                    {
+                        "text": 'Help centres',
+                        "url": '/prototypes/census-website/help/finding-support-to-complete-your-census/help-centres/'
+                    },
+                    {
+                        "current": true,
+                        "text": 'Helping someone else fill in their census'
+                    }
+                ]
             }
         ]
     },
     "contentPagination": {
         "contentPaginationItems": [
             {
-                "rel": 'previous',
+                "rel": 'prev',
                 "text": 'Previous',
                 "url": '/prototypes/census-website/help/finding-support-to-complete-your-census/help-centres/',
                 "label": 'Help centres'

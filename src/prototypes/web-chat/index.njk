@@ -1,0 +1,35 @@
+---
+title: Web Chat
+group: Web Chat
+version: 7.0.0
+layout: web-chat/views/_master
+---
+{#{% from "prototypes/rh-census/components/uac-entry/_macro.njk" import onsUACEntry %}#}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/select/_macro.njk" import onsSelect %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action": "#"
+    }
+} %}
+
+{% block main %}
+    <h1> Webchat call-to-actions and form popup</h1>
+
+    <p>Examples of dynamic webchat content that will set user expectations when on the campaign site contact page - other contact information such as 'call us on...' etc will be on there too.</p>
+    <p><a href="{{ pageInfo.rootPath }}/adviser-available.html">Advisers available</a></p>
+    <p><a href="{{ pageInfo.rootPath }}/adviser-not-available-busy.html">Advisers not available / busy</a></p>
+    <p><a href="{{ pageInfo.rootPath }}/contact-centre-closed.html">Contact centre closed</a></p>
+    <p><a href="{{ pageInfo.rootPath }}/technical-issues.html">There's technical / JS / browser issues</a></p>
+    <p>The chat <a href="{{ pageInfo.rootPath }}/chat-form-full-list.html" onclick="window.open(this.href,'targetWindow','toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=360,height=680'); return false;">form popup window</a> from these views are <strong>based on the initial requirements</strong> but using radio buttons instead of select dropdowns.</p>
+
+    <h2>Recommendation</h2>
+    <p><a href="{{ pageInfo.rootPath }}/chat-form-recommended.html" onclick="window.open(this.href,'targetWindow','toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=360,height=680'); return false;">View recommended chat form prototype</a></p>
+    <p>Advise to research and investigate the need in requiring the language and list of query types for the user to select.</p>
+    <p>Best practice would be to follow the question protocol and allow the user to provide their initial question in the webchat form which will be passed in to the web chat conversation.</p>
+    <p>The users prefered language would be determined by the language they have toggled / selected when navigating the census campaign site.</p>
+    
+{% endblock %}

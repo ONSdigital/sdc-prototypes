@@ -1,0 +1,44 @@
+---
+version: 10.0.0
+layout: census-website/views/_page
+---
+
+{% set content = { 
+    "title": 'Case study A',
+    "breadcrumbs": {
+        "itemsList": [
+            {
+                "url": '/prototypes/census-website/',
+                "text": 'Home'
+            },
+            {
+                "url": '/prototypes/census-website/help/',
+                "text": 'Help with your census'
+            },
+            {
+                "url": '/prototypes/census-website/help/getting-started/',
+                "text": 'Case study A',
+                "current": true
+            }
+        ]
+    }
+} %}
+
+{% block content %}
+    <div class="u-mb-m">
+        <img src="img/bristol.jpg" width="" alt="group image">
+    </div>
+    
+    <blockquote>We in Early Years would be pretty much lost without Lower Super Output Area (LSOA) census data.</blockquote>
+    
+    <p>Bristol City Council works with its partners through the Children and Young People’s Trust, to deliver a wide range of services. From education, health and welfare, to youth services and play, our services support the 92,000 children and young people in Bristol and their families.</p>
+    <p>Census data is vital for delivering these council services effectively. For example, the Council's Early Years, Children and Young People’s Services uses lower super output area (LSOA) data from the census together with the Income Deprivation Affecting Children Index (IDACI), which is an index of deprivation measuring the local area’s proportion of children under the age of 16 that live in low income households, to prioritise initiatives and funding.</p>
+    
+    <p>Specifically, the Early Years, Children and Young People’s Services uses:</p>
+    <ul class="list">
+        <li>LSOA census population estimates with IDACI to allocate around 85% of all Children Centre funding in a targeted way,</li>
+        <li>IDACI by LSOA to allocate deprivation supplements to providers of the free early education entitlement for three and four year olds,</li>
+        <li>LSOA census population estimates to ensure sufficient childcare is available, assess take up of Children Centre services, aid in developing/managing the childcare market and plan for the implementation of the free entitlement for two year olds (all statutory duties).</li>
+
+    </ul>
+{% endblock %}

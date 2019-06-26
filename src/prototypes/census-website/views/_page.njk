@@ -1,22 +1,25 @@
 ---
-version: 9.0.0
+version: 10.0.0
 ---
 {% extends "prototypes/census-website/views/_master.njk" %}
 
 {% from "components/card/_macro.njk" import onsCard %}
 {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
-{% from "prototypes/census-website/components/call-to-action/_macro.njk" import onsCallToAction %}
-{% from "prototypes/census-website/components/content-list/_macro.njk" import onsContentList %}
-{% from "prototypes/census-website/components/content-pagination/_macro.njk" import onsContentPagination %}
-{% from "prototypes/census-website/components/related-list/_macro.njk" import onsRelatedList %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+{% from "components/call-to-action/_macro.njk" import onsCallToAction %}
+{% from "components/toc/_macro.njk" import onsTableOfContents %}
+{% from "components/content-pagination/_macro.njk" import onsContentPagination %}
+{% from "components/related-links/_macro.njk" import onsRelatedLinks %}
+{% from "components/lists/_macro.njk" import onsList %}
 
 {% block page %}
+{% set pageClasses = "page__main" %}
 {{-
     onsCallToAction({
-        "headingText": "Ready to start your census survey?",
+        "headingText": "Ready to start your census?",
         "paragraphText": "You'll need the access code from the letter we sent you.",
         "button": {
-            "text": "Start survey",
+            "text": "Start census",
             "classes": 'btn--small',
             "url": "https://sdc-prototypes.netlify.com/prototypes/rh-census/home.html"
         }
@@ -29,16 +32,26 @@ version: 9.0.0
             "itemsList": content.breadcrumbs.itemsList
         }) 
     }}
-    <div class="grid u-mt-l@m">
+    <div class="grid u-mt-s@m">
         <div class="grid__col col-7@m">
             <main id="main-content" class=" {{ pageClasses }}">
                 <h1 class="u-mb-l u-fs-xxl">{{ content.title }}</h1>
+                {% if content.topPanel %}
+                    <div class="u-mb-l">
+                        {{ 
+                            onsPanel({
+                                type: 'branded',
+                                body: content.topPanel.body
+                            })
+                        }}
+                    </div>
+                {% endif %}
                 {% if content.contentsList %}
                     {{-
-                        onsContentList({
-                            "ariaLabel": 'Pages in this guide',
+                        onsTableOfContents({
+                            "ariaLabel": content.contentsList.ariaLabel,
                             "title": 'Contents',
-                            "itemsList": content.contentsList.itemsList
+                            "lists": content.contentsList.lists
                         }) 
                     }}
                 {% endif %}
@@ -48,7 +61,7 @@ version: 9.0.0
                     {% if content.contentPagination %}
                         {{-
                             onsContentPagination({
-                                "ariaLabel": 'Pages in this guide',
+                                "ariaLabel": 'guide pagination',
                                 "contentPaginationItems": content.contentPagination.contentPaginationItems
                             }) 
                         }}
@@ -56,10 +69,10 @@ version: 9.0.0
                 {% if content.contentsList %}</section>{% endif %}
             </main>
         </div>
-        <div class="grid__col col-4@m push-1@m u-mt-xs">
+        <div class="grid__col col-4@m push-1@m u-mt-m">
                 {{-
-                    onsRelatedList({
-                        "id": 'related-list-block',
+                    onsRelatedLinks({
+                        "id": 'related-links-block',
                         "title": 'Related content',
                         "itemsList": [
                             {

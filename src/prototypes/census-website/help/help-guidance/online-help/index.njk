@@ -1,0 +1,421 @@
+---
+version: 10.0.0
+layout: census-website/views/_page
+---
+
+{% set content = { 
+    "title": 'Help with your online census questions',
+    "breadcrumbs": {
+        "itemsList": [
+            {
+                "url": '#',
+                "text": 'Home'
+            },
+            {
+                "url": '#',
+                "text": 'Help with your census'
+            }, 
+            {
+                "url": '/prototypes/census-website/help/help-guidance/index.html',
+                "text": 'Help with the census questions'
+            }, 
+            {
+                "url": '',
+                "text": 'Help with your online census questions',
+                "current": true
+            }
+        ]
+    },
+    "topPanel": {
+        "body": 'If you are completing the <strong>paper</strong> version of the census questions <a href="/prototypes/census-website/help/help-guidance/paper-help/index.html">see paper census guidance here</a>.'
+    },
+    "contentsList": {
+        "ariaLabel": 'Links to page sections',
+        "lists": [
+            {
+                "listHeading": 'Who lives here',
+                "itemsList": [
+                    {
+                        "url": '#household',
+                        "text": 'People who live in the household'
+                    }
+                ]
+            },
+            {
+                "listHeading": 'Household accommodation',
+                "itemsList": [  
+                    {
+                        "url": '#accommodation',
+                        "text": 'About your accommodation'
+                    }
+                ]    
+            },
+            {
+                "listHeading": 'Individual questions (Additional persons)',
+                "itemsList": [
+                    {
+                        "url": '#people',
+                        "text": 'Additional persons details'
+                    },
+                    {
+                        "url": '#qualifications',
+                        "text": 'Individual qualifications'
+                    },
+                    {
+                        "url": '#Employment',
+                        "text": 'Individual employment'
+                    }
+                ]
+            } 
+        ]
+    }
+
+} %}
+
+{% block content %}
+            <div id="house"></div>
+                <h2 class="u-mt-m ">Your address</h2>   
+                    <ul class="list list--bare online">
+                        <li><a href="">What is your address?</a></li>
+                    </ul>
+                    
+            <div id="household"></div>
+                <h2 class="u-mt-l">Who lives here?</h2>
+                    <h3>People who live in the household!</h3>   
+                        {{ 
+        onsList({
+            "element": 'ol',
+            "classes": 'list--prefix list--spacious',
+            "itemsList": [
+                {
+                    "url": 'h7-what-type-of-accommodation.html',
+                    "text": 'Does anyone live at [House number] as their permanent or family home?',
+                    "prefix": ''
+                },
+                {
+                    "url": 'h8-rooms-behind-doors.html',
+                    "text": 'What are the names of everyone who live at [House number]?',
+                    "prefix": ''
+                },
+                {
+                    "url": 'h9-how-many-bedrooms.html',
+                    "text": 'Is this everyone for whom this is their permanent or family home?',
+                    "prefix": ''
+                },
+                {
+                    "url": 'h10-central-heating.html',
+                    "text": 'How many visitors are staying overnight at [House number] on 8th February 2018?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'How are the following people related to [Person name]',
+                    "prefix": ''
+                },
+                {
+                    "url": 'h12-own-or-rent.html',
+                    "text": 'Does your household own or rent this accommodation?',
+                    "prefix": ''
+                }
+            ]
+        }) 
+    }}
+                        
+                    <div id="accommodation"></div>
+                    <h2 class="u-mt-l">Household accommodation</h2>
+                    <h3>About your accommodation</h3>
+                    {{ 
+        onsList({
+            "element": 'ol',
+            "classes": 'list--prefix list--spacious',
+            "itemsList": [
+                {
+                    "url": '#',
+                    "text": 'What type of accommodation is [House number]?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'Which of the following is your house or bungalow?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'Are all the rooms in this accommodation, including the kitchen, bathroom and toilet, behind a door that only this household can use?',
+                    "prefix": ''
+                },
+                {
+                    "url": '3-what-is-your-sex.html',
+                    "text": 'How many bedrooms are available for use only by this household?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'What type of central heating does [House number] have?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'Does your household own or rent [House number]?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'Who is your landlord?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'In total, how many cars or vans are owned, or available for use, by members of this household?',
+                    "prefix": ''
+                }
+            ]
+        }) 
+    }}
+                    
+                    <div id="people"></div>
+                    <h2 class="u-mt-l">Individual questions</h2>
+                    <h3>Additional persons details</h3>
+                        
+                        {{ 
+        onsList({
+            "element": 'ol',
+            "classes": 'list--prefix list--spacious',
+            "itemsList": [
+                {
+                    "url": '#',
+                    "text": 'Are you [Person name]?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'What is [Person name] date of birth?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'What is [Person name] sex?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'On 30 November 2018, what is [Person name] legal marital or registered civil partnership status?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'Who is [Person name] legal marriage to?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'Does [Person name] stay at another address for more than 30 days a year?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'Enter details of the other UK address where [Person name] stays for more than 30 days a year?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'What type of address is [House number]',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'Is [Person name] a student in full-time education?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'During term time, where does [Person name] usually live?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'What is [Person name] country of birth?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'What is [Person name] main language?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'How would [Person name] describe their national identity?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'What is [Person name] ethnic group?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'Which one best describes [Person name] White ethnic group or background?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'What is [Person name] religion?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'One year ago, what was [Person name] usual address?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'What passports does [Person name] hold?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'How is [Person name] health in general?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'Does [Person name] have any physical or mental health conditions or illnesses lasting or expected to last 12 months or more?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'Does any of [Person name] conditions or illnesses reduce their ability to carry out day-to-day activities?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'Does [Person name] look after, or give any help or support to, anyone because they have long-term physical or mental health conditions or illnesses, or problems related to old age?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'Which of the following best describes [Person name] sexual orientation?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'Is [Person name] gender the same as the sex they were registered at birth?',
+                    "prefix": ''
+                }
+            ]
+        }) 
+    }}
+                        
+                        
+        <div id="qualifications"></div>
+        <h3 class="u-mt-l u-fs-m">Individual qualifications</h3>
+    
+    {{ 
+        onsList({
+            "element": 'ol',
+            "classes": 'list--prefix list--spacious u-mb-l',
+            "itemsList": [
+                {
+                    "url": '#',
+                    "text": 'Has [Person name] completed an apprenticeship?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'Has [Person name] achieved a qualification at degree level or above?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'Has [Person name] achieved an AS, A level or equivalent, or, a GCSE or equivalent qualification?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'Has [Person name] previously served in the UK Armed Forces?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'In the last seven days, was [Person name] doing any of the following?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'How many members of this household related to each other?',
+                    "prefix": ''
+                }
+            ]
+        }) 
+    }}
+                        
+                       
+                        <div id="Employment"></div>
+                        
+                        <h3>Individual employment</h3>
+                        
+                        {{ 
+        onsList({
+            "element": 'ol',
+            "classes": 'list--prefix list--spacious',
+            "itemsList": [
+                {
+                    "url": '#',
+                    "text": 'In their main job, what is [Person name] employment status?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'What is the name of the organisation or business [Person name] works for?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'What is [Person name] full job title?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'Briefly describe what [Person name] does in their main job?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'What is the main activity of [Person name] organisation, business or freelance work?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'Does [Person name] supervise or oversee the work of other employees on a day-to-day basis?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'In [Person name] main job, how many hours a week do they usually work?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'How does [Person name] usually travel to work?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'Where does [Person name] mainly work?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'What is the address of [Person name] workplace?',
+                    "prefix": ''
+                }
+            ]
+        }) 
+    }}
+                        
+                       
+
+                    <div class="u-mt-l u-mb-l"><a href="#top">Back to top</a></div>
+  
+    
+{% endblock %}

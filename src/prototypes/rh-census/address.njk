@@ -1,13 +1,12 @@
 ---
 title: Enter address
 group: Census
-version: 8.0.1
+version: 9.1.0
 layout: rh-census/views/_master
 ---
 {% from "components/question/_macro.njk" import onsQuestion %}
-{% from "prototypes/rh-census/components/uac-entry/_macro.njk" import onsUACEntry %}
 {% from "components/button/_macro.njk" import onsButton %}
-{% from "components/panel/_macro.njk" import onsPanel %}
+{% from "rh-census/components/address-input/_macro.njk" import prototypeAddressInput %}
 
 {% set form =  {
     "method": "GET",
@@ -17,29 +16,56 @@ layout: rh-census/views/_master
 } %}
 
 {% block main %}
-    <a class="previous-link js-previous" href="{{ pageInfo.parentPath }}">Previous</a>
+    <a class="previous-link js-previous" href="{{ pageInfo.parentPath }}/home.html">Previous</a>
     {% call onsQuestion({
-        "title": "What is your address?"
+        "title": "What is your address?",
+        "description": "<p>We ask for this to check if your address is eligible for the census.</p>",
+        "useFieldset": true
     }) %}
-    <p>We ask for this to check if your address is eligible for the census</p>
-    {% from "components/input/_macro.njk" import onsInput %}
-    {{ 
-        onsInput({
-            "id": "text",
-            "label": {
-                "text": "Enter part of your address or postcode"
-            }
-        })
-    }}
-    <h2 class="u-fs-m u-mt-m">Or</h2>
-    {{ 
-        onsButton({
-            "type": 'button',
-            "text": 'Manually enter address',
-            "classes": 'btn--secondary btn--small js-address-manual-btn'
-        }) 
-    }}
-    
+        {{
+            prototypeAddressInput({
+                "id": "address",
+                "classes": "u-mt-s",
+                "line1": {
+                    "label": "Building and street <span class=\"u-vh\">line 1 of 2</span>"
+                },
+                "line2": {
+                    "label": "Building and street line 2 of 2"
+                },
+                "town": {
+                    "label": "Town or City"
+                },
+                "county": {
+                    "label": "County"
+                },
+                "postcode": {
+                    "label": "Postcode"
+                },
+                "typeahead": {
+                    "label": {
+                        "text": "Enter your address or postcode"
+                    },
+                    "instructions": "Use up and down keys to navigate addresses once you\'ve typed more than two characters. Use the enter key to select a address. Touch device users, explore by touch or with swipe gestures.",
+                    "content": {
+                        "no_results": "No addresses found",
+                        "aria_no_results": "No addresses found for the query",
+                        "aria_you_have_selected": "You have selected",
+                        "aria_found_by_alternative_name": "found by alternative name",
+                        "aria_min_chars": "Type in 5 or more characters for addresses.",
+                        "aria_one_result": "There is one address available.",
+                        "aria_n_results": "There are {n} addresses available.",
+                        "aria_limited_results": "Results have been limited to 10 addresses. Type more characters to refine your search.",
+                        "more_results": "Continue typing to refine addresses",
+                        "results_title": "Select an address"
+                    },
+                    "autocomplete": "new-address"
+                },
+                "or": "Or",
+                "searchButton": "Search for an address",
+                "manualButton": "Manually enter address",
+                "selectError": "Select an address to continue."
+            })
+        }}
     {% endcall %}
     
     {{
