@@ -18,8 +18,7 @@ layout: rh-census/views/_master
     <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/enter-mobile-number.html">Previous</a>
     {% call onsQuestion({
         "title": "What language would you like to complete the census in?",
-        "description": "<p>You can change your language option at any time.</p>",
-        "useFieldset": true
+        "description": "<p>You can change your language option at any time.</p>"
     }) %}
 
     {% from "components/radios/_macro.njk" import onsRadios %}
