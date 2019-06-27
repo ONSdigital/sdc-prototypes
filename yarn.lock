@@ -711,6 +711,11 @@
     throttle-typescript "^1.0.1"
     whatwg-fetch "^3.0.0"
 
+"@ons/design-system/10.0.0@npm:@ons/design-system@10.0.0":
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-10.0.0.tgz#bb3facb9d8064924e2ff5e5c3b1552f3c64b974e"
+  integrity sha512-k6UG+WzvzC02Ljn1wnI7ucObm/UmK6lnepT7dsWtRelO4Ly+oThyaev1EQqm66orsZGi5nA9QCtBheZtP7Ftyw==
+
 "@ons/design-system/4.1.0@npm:@ons/design-system@4.1.0":
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-4.1.0.tgz#3d8c5c09642ee90bee5b6fc2d5b509b59b245491"
