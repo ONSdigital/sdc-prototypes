@@ -27,11 +27,20 @@ layout: census-website/views/_page
         ]
     },
     "topPanel": {
-        "body": 'If you are completing the <strong>paper</strong> version of the census questions <a href="/prototypes/census-website/help/help-guidance/paper-help/index.html">see paper census guidance here</a>.'
+        "body": 'If you are completing the paper census questionnaire please use the <a href="/prototypes/census-website/help/help-guidance/paper-help/index.html">paper census guidance</a>.'
     },
     "contentsList": {
         "ariaLabel": 'Links to page sections',
         "lists": [
+            {
+                "listHeading": 'Your address',
+                "itemsList": [
+                    {
+                        "url": '#house',
+                        "text": 'What is your address?'
+                    }
+                ]
+            },
             {
                 "listHeading": 'Who lives here',
                 "itemsList": [
@@ -81,7 +90,7 @@ layout: census-website/views/_page
                     
             <div id="household"></div>
                 <h2 class="u-mt-l">Who lives here?</h2>
-                    <h3>People who live in the household!</h3>   
+                    <h3>People who live in the household</h3>   
                         {{ 
         onsList({
             "element": 'ol',
@@ -89,12 +98,12 @@ layout: census-website/views/_page
             "itemsList": [
                 {
                     "url": 'h7-what-type-of-accommodation.html',
-                    "text": 'Does anyone live at [House number] as their permanent or family home?',
+                    "text": 'Does anyone live at the address as their permanent or family home?',
                     "prefix": ''
                 },
                 {
                     "url": 'h8-rooms-behind-doors.html',
-                    "text": 'What are the names of everyone who live at [House number]?',
+                    "text": 'What are the names of everyone who live at the address?',
                     "prefix": ''
                 },
                 {
@@ -104,12 +113,12 @@ layout: census-website/views/_page
                 },
                 {
                     "url": 'h10-central-heating.html',
-                    "text": 'How many visitors are staying overnight at [House number] on 8th February 2018?',
+                    "text": 'How many visitors are staying overnight at the address on 8th February 2018?',
                     "prefix": ''
                 },
                 {
                     "url": '#',
-                    "text": 'How are the following people related to [Person name]',
+                    "text": 'How are the following people related to the person',
                     "prefix": ''
                 },
                 {
@@ -131,7 +140,7 @@ layout: census-website/views/_page
             "itemsList": [
                 {
                     "url": '#',
-                    "text": 'What type of accommodation is [House number]?',
+                    "text": 'What type of accommodation is the house?',
                     "prefix": ''
                 },
                 {
@@ -151,12 +160,12 @@ layout: census-website/views/_page
                 },
                 {
                     "url": '#',
-                    "text": 'What type of central heating does [House number] have?',
+                    "text": 'What type of central heating does the address have?',
                     "prefix": ''
                 },
                 {
                     "url": '#',
-                    "text": 'Does your household own or rent [House number]?',
+                    "text": 'Does your household own or rent this address?',
                     "prefix": ''
                 },
                 {
@@ -184,122 +193,122 @@ layout: census-website/views/_page
             "itemsList": [
                 {
                     "url": '#',
-                    "text": 'Are you [Person name]?',
+                    "text": 'Are you the person?',
                     "prefix": ''
                 },
                 {
                     "url": '#',
-                    "text": 'What is [Person name] date of birth?',
+                    "text": 'What is the person date of birth?',
                     "prefix": ''
                 },
                 {
                     "url": '#',
-                    "text": 'What is [Person name] sex?',
+                    "text": 'What is the person sex?',
                     "prefix": ''
                 },
                 {
                     "url": '#',
-                    "text": 'On 30 November 2018, what is [Person name] legal marital or registered civil partnership status?',
+                    "text": 'On 30 November 2018, what is the person legal marital or registered civil partnership status?',
                     "prefix": ''
                 },
                 {
                     "url": '#',
-                    "text": 'Who is [Person name] legal marriage to?',
+                    "text": 'Who is the person legal marriage to?',
                     "prefix": ''
                 },
                 {
                     "url": '#',
-                    "text": 'Does [Person name] stay at another address for more than 30 days a year?',
+                    "text": 'Does the person stay at another address for more than 30 days a year?',
                     "prefix": ''
                 },
                 {
                     "url": '#',
-                    "text": 'Enter details of the other UK address where [Person name] stays for more than 30 days a year?',
+                    "text": 'Enter details of the other UK address where the person stays for more than 30 days a year?',
                     "prefix": ''
                 },
                 {
                     "url": '#',
-                    "text": 'What type of address is [House number]',
+                    "text": 'What type of accommodation is this address',
                     "prefix": ''
                 },
                 {
                     "url": '#',
-                    "text": 'Is [Person name] a student in full-time education?',
+                    "text": 'Is the person a student in full-time education?',
                     "prefix": ''
                 },
                 {
                     "url": '#',
-                    "text": 'During term time, where does [Person name] usually live?',
+                    "text": 'During term time, where does the person usually live?',
                     "prefix": ''
                 },
                 {
                     "url": '#',
-                    "text": 'What is [Person name] country of birth?',
+                    "text": 'What is the person country of birth?',
                     "prefix": ''
                 },
                 {
                     "url": '#',
-                    "text": 'What is [Person name] main language?',
+                    "text": 'What is the person main language?',
                     "prefix": ''
                 },
                 {
                     "url": '#',
-                    "text": 'How would [Person name] describe their national identity?',
+                    "text": 'How would the person describe their national identity?',
                     "prefix": ''
                 },
                 {
                     "url": '#',
-                    "text": 'What is [Person name] ethnic group?',
+                    "text": 'What is the person ethnic group?',
                     "prefix": ''
                 },
                 {
                     "url": '#',
-                    "text": 'Which one best describes [Person name] White ethnic group or background?',
+                    "text": 'Which one best describes the person White ethnic group or background?',
                     "prefix": ''
                 },
                 {
                     "url": '#',
-                    "text": 'What is [Person name] religion?',
+                    "text": 'What is the person religion?',
                     "prefix": ''
                 },
                 {
                     "url": '#',
-                    "text": 'One year ago, what was [Person name] usual address?',
+                    "text": 'One year ago, what was the person usual address?',
                     "prefix": ''
                 },
                 {
                     "url": '#',
-                    "text": 'What passports does [Person name] hold?',
+                    "text": 'What passports does the person hold?',
                     "prefix": ''
                 },
                 {
                     "url": '#',
-                    "text": 'How is [Person name] health in general?',
+                    "text": 'How is the person health in general?',
                     "prefix": ''
                 },
                 {
                     "url": '#',
-                    "text": 'Does [Person name] have any physical or mental health conditions or illnesses lasting or expected to last 12 months or more?',
+                    "text": 'Does the person have any physical or mental health conditions or illnesses lasting or expected to last 12 months or more?',
                     "prefix": ''
                 },
                 {
                     "url": '#',
-                    "text": 'Does any of [Person name] conditions or illnesses reduce their ability to carry out day-to-day activities?',
+                    "text": 'Does any of the person conditions or illnesses reduce their ability to carry out day-to-day activities?',
                     "prefix": ''
                 },
                 {
                     "url": '#',
-                    "text": 'Does [Person name] look after, or give any help or support to, anyone because they have long-term physical or mental health conditions or illnesses, or problems related to old age?',
+                    "text": 'Does the person look after, or give any help or support to, anyone because they have long-term physical or mental health conditions or illnesses, or problems related to old age?',
                     "prefix": ''
                 },
                 {
                     "url": '#',
-                    "text": 'Which of the following best describes [Person name] sexual orientation?',
+                    "text": 'Which of the following best describes the person sexual orientation?',
                     "prefix": ''
                 },
                 {
                     "url": '#',
-                    "text": 'Is [Person name] gender the same as the sex they were registered at birth?',
+                    "text": 'Is the person gender the same as the sex they were registered at birth?',
                     "prefix": ''
                 }
             ]
@@ -317,27 +326,27 @@ layout: census-website/views/_page
             "itemsList": [
                 {
                     "url": '#',
-                    "text": 'Has [Person name] completed an apprenticeship?',
+                    "text": 'Has the person completed an apprenticeship?',
                     "prefix": ''
                 },
                 {
                     "url": '#',
-                    "text": 'Has [Person name] achieved a qualification at degree level or above?',
+                    "text": 'Has the person achieved a qualification at degree level or above?',
                     "prefix": ''
                 },
                 {
                     "url": '#',
-                    "text": 'Has [Person name] achieved an AS, A level or equivalent, or, a GCSE or equivalent qualification?',
+                    "text": 'Has the person achieved an AS, A level or equivalent, or, a GCSE or equivalent qualification?',
                     "prefix": ''
                 },
                 {
                     "url": '#',
-                    "text": 'Has [Person name] previously served in the UK Armed Forces?',
+                    "text": 'Has the person previously served in the UK Armed Forces?',
                     "prefix": ''
                 },
                 {
                     "url": '#',
-                    "text": 'In the last seven days, was [Person name] doing any of the following?',
+                    "text": 'In the last seven days, was the person doing any of the following?',
                     "prefix": ''
                 },
                 {
@@ -361,52 +370,52 @@ layout: census-website/views/_page
             "itemsList": [
                 {
                     "url": '#',
-                    "text": 'In their main job, what is [Person name] employment status?',
+                    "text": 'In their main job, what is the person employment status?',
                     "prefix": ''
                 },
                 {
                     "url": '#',
-                    "text": 'What is the name of the organisation or business [Person name] works for?',
+                    "text": 'What is the name of the organisation or business the person works for?',
                     "prefix": ''
                 },
                 {
                     "url": '#',
-                    "text": 'What is [Person name] full job title?',
+                    "text": 'What is the person full job title?',
                     "prefix": ''
                 },
                 {
                     "url": '#',
-                    "text": 'Briefly describe what [Person name] does in their main job?',
+                    "text": 'Briefly describe what the person does in their main job?',
                     "prefix": ''
                 },
                 {
                     "url": '#',
-                    "text": 'What is the main activity of [Person name] organisation, business or freelance work?',
+                    "text": 'What is the main activity of the person organisation, business or freelance work?',
                     "prefix": ''
                 },
                 {
                     "url": '#',
-                    "text": 'Does [Person name] supervise or oversee the work of other employees on a day-to-day basis?',
+                    "text": 'Does the person supervise or oversee the work of other employees on a day-to-day basis?',
                     "prefix": ''
                 },
                 {
                     "url": '#',
-                    "text": 'In [Person name] main job, how many hours a week do they usually work?',
+                    "text": 'In the person main job, how many hours a week do they usually work?',
                     "prefix": ''
                 },
                 {
                     "url": '#',
-                    "text": 'How does [Person name] usually travel to work?',
+                    "text": 'How does the person usually travel to work?',
                     "prefix": ''
                 },
                 {
                     "url": '#',
-                    "text": 'Where does [Person name] mainly work?',
+                    "text": 'Where does the person mainly work?',
                     "prefix": ''
                 },
                 {
                     "url": '#',
-                    "text": 'What is the address of [Person name] workplace?',
+                    "text": 'What is the address of the person workplace?',
                     "prefix": ''
                 }
             ]

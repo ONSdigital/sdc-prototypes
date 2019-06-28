@@ -22,7 +22,6 @@ layout: census-website/views/_master
     <div class="grid">
         <div class="grid__col u-mb-l">
             <main id="main-content" class="{{ pageClasses }}">
-                
                     <div class="container">
                         <div class="col-12@m">
                             {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
@@ -50,46 +49,39 @@ layout: census-website/views/_master
                             
                         </div>
                     </div>
-                
                 <div class="container">
-                <div class="grid grid--flex grid--loose grid--column@xs@s u-mt-l">
-                    <div class="grid__col grid__col--loose grid__col--flex u-flex-grow u-flex-no-basis@s col-6@m col-12@xs@s">
-                        {{- 
-                            onsCard({
-                                "classes": 'u-fs-r',
-                                "title": 'Help with your paper census questions',
-                                "url": '/prototypes/census-website/help/help-guidance/paper-help/index.html',
-                                "text": 'Guidance on how to answer your paper census questions.'
-                                                               
-                            })
-                        }}
+                    <div class="grid grid--flex grid--loose grid--column@xs@s u-mt-l">
+                        <div class="grid__col grid__col--loose col-6@m col-12@xs@s">
+                            {{- 
+                                onsCard({
+                                    "classes": 'u-fs-r u-mb-l',
+                                    "title": 'Online census question help',
+                                    "url": '/prototypes/census-website/help/help-guidance/online-help/index.html',
+                                    "text": ''                               
+                                })
+                            }}
+                            {{- 
+                                onsCard({
+                                    "classes": 'u-fs-r',
+                                    "title": 'Paper census question help',
+                                    "url": '/prototypes/census-website/help/help-guidance/paper-help/index.html',
+                                    "text": ''
+                                                                
+                                })
+                            }}
+                            
+                        </div>
                     </div>
-                    <div class="grid__col grid__col--flex grid__col--loose u-flex-grow u-flex-no-basis@s col-6@m col-12@xs@s">
-                        {{- 
-                            onsCard({
-                                "classes": 'u-fs-r',
-                                "title": 'Help with your online census questions',
-                                "url": '/prototypes/census-website/help/help-guidance/online-help/index.html',
-                                "text": 'Guidance on how to answer your online census questions.'
-                                                               
-                            })
-                        }}
-                    </div>
-                    
-
-                    
-                </div>
                 <div class="u-mt-l">
                     <hr class="footer__hr" style="margin-bottom: 0;">
                     <div class="grid">
                       <div class="grid__col col-8@m">
                         <h2 class="u-fs-r--b u-mt-l u-mb-xs">Don't have an access code or letter?</h2>
                         <p>You can <a href="/prototypes/rh-census/address.html">request a new code</a> to start a new online census survey if you have lost, forgotten or not received an access code.</p>
-                        <p> Alternatively, you can <a href="/prototypes/census-website/contact.html">contact us</a> to request a paper questionnaire.</p>
+                        <p> To request a paper questionnaire please <a href="/prototypes/census-website/contact.html">contact us</a></p>
                       </div>
                     </div>
                   </div>
-                
                 </div>
             </main>
         </div>
