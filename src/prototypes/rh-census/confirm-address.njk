@@ -1,7 +1,7 @@
 ---
 title: Confirm address
 group: Census
-version: 9.1.0
+version: 10.0.1
 layout: rh-census/views/_master
 ---
 {% from "components/question/_macro.njk" import onsQuestion %}
@@ -18,8 +18,7 @@ layout: rh-census/views/_master
     <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/address.html">Previous</a>
     {% call onsQuestion({
         "title": "Is this address correct?",
-        "description": "<p class=\"js-address-confirm\" data-address-input-url=\"" + pageInfo.rootPath + "/address.html\">{x}</p>",
-        "useFieldset": true
+        "description": "<p class=\"js-address-confirm\" data-address-input-url=\"" + pageInfo.rootPath + "/address.html\">{x}</p>"
     }) %}
 
     {% from "components/radios/_macro.njk" import onsRadios %}
@@ -39,7 +38,10 @@ layout: rh-census/views/_master
                     "label": {
                         "text": "No, I need to change it"
                     },
-                    "value": "no"
+                    "value": "no",
+                    "attributes": {
+                        "data-action-url": pageInfo.rootPath + "/address.html"
+                    }
                 }
             ]
         }) 

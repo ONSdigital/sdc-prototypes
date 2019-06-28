@@ -1,7 +1,7 @@
 ---
 title: Respondent Home
 group: Census
-version: 9.1.0
+version: 10.0.1
 layout: rh-census/views/_master
 ---
 {% from "components/lists/_macro.njk" import onsList %}
@@ -17,6 +17,10 @@ layout: rh-census/views/_master
             {
                 "text": "UAC Entry page (Your household v13)",
                 "url": pageInfo.rootPath + "/home-v13.html"
+            },
+            {
+                "text": "UAC Entry page (Request UAC no-js emulated)",
+                "url": pageInfo.rootPath + "/home-request-uac-no-js.html"
             },
             {
                 "text": "Address not found page",
