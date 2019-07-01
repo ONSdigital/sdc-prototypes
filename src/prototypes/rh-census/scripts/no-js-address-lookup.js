@@ -18,15 +18,12 @@ class NoJSAddressLookup {
     this.template = context.querySelector('.field__item');
     this.form = document.querySelector('form');
     this.button = this.form.querySelector('button');
-    this.playback = context.querySelector('.js-no-js-address-lookup-playback');
     this.numberOfResults = context.querySelector('.js-no-js-address-lookup-results');
 
     this.form.addEventListener('submit', this.handleSubmit.bind(this));
 
     this.line1 = this.getInput('line-1').value;
     this.postcode = this.getInput('postcode').value;
-
-    this.playback.innerHTML = [this.line1, this.postcode].filter(value => !!value).join('<br>');
 
     const searchString = `${this.line1} ${this.postcode}`
       .trim()
