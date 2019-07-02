@@ -22,6 +22,8 @@ class QuestionManager {
       ...document.getElementsByTagName('SELECT')
     ];
 
+    this.inputs = this.inputs.filter(input => !input.classList.contains('js-no-save'));
+
     this.form = document.getElementsByTagName('FORM')[0];
     this.hideFromSummary = this.form.classList.contains('js-question-no-summary');
     this.actionChangingInputs = [...this.form.querySelectorAll('input[data-action-url]')];

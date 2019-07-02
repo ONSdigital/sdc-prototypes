@@ -1,0 +1,116 @@
+---
+title: Campaign Website
+group: Census
+version: 9.0.0
+layout: census-website/views/_master
+---
+
+{% from "components/card/_macro.njk" import onsCard %}
+
+{% block page %}
+<div class="page__container container {{ containerClasses }}">
+                        <div class="col-7@m">
+                            {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+                                {{ 
+                                    onsBreadcrumb({
+                                        "ariaLabel": 'Breadcrumb',
+                                        "itemsList": [
+                                            {
+                                                "url": '/prototypes/census-website/index.html',
+                                                "text": 'Home'
+                                            },
+                                            {
+                                                "url": '/prototypes/census-website/help/',
+                                                "text": 'Help with your census'
+                                            },                                            
+                                            {
+                                                "url": '/prototypes/census-website/help/question-help.html',
+                                                "text": 'Help with the questions'
+                                            },
+                                            {
+                                                "url": '',
+                                                "text": 'H14 - In total, how many cars or vans are owned, or available for use, by members of this household?',
+                                                "current": true
+                                            }
+                                        ]
+                                    }) 
+                                }}
+                                </div>
+                <div class="grid">
+                    <div class="grid__col col-7@m">
+                        <main id="main-content" class=" {{ pageClasses }}">
+                                    <h1 class="u-mb-m">H14 - In total, how many cars or vans are owned, or available for use, by members of this household?</h1>
+                                    {#<div class="u-mb-m">
+                                    {% from "components/panel/_macro.njk" import onsPanel %}
+                                        {{ 
+                                            onsPanel({
+                                                body: "<p>If you’re not sure how to describe your accommodation, answer as best you can.</p>"
+                                            }) 
+                                        }}
+                                        </div>#}
+                                    {% from "components/details/_macro.njk" import onsDetails %}
+
+                                    {{
+                                        onsDetails({
+                                            "id": "details",
+                                            "title": "Why we ask this question",
+                                            "classes": "u-mb-m",
+                                            "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur snint occaecat cupidatat</p>
+                                            <p> non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occat in culpa qui officia deserunt mollit anim id est laborum.</p>
+</p>",
+                                            "button": {
+                                                "close": "Hide this"
+                                            }
+                                        })
+                                    }}
+                                              
+                                    
+                                    <p>Enter a total number of cars or vans that this household owns or are available for use. </p>
+                                    <p>Include those that are owned or available to members of <strong>your</strong> household only. </p>
+                                    <p>For example, you can include vehicles owned or used by your lodger, but <strong>don’t</strong> include vehicles owned or used by a visitor to your household.</p> 
+
+                                    <p>Also include:</p>
+                                    
+                                    <ul class="list">
+                                    <li>pick-ups, campervans and motorhomes</li>
+                                    <li>vehicles that are temporarily not working, even if they failed their MOT</li>
+                                    </ul>
+
+                                    <p>Don’t include:</p>
+                                    
+                                    <ul class="list">
+                                    <li>motorbikes, trikes, quad bikes or mobility vehicles</li>
+                                    <li>vehicles that have a SORN (Statutory Off R-road Notification)</li>
+                                    </ul>
+
+                                    <h2>Work vehicles</h2>
+                                   <p>Only include these in your total if you can drive them for private use (social, domestic or pleasure).</p>
+
+                                   <div class="u-mb-m">
+                                    {% from "components/panel/_macro.njk" import onsPanel %}
+                                        {{ 
+                                            onsPanel({
+                                                body: "<p>Vehicles should be <strong>available to your household</strong>. If they are kept at another address, not easily accessed, then do not include them.</p>"
+                                            }) 
+                                        }}
+                                    </div>
+
+                                    
+                        </main>
+                </div>
+                <!--Right Sidbar-->
+                <div class="grid__col col-4@m push-1@m">
+                    <div style="border-top:5px solid purple;padding:15px 0;">
+                        <h3>Related content</h3>
+                        <ul class="list list--bare">
+                            <li><a href="#">About the census</a></li>
+                            <li><a href="#">Help and support</a></li>
+                            <li><a href="#">Contact us</a></li>
+                        </ul>
+                    </div>
+                </div> <!--Right Sidbar end-->
+        </div>
+</div>
+{% endblock %}

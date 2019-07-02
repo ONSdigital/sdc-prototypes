@@ -1,13 +1,11 @@
 ---
 title: Confirm mobile number
 group: Census
-version: 9.1.0
+version: 10.0.1
 layout: rh-census/views/_master
 ---
 {% from "components/question/_macro.njk" import onsQuestion %}
-{% from "prototypes/rh-census/components/uac-entry/_macro.njk" import onsUACEntry %}
 {% from "components/button/_macro.njk" import onsButton %}
-{% from "components/panel/_macro.njk" import onsPanel %}
 
 {% set form =  {
     "method": "GET",
@@ -20,8 +18,7 @@ layout: rh-census/views/_master
     <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/enter-mobile-number.html">Previous</a>
     {% call onsQuestion({
         "title": "Is this mobile number correct?",
-        "description": "<p class=\"js-piped-answer\" data-question-to-pipe=\"" + pageInfo.parentPath + "/enter-mobile-number.html\">{x}</p>",
-        "useFieldset": true
+        "description": "<p class=\"js-piped-answer\" data-question-to-pipe=\"" + pageInfo.rootPath + "/enter-mobile-number.html\">{x}</p>"
     }) %}
 
     
