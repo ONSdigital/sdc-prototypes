@@ -2,6 +2,7 @@ import domready from 'helpers/domready';
 import formBodyFromObject from 'helpers/form-body-from-object';
 import AbortableFetch from 'helpers/abortable-fetch';
 import { sortBy } from 'sort-by-typescript';
+import dice from 'dice-coefficient';
 
 const lookupURL = 'https://api.addressy.com/Capture/Interactive/Find/v1.10/json3.ws';
 const retrieveURL = 'https://api.addressy.com/Capture/Interactive/Retrieve/v1.10/json3.ws';
@@ -22,10 +23,9 @@ class NoJSAddressLookup {
 
     this.form.addEventListener('submit', this.handleSubmit.bind(this));
 
-    this.line1 = this.getInput('line-1').value;
     this.postcode = this.getInput('postcode').value;
 
-    const searchString = `${this.line1} ${this.postcode}`
+    const searchString = `${this.postcode}`
       .trim()
       .replace(/ /g, ' ')
       .trim()
@@ -69,87 +69,74 @@ class NoJSAddressLookup {
         this.getAddress(results[0].Id);
       }
     } else {
-      this.renderResults(results);
+      this.processResults(results);
     }
   }
 
-  renderResults(results) {
-    const inputs = results
-      .sort(sortBy('Text'))
-      .filter(result => result.Type === 'Address')
-      .map(result => {
-        const clone = template.cloneNode(true);
-        const input = clone.querySelector('.radio__input');
-        const label = clone.querySelector('.radio__label');
+  processResults(results) {
+    results = results.filter(result => result.Type === 'Address');
 
-        input.id = result.Id;
-        input.value = result.Id;
-        label.setAttribute('for', result.Id);
-        label.innerHTML = result.Text;
+    const sanitisedLine1 = this.getInput('line-1')
+      .value.toLowerCase()
+      .trim();
 
-        return clone;
+    if (sanitisedLine1) {
+      results = results.map(result => {
+        const sanitisedText = result.Text.split(',')[0]
+          .toLowerCase()
+          .trim();
+
+        const exactMatch = sanitisedLine1 === sanitisedText;
+
+        let score = 0;
+        let contains = false;
+
+        if (!exactMatch) {
+          contains = sanitisedText.includes(sanitisedLine1);
+        }
+
+        if (!exactMatch && !contains) {
+          score = dice(sanitisedText, sanitisedLine1);
+        }
+
+        return {
+          ...result,
+          exactMatch,
+          contains,
+          score
+        };
       });
 
-    const destination = this.context.querySelector('.field__items');
+      const exactMatch = results.find(result => result.exactMatch);
 
-    destination.innerHTML = '';
-
-    inputs.forEach(input => {
-      destination.append(input);
-    });
-  }
-
-  handleSubmit(event) {
-    event.preventDefault();
-
-    const selectedInput = this.context.querySelector('input[type=radio]:checked');
-
-    if (selectedInput) {
-      this.getAddress(selectedInput.id);
-    } else {
-      alert('Select an option');
+      if (exactMatch) {
+        this.getAddress(exactMatch.Id);
+        return;
+      } else if (!!results.find(result => result.contains)) {
+        results = results.filter(result => result.contains).sort(sortBy('Text'));
+      } else {
+        results = results.filter(result => result.score > 0.8).sort(sortBy('-score', 'Text'));
+      }
     }
-  }
 
-  getAddress(id) {
-    const query = {
-      key,
-      id
-    };
+    // console.table(results.map(result => ({ Text: result.Text, score: result.score })));
 
-    const body = formBodyFromObject(query);
-
-    const fetch = new AbortableFetch(retrieveURL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
-      },
-      body
-    });
-
-    fetch.send().then(async response => {
-      const data = (await response.json()).Items.find(item => item.Language === 'ENG');
-
-      this.setAddress(data);
-    });
+    this.renderResults(results);
   }
 
   renderResults(results) {
-    const inputs = results
-      .sort(sortBy('Text'))
-      .filter(result => result.Type === 'Address')
-      .map(result => {
-        const clone = this.template.cloneNode(true);
-        const input = clone.querySelector('.radio__input');
-        const label = clone.querySelector('.radio__label');
+    const inputs = results.map(result => {
+      const clone = this.template.cloneNode(true);
+      const input = clone.querySelector('.radio__input');
+      const label = clone.querySelector('.radio__label');
 
-        input.id = result.Id;
-        input.value = result.Id;
-        label.setAttribute('for', result.Id);
-        label.innerHTML = result.Text;
+      input.id = result.Id;
+      input.value = result.Id;
+      label.setAttribute('for', result.Id);
+      label.innerHTML = result.Text;
 
-        return clone;
-      });
+      return clone;
+    });
 
     const destination = this.context.querySelector('.field__items');
 
@@ -199,6 +186,18 @@ class NoJSAddressLookup {
     sessionStorage.setItem(this.addressSource, JSON.stringify(this.addressData));
 
     window.location.href = this.form.action;
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+
+    const selectedInput = this.context.querySelector('input[type=radio]:checked');
+
+    if (selectedInput) {
+      this.getAddress(selectedInput.id);
+    } else {
+      alert('Select an option');
+    }
   }
 
   getInput(id) {
