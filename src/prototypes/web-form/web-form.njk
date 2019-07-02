@@ -29,7 +29,7 @@ layout: rh-census/views/_master
     {% from "components/radios/_macro.njk" import onsRadios %}
     {{ 
         onsRadios({
-            "legend": "Select your query type ",
+            "legend": "What type of query do you have?",
             "name": "food",
             "radios": [
                 {
@@ -42,14 +42,14 @@ layout: rh-census/views/_master
                 {
                     "id": "form",
                     "label": {
-                        "text": "I have a query about a form"
+                        "text": "I have a question about my census form"
                     },
                     "value": "form"
                 },
                 {
                     "id": "technical",
                     "label": {
-                        "text": "I have a technical question"
+                        "text": "I am having technical difficulties"
                     },
                     "value": "technical"
                 },
@@ -63,7 +63,7 @@ layout: rh-census/views/_master
                 {
                     "id": "address",
                     "label": {
-                        "text": "I have a query about my address"
+                        "text": "I have a question about my address"
                     },
                     "value": "address"
                 },
@@ -77,7 +77,7 @@ layout: rh-census/views/_master
                 {
                     "id": "face-to-face",
                     "label": {
-                        "text": "I need face to face help"
+                        "text": "I need to speak to an adviser face-to-face"
                     },
                     "value": "face-to-face"
                 }

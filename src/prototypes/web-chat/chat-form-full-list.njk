@@ -49,9 +49,16 @@ layout: web-chat/views/_master
 
         {{ 
             onsRadios({
-                "legend": "What do you need help with?",
+                "legend": "What type of query do you have?",
                 "name": "food",
                 "radios": [
+                    {
+                        "id": "help",
+                        "label": {
+                            "text": "I need some help"
+                        },
+                        "value": "help"
+                    },
                     {
                         "id": "form",
                         "label": {
