@@ -66,6 +66,8 @@ class NoJSAddressLookup {
       if (results[0].Type === 'Postcode') {
         this.lookupAddress(searchString, results[0].Id);
       } else {
+        // const address = await this.getAddress(results[0].Id);
+        // debugger;
         this.getAddress(results[0].Id);
       }
     } else {
@@ -73,7 +75,7 @@ class NoJSAddressLookup {
     }
   }
 
-  processResults(results) {
+  async processResults(results) {
     results = results.filter(result => result.Type === 'Address');
 
     const sanitisedLine1 = this.getInput('line-1')
@@ -110,12 +112,16 @@ class NoJSAddressLookup {
       const exactMatch = results.find(result => result.exactMatch);
 
       if (exactMatch) {
-        this.getAddress(exactMatch.Id);
+        debugger;
+        const address = await this.getAddress(exactMatch.Id);
+        debugger;
         return;
       } else if (!!results.find(result => result.contains)) {
         results = results.filter(result => result.contains).sort(sortBy('Text'));
-      } else {
+      } else if (!!results.find(result => result.score > 0.8)) {
         results = results.filter(result => result.score > 0.8).sort(sortBy('-score', 'Text'));
+      } else {
+        results = results.sort(sortBy('Text'));
       }
     }
 
@@ -151,7 +157,7 @@ class NoJSAddressLookup {
     this.button.disabled = false;
   }
 
-  getAddress(id) {
+  async getAddress(id) {
     this.button.disabled = true;
 
     const query = {
@@ -169,11 +175,10 @@ class NoJSAddressLookup {
       body
     });
 
-    fetch.send().then(async response => {
-      const data = (await response.json()).Items.find(item => item.Language === 'ENG');
+    const response = await fetch.send();
+    const address = (await response.json()).Items.find(item => item.Language === 'ENG');
 
-      this.setAddress(data);
-    });
+    this.setAddress(address);
   }
 
   setAddress(data) {
