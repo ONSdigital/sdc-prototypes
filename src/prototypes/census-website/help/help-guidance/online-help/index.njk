@@ -32,15 +32,7 @@ layout: census-website/views/_page
     "contentsList": {
         "ariaLabel": 'Links to page sections',
         "lists": [
-            {
-                "listHeading": 'Your address',
-                "itemsList": [
-                    {
-                        "url": '#house',
-                        "text": 'What is your address?'
-                    }
-                ]
-            },
+           
             {
                 "listHeading": 'Who lives here',
                 "itemsList": [
@@ -82,12 +74,7 @@ layout: census-website/views/_page
 } %}
 
 {% block content %}
-            <div id="house"></div>
-                <h2 class="u-mt-m ">Your address</h2>   
-                    <ul class="list list--bare online">
-                        <li><a href="">What is your address?</a></li>
-                    </ul>
-                    
+            
             <div id="household"></div>
                 <h2 class="u-mt-l">Who lives here</h2>
                     <h3>People who live in the household</h3>   
@@ -149,7 +136,7 @@ layout: census-website/views/_page
                     "prefix": ''
                 },
                 {
-                    "url": '3-what-is-your-sex.html',
+                    "url": '#',
                     "text": 'How many bedrooms are available for use only by this household?',
                     "prefix": ''
                 },
@@ -218,7 +205,7 @@ layout: census-website/views/_page
                 },
                 {
                     "url": '#',
-                    "text": 'Enter details of the other UK address where you stays for more than 30 days a year?',
+                    "text": 'Enter details of the other UK address where you stay for more than 30 days a year?',
                     "prefix": ''
                 },
                 {
@@ -238,6 +225,11 @@ layout: census-website/views/_page
                 },
                 {
                     "url": '#',
+                    "text": 'Enter details of the UK address where you usually stay during term time',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
                     "text": 'What is your country of birth?',
                     "prefix": ''
                 },
@@ -248,7 +240,12 @@ layout: census-website/views/_page
                 },
                 {
                     "url": '#',
-                    "text": 'How would you describe their national identity?',
+                    "text": 'How well can you speak English?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'How would you describe your national identity?',
                     "prefix": ''
                 },
                 {
@@ -258,7 +255,7 @@ layout: census-website/views/_page
                 },
                 {
                     "url": '#',
-                    "text": 'Which one best describes your White ethnic group or background?',
+                    "text": 'Which one best describes your ethnic group or background?',
                     "prefix": ''
                 },
                 {
@@ -269,6 +266,11 @@ layout: census-website/views/_page
                 {
                     "url": '#',
                     "text": 'One year ago, what was your usual address?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'Enter details of your address one year ago',
                     "prefix": ''
                 },
                 {
@@ -288,7 +290,7 @@ layout: census-website/views/_page
                 },
                 {
                     "url": '#',
-                    "text": 'Does any of your conditions or illnesses reduce their ability to carry out day-to-day activities?',
+                    "text": 'Do any of your conditions or illnesses reduce their ability to carry out day-to-day activities?',
                     "prefix": ''
                 },
                 {
@@ -331,7 +333,17 @@ layout: census-website/views/_page
                 },
                 {
                     "url": '#',
-                    "text": 'Have you achieved an AS, A level or equivalent, or, a GCSE or equivalent qualification?',
+                    "text": 'Have you achieved an NVQ or equivalent qualification?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'Have you achieved an AS, A level or equivalent qualification?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'Have you achieved a GCSE or equivalent qualification?',
                     "prefix": ''
                 },
                 {
@@ -342,11 +354,6 @@ layout: census-website/views/_page
                 {
                     "url": '#',
                     "text": 'In the last seven days, were you doing any of the following?',
-                    "prefix": ''
-                },
-                {
-                    "url": '#',
-                    "text": 'How many members of this household related to each other?',
                     "prefix": ''
                 }
             ]
@@ -370,7 +377,7 @@ layout: census-website/views/_page
                 },
                 {
                     "url": '#',
-                    "text": 'What is the name of the organisation or business you works for?',
+                    "text": 'What is the name of the organisation or business you work for?',
                     "prefix": ''
                 },
                 {
@@ -380,7 +387,7 @@ layout: census-website/views/_page
                 },
                 {
                     "url": '#',
-                    "text": 'Briefly describe what you does in their main job?',
+                    "text": 'Briefly describe what you do in their main job?',
                     "prefix": ''
                 },
                 {
@@ -395,12 +402,12 @@ layout: census-website/views/_page
                 },
                 {
                     "url": '#',
-                    "text": 'In your main job, how many hours a week do they usually work?',
+                    "text": 'In your main job, how many hours a week do you usually work?',
                     "prefix": ''
                 },
                 {
                     "url": '#',
-                    "text": 'How doe you usually travel to work?',
+                    "text": 'How do you usually travel to work?',
                     "prefix": ''
                 },
                 {
@@ -410,7 +417,7 @@ layout: census-website/views/_page
                 },
                 {
                     "url": '#',
-                    "text": 'What is the address of the person workplace?',
+                    "text": 'What is the address of the your workplace?',
                     "prefix": ''
                 }
             ]
