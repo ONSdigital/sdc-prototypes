@@ -18,8 +18,8 @@ layout: rh-census/views/_master
 {% block main %}
     <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/home.html">Previous</a>
     {% call onsQuestion({
-        "title": "What is your address?",
-        "description": "<p>We ask for this to check if your address is eligible for the census.</p>"
+        "title": "Request a new code",
+        "description": "<p>To text you a new code we need to know what address you are answering for.</p>"
     }) %}
         {{
             prototypeAddressInput({
