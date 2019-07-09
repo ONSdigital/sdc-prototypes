@@ -1,0 +1,54 @@
+---
+title: Confirm mobile number
+group: Census
+version: 10.0.1
+layout: rh-census/views/_master
+---
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action": "/prototypes/rh-census/code-sent-mobile.html"
+    }
+} %}
+
+{% block main %}
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/enter-mobile-number.html">Previous</a>
+    {% call onsQuestion({
+        "title": "<span class=\"js-piped-answer\" data-question-to-pipe=\"" + pageInfo.rootPath + "/enter-mobile-number.html\">Is <em>{x}</em> the correct mobile number?</span>"
+    }) %}
+
+    {% from "components/radios/_macro.njk" import onsRadios %}
+    {{ 
+        onsRadios({
+            "name": "confirm",
+            "radios": [
+                {
+                    "id": "yes",
+                    "label": {
+                        "text": "Yes, send the text now"
+                    },
+                    "value": "yes"
+                },
+                {
+                    "id": "no",
+                    "label": {
+                        "text": "No, I need to change it"
+                    },
+                    "value": "no"
+                }
+            ]
+        }) 
+    }}
+    {% endcall %}
+
+    {{
+        onsButton({
+            "text": "Continue",
+            "classes": "u-mt-l"
+        })
+    }}
+
+{% endblock %}

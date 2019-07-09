@@ -1,0 +1,37 @@
+.page-fix {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.web-chat-inner {
+  position: relative;
+}
+
+.web-chat-form {
+  display: none;
+  width: 375px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-color: #e5e5e5;
+  border: 1px solid #fff;
+
+  &--open {
+    display: block;
+  }
+
+  &__header,
+  &__body {
+    padding: 0.6rem;
+  }
+
+  &__header {
+    background-color: #3b7a9e;
+    color: #fff;
+  }
+
+  &__body {
+  }
+}

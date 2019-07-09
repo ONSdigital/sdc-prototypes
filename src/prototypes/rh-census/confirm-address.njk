@@ -1,0 +1,62 @@
+---
+title: Confirm address
+group: Census
+version: 10.0.1
+layout: rh-census/views/_master
+---
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action": "/prototypes/rh-census/enter-mobile-number.html"
+    }
+} %}
+
+{% block main %}
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/address.html">Previous</a>
+    {% call onsQuestion({
+        "title": "Is this address correct?",
+        "description": "<p class=\"js-address-confirm\" data-address-input-url=\"" + pageInfo.rootPath + "/address.html\">{x}</p>"
+    }) %}
+
+    {% from "components/radios/_macro.njk" import onsRadios %}
+    {{ 
+        onsRadios({
+            "name": "food",
+            "radios": [
+                {
+                    "id": "yes",
+                    "label": {
+                        "text": "Yes, this address is correct"
+                    },
+                    "value": "yes"
+                },
+                {
+                    "id": "no",
+                    "label": {
+                        "text": "No, I need to change it"
+                    },
+                    "value": "no",
+                    "attributes": {
+                        "data-action-url": pageInfo.rootPath + "/address.html"
+                    }
+                }
+            ]
+        }) 
+    }}
+    {% endcall %}
+
+    {{
+        onsButton({
+            "text": "Continue",
+            "classes": "u-mt-l"
+        })
+    }}
+
+{% endblock %}
+
+<scrip>
+
+</scrip>

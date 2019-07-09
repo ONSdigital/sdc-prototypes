@@ -1,0 +1,142 @@
+{% from "components/field/_macro.njk" import onsField %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "../typeahead/_macro.njk" import prototypeTypeahead %}
+
+{% macro prototypeAddressInput(params) %}
+    {% call onsField({ 
+        "id": params.id,
+        "classes": "address-input js-address" + (" " + params.classes if params.classes),
+        "legendClasses": params.legendClasses,
+        "legend": params.legend
+    }) %}
+        {% if params.fromLookup %}
+            <input id="{{ params.id }}-from-lookup" type="hidden" class="js-address-from-lookup js-no-save" name="{{ params.fromLookup.name }}">
+        {% endif %}
+        <div class="address-input__manual">
+            {% if params.organisation %}
+                {{
+                    onsInput({
+                        "id": params.id + "-organisation",
+                        "type": params.organisation.type,
+                        "label": {
+                            "text": params.organisation.label
+                        },
+                        "classes": "input--w-20@m js-address-organisation",
+                        "name": params.organisation.name | default(params.id + "-organisation")
+                    })
+                }}
+            {% endif %}
+            {{
+                onsInput({
+                    "id": params.line1.id | default(params.id + "-line-1"),
+                    "label": {
+                        "text": params.line1.label
+                    },
+                    "classes": "input--w-20@m js-address-line-1",
+                    "name": params.line1.name | default(params.id + "-line-1")
+                })
+            }}
+            {% if params.line2 %}
+                {{
+                    onsInput({
+                        "id": params.line2.id | default(params.id + "-line-2"),
+                        "type": params.line2.type,
+                        "label": {
+                            "text": params.line2.label
+                        },
+                        "classes": "input--w-20@m js-address-line-2",
+                        "name": params.line2.name | default(params.id + "-line-2")
+                    })
+                }}
+            {% endif %}
+            {% if params.line3 %}
+                {{
+                    onsInput({
+                        "id": params.line3.id | default(params.id + "-line-3"),
+                        "type": params.line3.type,
+                        "label": {
+                            "text": params.line3.label
+                        },
+                        "classes": "input--w-20@m js-address-line-3",
+                        "name": params.line3.name | default(params.id + "-line-3")
+                    })
+                }}
+            {% endif %}
+            {% if params.town %}
+                {{
+                    onsInput({
+                        "id": params.town.id | default(params.id + "-town"),
+                        "type": params.town.type,
+                        "classes": "js-address-town",
+                        "label": {
+                            "text": params.town.label
+                        },
+                        "name": params.town.name | default(params.id + "-town")
+                    })
+                }}
+            {% endif %}
+            {% if params.county %}
+                {{
+                    onsInput({
+                        "id": params.county.id | default(params.id + "-county"),
+                        "type": params.county.type,
+                        "classes": "js-address-county",
+                        "label": {
+                            "text": params.county.label
+                        },
+                        "name": params.county.name | default(params.id + "-county")
+                    })
+                }}
+            {% endif %}
+            {{
+                onsInput({
+                    "id": params.postcode.id | default(params.id + "-postcode"),
+                    "label": {
+                        "text": params.postcode.label
+                    },
+                    "classes": "input--w-5 js-address-postcode",
+                    "name": params.postcode.name | default(params.id + "-postcode")
+                })
+            }}
+            <div class="u-d-no u-mt-m js-address-search-btn-container">
+                <p class="u-fs-r--b">{{ params.or }}</p>
+                {{
+                    onsButton({
+                        "text": params.searchButton,
+                        "type": "button",
+                        "classes": "btn--secondary btn--small js-address-search-btn"
+                    })
+                }}
+            </div>
+        </div>
+
+        <div class="address-input__search">
+            {{
+                prototypeTypeahead({
+                    "id": params.id + "-typeahead",
+                    "classes": "address-input__typeahead js-address-typeahead",
+                    "inputClasses": "input--w-30",
+                    "label": {
+                        "text": params.typeahead.label.text
+                    },
+                    "instructions": params.typeahead.instructions,
+                    "content": params.typeahead.content,
+                    "autocomplete": params.typeahead.autocomplete,
+                    "externalInitialiser": true,
+                    "resultsErrorPanel": {
+                        "error": params.selectError
+                    }
+                })
+            }}
+            <p class="u-fs-r--b u-mt-m">{{ params.or }}</p>
+            {{
+                onsButton({
+                    "text": params.manualButton,
+                    "type": "button",
+                    "classes": "btn--secondary btn--small js-address-manual-btn"
+                })
+            }}
+        </div>
+    {% endcall %}
+{% endmacro %}

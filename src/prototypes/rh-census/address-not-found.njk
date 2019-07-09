@@ -1,0 +1,20 @@
+---
+title: Address not found
+group: Census
+version: 10.0.1
+layout: rh-census/views/_master
+---
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action": "/prototypes/rh-census/enter-mobile-number.html"
+    }
+} %}
+
+{% block main %}
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/address.html">Previous</a>
+    <h1 class="u-mt-s">We cannot find your address</h1>
+
+    <p>If this is incorrect you can <a href="/prototypes/rh-census/address.html">enter the address</a> again or <a href="https://deploy-preview-18--sdc-prototypes.netlify.com/prototypes/census-website/contact-us">contact us</a> for help.</p>
+
+{% endblock %}

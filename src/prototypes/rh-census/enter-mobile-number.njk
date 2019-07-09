@@ -1,0 +1,47 @@
+---
+title: Enter your mobile number
+group: Census
+version: 10.0.1
+layout: rh-census/views/_master
+---
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/input/_macro.njk" import onsInput %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action": "/prototypes/rh-census/confirm-mobile-number.html"
+    }
+} %}
+
+{% block main %}
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/confirm-address.html">Previous</a>
+    {% call onsQuestion({
+        "title": "What is your mobile phone number?",
+        "description": "<p>We will send an access code by text to this number.</p>"
+    }) %}
+
+    {% from "components/input/_macro.njk" import onsInput %}
+    {{ 
+        onsInput({
+            "id": "telephone",
+            "type": "tel",
+            "autocomplete": "tel",
+            "classes": "input--w-8",
+            "label": {
+                "text": "UK mobile phone number"
+            }
+        }) 
+    }}
+    
+    {% endcall %}
+    
+    {{
+        onsButton({
+            "text": "Continue",
+            "classes": "u-mt-l"
+        })
+    }}
+    
+{% endblock %}

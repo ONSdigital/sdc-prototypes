@@ -1,0 +1,85 @@
+---
+title: Web Chat
+group: Web Chat
+version: 7.0.0
+layout: web-chat/views/_master
+---
+{#{% from "prototypes/rh-census/components/uac-entry/_macro.njk" import onsUACEntry %}#}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/select/_macro.njk" import onsSelect %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+
+{% block header %}
+    <div class="header__main">
+        <div class="container">
+            <div class="grid grid--gutterless grid--flex grid--between grid--vertical-center grid--no-wrap">
+            <div class="grid__col col-auto u-flex-shrink">
+                <div class="header__title">Census 2019 Rehersal</div>
+            </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block main %}
+    <div class="">
+        {{
+            onsInput({
+                "id": "name",
+                "label": {
+                    "text": "Enter your name"
+                },
+                "classes": "input--w-20@m js-name"
+            })
+        }}
+
+        {{
+            onsInput({
+                "id": "email",
+                "label": {
+                    "text": "Enter your email address",
+                    "description": "We will send a copy of the chat to this address"
+                },
+                "classes": "input--w-20@m js-name"
+            })
+        }}
+
+        {{
+            onsTextarea({
+                "id": "textarea-char-limit",
+                "name": "feedback-limited",
+                "classes": "input--w-30",
+                "label": {
+                    "text": "Your message"
+                },
+                "maxlength": 800,
+                "charCountSingular": "You have {x} character remaining",
+                "charCountPlural": "You have {x} characters remaining"
+            })
+        }}
+
+        {{ 
+            onsButton({
+                "text": "Start chat",
+                "classes": "btn-group__btn u-mb-m u-mt-m"
+            }) 
+        
+        }}
+        {{ 
+            onsButton({
+                "type": 'button',
+                "text": 'Close chat',
+                "classes": 'btn--secondary btn-group__btn u-mb-m u-mt-m js-chat-close'
+            }) 
+        }}
+    </div>
+    
+    <script>
+        document.querySelector('.js-chat-close').addEventListener('click', function() { window.close() });
+    </script>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

@@ -1,7 +1,6 @@
-import domReady from 'helpers/domready';
-
-import UACEntry from './components/uac-entry/uac-entry.dom';
-
-domReady(() => {
-  UACEntry();
-});
+import './components/address-input/address-input';
+import './scripts/questions-manager';
+import './scripts/address-confirmer';
+import './scripts/piping';
+import './scripts/address-eligibility-page';
+import './scripts/no-js-address-lookup';

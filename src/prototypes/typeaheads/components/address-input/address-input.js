@@ -1,4 +1,3 @@
-
 import TypeaheadCore from '../typeahead/typeahead-core';
 import { sanitiseTypeaheadText } from '../typeahead/typeahead-helpers';
 
@@ -11,7 +10,7 @@ import { sortBy } from 'sort-by-typescript';
 
 const lookupURL = 'https://api.addressy.com/Capture/Interactive/Find/v1.10/json3.ws';
 const retrieveURL = 'https://api.addressy.com/Capture/Interactive/Retrieve/v1.10/json3.ws';
-const key = 'gw51-he54-ck31-ag93';
+const key = 'bu52-nh49-mx94-ju33';
 const addressReplaceChars = [','];
 
 const classAddress = 'js-address';
@@ -65,8 +64,8 @@ class AddressInput {
     this.searchButtonContainer.classList.remove('u-d-no');
 
     // Bind Event Listeners
-    this.searchButton.addEventListener('click', this.toggleMode.bind(this));
-    this.manualButton.addEventListener('click', this.toggleMode.bind(this));
+    this.searchButton.addEventListener('click', () => this.toggleMode());
+    this.manualButton.addEventListener('click', () => this.toggleMode());
 
     if (this.form) {
       this.form.addEventListener('submit', this.handleSubmit.bind(this));
@@ -77,7 +76,7 @@ class AddressInput {
     }
   }
 
-  toggleMode(clearInputs = true) {
+  toggleMode(clearInputs = false) {
     this.setManualMode(!this.manualMode, clearInputs);
   }
 
@@ -91,7 +90,7 @@ class AddressInput {
     if (manual) {
       this.typeahead.input.value = '';
     }
-    
+
     this.manualMode = manual;
   }
 
@@ -134,7 +133,7 @@ class AddressInput {
 
       const body = formBodyFromObject(query);
 
-      this.fetch = new AbortableFetch(lookupURL, { 
+      this.fetch = new AbortableFetch(lookupURL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded'
@@ -142,12 +141,15 @@ class AddressInput {
         body
       });
 
-      this.fetch.send()
+      this.fetch
+        .send()
         .then(async response => {
           const data = (await response.json()).Items;
 
           if (data.length === 1 && data[0].Type === 'Postcode') {
-            this.findAddress(text, data[0].Id).then(resolve).catch(reject);
+            this.findAddress(text, data[0].Id)
+              .then(resolve)
+              .catch(reject);
           } else {
             resolve(this.mapFindResults(data));
           }
@@ -203,7 +205,7 @@ class AddressInput {
 
       const body = formBodyFromObject(query);
 
-      this.fetch = new AbortableFetch(retrieveURL, { 
+      this.fetch = new AbortableFetch(retrieveURL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded'
@@ -211,7 +213,8 @@ class AddressInput {
         body
       });
 
-      this.fetch.send()
+      this.fetch
+        .send()
         .then(async response => {
           const data = (await response.json()).Items.find(item => item.Language === 'ENG');
 
@@ -226,10 +229,12 @@ class AddressInput {
       const result = this.currentResults.find(currentResult => currentResult.value === selectedResult.value);
 
       if (result.type !== 'Address') {
-        this.findAddress(null, result.value).then(results => {
-          this.typeahead.handleResults(results);
-          resolve();
-        }).catch(reject);
+        this.findAddress(null, result.value)
+          .then(results => {
+            this.typeahead.handleResults(results);
+            resolve();
+          })
+          .catch(reject);
       } else {
         this.retrieveAddress(result.value)
           .then(data => {
@@ -253,8 +258,7 @@ class AddressInput {
     this.county.value = data.AdminAreaName;
 
     this.postcode.value = data.PostalCode;
-    
-    
+
     this.triggerManualInputsChanges();
     this.typeahead.hideErrorPanel();
 
@@ -303,7 +307,7 @@ class AddressInput {
   }
 
   handleSubmit(event) {
-    if(!this.manualMode && this.typeahead.input.value.trim() && !this.addressSelected) {
+    if (!this.manualMode && this.typeahead.input.value.trim() && !this.addressSelected) {
       event.preventDefault();
 
       window.DONT_SUBMIT = true;

@@ -1,0 +1,130 @@
+---
+title: Campaign Website
+group: Census
+version: 9.0.0
+layout: census-website/views/_master
+---
+
+{% from "components/card/_macro.njk" import onsCard %}
+
+{% block page %}
+<div class="page__container container {{ containerClasses }}">
+                        <div class="col-7@m">
+                            {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+                                {{ 
+                                    onsBreadcrumb({
+                                        "ariaLabel": 'Breadcrumb',
+                                        "itemsList": [
+                                            {
+                                                "url": '/prototypes/census-website/index.html',
+                                                "text": 'Home'
+                                            },
+                                            {
+                                                "url": '/prototypes/census-website/help/',
+                                                "text": 'Help with your census'
+                                            },                                            
+                                            {
+                                                "url": '/prototypes/census-website/help/question-help.html',
+                                                "text": 'Help with the questions'
+                                            },
+                                            {
+                                                "url": '',
+                                                "text": 'H9 - How many bedrooms are available for use only by this household?',
+                                                "current": true
+                                            }
+                                        ]
+                                    }) 
+                                }}
+                                </div>
+                <div class="grid">
+                    <div class="grid__col col-7@m">
+                        <main id="main-content" class=" {{ pageClasses }}">
+                                    <h1 class="u-mb-m">H9 - How many bedrooms are available for use only by this household?</h1>
+                                    {#<div class="u-mb-m">
+                                    {% from "components/panel/_macro.njk" import onsPanel %}
+                                        {{ 
+                                            onsPanel({
+                                                body: "<p>If you’re not sure how to describe your accommodation, answer as best you can.</p>"
+                                            }) 
+                                        }}
+                                        </div>#}
+                                                                        {% from "components/details/_macro.njk" import onsDetails %}
+
+                                    {{
+                                        onsDetails({
+                                            "id": "details",
+                                            "title": "Why we ask this question",
+                                            "classes": "u-mb-m",
+                                            "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur snint occaecat cupidatat</p>
+                                            <p> non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occat in culpa qui officia deserunt mollit anim id est laborum.</p>
+</p>",
+                                            "button": {
+                                                "close": "Hide this"
+                                            }
+                                        })
+                                    }}         
+                                    
+                                    <p>Include any rooms that are intended to be used as bedrooms.</p> 
+
+                                    <p>This intention may have changed from when:</p>
+                                    
+                                    <ul class="list">
+                                    <li>the property was originally built</li>
+                                    <li>the room was converted</li>
+                                    </ul>
+                                    <p><strong>OR</strong></p>
+                                    <ul class="list">
+                                    <li>the use of the room permanently changed</li>
+                                    </ul>
+
+                                    <h2 class="u-mt-l">Include as a bedroom, if the room was:</h2>
+                                    <ul class="list">
+                                    <li>built as a bedroom, and is used as one</li>
+                                    <li>built as a bedroom, and is used for something else like an office or den</li>
+                                    <li>built as a room with plumbing, for example, a bathroom or kitchen and converted to a bedroom</li>
+                                    <li>not built as any room at all, but is now used as a bedroom, for example, a loft or   garage conversion</li>
+                                    </ul>
+
+                                    <h2 class="u-mt-l">Do not include as a bedroom, if the room:</h2>
+                                    <ul class="list">
+                                    <li>was built as a bedroom and was then converted to a bathroom, wet room or kitchen</li>
+                                    <li>is used as a bedroom now, but its intended use is different, for example, a dining room, conservatory or lounge</li>
+                                    
+                                    </ul>
+                                   
+                                   <div class="u-mb-m">
+                                    {% from "components/panel/_macro.njk" import onsPanel %}
+                                        {{ 
+                                            onsPanel({
+                                                body: "<p>If you’re not sure how to answer, imagine you’re selling the house; how many bedrooms would you advertise?</p>"
+                                            }) 
+                                        }}
+                                    </div>
+
+                                    {#<div class="u-mb-m">
+                                    {% from "components/panel/_macro.njk" import onsPanel %}
+                                        {{ 
+                                            onsPanel({
+                                                body: "<p>If you prefer to keep your answers private from people you live with, you can <a href='#'>complete your own individual census form.</a></p>"
+                                            }) 
+                                        }}
+                                        </div>#}
+                        </main>
+                </div>
+                <!--Right Sidbar-->
+                <div class="grid__col col-4@m push-1@m">
+                    <div style="border-top:5px solid purple;padding:15px 0;">
+                        <h3>Related content</h3>
+                        <ul class="list list--bare">
+                            <li><a href="#">About the census</a></li>
+                            <li><a href="#">What we ask you</a></li>
+                            <li><a href="#">Help and support</a></li>
+                            <li><a href="#">Contact us</a></li>
+                        </ul>
+                    </div>
+                </div> <!--Right Sidbar end-->
+        </div>
+</div>
+{% endblock %}
