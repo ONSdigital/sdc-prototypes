@@ -1,4 +1,3 @@
-
 import TypeaheadCore from '../typeahead/typeahead-core';
 import { sanitiseTypeaheadText } from '../typeahead/typeahead-helpers';
 
@@ -9,7 +8,7 @@ import formBodyFromObject from 'helpers/form-body-from-object';
 import dice from 'dice-coefficient';
 import { sortBy } from 'sort-by-typescript';
 
-const lookupURL = 'https://bambrp-address-lookup-api.gcp.dev.eq.ons.digital/address_api';
+const lookupURL = 'https://pricem-address-lookup-api.gcp.dev.eq.ons.digital/address_api';
 const addressReplaceChars = [','];
 
 const classAddress = 'js-address';
@@ -89,7 +88,7 @@ class AddressInput {
     if (manual) {
       this.typeahead.input.value = '';
     }
-    
+
     this.manualMode = manual;
   }
 
@@ -119,11 +118,12 @@ class AddressInput {
 
   findAddress(text) {
     return new Promise((resolve, reject) => {
-      this.fetch = new AbortableFetch(`${lookupURL}/?q=${text}`, { 
+      this.fetch = new AbortableFetch(`${lookupURL}/?q=${text}`, {
         method: 'GET'
       });
 
-      this.fetch.send()
+      this.fetch
+        .send()
         .then(async response => {
           const data = (await response.json()).addresses;
 
@@ -170,7 +170,7 @@ class AddressInput {
 
       const body = formBodyFromObject(query);
 
-      this.fetch = new AbortableFetch(retrieveURL, { 
+      this.fetch = new AbortableFetch(retrieveURL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded'
@@ -178,7 +178,8 @@ class AddressInput {
         body
       });
 
-      this.fetch.send()
+      this.fetch
+        .send()
         .then(async response => {
           const data = (await response.json()).Items.find(item => item.Language === 'ENG');
 
@@ -191,7 +192,6 @@ class AddressInput {
   onAddressSelect(selectedResult) {
     return new Promise((resolve, reject) => {
       // const result = this.currentResults.find(currentResult => currentResult.value === selectedResult.value);
-
       // if (result.type !== 'Address') {
       //   this.findAddress(null, result.value).then(results => {
       //     this.typeahead.handleResults(results);
@@ -220,8 +220,7 @@ class AddressInput {
     this.county.value = data.AdminAreaName;
 
     this.postcode.value = data.PostalCode;
-    
-    
+
     this.triggerManualInputsChanges();
     this.typeahead.hideErrorPanel();
 
@@ -270,7 +269,7 @@ class AddressInput {
   }
 
   handleSubmit(event) {
-    if(!this.manualMode && this.typeahead.input.value.trim() && !this.addressSelected) {
+    if (!this.manualMode && this.typeahead.input.value.trim() && !this.addressSelected) {
       event.preventDefault();
 
       window.DONT_SUBMIT = true;
