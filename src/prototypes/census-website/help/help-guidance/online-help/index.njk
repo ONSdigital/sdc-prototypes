@@ -38,7 +38,7 @@ layout: census-website/views/_page
                 "itemsList": [
                     {
                         "url": '#household',
-                        "text": 'People who live in the household'
+                        "text": 'Your address and people who live here'
                     }
                 ]
             },
@@ -55,16 +55,36 @@ layout: census-website/views/_page
                 "listHeading": 'Individual questions',
                 "itemsList": [
                     {
-                        "url": '#people',
-                        "text": 'Additional details'
+                        "url": '#name',
+                        "text": 'Name, sex, date of birth, and marital status'
+                    },
+                    {
+                        "url": '#country',
+                        "text": 'Country of birth, passports and not born in the UK'
+                    },
+                    {
+                        "url": '#language',
+                        "text": 'Language and religion'
+                    },
+                    {
+                        "url": '#health',
+                        "text": 'Health and care'
+                    },
+                    {
+                        "url": '#sex',
+                        "text": 'Sexual orientation and gender'
+                    },
+                    {
+                        "url": '#identity',
+                        "text": 'National identity and ethnic group'
                     },
                     {
                         "url": '#qualifications',
-                        "text": 'Individual qualifications'
+                        "text": 'Qualifications and full time education'
                     },
                     {
                         "url": '#Employment',
-                        "text": 'Individual employment'
+                        "text": 'Employment and armed forces'
                     }
                 ]
             } 
@@ -77,7 +97,7 @@ layout: census-website/views/_page
             
             <div id="household"></div>
                 <h2 class="u-mt-l">Who lives here</h2>
-                    <h3>People who live in the household</h3>   
+                    <h3>Your address and people who live here</h3>   
                         {{ 
         onsList({
             "element": 'ol',
@@ -89,17 +109,17 @@ layout: census-website/views/_page
                     "prefix": ''
                 },
                 {
-                    "url": 'h8-rooms-behind-doors.html',
+                    "url": '#',
                     "text": 'What are the names of everyone who live at the address?',
                     "prefix": ''
                 },
                 {
-                    "url": 'h9-how-many-bedrooms.html',
+                    "url": '#',
                     "text": 'Is this everyone for whom this is their permanent or family home?',
                     "prefix": ''
                 },
                 {
-                    "url": 'h10-central-heating.html',
+                    "url": '#',
                     "text": 'How many visitors are staying overnight at the address on 8th February 2018?',
                     "prefix": ''
                 },
@@ -107,15 +127,55 @@ layout: census-website/views/_page
                     "url": '#',
                     "text": 'How are the following people related to you',
                     "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'One year ago, what was your usual address?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'Enter details of your address one year ago',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'Do you stay at another address for more than 30 days a year?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'Enter details of the other UK address where you stay for more than 30 days a year?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'What type of accommodation is this?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'Are you a student in full-time education?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'During term time, where do you usually live?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'Enter details of the UK address where you usually stay during term time',
+                    "prefix": ''
                 }
             ]
         }) 
     }}
                         
-                    <div id="accommodation"></div>
-                    <h2 class="u-mt-l">Household accommodation</h2>
-                    <h3>About your accommodation</h3>
-                    {{ 
+    <div id="accommodation"></div>
+    <h2 class="u-mt-l">Household accommodation</h2>
+    <h3>About your accommodation</h3>
+    {{ 
         onsList({
             "element": 'ol',
             "classes": 'list--prefix list--spacious',
@@ -147,7 +207,7 @@ layout: census-website/views/_page
                 },
                 {
                     "url": '#',
-                    "text": 'Does your household own or rent this address?',
+                    "text": 'Does your household own or rent this accommodation?',
                     "prefix": ''
                 },
                 {
@@ -164,11 +224,11 @@ layout: census-website/views/_page
         }) 
     }}
                     
-                    <div id="people"></div>
-                    <h2 class="u-mt-l">Individual questions</h2>
-                    <h3>Additional persons details</h3>
+    <div id="name"></div>
+    <h2 class="u-mt-l">Individual questions</h2>
+    <h3>Name, sex, date of birth, and marital status</h3>
                         
-                        {{ 
+    {{ 
         onsList({
             "element": 'ol',
             "classes": 'list--prefix list--spacious',
@@ -190,7 +250,7 @@ layout: census-website/views/_page
                 },
                 {
                     "url": '#',
-                    "text": 'On 30 November 2018, what is your legal marital or registered civil partnership status?',
+                    "text": 'What is your legal marital or registered civil partnership status?',
                     "prefix": ''
                 },
                 {
@@ -200,39 +260,58 @@ layout: census-website/views/_page
                 },
                 {
                     "url": '#',
-                    "text": 'Do you stay at another address for more than 30 days a year?',
+                    "text": 'Who is your registered civil partnership to?',
                     "prefix": ''
-                },
-                {
-                    "url": '#',
-                    "text": 'Enter details of the other UK address where you stay for more than 30 days a year?',
-                    "prefix": ''
-                },
-                {
-                    "url": '#',
-                    "text": 'What type of accommodation is this address',
-                    "prefix": ''
-                },
-                {
-                    "url": '#',
-                    "text": 'Are you a student in full-time education?',
-                    "prefix": ''
-                },
-                {
-                    "url": '#',
-                    "text": 'During term time, where do you usually live?',
-                    "prefix": ''
-                },
-                {
-                    "url": '#',
-                    "text": 'Enter details of the UK address where you usually stay during term time',
-                    "prefix": ''
-                },
+                }
+
+                
+            ]
+        }) 
+    }}
+<div id="country"></div>
+    <h3>Country of birth, passports and not born in the UK</h3>
+                        
+    {{ 
+        onsList({
+            "element": 'ol',
+            "classes": 'list--prefix list--spacious',
+            "itemsList": [
                 {
                     "url": '#',
                     "text": 'What is your country of birth?',
                     "prefix": ''
                 },
+                {
+                    "url": '#',
+                    "text": 'What passports do you hold?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'When did you most recently arrive to live in the United Kingdom?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'Did you arrive in the UK, on or after the census?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'Including time spent here, how long do you intend to stay in the United Kingdom?',
+                    "prefix": ''
+                }
+            ]
+        }) 
+    }}
+    <div id="language"></div>
+    <h3>Language and religion</h3>
+                        
+    {{ 
+        onsList({
+            "element": 'ol',
+            "classes": 'list--prefix list--spacious',
+            "itemsList": [
                 {
                     "url": '#',
                     "text": 'What is your main language?',
@@ -243,41 +322,24 @@ layout: census-website/views/_page
                     "text": 'How well can you speak English?',
                     "prefix": ''
                 },
-                {
-                    "url": '#',
-                    "text": 'How would you describe your national identity?',
-                    "prefix": ''
-                },
-                {
-                    "url": '#',
-                    "text": 'What is your ethnic group?',
-                    "prefix": ''
-                },
-                {
-                    "url": '#',
-                    "text": 'Which one best describes your ethnic group or background?',
-                    "prefix": ''
-                },
+                
                 {
                     "url": '#',
                     "text": 'What is your religion?',
                     "prefix": ''
-                },
-                {
-                    "url": '#',
-                    "text": 'One year ago, what was your usual address?',
-                    "prefix": ''
-                },
-                {
-                    "url": '#',
-                    "text": 'Enter details of your address one year ago',
-                    "prefix": ''
-                },
-                {
-                    "url": '#',
-                    "text": 'What passports do you hold?',
-                    "prefix": ''
-                },
+                }
+                ]
+        }) 
+    }}
+               <div id="health"></div>         
+               <h3>Health and care</h3>     
+ {{ 
+        onsList({
+            "element": 'ol',
+            "classes": 'list--prefix list--spacious u-mb-l',
+            "itemsList": [
+                
+                
                 {
                     "url": '#',
                     "text": 'How is your health in general?',
@@ -297,7 +359,17 @@ layout: census-website/views/_page
                     "url": '#',
                     "text": 'Do you look after, or give any help or support to, anyone because they have long-term physical or mental health conditions or illnesses, or problems related to old age?',
                     "prefix": ''
-                },
+                }
+                ]
+        }) 
+    }}
+                <div id="sex"></div>        
+               <h3>Sexual orientation and gender</h3>     
+ {{ 
+        onsList({
+            "element": 'ol',
+            "classes": 'list--prefix list--spacious u-mb-l',
+            "itemsList": [
                 {
                     "url": 'sexual-orientation.html',
                     "text": 'Which of the following best describes your sexual orientation?',
@@ -308,13 +380,42 @@ layout: census-website/views/_page
                     "text": 'Is your gender the same as the sex they were registered at birth?',
                     "prefix": ''
                 }
+                
+                
             ]
         }) 
     }}
-                        
-                        
+               <div id="identity"></div>         
+               <h3>National identity and ethnic group</h3>     
+ {{ 
+        onsList({
+            "element": 'ol',
+            "classes": 'list--prefix list--spacious u-mb-l',
+            "itemsList": [
+               
+                {
+                    "url": '#',
+                    "text": 'How would you describe your national identity?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'What is your ethnic group?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'Which one best describes your ethnic group or background?',
+                    "prefix": ''
+                }
+                
+                
+            ]
+        }) 
+    }}
+
         <div id="qualifications"></div>
-        <h3 class="u-mt-l u-fs-m">Individual qualifications</h3>
+        <h3 class="u-mt-l u-fs-m">Qualifications and full time education</h3>
     
     {{ 
         onsList({
@@ -348,12 +449,7 @@ layout: census-website/views/_page
                 },
                 {
                     "url": '#',
-                    "text": 'Have you previously served in the UK Armed Forces?',
-                    "prefix": ''
-                },
-                {
-                    "url": '#',
-                    "text": 'In the last seven days, were you doing any of the following?',
+                    "text": 'Have you achieved any other qualifications?',
                     "prefix": ''
                 }
             ]
@@ -363,9 +459,9 @@ layout: census-website/views/_page
                        
                         <div id="Employment"></div>
                         
-                        <h3>Individual employment</h3>
+                        <h3>Employment and armed forces</h3>
                         
-                        {{ 
+    {{ 
         onsList({
             "element": 'ol',
             "classes": 'list--prefix list--spacious',
@@ -418,6 +514,21 @@ layout: census-website/views/_page
                 {
                     "url": '#',
                     "text": 'What is the address of the your workplace?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'What is the address of your depot?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'Have you previously served in the UK Armed Forces?',
+                    "prefix": ''
+                },
+                {
+                    "url": '#',
+                    "text": 'In the last seven days, were you doing any of the following?',
                     "prefix": ''
                 }
             ]
