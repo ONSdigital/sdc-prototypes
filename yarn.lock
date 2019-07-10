@@ -711,11 +711,6 @@
     throttle-typescript "^1.0.1"
     whatwg-fetch "^3.0.0"
 
-"@ons/design-system/10.0.1@npm:@ons/design-system@10.0.1":
-  version "10.0.1"
-  resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-10.0.1.tgz#95a9f8cc1988b7f63a34f66434e48373373280d4"
-  integrity sha512-k9cxbjsxFfoiQt1OX5t/MgRxjZ7OEuvn23LaxX4/To0ZGs0ABEwxPPpxJyimQfohIasjHk23/9Na1pB8uOkWzA==
-
 "@ons/design-system/4.1.0@npm:@ons/design-system@4.1.0":
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-4.1.0.tgz#3d8c5c09642ee90bee5b6fc2d5b509b59b245491"
@@ -770,6 +765,21 @@
   version "9.1.0"
   resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-9.1.0.tgz#37a39a600492e1f13a11b7563a5355f845cd0d99"
   integrity sha512-fQo8uQsTL51QhofRk8vfN7B7SJRAfrgw+9D+NLPP1/hKvV0hlXJb6QqVa6hyzY7Kn/k4ca7TYGhXkuCvsfN5kQ==
+
+"@ons/design-system/9.2.0@npm:@ons/design-system@9.2.0":
+  version "9.2.0"
+  resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-9.2.0.tgz#1efa99ad99f12c97a8decd395a7e534d0925e9ab"
+  integrity sha512-6XrUlQ5GImdFkI0uZaSUMVkfrhZ9c74ME7yjZz4pWJvAnJcO7ECwr8kwdvaFEajzn0YJAaFsox6fe4lbofMaEA==
+
+"@ons/design-system/10.0.0@npm:@ons/design-system@10.0.0":
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-10.0.0.tgz#bb3facb9d8064924e2ff5e5c3b1552f3c64b974e"
+  integrity sha512-k6UG+WzvzC02Ljn1wnI7ucObm/UmK6lnepT7dsWtRelO4Ly+oThyaev1EQqm66orsZGi5nA9QCtBheZtP7Ftyw==
+
+"@ons/design-system/10.0.1@npm:@ons/design-system@10.0.1":
+  version "10.0.1"
+  resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-10.0.1.tgz#95a9f8cc1988b7f63a34f66434e48373373280d4"
+  integrity sha512-k9cxbjsxFfoiQt1OX5t/MgRxjZ7OEuvn23LaxX4/To0ZGs0ABEwxPPpxJyimQfohIasjHk23/9Na1pB8uOkWzA==
 
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.0"

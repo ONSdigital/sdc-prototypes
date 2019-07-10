@@ -1,11 +1,11 @@
 ---
 title: Campaign Website
 group: Census
-version: 9.0.0
+version: 10.0.0
 layout: census-website/views/_master
 ---
 
-{% from "prototypes/census-website/components/card/_macro.njk" import onsCard %}
+{% from "components/card/_macro.njk" import onsCard %}
 {% from "components/button/_macro.njk" import onsButton %}
 
 {% block page %}
@@ -21,15 +21,16 @@ layout: census-website/views/_master
                                 <h1 class="hero--header u-fs-xxl">We count</h1>
                                 <p class="u-fs-r">Campaign tagline goes here</p>
                                 <a href="https://sdc-prototypes.netlify.com/prototypes/rh-census/home.html" role="button" class="btn">
-                                    <span class="btn__inner icon--chevron-right-white" style="padding-right:13px;">Start your census survey</span>
+                                    <span class="btn__inner icon--chevron-right-white" style="padding-right:13px;">Start your census</span>
                                 </a>
                             </div>
                         </div>
                     </div>    
             </main>  <!--Main Banner end-->
+            
             <div class="container">
-                <div class="grid grid--flex grid--column@xs@s u-mt-l u-mb-m">
-                    <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s u-mb-s col-12@xs@s">
+                <div class="grid grid--flex grid--loose grid--column@xs@s u-mt-l u-mb-m">
+                    <div class="grid__col grid__col--flex grid__col--loose u-flex-grow u-flex-no-basis@s u-mb-s col-12@xs@s">
                     {{- 
                         onsCard({
                             "classes": 'u-fs-r',
@@ -49,7 +50,7 @@ layout: census-website/views/_master
                         })
                     }}
                     </div>
-                    <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s u-mb-s col-12@xs@s">
+                    <div class="grid__col grid__col--flex grid__col--loose u-flex-grow u-flex-no-basis@s u-mb-s col-12@xs@s">
                     {{- 
                         onsCard({
                             "classes": 'u-fs-r',
@@ -59,12 +60,12 @@ layout: census-website/views/_master
                         })
                     }}
                     </div>
-                    <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s u-mb-s col-12@xs@s">                    
+                    <div class="grid__col grid__col--flex grid__col--loose u-flex-grow u-flex-no-basis@s u-mb-s col-12@xs@s">                    
                     {{- 
                         onsCard({
                             "classes": 'u-fs-r',
                             "title": 'Keeping your data secure',
-                            "url": '/prototypes/census-website/help/question-help.html',
+                            "url": '/prototypes/census-website/help/index.html',
                             "text": 'How we secure your personal information'                             
                         })
                     }}                                        
@@ -117,73 +118,70 @@ layout: census-website/views/_master
                         </div>
                     </div>
                 </div>
-            <!--block quote case study-
-                <div style="background-color:#f1f1f1;padding:1rem;">
-                    <div class="container" style="padding:0;">
-                        <div class="grid">
-                            <div class="grid__col--flex grid--flex grid--no-wrap@m grid__col col-12@xs@s">
-                            <h2 class="u-fs-xl u-mb-xs">Why it makes a difference</h2>
-                            <blockquote>
-                            <p>"We in Early Years would be pretty much lost without Lower Super Output Area (LSOA) census data."</p>
-                            <footer class="blockquote-footer">- Bristol City Council</footer>
-                            </blockquote> 
-                            </div>
+            <!--Case study cards-->
+            <div class="container">
+                <div class="grid u-mt-l u-mb-l">
+                        <h2 class="u-fs-xl u-mb-l" style="text-align:center;">Why the census counts</h2>
+                        <div class="grid__col--flex grid--flex grid--no-wrap@m grid__col col-12@xs@s"> 
+                            
+                            <blockquote class="u-mb-m col-6@m u-mr-m">We in Early Years would be pretty much lost without Lower Super Output Area (LSOA) census data
+                            <span>- Bristol City Council</span>
+                            <div class="u-mt-xs u-fs-xs">
+                                    <a href="census-website/case-study-a.html">Read more</a>
+                                </div>
+                            </blockquote>
+                            
+                            <blockquote class="u-mb-m col-6@m u-mr-m">We in Early Years would be pretty much lost without Lower Super Output Area (LSOA) census data
+                            <span>- Bristol City Council</span>
+                            <div class="u-mt-xs u-fs-xs">
+                                    <a href="case-study-a.html">Read more</a>
+                                </div>
+                            </blockquote>
+
                         </div>
                     </div>
                 </div>
-            <!--block quote end-->
+            <!--Case study cards end-->
 
-
+            <!--Help secion-->
                 <div class="container" style="padding:0;">
                     <div class="grid u-mt-l u-mb-l">
                         <div class="grid__col--flex grid--flex grid--no-wrap@m grid__col col-12@xs@s">
                             <div class="card" style="border-right:4px solid purple;padding:1.3em;">
-                                <h3 class="u-fs-m">
-                                    <a href="/prototypes/census-website/help">Help with your census</a>
+                                <h3 class="u-fs-l">Help with your census
                                 </h3>
                                 <p>How to fill in your census survey or get help to complete it.</p>
                             </div>
                             <div class="card" style="padding: 1.3em;">
                                 <h3 class="">
-                                    Completing your census
+                                    <a href="/prototypes/census-website/help/getting-started/">Getting Started</a>
                                 </h3>
-                                <ul class="list--bare">
-                                <li><a href="">Completing the online form</a></li>
-                                <li><a href="">Completing the paper form</a></li>
-                                <li><a href="">Who should complete the census</a></li>
-                                </ul>
+                                <p>Who should fill it in, what you need to get started, what to do if you don't have an access code.</p>
                             </div>
                             <div class="card" style="padding: 1.3em;">
                                <h3 class="">
-                                    Help with the questions
+                                    <a href="/prototypes/census-website/help/getting-started/">Help with the questions</a>
                                 </h3>
-                                <ul class="list--bare">
-                                <li><a href="">Issues with your address</a></li>
-                                <li><a href="">Accessing your online form</a></li>
-                                <li><a href="">Changes in your circumstance</a></li>
+                                <ul class="list list--dashed">
+                                <li class="list__item"><a href="">Online census</a></li>
+                                <li class="list__item"><a href="">Paper questionnaire</a></li>
                                 </ul>
                             </div>
                             <div class="card" style="padding: 1.3em;">
                                 <h3 class="">
-                                    Request a new access code or paper form
+                                    <a href="/prototypes/census-website/help/finding-support-to-complete-your-census/">Finding support to complete your census
                                 </h3>
-                                <ul class="list--bare">
-                                <li><a href="">I need a household form</a></li>
-                                <li><a href="">I need a personal form</a></li>
+                                <ul class="list list--dashed">
+                                <li class="list__item"><a href="">Help centres</a></li>
+                                <li class="list__item"><a href="">Helping someone else fill in their census</a></li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
-                            
-                        </div>
-                        <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
-                            
-                        </div>
-                        </div>
-
-                 
-                    
-              </div>
+                    </div>
+                </div>
+            <!--Help secion end-->
+            
+            <!--Security block-->
                 <!--<div class="grid u-mt-l">
                     <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
                         <div class="bg-darkgrey" style="padding: 25px 0; height: 80px;display: flex;width: 100%;align-items: center;">

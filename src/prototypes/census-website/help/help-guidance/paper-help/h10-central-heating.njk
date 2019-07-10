@@ -1,0 +1,123 @@
+---
+title: Campaign Website
+group: Census
+version: 10.0.0
+layout: census-website/views/_master
+---
+
+{% from "components/card/_macro.njk" import onsCard %}
+
+{% block page %}
+<div class="page__container container {{ containerClasses }}">
+            <div class="grid">
+                <div class="grid__col col-7@m">
+                            {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+                                {{ 
+                                    onsBreadcrumb({
+                                        "ariaLabel": 'Breadcrumb',
+                                        "itemsList": [
+                                            {
+                                                "url": '/prototypes/census-website/index.html',
+                                                "text": 'Home'
+                                            },
+                                            {
+                                                "url": '/prototypes/census-website/help/',
+                                                "text": 'Help with your census'
+                                            },                                            
+                                            {
+                                                "url": '/prototypes/census-website/help/index.html',
+                                                "text": 'Help with the questions'
+                                            },
+                                            {
+                                                "url": '/prototypes/census-website/help/help-guidance/paper-help/index.html',
+                                                "text": 'Help with your paper census questions'
+                                            },
+                                            {
+                                                "url": '',
+                                                "text": 'H10 - What type of central heating does this accommodation have?',
+                                                "current": true
+                                            }
+                                        ]
+                                    }) 
+                                }}
+                                </div>
+                                </div>
+                <div class="grid">
+                    <div class="grid__col col-7@m">
+                        <main id="main-content" class=" {{ pageClasses }}">
+                                    <h1 class="u-mb-m">H10 - What type of central heating does this accommodation have?</h1>
+                                    {#<div class="u-mb-m">
+                                    {% from "components/panel/_macro.njk" import onsPanel %}
+                                        {{ 
+                                            onsPanel({
+                                                body: "<p>If you’re not sure how to describe your accommodation, answer as best you can.</p>"
+                                            }) 
+                                        }}
+                                        </div>#}
+                                                                        {% from "components/details/_macro.njk" import onsDetails %}
+
+                                    {{
+                                        onsDetails({
+                                            "id": "details",
+                                            "title": "Why we ask this question",
+                                            "classes": "u-mb-m",
+                                            "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur snint occaecat cupidatat</p>
+                                            <p> non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occat in culpa qui officia deserunt mollit anim id est laborum.</p>
+</p>",
+                                            "button": {
+                                                "close": "Hide this"
+                                            }
+                                        })
+                                    }}          
+                                    
+                                    <p>Central heating is a system for warming a building by heating water or air in one place, then piping it to, for example, radiators or vents.</p> 
+
+                                    <p>This question is only about systems that generate heat for <strong>more than one room.</strong></p> 
+
+                                    <p><strong>Include</strong> systems that are not working or unused. You may choose more than one answer.</p> 
+
+                                    <p><strong>Solar power (thermal):</strong> Only choose “Renewable energy” if your rooms are directly heated by the energy generated. Do not select it if it only heats water for your taps.</p>
+
+                                    <p><strong>Storage heaters:</strong> Choose Electric.</p>
+
+                                    <h2>Do not include:</h2>
+                                    <p><strong>Stoves, burners and open fires:</strong> If you have a fire in your living room not connected to any other rooms, don’t include it. Even though you may feel the benefit of the heat in another room, it’s not a system designed to heat multiple rooms.</p>
+
+                                    <p><strong>Plug-in heaters:</strong> This question is not asking about heaters that  that only warm one room.If you’re not sure, answer as best you can.</p>
+                                   
+                                   <div class="u-mb-m">
+                                    {% from "components/panel/_macro.njk" import onsPanel %}
+                                        {{ 
+                                            onsPanel({
+                                                body: "<p>If you’re not sure how to answer, choose as best you can.</p>"
+                                            }) 
+                                        }}
+                                    </div>
+
+                                    {#<div class="u-mb-m">
+                                    {% from "components/panel/_macro.njk" import onsPanel %}
+                                        {{ 
+                                            onsPanel({
+                                                body: "<p>If you prefer to keep your answers private from people you live with, you can <a href='#'>complete your own individual census form.</a></p>"
+                                            }) 
+                                        }}
+                                        </div>#}
+                        </main>
+                </div>
+                <!--Right Sidbar-->
+                <div class="grid__col col-4@m push-1@m">
+                    <div style="border-top:5px solid purple;padding:15px 0;">
+                        <h3>Related content</h3>
+                        <ul class="list list--bare">
+                            <li><a href="#">About the census</a></li>
+                            <li><a href="#">What we ask you</a></li>
+                            <li><a href="#">Help and support</a></li>
+                            <li><a href="#">Contact us</a></li>
+                        </ul>
+                    </div>
+                </div> <!--Right Sidbar end-->
+        </div>
+</div>
+{% endblock %}

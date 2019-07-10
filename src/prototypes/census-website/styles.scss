@@ -112,7 +112,7 @@ $purple: #93328e;
 }
 
 .hero-image {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(images/group.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/group.jpg);
   height: 40vh;
   background-position: center;
   background-repeat: no-repeat;
@@ -274,4 +274,45 @@ ul.online {
       padding-bottom: 1rem;
     }
   }
+}
+.quote {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  font-size: 3rem !important;
+  line-height: 0.5 !important;
+  width: 2.4rem;
+  color: grey;
+}
+blockquote {
+  font-size: 1.2em;
+  margin: 0 0 1em;
+  font-weight: 700;
+  color: #000;
+  padding: 2.8em 2rem 1.2em 1rem;
+  border-top: 5px solid grey;
+  line-height: 1.6;
+  position: relative;
+  background: #ededed;
+}
+
+blockquote::before {
+  font-family: Arial;
+  content: '\201C';
+  color: #929292;
+  font-size: 4em;
+  position: absolute;
+  left: 13px;
+  top: -17px;
+}
+
+blockquote::after {
+  content: '';
+}
+
+blockquote span {
+  display: block;
+  color: #333333;
+  font-size: 0.8em;
+  font-weight: 400;
+  margin-top: 1em;
 }
