@@ -1,7 +1,7 @@
 ---
 title: Enter address
 group: Census
-version: 9.1.0
+version: 10.0.1
 layout: rh-census/views/_master
 ---
 {% from "components/question/_macro.njk" import onsQuestion %}
@@ -16,21 +16,24 @@ layout: rh-census/views/_master
 } %}
 
 {% block main %}
-    <a class="previous-link js-previous" href="{{ pageInfo.parentPath }}/home.html">Previous</a>
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/home.html">Previous</a>
     {% call onsQuestion({
-        "title": "What is your address?",
-        "description": "<p>We ask for this to check if your address is eligible for the census.</p>",
-        "useFieldset": true
+        "title": "Request a new code",
+        "description": "<p>To text you a new code we need to know what address you are answering for.</p>"
     }) %}
         {{
             prototypeAddressInput({
                 "id": "address",
+                "legend": "What is your address?",
                 "classes": "u-mt-s",
+                "fromLookup": {
+                    "name": "from-lookup"
+                },
                 "line1": {
-                    "label": "Building and street <span class=\"u-vh\">line 1 of 2</span>"
+                    "label": "Address line 1"
                 },
                 "line2": {
-                    "label": "Building and street line 2 of 2"
+                    "label": "Address line 2"
                 },
                 "town": {
                     "label": "Town or City"

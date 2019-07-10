@@ -1,0 +1,35 @@
+---
+title: Survey Error Pages
+group: Error Pages
+version: 9.1.0
+layout: survey-error-pages/views/_master
+---
+{% from "components/lists/_macro.njk" import onsList %}
+
+{% block main %}
+    {{ onsList({
+        "classes": "u-mt-l",
+        "itemsList": [
+            {
+                "text": "404 error",
+                "url": pageInfo.rootPath + "/404error.html"
+            },
+                        {
+                "text": "505 error",
+                "url": pageInfo.rootPath + "/505error.html"
+            },
+                        {
+                "text": "503 maintenance",
+                "url": pageInfo.rootPath + "/503maintenance.html"
+            },
+                        {
+                "text": "404 error reference",
+                "url": pageInfo.rootPath + "/404errorreference.html"
+            },
+                        {
+                "text": "Time out",
+                "url": pageInfo.rootPath + "/timeout.html"
+            }
+        ]
+    }) }}
+{% endblock %}

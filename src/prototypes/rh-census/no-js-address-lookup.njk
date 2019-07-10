@@ -1,0 +1,57 @@
+---
+title: Enter address
+group: Census
+version: 10.0.1
+layout: rh-census/views/_master
+---
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action": "/prototypes/rh-census/confirm-address.html"
+    }
+} %}
+
+{% set question = "Select your address" %}
+
+{% block main %}
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/address.html">Previous</a>
+    {% call onsQuestion({
+        "title": question
+    }) %}
+        <div class="js-no-js-address-lookup" data-address-from="{{ pageInfo.rootPath }}/address.html">
+            <p class="js-no-js-address-lookup-results u-fs-r--b">{x} addresses found</p>
+            {{ onsRadios({
+                "id": "select-your-address",
+                "name": "select-your-address",
+                "legend": question,
+                "radios": [
+                    {
+                        "label": {
+                            "text": "Loading"
+                        },
+                        "value": "loading"
+                    }
+                ]
+            }) }}
+        </div>
+    {% endcall %}
+
+    <p class="u-mt-m">
+        <a href="{{ pageInfo.rootPath }}/address.html">I can't find my address in the list</a>
+    </p>
+
+    {{
+        onsButton({
+            "text": "Continue",
+            "classes": "u-mt-l",
+            "attributes": {
+                "disabled": true
+            }
+        })
+    }}
+    
+{% endblock %}

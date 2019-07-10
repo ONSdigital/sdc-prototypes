@@ -1,0 +1,16 @@
+---
+title: Survey Error Pages
+group: Service name
+version: 9.1.0
+layout: survey-error-pages/views/_master
+---
+{% block main %}
+   <h1>Page not found</h1>
+   <p>If you entered the web address, check it is correct.</p>
+   <p>If you pasted the web address, check you copied the whole address.</p>
+   <p>If the web address is correct or you selected a link or button, <a href="#">contact us</a> for more help.</p>
+   {% from "components/panel/_macro.njk" import onsPanel %}
+    {% call onsPanel() %}
+        <p>You will need the following reference code when you contact us:</p><strong class="u-f-mono u-fs-l" style="letter-spacing:.1em">Q018 45T0 PR09 SOFG</strong>
+    {% endcall %}
+{% endblock %}

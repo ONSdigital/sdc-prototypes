@@ -1,0 +1,16 @@
+---
+title: Survey Error Pages
+group: Service name
+version: 9.1.0
+layout: survey-error-pages/views/_master
+---
+{% block main %}
+   <h1>Your session has timed out due to inactivity</h1>
+    {% from "components/panel/_macro.njk" import onsPanel %}
+    {% call onsPanel() %}
+        <p>To protect your information we have timed you out.</p>
+        {% endcall %}
+        <br>
+        <p>We have saved your progress and you will need to <a href="#">enter your unique code</a> to access the survey again.</p>
+
+{% endblock %}
