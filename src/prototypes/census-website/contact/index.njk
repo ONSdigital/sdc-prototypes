@@ -21,21 +21,16 @@ layout: census-website/views/_page
 } %}
 {% block content %}
     <p>Census helpline is available from the 23 September to 17 November 2019.</p>
-    <h2 class="u-mt-l">Telephone</h2>
+    <h2 class="u-mt-l">By phone</h2>
     <div class="u-mb-m tel-block">
-    <p style="margin-bottom:2px;">Telephone:<strong></p><p style="margin-bottom:2px;">0800 000 XXXX 
-    <small>(Option for English and Welsh)</small></strong> </p>
+    <p style="margin-bottom:2px;">(England) Telephone:</p> <p><strong>0800 141 2021</strong></p>
+    <p style="margin-bottom:2px;">(Wales) Telephone:</p> <p> <strong>0800 169 2021</strong> <small>(Option for English and Welsh)</small></p>
+    <p style="margin-bottom:2px;">(Northern Ireland) Telephone:</p> <p><strong> 0800 328 2021</strong></p>
+    <p style="margin-bottom:2px;">(For other languages) Telephone:</p> <p><strong> 0800 587 2021</strong></p>
+    <p style="margin-bottom:2px;">Text relay:</p> <p><strong>NGT (18001) then 0800 141 2021</strong> </p>
     </div>
-    <div class="u-mb-m">
-    {% from "components/panel/_macro.njk" import onsPanel %}
-    {{ 
-    onsPanel({
-        body: "<p>For alternative formats, such as braille call <strong>0800 XXX XXXX</strong></p>"
-    }) 
-    }}
-    </div>
-    <h3 class="u-mt-l u-mb-xs">Opening hours</h3>
-    <p>Monday to Friday, 8 am to 7pm<br> Saturday, 8am to 4pm</p>
+<p class="u-mt-s u-mb-m u-fs-r–b"><strong>Opening hours: </strong>Monday to Friday, 8 am to 7pm<br> Saturday, 8am to 4pm</p>
+
     {% from "components/details/_macro.njk" import onsDetails %}
     {{ onsDetails({
             "id": "details",
@@ -50,32 +45,23 @@ layout: census-website/views/_page
             }
         })
     }}
-    <h2 class="u-mt-xl">Textphone</h2>
-    <div class="u-mb-m tel-block">
-    <p style="margin-bottom:2px;">Textphone:<strong></p><p style="margin-bottom:2px;">0800 XXX XXXX</strong> </p>
-    </div>
+
+
     <div class="u-mb-m">
     {% from "components/panel/_macro.njk" import onsPanel %}
-        {{ 
-        onsPanel({
-            body: "<p>Text relay (if you cannot hear or speak on the phone):<strong>XXXXX then 0800 XXX XXXX</strong></p>"
-        }) 
+    {{ 
+    onsPanel({
+        body: "<p>Call 0800 141 2021 to ask for alternative formats, such as braille</p>"
+    }) 
     }}
     </div>
+    
     <h2 class="u-mt-xl u-mb-xs">Web chat</h2>
     <p><a href="">Speak to an advisor</a></p>
-    <h3 class="u-mb-xs">Opening hours</h3>
-    <p>Monday to Friday 8am – 7pm<br> Saturday 8am - 4pm</p>
-    <h2 class="u-mt-xl u-mb-xs">Email enquiry</h2>
-    <p><a href="">Get in touch</a></p>
-    <h2 class="u-mt-xl">Post</h2>
-    <div class="tel-block">
-    <p>Government Buildings<br>
-    Cardiff Road<br>
-    Newport<br>
-    South Wales<br>
-    NP10 8XG</p>
-    </div>
+        <p class="u-mt-s u-mb-xs u-fs-r–b"><strong>Opening hours: </strong>Monday to Friday, 8 am to 7pm<br> Saturday, 8am to 4pm</p>
+    <h2 class="u-mt-xl u-mb-xs">Web form</h2>
+    <p>You can use the <a href="">webform</a> to send your questions or comments about the Census programme</p>
+    
 
     <h2 class="u-mt-xl">Follow us</h2>
     <div style="display: flex;">
@@ -85,14 +71,13 @@ layout: census-website/views/_page
     <div style="height:40px;width:40px;margin-right:10px;">
         <a href=""><img src="/prototypes/census-website/img/twitter-logo.svg"></a>
     </div> 
-    <div style="height:40px;width:40px;">
+    <!--<div style="height:40px;width:40px;">
         <a href=""><img src="/prototypes/census-website/img/linkedin.svg"></a>
-    </div>
+    </div>-->
     </div> 
 
-    <hr class="footer__hr u-mt-l" style="margin-bottom: 0;">
 
-    <div class="u-mt-m">
+    <!--<div class="u-mt-m">
     <h2 class="u-fs-l">Marketing materials</h2>
     <p>Select below the advertising materials you require</p>
     {% from "components/downloads/_macro.njk" import onsDownloads %}
@@ -124,5 +109,5 @@ layout: census-website/views/_page
                 "accessibilityLinkText": "Request an accessible format"
             }
         ]
-    }) }}        
+    }) }}   -->     
 {% endblock %}
