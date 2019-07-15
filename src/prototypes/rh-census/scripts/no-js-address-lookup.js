@@ -80,13 +80,15 @@ class NoJSAddressLookup {
 
     const sanitisedLine1 = this.getInput('line-1')
       .value.toLowerCase()
-      .trim();
+      .trim()
+      .replace(/  +/g, ' ');
 
     if (sanitisedLine1) {
       results = results.map(result => {
         const sanitisedText = result.Text.split(',')[0]
           .toLowerCase()
-          .trim();
+          .trim()
+          .replace(/  +/g, ' ');
 
         const exactMatch = sanitisedLine1 === sanitisedText;
 
@@ -112,9 +114,7 @@ class NoJSAddressLookup {
       const exactMatch = results.find(result => result.exactMatch);
 
       if (exactMatch) {
-        debugger;
-        const address = await this.getAddress(exactMatch.Id);
-        debugger;
+        await this.getAddress(exactMatch.Id);
         return;
       } else if (!!results.find(result => result.contains)) {
         results = results.filter(result => result.contains).sort(sortBy('Text'));
