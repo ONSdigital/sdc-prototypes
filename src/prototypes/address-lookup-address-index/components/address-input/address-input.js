@@ -8,7 +8,9 @@ import formBodyFromObject from 'helpers/form-body-from-object';
 import dice from 'dice-coefficient';
 import { sortBy } from 'sort-by-typescript';
 
-const lookupURL = 'https://pricem-address-lookup-api.gcp.dev.eq.ons.digital/address_api';
+const baseURL = 'https://pricem-address-lookup-api.gcp.dev.eq.ons.digital';
+const lookupURL = `${baseURL}/address_api/`;
+const retrieveURL = `${baseURL}/uprn/`;
 const addressReplaceChars = [','];
 
 const classAddress = 'js-address';
@@ -118,8 +120,14 @@ class AddressInput {
 
   findAddress(text) {
     return new Promise((resolve, reject) => {
-      this.fetch = new AbortableFetch(`${lookupURL}/?q=${text}`, {
-        method: 'GET'
+      const body = formBodyFromObject({ q: text });
+
+      this.fetch = new AbortableFetch(lookupURL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body
       });
 
       this.fetch
@@ -134,7 +142,7 @@ class AddressInput {
   }
 
   mapFindResults(results) {
-    const mappedResults = results.map(text => {
+    const mappedResults = results.map(({ uprn, text }) => {
       const sanitisedText = sanitiseTypeaheadText(text, addressReplaceChars);
 
       let queryIndex = sanitisedText.indexOf(this.currentQuery);
@@ -149,7 +157,8 @@ class AddressInput {
         'en-gb': text,
         sanitisedText,
         querySimilarity,
-        queryIndex
+        queryIndex,
+        uprn
       };
     });
 
@@ -164,8 +173,7 @@ class AddressInput {
   retrieveAddress(id) {
     return new Promise((resolve, reject) => {
       const query = {
-        key,
-        id
+        q: id
       };
 
       const body = formBodyFromObject(query);
@@ -181,7 +189,7 @@ class AddressInput {
       this.fetch
         .send()
         .then(async response => {
-          const data = (await response.json()).Items.find(item => item.Language === 'ENG');
+          const data = await response.json();
 
           resolve(data);
         })
@@ -191,40 +199,34 @@ class AddressInput {
 
   onAddressSelect(selectedResult) {
     return new Promise((resolve, reject) => {
-      // const result = this.currentResults.find(currentResult => currentResult.value === selectedResult.value);
-      // if (result.type !== 'Address') {
-      //   this.findAddress(null, result.value).then(results => {
-      //     this.typeahead.handleResults(results);
-      //     resolve();
-      //   }).catch(reject);
-      // } else {
-      //   this.retrieveAddress(result.value)
-      //     .then(data => {
-      //       this.setAddress(data, resolve);
-      //     })
-      //     .catch(reject);
-      // }
+      this.retrieveAddress(selectedResult.uprn)
+        .then(data => {
+          this.setAddress(data, resolve);
+        })
+        .catch(reject);
     });
   }
 
   setAddress(data, resolve) {
     this.clearManualInputs(false);
 
-    if (data.Company && this.organisation) {
-      this.organisation.value = data.Company;
-    }
+    // if (data.Company && this.organisation) {
+    //   this.organisation.value = data.Company;
+    // }
 
-    this.line1.value = data.Line1;
-    this.line2.value = data.Line2;
-    this.town.value = data.City;
-    this.county.value = data.AdminAreaName;
+    this.line1.value = data.address.field1;
+    this.line2.value = data.address.field2;
+    this.town.value = data.address.field3;
+    this.county.value = data.address.field4;
 
-    this.postcode.value = data.PostalCode;
+    this.postcode.value = data.address.field5;
 
     this.triggerManualInputsChanges();
     this.typeahead.hideErrorPanel();
 
     this.addressSelected = true;
+
+    this.setManualMode(true, false);
 
     resolve();
   }
