@@ -1,0 +1,14 @@
+---
+title: Submission page
+group: Individual summary
+version: 9.1.0
+layout: individual-summary/views/_master
+---
+{% from "components/button/_macro.njk" import onsButton %}
+{% block main %}
+    <style>h1:before { width: 1em !important; height: 1em !important; background-size: 100% !important; }</style>
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/">Previous</a>
+   <h1 class="u-fs-xl u-mt-s u-mb-s icon--check-green">Thank you for submitting your census</h1>
+   <p>We have received your answers and you do not need to do anything else.</p> 
+   <p>We value your <a href="#">feedback to help improve this service.</p></a>
+{% endblock %}
