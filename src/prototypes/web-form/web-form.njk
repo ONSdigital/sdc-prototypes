@@ -122,60 +122,14 @@ layout: rh-census/views/_master
         }) 
     }}
 
-    <label class="label u-mt-m" for="textarea">
-        Address
-        <br>
-        <span class="label__description">We ask for this to check if your address is eligible for the census</span>
-    </label>
-
-    {#{% from "components/input/_macro.njk" import onsInput %}
-    {{
-        onsManualAddressInput({
-            "id": "address",
-            "classes": "u-mt-s",
-            "line1": {
-                "label": "Building and street <span class=\"u-vh\">line 1 of 2</span>"
-            },
-            "line2": {
-                
-            },
-            "town": {
-                "label": "Town or City"
-            },
-            "county": {
-                "label": "County"
-            },
-            "postcode": {
-                "label": "Postcode"
-            }
-        }) 
-    }}#}
-
     {% from "components/input/_macro.njk" import onsInput %}
-    {{ 
-        onsInput({
-            "id": "address1",
-            "classes": "input--w-20@m",
-            "label": {
-                "text": "Building and street <span class=\"u-vh\">line 1 of 2</span>"
-            }
-        })
-    }}
-    {{ 
-        onsInput({
-            "id": "address2",
-            "classes": "input--w-20@m",
-            "label": {
-                "text": "<span class=\"u-vh\">Building and street line 2 of 2</span>"
-            }
-        })
-    }}
     {{ 
         onsInput({
             "id": "address1",
             "classes": "input--w-5",
             "label": {
-                "text": "Postcode"
+                "text": "Postcode",
+                "description": "We ask for this to check if your address is eligible for the census"
             }
         })
     }}
