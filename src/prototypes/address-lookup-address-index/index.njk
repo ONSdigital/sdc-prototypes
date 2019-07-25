@@ -1,0 +1,57 @@
+---
+title: Address Lookup using ONS Address Index
+group: Address Lookup
+version: 7.0.2
+layout: address-lookup-address-index/views/_master
+---
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "address-lookup-address-index/components/address-input/_macro.njk" import prototypeAddressInput %}
+
+{% block main %}
+    {% call onsQuestion({
+        "title": "What is your current address?",
+        "useFieldset": true
+    }) %}
+        {{ prototypeAddressInput({
+            "id": "address",
+            "line1": {
+                "label": "Building and street <span class=\"u-vh\">line 1 of 2</span>"
+            },
+            "line2": {
+                "label": "Building and street line 2 of 2"
+            },
+            "town": {
+                "label": "Town or City"
+            },
+            "county": {
+                "label": "County"
+            },
+            "postcode": {
+                "label": "Postcode"
+            },
+            "typeahead": {
+                "label": {
+                    "text": "Enter your address"
+                },
+                "instructions": "Use up and down keys to navigate addresses once you\'ve typed more than two characters. Use the enter key to select a address. Touch device users, explore by touch or with swipe gestures.",
+                "content": {
+                    "no_results": "No addresses found",
+                    "aria_no_results": "No addresses found for the query",
+                    "aria_you_have_selected": "You have selected",
+                    "aria_found_by_alternative_name": "found by alternative name",
+                    "aria_min_chars": "Type in 5 or more characters for addresses.",
+                    "aria_one_result": "There is one address available.",
+                    "aria_n_results": "There are {n} addresses available.",
+                    "aria_limited_results": "Results have been limited to 10 addresses. Type more characters to refine your search.",
+                    "more_results": "Continue typing to refine addresses",
+                    "results_title": "Select an address"
+                },
+                "autocomplete": "new-address"
+            },
+            "or": "Or",
+            "searchButton": "Search for an address",
+            "manualButton": "Manually enter address",
+            "selectError": "Select an address to continue."
+        }) }}
+    {% endcall %}
+{% endblock %}

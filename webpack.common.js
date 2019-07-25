@@ -25,7 +25,7 @@ function formDirectory(startPath, scripts) {
     const filePath = path.join(startPath, file);
     const statistics = fs.lstatSync(filePath);
 
-    if(statistics.isDirectory()) {
+    if (statistics.isDirectory()) {
       formDirectory(filePath, scripts);
     } else if (file === 'index.js') {
       const path = startPath.replace(/\\/g, '/').replace('src/', '');
@@ -42,7 +42,6 @@ function generateScriptEntries() {
   return scripts;
 }
 
-
 export default function(mode) {
   const devMode = mode === 'development';
 
@@ -50,7 +49,7 @@ export default function(mode) {
     context: `${__dirname}/src`,
 
     mode,
-    
+
     entry: {
       ...generateScriptEntries(),
       styles: glob.sync('./**/*.scss', { cwd: 'src', ignore: './**/_*.scss' }),
@@ -90,11 +89,7 @@ export default function(mode) {
             {
               loader: path.resolve('./lib/nunjucks-html-loader.js'),
               options: {
-                searchPaths: [
-                  `${__dirname}/src`,
-                  `${__dirname}/src/prototypes`,
-                  `${__dirname}/node_modules/@ons/design-system`
-                ],
+                searchPaths: [`${__dirname}/src`, `${__dirname}/src/prototypes`, `${__dirname}/node_modules/@ons/design-system`],
                 layoutPath: 'prototypes',
                 defaultLayout: 'page-templates/_template.njk',
                 context: {
@@ -152,7 +147,11 @@ export default function(mode) {
                     }
                   ]
                 ],
-                plugins: ['@babel/plugin-syntax-dynamic-import', '@babel/plugin-proposal-class-properties', '@babel/plugin-transform-runtime']
+                plugins: [
+                  '@babel/plugin-syntax-dynamic-import',
+                  '@babel/plugin-proposal-class-properties',
+                  '@babel/plugin-transform-runtime'
+                ]
               }
             }
           ]
@@ -177,51 +176,49 @@ export default function(mode) {
         silent: true
       }),
 
-      new CopyWebpackPlugin(
-        [
-          {
-            context: '../node_modules/@ons/design-system/',
-            from: {
-              glob: '**/css/**/*',
-              dot: true
-            }
-          },
-          {
-            context: '../node_modules/@ons/design-system/',
-            from: {
-              glob: '**/scripts/**/*',
-              dot: true
-            }
-          },
-          {
-            context: '../node_modules/@ons/design-system/',
-            from: {
-              glob: '**/fonts/**/*',
-              dot: true
-            }
-          },
-          {
-            context: '../node_modules/@ons/design-system/',
-            from: {
-              glob: '**/img/**/*',
-              dot: true
-            }
-          },
-          {
-            context: '../node_modules/@ons/design-system/',
-            from: {
-              glob: '**/favicons/**/*',
-              dot: true
-            }
-          },
-          {
-            from: {
-              glob: '**/img/**/*',
-              dot: true
-            }
+      new CopyWebpackPlugin([
+        {
+          context: '../node_modules/@ons/design-system/',
+          from: {
+            glob: '**/css/**/*',
+            dot: true
           }
-        ]
-      ),
+        },
+        {
+          context: '../node_modules/@ons/design-system/',
+          from: {
+            glob: '**/scripts/**/*',
+            dot: true
+          }
+        },
+        {
+          context: '../node_modules/@ons/design-system/',
+          from: {
+            glob: '**/fonts/**/*',
+            dot: true
+          }
+        },
+        {
+          context: '../node_modules/@ons/design-system/',
+          from: {
+            glob: '**/img/**/*',
+            dot: true
+          }
+        },
+        {
+          context: '../node_modules/@ons/design-system/',
+          from: {
+            glob: '**/favicons/**/*',
+            dot: true
+          }
+        },
+        {
+          from: {
+            glob: '**/img/**/*',
+            dot: true
+          }
+        }
+      ]),
 
       new ImageminPlugin({
         test: /\.(svg)$/i,
@@ -231,4 +228,4 @@ export default function(mode) {
       })
     ]
   };
-};
+}
