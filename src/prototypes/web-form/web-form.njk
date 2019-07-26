@@ -1,5 +1,5 @@
 ---
-title: Email enquiry form
+title: Contact form
 group: Web Form
 version: 9.1.0
 layout: rh-census/views/_master
@@ -21,7 +21,7 @@ layout: rh-census/views/_master
 {% block main %}
     <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/">Previous</a>
     {% call onsQuestion({
-        "title": "Email enquiry",
+        "title": "Contact form",
         "description": "",
         "useFieldset": true
     }) %}
@@ -91,13 +91,12 @@ layout: rh-census/views/_master
             "id": "textarea",
             "name": "feedback",
             "label": {
-                "text": "Tell us why you need to get in touch",
-                "description": "For example describe any difficulties you experienced in the use of this service"
+                "text": "Describe what you need help with"
             }
         })
     }}
 
-    <h2 class="u-mt-m">Your contact details</h2>
+    <h2 class="u-mt-m">Your details</h2>
 
     {% from "components/input/_macro.njk" import onsInput %}
     {{ 
@@ -116,8 +115,7 @@ layout: rh-census/views/_master
             "type": "email",
             "autocomplete": "email",
             "label": {
-                "text": "Email address",
-                "description": "We ask for this so we can respond to your query"
+                "text": "Email address"
             }
         }) 
     }}
@@ -129,7 +127,7 @@ layout: rh-census/views/_master
             "classes": "input--w-5",
             "label": {
                 "text": "Postcode",
-                "description": "We ask for this to check if your address is eligible for the census"
+                "description": "We use this to check if your area is included in the census rehearsal"
             }
         })
     }}
@@ -138,7 +136,7 @@ layout: rh-census/views/_master
     
     {{
         onsButton({
-            "text": "Send message",
+            "text": "Send",
             "classes": "u-mt-l"
         })
     }}
