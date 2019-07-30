@@ -22,20 +22,19 @@ layout: census-website/views/_page
 {% block content %}
     <p>Census helpline is available from the 23 September to 17 November 2019.</p>
     <h2 class="u-mt-l">By phone</h2>
-    <div class="u-mb-m tel-block">
-    <p style="margin-bottom:2px;">(England) Telephone:</p> <p><strong>0800 141 2021</strong></p>
-    <p style="margin-bottom:2px;">(Wales) Telephone:</p> <p> <strong>0800 169 2021</strong> <small>(Option for English and Welsh)</small></p>
-    <p style="margin-bottom:2px;">(Northern Ireland) Telephone:</p> <p><strong> 0800 328 2021</strong></p>
-    <p style="margin-bottom:2px;">(For other languages) Telephone:</p> <p><strong> 0800 587 2021</strong></p>
-    <p style="margin-bottom:2px;">Text relay:</p> <p><strong>NGT (18001) then 0800 141 2021</strong> </p>
-    </div>
-<p class="u-mt-s u-mb-m u-fs-r–b"><strong>Opening hours: </strong>Monday to Friday, 8 am to 7pm<br> Saturday, 8am to 4pm</p>
+    <h3 class="u-mb-xs">England</h3> <p class="u-mb-xs">Telephone: <strong>0800 141 2021</strong></p><p class="u-mt-xs">Monday to Friday, 8 am to 7pm<br> Saturday, 8am to 4pm</p>
+    <h3 class="u-fs-r-m u-mb-xs">Wales</h3> Telephone: <strong>0800 169 2021</strong> <small>(Option for English and Welsh)</small></p>
+    <h3 class="u-mb-xs">Northern Ireland</h3> Telephone: <strong> 0800 328 2021</strong></p>
+    <h3 class="u-mb-xs">For other languages</h3> Telephone: <strong> 0800 587 2021</strong></p>
+    <h3 class="u-mb-xs">Text relay:</h3> <strong>NGT (18001) then 0800 141 2021</strong> </p>
+<h3 class="u-mb-xs">Opening hours:</h3>
+<p>Monday to Friday, 8 am to 7pm<br> Saturday, 8am to 4pm</p>
 
     {% from "components/details/_macro.njk" import onsDetails %}
     {{ onsDetails({
             "id": "details",
             "title": "Find out about call charges",
-            "classes": "u-mb-m",
+            "classes": "u-mb-m u-mt-l",
             "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
                         <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur snint occaecat cupidatat</p>
                         <p> non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -69,8 +68,11 @@ layout: census-website/views/_page
         <a href=""><img src="/prototypes/census-website/img/facebook-logo.svg"></a>
     </div> 
     <div style="height:40px;width:40px;margin-right:10px;">
-        <a href=""><img src="/prototypes/census-website/img/twitter-logo.svg"></a>
+        <a href=""><img src="/prototypes/census-website/img/twitter-logo.svg"> @Census2021</a>
     </div> 
+    <div style="height:40px;width:40px;margin-right:10px;">
+   <a href=""><img src="/prototypes/census-website/img/twitter-logo.svg"> @Censushelp</a>
+    </div>
     <!--<div style="height:40px;width:40px;">
         <a href=""><img src="/prototypes/census-website/img/linkedin.svg"></a>
     </div>-->

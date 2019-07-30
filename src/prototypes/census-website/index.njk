@@ -15,30 +15,19 @@ layout: census-website/views/_master
         <div>
             <!--Main Banner-->
             <main id="main-content" class="{{ pageClasses }}">
-                    <div class="hero-image" role="banner">
-                        <div class="container">
-                            <div class="hero-text">
-                                <h1 class="hero--header u-fs-xxl">We count</h1>
-                                <p class="u-fs-r">Campaign tagline goes here</p>
-                                <a href="https://sdc-prototypes.netlify.com/prototypes/rh-census/home.html" role="button" class="btn">
-                                    <span class="btn__inner icon--chevron-right-white" style="padding-right:13px;">Start your census</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>    
-            </main>  <!--Main Banner end-->
-            
-            <!--Intro-->
-            <div class="u-pt-xs" style="background:#f0f0f0;">
-                <div class="container">
-                    <div class="grid grid--flex grid--loose grid--column@xs@s u-mt-l u-mb-m">
-                        <div class="grid__col grid__col--flex grid__col--loose u-flex-grow u-flex-no-basis@s u-mb-s col-12@xs@s">
-                        <p class="u-fs-m">The census counts everyone in England and Wales to give us a picture of who we are and how we live. The next census will be in March 2021. We’re preparing by running a rehearsal in 2019 on 13th October 2019.</p>
+                <div class="hero-image" role="banner"><img src="census-website/img/group.jpg" style="opacity: .4; position: absolute;width: 100%;top: 0;bottom: 0;margin: auto;">
+                    <div class="container">
+                        <div class="hero-text">
+                            <h1 class="hero--header u-fs-xxl">We count</h1>
+                            <p class="u-fs-r">Campaign tagline goes here</p>
+                            <a href="https://sdc-prototypes.netlify.com/prototypes/rh-census/home.html" role="button" class="btn">
+                                <span class="btn__inner icon--chevron-right-white" style="padding-right:13px;">Start your census</span>
+                            </a>
                         </div>
                     </div>
-                </div>
-            </div>
-            <!--Intro end-->
+                </div>    
+            </main>  <!--Main Banner end-->
+        
 
             <div class="container">
                 <div class="grid grid--flex grid--loose grid--column@xs@s u-mt-l u-mb-m">
@@ -48,7 +37,7 @@ layout: census-website/views/_master
                             "classes": 'u-fs-r',
                             "title": 'What is the census?',
                             "url": '/prototypes/census-website/about-the-census/',
-                            "text": 'About the census and the 2019 rehearsal.',
+                            "text": 'The census counts everyone in England and Wales to give us a picture of who we are and how we live.',
                             "itemsList": [
                                 {
                                     "url": '/prototypes/census-website/about-the-census/the-2019-rehearsal.html',
@@ -73,14 +62,14 @@ layout: census-website/views/_master
                     }}
                     </div>
                     <div class="grid__col grid__col--flex grid__col--loose u-flex-grow u-flex-no-basis@s u-mb-s col-12@xs@s">                    
-                    {{- 
-                        onsCard({
-                            "classes": 'u-fs-r',
-                            "title": 'Keeping your data secure',
-                            "url": '/prototypes/census-website/help/index.html',
-                            "text": 'How we secure your personal information'                             
-                        })
-                    }}                                        
+                        {{- 
+                            onsCard({
+                                "classes": 'u-fs-r',
+                                "title": 'Keeping your data secure',
+                                "url": '/prototypes/census-website/help/index.html',
+                                "text": 'How we secure your personal information'                             
+                            })
+                        }}                                        
                     </div>
                 </div>
             </div>
@@ -130,29 +119,27 @@ layout: census-website/views/_master
                         </div>
                     </div>
                 </div>-->
+            
             <!--Case study cards-->
             <div class="container">
                 <div class="grid u-mt-l u-mb-l">
-                        <h2 class="u-fs-xl u-mb-l" style="text-align:center;">Why the census counts</h2>
-                        <div class="grid__col--flex grid--flex grid--no-wrap@m grid__col col-12@xs@s"> 
-                            
-                            <blockquote class="u-mb-m col-6@m u-mr-m">We in Early Years would be pretty much lost without Lower Super Output Area (LSOA) census data
+                    <h2 class="u-fs-xl u-mb-l" style="text-align:center;">Why the census counts</h2>
+                    <div class="grid__col--flex grid--flex grid--no-wrap@m grid__col col-12@xs@s"> 
+                        <blockquote class="u-mb-m col-6@m u-mr-m">We in Early Years would be pretty much lost without Lower Super Output Area (LSOA) census data
                             <span>- Bristol City Council</span>
                             <div class="u-mt-xs u-fs-xs">
-                                    <a href="census-website/case-study-a.html">Read more</a>
-                                </div>
-                            </blockquote>
-                            
-                            <blockquote class="u-mb-m col-6@m u-mr-m">We in Early Years would be pretty much lost without Lower Super Output Area (LSOA) census data
+                                <a href="census-website/case-study-a.html">Read more</a>
+                            </div>
+                        </blockquote>
+                        <blockquote class="u-mb-m col-6@m u-mr-m">We in Early Years would be pretty much lost without Lower Super Output Area (LSOA) census data
                             <span>- Bristol City Council</span>
                             <div class="u-mt-xs u-fs-xs">
-                                    <a href="case-study-a.html">Read more</a>
-                                </div>
-                            </blockquote>
-
-                        </div>
+                                <a href="case-study-a.html">Read more</a>
+                            </div>
+                        </blockquote>
                     </div>
                 </div>
+            </div>
             <!--Case study cards end-->
 
             <!--Help secion-->
