@@ -1,0 +1,26 @@
+---
+title: Contact form
+group: Contact form
+version: 9.1.0
+layout: rh-census/views/_master
+---
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/address/_macro.njk" import onsManualAddressInput %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+
+{% block main %}
+    <h1>Contact form</h1>
+
+    <p><a href="{{ pageInfo.rootPath }}/web-form.html">Based on the Jira ticket and business requirments</a></p>
+    
+    <p><a href="{{ pageInfo.rootPath }}/web-form-recommended-1.html">Reduced to suggested minimum form fields - requires review and testing</a></p>
+    <p><a href="{{ pageInfo.rootPath }}/web-form-recommended-2.html">To replicate email structure and familiarity - requires review and testing</a></p>
+
+    <p><a href="{{ pageInfo.rootPath }}/web-form-sent.html">Message sent confirmation - requires review and testing</a></p>
+
+    <p>Alternatively if the web form is only sent to an email inbox, could we just provide an email address as MVP and the 3rd party would need to sift and handle requests?</p>
+    
+{% endblock %}

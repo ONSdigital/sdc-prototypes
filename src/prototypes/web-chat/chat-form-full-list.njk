@@ -24,83 +24,9 @@ layout: web-chat/views/_master
             })
         }}
 
-        {#{{
-            onsInput({
-                "id": "email",
-                "label": {
-                    "text": "Enter your email address",
-                    "description": "We will send a copy of the chat to this address"
-                },
-                "classes": "input--w-20@m js-name"
-            })
-        }}#}
-
         {{ 
             onsRadios({
-                "legend": "Select your language",
-                "name": "food",
-                "radios": [
-                    {
-                        "id": "english",
-                        "label": {
-                            "text": "English"
-                        },
-                        "value": "help"
-                    },
-                    {
-                        "id": "welsh",
-                        "label": {
-                            "text": "Welsh"
-                        },
-                        "value": "form"
-                    }
-                ]
-            }) 
-        }}
-
-        {#{{
-            onsSelect({
-                "id": "query",
-                "name": "query",
-                "label": {
-                    "text": "Select your language"
-                },
-                "options": [
-                    {
-                        "value": "",
-                        "text": "Select an option",
-                        "disabled": true,
-                        "selected": true
-                    },
-                    {
-                        "value": "english",
-                        "text": "English"
-                    },
-                    {
-                        "value": "welsh",
-                        "text": "Welsh"
-                    }
-                ]
-            })
-        }}#}
-
-        {#{{
-            onsTextarea({
-                "id": "textarea-char-limit",
-                "name": "feedback-limited",
-                "classes": "input--w-30",
-                "label": {
-                    "text": "Your message"
-                },
-                "maxlength": 800,
-                "charCountSingular": "You have {x} character remaining",
-                "charCountPlural": "You have {x} characters remaining"
-            })
-        }}#}
-
-        {{ 
-            onsRadios({
-                "legend": "What type of query do you have",
+                "legend": "What do you need help with?",
                 "name": "food",
                 "radios": [
                     {
@@ -113,14 +39,14 @@ layout: web-chat/views/_master
                     {
                         "id": "form",
                         "label": {
-                            "text": "I have a query about a form"
+                            "text": "I have a question about my census form"
                         },
                         "value": "form"
                     },
                     {
                         "id": "technical",
                         "label": {
-                            "text": "I have a technical question"
+                            "text": "I am having technical difficulties"
                         },
                         "value": "technical"
                     },
@@ -134,7 +60,7 @@ layout: web-chat/views/_master
                     {
                         "id": "address",
                         "label": {
-                            "text": "I have a query about my address"
+                            "text": "I have a question about my address"
                         },
                         "value": "address"
                     },
@@ -148,59 +74,13 @@ layout: web-chat/views/_master
                     {
                         "id": "face-to-face",
                         "label": {
-                            "text": "I need face to face help"
+                            "text": "I need to speak to an adviser face-to-face"
                         },
                         "value": "face-to-face"
                     }
                 ]
             }) 
         }}
-
-        {#{{
-            onsSelect({
-                "id": "query",
-                "name": "query",
-                "label": {
-                    "text": "Select your query type"
-                },
-                "options": [
-                    {
-                        "value": "",
-                        "text": "Select an option",
-                        "disabled": true,
-                        "selected": true
-                    },
-                    {
-                        "value": "help",
-                        "text": "I need some help"
-                    },
-                    {
-                        "value": "form",
-                        "text": "I have a query about a form"
-                    },
-                    {
-                        "value": "technical",
-                        "text": "I have a technical question"
-                    },
-                    {
-                        "value": "complaint",
-                        "text": "I have a complaint"
-                    },
-                    {
-                        "value": "address",
-                        "text": "I have a query about my address"
-                    },
-                    {
-                        "value": "send-something",
-                        "text": "I need something sent to me"
-                    },
-                    {
-                        "value": "face-to-face",
-                        "text": "I need face to face help"
-                    }
-                ]
-            })
-        }}#}
 
         {{ 
             onsButton({

@@ -711,11 +711,6 @@
     throttle-typescript "^1.0.1"
     whatwg-fetch "^3.0.0"
 
-"@ons/design-system/10.0.0@npm:@ons/design-system@10.0.0":
-  version "10.0.0"
-  resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-10.0.0.tgz#bb3facb9d8064924e2ff5e5c3b1552f3c64b974e"
-  integrity sha512-k6UG+WzvzC02Ljn1wnI7ucObm/UmK6lnepT7dsWtRelO4Ly+oThyaev1EQqm66orsZGi5nA9QCtBheZtP7Ftyw==
-
 "@ons/design-system/4.1.0@npm:@ons/design-system@4.1.0":
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-4.1.0.tgz#3d8c5c09642ee90bee5b6fc2d5b509b59b245491"
@@ -775,6 +770,16 @@
   version "9.2.0"
   resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-9.2.0.tgz#1efa99ad99f12c97a8decd395a7e534d0925e9ab"
   integrity sha512-6XrUlQ5GImdFkI0uZaSUMVkfrhZ9c74ME7yjZz4pWJvAnJcO7ECwr8kwdvaFEajzn0YJAaFsox6fe4lbofMaEA==
+
+"@ons/design-system/10.0.0@npm:@ons/design-system@10.0.0":
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-10.0.0.tgz#bb3facb9d8064924e2ff5e5c3b1552f3c64b974e"
+  integrity sha512-k6UG+WzvzC02Ljn1wnI7ucObm/UmK6lnepT7dsWtRelO4Ly+oThyaev1EQqm66orsZGi5nA9QCtBheZtP7Ftyw==
+
+"@ons/design-system/10.0.1@npm:@ons/design-system@10.0.1":
+  version "10.0.1"
+  resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-10.0.1.tgz#95a9f8cc1988b7f63a34f66434e48373373280d4"
+  integrity sha512-k9cxbjsxFfoiQt1OX5t/MgRxjZ7OEuvn23LaxX4/To0ZGs0ABEwxPPpxJyimQfohIasjHk23/9Na1pB8uOkWzA==
 
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.0"
@@ -2957,10 +2962,10 @@ detect-node@^2.0.4:
   resolved "https://registry.yarnpkg.com/detect-node/-/detect-node-2.0.4.tgz#014ee8f8f669c5c58023da64b8179c083a28c46c"
   integrity sha512-ZIzRpLJrOj7jjP2miAtgqIfmzbxa4ZOr5jJc601zklsfEx9oTzmmj2nVpIPRpNlRTIh8lc1kyViIY7BWSGNmKw==
 
-dice-coefficient@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/dice-coefficient/-/dice-coefficient-1.0.3.tgz#d49a2742c554f789696111a0b9d398fc705c14fc"
-  integrity sha512-Ub1z+1ZP69yc9fRQEu1y7WE6QglUVPDaIbI0NxgpcE+rxuyJYx115LyN8gS1DO0su3QO1nql7DLlq6jAahcDbQ==
+dice-coefficient@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/dice-coefficient/-/dice-coefficient-1.0.4.tgz#09b319fd8ddd3e843bc512945e5bc33da67cfb74"
+  integrity sha512-RA/CrEZjsxQR18Auir+BBedEpjjjH3dT8jLfBltQf8qE8pyM8wbhGE5O8duIwqK3LDBZ/ArXeveRnWxs3SK7vQ==
   dependencies:
     n-gram "^1.0.0"
 
@@ -5856,10 +5861,10 @@ lodash.uniq@^4.5.0:
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
   integrity sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=
 
-lodash@^4.0.0, lodash@^4.17.11, lodash@^4.17.5, lodash@^4.3.0, lodash@~4.17.10:
-  version "4.17.11"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
-  integrity sha512-cQKh8igo5QUhZ7lg38DYWAxMvjSAKG0A8wGSVimP07SIUEK2UO+arSRKbRZWtelMtN5V0Hkwh5ryOto/SshYIg==
+lodash@^4.0.0, lodash@^4.17.11, lodash@^4.17.13, lodash@^4.17.5, lodash@^4.3.0, lodash@~4.17.10:
+  version "4.17.13"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.13.tgz#0bdc3a6adc873d2f4e0c4bac285df91b64fc7b93"
+  integrity sha512-vm3/XWXfWtRua0FkUyEHBZy8kCPjErNBT9fJx8Zvs+U6zjqPbTUOpkaoum3O5uiA8sm+yNMHXfYkTUHFoMxFNA==
 
 log-symbols@^1.0.2:
   version "1.0.2"

@@ -19,6 +19,20 @@ layout: web-chat/views/_master
 {% block main %}
     <h2 class="u-mt-m u-mb-no">Webchat</h2>
     <p>Our advisers can help you with your census survey.</p>
-    <p>Webchat is unavailable at the moment because of techincal problems. If this continues either try another browser or call us on 0300 141 2021 for help.</p>
+    <p>Webchat is unavailable at the moment.</p>
+    <p>You could:</p>
+    {% from "components/lists/_macro.njk" import onsList %}
+    {{ 
+        onsList({
+            "itemsList": [
+                {
+                    "text": 'try another browser'
+                },
+                {
+                    "text": 'call us on 03000 141 2021 for help'
+                }
+            ]
+        }) 
+    }}
     
 {% endblock %}

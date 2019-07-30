@@ -1,0 +1,144 @@
+---
+title: Contact form
+group: Web Form
+version: 9.1.0
+layout: rh-census/views/_master
+---
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/address/_macro.njk" import onsManualAddressInput %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action": "/prototypes/web-form/web-form-sent.html"
+    }
+} %}
+
+{% block main %}
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/">Previous</a>
+    {% call onsQuestion({
+        "title": "Contact form",
+        "description": "",
+        "useFieldset": true
+    }) %}
+
+    {% from "components/radios/_macro.njk" import onsRadios %}
+    {{ 
+        onsRadios({
+            "legend": "What do you need help with?",
+            "name": "food",
+            "radios": [
+                {
+                    "id": "help",
+                    "label": {
+                        "text": "I need some help"
+                    },
+                    "value": "help"
+                },
+                {
+                    "id": "form",
+                    "label": {
+                        "text": "I have a question about my census form"
+                    },
+                    "value": "form"
+                },
+                {
+                    "id": "technical",
+                    "label": {
+                        "text": "I am having technical difficulties"
+                    },
+                    "value": "technical"
+                },
+                {
+                    "id": "complaint",
+                    "label": {
+                        "text": "I have a complaint"
+                    },
+                    "value": "complaint"
+                },
+                {
+                    "id": "address",
+                    "label": {
+                        "text": "I have a question about my address"
+                    },
+                    "value": "address"
+                },
+                {
+                    "id": "send-something",
+                    "label": {
+                        "text": "I need something sent to me"
+                    },
+                    "value": "send-something"
+                },
+                {
+                    "id": "face-to-face",
+                    "label": {
+                        "text": "I need to speak to an adviser face-to-face"
+                    },
+                    "value": "face-to-face"
+                }
+            ]
+        }) 
+    }}
+
+    {% from "components/textarea/_macro.njk" import onsTextarea %}
+    {{
+        onsTextarea({
+            "id": "textarea",
+            "name": "feedback",
+            "label": {
+                "text": "Describe what you need help with"
+            }
+        })
+    }}
+
+    <h2 class="u-mt-m">Your details</h2>
+
+    {% from "components/input/_macro.njk" import onsInput %}
+    {{ 
+        onsInput({
+            "id": "name",
+            "label": {
+                "text": "Name"
+            }
+        }) 
+    }}
+
+    {% from "components/input/_macro.njk" import onsInput %}
+    {{ 
+        onsInput({
+            "id": "email",
+            "type": "email",
+            "autocomplete": "email",
+            "label": {
+                "text": "Email address"
+            }
+        }) 
+    }}
+
+    {% from "components/input/_macro.njk" import onsInput %}
+    {{ 
+        onsInput({
+            "id": "address1",
+            "classes": "input--w-5",
+            "label": {
+                "text": "Postcode",
+                "description": "We use this to check if your area is included in the census rehearsal"
+            }
+        })
+    }}
+
+    {% endcall %}
+    
+    {{
+        onsButton({
+            "text": "Send",
+            "classes": "u-mt-l"
+        })
+    }}
+    
+{% endblock %}

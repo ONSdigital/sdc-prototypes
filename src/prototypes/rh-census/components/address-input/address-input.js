@@ -10,10 +10,11 @@ import { sortBy } from 'sort-by-typescript';
 
 const lookupURL = 'https://api.addressy.com/Capture/Interactive/Find/v1.10/json3.ws';
 const retrieveURL = 'https://api.addressy.com/Capture/Interactive/Retrieve/v1.10/json3.ws';
-const key = 'ab49-ty54-ke29-bu23';
+const key = 'bu52-nh49-mx94-ju33';
 const addressReplaceChars = [','];
 
 const classAddress = 'js-address';
+const classFromLookup = 'js-address-from-lookup';
 const classOrganisation = 'js-address-organisation';
 const classLine1 = 'js-address-line-1';
 const classLine2 = 'js-address-line-2';
@@ -28,6 +29,7 @@ const classTypeahead = 'js-address-typeahead';
 class AddressInput {
   constructor(context) {
     this.context = context;
+    this.fromLookupInput = context.querySelector(`.${classFromLookup}`);
     this.organisation = context.querySelector(`.${classOrganisation}`);
     this.line1 = context.querySelector(`.${classLine1}`);
     this.line2 = context.querySelector(`.${classLine2}`);
@@ -92,6 +94,11 @@ class AddressInput {
     }
 
     this.manualMode = manual;
+
+    if (this.fromLookupInput) {
+      this.fromLookupInput.value = !manual;
+      triggerChange(this.fromLookupInput);
+    }
   }
 
   suggestAddresses(query) {

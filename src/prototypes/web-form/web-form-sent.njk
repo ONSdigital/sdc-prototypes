@@ -1,0 +1,26 @@
+---
+title: Contact us form
+group: Web Form
+version: 9.1.0
+layout: rh-census/views/_master
+---
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/address/_macro.njk" import onsManualAddressInput %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action": "/prototypes/web-form/"
+    }
+} %}
+
+{% block main %}
+    <h1 class="u-mt-l">Message sent</h1>
+
+    <p>We will reply to example@example.com within 48 working hours.</p>
+
+{% endblock %}
