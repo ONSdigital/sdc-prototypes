@@ -1,10 +1,11 @@
 ---
-version: 10.0.0
+version: 13.3.0
 layout: census-website/views/_page
 ---
 
 {% set content = { 
     "title": 'How to complete the census',
+    "sectionTitle": "Overview",
     "breadcrumbs": {
         "itemsList": [
             {
@@ -21,7 +22,38 @@ layout: census-website/views/_page
                 "current": true
             }
         ]
-    }
+    },
+    "contentsList": {
+        "ariaLabel": 'Pages in this guide',
+        "lists": [
+            {
+                "itemsList": [
+                    {
+                        "text": 'Overview',
+                        "current": true
+                    },
+                    {
+                        "url": '/prototypes/census-website/help/getting-started/who-should-complete-the-census.html',
+                        "text": 'Who should complete the census'
+                    },
+                    {
+                        "url": '/prototypes/census-website/help/getting-started/change-in-circumstances.html',
+                        "text": 'Change in circumstances'
+                    }
+                ]
+            }
+        ]
+    },
+    "contentPagination": {
+        "contentPaginationItems": [
+            {
+                "rel": 'next',
+                "text": 'Next',
+                "url": '/prototypes/census-website/help/getting-started/who-should-complete-the-census.html',
+                "label": 'Who should complete the census'
+            }
+        ]
+    }    
 } %}
 
 {% block content %}
@@ -48,7 +80,7 @@ layout: census-website/views/_page
             }
         })
     }}
-    <p>To <a href="https://sdc-prototypes.netlify.com/prototypes/rh-census/home.html">complete your census online</a>, use the unique access code in the letter we sent the householder.</p>
+    <p>To complete your census online</a>, use the unique access code in the letter we sent the householder.</p>
     <img class="u-mb-s" src="../../img/letter-placeholder.png" width="280"/>
     <p>Complete your census as soon as possible.</p>
     <p>It should take between 20 to 30 minutes to complete and we’d like you to do it as soon as possible. You can save your answers and return to them later if you need to.</p>
@@ -59,31 +91,18 @@ layout: census-website/views/_page
             "classes": "u-mb-m"
         })
     }}
-    <h2>Second homes</h2>
-    <p>If you have a second home then you will need to complete the census for both properties.</p>
-    <h2>People with no fixed address</h2>
-    <p>You may be living in temporary accommodation or have no fixed address. You will still need to complete the census for the place you are currently living. This may include:</p>
-    <ul>
-    <li>boats</li>
-    <li>mobile homes</li>
-    <li>refuges</li>
-    <li>homeless shelters</li>
-    </ul>
-    <h2>Armed forces</h2>
-    <p>Members of the armed forces will need to complete the census for their usual address in the UK. This applies when:</p>
-    <ul>
-    <li>you spend most of your time at your place of work elsewhere</li>
-    <li>you are serving onboard a ship</li>
-    </ul>
-    <p>You do not need to complete the census if you are a member of the foreign armed forces, or your permanent base is outside the UK.</p>
-    <h2>If you have not seen a census letter</h2>
+    {% from "components/button/_macro.njk" import onsButton %}
+    {{-
+        onsButton({
+            "type": "button",
+            "classes": "u-mb-l",
+            "innerClasses": "icon--chevron-right-white",
+            "url": "https://sdc-prototypes.netlify.com/prototypes/rh-census/home-v13.html",
+            "text": "Start census"
+        })
+    }}    
+  <h2>If you have not seen a census letter</h2>
     <p>If you are the householder and think you should have received a letter, <a href="/prototypes/census-website/contact/">contact us to get a unique access code.</a></p>
     <p>If you are not the householder check with them to see if they have the census letter with the unique access code. You can use the code to complete your individual questions.</p>
     <p>This may not be possible, or you may not want the people you live with to see your answers. You can <a href="https://sdc-prototypes.netlify.com/prototypes/rh-census/address.html">get a new code to respond separately to the household</a>. We will send it to you by text.</p>
-    <h2>Change in circumstances</h2>
-    <p>If anything changes after you have filled out the form, then you don’t need to let us know. Just be as accurate as possible when you are completing it.</p>
-    <h3>Moving house</h3>
-    <p>Fill out the census for the address where you will be on the 13 October 2019.</p>
-    <h3>Staying somewhere else on the night of the census</h3>
-    <p>Please fill out the census for where you will be on the 13 October. If anything changes after you’ve submitted it you don’t need to let us know.</p>
-{% endblock %}
+  {% endblock %}
