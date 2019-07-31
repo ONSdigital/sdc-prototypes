@@ -20,17 +20,21 @@ layout: census-website/views/_page
     }
 } %}
 {% block content %}
-    <p>Census helpline is available from the 23 September to 17 November 2019.</p>
-    <h2 class="u-mt-l">By phone</h2>
-    <h3 class="u-mb-xs">England</h3> <p class="u-mb-xs">Telephone: <strong>0800 141 2021</strong></p><p class="u-mt-xs">Monday to Friday, 8 am to 7pm<br> Saturday, 8am to 4pm</p>
-    <h3 class="u-fs-r-m u-mb-xs">Wales</h3> Telephone: <strong>0800 169 2021</strong> <small>(Option for English and Welsh)</small></p>
-    <h3 class="u-mb-xs">Northern Ireland</h3> Telephone: <strong> 0800 328 2021</strong></p>
-    <h3 class="u-mb-xs">For other languages</h3> Telephone: <strong> 0800 587 2021</strong></p>
-    <h3 class="u-mb-xs">Text relay:</h3> <strong>NGT (18001) then 0800 141 2021</strong> </p>
-<h3 class="u-mb-xs">Opening hours:</h3>
-<p>Monday to Friday, 8 am to 7pm<br> Saturday, 8am to 4pm</p>
-
-    {% from "components/details/_macro.njk" import onsDetails %}
+    <p>Census contact centre is available from the 23 September to 17 November 2019.</p>
+<h2>By phone</h2>
+<h3 class="u-mb-xs">England</h3>
+<div class="tel-block">
+    <p>Telephone: 0800 141 2021<br>Monday to Friday, 8 am to 7pm<br>Saturday and Sunday, 8am to 1pm<br>(During rehearsal weekend) Saturday and Sunday, 8am to 4pm</p>
+</div>
+<h3 class="u-mb-xs">Wales</h3>
+<div class="tel-block">
+    <p>Telephone: 0800 169 2021 <small>(Option for English and Welsh)</small><small></small><br>Monday to Friday, 8 am to 7pm<br>Saturday and Sunday, 8am to 4pm<br>(During rehearsal weekend) Saturday and Sunday, 8am to 4pm<br></p>
+</div>
+<h3 class="u-mb-xs">For other languages</h3>
+<div class="tel-block">
+    <p> Telephone: 0800 587 2021<br>Monday to Friday, 8 am to 7pm<br>Saturday and Sunday, 8am to 1pm<br>(During rehearsal weekend) Saturday and Sunday, 8am to 4pm</p>
+</div>
+{% from "components/details/_macro.njk" import onsDetails %}
     {{ onsDetails({
             "id": "details",
             "title": "Find out about call charges",
@@ -44,72 +48,18 @@ layout: census-website/views/_page
             }
         })
     }}
+<h3 class="u-mb-xs">Text relay:</h3>
+<p> NGT (18001) then 0800 141 2021<br>Monday to Sunday, open 24 hours</p>
+<h3>Alternative formats:</h3>
+<p>Telephone: 0800 141 2021<br>To request a Braille form, etc</p>
 
+   
 
-    <div class="u-mb-m">
-    {% from "components/panel/_macro.njk" import onsPanel %}
-    {{ 
-    onsPanel({
-        body: "<p>Call 0800 141 2021 to ask for alternative formats, such as braille</p>"
-    }) 
-    }}
-    </div>
-    
-    <h2 class="u-mt-xl u-mb-xs">Web chat</h2>
-    <p><a href="">Speak to an advisor</a></p>
-        <p class="u-mt-s u-mb-xs u-fs-r–b"><strong>Opening hours: </strong>Monday to Friday, 8 am to 7pm<br> Saturday, 8am to 4pm</p>
-    <h2 class="u-mt-xl u-mb-xs">Web form</h2>
-    <p>You can use the <a href="">webform</a> to send your questions or comments about the Census programme</p>
-    
+    <h2 class="u-mb-xs">Web chat</h2>
+    <p>Monday to Friday, 8am to 7pm<br>Saturday and Sunday, 8am to 1pm<br>(During rehearsal weekend) Saturday and Sunday, 8am to 4pm<a href="/webchat"><br></a></p>
+    <p><a href="/webchat">Chat with an adviser</a></p>
 
-    <h2 class="u-mt-xl">Follow us</h2>
-    <div style="display: flex;">
-    <div style="height:40px;width:40px;margin-right:10px;">
-        <a href=""><img src="/prototypes/census-website/img/facebook-logo.svg"></a>
-    </div> 
-    <div style="height:40px;width:40px;margin-right:10px;">
-        <a href=""><img src="/prototypes/census-website/img/twitter-logo.svg"> @Census2021</a>
-    </div> 
-    <div style="height:40px;width:40px;margin-right:10px;">
-   <a href=""><img src="/prototypes/census-website/img/twitter-logo.svg"> @Censushelp</a>
-    </div>
-    <!--<div style="height:40px;width:40px;">
-        <a href=""><img src="/prototypes/census-website/img/linkedin.svg"></a>
-    </div>-->
-    </div> 
+    <h2 class="u-mt-m">Web form</h2>
+<p>You can use the <a href="https://craftcms.census-gcp.onsdigital.uk/admin/entries/contentPage/82-contact-us/en">webform</a> to send your questions or comments about the Census programme</p>
 
-
-    <!--<div class="u-mt-m">
-    <h2 class="u-fs-l">Marketing materials</h2>
-    <p>Select below the advertising materials you require</p>
-    {% from "components/downloads/_macro.njk" import onsDownloads %}
-    {{ onsDownloads({
-        "classes": "u-mt-m",
-        "downloads": [
-            {
-                "url": "#",
-                "thumbnail": "/prototypes/census-website/img/poster.jpg",
-                "title": "Census awareness poster",
-                "type": "Portable Document Format",
-                "typeAbbr": "PDF",
-                "fileSize": "890KB",
-                "pages": "1 page",
-                "accessibilityMessage": "This file may not be suitable for users of assistive technology.",
-                "accessibilityURL": "#",
-                "accessibilityLinkText": "Request an accessible format"
-            },
-            {
-                "url": "#",
-                "thumbnail": "/prototypes/census-website/img/poster2.jpg",
-                "title": "Census Letterhead",
-                "type": "Portable Document Format",
-                "typeAbbr": "PDF",
-                "fileSize": "330KB",
-                "pages": "1 page",
-                "accessibilityMessage": "This file may not be suitable for users of assistive technology.",
-                "accessibilityURL": "#",
-                "accessibilityLinkText": "Request an accessible format"
-            }
-        ]
-    }) }}   -->     
 {% endblock %}
