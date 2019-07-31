@@ -4,8 +4,8 @@ layout: census-website/views/_guide
 ---
 
 {% set content = { 
-    "title": 'Finding support to complete your census',
-    "sectionTitle": 'Overview',    
+    "title": 'How to get help to fill in your census',
+    "sectionTitle": 'Overview',
     "breadcrumbs": {
         "itemsList": [
             {
@@ -17,13 +17,13 @@ layout: census-website/views/_guide
                 "text": 'Help with your census'
             },            
             {
-                "url": '/prototypes/census-website/help/finding-support-to-complete-your-census/',
-                "text": 'Finding support to complete your census',
+                "text": 'How to get help to fill in your census',
                 "current": true
             }
         ]
     },
-    "contentsList": {
+   "contentsList": {
+        "ariaLabel": 'Pages in this guide',
         "lists": [
             {
                 "itemsList": [
@@ -32,12 +32,8 @@ layout: census-website/views/_guide
                         "current": true
                     },
                     {
-                        "url": '/prototypes/census-website/help/finding-support-to-complete-your-census/help-centres/',
-                        "text": 'Help centres'
-                    },
-                    {
-                        "url": '/prototypes/census-website/help/finding-support-to-complete-your-census/helping-someone-else-fill-in-their-census/',
-                        "text": 'Helping someone else fill in their census'
+                        "url": '/prototypes/census-website/help/finding-support-to-complete-your-census/help-centre-venues.html',
+                        "text": 'Help centre venues'
                     }
                 ]
             }
@@ -46,27 +42,24 @@ layout: census-website/views/_guide
     "contentPagination": {
         "contentPaginationItems": [
             {
-                "rel": 'next',
-                "text": 'Next',
-                "url": '/prototypes/census-website/help/finding-support-to-complete-your-census/help-centres/',
-                "label": 'Help centres'
+                "rel": 'prev',
+                "text": 'Previous',
+                "url": '/prototypes/census-website/help/finding-support-to-complete-your-census/',
+                "label": 'Overview'
             }
         ]
     }
-
 } %}
 {% block content %}
-    <p>There are a few different ways to get help filling in your census. You can:</p>
+    <p>If you need help filling in the census, then there a few different ways to get help:</p>
     <ul>
-        <li>call <a href="/prototypes/census-website/contact/">our contact centre</a> using the free phone number</li>
+        <li><a href="/prototypes/census-website/contact/">call our contact centre</a> using the free phone number</li>
         <li>ask someone you trust to help you</li>
-        <li>visit one of the <a href="/prototypes/census-website/help/finding-support-to-complete-your-census/drop-in-centres/">drop-in help centres</a> set up to provide help</li>
+        <li>in person by visiting one of the <a href="prototypes/census-website/help/finding-support-to-complete-your-census/help-centre-venues.html">help centre venues</a> set up to provide help</li>
     </ul>
-    {% from "components/panel/_macro.njk" import onsPanel %}
-    {{-
-        onsPanel({
-            "body": "<p>When you contact us or visit one of our venues you will need your letter with the 16 digit unique access code.</p>",
-            "classes": "u-mb-m"
-        })
-    }} 
+    {% from "components/panel/_macro.njk" import onsPanel %}            
+    <p>Our staff will offer you help to get online and fill in the census. You can take your own mobile device, or you can use a laptop or tablet provided at the venue.</p>
+    <p>You will need to bring your letter with the 16 digit unique access code. You’ll also need to have access to the information we ask for in the census. For examples, dates of birth, addresses, employer details.</p>
+    <h2>Helping someone else fill in their census</h2>
+    <p>If someone is happy to give you their answers then you can fill out the survey for them. If they are not able to give their own answers then you must make sure you answer with what you know to be true about them.</p>
 {% endblock %}
