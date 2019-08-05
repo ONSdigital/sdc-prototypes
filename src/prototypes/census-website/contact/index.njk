@@ -20,50 +20,55 @@ layout: census-website/views/_page
     }
 } %}
 {% block content %}
-<h2>By phone</h2>
-<h3 class="u-mb-xs">England</h3>
-<div class="tel-block">
-    <p>Telephone: 0800 141 2021<br>Monday to Friday, 8 am to 7pm<br>Saturday and Sunday, 8am to 1pm<br>(During rehearsal weekend) Saturday and Sunday, 8am to 4pm</p>
-</div>
-<h3 class="u-mb-xs">Wales</h3>
-<div class="tel-block">
-    <p>Telephone: 0800 169 2021 <small>(Option for English and Welsh)</small><small></small><br>Monday to Friday, 8 am to 7pm<br>Saturday and Sunday, 8am to 4pm<br>(During rehearsal weekend) Saturday and Sunday, 8am to 4pm<br></p>
-</div>
-<h3 class="u-mb-xs">For other languages</h3>
-<div class="tel-block">
-    <p> Telephone: 0800 587 2021<br>Monday to Friday, 8 am to 7pm<br>Saturday and Sunday, 8am to 1pm<br>(During rehearsal weekend) Saturday and Sunday, 8am to 4pm</p>
-</div>
-{% from "components/details/_macro.njk" import onsDetails %}
-    {{ onsDetails({
-            "id": "details",
-            "title": "Find out about call charges",
-            "classes": "u-mb-m u-mt-l",
-            "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur snint occaecat cupidatat</p>
-                        <p> non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occat in culpa qui officia deserunt mollit anim id est laborum.</p>",
-            "button": {
-                "close": "Hide this"
-            }
-        })
-    }}
-<h3 class="u-mb-xs">Text relay:</h3>
-<div class="tel-block">
-<p> NGT (18001) then 0800 141 2021<br>Monday to Sunday, open 24 hours</p>
-</div>
-
-<h3>Alternative formats:</h3>
-<div class="tel-block">
-<p>Telephone: 0800 141 2021<br>To request a Braille form, etc</p>
-</div>
-   
-
-    <h2 class="u-mb-xs">Web chat</h2>
-    <div class="tel-block">
-    <p>Monday to Friday, 8am to 7pm<br>Saturday and Sunday, 8am to 1pm<br>(During rehearsal weekend) Saturday and Sunday, 8am to 4pm<a href="/webchat"><br></a></p>
-    <p><a href="/webchat">Chat with an adviser</a></p>
-</div>
-    <h2 class="u-mt-m">Web form</h2>
-<p>You can use the <a href="https://craftcms.census-gcp.onsdigital.uk/admin/entries/contentPage/82-contact-us/en">webform</a> to send your questions or comments about the Census programme</p>
+               <section class="section">
+                    <p>Contact us if you have any questions about filling in the Census online or on paper. You can use any of these options if you need information or a questionnaire in an alternative format like Braille or large print.</p>
+                    
+                    <h2>Phone</h2>
+                    <p>We will have advisors available to speak to you at the following times:</p>
+                    <p>Monday to Friday, 8am to 7pm<br>
+                    Saturday and Sunday, 8am to 1pm</p>
+                    
+                    <h3 class="u-mb-xs">England</h3>
+                    <p>Telephone: 0800 141 2021</p>
+                    
+                    <h3 class="u-mb-xs">Wales</h3>
+                    <p>Telephone: 0800 169 2021 <small>(Option for English and Welsh)</small><br></p>
+                    
+                    <h3 class="u-mb-xs">Alternative languages</h3>
+                    <p>Telephone: 0800 587 2021<br></p>
+                    
+                    <h3>Text relay</h3>
+                    <p>NGT (18001) then 0800 141 2021<br>24 hours a day, seven days a week</p>
+                    <h3>SMS text message</h3>
+                    <p>Text 86677<br>24 hours a day, seven days a week</p>
+                        {% from "components/details/_macro.njk" import onsDetails %}
+                            {{ onsDetails({
+                                    "id": "details",
+                                    "title": "Find out about call charges",
+                                    "classes": "u-mb-m u-mt-l",
+                                    "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur snint occaecat cupidatat</p>
+                                                <p> non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occat in culpa qui officia deserunt mollit anim id est laborum.</p>",
+                                    "button": {
+                                        "close": "Hide this"
+                                    }
+                                })
+                            }}
+                    
+                    <h2>Online</h2>
+                    <h3>Live chat</h3>
+                    <p>We will have advisors available to speak to you at the following times:</p>
+                    <p>Monday to Friday, 8am to 7pm<br>Saturday and Sunday, 8am to 1pm<br></p>
+                    
+                    <a href="/webchat" role="button" class="btn u-mb-m" onclick="window.open(this.href,'targetWindow','toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=360,height=680'); return false;"><span class="btn__inner icon--chevron-right-white">Start live chat</span></a>
+                    
+                    <h3>Contact form</h3>
+                    <p>You can use the contact form to send your questions or comments about the Census. We will email you back.</p>
+                    <button type="button" class="btn u-mb-m">
+                    <span class="btn__inner icon--chevron-right-white">Contact us email form</span>
+                    </button>
+               </section>
+         
 
 {% endblock %}
