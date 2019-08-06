@@ -7,14 +7,15 @@ layout: typeaheads/views/_master
 
 {% block main %}
     <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/passport.html">Previous</a>
-    <form action="{{ pageInfo.parentPath }}/national-identity.html?previous={{ pageInfo.path }}.html">
-        <h1 class="u-fs-l u-mt-s">What other passports do you hold?</h1>
+    <form action="{{ pageInfo.parentPath }}/employment-status.html?previous={{ pageInfo.path }}.html">
+        <h1 class="u-fs-l u-mt-s">You selected "Other". What other passports do you hold?</h1>
         {{
             prototypeTypeahead({
                 "id": "passport-other",
                 "classes": "u-mt-s",
                 "label": {
-                    "text": "Enter other passports held"
+                    "text": "Passports",
+                    "description": "Start entering to get suggestions. You can select from suggestions or enter your own answer"
                 },
                 "instructions": "Use up and down keys to navigate suggestions once you\'ve typed more than two characters. Use the enter key to select a suggestion. Touch device users, explore by touch or with swipe gestures.",
                 "content": {
