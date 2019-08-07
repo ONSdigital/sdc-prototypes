@@ -75,9 +75,7 @@ function studentAddressCheck() {
 
       return `<div class="field__item">
         <div class="radio">
-          <input class="radio__input" name="${params.name}" id="${radio.id}" value="${radio.value}" aria-labeledby="${
-        radio.id
-      }-label" type="radio" ${attributes.join(' ')}>
+          <input class="radio__input" name="${params.name}" id="${radio.id}" value="${radio.value}" aria-labeledby="${radio.id}-label" type="radio" ${attributes.join(' ')}>
           <label id="${radio.id}-label" aria-hidden="true" class="radio__label" for="${radio.id}">${radio.label.text}</label>
         </div>
       </div>`;
