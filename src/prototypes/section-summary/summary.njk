@@ -1,0 +1,734 @@
+---
+title: Section summary
+group: Section summary
+version: 9.1.0
+layout: individual-summary/views/_master
+---
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/summary/_macro.njk" import onsSummary %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+{% from "prototypes/link-as-button-accessibility/components/button/_macro.njk" import onsButton %}
+
+{% block main %}
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/">Previous</a>
+   <h1 class="u-fs-xl u-mt-s">Gino Bartali</h1>
+   {{ 
+    onsPanel({
+        "type": "success",
+        body: "<p><strong>This section is now complete</strong><br>
+You can check your answers below</p>"
+    }) 
+}}
+   <h2 class="u-fs-m u-mt-l u-mb-xs">Personal details</h2>
+   {{
+    onsSummary({
+        "rows": [
+            {
+                "title": "Are you answering the questions on behalf of someone else?",
+                "rowItems": [
+                    {
+                        "valueList": [ 
+                            {
+                                "text": "No, I’m answering for myself"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "text": "Change",
+                                "ariaLabel": "Change answer for: What are the dates of the sales period you are reporting for?",
+                                "url": "#"
+                            }
+                        ]
+                    }
+                ]
+            }
+            ,
+            {
+                "title": "What is your name?",
+                "rowItems": [
+                    {
+                        "valueList": [
+                            {
+                                "text": "Gino Bartali"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "text": "Change",
+                                "ariaLabel": "Change answer for: What is your name?",
+                                "url": "#"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "What is your date of birth?",
+                "rowItems": [
+                    {
+                        "valueList": [
+                            {
+                                "text": "18 July 1914"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "text": "Change",
+                                "ariaLabel": "Change answer for: What is your date of birth?",
+                                "url": "#"
+                            }
+                        ]
+                    }
+                ]
+            },
+                       {
+                "title": "What is your sex?",
+                "rowItems": [
+                    {
+                        "valueList": [
+                            {
+                                "text": "Male"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "text": "Change",
+                                "ariaLabel": "Change answer for: What is your sex?",
+                                "url": "#"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "On 20 June 2019, what is your legal marital or registered civil partnership status?",
+                "rowItems": [
+                    {
+                        "valueList": [
+                            {
+                                "text": "Married"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "text": "Change",
+                                "ariaLabel": "Change answer for: On 20 June 2019, what is your legal marital or registered civil partnership status?	",
+                                "url": "#"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Who is your legal marriage to?",
+                "rowItems": [
+                    {
+                        "valueList": [
+                            {
+                                "text": "Someone of the opposite sex"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "text": "Change",
+                                "ariaLabel": "Change answer for: Who is your legal marriage to?",
+                                "url": "#"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Do you stay at another address for more than 30 days a year?",
+                "rowItems": [
+                    {
+                        "valueList": [
+                            {
+                                "text": "No"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "text": "Change",
+                                "ariaLabel": "Change answer for: Do you stay at another address for more than 30 days a year?",
+                                "url": "#"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Are you a student in full-time education?",
+                "rowItems": [
+                    {
+                        "valueList": [
+                            {
+                                "text": "No"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "text": "Change",
+                                "ariaLabel": "Change answer for: What passports do you hold?",
+                                "url": "#"
+                            }
+                        ]
+                    }
+                ]
+            }
+
+        
+            
+        ]
+        
+    }) }}
+   <h2 class="u-fs-m u-mt-l u-mb-xs">Identity and health</h2>
+   {{
+    onsSummary({
+        "rows": [
+            {
+                "title": "What is your country of birth?",
+                "rowItems": [
+                    {
+                        "valueList": [ 
+                            {
+                                "text": "Italy"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "text": "Change",
+                                "ariaLabel": "Change answer for: What is your country of birth?",
+                                "url": "#"
+                            }
+                        ]
+                    }
+                ]
+            }
+            ,
+            {
+                "title": "What is your main language?",
+                "rowItems": [
+                    {
+                        "valueList": [
+                            {
+                                "text": "Italian"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "text": "Change",
+                                "ariaLabel": "Change answer for: What is your main language?",
+                                "url": "#"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "How would you describe your national identity?",
+                "rowItems": [
+                    {
+                        "valueList": [
+                            {
+                                "text": "Fiorentino"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "text": "Change",
+                                "ariaLabel": "How would you describe your national identity?",
+                                "url": "#"
+                            }
+                        ]
+                    }
+                ]
+            },
+                       {
+                "title": "What is your ethnic group?",
+                "rowItems": [
+                    {
+                        "valueList": [
+                            {
+                                "text": "White"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "text": "Change",
+                                "ariaLabel": "Change answer for: What is your ethnic group?",
+                                "url": "#"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Which one best describes your White ethnic group or background?",
+                "rowItems": [
+                    {
+                        "valueList": [
+                            {
+                                "text": "Any other White background (Italian)"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "text": "Change",
+                                "ariaLabel": "Change answer for: Which one best describes your White ethnic group or background?",
+                                "url": "#"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "What is your religion?",
+                "rowItems": [
+                    {
+                        "valueList": [
+                            {
+                                "text": "Catholic"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "text": "Change",
+                                "ariaLabel": "Change answer for: What is your religion?",
+                                "url": "#"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "One year ago, what was your usual address?",
+                "rowItems": [
+                    {
+                        "valueList": [
+                            {
+                                "text": "Casa d'oro<br> Bella strada<br> Ponte a Ema<br> Florence"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "text": "Change",
+                                "ariaLabel": "Change answer for: One year ago, what was your usual address?",
+                                "url": "#"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "What passports do you hold?",
+                "rowItems": [
+                    {
+                        "valueList": [
+                            {
+                                "text": "Italian"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "text": "Change",
+                                "ariaLabel": "Change answer for: What passports do you hold?",
+                                "url": "#"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "How is your health in general?",
+                "rowItems": [
+                    {
+                        "valueList": [
+                            {
+                                "text": "Very good"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "text": "Change",
+                                "ariaLabel": "Change answer for: How is your health in general?",
+                                "url": "#"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Do you have any physical or mental health conditions or illnesses lasting or expected to last 12 months or more?",
+                "rowItems": [
+                    {
+                        "valueList": [
+                            {
+                                "text": "No"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "text": "Change",
+                                "ariaLabel": "Change answer for: Do you have any physical or mental health conditions or illnesses lasting or expected to last 12 months or more?",
+                                "url": "#"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Do you look after, or give any help or support to, anyone because they have long-term physical or mental health conditions or illnesses, or problems related to old age?",
+                "rowItems": [
+                    {
+                        "valueList": [
+                            {
+                                "text": "No"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "text": "Change",
+                                "ariaLabel": "Change answer for: Do you look after, or give any help or support to, anyone because they have long-term physical or mental health conditions or illnesses, or problems related to old age?",
+                                "url": "#"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Which of the following best describes your sexual orientation?",
+                "rowItems": [
+                    {
+                        "valueList": [
+                            {
+                                "text": "Straight or Heterosexual"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "text": "Change",
+                                "ariaLabel": "Change answer for: Which of the following best describes your sexual orientation?",
+                                "url": "#"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Is your gender the same as the sex you were registered at birth?",
+                "rowItems": [
+                    {
+                        "valueList": [
+                            {
+                                "text": "Yes"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "text": "Change",
+                                "ariaLabel": "Change answer for: Is your gender the same as the sex you were registered at birth?",
+                                "url": "#"
+                            }
+                        ]
+                    }
+                ]
+            }
+            
+        ]
+        
+    }) }}
+ <h2 class="u-fs-m u-mt-l u-mb-xs">Qualifications</h2>
+   {{
+    onsSummary({
+        "rows": [
+            {
+                "title":"Have you completed an apprenticeship?",
+                "rowItems": [
+                    {
+                        "valueList": [ 
+                            {
+                                "text": "No"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "text": "Change",
+                                "ariaLabel": "Change answer for: Have you completed an apprenticeship?",
+                                "url": "#"
+                            }
+                        ]
+                    }
+                ]
+            }
+            ,
+            {
+                "title": "Have you achieved a qualification at degree level or above?",
+                "rowItems": [
+                    {
+                        "valueList": [
+                            {
+                                "text": "Yes"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "text": "Change",
+                                "ariaLabel": "Change answer for: Have you achieved a qualification at degree level or above?",
+                                "url": "#"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Have you achieved an NVQ or equivalent qualification?",
+                "rowItems": [
+                    {
+                        "valueList": [
+                            {
+                                "text": "NVQ level 3 or equivalent"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "text": "Change",
+                                "ariaLabel": "Have you achieved an NVQ or equivalent qualification?",
+                                "url": "#"
+                            }
+                        ]
+                    }
+                ]
+            },
+                       {
+                "title": "Have you achieved an AS, A level or equivalent qualification?",
+                "rowItems": [
+                    {
+                        "valueList": [
+                            {
+                                "text": "2 or more A levels"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "text": "Change",
+                                "ariaLabel": "Change answer for: Have you achieved an AS, A level or equivalent qualification?",
+                                "url": "#"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Have you achieved a GCSE or equivalent qualification?",
+                "rowItems": [
+                    {
+                        "valueList": [
+                            {
+                                "text": "5 or more GCSEs grades A* to C or 9 to 4"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "text": "Change",
+                                "ariaLabel": "Change answer for: Have you achieved a GCSE or equivalent qualification?",
+                                "url": "#"
+                            }
+                        ]
+                    }
+                ]
+            }
+            
+        ]
+        
+    }) }}
+     <h2 class="u-fs-m u-mt-l u-mb-xs">Employment</h2>
+   {{
+    onsSummary({
+        "rows": [
+            {
+                "title":"Have you previously served in the UK Armed Forces?",
+                "rowItems": [
+                    {
+                        "valueList": [ 
+                            {
+                                "text": "No"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "text": "Change",
+                                "ariaLabel": "Change answer for: Have you previously served in the UK Armed Forces?",
+                                "url": "#"
+                            }
+                        ]
+                    }
+                ]
+            }
+            ,
+            {
+                "title": "In your main job, what is your employment status?	",
+                "rowItems": [
+                    {
+                        "valueList": [
+                            {
+                                "text": "Employed"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "text": "Change",
+                                "ariaLabel": "Change answer for: In your main job, what is your employment status?	",
+                                "url": "#"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "What is the name of the organisation or business you work for?",
+                "rowItems": [
+                    {
+                        "valueList": [
+                            {
+                                "text": "Bianchi"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "text": "Change",
+                                "ariaLabel": "What is the name of the organisation or business you work for?",
+                                "url": "#"
+                            }
+                        ]
+                    }
+                ]
+            },
+                       {
+                "title": "What is your full job title?",
+                "rowItems": [
+                    {
+                        "valueList": [
+                            {
+                                "text": "Rouler"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "text": "Change",
+                                "ariaLabel": "Change answer for: What is your full job title?",
+                                "url": "#"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Briefly describe what you do in your main job?",
+                "rowItems": [
+                    {
+                        "valueList": [
+                            {
+                                "text": "Ride like the wind"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "text": "Change",
+                                "ariaLabel": "Change answer for: Briefly describe what you do in your main job?",
+                                "url": "#"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Do you supervise or oversee the work of other employees on a day-to-day basis?",
+                "rowItems": [
+                    {
+                        "valueList": [
+                            {
+                                "text": "Yes"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "text": "Change",
+                                "ariaLabel": "Change answer for: Do you supervise or oversee the work of other employees on a day-to-day basis?",
+                                "url": "#"
+                            }
+                        ]
+                    }
+                ]
+            },
+                        {
+                "title": "In your main job, how many hours a week do you usually work?",
+                "rowItems": [
+                    {
+                        "valueList": [
+                            {
+                                "text": "49 hours or more"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "text": "Change",
+                                "ariaLabel": "Change answer for: In your main job, how many hours a week do you usually work?",
+                                "url": "#"
+                            }
+                        ]
+                    }
+                ]
+            },
+                                   {
+                "title": "How do you usually travel to work?",
+                "rowItems": [
+                    {
+                        "valueList": [
+                            {
+                                "text": "Cycle"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "text": "Change",
+                                "ariaLabel": "Change answer for: How do you usually travel to work?",
+                                "url": "#"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Where do you mainly work?",
+                "rowItems": [
+                    {
+                        "valueList": [
+                            {
+                                "text": "On the bicycle"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "text": "Change",
+                                "ariaLabel": "Change answer for: Where do you mainly work?",
+                                "url": "#"
+                            }
+                        ]
+                    }
+                ]
+            }
+            
+            
+        ]
+        
+    }) }}
+    
+    {{
+        onsButton({
+            "text": "Continue",
+            "classes": "u-mt-l",
+            "url": "index.html"
+        })
+    }}
+{% endblock %}
