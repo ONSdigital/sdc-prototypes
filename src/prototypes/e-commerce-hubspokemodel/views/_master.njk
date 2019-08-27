@@ -1,0 +1,44 @@
+{% extends "page-templates/_template.njk" %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ pageInfo.rootPath }}/styles.css" />
+{% endblock %}
+
+{% set page = { 
+ 
+    "header": {
+        "classes": "header--hero",
+        "title": "E-ddd",
+        "logoHref": "#",
+        "desc": "You are completing this for <strong>ESSENTIAL ENTERPRISE LTD</strong>.",
+        "signoutButton": {
+          "text": "Save and sign out"
+        }
+    },
+    "footer": {
+        "rows": [
+            {
+                "itemsList": [
+                    {
+                        "text": 'Contact us',
+                        "url": '#'
+                    },
+                    {
+                        "text": 'Cookies and privacy',
+                        "url": '#'
+                    },
+                    {
+                        "text": 'Terms and conditions',
+                        "url": '#'
+                    }
+                ]
+            }
+        ],
+        "OGLLink": {
+            "pre": 'All content is available under the',
+            "link": 'Open Government Licence v3.0',
+            "url": 'https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/',
+            "post": ', except where otherwise stated'
+        }
+    }
+} %}
