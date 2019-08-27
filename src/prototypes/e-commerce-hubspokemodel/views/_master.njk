@@ -1,19 +1,15 @@
-{% extends "page-templates/_template.njk" %}
+{% extends "prototypes/e-commerce-hubspokemodel/page-templates/_template.njk" %}
 
 {% block head %}
     <link rel="stylesheet" href="{{ pageInfo.rootPath }}/styles.css" />
 {% endblock %}
 
 {% set page = { 
- 
     "header": {
         "classes": "header--hero",
-        "title": "E-ddd",
-        "logoHref": "#",
-        "desc": "You are completing this for <strong>ESSENTIAL ENTERPRISE LTD</strong>.",
-        "signoutButton": {
-          "text": "Save and sign out"
-        }
+        "desc": "You are completing this for ESSENTIAL ENTERPRISE LTD.",
+        "title": "E-commerce",
+        "logoHref": "#"
     },
     "footer": {
         "rows": [
