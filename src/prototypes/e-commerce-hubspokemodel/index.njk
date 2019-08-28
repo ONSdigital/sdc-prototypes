@@ -2,7 +2,7 @@
 title: E-commerce
 group: E-commerce hub and spoke model
 version: 9.1.0
-layout: e-commerce-hubspokemodel/views/_master
+layout: e-commerce-hubspokemodel/views/_home
 ---
 {% from "components/panel/_macro.njk" import onsPanel %}
 {% from "components/summary/_macro.njk" import onsSummary %}
@@ -37,7 +37,7 @@ layout: e-commerce-hubspokemodel/views/_master
         onsButton({
             "text": 'Start survey',
             "classes": 'u-mb-m u-mt-l',
-            "url": "e-commerce-hubspokemodel/use-of-computers.html"
+            "url": "/prototypes/e-commerce-hubspokemodel/use-of-computers.html"
         })
     }}
 {% endblock %}
