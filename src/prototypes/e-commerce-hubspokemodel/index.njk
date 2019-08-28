@@ -1,8 +1,13 @@
 ---
 title: E-commerce
 group: E-commerce hub and spoke model
+<<<<<<< HEAD
 version: 10.0.1
 layout: e-commerce-hubspokemodel/views/_master
+=======
+version: 9.1.0
+layout: e-commerce-hubspokemodel/views/_home
+>>>>>>> 9aff5cdfde2c301c50d81488863492218774554f
 ---
 {% from "components/panel/_macro.njk" import onsPanel %}
 {% from "components/summary/_macro.njk" import onsSummary %}
@@ -10,14 +15,8 @@ layout: e-commerce-hubspokemodel/views/_master
 {% from "prototypes/link-as-button-accessibility/components/button/_macro.njk" import onsButton %}
 {% from "components/lists/_macro.njk" import onsList %}
 {% from "components/header/_macro.njk" import onsHeader %}
-{% set page = {
-        "header": {
-        "logoHref": "#",
-        "title": "E-commerce"
-    }
-} %}
+
 {% block main %}
-    <h1 class="u-mt-m">You are completing this for ESSENTIAL ENTERPRISE LTD.</h1>
     <p>If the company details or structure have changed contact us on <a href="#">0300 1234 931</a> or email <a href="#">surveys@ons.gov.uk</a></p>
     <h2>Information you will need:</h2>
 {{ 
@@ -43,7 +42,7 @@ layout: e-commerce-hubspokemodel/views/_master
         onsButton({
             "text": 'Start survey',
             "classes": 'u-mb-m u-mt-l',
-            "url": "e-commerce-hubspokemodel/use-of-computers.html"
+            "url": "/prototypes/e-commerce-hubspokemodel/use-of-computers.html"
         })
     }}
 {% endblock %}
