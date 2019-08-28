@@ -1,13 +1,9 @@
 ---
 title: E-commerce
 group: E-commerce hub and spoke model
-<<<<<<< HEAD
-version: 10.0.1
-layout: e-commerce-hubspokemodel/views/_master
-=======
-version: 9.1.0
+version: 13.4.5
+
 layout: e-commerce-hubspokemodel/views/_home
->>>>>>> 9aff5cdfde2c301c50d81488863492218774554f
 ---
 {% from "components/panel/_macro.njk" import onsPanel %}
 {% from "components/summary/_macro.njk" import onsSummary %}
@@ -17,6 +13,8 @@ layout: e-commerce-hubspokemodel/views/_home
 {% from "components/header/_macro.njk" import onsHeader %}
 
 {% block main %}
+<h2>Your response is legally required</h2>
+<p>Notice is given under section 1 of the Statistics of Trade Act 1947.</p>
     <p>If the company details or structure have changed contact us on <a href="#">0300 1234 931</a> or email <a href="#">surveys@ons.gov.uk</a></p>
     <h2>Information you will need:</h2>
 {{ 
@@ -26,7 +24,7 @@ layout: e-commerce-hubspokemodel/views/_home
                 "text": 'Data should relate to all sites in the UK (including foreign owned businesses) unless otherwise stated. The UK consists of England, Wales, Scotland, and Northern Ireland and excludes the Channel Islands and the Isle of Man.'
             },
             {
-                "text": 'You can provide informed estimates if actual figures aren’t available.'
+                "text": "You can provide informed estimates if actual figures aren’t available."
             },
             {
                 "text": 'For further information read <a href="#">Guidance for completing the E-commerce survey</a>'
@@ -34,8 +32,6 @@ layout: e-commerce-hubspokemodel/views/_home
         ]
     }) 
 }} 
-    <h2>Your response is legally required</h2>
-<p>Notice is given under section 1 of the Statistics of Trade Act 1947.</p>
 <p class="icon--lock">We will treat your data securely and confidentially.</p>
 
     {{
