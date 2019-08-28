@@ -1,8 +1,8 @@
 ---
 title: Campaign Website
 group: Census
-version: 13.3.0
-layout: census-website/views/_master
+version: 13.4.5
+layout: census-website/views/_page
 ---
 
 {% from "components/card/_macro.njk" import onsCard %}
@@ -11,191 +11,241 @@ layout: census-website/views/_master
 {% block page %}
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-    <div>
         <div>
-            <section class="hero hero--dark-theme hero--with-image">
-                <picture>
-                    <source media="(max-width: 739px)" srcset="/prototypes/census-website/img/banner_gradient.gif">
-                    <img class="hero__img" src="/prototypes/census-website/img/banner_gradient.gif" alt="">
-                </picture>
-                <div class="hero__container">
-                    <div class="hero__content grid grid--gutterless grid--flex grid--vertical-center">
-                        <div class="container">
-                            <div class="grid__col col-8@m">
-                                <header>
-                                    <h1 class="hero__title">We're counting on you</h1>
-                                    <h2 class="hero__subtitle u-fs-m">The census rehearsal is taking place in October 2019.</h2>
-                                </header>
-                                <p class="hero__text"><a href="/about-the-census/2019-rehearsal">Why we're doing a rehearsal and who should take part</a></p>
+            <div>
+                <section class="hero hero--dark-theme hero--with-image">
+                    <picture>
+                        <source media="(max-width: 739px)" srcset="/prototypes/census-website/img/banner_gradient.gif">
+                        <img class="hero__img" src="/prototypes/census-website/img/banner_gradient.gif" alt="">
+                    </picture>
+                    <div class="hero__container">
+                        <div class="hero__content grid grid--gutterless grid--flex grid--vertical-center">
+                            <div class="container">
+                                <div class="grid__col col-8@m">
+                                    <header>
+                                        <h1 class="hero__title">We're sort of counting on you</h1>
+                                        <h2 class="hero__subtitle u-fs-m">The census rehearsal is taking place in October 2019.</h2>
+                                    </header>
+                                    <p class="hero__text"><a href="/about-the-census/2019-rehearsal">Why we're doing a rehearsal and who should take part</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            
+                <!--3 x blocks-->
+                <div class="page__container container u-mt-l">
+                    <div class="grid grid--column@xs@s u-mb-l">
+                        <div class="grid__col col-4@m">
+                            <div class="card" aria-labelledby="about-the-census" aria-describedby="id-0" role="navigation" aria-label="Section highlight">
+                                <h3 class="u-fs-m" id="about-the-census">
+                                    <a href="/about-the-census">About the census</a>
+                                </h3>
+                                <p id="id-0">The census is a survey that gives us information about all the households in England and Wales.</p>
+                            </div>
+                        </div>
+                        <div class="grid__col col-4@m">
+                            <div class="card" aria-labelledby="why-should-i-take-part?" aria-describedby="id-1" role="navigation" aria-label="Section highlight">
+                                <h3 class="u-fs-m" id="why-should-i-take-part?">
+                                    <a href="/about-the-census/why-should-i-take-part">Why should I take part?</a>
+                                </h3>
+                                <p id="id-1">Why the information we collect is important and what we use it for.</p>
+                            </div>
+                        </div>
+                        <div class="grid__col col-4@m">
+                            <div class="card" aria-labelledby="keeping-your-data-safe" aria-describedby="id-2" role="navigation" aria-label="Section highlight">
+                                <h3 class="u-fs-m" id="keeping-your-data-safe">
+                                    <a href="/keeping-your-data-safe">Keeping your data safe</a>
+                                </h3>
+                                <p id="id-2">How we keep your data safe and what happens to your personal information.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-            
-            <div class="container">
-                <div class="grid grid--flex grid--loose grid--column@xs@s u-mt-l u-mb-m">
-                    <div class="grid__col grid__col--flex grid__col--loose u-flex-grow u-flex-no-basis@s u-mb-s col-12@xs@s">
-                    {{- 
-                        onsCard({
-                            "classes": 'u-fs-r',
-                            "title": 'What is the census?',
-                            "url": '/prototypes/census-website/about-the-census/',
-                            "text": 'The census counts everyone in England and Wales to give us a picture of who we are and how we live.',
-                            "itemsList": [
-                                {
-                                    "url": '/prototypes/census-website/about-the-census/the-2019-rehearsal.html',
-                                    "text": 'The 2019 Census Rehearsal'
-                                },
-                                {
-                                    "url": '/prototypes/census-website/about-the-census/what-happens-to-your-information.html',
-                                    "text": 'How your information is used'
-                                }
-                            ]                                
-                        })
-                    }}
-                    </div>
-                    <div class="grid__col grid__col--flex grid__col--loose u-flex-grow u-flex-no-basis@s u-mb-s col-12@xs@s">
-                    {{- 
-                        onsCard({
-                            "classes": 'u-fs-r',
-                            "title": 'Who should take part and why',
-                            "url": '/prototypes/census-website/about-the-census/who-should-take-part-and-why.html',
-                            "text": "Who should complete the census and how the information improves services."                            
-                        })
-                    }}
-                    </div>
-                    <div class="grid__col grid__col--flex grid__col--loose u-flex-grow u-flex-no-basis@s u-mb-s col-12@xs@s">                    
-                        {{- 
-                            onsCard({
-                                "classes": 'u-fs-r',
-                                "title": 'Keeping your data secure',
-                                "url": '/prototypes/census-website/help/index.html',
-                                "text": 'How we secure your personal information'                             
-                            })
-                        }}                                        
-                    </div>
-                </div>
-            </div>
 
-                <!--Purple banner
-                <div class="grid grid--flex u-mt-l">
-                    <div class="grid__col grid__col--flex grid--center u-flex-grow u-flex-no-basis@s col-12@xs@s">
-                        <div class="card card-cta bg-blue" style="padding: 2em 0;">
-                            <div class="container">
-                            <h2 class="u-mb-xs u-fs-xl">Making census count</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-                            <div class="grid grid--center u-mt-l grid--flex">
-                                <div class="grid__col col-3@s" style="text-align: center;">
-                                    <i class="material-icons" style="font-size: 4em;">phonelink</i>
-                                        <p class="stat-text u-fs-m u-mb-xs">
-                                            80%
-                                        </p>
-                                    
-                                <p style="padding: 0 17px;">of users will fill out the form online</p>
+                <!--promo banner-->
+                <section class="promo-banner promo-banner--gradient promo-banner--dark-theme">
+                    <div class="container">
+                        <div class="grid grid grid--gutterless">
+                            <div class="grid__col col-7@s">
+                                <div class="promo-banner__content">
+                                    <h2>Are you in a census rehearsal area?</h2>
+                                    <p class="u-fs-m">To make Census 2021 a success we're holding a rehearsal in four areas of England and Wales.</p>
+                                    <ul>
+                                        <li>Carlisle</li>
+                                        <li>Ceredigion</li>
+                                        <li>Hackney</li>
+                                        <li>Tower Hamlets</li>
+                                    </ul>
+                                    <p>What to do if you receive a letter <a href="/about-the-census/2019-rehearsal">about the census rehearsal.</a>
+                                    </p>
                                 </div>
-                                <div class="grid__col col-3@s" style="text-align: center;">
-                                    <i class="material-icons" style="font-size: 4em;">home</i>
-                                        <p class="stat-text u-fs-m u-mb-xs">
-                                            25<small>million</small>
-                                        </p>
-                                    
-                                    <p style="padding: 0 17px;">households will take  part in the census</p>
-                                </div>
-                                <div class="grid__col col-3@s" style="text-align: center;">
-                                    <i class="material-icons" style="font-size: 4em;">headset_mic</i>  
-                                        <p class="stat-text u-fs-m u-mb-xs">
-                                            223
-                                        </p>
-                                      
-                                    <p style="padding: 0 17px;">services are affected by the census</p>
-                                </div> 
-                                <div class="grid__col col-3@s" style="text-align: center;">
-                                    <i class="material-icons" style="font-size: 4em;">public</i>  
-                                        <p class="stat-text u-fs-m u-mb-xs">
-                                            100
-                                        </p>
-                                     
-                                    <p style="padding: 0 17px;">countries take part in their own census</p>
-                                </div>   
-                            </div> 
-                        </div>
+                            </div>
+                            <div class="grid__col col-4@s push-1@s u-d-no@xs@s">
+                            <div class="promo-banner__image">
+                                <img alt="Census rehearsal areas in England and Wales: Carlisle, Ceredigion, Hackney and Tower Hamlets" src="census-website/img/rehearsal-areas.svg"></div>
+                            </div>
                         </div>
                     </div>
-                </div>-->
+                </section>
             
             <!--Case study cards-->
-            <div class="container">
-                <div class="grid u-mt-l u-mb-l">
-                    <h2 class="u-fs-xl u-mb-l" style="text-align:center;">Why the census counts</h2>
-                    <div class="grid__col--flex grid--flex grid--no-wrap@m grid__col col-12@xs@s"> 
-                        <blockquote class="u-mb-m col-6@m u-mr-m">We in Early Years would be pretty much lost without Lower Super Output Area (LSOA) census data
-                            <span>- Bristol City Council</span>
-                            <div class="u-mt-xs u-fs-xs">
-                                <a href="census-website/case-study-a.html">Read more</a>
+            <div class="page__container container u-mt-l">
+                <section class="u-mt-l">
+                    <h2 class="u-mb-l">Make a difference to public services</h2>
+                        <div class="grid grid--column@xs@s u-mb-l">
+                            <div class="grid__col col-4@m">
+                                <div class="u-pr-m@m u-mb-l@xs@m">
+                                    <h3>It's important you take part in the census.</h3>
+                                    <p>The information we collect helps the government spend public money and plan services.</p>
+                                    <a href="/about-the-census/why-should-i-take-part">Why we need you to take part in the census rehearsal</a>
+                                </div>
                             </div>
-                        </blockquote>
-                        <blockquote class="u-mb-m col-6@m u-mr-m">We in Early Years would be pretty much lost without Lower Super Output Area (LSOA) census data
-                            <span>- Bristol City Council</span>
-                            <div class="u-mt-xs u-fs-xs">
-                                <a href="case-study-a.html">Read more</a>
+                            <div class="grid__col col-6@s@m col-4@m">
+                                <div class="card" aria-labelledby="healthier-communities" aria-describedby="id-0" role="navigation" aria-label="Case study">
+                                <a href="/case-studies/mental-health-foundation" class="u-db">
+                                    <img class="card__image u-mb-s" alt="Mental Health Foundation logo" src="census-website/img/mhf-logo.png">
+                                    <h3 class="u-fs-m" id="healthier-communities">Healthier communities</h3>
+                                </a>
+                                <p id="id-0">How census data helped the Mental Health Foundation help and support those more at risk of mental ill health.</p>
                             </div>
-                        </blockquote>
+                        </div>
+                        <div class="grid__col col-6@s@m col-4@m">
+                        <div class="card" aria-labelledby="fire-fighting-with-facts" aria-describedby="id-1" role="navigation" aria-label="Case study">
+                        <a href="/case-studies/london-fire-brigade" class="u-db">
+                            <img class="card__image u-mb-s" alt="London Fire Brigade logo" src="census-website/img/lfb-logo.png">
+                            <h3 class="u-fs-m" id="fire-fighting-with-facts">Fire-fighting with facts</h3>
+                        </a>
+                        <p id="id-1">The London Fire Brigade used census data to identify and prevent fires in high risk areas.</p>
                     </div>
                 </div>
             </div>
-            <!--Case study cards end-->
-
-            <!--Help secion-->
-                <div class="container" style="padding:0;">
-                    <div class="grid u-mt-l u-mb-l">
-                        <div class="grid__col--flex grid--flex grid--no-wrap@m grid__col col-12@xs@s">
-                            <div class="card" style="border-right:4px solid purple;padding:1.3em;">
-                                <h3 class="u-fs-l">Help with your census
-                                </h3>
-                                <p>How to fill in your census survey or get help to complete it.</p>
-                            </div>
-                            <div class="card" style="padding: 1.3em;">
-                                <h3 class="">
-                                    <a href="/prototypes/census-website/help/getting-started/">Getting Started</a>
-                                </h3>
-                                <p>Who should fill it in, what you need to get started, what to do if you don't have an access code.</p>
-                            </div>
-                            <div class="card" style="padding: 1.3em;">
-                               <h3 class="">
-                                    <a href="/prototypes/census-website/help/getting-started/">Help with the questions</a>
-                                </h3>
-                                <ul class="list list--dashed">
-                                <li class="list__item"><a href="">Online census</a></li>
-                                <li class="list__item"><a href="">Paper questionnaire</a></li>
-                                </ul>
-                            </div>
-                            <div class="card" style="padding: 1.3em;">
-                                <h3 class="">
-                                    <a href="/prototypes/census-website/help/finding-support-to-complete-your-census/">Finding support to complete your census
-                                </h3>
-                                <ul class="list list--dashed">
-                                <li class="list__item"><a href="">Help centres</a></li>
-                                <li class="list__item"><a href="">Helping someone else fill in their census</a></li>
-                                </ul>
-                            </div>
-                        </div>
+        </section>
+        <section class="u-bt u-pt-m">
+            <div class="grid grid--column@xs@s u-mb-l">
+                <div class="grid__col">
+                    <div class="">
+                        <h2 class="u-mb-m">Follow us</h2>
+                        <a href="https://twitter.com/census2021" class="u-dib u-mr-s">
+                            <img width="50" height="50" src="census-website/img/twitter-logo-black.svg" alt="Twitter logo">
+                        </a>
+                        <a href="https://facebook.com/census2021" class="u-dib u-mr-s">
+                            <img width="50" height="50" src="census-website/img/facebook-logo-black.svg" alt="Facebook logo">
+                        </a>
                     </div>
                 </div>
-            <!--Help secion end-->
-            
-            <!--Security block-->
-                <!--<div class="grid u-mt-l">
-                    <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
-                        <div class="bg-darkgrey" style="padding: 25px 0; height: 80px;display: flex;width: 100%;align-items: center;">
-                            <div class="container" style="    padding: 0;text-align: center;display: flex;color: white;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#ffffff" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4 17h-8v-6h8v6zm-6-6v-2c0-1.104.897-2 2-2s2 .896 2 2v2h1v-2c0-1.656-1.343-3-3-3s-3 1.344-3 3v2h1z"/></svg>
-                            <div style="align-items: baseline;display: flex;margin-left: 2em;margin-top: .5em;">
-                            <h2>Your data is secure.</h2><p class="u-ml-s">Lorem ipsum dolor sit amet, consectetur adipiscing elit sit amet.</p>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>-->
+            </div>
+        </section>
     </div>
+            <!--Case study cards end-->
+
+           
+    </div>
+    <footer class="footer " data-ga-element="footer">
+  <div class="container">
+    <div class="grid">
+    <div class="grid__col col-12@m u-mb-l">
+              <details id="feedback" class="details js-collapsible js-feedback" open>
+                <summary class="details__summary js-collapsible-summary">
+                  <div class="details__heading">
+                    <span class="details__title u-fs-r--b">Give feedback and help us improve this service</span>
+                  </div>
+                </summary>
+                <div id="feedback-content" class="details__content js-collapsible-content">
+                  <form id="feedback-form" class="u-mt-s js-feedback-form" method="POST" action="/" novalidate data-thank-you="Thank you for your feedback." data-error-message="There was an error sending your feedback.
+(Error code: {x})">
+                    <p class="field">
+                      <label class="label" for="feedback-textarea">How can we improve this survey</label>
+                      <textarea id="feedback-textarea" class="input input--textarea  js-charlimit-input js-feedback-textarea" name="feedback-textarea" rows="8" maxlength="2000" data-char-limit-ref="feedback-textarea-lim-remaining"></textarea>
+                      <span
+                id="feedback-textarea-lim-remaining"
+                class="input__limit u-mt-xs u-fs-s--b u-d-no"
+                data-charcount-singular="You have {x} character remaining"
+                data-charcount-plural="You have {x} characters remaining">
+            </span>
+                    </p>
+                    <p class="field">
+                      <label class="label" for="feedback-name">Name (optional)
+                        <br>
+                        <span class="label__description">Please include your name and email address if you’re interested in taking part in further research to improve this survey</span>
+                      </label>
+                      <input type="text" id="feedback-name" class="input input--text input-type__input js-feedback-name" name="feedback-name" autocomplete="name" />
+                    </p>
+                    <p class="field">
+                      <label class="label" for="feedback-email">Email address (optional)</label>
+                      <input type="email" id="feedback-email" class="input input--text input-type__input js-feedback-email" name="feedback-email" />
+                    </p>
+                    <p class="field u-mt-l u-mb-s">
+                      <button type="submit" class="btn js-feedback-send btn--loader">
+                        <span class="btn__inner">Send feedback</span>
+                      </button>
+                    </p>
+                  </form>
+                </div>
+              </details>
+                          <hr class="footer__hr">
+
+            </div>
+      <div class="grid__col col-4@m">
+        <h4 class="u-fs-r--b footer__heading">Get in touch</h4>
+        <ul class="list list--bare u-mb-no">
+          <li class="list__item ">
+            <a href="#" class="list__link ">
+              Twitter
+            </a>
+            </li>
+            <li>
+            <a href="#" class="list__link ">
+              Facebook
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="grid__col col-4@m u-mt-m@xs@m">
+        <h4 class="u-fs-r--b footer__heading">Working on the census</h4>
+        <ul class="list list--bare u-mb-no">
+          <li class="list__item ">
+            <a href="#" class="list__link ">
+              Jobs
+            </a>
+          </li>
+          <li class="list__item ">
+            <a href="#" class="list__link ">
+              Media and campaigns
+            </a>
+          </li>
+          <li class="list__item ">
+            <a href="#" class="list__link ">
+              Our partners
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="grid__col col-4@m u-mt-m@xs@m">
+        <h4 class="u-fs-r--b footer__heading">Legal information</h4>
+        <ul class="list list--bare u-mb-no">
+          <li class="list__item ">
+            <a href="#" class="list__link ">
+              Cookies
+            </a>
+          </li>
+          <li class="list__item ">
+            <a href="#" class="list__link ">
+              Privacy and data protection
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="grid__col u-mt-m u-mb-m">
+        <hr class="footer__hr">
+      </div>
+      <div class="grid__col">
+        <div class="footer__license">
+          <img alt="OGL" class="footer__ogl-img" src="/img/UKOpenGovernmentLicence-grey.svg">
+          All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" class="footer__link">Open Government Licence v3.0</a>, except where otherwise stated
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
 {% endblock %}
