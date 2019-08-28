@@ -2,6 +2,34 @@
 
 $purple: #93328e;
 
+.grid--flex.grid--vertical-center {
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.hero--with-image {
+  border-top: 1px solid white;
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+}
+
+.hero--with-image .hero__container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero--dark-theme a,
+.hero--dark-theme h1,
+.hero--dark-theme h2,
+.hero--dark-theme li,
+.hero--dark-theme p {
+  color: #fff;
+}
+
 .header__bottom {
   background: $purple;
 }
