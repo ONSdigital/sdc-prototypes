@@ -6,7 +6,7 @@ import dice from 'dice-coefficient';
 
 const lookupURL = 'https://api.addressy.com/Capture/Interactive/Find/v1.10/json3.ws';
 const retrieveURL = 'https://api.addressy.com/Capture/Interactive/Retrieve/v1.10/json3.ws';
-const key = 'bu52-nh49-mx94-ju33';
+const key = 'ha14-fy33-nr14-ej83';
 
 class NoJSAddressLookup {
   constructor(context) {

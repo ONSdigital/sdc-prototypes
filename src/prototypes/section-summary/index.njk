@@ -1,0 +1,188 @@
+---
+title: Hub and spoke to section summary
+group: Section summary
+version: 9.1.0
+layout: individual-summary/views/_master
+---
+{% from "components/panel/_macro.njk" import onsPanel %}
+{% from "components/summary/_macro.njk" import onsSummary %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% set page = {
+    "title": "Hub Example",
+    "signoutButton": {
+        "text": "Save and complete later"
+    }
+} %}
+{% block main %}
+    <h1 class="u-mt-m">Choose another section to complete</h1>
+    {% call onsPanel() %}
+        <p><strong>You must complete all sections in order to submit this survey</strong></p>
+    {% endcall %}
+    {{ onsSummary({
+        "hub": true,
+        "classes": "u-mt-m",
+        "rows": [
+            {
+                "title": "People who live here",
+                "rowItems": [
+                    {
+                        "icon": "check-green",
+                        "valueList": [
+                            {
+                                "text": "Completed"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "text": "View answers",
+                                "ariaLabel": "View answers for People who live here",
+                                "url": "#"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Accomodation",
+                "rowItems": [
+                    {
+                        "icon": "check-green",
+                        "valueList": [
+                            {
+                                "text": "Completed"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "text": "View answers",
+                                "ariaLabel": "View answers for Accomodation",
+                                "url": "#"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Gino Bartali (You)",
+                "rowItems": [
+                    {
+                        "icon": "check-green",
+                        "valueList": [
+                            {
+                                "text": "Completed"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "text": "View answers",
+                                "ariaLabel": "View answers for Gino Bartali",
+                                "url": "summary.html"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Eddy Merkx",
+                "rowItems": [
+                    {
+                        "valueList": [
+                            {
+                                "text": "Partially completed"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "text": "Continue with section",
+                                "ariaLabel": "Continue with Eddy Merkx's section",
+                                "url": "#"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Miguel Indurain",
+                "rowItems": [
+                    {
+                        "valueList": [
+                            {
+                                "text": "Not started"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "text": "Start section",
+                                "ariaLabel": "Start Miguel Indurain's section",
+                                "url": "#"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Tommy Simpson",
+                "rowItems": [
+                    {
+                        "valueList": [
+                            {
+                                "text": "Not started"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "text": "Start section",
+                                "ariaLabel": "Start Tommy Simpson's section",
+                                "url": "#"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Greg Lemond (Visitor)",
+                "rowItems": [
+                    {
+                        "valueList": [
+                            {
+                                "text": "Not started"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "text": "Start section",
+                                "ariaLabel": "Greg Lemond's section",
+                                "url": "#"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Marco Pantani (Visitor)",
+                "rowItems": [
+                    {
+                        "valueList": [
+                            {
+                                "text": "Not started"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "text": "Start section",
+                                "ariaLabel": "Marco Pantani's section",
+                                "url": "#"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }) }}
+    {{
+        onsButton({
+            "text": 'Continue',
+            "classes": 'u-mb-m u-mt-l'
+        })
+    }}
+{% endblock %}

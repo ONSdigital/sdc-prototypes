@@ -1,0 +1,83 @@
+---
+title: E-commerce
+group: E-commerce hub and spoke model
+version: 13.4.5
+
+
+layout: e-commerce-hubspokemodel/views/_master
+---
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/summary/_macro.njk" import onsSummary %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "prototypes/link-as-button-accessibility/components/button/_macro.njk" import onsButton %}
+{% from "components/details/_macro.njk" import onsDetails %}
+
+{% block main %}
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/">Previous</a>
+      {{ 
+    onsPanel({
+        "classes" : "u-mt-s",
+        body: "<p><strong>This was the last question you answered in this section</strong><br>You can review your answers at the <a href=\"#\">start of this section</a></p>"
+    }) 
+}}
+   <h1 class="u-fs-xl u-mt-s">Does ESSENTIAL ENTERPRISE LTD. employ ICT or IT specialists?</h1>
+   {{
+    onsDetails({
+        "id": "details",
+        "title": "What does ICT/IT mean?",
+        "content": "<p>ICT/IT is the employees’ main function. ICT or IT specialist skills involve developing, operating, or maintaining ICT or IT systems or applications.</p>",
+        "button": {
+            "close": "Hide this"
+        }
+    })
+}}
+   {{ 
+    onsPanel({
+        body: "<p><strong>Include</strong><br>
+<ul><li>All agency staff on your payroll</li></ul></p>
+<p><strong>Exclude</strong><br>
+<ul><li>Terminals and computers solely used for Electronic Point of Sale (EPOS) and computer controlled machinery</ul></li>
+</p>"
+    }) 
+}}
+<form action="{{ pageInfo.parentPath }}/percentage-of-people.html">
+        {{ 
+            onsRadios({
+                "name": "are-computers-used",
+                "classes": "u-mt-m",
+                "radios": [
+                    {
+                        "id": "yes-ict",
+                        "label": {
+                            "text": "Yes, ICT or IT specialists are employed"
+                        },
+                        "name": "yes-ict",
+                        "attributes": {
+                            "data-action-url": pageInfo.parentPath  + "/percentage-of-people.html"
+                        }
+                    },
+                    {
+                        "id": "no-ict",
+                        "label": {
+                            "text": "No ICT or IT specialists are employed"
+                        },
+                        "name": "no-ict",
+                         "attributes": {
+                            "data-action-url": pageInfo.parentPath  + "/confirmation.html"
+                        }
+                    }
+                ]
+            }) 
+        }}
+        {{
+           onsButton({
+                "text": "Save and continue",
+                "classes": "u-mt-l",
+                "url": "hub-complete.html"
+            })
+        }}
+    </form>
+    <p class="u-mt-xl">Can't complete this question?<br>
+<a href="hub-partially-complete.html">Choose another section and return to this later</a>
+{% endblock %}

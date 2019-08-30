@@ -8,14 +8,15 @@ layout: typeaheads/views/_master
 {% block main %}
     <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/religion.html">Previous</a>
     <form action="{{ pageInfo.parentPath }}/one-year-ago-address.html?previous={{ pageInfo.path }}.html">
-        <h1 class="u-fs-l u-mt-s">What is your religion?</h1>
+        <h1 class="u-fs-l u-mt-s">You selected "Other". What is your religion?</h1>
         <p>This question is voluntary</p>
         {{
             prototypeTypeahead({
                 "id": "religion-other",
                 "classes": "u-mt-m",
                 "label": {
-                    "text": "Enter your religion"
+                    "text": "Religion",
+                    "description": "Start entering to get suggestions. You can select from suggestions or enter your own answer"
                 },
                 "instructions": "Use up and down keys to navigate suggestions once you\'ve typed more than two characters. Use the enter key to select a suggestion. Touch device users, explore by touch or with swipe gestures.",
                 "content": {

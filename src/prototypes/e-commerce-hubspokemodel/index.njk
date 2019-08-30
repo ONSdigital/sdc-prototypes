@@ -1,0 +1,44 @@
+---
+title: E-commerce
+group: E-commerce hub and spoke model
+version: 13.4.5
+
+layout: e-commerce-hubspokemodel/views/_home
+---
+{% from "components/panel/_macro.njk" import onsPanel %}
+{% from "components/summary/_macro.njk" import onsSummary %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "prototypes/link-as-button-accessibility/components/button/_macro.njk" import onsButton %}
+{% from "components/lists/_macro.njk" import onsList %}
+{% from "components/header/_macro.njk" import onsHeader %}
+
+{% block main %}
+<h2>Your response is legally required</h2>
+<p>Notice is given under section 1 of the Statistics of Trade Act 1947.</p>
+    <p>If the company details or structure have changed contact us on <a href="#">0300 1234 931</a> or email <a href="#">surveys@ons.gov.uk</a></p>
+    <h2>Information you will need:</h2>
+{{ 
+    onsList({
+        "itemsList": [
+            {
+                "text": 'Data should relate to all sites in the UK (including foreign owned businesses) unless otherwise stated. The UK consists of England, Wales, Scotland, and Northern Ireland and excludes the Channel Islands and the Isle of Man.'
+            },
+            {
+                "text": "You can provide informed estimates if actual figures aren’t available."
+            },
+            {
+                "text": 'For further information read <a href="#">Guidance for completing the E-commerce survey</a>'
+            }
+        ]
+    }) 
+}} 
+<p class="icon--lock">We will treat your data securely and confidentially.</p>
+
+    {{
+        onsButton({
+            "text": 'Start survey',
+            "classes": 'u-mb-m u-mt-l',
+            "url": "/prototypes/e-commerce-hubspokemodel/use-of-computers.html"
+        })
+    }}
+{% endblock %}

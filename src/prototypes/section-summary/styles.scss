@@ -1,0 +1,9 @@
+@import 'node_modules/@ons/design-system/9.1.0/scss/vars/forms';
+@import 'node_modules/@ons/design-system/9.1.0/scss/vars/colors';
+@import 'node_modules/@ons/design-system/9.1.0/scss/vars/grid';
+@import 'node_modules/@ons/design-system/9.1.0/scss/helpers/mq';
+@import 'node_modules/@ons/design-system/9.1.0/scss/vars/typography';
+
+.u-f-mono {
+  font-family: $font-mono;
+}

@@ -7,7 +7,7 @@ layout: typeaheads/views/_master
 {% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
 
 {% block main %}
-    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/passport.html">Previous</a>
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/main-language.html">Previous</a>
     <form action="{{ pageInfo.parentPath }}/ethnic-group.html">
         <h1 class="u-fs-l u-mt-s">How would you describe your national identity?</h1>
         {{
@@ -63,7 +63,7 @@ layout: typeaheads/views/_master
                         "id": "other",
                         "label": {
                             "text": "Other",
-                            "description": "You can enter your national identity on the next question"
+                            "description": "You can enter this on the next question"
                         },
                         "name": "other",
                         "attributes": {
