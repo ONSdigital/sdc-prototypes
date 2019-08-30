@@ -1,0 +1,537 @@
+---
+title: SIC
+group: SIC
+version: 10.0.1
+layout: sic/views/_master
+---
+
+{% block main %}
+{% from "components/accordion/_macro.njk" import onsAccordion %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/label/_macro.njk" import onsLabel %}
+
+<script type="text/javascript">
+function writeResult(text){
+    document.getElementById("text").value=text;
+}
+</script>
+
+<a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/#">Previous</a>
+    <form action="{{ pageInfo.parentPath }}/#">
+        <fieldset class="u-mt-s">
+            <legend><h1 class="u-fs-l">What is the main activity of your organisation, business or freelance work?</h1></legend>
+            <p>For example, clothing retail, general hospital, primary education, food wholesale, civil service, DWP, local government, housing</p>
+
+            {{ 
+                onsInput({
+                    "id": "text",
+                    "label": {
+                        "text": "Please enter the main activity of the organisation"
+                    }
+                }) 
+            }}
+            <br>
+            {{ 
+                onsButton({
+                    "type": 'button',
+                    "text": 'Save and continue'
+                }) 
+            }}
+            <br>
+            <br>
+            {{
+                onsAccordion({
+                    "id": "accordion",
+                    "allButton": {
+                        "open": "Show all",
+                        "close": "Hide all"
+                    },
+                    "itemsList": [
+                        {
+                            "title": "Catagory 1",
+                            "content": "
+                                <div class=\"scrolldiv frame\">
+                                    <div class=\"radios__items radiowidth frame\">
+                                        <p class=\"radios__item\">
+                                        <span class=\"radio\">
+                                                            <input
+                                                                type=\"radio\"
+                                                                id=\"1\"
+                                                                class=\"radio__input js-radio \"
+                                                                value=\"1\" 
+                                                                name=\"radioList\"
+                                                                onclick=\"writeResult(this.value);\"
+                                                            >
+                                                            <label class=\"radio__label \" for=\"1\">
+                                                                1
+                                                            </label>
+                                                        </span>
+                                        </p>
+                                        <p class=\"radios__item\">
+                                        <span class=\"radio\">
+                                                            <input
+                                                                type=\"radio\"
+                                                                id=\"2\"
+                                                                class=\"radio__input js-radio \"
+                                                                value=\"2\" 
+                                                                name=\"radioList\"
+                                                                onclick=\"writeResult(this.value);\"
+                                                            >
+                                                            <label class=\"radio__label \" for=\"2\">
+                                                                2
+                                                            </label>
+                                                        </span>
+                                        </p>
+                                        <p class=\"radios__item\">
+                                        <span class=\"radio\">
+                                                            <input
+                                                                type=\"radio\"
+                                                                id=\"3\"
+                                                                class=\"radio__input js-radio \"
+                                                                value=\"3\" 
+                                                                name=\"radioList\"
+                                                                onclick=\"writeResult(this.value);\"
+                                                            >
+                                                            <label class=\"radio__label \" for=\"3\">
+                                                                3
+                                                            </label>
+                                                        </span>
+                                        </p>
+                                        <p class=\"radios__item\">
+                                        <span class=\"radio\">
+                                                            <input
+                                                                type=\"radio\"
+                                                                id=\"4\"
+                                                                class=\"radio__input js-radio \"
+                                                                value=\"4\" 
+                                                                name=\"radioList\"
+                                                                onclick=\"writeResult(this.value);\"
+                                                            >
+                                                            <label class=\"radio__label \" for=\"4\">
+                                                                4
+                                                            </label>
+                                                        </span>
+                                        </p>
+                                        <p class=\"radios__item\">
+                                        <span class=\"radio\">
+                                                            <input
+                                                                type=\"radio\"
+                                                                id=\"5\"
+                                                                class=\"radio__input js-radio \"
+                                                                value=\"5\" 
+                                                                name=\"radioList\"
+                                                                onclick=\"writeResult(this.value);\"
+                                                            >
+                                                            <label class=\"radio__label \" for=\"5\">
+                                                                5
+                                                            </label>
+                                                        </span>
+                                        </p>
+                                        <p class=\"radios__item\">
+                                        <span class=\"radio\">
+                                                            <input
+                                                                type=\"radio\"
+                                                                id=\"6\"
+                                                                class=\"radio__input js-radio \"
+                                                                value=\"6\" 
+                                                                name=\"radioList\"
+                                                                onclick=\"writeResult(this.value);\"
+                                                            >
+                                                            <label class=\"radio__label \" for=\"6\">
+                                                                6
+                                                            </label>
+                                                        </span>
+                                        </p>
+                                        <p class=\"radios__item\">
+                                        <span class=\"radio\">
+                                                            <input
+                                                                type=\"radio\"
+                                                                id=\"7\"
+                                                                class=\"radio__input js-radio \"
+                                                                value=\"7\" 
+                                                                name=\"radioList\"
+                                                                onclick=\"writeResult(this.value);\"
+                                                            >
+                                                            <label class=\"radio__label \" for=\"7\">
+                                                                7
+                                                            </label>
+                                                        </span>
+                                        </p>
+                                        <p class=\"radios__item\">
+                                        <span class=\"radio\">
+                                                            <input
+                                                                type=\"radio\"
+                                                                id=\"8\"
+                                                                class=\"radio__input js-radio \"
+                                                                value=\"8\" 
+                                                                name=\"radioList\"
+                                                                onclick=\"writeResult(this.value);\"
+                                                            >
+                                                            <label class=\"radio__label \" for=\"8\">
+                                                                8
+                                                            </label>
+                                                        </span>
+                                        </p>
+                                        <p class=\"radios__item\">
+                                        <span class=\"radio\">
+                                                            <input
+                                                                type=\"radio\"
+                                                                id=\"9\"
+                                                                class=\"radio__input js-radio \"
+                                                                value=\"9\" 
+                                                                name=\"radioList\"
+                                                                onclick=\"writeResult(this.value);\"
+                                                            >
+                                                            <label class=\"radio__label \" for=\"9\">
+                                                                9
+                                                            </label>
+                                                        </span>
+                                        </p>
+                                        </p>
+                                        <p class=\"radios__item\">
+                                        <span class=\"radio\">
+                                                            <input
+                                                                type=\"radio\"
+                                                                id=\"10\"
+                                                                class=\"radio__input js-radio \"
+                                                                value=\"10\" 
+                                                                name=\"radioList\"
+                                                                onclick=\"writeResult(this.value);\"
+                                                            >
+                                                            <label class=\"radio__label \" for=\"10\">
+                                                                10
+                                                            </label>
+                                                        </span>
+                                        </p>
+                                        <p class=\"radios__item\">
+                                        <span class=\"radio\">
+                                                            <input
+                                                                type=\"radio\"
+                                                                id=\"11\"
+                                                                class=\"radio__input js-radio \"
+                                                                value=\"11\" 
+                                                                name=\"radioList\"
+                                                                onclick=\"writeResult(this.value);\"
+                                                            >
+                                                            <label class=\"radio__label \" for=\"11\">
+                                                                11
+                                                            </label>
+                                                        </span>
+                                        </p>
+                                        <p class=\"radios__item\">
+                                        <span class=\"radio\">
+                                                            <input
+                                                                type=\"radio\"
+                                                                id=\"12\"
+                                                                class=\"radio__input js-radio \"
+                                                                value=\"12\" 
+                                                                name=\"radioList\"
+                                                                onclick=\"writeResult(this.value);\"
+                                                            >
+                                                            <label class=\"radio__label \" for=\"12\">
+                                                                12
+                                                            </label>
+                                                        </span>
+                                        </p>
+                                        </p>
+                                        <p class=\"radios__item\">
+                                        <span class=\"radio\">
+                                                            <input
+                                                                type=\"radio\"
+                                                                id=\"13\"
+                                                                class=\"radio__input js-radio \"
+                                                                value=\"13\" 
+                                                                name=\"radioList\"
+                                                                onclick=\"writeResult(this.value);\"
+                                                            >
+                                                            <label class=\"radio__label \" for=\"13\">
+                                                                13
+                                                            </label>
+                                                        </span>
+                                        </p>
+                                        <p class=\"radios__item\">
+                                        <span class=\"radio\">
+                                                            <input
+                                                                type=\"radio\"
+                                                                id=\"14\"
+                                                                class=\"radio__input js-radio \"
+                                                                value=\"14\" 
+                                                                name=\"radioList\"
+                                                                onclick=\"writeResult(this.value);\"
+                                                            >
+                                                            <label class=\"radio__label \" for=\"14\">
+                                                                14
+                                                            </label>
+                                                        </span>
+                                        </p>
+                                        <p class=\"radios__item\">
+                                        <span class=\"radio\">
+                                                            <input
+                                                                type=\"radio\"
+                                                                id=\"15\"
+                                                                class=\"radio__input js-radio \"
+                                                                value=\"15\" 
+                                                                name=\"radioList\"
+                                                                onclick=\"writeResult(this.value);\"
+                                                            >
+                                                            <label class=\"radio__label \" for=\"15\">
+                                                                15
+                                                            </label>
+                                                        </span>
+                                        </p>
+                                    </div>
+                                </div>
+                            ",
+                            "button": {
+                                "open": "Show",
+                                "close": "Hide"
+                            }
+                        },
+                        {
+                            "title": "Catagory 2",
+                            "content": "
+                            <div class=\"scrolldiv\">
+                                <div class=\"radios__items radiowidth\">
+                                                            <p class=\"radios__item\">
+                                        <span class=\"radio\">
+                                                            <input
+                                                                type=\"radio\"
+                                                                id=\"21\"
+                                                                class=\"radio__input js-radio \"
+                                                                value=\"21\" 
+                                                                name=\"radioList\"
+                                                                onclick=\"writeResult(this.value);\"
+                                                            >
+                                                            <label class=\"radio__label \" for=\"21\">
+                                                                21
+                                                            </label>
+                                                        </span>
+                                        </p>
+                                        <p class=\"radios__item\">
+                                        <span class=\"radio\">
+                                                            <input
+                                                                type=\"radio\"
+                                                                id=\"22\"
+                                                                class=\"radio__input js-radio \"
+                                                                value=\"22\" 
+                                                                name=\"radioList\"
+                                                                onclick=\"writeResult(this.value);\"
+                                                            >
+                                                            <label class=\"radio__label \" for=\"22\">
+                                                                22
+                                                            </label>
+                                                        </span>
+                                        </p>
+                                        <p class=\"radios__item\">
+                                        <span class=\"radio\">
+                                                            <input
+                                                                type=\"radio\"
+                                                                id=\"23\"
+                                                                class=\"radio__input js-radio \"
+                                                                value=\"23\" 
+                                                                name=\"radioList\"
+                                                                onclick=\"writeResult(this.value);\"
+                                                            >
+                                                            <label class=\"radio__label \" for=\"23\">
+                                                                23
+                                                            </label>
+                                                        </span>
+                                        </p>
+                                        <p class=\"radios__item\">
+                                        <span class=\"radio\">
+                                                            <input
+                                                                type=\"radio\"
+                                                                id=\"24\"
+                                                                class=\"radio__input js-radio \"
+                                                                value=\"24\" 
+                                                                name=\"radioList\"
+                                                                onclick=\"writeResult(this.value);\"
+                                                            >
+                                                            <label class=\"radio__label \" for=\"24\">
+                                                                24
+                                                            </label>
+                                                        </span>
+                                        </p>
+                                        <p class=\"radios__item\">
+                                        <span class=\"radio\">
+                                                            <input
+                                                                type=\"radio\"
+                                                                id=\"25\"
+                                                                class=\"radio__input js-radio \"
+                                                                value=\"25\" 
+                                                                name=\"radioList\"
+                                                                onclick=\"writeResult(this.value);\"
+                                                            >
+                                                            <label class=\"radio__label \" for=\"25\">
+                                                                25
+                                                            </label>
+                                                        </span>
+                                        </p>
+                                        <p class=\"radios__item\">
+                                        <span class=\"radio\">
+                                                            <input
+                                                                type=\"radio\"
+                                                                id=\"26\"
+                                                                class=\"radio__input js-radio \"
+                                                                value=\"26\" 
+                                                                name=\"radioList\"
+                                                                onclick=\"writeResult(this.value);\"
+                                                            >
+                                                            <label class=\"radio__label \" for=\"26\">
+                                                                26
+                                                            </label>
+                                                        </span>
+                                        </p>
+                                        <p class=\"radios__item\">
+                                        <span class=\"radio\">
+                                                            <input
+                                                                type=\"radio\"
+                                                                id=\"27\"
+                                                                class=\"radio__input js-radio \"
+                                                                value=\"27\" 
+                                                                name=\"radioList\"
+                                                                onclick=\"writeResult(this.value);\"
+                                                            >
+                                                            <label class=\"radio__label \" for=\"27\">
+                                                                27
+                                                            </label>
+                                                        </span>
+                                        </p>
+                                        <p class=\"radios__item\">
+                                        <span class=\"radio\">
+                                                            <input
+                                                                type=\"radio\"
+                                                                id=\"28\"
+                                                                class=\"radio__input js-radio \"
+                                                                value=\"28\" 
+                                                                name=\"radioList\"
+                                                                onclick=\"writeResult(this.value);\"
+                                                            >
+                                                            <label class=\"radio__label \" for=\"28\">
+                                                                28
+                                                            </label>
+                                                        </span>
+                                        </p>
+                                        <p class=\"radios__item\">
+                                        <span class=\"radio\">
+                                                            <input
+                                                                type=\"radio\"
+                                                                id=\"29\"
+                                                                class=\"radio__input js-radio \"
+                                                                value=\"29\" 
+                                                                name=\"radioList\"
+                                                                onclick=\"writeResult(this.value);\"
+                                                            >
+                                                            <label class=\"radio__label \" for=\"29\">
+                                                                29
+                                                            </label>
+                                                        </span>
+                                        </p>
+                                        </p>
+                                        <p class=\"radios__item\">
+                                        <span class=\"radio\">
+                                                            <input
+                                                                type=\"radio\"
+                                                                id=\"210\"
+                                                                class=\"radio__input js-radio \"
+                                                                value=\"210\" 
+                                                                name=\"radioList\"
+                                                                onclick=\"writeResult(this.value);\"
+                                                            >
+                                                            <label class=\"radio__label \" for=\"210\">
+                                                                210
+                                                            </label>
+                                                        </span>
+                                        </p>
+                                        <p class=\"radios__item\">
+                                        <span class=\"radio\">
+                                                            <input
+                                                                type=\"radio\"
+                                                                id=\"211\"
+                                                                class=\"radio__input js-radio \"
+                                                                value=\"211\" 
+                                                                name=\"radioList\"
+                                                                onclick=\"writeResult(this.value);\"
+                                                            >
+                                                            <label class=\"radio__label \" for=\"211\">
+                                                                211
+                                                            </label>
+                                                        </span>
+                                        </p>
+                                        <p class=\"radios__item\">
+                                        <span class=\"radio\">
+                                                            <input
+                                                                type=\"radio\"
+                                                                id=\"212\"
+                                                                class=\"radio__input js-radio \"
+                                                                value=\"212\" 
+                                                                name=\"radioList\"
+                                                                onclick=\"writeResult(this.value);\"
+                                                            >
+                                                            <label class=\"radio__label \" for=\"212\">
+                                                                212
+                                                            </label>
+                                                        </span>
+                                        </p>
+                                        </p>
+                                        <p class=\"radios__item\">
+                                        <span class=\"radio\">
+                                                            <input
+                                                                type=\"radio\"
+                                                                id=\"213\"
+                                                                class=\"radio__input js-radio \"
+                                                                value=\"213\" 
+                                                                name=\"radioList\"
+                                                                onclick=\"writeResult(this.value);\"
+                                                            >
+                                                            <label class=\"radio__label \" for=\"213\">
+                                                                213
+                                                            </label>
+                                                        </span>
+                                        </p>
+                                        <p class=\"radios__item\">
+                                        <span class=\"radio\">
+                                                            <input
+                                                                type=\"radio\"
+                                                                id=\"214\"
+                                                                class=\"radio__input js-radio \"
+                                                                value=\"214\" 
+                                                                name=\"radioList\"
+                                                                onclick=\"writeResult(this.value);\"
+                                                            >
+                                                            <label class=\"radio__label \" for=\"214\">
+                                                                214
+                                                            </label>
+                                                        </span>
+                                        </p>
+                                        <p class=\"radios__item\">
+                                        <span class=\"radio\">
+                                                            <input
+                                                                type=\"radio\"
+                                                                id=\"215\"
+                                                                class=\"radio__input js-radio \"
+                                                                value=\"215\" 
+                                                                name=\"radioList\"
+                                                                onclick=\"writeResult(this.value);\"
+                                                            >
+                                                            <label class=\"radio__label \" for=\"215\">
+                                                                215
+                                                            </label>
+                                                        </span>
+                                        </p>
+                                </div>
+                            </div>
+                            ",
+                            "button": {
+                                "open": "Show",
+                                "close": "Hide"
+                            }
+                        }
+                    ]
+                })
+            }}
+        </fieldset>
+    </form>
+{% endblock %}
