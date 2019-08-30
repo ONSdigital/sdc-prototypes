@@ -1,89 +1,25 @@
 ---
 group: Examples
 title: Example
-version: 13.4.5
+version: 4.1.0
 ---
 {% from "components/input/_macro.njk" import onsInput %}
 {% from "components/button/_macro.njk" import onsButton %}
 
+{% set page = { 
+    "title": "Example Prototype",
+    "footer": {
+        "OGLLink": {
+            "pre": 'All content is available under the',
+            "link": 'Open Government Licence v3.0',
+            "url": 'https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/',
+            "post": ', except where otherwise stated'
+        }
+    }
+} %}
+
 {% block head %}
     <link rel="stylesheet" href="/prototypes/example/styles.css" />
-{% endblock %}
-{% block header %}
-{{
-    onsHeader({
-        "title": "Survey title",
-        "button": {
-            "text": "Save and complete later",
-            "url": "#"
-        }
-        })
-}} 
-{% endblock %}
-
-{% block page %}
-  
-    <div class="page__container container ">
-          <div class="grid">
-            <div class="grid__col col-8@m">
-              <main id="main-content" class="page__main ">
-                <a href="#">Previous</a>
-                <form class="u-mt-m">
-                  <h1>What is your name?</h1>
-                  <p class="field">
-                    <label class="label" for="first-name">First or given name</label>
-                    <input type="text" id="first-name" class="input input--text input-type__input " name="first-name">
-                  </p>
-                  <p class="field">
-                    <label class="label" for="last-name">Surname or family name</label>
-                    <input type="text" id="last-name" class="input input--text input-type__input " name="last-name">
-                  </p>
-                  <button type="submit" class="btn u-mt-l">
-                    <span class="btn__inner">Save and continue</span>
-                  </button>
-                </form>
-              </main>
-            </div>
-          </div>
-        </div>
-
-
-<footer class="footer ">
-  <div class="container">
-    <div class="grid">
-    <div class="grid__col col-12@m u-mb-l">
-    <a href="/prototypes/example/feedback/index.html">
-    <p class="u-fs-r–b">Give feedback and help us improve this service</p>
-    </a>
-                  
-                  <hr class="footer__hr">
-                </div>
-      <div class="grid__col">
-        <ul class="list list--bare list--inline@s u-mb-no">
-          <li class="list__item ">
-            <a href="#" class="list__link ">
-              Contact us
-            </a>
-          </li>
-          <li class="list__item ">
-            <a href="#" class="list__link ">
-              Cookies and privacy
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="grid__col u-mt-m u-mb-m">
-        <hr class="footer__hr">
-      </div>
-      <div class="grid__col">
-        <div class="footer__license">
-          <img alt="OGL" class="footer__ogl-img" src="/img/UKOpenGovernmentLicence-grey.svg">
-          All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" class="footer__link">Open Government Licence v3.0</a>, except where otherwise stated
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
 {% endblock %}
 
 {% block main %}
@@ -114,7 +50,6 @@ version: 13.4.5
             })
         }}
     </form>
-    
 {% endblock %}
 
 {% block bodyEnd %}

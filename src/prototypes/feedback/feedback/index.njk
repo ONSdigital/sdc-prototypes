@@ -1,17 +1,23 @@
 ---
-version: 10.0.0
+version: 10.0.1
+theme: census
 ---
 {% from "components/input/_macro.njk" import onsInput %}
 {% from "components/button/_macro.njk" import onsButton %}
 {% from "components/textarea/_macro.njk" import onsTextarea %}
 
 {% block head %}
-    <link rel="stylesheet" href="/prototypes/example/styles.css" />
+    <link rel="stylesheet" href="/prototypes/feedback/styles.css" />
 {% endblock %}
 {% block header %}
 {{
     onsHeader({
         "title": "Survey title",
+        "theme": "census",
+        "logoHref": "https://www.ons.gov.uk",
+        "titleLogo": "/img/census-logo-en.svg",
+        "titleLogoAlt": "Census 2021",
+        "titleLogoHref": "/prototypes/feedback/",
         "button": {
             "text": "Save and complete later",
             "url": "#"
@@ -117,5 +123,5 @@ version: 10.0.0
 {% endblock %}
 
 {% block bodyEnd %}
-    <script src="/prototypes/example/index.js"></script>
+    <script src="/prototypes/feedback/index.js"></script>
 {% endblock %}

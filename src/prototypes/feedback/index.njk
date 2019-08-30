@@ -1,7 +1,8 @@
 ---
 group: Feedback
 title: EQ feedback proto v1
-version: 10.0.0
+version: 10.0.1
+theme: census
 ---
 {% from "components/input/_macro.njk" import onsInput %}
 {% from "components/button/_macro.njk" import onsButton %}
@@ -13,6 +14,11 @@ version: 10.0.0
 {{
     onsHeader({
         "title": "Survey title",
+        "theme": "census",
+        "logoHref": "https://www.ons.gov.uk",
+        "titleLogo": "/img/census-logo-en.svg",
+        "titleLogoAlt": "Census 2021",
+        "titleLogoHref": "/prototypes/feedback/",
         "button": {
             "text": "Save and complete later",
             "url": "#"
