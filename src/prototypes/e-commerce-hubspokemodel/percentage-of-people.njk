@@ -1,0 +1,55 @@
+---
+title: E-commerce
+group: E-commerce hub and spoke model
+version: 13.4.5
+
+
+layout: e-commerce-hubspokemodel/views/_master
+---
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/summary/_macro.njk" import onsSummary %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "prototypes/link-as-button-accessibility/components/button/_macro.njk" import onsButton %}
+
+{% block main %}
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/">Previous</a>
+   <h1 class="u-fs-xl u-mt-s">What percentage of people in the business use computers for their work?</h1>
+   {{ 
+    onsPanel({
+        body: "<p><strong>Include</strong><br>
+<ul>
+<li>Employees, directors, and proprietors</li>
+<li>All agency staff on your payroll</li>
+</ul></p>
+<p><strong>Exclude</strong><br>
+<ul><li>Agency staff not on your payroll</li></ul>
+</p>"
+    }) 
+}}
+{{ 
+    onsInput({
+        "id": "suffixed-percent",
+        "type": "number",
+        "classes": "input--w-3",
+        "autocomplete": "off",
+        "attributes": {
+            "required": true
+        },
+        "label": {
+            "text": "Percentage who use computers"
+        },
+        "suffix": {
+            "title": "Percent",
+            "text": "%"
+        }
+    }) 
+}}
+        {{
+           onsButton({
+                "text": "Save and continue",
+                "classes": "u-mt-l",
+                "url": "/prototypes/e-commerce-hubspokemodel/hub.html"
+            })
+        }}
+{% endblock %}
