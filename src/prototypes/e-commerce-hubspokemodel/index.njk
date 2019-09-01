@@ -13,26 +13,26 @@ layout: e-commerce-hubspokemodel/views/_home
 {% from "components/header/_macro.njk" import onsHeader %}
 
 {% block main %}
-<h2>Your response is legally required</h2>
-<p>Notice is given under section 1 of the Statistics of Trade Act 1947.</p>
-    <p>If the company details or structure have changed contact us on <a href="#">0300 1234 931</a> or email <a href="#">surveys@ons.gov.uk</a></p>
-    <h2>Information you will need:</h2>
-{{ 
-    onsList({
-        "itemsList": [
-            {
-                "text": 'Data should relate to all sites in the UK (including foreign owned businesses) unless otherwise stated. The UK consists of England, Wales, Scotland, and Northern Ireland and excludes the Channel Islands and the Isle of Man.'
-            },
-            {
-                "text": "You can provide informed estimates if actual figures aren’t available."
-            },
-            {
-                "text": 'For further information read <a href="#">Guidance for completing the E-commerce survey</a>'
-            }
-        ]
-    }) 
-}} 
-<p class="icon--lock">We will treat your data securely and confidentially.</p>
+    <h2>Your response is legally required</h2>
+    <p>Notice is given under section 1 of the Statistics of Trade Act 1947.</p>
+        <p>If the company details or structure have changed contact us on <a href="#">0300 1234 931</a> or email <a href="#">surveys@ons.gov.uk</a></p>
+        <h2>Information you will need:</h2>
+    {{ 
+        onsList({
+            "itemsList": [
+                {
+                    "text": 'Data should relate to all sites in the UK (including foreign owned businesses) unless otherwise stated. The UK consists of England, Wales, Scotland, and Northern Ireland and excludes the Channel Islands and the Isle of Man.'
+                },
+                {
+                    "text": "You can provide informed estimates if actual figures aren’t available."
+                },
+                {
+                    "text": 'For further information read <a href="#">Guidance for completing the E-commerce survey</a>'
+                }
+            ]
+        }) 
+    }} 
+    <p class="icon--lock">We will treat your data securely and confidentially.</p>
 
     {{
         onsButton({
