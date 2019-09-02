@@ -10,20 +10,20 @@ theme: census
     <link rel="stylesheet" href="/prototypes/feedback/styles.css" />
 {% endblock %}
 {% block header %}
-{{
-  onsHeader({
-    "title": "Survey title",
-    "theme": "census",
-    "logoHref": "https://www.ons.gov.uk",
-    "titleLogo": "/img/census-logo-en.svg",
-    "titleLogoAlt": "Census 2021",
-    "titleLogoHref": "/prototypes/feedback/",
-    "button": {
+  {{
+    onsHeader({
+      "title": "Survey title",
+      "theme": "census",
+      "logoHref": "https://www.ons.gov.uk",
+      "titleLogo": "/img/census-logo-en.svg",
+      "titleLogoAlt": "Census 2021",
+      "titleLogoHref": "/prototypes/feedback/",
+      "button": {
         "text": "Save and complete later",
         "url": "#"
-    }
-  })
-}} 
+      }
+    })
+  }} 
 {% endblock %}
 
 {% block page %}
