@@ -1,0 +1,44 @@
+---
+version: 13.4.4
+layout: census-website/views/_guide
+---
+
+{% set content = { 
+    "sectionTitle": 'Case studies',
+    "breadcrumbs": {
+        "itemsList": [
+            {
+                "url": '/prototypes/census-website/',
+                "text": 'Home'
+            },
+            {
+                "current": true ,                                               
+                "text": 'Case studies'
+            }
+        ]
+    }
+    
+} %}
+{% block content %}
+    <div class="col-12@m u-mb-l">
+            <p>The information we gather from the census helps a range of organisations plan for the future. For example, local government use the information to help plan services, such as schools, hospitals and rubbish collection, in your area. Businesses use it to decide where to set up, which creates job opportunities. Charities also use census information to help get the funding they need.</p>
+            <p>Read some of our case studies below to find out how different organisations use census information to plan services.</p>
+        </div>
+        <div class="grid grid--column@xs@s u-mb-m@m">
+            <div class="grid__col col-6@m">
+                <div class="card" aria-labelledby="healthier-communities" aria-describedby="id-0" role="navigation" aria-label="Section highlight">
+                <h3 class="u-fs-m" id="healthier-communities">
+                    <a href="/prototypes/census-website/case-studies/mental-health-foundation/">Healthier communities</a>
+                </h3>
+                <p id="id-0">Census data helped the Mental Health Foundation support those more at risk of mental ill health.</p>
+            </div>
+        </div>
+        <div class="grid__col col-6@m">
+            <div class="card" aria-labelledby="fire-fighting-with-facts" aria-describedby="id-1" role="navigation" aria-label="Section highlight">
+            <h3 class="u-fs-m" id="fire-fighting-with-facts">
+                <a href="/prototypes/census-website/case-studies/london-fire-brigade/">Fire-fighting with facts</a>
+            </h3>
+            <p id="id-1">The London Fire Brigade used census data to identify and prevent fires in high risk areas.</p>
+        </div>
+    </div>
+{% endblock %}

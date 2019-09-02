@@ -1,0 +1,80 @@
+---
+version: 13.4.4
+layout: census-website/views/_guide
+---
+
+{% set content = { 
+    "title": 'About the census',
+    "sectionTitle": '2019 Rehearsal',
+    "breadcrumbs": {
+        "itemsList": [
+            {
+                "url": '/prototypes/census-website/',
+                "text": 'Home'
+            },
+            {
+                "url": '/prototypes/census-website/about-the-census/',
+                "text": 'About the census'
+            },                                            
+            {
+                "url": '',
+                "text": '2019 Rehearsal',
+                "current": true                                                
+
+            }
+        ]
+    },
+    "contentsList": {
+        "ariaLabel": 'Pages in this guide',
+        "lists": [
+            {
+                "itemsList": [
+                    {
+                        "text": 'Overview',
+                        "url": '/prototypes/census-website/about-the-census/'
+                    },
+                    {
+                        "current": true,
+                        "text": '2019 Rehearsal'
+                    },
+                    {
+                        "url": '/prototypes/census-website/about-the-census/why-should-I-take-part/index.html',
+                        "text": 'Why should I take part?'
+                    },
+                    {
+                        "url": '/prototypes/census-website/about-the-census/what-do-I-need-to-do/index.html',
+                        "text": 'What do I need to do for the census rehearsal?'
+                    },
+                    {
+                        "text": 'About Census 2021',
+                        "url": '/prototypes/census-website/about-the-census/about-census-2021/index.html'
+                    },
+                    {
+                        "url": '/prototypes/census-website/about-the-census/about-the-census-coverage-survey/index.html',
+                        "text": 'About the Census Coverage Survey'
+                    }
+                ]
+            }
+        ]
+    },
+    "contentPagination": {
+        "contentPaginationItems": [
+            {
+                "rel": 'prev',
+                "text": 'Previous',
+                "url": '/prototypes/census-website/about-the-census/',
+                "label": 'Overview'
+            },
+            {
+                "rel": 'next',
+                "text": 'Next',
+                "url": '/prototypes/census-website/about-the-census/why-should-I-take-part/',
+                "label": 'Why should I take part?'
+            }
+        ]
+    }
+} %}
+{% block content %}
+    <p>In preparation for Census 2021, we at the Office for National Statistics (ONS) will be holding a census rehearsal in October 2019.<br></p><h2><strong>Why we need a rehearsal</strong></h2><p>The census aims to count everyone in England and Wales, which makes it a pretty big task. No other survey gives as much information about us and our society. Having a rehearsal will help make sure our processes, systems and services are running smoothly. The rehearsal will take place in October 2019. It’s a practice run so we get things right for the real thing.</p><h2><strong>Where the rehearsal is taking place</strong></h2><p>We’ve chosen four areas to rehearse the census as together they represent a good cross section of our society. The areas are:</p><ul><li>Carlisle</li><li>Ceredigion</li><li>Hackney</li><li>Tower Hamlets</li></ul><h2><strong>What you’ll need to do</strong></h2><p>If you live in one of the rehearsal areas, we’ll send you a letter if we need you to take part.</p><p>It’s important you get involved in the rehearsal. The more people that respond, the better we can make the census in 2021.</p>
+
+{% endblock %}

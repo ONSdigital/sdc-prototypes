@@ -1,0 +1,41 @@
+---
+version: 13.4.4
+layout: census-website/views/_guide
+---
+
+{% set content = { 
+    "sectionTitle": 'Lets Count!',
+    "breadcrumbs": {
+        "itemsList": [
+            {
+                "url": '/prototypes/census-website/',
+                "text": 'Home'
+            },
+            {
+                "url": '/prototypes/census-website/media-and-campaigns/',
+                "text": 'Media and campaigns'
+            },                                            
+            {
+                "url": '',
+                "text": 'Lets Count!',
+                "current": true                                                
+
+            }
+        ]
+    }
+} %}
+{% block content %}
+    <section class="page__body">
+        <p>We really want to inspire a new generation to take part in the census.</p>
+        <p>We’ve developed an exciting free education programme to help teach children in primary schools about the census. Let’s Count! includes census-inspired lesson plans to support learning across the main areas of the English and Welsh Curriculum.</p>
+        <p>The programme is currently available to all primary schools in the four census rehearsal areas: Carlisle, Ceredigion, Hackney and Tower Hamlets.</p>
+        <div class="video">
+            <iframe class="video__iframe" src="https://www.youtube.com/embed/BiZk2pnSM6w" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+        </div>
+        <p>Schools in these areas will also be encouraged to host a Let’s Count! day in October and enter a competition.</p>
+        <p>Children will be challenged to count all the different things they find on a short walk around the school and share what they find in exciting ways. Prizes will be awarded for the best entries.</p>
+        <p>The Let’s Count! website has plenty of resources available for teachers and parents to use. These include leaflets, presentations and posters. For more information, 
+            <a href="https://letscount.org.uk/en/">visit the Let’s Count! website</a>.
+        </p>
+    </section>
+{% endblock %}

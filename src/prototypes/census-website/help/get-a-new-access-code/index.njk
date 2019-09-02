@@ -1,0 +1,43 @@
+---
+version: 13.4.4
+layout: census-website/views/_page
+---
+
+{% set content = { 
+    "title": 'Get a new access code',
+    "breadcrumbs": {
+        "itemsList": [
+            {
+                "url": '/prototypes/census-website/',
+                "text": 'Home'
+            },
+           {
+                "url": '/prototypes/census-website/help/',
+                "text": 'Help with your census'
+            },
+            {
+                "url": '/prototypes/census-website/help/get-a-new-access-code/',
+                "text": 'Get a new access code',
+                "current": true
+            }
+        ]
+    }
+} %}
+
+{% block content %}
+    
+<section class="section">
+    <p>To do the census online you need a 16 character unique access code which we have sent you in a letter.</p>
+    <p>If you are in a <a href="/prototypes/census-website/about-the-census/the-2019-census-rehearsal">rehearsal area</a> and don’t have a code you can get a new one.</p>
+    <p>You will need to provide:</p>
+    <ul>
+        <li>your mobile number so we can send you the code by text</li>
+        <li>your address so we can confirm you are in the rehearsal area</li>
+    </ul>
+    <p><a href="https://sdc-prototypes.netlify.com/prototypes/rh-census/address.html?no-js=false" class="btn u-mt-xs u-mb-l"><span class="btn__inner icon--chevron-right-white">Get a new code</span></a></p>
+    <h2>Paper census</h2>
+    <p>If you want to <a href="/prototypes/census-website/contact-us">get a paper version of the census</a> contact us to request one.<br></p>
+    <p>You can also <a href="/prototypes/census-website/contact-us">contact us for a continuation form</a> if you need to add more people in your household to the paper census.</p>
+</section>        
+   
+{% endblock %}

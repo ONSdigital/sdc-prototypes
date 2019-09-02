@@ -1,0 +1,68 @@
+---
+version: 13.4.4
+layout: census-website/views/_guide
+---
+
+{% set content = { 
+    "title": 'How to complete the census',
+    "sectionTitle": "Change in circumstances", 
+    "breadcrumbs": {
+        "itemsList": [
+            {
+                "url": '/prototypes/census-website/',
+                "text": 'Home'
+            },
+            {
+                "url": '/prototypes/census-website/help/',
+                "text": 'Help with your census'
+            },
+            {
+                "url": '/prototypes/census-website/help/getting-started/',
+                "text": 'Getting started'
+            },
+            {
+                "text": 'Change in circumstances',
+                "current": true
+            }            
+        ]
+    },
+    "contentsList": {
+        "ariaLabel": 'Pages in this guide',
+        "lists": [
+            {
+                "itemsList": [
+                    {
+                        "url": '/prototypes/census-website/help/getting-started/',
+                        "text": 'Overview'
+                    },
+                    {
+                        "url": '/prototypes/census-website/help/getting-started/who-should-complete-the-census.html',
+                        "text": 'Who should complete the census'                   
+                    },
+                    {
+                        "text": 'Change in circumstances',
+                        "current": true                             
+                    }
+                ]
+            }
+        ]
+    },
+    "contentPagination": {
+        "contentPaginationItems": [
+            {
+                "rel": 'prev',
+                "text": 'Previous',
+                "url": '/prototypes/census-website/help/getting-started/who-should-complete-the-census.html',
+                "label": 'Who should complete the census'
+            }         
+        ]
+    }    
+} %}
+
+{% block content %}  
+  <p>If anything changes after you have filled out the form, then you don’t need to let us know. Just be as accurate as possible when you are completing it.</p>
+    <h3>Moving house</h3>
+    <p>Fill out the census for the address where you will be on the 13 October 2019.</p>
+    <h3>Staying somewhere else on the night of the census</h3>
+    <p>Please fill out the census for where you will be on the 13 October. If anything changes after you’ve submitted it you don’t need to let us know.</p>
+{% endblock %}

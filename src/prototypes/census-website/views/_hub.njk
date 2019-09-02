@@ -1,0 +1,170 @@
+---
+version: 13.4.4
+
+---
+{% extends "prototypes/census-website/views/_page.njk" %}
+{% from "components/card/_macro.njk" import onsCard %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/card/_macro.njk" import onsCard %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+{% from "components/call-to-action/_macro.njk" import onsCallToAction %}
+{% from "components/toc/_macro.njk" import onsTableOfContents %}
+{% from "components/content-pagination/_macro.njk" import onsContentPagination %}
+{% from "components/related-links/_macro.njk" import onsRelatedLinks %}
+{% from "components/lists/_macro.njk" import onsList %}
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+
+{% block page %}
+{% set pageClasses = "page__main" %}
+
+<div class="page__container container {{ containerClasses }}">
+    {{-
+        onsBreadcrumb({
+            "ariaLabel": 'Breadcrumb',
+            "itemsList": content.breadcrumbs.itemsList
+        }) 
+    }}
+    <div class="grid u-mt-s@m">
+        <div class="grid__col col-12@m">
+            <main id="main-content" class=" {{ pageClasses }}">
+                <h1 class="u-mb-l u-fs-xxl"><span class="u-fs-m u-db u-mb-xs u-lighter">{{ content.title }}</span> 
+                    <span class="u-vh">: </span>
+                    <span class="u-fs-xxl u-db">{{ content.sectionTitle }}</span></h1>
+                {% if content.topPanel %}
+                    <div class="u-mb-l">
+                        {{ 
+                            onsPanel({
+                                type: 'branded',
+                                body: content.topPanel.body
+                            })
+                        }}
+                    </div>
+                {% endif %}
+                {% if content.contentsList %}
+                    {{-
+                        onsTableOfContents({
+                            "ariaLabel": content.contentsList.ariaLabel,
+                            "title": 'Contents',
+                            "lists": content.contentsList.lists
+                        }) 
+                    }}
+                {% endif %}
+                {% if content.contentsList %}<section class="section-contents">{% endif %}
+                    {% block content %}{% endblock %}
+                    {% if content.contentPagination %}
+                        {{-
+                            onsContentPagination({
+                                "ariaLabel": 'guide pagination',
+                                "contentPaginationItems": content.contentPagination.contentPaginationItems
+                            }) 
+                        }}
+                    {% endif %}
+                {% if content.contentsList %}</section>{% endif %}
+            </main>
+        </div>
+    </div>
+</div>
+<footer class="footer " data-ga-element="footer">
+  <div class="container">
+    <div class="grid">
+    <div class="grid__col col-12@m u-mb-l">
+              <details id="feedback" class="details js-collapsible js-feedback" open>
+                <summary class="details__summary js-collapsible-summary">
+                  <div class="details__heading">
+                    <span class="details__title u-fs-r--b">Give us feedback and help us improve this website</span>
+                  </div>
+                </summary>
+                <div id="feedback-content" class="details__content js-collapsible-content">
+                  <form id="feedback-form" class="u-mt-s js-feedback-form" method="POST" action="/" novalidate data-thank-you="Thank you for your feedback." data-error-message="There was an error sending your feedback.
+                    (Error code: {x})">
+                    {{
+                        onsTextarea({
+                            "id": "textarea-char-limit",
+                            "name": "feedback-limited",
+                            "classes": "input--w-30",        
+                            "label": {
+                                "text": "Tell us what we could do better"
+                            },
+                            "maxlength": 400,
+                            "charCountSingular": "You have {x} character remaining",
+                            "charCountPlural": "You have {x} characters remaining"
+                        })
+                    }}
+
+                    {{ 
+                        onsButton({
+                            "type": 'button',
+                            "text": 'Submit feedback',
+                            "classes": "u-mt-m"
+                        }) 
+                    }}
+                  </form>
+                </div>
+              </details>
+                          <hr class="footer__hr">
+
+            </div>
+      <div class="grid__col col-4@m">
+        <h4 class="u-fs-r--b footer__heading">Get in touch</h4>
+        <ul class="list list--bare u-mb-no">
+          <li class="list__item ">
+            <a href="#" class="list__link ">
+              Twitter
+            </a>
+            </li>
+            <li>
+            <a href="#" class="list__link ">
+              Facebook
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="grid__col col-4@m u-mt-m@xs@m">
+        <h4 class="u-fs-r--b footer__heading">Working on the census</h4>
+        <ul class="list list--bare u-mb-no">
+          <li class="list__item ">
+            <a href="jobs/" class="list__link ">
+              Jobs
+            </a>
+          </li>
+          <li class="list__item ">
+            <a href="#" class="list__link ">
+              Media and campaigns
+            </a>
+          </li>
+          <li class="list__item ">
+            <a href="#" class="list__link ">
+              Our partners
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="grid__col col-4@m u-mt-m@xs@m">
+        <h4 class="u-fs-r--b footer__heading">Legal information</h4>
+        <ul class="list list--bare u-mb-no">
+          <li class="list__item ">
+            <a href="#" class="list__link ">
+              Cookies
+            </a>
+          </li>
+          <li class="list__item ">
+            <a href="#" class="list__link ">
+              Privacy and data protection
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="grid__col u-mt-m u-mb-m">
+        <hr class="footer__hr">
+      </div>
+      <div class="grid__col">
+        <div class="footer__license">
+          <img alt="OGL" class="footer__ogl-img" src="/img/UKOpenGovernmentLicence-grey.svg">
+          All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" class="footer__link">Open Government Licence v3.0</a>, except where otherwise stated
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+{% endblock %}

@@ -1,10 +1,10 @@
 ---
-version: 10.0.0
-layout: census-website/views/_page
+version: 13.4.4
+layout: census-website/views/_guide
 ---
 
 {% set content = { 
-    "title": 'Contact us',
+    "sectionTitle": 'Contact us',
     "breadcrumbs": {
         "itemsList": [
             {
@@ -20,109 +20,29 @@ layout: census-website/views/_page
     }
 } %}
 {% block content %}
-    <p>Census helpline is available from the 23 September to 17 November 2019.</p>
-    <h2 class="u-mt-l">Telephone</h2>
-    <div class="u-mb-m tel-block">
-    <p style="margin-bottom:2px;">Telephone:<strong></p><p style="margin-bottom:2px;">0800 000 XXXX 
-    <small>(Option for English and Welsh)</small></strong> </p>
-    </div>
-    <div class="u-mb-m">
-    {% from "components/panel/_macro.njk" import onsPanel %}
-    {{ 
-    onsPanel({
-        body: "<p>For alternative formats, such as braille call <strong>0800 XXX XXXX</strong></p>"
-    }) 
-    }}
-    </div>
-    <h3 class="u-mt-l u-mb-xs">Opening hours</h3>
-    <p>Monday to Friday, 8 am to 7pm<br> Saturday, 8am to 4pm</p>
-    {% from "components/details/_macro.njk" import onsDetails %}
-    {{ onsDetails({
-            "id": "details",
-            "title": "Find out about call charges",
-            "classes": "u-mb-m",
-            "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur snint occaecat cupidatat</p>
-                        <p> non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occat in culpa qui officia deserunt mollit anim id est laborum.</p>",
-            "button": {
-                "close": "Hide this"
-            }
-        })
-    }}
-    <h2 class="u-mt-xl">Textphone</h2>
-    <div class="u-mb-m tel-block">
-    <p style="margin-bottom:2px;">Textphone:<strong></p><p style="margin-bottom:2px;">0800 XXX XXXX</strong> </p>
-    </div>
-    <div class="u-mb-m">
-    {% from "components/panel/_macro.njk" import onsPanel %}
-        {{ 
-        onsPanel({
-            body: "<p>Text relay (if you cannot hear or speak on the phone):<strong>XXXXX then 0800 XXX XXXX</strong></p>"
-        }) 
-    }}
-    </div>
-    <h2 class="u-mt-xl u-mb-xs">Web chat</h2>
-    <p><a href="">Speak to an advisor</a></p>
-    <h3 class="u-mb-xs">Opening hours</h3>
-    <p>Monday to Friday 8am – 7pm<br> Saturday 8am - 4pm</p>
-    <h2 class="u-mt-xl u-mb-xs">Email enquiry</h2>
-    <p><a href="">Get in touch</a></p>
-    <h2 class="u-mt-xl">Post</h2>
-    <div class="tel-block">
-    <p>Government Buildings<br>
-    Cardiff Road<br>
-    Newport<br>
-    South Wales<br>
-    NP10 8XG</p>
-    </div>
+               <p>Contact us if you have any questions about filling in the census online or on paper. You can use any of these options if you need information or a census in an alternative format like Braille or large print.</p>
+                <h2>Telephone</h2>
+                <p>We will have advisers available to help you at the following times:</p>
+                <p>Monday to Friday – 8am to 7pm<br>Saturday – 8am to 1pm<br>Sunday – closed</p>
+                <h3 class="u-mb-xs">England</h3>
+                <p>Telephone: 0800 141 2021<br></p>
+                <h3 class="u-mb-xs">Wales</h3>
+                <p>Telephone: 0800 169 2021 <small>(Option 1 for Welsh, option 2 for English)</small></p>
+                <h3 class="u-mb-xs">Other languages</h3>
+                <p>If you need to speak to us in another language phone 0800 587 2021</p>
+                <h3>Text relay</h3>
+                <p> NGT users dial 18001 followed by the phone number you need</p>
+                <h3>SMS text message</h3>
+                <p> Text 86677</p>
+                <p>We will have advisers available to help you at the following times:</p>
+                <p>Monday to Friday – 8am to 7pm<br>Saturday – 8am to 1pm<br>Sunday – closed</p>
+                    
+                    <h2>Online</h2>
+                    <h3>Live chat</h3>
+                    <p>We will have advisers available to help you at the following times:</p>
+                    <p>Monday to Friday – 8am to 7pm<br>Saturday – 8am to 1pm<br>Sunday – closed</p>
+                    
+                    <a href="/webchat" role="button" class="btn u-mb-m" onclick="window.open(this.href,'targetWindow','toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=360,height=680'); return false;"><span class="btn__inner icon--chevron-right-white">Start live chat</span></a>
+                    
 
-    <h2 class="u-mt-xl">Follow us</h2>
-    <div style="display: flex;">
-    <div style="height:40px;width:40px;margin-right:10px;">
-        <a href=""><img src="/prototypes/census-website/img/facebook-logo.svg"></a>
-    </div> 
-    <div style="height:40px;width:40px;margin-right:10px;">
-        <a href=""><img src="/prototypes/census-website/img/twitter-logo.svg"></a>
-    </div> 
-    <div style="height:40px;width:40px;">
-        <a href=""><img src="/prototypes/census-website/img/linkedin.svg"></a>
-    </div>
-    </div> 
-
-    <hr class="footer__hr u-mt-l" style="margin-bottom: 0;">
-
-    <div class="u-mt-m">
-    <h2 class="u-fs-l">Marketing materials</h2>
-    <p>Select below the advertising materials you require</p>
-    {% from "components/downloads/_macro.njk" import onsDownloads %}
-    {{ onsDownloads({
-        "classes": "u-mt-m",
-        "downloads": [
-            {
-                "url": "#",
-                "thumbnail": "/prototypes/census-website/img/poster.jpg",
-                "title": "Census awareness poster",
-                "type": "Portable Document Format",
-                "typeAbbr": "PDF",
-                "fileSize": "890KB",
-                "pages": "1 page",
-                "accessibilityMessage": "This file may not be suitable for users of assistive technology.",
-                "accessibilityURL": "#",
-                "accessibilityLinkText": "Request an accessible format"
-            },
-            {
-                "url": "#",
-                "thumbnail": "/prototypes/census-website/img/poster2.jpg",
-                "title": "Census Letterhead",
-                "type": "Portable Document Format",
-                "typeAbbr": "PDF",
-                "fileSize": "330KB",
-                "pages": "1 page",
-                "accessibilityMessage": "This file may not be suitable for users of assistive technology.",
-                "accessibilityURL": "#",
-                "accessibilityLinkText": "Request an accessible format"
-            }
-        ]
-    }) }}        
 {% endblock %}

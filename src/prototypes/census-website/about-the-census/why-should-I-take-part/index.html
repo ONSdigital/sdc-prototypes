@@ -1,0 +1,81 @@
+---
+version: 13.4.4
+layout: census-website/views/_guide
+---
+
+{% set content = { 
+    "title": 'About the census',
+    "sectionTitle": 'Why should I take part?',
+    "breadcrumbs": {
+        "itemsList": [
+            {
+                "url": '/prototypes/census-website/',
+                "text": 'Home'
+            },
+            {
+                "url": '/prototypes/census-website/about-the-census/',
+                "text": 'About the census'
+            },                                            
+            {
+                "url": '',
+                "text": 'Why should I take part?',
+                "current": true                                                
+
+            }
+        ]
+    },
+    "contentsList": {
+        "ariaLabel": 'Pages in this guide',
+        "lists": [
+            {
+                "itemsList": [
+                    {
+                        "text": 'Overview',
+                        "url": '/prototypes/census-website/about-the-census/'
+                    },
+                    {
+                        "url": '/prototypes/census-website/about-the-census/the-2019-rehearsal/index.html',
+                        "text": '2019 Rehearsal'
+                    },
+                    {
+                        "current": true,
+                        "text": 'Why should I take part?'
+                    },
+                    {
+                        "url": '/prototypes/census-website/about-the-census/what-do-I-need-to-do/index.html',
+                        "text": 'What do I need to do for the census rehearsal?'
+                    },
+                    {
+                        "text": 'About Census 2021',
+                        "url": '/prototypes/census-website/about-the-census/about-census-2021/index.html'
+                    },
+                    {
+                        "url": '/prototypes/census-website/about-the-census/about-the-census-coverage-survey/index.html',
+                        "text": 'About the Census Coverage Survey'
+                    }
+                ]
+            }
+        ]
+    },
+    "contentPagination": {
+        "contentPaginationItems": [
+            {
+                "rel": 'prev',
+                "text": 'Previous',
+                "url": '/prototypes/census-website/about-the-census/2019-rehearsal/',
+                "label": '2019 Rehearsal'
+            },
+            {
+                "rel": 'next',
+                "text": 'Next',
+                "url": '/prototypes/census-website/about-the-census/what-do-I-need-to-do/',
+                "label": 'What do I need to do for the census rehearsal?'
+            }
+        ]
+    }
+} %}
+{% block content %}
+    <div class="page__body">
+    <h2>Getting the right information from the census</h2><p>The census helps us understand what our society needs now, and what it will likely need in the future. The information it collects helps decide how services are planned and funded in your area. This could include schools, doctors’ surgeries, emergency services or even local support groups.</p><p>Charities also use census information to help get the funding they need. Businesses use it to decide where to set up, which creates job opportunities.</p><p>This is why it’s so important we get it right. We’ll be running a census rehearsal this October in Carlisle, Ceredigion, Hackney and Tower Hamlets to test our processes, systems and services before the census in 2021. It gives us a chance to make sure things go smoothly in 2021 and we ask the right questions, to get the right information to help plan services in your area.<br></p><div class="panel panel--info panel--simple u-mb-m"><div class="panel__body"><p>You can read more about how the <a href="/case-studies/mental-health-foundation">Mental Health Foundation</a> and <a href="/case-studies/london-fire-brigade">London Fire Brigade</a> use census data to support and protect communities.</p></div></div><h2>Practice makes perfect</h2><p>In the build up to 2021, we’re asking people living in our <a href="/about-the-census/2019-rehearsal">four census rehearsal areas</a> to fill in the rehearsal questionnaire.</p><p>It’s really important you take part. The more people who respond, the better information we’ll have to help us plan the census in 2021.</p><p>A successful census in 2021 will help give the best picture of the needs of everyone living in England and Wales. A total of 96% of people responded to the last census, helping each area receive its share of public funding. Without it, it would be much more difficult to provide your area with the services you need.<br></p>
+    </div>
+{% endblock %}

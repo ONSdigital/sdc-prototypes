@@ -1,0 +1,75 @@
+---
+version: 13.4.4
+layout: census-website/views/_guide
+---
+
+{% set content = { 
+    "title": 'About the Census Coverage Survey',
+    "sectionTitle": 'About the Census Coverage Survey',
+    "breadcrumbs": {
+        "itemsList": [
+            {
+                "url": '/prototypes/census-website/',
+                "text": 'Home'
+            },
+            {
+                "url": '/prototypes/census-website/about-the-census/',
+                "text": 'About the census'
+            },                                            
+            {
+                "url": '',
+                "text": 'About the Census Coverage Survey',
+                "current": true                                                
+
+            }
+        ]
+    },
+    "contentsList": {
+        "ariaLabel": 'Pages in this guide',
+        "lists": [
+            {
+                "itemsList": [
+                    {
+                        "text": 'Overview',
+                        "url": '/prototypes/census-website/about-the-census/'
+                    },
+                    {
+                        "url": '/prototypes/census-website/about-the-census/the-2019-rehearsal/index.html',
+                        "text": '2019 Rehearsal'
+                    },
+                    {
+                        "url": '/prototypes/census-website/about-the-census/why-should-I-take-part/index.html',
+                        "text": 'Why should I take part?'
+                    },
+                    {
+                        "url": '/prototypes/census-website/about-the-census/what-do-I-need-to-do/',
+                        "text": 'What do I need to do for the census rehearsal?'
+                    },
+                    {
+                        "text": 'About Census 2021',
+                        "url": '/prototypes/census-website/about-the-census/about-census-2021/'
+                      },
+                    {
+                        "current": true,
+                        "text": 'About the Census Coverage Survey'
+                    }
+                ]
+            }
+        ]
+    },
+    "contentPagination": {
+        "contentPaginationItems": [
+            {
+                "rel": 'prev',
+                "text": 'Previous',
+                "url": '/prototypes/census-website/about-the-census/about-census-2021',
+                "label": 'About Census 2021'
+            }
+        ]
+    }
+} %}
+{% block content %}
+    <div class="page__body">
+    <p>We try our hardest to make sure everyone is counted in a census. However, no census is perfect, and some people will be missed. We want to make sure the number missed is as small as possible.</p><p>To do this we conduct the Census Coverage Survey (CCS). The CCS is a short survey to find out if any people have been missed and if people have been counted more than once. If your house is chosen, someone will come to your door and ask you some questions.</p><h2>Information the Census Coverage Survey collects</h2><p>The CCS asks similar questions to those on the census questionnaire, just fewer of them. It’s carried out six weeks after the census in a sample of areas across England and Wales.</p><p>The CCS records are then compared with those from the census. If needed, the census data is then adjusted. This is all to make sure the information produced is as accurate as possible for planning services such as health, education, housing and transport.</p><h2>How to identify a Census Coverage Survey interviewer</h2><p>We’ll be testing the CCS as part of the rehearsal, too. If you live in one of the rehearsal areas, you may be asked to take part.</p><p>Our interviewers will wear an ID badge when they call.</p>
+    </div>
+{% endblock %}

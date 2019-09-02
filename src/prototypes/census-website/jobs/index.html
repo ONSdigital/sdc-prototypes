@@ -1,0 +1,34 @@
+---
+version: 13.4.4
+layout: census-website/views/_guide
+---
+
+{% set content = { 
+    "sectionTitle": 'Working on the census',
+    "breadcrumbs": {
+        "itemsList": [
+            {
+                "url": '/prototypes/census-website/',
+                "text": 'Home'
+            },
+            {
+                "current": true ,                                               
+                "text": 'Working on the census'
+            }
+        ]
+    }
+    
+} %}
+{% block content %}
+    <section class="page__body">
+        <h2>Census rehearsal jobs</h2>
+        <p>As our census rehearsal will be taking place in four areas – Carlisle, Ceredigion, Hackney and Tower Hamlets – we’re now looking for field staff in these areas to help.</p>
+        <h2>Applying for jobs</h2>
+        <p>If you’re a people person, have great customer service skills and want to be part of something that affects all of us, then <a href="https://censusjobs.co.uk/">apply for a job with the census</a>.</p>
+        <h2>Census 2021 roles</h2>
+        <p>For Census 2021, we’ll be hiring at least 17,000 field staff across England and Wales. As it gets closer, we’ll be advertising the opportunities online.</p>
+        <h2>What the field team do</h2>
+        <p>It takes a big team to ensure both the rehearsal and the census itself run smoothly. Our field team is vital to our success.</p>
+        <p>As part of our field team, you would be the face of the census – visiting people who’ve not yet responded, offering help and encouraging people to take part. It’s an essential part of making sure we get the responses we need to make the census the best it can be.<br></p>
+    </section>
+{% endblock %}

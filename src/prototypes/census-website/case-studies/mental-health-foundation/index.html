@@ -1,0 +1,30 @@
+---
+version: 13.4.4
+layout: census-website/views/_guide
+---
+
+{% set content = { 
+    "sectionTitle": 'Healthier communities',
+    "breadcrumbs": {
+        "itemsList": [
+            {
+                "url": '/prototypes/census-website/',
+                "text": 'Home'
+            },
+            {
+                "url": '/prototypes/census-website/case-studies/',
+                "text": 'Case studies'
+            },                                            
+            {
+                "url": '',
+                "text": 'Healthier communities',
+                "current": true                                                
+
+            }
+        ]
+    }
+    
+} %}
+{% block content %}
+    <section class="page__body"><h2>Supporting communities’ mental health</h2><p>Charities use census information to help plan the services they provide to those who need them most. For example, the Mental Health Foundation (MHF) uses it to find those more at risk of mental ill health and give them the support they need.</p><p>Sadly, the risk of developing mental ill health is higher in some parts of England and Wales than others. Factors such as age, gender, ethnicity and location can all have an impact.</p><p>MHF used information from the 2011 Census to produce a heat map of London’s most at-risk boroughs. This showed seven East London boroughs as “red”, with the highest risks.</p><p>MHF responded by setting up a series of Community Conversations in those areas. These events brought together people from the local community to talk about how to improve their mental health. Over 1,000 Londoners took part. Now their ideas are being taken forward. In Hackney, for example, people said they wanted more free and safe community spaces where they could meet friends and neighbours. As a result, an open community space was added to the council’s plans for a new leisure centre.</p><p>Thanks to the census, MHF identified an at-risk community, helped local people have their voice heard and improved their local environment.</p></section>
+{% endblock %}

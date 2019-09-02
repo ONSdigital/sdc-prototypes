@@ -1,0 +1,87 @@
+---
+version: 13.4.4
+layout: census-website/views/_guide
+---
+
+{% set content = { 
+    "title": 'How to complete the census',
+    "sectionTitle": "Who should complete the census", 
+    "breadcrumbs": {
+        "itemsList": [
+            {
+                "url": '/prototypes/census-website/',
+                "text": 'Home'
+            },
+            {
+                "url": '/prototypes/census-website/help/',
+                "text": 'Help with your census'
+            },
+            {
+                "url": '/prototypes/census-website/help/getting-started/',
+                "text": 'Getting started'
+            },
+            {
+                "text": 'Who should complete the census',
+                "current": true
+            }            
+        ]
+    },
+    "contentsList": {
+        "ariaLabel": 'Pages in this guide',
+        "lists": [
+            {
+                "itemsList": [
+                    {
+                        "url": '/prototypes/census-website/help/getting-started/',
+                        "text": 'Overview'
+                    },
+                    {
+                        "url": '/prototypes/census-website/help/getting-started/who-should-complete-the-census.html',
+                        "text": 'Who should complete the census',
+                        "current": true                        
+                    },
+                    {
+                        "url": '/prototypes/census-website/help/getting-started/change-in-circumstances.html',
+                        "text": 'Change in circumstances'
+                    }
+                ]
+            }
+        ]
+    },
+    "contentPagination": {
+        "contentPaginationItems": [
+            {
+                "rel": 'prev',
+                "text": 'Previous',
+                "url": '/prototypes/census-website/help/getting-started/',
+                "label": 'Overview'
+            },
+            {
+                "rel": 'next',
+                "text": 'Next',
+                "url": '/prototypes/census-website/help/getting-started/change-in-circumstances.html',
+                "label": 'Change in circumstances'
+            }            
+        ]
+    }    
+} %}
+
+{% block content %}  
+    <h2>Second homes</h2>
+    <p>If you have a second home then you will need to complete the census for both properties.</p>
+    <h2>People with no fixed address</h2>
+    <p>You may be living in temporary accommodation or have no fixed address. You will still need to complete the census for the place you are currently living. This may include:</p>
+    <ul>
+    <li>boats</li>
+    <li>mobile homes</li>
+    <li>refuges</li>
+    <li>homeless shelters</li>
+    </ul>
+    <h2>Armed forces</h2>
+    <p>Members of the armed forces will need to complete the census for their usual address in the UK. This applies when:</p>
+    <ul>
+    <li>you spend most of your time at your place of work elsewhere</li>
+    <li>you are serving onboard a ship</li>
+    </ul>
+    <p>You do not need to complete the census if you are a member of the foreign armed forces, or your permanent base is outside the UK.</p>
+ {% endblock %}

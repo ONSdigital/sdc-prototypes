@@ -1,0 +1,30 @@
+---
+version: 13.4.4
+layout: census-website/views/_guide
+---
+
+{% set content = { 
+    "sectionTitle": 'Fire-fighting with facts',
+    "breadcrumbs": {
+        "itemsList": [
+            {
+                "url": '/prototypes/census-website/',
+                "text": 'Home'
+            },
+            {
+                "url": '/prototypes/census-website/case-studies/',
+                "text": 'Case studies'
+            },                                            
+            {
+                "url": '',
+                "text": 'Fire-fighting with facts',
+                "current": true                                                
+
+            }
+        ]
+    }
+    
+} %}
+{% block content %}
+    <section class="page__body"><p>The London Fire Brigade (LFB) is the fire and rescue service for London. In planning its services, the LFB does an assessment of risk across London. LFB uses census data – and its own knowledge of the communities across the capital – to accurately assess the risk level for each area. There is an <a href="https://www.london-fire.gov.uk/in-your-postcode/index.html">online postcode tool</a> that members of the public can use to look up their own area.</p><p>A big part of LFB’s role is trying to prevent fires from happening in the first place and to do this it is important to look at which areas and communities are most at risk of fires. With over 3.2 million homes in London this is a difficult task.</p><p>By looking at data from the census about age, for example, the team can map areas with higher numbers of older people living alone, who might be more at risk of injury or death if a fire happened. Other factors like overcrowding or the lack of central heating can also make people more vulnerable. The Brigade works with local councils and communities to help reduce risks, educating residents on fire safety and carrying out home fire safety visits. This helps to reduce the number of fires and casualties from fire in London. Without the census data it would be more difficult for the Brigade to map these areas of risk. It really does save lives.</p><p></p></section>
+{% endblock %}

@@ -1,0 +1,81 @@
+---
+version: 13.4.4
+layout: census-website/views/_guide
+---
+
+{% set content = { 
+    "title": 'About the census',
+    "sectionTitle": 'What do I need to do for the census rehearsal?',
+    "breadcrumbs": {
+        "itemsList": [
+            {
+                "url": '/prototypes/census-website/',
+                "text": 'Home'
+            },
+            {
+                "url": '/prototypes/census-website/about-the-census/',
+                "text": 'About the census'
+            },                                            
+            {
+                "url": '',
+                "text": 'What do I need to do for the census rehearsal?',
+                "current": true                                                
+
+            }
+        ]
+    },
+    "contentsList": {
+        "ariaLabel": 'Pages in this guide',
+        "lists": [
+            {
+                "itemsList": [
+                    {
+                        "text": 'Overview',
+                        "url": '/prototypes/census-website/about-the-census/'
+                    },
+                    {
+                        "url": '/prototypes/census-website/about-the-census/the-2019-rehearsal/index.html',
+                        "text": '2019 Rehearsal'
+                    },
+                    {
+                        "url": '/prototypes/census-website/about-the-census/why-should-I-take-part/index.html',
+                        "text": 'Why should I take part?'
+                    },
+                    {
+                        "current": true,
+                        "text": 'What do I need to do for the census rehearsal?'
+                    },
+                    {
+                        "text": 'About Census 2021',
+                        "url": '/prototypes/census-website/about-the-census/about-census-2021/index.html'
+                    },
+                    {
+                        "url": '/prototypes/census-website/about-the-census/about-the-census-coverage-survey/index.html',
+                        "text": 'About the Census Coverage Survey'
+                    }
+                ]
+            }
+        ]
+    },
+    "contentPagination": {
+        "contentPaginationItems": [
+            {
+                "rel": 'prev',
+                "text": 'Previous',
+                "url": '/prototypes/census-website/about-the-census/why-should-I-take-part',
+                "label": 'Why should I take part?'
+            },
+            {
+                "rel": 'next',
+                "text": 'Next',
+                "url": '/prototypes/census-website/about-the-census/about-census-2021/',
+                "label": 'About Census 2021'
+            }
+        ]
+    }
+} %}
+{% block content %}
+    <div class="page__body">
+    <p>If you live in one of the four census rehearsal areas, we’ll send you a letter asking you to take part in the rehearsal. This is a practice run to make sure we get the real thing right.</p><p>The rehearsal areas are:</p><ul><li>Carlisle</li><li>Ceredigion</li><li>Hackney</li><li>Tower Hamlets</li></ul><p>The letter we send you will have a unique access code which you can use to complete your census questionnaire online. You can do it in one go or save as you go along to come back to it later.</p><p>It’s a lot cheaper if everyone fills the questionnaire in online, instead of being sent a paper copy through the post. However, you can ask for a paper questionnaire to fill in if you need to.<br></p><p>If you do not live in one of the rehearsal areas, you do not need to do anything right now. We’ll be in touch in early 2021 about the census.<br></p>
+    </div>
+{% endblock %}

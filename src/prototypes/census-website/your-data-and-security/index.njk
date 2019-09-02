@@ -1,0 +1,40 @@
+---
+version: 13.4.4
+layout: census-website/views/_page
+---
+
+{% set content = { 
+    "title": 'Your data and security',
+    "breadcrumbs": {
+        "itemsList": [
+            {
+                "url": '/prototypes/census-website/',
+                "text": 'Home'
+            },
+           
+            {
+                "url": '/prototypes/census-website/your-data-and-security/',
+                "text": 'Your data and security',
+                "current": true
+            }
+        ]
+    }
+} %}
+
+{% block content %}
+    <section class="section">
+        <p>The safety of your information is our top priority. We at the Office for National Statistics (ONS) are the UK’s largest producer of official statistics and recognised national statistical institute.</p>
+        <p>The information we collect in the census is the most comprehensive source of information on our population that we have.</p>
+        <p>To get this information we need to ask you for personal information about you and the people you live with. You can trust us to keep this safe and secure.</p>
+        <p>When we publish the statistics from the census they are completely anonymous so none of your personal information is shared or published. Your census record is kept secure for up to 100 years and only then can it be seen by future generations.</p>
+        <p>We have a strict security regime that follows government standards. This includes physical and IT security measures to protect your data.</p>
+        <p>All our systems, staff and suppliers and how we process things must protect your confidentiality by law. Laws in place that cover protection of your data include:</p>
+        <ul>
+            <li>Data Protection Act 2018</li>
+            <li>General Data Protection Regulation (GDPR)</li>
+            <li>Census Act 1920</li>
+            <li>Statistics and Registration Service Act 2007</li>
+        </ul>
+        <p>We follow these to the letter.</p>
+    </section>
+{% endblock %}

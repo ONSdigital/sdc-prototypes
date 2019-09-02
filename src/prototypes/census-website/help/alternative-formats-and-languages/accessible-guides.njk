@@ -1,0 +1,95 @@
+---
+version: 13.4.4
+layout: census-website/views/_guide
+---
+
+{% set content = { 
+    "title": 'Alternative formats and languages',
+    "sectionTitle": 'Accessible guides',
+    "breadcrumbs": {
+        "itemsList": [
+            {
+                "url": '/prototypes/census-website/',
+                "text": 'Home'
+            },
+            {
+                "url": '/prototypes/census-website/help/',
+                "text": 'Help with your census'
+            },
+            {
+                "url": '/prototypes/census-website/help/alternative-formats-and-languages/',
+                "text": 'Alternative formats and languages'
+            },
+            {
+                "url": '/prototypes/census-website/help/getting-started/',
+                "text": 'Accessible guides',
+                "current": true
+            }
+        ]
+    },
+   "contentsList": {
+        "ariaLabel": 'Pages in this guide',
+        "lists": [
+            {
+                "itemsList": [
+                    {
+                        "url": '/prototypes/census-website/help/alternative-formats-and-languages/',
+                        "text": 'Overview'
+                    },
+                    {
+                        "url": '/prototypes/census-website/help/alternative-formats-and-languages/paper-census-questionnaires.html',
+                        "text": 'Paper census questionnaires'
+                    },                      
+                    {
+                        "url": '/prototypes/census-website/help/alternative-formats-and-languages/accessible-guides.html',
+                        "text": 'Accessible guides',
+                        "current": true                        
+                    },
+                    {
+                        "url": '/prototypes/census-website/help/alternative-formats-and-languages/guides-in-other-languages.html',
+                        "text": 'Guides in other languages'
+                    }
+                ]
+            }
+        ]
+    },
+    "contentPagination": {
+        "contentPaginationItems": [
+            {
+                "rel": 'prev',
+                "text": 'Previous',
+                "url": '/prototypes/census-website/help/alternative-formats-and-languages/paper-census-questionnaires.html',
+                "label": 'Paper census questionnaires'
+            },
+            {
+                "rel": 'next',
+                "text": 'Next',
+                "url": '/prototypes/census-website/help/alternative-formats-and-languages/guides-in-other-languages.html',
+                "label": 'Guides in other languages'
+            }
+        ]
+    }
+} %}
+
+{% block content %}
+    <p>If you need information about the census and how to answer the questions in a different format, we have some options available to download.
+
+    <p>There are guides about the census available:<br></p>
+    <ul>
+        <li>in Braille, <a href="/prototypes/census-website/contact">contact us to request a Braille version</a></li>
+        <li>as an easy read version (which uses pictures to explain the census)</li>
+        <li>as a Welsh audio</li>
+        <li>as large print in English or large print in Welsh</li>
+    </ul>
+    <h2 class="u-mt-l u-mb-m">Easy read guides</h2>
+    <div class="downloads u-mb-m"><section class="download"><div class="download__thumbnail" aria-hidden="true"><a href="/190607-Census-Information-Leaflet-IL2B.pdf" class="download__thumbnail-link"><img src="/prototypes/census-website/img/poster.jpg"></a></div><div class="download__details"><h2 class="download__title"><a href="/190607-Census-Information-Leaflet-IL2B.pdf">Easy read: Census guidance (English) <span class="u-vh">, PDF , 168KB, 5 pages</span></a></h2><p class="download__metadata u-fs-s"><abbr class="download__file-type" title="Portable Document Format">PDF</abbr>, 168KB, 5 pages</p></div></section></div>
+    <div class="downloads u-mb-m"><section class="download"><div class="download__thumbnail" aria-hidden="true"><a href="/190607-Census-Information-Leaflet-IL2B.pdf" class="download__thumbnail-link"><img src="/prototypes/census-website/img/poster.jpg"></a></div><div class="download__details"><h2 class="download__title"><a href="/190607-Census-Information-Leaflet-IL2B.pdf">Easy read: Census guidance (Cymraeg) <span class="u-vh">, PDF , 168KB, 5 pages</span></a></h2><p class="download__metadata u-fs-s"><abbr class="download__file-type" title="Portable Document Format">PDF</abbr>, 168KB, 5 pages</p></div></section></div>
+    <h2 class="u-mt-l u-mb-m">Audio and British Sign Language</h2>
+    <p>The video has guidance available in British Sign Language, as an audio guide and subtitles.</p>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/79DijItQXMM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+    <h2 class="u-mt-l u-mb-m">Large print guides</h2>
+    <div class="downloads u-mb-m"><section class="download"><div class="download__thumbnail" aria-hidden="true"><a href="/190607-Census-Information-Leaflet-IL2B.pdf" class="download__thumbnail-link"><img src="/prototypes/census-website/img/poster.jpg"></a></div><div class="download__details"><h2 class="download__title"><a href="/190607-Census-Information-Leaflet-IL2B.pdf">Large print: Census guidance (English) <span class="u-vh">, PDF , 168KB, 5 pages</span></a></h2><p class="download__metadata u-fs-s"><abbr class="download__file-type" title="Portable Document Format">PDF</abbr>, 168KB, 5 pages</p></div></section></div>
+    <div class="downloads u-mb-xl"><section class="download"><div class="download__thumbnail" aria-hidden="true"><a href="/190607-Census-Information-Leaflet-IL2B.pdf" class="download__thumbnail-link"><img src="/prototypes/census-website/img/poster.jpg"></a></div><div class="download__details"><h2 class="download__title"><a href="/190607-Census-Information-Leaflet-IL2B.pdf">Large print: Census guidance (Cymraeg) <span class="u-vh">, PDF , 168KB, 5 pages</span></a></h2><p class="download__metadata u-fs-s"><abbr class="download__file-type" title="Portable Document Format">PDF</abbr>, 168KB, 5 pages</p></div></section></div>
+
+    
+{% endblock %}

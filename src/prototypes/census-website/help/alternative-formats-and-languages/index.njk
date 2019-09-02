@@ -1,0 +1,74 @@
+---
+version: 13.4.4
+layout: census-website/views/_guide
+---
+
+{% set content = { 
+    "title": 'Alternative formats and languages',
+    "sectionTitle": 'Overview',
+    "breadcrumbs": {
+        "itemsList": [
+            {
+                "url": '/prototypes/census-website/',
+                "text": 'Home'
+            },
+            {
+                "url": '/prototypes/census-website/help/',
+                "text": 'Help with your census'
+            },
+            {
+                "url": '/prototypes/census-website/help/getting-started/',
+                "text": 'Alternative formats and languages',
+                "current": true
+            }
+        ]
+    },
+   "contentsList": {
+        "ariaLabel": 'Pages in this guide',
+        "lists": [
+            {
+                "itemsList": [
+                    {
+                        "text": 'Overview',
+                        "current": true
+                    },
+                    {
+                        "url": '/prototypes/census-website/help/alternative-formats-and-languages/paper-census-questionnaires.html',
+                        "text": 'Paper census questionnaires'
+                    },                    
+                    {
+                        "url": '/prototypes/census-website/help/alternative-formats-and-languages/accessible-guides.html',
+                        "text": 'Accessible guides'
+                    },
+                    {
+                        "url": '/prototypes/census-website/help/alternative-formats-and-languages/guides-in-other-languages.html',
+                        "text": 'Guides in other languages'
+                    }
+                ]
+            }
+        ]
+    },
+    "contentPagination": {
+        "contentPaginationItems": [
+            {
+                "rel": 'next',
+                "text": 'Next',
+                "url": '/prototypes/census-website/help/alternative-formats-and-languages/paper-census-questionnaires.html',
+                "label": 'Paper census questionnaires'
+            }
+        ]
+    }
+} %}
+
+{% block content %}
+<p>Information on the census and how to answer the questions is available in accessible formats.</p>
+
+<p>The different formats you can download or request include:</p>
+<ul>
+    <li>easy read</li>
+    <li>braille</li>
+    <li>British Sign Language (BSL)</li>
+    <li>large print</li>
+    <li>a number of different languages</li>
+</ul>
+{% endblock %}

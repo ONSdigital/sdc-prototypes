@@ -1,6 +1,6 @@
 ---
-version: 10.0.0
-layout: census-website/views/_master
+version: 13.4.4
+layout: census-website/views/_page
 ---
 
 {% from "components/card/_macro.njk" import onsCard %}
@@ -52,7 +52,7 @@ layout: census-website/views/_master
                     <div class="grid__col grid__col--flex grid__col--loose u-flex-grow u-flex-no-basis@s col-12@xs@s">
                         {{-
                             onsCard({
-                                "title": 'Getting started',
+                                "title": 'How to complete the census',
                                 "url": '/prototypes/census-website/help/getting-started/',
                                 "text": "Who should fill it in, what you need to get started, what to do if you don't have an access code."
                               
@@ -82,22 +82,36 @@ layout: census-website/views/_master
                     <div class="grid__col grid__col--flex grid__col--loose u-flex-grow u-flex-no-basis@s col-12@xs@s">
                         {{-
                             onsCard({
-                                "title": 'Finding support to complete your census',
+                                "title": 'How to get help to fill in your questionnaire',
                                 "url": '/prototypes/census-website/help/finding-support-to-complete-your-census/',
-                                "text": 'You can get help from a friend or neighbour, or one of our advisors face-to-face or over the phone.',
-                                "itemsList": [
-                                    {
-                                        "url": '/prototypes/census-website/help/finding-support-to-complete-your-census/help-centres/',
-                                        "text": 'Help centres'
-                                    },
-                                    {
-                                        "url": '/prototypes/census-website/help/finding-support-to-complete-your-census/helping-someone-else/',
-                                        "text": 'Helping someone else fill in their census'
-                                    }
-                                ]
+                                "text": 'You can get help from a friend or neighbour, or one of our advisors face-to-face or over the phone.'
                             })
                         }}                        
                     </div>                     
+                </div>
+                <div class="grid grid--flex grid--loose grid--column@xs@s u-mt-l">
+                    <div class="grid__col grid__col--flex grid__col--loose u-flex-grow u-flex-no-basis@s col-4@m col-12@xs@s">
+                            {{- 
+                                onsCard({
+                                    "classes": 'u-fs-r',
+                                    "title": 'Alternative formats and languages',
+                                    "url": '/prototypes/census-website/help/alternative-formats-and-languages/',
+                                    "text": 'Census guidance in other languages and accessible formats.'
+                                                                  
+                                })
+                            }}
+                    </div>
+                    <div class="grid__col grid__col--flex grid__col--loose u-flex-grow u-flex-no-basis@s col-4@m col-12@xs@s">
+                            {{- 
+                                onsCard({
+                                    "classes": 'u-fs-r',
+                                    "title": 'Get a new access code',
+                                    "url": '/prototypes/census-website/help/get-a-new-access-code/',
+                                    "text": 'What to do if you have lost, forgotten or not received your access code, or need to complete on paper.'
+                                                                  
+                                })
+                            }}
+                    </div>
                 </div>
                 <div class="u-mt-l">
                     <hr class="footer__hr" style="margin-bottom: 0;">

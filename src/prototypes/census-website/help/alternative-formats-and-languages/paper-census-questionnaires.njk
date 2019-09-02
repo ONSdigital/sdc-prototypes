@@ -1,0 +1,76 @@
+---
+version: 13.4.4
+layout: census-website/views/_guide
+---
+
+{% set content = { 
+    "title": 'Alternative formats and languages',
+    "sectionTitle": 'Paper census questionnaires',
+    "breadcrumbs": {
+        "itemsList": [
+            {
+                "url": '/prototypes/census-website/',
+                "text": 'Home'
+            },
+            {
+                "url": '/prototypes/census-website/help/',
+                "text": 'Help with your census'
+            },
+            {
+                "url": '/prototypes/census-website/help/getting-started/',
+                "text": 'Alternative formats and languages',
+                "current": true
+            }
+        ]
+    },
+   "contentsList": {
+        "ariaLabel": 'Pages in this guide',
+        "lists": [
+            {
+                "itemsList": [
+                    {
+                        "text": 'Overview',
+                        "url": '/prototypes/census-website/help/alternative-formats-and-languages/'
+                    },
+                    {
+                        "url": '/prototypes/census-website/help/alternative-formats-and-languages/paper-census-questionnaires.html',
+                        "text": 'Paper census questionnaires',
+                        "current": true
+                    },                    
+                    {
+                        "url": '/prototypes/census-website/help/alternative-formats-and-languages/accessible-guides.html',
+                        "text": 'Accessible guides'
+                    },
+                    {
+                        "url": '/prototypes/census-website/help/alternative-formats-and-languages/guides-in-other-languages.html',
+                        "text": 'Guides in other languages'
+                    }
+                ]
+            }
+        ]
+    },
+    "contentPagination": {
+        "contentPaginationItems": [
+            { 
+                "rel": 'prev',
+                "text": 'Previous',
+                "url": '/prototypes/census-website/help/alternative-formats-and-languages/',
+                "label": 'Overview'
+            },
+            {
+                "rel": 'next',
+                "text": 'Next',
+                "url": '/prototypes/census-website/help/alternative-formats-and-languages/accessible-guides.html',
+                "label": 'Accessible guides'
+            }
+        ]
+    }
+} %}
+
+{% block content %}
+
+<h2>Paper census</h2>
+    <p>A paper version of the questionnaire is available in English or Welsh, and as a large print version in either language. </p>
+    <p>You can <a href="/prototypes/census-website/contact">contact us to get a paper questionnaire</a> sent to you.</p>
+
+{% endblock %}

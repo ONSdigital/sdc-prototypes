@@ -1,0 +1,81 @@
+---
+version: 13.4.4
+layout: census-website/views/_guide
+---
+
+{% set content = { 
+    "title": 'About the census',
+    "sectionTitle": 'About Census 2021',
+    "breadcrumbs": {
+        "itemsList": [
+            {
+                "url": '/prototypes/census-website/',
+                "text": 'Home'
+            },
+            {
+                "url": '/prototypes/census-website/about-the-census/',
+                "text": 'About the census'
+            },                                            
+            {
+                "url": '',
+                "text": 'About Census 2021',
+                "current": true                                                
+
+            }
+        ]
+    },
+    "contentsList": {
+        "ariaLabel": 'Pages in this guide',
+        "lists": [
+            {
+                "itemsList": [
+                    {
+                        "text": 'Overview',
+                        "url": '/prototypes/census-website/about-the-census/'
+                    },
+                    {
+                        "url": '/prototypes/census-website/about-the-census/the-2019-rehearsal/index.html',
+                        "text": '2019 Rehearsal'
+                    },
+                    {
+                        "url": '/prototypes/census-website/about-the-census/why-should-I-take-part/index.html',
+                        "text": 'Why should I take part?'
+                    },
+                    {
+                        "url": '/prototypes/census-website/about-the-census/what-do-I-need-to-do/',
+                        "text": 'What do I need to do for the census rehearsal?'
+                    },
+                    {
+                        "text": 'About Census 2021',
+                        "current": true
+                    },
+                    {
+                        "url": '/prototypes/census-website/about-the-census/about-the-census-coverage-survey/index.html',
+                        "text": 'About the Census Coverage Survey'
+                    }
+                ]
+            }
+        ]
+    },
+    "contentPagination": {
+        "contentPaginationItems": [
+            {
+                "rel": 'prev',
+                "text": 'Previous',
+                "url": '/prototypes/census-website/about-the-census/why-should-I-take-part',
+                "label": 'What do I need to do for the census rehearsal?'
+            },
+            {
+                "rel": 'next',
+                "text": 'Next',
+                "url": '/prototypes/census-website/about-the-census/about-the-census-coverage-survey/',
+                "label": 'About the Census Coverage Survey'
+            }
+        ]
+    }
+} %}
+{% block content %}
+    <div class="page__body">
+    <p>The next census is planned for March 2021. Early in 2021, we’ll be asking you to fill in the census questionnaire, but there are a few things you should know first.</p><h2><strong>Help your area</strong></h2><p>It’s really important you take part. Your information helps build a picture of where you live that’ll be used to decide how vital services are planned and funded. These include things like schools, doctors’ surgeries, hospitals and libraries. Charities and local services need census information, too. You can <a href="/case-studies">read more about how different organisations use the 2011 Census to support communities.</a></p><h2><strong>Moving the census online</strong></h2><p>We’re moving to a “digital-first” census. We want as many people as possible to fill their questionnaire in online in 2021. It’s easy to do and can be done on any device. Most people will get a letter with a unique access code on it through the post. All you need to do is enter the code into the website and fill in the questionnaire. We’ll be in contact nearer the time to let you know what you need to do.</p>
+    </div>
+{% endblock %}
