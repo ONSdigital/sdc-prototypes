@@ -20,50 +20,31 @@ layout: census-website/views/_page
     }
 } %}
 {% block content %}
-               <section class="section">
-                    <p>Contact us if you have any questions about filling in the Census online or on paper. You can use any of these options if you need information or a questionnaire in an alternative format like Braille or large print.</p>
-                    
-                    <h2>Phone</h2>
-                    <p>We will have advisors available to speak to you at the following times:</p>
-                    <p>Monday to Friday, 8am to 7pm<br>
-                    Saturday and Sunday, 8am to 1pm</p>
-                    
-                    <h3 class="u-mb-xs">England</h3>
-                    <p>Telephone: 0800 141 2021</p>
-                    
-                    <h3 class="u-mb-xs">Wales</h3>
-                    <p>Telephone: 0800 169 2021 <small>(Option for English and Welsh)</small><br></p>
-                    
-                    <h3 class="u-mb-xs">Alternative languages</h3>
-                    <p>Telephone: 0800 587 2021<br></p>
-                    
-                    <h3>Text relay</h3>
-                    <p>NGT (18001) then 0800 141 2021<br>24 hours a day, seven days a week</p>
-                    <h3>SMS text message</h3>
-                    <p>Text 86677<br>24 hours a day, seven days a week</p>
-                        {% from "components/details/_macro.njk" import onsDetails %}
-                            {{ onsDetails({
-                                    "id": "details",
-                                    "title": "Find out about call charges",
-                                    "classes": "u-mb-m u-mt-l",
-                                    "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur snint occaecat cupidatat</p>
-                                                <p> non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occat in culpa qui officia deserunt mollit anim id est laborum.</p>",
-                                    "button": {
-                                        "close": "Hide this"
-                                    }
-                                })
-                            }}
+               <p>Contact us if you have any questions about filling in the census online or on paper. You can use any of these options if you need information or a census in an alternative format like Braille or large print.</p>
+                <h2>Telephone</h2>
+                <p>We will have advisers available to help you at the following times:</p>
+                <p>Monday to Friday – 8am to 7pm<br>Saturday – 8am to 1pm<br>Sunday – closed</p>
+                <h3 class="u-mb-xs">England</h3>
+                <p>Telephone: 0800 141 2021<br></p>
+                <h3 class="u-mb-xs">Wales</h3>
+                <p>Telephone: 0800 169 2021 <small>(Option 1 for Welsh, option 2 for English)</small></p>
+                <h3 class="u-mb-xs">Other languages</h3>
+                <p>If you need to speak to us in another language phone 0800 587 2021</p>
+                <h3>Text relay</h3>
+                <p> NGT users dial 18001 followed by the phone number you need</p>
+                <h3>SMS text message</h3>
+                <p> Text 86677</p>
+                <p>We will have advisers available to help you at the following times:</p>
+                <p>Monday to Friday – 8am to 7pm<br>Saturday – 8am to 1pm<br>Sunday – closed</p>
                     
                     <h2>Online</h2>
                     <h3>Live chat</h3>
-                    <p>We will have advisors available to speak to you at the following times:</p>
-                    <p>Monday to Friday, 8am to 7pm<br>Saturday and Sunday, 8am to 1pm<br></p>
+                    <p>We will have advisers available to help you at the following times:</p>
+                    <p>Monday to Friday – 8am to 7pm<br>Saturday – 8am to 1pm<br>Sunday – closed</p>
                     
                     <a href="/webchat" role="button" class="btn u-mb-m" onclick="window.open(this.href,'targetWindow','toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=360,height=680'); return false;"><span class="btn__inner icon--chevron-right-white">Start live chat</span></a>
                     
-               </section>
-         
+<h3>Contact form</h3>
+<p>You can use the contact form to send your questions or comments about the Census. We will email you back.</p>         
 
 {% endblock %}
