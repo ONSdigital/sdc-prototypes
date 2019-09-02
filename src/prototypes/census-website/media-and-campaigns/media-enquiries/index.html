@@ -1,0 +1,38 @@
+---
+version: 13.4.4
+layout: census-website/views/_guide
+---
+
+{% set content = { 
+    "sectionTitle": 'Media enquiries',
+    "breadcrumbs": {
+        "itemsList": [
+            {
+                "url": '/prototypes/census-website/',
+                "text": 'Home'
+            },
+            {
+                "url": '/prototypes/census-website/media-and-campaigns/',
+                "text": 'Media and campaigns'
+            },                                            
+            {
+                "url": '',
+                "text": 'Media enquiries',
+                "current": true                                                
+
+            }
+        ]
+    }
+} %}
+{% block content %}
+    <section class="page__body">
+        <p>If you’re a journalist looking to talk to someone about the census, please contact our media relations office on +44 (0)845 604 1858 or +44 (0)203 973 4761.</p>
+        <p>We’re available 8:30am to 5:30pm Monday to Friday.</p>
+        <p>Emergency out of hours (limited service): +44 (0)7867 906553</p>
+        <p>Email: 
+            <a href="mailto:media.relations@ons.gov.uk">media.relations@ons.gov.uk</a>
+        </p>
+        <p>You can also find more information, including all 
+            <a href="/media-and-campaigns/press-releases">our latest press releases</a> and media coverage.</p>
+    </section>
+{% endblock %}

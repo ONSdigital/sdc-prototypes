@@ -26,7 +26,7 @@ version: 13.4.4
         }) 
     }}
     <div class="grid u-mt-s@m">
-        <div class="grid__col col-7@m">
+        <div class="grid__col col-12@m">
             <main id="main-content" class=" {{ pageClasses }}">
                 <h1 class="u-mb-l u-fs-xxl"><span class="u-fs-m u-db u-mb-xs u-lighter">{{ content.title }}</span> 
                     <span class="u-vh">: </span>
@@ -62,23 +62,6 @@ version: 13.4.4
                     {% endif %}
                 {% if content.contentsList %}</section>{% endif %}
             </main>
-        </div>
-        <div class="grid__col col-4@m push-1@m u-mt-m">
-                {{-
-                    onsRelatedLinks({
-                        "id": 'related-links-block',
-                        "title": 'Related content',
-                        "itemsList": [
-                            {
-                                "url": '#',
-                                "text": 'Keeping your data safe'
-                            }
-                            
-                        ]
-                    }) 
-                }}
-            {% block aside %}
-            {% endblock %}
         </div>
     </div>
 </div>
@@ -141,12 +124,12 @@ version: 13.4.4
         <h4 class="u-fs-r--b footer__heading">Working on the census</h4>
         <ul class="list list--bare u-mb-no">
           <li class="list__item ">
-            <a href="/prototypes/census-website/jobs/" class="list__link ">
+            <a href="jobs/" class="list__link ">
               Jobs
             </a>
           </li>
           <li class="list__item ">
-            <a href="/prototypes/census-website/media-and-campaigns/" class="list__link ">
+            <a href="#" class="list__link ">
               Media and campaigns
             </a>
           </li>

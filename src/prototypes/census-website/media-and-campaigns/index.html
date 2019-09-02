@@ -1,0 +1,49 @@
+---
+version: 13.4.4
+layout: census-website/views/_hub
+---
+
+{% set content = { 
+    "sectionTitle": 'Media and campaigns',
+    "breadcrumbs": {
+        "itemsList": [
+            {
+                "url": '/prototypes/census-website/',
+                "text": 'Home'
+            },
+            {
+                "current": true ,                                               
+                "text": 'Media and campaigns'
+            }
+        ]
+    }
+    
+} %}
+{% block content %}
+    <div class="grid grid--column@xs@s u-mb-m@m">
+        <div class="grid__col col-4@m">
+            <div class="card" aria-labelledby="media-enquiries" aria-describedby="id-0" role="navigation" aria-label="Section highlight">
+            <h3 class="u-fs-m" id="media-enquiries">
+                <a href="/prototypes/census-website/media-and-campaigns/media-enquiries/">Media enquiries</a>
+            </h3>
+            <p id="id-0">If you’re a journalist looking to talk to someone about the census, contact our media team.</p>
+        </div>
+    </div>
+    <div class="grid__col col-4@m">
+        <div class="card" aria-labelledby="press-releases" aria-describedby="id-1" role="navigation" aria-label="Section highlight">
+            <h3 class="u-fs-m" id="press-releases">
+                <a href="/prototypes/census-website/media-and-campaigns/press-releases/">Press releases</a>
+            </h3>
+            <p id="id-1">Census press releases and statements from the Office for National Statistics.</p>
+        </div>
+    </div>
+    <div class="grid__col col-4@m">
+        <div class="card" aria-labelledby="let's-count!" aria-describedby="id-2" role="navigation" aria-label="Section highlight">
+            <h3 class="u-fs-m" id="let's-count!">
+                <a href="/prototypes/census-website/media-and-campaigns/lets-count/">Let's Count!</a>
+            </h3>
+            <p id="id-2">Let's Count! is a free educational programme that helps primary school children learn about census.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

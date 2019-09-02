@@ -1,10 +1,15 @@
 ---
+<<<<<<< HEAD
 version: 13.4.4
 layout: census-website/views/_page
+=======
+version: 13.4.4
+layout: census-website/views/_guide
+>>>>>>> f1397f5819353fcc72c77a001eaa5c89d6d4ab00
 ---
 
 {% set content = { 
-    "title": 'Contact us',
+    "sectionTitle": 'Contact us',
     "breadcrumbs": {
         "itemsList": [
             {
@@ -44,7 +49,5 @@ layout: census-website/views/_page
                     
                     <a href="/webchat" role="button" class="btn u-mb-m" onclick="window.open(this.href,'targetWindow','toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=360,height=680'); return false;"><span class="btn__inner icon--chevron-right-white">Start live chat</span></a>
                     
-<h3>Contact form</h3>
-<p>You can use the contact form to send your questions or comments about the Census. We will email you back.</p>         
 
 {% endblock %}
