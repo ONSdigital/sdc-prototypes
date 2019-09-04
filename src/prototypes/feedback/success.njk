@@ -41,7 +41,7 @@ theme: census
                     })
                 }}
 
-                <form class="u-mt-m">
+                <form class="u-mt-m" action="{{ pageInfo.rootPath }}/sex.html">
                   <h1>What is your name?</h1>
                   <p class="field">
                     <label class="label" for="first-name">First or given name</label>
@@ -97,39 +97,4 @@ theme: census
     </div>
   </div>
 </footer>
-{% endblock %}
-
-{% block main %}
-    <form class="u-mt-m">
-        <h1>What is your name?</h1>
-        {{
-            onsInput({
-                "id": "first-name",
-                "name": "first-name",
-                "label": {
-                    "text": "First or given name"
-                }
-            })
-        }}
-        {{
-            onsInput({
-                "id": "last-name",
-                "name": "last-name",
-                "label": {
-                    "text": "Surname or family name"
-                }
-            })
-        }}
-        {{
-            onsButton({
-                "text": "Save and continue",
-                "classes": "u-mt-l"
-            })
-        }}
-    </form>
-    
-{% endblock %}
-
-{% block bodyEnd %}
-    <script src="/prototypes/feedback/index.js"></script>
 {% endblock %}
