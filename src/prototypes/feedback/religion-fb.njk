@@ -32,6 +32,7 @@ theme: census
           <div class="grid">
             <div class="grid__col col-8@m">
               <main id="main-content" class="page__main ">
+                 <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/religion.html">Return to census</a>
                 <form class="u-mt-m">
                   <h1>Give us feedback and help us improve this service</h1>
                   <p>We don't need any personal information here, just tell us what we could do better.</p>
@@ -45,7 +46,7 @@ theme: census
                         "charCountPlural": "You have {x} characters remaining"
                     })
                   }}
-                  <a href="/prototypes/feedback/success.html" role="button" class="btn u-mt-m">
+                  <a href="{{ pageInfo.rootPath }}/religion-fb-success.html" role="button" class="btn u-mt-m">
                   <span class="btn__inner">Submit and return to census</span>
                 </a>
                 </form>
@@ -89,39 +90,4 @@ theme: census
           </div>
         </div>
       </footer>
-{% endblock %}
-
-{% block main %}
-    <form class="u-mt-m">
-        <h1>What is your name?</h1>
-        {{
-            onsInput({
-                "id": "first-name",
-                "name": "first-name",
-                "label": {
-                    "text": "First or given name"
-                }
-            })
-        }}
-        {{
-            onsInput({
-                "id": "last-name",
-                "name": "last-name",
-                "label": {
-                    "text": "Surname or family name"
-                }
-            })
-        }}
-        {{
-            onsButton({
-                "text": "Save and continue",
-                "classes": "u-mt-l"
-            })
-        }}
-    </form>
-    
-{% endblock %}
-
-{% block bodyEnd %}
-    <script src="/prototypes/feedback/index.js"></script>
 {% endblock %}

@@ -1,0 +1,174 @@
+---
+group: Feedback
+title: EQ feedback proto v1
+version: 10.0.1
+theme: census
+---
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+{% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
+{% from "components/details/_macro.njk" import onsDetails %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+
+{% block head %}
+    <link rel="stylesheet" href="/prototypes/feedback/styles.css" />
+{% endblock %}
+{% block header %}
+{{
+    onsHeader({
+        "title": "Survey title",
+        "theme": "census",
+        "logoHref": "https://www.ons.gov.uk",
+        "titleLogo": "/img/census-logo-en.svg",
+        "titleLogoAlt": "Census 2021",
+        "titleLogoHref": "/prototypes/feedback/",
+        "button": {
+            "text": "Save and complete later",
+            "url": "#"
+        }
+        })
+}} 
+{% endblock %}
+
+{% block page %}
+    <div class="page__container container ">
+          <div class="grid">
+            <div class="grid__col col-8@m">
+              <main id="main-content" class="page__main ">
+                <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/sexual-identity.html">Previous</a>
+                <form class="u-mt-m" action="{{ pageInfo.rootPath }}/index.html">
+                {{ 
+    onsPanel({
+        "type": "success",
+        body: "<p>Thank you, your feedback has been sent. </p>"
+    })
+}}
+<br>
+                  <h1>What is your ethnic group?</h1>
+                    {{ 
+    onsPanel({
+        body: "<p>This question is voluntary</p>"
+    }) 
+}}
+<br>
+  {{ 
+            onsCheckboxes({
+                "checkboxes": [
+                    {
+                        "id": "none",
+                        "label": {
+                            "text": "No religion"
+                        },
+                        "name": "none"
+                    },
+                    {
+                        "id": "christian",
+                        "label": {
+                            "text": "Christian",
+                            "description": "Including Church of England, Catholic, Protestant and all other Christian denominations"
+                        },
+                        "name": "christian"
+                    },
+                    {
+                        "id": "buddhist",
+                        "label": {
+                            "text": "Buddhist"
+                        },
+                        "name": "buddhist"
+                    },
+                    {
+                        "id": "hindu",
+                        "label": {
+                            "text": "Hindu"
+                        },
+                        "name": "hindu"
+                    },
+                    {
+                        "id": "jewish",
+                        "label": {
+                            "text": "Jewish"
+                        },
+                        "name": "jewish"
+                    },
+                    {
+                        "id": "muslim",
+                        "label": {
+                            "text": "Muslim"
+                        },
+                        "name": "muslim"
+                    },
+                    {
+                        "id": "sikh",
+                        "label": {
+                            "text": "Sikh"
+                        },
+                        "name": "sikh"
+                    },
+                    {
+                "id": "Any other religion ",
+                "label": {
+                    "text": "Any other religion ",
+                    "description": "Select to enter answer"
+                },
+                "value": "other",
+                "other": {
+                    "id": "other-textbox",
+                    "name": "other-answer",
+                    "label": {
+                        "text": "Enter your sexual orientation"
+                    }
+                }
+            }
+                ]
+            }) 
+        }}
+   </p>
+                  <button type="submit" class="btn u-mt-l">
+                    <span class="btn__inner">Save and continue</span>
+                  </button>
+                </form>
+              </main>
+            </div>
+          </div>
+        </div>
+
+
+<footer class="footer ">
+  <div class="container">
+    <div class="grid">
+    <div class="grid__col col-12@m u-mb-l">
+    <a href="religion-fb.html">
+    <p class="u-fs-r–b">Give feedback and help us improve this service</p>
+    </a>
+                  
+                  <hr class="footer__hr">
+                </div>
+      <div class="grid__col">
+        <ul class="list list--bare list--inline@s u-mb-no">
+          <li class="list__item ">
+            <a href="#" class="list__link ">
+              Contact us
+            </a>
+          </li>
+          <li class="list__item ">
+            <a href="#" class="list__link ">
+              Cookies and privacy
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="grid__col u-mt-m u-mb-m">
+        <hr class="footer__hr">
+      </div>
+      <div class="grid__col">
+        <div class="footer__license">
+          <img alt="OGL" class="footer__ogl-img" src="/img/UKOpenGovernmentLicence-grey.svg">
+          All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" class="footer__link">Open Government Licence v3.0</a>, except where otherwise stated
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+{% endblock %}

@@ -1,0 +1,95 @@
+---
+version: 10.0.1
+theme: census
+---
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+
+{% block head %}
+    <link rel="stylesheet" href="/prototypes/feedback/styles.css" />
+{% endblock %}
+{% block header %}
+{{
+    onsHeader({
+        "title": "Survey title",
+        "theme": "census",
+        "logoHref": "https://www.ons.gov.uk",
+        "titleLogo": "/img/census-logo-en.svg",
+        "titleLogoAlt": "Census 2021",
+        "titleLogoHref": "/prototypes/feedback/",
+        "button": {
+            "text": "Save and complete later",
+            "url": "#"
+        }
+        })
+}} 
+{% endblock %}
+
+{% block page %}
+  
+    <div class="page__container container ">
+          <div class="grid">
+            <div class="grid__col col-8@m">
+              <main id="main-content" class="page__main ">
+              <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/index.html">Return to census</a>
+              
+                <form class="u-mt-m">
+                  <h1>Give us feedback and help us improve this service</h1>
+                  <p>We don't need any personal information here, just tell us what we could do better.</p>
+                  {{-
+                    onsTextarea({
+                        "id": "textarea-char-limit",
+                        "name": "feedback-limited",
+                        "classes": "input--w-30",        
+                        "maxlength": 200,
+                        "charCountSingular": "You have {x} character remaining",
+                        "charCountPlural": "You have {x} characters remaining"
+                    })
+                  }}
+                  <a href="/prototypes/feedback/success.html" role="button" class="btn u-mt-m">
+                  <span class="btn__inner">Submit and return to census</span>
+                </a>
+                </form>
+              </main>
+            </div>
+          </div>
+        </div>
+      <footer class="footer ">
+        <div class="container">
+          <div class="grid">
+          <div class="grid__col col-12@m u-mb-l">
+          <a href="">
+          <p class="u-fs-r–b">Give feedback and help us improve this service</p>
+          </a>
+                        
+                        <hr class="footer__hr">
+                      </div>
+            <div class="grid__col">
+              <ul class="list list--bare list--inline@s u-mb-no">
+                <li class="list__item ">
+                  <a href="#" class="list__link ">
+                    Contact us
+                  </a>
+                </li>
+                <li class="list__item ">
+                  <a href="#" class="list__link ">
+                    Cookies and privacy
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="grid__col u-mt-m u-mb-m">
+              <hr class="footer__hr">
+            </div>
+            <div class="grid__col">
+              <div class="footer__license">
+                <img alt="OGL" class="footer__ogl-img" src="/img/UKOpenGovernmentLicence-grey.svg">
+                All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" class="footer__link">Open Government Licence v3.0</a>, except where otherwise stated
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+{% endblock %}
+

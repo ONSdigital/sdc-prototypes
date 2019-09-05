@@ -6,6 +6,8 @@ theme: census
 ---
 {% from "components/input/_macro.njk" import onsInput %}
 {% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/panel/_macro.njk" import onsPanel %}
 
 {% block head %}
     <link rel="stylesheet" href="/prototypes/feedback/styles.css" />
@@ -32,17 +34,36 @@ theme: census
           <div class="grid">
             <div class="grid__col col-8@m">
               <main id="main-content" class="page__main ">
-                <a href="#">Previous</a>
-                <form class="u-mt-m" action="{{ pageInfo.rootPath }}/sex.html">
-                  <h1>What is your name?</h1>
-                  <p class="field">
-                    <label class="label" for="first-name">First or given name</label>
-                    <input type="text" id="first-name" class="input input--text input-type__input " name="first-name">
-                  </p>
-                  <p class="field">
-                    <label class="label" for="last-name">Surname or family name</label>
-                    <input type="text" id="last-name" class="input input--text input-type__input " name="last-name">
-                  </p>
+                <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/index.html">Previous</a>
+               <form class="u-mt-m" action="{{ pageInfo.rootPath }}/sexual-identity.html">
+                  <h1>What is your sex?</h1>
+                                {{ 
+    onsPanel({
+        body: "<p>A question about gender will follow</p>"
+    }) 
+}}
+<br>
+                {{ 
+    onsRadios({
+        "radios": [
+            {
+                "id": "Female",
+                "label": {
+                    "text": "Female"
+                },
+                "value": "Female"
+            },
+            {
+                "id": "Male",
+                "label": {
+                    "text": "Male"
+                },
+                "value": "Male"
+            }
+        ]
+    }) 
+}}
+   </p>
                   <button type="submit" class="btn u-mt-l">
                     <span class="btn__inner">Save and continue</span>
                   </button>
@@ -57,7 +78,7 @@ theme: census
   <div class="container">
     <div class="grid">
     <div class="grid__col col-12@m u-mb-l">
-    <a href="{{ pageInfo.rootPath }}/fb.html">
+    <a href="{{ pageInfo.rootPath }}/sex-fb.html">
     <p class="u-fs-r–b">Give feedback and help us improve this service</p>
     </a>
                   
@@ -90,3 +111,4 @@ theme: census
   </div>
 </footer>
 {% endblock %}
+
