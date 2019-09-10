@@ -1,0 +1,56 @@
+---
+version: 13.4.6
+theme: census
+layout: feedback2/views/_success
+---
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+
+
+{% block header %}
+{{
+  onsHeader({
+    "title": "Survey title",
+    "theme": "census",
+    "logoHref": "https://www.ons.gov.uk",
+    "titleLogo": "/img/census-logo-en.svg",
+    "titleLogoAlt": "Census 2021",
+    "titleLogoHref": "/prototypes/feedback/",
+    "button": {
+        "text": "Save and complete later",
+        "url": "#"
+    }
+  })
+}} 
+{% endblock %}
+
+{% block page %}
+  
+    <div class="page__container container ">
+          <div class="grid">
+            <div class="grid__col col-8@m">
+              <main id="main-content" class="page__main ">
+              <a href="#">Previous</a>
+
+                <form class="u-mt-m" action="{{ pageInfo.rootPath }}/sex.html">
+                  <h1>What is your name?</h1>
+                  <p class="field">
+                    <label class="label" for="first-name">First or given name</label>
+                    <input type="text" id="first-name" class="input input--text input-type__input " name="first-name">
+                  </p>
+                  <p class="field">
+                    <label class="label" for="last-name">Surname or family name</label>
+                    <input type="text" id="last-name" class="input input--text input-type__input " name="last-name">
+                  </p>
+                  <button type="submit" class="btn u-mt-l">
+                    <span class="btn__inner">Save and continue</span>
+                  </button>
+                </form>
+              </main>
+            </div>
+          </div>
+        </div>
+                   <a name="feedback"></a>
+
+{% endblock %}
