@@ -1,0 +1,58 @@
+---
+version: 13.4.6
+theme: census
+layout: feedback2/views/_success
+
+---
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+
+
+{% block header %}
+{{
+    onsHeader({
+        "title": "Survey title",
+        "theme": "census",
+        "logoHref": "https://www.ons.gov.uk",
+        "titleLogo": "/img/census-logo-en.svg",
+        "titleLogoAlt": "Census 2021",
+        "titleLogoHref": "/prototypes/feedback/",
+        "button": {
+            "text": "Save and complete later",
+            "url": "#"
+        }
+        })
+}} 
+{% endblock %}
+
+{% block page %}
+  
+    <div class="page__container container ">
+          <div class="grid">
+            <div class="grid__col col-8@m">
+              <main id="main-content" class="page__main ">
+              <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/sexual-identity.html">Return to census</a>
+                <form class="u-mt-m">
+                  <h1>Give us feedback and help us improve this service</h1>
+                  <p>We don't need any personal information here, just tell us what we could do better.</p>
+                  {{-
+                    onsTextarea({
+                        "id": "textarea-char-limit",
+                        "name": "feedback-limited",
+                        "classes": "input--w-30",        
+                        "maxlength": 200,
+                        "charCountSingular": "You have {x} character remaining",
+                        "charCountPlural": "You have {x} characters remaining"
+                    })
+                  }}
+                  <a href="{{ pageInfo.rootPath }}/sexual-identity-fb-success.html" role="button" class="btn u-mt-m">
+                  <span class="btn__inner">Submit and return to census</span>
+                </a>
+                </form>
+              </main>
+            </div>
+          </div>
+        </div>
+
+{% endblock %}
