@@ -57,7 +57,7 @@ $color-text-inverse-link-hover: #d0d0d0;
 
   .details--initialised & {
     &__link {
-      padding: 0.2rem 0.2rem 0.2rem ($feedback-caret-width + 1rem);
+      padding: 0.5rem 0 0.4rem ($feedback-caret-width + 1rem);
       color: $color-text-inverse-link;
       cursor: pointer;
       pointer-events: initial;
@@ -80,7 +80,7 @@ $color-text-inverse-link-hover: #d0d0d0;
         content: '';
         display: inline-block;
         position: absolute;
-        top: 0.5rem;
+        top: 0.7rem;
         left: 0.7rem;
         width: $feedback-caret-width;
         height: $feedback-caret-width;
@@ -98,7 +98,7 @@ $color-text-inverse-link-hover: #d0d0d0;
       }
 
       &:after {
-        background-image: url(/img/icons/icons--chevron-right-white-hover.svg);
+        background-image: url(/prototypes/feedback2/img/icons--chevron-right-white-hover.svg);
       }
     }
 
@@ -119,8 +119,7 @@ $color-text-inverse-link-hover: #d0d0d0;
       }
       &:before,
       &:after {
-        top: 0.4rem;
-        background-image: url(../img/icons--check.svg);
+        background-image: url(/prototypes/feedback2/img/icons--check.svg);
       }
     }
   }
