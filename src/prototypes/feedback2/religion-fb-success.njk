@@ -1,0 +1,132 @@
+---
+group: Feedback
+title: EQ feedback proto v2
+version: 13.4.6
+theme: census
+layout: feedback2/views/_success
+---
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+{% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
+{% from "components/details/_macro.njk" import onsDetails %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+
+
+{% block header %}
+{{
+    onsHeader({
+        "title": "Survey title",
+        "theme": "census",
+        "logoHref": "https://www.ons.gov.uk",
+        "titleLogo": "/img/census-logo-en.svg",
+        "titleLogoAlt": "Census 2021",
+        "titleLogoHref": "/prototypes/feedback/",
+        "button": {
+            "text": "Save and complete later",
+            "url": "#"
+        }
+        })
+}} 
+{% endblock %}
+
+{% block page %}
+    <div class="page__container container ">
+          <div class="grid">
+            <div class="grid__col col-8@m">
+              <main id="main-content" class="page__main ">
+                <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/sexual-identity.html">Previous</a>
+                <form class="u-mt-m" action="{{ pageInfo.rootPath }}/index.html">
+
+                  <h1>What is your ethnic group?</h1>
+                    {{ 
+    onsPanel({
+        body: "<p>This question is voluntary</p>"
+    }) 
+}}
+<br>
+  {{ 
+            onsCheckboxes({
+                "checkboxesLabel": "Select all that apply",
+                "checkboxes": [
+                    {
+                        "id": "none",
+                        "label": {
+                            "text": "No religion"
+                        },
+                        "name": "none"
+                    },
+                    {
+                        "id": "christian",
+                        "label": {
+                            "text": "Christian",
+                            "description": "Including Church of England, Catholic, Protestant and all other Christian denominations"
+                        },
+                        "name": "christian"
+                    },
+                    {
+                        "id": "buddhist",
+                        "label": {
+                            "text": "Buddhist"
+                        },
+                        "name": "buddhist"
+                    },
+                    {
+                        "id": "hindu",
+                        "label": {
+                            "text": "Hindu"
+                        },
+                        "name": "hindu"
+                    },
+                    {
+                        "id": "jewish",
+                        "label": {
+                            "text": "Jewish"
+                        },
+                        "name": "jewish"
+                    },
+                    {
+                        "id": "muslim",
+                        "label": {
+                            "text": "Muslim"
+                        },
+                        "name": "muslim"
+                    },
+                    {
+                        "id": "sikh",
+                        "label": {
+                            "text": "Sikh"
+                        },
+                        "name": "sikh"
+                    },
+                    {
+                "id": "Any other religion ",
+                "label": {
+                    "text": "Any other religion ",
+                    "description": "Select to enter answer"
+                },
+                "value": "other",
+                "other": {
+                    "id": "other-textbox",
+                    "name": "other-answer",
+                    "label": {
+                        "text": "Enter your sexual orientation"
+                    }
+                }
+            }
+                ]
+            }) 
+        }}
+   </p>
+                  <button type="submit" class="btn u-mt-l">
+                    <span class="btn__inner">Save and continue</span>
+                  </button>
+                </form>
+              </main>
+            </div>
+          </div>
+        </div>
+           <a name="feedback"></a>
+
+{% endblock %}

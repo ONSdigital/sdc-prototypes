@@ -1,0 +1,75 @@
+{% extends "../views/_template.njk" %}
+{% from "feedback2/components/feedback/_macro.njk" import onsFeedback %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ pageInfo.rootPath }}/styles/styles.css" />
+{% endblock %}
+
+{% set page = { 
+    "title": "EQ feedback proto v2",
+    "theme": "census",
+    "footer": {
+        "rows": [
+            {
+                "itemsList": [
+                    {
+                        "text": 'About the census',
+                        "url": '#'
+                    },
+                    {
+                        "text": 'Help with the census',
+                        "url": '#'
+                    },                    
+                    {
+                        "text": 'Contact us',
+                        "url": '#'
+                    },                    
+                    {
+                        "text": 'Cookies',
+                        "url": '#'
+                    },
+                    {
+                        "text": 'Accessibility',
+                        "url": '#'
+                    },
+                    {
+                        "text": 'Privacy and data protection',
+                        "url": '#'
+                    }                    
+                ]
+            }
+        ],
+        "OGLLink": {
+            "pre": 'All content is available under the',
+            "link": 'Open Government Licence v3.0',
+            "url": 'https://www.nationalarchive2s.gov.uk/doc/open-government-licence/version/3/',
+            "post": ', except where otherwise stated'
+        }
+    },
+    "feedback": {
+        "id": "feedback",
+        "action": "/",
+        "title": "Give us feedback and help us improve this service",
+        "textarea": {
+            "label": {
+                "text": "Tell us how we can improve this service",
+                "description": "We don't need any personal information here, just tell us what we could do better."
+            },
+            "maxlength": 500,
+            "charCountSingular": "You have {x} character remaining",
+            "charCountPlural": "You have {x} characters remaining"
+        },
+        "sendButton": {
+            "text": "Send feedback",
+            "url": page.feedback.sendButton.url
+        },
+        "thankYouMessage": "Thank you for your feedback.",
+        "errorMessage": "There was an error sending your feedback.\n(Error code: {x})"
+    }  
+} %}
+{% block page %}
+
+{% endblock %}
+{% block bodyEnd %}
+    
+{% endblock %}
