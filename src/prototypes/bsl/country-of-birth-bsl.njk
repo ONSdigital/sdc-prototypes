@@ -10,10 +10,10 @@ layout: bsl/views/_master
 {% from "components/video/_macro.njk" import onsVideo %}
 
 {% block main %}
-    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/sex-bsl.html">Previous</a>
+    <a class="div-margin previous-link js-previous" href="{{ pageInfo.rootPath }}/sex-bsl.html">Previous</a>
     <form action="{{ pageInfo.rootPath }}/religion-bsl.html">
-        <div class="grid--reverse">
-            <div class = "grid__col col-6@m grid--flex">
+        <div class="grid--reverse pull-1@m">
+            <div class = "grid__col col-6@m">
                 {{
                     onsVideo({
                         "youtubeUrl": "https://www.youtube.com/embed/e3hB3ZLNhN0"
