@@ -1,15 +1,22 @@
 ---
 group: Feedback
-title: EQ feedback proto v1
-version: 10.0.1
+title: EQ feedback proto v2
+version: 13.4.6
 theme: census
+layout: feedback2/views/_master
 ---
 {% from "components/input/_macro.njk" import onsInput %}
 {% from "components/button/_macro.njk" import onsButton %}
 
-{% block head %}
-    <link rel="stylesheet" href="/prototypes/feedback/styles.css" />
-{% endblock %}
+{% set page = { 
+    "feedback": {
+        "sendButton": {
+            "url": pageInfo.rootPath + "/success.html#feedback"
+        }
+    } 
+  }
+%}
+
 {% block header %}
 {{
     onsHeader({
@@ -51,42 +58,4 @@ theme: census
             </div>
           </div>
         </div>
-
-
-<footer class="footer ">
-  <div class="container">
-    <div class="grid">
-    <div class="grid__col col-12@m u-mb-l">
-    <a href="{{ pageInfo.rootPath }}/fb.html">
-    <p class="u-fs-r–b">Give feedback and help us improve this service</p>
-    </a>
-                  
-                  <hr class="footer__hr">
-                </div>
-      <div class="grid__col">
-        <ul class="list list--bare list--inline@s u-mb-no">
-          <li class="list__item ">
-            <a href="#" class="list__link ">
-              Contact us
-            </a>
-          </li>
-          <li class="list__item ">
-            <a href="#" class="list__link ">
-              Cookies and privacy
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="grid__col u-mt-m u-mb-m">
-        <hr class="footer__hr">
-      </div>
-      <div class="grid__col">
-        <div class="footer__license">
-          <img alt="OGL" class="footer__ogl-img" src="/img/UKOpenGovernmentLicence-grey.svg">
-          All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" class="footer__link">Open Government Licence v3.0</a>, except where otherwise stated
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
 {% endblock %}

@@ -1,0 +1,78 @@
+---
+group: Feedback
+title: EQ feedback proto v2
+version: 13.4.6
+theme: census
+layout: feedback2/views/_success
+---
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+
+
+{% block header %}
+{{
+    onsHeader({
+        "title": "Survey title",
+        "theme": "census",
+        "logoHref": "https://www.ons.gov.uk",
+        "titleLogo": "/img/census-logo-en.svg",
+        "titleLogoAlt": "Census 2021",
+        "titleLogoHref": "/prototypes/feedback/",
+        "button": {
+            "text": "Save and complete later",
+            "url": "#"
+        }
+        })
+}} 
+{% endblock %}
+
+{% block page %}
+    <div class="page__container container ">
+          <div class="grid">
+            <div class="grid__col col-8@m">
+              <main id="main-content" class="page__main ">
+               <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/index.html">Previous</a>
+                 <form class="u-mt-m" action="{{ pageInfo.rootPath }}/sexual-identity.html">
+
+                  <h1>What is your sex?</h1>
+                                {{ 
+    onsPanel({
+        body: "<p>A question about gender will follow</p>"
+    }) 
+}}
+<br>
+                {{ 
+    onsRadios({
+        "radios": [
+            {
+                "id": "Female",
+                "label": {
+                    "text": "Female"
+                },
+                "value": "Female"
+            },
+            {
+                "id": "Male",
+                "label": {
+                    "text": "Male"
+                },
+                "value": "Male"
+            }
+        ]
+    }) 
+}}
+   </p>
+                  <button type="submit" class="btn u-mt-l">
+                    <span class="btn__inner">Save and continue</span>
+                  </button>
+                </form>
+              </main>
+            </div>
+          </div>
+        </div>
+           <a name="feedback"></a>
+
+
+{% endblock %}

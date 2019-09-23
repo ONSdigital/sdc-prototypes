@@ -2,7 +2,7 @@
 title: Campaign Website
 group: Census
 version: 13.4.6
-layout: census-website/views/_page
+layout: census-website/views/_success
 ---
 
 {% from "components/card/_macro.njk" import onsCard %}
@@ -12,7 +12,7 @@ layout: census-website/views/_page
 {% set page = { 
     "feedback": {
         "sendButton": {
-            "url": pageInfo.rootPath + "/success.html#feedback"
+            "url": pageInfo.rootPath + "/success.html"
         }
     } 
   }
@@ -149,7 +149,7 @@ layout: census-website/views/_page
     </div>
             <!--Case study cards end-->
 
-           
+           <a name="feedback"></a>
     </div>
 
 {% endblock %}

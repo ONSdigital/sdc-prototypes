@@ -720,6 +720,11 @@
   version "13.6.7"
   resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-13.6.7.tgz#69c7c4b647fa10244c96fd9187aebcdfcbd07523"
   integrity sha512-cKNcz/iS3lpVjZA8iRQgjP4d4Eb9KgPP4nq9GcVsXH9q86067JpiLUahBec0jvmTYJBXWtDgeYC4Zd6r/p27Zw==
+
+"@ons/design-system/13.4.6@npm:@ons/design-system@13.4.6":
+  version "13.4.6"
+  resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-13.4.6.tgz#610ddda9440ed1ed04e281c1c32177918ddff440"
+  integrity sha512-iiIPVykEZOpLB1dRKIEpdZ+wBUwk8NYYTIyqcd/DPATeP+Jr2rDJ2iq16uYOR72vd1XDVEeomfgibNWiTxRK6w==
   dependencies:
     "@ons/design-system" "^13.3.0"
 
