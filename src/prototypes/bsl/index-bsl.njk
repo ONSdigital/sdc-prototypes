@@ -1,0 +1,49 @@
+---
+title: BSL
+group: BSL
+version: 13.6.7
+layout: bsl/views/_master
+---
+
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/video/_macro.njk" import onsVideo %}
+
+{% block main %}
+    <form action="{{ pageInfo.rootPath }}/sex-bsl.html">
+        <div class = "grid__col col-5@m">
+            {% call onsQuestion({
+                "title": "What is your name?"
+            }) %}
+                {{ onsInput({
+                    "id": "first-name",
+                    "name": "first-name",
+                    "type": "text",
+                    "label": {
+                        "text": "First Name"
+                    }
+                }) }}
+                {{ onsInput({
+                    "id": "last-name",
+                    "name": "last-name",
+                    "type": "text",
+                    "label": {
+                        "text": "Last Name"
+                    }
+                }) }}
+            {% endcall %}
+            {{ onsButton({
+                "text": "Save and continue",
+                "classes": "u-mt-xl"
+            }) }}
+        </div>
+        <div class = "grid__col col-6@m grid--flex">
+            {{
+                onsVideo({
+                    "youtubeUrl": "https://www.youtube.com/embed/6UUHGw_R28k"
+                })
+            }}
+        </div>
+    </form>
+{% endblock %}
