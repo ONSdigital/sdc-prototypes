@@ -11,32 +11,33 @@ layout: bsl/views/_master
 {% block main %}
     <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/index.html">Previous</a>
     <form action="{{ pageInfo.rootPath }}/country-of-birth.html">
-        {{ 
-            onsRadios({
-                "legend": "<h1 class=\"u-fs-l\">What is your sex?</h1>",
-                "name": "sex",
-                "classes": "u-mt-s",
-                "radios": [
-                    {
-                        "id": "male",
-                        "label": {
-                            "text": "Male"
+        <div class = "div-margin grid__col col-5@m">
+            {{ 
+                onsRadios({
+                    "legend": "<h1 class=\"u-fs-l\">What is your sex?</h1>",
+                    "name": "sex",
+                    "radios": [
+                        {
+                            "id": "male",
+                            "label": {
+                                "text": "Male"
+                            },
+                            "value": "male"
                         },
-                        "value": "male"
-                    },
-                    {
-                        "id": "female",
-                        "label": {
-                            "text": "Female"
-                        },
-                        "value": "female"
-                    }
-                ]
-            }) 
-        }}
-        {{ onsButton({
-            "text": "Save and continue",
-            "classes": "u-mt-xl"
-        }) }}
+                        {
+                            "id": "female",
+                            "label": {
+                                "text": "Female"
+                            },
+                            "value": "female"
+                        }
+                    ]
+                }) 
+            }}
+            {{ onsButton({
+                "text": "Save and continue",
+                "classes": "u-mt-xl"
+            }) }}
+        </div>
     </form>
 {% endblock %}

@@ -11,29 +11,31 @@ layout: bsl/views/_master
 
 {% block main %}
     <form action="{{ pageInfo.rootPath }}/sex.html">
-        {% call onsQuestion({
-            "title": "What is your name?"
-        }) %}
-            {{ onsInput({
-                "id": "first-name",
-                "name": "first-name",
-                "type": "text",
-                "label": {
-                    "text": "First Name"
-                }
+        <div class = "div-margin grid__col col-5@m">
+            {% call onsQuestion({
+                "title": "<h1 class=\"u-fs-l\">What is your name?</h1>"
+            }) %}
+                {{ onsInput({
+                    "id": "first-name",
+                    "name": "first-name",
+                    "type": "text",
+                    "label": {
+                        "text": "First Name"
+                    }
+                }) }}
+                {{ onsInput({
+                    "id": "last-name",
+                    "name": "last-name",
+                    "type": "text",
+                    "label": {
+                        "text": "Last Name"
+                    }
+                }) }}
+            {% endcall %}
+            {{ onsButton({
+                "text": "Save and continue",
+                "classes": "u-mt-xl"
             }) }}
-            {{ onsInput({
-                "id": "last-name",
-                "name": "last-name",
-                "type": "text",
-                "label": {
-                    "text": "Last Name"
-                }
-            }) }}
-        {% endcall %}
-        {{ onsButton({
-            "text": "Save and continue",
-            "classes": "u-mt-xl"
-        }) }}
+        </div>
     </form>
 {% endblock %}
