@@ -1,0 +1,131 @@
+{% extends "../page-templates/_template.njk" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/prototypes/bsl/styles.css"/>
+{% endblock %}
+
+{% if "-bsl" in pageInfo.path %}
+    {% set en_current_language = false %}
+    {% set bsl_current_language = true %}
+{% else %}
+    {% set en_current_language = true %}
+    {% set bsl_current_language = false %}
+{% endif %}
+
+{% set bslUrl = pageInfo.path + "-bsl.html" %}
+{% set enUrl = pageInfo.path.replace('-bsl', '') + ".html" %}
+
+{% if pageInfo.path == "/prototypes/bsl" %}
+    {% set page = {
+        "title": "BSL Prototype",
+        "theme": "census",
+            "header": {
+            "titleLogo": "/img/census-logo-en.svg",
+            "titleLogoAlt": "Census 2021"
+        },
+        "footer": {
+            "rows": [
+                {
+                    "itemsList": [
+                        {
+                            "text": 'About the census',
+                            "url": '#'
+                        },
+                        {
+                            "text": 'Help with the census',
+                            "url": '#'
+                        },
+                        {
+                            "text": 'Contact us',
+                            "url": '#'
+                        }
+                    ]
+                },
+                {
+                    "itemsList": [
+                        {
+                            "text": 'Cookies',
+                            "url": '#'
+                        },
+                        {
+                            "text": 'Accessibility',
+                            "url": '#'
+                        },
+                        {
+                            "text": 'Privacy and data protection',
+                            "url": '#'
+                        }
+                    ]
+                }
+            ]
+        } 
+    } %}
+{% else %}
+    {% set page = {
+        "title": "BSL Prototype",
+        "theme": "census",
+            "header": {
+            "titleLogo": "/img/census-logo-en.svg",
+            "titleLogoAlt": "Census 2021"
+        },
+        "language": {
+            "languages": [
+                {
+                    "url": enUrl,
+                    "ISOCode": "en",
+                    "text": "English",
+                    "buttonAriaLabel": "Language selector. Current language: English",
+                    "chooseLanguage": "Choose language",
+                    "current": en_current_language
+                },
+                {
+                    "url": bslUrl,
+                    "ISOCode": "en",
+                    "text": "BSL",
+                    "buttonAriaLabel": "Language selector. Current language: BSL",
+                    "chooseLanguage": "Choose language",
+                    "current": bsl_current_language
+                }
+            ]
+        },
+        "footer": {
+            "rows": [
+                {
+                    "itemsList": [
+                        {
+                            "text": 'About the census',
+                            "url": '#'
+                        },
+                        {
+                            "text": 'Help with the census',
+                            "url": '#'
+                        },
+                        {
+                            "text": 'Contact us',
+                            "url": '#'
+                        }
+                    ]
+                },
+                {
+                    "itemsList": [
+                        {
+                            "text": 'Cookies',
+                            "url": '#'
+                        },
+                        {
+                            "text": 'Accessibility',
+                            "url": '#'
+                        },
+                        {
+                            "text": 'Privacy and data protection',
+                            "url": '#'
+                        }
+                    ]
+                }
+            ]
+        } 
+    } %}
+{% endif %}
+
+{% block bodyEnd %}
+{% endblock %}

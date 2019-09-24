@@ -1,0 +1,33 @@
+---
+title: BSL
+group: BSL
+version: 13.6.7
+layout: bsl/views/_master
+---
+
+{% from "components/panel/_macro.njk" import onsPanel %}
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% block main %}
+    <form action="{{ pageInfo.rootPath }}/name.html">
+        <h1 class="u-fs-l">Welcome to the Census</h1>
+        <p>We will be asking you for the following information:</p>
+        <ul>
+            <li><p>Your name</p></li>
+            <li><p>Yous sex</p></li>
+            <li><p>Your country of birth</p></li>
+            <li><p>Your religion</p></li>
+            <li><p>The language you use at home</p></li>
+        </ul>
+        <br>
+        {{ 
+            onsPanel({
+                body: "<p>This service is also available in <a href='name-bsl.html'>BSL</a>.</p>"
+            }) 
+        }}
+        {{ onsButton({
+            "text": "Start",
+            "classes": "u-mt-xl"
+        }) }}
+    </form>
+{% endblock %}

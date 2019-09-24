@@ -1,0 +1,78 @@
+---
+title: BSL
+group: BSL
+version: 13.6.7
+layout: bsl/views/_master
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+
+{% block main %}
+    <form action="{{ pageInfo.rootPath }}/religion.html">
+        <div class = "grid__col col-5@m">
+            <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/sex.html">Previous</a>
+            {{ 
+                onsRadios({
+                    "legend": "<h1 class=\"u-fs-l\">What is your country of birth?</h1>",
+                    "name": "country-of-birth",
+                    "radios": [
+                        {
+                            "id": "scotland",
+                            "label": {
+                                "text": "Scotland"
+                            },
+                            "value": "scotland"
+                        },
+                        {
+                            "id": "england",
+                            "label": {
+                                "text": "England"
+                            },
+                            "value": "england"
+                        },
+                        {
+                            "id": "wales",
+                            "label": {
+                                "text": "Wales"
+                            },
+                            "value": "wales"
+                        },
+                        {
+                            "id": "northen-ireland",
+                            "label": {
+                                "text": "Northen Ireland"
+                            },
+                            "value": "northen-ireland"
+                        },
+                        {
+                            "id": "republic-of-ireland",
+                            "label": {
+                                "text": "Republic of Ireland"
+                            },
+                            "value": "republic-of-ireland"
+                        },
+                        {
+                            "id": "other-checkbox",
+                            "label": {
+                                "text": "Elsewhere"
+                            },
+                            "value": "other",
+                            "other": {
+                                "id": "other-textbox",
+                                "name": "other-answer",
+                                "label": {
+                                    "text": "Please write in the current name of the country"
+                                }
+                            }
+                        }
+                    ]
+                }) 
+            }}
+            {{ onsButton({
+                "text": "Save and continue",
+                "classes": "u-mt-xl"
+            }) }}
+        </div>
+    </form>
+{% endblock %}

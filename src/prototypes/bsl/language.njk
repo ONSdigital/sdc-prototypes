@@ -1,0 +1,58 @@
+---
+title: BSL
+group: BSL
+version: 13.6.7
+layout: bsl/views/_master
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
+
+{% block main %}
+    <form action="#">
+        <div class = "grid__col col-5@m">
+            <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/religion.html">Previous</a>
+            {{ 
+                onsCheckboxes({
+                    "legend": "<h1 class=\"u-fs-l\">Do you use a language other than English at home?</h1>",
+                    "checkboxesLabel": "Select all that apply",
+                    "name": "language",
+                    "checkboxes": [
+                        {
+                            "id": "english",
+                            "label": {
+                                "text": "No, English only"
+                            },
+                            "value": "english"
+                        },
+                        {
+                            "id": "bsl",
+                            "label": {
+                                "text": "Yes, British Sign Language"
+                            },
+                            "value": "bsl"
+                        },
+                        {
+                            "id": "other",
+                            "label": {
+                                "text": "Yes, Other"
+                            },
+                            "value": "other",
+                            "other": {
+                                "id": "other-text",
+                                "name": "other",
+                                "label": {
+                                    "text": "Please specify other"
+                                }
+                            }
+                        }
+                    ]
+                }) 
+            }}
+            {{ onsButton({
+                "text": "Save and continue",
+                "classes": "u-mt-xl"
+            }) }}
+        </div>
+    </form>
+{% endblock %}
