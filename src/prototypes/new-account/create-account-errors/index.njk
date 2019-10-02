@@ -1,0 +1,211 @@
+---
+group:                     New internal account
+title:                     Create account
+version:                   0.5.0
+---
+{% from "components/panel/_macro.njk" import onsPanel %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/button/_macro.njk" import onsButton %}
+
+
+{% set page = {
+    "title":               "Create account - Survey Data Collection",
+    "footer":              {
+        "OGLLink":         {
+            "pre":         'All content is available under the',
+            "link":        'Open Government Licence v3.0',
+            "url":         'https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/',
+            "post":        ', except where otherwise stated'
+        }
+    }
+} %}
+
+{% block head %}
+<link rel="stylesheet" href="/prototypes/new-account/styles.css" />
+{% endblock %}
+
+
+{% block content %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+{% call
+    onsPanel({
+        title:             "This page has 4 errors",
+        type:              "error"
+    })
+%}
+<p>These <strong>must be corrected</strong> to continue.</p>
+{% from "components/lists/_macro.njk" import onsList %}
+{{
+    onsList({
+        "classes":         "list--bare",
+        "itemsList":       [
+            {
+                "text":    "Enter a number.",
+                "index":   true,
+                "url":     "#container-test-number",
+                "classes": "js-inpagelink"
+            },
+            {
+                "text":    "Enter a number less than or equal to 100.",
+                "index":   true,
+                "url":     "#container-test-percent",
+                "classes": "js-inpagelink"
+            }
+        ]
+    })
+}}
+{% endcall %}
+
+
+<form class="u-mt-m">
+  <h1>Create an account</h1>
+
+
+  <div class="panel panel--error panel--simple">
+    <div class="panel__body">
+      <p class="panel__error">
+        <strong>You must tell us your first name</strong>
+      </p>
+      <p class="field">
+        <label class="label" for="number">First name</label>
+        <input type="text" id="number" class="input input--text pattern="[0-9]*" min required="true" />
+      </p>
+    </div>
+  </div>
+
+    <div class="panel panel--error panel--simple">
+      <div class="panel__body">
+        <p class="panel__error">
+          <strong>You must tell us your last name</strong>
+        </p>
+        <p class="field">
+          <label class="label" for="number">Last name</label>
+          <input type="text" id="number" class="input input--text pattern="[0-9]*" min required="true" />
+        </p>
+      </div>
+    </div>
+
+    <div class="panel panel--error panel--simple">
+      <div class="panel__body">
+        <p class="panel__error">
+          <strong>You must create a username</strong>
+        </p>
+        <p class="field">
+          <label class="label" for="text">Username
+            <br>
+            <span class="input__description">Hint: Use your Windows username</span>
+          </label>
+          <input type="text" id="number" class="input input--text" pattern="[0-9]*" min required="true" />
+        </p>
+      </div>
+    </div>
+
+    <div class="panel panel--error panel--simple">
+      <div class="panel__body">
+        <p class="panel__error">
+          <strong>You must create a password</strong>
+        </p>
+        <div class="field">
+          <label class="label " for="psw">
+            Password
+          </label>
+          <div id="message">
+            <p>Your password must contain the following:</p>
+            <ul>
+              <li id="letter" class="invalid">A lowercase letter</li>
+              <li id="capital" class="invalid">An uppercase letter</li>
+              <li id="number" class="invalid">A number</li>
+              <li id="length" class="invalid">A minimum of 8 characters</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  <span class="checkbox js-password-toggle-wrap checkbox--toggle u-d-no">
+    <input type="checkbox" onclick="showPassword()" id="password-toggle" class="checkbox__input js-checkbox js-password-toggle" value="" name="show-password">
+    <label id="password-toggle-label" class="checkbox__label " for="password-toggle">
+      Show password
+    </label>
+  </span>
+  <label class="label" for="password"></label>
+
+
+  <input name="psw" type="password" id="psw" class="input input--text input-type__input " pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+
+        {{
+            onsButton({
+                "text":    "Sign in",
+                "classes": "u-mt-l"
+            })
+        }}
+</form>
+
+<script>
+  var myInput = document.getElementById("psw");
+  var letter = document.getElementById("letter");
+  var capital = document.getElementById("capital");
+  var number = document.getElementById("number");
+  var length = document.getElementById("length");
+
+  // When the user starts to type something inside the password field
+  myInput.onkeyup = function() {
+    // Validate lowercase letters
+    var lowerCaseLetters = /[a-z]/g;
+    if (myInput.value.match(lowerCaseLetters)) {
+      letter.classList.remove("invalid");
+      letter.classList.add("valid");
+    } else {
+      letter.classList.remove("valid");
+      letter.classList.add("invalid");
+    }
+
+    // Validate capital letters
+    var upperCaseLetters = /[A-Z]/g;
+    if (myInput.value.match(upperCaseLetters)) {
+      capital.classList.remove("invalid");
+      capital.classList.add("valid");
+    } else {
+      capital.classList.remove("valid");
+      capital.classList.add("invalid");
+    }
+
+    // Validate numbers
+    var numbers = /[0-9]/g;
+    if (myInput.value.match(numbers)) {
+      number.classList.remove("invalid");
+      number.classList.add("valid");
+    } else {
+      number.classList.remove("valid");
+      number.classList.add("invalid");
+    }
+
+    // Validate length
+    if (myInput.value.length >= 8) {
+      length.classList.remove("invalid");
+      length.classList.add("valid");
+    } else {
+      length.classList.remove("valid");
+      length.classList.add("invalid");
+    }
+  }
+</script>
+
+<script>
+  function showPassword() {
+    var x = document.getElementById("psw");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  }
+</script>
+
+
+{% endblock %}
+
+{% block bodyEnd %}
+<script src="/prototypes/new-account/index.js"></script>
+{% endblock %}

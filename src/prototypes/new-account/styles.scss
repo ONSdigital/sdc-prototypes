@@ -1,0 +1,51 @@
+p.create-account {
+  margin-top: 1rem;
+}
+p.forgot-password {
+  margin-bottom: 0;
+}
+
+.input__description {
+  font-size: 0.77777778rem;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+#message {
+  font-size: 0.77777778rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #000;
+  position: relative;
+  p {
+    margin-bottom: 0.5rem;
+  }
+  ul {
+    padding-left: 0;
+    li {
+      list-style-type: none;
+      background-image: url('/img/icons/icons--bullet-black.svg');
+      background-repeat: no-repeat;
+      background-size: 5px 5px;
+      background-position: top 7px left 11px;
+      padding-left: 26px;
+      &.valid {
+        color: green;
+        font-weight: 600;
+        background-image: url('/img/icons/icons--check-green.svg');
+        background-repeat: no-repeat;
+        background-size: 15px 16px;
+        background-position: top 1px left 5px;
+      }
+      /* Add a red text color and an "x" when the requirements are wrong */
+      &.invalid {
+        color: #d0021b;
+        font-weight: 600;
+        background-image: url('/img/icons/icons--cross-red.svg');
+        background-repeat: no-repeat;
+        background-size: 11px 11px;
+        background-position: top 4px left 7px;
+      }
+    }
+  }
+}

@@ -1,0 +1,165 @@
+---
+group:                     New internal account
+title:                     Create account
+version:                   0.5.0
+---
+{% from "components/panel/_macro.njk" import onsPanel %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/button/_macro.njk" import onsButton %}
+
+
+{% set page = {
+    "title":               "Create account - Survey Data Collection",
+    "footer":              {
+        "OGLLink":         {
+            "pre":         'All content is available under the',
+            "link":        'Open Government Licence v3.0',
+            "url":         'https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/',
+            "post":        ', except where otherwise stated'
+        }
+    }
+} %}
+
+{% block head %}
+<link rel="stylesheet" href="/prototypes/new-account/styles.css" />
+{% endblock %}
+
+{% block content %}
+
+{{
+    onsPanel({
+        "type":            "success",
+        body:              "<p>You have successfully verified your email address. </p>"
+    })
+}}
+<form class="u-mt-m" action="/prototypes/new-account/create-account-errors" method="get">
+  <h1>Create an account</h1>
+
+    {{
+        onsInput({
+            "id":          "firstname",
+            "name":        "firstname",
+            "label":       {
+                "text":    "First name"
+            }
+        })
+    }}
+
+    {{
+        onsInput({
+            "id":          "lastname",
+            "name":        "lastname",
+            "label":       {
+                "text":    "Last name"
+            }
+        })
+    }}
+
+    <p class="field">
+      <label class="label" for="text">Username
+        <br>
+        <span class="input__description">Hint: Use your Windows username</span>
+      </label>
+      <input id="username" name="username" type="text" id="text" class="input input--text input-type__input " />
+    </p>
+
+
+    <div class="field">
+      <label class="label " for="psw">
+        Password
+      </label>
+      <div id="message">
+        <p>Your password must contain the following:</p>
+        <ul>
+          <li id="letter" class="">A lowercase letter</li>
+          <li id="capital" class="">An uppercase letter</li>
+          <li id="number" class="">A number</li>
+          <li id="length" class="">A minimum of 8 characters</li>
+        </ul>
+      </div>
+    <input name="psw" type="password" id="psw" class="input input--text input-type__input " pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+  </div>
+
+  <div class="field">
+    <label class="label " for="psw">
+      Repeat password
+    </label>
+  </div>
+
+  <input name="psw" type="password" id="psw" class="input input--text input-type__input " pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+
+        {{
+            onsButton({
+                "text":    "Sign in",
+                "classes": "u-mt-l"
+            })
+        }}
+</form>
+
+<script>
+  var myInput = document.getElementById("psw");
+  var letter = document.getElementById("letter");
+  var capital = document.getElementById("capital");
+  var number = document.getElementById("number");
+  var length = document.getElementById("length");
+
+  // When the user starts to type something inside the password field
+  myInput.onkeyup = function() {
+    // Validate lowercase letters
+    var lowerCaseLetters = /[a-z]/g;
+    if (myInput.value.match(lowerCaseLetters)) {
+      letter.classList.remove("invalid");
+      letter.classList.add("valid");
+    } else {
+      letter.classList.remove("valid");
+      letter.classList.add("invalid");
+    }
+
+    // Validate capital letters
+    var upperCaseLetters = /[A-Z]/g;
+    if (myInput.value.match(upperCaseLetters)) {
+      capital.classList.remove("invalid");
+      capital.classList.add("valid");
+    } else {
+      capital.classList.remove("valid");
+      capital.classList.add("invalid");
+    }
+
+    // Validate numbers
+    var numbers = /[0-9]/g;
+    if (myInput.value.match(numbers)) {
+      number.classList.remove("invalid");
+      number.classList.add("valid");
+    } else {
+      number.classList.remove("valid");
+      number.classList.add("invalid");
+    }
+
+    // Validate length
+    if (myInput.value.length >= 8) {
+      length.classList.remove("invalid");
+      length.classList.add("valid");
+    } else {
+      length.classList.remove("valid");
+      length.classList.add("invalid");
+    }
+  }
+</script>
+
+<script>
+  function showPassword() {
+    var x = document.getElementById("psw");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  }
+</script>
+
+
+{% endblock %}
+
+{% block bodyEnd %}
+<script src="/prototypes/new-account/index.js"></script>
+{% endblock %}
