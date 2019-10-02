@@ -7,7 +7,6 @@ version: 13.6.7
 {% from "components/input/_macro.njk" import onsInput %}
 {% from "components/button/_macro.njk" import onsButton %}
 
-
 {% set page = {
     "title": "Survey Data Collection",
     "footer": {
@@ -27,7 +26,7 @@ version: 13.6.7
 {% block main %}
 
 <p class="field"><a href="create-account">Back to sign in</a></p>
-<form class="u-mt-m" action="{{ pageInfo.rootPath }}/create-account.html">
+<form class="u-mt-m" action="{{ pageInfo.rootPath }}/verify-email-error.html">
   <h1>Verify your email address</h1>
 
     {{

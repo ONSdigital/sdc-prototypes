@@ -7,7 +7,6 @@ version:                   13.6.7
 {% from "components/input/_macro.njk" import onsInput %}
 {% from "components/button/_macro.njk" import onsButton %}
 
-
 {% set page = {
     "title":               "Survey Data Collection",
     "footer":              {
@@ -33,7 +32,7 @@ version:                   13.6.7
         type:              "error"
     })
 %}
-<p>These <strong>must be corrected</strong> to continue.</p>
+<p>These must be corrected to continue.</p>
 {% from "components/lists/_macro.njk" import onsList %}
 {{
     onsList({
@@ -112,41 +111,41 @@ version:                   13.6.7
     </div>
 
     <div class="panel panel--error panel--simple">
-      <div class="panel__body">
-        <p class="panel__error">
-          <strong>Your password must be formatted correctly</strong>
-        </p>
-          <div class="field">
-            <label class="label " for="psw">
-              Password
-            </label>
-            <div id="message">
-              <p>Your password must contain the following:</p>
-              <ul>
-                <li id="letter" class="">A lowercase letter</li>
-                <li id="capital" class="">An uppercase letter</li>
-                <li id="number" class="">A number</li>
-                <li id="length" class="">A minimum of 8 characters</li>
-              </ul>
-            </div>
-            <input name="psw" type="password" id="psw" class="input input--text input-type__input " pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required="required">
-          </div>
+    <div class="panel__body">
+      <p class="panel__error">
+        <strong>Your password must be formatted correctly</strong>
+      </p>
+      <div class="field">
+        <label class="label " for="psw">
+          Password
+        </label>
+        <div id="message">
+          <p>Your password must contain the following:</p>
+          <ul>
+            <li id="letter" class="">A lowercase letter</li>
+            <li id="capital" class="">An uppercase letter</li>
+            <li id="number" class="">A number</li>
+            <li id="length" class="">A minimum of 8 characters</li>
+          </ul>
+        </div>
+        <input name="psw" type="password" id="psw" class="input input--text input-type__input " pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required="required">
+      </div>
 
-          <div class="field">
-            <label class="label " for="psw">
-              Repeat password
-            </label>
-            <input name="psw" type="password" id="psw" class="input input--text input-type__input " pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required="required">
-          </div>
+      <div class="field">
+        <label class="label " for="psw">
+          Repeat password
+        </label>
+        <input name="psw" type="password" id="psw" class="input input--text input-type__input " pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required="required">
       </div>
     </div>
+  </div>
 
-        {{
-            onsButton({
-                "text":    "Sign in",
-                "classes": "u-mt-l"
-            })
-        }}
+  {{
+      onsButton({
+          "text":    "Sign in",
+          "classes": "u-mt-l"
+      })
+  }}
 </form>
 
 <script>
