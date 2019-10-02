@@ -24,7 +24,7 @@ p.forgot-password {
     padding-left: 0;
     li {
       list-style-type: none;
-      background-image: url('/img/icons/icons--bullet-black.svg');
+      background-image: url('/prototypes/new-account/img/icons--bullet-black.svg');
       background-repeat: no-repeat;
       background-size: 5px 5px;
       background-position: top 7px left 11px;
@@ -41,7 +41,7 @@ p.forgot-password {
       &.invalid {
         color: #d0021b;
         font-weight: 600;
-        background-image: url('/img/icons/icons--cross-red.svg');
+        background-image: url('/prototypes/new-account/img/icons--cross-red.svg');
         background-repeat: no-repeat;
         background-size: 11px 11px;
         background-position: top 4px left 7px;

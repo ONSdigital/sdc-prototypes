@@ -1,7 +1,7 @@
 ---
 group: New internal account
-title: Create account
-version: 0.5.0
+title: Create account - Survey Data Collection
+version: 13.6.7
 ---
 {% from "components/panel/_macro.njk" import onsPanel %}
 {% from "components/input/_macro.njk" import onsInput %}
@@ -9,7 +9,7 @@ version: 0.5.0
 
 
 {% set page = {
-    "title": "Create account - Survey Data Collection",
+    "title": "Survey Data Collection",
     "footer": {
         "OGLLink": {
             "pre": 'All content is available under the',
@@ -24,10 +24,10 @@ version: 0.5.0
 <link rel="stylesheet" href="/prototypes/new-account/styles.css" />
 {% endblock %}
 
-{% block content %}
+{% block main %}
 
-<form class="u-mt-m" action="/prototypes/new-account/create-account" method="get">
-  <p class="field"><a href="create-account">< Back to sign in</a></p>
+<p class="field"><a href="create-account">Back to sign in</a></p>
+<form class="u-mt-m" action="{{ pageInfo.rootPath }}/create-account.html">
   <h1>Verify your email address</h1>
 
     {{
@@ -49,8 +49,4 @@ version: 0.5.0
 </form>
 
 
-{% endblock %}
-
-{% block bodyEnd %}
-<script src="/prototypes/new-account/index.js"></script>
 {% endblock %}

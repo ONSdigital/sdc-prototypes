@@ -1,7 +1,7 @@
 ---
 group:                     New internal account
-title:                     Create account
-version:                   0.5.0
+title:                     Create account - Survey Data Collection
+version:                   13.6.7
 ---
 {% from "components/panel/_macro.njk" import onsPanel %}
 {% from "components/input/_macro.njk" import onsInput %}
@@ -9,7 +9,7 @@ version:                   0.5.0
 
 
 {% set page = {
-    "title":               "Create account - Survey Data Collection",
+    "title":               "Survey Data Collection",
     "footer":              {
         "OGLLink":         {
             "pre":         'All content is available under the',
@@ -25,7 +25,7 @@ version:                   0.5.0
 {% endblock %}
 
 
-{% block content %}
+{% block main %}
 {% from "components/panel/_macro.njk" import onsPanel %}
 {% call
     onsPanel({
@@ -40,13 +40,25 @@ version:                   0.5.0
         "classes":         "list--bare",
         "itemsList":       [
             {
-                "text":    "Enter a number.",
+                "text":    "Enter your first name.",
                 "index":   true,
                 "url":     "#container-test-number",
                 "classes": "js-inpagelink"
             },
             {
-                "text":    "Enter a number less than or equal to 100.",
+                "text":    "Enter your last name.",
+                "index":   true,
+                "url":     "#container-test-percent",
+                "classes": "js-inpagelink"
+            },
+            {
+                "text":    "Choose a username.",
+                "index":   true,
+                "url":     "#container-test-percent",
+                "classes": "js-inpagelink"
+            },
+            {
+                "text":    "Your password must be formatted correctly.",
                 "index":   true,
                 "url":     "#container-test-percent",
                 "classes": "js-inpagelink"
@@ -60,15 +72,14 @@ version:                   0.5.0
 <form class="u-mt-m">
   <h1>Create an account</h1>
 
-
   <div class="panel panel--error panel--simple">
     <div class="panel__body">
       <p class="panel__error">
-        <strong>You must tell us your first name</strong>
+        <strong>Enter your first name</strong>
       </p>
       <p class="field">
-        <label class="label" for="number">First name</label>
-        <input type="text" id="number" class="input input--text pattern="[0-9]*" min required="true" />
+        <label class="label" for="first-name">First name</label>
+        <input type="text" id="first-name" class="input input--text pattern="[0-9]*" min required="true" />
       </p>
     </div>
   </div>
@@ -76,11 +87,11 @@ version:                   0.5.0
     <div class="panel panel--error panel--simple">
       <div class="panel__body">
         <p class="panel__error">
-          <strong>You must tell us your last name</strong>
+          <strong>Enter your last name</strong>
         </p>
         <p class="field">
-          <label class="label" for="number">Last name</label>
-          <input type="text" id="number" class="input input--text pattern="[0-9]*" min required="true" />
+          <label class="label" for="last-name">Last name</label>
+          <input type="text" id="last-name" class="input input--text input-type__input " pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required min required="true" />
         </p>
       </div>
     </div>
@@ -88,14 +99,14 @@ version:                   0.5.0
     <div class="panel panel--error panel--simple">
       <div class="panel__body">
         <p class="panel__error">
-          <strong>You must create a username</strong>
+          <strong>Choose a username</strong>
         </p>
         <p class="field">
-          <label class="label" for="text">Username
+          <label class="label" for="username">Username
             <br>
             <span class="input__description">Hint: Use your Windows username</span>
           </label>
-          <input type="text" id="number" class="input input--text" pattern="[0-9]*" min required="true" />
+          <input type="text" id="username" class="input input--text input-type__input " pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required min required="true" />
         </p>
       </div>
     </div>
@@ -103,36 +114,32 @@ version:                   0.5.0
     <div class="panel panel--error panel--simple">
       <div class="panel__body">
         <p class="panel__error">
-          <strong>You must create a password</strong>
+          <strong>Your password must be formatted correctly</strong>
         </p>
-        <div class="field">
-          <label class="label " for="psw">
-            Password
-          </label>
-          <div id="message">
-            <p>Your password must contain the following:</p>
-            <ul>
-              <li id="letter" class="invalid">A lowercase letter</li>
-              <li id="capital" class="invalid">An uppercase letter</li>
-              <li id="number" class="invalid">A number</li>
-              <li id="length" class="invalid">A minimum of 8 characters</li>
-            </ul>
+          <div class="field">
+            <label class="label " for="psw">
+              Password
+            </label>
+            <div id="message">
+              <p>Your password must contain the following:</p>
+              <ul>
+                <li id="letter" class="">A lowercase letter</li>
+                <li id="capital" class="">An uppercase letter</li>
+                <li id="number" class="">A number</li>
+                <li id="length" class="">A minimum of 8 characters</li>
+              </ul>
+            </div>
+            <input name="psw" type="password" id="psw" class="input input--text input-type__input " pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required="required">
           </div>
-        </div>
+
+          <div class="field">
+            <label class="label " for="psw">
+              Repeat password
+            </label>
+            <input name="psw" type="password" id="psw" class="input input--text input-type__input " pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required="required">
+          </div>
       </div>
     </div>
-
-
-  <span class="checkbox js-password-toggle-wrap checkbox--toggle u-d-no">
-    <input type="checkbox" onclick="showPassword()" id="password-toggle" class="checkbox__input js-checkbox js-password-toggle" value="" name="show-password">
-    <label id="password-toggle-label" class="checkbox__label " for="password-toggle">
-      Show password
-    </label>
-  </span>
-  <label class="label" for="password"></label>
-
-
-  <input name="psw" type="password" id="psw" class="input input--text input-type__input " pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
 
         {{
             onsButton({
@@ -204,8 +211,4 @@ version:                   0.5.0
 </script>
 
 
-{% endblock %}
-
-{% block bodyEnd %}
-<script src="/prototypes/new-account/index.js"></script>
 {% endblock %}

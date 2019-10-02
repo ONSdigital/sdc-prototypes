@@ -1,16 +1,15 @@
 ---
 group: New internal account
-title: Sign in
-version: 0.5.0
+title: Sign in - Survey Data Collection
+version: 13.6.7
 ---
 {% from "components/panel/_macro.njk" import onsPanel %}
 {% from "components/password/_macro.njk" import onsPassword %}
 {% from "components/input/_macro.njk" import onsInput %}
 {% from "components/button/_macro.njk" import onsButton %}
 
-
 {% set page = {
-    "title": "Sign in - Survey Data Collection",
+    "title": "Survey Data Collection",
     "footer": {
         "OGLLink": {
             "pre": 'All content is available under the',
@@ -25,10 +24,10 @@ version: 0.5.0
     <link rel="stylesheet" href="/prototypes/new-account/styles.css" />
 {% endblock %}
 
-{% block content %}
-    <form class="u-mt-m">
+{% block main %}
+    <form>
         <h1>Sign in</h1>
-        <p class="field"><a href="verify-email">Create an account</a></p>
+        <p class="field"><a href="{{ pageInfo.rootPath }}/verify-email.html">Create an account</a></p>
 
         {{
             onsInput({
@@ -62,8 +61,4 @@ version: 0.5.0
     </form>
 
 
-{% endblock %}
-
-{% block bodyEnd %}
-    <script src="/prototypes/new-account/index.js"></script>
 {% endblock %}
