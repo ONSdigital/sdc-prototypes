@@ -64,7 +64,7 @@ version:                   13.6.9
 
   <div class="field">
     <label class="label " for="psw">
-      Password
+      New password
     </label>
     <div id="message">
       <p>Your password must contain the following:</p>
@@ -75,14 +75,26 @@ version:                   13.6.9
         <li id="length" class="">A minimum of 8 characters</li>
       </ul>
     </div>
-    <input name="psw" type="password" id="psw" class="input input--text input-type__input " pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required="required">
+    
+
+  <span class="checkbox js-password-toggle-wrap checkbox--toggle">
+    <input type="checkbox" onclick="showPassword()" id="password-toggle" class="checkbox__input js-checkbox js-password-toggle" value="" name="show-password">
+    <label id="password-toggle-label" class="checkbox__label " for="password-toggle">
+      Show password
+    </label>
+  </span>
+  <label class="label" for="password"></label>
+
+
+  <input name="psw" type="password" id="psw" class="input input--text input-type__input " pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+
   </div>
 
   <div class="field">
-    <label class="label " for="psw">
-      Repeat password
+    <label class="label " for="retype-psw">
+      Re-type new password
     </label>
-    <input name="psw" type="password" id="psw" class="input input--text input-type__input " pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required="required">
+    <input name="retype-psw" type="password" id="retype-psw" class="input input--text input-type__input u-mt-xs js-password-input" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required="required">
   </div>
   {{
     onsButton({
