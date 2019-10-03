@@ -1,7 +1,7 @@
 ---
 group:                     New internal account
 title:                     Create account - Survey Data Collection
-version:                   13.6.7
+version:                   13.6.9
 ---
 {% from "components/panel/_macro.njk" import onsPanel %}
 {% from "components/input/_macro.njk" import onsInput %}
@@ -59,7 +59,7 @@ version:                   13.6.7
       <br>
       <span class="input__description">Hint: Use your Windows username</span>
     </label>
-    <input id="text" name="username" type="text" class="input input--text input-type__input "/>
+    <input name="psw" type="password" id="psw" class="input input--text input-type__input " pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required="required">
   </p>
 
   <div class="field">
@@ -139,17 +139,7 @@ version:                   13.6.7
       length.classList.remove("valid");
       length.classList.add("invalid");
     }
-  }
-</script>
 
-<script>
-  function showPassword() {
-    var x = document.getElementById("psw");
-    if (x.type === "password") {
-      x.type = "text";
-    } else {
-      x.type = "password";
-    }
   }
 </script>
 
