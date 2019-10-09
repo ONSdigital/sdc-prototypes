@@ -25,7 +25,15 @@ version: 13.6.9
 {% endblock %}
 
 {% block main %}
-    <form>
+
+{{
+    onsPanel({
+        "type":            "success",
+        body:              "<p>You have created a new account</p>"
+    })
+}}
+
+    <form class="u-mt-m">
         <h1>Sign in</h1>
         <p class="field"><a href="{{ pageInfo.rootPath }}/verify-email.html">Create an account</a></p>
 

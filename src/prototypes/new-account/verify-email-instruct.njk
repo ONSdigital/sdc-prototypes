@@ -25,26 +25,12 @@ version: 13.6.9
 
 {% block main %}
 
-<p class="field">Already have an account? <a href="index.html">Sign in</a></p>
-<form class="u-mt-m" action="{{ pageInfo.rootPath }}/verify-email-error.html">
-  <h1>Create an account</h1>
-
-    {{
-        onsInput({
-            "id": "firstname",
-            "name": "firstname",
-            "label": {
-                "text": "Enter your ONS email address"
-            }
-        })
-    }}
-
-    {{
-        onsButton({
-            "text": "Continue",
-            "classes": "u-mt-l"
-        })
-    }}
+<form class="u-mt-m" action="">
+    <h1>Confirm your email address</h1>
+    <p>We have sent an email to <strong>firstname.lastname@ons.gov.uk</strong>.</p>
+    <p>Follow the instructions in the email to confirm your email address. You can then create an  account.</p>
+    <p>Not received the email? <a href="{{ pageInfo.rootPath }}/verify-email.html">Enter your email address again</a> and we will resend the email.</p>
+    <p><a href="{{ pageInfo.rootPath }}/create-account.html">[User clicks link in email]</a></p>
 </form>
 
 

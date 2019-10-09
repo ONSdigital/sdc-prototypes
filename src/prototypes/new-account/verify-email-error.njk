@@ -28,7 +28,7 @@ version: 13.6.9
 {% from "components/panel/_macro.njk" import onsPanel %}
 {% call
     onsPanel({
-        title:             "This page has 1 error",
+        title:             "This page has an error",
         type:              "error"
     })
 %}
@@ -39,9 +39,9 @@ version: 13.6.9
         "classes":         "list--bare",
         "itemsList":       [
             {
-                "text":    "Enter ONS email address.",
+                "text":    "Enter an email address.",
                 "index":   true,
-                "url":     "#container-test-number",
+                "url":     "#container-email-address",
                 "classes": "js-inpagelink"
             }
         ]
@@ -50,36 +50,36 @@ version: 13.6.9
 {% endcall %}
 
 
-<p class="field"><a href="create-account">Back to sign in</a></p>
-<form class="u-mt-m" action="{{ pageInfo.rootPath }}/create-account.html">
-  <h1>Verify your email address</h1>
+<p class="field">Already have an account? <a href="index.html">Sign in</a></p>
+<form class="u-mt-m" action="{{ pageInfo.rootPath }}/verify-email-instruct.html">
+  <h1>Create an account</h1>
 
 
-  <div class="panel panel--error panel--simple">
+  <div id="container-email-address" class="panel panel--error panel--simple">
     <div class="panel__body">
       <p class="panel__error">
-        <strong>Enter ONS email address</strong>
+        <strong>Enter an email address</strong>
       </p>
         <div class="field">
         {{
             onsInput({
-                "id": "firstname",
-                "name": "firstname",
+                "id": "email",
+                "name": "email",
                 "label": {
                     "text": "Enter your ONS email address"
                 }
             })
         }}
-
-        {{
-            onsButton({
-                "text": "Continue",
-                "classes": "u-mt-l"
-            })
-        }}
       </div>
     </div>
   </div>
+
+    {{
+        onsButton({
+            "text": "Continue",
+            "classes": "u-mt-l"
+        })
+    }}
 </form>
 
 

@@ -39,27 +39,27 @@ version:                   13.6.9
         "classes":         "list--bare",
         "itemsList":       [
             {
-                "text":    "Enter your first name.",
+                "text":    "Enter your first name",
                 "index":   true,
-                "url":     "#container-test-number",
+                "url":     "#container-first-name",
                 "classes": "js-inpagelink"
             },
             {
-                "text":    "Enter your last name.",
+                "text":    "Enter your last name",
                 "index":   true,
-                "url":     "#container-test-percent",
+                "url":     "#container-last-name",
                 "classes": "js-inpagelink"
             },
             {
-                "text":    "Choose a username.",
+                "text":    "Choose a username",
                 "index":   true,
-                "url":     "#container-test-percent",
+                "url":     "#container-username",
                 "classes": "js-inpagelink"
             },
             {
-                "text":    "Your password must be formatted correctly.",
+                "text":    "Your password must be in the correct format",
                 "index":   true,
-                "url":     "#container-test-percent",
+                "url":     "#container-password",
                 "classes": "js-inpagelink"
             }
         ]
@@ -68,74 +68,74 @@ version:                   13.6.9
 {% endcall %}
 
 
-<form class="u-mt-m">
+<form class="u-mt-m" action="{{ pageInfo.rootPath }}/sign-in.html">
   <h1>Create an account</h1>
 
-  <div class="panel panel--error panel--simple">
+  <div id="container-first-name" class="panel panel--error panel--simple">
     <div class="panel__body">
       <p class="panel__error">
         <strong>Enter your first name</strong>
       </p>
       <p class="field">
         <label class="label" for="first-name">First name</label>
-        <input type="text" id="first-name" class="input input--text input-type__input" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required min required="true" />
+        <input type="text" id="first-name" class="input input--text input-type__input" />
       </p>
     </div>
   </div>
 
-    <div class="panel panel--error panel--simple">
+    <div id="container-last-name" class="panel panel--error panel--simple">
       <div class="panel__body">
         <p class="panel__error">
           <strong>Enter your last name</strong>
         </p>
         <p class="field">
           <label class="label" for="last-name">Last name</label>
-          <input type="text" id="last-name" class="input input--text input-type__input" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required min required="true" />
+          <input type="text" id="last-name" class="input input--text input-type__input" />
         </p>
       </div>
     </div>
 
-    <div class="panel panel--error panel--simple">
+    <div id="container-username" class="panel panel--error panel--simple">
       <div class="panel__body">
         <p class="panel__error">
           <strong>Choose a username</strong>
         </p>
         <p class="field">
-          <label class="label" for="username">Username
+          <label class="label" for="username">Choose a username
             <br>
             <span class="input__description">Hint: Use your Windows username</span>
           </label>
-          <input type="text" id="username" class="input input--text input-type__input " pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required min required="true" />
+          <input type="text" id="username" class="input input--text input-type__input" />
         </p>
       </div>
     </div>
 
-    <div class="panel panel--error panel--simple">
+    <div id="container-password" class="panel panel--error panel--simple">
     <div class="panel__body">
       <p class="panel__error">
-        <strong>Your password must be formatted correctly</strong>
+        <strong>Your password must be in the correct format</strong>
       </p>
       <div class="field">
         <label class="label " for="psw">
-          Password
+          Create password
         </label>
         <div id="message">
-          <p>Your password must contain the following:</p>
+          <p class="panel__error"><strong>Your password must have:</strong></p>
           <ul>
-            <li id="letter" class="">A lowercase letter</li>
-            <li id="capital" class="">An uppercase letter</li>
-            <li id="number" class="">A number</li>
-            <li id="length" class="">A minimum of 8 characters</li>
+            <li id="length" class="invalid">at least 8 characters</li>
+            <li id="capital" class="invalid">at least 1 uppercase letter</li>
+            <li id="symbol" class="invalid">at least 1 symbol (eg: ?!£%)</li>
+            <li id="number" class="invalid">at least 1 number</li>
           </ul>
         </div>
-        <input name="psw" type="password" id="psw" class="input input--text input-type__input " pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required="required">
+        <input name="psw" type="password" id="psw" class="input input--text input-type__input" />
       </div>
 
       <div class="field">
         <label class="label " for="psw">
-          Repeat password
+         Confirm password
         </label>
-        <input name="psw" type="password" id="psw" class="input input--text input-type__input " pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required="required">
+        <input name="psw" type="password" id="psw" class="input input--text input-type__input" />
       </div>
     </div>
   </div>
@@ -150,21 +150,21 @@ version:                   13.6.9
 
 <script>
   var myInput = document.getElementById("psw");
-  var letter = document.getElementById("letter");
+  var symbol = document.getElementById("symbol");
   var capital = document.getElementById("capital");
   var number = document.getElementById("number");
   var length = document.getElementById("length");
 
   // When the user starts to type something inside the password field
   myInput.onkeyup = function() {
-    // Validate lowercase letters
-    var lowerCaseLetters = /[a-z]/g;
-    if (myInput.value.match(lowerCaseLetters)) {
-      letter.classList.remove("invalid");
-      letter.classList.add("valid");
+    
+    // Validate length
+    if (myInput.value.length >= 8) {
+      length.classList.remove("invalid");
+      length.classList.add("valid");
     } else {
-      letter.classList.remove("valid");
-      letter.classList.add("invalid");
+      length.classList.remove("valid");
+      length.classList.add("invalid");
     }
 
     // Validate capital letters
@@ -177,6 +177,16 @@ version:                   13.6.9
       capital.classList.add("invalid");
     }
 
+    // Validate symbols
+    var symbols = /[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]/g;
+    if (myInput.value.match(symbols)) {
+      symbol.classList.remove("invalid");
+      symbol.classList.add("valid");
+    } else {
+      symbol.classList.remove("valid");
+      symbol.classList.add("invalid");
+    }
+
     // Validate numbers
     var numbers = /[0-9]/g;
     if (myInput.value.match(numbers)) {
@@ -185,15 +195,6 @@ version:                   13.6.9
     } else {
       number.classList.remove("valid");
       number.classList.add("invalid");
-    }
-
-    // Validate length
-    if (myInput.value.length >= 8) {
-      length.classList.remove("invalid");
-      length.classList.add("valid");
-    } else {
-      length.classList.remove("valid");
-      length.classList.add("invalid");
     }
   }
 </script>
