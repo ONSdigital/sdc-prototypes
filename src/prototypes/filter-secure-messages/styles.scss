@@ -31,8 +31,11 @@
   }
   button {
     margin-bottom: 1rem;
+    margin-left: 0.5rem;
   }
-
+  .input {
+    width: 100px;
+  }
   @media only screen and (min-width: 500px) {
     .input--select:not(.input--block):not([class*='input--w-']),
     .input--text:not(.input--block):not([class*='input--w-']) {
