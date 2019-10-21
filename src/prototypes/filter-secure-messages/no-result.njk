@@ -1,0 +1,89 @@
+---
+group: Secure messaging
+title: Search
+version: 13.6.9
+layout: filter-secure-messages/views/_master
+---
+
+{% block main %}
+
+  <div class="grid__col col-9@m ">
+    <div class="pl-grid-col">
+      {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+      {{ 
+          onsBreadcrumb({
+              "ariaLabel": 'Breadcrumb',
+              "itemsList": [
+                  {
+                      "url": '/',
+                      "text": 'Home'
+                  },
+                  {
+                      "url": '/',
+                      "text": 'FDI Messages',
+                      "current": true
+                  }
+              ]
+          }) 
+      }}
+      <h1>There are no FDI Messages for 11110020831</h1>
+    </div>
+  </div>
+
+
+  <div class="grid__col col-3@m ">
+    <div class="pl-grid-col">
+      <div class="filter flex">
+        <div>
+          <p class="field">
+            <div class="flex">
+              <label class="label" for="filter">Filter RU Ref</label>
+              <a href="#" class="clear">Clear</a>
+            </div>
+            <div>
+              <input name="filter" type="text" id="filter" class="input input--text input-type__input " />
+            </div>
+          </p>
+        </div>
+
+        <div>
+          <div id="message">
+            <form class="u-mt-m" action="{{ pageInfo.rootPath }}/result.html">
+              <button type="submit" id="length" class="btn btn--small btn--disabled">
+                <span class="btn__inner">Filter</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid__col col-8@m ">
+    <p>This may be because they have not contacted the ONS or have been removed from the system</p>
+    <p>Check you have the correct RU Ref and try again or <a href="#">Show all messages</a></p>
+  </div>
+
+<div id="live" class="u-vh" aria-live="polite"></div>
+
+
+<script>
+  var myInput = document.getElementById("filter");
+  var length = document.getElementById("length");
+
+  // When the user starts to type something inside the password field
+  myInput.onkeyup = function() {
+    
+    // Validate length
+    if  (myInput.value.length >= 12 ) {
+      length.classList.remove("invalid");
+      length.classList.add("btn--disabled");
+    } else {
+      length.classList.remove("btn--disabled");
+      length.classList.add("invalid");
+    }
+  }
+</script>
+
+
+{% endblock %}
