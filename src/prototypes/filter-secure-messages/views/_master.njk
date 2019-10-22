@@ -17,7 +17,7 @@
 } %}
 
 {% block header %}
-   <header class="header header--internal header--thin">
+<header class="header header--internal header--thin">
   <div class="header__top" role="banner">
     <div class="container container--wide">
       <div class="header__grid-top grid grid--gutterless grid--flex grid--between grid--vertical-center grid--no-wrap">
@@ -84,11 +84,9 @@
 {% block page %}
     {% block preMain %}{% endblock %}
     <div class="page__container container container--wide {{ containerClasses }}">
-        <div class="grid">
-          <main id="main-content" class="page__main {{ pageClasses }}">
-              {% block main %}{% endblock %}
-          </main>
-        </div>
+      <main id="main-content" class="page__main {{ pageClasses }}">
+          {% block main %}{% endblock %}
+      </main>
     </div>
 {% endblock %}
 

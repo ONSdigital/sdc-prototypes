@@ -6,9 +6,8 @@ layout: filter-secure-messages/views/_master
 ---
 
 {% block main %}
-
-  <div class="grid__col col-9@m ">
-    <div class="pl-grid-col">
+  <div class="grid grid--flex grid--between">
+    <div class="grid__col col-9@m">
       {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
       {{ 
           onsBreadcrumb({
@@ -28,62 +27,89 @@ layout: filter-secure-messages/views/_master
       }}
       <h1>There are no FDI Messages for 11110020831</h1>
     </div>
-  </div>
 
-
-  <div class="grid__col col-3@m ">
-    <div class="pl-grid-col">
-      <div class="filter flex">
-        <div class="input-group">
-          <p class="field">
-            <div class="flex">
-              <label class="label" for="filter">Filter RU Ref</label>
-              <a href="#" class="clear">Clear</a>
-            </div>
-            <div>
-              <input name="filter" type="text" id="filter" class="input input--text input-type__input " />
-            </div>
-          </p>
-        </div>
-
-        <div>
-          <div id="message">
-            <form class="u-mt-m" action="{{ pageInfo.rootPath }}/result.html">
-              <button type="submit" id="length" class="btn btn--small btn--disabled">
-                <span class="btn__inner">Filter</span>
-              </button>
-            </form>
+    <div class="grid__col col-3@m">
+      <form class="u-mt-m" action="{{ pageInfo.rootPath }}/index.html">
+        <label class="label" for="filter">Filter RU ref</label>
+        <div class="grid--flex input-group">
+          <div class="input-field">
+            <p class="field">
+              <span class="input-type">
+                <span class="input-type__inner">
+                  <input type="text" id="filter" class="input input--text input-type__input input--w-6" pattern="[0-9]*" inputmode="numeric" autocomplete="off" min/>
+                  <abbr
+                    id="clear"
+                    class="input-type__type clear"
+                    aria-hidden="true"
+                    title="Clear filter">
+                    <a href="#"><img class="icons--cross-black" src="{{ pageInfo.rootPath }}/img/icons/icons--cross-black.svg"></a>
+                  </abbr>
+                </span>
+              </span>
+            </p>
+            <!--
+            <p class="error too-few">Too few characters</p>
+            <p class="error too-many">Too many characters</p>
+            -->
+          </div>
+          <div class="filter-button">
+            <button type="submit" id="length" class="btn btn--small btn--disabled">
+              <span class="btn__inner">Filter</span>
+            </button>
           </div>
         </div>
-      </div>
+      </form>
+    </div>
+  </div>
+  <div class="grid grid--flex grid--between">
+    <div class="grid__col col-8@m ">
+      <p>This may be because they have not contacted the ONS or have been removed from the system</p>
+      <p>Check you have the correct RU Ref and try again or <a href="#">Show all messages</a>
+      </p>
     </div>
   </div>
 
-  <div class="grid__col col-8@m ">
-    <p>This may be because they have not contacted the ONS or have been removed from the system</p>
-    <p>Check you have the correct RU Ref and try again or <a href="#">Show all messages</a></p>
-  </div>
+  <div id="live" class="u-vh" aria-live="polite"></div>
 
-<div id="live" class="u-vh" aria-live="polite"></div>
+  <script>
+    var myInput = document.getElementById("filter");
+    var length = document.getElementById("length");
+    var filter = document.getElementById("filter");
+    var clear = document.getElementById("clear");
 
+    // When the user starts to type something inside the password field
+    myInput.onkeyup = function () {
 
-<script>
-  var myInput = document.getElementById("filter");
-  var length = document.getElementById("length");
+      // Validate length
+      if (myInput.value.length == 11) {
+        length
+          .classList
+          .remove("btn--disabled");
+        length
+          .classList
+          .add("valid");
+        filter
+          .classList
+          .remove("invalid");
+        filter
+          .classList
+          .add("valid");
+      } else {
+        length
+          .classList
+          .remove("valid");
+        length
+          .classList
+          .add("btn--disabled");
+        filter
+          .classList
+          .remove("valid");
+        filter
+          .classList
+          .add("invalid");
+      }
 
-  // When the user starts to type something inside the password field
-  myInput.onkeyup = function() {
-    
-    // Validate length
-    if  (myInput.value.length >= 12 ) {
-      length.classList.remove("invalid");
-      length.classList.add("btn--disabled");
-    } else {
-      length.classList.remove("btn--disabled");
-      length.classList.add("invalid");
     }
-  }
-</script>
-
+  </script>
 
 {% endblock %}

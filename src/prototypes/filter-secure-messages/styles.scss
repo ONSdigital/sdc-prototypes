@@ -19,34 +19,36 @@
   border: 0;
 }
 
-.filter {
-  margin-top: 0.5rem;
-  .field {
-    margin-right: 0.5rem;
-  }
-
+abbr.input-type__type {
   .clear {
-    display: inline-block;
-    margin-bottom: 0.4rem;
-  }
-  button {
-    margin-bottom: 1rem;
-    margin-left: 0.5rem;
-  }
-  .input {
-    width: 100px;
-  }
-  @media only screen and (min-width: 500px) {
-    .input--select:not(.input--block):not([class*='input--w-']),
-    .input--text:not(.input--block):not([class*='input--w-']) {
-      width: 100%;
-    }
   }
 }
-.flex {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+#filter.invalid {
+  .input:focus {
+    -webkit-box-shadow: 0 0 0 3px #d0021b;
+    box-shadow: 0 0 0 3px #d0021b;
+  }
+}
+
+.input-group {
+  justify-items: flex-end;
+  .input-field {
+  }
+  .filter-button {
+    margin-left: 0.5rem;
+    .btn--small {
+      line-height: 1.1rem;
+    }
+  }
+  .input-type__type[title] {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .icons--cross-black {
+    width: 15px;
+    height: 15px;
+    margin-bottom: 2px;
+  }
 }
 
 .table__caption {
@@ -103,43 +105,5 @@
     font-family: 'Open Sans';
     font-variant-numeric: tabular-nums;
     text-align: right;
-  }
-}
-
-#message {
-  font-weight: 400;
-  color: #000;
-  position: relative;
-  p {
-    margin-bottom: 0.5rem;
-  }
-  ul {
-    padding-left: 0;
-    li {
-      margin-left: 1.5rem;
-      &.valid {
-        margin-left: 0;
-        padding-left: 1.5rem;
-        list-style-type: none;
-        color: #222;
-        font-weight: 400;
-        background-image: url('/img/icons/icons--check-green.svg');
-        background-repeat: no-repeat;
-        background-size: 20px 16px;
-        background-position: top 6px left 1px;
-      }
-      /* Add a red text color and an "x" when the requirements are wrong */
-      &.invalid {
-        margin-left: 0;
-        padding-left: 1.5rem;
-        list-style-type: none;
-        color: #d0021b;
-        font-weight: 600;
-        background-image: url('/prototypes/new-account/img/icons--cross-red.svg');
-        background-repeat: no-repeat;
-        background-size: 14px 14px;
-        background-position: top 8px left 4px;
-      }
-    }
   }
 }
