@@ -14,9 +14,40 @@
   padding: 0.6em 0.7em;
 }
 
-.btn--disabled:not(.btn--secondary) .btn__inner {
-  background-color: #595959;
-  border: 0;
+.error {
+  color: #d0021b;
+  margin: 0.1rem 0 0;
+  &.hidden {
+    display: none;
+  }
+  &.visible {
+    display: block;
+  }
+  &.null {
+    display: none;
+  }
+}
+
+.btn {
+  // Disabled buttons
+  &--disabled {
+    &:hover {
+      cursor: not-allowed;
+    }
+    &.btn--secondary,
+    &.btn--print {
+      .btn__inner {
+        background: #d0d0d0;
+        border: 0;
+      }
+    }
+    &:not(.btn--secondary) {
+      .btn__inner {
+        background-color: #535353;
+        border: 0;
+      }
+    }
+  }
 }
 
 abbr.input-type__type {
