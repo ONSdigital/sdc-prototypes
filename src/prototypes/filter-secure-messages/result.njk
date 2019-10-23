@@ -30,12 +30,12 @@ layout: filter-secure-messages/views/_master
     </div>
 
     <div class="grid__col col-3@m">
-      <form class="u-mt-s" action="{{ pageInfo.rootPath }}/result.html">
+      <form class="u-mt-s" action="{{ pageInfo.rootPath }}/no-result.html">
         <label class="label" for="filter">Filter RU ref</label>
         <div class="grid--flex input-group">
           <div class="input-field">
             <p class="field">
-              <input type="text" id="filter" class="input input--text input-type__input input--w-6 number" pattern="[0-9]*" inputmode="numeric" autocomplete="off" min />
+              <input type="text" id="filter" class="input input--text input-type__input input--w-6 number" value="11110000243" pattern="[0-9]*" inputmode="numeric" autocomplete="off" min />
             </p>
           </div>
           <div class="filter-button">
@@ -46,6 +46,7 @@ layout: filter-secure-messages/views/_master
         </div>
         <p id="toofew" class="error hidden">Too few characters</p>
         <p id="toomany" class="error hidden">Too many characters</p>
+        <p id="clear" class="clear hidden"><a href="{{ pageInfo.rootPath }}/index.html">Clear filter</a></p>
       </form>
     </div>
   </div>
@@ -55,13 +56,13 @@ layout: filter-secure-messages/views/_master
       <nav class="section-nav" id="" aria-label="Section menu">
         <ul class="section-nav__list" aria-label="">
           <li class="section-nav__item">
-            <a href="" class="section-nav__link">My Messages</a>
+            <a href="" class="section-nav__link">My Messages (1)</a>
           </li>
           <li class="section-nav__item">
-            <a href="" class="section-nav__link">Open</a>
+            <a href="" class="section-nav__link">Open (4)</a>
           </li>
           <li class="section-nav__item section-nav__item--active">
-            <a href="" class="section-nav__link">Closed</a>
+            <a href="" class="section-nav__link">Closed (3)</a>
           </li>
           <li class="section-nav__item">
             <a href="" class="section-nav__link">Initial</a>

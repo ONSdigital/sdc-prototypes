@@ -34,7 +34,7 @@ layout: filter-secure-messages/views/_master
         <div class="grid--flex input-group">
           <div class="input-field">
             <p class="field">
-              <input type="text" id="filter" class="input input--text input-type__input input--w-6 number" pattern="[0-9]*" inputmode="numeric" autocomplete="off" min />
+              <input type="text" id="filter" class="input input--text input-type__input input--w-6 number" value="11110000243" pattern="[0-9]*" inputmode="numeric" autocomplete="off" min />
             </p>
           </div>
           <div class="filter-button">
@@ -45,13 +45,14 @@ layout: filter-secure-messages/views/_master
         </div>
         <p id="toofew" class="error hidden">Too few characters</p>
         <p id="toomany" class="error hidden">Too many characters</p>
+        <p id="clear" class="clear hidden"><a href="{{ pageInfo.rootPath }}/index.html">Clear filter</a></p>
       </form>
     </div>
   </div>
   <div class="grid grid--flex grid--between">
     <div class="grid__col col-8@m ">
       <p>This may be because they have not contacted the ONS or have been removed from the system</p>
-      <p>Check you have the correct RU Ref and try again or <a href="#">Show all messages</a>
+      <p>Check you have the correct RU Ref and try again or <a href="{{ pageInfo.rootPath }}/index.html">Show all messages</a>
       </p>
     </div>
   </div>
