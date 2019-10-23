@@ -1,0 +1,79 @@
+{% macro onsFeedback(params) %}
+    {% from "components/details/_macro.njk" import onsDetails %}
+    {% from "components/textarea/_macro.njk" import onsTextarea %}
+    {% from "components/input/_macro.njk" import onsInput %}
+    {% from "components/field/_macro.njk" import onsField %}
+    {% from "components/button/_macro.njk" import onsButton %}
+
+    {% call onsDetails({
+            "id": params.id,
+            "classes": "js-feedback",
+            "title": params.title,
+            "summaryAttributes": params.summaryAttributes,
+            "button": {
+                "close": params.closeButton.text,
+                "classes": params.closeButton.classes,
+                "attributes": params.closeButton.attributes
+            }
+        })
+    %}
+        <form
+            id="{{ params.id }}-form"
+            class="u-mt-s js-feedback-form"
+            method="POST"
+            action="{{ params.action }}"
+            novalidate
+            data-thank-you="{{ params.thankYouMessage }}"
+            data-error-message="{{ params.errorMessage }}">
+            {% if csrf_token %}
+                <input id="csrf_token" name="csrf_token" type="hidden" value="{{ csrf_token() }}" />
+            {% endif %}
+            {{
+                onsTextarea({
+                    "id":  params.textarea.id | default(params.id + '-textarea'),
+                    "name": params.textarea.name | default(params.id + '-textarea'),
+                    "label": params.textarea.label,
+                    "classes": "js-feedback-textarea" + (" " + params.textarea.classes if params.textarea.classes else ""),
+                    "value": params.textarea.value,
+                    "maxlength": params.textarea.maxlength,
+                    "charCountPlural": params.textarea.charCountPlural,
+                    "charCountSingular": params.textarea.charCountSingular,
+                    "attributes": params.textarea.attributes
+                })
+            }}
+            {{
+                onsInput({
+                    "id": params.name.id | default(params.id + '-name'),
+                    "name": params.name.name | default(params.id + '-name'),
+                    "label": params.name.label,
+                    "classes": "js-feedback-name" + (" " + params.name.classes if params.name.classes else ""),
+                    "value": params.name.value,
+                    "attributes": params.name.attributes,
+                    "autocomplete": "name"
+                })
+            }}
+            {{
+                onsInput({
+                    "id": params.email.id | default(params.id + '-email'),
+                    "type": "email",
+                    "name": params.email.name | default(params.id + '-email'),
+                    "label": params.email.label,
+                    "classes": "js-feedback-email" + (" " + params.email.classes if params.email.classes else ""),
+                    "value": params.name.value,
+                    "attributes": params.name.attributes
+                })
+            }}
+            {% call onsField({
+                "classes": "u-mt-l u-mb-s"
+            }) %}
+                {{
+                    onsButton({
+                        "text": params.sendButton.text,
+                        "classes": "js-feedback-send btn--loader",
+                        "attributes": params.sendButton.attributes
+                    })
+                }}
+            {% endcall %}
+        </form>
+    {% endcall %}
+{% endmacro %}
