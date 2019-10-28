@@ -1,5 +1,15 @@
 .btn-clear {
   display: block;
+
+  &:hover {
+    text-decoration: none !important;
+  }
+
+  .btn__inner {
+    &:after {
+      background-image: none !important;
+    }
+  }
 }
 
 .btn--disabled {

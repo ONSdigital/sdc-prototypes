@@ -5,6 +5,7 @@ class Radios {
     this.submitButton = [...document.querySelectorAll('button[type="submit"]')];
     this.inputs.forEach(input => input.addEventListener('click', this.showClearBtn.bind(this)));
     this.button.forEach(input => input.addEventListener('click', this.clearRadios.bind(this)));
+    this.button.forEach(input => input.classList.add('btn--disabled'));
   }
 
   showClearBtn() {
