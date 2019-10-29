@@ -8,7 +8,7 @@ layout: filter-secure-messages/views/_master
 {% block main %}
   <div class="grid grid--flex grid--between">
     <div class="grid__col col-9@m">
-      {% from "filter-secure-messages/components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+      {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
       {{ 
           onsBreadcrumb({
               "ariaLabel": 'Breadcrumb',
