@@ -1,5 +1,5 @@
 .btn-clear {
-  display: block;
+  display: table;
 
   &:hover {
     text-decoration: none !important;
@@ -7,6 +7,7 @@
 
   .btn__inner {
     &:after {
+      display: none !important;
       background-image: none !important;
     }
   }
