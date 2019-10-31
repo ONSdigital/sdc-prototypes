@@ -9,20 +9,13 @@ class Radios {
   }
 
   showClearBtn() {
-    console.log(this.inputs);
-    console.log(this.button);
-    console.log(this.submitButton);
     this.button.forEach(button => button.classList.remove('btn--disabled'));
-    // this.submitButton.forEach(input => input.classList.remove('u-mt-xl'));
-    // this.submitButton.forEach(input => input.classList.add('u-mt-xs'));
   }
 
-  clearRadios() {
+  clearRadios(event) {
+    event.preventDefault();
     this.inputs.forEach(input => (input.checked = false));
     this.button.forEach(input => input.classList.add('btn--disabled'));
-    console.log(this.submitButton);
-    // this.submitButton.forEach(input => input.classList.remove('u-mt-xs'));
-    // this.submitButton.forEach(input => input.classList.add('u-mt-xl'));
   }
 }
 
