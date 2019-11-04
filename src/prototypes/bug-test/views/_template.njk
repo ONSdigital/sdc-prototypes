@@ -15,13 +15,13 @@
     {% set assetsURL = "https://cdn.ons.gov.uk/sdc/design-system/" + (page.cdn or release_version) %}
 {% elif data and data.version %}
     {# Prototype kits #}
-    {% set assetsURL = "https://cdn.ons.gov.uk/sdc/design-system/13.8.4" %}
+    {% set assetsURL = "/" + data.version %}
 {% elif page.assetsURL %}
     {# Runner Dev #}
     {% set assetsURL = page.assetsURL %}
 {% else %}
     {# Development #}
-    {% set assetsURL = "https://cdn.ons.gov.uk/sdc/design-system/13.8.4/" %}
+    {% set assetsURL = "" %}
 {% endif %}
 
 {% if page and page.title %}
