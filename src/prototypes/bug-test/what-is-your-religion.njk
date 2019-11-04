@@ -1,0 +1,66 @@
+---
+version: 13.8.4
+layout: bug-test/views/_master
+---
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+{% from "components/details/_macro.njk" import onsDetails %}
+
+{% set form =  {
+    "method": "POST",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/relationships-intro.html"
+    }
+} %}
+
+{% block main %}
+    <div class="u-mb-s">
+        <a data-ga="click" data-ga-category="Navigation" data-ga-action="Previous link click" href="{{ pageInfo.rootPath }}" id="top-previous">Previous</a>
+    </div>
+    <div class="group" id="">
+        <div class="block" id="primary-person-list-collector">
+            {% call onsQuestion({
+                "title": "Do you usually live at?",
+                "id": "primary-confirmation-question",
+                "useFieldset": true
+            }) %}
+                {% call onsDetails({
+                    "title": "What does 'usually live' mean?"
+                }) %}
+                    <p>contents</p>
+                {% endcall %}
+                {{ onsRadios({
+                    "noField": false,
+                    "id": "you-live-here-answer",
+                    "name": "you-live-here-answer",
+                    "legend": "Do you usually live at?",
+                    "legendClasses": "u-vh",
+                    "radios": [
+                        {
+                            "id": "you-live-here-answer-0",
+                            "label": {
+                                "text": "Yes, I usually live here"
+                            },
+                            "attributes": {
+                                "data-action": pageInfo.rootPath + "/who-else.html"
+                            }
+                        },
+                        {
+                            "id": "you-live-here-answer-1",
+                            "label": {
+                                "text": "No, I don't usually live here"                            }
+                        }
+                    ]
+                }) }}
+            {% endcall %}
+        </div>
+    </div>
+
+    {{ onsButton({
+        "text": "Save and continue",
+        "classes": "u-ml-no u-mt-xl u-mb-xl"
+    }) }}
+
+{% endblock %}

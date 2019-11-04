@@ -1,0 +1,20 @@
+---
+title: Bug test
+group: Bug test
+version: 13.8.4
+layout: bug-test/views/_master
+---
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% block main %}
+    <h1 class="u-mt-l">Voluntary radio questions - control</h1>
+
+    <p>The purpose of this prototype is to test the users instinctive behaviour when needing to cancel a radio button selection.<p>
+
+    {{ onsButton({
+        "text": "Start prototype",
+        "url": pageInfo.rootPath + "/what-is-your-religion.html",
+        "classes": "u-mt-m u-mb-xl"
+    }) }}
+
+{% endblock %}

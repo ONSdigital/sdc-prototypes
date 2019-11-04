@@ -723,10 +723,12 @@
   dependencies:
     "@ons/design-system" "^13.3.0"
 
-"@ons/design-system/13.6.7@npm:@ons/design-system@13.6.7":
-  version "13.6.7"
-  resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-13.6.7.tgz#69c7c4b647fa10244c96fd9187aebcdfcbd07523"
-  integrity sha512-cKNcz/iS3lpVjZA8iRQgjP4d4Eb9KgPP4nq9GcVsXH9q86067JpiLUahBec0jvmTYJBXWtDgeYC4Zd6r/p27Zw==
+"@ons/design-system/13.8.4@npm:@ons/design-system@13.8.4":
+  version "13.8.4"
+  resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-13.8.4.tgz#510189a3b277e4059b56911420fc8da107002938"
+  integrity sha512-Y94UTAu1popxhaCoygEZTIpSQsAAiUTADnpkgZXP8GHSBCPZTHOk9rThpw8Yp+nTpy0caqKKOnUjh6az+NgiZQ==
+  dependencies:
+    "@ons/design-system" "^13.3.0"
 
 "@ons/design-system/4.1.0@npm:@ons/design-system@4.1.0":
   version "4.1.0"
