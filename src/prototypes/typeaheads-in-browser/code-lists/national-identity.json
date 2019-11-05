@@ -1,0 +1,1367 @@
+[
+  {
+    "code": 4,
+    "en-gb": "Afghan",
+    "cy": "Afghan"
+  },
+  {
+    "code": 248,
+    "en-gb": "Aland islander",
+    "cy": "Aland ynyswr"
+  },
+  {
+    "code": 8,
+    "en-gb": "Albanian",
+    "cy": "Albaneg"
+  },
+  {
+    "code": 12,
+    "en-gb": "Algerian",
+    "cy": "Algeria"
+  },
+  {
+    "code": 16,
+    "en-gb": "American samoan",
+    "cy": "Samoa Americanaidd"
+  },
+  {
+    "code": 20,
+    "en-gb": "Andorran",
+    "cy": "Andorran"
+  },
+  {
+    "code": 24,
+    "en-gb": "Angolan",
+    "cy": "Angolan"
+  },
+  {
+    "code": 660,
+    "en-gb": "Anguillan",
+    "cy": "Anguillan"
+  },
+  {
+    "code": 29,
+    "en-gb": "Antiguan",
+    "cy": "Antiguan"
+  },
+  {
+    "code": 28,
+    "en-gb": "Antiguan and barbudan",
+    "cy": "Antiguan a barbudan"
+  },
+  {
+    "code": 32,
+    "en-gb": "Argentinian",
+    "cy": "yr Ariannin"
+  },
+  {
+    "code": 51,
+    "en-gb": "Armenian",
+    "cy": "Armenia"
+  },
+  {
+    "code": 533,
+    "en-gb": "Aruban",
+    "cy": "Aruban"
+  },
+  {
+    "code": 36,
+    "en-gb": "Australian",
+    "cy": "Awstralia"
+  },
+  {
+    "code": 37,
+    "en-gb": "Australian aboriginal",
+    "cy": "Awstralia aboriginal"
+  },
+  {
+    "code": 40,
+    "en-gb": "Austrian",
+    "cy": "Awstria"
+  },
+  {
+    "code": 31,
+    "en-gb": "Azerbaijani",
+    "cy": "azerbaijani"
+  },
+  {
+    "code": 44,
+    "en-gb": "Bahamian",
+    "cy": "Bahamas"
+  },
+  {
+    "code": 48,
+    "en-gb": "Bahraini",
+    "cy": "Bahraini"
+  },
+  {
+    "code": 50,
+    "en-gb": "Bangladeshi",
+    "cy": "Bangladeshaidd"
+  },
+  {
+    "code": 52,
+    "en-gb": "Barbadian",
+    "cy": "Barbadian"
+  },
+  {
+    "code": 30,
+    "en-gb": "Barbudan",
+    "cy": "Barbudan"
+  },
+  {
+    "code": 426,
+    "en-gb": "Basotho",
+    "cy": "Basotho"
+  },
+  {
+    "code": 914,
+    "en-gb": "Basque",
+    "cy": "Basgeg"
+  },
+  {
+    "code": 112,
+    "en-gb": "Belarusian",
+    "cy": "Belarwseg"
+  },
+  {
+    "code": 56,
+    "en-gb": "Belgian",
+    "cy": "Gwlad Belg"
+  },
+  {
+    "code": 84,
+    "en-gb": "Belizean",
+    "cy": "Belizean"
+  },
+  {
+    "code": 204,
+    "en-gb": "Beninese",
+    "cy": "Beninese"
+  },
+  {
+    "code": 60,
+    "en-gb": "Bermudian",
+    "cy": "Bermudian"
+  },
+  {
+    "code": 64,
+    "en-gb": "Bhutanese",
+    "cy": "Bhutan"
+  },
+  {
+    "code": 68,
+    "en-gb": "Bolivian",
+    "cy": "Bolifia"
+  },
+  {
+    "code": 535,
+    "en-gb": "Bonaire, sint eustasius and saba islander",
+    "cy": "Bonaire, eustasius sint a ynyswr saba"
+  },
+  {
+    "code": 69,
+    "en-gb": "Bosnian",
+    "cy": "Bosnian"
+  },
+  {
+    "code": 70,
+    "en-gb": "Bosnian and herzegovinian",
+    "cy": "Bosnian a herzegovinian"
+  },
+  {
+    "code": 76,
+    "en-gb": "Brazilian",
+    "cy": "Brasil"
+  },
+  {
+    "code": 916,
+    "en-gb": "Breton",
+    "cy": "Llydaweg"
+  },
+  {
+    "code": 929,
+    "en-gb": "British overseas territories citizen",
+    "cy": "diriogaethau tramor Prydain dinesydd"
+  },
+  {
+    "code": 92,
+    "en-gb": "British virgin islander",
+    "cy": "ynyswr gwyryf Prydeinig"
+  },
+  {
+    "code": 96,
+    "en-gb": "Bruneian",
+    "cy": "Bruneian"
+  },
+  {
+    "code": 100,
+    "en-gb": "Bulgarian",
+    "cy": "Bwlgareg"
+  },
+  {
+    "code": 854,
+    "en-gb": "Burkinabe",
+    "cy": "Burkinabe"
+  },
+  {
+    "code": 104,
+    "en-gb": "Burmese",
+    "cy": "Burmese"
+  },
+  {
+    "code": 108,
+    "en-gb": "Burundian",
+    "cy": "Burundi"
+  },
+  {
+    "code": 116,
+    "en-gb": "Cambodian",
+    "cy": "Cambodieg"
+  },
+  {
+    "code": 120,
+    "en-gb": "Cameroonian",
+    "cy": "Cameroon"
+  },
+  {
+    "code": 124,
+    "en-gb": "Canadian",
+    "cy": "Canada"
+  },
+  {
+    "code": 912,
+    "en-gb": "Canary islander",
+    "cy": "ynyswr Canary"
+  },
+  {
+    "code": 132,
+    "en-gb": "Cape verdean",
+    "cy": "Cape Verde"
+  },
+  {
+    "code": 136,
+    "en-gb": "Caymanian",
+    "cy": "Caymanian"
+  },
+  {
+    "code": 140,
+    "en-gb": "Central african",
+    "cy": "Central african"
+  },
+  {
+    "code": 148,
+    "en-gb": "Chadian",
+    "cy": "Chadian"
+  },
+  {
+    "code": 86,
+    "en-gb": "Chagos islander, chagossian",
+    "cy": "Chagos ynyswr, chagossian"
+  },
+  {
+    "code": 931,
+    "en-gb": "Channel islander",
+    "cy": "ynyswr Channel"
+  },
+  {
+    "code": 152,
+    "en-gb": "Chilean",
+    "cy": "Chile"
+  },
+  {
+    "code": 156,
+    "en-gb": "Chinese",
+    "cy": "Tseiniaidd"
+  },
+  {
+    "code": 162,
+    "en-gb": "Christmas islander",
+    "cy": "ynyswr Nadolig"
+  },
+  {
+    "code": 166,
+    "en-gb": "Cocos islander",
+    "cy": "Cocos ynyswr"
+  },
+  {
+    "code": 170,
+    "en-gb": "Colombian",
+    "cy": "Colombia"
+  },
+  {
+    "code": 174,
+    "en-gb": "Comoran",
+    "cy": "Comoran"
+  },
+  {
+    "code": 180,
+    "en-gb": "Congolese (democratic republic of congo)",
+    "cy": "Congo (Gweriniaeth Ddemocrataidd y Congo)"
+  },
+  {
+    "code": 178,
+    "en-gb": "Congolese (republic of congo)",
+    "cy": "Congo (gweriniaeth o Congo)"
+  },
+  {
+    "code": 184,
+    "en-gb": "Cook islander",
+    "cy": "Cook ynyswr"
+  },
+  {
+    "code": 927,
+    "en-gb": "Cornish",
+    "cy": "Cornish"
+  },
+  {
+    "code": 188,
+    "en-gb": "Costa rican",
+    "cy": "Costa Rica"
+  },
+  {
+    "code": 191,
+    "en-gb": "Croatian",
+    "cy": "Croateg"
+  },
+  {
+    "code": 192,
+    "en-gb": "Cuban",
+    "cy": "Ciwba"
+  },
+  {
+    "code": 531,
+    "en-gb": "Curacaoan",
+    "cy": "Curacaoan"
+  },
+  {
+    "code": 203,
+    "en-gb": "Czech",
+    "cy": "Tsiec"
+  },
+  {
+    "code": 971,
+    "en-gb": "Czechoslovakian",
+    "cy": "Tsiecoslofacia"
+  },
+  {
+    "code": 208,
+    "en-gb": "Danish",
+    "cy": "Daneg"
+  },
+  {
+    "code": 262,
+    "en-gb": "Djiboutian",
+    "cy": "Djiboutian"
+  },
+  {
+    "code": 212,
+    "en-gb": "Dominican (dominica)",
+    "cy": "Dominica (Dominica)"
+  },
+  {
+    "code": 214,
+    "en-gb": "Dominican (dominican republic)",
+    "cy": "Dominica (Gweriniaeth Dominica)"
+  },
+  {
+    "code": 528,
+    "en-gb": "Dutch",
+    "cy": "Iseldireg"
+  },
+  {
+    "code": 999,
+    "en-gb": "Dutch antillean",
+    "cy": "Antillean Iseldiroedd"
+  },
+  {
+    "code": 626,
+    "en-gb": "East timorese",
+    "cy": "Dwyrain timorese"
+  },
+  {
+    "code": 218,
+    "en-gb": "Ecuadorian",
+    "cy": "Ecwador"
+  },
+  {
+    "code": 818,
+    "en-gb": "Egyptian",
+    "cy": "Aifft"
+  },
+  {
+    "code": 784,
+    "en-gb": "Emirati",
+    "cy": "Emirati"
+  },
+  {
+    "code": 226,
+    "en-gb": "Equatorial guinean",
+    "cy": "Gyhydeddol Guinea"
+  },
+  {
+    "code": 232,
+    "en-gb": "Eritrean",
+    "cy": "Eritreaidd"
+  },
+  {
+    "code": 233,
+    "en-gb": "Estonian",
+    "cy": "Estoneg"
+  },
+  {
+    "code": 231,
+    "en-gb": "Ethiopian",
+    "cy": "Ethiopia"
+  },
+  {
+    "code": 238,
+    "en-gb": "Falkland islander",
+    "cy": "ynyswr Falkland"
+  },
+  {
+    "code": 234,
+    "en-gb": "Faroese",
+    "cy": "Ffaroeg"
+  },
+  {
+    "code": 242,
+    "en-gb": "Fijian",
+    "cy": "Fijian"
+  },
+  {
+    "code": 608,
+    "en-gb": "Filipino",
+    "cy": "Tagalog"
+  },
+  {
+    "code": 246,
+    "en-gb": "Finnish",
+    "cy": "Ffindir"
+  },
+  {
+    "code": 250,
+    "en-gb": "French",
+    "cy": "Ffrangeg"
+  },
+  {
+    "code": 258,
+    "en-gb": "French polynesian",
+    "cy": "Polynesaidd Ffrangeg"
+  },
+  {
+    "code": 915,
+    "en-gb": "Frisian",
+    "cy": "Ffriseg"
+  },
+  {
+    "code": 878,
+    "en-gb": "Futun",
+    "cy": "Futun"
+  },
+  {
+    "code": 266,
+    "en-gb": "Gabonese",
+    "cy": "Gabon"
+  },
+  {
+    "code": 933,
+    "en-gb": "Gaelic",
+    "cy": "Gaeleg"
+  },
+  {
+    "code": 270,
+    "en-gb": "Gambian",
+    "cy": "Gambia"
+  },
+  {
+    "code": 268,
+    "en-gb": "Georgian",
+    "cy": "georgian"
+  },
+  {
+    "code": 276,
+    "en-gb": "German",
+    "cy": "Almaeneg"
+  },
+  {
+    "code": 288,
+    "en-gb": "Ghanaian, ghanian",
+    "cy": "Ghana, Ghana"
+  },
+  {
+    "code": 292,
+    "en-gb": "Gibraltese",
+    "cy": "Gibraltese"
+  },
+  {
+    "code": 300,
+    "en-gb": "Greek",
+    "cy": "Groeg"
+  },
+  {
+    "code": 901,
+    "en-gb": "Greek cypriot",
+    "cy": "Chypriad Groeg"
+  },
+  {
+    "code": 304,
+    "en-gb": "Greenlander",
+    "cy": "Greenlander"
+  },
+  {
+    "code": 308,
+    "en-gb": "Grenadian",
+    "cy": "Grenadian"
+  },
+  {
+    "code": 312,
+    "en-gb": "Guadeloupean",
+    "cy": "Guadeloupean"
+  },
+  {
+    "code": 316,
+    "en-gb": "Guamanian",
+    "cy": "Guamanian"
+  },
+  {
+    "code": 320,
+    "en-gb": "Guatemalan",
+    "cy": "Guatemalan"
+  },
+  {
+    "code": 831,
+    "en-gb": "Guernsey islander",
+    "cy": "Guernsey ynyswr"
+  },
+  {
+    "code": 254,
+    "en-gb": "Guianese",
+    "cy": "Guianese"
+  },
+  {
+    "code": 324,
+    "en-gb": "Guinean (guinea)",
+    "cy": "Guinean (gini)"
+  },
+  {
+    "code": 624,
+    "en-gb": "Guinean (guinea-bissau)",
+    "cy": "Guinean (gini bissau)"
+  },
+  {
+    "code": 328,
+    "en-gb": "Guyanan, guyanese",
+    "cy": "Guyanan, Gaiana"
+  },
+  {
+    "code": 332,
+    "en-gb": "Haitian",
+    "cy": "haitian"
+  },
+  {
+    "code": 333,
+    "en-gb": "Haredi",
+    "cy": "Haredi"
+  },
+  {
+    "code": 71,
+    "en-gb": "Herzegovinian",
+    "cy": "Herzegovinian"
+  },
+  {
+    "code": 340,
+    "en-gb": "Honduran",
+    "cy": "Honduras"
+  },
+  {
+    "code": 344,
+    "en-gb": "Hong kong chinese",
+    "cy": "Hong kong Tseiniaidd"
+  },
+  {
+    "code": 348,
+    "en-gb": "Hungarian",
+    "cy": "Hwngareg"
+  },
+  {
+    "code": 352,
+    "en-gb": "Icelandic",
+    "cy": "Islandeg"
+  },
+  {
+    "code": 296,
+    "en-gb": "I-kiribati",
+    "cy": "I-Kiribati"
+  },
+  {
+    "code": 356,
+    "en-gb": "Indian",
+    "cy": "Indiaidd"
+  },
+  {
+    "code": 360,
+    "en-gb": "Indonesian",
+    "cy": "indonesian"
+  },
+  {
+    "code": 364,
+    "en-gb": "Iranian",
+    "cy": "Iran"
+  },
+  {
+    "code": 368,
+    "en-gb": "Iraqi",
+    "cy": "Irac"
+  },
+  {
+    "code": 372,
+    "en-gb": "Irish",
+    "cy": "Gwyddeleg"
+  },
+  {
+    "code": 376,
+    "en-gb": "Israeli",
+    "cy": "Israel"
+  },
+  {
+    "code": 380,
+    "en-gb": "Italian",
+    "cy": "Eidaleg"
+  },
+  {
+    "code": 384,
+    "en-gb": "Ivorian",
+    "cy": "Ivorian"
+  },
+  {
+    "code": 388,
+    "en-gb": "Jamaican",
+    "cy": "Jamaican"
+  },
+  {
+    "code": 392,
+    "en-gb": "Japanese",
+    "cy": "Siapan"
+  },
+  {
+    "code": 832,
+    "en-gb": "Jersey islander",
+    "cy": "Jersey ynyswr"
+  },
+  {
+    "code": 393,
+    "en-gb": "Jewish",
+    "cy": "Iddewig"
+  },
+  {
+    "code": 400,
+    "en-gb": "Jordanian",
+    "cy": "Jordanian"
+  },
+  {
+    "code": 398,
+    "en-gb": "Kazakhstani",
+    "cy": "Kazakhstani"
+  },
+  {
+    "code": 404,
+    "en-gb": "Kenyan",
+    "cy": "Kenya"
+  },
+  {
+    "code": 657,
+    "en-gb": "Kittitian",
+    "cy": "Kittitian"
+  },
+  {
+    "code": 659,
+    "en-gb": "Kittitian and nevisian",
+    "cy": "Kittitian a nevisian"
+  },
+  {
+    "code": 408,
+    "en-gb": "Korean (north korea)",
+    "cy": "Corea (korea gogledd)"
+  },
+  {
+    "code": 410,
+    "en-gb": "Korean (south korea)",
+    "cy": "Corea (de Korea)"
+  },
+  {
+    "code": 951,
+    "en-gb": "Kosovan",
+    "cy": "Kosovo"
+  },
+  {
+    "code": 414,
+    "en-gb": "Kuwaiti",
+    "cy": "Kuwaiti"
+  },
+  {
+    "code": 417,
+    "en-gb": "Kyrgyzstani",
+    "cy": "Kyrgyzstani"
+  },
+  {
+    "code": 418,
+    "en-gb": "Laotian",
+    "cy": "Laotian"
+  },
+  {
+    "code": 428,
+    "en-gb": "Latvian",
+    "cy": "Latfieg"
+  },
+  {
+    "code": 422,
+    "en-gb": "Lebanese",
+    "cy": "Libanus"
+  },
+  {
+    "code": 430,
+    "en-gb": "Liberian",
+    "cy": "Liberian"
+  },
+  {
+    "code": 434,
+    "en-gb": "Libyan",
+    "cy": "Libya"
+  },
+  {
+    "code": 438,
+    "en-gb": "Liechtensteiner",
+    "cy": "Liechtensteiner"
+  },
+  {
+    "code": 440,
+    "en-gb": "Lithuanian",
+    "cy": "Lithwaneg"
+  },
+  {
+    "code": 442,
+    "en-gb": "Luxembourger",
+    "cy": "Luxembourger"
+  },
+  {
+    "code": 446,
+    "en-gb": "Macao chinese",
+    "cy": "Macao Tseiniaidd"
+  },
+  {
+    "code": 807,
+    "en-gb": "Macedonian",
+    "cy": "macedonian"
+  },
+  {
+    "code": 450,
+    "en-gb": "Madagascan, malagasy",
+    "cy": "Madagascar, Malagasy"
+  },
+  {
+    "code": 175,
+    "en-gb": "Mahoran",
+    "cy": "Mahoran"
+  },
+  {
+    "code": 454,
+    "en-gb": "Malawian",
+    "cy": "Malawi"
+  },
+  {
+    "code": 458,
+    "en-gb": "Malaysian",
+    "cy": "Malaysia"
+  },
+  {
+    "code": 462,
+    "en-gb": "Maldivan",
+    "cy": "Maldivan"
+  },
+  {
+    "code": 466,
+    "en-gb": "Malian",
+    "cy": "Mali"
+  },
+  {
+    "code": 470,
+    "en-gb": "Maltese",
+    "cy": "maltese"
+  },
+  {
+    "code": 833,
+    "en-gb": "Manx",
+    "cy": "Manx"
+  },
+  {
+    "code": 555,
+    "en-gb": "Maori",
+    "cy": "Maori"
+  },
+  {
+    "code": 584,
+    "en-gb": "Marshallese",
+    "cy": "Marshallese"
+  },
+  {
+    "code": 474,
+    "en-gb": "Martinique french",
+    "cy": "french Martinique"
+  },
+  {
+    "code": 478,
+    "en-gb": "Mauritanian",
+    "cy": "Mauritania"
+  },
+  {
+    "code": 480,
+    "en-gb": "Mauritian",
+    "cy": "Mauritian"
+  },
+  {
+    "code": 484,
+    "en-gb": "Mexican",
+    "cy": "Mecsicanaidd"
+  },
+  {
+    "code": 583,
+    "en-gb": "Micronesian",
+    "cy": "Micronesian"
+  },
+  {
+    "code": 498,
+    "en-gb": "Moldovian",
+    "cy": "Moldovian"
+  },
+  {
+    "code": 492,
+    "en-gb": "Monacan",
+    "cy": "MONACAN"
+  },
+  {
+    "code": 496,
+    "en-gb": "Mongolian",
+    "cy": "Mongolian"
+  },
+  {
+    "code": 499,
+    "en-gb": "Montenegrin",
+    "cy": "Montenegrin"
+  },
+  {
+    "code": 500,
+    "en-gb": "Montserratian",
+    "cy": "Montserratian"
+  },
+  {
+    "code": 504,
+    "en-gb": "Moroccan",
+    "cy": "Moroco"
+  },
+  {
+    "code": 72,
+    "en-gb": "Motswana",
+    "cy": "Motswana"
+  },
+  {
+    "code": 508,
+    "en-gb": "Mozambican",
+    "cy": "Mozambican"
+  },
+  {
+    "code": 516,
+    "en-gb": "Namibian",
+    "cy": "Namibian"
+  },
+  {
+    "code": 520,
+    "en-gb": "Nauruan",
+    "cy": "Nauruan"
+  },
+  {
+    "code": 524,
+    "en-gb": "Nepalese",
+    "cy": "Nepal"
+  },
+  {
+    "code": 999,
+    "en-gb": "Netherlands antilles",
+    "cy": "Antilles yr Iseldiroedd"
+  },
+  {
+    "code": 658,
+    "en-gb": "Nevisian",
+    "cy": "Nevisian"
+  },
+  {
+    "code": 540,
+    "en-gb": "New caledonian",
+    "cy": "Caledonaidd newydd"
+  },
+  {
+    "code": 554,
+    "en-gb": "New zealander",
+    "cy": "Seland newydd"
+  },
+  {
+    "code": 558,
+    "en-gb": "Nicaraguan",
+    "cy": "Nicaragwa"
+  },
+  {
+    "code": 562,
+    "en-gb": "Nigerian (niger)",
+    "cy": "Nigeria (niger)"
+  },
+  {
+    "code": 566,
+    "en-gb": "Nigerian (nigeria)",
+    "cy": "Nigeria (nigeria)"
+  },
+  {
+    "code": 570,
+    "en-gb": "Niuean",
+    "cy": "Niuean"
+  },
+  {
+    "code": 548,
+    "en-gb": "Ni-vanuatu",
+    "cy": "Ni-Vanuatu"
+  },
+  {
+    "code": 574,
+    "en-gb": "Norfolk islander",
+    "cy": "Norfolk ynyswr"
+  },
+  {
+    "code": 580,
+    "en-gb": "Northern mariana islander",
+    "cy": "ynyswr Mariana Northern"
+  },
+  {
+    "code": 578,
+    "en-gb": "Norwegian",
+    "cy": "norwegian"
+  },
+  {
+    "code": 512,
+    "en-gb": "Omani",
+    "cy": "Oman"
+  },
+  {
+    "code": 586,
+    "en-gb": "Pakistani",
+    "cy": "Pacistanaidd"
+  },
+  {
+    "code": 585,
+    "en-gb": "Palauan",
+    "cy": "Palauan"
+  },
+  {
+    "code": 275,
+    "en-gb": "Palestinian",
+    "cy": "Palesteina"
+  },
+  {
+    "code": 591,
+    "en-gb": "Panamanian",
+    "cy": "Panamanian"
+  },
+  {
+    "code": 598,
+    "en-gb": "Papua new guinean",
+    "cy": "Papua Guinea newydd"
+  },
+  {
+    "code": 600,
+    "en-gb": "Paraguayan",
+    "cy": "Paraguayan"
+  },
+  {
+    "code": 604,
+    "en-gb": "Peruvian",
+    "cy": "Periw"
+  },
+  {
+    "code": 612,
+    "en-gb": "Pitcairn islander",
+    "cy": "Pitcairn ynyswr"
+  },
+  {
+    "code": 616,
+    "en-gb": "Polish",
+    "cy": "Pwyleg"
+  },
+  {
+    "code": 620,
+    "en-gb": "Portuguese",
+    "cy": "Portiwgaleg"
+  },
+  {
+    "code": 630,
+    "en-gb": "Puerto rican",
+    "cy": "Puerto Rico"
+  },
+  {
+    "code": 634,
+    "en-gb": "Qatari",
+    "cy": "Qatar"
+  },
+  {
+    "code": 638,
+    "en-gb": "Reunion french",
+    "cy": "french aduniad"
+  },
+  {
+    "code": 642,
+    "en-gb": "Romanian",
+    "cy": "Rwmaneg"
+  },
+  {
+    "code": 935,
+    "en-gb": "Romany",
+    "cy": "Romany"
+  },
+  {
+    "code": 643,
+    "en-gb": "Russian",
+    "cy": "Rwsieg"
+  },
+  {
+    "code": 646,
+    "en-gb": "Rwandan",
+    "cy": "Rwanda"
+  },
+  {
+    "code": 732,
+    "en-gb": "Sahraouian, sahrawi, sahrawian",
+    "cy": "Sahraouian, sahrawi, sahrawian"
+  },
+  {
+    "code": 222,
+    "en-gb": "Salvadoran",
+    "cy": "Salvadoran"
+  },
+  {
+    "code": 674,
+    "en-gb": "Sammarinese",
+    "cy": "Sammarinese"
+  },
+  {
+    "code": 882,
+    "en-gb": "Samoan",
+    "cy": "Samoa"
+  },
+  {
+    "code": 678,
+    "en-gb": "Sao tomean",
+    "cy": "Sao tomean"
+  },
+  {
+    "code": 682,
+    "en-gb": "Saudi arabian",
+    "cy": "Saudi Arabia"
+  },
+  {
+    "code": 686,
+    "en-gb": "Senegalese",
+    "cy": "Senegal"
+  },
+  {
+    "code": 688,
+    "en-gb": "Serbian",
+    "cy": "Serbia"
+  },
+  {
+    "code": 974,
+    "en-gb": "Serbian and montenegrin",
+    "cy": "Serbia a Montenegrin"
+  },
+  {
+    "code": 690,
+    "en-gb": "Seychellois",
+    "cy": "Seychellois"
+  },
+  {
+    "code": 694,
+    "en-gb": "Sierra leonean",
+    "cy": "Sierra Leone"
+  },
+  {
+    "code": 702,
+    "en-gb": "Singaporean",
+    "cy": "Singaporaidd"
+  },
+  {
+    "code": 534,
+    "en-gb": "Sint maartener",
+    "cy": "Sint maartener"
+  },
+  {
+    "code": 703,
+    "en-gb": "Slovak, slovakian",
+    "cy": "Slofacia, Slofacia"
+  },
+  {
+    "code": 705,
+    "en-gb": "Slovenian",
+    "cy": "slovenian"
+  },
+  {
+    "code": 90,
+    "en-gb": "Solomon islander",
+    "cy": "solomon ynyswr"
+  },
+  {
+    "code": 706,
+    "en-gb": "Somali",
+    "cy": "Somali"
+  },
+  {
+    "code": 707,
+    "en-gb": "Somalilander",
+    "cy": "Somalilander"
+  },
+  {
+    "code": 710,
+    "en-gb": "South african",
+    "cy": "De african"
+  },
+  {
+    "code": 728,
+    "en-gb": "South sudanese",
+    "cy": "De Sudan"
+  },
+  {
+    "code": 972,
+    "en-gb": "Soviet",
+    "cy": "Sofietaidd"
+  },
+  {
+    "code": 913,
+    "en-gb": "Spanish",
+    "cy": "Sbaeneg"
+  },
+  {
+    "code": 144,
+    "en-gb": "Sri lankan",
+    "cy": "Sri Lanka"
+  },
+  {
+    "code": 652,
+    "en-gb": "St barthelemy french",
+    "cy": "St barthelemy french"
+  },
+  {
+    "code": 654,
+    "en-gb": "St helenian",
+    "cy": "St helenian"
+  },
+  {
+    "code": 662,
+    "en-gb": "St lucian",
+    "cy": "St Lucian"
+  },
+  {
+    "code": 663,
+    "en-gb": "St martin french",
+    "cy": "martin french St"
+  },
+  {
+    "code": 670,
+    "en-gb": "St vincent and the grenadines",
+    "cy": "St Vincent a'r Grenadines"
+  },
+  {
+    "code": 729,
+    "en-gb": "Sudanese",
+    "cy": "Swdan"
+  },
+  {
+    "code": 740,
+    "en-gb": "Surinamese",
+    "cy": "Surinamese"
+  },
+  {
+    "code": 744,
+    "en-gb": "Svalbard and jan mayen islander",
+    "cy": "Svalbard a Jan Mayen ynyswr"
+  },
+  {
+    "code": 748,
+    "en-gb": "Swazi",
+    "cy": "Swazi"
+  },
+  {
+    "code": 752,
+    "en-gb": "Swedish",
+    "cy": "Swedeg"
+  },
+  {
+    "code": 756,
+    "en-gb": "Swiss",
+    "cy": "Swistir"
+  },
+  {
+    "code": 760,
+    "en-gb": "Syrian",
+    "cy": "Syria"
+  },
+  {
+    "code": 158,
+    "en-gb": "Taiwanese",
+    "cy": "Taiwanese"
+  },
+  {
+    "code": 762,
+    "en-gb": "Tajikistani",
+    "cy": "Tajikistani"
+  },
+  {
+    "code": 834,
+    "en-gb": "Tanzanian",
+    "cy": "Tanzanian"
+  },
+  {
+    "code": 764,
+    "en-gb": "Thai",
+    "cy": "thai"
+  },
+  {
+    "code": 782,
+    "en-gb": "Tobagonian",
+    "cy": "Tobagonian"
+  },
+  {
+    "code": 768,
+    "en-gb": "Togolese",
+    "cy": "Togo"
+  },
+  {
+    "code": 772,
+    "en-gb": "Tokelauan",
+    "cy": "Tokelauan"
+  },
+  {
+    "code": 776,
+    "en-gb": "Tongan",
+    "cy": "Tongan"
+  },
+  {
+    "code": 781,
+    "en-gb": "Trinidadian",
+    "cy": "Trinidadian"
+  },
+  {
+    "code": 780,
+    "en-gb": "Trinidadian and tobagonian",
+    "cy": "Trinidadian a tobagonian"
+  },
+  {
+    "code": 788,
+    "en-gb": "Tunisian",
+    "cy": "Tunisian"
+  },
+  {
+    "code": 792,
+    "en-gb": "Turkish",
+    "cy": "turkish"
+  },
+  {
+    "code": 902,
+    "en-gb": "Turkish cypriot",
+    "cy": "Chypriad Twrcaidd"
+  },
+  {
+    "code": 795,
+    "en-gb": "Turkmenistani",
+    "cy": "Turkmenistani"
+  },
+  {
+    "code": 796,
+    "en-gb": "Turks and caicos islander",
+    "cy": "Ynysoedd Turks a Caicos Islander"
+  },
+  {
+    "code": 798,
+    "en-gb": "Tuvaluan",
+    "cy": "Tuvaluan"
+  },
+  {
+    "code": 800,
+    "en-gb": "Ugandan",
+    "cy": "Uganda"
+  },
+  {
+    "code": 804,
+    "en-gb": "Ukrainian",
+    "cy": "Wcreineg"
+  },
+  {
+    "code": 932,
+    "en-gb": "Ulster scots",
+    "cy": "Sgoteg Wlster"
+  },
+  {
+    "code": 858,
+    "en-gb": "Uruguayan",
+    "cy": "Uruguayan"
+  },
+  {
+    "code": 840,
+    "en-gb": "Us citizen",
+    "cy": "ni dinesydd"
+  },
+  {
+    "code": 850,
+    "en-gb": "Us virgin islander",
+    "cy": "Ni ynyswr gwyryf"
+  },
+  {
+    "code": 860,
+    "en-gb": "Uzbekistani",
+    "cy": "Uzbekistani"
+  },
+  {
+    "code": 862,
+    "en-gb": "Venezuelan",
+    "cy": "Venezuela"
+  },
+  {
+    "code": 704,
+    "en-gb": "Vietnamese",
+    "cy": "Fietnameg"
+  },
+  {
+    "code": 876,
+    "en-gb": "Wallis and futuna islander",
+    "cy": "Wallis a Futuna ynyswr"
+  },
+  {
+    "code": 877,
+    "en-gb": "Wallisian",
+    "cy": "Wallisian"
+  },
+  {
+    "code": 887,
+    "en-gb": "Yemeni",
+    "cy": "Yemeni"
+  },
+  {
+    "code": 973,
+    "en-gb": "Yugoslav",
+    "cy": "Iwgoslafaidd"
+  },
+  {
+    "code": 894,
+    "en-gb": "Zambian",
+    "cy": "Zambia"
+  },
+  {
+    "code": 716,
+    "en-gb": "Zimbabwean",
+    "cy": "Zimbabwe"
+  }
+]

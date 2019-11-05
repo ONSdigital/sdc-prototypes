@@ -1,0 +1,42 @@
+---
+version: 5.0.1
+layout: typeaheads-in-browser/views/_master
+---
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% block main %}
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/work-address.html">Previous</a>
+    <form class="js-question-no-summary" action="{{ pageInfo.parentPath }}/summary.html?previous={{ pageInfo.path }}.html">
+        <fieldset class="u-mt-s">
+            <legend><h1 class="u-fs-l">Can you confirm this address is correct?</h1></legend>
+            <p class="js-address-confirm" data-address-input-url="{{ pageInfo.parentPath }}/work-address.html"></p>
+            {{ onsRadios({
+                "name": "address-confirm",
+                "radios": [
+                    {
+                        "id": "yes",
+                        "label": {
+                            "text": "Yes, this address is correct"
+                        }
+                    },
+                    {
+                        "id": "no",
+                        "label": {
+                            "text": "No, I need to change this"
+                        },
+                        "attributes": {
+                            "data-action-url": pageInfo.parentPath + "/work-address.html"
+                        }
+                    }
+                ]
+            }) }}
+        </fieldset>
+        {{
+            onsButton({
+                "text": "Save and continue",
+                "classes": "u-mt-l"
+            })
+        }}
+    </form>
+{% endblock %}

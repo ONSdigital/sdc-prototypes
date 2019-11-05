@@ -1,0 +1,73 @@
+---
+version: 5.0.1
+layout: typeaheads-in-browser/views/_master
+---
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+
+{% block main %}
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/student-check.html">Previous</a>
+    <form action="{{ pageInfo.parentPath }}/main-language.html">
+        {{ 
+            onsRadios({
+                "legend": " <h1 class=\"u-fs-l\">What is your country of birth?</h1>",
+                "name": "country-of-birth",
+                "classes": "u-mt-s",
+                "radios": [
+                    {
+                        "id": "england",
+                        "label": {
+                            "text": "England"
+                        },
+                        "name": "England"
+                    },
+                    {
+                        "id": "wales",
+                        "label": {
+                            "text": "Wales"
+                        },
+                        "name": "Wales"
+                    },
+                     {
+                        "id": "scotland",
+                        "label": {
+                            "text": "Scotland"
+                        },
+                        "name": "scotland"
+                    },
+                    {
+                        "id": "northern-ireland",
+                        "label": {
+                            "text": "Northern Ireland"
+                        },
+                        "name": "northern-ireland"
+                    },
+                    {
+                        "id": "replublic-of-ireland",
+                        "label": {
+                            "text": "Republic of Ireland"
+                        },
+                        "name": "replublic-of-ireland"
+                    },
+                    {
+                        "id": "other",
+                        "label": {
+                            "text": "Elsewhere",
+                            "description": "You can enter the country of birth on the next question"
+                        },
+                        "name": "elsewhere",
+                        "attributes": {
+                            "data-action-url": pageInfo.parentPath + "/country-of-birth-other.html"
+                        }
+                    }
+                ]
+            }) 
+        }}
+        {{
+           onsButton({
+                "text": "Save and continue",
+                "classes": "u-mt-l"
+            })
+        }}
+    </form>
+{% endblock %}
