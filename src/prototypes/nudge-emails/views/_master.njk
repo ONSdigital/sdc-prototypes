@@ -81,16 +81,37 @@
 </header>
 {% endblock %}
 
-{% block page %}
+
+{% block pageContent %}
     {% block preMain %}{% endblock %}
-    <div class="page__container container container--wide {{ containerClasses }}">
-       <div class="grid">
-            <div class="grid__col col-12@m">
-                <main id="main-content" class="page__main {{ pageClasses }}">
-                {% block main %}{% endblock %}
-                </main>
-            </div>
-        </div>
+    <div class="page__container container container--wide">
+    {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+    {{ 
+        onsBreadcrumb({
+            "ariaLabel": 'Breadcrumb',
+            "itemsList": [
+                {
+                    "url": '/',
+                    "text": 'Home'
+                },
+                {
+                    "url": '/surveys',
+                    "text": 'Surveys'
+                },
+                {
+                    "url": '/009-MBS',
+                    "text": '009 MBS'
+                },
+                {
+                    "text": '1912',
+                    "current": true
+                }
+            ]
+        }) 
+    }}
+      <main id="main-content" class="page__main {{ pageClasses }}">
+          {% block main %}{% endblock %}
+      </main>
     </div>
 {% endblock %}
 
