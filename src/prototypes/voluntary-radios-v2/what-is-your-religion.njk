@@ -1,6 +1,6 @@
 ---
 version: 13.8.3
-layout: voluntary-radios-v2/views/_master
+layout: voluntary-radios-v1/views/_master
 ---
 {% from "components/question/_macro.njk" import onsQuestion %}
 {% from "components/button/_macro.njk" import onsButton %}
@@ -10,12 +10,13 @@ layout: voluntary-radios-v2/views/_master
 {% set form =  {
     "method": "GET",
     "attributes": {
-        "action":  pageInfo.rootPath + "/relationships-intro.html"
+        "action":  pageInfo.rootPath + "/ethnic-group.html",
+        "autocomplete": "false"
     }
 } %}
 
 {% block main %}
-   <a href="{{ pageInfo.rootPath }}/your-name.html">Previous</a>
+   <a href="{{ pageInfo.rootPath + '/marriage-type.html' }}">Previous</a>
     {% call onsQuestion({
         "title": "What is your religion?",
         "useFieldset": true
@@ -23,7 +24,7 @@ layout: voluntary-radios-v2/views/_master
         {% call onsPanel({ 
 
         }) %}
-            <p>This question is voluntary.</p>
+            <p>This question is <strong>voluntary</strong></p>
         {% endcall %}
 
         {{ onsRadios({
@@ -36,9 +37,6 @@ layout: voluntary-radios-v2/views/_master
                     "id": "no-religion",
                     "label": {
                         "text": "No religion"
-                    },
-                    "attributes": {
-                        "data-action": pageInfo.rootPath + "/who-else.html"
                     }
                 },
                 {
@@ -80,14 +78,17 @@ layout: voluntary-radios-v2/views/_master
                 },
                 {
                     "id": "other-radio",
+                    "classes": "voluntary",
                     "label": {
-                        "text": "Any other religion",
-                        "description": "Select to enter answer"
+                        "text": "Any other religion"
                     },
                     "value": "other",
                     "other": {
                         "id": "other-textbox",
                         "name": "other-answer",
+                        "attributes": {
+                            "autocomplete": "off"
+                        },
                         "label": {
                             "text": "Enter religion"
                         }
@@ -99,13 +100,13 @@ layout: voluntary-radios-v2/views/_master
     {{ onsButton({
         "text": "Clear selection",
         "type": "button",
-        "classes": "btn--secondary btn--small u-mt-s u-vh btn-clear"
+        "url": "/prototypes/voluntary-radios-v1/what-is-your-religion.html",
+        "classes": "btn--secondary btn--small btn-clear u-mt-s"
     }) }}
-    <div class="u-mt-m">
+
     {{ onsButton({
         "text": "Save and continue",
         "classes": "u-ml-no u-mt-xl u-mb-xl"
     }) }}
-    </div>
 
 {% endblock %}
