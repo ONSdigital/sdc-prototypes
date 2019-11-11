@@ -1,0 +1,94 @@
+---
+version: 13.8.3
+layout: voluntary-radios-v1/views/_master
+---
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/what-is-your-religion.html"
+    }
+} %}
+
+{% block main %}
+   <a href="{{ pageInfo.rootPath + '/what-is-your-sex.html' }}">Previous</a>
+    {% call onsQuestion({
+        "title": "On 13 December 2019, what is your legal marital or registered civil partnership status?",
+        "useFieldset": true
+    }) %}
+
+        {{ onsRadios({
+            "noField": true,
+            "id": "marriage-type-answer",
+            "name": "marriage-type-answer",
+            "classes": "js-radios",
+            "radios": [
+                {
+                    "id": "marriage-type-answer-0",
+                    "label": {
+                        "text": "Never married and never registered a civil partnership"
+                    }
+                },
+                {
+                    "id": "marriage-type-answer-1",
+                    "label": {
+                        "text": "Married"
+                    }
+                },
+                {
+                    "id": "marriage-type-answer-2",
+                    "label": {
+                        "text": "In a registered civil partnership"
+                    }
+                },
+                {
+                    "id": "marriage-type-answer-3",
+                    "label": {
+                        "text": "Separated, but still legally married"
+                    }
+                },
+                {
+                    "id": "marriage-type-answer-4",
+                    "label": {
+                        "text": "Separated, but still legally in a civil partnership"
+                    }
+                },
+                {
+                    "id": "marriage-type-answer-5",
+                    "label": {
+                        "text": "Divorced"
+                    }
+                },
+                {
+                    "id": "marriage-type-answer-6",
+                    "label": {
+                        "text": "Formerly in a civil partnership which is now legally dissolved"
+                    }
+                },
+                {
+                    "id": "marriage-type-answer-7",
+                    "label": {
+                        "text": "Widowed"
+                    }
+                },
+                {
+                    "id": "marriage-type-answer-8",
+                    "label": {
+                        "text": "Surviving partner from a registered civil partnership"
+                    }
+                }
+            ]
+        }) }}
+    {% endcall %}
+
+
+    {{ onsButton({
+        "text": "Save and continue",
+        "classes": "u-ml-no u-mt-xl u-mb-xl"
+    }) }}
+
+{% endblock %}

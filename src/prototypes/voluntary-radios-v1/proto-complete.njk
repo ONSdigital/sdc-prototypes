@@ -1,0 +1,14 @@
+---
+version: 13.8.3
+layout: voluntary-radios-v1/views/_master
+---
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% block main %}
+    <h1 class="u-mt-l">End of prototype</h1>
+
+    <p>Thank you for helping us test this prototype.<p>
+
+    <a href="{{ pageInfo.rootPath }}">Start again</a>
+
+{% endblock %}

@@ -727,6 +727,15 @@
   version "13.6.7"
   resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-13.6.7.tgz#69c7c4b647fa10244c96fd9187aebcdfcbd07523"
   integrity sha512-cKNcz/iS3lpVjZA8iRQgjP4d4Eb9KgPP4nq9GcVsXH9q86067JpiLUahBec0jvmTYJBXWtDgeYC4Zd6r/p27Zw==
+  dependencies:
+    "@ons/design-system" "^13.3.0"
+
+"@ons/design-system/13.8.3@npm:@ons/design-system@13.8.3":
+  version "13.8.3"
+  resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-13.8.3.tgz#6d7b3cb86dfd5a092605dc4d14d94623f4b6d57b"
+  integrity sha512-/v4AxIBYoIoAbLzgjfvsD/fLW6dR6xbx/kCWLo5piOtsqc2L9fMMZ2Xm+7iWmFk7fNdX9OLZN4Xe3Q2KKuTATA==
+  dependencies:
+    "@ons/design-system" "^13.3.0"
 
 "@ons/design-system/4.1.0@npm:@ons/design-system@4.1.0":
   version "4.1.0"
