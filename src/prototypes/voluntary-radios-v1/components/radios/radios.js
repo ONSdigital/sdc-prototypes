@@ -3,9 +3,15 @@ class Radios {
     this.inputs = [...context.querySelectorAll('.js-radio')];
     this.button = [...document.querySelectorAll('.btn-clear')];
     this.submitButton = [...document.querySelectorAll('button[type="submit"]')];
+    this.otherField = [document.querySelector('#other-textbox')];
+    this.otherFieldRadio = [...document.querySelectorAll('.voluntary')];
     this.inputs.forEach(input => input.addEventListener('click', this.showClearBtn.bind(this)));
     this.button.forEach(input => input.addEventListener('click', this.clearRadios.bind(this)));
+    this.otherField.forEach(input => input.addEventListener('click', this.clearRadios.bind(this)));
+    this.otherField.forEach(input => input.addEventListener('click', this.checkRadio.bind(this)));
+    this.otherFieldRadio.forEach(input => input.addEventListener('click', this.checkRadio.bind(this)));
     this.button.forEach(input => input.classList.add('btn--disabled'));
+    this.button.forEach(input => input.setAttribute('disabled', 'true'));
   }
 
   showClearBtn() {
@@ -15,7 +21,14 @@ class Radios {
   clearRadios(event) {
     event.preventDefault();
     this.inputs.forEach(input => (input.checked = false));
+    this.otherField.forEach(input => (input.value = ''));
     this.button.forEach(input => input.classList.add('btn--disabled'));
+  }
+
+  checkRadio() {
+    this.otherFieldRadio.forEach(input => (input.checked = true));
+    this.button.forEach(input => input.classList.remove('btn--disabled'));
+    this.otherField.forEach(input => input.focus());
   }
 }
 

@@ -10,15 +10,15 @@ layout: voluntary-radios-v1/views/_master
 {% set form =  {
     "method": "GET",
     "attributes": {
-        "action":  pageInfo.rootPath + "/sexual-orientation.html",
-        "autocomplete": "false"
+        "action":  pageInfo.rootPath + "/gender.html",
+        "autocomplete": "false"        
     }
 } %}
 
 {% block main %}
-   <a href="{{ pageInfo.rootPath + '/ethnic-group.html' }}">Previous</a>
+   <a href="{{ pageInfo.rootPath + '/what-is-your-religion.html' }}">Previous</a>
     {% call onsQuestion({
-        "title": "What is your religion?",
+        "title": "Which of the following best describes your sexual orientation?",
         "useFieldset": true
     }) %}
         {% call onsPanel({ 
@@ -29,59 +29,33 @@ layout: voluntary-radios-v1/views/_master
 
         {{ onsRadios({
             "noField": true,
-            "id": "what-is-your-religion",
-            "name": "what-is-your-religion",
+            "id": "what-is-your-sexual-orientation",
+            "name": "what-is-your-sexual-orientation",
             "classes": "js-radios",
             "radios": [
                 {
-                    "id": "no-religion",
+                    "id": "sexual-orientation-answer-0",
                     "label": {
-                        "text": "No religion"
+                        "text": "Straight or Heterosexual"
                     }
                 },
                 {
-                    "id": "christian",
+                    "id": "sexual-orientation-answer-1",
                     "label": {
-                        "text": "Christian",
-                        "description": "Including Church of England, Catholic, Protestant and all other Christian denominations"
+                        "text": "Gay or Lesbian"
                     }
                 },
                 {
-                    "id": "buddhist",
+                    "id": "sexual-orientation-answer-2",
                     "label": {
-                        "text": "Buddhist"
-                    }
-                },
-                {
-                    "id": "hindu",
-                    "label": {
-                        "text": "Hindu"
-                    }
-                },
-                {
-                    "id": "jewish",
-                    "label": {
-                        "text": "Jewish"
-                    }
-                },
-                {
-                    "id": "muslim",
-                    "label": {
-                        "text": "Muslim"
-                    }
-                },
-                {
-                    "id": "sikh",
-                    "label": {
-                        "text": "Sikh"
+                        "text": "Bisexual"
                     }
                 },
                 {
                     "id": "other-radio",
                     "classes": "voluntary",
                     "label": {
-                        "text": "Any other religion",
-                        "description": "Select to enter answer"
+                        "text": "Other sexual orientation"
                     },
                     "value": "other",
                     "other": {
@@ -89,9 +63,9 @@ layout: voluntary-radios-v1/views/_master
                         "name": "other-answer",
                         "attributes": {
                             "autocomplete": "off"
-                        },
+                        },                        
                         "label": {
-                            "text": "Enter religion"
+                            "text": "Enter sexual orientation"
                         }
                     }
                 }
@@ -101,7 +75,7 @@ layout: voluntary-radios-v1/views/_master
     {{ onsButton({
         "text": "Clear selection",
         "type": "button",
-        "url": "/prototypes/voluntary-radios-v1/what-is-your-religion.html",
+        "url": "/prototypes/voluntary-radios-v1/sexual-orientation.html",
         "classes": "btn--secondary btn--small btn-clear u-mt-s"
     }) }}
 
