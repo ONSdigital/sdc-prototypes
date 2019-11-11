@@ -10,13 +10,13 @@ layout: voluntary-radios-v1/views/_master
 {% set form =  {
     "method": "GET",
     "attributes": {
-        "action":  pageInfo.rootPath + "/sexual-orientation.html",
+        "action":  pageInfo.rootPath + "/ethnic-group.html",
         "autocomplete": "false"
     }
 } %}
 
 {% block main %}
-   <a href="{{ pageInfo.rootPath + '/ethnic-group.html' }}">Previous</a>
+   <a href="{{ pageInfo.rootPath + '/marriage-type.html' }}">Previous</a>
     {% call onsQuestion({
         "title": "What is your religion?",
         "useFieldset": true

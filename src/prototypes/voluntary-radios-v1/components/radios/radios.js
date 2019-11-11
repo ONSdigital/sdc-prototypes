@@ -16,6 +16,7 @@ class Radios {
 
   showClearBtn() {
     this.button.forEach(button => button.classList.remove('btn--disabled'));
+    this.otherField.forEach(input => (input.value = ''));
   }
 
   clearRadios(event) {
