@@ -7,7 +7,6 @@ class Radios {
     this.otherFieldRadio = [...document.querySelectorAll('.voluntary')];
     this.inputs.forEach(input => input.addEventListener('click', this.showClearBtn.bind(this)));
     this.button.forEach(input => input.addEventListener('click', this.clearRadios.bind(this)));
-    this.otherField.forEach(input => input.addEventListener('click', this.clearRadios.bind(this)));
     this.otherField.forEach(input => input.addEventListener('click', this.checkRadio.bind(this)));
     this.otherFieldRadio.forEach(input => input.addEventListener('click', this.checkRadio.bind(this)));
     this.button.forEach(input => input.classList.add('btn--disabled'));
