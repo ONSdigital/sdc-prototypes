@@ -1,0 +1,48 @@
+---
+version: 13.8.3
+layout: voluntary-radios-v1/views/_master
+---
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/what-is-your-dob.html"
+    }
+} %}
+
+{% block main %}
+   <a href="{{ pageInfo.rootPath }}">Previous</a>
+    {% call onsQuestion({
+        "title": "What is your name?",
+        "useFieldset": true
+    }) %}
+
+        {{  onsInput({
+                "id": "first-name",
+                "name": "first-name",
+                "label": {
+                    "text": "First name"
+                }
+            })
+        }}
+        {{  onsInput({
+                "id": "last-name",
+                "name": "last-name",
+                "label": {
+                    "text": "Last name"
+                }
+            })
+        }}
+
+    {% endcall %}
+
+    {{ onsButton({
+        "text": "Save and continue",
+        "classes": "u-ml-no u-mt-xl u-mb-xl"
+    }) }}
+
+{% endblock %}
