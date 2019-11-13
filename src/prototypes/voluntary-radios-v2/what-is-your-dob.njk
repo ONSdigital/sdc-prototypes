@@ -1,0 +1,70 @@
+---
+version: 13.8.3
+layout: voluntary-radios-v1/views/_master
+---
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/date-input/_macro.njk" import onsDateInput %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/what-is-your-sex.html"
+    }
+} %}
+
+{% block main %}
+   <a href="{{ pageInfo.rootPath + '/what-is-your-name.html' }}">Previous</a>
+    {% call onsQuestion({
+        "title": "What is your date of birth?",
+        "useFieldset": true
+    }) %}
+        {% call onsPanel({ 
+
+        }) %}
+            <p>For example 31 12 1970</p>
+        {% endcall %}
+
+        {{
+            onsDateInput({
+                "id": "date-of-birth",
+                "name": "date-of-birth",
+                "day": {
+                    "label": {
+                        "text": "Day"
+                    },
+                    "name": "day",
+                    "attributes": {
+                        "autocomplete": "bday-day"
+                    }
+                },
+                "month": {
+                    "label": {
+                        "text": "Month"
+                    },
+                    "name": "month",
+                    "attributes": {
+                        "autocomplete": "bday-month"
+                    }
+                },
+                "year": {
+                    "label": {
+                        "text": "Year"
+                    },
+                    "name": "year",
+                    "attributes": {
+                        "autocomplete": "bday-year"
+                    }
+                }
+            })
+        }}
+
+    {% endcall %}
+
+    {{ onsButton({
+        "text": "Save and continue",
+        "classes": "u-ml-no u-mt-xl u-mb-xl"
+    }) }}
+
+{% endblock %}
