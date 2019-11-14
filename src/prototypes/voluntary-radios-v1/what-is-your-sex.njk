@@ -1,0 +1,56 @@
+---
+version: 13.8.3
+layout: voluntary-radios-v1/views/_master
+---
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/marriage-type.html"
+    }
+} %}
+
+{% block main %}
+   <a href="{{ pageInfo.rootPath + '/what-is-your-dob.html' }}">Previous</a>
+    {% call onsQuestion({
+        "title": "What is your sex?",
+        "useFieldset": true
+    }) %}
+        {% call onsPanel({ 
+
+        }) %}
+            <p>A question about gender will follow</p>
+        {% endcall %}
+
+        {{ onsRadios({
+            "noField": true,
+            "id": "what-is-your-sex",
+            "name": "what-is-your-sex",
+            "classes": "js-radios",
+            "radios": [
+                {
+                    "id": "female",
+                    "label": {
+                        "text": "Female"
+                    }
+                },
+                {
+                    "id": "male",
+                    "label": {
+                        "text": "Male"
+                    }
+                }
+            ]
+        }) }}
+    {% endcall %}
+
+    {{ onsButton({
+        "text": "Save and continue",
+        "classes": "u-ml-no u-mt-xl u-mb-xl"
+    }) }}
+
+{% endblock %}

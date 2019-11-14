@@ -1,0 +1,20 @@
+---
+title: Voluntary radio questions - control
+group: Voluntary radio questions
+version: 13.8.3
+layout: voluntary-radios-v1/views/_master
+---
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% block main %}
+    <h1 class="u-mt-l">Voluntary radio questions - control</h1>
+
+    <p>The purpose of this prototype is to test the users instinctive behaviour when needing to cancel a radio button selection.<p>
+
+    {{ onsButton({
+        "text": "Start prototype",
+        "url": pageInfo.rootPath + "/what-is-your-religion.html",
+        "classes": "u-mt-m u-mb-xl"
+    }) }}
+
+{% endblock %}
