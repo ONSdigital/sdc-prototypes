@@ -256,7 +256,7 @@ export default class TypeaheadCore {
   }
 
   fetchSuggestions(sanitisedQuery) {
-    return new Promise((resolve, reject) => {
+    return new Promise(resolve => {
       const results = queryJson(sanitisedQuery, 'en-gb');
       results.forEach(result => {
         console.log('result');
@@ -278,10 +278,6 @@ export default class TypeaheadCore {
       resolve({
         results
       });
-      //######need reject here
-      //}
-      //)
-      //.catch(reject);
     });
   }
 
