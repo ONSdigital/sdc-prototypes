@@ -1,7 +1,8 @@
 // https://www.w3.org/TR/wai-aria-practices/examples/combobox/aria1.0pattern/combobox-autocomplete-list.html
 
+import AbortableFetch from 'helpers/abortable-fetch';
+import formBodyFromObject from 'helpers/form-body-from-object';
 import { sanitiseTypeaheadText } from './typeahead-helpers';
-import queryJson from './code-list-searcher';
 
 const classTypeaheadLabel = 'js-typeahead-label';
 const classTypeaheadInput = 'js-typeahead-input';
@@ -32,7 +33,7 @@ const KEYCODE = {
 export default class TypeaheadCore {
   constructor({
     context,
-    jsonFilename,
+    apiUrl,
     onSelect,
     onUnsetResult,
     onError,
@@ -51,8 +52,8 @@ export default class TypeaheadCore {
     this.ariaStatus = context.querySelector(`.${classTypeaheadAriaStatus}`);
     this.errorPanel = context.querySelector(`.${classTypeaheadErrorPanel}`);
 
-    // Suggestion json data
-    this.jsonFilename = jsonFilename || context.getAttribute('json-filename');
+    // Suggestion URL
+    this.apiUrl = apiUrl || context.getAttribute('data-api-url');
 
     // Callbacks
     this.onSelect = onSelect;
@@ -232,7 +233,6 @@ export default class TypeaheadCore {
         if (this.sanitisedQuery.length >= this.minChars) {
           this.fetchSuggestions(this.sanitisedQuery)
             .then(this.handleResults.bind(this))
-            .then(console.log('handled'))
             .catch(error => {
               if (error.name !== 'AbortError' && this.onError) {
                 this.onError(error);
@@ -247,34 +247,55 @@ export default class TypeaheadCore {
 
   fetchSuggestions(sanitisedQuery) {
     return new Promise((resolve, reject) => {
-      const results = queryJson(sanitisedQuery);
-      console.log('results');
-      console.log(results);
+      const query = {
+        query: sanitisedQuery,
+        lang: this.lang
+      };
 
-      results.forEach(result => {
-        console.log('result');
-        console.log(result);
-        result.sanitisedText = sanitiseTypeaheadText(result[this.lang], this.sanitisedQueryReplaceChars);
-        if (this.lang !== 'en-gb') {
-          const english = result['en-gb'];
-          const sanitisedAlternative = sanitiseTypeaheadText(english, this.sanitisedQueryReplaceChars);
+      this.abortFetch();
 
-          if (sanitisedAlternative.match(sanitisedQuery)) {
-            result.alternatives = [english];
-            result.sanitisedAlternatives = [sanitisedAlternative];
-          }
-        } else {
-          result.alternatives = [];
-          result.sanitisedAlternatives = [];
-        }
+      const body = formBodyFromObject(query);
+
+      this.fetch = new AbortableFetch(this.apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body
       });
-      resolve({
-        results
-      });
-      //need reject here
-      //}
-      //)
-      //.catch(reject);
+
+      this.fetch
+        .send()
+        .then(async response => {
+          const data = await response.json();
+
+          const results = data.results;
+          console.log(results);
+
+          results.forEach(result => {
+            result.sanitisedText = sanitiseTypeaheadText(result[this.lang], this.sanitisedQueryReplaceChars);
+            console.log(result.sanitisedText);
+
+            if (this.lang !== 'en-gb') {
+              const english = result['en-gb'];
+              const sanitisedAlternative = sanitiseTypeaheadText(english, this.sanitisedQueryReplaceChars);
+
+              if (sanitisedAlternative.match(sanitisedQuery)) {
+                result.alternatives = [english];
+                result.sanitisedAlternatives = [sanitisedAlternative];
+              }
+            } else {
+              result.alternatives = [];
+              result.sanitisedAlternatives = [];
+            }
+          });
+
+          resolve({
+            results,
+            totalResults: data.totalResults
+          });
+        })
+        .catch(reject);
     });
   }
 
@@ -306,9 +327,7 @@ export default class TypeaheadCore {
   }
 
   handleResults(result) {
-    console.log('handleresults');
-    console.log(result);
-    this.foundResults = result.results.length;
+    this.foundResults = result.totalResults;
     this.results = result.results;
     this.numberOfResults = Math.max(this.results.length, 0);
 
@@ -344,7 +363,7 @@ export default class TypeaheadCore {
           listElement.addEventListener('click', () => {
             this.selectResult(index);
           });
-          console.log(listElement);
+
           this.listbox.appendChild(listElement);
 
           return listElement;
@@ -428,12 +447,14 @@ export default class TypeaheadCore {
       }
 
       this.resultSelected = true;
+
       this.onSelect(result).then(() => {
         this.settingResult = false;
         // this.input.setAttribute('autocomplete', 'false');
       });
 
       let ariaAlternativeMessage = '';
+
       if (!result.sanitisedText.includes(this.sanitisedQuery) && result.sanitisedAlternatives) {
         const alternativeMatch = result.sanitisedAlternatives.find(alternative => alternative.includes(this.sanitisedQuery));
 
@@ -441,6 +462,7 @@ export default class TypeaheadCore {
           ariaAlternativeMessage = `, ${this.content.aria_found_by_alternative_name}: ${alternativeMatch}`;
         }
       }
+
       const ariaMessage = `${this.content.aria_you_have_selected}: ${result[this.lang]}${ariaAlternativeMessage}.`;
 
       this.clearListbox();
