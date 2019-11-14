@@ -1,0 +1,64 @@
+---
+group: New internal account
+title: Sign in - Survey Data Collection
+version: 13.6.9
+---
+{% from "components/panel/_macro.njk" import onsPanel %}
+{% from "components/password/_macro.njk" import onsPassword %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% set page = {
+    "title": "Survey Data Collection",
+    "footer": {
+        "OGLLink": {
+            "pre": 'All content is available under the',
+            "link": 'Open Government Licence v3.0',
+            "url": 'https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/',
+            "post": ', except where otherwise stated'
+        }
+    }
+} %}
+
+{% block head %}
+    <link rel="stylesheet" href="/prototypes/new-account/styles.css" />
+{% endblock %}
+
+{% block main %}
+    <form>
+        <h1>Sign in</h1>
+        <p class="field"><a href="{{ pageInfo.rootPath }}/verify-email.html">Create an account</a></p>
+
+        {{
+            onsInput({
+                "id": "username",
+                "name": "username",
+                "label": {
+                    "text": "Username"
+                }
+            })
+        }}
+
+        {{
+            onsPassword({
+                "id": "password",
+                "label": {
+                    "text": "Password"
+                },
+                "showPasswordText": "Show password"
+            })
+        }}
+
+        <p class="field"><a href="">Forgotten your password?</a></p>
+
+        {{
+            onsButton({
+                "text": "Sign in",
+                "classes": "u-mt-l"
+            })
+        }}
+
+    </form>
+
+
+{% endblock %}
