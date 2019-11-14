@@ -1,0 +1,105 @@
+/* Overrides */
+/* Collection exercise views */
+
+.ce-section h2 {
+  border-bottom: 2px solid #222;
+  padding-top: 9px;
+  margin-bottom: 0.3rem;
+  padding-bottom: 0.4rem;
+}
+
+.ce-status__data.ce-status {
+  font-weight: 600;
+}
+.ce-status__title {
+  float: left;
+  clear: left;
+  width: 4rem;
+  margin: 0;
+  padding: 0;
+  color: #444;
+  font-weight: 600;
+}
+
+.input--upload {
+  border: 1px solid #222222;
+  border-radius: 3px 3px 3px 3px;
+  padding: 0;
+  background: white;
+  width: 100% !important;
+  &::-webkit-file-upload-button {
+    font-size: 1rem;
+    border: none;
+    border-right: 1px solid #222222;
+    padding: 0.5rem 1rem;
+    background: #d0d0d0;
+    color: #222222;
+    transition: border-color 200ms ease-in;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    outline: none;
+  }
+  &:hover {
+    cursor: pointer;
+    &::-webkit-file-upload-button {
+      background: #c3c3c3;
+      cursor: pointer;
+    }
+  }
+}
+
+/* Additional styles for tables */
+
+.tbl-ce-label {
+  width: 40%;
+}
+
+.ce-events .tbl-ce-value {
+  text-align: right;
+}
+
+.tbl-ce-action {
+  text-align: right;
+}
+
+/* sortable table styles from ljwatson https://ljwatson.github.io/sortable-tables/ */
+
+.sortable span[role='button'] {
+  display: inline-block;
+}
+
+.sortable span[role='button']:hover,
+span[role='button']:focus {
+  color: #0f8243;
+}
+
+.sortable th {
+  white-space: nowrap;
+}
+
+.sortable th i {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding-left: 5px;
+  width: 10px;
+}
+
+.arrow::after {
+  content: '\2195';
+}
+
+.arrow-down::after {
+  content: '\2193';
+}
+
+.arrow-up::after {
+  content: '\2191';
+}
+
+/* Pagination */
+
+.paginatorLink {
+  margin: 0 0.5rem;
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+}

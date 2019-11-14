@@ -1,0 +1,122 @@
+{% extends "page-templates/_template.njk" %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ pageInfo.rootPath }}/styles.css" />
+{% endblock %}
+
+{% set page = { 
+    "title": "Survey Data Collection",
+    "footer": {
+        "OGLLink": {
+            "pre": 'All content is available under the',
+            "link": 'Open Government Licence v3.0',
+            "url": 'https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/',
+            "post": ', except where otherwise stated'
+        }
+    }
+} %}
+
+{% block header %}
+<header class="header header--internal header--thin">
+  <div class="header__top" role="banner">
+    <div class="container container--wide">
+      <div class="header__grid-top grid grid--gutterless grid--flex grid--between grid--vertical-center grid--no-wrap">
+        <div class="grid__col col-auto">
+          <img class="header__logo" src="/img/ons-logo-white.svg" alt="Office for National Statistics logo">
+        </div>
+        <div class="header__links grid__col col-auto">
+          <div class="grid__col col-auto u-d-no@xs@m">
+            <nav class="header-service-nav header-service-nav--internal" aria-label="Site services menu">
+              <ul class="header-service-nav__list" aria-label="Navigation menu">
+                <li class="header-service-nav__item">
+                  <a href="" class="header-service-nav__link"></a>
+                </li>
+                <li class="header-service-nav__item">
+                  <a href="" class="header-service-nav__link"></a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="header__main">
+    <div class="container container--wide">
+      <div class="grid grid--gutterless grid--flex grid--between grid--vertical-center grid--no-wrap">
+        <div class="grid__col col-auto u-flex-shrink">
+          <div class="header__title">Survey Data Collection</div>
+        </div>
+        <div class="grid__col col-auto u-flex-no-shrink u-d-no@m">
+          <button type="submit" class="btn btn--mobile u-ml-s u-d-no js-toggle-main" aria-label="Toggle main navigation" aria-controls="main-nav" aria-haspopup="true" aria-expanded="false">
+            <span class="btn__inner">Menu</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="header__bottom">
+    <div class="container container--wide container--gutterless@xs@m">
+      <nav class="header-nav js-header-nav" id="main-nav" aria-label="Main menu" data-analytics="header-navigation">
+        <ul class="header-nav__list" aria-label="" role="menubar">
+          <li class="header-nav__item">
+            <a href="" class="header-nav__link" role="menuitem">Home</a>
+          </li>
+          <li class="header-nav__item">
+            <a href="" class="header-nav__link" role="menuitem">Surveys</a>
+          </li>
+          <li class="header-nav__item">
+            <a href="" class="header-nav__link" role="menuitem">Reporting units</a>
+          </li>
+          <li class="header-nav__item">
+            <a href="" class="header-nav__link" role="menuitem">Respondents</a>
+          </li>
+          <li class="header-nav__item header-nav__item--active">
+            <a href="" class="header-nav__link" role="menuitem">Messages</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+{% endblock %}
+
+
+{% block pageContent %}
+    {% block preMain %}{% endblock %}
+    <div class="page__container container container--wide">
+    {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+    {{ 
+        onsBreadcrumb({
+            "ariaLabel": 'Breadcrumb',
+            "itemsList": [
+                {
+                    "url": '/',
+                    "text": 'Home'
+                },
+                {
+                    "url": '/surveys',
+                    "text": 'Surveys'
+                },
+                {
+                    "url": '/009-MBS',
+                    "text": '009 MBS'
+                },
+                {
+                    "text": '1912',
+                    "current": true
+                }
+            ]
+        }) 
+    }}
+      <main id="main-content" class="page__main {{ pageClasses }}">
+          {% block main %}{% endblock %}
+      </main>
+    </div>
+{% endblock %}
+
+
+
+{% block bodyEnd %}
+    <script src="{{ pageInfo.rootPath }}/index.js"></script>
+{% endblock %}
