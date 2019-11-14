@@ -1,0 +1,74 @@
+---
+version: 13.8.3
+layout: voluntary-radios-v1/views/_master
+---
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/sexual-orientation.html"
+    }
+} %}
+
+{% block main %}
+   <a href="{{ pageInfo.rootPath + '/what-is-your-religion.html' }}">Previous</a>
+    {% call onsQuestion({
+        "title": "What is your ethnic group?",
+        "useFieldset": true
+    }) %}
+
+        {{ onsRadios({
+            "noField": true,
+            "id": "ethnic-group",
+            "name": "ethnic-group-answer",
+            "classes": "js-radios",
+            "radios": [
+                {
+                    "id": "ethnic-group-answer-0",
+                    "label": {
+                        "text": "White",
+                        "description": "Includes British, Northern Irish, Irish, Gypsy, Irish Traveller, Roma or any other White background"
+                    }
+                },
+                {
+                    "id": "ethnic-group-answer-1",
+                    "label": {
+                        "text": "Mixed or Multiple ethnic groups",
+                        "description": "Includes White and Black Caribbean, White and Black African, White and Asian or any other Mixed or Multiple background"
+                    }
+                },
+                {
+                    "id": "ethnic-group-answer-2",
+                    "label": {
+                        "text": "Asian or Asian British",
+                        "description": "Includes Indian, Pakistani, Bangladeshi, Chinese or any other Asian background"
+                    }
+                },
+                {
+                    "id": "ethnic-group-answer-3",
+                    "label": {
+                        "text": "Black, Black British, Caribbean or African",
+                        "description": "Includes Black British, Caribbean, African or any other Black background"
+                    }
+                },
+                {
+                    "id": "ethnic-group-answer-4",
+                    "label": {
+                        "text": "Other ethnic group",
+                        "description": "Includes Arab or any other ethnic group"
+                    }
+                }
+            ]
+        }) }}
+    {% endcall %}
+
+    {{ onsButton({
+        "text": "Save and continue",
+        "classes": "u-ml-no u-mt-xl u-mb-xl"
+    }) }}
+
+{% endblock %}
