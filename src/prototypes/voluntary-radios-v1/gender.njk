@@ -1,0 +1,75 @@
+---
+version: 13.8.3
+layout: voluntary-radios-v1/views/_master
+---
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/proto-complete.html",
+        "autocomplete": "false"        
+    }
+} %}
+
+{% block main %}
+   <a href="{{ pageInfo.rootPath + '/sexual-orientation.html' }}">Previous</a>
+    {% call onsQuestion({
+        "title": "Is your gender the same as the sex you were registered at birth?",
+        "useFieldset": true
+    }) %}
+        {% call onsPanel({ 
+
+        }) %}
+            <p>This question is <strong>voluntary</strong></p>
+        {% endcall %}
+
+        {{ onsRadios({
+            "noField": true,
+            "id": "what-is-your-sexual-orientation",
+            "name": "what-is-your-sexual-orientation",
+            "classes": "js-radios",
+            "radios": [
+                {
+                    "id": "gender-answer-0",
+                    "label": {
+                        "text": "Yes"
+                    }
+                },
+                {
+                    "id": "other-radio",
+                    "classes": "voluntary",
+                    "label": {
+                        "text": "No"
+                    },
+                    "value": "other",
+                    "other": {
+                        "id": "other-textbox",
+                        "name": "other-answer",
+                        "attributes": {
+                            "autocomplete": "off"
+                        },                        
+                        "label": {
+                            "text": "Enter your gender"
+                        }
+                    }
+                }
+            ]
+        }) }}
+    {% endcall %}
+    {{ onsButton({
+        "text": "Clear selection",
+        "type": "button",
+        "url": "/prototypes/voluntary-radios-v1/gender.html",
+        "classes": "btn--secondary btn--small btn-clear u-mt-s"
+    }) }}
+
+    {{ onsButton({
+        "text": "Save and continue",
+        "classes": "u-ml-no u-mt-xl u-mb-xl"
+    }) }}
+
+{% endblock %}

@@ -1,0 +1,11 @@
+.btn-clear {
+  display: block;
+}
+
+.btn--disabled {
+  opacity: 0.5;
+  padding-top: 0.16666667em;
+  &:focus .btn__inner {
+    background-color: #d0d0d0 !important;
+  }
+}

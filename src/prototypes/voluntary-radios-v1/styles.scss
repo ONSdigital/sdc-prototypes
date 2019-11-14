@@ -1,0 +1,29 @@
+.btn-clear {
+  display: table;
+
+  &:hover {
+    text-decoration: none !important;
+  }
+
+  .btn__inner {
+    &:after {
+      display: none !important;
+      background-image: none !important;
+    }
+  }
+}
+
+.btn--disabled {
+  opacity: 0.5;
+  &:active {
+    padding-top: 0 !important;
+  }
+  .btn__inner {
+    background-color: #d0d0d0 !important;
+    border-bottom: 0.16666667em solid rgba(0, 0, 0, 0.6) !important;
+  }
+}
+
+.radio__input.voluntary:not(:checked) ~ .radio__other {
+  display: block;
+}
