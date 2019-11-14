@@ -1,10 +1,11 @@
 import * as Fuse from 'fuse.js';
 
-export default function queryJson(query) {
+export default function queryJson(query, searchFields) {
+  //#####pass in json from json file
   const list = JSON.parse(
-    '[{ "code":"01", "en-gb":"germany", "cy":"almain"},{ "code":"02", "en-gb":"wales", "cy":"cymru"},{ "code":"03", "en-gb":"scotland", "cy":"alm"},{ "code":"04", "en-gb":"german", "cy":"alg"}]'
+    '[{"code": "4","en-gb": "Afghanistan","cy": "Afghanistan"},{"code": "248","en-gb": "Aland islands","cy": "ynysoedd Aland"},{"code": "8","en-gb": "Albania","cy": "Albania"}]'
   );
-  const fields = ['en-gb'];
+  const fields = [searchFields];
 
   const options = {
     shouldSort: true,

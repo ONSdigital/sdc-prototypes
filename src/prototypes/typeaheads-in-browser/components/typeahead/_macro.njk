@@ -4,7 +4,7 @@
 {% from "components/lists/_macro.njk" import onsList %}
 
 {% macro prototypeTypeahead(params) %}
-    <div class="typeahead{% if not params.externalInitialiser %} js-typeahead{% endif %}{% if params.classes %} {{ params.classes }}{% endif %}" data-content="{{ params.content | dump }}" api-data="{{ params.data }}">
+    <div class="typeahead{% if not params.externalInitialiser %} js-typeahead {% endif %} {% if params.classes %} {{ params.classes }} {% endif %}" data-content="{{ params.content | dump }}" json-data="{{ params.lookupData }}">
         {{
             onsLabel({
                 "for": params.id + "-input",

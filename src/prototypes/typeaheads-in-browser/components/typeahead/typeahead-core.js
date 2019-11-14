@@ -1,6 +1,6 @@
 // https://www.w3.org/TR/wai-aria-practices/examples/combobox/aria1.0pattern/combobox-autocomplete-list.html
 
-import { sanitiseTypeaheadText } from './typeahead-helpers';
+import { sanitiseTypeaheadText /*, readJsonData, loadJSON*/ } from './typeahead-helpers';
 import queryJson from './code-list-searcher';
 
 const classTypeaheadLabel = 'js-typeahead-label';
@@ -52,7 +52,16 @@ export default class TypeaheadCore {
     this.errorPanel = context.querySelector(`.${classTypeaheadErrorPanel}`);
 
     // Suggestion json data
-    this.jsonFilename = jsonFilename || context.getAttribute('json-filename');
+    this.jsonFilename = jsonFilename || context.getAttribute('json-data');
+
+    //#####call loading of json file
+
+    //loadJSON(this.jsonFilename);
+
+    // loadJSON('code-lists/country-of-birth.json',
+    //   function(data) { console.log(data); },
+    //   function(xhr) { console.error(xhr); }
+    // );
 
     // Callbacks
     this.onSelect = onSelect;
@@ -230,6 +239,7 @@ export default class TypeaheadCore {
         this.sanitisedQuery = sanitisedQuery;
 
         if (this.sanitisedQuery.length >= this.minChars) {
+          console.log(this.sanitisedQuery);
           this.fetchSuggestions(this.sanitisedQuery)
             .then(this.handleResults.bind(this))
             .then(console.log('handled'))
@@ -247,10 +257,7 @@ export default class TypeaheadCore {
 
   fetchSuggestions(sanitisedQuery) {
     return new Promise((resolve, reject) => {
-      const results = queryJson(sanitisedQuery);
-      console.log('results');
-      console.log(results);
-
+      const results = queryJson(sanitisedQuery, 'en-gb');
       results.forEach(result => {
         console.log('result');
         console.log(result);
@@ -271,7 +278,7 @@ export default class TypeaheadCore {
       resolve({
         results
       });
-      //need reject here
+      //######need reject here
       //}
       //)
       //.catch(reject);
