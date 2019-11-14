@@ -11,6 +11,7 @@ export function sanitiseTypeaheadText(string, sanitisedQueryReplaceChars = [], t
 }
 
 //#####add in reading in of json files
+//#####files also need to be added in webpack
 
 // export async function readJsonData(jsonFilename) {
 //   const reader = new FileReader();
