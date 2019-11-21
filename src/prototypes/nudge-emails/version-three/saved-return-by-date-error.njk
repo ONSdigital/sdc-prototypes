@@ -2,12 +2,20 @@
 group: SCD Internal
 title: Nudge emails
 version: 14.2.1
-layout: nudge-emails/views/_master
+layout: nudge-emails/views/_master-error
 ---
 
 {% from "components/upload/_macro.njk" import onsUpload %}
 
 {% block main %}
+  <div class="page__container container container--wide">
+  
+  <div class="panel panel--info panel--simple">
+    <div class="panel__body">
+      <p>Two nudge emails that were scheduled after the return by date were removed.</p>
+    </div>
+  </div>
+
 
   <div class="grid">
     <div class="grid__col col-12@m">
@@ -16,10 +24,10 @@ layout: nudge-emails/views/_master
         <dl class="ce-info" id="ce-attributes">
           <dt class="ce-status__title item-headlines-term ce-status">
             Status:
-        </dt>
+          </dt>
           <dd class="ce-status__data item-headlines-definition ce-status" id="ce_status">
             Scheduled
-        </dd>
+          </dd>
         </dl>
       </div>
     </div>
@@ -77,7 +85,7 @@ layout: nudge-emails/views/_master
                         Tuesday <em>07 Jan 2020</em> 00:00
                       </td>
                 <td class="table__cell tbl-ce-status tbl-ce-action">
-                  <button type="button" class="btn btn--secondary btn--small" onclick="location.href='{{ pageInfo.rootPath }}/version-three/edit-return-by-date.html';">
+                  <button type="button" class="btn btn--secondary btn--small">
                     <span class="btn__inner">Edit</span>
                   </button>
                 </td>
@@ -122,53 +130,60 @@ layout: nudge-emails/views/_master
             </tbody>
           </table>
 
-          <h2 class="u-fs-r--b u-pt-m">Nudge emails</h2>
-          <table class="table table--dense table--nudge" summary="Dates for this collection exercise">
-            <thead class="table__head u-vh">
-              <tr class="table__row">
-                <th scope="col" class="table__header tbl-ce-label">
-                    Event
-                </th>
-                <th scope="col" class="table__header tbl-ce-value">
-                    Date
-                </th>
-                <th scope="col" class="table__header tbl-ce-status">
-                    Status
-                </th>
-              </tr>
-            </thead>
-            <tbody class="table__body">
-              <tr class="table__row">
-                <td class="table__cell tbl-ce-label">
-                        First nudge email
-                      </td>
-                <td class="table__cell tbl-ce-value ce-event-date" name="first-nudge-email">
-                        Tuesday <em>28 Jan 2020</em> 07:00
-                      </td>
-                <td class="table__cell tbl-ce-status tbl-ce-action">
-                  <button type="button" class="btn btn--secondary btn--small">
-                    <span class="btn__inner">Edit</span>
-                  </button>
-                </td>
-              </tr>
-              <tr class="table__row">
-                <td class="table__cell tbl-ce-label">
-                        Second nudge email
-                      </td>
-                <td class="table__cell tbl-ce-value ce-event-date" name="first-nudge-email">
-                        Tuesday <em>18 Feb 2020</em> 07:00
-                      </td>
-                <td class="table__cell tbl-ce-status tbl-ce-action">
-                  <button type="button" class="btn btn--secondary btn--small">
-                    <span class="btn__inner">Edit</span>
-                  </button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+
+          <!--
+          <div class="panel panel--info panel--simple">
+            <div class="panel__body">
+              <h2 class="u-fs-r--b u-pt-m">Nudge emails</h2>
+              <table class="table table--dense table--nudge" summary="Dates for this collection exercise">
+                <thead class="table__head u-vh">
+                  <tr class="table__row">
+                    <th scope="col" class="table__header tbl-ce-label">
+                        Event
+                    </th>
+                    <th scope="col" class="table__header tbl-ce-value">
+                        Date
+                    </th>
+                    <th scope="col" class="table__header tbl-ce-status">
+                        Status
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="table__body">
+                  <tr class="table__row">
+                    <td class="table__cell tbl-ce-label">
+                            First nudge email
+                          </td>
+                    <td class="table__cell tbl-ce-value ce-event-date" name="first-nudge-email">
+                            Tuesday <em>28 Jan 2020</em> 07:00
+                          </td>
+                    <td class="table__cell tbl-ce-status tbl-ce-action">
+                      <button type="button" class="btn btn--secondary btn--small">
+                        <span class="btn__inner">Edit</span>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr class="table__row">
+                    <td class="table__cell tbl-ce-label">
+                            Second nudge email
+                          </td>
+                    <td class="table__cell tbl-ce-value ce-event-date" name="first-nudge-email">
+                            Tuesday <em>18 Feb 2020</em> 07:00
+                          </td>
+                    <td class="table__cell tbl-ce-status tbl-ce-action">
+                      <button type="button" class="btn btn--secondary btn--small">
+                        <span class="btn__inner">Edit</span>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          -->
 
           <p class="field">
-            <button type="submit" class="btn btn--secondary btn--small btn--nudge">
+            <button type="submit" class="btn btn--secondary btn--small btn--nudge" onclick="location.href='{{ pageInfo.rootPath }}/version-three/saved-first-nudge-email-warning.html';">
               <span class="btn__inner">Schedule a nudge email</span>
             </button>
           </p>
@@ -304,6 +319,8 @@ layout: nudge-emails/views/_master
         </section>
       </div>
     </div>
+  </div>
+    </main>
   </div>
 
 {% endblock %}
