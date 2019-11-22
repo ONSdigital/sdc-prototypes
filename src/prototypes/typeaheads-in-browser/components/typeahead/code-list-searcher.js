@@ -1,10 +1,7 @@
 import * as Fuse from 'fuse.js';
 
-export default function queryJson(query, searchFields) {
-  //#####pass in json from json file
-  const list = JSON.parse(
-    '[{"code": 4,"en-gb": "Afghanistan","cy": "Afghanistan"},{"code": 248,"en-gb": "Aland islands","cy": "ynysoedd Aland"},{"code": 8,"en-gb": "Albania","cy": "Albania"}]'
-  );
+export default function queryJson(query, data, searchFields) {
+  const list = JSON.parse(data);
   const fields = [searchFields];
 
   const options = {

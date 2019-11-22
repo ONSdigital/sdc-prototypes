@@ -1,7 +1,8 @@
 // https://www.w3.org/TR/wai-aria-practices/examples/combobox/aria1.0pattern/combobox-autocomplete-list.html
 
-import { sanitiseTypeaheadText /*, readJsonData, loadJSON*/ } from './typeahead-helpers';
+import { sanitiseTypeaheadText } from './typeahead-helpers';
 import queryJson from './code-list-searcher';
+import fetch from 'node-fetch';
 
 const classTypeaheadLabel = 'js-typeahead-label';
 const classTypeaheadInput = 'js-typeahead-input';
@@ -54,14 +55,32 @@ export default class TypeaheadCore {
     // Suggestion json data
     this.jsonFilename = jsonFilename || context.getAttribute('json-data');
 
+    async function loadJSON(jsonPath) {
+      try {
+        const jsonResponse = await fetch(jsonPath);
+        if (jsonResponse.status === 500) {
+          throw new Error('Error fetching json data: ' + jsonResponse.status);
+        }
+        const jsonData = await jsonResponse.json();
+        return jsonData;
+      } catch (error) {
+        console.log(error);
+        process.exit(1);
+      }
+    }
+
     //#####call loading of json file
+    async function getJSON() {
+      let jsonData = await loadJSON(
+        'https://gist.githubusercontent.com/rmccar/c123023fa6bd1b137d7f960c3ffa1fed/raw/368a3ea741f72c62c735c319ff7e33e3c1bfdc53/country-of-birth.json'
+      );
+      jsonData = await Promise.all(jsonData);
+      console.log(jsonData);
+      return jsonData;
+    }
 
-    //loadJSON(this.jsonFilename);
-
-    // loadJSON('code-lists/country-of-birth.json',
-    //   function(data) { console.log(data); },
-    //   function(xhr) { console.error(xhr); }
-    // );
+    this.data = getJSON();
+    console.log(this.data);
 
     // Callbacks
     this.onSelect = onSelect;
@@ -240,7 +259,7 @@ export default class TypeaheadCore {
 
         if (this.sanitisedQuery.length >= this.minChars) {
           console.log(this.sanitisedQuery);
-          this.fetchSuggestions(this.sanitisedQuery)
+          this.fetchSuggestions(this.sanitisedQuery, this.data)
             .then(this.handleResults.bind(this))
             .then(console.log('handled'))
             .catch(error => {
@@ -255,9 +274,10 @@ export default class TypeaheadCore {
     }
   }
 
-  fetchSuggestions(sanitisedQuery) {
+  fetchSuggestions(sanitisedQuery, data) {
+    console.log('fetch');
     return new Promise(resolve => {
-      const results = queryJson(sanitisedQuery, 'en-gb');
+      const results = queryJson(sanitisedQuery, data, 'en-gb');
       results.forEach(result => {
         console.log('result');
         console.log(result);
