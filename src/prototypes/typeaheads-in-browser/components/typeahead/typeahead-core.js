@@ -81,14 +81,6 @@ export default class TypeaheadCore {
     // Call loading of json file
     this.data = loadJSON(jsonUrl[0].url);
 
-    this.data.then(() => {
-      let jsonData;
-      for (let i = 0; i < this.data.length; i++) {
-        jsonData = jsonData + this.data[i];
-        console.log(this.data);
-      }
-    });
-
     // Callbacks
     this.onSelect = onSelect;
     this.onUnsetResult = onUnsetResult;
@@ -265,15 +257,15 @@ export default class TypeaheadCore {
         this.sanitisedQuery = sanitisedQuery;
 
         if (this.sanitisedQuery.length >= this.minChars) {
-          console.log(this.sanitisedQuery);
-          this.fetchSuggestions(this.sanitisedQuery, this.data)
-            .then(this.handleResults.bind(this))
-            //.then(console.log('handled'))
-            .catch(error => {
-              if (error.name !== 'AbortError' && this.onError) {
-                this.onError(error);
-              }
-            });
+          this.data.then(data => {
+            this.fetchSuggestions(this.sanitisedQuery, data)
+              .then(this.handleResults.bind(this))
+              .catch(error => {
+                if (error.name !== 'AbortError' && this.onError) {
+                  this.onError(error);
+                }
+              });
+          });
         } else {
           this.clearListbox();
         }
@@ -282,11 +274,7 @@ export default class TypeaheadCore {
   }
 
   async fetchSuggestions(sanitisedQuery, data) {
-    console.log('fetch');
     const results = await queryJson(sanitisedQuery, data, 'en-gb');
-    console.log(results);
-    // console.log('results');
-    // console.log(results);
     results.forEach(result => {
       result.sanitisedText = sanitiseTypeaheadText(result[this.lang], this.sanitisedQueryReplaceChars);
       if (this.lang !== 'en-gb') {
@@ -302,6 +290,10 @@ export default class TypeaheadCore {
         result.sanitisedAlternatives = [];
       }
     });
+    return {
+      results,
+      totalResults: data.totalResults
+    };
   }
 
   abortFetch() {
@@ -332,9 +324,7 @@ export default class TypeaheadCore {
   }
 
   handleResults(result) {
-    console.log('handleresults');
-    console.log(result);
-    this.foundResults = result.results.length;
+    this.foundResults = result.length;
     this.results = result.results;
     this.numberOfResults = Math.max(this.results.length, 0);
 
