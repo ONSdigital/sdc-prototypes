@@ -52,9 +52,19 @@ export default class TypeaheadCore {
     this.ariaStatus = context.querySelector(`.${classTypeaheadAriaStatus}`);
     this.errorPanel = context.querySelector(`.${classTypeaheadErrorPanel}`);
 
+    const jsonUrls = [
+      {
+        id: 'countries',
+        url:
+          'https://gist.githubusercontent.com/rmccar/c123023fa6bd1b137d7f960c3ffa1fed/raw/368a3ea741f72c62c735c319ff7e33e3c1bfdc53/country-of-birth.json'
+      }
+    ];
+
+    const type = 'countries';
+    const jsonUrl = jsonUrls.filter(i => i.id === type);
+
     // Suggestion json data
     this.jsonFilename = jsonFilename || context.getAttribute('json-data');
-
     async function loadJSON(jsonPath) {
       try {
         const jsonResponse = await fetch(jsonPath);
@@ -65,22 +75,19 @@ export default class TypeaheadCore {
         return jsonData;
       } catch (error) {
         console.log(error);
-        process.exit(1);
       }
     }
 
-    //#####call loading of json file
-    async function getJSON() {
-      let jsonData = await loadJSON(
-        'https://gist.githubusercontent.com/rmccar/c123023fa6bd1b137d7f960c3ffa1fed/raw/368a3ea741f72c62c735c319ff7e33e3c1bfdc53/country-of-birth.json'
-      );
-      jsonData = await Promise.all(jsonData);
-      console.log(jsonData);
-      return jsonData;
-    }
+    // Call loading of json file
+    this.data = loadJSON(jsonUrl[0].url);
 
-    this.data = getJSON();
-    console.log(this.data);
+    this.data.then(() => {
+      let jsonData;
+      for (let i = 0; i < this.data.length; i++) {
+        jsonData = jsonData + this.data[i];
+        console.log(this.data);
+      }
+    });
 
     // Callbacks
     this.onSelect = onSelect;
@@ -261,7 +268,7 @@ export default class TypeaheadCore {
           console.log(this.sanitisedQuery);
           this.fetchSuggestions(this.sanitisedQuery, this.data)
             .then(this.handleResults.bind(this))
-            .then(console.log('handled'))
+            //.then(console.log('handled'))
             .catch(error => {
               if (error.name !== 'AbortError' && this.onError) {
                 this.onError(error);
@@ -274,30 +281,26 @@ export default class TypeaheadCore {
     }
   }
 
-  fetchSuggestions(sanitisedQuery, data) {
+  async fetchSuggestions(sanitisedQuery, data) {
     console.log('fetch');
-    return new Promise(resolve => {
-      const results = queryJson(sanitisedQuery, data, 'en-gb');
-      results.forEach(result => {
-        console.log('result');
-        console.log(result);
-        result.sanitisedText = sanitiseTypeaheadText(result[this.lang], this.sanitisedQueryReplaceChars);
-        if (this.lang !== 'en-gb') {
-          const english = result['en-gb'];
-          const sanitisedAlternative = sanitiseTypeaheadText(english, this.sanitisedQueryReplaceChars);
+    const results = await queryJson(sanitisedQuery, data, 'en-gb');
+    console.log(results);
+    // console.log('results');
+    // console.log(results);
+    results.forEach(result => {
+      result.sanitisedText = sanitiseTypeaheadText(result[this.lang], this.sanitisedQueryReplaceChars);
+      if (this.lang !== 'en-gb') {
+        const english = result['en-gb'];
+        const sanitisedAlternative = sanitiseTypeaheadText(english, this.sanitisedQueryReplaceChars);
 
-          if (sanitisedAlternative.match(sanitisedQuery)) {
-            result.alternatives = [english];
-            result.sanitisedAlternatives = [sanitisedAlternative];
-          }
-        } else {
-          result.alternatives = [];
-          result.sanitisedAlternatives = [];
+        if (sanitisedAlternative.match(sanitisedQuery)) {
+          result.alternatives = [english];
+          result.sanitisedAlternatives = [sanitisedAlternative];
         }
-      });
-      resolve({
-        results
-      });
+      } else {
+        result.alternatives = [];
+        result.sanitisedAlternatives = [];
+      }
     });
   }
 
