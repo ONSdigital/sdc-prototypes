@@ -33,8 +33,8 @@ const KEYCODE = {
 export default class TypeaheadCore {
   constructor({
     context,
-    jsonFilename,
     onSelect,
+    typeaheadData,
     onUnsetResult,
     onError,
     minChars,
@@ -52,19 +52,8 @@ export default class TypeaheadCore {
     this.ariaStatus = context.querySelector(`.${classTypeaheadAriaStatus}`);
     this.errorPanel = context.querySelector(`.${classTypeaheadErrorPanel}`);
 
-    const jsonUrls = [
-      {
-        id: 'countries',
-        url:
-          'https://gist.githubusercontent.com/rmccar/c123023fa6bd1b137d7f960c3ffa1fed/raw/368a3ea741f72c62c735c319ff7e33e3c1bfdc53/country-of-birth.json'
-      }
-    ];
-
-    const type = 'countries';
-    const jsonUrl = jsonUrls.filter(i => i.id === type);
-
     // Suggestion json data
-    this.jsonFilename = jsonFilename || context.getAttribute('json-data');
+    this.typeaheadData = typeaheadData || context.getAttribute('typeahead-data');
     async function loadJSON(jsonPath) {
       try {
         const jsonResponse = await fetch(jsonPath);
@@ -79,7 +68,7 @@ export default class TypeaheadCore {
     }
 
     // Call loading of json file
-    this.data = loadJSON(jsonUrl[0].url);
+    this.data = loadJSON(this.typeaheadData);
 
     // Callbacks
     this.onSelect = onSelect;
