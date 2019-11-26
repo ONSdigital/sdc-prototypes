@@ -1,0 +1,148 @@
+.page__main {
+  margin-top: 0 !important;
+}
+
+h1.filtered {
+  margin-bottom: 0;
+}
+
+form.filter {
+  margin-top: 29px;
+}
+
+.highlight {
+}
+
+.number {
+  font-family: 'Open Sans';
+  font-variant-numeric: tabular-nums;
+}
+
+.btn--small .btn__inner {
+  padding: 0.6em 0.7em;
+}
+
+.error {
+  color: #d0021b;
+  margin: 0.1rem 0 0;
+  &.hidden {
+    display: none;
+  }
+  &.visible {
+    display: block;
+  }
+  &.null {
+    display: none;
+  }
+}
+
+.btn {
+  // Disabled buttons
+  &--disabled {
+    &:hover {
+      cursor: not-allowed;
+    }
+    &.btn--secondary,
+    &.btn--print {
+      .btn__inner {
+        background: #d0d0d0;
+        border: 0;
+      }
+    }
+    &:not(.btn--secondary) {
+      .btn__inner {
+        background-color: #535353;
+        border: 0;
+      }
+    }
+  }
+}
+
+abbr.input-type__type {
+  .clear {
+  }
+}
+#filter.invalid {
+  .input:focus {
+    -webkit-box-shadow: 0 0 0 3px #d0021b;
+    box-shadow: 0 0 0 3px #d0021b;
+  }
+}
+
+.input-group {
+  justify-items: flex-end;
+  .input-field {
+  }
+  .filter-button {
+    margin-left: 0.5rem;
+    .btn--small {
+      line-height: 1.1rem;
+    }
+  }
+  .input-type__type[title] {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .icons--cross-black {
+    width: 15px;
+    height: 15px;
+    margin-bottom: 2px;
+  }
+}
+
+.table__caption {
+  display: none;
+}
+
+.table {
+  margin-top: 1rem;
+  .table__header {
+    &.ru-ref {
+      width: 7rem;
+    }
+    &.business-name {
+      width: 20%;
+    }
+    &.subject {
+      width: 30%;
+    }
+    &.from {
+      width: 10%;
+    }
+    &.to {
+      width: 10%;
+    }
+    &.date-and-time {
+      width: 10rem;
+    }
+  }
+  td {
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  tr.new {
+    td {
+      font-weight: 600;
+    }
+    .ru-ref {
+      padding-left: 0rem;
+      .circle:before {
+        content: ' \25CF';
+        font-size: 16px;
+        color: #3b7a9e;
+        margin-right: 0.2rem;
+        width: 0.5rem;
+        display: inline-block;
+      }
+    }
+  }
+
+  .date-time {
+    font-family: 'Open Sans';
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+  }
+}

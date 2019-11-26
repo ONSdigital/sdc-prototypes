@@ -1,0 +1,20 @@
+---
+title: Voluntary radio questions - v1 - disabled clear button
+group: Voluntary radio questions
+version: 13.8.3
+layout: voluntary-radios-v1/views/_master
+---
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% block main %}
+    <h1 class="u-mt-l">Voluntary radio questions - v1</h1>
+
+    <p>The purpose of this prototype is to test the voluntary census questions which ask for a single answer.<p>
+
+    {{ onsButton({
+        "text": "Start prototype",
+        "url": pageInfo.rootPath + "/what-is-your-name.html",
+        "classes": "u-mt-m u-mb-xl"
+    }) }}
+
+{% endblock %}

@@ -1,0 +1,35 @@
+---
+group: SCD Internal
+title: Nudge emails
+version: 14.2.1
+layout: nudge-emails/views/_index
+---
+
+{% block main %}
+{% from "components/button/_macro.njk" import onsButton %}
+  <h1>Nudge emails UI prototype</h1>
+  <div class="grid">
+    <div class="grid__col col-2@m">
+        {{ 
+            onsButton({
+                "type": 'button',
+                "text": 'Version one',
+                "classes": 'btn--secondary',
+                "url": 'version-one/index.html'
+            }) 
+        }}
+    </div>
+    <div class="grid__col col-2@m">
+      
+        {{ 
+            onsButton({
+                "type": 'button',
+                "text": 'Version two',
+                "classes": 'btn--secondary',
+                "url": 'version-two/index.html'
+            }) 
+        }}
+    </div>
+  </div>
+
+{% endblock %}

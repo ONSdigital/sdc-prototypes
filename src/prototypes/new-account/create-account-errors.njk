@@ -1,0 +1,213 @@
+---
+group:                     New internal account
+title:                     Create account - Survey Data Collection
+version:                   13.6.9
+---
+{% from "components/panel/_macro.njk" import onsPanel %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% set page = {
+    "title":               "Survey Data Collection",
+    "footer":              {
+        "OGLLink":         {
+            "pre":         'All content is available under the',
+            "link":        'Open Government Licence v3.0',
+            "url":         'https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/',
+            "post":        ', except where otherwise stated'
+        }
+    }
+} %}
+
+{% block head %}
+<link rel="stylesheet" href="/prototypes/new-account/styles.css" />
+{% endblock %}
+
+
+{% block main %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+{% call
+    onsPanel({
+        title:             "This page has 4 errors",
+        type:              "error"
+    })
+%}
+<p>These must be corrected to continue.</p>
+{% from "components/lists/_macro.njk" import onsList %}
+{{
+    onsList({
+        "classes":         "list--bare",
+        "itemsList":       [
+            {
+                "text":    "Enter your first name",
+                "index":   true,
+                "url":     "#container-first-name",
+                "classes": "js-inpagelink"
+            },
+            {
+                "text":    "Enter your last name",
+                "index":   true,
+                "url":     "#container-last-name",
+                "classes": "js-inpagelink"
+            },
+            {
+                "text":    "Choose a username",
+                "index":   true,
+                "url":     "#container-username",
+                "classes": "js-inpagelink"
+            },
+            {
+                "text":    "Your password must be in the correct format",
+                "index":   true,
+                "url":     "#container-password",
+                "classes": "js-inpagelink"
+            }
+        ]
+    })
+}}
+{% endcall %}
+
+
+<form class="u-mt-m" action="{{ pageInfo.rootPath }}/sign-in.html">
+  <h1>Create an account</h1>
+
+  <div id="container-first-name" class="panel panel--error panel--simple">
+    <div class="panel__body">
+      <p class="panel__error">
+        <strong>Enter your first name</strong>
+      </p>
+      <p class="field">
+        <label class="label" for="first-name">First name</label>
+        <input type="text" id="first-name" class="input input--text input-type__input" />
+      </p>
+    </div>
+  </div>
+
+    <div id="container-last-name" class="panel panel--error panel--simple">
+      <div class="panel__body">
+        <p class="panel__error">
+          <strong>Enter your last name</strong>
+        </p>
+        <p class="field">
+          <label class="label" for="last-name">Last name</label>
+          <input type="text" id="last-name" class="input input--text input-type__input" />
+        </p>
+      </div>
+    </div>
+
+    <div id="container-username" class="panel panel--error panel--simple">
+      <div class="panel__body">
+        <p class="panel__error">
+          <strong>Choose a username</strong>
+        </p>
+        <p class="field">
+          <label class="label" for="username">Choose a username
+            <br>
+            <span class="input__description">Hint: Use your Windows username</span>
+          </label>
+          <input type="text" id="username" class="input input--text input-type__input" />
+        </p>
+      </div>
+    </div>
+
+    <div id="container-password" class="panel panel--error panel--simple">
+    <div class="panel__body">
+      <p class="panel__error">
+        <strong>Your password must be in the correct format</strong>
+      </p>
+      <div class="field">
+        <label class="label " for="psw">
+          Create password
+        </label>
+        <div id="message">
+          <p class="panel__error"><strong>Your password must have:</strong></p>
+          <ul>
+            <li id="length" class="invalid">at least 8 characters</li>
+            <li id="capital" class="invalid">at least 1 uppercase letter</li>
+            <li id="symbol" class="invalid">at least 1 symbol (eg: ?!£%)</li>
+            <li id="number" class="invalid">at least 1 number</li>
+          </ul>
+        </div>
+        <input name="psw" type="password" id="psw" class="input input--text input-type__input" />
+      </div>
+
+      <div class="field">
+        <label class="label " for="psw">
+         Confirm password
+        </label>
+        <input name="psw" type="password" id="psw" class="input input--text input-type__input" />
+      </div>
+    </div>
+  </div>
+
+  {{
+      onsButton({
+          "text":    "Sign in",
+          "classes": "u-mt-l"
+      })
+  }}
+</form>
+
+<script>
+  var myInput = document.getElementById("psw");
+  var symbol = document.getElementById("symbol");
+  var capital = document.getElementById("capital");
+  var number = document.getElementById("number");
+  var length = document.getElementById("length");
+
+  // When the user starts to type something inside the password field
+  myInput.onkeyup = function() {
+    
+    // Validate length
+    if (myInput.value.length >= 8) {
+      length.classList.remove("invalid");
+      length.classList.add("valid");
+    } else {
+      length.classList.remove("valid");
+      length.classList.add("invalid");
+    }
+
+    // Validate capital letters
+    var upperCaseLetters = /[A-Z]/g;
+    if (myInput.value.match(upperCaseLetters)) {
+      capital.classList.remove("invalid");
+      capital.classList.add("valid");
+    } else {
+      capital.classList.remove("valid");
+      capital.classList.add("invalid");
+    }
+
+    // Validate symbols
+    var symbols = /[-!@£$%^&*()_+|~=`{}\[\]:";'<>?,.\/]/g;
+    if (myInput.value.match(symbols)) {
+      symbol.classList.remove("invalid");
+      symbol.classList.add("valid");
+    } else {
+      symbol.classList.remove("valid");
+      symbol.classList.add("invalid");
+    }
+
+    // Validate numbers
+    var numbers = /[0-9]/g;
+    if (myInput.value.match(numbers)) {
+      number.classList.remove("invalid");
+      number.classList.add("valid");
+    } else {
+      number.classList.remove("valid");
+      number.classList.add("invalid");
+    }
+  }
+</script>
+
+<script>
+  function showPassword() {
+    var x = document.getElementById("psw");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  }
+</script>
+
+{% endblock %}

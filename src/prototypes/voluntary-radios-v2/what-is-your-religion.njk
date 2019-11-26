@@ -1,0 +1,112 @@
+---
+version: 13.8.3
+layout: voluntary-radios-v1/views/_master
+---
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/ethnic-group.html",
+        "autocomplete": "false"
+    }
+} %}
+
+{% block main %}
+   <a href="{{ pageInfo.rootPath + '/marriage-type.html' }}">Previous</a>
+    {% call onsQuestion({
+        "title": "What is your religion?",
+        "useFieldset": true
+    }) %}
+        {% call onsPanel({ 
+
+        }) %}
+            <p>This question is <strong>voluntary</strong></p>
+        {% endcall %}
+
+        {{ onsRadios({
+            "noField": true,
+            "id": "what-is-your-religion",
+            "name": "what-is-your-religion",
+            "classes": "js-radios",
+            "radios": [
+                {
+                    "id": "no-religion",
+                    "label": {
+                        "text": "No religion"
+                    }
+                },
+                {
+                    "id": "christian",
+                    "label": {
+                        "text": "Christian",
+                        "description": "Including Church of England, Catholic, Protestant and all other Christian denominations"
+                    }
+                },
+                {
+                    "id": "buddhist",
+                    "label": {
+                        "text": "Buddhist"
+                    }
+                },
+                {
+                    "id": "hindu",
+                    "label": {
+                        "text": "Hindu"
+                    }
+                },
+                {
+                    "id": "jewish",
+                    "label": {
+                        "text": "Jewish"
+                    }
+                },
+                {
+                    "id": "muslim",
+                    "label": {
+                        "text": "Muslim"
+                    }
+                },
+                {
+                    "id": "sikh",
+                    "label": {
+                        "text": "Sikh"
+                    }
+                },
+                {
+                    "id": "other-radio",
+                    "label": {
+                        "text": "Any other religion",
+                        "description": "Select to enter answer"
+                    },
+                    "value": "other",
+                    "other": {
+                        "id": "other-textbox",
+                        "name": "other-answer",
+                        "attributes": {
+                            "autocomplete": "off"
+                        },
+                        "label": {
+                            "text": "Enter religion"
+                        }
+                    }
+                }
+            ]
+        }) }}
+    {% endcall %}
+    {{ onsButton({
+        "text": "Clear selection",
+        "type": "button",
+        "url": "/prototypes/voluntary-radios-v1/what-is-your-religion.html",
+        "classes": "btn--secondary btn--small btn-clear u-mt-s"
+    }) }}
+
+    {{ onsButton({
+        "text": "Save and continue",
+        "classes": "u-ml-no u-mt-xl u-mb-xl"
+    }) }}
+
+{% endblock %}
