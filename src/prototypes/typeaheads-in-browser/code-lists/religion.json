@@ -1,0 +1,2772 @@
+[
+  {
+    "code": 41,
+    "en-gb": "Aaronic order",
+    "cy": "trefn Aaronic"
+  },
+  {
+    "code": 520,
+    "en-gb": "Aborisha",
+    "cy": "Aborisha"
+  },
+  {
+    "code": 45,
+    "en-gb": "Adventist",
+    "cy": "Adventist"
+  },
+  {
+    "code": 201,
+    "en-gb": "African inland church",
+    "cy": "eglwys mewndirol african"
+  },
+  {
+    "code": 24,
+    "en-gb": "African methodist",
+    "cy": "methodistiaid african"
+  },
+  {
+    "code": 48,
+    "en-gb": "Agape",
+    "cy": "agape"
+  },
+  {
+    "code": 201,
+    "en-gb": "Aglipay church",
+    "cy": "eglwys Aglipay"
+  },
+  {
+    "code": 608,
+    "en-gb": "Agnostic",
+    "cy": "agnostig"
+  },
+  {
+    "code": 302,
+    "en-gb": "Ahmadiyya",
+    "cy": "Ahmadiyya"
+  },
+  {
+    "code": 302,
+    "en-gb": "Akhbari",
+    "cy": "Akhbari"
+  },
+  {
+    "code": 302,
+    "en-gb": "Alavi bohras",
+    "cy": "Alavi bohras"
+  },
+  {
+    "code": 302,
+    "en-gb": "Alawism",
+    "cy": "Alawism"
+  },
+  {
+    "code": 302,
+    "en-gb": "Alevi",
+    "cy": "Alevi"
+  },
+  {
+    "code": 401,
+    "en-gb": "Alexandrian",
+    "cy": "Alecsandraidd"
+  },
+  {
+    "code": 302,
+    "en-gb": "Al-ikhwan al-muslimoon",
+    "cy": "Al-ikhwan al-muslimoon"
+  },
+  {
+    "code": 49,
+    "en-gb": "Amish",
+    "cy": "Amish"
+  },
+  {
+    "code": 49,
+    "en-gb": "Amish mennonite",
+    "cy": "Mennonite Amish"
+  },
+  {
+    "code": 517,
+    "en-gb": "Ancestor worship",
+    "cy": "addoli hynafiad"
+  },
+  {
+    "code": 408,
+    "en-gb": "Ancient egyptian",
+    "cy": "hynafol Aifft"
+  },
+  {
+    "code": 1,
+    "en-gb": "Anglican",
+    "cy": "Anglicanaidd"
+  },
+  {
+    "code": 531,
+    "en-gb": "Animism",
+    "cy": "Animism"
+  },
+  {
+    "code": 18,
+    "en-gb": "Apostolic church",
+    "cy": "eglwys Apostolaidd"
+  },
+  {
+    "code": 18,
+    "en-gb": "Apostolic faith",
+    "cy": "ffydd apostolaidd"
+  },
+  {
+    "code": 18,
+    "en-gb": "Apostolic pentecostal",
+    "cy": "Apostolaidd Bentecostaidd"
+  },
+  {
+    "code": 41,
+    "en-gb": "Apostolic united brethren",
+    "cy": "Apostolaidd unedig frodyr"
+  },
+  {
+    "code": 41,
+    "en-gb": "Apostolic united order",
+    "cy": "Apostolaidd gorchymyn unedig"
+  },
+  {
+    "code": 19,
+    "en-gb": "Armstrongism",
+    "cy": "Armstrongism"
+  },
+  {
+    "code": 409,
+    "en-gb": "Asatru",
+    "cy": "Asatru"
+  },
+  {
+    "code": 302,
+    "en-gb": "Ash'ari",
+    "cy": "Ash'ari"
+  },
+  {
+    "code": 304,
+    "en-gb": "Ashkenazi",
+    "cy": "Ashkenazi"
+  },
+  {
+    "code": 22,
+    "en-gb": "Assemblies of god",
+    "cy": "Cynulliadau o duw"
+  },
+  {
+    "code": 50,
+    "en-gb": "Associate synod",
+    "cy": "synod Cyswllt"
+  },
+  {
+    "code": 302,
+    "en-gb": "Atba-i-malak",
+    "cy": "Atba-i-Malak"
+  },
+  {
+    "code": 302,
+    "en-gb": "Athari",
+    "cy": "Athari"
+  },
+  {
+    "code": 601,
+    "en-gb": "Atheist",
+    "cy": "anffyddiwr"
+  },
+  {
+    "code": 504,
+    "en-gb": "Baha ' i",
+    "cy": "i Baha '"
+  },
+  {
+    "code": 301,
+    "en-gb": "Balaji",
+    "cy": "Balaji"
+  },
+  {
+    "code": 26,
+    "en-gb": "Ballee baptist church",
+    "cy": "eglwys Bedyddwyr Ballee"
+  },
+  {
+    "code": 301,
+    "en-gb": "Baps",
+    "cy": "rholiau"
+  },
+  {
+    "code": 26,
+    "en-gb": "Baptist",
+    "cy": "Bedyddwyr"
+  },
+  {
+    "code": 26,
+    "en-gb": "Baptist chapel",
+    "cy": "capel y Bedyddwyr"
+  },
+  {
+    "code": 26,
+    "en-gb": "Baptist church",
+    "cy": "eglwys y Bedyddwyr"
+  },
+  {
+    "code": 26,
+    "en-gb": "Baptist new testament",
+    "cy": "testament newydd y Bedyddwyr"
+  },
+  {
+    "code": 302,
+    "en-gb": "Barelwi",
+    "cy": "Barelwi"
+  },
+  {
+    "code": 26,
+    "en-gb": "Bedyddwyr",
+    "cy": "Bedyddwyr"
+  },
+  {
+    "code": 302,
+    "en-gb": "Bektashi",
+    "cy": "Bektashi"
+  },
+  {
+    "code": 51,
+    "en-gb": "Belfast chinese christian church",
+    "cy": "Belfast eglwys christian Tseiniaidd"
+  },
+  {
+    "code": 71,
+    "en-gb": "Belfast city mission",
+    "cy": "genhadaeth dinas Belfast"
+  },
+  {
+    "code": 500,
+    "en-gb": "Believe in god",
+    "cy": "Credu mewn duw"
+  },
+  {
+    "code": 201,
+    "en-gb": "Bethany fellowship",
+    "cy": "Bethany cymrodoriaeth"
+  },
+  {
+    "code": 300,
+    "en-gb": "Bhutanese buddhism",
+    "cy": "bwdhaeth Bhutan"
+  },
+  {
+    "code": 52,
+    "en-gb": "Bible pattern church",
+    "cy": "eglwys patrwm Beibl"
+  },
+  {
+    "code": 79,
+    "en-gb": "Born again christian",
+    "cy": "Eni eto christian"
+  },
+  {
+    "code": 505,
+    "en-gb": "Brahma kumari",
+    "cy": "Brahma Kumari"
+  },
+  {
+    "code": 301,
+    "en-gb": "Brahma sampradaya",
+    "cy": "Brahma sampradaya"
+  },
+  {
+    "code": 201,
+    "en-gb": "Branagh memorial church",
+    "cy": "eglwys cofeb Branagh"
+  },
+  {
+    "code": 53,
+    "en-gb": "Brethren",
+    "cy": "brodyr"
+  },
+  {
+    "code": 54,
+    "en-gb": "Brethren in christ",
+    "cy": "Brodyr yn Crist"
+  },
+  {
+    "code": 53,
+    "en-gb": "Brethren, christian",
+    "cy": "Frodyr, christian"
+  },
+  {
+    "code": 22,
+    "en-gb": "Brethren, pentecostal",
+    "cy": "Frodyr, Pentecostaidd"
+  },
+  {
+    "code": 610,
+    "en-gb": "Bright",
+    "cy": "Bright"
+  },
+  {
+    "code": 55,
+    "en-gb": "British israelite",
+    "cy": "Israel Prydain"
+  },
+  {
+    "code": 400,
+    "en-gb": "Brythonic pagan",
+    "cy": "baganaidd Frythoneg"
+  },
+  {
+    "code": 17,
+    "en-gb": "Bulgarian orthodox church",
+    "cy": "eglwys uniongred Bwlgareg"
+  },
+  {
+    "code": 2,
+    "en-gb": "C of e",
+    "cy": "C e"
+  },
+  {
+    "code": 35,
+    "en-gb": "Calvanist methodist",
+    "cy": "Calvanist methodistiaid"
+  },
+  {
+    "code": 503,
+    "en-gb": "Candomble",
+    "cy": "Candomble"
+  },
+  {
+    "code": 520,
+    "en-gb": "Candomble jege-nago",
+    "cy": "Candomble jege-Nago"
+  },
+  {
+    "code": 26,
+    "en-gb": "Capel y bedyddwyr",
+    "cy": "Capel y Bedyddwyr"
+  },
+  {
+    "code": 201,
+    "en-gb": "Catharism",
+    "cy": "Catharism"
+  },
+  {
+    "code": 4,
+    "en-gb": "Catholic apostolic church",
+    "cy": "eglwys apostolaidd gatholig"
+  },
+  {
+    "code": 3,
+    "en-gb": "Catholic church",
+    "cy": "eglwys Gatholig"
+  },
+  {
+    "code": 3,
+    "en-gb": "Catholic faith",
+    "cy": "ffydd Gatholig"
+  },
+  {
+    "code": 6,
+    "en-gb": "Catholic, greek",
+    "cy": "Catholig, greek"
+  },
+  {
+    "code": 201,
+    "en-gb": "Cell church",
+    "cy": "eglwys cell"
+  },
+  {
+    "code": 111,
+    "en-gb": "Celtic christian",
+    "cy": "Celtic christian"
+  },
+  {
+    "code": 7,
+    "en-gb": "Celtic orthodox church",
+    "cy": "eglwys uniongred Geltaidd"
+  },
+  {
+    "code": 400,
+    "en-gb": "Celtic pagan",
+    "cy": "baganaidd Celtaidd"
+  },
+  {
+    "code": 57,
+    "en-gb": "Chapel",
+    "cy": "capel"
+  },
+  {
+    "code": 35,
+    "en-gb": "Chapel, methodist",
+    "cy": "Capel, methodistiaid"
+  },
+  {
+    "code": 59,
+    "en-gb": "Charismatic",
+    "cy": "charismataidd"
+  },
+  {
+    "code": 304,
+    "en-gb": "Chief rabbi",
+    "cy": "Prif rabbi"
+  },
+  {
+    "code": 60,
+    "en-gb": "Child of god",
+    "cy": "Plentyn o duw"
+  },
+  {
+    "code": 61,
+    "en-gb": "Chinese church",
+    "cy": "eglwys Tseiniaidd"
+  },
+  {
+    "code": 506,
+    "en-gb": "Chinese religion",
+    "cy": "crefydd Tseiniaidd"
+  },
+  {
+    "code": 301,
+    "en-gb": "Chinmaya mission",
+    "cy": "cenhadaeth Chinmaya"
+  },
+  {
+    "code": 302,
+    "en-gb": "Chishti",
+    "cy": "Chishti"
+  },
+  {
+    "code": 201,
+    "en-gb": "Christ church",
+    "cy": "eglwys Crist"
+  },
+  {
+    "code": 40,
+    "en-gb": "Christadelphian",
+    "cy": "Christadelphian"
+  },
+  {
+    "code": 45,
+    "en-gb": "Christian adventist",
+    "cy": "adventist christian"
+  },
+  {
+    "code": 200,
+    "en-gb": "Christian believer",
+    "cy": "gredwr christian"
+  },
+  {
+    "code": 3,
+    "en-gb": "Christian catholic",
+    "cy": "christian gatholig"
+  },
+  {
+    "code": 65,
+    "en-gb": "Christian church",
+    "cy": "eglwys Gristnogol"
+  },
+  {
+    "code": 58,
+    "en-gb": "Christian church wales",
+    "cy": "Eglwys Gristnogol cymru"
+  },
+  {
+    "code": 201,
+    "en-gb": "Christian churches of god",
+    "cy": "eglwysi Cristnogol o duw"
+  },
+  {
+    "code": 201,
+    "en-gb": "Christian existentialist",
+    "cy": "dirfodol christian"
+  },
+  {
+    "code": 62,
+    "en-gb": "Christian fellowship",
+    "cy": "cymdeithas Gristnogol"
+  },
+  {
+    "code": 63,
+    "en-gb": "Christian fellowship church",
+    "cy": "eglwys cymdeithas Gristnogol"
+  },
+  {
+    "code": 201,
+    "en-gb": "Christian hedonist",
+    "cy": "hedonist christian"
+  },
+  {
+    "code": 201,
+    "en-gb": "Christian humanist",
+    "cy": "dyneiddiwr christian"
+  },
+  {
+    "code": 12,
+    "en-gb": "Christian orthodox church",
+    "cy": "eglwys uniongred christian"
+  },
+  {
+    "code": 22,
+    "en-gb": "Christian pentecostal",
+    "cy": "Bentecostaidd christian"
+  },
+  {
+    "code": 64,
+    "en-gb": "Christian scientist",
+    "cy": "gwyddonydd christian"
+  },
+  {
+    "code": 116,
+    "en-gb": "Christian spiritualist church",
+    "cy": "Eglwys Ysbrydegwyr christian"
+  },
+  {
+    "code": 530,
+    "en-gb": "Church of all religion",
+    "cy": "Eglwys o bob crefydd"
+  },
+  {
+    "code": 201,
+    "en-gb": "Church of australia",
+    "cy": "Eglwys Awstralia"
+  },
+  {
+    "code": 90,
+    "en-gb": "Church of denmark",
+    "cy": "Eglwys denmarc"
+  },
+  {
+    "code": 2,
+    "en-gb": "Church of england",
+    "cy": "Eglwys Lloegr"
+  },
+  {
+    "code": 19,
+    "en-gb": "Church of god",
+    "cy": "Eglwys duw"
+  },
+  {
+    "code": 66,
+    "en-gb": "Church of god of prophecy",
+    "cy": "Eglwys duw y broffwydoliaeth"
+  },
+  {
+    "code": 201,
+    "en-gb": "Church of god trinity",
+    "cy": "Eglwys trinity duw"
+  },
+  {
+    "code": 201,
+    "en-gb": "Church of god, christian",
+    "cy": "Eglwys duw, christian"
+  },
+  {
+    "code": 22,
+    "en-gb": "Church of god, pentecostal",
+    "cy": "Eglwys duw, Pentecostaidd"
+  },
+  {
+    "code": 113,
+    "en-gb": "Church of harmony",
+    "cy": "Eglwys harmoni"
+  },
+  {
+    "code": 47,
+    "en-gb": "Church of ireland",
+    "cy": "Eglwys iwerddon"
+  },
+  {
+    "code": 41,
+    "en-gb": "Church of jesus christ",
+    "cy": "Eglwys Crist Iesu"
+  },
+  {
+    "code": 41,
+    "en-gb": "Church of jesus christ of latter day saints (mormons)",
+    "cy": "Eglwys Iesu Grist o saint diwrnod olaf (Mormoniaid)"
+  },
+  {
+    "code": 1,
+    "en-gb": "Church of mauritius",
+    "cy": "Eglwys mauritius"
+  },
+  {
+    "code": 1,
+    "en-gb": "Church of nigeria",
+    "cy": "Eglwys Nigeria"
+  },
+  {
+    "code": 90,
+    "en-gb": "Church of norway",
+    "cy": "Eglwys norway"
+  },
+  {
+    "code": 67,
+    "en-gb": "Church of prophecy",
+    "cy": "Eglwys proffwydoliaeth"
+  },
+  {
+    "code": 56,
+    "en-gb": "Church of scotland",
+    "cy": "Eglwys scotland"
+  },
+  {
+    "code": 201,
+    "en-gb": "Church of south africa",
+    "cy": "Eglwys Affrica i'r de"
+  },
+  {
+    "code": 201,
+    "en-gb": "Church of south india",
+    "cy": "Eglwys india de"
+  },
+  {
+    "code": 90,
+    "en-gb": "Church of sweden",
+    "cy": "Eglwys sweden"
+  },
+  {
+    "code": 41,
+    "en-gb": "Church of the firstborn",
+    "cy": "Eglwys y cyntaf-anedig"
+  },
+  {
+    "code": 115,
+    "en-gb": "Church of the living",
+    "cy": "Eglwys y byw"
+  },
+  {
+    "code": 68,
+    "en-gb": "Church of the living god",
+    "cy": "Eglwys y duw byw"
+  },
+  {
+    "code": 69,
+    "en-gb": "Church of the nazarene",
+    "cy": "Eglwys y Nasaread"
+  },
+  {
+    "code": 1,
+    "en-gb": "Church of the province of west africa",
+    "cy": "Eglwys nhalaith gorllewin Affrica"
+  },
+  {
+    "code": 201,
+    "en-gb": "Church of the redeemer",
+    "cy": "Eglwys y Gwaredwr"
+  },
+  {
+    "code": 1,
+    "en-gb": "Church of uganda",
+    "cy": "Eglwys uganda"
+  },
+  {
+    "code": 58,
+    "en-gb": "Church of wales",
+    "cy": "Eglwys cymru"
+  },
+  {
+    "code": 70,
+    "en-gb": "Church on the way",
+    "cy": "Eglwys ar y ffordd"
+  },
+  {
+    "code": 35,
+    "en-gb": "Church, methodist",
+    "cy": "Church, methodistiaid"
+  },
+  {
+    "code": 42,
+    "en-gb": "Churches of christ",
+    "cy": "Eglwysi Crist"
+  },
+  {
+    "code": 201,
+    "en-gb": "City church",
+    "cy": "eglwys City"
+  },
+  {
+    "code": 71,
+    "en-gb": "City mission",
+    "cy": "genhadaeth City"
+  },
+  {
+    "code": 72,
+    "en-gb": "Coleraine christian centre",
+    "cy": "canolfan christian Coleraine"
+  },
+  {
+    "code": 27,
+    "en-gb": "Combined methodist and presbyterian church",
+    "cy": "methodistiaid cyfunol a'r eglwys Bresbyteraidd"
+  },
+  {
+    "code": 201,
+    "en-gb": "Community church",
+    "cy": "eglwys y gymuned"
+  },
+  {
+    "code": 507,
+    "en-gb": "Confucianist",
+    "cy": "Confucianist"
+  },
+  {
+    "code": 73,
+    "en-gb": "Congregational church",
+    "cy": "eglwys Annibynnol"
+  },
+  {
+    "code": 304,
+    "en-gb": "Conservadox",
+    "cy": "Conservadox"
+  },
+  {
+    "code": 74,
+    "en-gb": "Cooneyite",
+    "cy": "Cooneyite"
+  },
+  {
+    "code": 8,
+    "en-gb": "Coptic christian",
+    "cy": "Goptaidd christian"
+  },
+  {
+    "code": 8,
+    "en-gb": "Coptic orthodox church",
+    "cy": "eglwys uniongred Goptaidd"
+  },
+  {
+    "code": 201,
+    "en-gb": "Covenant protestant reformed church",
+    "cy": "eglwys Cyfamod Protestannaidd diwygiedig"
+  },
+  {
+    "code": 103,
+    "en-gb": "Covenanter",
+    "cy": "Cyfamodwr"
+  },
+  {
+    "code": 524,
+    "en-gb": "Daoism",
+    "cy": "Daoism"
+  },
+  {
+    "code": 302,
+    "en-gb": "Dawoodi bohras",
+    "cy": "Dawoodi bohras"
+  },
+  {
+    "code": 112,
+    "en-gb": "Day church of god",
+    "cy": "Eglwys Diwrnod y duw"
+  },
+  {
+    "code": 201,
+    "en-gb": "Deaf christian fellowship",
+    "cy": "cymrodoriaeth christian Byddar"
+  },
+  {
+    "code": 515,
+    "en-gb": "Deist",
+    "cy": "deist"
+  },
+  {
+    "code": 302,
+    "en-gb": "Deobandi",
+    "cy": "Deobandi"
+  },
+  {
+    "code": 301,
+    "en-gb": "Devi",
+    "cy": "Devi"
+  },
+  {
+    "code": 401,
+    "en-gb": "Dianic",
+    "cy": "Dianic"
+  },
+  {
+    "code": 74,
+    "en-gb": "Dippers",
+    "cy": "trochwyr"
+  },
+  {
+    "code": 43,
+    "en-gb": "Disciples of christ",
+    "cy": "Disgyblion Crist"
+  },
+  {
+    "code": 405,
+    "en-gb": "Discordian",
+    "cy": "Discordian"
+  },
+  {
+    "code": 301,
+    "en-gb": "Divine life society",
+    "cy": "cymdeithas bywyd dwyfol"
+  },
+  {
+    "code": 508,
+    "en-gb": "Divine lightmission",
+    "cy": "lightmission Divine"
+  },
+  {
+    "code": 403,
+    "en-gb": "Druid",
+    "cy": "Druid"
+  },
+  {
+    "code": 509,
+    "en-gb": "Druze",
+    "cy": "Druze"
+  },
+  {
+    "code": 75,
+    "en-gb": "Dutch reformed church",
+    "cy": "eglwys diwygiedig Iseldiroedd"
+  },
+  {
+    "code": 301,
+    "en-gb": "Dvaitadvaita",
+    "cy": "Dvaitadvaita"
+  },
+  {
+    "code": 301,
+    "en-gb": "Dwaraka pitha",
+    "cy": "Dwaraka pitha"
+  },
+  {
+    "code": 201,
+    "en-gb": "Eaglemount christian centre",
+    "cy": "canolfan christian Eaglemount"
+  },
+  {
+    "code": 201,
+    "en-gb": "East evangelical church",
+    "cy": "eglwys efengylaidd Dwyrain"
+  },
+  {
+    "code": 9,
+    "en-gb": "Eastern orthodox church",
+    "cy": "eglwys uniongred Dwyrain"
+  },
+  {
+    "code": 510,
+    "en-gb": "Eckankar",
+    "cy": "Eckankar"
+  },
+  {
+    "code": 76,
+    "en-gb": "Ecumenical",
+    "cy": "eciwmenaidd"
+  },
+  {
+    "code": 102,
+    "en-gb": "Eglise reformee de france",
+    "cy": "Eglise de france reformee"
+  },
+  {
+    "code": 201,
+    "en-gb": "Ekklesia ministries",
+    "cy": "gweinidogaethau Ekklesia"
+  },
+  {
+    "code": 22,
+    "en-gb": "Elim church",
+    "cy": "eglwys Elim"
+  },
+  {
+    "code": 22,
+    "en-gb": "Elim pentecostal",
+    "cy": "Bentecostaidd Elim"
+  },
+  {
+    "code": 201,
+    "en-gb": "Elkana christian fellowship",
+    "cy": "Elkana cymrodoriaeth christian"
+  },
+  {
+    "code": 201,
+    "en-gb": "Emmanuel church",
+    "cy": "eglwys Emmanuel"
+  },
+  {
+    "code": 77,
+    "en-gb": "Emmanuel mission",
+    "cy": "cenhadaeth Emmanuel"
+  },
+  {
+    "code": 78,
+    "en-gb": "Episcopalian",
+    "cy": "Episcopalian"
+  },
+  {
+    "code": 2,
+    "en-gb": "Episcopalian church of england",
+    "cy": "eglwys Episcopalian o lloegr"
+  },
+  {
+    "code": 300,
+    "en-gb": "Esoteric buddhism",
+    "cy": "bwdhaeth esoterig"
+  },
+  {
+    "code": 400,
+    "en-gb": "Esthetic pagan",
+    "cy": "esthetic paganaidd"
+  },
+  {
+    "code": 90,
+    "en-gb": "Estonian lutheran",
+    "cy": "Lutheraidd Estonia"
+  },
+  {
+    "code": 79,
+    "en-gb": "Evangelical",
+    "cy": "Efengylaidd"
+  },
+  {
+    "code": 80,
+    "en-gb": "Evangelical alliance",
+    "cy": "cynghrair efengylaidd"
+  },
+  {
+    "code": 1,
+    "en-gb": "Evangelical anglican",
+    "cy": "Anglicanaidd efengylaidd"
+  },
+  {
+    "code": 26,
+    "en-gb": "Evangelical baptist",
+    "cy": "Bedyddwyr efengylaidd"
+  },
+  {
+    "code": 81,
+    "en-gb": "Evangelical church",
+    "cy": "eglwys efengylaidd"
+  },
+  {
+    "code": 201,
+    "en-gb": "Evangelical church of germany",
+    "cy": "Eglwys Efengylaidd Almaen"
+  },
+  {
+    "code": 90,
+    "en-gb": "Evangelical lutheran",
+    "cy": "Lutheraidd Efengylaidd"
+  },
+  {
+    "code": 11,
+    "en-gb": "Evangelical orthodox catholic",
+    "cy": "Efengylaidd uniongred gatholig"
+  },
+  {
+    "code": 81,
+    "en-gb": "Evangelical presbyterian church",
+    "cy": "eglwys Bresbyteraidd efengylaidd"
+  },
+  {
+    "code": 82,
+    "en-gb": "Evangelical union",
+    "cy": "undeb efengylaidd"
+  },
+  {
+    "code": 88,
+    "en-gb": "Evangelist",
+    "cy": "efengylwr"
+  },
+  {
+    "code": 201,
+    "en-gb": "Faith fellowship",
+    "cy": "cymrodoriaeth ffydd"
+  },
+  {
+    "code": 83,
+    "en-gb": "Faith mission pilgrim",
+    "cy": "pererinion genhadaeth Ffydd"
+  },
+  {
+    "code": 201,
+    "en-gb": "Fellowship church",
+    "cy": "eglwys Cymrodoriaeth"
+  },
+  {
+    "code": 84,
+    "en-gb": "Fellowship of independent evangelical churches",
+    "cy": "Cymrodoriaeth o eglwysi efengylaidd annibynnol"
+  },
+  {
+    "code": 201,
+    "en-gb": "Finnish orthodox church",
+    "cy": "eglwys uniongred Ffindir"
+  },
+  {
+    "code": 201,
+    "en-gb": "Forestside christian centre",
+    "cy": "canolfan christian Forestside"
+  },
+  {
+    "code": 21,
+    "en-gb": "Four square gospel",
+    "cy": "Pedwar efengyl sgwâr"
+  },
+  {
+    "code": 3,
+    "en-gb": "Franciscan",
+    "cy": "Ffransisgaidd"
+  },
+  {
+    "code": 26,
+    "en-gb": "Free baptist",
+    "cy": "Bedyddwyr am ddim"
+  },
+  {
+    "code": 28,
+    "en-gb": "Free church",
+    "cy": "eglwys am ddim"
+  },
+  {
+    "code": 201,
+    "en-gb": "Free church of england",
+    "cy": "eglwys yn rhad ac am lloegr"
+  },
+  {
+    "code": 532,
+    "en-gb": "Free church of love",
+    "cy": "eglwys am ddim o gariad"
+  },
+  {
+    "code": 28,
+    "en-gb": "Free church of scotland",
+    "cy": "eglwys yn rhad ac am scotland"
+  },
+  {
+    "code": 201,
+    "en-gb": "Free church of switzerland",
+    "cy": "eglwys yn rhad ac am swistir"
+  },
+  {
+    "code": 29,
+    "en-gb": "Free evangelical church",
+    "cy": "eglwys efengylaidd am ddim"
+  },
+  {
+    "code": 30,
+    "en-gb": "Free methodist",
+    "cy": "methodistiaid am ddim"
+  },
+  {
+    "code": 31,
+    "en-gb": "Free presbyterian",
+    "cy": "Bresbyteraidd am ddim"
+  },
+  {
+    "code": 32,
+    "en-gb": "Free presbyterian church of scotland",
+    "cy": "Eglwys Bresbyteraidd yn rhad ac am scotland"
+  },
+  {
+    "code": 33,
+    "en-gb": "Free presbyterian church of ulster",
+    "cy": "Eglwys Bresbyteraidd yn rhad ac am ulster"
+  },
+  {
+    "code": 100,
+    "en-gb": "Free secessionalist",
+    "cy": "secessionalist am ddim"
+  },
+  {
+    "code": 604,
+    "en-gb": "Free thinker",
+    "cy": "meddyliwr am ddim"
+  },
+  {
+    "code": 201,
+    "en-gb": "Freshwater christian fellowship",
+    "cy": "Freshwater cymrodoriaeth christian"
+  },
+  {
+    "code": 300,
+    "en-gb": "Friends of western buddhist order (fwbo)",
+    "cy": "Cyfeillion Urdd Bwdhyddion y Gorllewin (fwbo)"
+  },
+  {
+    "code": 85,
+    "en-gb": "Full gospel assembly",
+    "cy": "cynulliad efengyl llawn"
+  },
+  {
+    "code": 401,
+    "en-gb": "Gardnerian",
+    "cy": "Gardneraidd"
+  },
+  {
+    "code": 201,
+    "en-gb": "Gateway church",
+    "cy": "eglwys y Porth"
+  },
+  {
+    "code": 201,
+    "en-gb": "Glenabbey church",
+    "cy": "eglwys Glenabbey"
+  },
+  {
+    "code": 19,
+    "en-gb": "Global church of god",
+    "cy": "Eglwys Fyd-eang o duw"
+  },
+  {
+    "code": 405,
+    "en-gb": "Golden dawn",
+    "cy": "wawr Golden"
+  },
+  {
+    "code": 53,
+    "en-gb": "Gospel assembly",
+    "cy": "Efengyl cynulliad"
+  },
+  {
+    "code": 301,
+    "en-gb": "Govardhana pitha",
+    "cy": "Govardhana pitha"
+  },
+  {
+    "code": 201,
+    "en-gb": "Grace fellowship",
+    "cy": "Grace cymrodoriaeth"
+  },
+  {
+    "code": 201,
+    "en-gb": "Greater work crusade",
+    "cy": "crwsâd gwaith mwy"
+  },
+  {
+    "code": 10,
+    "en-gb": "Greek orthodox",
+    "cy": "uniongred Groeg"
+  },
+  {
+    "code": 10,
+    "en-gb": "Greek orthodox church",
+    "cy": "eglwys uniongred Groeg"
+  },
+  {
+    "code": 15,
+    "en-gb": "Greek ukrainian orthodox",
+    "cy": "ukrainian uniongred Groeg"
+  },
+  {
+    "code": 302,
+    "en-gb": "Hanafi",
+    "cy": "Hanafi"
+  },
+  {
+    "code": 302,
+    "en-gb": "Hanbali",
+    "cy": "Hanbali"
+  },
+  {
+    "code": 306,
+    "en-gb": "Hare krishna",
+    "cy": "Hare krishna"
+  },
+  {
+    "code": 307,
+    "en-gb": "Haredi",
+    "cy": "Haredi"
+  },
+  {
+    "code": 304,
+    "en-gb": "Hasidic",
+    "cy": "Hasidaidd"
+  },
+  {
+    "code": 201,
+    "en-gb": "Haven christian centre fellowship",
+    "cy": "Haven cymrodoriaeth ganolfan christian"
+  },
+  {
+    "code": 409,
+    "en-gb": "Heathen",
+    "cy": "paganiaid"
+  },
+  {
+    "code": 611,
+    "en-gb": "Heavy metal",
+    "cy": "Metal trwm"
+  },
+  {
+    "code": 302,
+    "en-gb": "Hebtiahs bohra",
+    "cy": "Hebtiahs bohra"
+  },
+  {
+    "code": 408,
+    "en-gb": "Hellenic",
+    "cy": "Hellenic"
+  },
+  {
+    "code": 201,
+    "en-gb": "Highway of holiness",
+    "cy": "Priffyrdd o sancteiddrwydd"
+  },
+  {
+    "code": 301,
+    "en-gb": "Hinduism/arya samaj",
+    "cy": "Hindŵaeth / Arya Samaj"
+  },
+  {
+    "code": 201,
+    "en-gb": "Holy church of god",
+    "cy": "Eglwys Sanctaidd duw"
+  },
+  {
+    "code": 86,
+    "en-gb": "House church",
+    "cy": "eglwys House"
+  },
+  {
+    "code": 201,
+    "en-gb": "Huguenot",
+    "cy": "Huguenot"
+  },
+  {
+    "code": 603,
+    "en-gb": "Humanist",
+    "cy": "Dyneiddwyr"
+  },
+  {
+    "code": 102,
+    "en-gb": "Hungarian reformed church",
+    "cy": "eglwys diwygiedig Hwngareg"
+  },
+  {
+    "code": 87,
+    "en-gb": "Independent",
+    "cy": "annibynnol"
+  },
+  {
+    "code": 26,
+    "en-gb": "Independent baptist",
+    "cy": "Bedyddwyr annibynnol"
+  },
+  {
+    "code": 88,
+    "en-gb": "Independent evangelist",
+    "cy": "efengylwr annibynnol"
+  },
+  {
+    "code": 34,
+    "en-gb": "Independent methodist",
+    "cy": "methodistiaid annibynnol"
+  },
+  {
+    "code": 201,
+    "en-gb": "Infinite way",
+    "cy": "ffordd Infinite"
+  },
+  {
+    "code": 201,
+    "en-gb": "Inglesia ni cristo",
+    "cy": "Inglesia us Cristo"
+  },
+  {
+    "code": 89,
+    "en-gb": "Interdenominational",
+    "cy": "rhyngenwadol"
+  },
+  {
+    "code": 44,
+    "en-gb": "International bible student's association",
+    "cy": "cymdeithas myfyrwyr rhyngwladol Beibl yn"
+  },
+  {
+    "code": 306,
+    "en-gb": "International society for krishna consciousness",
+    "cy": "cymdeithas Rhyngwladol ar gyfer ymwybyddiaeth krishna"
+  },
+  {
+    "code": 3,
+    "en-gb": "Irish catholic",
+    "cy": "Gwyddelig gatholig"
+  },
+  {
+    "code": 81,
+    "en-gb": "Irish evangelical church",
+    "cy": "eglwys efengylaidd Gwyddelig"
+  },
+  {
+    "code": 46,
+    "en-gb": "Irish presbyterian",
+    "cy": "Bresbyteraidd Gwyddelig"
+  },
+  {
+    "code": 201,
+    "en-gb": "Iron hall",
+    "cy": "neuadd haearn"
+  },
+  {
+    "code": 306,
+    "en-gb": "Iskcon",
+    "cy": "ISKCON"
+  },
+  {
+    "code": 302,
+    "en-gb": "Islamic",
+    "cy": "Islamaidd"
+  },
+  {
+    "code": 302,
+    "en-gb": "Ismaili",
+    "cy": "Ismaili"
+  },
+  {
+    "code": 511,
+    "en-gb": "Jain",
+    "cy": "Jain"
+  },
+  {
+    "code": 301,
+    "en-gb": "Jalaram",
+    "cy": "Jalaram"
+  },
+  {
+    "code": 302,
+    "en-gb": "Jamaat al-muslimeen",
+    "cy": "Jamaat al-muslimeen"
+  },
+  {
+    "code": 302,
+    "en-gb": "Jamaat-e-islami",
+    "cy": "Jamaat-e-Islami"
+  },
+  {
+    "code": 600,
+    "en-gb": "Jedi knight",
+    "cy": "marchog Jedi"
+  },
+  {
+    "code": 44,
+    "en-gb": "Jehovah's witness",
+    "cy": "Jehovah tyst"
+  },
+  {
+    "code": 41,
+    "en-gb": "Jesus christ of latter day saints",
+    "cy": "Iesu Crist o saint diwrnod olaf"
+  },
+  {
+    "code": 201,
+    "en-gb": "Jesus fellowship church",
+    "cy": "eglwys gymrodoriaeth jesus"
+  },
+  {
+    "code": 201,
+    "en-gb": "Jesus saves mission",
+    "cy": "Iesu yn arbed genhadaeth"
+  },
+  {
+    "code": 304,
+    "en-gb": "Jewish humanist",
+    "cy": "dyneiddiwr Iddewig"
+  },
+  {
+    "code": 201,
+    "en-gb": "Jordan victory church",
+    "cy": "eglwys buddugoliaeth Jordan"
+  },
+  {
+    "code": 201,
+    "en-gb": "Judaic christian",
+    "cy": "Iddewig ohono christian"
+  },
+  {
+    "code": 301,
+    "en-gb": "Jyotirmatha pitha",
+    "cy": "Jyotirmatha pitha"
+  },
+  {
+    "code": 300,
+    "en-gb": "Kalmykian buddhism",
+    "cy": "bwdhaeth Kalmykian"
+  },
+  {
+    "code": 301,
+    "en-gb": "Kanchi kamakoti pitha",
+    "cy": "Kanchi kamakoti pitha"
+  },
+  {
+    "code": 300,
+    "en-gb": "Karma kagyu",
+    "cy": "karma kagyu"
+  },
+  {
+    "code": 301,
+    "en-gb": "Kashmir shaivism",
+    "cy": "Kashmir Shaiviaeth"
+  },
+  {
+    "code": 201,
+    "en-gb": "Katapheugo fellowship",
+    "cy": "Katapheugo cymrodoriaeth"
+  },
+  {
+    "code": 408,
+    "en-gb": "Kemetic",
+    "cy": "Kemetic"
+  },
+  {
+    "code": 307,
+    "en-gb": "Khareidi",
+    "cy": "Khareidi"
+  },
+  {
+    "code": 201,
+    "en-gb": "Kingdom life ministries",
+    "cy": "gweinidogaethau bywyd Kingdom"
+  },
+  {
+    "code": 201,
+    "en-gb": "King's fellowship",
+    "cy": "gymrodoriaeth Brenin"
+  },
+  {
+    "code": 300,
+    "en-gb": "Korean zen",
+    "cy": "zen Corea"
+  },
+  {
+    "code": 306,
+    "en-gb": "Krishna",
+    "cy": "Krishna"
+  },
+  {
+    "code": 301,
+    "en-gb": "Kumara-sampradaya",
+    "cy": "Kumara-sampradaya"
+  },
+  {
+    "code": 520,
+    "en-gb": "La regla lucumi",
+    "cy": "lucumi regla la"
+  },
+  {
+    "code": 302,
+    "en-gb": "Lahore ahmadiyya",
+    "cy": "Lahore Ahmadiyya"
+  },
+  {
+    "code": 301,
+    "en-gb": "Lakshmi-sampradaya",
+    "cy": "Lakshmi-sampradaya"
+  },
+  {
+    "code": 3,
+    "en-gb": "Lapsed catholic",
+    "cy": "darfod gatholig"
+  },
+  {
+    "code": 41,
+    "en-gb": "Latter day saints",
+    "cy": "saint dydd olaf"
+  },
+  {
+    "code": 302,
+    "en-gb": "Liberal muslim",
+    "cy": "Muslim ryddfrydol"
+  },
+  {
+    "code": 201,
+    "en-gb": "Lifeboat mission",
+    "cy": "genhadaeth Bad Achub"
+  },
+  {
+    "code": 201,
+    "en-gb": "Lifeline/lifelink church",
+    "cy": "Lifeline / eglwys lifelink"
+  },
+  {
+    "code": 301,
+    "en-gb": "Lingayatism",
+    "cy": "Lingayatism"
+  },
+  {
+    "code": 19,
+    "en-gb": "Living church of god",
+    "cy": "Byw eglwys duw"
+  },
+  {
+    "code": 201,
+    "en-gb": "Lollard",
+    "cy": "Lollard"
+  },
+  {
+    "code": 90,
+    "en-gb": "Lutheran",
+    "cy": "Lutheraidd"
+  },
+  {
+    "code": 520,
+    "en-gb": "Macumba",
+    "cy": "Macumba"
+  },
+  {
+    "code": 405,
+    "en-gb": "Magick",
+    "cy": "Magick"
+  },
+  {
+    "code": 301,
+    "en-gb": "Mahapuruxiya dharma",
+    "cy": "Mahapuruxiya dharma"
+  },
+  {
+    "code": 300,
+    "en-gb": "Mahayana",
+    "cy": "Mahayana"
+  },
+  {
+    "code": 302,
+    "en-gb": "Maliki",
+    "cy": "Maliki"
+  },
+  {
+    "code": 300,
+    "en-gb": "Mantrayana",
+    "cy": "Mantrayana"
+  },
+  {
+    "code": 201,
+    "en-gb": "Maranatha community",
+    "cy": "cymuned Maranatha"
+  },
+  {
+    "code": 304,
+    "en-gb": "Masorti",
+    "cy": "Masorti"
+  },
+  {
+    "code": 302,
+    "en-gb": "Maturidi",
+    "cy": "Maturidi"
+  },
+  {
+    "code": 91,
+    "en-gb": "Mennonite brethren",
+    "cy": "frodyr Mennonite"
+  },
+  {
+    "code": 35,
+    "en-gb": "Methodist",
+    "cy": "Methodist"
+  },
+  {
+    "code": 23,
+    "en-gb": "Methodist church in ireland",
+    "cy": "eglwys y Methodistiaid yn iwerddon"
+  },
+  {
+    "code": 201,
+    "en-gb": "Methodist church in scotland",
+    "cy": "eglwys y Methodistiaid yn yr Alban"
+  },
+  {
+    "code": 92,
+    "en-gb": "Metropolitan church",
+    "cy": "eglwys Metropolitan"
+  },
+  {
+    "code": 44,
+    "en-gb": "Millennial dawn",
+    "cy": "wawr milflwyddol"
+  },
+  {
+    "code": 201,
+    "en-gb": "Mission church",
+    "cy": "eglwys cenhadaeth"
+  },
+  {
+    "code": 201,
+    "en-gb": "Mission hall",
+    "cy": "neuadd cenhadaeth"
+  },
+  {
+    "code": 210,
+    "en-gb": "Mixed catholic/protestant",
+    "cy": "Cymysg gatholig / Protestannaidd"
+  },
+  {
+    "code": 535,
+    "en-gb": "Mixed religion",
+    "cy": "crefydd cymysg"
+  },
+  {
+    "code": 304,
+    "en-gb": "Mizrahim",
+    "cy": "Mizrahim"
+  },
+  {
+    "code": 302,
+    "en-gb": "Mohammedan",
+    "cy": "Mohammedan"
+  },
+  {
+    "code": 300,
+    "en-gb": "Mongolian buddhism",
+    "cy": "bwdhaeth Mongolian"
+  },
+  {
+    "code": 501,
+    "en-gb": "Monk",
+    "cy": "Monk"
+  },
+  {
+    "code": 500,
+    "en-gb": "Monotheistic",
+    "cy": "monotheistic"
+  },
+  {
+    "code": 302,
+    "en-gb": "Moorish science",
+    "cy": "gwyddoniaeth Mwraidd"
+  },
+  {
+    "code": 93,
+    "en-gb": "Moravian",
+    "cy": "Moravian"
+  },
+  {
+    "code": 41,
+    "en-gb": "Mormon",
+    "cy": "Mormoniaid"
+  },
+  {
+    "code": 201,
+    "en-gb": "Muggletonian",
+    "cy": "Muggletonian"
+  },
+  {
+    "code": 302,
+    "en-gb": "Murjite",
+    "cy": "Murjite"
+  },
+  {
+    "code": 302,
+    "en-gb": "Muslim druze",
+    "cy": "Druze Muslim"
+  },
+  {
+    "code": 302,
+    "en-gb": "Mustaali",
+    "cy": "Mustaali"
+  },
+  {
+    "code": 304,
+    "en-gb": "Musta'arabim",
+    "cy": "Musta'arabim"
+  },
+  {
+    "code": 302,
+    "en-gb": "Mu'tazili",
+    "cy": "Mu'tazili"
+  },
+  {
+    "code": 512,
+    "en-gb": "Mysticism",
+    "cy": "cyfriniaeth"
+  },
+  {
+    "code": 302,
+    "en-gb": "Naqshbandi",
+    "cy": "Naqshbandi"
+  },
+  {
+    "code": 513,
+    "en-gb": "Native american church",
+    "cy": "eglwys american Brodorol"
+  },
+  {
+    "code": 69,
+    "en-gb": "Nazarene",
+    "cy": "Nasaread"
+  },
+  {
+    "code": 400,
+    "en-gb": "Neo pagan",
+    "cy": "baganaidd neo"
+  },
+  {
+    "code": 406,
+    "en-gb": "Neo-shaman",
+    "cy": "Neo-siaman"
+  },
+  {
+    "code": 300,
+    "en-gb": "Nepalese buddhism",
+    "cy": "bwdhaeth Nepal"
+  },
+  {
+    "code": 404,
+    "en-gb": "New age",
+    "cy": "oes newydd"
+  },
+  {
+    "code": 201,
+    "en-gb": "New church",
+    "cy": "eglwys newydd"
+  },
+  {
+    "code": 201,
+    "en-gb": "New heart ministries",
+    "cy": "gweinidogaethau newydd galon"
+  },
+  {
+    "code": 22,
+    "en-gb": "New life fellowship",
+    "cy": "cymrodoriaeth bywyd newydd"
+  },
+  {
+    "code": 201,
+    "en-gb": "New testament church",
+    "cy": "eglwys testament newydd"
+  },
+  {
+    "code": 300,
+    "en-gb": "Nichiren buddhism",
+    "cy": "Nichiren bwdhaeth"
+  },
+  {
+    "code": 302,
+    "en-gb": "Nizari",
+    "cy": "Nizari"
+  },
+  {
+    "code": 95,
+    "en-gb": "Non denominational",
+    "cy": "Non enwadol"
+  },
+  {
+    "code": 109,
+    "en-gb": "Non sectarian",
+    "cy": "Non sectyddol"
+  },
+  {
+    "code": 94,
+    "en-gb": "Nonconformist",
+    "cy": "Anghydffurfiol"
+  },
+  {
+    "code": 301,
+    "en-gb": "Non-puranic",
+    "cy": "Di-puranic"
+  },
+  {
+    "code": 96,
+    "en-gb": "Non-subscribing presbyterian",
+    "cy": "Di-danysgrifio Bresbyteraidd"
+  },
+  {
+    "code": 96,
+    "en-gb": "Non-subscribing unitarian",
+    "cy": "Di-danysgrifio Undodaidd"
+  },
+  {
+    "code": 409,
+    "en-gb": "Norseodox",
+    "cy": "Norseodox"
+  },
+  {
+    "code": 201,
+    "en-gb": "Norwegian missionary alliance",
+    "cy": "cynghrair cenhadwr Norwyeg"
+  },
+  {
+    "code": 90,
+    "en-gb": "Norwegian state religion",
+    "cy": "crefydd y wladwriaeth Norwy"
+  },
+  {
+    "code": 405,
+    "en-gb": "Occult",
+    "cy": "ocwlt"
+  },
+  {
+    "code": 409,
+    "en-gb": "Odinist",
+    "cy": "Odinist"
+  },
+  {
+    "code": 201,
+    "en-gb": "Old forge mission hall",
+    "cy": "Hen neuadd genhadaeth efail"
+  },
+  {
+    "code": 201,
+    "en-gb": "Olivet hall",
+    "cy": "neuadd Olivet"
+  },
+  {
+    "code": 201,
+    "en-gb": "Open bible fellowship",
+    "cy": "cymrodoriaeth Beibl Agored"
+  },
+  {
+    "code": 201,
+    "en-gb": "Order of st john",
+    "cy": "Trefn y st john"
+  },
+  {
+    "code": 11,
+    "en-gb": "Orthodox catholic church",
+    "cy": "yr eglwys gatholig Uniongred"
+  },
+  {
+    "code": 12,
+    "en-gb": "Orthodox church",
+    "cy": "eglwys Uniongred"
+  },
+  {
+    "code": 304,
+    "en-gb": "Orthodox jewish",
+    "cy": "uniongred Iddewig"
+  },
+  {
+    "code": 302,
+    "en-gb": "Orthodox muslim",
+    "cy": "Uniongred Foslemaidd"
+  },
+  {
+    "code": 13,
+    "en-gb": "Orthodox presbyterian",
+    "cy": "Uniongred Bresbyteraidd"
+  },
+  {
+    "code": 302,
+    "en-gb": "Oveyssi",
+    "cy": "Oveyssi"
+  },
+  {
+    "code": 514,
+    "en-gb": "Own belief system",
+    "cy": "system gred Hun"
+  },
+  {
+    "code": 514,
+    "en-gb": "Own personal beliefs",
+    "cy": "credoau personol eich hun"
+  },
+  {
+    "code": 400,
+    "en-gb": "Pagan",
+    "cy": "Pagan"
+  },
+  {
+    "code": 403,
+    "en-gb": "Pagan druid",
+    "cy": "Pagan derwydd"
+  },
+  {
+    "code": 407,
+    "en-gb": "Pagan gnostic catholic",
+    "cy": "Pagan Gnostic gatholig"
+  },
+  {
+    "code": 402,
+    "en-gb": "Pagan hedgewitch",
+    "cy": "Pagan hedgewitch"
+  },
+  {
+    "code": 404,
+    "en-gb": "Pagan new age",
+    "cy": "oes newydd Pagan"
+  },
+  {
+    "code": 405,
+    "en-gb": "Pagan occult",
+    "cy": "Pagan ocwlt"
+  },
+  {
+    "code": 408,
+    "en-gb": "Pagan roman",
+    "cy": "Pagan roman"
+  },
+  {
+    "code": 406,
+    "en-gb": "Pagan shaman",
+    "cy": "Pagan siaman"
+  },
+  {
+    "code": 402,
+    "en-gb": "Pagan stregheria",
+    "cy": "Pagan stregheria"
+  },
+  {
+    "code": 407,
+    "en-gb": "Pagan thelemite",
+    "cy": "Pagan thelemite"
+  },
+  {
+    "code": 402,
+    "en-gb": "Pagan witchcraft",
+    "cy": "Pagan dewiniaeth"
+  },
+  {
+    "code": 201,
+    "en-gb": "Palmarian catholic",
+    "cy": "Palmarian gatholig"
+  },
+  {
+    "code": 503,
+    "en-gb": "Palo mayombe",
+    "cy": "Palo mayombe"
+  },
+  {
+    "code": 518,
+    "en-gb": "Pantheism",
+    "cy": "Pantheism"
+  },
+  {
+    "code": 301,
+    "en-gb": "Pashupata shaivism",
+    "cy": "Shaiviaeth Pashupata"
+  },
+  {
+    "code": 22,
+    "en-gb": "Pentecostal",
+    "cy": "Pentecostaidd"
+  },
+  {
+    "code": 83,
+    "en-gb": "Pilgrims",
+    "cy": "pererinion"
+  },
+  {
+    "code": 201,
+    "en-gb": "Potter's house",
+    "cy": "tŷ crochenydd"
+  },
+  {
+    "code": 97,
+    "en-gb": "Presbyterian",
+    "cy": "Presbyteraidd"
+  },
+  {
+    "code": 98,
+    "en-gb": "Presbyterian apostolic",
+    "cy": "apostolaidd Bresbyteraidd"
+  },
+  {
+    "code": 46,
+    "en-gb": "Presbyterian church in ireland",
+    "cy": "Eglwys Bresbyteraidd yn iwerddon"
+  },
+  {
+    "code": 99,
+    "en-gb": "Presbyterian church in wales",
+    "cy": "Eglwys Bresbyteraidd yng nghymru"
+  },
+  {
+    "code": 100,
+    "en-gb": "Presbyterian secession church",
+    "cy": "Eglwys Bresbyteraidd Ymwahaniad"
+  },
+  {
+    "code": 96,
+    "en-gb": "Presbyterian unitarian",
+    "cy": "Undodaidd Bresbyteraidd"
+  },
+  {
+    "code": 101,
+    "en-gb": "Protestant",
+    "cy": "Protestannaidd"
+  },
+  {
+    "code": 209,
+    "en-gb": "Protestant (mixed)",
+    "cy": "Protestannaidd (cymysg)"
+  },
+  {
+    "code": 301,
+    "en-gb": "Puranic",
+    "cy": "Puranic"
+  },
+  {
+    "code": 300,
+    "en-gb": "Pure land",
+    "cy": "tir pur"
+  },
+  {
+    "code": 302,
+    "en-gb": "Qadiri",
+    "cy": "Qadiri"
+  },
+  {
+    "code": 104,
+    "en-gb": "Quaker",
+    "cy": "Crynwyr"
+  },
+  {
+    "code": 503,
+    "en-gb": "Quimbanda",
+    "cy": "Quimbanda"
+  },
+  {
+    "code": 302,
+    "en-gb": "Quranism",
+    "cy": "Quranism"
+  },
+  {
+    "code": 305,
+    "en-gb": "Raja yoga",
+    "cy": "Raja ioga"
+  },
+  {
+    "code": 301,
+    "en-gb": "Ramanandi",
+    "cy": "Ramanandi"
+  },
+  {
+    "code": 519,
+    "en-gb": "Rastafarian",
+    "cy": "Rastaffaraidd"
+  },
+  {
+    "code": 117,
+    "en-gb": "Ratana churrch of new zealand",
+    "cy": "Ratana churrch o seland newydd"
+  },
+  {
+    "code": 605,
+    "en-gb": "Rationalist",
+    "cy": "rhesymolwr"
+  },
+  {
+    "code": 534,
+    "en-gb": "Ravidassia",
+    "cy": "Ravidassia"
+  },
+  {
+    "code": 67,
+    "en-gb": "Realist",
+    "cy": "realaidd"
+  },
+  {
+    "code": 408,
+    "en-gb": "Reconstructionist",
+    "cy": "Reconstructionist"
+  },
+  {
+    "code": 201,
+    "en-gb": "Reformed congregational",
+    "cy": "cynulleidfaol ddiwygiedig"
+  },
+  {
+    "code": 103,
+    "en-gb": "Reformed presbyterian",
+    "cy": "Bresbyteraidd ddiwygiedig"
+  },
+  {
+    "code": 201,
+    "en-gb": "Rehoboth mission",
+    "cy": "cenhadaeth Rehoboth"
+  },
+  {
+    "code": 104,
+    "en-gb": "Religious society of friends (quakers)",
+    "cy": "cymdeithas grefyddol o ffrindiau (Crynwyr)"
+  },
+  {
+    "code": 96,
+    "en-gb": "Remonstrant synod of ulster",
+    "cy": "synod Remonstrant o ulster"
+  },
+  {
+    "code": 201,
+    "en-gb": "River of life fellowship",
+    "cy": "River o gymrodoriaeth bywyd"
+  },
+  {
+    "code": 33,
+    "en-gb": "Riverside free presbyterian church",
+    "cy": "Riverside eglwys Bresbyteraidd rhad ac am ddim"
+  },
+  {
+    "code": 3,
+    "en-gb": "Roman catholic",
+    "cy": "Rhufeinig gatholig"
+  },
+  {
+    "code": 20,
+    "en-gb": "Romanian orthodox church",
+    "cy": "eglwys uniongred Rwmaneg"
+  },
+  {
+    "code": 304,
+    "en-gb": "Romaniotes",
+    "cy": "Romaniotes"
+  },
+  {
+    "code": 405,
+    "en-gb": "Rosicrucian",
+    "cy": "Rosicrucian"
+  },
+  {
+    "code": 44,
+    "en-gb": "Russellism",
+    "cy": "Russellism"
+  },
+  {
+    "code": 14,
+    "en-gb": "Russian orthodox church",
+    "cy": "eglwys uniongred Rwsia"
+  },
+  {
+    "code": 201,
+    "en-gb": "Sabbath keepers",
+    "cy": "ceidwaid Saboth"
+  },
+  {
+    "code": 301,
+    "en-gb": "Saivite",
+    "cy": "Saivite"
+  },
+  {
+    "code": 300,
+    "en-gb": "Sakya",
+    "cy": "Sakya"
+  },
+  {
+    "code": 302,
+    "en-gb": "Salafi",
+    "cy": "Salafi"
+  },
+  {
+    "code": 302,
+    "en-gb": "Salafism",
+    "cy": "Salafism"
+  },
+  {
+    "code": 36,
+    "en-gb": "Salvation army",
+    "cy": "fyddin yr iachawdwriaeth"
+  },
+  {
+    "code": 528,
+    "en-gb": "Sant mat",
+    "cy": "Sant mat"
+  },
+  {
+    "code": 301,
+    "en-gb": "Santana dharma",
+    "cy": "Santana dharma"
+  },
+  {
+    "code": 520,
+    "en-gb": "Santeri",
+    "cy": "Santeri"
+  },
+  {
+    "code": 521,
+    "en-gb": "Satanism",
+    "cy": "Sataniaeth"
+  },
+  {
+    "code": 522,
+    "en-gb": "Scientology",
+    "cy": "Seientoleg"
+  },
+  {
+    "code": 105,
+    "en-gb": "Scottish anglican",
+    "cy": "Anglicanaidd yr Alban"
+  },
+  {
+    "code": 105,
+    "en-gb": "Scottish episcopal church",
+    "cy": "eglwys esgobol yr Alban"
+  },
+  {
+    "code": 114,
+    "en-gb": "Scottish presbyterian",
+    "cy": "Bresbyteraidd Albanaidd"
+  },
+  {
+    "code": 101,
+    "en-gb": "Scottish protestant",
+    "cy": "Protestannaidd Alban"
+  },
+  {
+    "code": 201,
+    "en-gb": "Seaman's mission",
+    "cy": "Cenhadaeth Morwyr"
+  },
+  {
+    "code": 100,
+    "en-gb": "Seceding presbyterian",
+    "cy": "Seceding Bresbyteraidd"
+  },
+  {
+    "code": 606,
+    "en-gb": "Secularist",
+    "cy": "seciwlaraidd"
+  },
+  {
+    "code": 409,
+    "en-gb": "Seidr",
+    "cy": "Seidr"
+  },
+  {
+    "code": 304,
+    "en-gb": "Sephardic",
+    "cy": "Seffardig"
+  },
+  {
+    "code": 16,
+    "en-gb": "Serbian orthodox church",
+    "cy": "eglwys uniongred Serbia"
+  },
+  {
+    "code": 45,
+    "en-gb": "Seventh day adventist",
+    "cy": "adventist dydd Seithfed"
+  },
+  {
+    "code": 45,
+    "en-gb": "Seventh day church of god",
+    "cy": "Diwrnod eglwys Seithfed o duw"
+  },
+  {
+    "code": 302,
+    "en-gb": "Shafi'i",
+    "cy": "Shafi'i"
+  },
+  {
+    "code": 301,
+    "en-gb": "Shaiva siddhanta",
+    "cy": "Shaiva siddhanta"
+  },
+  {
+    "code": 301,
+    "en-gb": "Shaivism",
+    "cy": "Shaiviaeth"
+  },
+  {
+    "code": 301,
+    "en-gb": "Shakta",
+    "cy": "Shakta"
+  },
+  {
+    "code": 301,
+    "en-gb": "Shakti",
+    "cy": "Shakti"
+  },
+  {
+    "code": 201,
+    "en-gb": "Shalom victory church",
+    "cy": "eglwys buddugoliaeth Shalom"
+  },
+  {
+    "code": 406,
+    "en-gb": "Shamanism",
+    "cy": "siamaniaeth"
+  },
+  {
+    "code": 201,
+    "en-gb": "Shankill mission",
+    "cy": "genhadaeth Shankill"
+  },
+  {
+    "code": 300,
+    "en-gb": "Shaolin",
+    "cy": "Shaolin"
+  },
+  {
+    "code": 301,
+    "en-gb": "Sharada pitha",
+    "cy": "Sharada pitha"
+  },
+  {
+    "code": 302,
+    "en-gb": "Shaykhi",
+    "cy": "Shaykhi"
+  },
+  {
+    "code": 302,
+    "en-gb": "Shia",
+    "cy": "Shia"
+  },
+  {
+    "code": 302,
+    "en-gb": "Shiate muslim",
+    "cy": "Muslim Shiate"
+  },
+  {
+    "code": 302,
+    "en-gb": "Shiate muslim",
+    "cy": "Muslim Shiate"
+  },
+  {
+    "code": 201,
+    "en-gb": "Shiloh fellowship",
+    "cy": "Shiloh cymrodoriaeth"
+  },
+  {
+    "code": 300,
+    "en-gb": "Shingon",
+    "cy": "Shingon"
+  },
+  {
+    "code": 538,
+    "en-gb": "Shintoism",
+    "cy": "Shintoism"
+  },
+  {
+    "code": 301,
+    "en-gb": "Shiva advaita",
+    "cy": "Advaita Shiva"
+  },
+  {
+    "code": 301,
+    "en-gb": "Shuddhadvaita",
+    "cy": "Shuddhadvaita"
+  },
+  {
+    "code": 301,
+    "en-gb": "Siddha siddhanta",
+    "cy": "Siddha siddhanta"
+  },
+  {
+    "code": 301,
+    "en-gb": "Smartist",
+    "cy": "Smartist"
+  },
+  {
+    "code": 104,
+    "en-gb": "Society of friends",
+    "cy": "Cymdeithas o ffrindiau"
+  },
+  {
+    "code": 300,
+    "en-gb": "Soka gakkai international",
+    "cy": "Soka Gakkai rhyngwladol"
+  },
+  {
+    "code": 300,
+    "en-gb": "Southeast asian buddhism",
+    "cy": "bwdhaeth asian de-ddwyrain"
+  },
+  {
+    "code": 537,
+    "en-gb": "Spiritual",
+    "cy": "ysbrydol"
+  },
+  {
+    "code": 523,
+    "en-gb": "Spiritualist",
+    "cy": "Ysbrydegwyr"
+  },
+  {
+    "code": 301,
+    "en-gb": "Sri vaishnavism",
+    "cy": "Vaishnaviaeth Sri"
+  },
+  {
+    "code": 302,
+    "en-gb": "Submitter",
+    "cy": "Cyflwynydd"
+  },
+  {
+    "code": 302,
+    "en-gb": "Sufi",
+    "cy": "Sufi"
+  },
+  {
+    "code": 302,
+    "en-gb": "Suhrawardiyya",
+    "cy": "Suhrawardiyya"
+  },
+  {
+    "code": 302,
+    "en-gb": "Sulaimani bohras",
+    "cy": "Sulaimani bohras"
+  },
+  {
+    "code": 302,
+    "en-gb": "Sunni",
+    "cy": "Sunni"
+  },
+  {
+    "code": 301,
+    "en-gb": "Swaminarayan",
+    "cy": "Swaminarayan"
+  },
+  {
+    "code": 102,
+    "en-gb": "Swiss reformed church",
+    "cy": "eglwys diwygiedig Swistir"
+  },
+  {
+    "code": 302,
+    "en-gb": "Tablighi jamaat",
+    "cy": "Tablighi jamaat"
+  },
+  {
+    "code": 301,
+    "en-gb": "Tamil hindu",
+    "cy": "tamil hindu"
+  },
+  {
+    "code": 300,
+    "en-gb": "Tantrayana",
+    "cy": "Tantrayana"
+  },
+  {
+    "code": 300,
+    "en-gb": "Tantric buddhism",
+    "cy": "bwdhaeth Tantric"
+  },
+  {
+    "code": 524,
+    "en-gb": "Taoist",
+    "cy": "Taoist"
+  },
+  {
+    "code": 304,
+    "en-gb": "Teimanim",
+    "cy": "Teimanim"
+  },
+  {
+    "code": 201,
+    "en-gb": "Templemore hall",
+    "cy": "neuadd Templemore"
+  },
+  {
+    "code": 41,
+    "en-gb": "The church of christ, mormons",
+    "cy": "Mae eglwys Crist, Mormons"
+  },
+  {
+    "code": 201,
+    "en-gb": "The church of north india",
+    "cy": "Mae eglwys india gogledd"
+  },
+  {
+    "code": 201,
+    "en-gb": "The knight's templar",
+    "cy": "Templar y marchog"
+  },
+  {
+    "code": 39,
+    "en-gb": "The methodist church in wales",
+    "cy": "Mae'r Eglwys Fethodistaidd yng Nghymru"
+  },
+  {
+    "code": 300,
+    "en-gb": "The new kadampa tradition (nkt)",
+    "cy": "Mae'r traddodiad Kadampa newydd (nkt)"
+  },
+  {
+    "code": 201,
+    "en-gb": "The revival fellowship",
+    "cy": "Mae'r gymrodoriaeth diwygiad"
+  },
+  {
+    "code": 516,
+    "en-gb": "Theism",
+    "cy": "theism"
+  },
+  {
+    "code": 407,
+    "en-gb": "Thelemite",
+    "cy": "Thelemite"
+  },
+  {
+    "code": 409,
+    "en-gb": "Theodist",
+    "cy": "Theodist"
+  },
+  {
+    "code": 300,
+    "en-gb": "Theravada",
+    "cy": "Theravada"
+  },
+  {
+    "code": 529,
+    "en-gb": "Tin tao",
+    "cy": "TAO Tin"
+  },
+  {
+    "code": 536,
+    "en-gb": "Traditional african religion",
+    "cy": "Traddodiadol african grefydd"
+  },
+  {
+    "code": 300,
+    "en-gb": "Triratna buddhist community",
+    "cy": "Triratna gymuned Bwdhaidd"
+  },
+  {
+    "code": 302,
+    "en-gb": "Twelver",
+    "cy": "Twelver"
+  },
+  {
+    "code": 5,
+    "en-gb": "Ukrainian catholic",
+    "cy": "Wcreineg gatholig"
+  },
+  {
+    "code": 15,
+    "en-gb": "Ukrainian orthodox church",
+    "cy": "eglwys uniongred Wcreineg"
+  },
+  {
+    "code": 503,
+    "en-gb": "Umbanda",
+    "cy": "Umbanda"
+  },
+  {
+    "code": 95,
+    "en-gb": "Undenominational",
+    "cy": "Undenominational"
+  },
+  {
+    "code": 502,
+    "en-gb": "Unification church",
+    "cy": "eglwys uno"
+  },
+  {
+    "code": 106,
+    "en-gb": "Unitarian",
+    "cy": "Undodaidd"
+  },
+  {
+    "code": 525,
+    "en-gb": "Unitarian-universalist",
+    "cy": "Undodaidd-Universalist"
+  },
+  {
+    "code": 107,
+    "en-gb": "United brethren",
+    "cy": "brodyr unedig"
+  },
+  {
+    "code": 201,
+    "en-gb": "United church",
+    "cy": "eglwys unedig"
+  },
+  {
+    "code": 108,
+    "en-gb": "United church of canada",
+    "cy": "eglwys unedig o canada"
+  },
+  {
+    "code": 201,
+    "en-gb": "United church of christ – philippines",
+    "cy": "eglwys unedig o christ - philippines"
+  },
+  {
+    "code": 19,
+    "en-gb": "United church of god",
+    "cy": "eglwys unedig o duw"
+  },
+  {
+    "code": 201,
+    "en-gb": "United church of india",
+    "cy": "eglwys unedig o india"
+  },
+  {
+    "code": 37,
+    "en-gb": "United free church of scotland",
+    "cy": "eglwys rhad Daleithiau scotland"
+  },
+  {
+    "code": 201,
+    "en-gb": "United methodist church",
+    "cy": "Eglwys Fethodistaidd Unedig"
+  },
+  {
+    "code": 100,
+    "en-gb": "United original seceders",
+    "cy": "Seceders gwreiddiol unedig"
+  },
+  {
+    "code": 38,
+    "en-gb": "United reformed church",
+    "cy": "Eglwys Ddiwygiedig Unedig"
+  },
+  {
+    "code": 38,
+    "en-gb": "United reformist",
+    "cy": "diwygiadol unedig"
+  },
+  {
+    "code": 201,
+    "en-gb": "Uniting church in australia",
+    "cy": "Uno eglwys yn Awstralia"
+  },
+  {
+    "code": 526,
+    "en-gb": "Universalist",
+    "cy": "Universalist"
+  },
+  {
+    "code": 109,
+    "en-gb": "Unsectarian",
+    "cy": "anenwadol"
+  },
+  {
+    "code": 302,
+    "en-gb": "Usuli",
+    "cy": "Usuli"
+  },
+  {
+    "code": 301,
+    "en-gb": "Vaishnava",
+    "cy": "Vaishnava"
+  },
+  {
+    "code": 301,
+    "en-gb": "Vaisnava-sahajiya",
+    "cy": "Vaisnava-sahajiya"
+  },
+  {
+    "code": 301,
+    "en-gb": "Vaisnavism",
+    "cy": "Vaisnavism"
+  },
+  {
+    "code": 300,
+    "en-gb": "Vajrayana",
+    "cy": "Vajrayana"
+  },
+  {
+    "code": 301,
+    "en-gb": "Valmiki",
+    "cy": "Valmiki"
+  },
+  {
+    "code": 409,
+    "en-gb": "Vanatru",
+    "cy": "Vanatru"
+  },
+  {
+    "code": 201,
+    "en-gb": "Victory praise centre",
+    "cy": "canolfan canmoliaeth Victory"
+  },
+  {
+    "code": 201,
+    "en-gb": "Vineyard churches",
+    "cy": "eglwysi gwinllan"
+  },
+  {
+    "code": 301,
+    "en-gb": "Vishishtadvaita",
+    "cy": "Vishishtadvaita"
+  },
+  {
+    "code": 301,
+    "en-gb": "Vishnuite",
+    "cy": "Vishnuite"
+  },
+  {
+    "code": 503,
+    "en-gb": "Vodun",
+    "cy": "Vodun"
+  },
+  {
+    "code": 302,
+    "en-gb": "Wahhabi",
+    "cy": "Wahhabi"
+  },
+  {
+    "code": 302,
+    "en-gb": "Wahhabism",
+    "cy": "Wahhabism"
+  },
+  {
+    "code": 201,
+    "en-gb": "Waldensian church",
+    "cy": "eglwys Waldensian"
+  },
+  {
+    "code": 26,
+    "en-gb": "Welsh baptist",
+    "cy": "Bedyddwyr Cymru"
+  },
+  {
+    "code": 201,
+    "en-gb": "Welsh chapel",
+    "cy": "capel Cymraeg"
+  },
+  {
+    "code": 73,
+    "en-gb": "Welsh congregational",
+    "cy": "cynulleidfaol Cymraeg"
+  },
+  {
+    "code": 39,
+    "en-gb": "Welsh methodist",
+    "cy": "methodistiaid Cymraeg"
+  },
+  {
+    "code": 35,
+    "en-gb": "Wesleyan methodist",
+    "cy": "Methodistiaid Wesleaidd"
+  },
+  {
+    "code": 110,
+    "en-gb": "Whitewell metropolitan tabernacle",
+    "cy": "Whitewell tabernacl metropolitan"
+  },
+  {
+    "code": 401,
+    "en-gb": "Wicca",
+    "cy": "Wica"
+  },
+  {
+    "code": 402,
+    "en-gb": "Witchcraft",
+    "cy": "dewiniaeth"
+  },
+  {
+    "code": 201,
+    "en-gb": "Word of life",
+    "cy": "Gair o fywyd"
+  },
+  {
+    "code": 19,
+    "en-gb": "Worldwide church of god",
+    "cy": "eglwys fyd-eang o duw"
+  },
+  {
+    "code": 201,
+    "en-gb": "Youth for christ",
+    "cy": "Ieuenctid ar gyfer Crist"
+  },
+  {
+    "code": 302,
+    "en-gb": "Zahiri",
+    "cy": "Zahiri"
+  },
+  {
+    "code": 302,
+    "en-gb": "Zaidi",
+    "cy": "Zaidi"
+  },
+  {
+    "code": 300,
+    "en-gb": "Zen buddhist",
+    "cy": "Zen Bwdhaidd"
+  },
+  {
+    "code": 527,
+    "en-gb": "Zoroastrian",
+    "cy": "Zoroastrian"
+  },
+  {
+    "code": 102,
+    "en-gb": "Zwingli",
+    "cy": "Zwingli"
+  }
+]

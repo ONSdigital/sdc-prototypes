@@ -1,0 +1,43 @@
+---
+version: 5.0.1
+layout: typeaheads-in-browser/views/_master
+---
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "typeaheads-in-browser/components/typeahead/_macro.njk" import prototypeTypeahead %}
+
+{% block main %}
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/religion.html">Previous</a>
+    <form action="{{ pageInfo.parentPath }}/one-year-ago-address.html?previous={{ pageInfo.path }}.html">
+        <h1 class="u-fs-l u-mt-s">You selected "Other". What is your religion?</h1>
+        <p>This question is voluntary</p>
+        {{
+            prototypeTypeahead({
+                "id": "religion-other",
+                "classes": "u-mt-m",
+                "label": {
+                    "text": "Religion",
+                    "description": "Start entering to get suggestions. You can select from suggestions or enter your own answer"
+                },
+                "instructions": "Use up and down keys to navigate suggestions once you\'ve typed more than two characters. Use the enter key to select a suggestion. Touch device users, explore by touch or with swipe gestures.",
+                "content": {
+                    "aria_you_have_selected": "You have selected",
+                    "aria_found_by_alternative_name": "found by alternative name",
+                    "aria_min_chars": "Type in 2 or more characters for suggestions.",
+                    "aria_one_result": "There is one suggestion available.",
+                    "aria_n_results": "There are {n} suggestions available.",
+                    "aria_limited_results": "Results have been limited to 10 suggestions. Type more characters to refine your search.",
+                    "more_results": "Continue typing to refine suggestions",
+                    "results_title": "Suggestions"
+                },
+                "autocomplete": "off",
+                "typeaheadData": "https://gist.githubusercontent.com/rmccar/04286e0df2ed7a30e231464b9b058858/raw/e4c96d7e8a800502f01d9f984ee89e5ddc9dad2b/religion.json"
+            })
+        }}
+        {{
+           onsButton({
+                "text": "Save and continue",
+                "classes": "u-mt-l"
+            })
+        }}
+    </form>
+{% endblock %}

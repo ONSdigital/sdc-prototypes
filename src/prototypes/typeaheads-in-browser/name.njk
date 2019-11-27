@@ -1,0 +1,53 @@
+---
+version: 5.0.1
+layout: typeaheads-in-browser/views/_master
+---
+{% from "components/field/_macro.njk" import onsField %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% block main %}
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/answering-questions-for.html">Previous</a>
+    <form action="{{ pageInfo.parentPath }}/date-of-birth.html">
+       {% call onsField({
+           "id": "name",
+           "legend": "<h1 class=\"u-fs-l\">What is your name?</h1>"
+       }) %}
+            {{
+                onsInput({
+                    "id": "first-name",
+                    "name": "first-name",
+                    "label": {
+                        "text": "First name"
+                    }
+                })
+            }}
+            {{
+                onsInput({
+                    "id": "middle-name",
+                    "name": "middle-name",
+                    "label": {
+                        "text": "Middle name(s)"
+                    }
+                })
+            }}
+            {{
+                onsInput({
+                    "id": "last-name",
+                    "name": "last-name",
+                    "label": {
+                        "text": "Last name"
+                    }
+                })
+            }}
+        {% endcall %}
+        {{
+            onsButton({
+                "text": "Save and continue",
+                "classes": "u-mt-l"
+            })
+        }}
+    </form>
+{% endblock %}
+
+

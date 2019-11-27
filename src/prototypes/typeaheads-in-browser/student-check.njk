@@ -1,0 +1,41 @@
+---
+version: 5.0.1
+layout: typeaheads-in-browser/views/_master
+---
+{% from "components/radios/_macro.njk" import onsRadios%}
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% block main %}
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/address-check.html">Previous</a>
+    <form action="{{ pageInfo.parentPath }}/country-of-birth.html">
+        <fieldset class="u-mt-s">
+            <legend><h1 class="u-fs-l">Are you a student in full-time education?</h1></legend>
+            {{ onsRadios({
+                "id": "student-check",
+                "name": "student-check",
+                "classes": "u-mt-s",
+                "radios": [
+                    {
+                        "id": "yes",
+                        "label": {
+                            "text": "Yes"
+                        },
+                        "attributes": {
+                            "data-action-url": pageInfo.parentPath + "/student-address-check.html"
+                        }
+                    },
+                    {
+                        "id": "no",
+                        "label": {
+                            "text": "No"
+                        }
+                    }
+                ]
+            }) }}
+        </fieldset>
+        {{ onsButton({
+            "text": "Save and continue",
+            "classes": "u-mt-l"
+        }) }}
+    </form>
+{% endblock %}

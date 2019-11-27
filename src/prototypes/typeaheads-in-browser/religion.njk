@@ -1,0 +1,91 @@
+---
+version: 5.0.1
+layout: typeaheads-in-browser/views/_master
+---
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
+
+{% block main %}
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/ethnic-group.html">Previous</a>
+    <form action="{{ pageInfo.parentPath }}/one-year-ago-address.html">
+        {{ 
+            onsCheckboxes({
+                "legend": "What is your religion?",
+                "description": "This question is voluntary",
+                "name": "religion",
+                "classes": "u-mt-s",
+                "checkboxesLabel": "Select one option only",
+                "questionMode": true,
+                "checkboxes": [
+                    {
+                        "id": "none",
+                        "label": {
+                            "text": "No religion"
+                        },
+                        "name": "none"
+                    },
+                    {
+                        "id": "christian",
+                        "label": {
+                            "text": "Christian",
+                            "description": "Including Church of England, Catholic, Protestant and all other Christian denominations"
+                        },
+                        "name": "christian"
+                    },
+                    {
+                        "id": "buddhist",
+                        "label": {
+                            "text": "Buddhist"
+                        },
+                        "name": "buddhist"
+                    },
+                    {
+                        "id": "hindu",
+                        "label": {
+                            "text": "Hindu"
+                        },
+                        "name": "hindu"
+                    },
+                    {
+                        "id": "jewish",
+                        "label": {
+                            "text": "Jewish"
+                        },
+                        "name": "jewish"
+                    },
+                    {
+                        "id": "muslim",
+                        "label": {
+                            "text": "Muslim"
+                        },
+                        "name": "muslim"
+                    },
+                    {
+                        "id": "sikh",
+                        "label": {
+                            "text": "Sikh"
+                        },
+                        "name": "sikh"
+                    },
+                    {
+                        "id": "other",
+                        "label": {
+                            "text": "Other",
+                            "description": "You can enter this on the next question"
+                        },
+                        "name": "other",
+                        "attributes": {
+                            "data-action-url": pageInfo.parentPath + "/religion-other.html"
+                        }
+                    }
+                ]
+            }) 
+        }}
+        {{
+           onsButton({
+                "text": "Save and continue",
+                "classes": "u-mt-l"
+            })
+        }}
+    </form>
+{% endblock %}

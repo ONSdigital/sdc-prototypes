@@ -1,0 +1,707 @@
+[
+  {
+    "code": 1,
+    "en-gb": "British european",
+    "cy": "Prydeinig ewropeaidd"
+  },
+  {
+    "code": 1,
+    "en-gb": "Prydeinig",
+    "cy": "boat"
+  },
+  {
+    "code": 2,
+    "en-gb": "Anglosaxon",
+    "cy": "Anglosaxon"
+  },
+  {
+    "code": 3,
+    "en-gb": "Albannach",
+    "cy": "Albannach"
+  },
+  {
+    "code": 3,
+    "en-gb": "Gaelic",
+    "cy": "Gaeleg"
+  },
+  {
+    "code": 4,
+    "en-gb": "Cymraeg",
+    "cy": "English"
+  },
+  {
+    "code": 4,
+    "en-gb": "Cymraes",
+    "cy": "Cymraes"
+  },
+  {
+    "code": 4,
+    "en-gb": "Cymreig",
+    "cy": "Cymreig"
+  },
+  {
+    "code": 4,
+    "en-gb": "Cymro",
+    "cy": "Cymro"
+  },
+  {
+    "code": 4,
+    "en-gb": "Cymru",
+    "cy": "Cymru"
+  },
+  {
+    "code": 4,
+    "en-gb": "Cymry",
+    "cy": "Cymry"
+  },
+  {
+    "code": 4,
+    "en-gb": "Gwyn",
+    "cy": "Gwyn"
+  },
+  {
+    "code": 6,
+    "en-gb": "Cornish",
+    "cy": "Cornish"
+  },
+  {
+    "code": 7,
+    "en-gb": "Ulster scot",
+    "cy": "Scot ulster"
+  },
+  {
+    "code": 9,
+    "en-gb": "British irish",
+    "cy": "Prydeinig irish"
+  },
+  {
+    "code": 9,
+    "en-gb": "Irish american",
+    "cy": "american Gwyddelig"
+  },
+  {
+    "code": 9,
+    "en-gb": "Irish english",
+    "cy": "english irish"
+  },
+  {
+    "code": 9,
+    "en-gb": "Irish european",
+    "cy": "Gwyddeleg ewropeaidd"
+  },
+  {
+    "code": 9,
+    "en-gb": "Irish french",
+    "cy": "french Gwyddelig"
+  },
+  {
+    "code": 9,
+    "en-gb": "Irish and hungarian",
+    "cy": "Gwyddelig a hungarian"
+  },
+  {
+    "code": 9,
+    "en-gb": "Irish italian",
+    "cy": "Gwyddeleg italian"
+  },
+  {
+    "code": 9,
+    "en-gb": "Irish scottish",
+    "cy": "Gwyddeleg Alban"
+  },
+  {
+    "code": 9,
+    "en-gb": "Irish spanish",
+    "cy": "Gwyddeleg spanish"
+  },
+  {
+    "code": 9,
+    "en-gb": "Irish welsh",
+    "cy": "Cymraeg Gwyddeleg"
+  },
+  {
+    "code": 11,
+    "en-gb": "Show person",
+    "cy": "Dangos person"
+  },
+  {
+    "code": 11,
+    "en-gb": "Traveller",
+    "cy": "Teithwyr"
+  },
+  {
+    "code": 12,
+    "en-gb": "Pavee",
+    "cy": "Pavee"
+  },
+  {
+    "code": 13,
+    "en-gb": "Romanichal",
+    "cy": "Romanichal"
+  },
+  {
+    "code": 14,
+    "en-gb": "Kale",
+    "cy": "cêl"
+  },
+  {
+    "code": 20,
+    "en-gb": "Cypriot",
+    "cy": "Chypriad"
+  },
+  {
+    "code": 21,
+    "en-gb": "Greek",
+    "cy": "Groeg"
+  },
+  {
+    "code": 21,
+    "en-gb": "Hellenic",
+    "cy": "Hellenic"
+  },
+  {
+    "code": 22,
+    "en-gb": "Greek cypriot",
+    "cy": "Chypriad Groeg"
+  },
+  {
+    "code": 23,
+    "en-gb": "Turkish",
+    "cy": "turkish"
+  },
+  {
+    "code": 24,
+    "en-gb": "Turkish cypriot",
+    "cy": "Chypriad Twrcaidd"
+  },
+  {
+    "code": 25,
+    "en-gb": "Polish",
+    "cy": "Pwyleg"
+  },
+  {
+    "code": 26,
+    "en-gb": "Armenian",
+    "cy": "Armenia"
+  },
+  {
+    "code": 26,
+    "en-gb": "Azerbaijani",
+    "cy": "azerbaijani"
+  },
+  {
+    "code": 26,
+    "en-gb": "Belarussian",
+    "cy": "Belarussian"
+  },
+  {
+    "code": 26,
+    "en-gb": "Georgian",
+    "cy": "georgian"
+  },
+  {
+    "code": 26,
+    "en-gb": "Kazakhstani",
+    "cy": "Kazakhstani"
+  },
+  {
+    "code": 26,
+    "en-gb": "Kyrgyzstani",
+    "cy": "Kyrgyzstani"
+  },
+  {
+    "code": 26,
+    "en-gb": "Moldovian",
+    "cy": "Moldovian"
+  },
+  {
+    "code": 26,
+    "en-gb": "Russian",
+    "cy": "Rwsieg"
+  },
+  {
+    "code": 26,
+    "en-gb": "Tajikistani",
+    "cy": "Tajikistani"
+  },
+  {
+    "code": 26,
+    "en-gb": "Turkmenistani",
+    "cy": "Turkmenistani"
+  },
+  {
+    "code": 26,
+    "en-gb": "Ukrainian",
+    "cy": "Wcreineg"
+  },
+  {
+    "code": 26,
+    "en-gb": "Uzbekistani",
+    "cy": "Uzbekistani"
+  },
+  {
+    "code": 27,
+    "en-gb": "Kosovan",
+    "cy": "Kosovo"
+  },
+  {
+    "code": 28,
+    "en-gb": "Albanian",
+    "cy": "Albaneg"
+  },
+  {
+    "code": 29,
+    "en-gb": "Estonian",
+    "cy": "Estoneg"
+  },
+  {
+    "code": 29,
+    "en-gb": "Latvian",
+    "cy": "Latfieg"
+  },
+  {
+    "code": 29,
+    "en-gb": "Lithuanian",
+    "cy": "Lithwaneg"
+  },
+  {
+    "code": 30,
+    "en-gb": "Bosnian",
+    "cy": "Bosnian"
+  },
+  {
+    "code": 31,
+    "en-gb": "Croatian",
+    "cy": "Croateg"
+  },
+  {
+    "code": 32,
+    "en-gb": "Serbian",
+    "cy": "Serbia"
+  },
+  {
+    "code": 33,
+    "en-gb": "Macedonian",
+    "cy": "macedonian"
+  },
+  {
+    "code": 33,
+    "en-gb": "Montenegran",
+    "cy": "Montenegroaidd"
+  },
+  {
+    "code": 33,
+    "en-gb": "Slovenian",
+    "cy": "slovenian"
+  },
+  {
+    "code": 33,
+    "en-gb": "Yugoslavian",
+    "cy": "Iwgoslafia"
+  },
+  {
+    "code": 34,
+    "en-gb": "Italian",
+    "cy": "Eidaleg"
+  },
+  {
+    "code": 34,
+    "en-gb": "Sicilian",
+    "cy": "Sicilian"
+  },
+  {
+    "code": 35,
+    "en-gb": "American and english",
+    "cy": "America a Saesneg"
+  },
+  {
+    "code": 35,
+    "en-gb": "American scottish",
+    "cy": "american Alban"
+  },
+  {
+    "code": 35,
+    "en-gb": "Anglo armenian",
+    "cy": "Eingl armenian"
+  },
+  {
+    "code": 35,
+    "en-gb": "Greek american",
+    "cy": "american Groeg"
+  },
+  {
+    "code": 35,
+    "en-gb": "Mixed white",
+    "cy": "gwyn cymysg"
+  },
+  {
+    "code": 35,
+    "en-gb": "Slavonic south american",
+    "cy": "Slafonaidd de America"
+  },
+  {
+    "code": 35,
+    "en-gb": "South america and english",
+    "cy": "De Amerig a saesneg"
+  },
+  {
+    "code": 35,
+    "en-gb": "White and white african",
+    "cy": "Gwyn a gwyn african"
+  },
+  {
+    "code": 35,
+    "en-gb": "White and maltese",
+    "cy": "Gwyn a maltese"
+  },
+  {
+    "code": 35,
+    "en-gb": "White mixed",
+    "cy": "Gwyn cymysg"
+  },
+  {
+    "code": 36,
+    "en-gb": "Anglo italian",
+    "cy": "Anglo italian"
+  },
+  {
+    "code": 36,
+    "en-gb": "Anglo pole",
+    "cy": "polyn Eingl"
+  },
+  {
+    "code": 36,
+    "en-gb": "Anglo turkish",
+    "cy": "Anglo turkish"
+  },
+  {
+    "code": 36,
+    "en-gb": "Austrian and english",
+    "cy": "Awstria a saesneg"
+  },
+  {
+    "code": 36,
+    "en-gb": "Celt",
+    "cy": "Celt"
+  },
+  {
+    "code": 36,
+    "en-gb": "Celtic",
+    "cy": "Celtic"
+  },
+  {
+    "code": 36,
+    "en-gb": "Central european",
+    "cy": "Central ewropeaidd"
+  },
+  {
+    "code": 36,
+    "en-gb": "Dutch portuguese",
+    "cy": "portuguese Iseldiroedd"
+  },
+  {
+    "code": 36,
+    "en-gb": "Eastern european",
+    "cy": "Dwyrain ewropeaidd"
+  },
+  {
+    "code": 36,
+    "en-gb": "English and french",
+    "cy": "Saesneg a french"
+  },
+  {
+    "code": 36,
+    "en-gb": "English maltese",
+    "cy": "maltese English"
+  },
+  {
+    "code": 36,
+    "en-gb": "English portuguese",
+    "cy": "portuguese English"
+  },
+  {
+    "code": 36,
+    "en-gb": "English and ukrainian",
+    "cy": "Saesneg a ukrainian"
+  },
+  {
+    "code": 36,
+    "en-gb": "European",
+    "cy": "Ewropeaidd"
+  },
+  {
+    "code": 36,
+    "en-gb": "French and austrian",
+    "cy": "Ffrangeg ac Awstria"
+  },
+  {
+    "code": 36,
+    "en-gb": "French and english",
+    "cy": "Ffrangeg a Saesneg"
+  },
+  {
+    "code": 36,
+    "en-gb": "French and scottish",
+    "cy": "Ffrangeg a scottish"
+  },
+  {
+    "code": 36,
+    "en-gb": "German romanian",
+    "cy": "romanian Almaeneg"
+  },
+  {
+    "code": 36,
+    "en-gb": "Greek german",
+    "cy": "Groeg german"
+  },
+  {
+    "code": 36,
+    "en-gb": "Hungarian polish",
+    "cy": "sglein Hwngareg"
+  },
+  {
+    "code": 36,
+    "en-gb": "Norwegian and swiss",
+    "cy": "Norwy a swiss"
+  },
+  {
+    "code": 36,
+    "en-gb": "Polish hungarian austrian",
+    "cy": "hungarian Awstria Pwyleg"
+  },
+  {
+    "code": 36,
+    "en-gb": "Polish and english",
+    "cy": "Pwyleg a Saesneg"
+  },
+  {
+    "code": 36,
+    "en-gb": "Scandinavian",
+    "cy": "Llychlyn"
+  },
+  {
+    "code": 36,
+    "en-gb": "Scottish and french",
+    "cy": "Scottish and french"
+  },
+  {
+    "code": 36,
+    "en-gb": "Transylvanian",
+    "cy": "Transylvanian"
+  },
+  {
+    "code": 37,
+    "en-gb": "Andorran",
+    "cy": "Andorran"
+  },
+  {
+    "code": 37,
+    "en-gb": "Austrian",
+    "cy": "Awstria"
+  },
+  {
+    "code": 37,
+    "en-gb": "Belgian",
+    "cy": "Gwlad Belg"
+  },
+  {
+    "code": 37,
+    "en-gb": "Danish",
+    "cy": "Daneg"
+  },
+  {
+    "code": 37,
+    "en-gb": "Dutch",
+    "cy": "Iseldireg"
+  },
+  {
+    "code": 37,
+    "en-gb": "Finnish",
+    "cy": "Ffindir"
+  },
+  {
+    "code": 37,
+    "en-gb": "French",
+    "cy": "Ffrangeg"
+  },
+  {
+    "code": 37,
+    "en-gb": "German",
+    "cy": "Almaeneg"
+  },
+  {
+    "code": 37,
+    "en-gb": "Icelandic",
+    "cy": "Islandeg"
+  },
+  {
+    "code": 37,
+    "en-gb": "Liechtenstein",
+    "cy": "Liechtenstein"
+  },
+  {
+    "code": 37,
+    "en-gb": "Luxemourger",
+    "cy": "Luxemourger"
+  },
+  {
+    "code": 37,
+    "en-gb": "Maltese",
+    "cy": "maltese"
+  },
+  {
+    "code": 37,
+    "en-gb": "Manx",
+    "cy": "Manx"
+  },
+  {
+    "code": 37,
+    "en-gb": "Monacan",
+    "cy": "MONACAN"
+  },
+  {
+    "code": 37,
+    "en-gb": "Nordic",
+    "cy": "Nordig"
+  },
+  {
+    "code": 37,
+    "en-gb": "Norwegian",
+    "cy": "norwegian"
+  },
+  {
+    "code": 37,
+    "en-gb": "Portuguese",
+    "cy": "Portiwgaleg"
+  },
+  {
+    "code": 37,
+    "en-gb": "Portuguese madeira",
+    "cy": "madeira Portiwgaleg"
+  },
+  {
+    "code": 37,
+    "en-gb": "Spanish",
+    "cy": "Sbaeneg"
+  },
+  {
+    "code": 37,
+    "en-gb": "Swedish",
+    "cy": "Swedeg"
+  },
+  {
+    "code": 37,
+    "en-gb": "Swiss",
+    "cy": "Swistir"
+  },
+  {
+    "code": 38,
+    "en-gb": "Bulgarian",
+    "cy": "Bwlgareg"
+  },
+  {
+    "code": 38,
+    "en-gb": "Czech",
+    "cy": "Tsiec"
+  },
+  {
+    "code": 38,
+    "en-gb": "Hungarian",
+    "cy": "Hwngareg"
+  },
+  {
+    "code": 38,
+    "en-gb": "Romanian",
+    "cy": "Rwmaneg"
+  },
+  {
+    "code": 38,
+    "en-gb": "Slovakian",
+    "cy": "Slofacia"
+  },
+  {
+    "code": 40,
+    "en-gb": "American",
+    "cy": "Americanaidd"
+  },
+  {
+    "code": 40,
+    "en-gb": "Anglo american",
+    "cy": "american Eingl"
+  },
+  {
+    "code": 40,
+    "en-gb": "British american",
+    "cy": "american Prydeinig"
+  },
+  {
+    "code": 40,
+    "en-gb": "Canadian",
+    "cy": "Canada"
+  },
+  {
+    "code": 40,
+    "en-gb": "English american",
+    "cy": "american English"
+  },
+  {
+    "code": 41,
+    "en-gb": "White south african",
+    "cy": "Gwyn de african"
+  },
+  {
+    "code": 41,
+    "en-gb": "White moroccan",
+    "cy": "Moroco Gwyn"
+  },
+  {
+    "code": 41,
+    "en-gb": "French algerian white",
+    "cy": "Ffrangeg gwyn Algeria"
+  },
+  {
+    "code": 41,
+    "en-gb": "White african",
+    "cy": "Gwyn african"
+  },
+  {
+    "code": 44,
+    "en-gb": "Australian",
+    "cy": "Awstralia"
+  },
+  {
+    "code": 44,
+    "en-gb": "New zealander",
+    "cy": "Seland newydd"
+  },
+  {
+    "code": 100,
+    "en-gb": "White and jamaican",
+    "cy": "Gwyn a Jamaica"
+  },
+  {
+    "code": 110,
+    "en-gb": "White and african",
+    "cy": "Gwyn a african"
+  },
+  {
+    "code": 130,
+    "en-gb": "White indian",
+    "cy": "Gwyn Indiaidd"
+  },
+  {
+    "code": 141,
+    "en-gb": "White and arab",
+    "cy": "Gwyn a arab"
+  },
+  {
+    "code": 143,
+    "en-gb": "White chinese",
+    "cy": "Tseiniaidd Gwyn"
+  },
+  {
+    "code": 146,
+    "en-gb": "White afro and american",
+    "cy": "Gwyn affro a America"
+  }
+]

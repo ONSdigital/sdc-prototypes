@@ -1,0 +1,727 @@
+[
+  {
+    "code": 100,
+    "en-gb": "Black caribbean and french",
+    "cy": "Du Caribî ac french"
+  },
+  {
+    "code": 100,
+    "en-gb": "Black caribbean white",
+    "cy": "gwyn Caribî Du"
+  },
+  {
+    "code": 100,
+    "en-gb": "Black caribbean white english",
+    "cy": "Du english gwyn Caribî"
+  },
+  {
+    "code": 100,
+    "en-gb": "Black caribbean white scot",
+    "cy": "Scot gwyn Caribî Du"
+  },
+  {
+    "code": 100,
+    "en-gb": "Black jamaican and white",
+    "cy": "Du a gwyn Jamaica"
+  },
+  {
+    "code": 100,
+    "en-gb": "Black jamaican and white scottish",
+    "cy": "Du a gwyn Jamaica Alban"
+  },
+  {
+    "code": 100,
+    "en-gb": "Jamaican and black",
+    "cy": "Jamaica a du"
+  },
+  {
+    "code": 100,
+    "en-gb": "Jamaican and irish",
+    "cy": "Jamaica a irish"
+  },
+  {
+    "code": 100,
+    "en-gb": "Jamaican and white",
+    "cy": "Jamaica a gwyn"
+  },
+  {
+    "code": 100,
+    "en-gb": "Black caribbean and white european",
+    "cy": "Du Caribî a gwyn ewropeaidd"
+  },
+  {
+    "code": 110,
+    "en-gb": "African and irish",
+    "cy": "Affricanaidd a irish"
+  },
+  {
+    "code": 110,
+    "en-gb": "African irish and english",
+    "cy": "African irish a saesneg"
+  },
+  {
+    "code": 110,
+    "en-gb": "African and white",
+    "cy": "Affricanaidd a gwyn"
+  },
+  {
+    "code": 110,
+    "en-gb": "Black african and american",
+    "cy": "Du african a America"
+  },
+  {
+    "code": 110,
+    "en-gb": "Black african white",
+    "cy": "Du Affricanaidd Gwyn"
+  },
+  {
+    "code": 110,
+    "en-gb": "Black african and white caribbean mix",
+    "cy": "african a gwyn cymysgedd Du Caribî"
+  },
+  {
+    "code": 110,
+    "en-gb": "Black african white celtic",
+    "cy": "celtic gwyn african du"
+  },
+  {
+    "code": 110,
+    "en-gb": "Black african and white uk",
+    "cy": "Du a gwyn african uk"
+  },
+  {
+    "code": 110,
+    "en-gb": "Ghanaian and northern irish",
+    "cy": "Ghana a gogledd irish"
+  },
+  {
+    "code": 140,
+    "en-gb": "Black caribbean filipino",
+    "cy": "Du Caribî filipino"
+  },
+  {
+    "code": 140,
+    "en-gb": "Jamaican and american and  indian and english  and irish",
+    "cy": "Jamaica a America ac indian a Saesneg a irish"
+  },
+  {
+    "code": 144,
+    "en-gb": "African and asian",
+    "cy": "Affricanaidd ac Asiaidd"
+  },
+  {
+    "code": 144,
+    "en-gb": "African indian",
+    "cy": "african indian"
+  },
+  {
+    "code": 144,
+    "en-gb": "African pakistani",
+    "cy": "african Pacistanaidd"
+  },
+  {
+    "code": 144,
+    "en-gb": "Afro caribbean and indian",
+    "cy": "Afro Caribî ac indian"
+  },
+  {
+    "code": 144,
+    "en-gb": "Afro indian caribbean",
+    "cy": "Affro indian Caribî"
+  },
+  {
+    "code": 144,
+    "en-gb": "Black and pakistani",
+    "cy": "Du a Pacistanaidd"
+  },
+  {
+    "code": 144,
+    "en-gb": "Black asian",
+    "cy": "Du asian"
+  },
+  {
+    "code": 144,
+    "en-gb": "Black caribbean and pakistani",
+    "cy": "Caribïaidd Du a Phacistanaidd"
+  },
+  {
+    "code": 144,
+    "en-gb": "Guyanese asian",
+    "cy": "Gaiana asian"
+  },
+  {
+    "code": 144,
+    "en-gb": "Indian african",
+    "cy": "Indiaidd african"
+  },
+  {
+    "code": 144,
+    "en-gb": "Indian and caribbean",
+    "cy": "Indiaidd a Caribî"
+  },
+  {
+    "code": 144,
+    "en-gb": "Nigerian and indian",
+    "cy": "Nigeria ac indian"
+  },
+  {
+    "code": 145,
+    "en-gb": "Afro chinese",
+    "cy": "Tseiniaidd Affro"
+  },
+  {
+    "code": 145,
+    "en-gb": "Black american and chinese",
+    "cy": "Du America a Tseiniaidd"
+  },
+  {
+    "code": 145,
+    "en-gb": "Black and chinese",
+    "cy": "Du a Tseiniaidd"
+  },
+  {
+    "code": 146,
+    "en-gb": "African and white black and european",
+    "cy": "Affricanaidd du a gwyn a european"
+  },
+  {
+    "code": 146,
+    "en-gb": "Afro european",
+    "cy": "Affro ewropeaidd"
+  },
+  {
+    "code": 146,
+    "en-gb": "Afro white",
+    "cy": "gwyn Affro"
+  },
+  {
+    "code": 146,
+    "en-gb": "Black american and white",
+    "cy": "Du a gwyn America"
+  },
+  {
+    "code": 146,
+    "en-gb": "Black american white irish",
+    "cy": "Du Americanaidd gwyn irish"
+  },
+  {
+    "code": 146,
+    "en-gb": "Black and european",
+    "cy": "Du a european"
+  },
+  {
+    "code": 146,
+    "en-gb": "Black and irish",
+    "cy": "Du a irish"
+  },
+  {
+    "code": 146,
+    "en-gb": "Black and italian",
+    "cy": "Du a italian"
+  },
+  {
+    "code": 146,
+    "en-gb": "Black and portuguese",
+    "cy": "Du a portuguese"
+  },
+  {
+    "code": 146,
+    "en-gb": "Black and white american",
+    "cy": "Du a gwyn America"
+  },
+  {
+    "code": 146,
+    "en-gb": "Black and white british",
+    "cy": "british du a gwyn"
+  },
+  {
+    "code": 146,
+    "en-gb": "Black and white mixed race",
+    "cy": "hil gymysg du a gwyn"
+  },
+  {
+    "code": 148,
+    "en-gb": "Mixed black carbbean",
+    "cy": "carbbean du Cymysg"
+  },
+  {
+    "code": 148,
+    "en-gb": "Mixed race caribbean",
+    "cy": "hil gymysg Caribî"
+  },
+  {
+    "code": 148,
+    "en-gb": "Part caribbean",
+    "cy": "rhan Caribî"
+  },
+  {
+    "code": 148,
+    "en-gb": "Part west indian",
+    "cy": "Rhan orllewin indian"
+  },
+  {
+    "code": 149,
+    "en-gb": "Part arab",
+    "cy": "rhan Arabaidd"
+  },
+  {
+    "code": 150,
+    "en-gb": "African and arab",
+    "cy": "Affricanaidd a arab"
+  },
+  {
+    "code": 150,
+    "en-gb": "Somali arab",
+    "cy": "Somali arab"
+  },
+  {
+    "code": 151,
+    "en-gb": "Mixed race african",
+    "cy": "hil gymysg african"
+  },
+  {
+    "code": 151,
+    "en-gb": "Part somali",
+    "cy": "rhan Somali"
+  },
+  {
+    "code": 151,
+    "en-gb": "Part west african",
+    "cy": "Rhan gorllewin african"
+  },
+  {
+    "code": 151,
+    "en-gb": "Somali mixed race",
+    "cy": "hil gymysg Somali"
+  },
+  {
+    "code": 260,
+    "en-gb": "African asian",
+    "cy": "african asian"
+  },
+  {
+    "code": 260,
+    "en-gb": "East african asian",
+    "cy": "Dwyrain Affrica asian"
+  },
+  {
+    "code": 260,
+    "en-gb": "Kenyan asian",
+    "cy": "Kenya asian"
+  },
+  {
+    "code": 260,
+    "en-gb": "Ugandan asian",
+    "cy": "Uganda asian"
+  },
+  {
+    "code": 270,
+    "en-gb": "Asian caribbean",
+    "cy": "asian Caribî"
+  },
+  {
+    "code": 270,
+    "en-gb": "Caribbean asian",
+    "cy": "Caribïaidd asian"
+  },
+  {
+    "code": 270,
+    "en-gb": "Caribbean indian",
+    "cy": "Caribïaidd Indiaidd"
+  },
+  {
+    "code": 300,
+    "en-gb": "African caribbean",
+    "cy": "african Caribî"
+  },
+  {
+    "code": 300,
+    "en-gb": "African caribbean english",
+    "cy": "African Saesneg Caribî"
+  },
+  {
+    "code": 300,
+    "en-gb": "Anguillan",
+    "cy": "Anguillan"
+  },
+  {
+    "code": 300,
+    "en-gb": "Antiguan",
+    "cy": "Antiguan"
+  },
+  {
+    "code": 300,
+    "en-gb": "Barbadian",
+    "cy": "Barbadian"
+  },
+  {
+    "code": 300,
+    "en-gb": "Barbudan",
+    "cy": "Barbudan"
+  },
+  {
+    "code": 300,
+    "en-gb": "Bermudian",
+    "cy": "Bermudian"
+  },
+  {
+    "code": 300,
+    "en-gb": "Black afro caribbean",
+    "cy": "Du affro Caribî"
+  },
+  {
+    "code": 300,
+    "en-gb": "Black caribbean",
+    "cy": "Du Caribî"
+  },
+  {
+    "code": 300,
+    "en-gb": "Black guyanese",
+    "cy": "Gaiana Black"
+  },
+  {
+    "code": 300,
+    "en-gb": "Black jamaican",
+    "cy": "Du Jamaica"
+  },
+  {
+    "code": 300,
+    "en-gb": "Black west indian",
+    "cy": "Du orllewin indian"
+  },
+  {
+    "code": 300,
+    "en-gb": "Caribbean spanish",
+    "cy": "Caribïaidd spanish"
+  },
+  {
+    "code": 300,
+    "en-gb": "Cayman islander",
+    "cy": "ynyswr Cayman"
+  },
+  {
+    "code": 300,
+    "en-gb": "Grenadian",
+    "cy": "Grenadian"
+  },
+  {
+    "code": 300,
+    "en-gb": "Guyanese",
+    "cy": "Gaiana"
+  },
+  {
+    "code": 300,
+    "en-gb": "Haitian",
+    "cy": "haitian"
+  },
+  {
+    "code": 300,
+    "en-gb": "Jamaican",
+    "cy": "Jamaican"
+  },
+  {
+    "code": 300,
+    "en-gb": "Kittitian",
+    "cy": "Kittitian"
+  },
+  {
+    "code": 300,
+    "en-gb": "Mixed caribbean",
+    "cy": "cymysg Caribî"
+  },
+  {
+    "code": 300,
+    "en-gb": "Tobagonian",
+    "cy": "Tobagonian"
+  },
+  {
+    "code": 300,
+    "en-gb": "Trinidadian",
+    "cy": "Trinidadian"
+  },
+  {
+    "code": 300,
+    "en-gb": "Vincentian",
+    "cy": "Vincentian"
+  },
+  {
+    "code": 300,
+    "en-gb": "West indian",
+    "cy": "West indian"
+  },
+  {
+    "code": 300,
+    "en-gb": "West indian trinidadian",
+    "cy": "trinidadian indian West"
+  },
+  {
+    "code": 320,
+    "en-gb": "African english",
+    "cy": "Affricanaidd Saesneg"
+  },
+  {
+    "code": 320,
+    "en-gb": "Black african",
+    "cy": "Du african"
+  },
+  {
+    "code": 320,
+    "en-gb": "Black scottish ghanaian",
+    "cy": "Ghanaidd scottish Black"
+  },
+  {
+    "code": 320,
+    "en-gb": "Black south african",
+    "cy": "Du de african"
+  },
+  {
+    "code": 320,
+    "en-gb": "East african",
+    "cy": "Dwyrain african"
+  },
+  {
+    "code": 320,
+    "en-gb": "Eritrean",
+    "cy": "Eritreaidd"
+  },
+  {
+    "code": 320,
+    "en-gb": "Ethiopian",
+    "cy": "Ethiopia"
+  },
+  {
+    "code": 320,
+    "en-gb": "Gambian",
+    "cy": "Gambia"
+  },
+  {
+    "code": 320,
+    "en-gb": "Ghanaian",
+    "cy": "Ghana"
+  },
+  {
+    "code": 320,
+    "en-gb": "Kenyan",
+    "cy": "Kenya"
+  },
+  {
+    "code": 320,
+    "en-gb": "Malawian",
+    "cy": "Malawi"
+  },
+  {
+    "code": 320,
+    "en-gb": "Namibian",
+    "cy": "Namibian"
+  },
+  {
+    "code": 320,
+    "en-gb": "Sudanese",
+    "cy": "Swdan"
+  },
+  {
+    "code": 320,
+    "en-gb": "Ugandan",
+    "cy": "Uganda"
+  },
+  {
+    "code": 320,
+    "en-gb": "Zambian",
+    "cy": "Zambia"
+  },
+  {
+    "code": 320,
+    "en-gb": "Zambian and english",
+    "cy": "Zambia a saesneg"
+  },
+  {
+    "code": 320,
+    "en-gb": "Zimbabwean",
+    "cy": "Zimbabwe"
+  },
+  {
+    "code": 330,
+    "en-gb": "Somali",
+    "cy": "Somali"
+  },
+  {
+    "code": 330,
+    "en-gb": "Somalian",
+    "cy": "Somalia"
+  },
+  {
+    "code": 331,
+    "en-gb": "Somali and british",
+    "cy": "Somali a british"
+  },
+  {
+    "code": 340,
+    "en-gb": "Nigerian",
+    "cy": "Nigeria"
+  },
+  {
+    "code": 340,
+    "en-gb": "Nigerian british",
+    "cy": "british Nigeria"
+  },
+  {
+    "code": 341,
+    "en-gb": "Nigerian and british",
+    "cy": "Nigeria ac british"
+  },
+  {
+    "code": 341,
+    "en-gb": "Nigerian and english",
+    "cy": "Nigeria a saesneg"
+  },
+  {
+    "code": 341,
+    "en-gb": "Nigerian and scottish",
+    "cy": "Nigeria a scottish"
+  },
+  {
+    "code": 350,
+    "en-gb": "African and caribbean",
+    "cy": "Affricanaidd a Caribî"
+  },
+  {
+    "code": 350,
+    "en-gb": "Afro caribbean black british",
+    "cy": "british du Caribî Affro"
+  },
+  {
+    "code": 350,
+    "en-gb": "Black african caribbean west indian",
+    "cy": "Du Affricanaidd Caribïaidd orllewin indian"
+  },
+  {
+    "code": 350,
+    "en-gb": "Caribbean african",
+    "cy": "Caribïaidd african"
+  },
+  {
+    "code": 350,
+    "en-gb": "Mixed black",
+    "cy": "du cymysg"
+  },
+  {
+    "code": 350,
+    "en-gb": "Somali jamaican",
+    "cy": "Somali Jamaican"
+  },
+  {
+    "code": 360,
+    "en-gb": "Afro english",
+    "cy": "Affro Saesneg"
+  },
+  {
+    "code": 360,
+    "en-gb": "Black english",
+    "cy": "Black Saesneg"
+  },
+  {
+    "code": 360,
+    "en-gb": "Black scots",
+    "cy": "Albanwyr Du"
+  },
+  {
+    "code": 360,
+    "en-gb": "Black welshman",
+    "cy": "Cymro Du"
+  },
+  {
+    "code": 380,
+    "en-gb": "African american",
+    "cy": "american african"
+  },
+  {
+    "code": 380,
+    "en-gb": "Black african american",
+    "cy": "Du african american"
+  },
+  {
+    "code": 380,
+    "en-gb": "Black american",
+    "cy": "american Black"
+  },
+  {
+    "code": 390,
+    "en-gb": "Black european",
+    "cy": "Du ewropeaidd"
+  },
+  {
+    "code": 399,
+    "en-gb": "Black american and english",
+    "cy": "Du Americanaidd a Saesneg"
+  },
+  {
+    "code": 399,
+    "en-gb": "Black and  british",
+    "cy": "Du a british"
+  },
+  {
+    "code": 399,
+    "en-gb": "Black and english",
+    "cy": "Du a Saesneg"
+  },
+  {
+    "code": 400,
+    "en-gb": "Afro arab",
+    "cy": "Affro arab"
+  },
+  {
+    "code": 450,
+    "en-gb": "Algerian",
+    "cy": "Algeria"
+  },
+  {
+    "code": 450,
+    "en-gb": "Berber",
+    "cy": "Berber"
+  },
+  {
+    "code": 450,
+    "en-gb": "Black egyptian",
+    "cy": "Du Aifft"
+  },
+  {
+    "code": 450,
+    "en-gb": "Egyptian",
+    "cy": "Aifft"
+  },
+  {
+    "code": 450,
+    "en-gb": "French algeria",
+    "cy": "Ffrangeg algeria"
+  },
+  {
+    "code": 450,
+    "en-gb": "Libyan",
+    "cy": "Libya"
+  },
+  {
+    "code": 450,
+    "en-gb": "Tunisian",
+    "cy": "Tunisian"
+  },
+  {
+    "code": 501,
+    "en-gb": "Black hispanic",
+    "cy": "Du Sbaenaidd"
+  },
+  {
+    "code": 503,
+    "en-gb": "Cuban",
+    "cy": "Ciwba"
+  },
+  {
+    "code": 504,
+    "en-gb": "Dominican",
+    "cy": "Dominica"
+  },
+  {
+    "code": 590,
+    "en-gb": "African mauritian",
+    "cy": "Mauritian african"
+  }
+]

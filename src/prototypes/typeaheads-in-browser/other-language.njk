@@ -1,0 +1,44 @@
+---
+version: 5.0.1
+layout: typeaheads-in-browser/views/_master
+---
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "typeaheads-in-browser/components/typeahead/_macro.njk" import prototypeTypeahead %}
+
+{% block main %}
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/main-language.html">Previous</a>
+    <form action="{{ pageInfo.parentPath }}/national-identity.html">
+       <h1 class="u-fs-l u-mt-s">You selected "Other". What is your main language?</h1>
+        {{
+            prototypeTypeahead({
+                "id": "language",
+                "classes": "u-mt-m",
+                "label": {
+                    "text": "Main language",
+                    "description": "Start entering to get suggestions. You can select from suggestions or enter your own answer"
+                },
+                "instructions": "Use up and down keys to navigate suggestions once you\'ve typed more than two characters. Use the enter key to select a suggestion. Touch device users, explore by touch or with swipe gestures.",
+                "content": {
+                    "aria_you_have_selected": "You have selected",
+                    "aria_found_by_alternative_name": "found by alternative name",
+                    "aria_min_chars": "Type in 2 or more characters for suggestions.",
+                    "aria_one_result": "There is one suggestion available.",
+                    "aria_n_results": "There are {n} suggestions available.",
+                    "aria_limited_results": "Results have been limited to 10 suggestions. Type more characters to refine your search.",
+                    "more_results": "Continue typing to refine suggestions",
+                    "results_title": "Suggestions"
+                },
+                "autocomplete": "off",
+                "typeaheadData": "https://gist.githubusercontent.com/rmccar/ab49c75970286a29ff0bbeb333bec4e5/raw/2ed3e577d2f8b03e37de712daf8b3a8b74236b54/languages.json"
+            })
+        }}
+        {{
+            onsButton({
+                "text": "Save and continue",
+                "classes": "u-mt-l"
+            })
+        }}
+    </form>
+{% endblock %}
+
+
