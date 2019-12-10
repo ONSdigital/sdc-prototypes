@@ -1,0 +1,147 @@
+---
+group: SCD Internal
+title: Nudge emails
+version: 14.2.1
+layout: nudge-emails/views/_master-error
+---
+
+{% from "components/date-input/_macro.njk" import onsDateInput %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+{% from "components/lists/_macro.njk" import onsList %}
+
+{% block main %}
+  <div class="page__container container container--wide">
+
+    {% call onsPanel({title: "This page has an error", type: "error"}) %}
+    <p>This <strong>must be corrected</strong> to continue.</p>
+    {{
+    onsList({
+            "classes": "list--bare",
+            "itemsList": [
+                {
+                    "text": "The date is after Exercise end",
+                    "index": true,
+                    "url": "#container-test-number",
+                    "classes": "js-inpagelink"
+                }
+            ]
+        }) 
+    }}
+    {% endcall %}
+
+    <div class="grid">
+      <div class="grid__col col-8@m">
+        <div class="pl-grid-col">
+          <h1 name="page-ce-title">Schedule nudge email</h1>
+          <dl class="ce-info" id="ce-attributes">
+            <dt class="ce-status__title item-headlines-term ce-status">Survey:</dt>
+            <dd class="ce-status__data item-headlines-definition ce-status" id="ce_status">009 MBS</dd>
+            <dt class="ce-status__title item-headlines-term ce-status">Period:</dt>
+            <dd class="ce-status__data item-headlines-definition ce-status" id="ce_period">1912</dd>
+          </dl>
+
+          <div class="panel panel--error panel--simple">
+            <div class="panel__body">
+              <p class="panel__error">
+                <strong>Nudge email must be set before Exercise end Monday 28 Feb 2022 00:00</strong>
+              </p>
+              <p class="field">
+
+                {{
+            onsDateInput({
+                "id": "date",
+                "legend": "Please enter your date",
+                "description": "Must be before Exercise end Monday 28 Feb 2022 00:00",
+                "day": {
+                    "label": {
+                        "text": "Day"
+                    },
+                    "name": "day",
+                    "attributes": {
+                        "autocomplete": "bday-day"
+                    }
+                },
+                "month": {
+                    "label": {
+                        "text": "Month"
+                    },
+                    "name": "month",
+                    "attributes": {
+                        "autocomplete": "bday-month"
+                    }
+                },
+                "year": {
+                    "label": {
+                        "text": "Year"
+                    },
+                    "name": "year",
+                    "attributes": {
+                        "autocomplete": "bday-year"
+                    }
+                }
+            })
+        }}
+
+              </p>
+            </div>
+          </div>
+          <fieldset id="date" class="fieldset">
+            <legend class="fieldset__legend">Time (Newport)</legend>
+            <div class="field-group">
+              <p class="field">
+                <label class="label u-fs-s--b" for="time-select-hrs" id="time-hrs">Hrs</label>
+                <select class="input input--select input--select__time-hrs input--w-4" id="time-select-hrs" name="hour">
+                  <option value="00">00</option>
+                  <option value="01">01</option>
+                  <option value="02">02</option>
+                  <option value="03">03</option>
+                  <option value="04">04</option>
+                  <option value="05">05</option>
+                  <option value="06">06</option>
+                  <option selected="" value="07">07</option>
+                  <option value="08">08</option>
+                  <option value="09">09</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                  <option value="16">16</option>
+                  <option value="17">17</option>
+                  <option value="18">18</option>
+                  <option value="19">19</option>
+                  <option value="20">20</option>
+                  <option value="21">21</option>
+                  <option value="22">22</option>
+                  <option value="23">23</option>
+                </select>
+              </p>
+              <p class="field">
+                <label class="label u-fs-s--b" for="time-select-mins" id="time-mins">Mins</label>
+                <select class="input input--select input--select__time-mins input--w-4" id="time-select-mins" name="minute">
+                  <option selected="" value="00">00</option>
+                  <option value="15">15</option>
+                  <option value="30">30</option>
+                  <option value="45">45</option>
+                </select>
+              </p>
+            </div>
+          </fieldset>
+
+          <p class="field">
+            <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-three/saved-nudge-email.html';">
+              <span class="btn__inner">Save</span>
+            </button>
+          </p>
+          <p class="field">
+            <a href="{{ pageInfo.rootPath }}/version-one/index.html">Cancel</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}
