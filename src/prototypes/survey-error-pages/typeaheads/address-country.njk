@@ -1,0 +1,43 @@
+---
+version: 5.0.1
+layout: typeaheads/views/_master
+---
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "typeaheads/components/typeahead/_macro.njk" import prototypeTypeahead %}
+
+{% block main %}
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/address-check.html">Previous</a>
+    <form action="{{ pageInfo.parentPath }}/outside-address-type.html">
+        <h1 class="u-fs-l u-mt-s">Which country outside of the UK do you stay in for more than 30 days a year?</h1>
+        {{
+            prototypeTypeahead({
+                "id": "address-country",
+                "classes": "u-mt-m",
+                "label": {
+                    "text": "Current name of country",
+                    "description": "Start entering to get suggestions. You can select from suggestions or enter your own answer"
+                },
+                "instructions": "Use up and down keys to navigate results once you\'ve typed more than two characters. Use the enter key to select a result. Touch device users, explore by touch or with swipe gestures.",
+                "content": {
+                    "aria_you_have_selected": "You have selected",
+                    "aria_found_by_alternative_name": "found by alternative name",
+                    "aria_min_chars": "Type in 2 or more characters for results.",
+                    "aria_one_result": "There is one result available.",
+                    "aria_n_results": "There are {n} results available.",
+                    "aria_limited_results": "Results have been limited to 10 results. Type more characters to refine your search.",
+                    "more_results": "Continue typing to refine results",
+                    "results_title": "Suggestions"
+                },
+                "autocomplete": "off",
+                "apiUrl": "https://ons-typeahead-prototypes.herokuapp.com/country-of-birth"
+            })
+        }}
+        {{
+           onsButton({
+                "text": "Save and continue",
+                "classes": "u-mt-l"
+            })
+        }}
+    </form>
+    {% include "typeaheads/views/partials/_heroku-waker.njk" %}
+{% endblock %}

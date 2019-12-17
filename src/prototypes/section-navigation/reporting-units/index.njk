@@ -1,0 +1,33 @@
+---
+group: SCD Internal
+title: Section navigation
+version: 14.4.0
+layout: section-navigation/views/_master-reporting-units
+---
+
+{% block main %}
+    {% from "components/button/_macro.njk" import onsButton %}
+    {% from "components/input/_macro.njk" import onsInput %}
+    <h1>Reporting units</h1>
+    <div class="ru-search">
+
+        <form action="" method="post">
+            <input id="csrf_token" name="csrf_token" type="hidden" value="IjMyZTk5YjFkYzM1NzI1M2M0OWM4ZmFhZjc0MDNkMTQ0NzU0YzljMDAi.Xfi-Dg.nfSAZu0nSkPcYx3DuCQIot-8im4">
+
+            <div class="field u-mb-s">
+                <label class="label">Type a reference or company name</label>
+                <input class="ru-search-box input input--text" id="query" name="query" size="20" type="text" value="">
+            </div>
+
+            <button
+type="submit"
+class="btn js-timer js-submit-btn"
+id="btn-search-ru"
+>
+                <span class="btn__inner">Search</span>
+            </button>
+
+        </form>
+
+    </div>
+{% endblock %}

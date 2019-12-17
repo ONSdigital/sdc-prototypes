@@ -1,0 +1,42 @@
+---
+version: 5.0.1
+layout: typeaheads/views/_master
+---
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "typeaheads/components/typeahead/_macro.njk" import prototypeTypeahead %}
+
+{% block main %}
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/ethnic-group.html">Previous</a>
+    <form action="{{ pageInfo.parentPath }}/religion.html?previous={{ pageInfo.path }}.html">
+        <h1 class="u-fs-l u-mt-s">What is your ethnic group or background?</h1>
+        {{
+            prototypeTypeahead({
+                "id": "ethnic-group-white-other",
+                "classes": "u-mt-m",
+                "label": {
+                    "text": "Enter your ethnic group or background"
+                },
+                "instructions": "Use up and down keys to navigate suggestions once you\'ve typed more than two characters. Use the enter key to select a suggestion. Touch device users, explore by touch or with swipe gestures.",
+                "content": {
+                    "aria_you_have_selected": "You have selected",
+                    "aria_found_by_alternative_name": "found by alternative name",
+                    "aria_min_chars": "Type in 2 or more characters for suggestions.",
+                    "aria_one_result": "There is one suggestion available.",
+                    "aria_n_results": "There are {n} suggestions available.",
+                    "aria_limited_results": "Results have been limited to 10 suggestions. Type more characters to refine your search.",
+                    "more_results": "Continue typing to refine suggestions",
+                    "results_title": "Suggestions"
+                },
+                "autocomplete": "off",
+                "apiUrl": "https://ons-typeahead-prototypes.herokuapp.com/ethnic-groups-other"
+            })
+        }}
+        {{
+           onsButton({
+                "text": "Save and continue",
+                "classes": "u-mt-l"
+            })
+        }}
+    </form>
+    {% include "typeaheads/views/partials/_heroku-waker.njk" %}
+{% endblock %}

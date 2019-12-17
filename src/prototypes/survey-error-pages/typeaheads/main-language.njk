@@ -1,0 +1,58 @@
+---
+version: 5.0.1
+layout: typeaheads/views/_master
+---
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/details/_macro.njk" import onsDetails%}
+
+{% block main %}
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/country-of-birth.html">Previous</a>
+    <form action="{{ pageInfo.parentPath }}/national-identity.html">
+        {{ 
+            onsRadios({
+                "legend": " <h1 class=\"u-fs-l\">What is your main language?</h1>",
+                "name": "country-of-birth",
+                "classes": "u-mt-s",
+                "radios": [
+                    {
+                        "id": "english",
+                        "label": {
+                            "text": "English"
+                        },
+                        "name": "english"
+                    },
+                    {
+                        "id": "other",
+                        "label": {
+                            "text": "Other",
+                            "description": "Including British Sign Language"
+                        },
+                        "description": "You can enter the main language at the next question including British Sign Language",
+                        "name": "other",
+                        "attributes": {
+                            "data-action-url": pageInfo.parentPath + "/other-language.html"
+                        }
+                    }
+                ]
+            }) 
+        }}
+        {{
+            onsDetails({
+                "id": "details",
+                "title": "What do we mean by 'main language'",
+                "content": "<p>Your main language is the language you use most naturally. It could be the language you use at home.</p>",
+                "button": {
+                    "close": "Hide this"
+                }
+            })
+        }}
+        {{
+           onsButton({
+                "text": "Save and continue",
+                "classes": "u-mt-l"
+            })
+        }}
+    </form>
+    {% include "typeaheads/views/partials/_heroku-waker.njk" %}
+{% endblock %}

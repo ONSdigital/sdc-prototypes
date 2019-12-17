@@ -1,0 +1,65 @@
+---
+version: 5.0.1
+layout: typeaheads/views/_master
+---
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+
+{% block main %}
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/passport.html">Previous</a>
+    <form action="{{ pageInfo.parentPath }}/summary.html">
+        {{ 
+            onsRadios({
+                "legend": "<h1 class=\"u-fs-l\">What is your employment status?</h1>",
+                "name": "employment-status",
+                "classes": "u-mt-m",
+                "radios": [
+                    {
+                        "id": "employee",
+                        "label": {
+                            "text": "Employee"
+                        },
+                        "name": "employee",
+                        "attributes": {
+                            "data-action-url": pageInfo.parentPath  + "/job-title.html"
+                        }
+                    },
+                    {
+                        "id": "self-employed-no-employees",
+                        "label": {
+                            "text": "Self-employed or freelance without employees"
+                        },
+                        "name": "self-employed-no-employees",
+                         "attributes": {
+                            "data-action-url": pageInfo.parentPath  + "/job-title.html"
+                        }
+                    },
+                    {
+                        "id": "self-employed-employees",
+                        "label": {
+                            "text": "Self-employed with employees"
+                        },
+                        "name": "self-employed-employees",
+                        "attributes": {
+                            "data-action-url": pageInfo.parentPath  + "/job-title.html"
+                        }
+                    },
+                    {
+                        "id": "unemployed",
+                        "label": {
+                            "text": "None of these"
+                        },
+                        "name": "unemployed"
+                    }
+                ]
+            }) 
+        }}
+        {{
+           onsButton({
+                "text": "Save and continue",
+                "classes": "u-mt-l"
+            })
+        }}
+    </form>
+    {% include "typeaheads/views/partials/_heroku-waker.njk" %}
+{% endblock %}

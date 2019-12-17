@@ -1,0 +1,60 @@
+---
+version: 5.0.1
+layout: typeaheads/views/_master
+---
+{% from "components/details/_macro.njk" import onsDetails%}
+{% from "components/radios/_macro.njk" import onsRadios%}
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% block main %}
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/date-of-birth.html">Previous</a>
+    <form action="{{ pageInfo.parentPath }}/student-check.html">
+        <fieldset class="u-mt-s">
+            <legend><h1 class="u-fs-l">Do you stay at another address for more than 30 days a year?</h1></legend>
+            <p>This could be more than 30 days in a row or divided accross the year</p>
+            {% call onsDetails({
+                "id": "address-definition",
+                "title": "What do we mean by 'another address'?",
+                "closeButton": "Hide this"
+            }) %}
+                <p>Another address refers to a different address to the one at the start of this survey. This might be another parent or guardian’s address, a term-time address, a partner's address, or a holiday home.</p>
+            {% endcall %}
+            {{ onsRadios({
+                "id": "address-check",
+                "name": "address-check",
+                "classes": "u-mt-s",
+                "radios": [
+                    {
+                        "id": "no",
+                        "label": {
+                            "text": "No"
+                        }
+                    },
+                    {
+                        "id": "yes-uk",
+                        "label": {
+                            "text": "Yes, an address within the UK"
+                        },
+                        "attributes": {
+                            "data-action-url": pageInfo.parentPath + "/other-address.html"
+                        }
+                    },
+                    {
+                        "id": "yes-outside",
+                        "label": {
+                            "text": "Yes, an address outside the UK"
+                        },
+                        "attributes": {
+                            "data-action-url": pageInfo.parentPath + "/address-country.html"
+                        }
+                    }
+                ]
+            }) }}
+        </fieldset>
+        {{ onsButton({
+            "text": "Save and continue",
+            "classes": "u-mt-l"
+        }) }}
+    </form>
+    {% include "typeaheads/views/partials/_heroku-waker.njk" %}
+{% endblock %}

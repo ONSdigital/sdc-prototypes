@@ -1,73 +1,14 @@
 ---
 group: SCD Internal
-title: Filter secure messages
-version: 13.8.3
-layout: filter-secure-messages/views/_master
+title: Section navigation
+version: 14.4.0
+layout: section-navigation/views/_master-messages
 ---
 
 {% block main %}
-
-  <div class="grid grid--flex grid--between">
-    <div class="grid__col col-9@m">
-      {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
-      {{ 
-          onsBreadcrumb({
-              "ariaLabel": 'Breadcrumb',
-              "itemsList": [
-                  {
-                      "url": '/',
-                      "text": 'Home'
-                  },
-                  {
-                      "url": '/',
-                      "text": 'FDI Messages',
-                      "current": true
-                  }
-              ]
-          }) 
-      }}
-      <h1>FDI Messages</h1>
-    </div>
-
-    <div class="grid__col col-3@m">
-      <form class="filter" action="{{ pageInfo.rootPath }}/result.html">
-        <label class="label" for="filter">Filter RU ref</label>
-        <div class="grid--flex input-group">
-          <div class="input-field">
-            <p class="field">
-              <input type="text" id="filter" class="input input--text input-type__input input--w-6 number" pattern="[0-9]*" inputmode="numeric" autocomplete="off" min />
-            </p>
-          </div>
-          <div class="filter-button">
-            <button type="submit" id="length" class="btn btn--small btn--disabled" disabled="true">
-              <span class="btn__inner">Filter</span>
-            </button>
-          </div>
-        </div>
-        <p id="toofew" class="error hidden">Too few characters</p>
-        <p id="toomany" class="error hidden">Too many characters</p>
-      </form>
-    </div>
-  </div>
-
-  <div class="grid">
-    <div class="grid__col col-12@m">
-      <nav class="section-nav" id="" aria-label="Section menu">
-        <ul class="section-nav__list" aria-label="">
-          <li class="section-nav__item">
-            <a href="" class="section-nav__link">My Messages</a>
-          </li>
-          <li class="section-nav__item">
-            <a href="" class="section-nav__link">Open</a>
-          </li>
-          <li class="section-nav__item section-nav__item--active">
-            <a href="" class="section-nav__link">Closed</a>
-          </li>
-          <li class="section-nav__item">
-            <a href="" class="section-nav__link">Initial</a>
-          </li>
-        </ul>
-      </nav>
+    {% from "components/button/_macro.njk" import onsButton %}
+    {% from "components/input/_macro.njk" import onsInput %}
+    <h1>Secure messages</h1>
 
       <table class="table">
         <caption class="table__caption">Secure messages</caption>
@@ -178,59 +119,4 @@ layout: filter-secure-messages/views/_master
         </tbody>
       </table>
 
-    </div>
-    <!-- grid__col col-12@m -->
-  </div>
-
-  <div id="live" class="u-vh" aria-live="polite"></div>
-
-   <script>
-    var myInput = document.getElementById("filter");
-    var length = document.getElementById("length");
-    var filter = document.getElementById("filter");
-    var toofew = document.getElementById("toofew");
-    var toomany = document.getElementById("toomany");
-    var clear = document.getElementById("clear");
-
-
-    // When the user starts to type something inside the password field
-    myInput.onkeyup = function () {
-
-      // Validate length
-      if (myInput.value.length == 11) {
-        length.classList.remove("btn--disabled");
-        length.classList.add("valid");
-        length.removeAttribute("disabled", "");
-      }
-      else {
-        length.classList.remove("valid");
-        length.classList.add("btn--disabled");
-        length.setAttribute("disabled", "");
-      }
-
-      // More than 11 characters
-      if (myInput.value.length == 0) {
-        toofew.classList.add("null");
-        toomany.classList.add("null");
-      } else {
-        toofew.classList.remove("null");
-        toomany.classList.remove("null");
-      }
-
-      // Fewer than 11 characters
-      if (myInput.value.length <= 10) {
-        toofew.classList.remove("hidden");
-      } else {
-        toofew.classList.add("hidden");
-      }
-
-      // More than 11 characters
-      if (myInput.value.length >= 12) {
-        toomany.classList.remove("hidden");
-      } else {
-        toomany.classList.add("hidden");
-      }
-    }
-  </script>
-  
 {% endblock %}

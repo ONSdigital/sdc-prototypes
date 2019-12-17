@@ -1,0 +1,69 @@
+---
+version: 5.0.1
+layout: typeaheads/views/_master
+---
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% block main %}
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/religion.html">Previous</a>
+    <form action="{{ pageInfo.parentPath }}/passport.html">
+        {{ onsRadios({
+            "legend": "One year ago, what was your usual address?",
+            "description": "If you had no usual address one year ago, state the address where you were staying",
+            "name": "one-year-ago-address",
+            "classes": "u-mt-s",
+            "questionMode": true,
+            "radios": [
+                {
+                    "id": "census-letter-address",
+                    "classes": "js-one-year-ago-census-address",
+                    "label": {
+                        "text": "Census letter address"
+                    },
+                    "name": "census-letter-address",
+                    "attributes": {
+                        "data-census-address": pageInfo.parentPath
+                    }
+                },
+                {
+                    "id": "student-address",
+                    "label": {
+                        "text": "Student term-time or boarding school address in the UK"
+                    },
+                    "name": "student-address",
+                    "attributes": {
+                        "data-action-url": pageInfo.parentPath + "/one-year-ago-uk-student.html"
+                    }
+                },
+                {
+                    "id": "another-uk-address",
+                    "label": {
+                        "text": "Another address in the UK"
+                    },
+                    "name": "another-uk-address",
+                    "attributes": {
+                        "data-action-url": pageInfo.parentPath + "/one-year-ago-uk-address.html"
+                    }
+                },
+                {
+                    "id": "another-non-uk-address",
+                    "label": {
+                        "text": "Another address outside the UK"
+                    },
+                    "name": "another-non-uk-address",
+                    "attributes": {
+                        "data-action-url": pageInfo.parentPath + "/one-year-ago-address-country.html"
+                    }
+                }
+            ]
+        }) }}
+        {{
+            onsButton({
+                "text": "Save and continue",
+                "classes": "u-mt-l"
+            })
+        }}
+    </form>
+    {% include "typeaheads/views/partials/_heroku-waker.njk" %}
+{% endblock %}

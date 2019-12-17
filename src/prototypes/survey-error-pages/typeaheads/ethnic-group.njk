@@ -1,0 +1,94 @@
+---
+version: 5.0.1
+layout: typeaheads/views/_master
+---
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/details/_macro.njk" import onsDetails %}
+
+{% block main %}
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/national-identity.html">Previous</a>
+    <form action="{{ pageInfo.parentPath }}/religion.html">
+        {{ 
+            onsRadios({
+                "legend": "<h1 class=\"u-fs-l\">What is your ethnic group?</h1>",
+                "name": "ethnic-group",
+                "classes": "u-mt-s",
+                "radios": [
+                    {
+                        "id": "white",
+                        "label": {
+                            "text": "White",
+                            "description": "Any White background Including British, Northern Irish, Irish, Gypsy, Irish Traveller and Roma"
+                        },
+                        "name": "white",
+                        "attributes": {
+                            "data-action-url": pageInfo.parentPath + "/ethnic-group-white.html"
+                        }
+                    },
+                    {
+                        "id": "mixed",
+                        "label": {
+                            "text": "Mixed or Multiple ethnic groups",
+                            "description": "Any Mixed or Multiple background Including White and Black Caribbean, White and Black African, and White and Asian"
+                        },
+                        "name": "mixed",
+                        "attributes": {
+                            "data-action-url": pageInfo.parentPath + "/ethnic-group-mixed.html"
+                        }
+                    },
+                    {
+                        "id": "asian",
+                        "label": {
+                            "text": "Asian or Asian British",
+                            "description": " Any Asian background Including Indian, Pakistani, Bangladeshi and Chinese"
+                        },
+                        "name": "asian",
+                        "attributes": {
+                            "data-action-url": pageInfo.parentPath + "/ethnic-group-asian.html"
+                        }
+                    },
+                    {
+                        "id": "black",
+                        "label": {
+                            "text": "Black, Caribbean, African or Black British",
+                            "description": " Any Black background Including Black British, Caribbean and African"
+                        },
+                        "name": "black",
+                        "attributes": {
+                            "data-action-url": pageInfo.parentPath + "/ethnic-group-black.html"
+                        }
+                    },
+                    {
+                        "id": "other",
+                        "label": {
+                            "text": "Other ethnic group",
+                            "description": "Any other ethnic group Including Arab"
+                        },
+                        "name": "other",
+                        "attributes": {
+                            "data-action-url": pageInfo.parentPath + "/ethnic-group-arab-other.html"
+                        }
+                    }
+                ]
+            }) 
+        }}
+        {{
+            onsDetails({
+                "id": "details",
+                "title": "Why your answer is important",
+                "content": "<p>Your answer will help to support equality and fairness in your community. Councils and government use information on ethnic group to make sure they <ul><li>provide services and share funding fairly</li> <li>understand and represent everyone’s interests</li></ul></p>",
+                "button": {
+                    "close": "Hide this"
+                }
+            })
+        }}
+        {{
+           onsButton({
+                "text": "Save and continue",
+                "classes": "u-mt-l"
+            })
+        }}
+    </form>
+    {% include "typeaheads/views/partials/_heroku-waker.njk" %}
+{% endblock %}

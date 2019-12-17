@@ -1,0 +1,75 @@
+/* Secure messages  */
+.table__caption {
+  display: none;
+}
+
+.table {
+  margin-top: 1rem;
+  .table__header {
+    &.ru-ref {
+      width: 7rem;
+    }
+    &.business-name {
+      width: 20%;
+    }
+    &.subject {
+      width: 30%;
+    }
+    &.from {
+      width: 10%;
+    }
+    &.to {
+      width: 10%;
+    }
+    &.date-and-time {
+      width: 10rem;
+    }
+  }
+  td {
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  tr.new {
+    td {
+      font-weight: 600;
+    }
+    .ru-ref {
+      padding-left: 0rem;
+      .circle:before {
+        content: ' \25CF';
+        font-size: 16px;
+        color: #3b7a9e;
+        margin-right: 0.2rem;
+        width: 0.5rem;
+        display: inline-block;
+      }
+    }
+  }
+
+  .date-time {
+    font-family: 'Open Sans';
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+  }
+}
+
+/* Additional styles for tables */
+
+.tbl-ce-label {
+  width: 40%;
+}
+
+.ce-events .tbl-ce-value {
+  text-align: right;
+}
+
+.ce-details .tbl-ce-value {
+  text-align: right;
+}
+
+.tbl-ce-action {
+  text-align: right;
+}
