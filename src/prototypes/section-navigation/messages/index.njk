@@ -9,6 +9,22 @@ layout: section-navigation/views/_master-messages
     {% from "components/button/_macro.njk" import onsButton %}
     {% from "components/input/_macro.njk" import onsInput %}
     <h1>Secure messages</h1>
+      <nav class="section-nav" id="" aria-label="Section menu">
+        <ul class="section-nav__list" aria-label="">
+          <li class="section-nav__item">
+            <a href="" class="section-nav__link">My Messages</a>
+          </li>
+          <li class="section-nav__item">
+            <a href="" class="section-nav__link">Open</a>
+          </li>
+          <li class="section-nav__item section-nav__item--active">
+            <a href="" class="section-nav__link">Closed</a>
+          </li>
+          <li class="section-nav__item">
+            <a href="" class="section-nav__link">Initial</a>
+          </li>
+        </ul>
+      </nav>
 
       <table class="table secure-messages">
         <caption class="table__caption">Secure messages</caption>
