@@ -8,7 +8,7 @@ import formBodyFromObject from 'helpers/form-body-from-object';
 import dice from 'dice-coefficient';
 import { sortBy } from 'sort-by-typescript';
 
-const baseURL = 'https://pricem-address-lookup-api.gcp.dev.eq.ons.digital';
+const baseURL = 'https://mark.address-lookup-api.gcp.dev.eq.ons.digital';
 const lookupURL = `${baseURL}/address_api/`;
 const retrieveURL = `${baseURL}/uprn/`;
 const addressReplaceChars = [','];
