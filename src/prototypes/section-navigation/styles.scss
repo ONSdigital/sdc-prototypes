@@ -1,9 +1,23 @@
+/* Overview */
+.overview {
+  .data {
+    margin-bottom: 0;
+  }
+  .desc {
+    display: block;
+  }
+  .u-fs-xxxl {
+    font-size: 3rem;
+    line-height: 1.4;
+  }
+}
+
 /* Secure messages  */
 .table__caption {
   display: none;
 }
 
-.table {
+.table.secure-messages {
   margin-top: 1rem;
   .table__header {
     &.ru-ref {

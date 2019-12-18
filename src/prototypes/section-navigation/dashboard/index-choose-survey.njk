@@ -10,201 +10,173 @@ layout: section-navigation/views/_master-dashboard-signed-out
     {% from "components/input/_macro.njk" import onsInput %}
 
     <div class="grid">
-        <div class="grid__col col-6@m">
+        <div class="grid__col col-8@m">
             <h1 name="page-surveys-title">Surveys</h1>
             <table id="tbl-surveys" class="table table--responsive">
                 <thead class="table__head">
                     <tr class="table__row">
-                        <th scope="col" class="table__header">ID</th>
                         <th scope="col" class="table__header">Title</th>
                         <th scope="col" class="table__header">Abbreviation</th>
                     </tr>
                 </thead>
                 <tbody class="table__body">
                     <tr class="table__row">
-                        <td class="table__cell" name="tbl-surveys-id" data-th="ID">009</td>
                         <td class="table__cell" name="tbl-surveys-title" data-th="Title">
                             <a href="/prototypes/section-navigation/dashboard/index.html">Monthly Business Survey</a>
                         </td>
                         <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">MBS</td>
                     </tr>
                     <tr class="table__row">
-                        <td class="table__cell" name="tbl-surveys-id" data-th="ID">017</td>
                         <td class="table__cell" name="tbl-surveys-title" data-th="Title">
                             <a href="#" name="survey-link-QSS">Quarterly Stocks Survey</a>
                         </td>
                         <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">QSS</td>
                     </tr>
                     <tr class="table__row">
-                        <td class="table__cell" name="tbl-surveys-id" data-th="ID">019</td>
                         <td class="table__cell" name="tbl-surveys-title" data-th="Title">
                             <a href="#" name="survey-link-QCAS">Quarterly Acquisitions and Disposal of Capital Assets Survey</a>
                         </td>
                         <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">QCAS</td>
                     </tr>
                     <tr class="table__row">
-                        <td class="table__cell" name="tbl-surveys-id" data-th="ID">023</td>
                         <td class="table__cell" name="tbl-surveys-title" data-th="Title">
                             <a href="#" name="survey-link-RSI">Monthly Business Survey - Retail Sales Index</a>
                         </td>
                         <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">RSI</td>
                     </tr>
                     <tr class="table__row">
-                        <td class="table__cell" name="tbl-surveys-id" data-th="ID">062</td>
                         <td class="table__cell" name="tbl-surveys-title" data-th="Title">
                             <a href="#" name="survey-link-AIFDI">Annual Inward Foreign Direct Investment Survey</a>
                         </td>
                         <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">AIFDI</td>
                     </tr>
                     <tr class="table__row">
-                        <td class="table__cell" name="tbl-surveys-id" data-th="ID">063</td>
                         <td class="table__cell" name="tbl-surveys-title" data-th="Title">
                             <a href="#" name="survey-link-AOFDI">Annual Outward Foreign Direct Investment Survey</a>
                         </td>
                         <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">AOFDI</td>
                     </tr>
                     <tr class="table__row">
-                        <td class="table__cell" name="tbl-surveys-id" data-th="ID">064</td>
                         <td class="table__cell" name="tbl-surveys-title" data-th="Title">
                             <a href="#" name="survey-link-QIFDI">Quarterly Inward Foreign Direct Investment Survey</a>
                         </td>
                         <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">QIFDI</td>
                     </tr>
                     <tr class="table__row">
-                        <td class="table__cell" name="tbl-surveys-id" data-th="ID">065</td>
                         <td class="table__cell" name="tbl-surveys-title" data-th="Title">
                             <a href="#" name="survey-link-QOFDI">Quarterly Outward Foreign Direct Investment Survey</a>
                         </td>
                         <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">QOFDI</td>
                     </tr>
                     <tr class="table__row">
-                        <td class="table__cell" name="tbl-surveys-id" data-th="ID">066</td>
                         <td class="table__cell" name="tbl-surveys-title" data-th="Title">
                             <a href="#" name="survey-link-Sand & Gravel">Quarterly Survey of Building Materials Sand and Gravel</a>
                         </td>
                         <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">Sand & Gravel</td>
                     </tr>
                     <tr class="table__row">
-                        <td class="table__cell" name="tbl-surveys-id" data-th="ID">073</td>
                         <td class="table__cell" name="tbl-surveys-title" data-th="Title">
                             <a href="#" name="survey-link-Blocks">Monthly Survey of Building Materials Concrete Building Blocks</a>
                         </td>
                         <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">Blocks</td>
                     </tr>
                     <tr class="table__row">
-                        <td class="table__cell" name="tbl-surveys-id" data-th="ID">074</td>
                         <td class="table__cell" name="tbl-surveys-title" data-th="Title">
                             <a href="#" name="survey-link-Bricks">Monthly Survey of Building Materials Bricks</a>
                         </td>
                         <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">Bricks</td>
                     </tr>
                     <tr class="table__row">
-                        <td class="table__cell" name="tbl-surveys-id" data-th="ID">093</td>
                         <td class="table__cell" name="tbl-surveys-title" data-th="Title">
                             <a href="#" name="survey-link-FSPS">Financial Survey of Pension Schemes</a>
                         </td>
                         <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">FSPS</td>
                     </tr>
                     <tr class="table__row">
-                        <td class="table__cell" name="tbl-surveys-id" data-th="ID">134</td>
                         <td class="table__cell" name="tbl-surveys-title" data-th="Title">
                             <a href="#" name="survey-link-MWSS">Monthly Wages and Salaries Survey</a>
                         </td>
                         <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">MWSS</td>
                     </tr>
                     <tr class="table__row">
-                        <td class="table__cell" name="tbl-surveys-id" data-th="ID">137</td>
                         <td class="table__cell" name="tbl-surveys-title" data-th="Title">
                             <a href="#" name="survey-link-PCS">Public Corporations Survey</a>
                         </td>
                         <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">PCS</td>
                     </tr>
                     <tr class="table__row">
-                        <td class="table__cell" name="tbl-surveys-id" data-th="ID">139</td>
                         <td class="table__cell" name="tbl-surveys-title" data-th="Title">
                             <a href="#" name="survey-link-QBS">Quarterly Business Survey</a>
                         </td>
                         <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">QBS</td>
                     </tr>
                     <tr class="table__row">
-                        <td class="table__cell" name="tbl-surveys-id" data-th="ID">141</td>
                         <td class="table__cell" name="tbl-surveys-title" data-th="Title">
                             <a href="#" name="survey-link-ASHE">Annual Survey of Hours and Earnings</a>
                         </td>
                         <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">ASHE</td>
                     </tr>
                     <tr class="table__row">
-                        <td class="table__cell" name="tbl-surveys-id" data-th="ID">144</td>
                         <td class="table__cell" name="tbl-surveys-title" data-th="Title">
                             <a href="#" name="survey-link-UKIS">UK Innovation Survey</a>
                         </td>
                         <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">UKIS</td>
                     </tr>
                     <tr class="table__row">
-                        <td class="table__cell" name="tbl-surveys-id" data-th="ID">160</td>
                         <td class="table__cell" name="tbl-surveys-title" data-th="Title">
                             <a href="#" name="survey-link-QPSESLA">Quarterly Public Sector Employment Survey - Local Authorities</a>
                         </td>
                         <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">QPSESLA</td>
                     </tr>
                     <tr class="table__row">
-                        <td class="table__cell" name="tbl-surveys-id" data-th="ID">165</td>
                         <td class="table__cell" name="tbl-surveys-title" data-th="Title">
                             <a href="#" name="survey-link-QPSESPB">Quarterly Public Sector Employment Survey - Public Bodies</a>
                         </td>
                         <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">QPSESPB</td>
                     </tr>
                     <tr class="table__row">
-                        <td class="table__cell" name="tbl-surveys-id" data-th="ID">169</td>
                         <td class="table__cell" name="tbl-surveys-title" data-th="Title">
                             <a href="#" name="survey-link-QPSESCS">Quarterly Public Sector Employment Survey - Civil Service</a>
                         </td>
                         <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">QPSESCS</td>
                     </tr>
                     <tr class="table__row">
-                        <td class="table__cell" name="tbl-surveys-id" data-th="ID">187</td>
                         <td class="table__cell" name="tbl-surveys-title" data-th="Title">
                             <a href="#" name="survey-link-Ecommerce">E-commerce Survey</a>
                         </td>
                         <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">Ecommerce</td>
                     </tr>
                     <tr class="table__row">
-                        <td class="table__cell" name="tbl-surveys-id" data-th="ID">199</td>
                         <td class="table__cell" name="tbl-surveys-title" data-th="Title">
                             <a href="#" name="survey-link-NBS">National Balance Sheet</a>
                         </td>
                         <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">NBS</td>
                     </tr>
                     <tr class="table__row">
-                        <td class="table__cell" name="tbl-surveys-id" data-th="ID">221</td>
                         <td class="table__cell" name="tbl-surveys-title" data-th="Title">
                             <a href="#" name="survey-link-BRES">Business Register and Employment Survey</a>
                         </td>
                         <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">BRES</td>
                     </tr>
                     <tr class="table__row">
-                        <td class="table__cell" name="tbl-surveys-id" data-th="ID">225</td>
                         <td class="table__cell" name="tbl-surveys-title" data-th="Title">
                             <a href="#" name="survey-link-OFATS">Outward Foreign Affiliates Statistics Survey</a>
                         </td>
                         <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">OFATS</td>
                     </tr>
                     <tr class="table__row">
-                        <td class="table__cell" name="tbl-surveys-id" data-th="ID">281</td>
                         <td class="table__cell" name="tbl-surveys-title" data-th="Title">
                             <a href="#" name="survey-link-MTS">Monthly Turnover Survey</a>
                         </td>
                         <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">MTS</td>
                     </tr>
                     <tr class="table__row">
-                        <td class="table__cell" name="tbl-surveys-id" data-th="ID">500</td>
                         <td class="table__cell" name="tbl-surveys-title" data-th="Title">
                             <a href="#" name="survey-link-GovERD">Government Research and Development Survey</a>
                         </td>
                         <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">GovERD</td>
                     </tr>
                     <tr class="table__row">
-                        <td class="table__cell" name="tbl-surveys-id" data-th="ID">888</td>
                         <td class="table__cell" name="tbl-surveys-title" data-th="Title">
                             <a href="#" name="survey-link-TST">Test Survey</a>
                         </td>
