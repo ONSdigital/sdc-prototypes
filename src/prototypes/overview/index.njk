@@ -5,15 +5,48 @@ version: 14.2.1
 layout: overview/views/_index
 ---
 
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/input/_macro.njk" import onsInput %}
+
 {% block main %}
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.6.0/echarts-en.js"></script>
-    <div class="grid">
+    <div class="grid overview">
         <div class="grid__col col-12@m">
-        <div class="panel panel--info panel--simple">
-            <div class="panel__body">
-                <p>Scheduled downtime 18/12/2019 00:00 to 02:00</p>
+            <div class="panel panel--info panel--simple">
+                <div class="panel__body">
+                    <p>Scheduled downtime 18/12/2019 00:00 to 02:00</p>
+                </div>
             </div>
+
+            <h1 name="page-surveys-title" class="u-mt-m">MBS <span class="u-fs-r"><a href="#">Change survey</a></span></h1>
+            <dl class="metadata metadata__list grid grid--gutterless u-cf u-mb-l" title="" aria-label="">
+                <dt class="metadata__term grid__col col-4@m">Status:</dt>
+                <dd class="metadata__value grid__col col-8@m">Scheduled</dd>
+                <dt class="metadata__term grid__col col-4@m">Current collection exercise period:</dt>
+                <dd class="metadata__value grid__col col-8@m">November 2019</dd>
+            </dl>
+            <h2>MBS: November 2019 progress</h2>
+            <div class="grid">
+                <div class="grid__col col-2@m">
+                    <h4 class="desc u-fs-s--b u-mb-no">Sample size</h4>
+                    <p class="data u-fs-xxxl">33411</p>
+                </div>
+                <div class="grid__col col-2@m">
+                    <h4 class="desc u-fs-s--b u-mb-no">Not started</h4>
+                    <p class="data u-fs-xxxl">10867</p>
+                </div>
+                <div class="grid__col col-2@m">
+                    <h4 class="desc u-fs-s--b u-mb-no">In progress</h4>
+                    <p class="data u-fs-xxxl">375</p>
+                </div>
+                <div class="grid__col col-2@m">
+                    <h4 class="desc u-fs-s--b u-mb-no">Completed</h4>
+                    <p class="data u-fs-xxxl">22114</p>
+                </div>
+                <div class="grid__col col-12@m">
+                    <p><span class="u-fs-r"><a href="#">Go to dashboard</a></span></p>
+                </div>
             </div>
 
             <div id="main" style="width: 100%;height:400px;"></div>
@@ -25,7 +58,7 @@ layout: overview/views/_index
                 // specify chart configuration item and data
                 var option = {
                     title: {
-                        text: 'Progress'
+                        show:'false'
                     },
                     tooltip: {},
                     legend: {
