@@ -112,7 +112,7 @@ layout: overview/views/_index
 
                 // Asynchronous data loading 
                 myChart.showLoading();
-                    $.get('data/data.json').done(function (data) {
+                    $.get('{{ pageInfo.rootPath }}/data/data.json').done(function (data) {
                     // fill in data
                     myChart.setOption({
                         xAxis: {
