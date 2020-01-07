@@ -1,0 +1,140 @@
+---
+group: SCD Internal
+title: Overview
+version: 14.2.1
+layout: overview/views/_index
+---
+
+{% block main %}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.6.0/echarts-en.js"></script>
+    <div class="grid">
+        <div class="grid__col col-12@m">
+            <div id="main" style="width: 100%;height:400px;"></div>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            <script type="text/javascript">
+
+                // based on prepared DOM, initialize echarts instance
+                var myChart = echarts.init(document.getElementById('main'));
+
+                myChart.setOption({
+                    title: {
+                        text: 'Progress'
+                    },
+                    tooltip: {},
+                    xAxis: {
+                        // boundaryGap: false,
+                        name: 'date',
+                        data: [ ]
+                    },
+                    yAxis: {
+                        max: 100
+                    },
+                    series: [
+                        {
+                            name: 'completed',
+                            type: 'bar',
+                            data:  [ ],
+                            stack: "stackbar",
+                            itemStyle: {
+                                color: 'rgb(255, 255, 255)',
+                                borderColor: "#979797",
+                                borderWidth: 1,
+                                borderType: 'solid'
+                            }
+                        },
+                        {
+                            name: 'in-progress',
+                            type: 'bar',
+                            data:  [ ],
+                            markLine: {
+                                symbol: 'none',
+                                animationDuration: '0',
+                                lineStyle: {
+                                    color: "#222222",
+                                    width: 1,
+                                    type: 'solid',
+                                },
+                                data: [
+                                    {
+                                        label: {
+                                            formatter: '{b}'
+                                        },
+                                        name: 'Go live',
+                                        xAxis: "19 Dec 19",
+                                    },
+                                    {
+                                        label: {
+                                            formatter: '{b}'
+                                        },
+                                        name: 'Return by',
+                                        xAxis: "7 Jan 20",
+                                    },
+                                    {
+                                        label: {
+                                            formatter: '{b}'
+                                        },
+                                        name: 'First reminder',
+                                        xAxis: "9 Jan 20",
+                                    },
+                                    {
+                                        label: {
+                                            formatter: '{b}'
+                                        },
+                                        name: 'Second reminder',
+                                        xAxis: "16 Jan 20",
+                                    },
+                                    {
+                                        label: {
+                                            formatter: '{b}'
+                                        },
+                                        name: 'Exercise end',
+                                        xAxis: "31 Jan 20",
+                                    }
+                                ],
+                            },
+                            stack: "stackbar",
+                            itemStyle: {
+                                color: '#033E58',
+                            }
+                        },
+                        {
+                            name: 'not-started',
+                            type: 'bar',
+                            data: [ ],
+                            stack: "stackbar",
+                            itemStyle: {
+                                color: 'rgba(255, 255, 255, 0)'
+                            }
+                        }
+                    ]
+                });
+
+                // Asynchronous data loading 
+                myChart.showLoading();
+                    $.get('data/data.json').done(function (data) {
+                    // fill in data
+                    myChart.setOption({
+                        xAxis: {
+                            data: data.date
+                        },
+                        series: [{
+                            // find series by name
+                            name: 'completed',
+                            data: data.completed
+                        },{
+                            // find series by name
+                            name: 'in-progress',
+                            data: data.in-progress
+                        },{
+                            // find series by name
+                            name: 'not-started',
+                            data: data.not-started
+                        }]
+                    });
+                });
+            </script>
+        </div>
+    </div>
+
+{% endblock %}

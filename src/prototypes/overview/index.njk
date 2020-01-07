@@ -1,0 +1,320 @@
+---
+group: SCD Internal
+title: Overview
+version: 14.2.1
+layout: overview/views/_index
+---
+
+{% block main %}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.6.0/echarts-en.js"></script>
+    <div class="grid">
+        <div class="grid__col col-12@m">
+            <div id="main" style="width: 100%;height:400px;"></div>
+            <script type="text/javascript">
+
+                // based on prepared DOM, initialize echarts instance
+                var myChart = echarts.init(document.getElementById('main'));
+
+                // specify chart configuration item and data
+                var option = {
+                    title: {
+                        text: 'Progress'
+                    },
+                    tooltip: {},
+                    legend: {
+                        data: ['Progress']
+                    },
+                    xAxis: {
+                        // boundaryGap: false,
+                        data: [
+                            "13 Dec 19",
+                            "14 Dec 19",
+                            "15 Dec 19",
+                            "16 Dec 19",
+                            "17 Dec 19",
+                            "18 Dec 19",
+                            "19 Dec 19",
+                            "20 Dec 19",
+                            "21 Dec 19",
+                            "22 Dec 19",
+                            "23 Dec 19",
+                            "24 Dec 19",
+                            "25 Dec 19",
+                            "26 Dec 19",
+                            "27 Dec 19",
+                            "28 Dec 19",
+                            "29 Dec 19",
+                            "30 Dec 19",
+                            "31 Dec 19",
+                            "1 Jan 20",
+                            "2 Jan 20",
+                            "3 Jan 20",
+                            "4 Jan 20",
+                            "5 Jan 20",
+                            "6 Jan 20",
+                            "7 Jan 20",
+                            "8 Jan 20",
+                            "9 Jan 20",
+                            "10 Jan 20",
+                            "11 Jan 20",
+                            "12 Jan 20",
+                            "13 Jan 20",
+                            "14 Jan 20",
+                            "15 Jan 20",
+                            "16 Jan 20",
+                            "17 Jan 20",
+                            "18 Jan 20",
+                            "19 Jan 20",
+                            "20 Jan 20",
+                            "21 Jan 20",
+                            "22 Jan 20",
+                            "23 Jan 20",
+                            "24 Jan 20",
+                            "25 Jan 20",
+                            "26 Jan 20",
+                            "27 Jan 20",
+                            "28 Jan 20",
+                            "29 Jan 20",
+                            "30 Jan 20",
+                            "31 Jan 20"
+                        ]
+                    },
+                    yAxis: {
+                        max: 100
+                    },
+                    series: [
+                        {
+                            name: 'Completed',
+                            type: 'bar',
+                            data: [
+                                0.73,
+                                1.02,
+                                3.12,
+                                3.28,
+                                3.74,
+                                3.75,
+                                3.91,
+                                4.68,
+                                4.94,
+                                5.63,
+                                6.76,
+                                6.86,
+                                9.47,
+                                10.36,
+                                10.46,
+                                10.49,
+                                12.23,
+                                13.65,
+                                14.46,
+                                16.93,
+                                17.50,
+                                17.96,
+                                18.01,
+                                19.27,
+                                19.37,
+                                19.50,
+                                19.70,
+                                19.84,
+                                20.36,
+                                21.13,
+                                21.49,
+                                21.52,
+                                24.15,
+                                24.41,
+                                0.00,
+                                0.00,
+                                0.00,
+                                0.00,
+                                0.00,
+                                0.00,
+                                0.00,
+                                0.00,
+                                0.00,
+                                0.00,
+                                0.00,
+                                0.00,
+                                0.00,
+                                0.00,
+                                0.00,
+                                0.00
+                            ],
+                            stack: "stackbar",
+                            itemStyle: {
+                                color: 'rgb(255, 255, 255)',
+                                borderColor: "#979797",
+                                borderWidth: 1,
+                                borderType: 'solid'
+                            }
+                        }, {
+                            name: 'In progress',
+                            type: 'bar',
+                            data: [
+                                0.01,
+                                0.03,
+                                0.04,
+                                0.09,
+                                0.16,
+                                0.19,
+                                0.19,
+                                0.29,
+                                0.31,
+                                0.31,
+                                0.36,
+                                0.37,
+                                0.37,
+                                0.37,
+                                0.40,
+                                0.41,
+                                0.44,
+                                0.50,
+                                0.50,
+                                0.51,
+                                0.55,
+                                0.63,
+                                0.64,
+                                0.64,
+                                0.65,
+                                0.70,
+                                0.75,
+                                0.80,
+                                0.80,
+                                0.91,
+                                0.92,
+                                0.92,
+                                1.04,
+                                1.05,
+                                0.00,
+                                0.00,
+                                0.00,
+                                0.00,
+                                0.00,
+                                0.00,
+                                0.00,
+                                0.00,
+                                0.00,
+                                0.00,
+                                0.00,
+                                0.00,
+                                0.00,
+                                0.00,
+                                0.00,
+                                0.00
+                            ],
+                            markLine: {
+                                symbol: 'none',
+                                animationDuration: '0',
+                                lineStyle: {
+                                    color: "#222222",
+                                    width: 1,
+                                    type: 'solid'
+                                },
+                                data: [
+                                    {
+                                        label: {
+                                            formatter: '{b}'
+                                        },
+                                        name: 'Go live',
+                                        xAxis: "19 Dec 19"
+                                    }, {
+                                        label: {
+                                            formatter: '{b}'
+                                        },
+                                        name: 'Return by',
+                                        xAxis: "7 Jan 20"
+                                    }, {
+                                        label: {
+                                            formatter: '{b}'
+                                        },
+                                        name: 'First reminder',
+                                        xAxis: "9 Jan 20"
+                                    }, {
+                                        label: {
+                                            formatter: '{b}'
+                                        },
+                                        name: 'Second reminder',
+                                        xAxis: "16 Jan 20"
+                                    }, {
+                                        label: {
+                                            formatter: '{b}'
+                                        },
+                                        name: 'Exercise end',
+                                        xAxis: "31 Jan 20"
+                                    }
+                                ]
+                            },
+                            stack: "stackbar",
+                            itemStyle: {
+                                color: '#033E58'
+                            }
+                        }, {
+                            name: 'Not started',
+                            type: 'bar',
+                            data: [
+                                99.26,
+                                98.95,
+                                96.84,
+                                96.63,
+                                96.09,
+                                96.06,
+                                95.90,
+                                95.03,
+                                94.75,
+                                94.06,
+                                92.87,
+                                92.78,
+                                90.16,
+                                89.27,
+                                89.13,
+                                89.11,
+                                87.33,
+                                85.86,
+                                85.03,
+                                82.56,
+                                81.95,
+                                81.41,
+                                81.36,
+                                80.09,
+                                79.98,
+                                79.80,
+                                79.55,
+                                79.36,
+                                78.84,
+                                77.96,
+                                77.59,
+                                77.56,
+                                74.81,
+                                74.54,
+                                100.00,
+                                100.00,
+                                100.00,
+                                100.00,
+                                100.00,
+                                100.00,
+                                100.00,
+                                100.00,
+                                100.00,
+                                100.00,
+                                100.00,
+                                100.00,
+                                100.00,
+                                100.00,
+                                100.00,
+                                100.00
+                            ],
+                            stack: "stackbar",
+                            itemStyle: {
+                                color: 'rgba(255, 255, 255, 0)'
+                            }
+                        }
+                    ]
+
+                };
+
+                // use configuration item and data specified to show chart
+                myChart.setOption(option);
+            </script>
+        </div>
+    </div>
+
+{% endblock %}
