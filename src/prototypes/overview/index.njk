@@ -24,23 +24,23 @@ layout: overview/views/_index
             <p class="desc u-fs-r u-mb-no">Status: <span class="data u-fs-r--b">Scheduled</span></p>
             <p class="desc u-fs-r">Current collection exercise period: <span class="data u-fs-r--b">November 2019</span></p>
 
-            <h2 class="desc u-mt-l">MBS: November 2019 progress:</h2>
+            <h2 class="desc u-mt-l">November 2019 progress</h2>
             <div class="grid">
                 <div class="grid__col col-2@m">
                     <h4 class="desc u-fs-r u-mb-no">Sample size</h4>
-                    <p class="data u-fs-xxxl">33411</p>
+                    <p class="data u-fs-l">33411</p>
                 </div>
                 <div class="grid__col col-2@m">
                     <h4 class="desc u-fs-r u-mb-no">Not started</h4>
-                    <p class="data u-fs-xxxl">10867</p>
+                    <p class="data u-fs-l">10867</p>
                 </div>
                 <div class="grid__col col-2@m">
                     <h4 class="desc u-fs-r u-mb-no">In progress</h4>
-                    <p class="data u-fs-xxxl">375</p>
+                    <p class="data u-fs-l">375</p>
                 </div>
                 <div class="grid__col col-2@m">
                     <h4 class="desc u-fs-r u-mb-no">Completed</h4>
-                    <p class="data u-fs-xxxl">22114</p>
+                    <p class="data u-fs-l">22114</p>
                 </div>
                 <!-- <div class="grid__col col-12@m">
                     <p><span class="u-fs-r"><a href="#">Go to dashboard</a></span></p>
@@ -49,7 +49,7 @@ layout: overview/views/_index
         </div>
 
         <div class="grid__col col-12@m">
-            <h2 class="u-mt-m">Progress <span class="u-fs-r"><a href="{{ pageInfo.rootPath }}/index-table.html">Show data as a table</a></span></h2>
+            <h2 class="u-mt-m"><span class="u-fs-r"><a href="{{ pageInfo.rootPath }}/index-table.html">Show data as a table</a></span></h2>
 
             <div id="main" style="width: 100%;height:400px;"></div>
             <script type="text/javascript">
@@ -65,6 +65,9 @@ layout: overview/views/_index
                         borderWidth: 1,
                         padding: 10,
                         extraCssText: 'box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);',
+                        axisPointer: {
+                            type: 'shadow',
+                        },
                         textStyle: {
                             color: '#222',
                             fontStyle: 'normal',
