@@ -1,0 +1,57 @@
+---
+group: SCD Internal
+title: Overview
+version: 14.2.1
+layout: overview/views/_index
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/input/_macro.njk" import onsInput %}
+
+{% block main %}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.6.0/echarts-en.js"></script>
+    <div class="grid overview">
+        <div class="grid__col col-12@m">
+            <div class="panel panel--info panel--simple">
+                <div class="panel__body">
+                    <p>Scheduled downtime 18/12/2019 00:00 to 02:00</p>
+                </div>
+            </div>
+
+            <h1 name="page-surveys-title" class="u-mt-m">MBS <span class="u-fs-r"><a href="#">Change survey</a></span></h1>
+            
+            <p class="desc u-fs-r u-mb-no">Status: <span class="data u-fs-m">Scheduled</span></p>
+            <p class="desc u-fs-r">Current collection exercise period: <span class="data u-fs-m">November 2019</span></p>
+
+            <h2 class="desc u-mt-l">MBS: November 2019 progress:</h2>
+            <div class="grid">
+                <div class="grid__col col-2@m">
+                    <h4 class="desc u-fs-r u-mb-no">Sample size</h4>
+                    <p class="data u-fs-xxxl">33411</p>
+                </div>
+                <div class="grid__col col-2@m">
+                    <h4 class="desc u-fs-r u-mb-no">Not started</h4>
+                    <p class="data u-fs-xxxl">10867</p>
+                </div>
+                <div class="grid__col col-2@m">
+                    <h4 class="desc u-fs-r u-mb-no">In progress</h4>
+                    <p class="data u-fs-xxxl">375</p>
+                </div>
+                <div class="grid__col col-2@m">
+                    <h4 class="desc u-fs-r u-mb-no">Completed</h4>
+                    <p class="data u-fs-xxxl">22114</p>
+                </div>
+                <!-- <div class="grid__col col-12@m">
+                    <p><span class="u-fs-r"><a href="#">Go to dashboard</a></span></p>
+                </div> -->
+            </div>
+
+
+            <h2 class="u-mt-m">Progress table<span class="u-fs-r"><a href="#">Show data as a chart</a></span></h2>
+
+            
+        </div>
+    </div>
+
+{% endblock %}
