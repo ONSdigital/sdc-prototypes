@@ -1,0 +1,41 @@
+---
+group: SCD Internal
+title: Section navigation
+version: 14.4.0
+layout: section-navigation/views/_master-surveys-signed-out
+---
+
+{% block main %}
+    {% from "components/button/_macro.njk" import onsButton %}
+    {% from "components/input/_macro.njk" import onsInput %}
+    <h1>Sign in</h1>
+    <p class="field">
+    {{ 
+        onsInput({
+            "id": "text",
+            "label": {
+                "text": "Username"
+            }
+        }) 
+    }}
+    </p>
+    <p class="field">
+    {{ 
+        onsInput({
+            "id": "text",
+            "label": {
+                "text": "Password"
+            }
+        }) 
+    }}
+    </p>
+    <p class="field">
+    {{ 
+        onsButton({
+            "type": 'button',
+            "text": 'Sign in',
+            "url": '/prototypes/section-navigation/surveys/index.html'
+        }) 
+    }}
+    </p>
+{% endblock %}
