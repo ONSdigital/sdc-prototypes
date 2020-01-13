@@ -9,6 +9,8 @@ layout: upload-file/views/_index
 
 {% from "components/upload/_macro.njk" import onsUpload %}
 
+<h1>Upload component styling</h1>
+<h2>Current</h2>
 <div class="current">
     {{
         onsUpload({
@@ -22,6 +24,7 @@ layout: upload-file/views/_index
     }}
 </div>
 <br style="height:100px">
+<h2>Proposed</h2>
 <div class="new">
     {{
         onsUpload({
@@ -36,21 +39,21 @@ layout: upload-file/views/_index
 </div>
 <code><pre>
 // Overrides
-.new {
-  .input--upload {
-    border: 1px solid #222;
-  }
 
-  .input--upload::-webkit-file-upload-button {
+.input--upload {
+    border: 1px solid #222;
+}
+
+.input--upload::-webkit-file-upload-button {
     background: #d0d0d0;
     border-right: 1px solid #222;
     color: #222;
     font-size: 1rem;
-  }
-  .input--upload:hover::-webkit-file-upload-button {
-    border-right-color: #222;
-  }
 }
+.input--upload:hover::-webkit-file-upload-button {
+    border-right-color: #222;
+}
+
 </pre>
 </code>
 
