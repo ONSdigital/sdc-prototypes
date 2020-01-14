@@ -2,6 +2,12 @@
   h2 {
     border-bottom: 2px solid #222222;
   }
+  label {
+    border-bottom: 2px solid #222222;
+  }
+  .label__description {
+    margin-bottom: 0.4rem;
+  }
   .table-dates,
   .table-refinfo {
     .table__cell,
@@ -9,4 +15,19 @@
       vertical-align: middle;
     }
   }
+}
+
+// Upload file
+.input--upload {
+  border: 1px solid #222;
+}
+
+.input--upload::-webkit-file-upload-button {
+  background: #d0d0d0;
+  border-right: 1px solid #222;
+  color: #222;
+  font-size: 1rem;
+}
+.input--upload:hover::-webkit-file-upload-button {
+  border-right-color: #222;
 }
