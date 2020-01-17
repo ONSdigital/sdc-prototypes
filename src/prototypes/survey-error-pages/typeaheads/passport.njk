@@ -1,0 +1,65 @@
+---
+version: 5.0.1
+layout: typeaheads/views/_master
+---
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
+
+{% block main %}
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/one-year-ago-address.html">Previous</a>
+    <form action="{{ pageInfo.parentPath }}/employment-status.html">
+        <h1 class="u-fs-l u-mt-s">What passport do you hold?</h1>
+        {{ 
+            onsCheckboxes({
+                "legend": "Select all that apply",
+                "name": "passport",
+                "checkboxes": [
+                    {
+                        "id": "united-kingdom",
+                        "label": {
+                            "text": "United Kingdom"
+                        },
+                        "name": "united-kingdom"
+                    },
+                    {
+                        "id": "ireland",
+                        "label": {
+                            "text": "Ireland"
+                        },
+                        "name": "ireland"
+                    },
+                    {
+                        "id": "other",
+                        "label": {
+                            "text": "Other",
+                            "description": "You can enter this on the next question"
+                        },
+                        "name": "other",
+                        "attributes": {
+                            "data-action-url": pageInfo.parentPath + "/passport-other.html"
+                        }
+                    }
+                ],
+                "mutuallyExclusive": {
+                    "or": 'Or',
+                    "deselectMessage": 'Selecting this will uncheck all other checkboxes',
+                    "deselectAdjective": 'deselected',
+                    "checkbox": {
+                        "id": "none",
+                        "label": {
+                            "text": "None"
+                        },
+                        "name": "none"
+                    }
+                }
+            }) 
+        }}
+        {{
+           onsButton({
+                "text": "Save and continue",
+                "classes": "u-mt-l"
+            })
+        }}
+    </form>
+    {% include "typeaheads/views/partials/_heroku-waker.njk" %}
+{% endblock %}

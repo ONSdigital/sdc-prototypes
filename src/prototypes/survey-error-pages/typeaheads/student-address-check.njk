@@ -1,0 +1,26 @@
+---
+version: 5.0.1
+layout: typeaheads/views/_master
+---
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% block main %}
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/student-check.html">Previous</a>
+    <form action="{{ pageInfo.parentPath }}/country-of-birth.html?previous={{ pageInfo.path }}.html">
+        <fieldset class="u-mt-s">
+            <legend><h1 class="u-fs-l">During term time, where do you usually live?</h1></legend>
+            <div
+                class="js-student-address-check"
+                data-census-address="{{ pageInfo.parentPath }}"
+                data-address-country="{{ pageInfo.parentPath }}/address-country.html"
+                data-address="{{ pageInfo.parentPath }}/other-address.html"
+                data-student-address="{{ pageInfo.parentPath }}/student-term-address.html"
+            ></div>
+        </fieldset>
+        {{ onsButton({
+            "text": "Save and continue",
+            "classes": "u-mt-l"
+        }) }}
+    </form>
+    {% include "typeaheads/views/partials/_heroku-waker.njk" %}
+{% endblock %}

@@ -1,0 +1,78 @@
+{% from "components/label/_macro.njk" import onsLabel %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+{% from "components/lists/_macro.njk" import onsList %}
+
+{% macro prototypeTypeahead(params) %}
+    <div class="typeahead{% if not params.externalInitialiser %} js-typeahead{% endif %}{% if params.classes %} {{ params.classes }}{% endif %}" data-content="{{ params.content | dump }}" data-api-url="{{ params.apiUrl }}">
+        {{
+            onsLabel({
+                "for": params.id + "-input",
+                "text": params.label.text,
+                "classes": "js-typeahead-label",
+                "description": params.label.description
+            })
+        }}
+        <div class="typeahead__combobox js-typeahead-combobox">
+            {% if not params.externalInitialiser %}
+                {{
+                    onsInput({
+                        "id": params.id + "-code",
+                        "name": params.id + "-code",
+                        "classes": "js-typeahead-code",
+                        "type": "hidden",
+                        "noField": true
+                    })
+                }}
+            {% endif %}
+            {{
+                onsInput({
+                    "id": params.id + "-input",
+                    "classes": "typeahead__input js-typeahead-input" + (" " + params.inputClasses if params.inputClasses),
+                    "fieldClasses": "u-mt-no",
+                    "name": params.id + "-input",
+                    "attributes": {
+                        "data-autocomplete": params.autocomplete,
+                        "role": "combobox",
+                        "aria-expanded": "false",
+                        "aria-has-popup": "true",
+                        "aria-owns": params.id + "-listbox",
+                        "aria-autocomplete": "list",
+                        "aria-describedby": params.id + "-instructions"
+                    }
+                })
+            }}
+            
+            {% if params.resultsErrorPanel %}
+                {% call onsPanel({ 
+                    "type": "error",
+                    "classes": "panel--off js-typeahead-error-panel"
+                }) %}
+                    {{ onsList({
+                        "classes": "list--bare list--errors u-mb-s panel__list",
+                        "itemsList": [
+                            {
+                                "text": params.resultsErrorPanel.error
+                            }
+                        ]
+                    }) }}
+
+                    {{ typeaheadResults(params) }}
+                {% endcall %}
+            {% else %}
+                {{ typeaheadResults(params) }}
+            {% endif %}
+
+            
+            <div class="typeahead__instructions u-vh js-typeahead-instructions" id="{{ params.id }}-instructions" tabindex="-1">{{ params.instructions }}</div>
+            <div class="typeahead__status u-vh js-typeahead-aria-status" aria-live="polite" role="status" tabindex="-1"></div> 
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro typeaheadResults(params) %}
+    <div class="typeahead__results js-typeahead-results">
+        <header class="typeahead__results-title u-fs-s">{{ params.content.results_title }}</header>
+        <ul class="typeahead__listbox js-typeahead-listbox" role="listbox" id="{{ params.id }}-listbox" tabindex="-1"></ul>
+    </div>
+{% endmacro %}

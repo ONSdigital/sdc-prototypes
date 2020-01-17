@@ -1,0 +1,42 @@
+---
+version: 5.0.1
+layout: typeaheads/views/_master
+---
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+
+{% block main %}
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/index.html">Previous</a>
+    <form action="{{ pageInfo.parentPath }}/name.html">
+        {{ 
+            onsRadios({
+                "legend": " <h1 class=\"u-fs-l\">Are you answering these questions for yourself or for someone else?</h1>",
+                "name": "country-of-birth",
+                "classes": "u-mt-s",
+                "radios": [
+                    {
+                        "id": "myself",
+                        "label": {
+                            "text": "For myself"
+                        },
+                        "name": "myself"
+                    },
+                    {
+                        "id": "someone-else",
+                        "label": {
+                            "text": "For someone else"
+                        },
+                        "name": "someone-else"
+                    }
+                ]
+            }) 
+        }}
+        {{
+           onsButton({
+                "text": "Save and continue",
+                "classes": "u-mt-l"
+            })
+        }}
+    </form>
+    {% include "typeaheads/views/partials/_heroku-waker.njk" %}
+{% endblock %}

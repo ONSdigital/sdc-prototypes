@@ -1,0 +1,84 @@
+---
+version: 5.0.1
+layout: typeaheads/views/_master
+---
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/details/_macro.njk" import onsDetails %}
+{% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
+
+{% block main %}
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/main-language.html">Previous</a>
+    <form action="{{ pageInfo.parentPath }}/ethnic-group.html">
+        <h1 class="u-fs-l u-mt-s">How would you describe your national identity?</h1>
+        {{
+            onsDetails({
+                "id": "what-is-a-national-identity",
+                "classes": "u-mb-m",
+                "title": "What is a national identity?",
+                "content": "<p>National Identity is not dependent on your ethnic group or citizenship. This could be about the country or countries where you feel you belong, or think of as home.</p>",
+                "buttonClose": "Hide this"
+            })
+        }}
+        {{ 
+            onsCheckboxes({
+                "legend": "Select all that apply",
+                "name": "national-identity",
+                "checkboxes": [
+                    {
+                        "id": "english",
+                        "label": {
+                            "text": "English"
+                        },
+                        "name": "english"
+                    },
+                    {
+                        "id": "welsh",
+                        "label": {
+                            "text": "Welsh"
+                        },
+                        "name": "welsh"
+                    },
+                     {
+                        "id": "scottish",
+                        "label": {
+                            "text": "Scottish"
+                        },
+                        "name": "scottish"
+                    },
+                    {
+                        "id": "northern-irish",
+                        "label": {
+                            "text": "Northern Irish"
+                        },
+                        "name": "northern-irish"
+                    },
+                    {
+                        "id": "british",
+                        "label": {
+                            "text": "British"
+                        },
+                        "name": "british"
+                    },
+                    {
+                        "id": "other",
+                        "label": {
+                            "text": "Other",
+                            "description": "You can enter this on the next question"
+                        },
+                        "name": "other",
+                        "attributes": {
+                            "data-action-url": pageInfo.parentPath + "/national-identity-other.html"
+                        }
+                    }
+                ]
+            }) 
+        }}
+        {{
+           onsButton({
+                "text": "Save and continue",
+                "classes": "u-mt-l"
+            })
+        }}
+    </form>
+    {% include "typeaheads/views/partials/_heroku-waker.njk" %}
+{% endblock %}
