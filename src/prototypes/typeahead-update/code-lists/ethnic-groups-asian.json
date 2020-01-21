@@ -1,0 +1,1002 @@
+[
+  {
+    "code": 120,
+    "en-gb": "Anglo asian",
+    "cy": "Anglo asian"
+  },
+  {
+    "code": 120,
+    "en-gb": "Asian white",
+    "cy": "gwyn Asiaidd"
+  },
+  {
+    "code": 120,
+    "en-gb": "East african asian english and pakistani",
+    "cy": "Dwyrain african asian Saesneg a Pacistanaidd"
+  },
+  {
+    "code": 120,
+    "en-gb": "Eurasian",
+    "cy": "Ewrasiaidd"
+  },
+  {
+    "code": 120,
+    "en-gb": "Eurasian welsh",
+    "cy": "Cymraeg Ewrasiaidd"
+  },
+  {
+    "code": 120,
+    "en-gb": "Eurasian and british",
+    "cy": "Ewrasiaidd a british"
+  },
+  {
+    "code": 120,
+    "en-gb": "European asian",
+    "cy": "Ewropeaidd asian"
+  },
+  {
+    "code": 120,
+    "en-gb": "Mixed eurasian",
+    "cy": "Ewrasiaidd cymysg"
+  },
+  {
+    "code": 120,
+    "en-gb": "Portuguese eurasian",
+    "cy": "Ewrasiaidd Portiwgaleg"
+  },
+  {
+    "code": 120,
+    "en-gb": "Urasian",
+    "cy": "Urasian"
+  },
+  {
+    "code": 130,
+    "en-gb": "Anglo bangladeshi",
+    "cy": "Eingl Bangladeshaidd"
+  },
+  {
+    "code": 130,
+    "en-gb": "Anglo bengali",
+    "cy": "bengali Eingl"
+  },
+  {
+    "code": 130,
+    "en-gb": "Anglo french indian",
+    "cy": "Anglo french indian"
+  },
+  {
+    "code": 130,
+    "en-gb": "Anglo and indian",
+    "cy": "Eingl a indian"
+  },
+  {
+    "code": 130,
+    "en-gb": "Anglo indian mixed indian irish",
+    "cy": "Anglo indian cymysg indian irish"
+  },
+  {
+    "code": 130,
+    "en-gb": "Anglo indo and mauritian",
+    "cy": "Eingl Indo a Mauritian"
+  },
+  {
+    "code": 130,
+    "en-gb": "Anglo indo teutonic",
+    "cy": "Anglo Indo Teutonic"
+  },
+  {
+    "code": 130,
+    "en-gb": "Anglo pakistani",
+    "cy": "Anglo Pacistanaidd"
+  },
+  {
+    "code": 130,
+    "en-gb": "Bangladeshi white",
+    "cy": "gwyn Bangladeshi"
+  },
+  {
+    "code": 130,
+    "en-gb": "Ceylonese dutch portuguese",
+    "cy": "dutch portuguese Ceylon"
+  },
+  {
+    "code": 130,
+    "en-gb": "Dutch indian",
+    "cy": "Iseldireg indian"
+  },
+  {
+    "code": 130,
+    "en-gb": "English white indian",
+    "cy": "Saesneg gwyn indian"
+  },
+  {
+    "code": 130,
+    "en-gb": "European and indian",
+    "cy": "Ewropeaidd a indian"
+  },
+  {
+    "code": 130,
+    "en-gb": "French indian",
+    "cy": "Ffrangeg Indiaidd"
+  },
+  {
+    "code": 130,
+    "en-gb": "Greek pakistani",
+    "cy": "Groeg Pacistanaidd"
+  },
+  {
+    "code": 130,
+    "en-gb": "Honduran and indian",
+    "cy": "Honduras ac indian"
+  },
+  {
+    "code": 130,
+    "en-gb": "Indian white",
+    "cy": "gwyn indian"
+  },
+  {
+    "code": 130,
+    "en-gb": "Indo caribbean and white",
+    "cy": "Indo Caribî a gwyn"
+  },
+  {
+    "code": 130,
+    "en-gb": "Indo and european",
+    "cy": "Indo a european"
+  },
+  {
+    "code": 130,
+    "en-gb": "Irish and sri lankan",
+    "cy": "Gwyddelig a Sri Lanka"
+  },
+  {
+    "code": 130,
+    "en-gb": "Mixed with french and indian",
+    "cy": "Gymysgu â french ac indian"
+  },
+  {
+    "code": 130,
+    "en-gb": "Mother english father indian",
+    "cy": "tad Saesneg Mam Indiaidd"
+  },
+  {
+    "code": 130,
+    "en-gb": "Pakistani and spanish",
+    "cy": "Pacistanaidd a Sbaeneg"
+  },
+  {
+    "code": 130,
+    "en-gb": "Part indian part english",
+    "cy": "Rhan rhan indian Saesneg"
+  },
+  {
+    "code": 130,
+    "en-gb": "Portuguese indian",
+    "cy": "Portiwgaleg indian"
+  },
+  {
+    "code": 130,
+    "en-gb": "Sri lankan and french",
+    "cy": "Sri Lankan a french"
+  },
+  {
+    "code": 130,
+    "en-gb": "Sri lankan and irish",
+    "cy": "Sri Lankan a irish"
+  },
+  {
+    "code": 135,
+    "en-gb": "Spanish filipino",
+    "cy": "Sbaeneg filipino"
+  },
+  {
+    "code": 140,
+    "en-gb": "Asian and iranian",
+    "cy": "Asiaidd a iranian"
+  },
+  {
+    "code": 140,
+    "en-gb": "Asian and oriental",
+    "cy": "Asiaidd a dwyreiniol"
+  },
+  {
+    "code": 140,
+    "en-gb": "Chinese and vietnamese",
+    "cy": "Tseiniaidd a vietnamese"
+  },
+  {
+    "code": 140,
+    "en-gb": "Filipino and pakistani",
+    "cy": "Filipino a Pacistanaidd"
+  },
+  {
+    "code": 140,
+    "en-gb": "Filipino and chinese",
+    "cy": "Filipino ac Tseiniaidd"
+  },
+  {
+    "code": 140,
+    "en-gb": "Filipino italian",
+    "cy": "filipino italian"
+  },
+  {
+    "code": 140,
+    "en-gb": "Indian arab",
+    "cy": "Indiaidd arab"
+  },
+  {
+    "code": 140,
+    "en-gb": "Indian and chinese and japanese",
+    "cy": "Indiaidd a Tseiniaidd a japanese"
+  },
+  {
+    "code": 140,
+    "en-gb": "Indian and irani",
+    "cy": "Indiaidd a Irani"
+  },
+  {
+    "code": 140,
+    "en-gb": "Indian and white caribbean",
+    "cy": "Indiaidd a gwyn Caribî"
+  },
+  {
+    "code": 140,
+    "en-gb": "Indonesian malay",
+    "cy": "malay indonesian"
+  },
+  {
+    "code": 140,
+    "en-gb": "Malayan filipino",
+    "cy": "Malayan filipino"
+  },
+  {
+    "code": 140,
+    "en-gb": "Malaysian chinese",
+    "cy": "Tseiniaidd Malaysia"
+  },
+  {
+    "code": 140,
+    "en-gb": "Malaysian and white",
+    "cy": "Malaysia a gwyn"
+  },
+  {
+    "code": 140,
+    "en-gb": "Mauritian asian and white",
+    "cy": "Mauritian asian a gwyn"
+  },
+  {
+    "code": 140,
+    "en-gb": "Mixed asian",
+    "cy": "cymysg asian"
+  },
+  {
+    "code": 140,
+    "en-gb": "Pakistani and filipino",
+    "cy": "Pacistanaidd a filipino"
+  },
+  {
+    "code": 140,
+    "en-gb": "Part malaysian",
+    "cy": "rhan Malaysia"
+  },
+  {
+    "code": 140,
+    "en-gb": "Singapore tamil descendants",
+    "cy": "Singapore disgynyddion tamil"
+  },
+  {
+    "code": 140,
+    "en-gb": "Sri lankan and anglo irish filipino",
+    "cy": "Sri Lanka ac eingl irish filipino"
+  },
+  {
+    "code": 140,
+    "en-gb": "Vietnamese chinese",
+    "cy": "Tseiniaidd Fietnameg"
+  },
+  {
+    "code": 143,
+    "en-gb": "Anglo chinese",
+    "cy": "Tseiniaidd Eingl"
+  },
+  {
+    "code": 143,
+    "en-gb": "Chinese and white",
+    "cy": "Tsieineaidd a gwyn"
+  },
+  {
+    "code": 143,
+    "en-gb": "Chinese french",
+    "cy": "french chinese"
+  },
+  {
+    "code": 143,
+    "en-gb": "Chinese  and uk white",
+    "cy": "Tseiniaidd a uk gwyn"
+  },
+  {
+    "code": 143,
+    "en-gb": "Part chinese part english",
+    "cy": "Rhan rhan Tseiniaidd Saesneg"
+  },
+  {
+    "code": 143,
+    "en-gb": "Sino american",
+    "cy": "Sino America"
+  },
+  {
+    "code": 143,
+    "en-gb": "Sino european",
+    "cy": "Sino ewropeaidd"
+  },
+  {
+    "code": 143,
+    "en-gb": "South american chinese",
+    "cy": "De America Tseiniaidd"
+  },
+  {
+    "code": 143,
+    "en-gb": "White chinese",
+    "cy": "Tseiniaidd Gwyn"
+  },
+  {
+    "code": 144,
+    "en-gb": "Asian black",
+    "cy": "du Asiaidd"
+  },
+  {
+    "code": 144,
+    "en-gb": "Black and pakistani",
+    "cy": "Du a Pacistanaidd"
+  },
+  {
+    "code": 144,
+    "en-gb": "Black asian",
+    "cy": "Du asian"
+  },
+  {
+    "code": 144,
+    "en-gb": "Black caribbean and pakistani",
+    "cy": "Caribïaidd Du a Phacistanaidd"
+  },
+  {
+    "code": 144,
+    "en-gb": "Guyanese asian",
+    "cy": "Gaiana asian"
+  },
+  {
+    "code": 144,
+    "en-gb": "Indian african",
+    "cy": "Indiaidd african"
+  },
+  {
+    "code": 144,
+    "en-gb": "Indian and caribbean",
+    "cy": "Indiaidd a Caribî"
+  },
+  {
+    "code": 145,
+    "en-gb": "Chinese and jamaican",
+    "cy": "Tseiniaidd a Jamaica"
+  },
+  {
+    "code": 147,
+    "en-gb": "Asian and chinese",
+    "cy": "Asiaidd a Tseiniaidd"
+  },
+  {
+    "code": 147,
+    "en-gb": "Chinese kashmiri",
+    "cy": "kashmiri chinese"
+  },
+  {
+    "code": 147,
+    "en-gb": "Chinese and asian",
+    "cy": "Tseiniaidd a asian"
+  },
+  {
+    "code": 147,
+    "en-gb": "Chinese and pakistani",
+    "cy": "Tseiniaidd a Pacistanaidd"
+  },
+  {
+    "code": 147,
+    "en-gb": "Indian chinese",
+    "cy": "Tseiniaidd indian"
+  },
+  {
+    "code": 152,
+    "en-gb": "Mixed race chinese",
+    "cy": "Tseiniaidd hil gymysg"
+  },
+  {
+    "code": 152,
+    "en-gb": "Part chinese",
+    "cy": "rhan Tseiniaidd"
+  },
+  {
+    "code": 199,
+    "en-gb": "Burmese and english",
+    "cy": "Burmese a saesneg"
+  },
+  {
+    "code": 199,
+    "en-gb": "Malaysian english",
+    "cy": "Malaysian Saesneg"
+  },
+  {
+    "code": 199,
+    "en-gb": "Polynesian english",
+    "cy": "Polynesaidd Saesneg"
+  },
+  {
+    "code": 200,
+    "en-gb": "Asian indian",
+    "cy": "asian indian"
+  },
+  {
+    "code": 200,
+    "en-gb": "Bengali",
+    "cy": "bengali"
+  },
+  {
+    "code": 200,
+    "en-gb": "Black indian",
+    "cy": "Du Indiaidd"
+  },
+  {
+    "code": 200,
+    "en-gb": "Goan",
+    "cy": "Goan"
+  },
+  {
+    "code": 200,
+    "en-gb": "Gujarati",
+    "cy": "gujarati"
+  },
+  {
+    "code": 200,
+    "en-gb": "Indian asian",
+    "cy": "Indiaidd Asiaidd"
+  },
+  {
+    "code": 200,
+    "en-gb": "Indian black",
+    "cy": "du indian"
+  },
+  {
+    "code": 200,
+    "en-gb": "Indian english",
+    "cy": "Indiaidd Saesneg"
+  },
+  {
+    "code": 200,
+    "en-gb": "Indian hindu",
+    "cy": "hindu indian"
+  },
+  {
+    "code": 200,
+    "en-gb": "Indian welsh",
+    "cy": "Cymraeg indian"
+  },
+  {
+    "code": 200,
+    "en-gb": "Asian goan",
+    "cy": "Goan asian"
+  },
+  {
+    "code": 200,
+    "en-gb": "Scottish indian",
+    "cy": "indian Alban"
+  },
+  {
+    "code": 200,
+    "en-gb": "Welsh indian",
+    "cy": "Cymraeg Indiaidd"
+  },
+  {
+    "code": 201,
+    "en-gb": "Anglo british indian",
+    "cy": "Anglo british indian"
+  },
+  {
+    "code": 201,
+    "en-gb": "Anglo indian",
+    "cy": "Anglo indian"
+  },
+  {
+    "code": 202,
+    "en-gb": "Indian and english",
+    "cy": "Indiaidd a Saesneg"
+  },
+  {
+    "code": 202,
+    "en-gb": "Indian and welsh",
+    "cy": "Indiaidd a Cymraeg"
+  },
+  {
+    "code": 210,
+    "en-gb": "Asian pakistani",
+    "cy": "asian Pacistanaidd"
+  },
+  {
+    "code": 210,
+    "en-gb": "Black pakistani",
+    "cy": "Du Pacistanaidd"
+  },
+  {
+    "code": 210,
+    "en-gb": "Pakistani asian",
+    "cy": "Pacistanaidd Asiaidd"
+  },
+  {
+    "code": 210,
+    "en-gb": "Pakistani scottish",
+    "cy": "Pacistanaidd Alban"
+  },
+  {
+    "code": 211,
+    "en-gb": "British and pakistani",
+    "cy": "Prydain ac Pacistanaidd"
+  },
+  {
+    "code": 211,
+    "en-gb": "English and pakistani",
+    "cy": "Saesneg a Pacistanaidd"
+  },
+  {
+    "code": 211,
+    "en-gb": "Pakistani and english",
+    "cy": "Pacistanaidd a Saesneg"
+  },
+  {
+    "code": 213,
+    "en-gb": "Kashmiri",
+    "cy": "kashmiri"
+  },
+  {
+    "code": 213,
+    "en-gb": "Mirpuri",
+    "cy": "Mirpuri"
+  },
+  {
+    "code": 215,
+    "en-gb": "Afghani",
+    "cy": "Afghani"
+  },
+  {
+    "code": 220,
+    "en-gb": "Asian bangladeshi",
+    "cy": "Bangladeshaidd Asiaidd"
+  },
+  {
+    "code": 230,
+    "en-gb": "Cantonese",
+    "cy": "Cantoneg"
+  },
+  {
+    "code": 230,
+    "en-gb": "Chinese english",
+    "cy": "chinese Saesneg"
+  },
+  {
+    "code": 230,
+    "en-gb": "Chinese welsh",
+    "cy": "Cymraeg Tseiniaidd"
+  },
+  {
+    "code": 230,
+    "en-gb": "Hong kongese",
+    "cy": "Hong kongese"
+  },
+  {
+    "code": 231,
+    "en-gb": "Chinese and english",
+    "cy": "Tseiniaidd a Saesneg"
+  },
+  {
+    "code": 231,
+    "en-gb": "Chinese and welsh",
+    "cy": "Tseiniaidd a Cymraeg"
+  },
+  {
+    "code": 232,
+    "en-gb": "Taiwan",
+    "cy": "Taiwan"
+  },
+  {
+    "code": 240,
+    "en-gb": "Asian sri lankan",
+    "cy": "Sri Lanka asian"
+  },
+  {
+    "code": 240,
+    "en-gb": "Ceylonese",
+    "cy": "Ceylon"
+  },
+  {
+    "code": 240,
+    "en-gb": "Sinhalese tamil",
+    "cy": "Sinhalese tamil"
+  },
+  {
+    "code": 240,
+    "en-gb": "Sri lankan",
+    "cy": "Sri Lanka"
+  },
+  {
+    "code": 240,
+    "en-gb": "Tamil sinhalese",
+    "cy": "tamil Sinhalese"
+  },
+  {
+    "code": 241,
+    "en-gb": "Singapore tamil",
+    "cy": "Singapore tamil"
+  },
+  {
+    "code": 241,
+    "en-gb": "Sri lankan tamil",
+    "cy": "Sri Lanka tamil"
+  },
+  {
+    "code": 241,
+    "en-gb": "Tamil",
+    "cy": "tamil"
+  },
+  {
+    "code": 242,
+    "en-gb": "Asian sinhalese",
+    "cy": "Sinhalese asian"
+  },
+  {
+    "code": 242,
+    "en-gb": "Sinhalese",
+    "cy": "Sinhalese"
+  },
+  {
+    "code": 242,
+    "en-gb": "Sinhalese asian",
+    "cy": "Sinhalese asian"
+  },
+  {
+    "code": 250,
+    "en-gb": "Asian and pakistani",
+    "cy": "Pacistanaidd Asiaidd a"
+  },
+  {
+    "code": 250,
+    "en-gb": "Indian and bangladeshi",
+    "cy": "Indiaidd a Bangladeshaidd"
+  },
+  {
+    "code": 250,
+    "en-gb": "Indian pakistani",
+    "cy": "Indiaidd Pacistanaidd"
+  },
+  {
+    "code": 250,
+    "en-gb": "Indian and pakistani and kashmiri",
+    "cy": "Indiaidd a Pacistanaidd a Kashmiri"
+  },
+  {
+    "code": 250,
+    "en-gb": "Pakistani and asian",
+    "cy": "Pacistanaidd a asian"
+  },
+  {
+    "code": 250,
+    "en-gb": "Pakistani indian",
+    "cy": "Pacistanaidd Indiaidd"
+  },
+  {
+    "code": 251,
+    "en-gb": "Sikh",
+    "cy": "Sikh"
+  },
+  {
+    "code": 252,
+    "en-gb": "Punjabi",
+    "cy": "Punjabi"
+  },
+  {
+    "code": 253,
+    "en-gb": "Punjabi english",
+    "cy": "Punjabi Saesneg"
+  },
+  {
+    "code": 254,
+    "en-gb": "Ravidasi",
+    "cy": "Ravidasi"
+  },
+  {
+    "code": 254,
+    "en-gb": "Ravidassia hindu",
+    "cy": "Ravidassia hindu"
+  },
+  {
+    "code": 254,
+    "en-gb": "Ravidassia sikh",
+    "cy": "Ravidassia Sikh"
+  },
+  {
+    "code": 260,
+    "en-gb": "Asian africa",
+    "cy": "Asiaidd Affrica"
+  },
+  {
+    "code": 260,
+    "en-gb": "Asian african",
+    "cy": "asian african"
+  },
+  {
+    "code": 270,
+    "en-gb": "Indian caribbean",
+    "cy": "Indiaidd Caribî"
+  },
+  {
+    "code": 270,
+    "en-gb": "Indian  and caribbean trinidad",
+    "cy": "Trinidad Indiaidd a Caribî"
+  },
+  {
+    "code": 270,
+    "en-gb": "West indian of indian descent",
+    "cy": "Gorllewin indian o dras Indiaidd"
+  },
+  {
+    "code": 280,
+    "en-gb": "Asian vietnamese",
+    "cy": "vietnamese asian"
+  },
+  {
+    "code": 280,
+    "en-gb": "Vietnamese",
+    "cy": "Fietnameg"
+  },
+  {
+    "code": 281,
+    "en-gb": "Japanese",
+    "cy": "Siapan"
+  },
+  {
+    "code": 282,
+    "en-gb": "Asian filipino",
+    "cy": "asian filipino"
+  },
+  {
+    "code": 282,
+    "en-gb": "Filipino",
+    "cy": "Tagalog"
+  },
+  {
+    "code": 283,
+    "en-gb": "Asian malay",
+    "cy": "malay asian"
+  },
+  {
+    "code": 283,
+    "en-gb": "Cape malayan",
+    "cy": "Cape Malayan"
+  },
+  {
+    "code": 283,
+    "en-gb": "Malayan",
+    "cy": "Malayan"
+  },
+  {
+    "code": 283,
+    "en-gb": "Malaysian",
+    "cy": "Malaysia"
+  },
+  {
+    "code": 284,
+    "en-gb": "Cambodian",
+    "cy": "Cambodieg"
+  },
+  {
+    "code": 285,
+    "en-gb": "Indonesian",
+    "cy": "indonesian"
+  },
+  {
+    "code": 286,
+    "en-gb": "Korean",
+    "cy": "Corea"
+  },
+  {
+    "code": 287,
+    "en-gb": "Bamar and burman",
+    "cy": "Bamar a Burman"
+  },
+  {
+    "code": 287,
+    "en-gb": "Burmese",
+    "cy": "Burmese"
+  },
+  {
+    "code": 287,
+    "en-gb": "Kachin",
+    "cy": "Kachin"
+  },
+  {
+    "code": 287,
+    "en-gb": "Karen",
+    "cy": "Karen"
+  },
+  {
+    "code": 287,
+    "en-gb": "Mon",
+    "cy": "Mon"
+  },
+  {
+    "code": 287,
+    "en-gb": "Myanmarian",
+    "cy": "Myanmarian"
+  },
+  {
+    "code": 287,
+    "en-gb": "Oriental burmese",
+    "cy": "Burmese Oriental"
+  },
+  {
+    "code": 287,
+    "en-gb": "Shan",
+    "cy": "Shan"
+  },
+  {
+    "code": 288,
+    "en-gb": "Asian thai",
+    "cy": "thai asian"
+  },
+  {
+    "code": 288,
+    "en-gb": "Oriental and thai",
+    "cy": "Oriental a thai"
+  },
+  {
+    "code": 288,
+    "en-gb": "Thai",
+    "cy": "thai"
+  },
+  {
+    "code": 289,
+    "en-gb": "Nepalese",
+    "cy": "Nepal"
+  },
+  {
+    "code": 289,
+    "en-gb": "Nepali",
+    "cy": "Nepali"
+  },
+  {
+    "code": 290,
+    "en-gb": "Gurkha",
+    "cy": "Gurkha"
+  },
+  {
+    "code": 291,
+    "en-gb": "Asian oriental",
+    "cy": "asian oriental"
+  },
+  {
+    "code": 291,
+    "en-gb": "Bruneian",
+    "cy": "Bruneian"
+  },
+  {
+    "code": 291,
+    "en-gb": "Far east asia",
+    "cy": "asia dwyrain Pell"
+  },
+  {
+    "code": 291,
+    "en-gb": "Far eastern",
+    "cy": "Pell ddwyreiniol"
+  },
+  {
+    "code": 291,
+    "en-gb": "Oriental",
+    "cy": "Oriental"
+  },
+  {
+    "code": 291,
+    "en-gb": "Singaporean",
+    "cy": "Singaporaidd"
+  },
+  {
+    "code": 291,
+    "en-gb": "South east asian",
+    "cy": "De-ddwyrain asian"
+  },
+  {
+    "code": 291,
+    "en-gb": "Tibetan",
+    "cy": "tibetan"
+  },
+  {
+    "code": 295,
+    "en-gb": "Asian british",
+    "cy": "british asian"
+  },
+  {
+    "code": 298,
+    "en-gb": "Asian english",
+    "cy": "Asiaidd Saesneg"
+  },
+  {
+    "code": 299,
+    "en-gb": "Asian",
+    "cy": "Asiaidd"
+  },
+  {
+    "code": 299,
+    "en-gb": "Asian hindu",
+    "cy": "hindu asian"
+  },
+  {
+    "code": 299,
+    "en-gb": "Asian larao",
+    "cy": "larao asian"
+  },
+  {
+    "code": 299,
+    "en-gb": "Asian origin",
+    "cy": "darddiad Asiaidd"
+  },
+  {
+    "code": 470,
+    "en-gb": "Asian iranian",
+    "cy": "asian iranian"
+  },
+  {
+    "code": 470,
+    "en-gb": "Asian persian iranian",
+    "cy": "Asian persian iranian"
+  },
+  {
+    "code": 590,
+    "en-gb": "Chinese and mauritian",
+    "cy": "Tseiniaidd a Mauritian"
+  },
+  {
+    "code": 590,
+    "en-gb": "Indian mauritian",
+    "cy": "Mauritian indian"
+  },
+  {
+    "code": 590,
+    "en-gb": "Maldivian",
+    "cy": "Maldivian"
+  },
+  {
+    "code": 590,
+    "en-gb": "Mauritian",
+    "cy": "Mauritian"
+  },
+  {
+    "code": 590,
+    "en-gb": "Mauritian asian",
+    "cy": "Mauritian asian"
+  },
+  {
+    "code": 590,
+    "en-gb": "Seychellese",
+    "cy": "Seychellese"
+  },
+  {
+    "code": 590,
+    "en-gb": "Seychellois",
+    "cy": "Seychellois"
+  },
+  {
+    "code": 590,
+    "en-gb": "St helena",
+    "cy": "St Helena"
+  },
+  {
+    "code": 590,
+    "en-gb": "Tamil mauritian",
+    "cy": "tamil Mauritian"
+  }
+]

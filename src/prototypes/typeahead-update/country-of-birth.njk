@@ -1,0 +1,79 @@
+---
+version: 14.4.4
+layout: typeahead-update/views/_master
+---
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/question/_macro.njk" import onsQuestion %}
+
+{% block main %}
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/student-check.html">Previous</a>
+    <form action="{{ pageInfo.parentPath }}/main-language.html">
+        {% call onsQuestion({
+            "title": "What is your country of birth?"
+        }) %}
+        {{ 
+            onsRadios({
+                "legend": "What is your country of birth?",
+                "legendClasses": "u-vh",
+                "name": "country-of-birth",
+                "classes": "u-mt-s",
+                "radios": [
+                    {
+                        "id": "england",
+                        "label": {
+                            "text": "England"
+                        },
+                        "name": "England"
+                    },
+                    {
+                        "id": "wales",
+                        "label": {
+                            "text": "Wales"
+                        },
+                        "name": "Wales"
+                    },
+                     {
+                        "id": "scotland",
+                        "label": {
+                            "text": "Scotland"
+                        },
+                        "name": "scotland"
+                    },
+                    {
+                        "id": "northern-ireland",
+                        "label": {
+                            "text": "Northern Ireland"
+                        },
+                        "name": "northern-ireland"
+                    },
+                    {
+                        "id": "replublic-of-ireland",
+                        "label": {
+                            "text": "Republic of Ireland"
+                        },
+                        "name": "replublic-of-ireland"
+                    },
+                    {
+                        "id": "other",
+                        "label": {
+                            "text": "Elsewhere",
+                            "description": "You can enter a country of birth on the next question"
+                        },
+                        "name": "elsewhere",
+                        "attributes": {
+                            "data-action-url": pageInfo.parentPath + "/country-of-birth-other.html"
+                        }
+                    }
+                ]
+            }) 
+        }}
+        {% endcall %}
+        {{
+           onsButton({
+                "text": "Save and continue",
+                "classes": "u-mt-l"
+            })
+        }}
+    </form>
+{% endblock %}

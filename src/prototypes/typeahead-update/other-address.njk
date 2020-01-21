@@ -1,15 +1,14 @@
 ---
-title: Typeaheads
-group: Typeaheads
 version: 14.4.4
 layout: typeahead-update/views/_master
 ---
-{% from "components/button/_macro.njk" import onsButton %}
 {% from "typeahead-update/components/address-input/_macro.njk" import prototypeAddressInput %}
+{% from "components/button/_macro.njk" import onsButton %}
 
 {% block main %}
-    <h1 class="u-fs-l">Start the prototype by providing an address</h1>
-    <form action="{{ pageInfo.rootPath }}/answering-questions-for.html">
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/address-check.html">Previous</a>
+    <h1 class="u-mt-s">What is the other UK address where you stay for more than 30 days a year?</h1>
+    <form action="{{ pageInfo.parentPath }}/other-address-confirm.html">
         {{
             prototypeAddressInput({
                 "id": "address",
@@ -18,10 +17,10 @@ layout: typeahead-update/views/_master
                     "text": "<h1 class=\"u-fs-l\">What is the other UK address where you stay for more than 30 days a year?</h1>"
                 },
                 "line1": {
-                    "label": "Building and street <span class=\"u-vh\">line 1 of 2</span>"
+                    "label": "Address line 1"
                 },
                 "line2": {
-                    "label": "Building and street line 2 of 2"
+                    "label": "Address line 2"
                 },
                 "town": {
                     "label": "Town or City"
@@ -34,7 +33,8 @@ layout: typeahead-update/views/_master
                 },
                 "typeahead": {
                     "label": {
-                        "text": "Enter your address or postcode"
+                        "text": "Enter your address or postcode",
+                        "description": "Enter your own answer or select from suggestions"
                     },
                     "typeahead": {
                         "instructions": "Use up and down keys to navigate addresses once you\'ve typed more than two characters. Use the enter key to select a address. Touch device users, explore by touch or with swipe gestures.",
@@ -59,17 +59,11 @@ layout: typeahead-update/views/_master
                 "selectError": "Select an address to continue."
             })
         }}
-
-        <p class="u-mt-m"><em>Or</em><br>
-            {{ onsButton({
-                "text": "Use dummy address",
-                "classes": "btn--small u-mt-s js-set-dummy-address"
-              }) }}
-        </p>
-        
-        {{ onsButton({
-                "text": "Start",
+        {{
+            onsButton({
+                "text": "Save and continue",
                 "classes": "u-mt-l"
-        }) }}
+            })
+        }}
     </form>
 {% endblock %}

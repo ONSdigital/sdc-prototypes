@@ -1,0 +1,48 @@
+---
+version: 14.4.4
+layout: typeahead-update/views/_master
+---
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "typeahead-update/components/input/_macro.njk" import onsInput %}
+{% from "components/question/_macro.njk" import onsQuestion %}
+
+{% block main %}
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/address-check.html">Previous</a>
+    <form action="{{ pageInfo.parentPath }}/outside-address-type.html">
+        {% call onsQuestion({
+            "title": "Which country outside of the UK do you stay in for more than 30 days a year?"
+        }) %}        
+        {{
+            onsInput({
+            "id": "country-of-birth",
+            "label": {
+                "text": "Current name of country",
+                "description": "Enter your own answer or select from suggestions
+answer"
+            },
+            "dontWrap": true,
+            "autocomplete": "off",
+            "typeahead":{
+                "instructions": "Use up and down keys to navigate suggestions once you\'ve typed more than two characters. Use the enter key to select a suggestion. Touch device users, explore by touch or with swipe gestures.",
+                "content": {
+                    "aria_you_have_selected": "You have selected",
+                    "aria_min_chars": "Enter 3 or more characters for suggestions.",
+                    "aria_one_result": "There is one suggestion available.",
+                    "aria_n_results": "There are {n} suggestions available.",
+                    "aria_limited_results": "Results have been limited to 10 suggestions. Type more characters to improve your search.",
+                    "more_results": "Continue entering to improve suggestions",
+                    "results_title": "Suggestions"
+                },
+                "typeaheadData": "https://gist.githubusercontent.com/rmccar/c123023fa6bd1b137d7f960c3ffa1fed/raw/368a3ea741f72c62c735c319ff7e33e3c1bfdc53/country-of-birth.json"
+            }
+            })
+        }}
+        {% endcall %}
+        {{
+           onsButton({
+                "text": "Save and continue",
+                "classes": "u-mt-l"
+            })
+        }}
+    </form>
+{% endblock %}

@@ -1,0 +1,2722 @@
+[
+  {
+    "code": 50921,
+    "en-gb": "Abaza",
+    "cy": "Abaza"
+  },
+  {
+    "code": 24613,
+    "en-gb": "Abbe",
+    "cy": "Abbe"
+  },
+  {
+    "code": 50920,
+    "en-gb": "Abkhaz",
+    "cy": "Abkhaz"
+  },
+  {
+    "code": 24812,
+    "en-gb": "Abua",
+    "cy": "Abua"
+  },
+  {
+    "code": 37003,
+    "en-gb": "Achehnese",
+    "cy": "Achehnese"
+  },
+  {
+    "code": 23104,
+    "en-gb": "Acholi",
+    "cy": "Acholi"
+  },
+  {
+    "code": 24610,
+    "en-gb": "Adangme",
+    "cy": "Adangme"
+  },
+  {
+    "code": 23106,
+    "en-gb": "Adhola",
+    "cy": "Adhola"
+  },
+  {
+    "code": 22301,
+    "en-gb": "Afar-saho",
+    "cy": "Bell-saho"
+  },
+  {
+    "code": 21101,
+    "en-gb": "Afrikaans",
+    "cy": "Affricaneg"
+  },
+  {
+    "code": 24605,
+    "en-gb": "Ahanta",
+    "cy": "Ahanta"
+  },
+  {
+    "code": 24606,
+    "en-gb": "Akan",
+    "cy": "Akan"
+  },
+  {
+    "code": 61502,
+    "en-gb": "Albanian (gheg/kosovan)",
+    "cy": "Albaneg (gheg / Kosovo)"
+  },
+  {
+    "code": 61501,
+    "en-gb": "Albanian (tosk)",
+    "cy": "Albaneg (tosk)"
+  },
+  {
+    "code": 23108,
+    "en-gb": "Alur",
+    "cy": "Alur"
+  },
+  {
+    "code": 24917,
+    "en-gb": "Ambo/oshiwambo",
+    "cy": "Ambo / oshiwambo"
+  },
+  {
+    "code": 22001,
+    "en-gb": "Amharic",
+    "cy": "Amhareg"
+  },
+  {
+    "code": 29203,
+    "en-gb": "Angolar",
+    "cy": "Angolar"
+  },
+  {
+    "code": 79102,
+    "en-gb": "Antillean creole french",
+    "cy": "french creole Antillean"
+  },
+  {
+    "code": 24602,
+    "en-gb": "Anyin",
+    "cy": "Anyin"
+  },
+  {
+    "code": 2001,
+    "en-gb": "Arabic",
+    "cy": "Arabeg"
+  },
+  {
+    "code": 36402,
+    "en-gb": "Arakanese",
+    "cy": "Arakanese"
+  },
+  {
+    "code": 61504,
+    "en-gb": "Arberesh",
+    "cy": "Arberesh"
+  },
+  {
+    "code": 51701,
+    "en-gb": "Armenian",
+    "cy": "Armenia"
+  },
+  {
+    "code": 85901,
+    "en-gb": "Arrernte",
+    "cy": "Arrernte"
+  },
+  {
+    "code": 61503,
+    "en-gb": "Arvanitika",
+    "cy": "Arvanitika"
+  },
+  {
+    "code": 41943,
+    "en-gb": "Assamese",
+    "cy": "Asameg"
+  },
+  {
+    "code": 52001,
+    "en-gb": "Assyrian",
+    "cy": "Assyrian"
+  },
+  {
+    "code": 89005,
+    "en-gb": "Australian kriol",
+    "cy": "kriol Awstralia"
+  },
+  {
+    "code": 24607,
+    "en-gb": "Awutu",
+    "cy": "Awutu"
+  },
+  {
+    "code": 78301,
+    "en-gb": "Aymara",
+    "cy": "Aymara"
+  },
+  {
+    "code": 50502,
+    "en-gb": "Azeri",
+    "cy": "Azeri"
+  },
+  {
+    "code": 24312,
+    "en-gb": "Baatonum",
+    "cy": "Baatonum"
+  },
+  {
+    "code": 79001,
+    "en-gb": "Bahamian creole",
+    "cy": "creole Bahamas"
+  },
+  {
+    "code": 79004,
+    "en-gb": "Bajan",
+    "cy": "Bajan"
+  },
+  {
+    "code": 24103,
+    "en-gb": "Balanta",
+    "cy": "Balanta"
+  },
+  {
+    "code": 37007,
+    "en-gb": "Balinese",
+    "cy": "Bali"
+  },
+  {
+    "code": 41801,
+    "en-gb": "Balochi",
+    "cy": "Balwchi"
+  },
+  {
+    "code": 46005,
+    "en-gb": "Balti tibetan",
+    "cy": "Balti Tibet"
+  },
+  {
+    "code": 24903,
+    "en-gb": "Bamileke",
+    "cy": "bobl Bamileke"
+  },
+  {
+    "code": 24404,
+    "en-gb": "Banda",
+    "cy": "Banda"
+  },
+  {
+    "code": 24601,
+    "en-gb": "Baoule",
+    "cy": "Baoule"
+  },
+  {
+    "code": 23112,
+    "en-gb": "Bari-pojulu",
+    "cy": "Bari-pojulu"
+  },
+  {
+    "code": 24906,
+    "en-gb": "Basaa",
+    "cy": "Basaa"
+  },
+  {
+    "code": 50507,
+    "en-gb": "Bashkir",
+    "cy": "bashkir"
+  },
+  {
+    "code": 60701,
+    "en-gb": "Basque/euskara",
+    "cy": "Basgeg / Euskara"
+  },
+  {
+    "code": 24201,
+    "en-gb": "Bassa (liberia)",
+    "cy": "Bassa (liberia)"
+  },
+  {
+    "code": 22202,
+    "en-gb": "Bata/gbwata",
+    "cy": "Bata / gbwata"
+  },
+  {
+    "code": 12301,
+    "en-gb": "Beja/bedawi",
+    "cy": "Beja / bedawi"
+  },
+  {
+    "code": 61402,
+    "en-gb": "Belarusian",
+    "cy": "Belarwseg"
+  },
+  {
+    "code": 79010,
+    "en-gb": "Belizean kriol",
+    "cy": "kriol Belizean"
+  },
+  {
+    "code": 24926,
+    "en-gb": "Bemba",
+    "cy": "Bemba"
+  },
+  {
+    "code": 41940,
+    "en-gb": "Bengali",
+    "cy": "bengali"
+  },
+  {
+    "code": 12101,
+    "en-gb": "Berber/tamazight",
+    "cy": "Berber / Tamazight"
+  },
+  {
+    "code": 24207,
+    "en-gb": "Bete",
+    "cy": "Bete"
+  },
+  {
+    "code": 41908,
+    "en-gb": "Bhadrawahi",
+    "cy": "Bhadrawahi"
+  },
+  {
+    "code": 41916,
+    "en-gb": "Bhateali",
+    "cy": "Bhateali"
+  },
+  {
+    "code": 41937,
+    "en-gb": "Bhili",
+    "cy": "Bhili"
+  },
+  {
+    "code": 41928,
+    "en-gb": "Bhojpuri",
+    "cy": "Bhojpuri"
+  },
+  {
+    "code": 37806,
+    "en-gb": "Biao mon",
+    "cy": "Biao mon"
+  },
+  {
+    "code": 37101,
+    "en-gb": "Bikol",
+    "cy": "Bikol"
+  },
+  {
+    "code": 41917,
+    "en-gb": "Bilaspuri",
+    "cy": "Bilaspuri"
+  },
+  {
+    "code": 22302,
+    "en-gb": "Bilen",
+    "cy": "Bilen"
+  },
+  {
+    "code": 24311,
+    "en-gb": "Bimoba",
+    "cy": "Bimoba"
+  },
+  {
+    "code": 24304,
+    "en-gb": "Birifor",
+    "cy": "Birifor"
+  },
+  {
+    "code": 89002,
+    "en-gb": "Bislama",
+    "cy": "Bislama"
+  },
+  {
+    "code": 61411,
+    "en-gb": "Bosnian",
+    "cy": "Bosnian"
+  },
+  {
+    "code": 40110,
+    "en-gb": "Brahui",
+    "cy": "Brahui"
+  },
+  {
+    "code": 61003,
+    "en-gb": "Breton",
+    "cy": "Llydaweg"
+  },
+  {
+    "code": 69801,
+    "en-gb": "British sign language",
+    "cy": "iaith arwyddion Prydain"
+  },
+  {
+    "code": 37510,
+    "en-gb": "Bugis",
+    "cy": "Bugis"
+  },
+  {
+    "code": 61414,
+    "en-gb": "Bulgarian",
+    "cy": "Bwlgareg"
+  },
+  {
+    "code": 24309,
+    "en-gb": "Buli (ghana)",
+    "cy": "Buli (ghana)"
+  },
+  {
+    "code": 24908,
+    "en-gb": "Bulu",
+    "cy": "Bulu"
+  },
+  {
+    "code": 36401,
+    "en-gb": "Burmese",
+    "cy": "Burmese"
+  },
+  {
+    "code": 40801,
+    "en-gb": "Burushaski",
+    "cy": "Burushaski"
+  },
+  {
+    "code": 35301,
+    "en-gb": "Cambodian/khmer",
+    "cy": "Cambodieg / Khmer"
+  },
+  {
+    "code": 36602,
+    "en-gb": "Cantonese",
+    "cy": "Cantoneg"
+  },
+  {
+    "code": 78504,
+    "en-gb": "Carib/kalinya",
+    "cy": "Carib / kalinya"
+  },
+  {
+    "code": 61207,
+    "en-gb": "Catalan",
+    "cy": "Catalaneg"
+  },
+  {
+    "code": 37102,
+    "en-gb": "Cebuano",
+    "cy": "cebuano"
+  },
+  {
+    "code": 24934,
+    "en-gb": "Chaga",
+    "cy": "chaga"
+  },
+  {
+    "code": 52002,
+    "en-gb": "Chaldean",
+    "cy": "Chaldean"
+  },
+  {
+    "code": 41911,
+    "en-gb": "Chambeali",
+    "cy": "Chambeali"
+  },
+  {
+    "code": 41942,
+    "en-gb": "Chatgaya",
+    "cy": "Chatgaya"
+  },
+  {
+    "code": 36403,
+    "en-gb": "Chaungtha",
+    "cy": "Chaungtha"
+  },
+  {
+    "code": 39301,
+    "en-gb": "Chavacano",
+    "cy": "Chavacano"
+  },
+  {
+    "code": 50910,
+    "en-gb": "Chechen",
+    "cy": "Chechen"
+  },
+  {
+    "code": 41931,
+    "en-gb": "Chhattisgarhi",
+    "cy": "Chhattisgarhi"
+  },
+  {
+    "code": 24957,
+    "en-gb": "Chichewa/nyanja",
+    "cy": "Chichewa / nyanja"
+  },
+  {
+    "code": 24923,
+    "en-gb": "Chilunda",
+    "cy": "Chilunda"
+  },
+  {
+    "code": 24952,
+    "en-gb": "Chingoni",
+    "cy": "Chingoni"
+  },
+  {
+    "code": 24928,
+    "en-gb": "Chitonga",
+    "cy": "Chitonga"
+  },
+  {
+    "code": 24953,
+    "en-gb": "Chiyao",
+    "cy": "Chiyao"
+  },
+  {
+    "code": 24921,
+    "en-gb": "Chokwe",
+    "cy": "Chokwe"
+  },
+  {
+    "code": 78103,
+    "en-gb": "Chol",
+    "cy": "chol"
+  },
+  {
+    "code": 41914,
+    "en-gb": "Churahi",
+    "cy": "Churahi"
+  },
+  {
+    "code": 50509,
+    "en-gb": "Chuvash",
+    "cy": "Chuvash"
+  },
+  {
+    "code": 24951,
+    "en-gb": "Comorian",
+    "cy": "Comorian"
+  },
+  {
+    "code": 61002,
+    "en-gb": "Cornish",
+    "cy": "Cornish"
+  },
+  {
+    "code": 61205,
+    "en-gb": "Corsican",
+    "cy": "Corsica"
+  },
+  {
+    "code": 78501,
+    "en-gb": "Cree",
+    "cy": "Cree"
+  },
+  {
+    "code": 61412,
+    "en-gb": "Croatian",
+    "cy": "Croateg"
+  },
+  {
+    "code": 69808,
+    "en-gb": "Cued speech",
+    "cy": "lleferydd Giwio"
+  },
+  {
+    "code": 61403,
+    "en-gb": "Czech",
+    "cy": "Tsiec"
+  },
+  {
+    "code": 24303,
+    "en-gb": "Dagaare",
+    "cy": "Dagaare"
+  },
+  {
+    "code": 24306,
+    "en-gb": "Dagbani",
+    "cy": "Dagbani"
+  },
+  {
+    "code": 61113,
+    "en-gb": "Danish",
+    "cy": "Daneg"
+  },
+  {
+    "code": 69805,
+    "en-gb": "Deaf-blind manual alphabet",
+    "cy": "gwyddor llaw Byddar-ddall"
+  },
+  {
+    "code": 85902,
+    "en-gb": "Dhuwal",
+    "cy": "Dhuwal"
+  },
+  {
+    "code": 23101,
+    "en-gb": "Dinka/jieng",
+    "cy": "Dinka / jieng"
+  },
+  {
+    "code": 24104,
+    "en-gb": "Diola-fonyi",
+    "cy": "Diola-fonyi"
+  },
+  {
+    "code": 41918,
+    "en-gb": "Dogri",
+    "cy": "Dogri"
+  },
+  {
+    "code": 79103,
+    "en-gb": "Dominica/saint lucia creole",
+    "cy": "Dominica / sant creole Lucia"
+  },
+  {
+    "code": 24905,
+    "en-gb": "Duala",
+    "cy": "Duala"
+  },
+  {
+    "code": 36614,
+    "en-gb": "Dungan",
+    "cy": "Dungan"
+  },
+  {
+    "code": 40108,
+    "en-gb": "Duruwa/parji",
+    "cy": "Duruwa / parji"
+  },
+  {
+    "code": 61105,
+    "en-gb": "Dutch",
+    "cy": "Iseldireg"
+  },
+  {
+    "code": 46001,
+    "en-gb": "Dzongkha",
+    "cy": "dzongkha"
+  },
+  {
+    "code": 24706,
+    "en-gb": "Ebira",
+    "cy": "Ebira"
+  },
+  {
+    "code": 24407,
+    "en-gb": "Ebuna",
+    "cy": "Ebuna"
+  },
+  {
+    "code": 24709,
+    "en-gb": "Edo/bini",
+    "cy": "Edo / Bini"
+  },
+  {
+    "code": 24801,
+    "en-gb": "Efik-ibibio",
+    "cy": "Efik-ibibio"
+  },
+  {
+    "code": 24815,
+    "en-gb": "Eggon",
+    "cy": "Eggon"
+  },
+  {
+    "code": 12001,
+    "en-gb": "Egyptian arabic",
+    "cy": "egyptian arabic"
+  },
+  {
+    "code": 24811,
+    "en-gb": "Ekit",
+    "cy": "Ekit"
+  },
+  {
+    "code": 24715,
+    "en-gb": "Ekpeye",
+    "cy": "Ekpeye"
+  },
+  {
+    "code": 24804,
+    "en-gb": "Eleme",
+    "cy": "Eleme"
+  },
+  {
+    "code": 24716,
+    "en-gb": "Emai-luleha-ora",
+    "cy": "Emai-luleha-ora"
+  },
+  {
+    "code": 60604,
+    "en-gb": "Erzya",
+    "cy": "erzya"
+  },
+  {
+    "code": 24710,
+    "en-gb": "Esan",
+    "cy": "Esan"
+  },
+  {
+    "code": 60602,
+    "en-gb": "Estonian",
+    "cy": "Estoneg"
+  },
+  {
+    "code": 24611,
+    "en-gb": "Ewe",
+    "cy": "mamogiaid"
+  },
+  {
+    "code": 24907,
+    "en-gb": "Ewondo",
+    "cy": "Ewondo"
+  },
+  {
+    "code": 29204,
+    "en-gb": "Fa d'ambu",
+    "cy": "Fa d'ambu"
+  },
+  {
+    "code": 24909,
+    "en-gb": "Fang",
+    "cy": "Fang"
+  },
+  {
+    "code": 61111,
+    "en-gb": "Faroese",
+    "cy": "Ffaroeg"
+  },
+  {
+    "code": 87201,
+    "en-gb": "Fijian",
+    "cy": "Fijian"
+  },
+  {
+    "code": 60601,
+    "en-gb": "Finnish",
+    "cy": "Ffindir"
+  },
+  {
+    "code": 24612,
+    "en-gb": "Fon",
+    "cy": "Fon"
+  },
+  {
+    "code": 61209,
+    "en-gb": "Franco-provencal",
+    "cy": "Franco-PROVENCAL"
+  },
+  {
+    "code": 1201,
+    "en-gb": "French",
+    "cy": "Ffrangeg"
+  },
+  {
+    "code": 61106,
+    "en-gb": "Frisian",
+    "cy": "Ffriseg"
+  },
+  {
+    "code": 61212,
+    "en-gb": "Friulian",
+    "cy": "Ffriwleg"
+  },
+  {
+    "code": 24101,
+    "en-gb": "Fulfulde-pulaar",
+    "cy": "Fulfulde-Pulaar"
+  },
+  {
+    "code": 24609,
+    "en-gb": "Ga",
+    "cy": "ga"
+  },
+  {
+    "code": 41915,
+    "en-gb": "Gaddi",
+    "cy": "Gaddi"
+  },
+  {
+    "code": 61004,
+    "en-gb": "Gaelic (irish)",
+    "cy": "Gaeleg (irish)"
+  },
+  {
+    "code": 61005,
+    "en-gb": "Gaelic (scottish)",
+    "cy": "Gaeleg (scottish)"
+  },
+  {
+    "code": 61206,
+    "en-gb": "Galician",
+    "cy": "galician"
+  },
+  {
+    "code": 36603,
+    "en-gb": "Gan chinese",
+    "cy": "Gan chinese"
+  },
+  {
+    "code": 41906,
+    "en-gb": "Garhwali",
+    "cy": "Garhwali"
+  },
+  {
+    "code": 78503,
+    "en-gb": "Garifuna",
+    "cy": "Garifona"
+  },
+  {
+    "code": 24705,
+    "en-gb": "Gbagyi",
+    "cy": "Gbagyi"
+  },
+  {
+    "code": 24402,
+    "en-gb": "Gbaya",
+    "cy": "Gbaya"
+  },
+  {
+    "code": 50901,
+    "en-gb": "Georgian/kartuli",
+    "cy": "Georgaidd / kartuli"
+  },
+  {
+    "code": 61101,
+    "en-gb": "German",
+    "cy": "Almaeneg"
+  },
+  {
+    "code": 37804,
+    "en-gb": "Ghao-xong",
+    "cy": "Ghao-xong"
+  },
+  {
+    "code": 24930,
+    "en-gb": "Gikuyu",
+    "cy": "Gikuyu"
+  },
+  {
+    "code": 51804,
+    "en-gb": "Gilaki",
+    "cy": "Gilaki"
+  },
+  {
+    "code": 24948,
+    "en-gb": "Gogo",
+    "cy": "Gogo"
+  },
+  {
+    "code": 24803,
+    "en-gb": "Gokana",
+    "cy": "Gokana"
+  },
+  {
+    "code": 40107,
+    "en-gb": "Gondi",
+    "cy": "Gondi"
+  },
+  {
+    "code": 24608,
+    "en-gb": "Gonja",
+    "cy": "Gonja"
+  },
+  {
+    "code": 24310,
+    "en-gb": "Gourmanchema",
+    "cy": "Gourmanchema"
+  },
+  {
+    "code": 24203,
+    "en-gb": "Grebo",
+    "cy": "Grebo"
+  },
+  {
+    "code": 61601,
+    "en-gb": "Greek",
+    "cy": "Groeg"
+  },
+  {
+    "code": 78401,
+    "en-gb": "Guarani",
+    "cy": "Guarani"
+  },
+  {
+    "code": 24206,
+    "en-gb": "Guere",
+    "cy": "Guere"
+  },
+  {
+    "code": 41935,
+    "en-gb": "Gujarati",
+    "cy": "gujarati"
+  },
+  {
+    "code": 79002,
+    "en-gb": "Gullah",
+    "cy": "Gullah"
+  },
+  {
+    "code": 51814,
+    "en-gb": "Gurani",
+    "cy": "Gurani"
+  },
+  {
+    "code": 24302,
+    "en-gb": "Gurenne",
+    "cy": "Gurenne"
+  },
+  {
+    "code": 24929,
+    "en-gb": "Gusii",
+    "cy": "Gusii"
+  },
+  {
+    "code": 79104,
+    "en-gb": "Guyanais",
+    "cy": "Guyanais"
+  },
+  {
+    "code": 79007,
+    "en-gb": "Guyanese creole",
+    "cy": "creole Gaiana"
+  },
+  {
+    "code": 79101,
+    "en-gb": "Haitian creole",
+    "cy": "creole haitian"
+  },
+  {
+    "code": 36604,
+    "en-gb": "Hakka",
+    "cy": "hakka"
+  },
+  {
+    "code": 12005,
+    "en-gb": "Hassaniyya",
+    "cy": "Hassaniyya"
+  },
+  {
+    "code": 22201,
+    "en-gb": "Hausa",
+    "cy": "hausa"
+  },
+  {
+    "code": 89006,
+    "en-gb": "Hawaii creole",
+    "cy": "Hawaii creole"
+  },
+  {
+    "code": 24938,
+    "en-gb": "Haya",
+    "cy": "Haya"
+  },
+  {
+    "code": 52003,
+    "en-gb": "Hebrew",
+    "cy": "Hebraeg"
+  },
+  {
+    "code": 24918,
+    "en-gb": "Herero",
+    "cy": "Herero"
+  },
+  {
+    "code": 37103,
+    "en-gb": "Hiligaynon",
+    "cy": "Hiligaynon"
+  },
+  {
+    "code": 41927,
+    "en-gb": "Hindi",
+    "cy": "hindi"
+  },
+  {
+    "code": 41920,
+    "en-gb": "Hindko",
+    "cy": "Hindko"
+  },
+  {
+    "code": 89301,
+    "en-gb": "Hiri motu",
+    "cy": "Hiri Motu"
+  },
+  {
+    "code": 37801,
+    "en-gb": "Hmong dou",
+    "cy": "Hmong Dou"
+  },
+  {
+    "code": 37802,
+    "en-gb": "Hmong njua",
+    "cy": "njua Hmong"
+  },
+  {
+    "code": 37803,
+    "en-gb": "Hmu",
+    "cy": "Hmu"
+  },
+  {
+    "code": 45002,
+    "en-gb": "Ho",
+    "cy": "Ho"
+  },
+  {
+    "code": 78104,
+    "en-gb": "Huastec",
+    "cy": "Huastec"
+  },
+  {
+    "code": 36605,
+    "en-gb": "Huizhou chinese",
+    "cy": "Huizhou Tseiniaidd"
+  },
+  {
+    "code": 60610,
+    "en-gb": "Hungarian",
+    "cy": "Hwngareg"
+  },
+  {
+    "code": 37005,
+    "en-gb": "Iban",
+    "cy": "Iban"
+  },
+  {
+    "code": 24504,
+    "en-gb": "Ibani",
+    "cy": "Ibani"
+  },
+  {
+    "code": 61110,
+    "en-gb": "Icelandic",
+    "cy": "Islandeg"
+  },
+  {
+    "code": 24707,
+    "en-gb": "Idoma",
+    "cy": "Idoma"
+  },
+  {
+    "code": 24703,
+    "en-gb": "Igala",
+    "cy": "Igala"
+  },
+  {
+    "code": 24713,
+    "en-gb": "Igbo",
+    "cy": "igbo"
+  },
+  {
+    "code": 24708,
+    "en-gb": "Igede",
+    "cy": "Igede"
+  },
+  {
+    "code": 24614,
+    "en-gb": "Ikposo",
+    "cy": "Ikposo"
+  },
+  {
+    "code": 24714,
+    "en-gb": "Ikwere",
+    "cy": "Ikwere"
+  },
+  {
+    "code": 37105,
+    "en-gb": "Ilocano",
+    "cy": "Ilocano"
+  },
+  {
+    "code": 37002,
+    "en-gb": "Indonesian malay",
+    "cy": "malay indonesian"
+  },
+  {
+    "code": 99801,
+    "en-gb": "International sign language",
+    "cy": "iaith arwyddion Rhyngwladol"
+  },
+  {
+    "code": 78901,
+    "en-gb": "Inuktitut",
+    "cy": "Inuktitut"
+  },
+  {
+    "code": 51890,
+    "en-gb": "Iranian",
+    "cy": "Iran"
+  },
+  {
+    "code": 69802,
+    "en-gb": "Irish sign language",
+    "cy": "iaith arwyddion Gwyddeleg"
+  },
+  {
+    "code": 37903,
+    "en-gb": "Isan",
+    "cy": "Isan"
+  },
+  {
+    "code": 24712,
+    "en-gb": "Isoko",
+    "cy": "Isoko"
+  },
+  {
+    "code": 61201,
+    "en-gb": "Italian",
+    "cy": "Eidaleg"
+  },
+  {
+    "code": 24702,
+    "en-gb": "Itsekiri",
+    "cy": "Itsekiri"
+  },
+  {
+    "code": 37805,
+    "en-gb": "Iu mien",
+    "cy": "iu mien"
+  },
+  {
+    "code": 24501,
+    "en-gb": "Izon",
+    "cy": "Izon"
+  },
+  {
+    "code": 79009,
+    "en-gb": "Jamaican",
+    "cy": "Jamaican"
+  },
+  {
+    "code": 30201,
+    "en-gb": "Japanese",
+    "cy": "Siapan"
+  },
+  {
+    "code": 41913,
+    "en-gb": "Jaunsari",
+    "cy": "Jaunsari"
+  },
+  {
+    "code": 37501,
+    "en-gb": "Javanese",
+    "cy": "Jafaneg"
+  },
+  {
+    "code": 36301,
+    "en-gb": "Jingpho",
+    "cy": "Jingpho"
+  },
+  {
+    "code": 36606,
+    "en-gb": "Jinyu chinese",
+    "cy": "Jinyu Tseiniaidd"
+  },
+  {
+    "code": 24809,
+    "en-gb": "Jju",
+    "cy": "Jju"
+  },
+  {
+    "code": 24313,
+    "en-gb": "Kabiye",
+    "cy": "Kabiye"
+  },
+  {
+    "code": 29201,
+    "en-gb": "Kabuverdianu",
+    "cy": "Kabuverdianu"
+  },
+  {
+    "code": 41934,
+    "en-gb": "Kachchi",
+    "cy": "Kachchi"
+  },
+  {
+    "code": 23113,
+    "en-gb": "Kakwa",
+    "cy": "Kakwa"
+  },
+  {
+    "code": 78902,
+    "en-gb": "Kalaallisut",
+    "cy": "kalaallisut"
+  },
+  {
+    "code": 24502,
+    "en-gb": "Kalabari ijo",
+    "cy": "Kalabari ijo"
+  },
+  {
+    "code": 85903,
+    "en-gb": "Kalaw lagaw ya",
+    "cy": "Kalaw lagaw ya"
+  },
+  {
+    "code": 23109,
+    "en-gb": "Kalenjin",
+    "cy": "Kalenjin"
+  },
+  {
+    "code": 29003,
+    "en-gb": "Kamtok",
+    "cy": "Kamtok"
+  },
+  {
+    "code": 41919,
+    "en-gb": "Kangri",
+    "cy": "Kangri"
+  },
+  {
+    "code": 40103,
+    "en-gb": "Kannada",
+    "cy": "kannada"
+  },
+  {
+    "code": 23301,
+    "en-gb": "Kanuri",
+    "cy": "Kanuri"
+  },
+  {
+    "code": 24925,
+    "en-gb": "Kaonde",
+    "cy": "Kaonde"
+  },
+  {
+    "code": 78110,
+    "en-gb": "Kaqchikel",
+    "cy": "Kaqchikel"
+  },
+  {
+    "code": 36502,
+    "en-gb": "Karen (pwo)",
+    "cy": "Karen (pwo)"
+  },
+  {
+    "code": 36501,
+    "en-gb": "Karen (s'gaw)",
+    "cy": "Karen (s'gaw)"
+  },
+  {
+    "code": 79105,
+    "en-gb": "Karipuna",
+    "cy": "Karipuna"
+  },
+  {
+    "code": 24314,
+    "en-gb": "Kasem",
+    "cy": "Kasem"
+  },
+  {
+    "code": 41903,
+    "en-gb": "Kashmiri",
+    "cy": "kashmiri"
+  },
+  {
+    "code": 61406,
+    "en-gb": "Kashubian",
+    "cy": "Kashubian"
+  },
+  {
+    "code": 50505,
+    "en-gb": "Kazakh",
+    "cy": "kazakh"
+  },
+  {
+    "code": 78108,
+    "en-gb": "Kekchi",
+    "cy": "Kekchi"
+  },
+  {
+    "code": 13202,
+    "en-gb": "Kenuzi dongola",
+    "cy": "Kenuzi DONGOLA"
+  },
+  {
+    "code": 24802,
+    "en-gb": "Khana",
+    "cy": "khana"
+  },
+  {
+    "code": 45004,
+    "en-gb": "Kharia",
+    "cy": "Kharia"
+  },
+  {
+    "code": 45101,
+    "en-gb": "Khasi",
+    "cy": "Khasi"
+  },
+  {
+    "code": 41901,
+    "en-gb": "Khowar",
+    "cy": "Khowar"
+  },
+  {
+    "code": 78109,
+    "en-gb": "Kiche",
+    "cy": "Kiche"
+  },
+  {
+    "code": 24931,
+    "en-gb": "Kiembu",
+    "cy": "Kiembu"
+  },
+  {
+    "code": 24933,
+    "en-gb": "Kikamba",
+    "cy": "Kikamba"
+  },
+  {
+    "code": 24914,
+    "en-gb": "Kikongo",
+    "cy": "Kikongo"
+  },
+  {
+    "code": 37807,
+    "en-gb": "Kim mun",
+    "cy": "Kim ychan"
+  },
+  {
+    "code": 24915,
+    "en-gb": "Kimbundu",
+    "cy": "Kimbundu"
+  },
+  {
+    "code": 24932,
+    "en-gb": "Kimeru",
+    "cy": "Kimeru"
+  },
+  {
+    "code": 24947,
+    "en-gb": "Kinyamwezi",
+    "cy": "Kinyamwezi"
+  },
+  {
+    "code": 24937,
+    "en-gb": "Kinyarwanda",
+    "cy": "kinyarwanda"
+  },
+  {
+    "code": 50506,
+    "en-gb": "Kirghiz",
+    "cy": "Kirghiz"
+  },
+  {
+    "code": 87301,
+    "en-gb": "Kiribati",
+    "cy": "Kiribati"
+  },
+  {
+    "code": 24503,
+    "en-gb": "Kirike",
+    "cy": "Kirike"
+  },
+  {
+    "code": 24936,
+    "en-gb": "Kirundi",
+    "cy": "Kirundi"
+  },
+  {
+    "code": 24107,
+    "en-gb": "Kisi (west africa)",
+    "cy": "Kisi (gorllewin Affrica)"
+  },
+  {
+    "code": 24946,
+    "en-gb": "Kisukuma",
+    "cy": "Kisukuma"
+  },
+  {
+    "code": 24913,
+    "en-gb": "Kituba",
+    "cy": "Kituba"
+  },
+  {
+    "code": 24202,
+    "en-gb": "Klao",
+    "cy": "Klao"
+  },
+  {
+    "code": 40106,
+    "en-gb": "Kodava",
+    "cy": "Kodava"
+  },
+  {
+    "code": 41902,
+    "en-gb": "Kohistani",
+    "cy": "Kohistani"
+  },
+  {
+    "code": 60606,
+    "en-gb": "Komi",
+    "cy": "Komi"
+  },
+  {
+    "code": 41939,
+    "en-gb": "Konkani",
+    "cy": "konkani"
+  },
+  {
+    "code": 24006,
+    "en-gb": "Kono",
+    "cy": "Kono"
+  },
+  {
+    "code": 30301,
+    "en-gb": "Korean",
+    "cy": "Corea"
+  },
+  {
+    "code": 45006,
+    "en-gb": "Korku",
+    "cy": "Korku"
+  },
+  {
+    "code": 24009,
+    "en-gb": "Kpelle",
+    "cy": "Kpelle"
+  },
+  {
+    "code": 24205,
+    "en-gb": "Krahn",
+    "cy": "KRAHN"
+  },
+  {
+    "code": 29001,
+    "en-gb": "Krio",
+    "cy": "Krio"
+  },
+  {
+    "code": 24204,
+    "en-gb": "Krumen",
+    "cy": "Krumen"
+  },
+  {
+    "code": 24808,
+    "en-gb": "Kuche",
+    "cy": "Kuche"
+  },
+  {
+    "code": 24807,
+    "en-gb": "Kukele",
+    "cy": "Kukele"
+  },
+  {
+    "code": 41912,
+    "en-gb": "Kulu pahari",
+    "cy": "Kulu Pahari"
+  },
+  {
+    "code": 41905,
+    "en-gb": "Kumaoni",
+    "cy": "Kumaoni"
+  },
+  {
+    "code": 24004,
+    "en-gb": "Kuranko",
+    "cy": "Kuranko"
+  },
+  {
+    "code": 51812,
+    "en-gb": "Kurdish (kermanshahi)",
+    "cy": "Kurdish (kermanshahi)"
+  },
+  {
+    "code": 51810,
+    "en-gb": "Kurdish (kurmanji)",
+    "cy": "Kurdish (Kurmandji)"
+  },
+  {
+    "code": 51811,
+    "en-gb": "Kurdish (sorani)",
+    "cy": "Kurdish (Sorani)"
+  },
+  {
+    "code": 40109,
+    "en-gb": "Kurukh",
+    "cy": "Kurukh"
+  },
+  {
+    "code": 24308,
+    "en-gb": "Kusaal",
+    "cy": "Kusaal"
+  },
+  {
+    "code": 46004,
+    "en-gb": "Ladakhi",
+    "cy": "Ladakhi"
+  },
+  {
+    "code": 61211,
+    "en-gb": "Ladin",
+    "cy": "Ladineg"
+  },
+  {
+    "code": 24927,
+    "en-gb": "Lamba",
+    "cy": "Lamba"
+  },
+  {
+    "code": 24902,
+    "en-gb": "Lamnso",
+    "cy": "Lamnso"
+  },
+  {
+    "code": 23105,
+    "en-gb": "Lango (uganda)",
+    "cy": "Lango (uganda)"
+  },
+  {
+    "code": 37902,
+    "en-gb": "Lao",
+    "cy": "Lao"
+  },
+  {
+    "code": 61301,
+    "en-gb": "Latvian",
+    "cy": "Latfieg"
+  },
+  {
+    "code": 79003,
+    "en-gb": "Leeward islands creole",
+    "cy": "ynysoedd Leeward creole"
+  },
+  {
+    "code": 51813,
+    "en-gb": "Leki",
+    "cy": "Leki"
+  },
+  {
+    "code": 29004,
+    "en-gb": "Liberian english",
+    "cy": "Liberian Saesneg"
+  },
+  {
+    "code": 24105,
+    "en-gb": "Limba/yimba",
+    "cy": "Limba / yimba"
+  },
+  {
+    "code": 46102,
+    "en-gb": "Limbu",
+    "cy": "Limbu"
+  },
+  {
+    "code": 24910,
+    "en-gb": "Lingala",
+    "cy": "Lingala"
+  },
+  {
+    "code": 61302,
+    "en-gb": "Lithuanian",
+    "cy": "Lithwaneg"
+  },
+  {
+    "code": 24011,
+    "en-gb": "Loko",
+    "cy": "Loko"
+  },
+  {
+    "code": 79106,
+    "en-gb": "Louisiana creole french",
+    "cy": "french creole Louisiana"
+  },
+  {
+    "code": 24965,
+    "en-gb": "Lozi",
+    "cy": "Lozi"
+  },
+  {
+    "code": 24924,
+    "en-gb": "Luba",
+    "cy": "Luba"
+  },
+  {
+    "code": 24940,
+    "en-gb": "Luganda",
+    "cy": "Luganda"
+  },
+  {
+    "code": 23001,
+    "en-gb": "Lugbara",
+    "cy": "Lugbara"
+  },
+  {
+    "code": 24942,
+    "en-gb": "Lugwere",
+    "cy": "Lugwere"
+  },
+  {
+    "code": 24945,
+    "en-gb": "Luhya",
+    "cy": "Luhya"
+  },
+  {
+    "code": 24943,
+    "en-gb": "Lunyole (uganda)",
+    "cy": "Lunyole (uganda)"
+  },
+  {
+    "code": 23107,
+    "en-gb": "Luo/dholuo",
+    "cy": "Luo / dholuo"
+  },
+  {
+    "code": 51803,
+    "en-gb": "Luri",
+    "cy": "Luri"
+  },
+  {
+    "code": 24911,
+    "en-gb": "Lusengo",
+    "cy": "Lusengo"
+  },
+  {
+    "code": 24941,
+    "en-gb": "Lusoga",
+    "cy": "Lusoga"
+  },
+  {
+    "code": 24920,
+    "en-gb": "Luvale",
+    "cy": "Luvale"
+  },
+  {
+    "code": 61103,
+    "en-gb": "Luxembourgish",
+    "cy": "Luxembourgish"
+  },
+  {
+    "code": 24919,
+    "en-gb": "Luyana",
+    "cy": "Luyana"
+  },
+  {
+    "code": 23110,
+    "en-gb": "Maasai",
+    "cy": "Maasai"
+  },
+  {
+    "code": 22303,
+    "en-gb": "Maay",
+    "cy": "Maay"
+  },
+  {
+    "code": 61413,
+    "en-gb": "Macedonian",
+    "cy": "macedonian"
+  },
+  {
+    "code": 23003,
+    "en-gb": "Madi",
+    "cy": "Madi"
+  },
+  {
+    "code": 37008,
+    "en-gb": "Madura",
+    "cy": "Madura"
+  },
+  {
+    "code": 41930,
+    "en-gb": "Magahi",
+    "cy": "Magahi"
+  },
+  {
+    "code": 12002,
+    "en-gb": "Maghrebi arabic",
+    "cy": "Maghrebi arabic"
+  },
+  {
+    "code": 37106,
+    "en-gb": "Maguindanao",
+    "cy": "Maguindanao"
+  },
+  {
+    "code": 41909,
+    "en-gb": "Mahasu",
+    "cy": "Mahasu"
+  },
+  {
+    "code": 41929,
+    "en-gb": "Maithili",
+    "cy": "Maithili"
+  },
+  {
+    "code": 37511,
+    "en-gb": "Makasar",
+    "cy": "Makasar"
+  },
+  {
+    "code": 69806,
+    "en-gb": "Makaton",
+    "cy": "Makaton"
+  },
+  {
+    "code": 24954,
+    "en-gb": "Makonde",
+    "cy": "Makonde"
+  },
+  {
+    "code": 24960,
+    "en-gb": "Makua",
+    "cy": "Makua"
+  },
+  {
+    "code": 27401,
+    "en-gb": "Malagasy",
+    "cy": "Malagasy"
+  },
+  {
+    "code": 37001,
+    "en-gb": "Malay",
+    "cy": "malay"
+  },
+  {
+    "code": 40102,
+    "en-gb": "Malayalam",
+    "cy": "Malayalam"
+  },
+  {
+    "code": 41946,
+    "en-gb": "Maldivian",
+    "cy": "Maldivian"
+  },
+  {
+    "code": 62001,
+    "en-gb": "Maltese",
+    "cy": "maltese"
+  },
+  {
+    "code": 78107,
+    "en-gb": "Mam",
+    "cy": "Mam"
+  },
+  {
+    "code": 24949,
+    "en-gb": "Mambwe-lungu",
+    "cy": "Mambwe-Lungu"
+  },
+  {
+    "code": 24307,
+    "en-gb": "Mampruli",
+    "cy": "Mampruli"
+  },
+  {
+    "code": 36601,
+    "en-gb": "Mandarin chinese",
+    "cy": "Mandarin Tseiniaidd"
+  },
+  {
+    "code": 41907,
+    "en-gb": "Mandeali",
+    "cy": "Mandeali"
+  },
+  {
+    "code": 24002,
+    "en-gb": "Manding (bamana)",
+    "cy": "Mandinga (bamana)"
+  },
+  {
+    "code": 24003,
+    "en-gb": "Manding (dyula)",
+    "cy": "Mandinga (dyula)"
+  },
+  {
+    "code": 24001,
+    "en-gb": "Manding/mandenkan",
+    "cy": "Mandinga / mandenkan"
+  },
+  {
+    "code": 23002,
+    "en-gb": "Mangbetu",
+    "cy": "Mangbetu"
+  },
+  {
+    "code": 61006,
+    "en-gb": "Manx gaelic",
+    "cy": "Manx Gaeleg"
+  },
+  {
+    "code": 87202,
+    "en-gb": "Maori",
+    "cy": "Maori"
+  },
+  {
+    "code": 78505,
+    "en-gb": "Mapudungun",
+    "cy": "Maputshe"
+  },
+  {
+    "code": 37107,
+    "en-gb": "Maranao",
+    "cy": "Maranao"
+  },
+  {
+    "code": 41938,
+    "en-gb": "Marathi",
+    "cy": "Marathi"
+  },
+  {
+    "code": 87302,
+    "en-gb": "Marshallese/ebon",
+    "cy": "Marshallese / Ebon"
+  },
+  {
+    "code": 24944,
+    "en-gb": "Masaba/lugisu",
+    "cy": "Masaba / lugisu"
+  },
+  {
+    "code": 78101,
+    "en-gb": "Maya (yucatan)",
+    "cy": "Maya (Yucatan)"
+  },
+  {
+    "code": 51805,
+    "en-gb": "Mazanderani",
+    "cy": "mazanderani"
+  },
+  {
+    "code": 24406,
+    "en-gb": "Mbum",
+    "cy": "Mbum"
+  },
+  {
+    "code": 46201,
+    "en-gb": "Meitei",
+    "cy": "Meitei"
+  },
+  {
+    "code": 24008,
+    "en-gb": "Mende",
+    "cy": "Mende"
+  },
+  {
+    "code": 36607,
+    "en-gb": "Min bei chinese",
+    "cy": "Min Bei Tseiniaidd"
+  },
+  {
+    "code": 36608,
+    "en-gb": "Min dong chinese",
+    "cy": "Min dong chinese"
+  },
+  {
+    "code": 36609,
+    "en-gb": "Min nan chinese",
+    "cy": "Min nan chinese"
+  },
+  {
+    "code": 36610,
+    "en-gb": "Min zhong chinese",
+    "cy": "Min Zhong Tseiniaidd"
+  },
+  {
+    "code": 37004,
+    "en-gb": "Minangkabau",
+    "cy": "Minangkabau"
+  },
+  {
+    "code": 41922,
+    "en-gb": "Mirpuri",
+    "cy": "Mirpuri"
+  },
+  {
+    "code": 60605,
+    "en-gb": "Moksha",
+    "cy": "moksha"
+  },
+  {
+    "code": 30401,
+    "en-gb": "Mongolian",
+    "cy": "Mongolian"
+  },
+  {
+    "code": 24301,
+    "en-gb": "Moore",
+    "cy": "Moore"
+  },
+  {
+    "code": 78102,
+    "en-gb": "Mopan maya",
+    "cy": "Mopan Maya"
+  },
+  {
+    "code": 29101,
+    "en-gb": "Morisyen",
+    "cy": "Morisyen"
+  },
+  {
+    "code": 45003,
+    "en-gb": "Mundari",
+    "cy": "Mundari"
+  },
+  {
+    "code": 24904,
+    "en-gb": "Mungaka",
+    "cy": "Mungaka"
+  },
+  {
+    "code": 85904,
+    "en-gb": "Murrinh-patha",
+    "cy": "Murrinh-patha"
+  },
+  {
+    "code": 78001,
+    "en-gb": "Nahuatl",
+    "cy": "Nahuatl"
+  },
+  {
+    "code": 23901,
+    "en-gb": "Nama",
+    "cy": "Nama"
+  },
+  {
+    "code": 24962,
+    "en-gb": "Nambya",
+    "cy": "Nambya"
+  },
+  {
+    "code": 24935,
+    "en-gb": "Namwanga",
+    "cy": "Namwanga"
+  },
+  {
+    "code": 61202,
+    "en-gb": "Napoletano-calabrese",
+    "cy": "Napoletano-calabrese"
+  },
+  {
+    "code": 87303,
+    "en-gb": "Nauruan",
+    "cy": "Nauruan"
+  },
+  {
+    "code": 78801,
+    "en-gb": "Navajo",
+    "cy": "Navajo"
+  },
+  {
+    "code": 24970,
+    "en-gb": "Ndebele (south africa)",
+    "cy": "Ndebele (De Affrica)"
+  },
+  {
+    "code": 24969,
+    "en-gb": "Ndebele (zimbabwe)",
+    "cy": "Ndebele (zimbabwe)"
+  },
+  {
+    "code": 24505,
+    "en-gb": "Nembe ijo",
+    "cy": "Nembe ijo"
+  },
+  {
+    "code": 41904,
+    "en-gb": "Nepalese",
+    "cy": "Nepal"
+  },
+  {
+    "code": 46101,
+    "en-gb": "Newar",
+    "cy": "Newar"
+  },
+  {
+    "code": 24403,
+    "en-gb": "Ngbaka",
+    "cy": "Ngbaka"
+  },
+  {
+    "code": 29002,
+    "en-gb": "Nigerian pidgin",
+    "cy": "Pidgin Nigeria"
+  },
+  {
+    "code": 13201,
+    "en-gb": "Nobiin",
+    "cy": "Nobiin"
+  },
+  {
+    "code": 61112,
+    "en-gb": "Norwegian",
+    "cy": "norwegian"
+  },
+  {
+    "code": 24958,
+    "en-gb": "Nsenga",
+    "cy": "Nsenga"
+  },
+  {
+    "code": 23102,
+    "en-gb": "Nuer/naadh",
+    "cy": "Nwer / naadh"
+  },
+  {
+    "code": 24704,
+    "en-gb": "Nupe",
+    "cy": "Nupe"
+  },
+  {
+    "code": 24955,
+    "en-gb": "Nyakyusa-ngonde",
+    "cy": "Nyakyusa-Ngonde"
+  },
+  {
+    "code": 24604,
+    "en-gb": "Nzema",
+    "cy": "Nzema"
+  },
+  {
+    "code": 61208,
+    "en-gb": "Occitan",
+    "cy": "Ocsitaneg"
+  },
+  {
+    "code": 24813,
+    "en-gb": "Odual",
+    "cy": "Odual"
+  },
+  {
+    "code": 24805,
+    "en-gb": "Ogbia",
+    "cy": "Ogbia"
+  },
+  {
+    "code": 78502,
+    "en-gb": "Ojibwa",
+    "cy": "Ojibwa"
+  },
+  {
+    "code": 30202,
+    "en-gb": "Okinawan",
+    "cy": "Okinawan"
+  },
+  {
+    "code": 24814,
+    "en-gb": "Olulumo-ikom",
+    "cy": "Olulumo-ikom"
+  },
+  {
+    "code": 24806,
+    "en-gb": "Oring",
+    "cy": "oring"
+  },
+  {
+    "code": 41944,
+    "en-gb": "Oriya",
+    "cy": "Oriya"
+  },
+  {
+    "code": 22304,
+    "en-gb": "Oromo",
+    "cy": "Oromo"
+  },
+  {
+    "code": 61213,
+    "en-gb": "Padanian",
+    "cy": "Padanian"
+  },
+  {
+    "code": 69807,
+    "en-gb": "Paget-gorman signs",
+    "cy": "Arwyddion Paget Gorman-"
+  },
+  {
+    "code": 41993,
+    "en-gb": "Pahari (pakistan)",
+    "cy": "Pahari (Pakistan)"
+  },
+  {
+    "code": 87501,
+    "en-gb": "Palauan",
+    "cy": "Palauan"
+  },
+  {
+    "code": 37108,
+    "en-gb": "Pampangan",
+    "cy": "Pampangan"
+  },
+  {
+    "code": 37109,
+    "en-gb": "Pangasinan",
+    "cy": "Pangasinan"
+  },
+  {
+    "code": 41925,
+    "en-gb": "Panjabi (india)",
+    "cy": "Panjabi (india)"
+  },
+  {
+    "code": 41924,
+    "en-gb": "Panjabi (pakistan)",
+    "cy": "Panjabi (Pakistan)"
+  },
+  {
+    "code": 79301,
+    "en-gb": "Papiamentu",
+    "cy": "Papiamentu"
+  },
+  {
+    "code": 51820,
+    "en-gb": "Pashto",
+    "cy": "Pashto"
+  },
+  {
+    "code": 51802,
+    "en-gb": "Persian (tajiki)",
+    "cy": "Persian (tajiki)"
+  },
+  {
+    "code": 51801,
+    "en-gb": "Persian/farsi",
+    "cy": "Persian / Farsi"
+  },
+  {
+    "code": 29005,
+    "en-gb": "Pichinglis",
+    "cy": "Pichinglis"
+  },
+  {
+    "code": 89003,
+    "en-gb": "Pijin",
+    "cy": "Pijin"
+  },
+  {
+    "code": 85905,
+    "en-gb": "Pitjantjatjara",
+    "cy": "Pitjantjatjara"
+  },
+  {
+    "code": 61405,
+    "en-gb": "Polish",
+    "cy": "Pwyleg"
+  },
+  {
+    "code": 1202,
+    "en-gb": "Portuguese",
+    "cy": "Portiwgaleg"
+  },
+  {
+    "code": 41923,
+    "en-gb": "Potwari",
+    "cy": "Potwari"
+  },
+  {
+    "code": 36611,
+    "en-gb": "Pu-xian chinese",
+    "cy": "Tseiniaidd Pu-Xian"
+  },
+  {
+    "code": 78201,
+    "en-gb": "Quechua",
+    "cy": "quechua"
+  },
+  {
+    "code": 41932,
+    "en-gb": "Rajasthani",
+    "cy": "Rajasthani"
+  },
+  {
+    "code": 22305,
+    "en-gb": "Rendille",
+    "cy": "Rendille"
+  },
+  {
+    "code": 61901,
+    "en-gb": "Romani",
+    "cy": "Romani"
+  },
+  {
+    "code": 61215,
+    "en-gb": "Romanian",
+    "cy": "Rwmaneg"
+  },
+  {
+    "code": 61210,
+    "en-gb": "Romansch",
+    "cy": "Románsh"
+  },
+  {
+    "code": 69501,
+    "en-gb": "Romany english",
+    "cy": "Romany Saesneg"
+  },
+  {
+    "code": 24939,
+    "en-gb": "Runyakitara",
+    "cy": "Runyakitara"
+  },
+  {
+    "code": 1401,
+    "en-gb": "Russian",
+    "cy": "Rwsieg"
+  },
+  {
+    "code": 24922,
+    "en-gb": "Ruund",
+    "cy": "Ruund"
+  },
+  {
+    "code": 60603,
+    "en-gb": "Saami",
+    "cy": "Saami"
+  },
+  {
+    "code": 87203,
+    "en-gb": "Samoan",
+    "cy": "Samoa"
+  },
+  {
+    "code": 24405,
+    "en-gb": "Sango",
+    "cy": "Sango"
+  },
+  {
+    "code": 45001,
+    "en-gb": "Santali",
+    "cy": "Santali"
+  },
+  {
+    "code": 29202,
+    "en-gb": "Saotomense",
+    "cy": "Saotomense"
+  },
+  {
+    "code": 41921,
+    "en-gb": "Saraiki",
+    "cy": "Saraiki"
+  },
+  {
+    "code": 79302,
+    "en-gb": "Saramaccan",
+    "cy": "Saramaccan"
+  },
+  {
+    "code": 61204,
+    "en-gb": "Sardinian",
+    "cy": "Sardeg"
+  },
+  {
+    "code": 41936,
+    "en-gb": "Saurashtra",
+    "cy": "Saurashtra"
+  },
+  {
+    "code": 61107,
+    "en-gb": "Scots",
+    "cy": "Scots"
+  },
+  {
+    "code": 24603,
+    "en-gb": "Sehwi",
+    "cy": "Sehwi"
+  },
+  {
+    "code": 24959,
+    "en-gb": "Sena",
+    "cy": "Sena"
+  },
+  {
+    "code": 61410,
+    "en-gb": "Serbian",
+    "cy": "Serbia"
+  },
+  {
+    "code": 29102,
+    "en-gb": "Seselwa creole",
+    "cy": "Seselwa creole"
+  },
+  {
+    "code": 24968,
+    "en-gb": "Setswana",
+    "cy": "Setswana"
+  },
+  {
+    "code": 37904,
+    "en-gb": "Shan",
+    "cy": "Shan"
+  },
+  {
+    "code": 46003,
+    "en-gb": "Sherpa",
+    "cy": "Sherpa"
+  },
+  {
+    "code": 23103,
+    "en-gb": "Shilluk/cholo",
+    "cy": "Shilluk / Cholo"
+  },
+  {
+    "code": 24961,
+    "en-gb": "Shona",
+    "cy": "Shona"
+  },
+  {
+    "code": 12004,
+    "en-gb": "Shuwa/chad arabic",
+    "cy": "Shuwa / Arabeg tchad"
+  },
+  {
+    "code": 61203,
+    "en-gb": "Sicilian",
+    "cy": "Sicilian"
+  },
+  {
+    "code": 22306,
+    "en-gb": "Sidamo",
+    "cy": "Sidamo"
+  },
+  {
+    "code": 69803,
+    "en-gb": "Sign-supported english",
+    "cy": "Cofrestrwch-gefnogir Saesneg"
+  },
+  {
+    "code": 69804,
+    "en-gb": "Sign-supported welsh",
+    "cy": "Cofrestrwch-gefnogir Cymraeg"
+  },
+  {
+    "code": 46002,
+    "en-gb": "Sikkimese",
+    "cy": "Sikkimese"
+  },
+  {
+    "code": 41933,
+    "en-gb": "Sindhi",
+    "cy": "Sindhi"
+  },
+  {
+    "code": 41945,
+    "en-gb": "Sinhala",
+    "cy": "Sinhaleg"
+  },
+  {
+    "code": 61902,
+    "en-gb": "Sinti",
+    "cy": "Sinti"
+  },
+  {
+    "code": 41910,
+    "en-gb": "Sirmauri",
+    "cy": "Sirmauri"
+  },
+  {
+    "code": 24972,
+    "en-gb": "Siswati",
+    "cy": "Siswati"
+  },
+  {
+    "code": 61404,
+    "en-gb": "Slovak",
+    "cy": "Slofaceg"
+  },
+  {
+    "code": 61409,
+    "en-gb": "Slovenian",
+    "cy": "slovenian"
+  },
+  {
+    "code": 22307,
+    "en-gb": "Somali",
+    "cy": "Somali"
+  },
+  {
+    "code": 23401,
+    "en-gb": "Songhai",
+    "cy": "Songhai"
+  },
+  {
+    "code": 24010,
+    "en-gb": "Soninke",
+    "cy": "Soninke"
+  },
+  {
+    "code": 45005,
+    "en-gb": "Sora-juray",
+    "cy": "Sora-juray"
+  },
+  {
+    "code": 61408,
+    "en-gb": "Sorbian (lower)",
+    "cy": "Sorbeg (is)"
+  },
+  {
+    "code": 61407,
+    "en-gb": "Sorbian (upper)",
+    "cy": "Sorbeg (uchaf)"
+  },
+  {
+    "code": 24967,
+    "en-gb": "Sotho (northern)",
+    "cy": "Sotho (gogledd)"
+  },
+  {
+    "code": 24966,
+    "en-gb": "Sotho/sesotho",
+    "cy": "Sotho / Sesotho"
+  },
+  {
+    "code": 1203,
+    "en-gb": "Spanish",
+    "cy": "Sbaeneg"
+  },
+  {
+    "code": 79008,
+    "en-gb": "Sranan",
+    "cy": "sranan"
+  },
+  {
+    "code": 12003,
+    "en-gb": "Sudanese arabic",
+    "cy": "Swdan arabic"
+  },
+  {
+    "code": 37006,
+    "en-gb": "Sunda",
+    "cy": "Sunda"
+  },
+  {
+    "code": 24007,
+    "en-gb": "Susu",
+    "cy": "susu"
+  },
+  {
+    "code": 24950,
+    "en-gb": "Swahili/kiswahili",
+    "cy": "Swahili / kiswahili"
+  },
+  {
+    "code": 61114,
+    "en-gb": "Swedish",
+    "cy": "Swedeg"
+  },
+  {
+    "code": 61102,
+    "en-gb": "Swiss german",
+    "cy": "Swiss german"
+  },
+  {
+    "code": 41941,
+    "en-gb": "Sylheti",
+    "cy": "Sylheti"
+  },
+  {
+    "code": 37110,
+    "en-gb": "Tagalog/filipino",
+    "cy": "Tagalog / filipino"
+  },
+  {
+    "code": 12102,
+    "en-gb": "Tamasheq",
+    "cy": "Tamasheq"
+  },
+  {
+    "code": 40101,
+    "en-gb": "Tamil",
+    "cy": "tamil"
+  },
+  {
+    "code": 22203,
+    "en-gb": "Tangale",
+    "cy": "Tangale"
+  },
+  {
+    "code": 50508,
+    "en-gb": "Tatar",
+    "cy": "tatar"
+  },
+  {
+    "code": 24912,
+    "en-gb": "Teke",
+    "cy": "Teke"
+  },
+  {
+    "code": 40104,
+    "en-gb": "Telugu",
+    "cy": "telugu"
+  },
+  {
+    "code": 24106,
+    "en-gb": "Temne",
+    "cy": "Temne"
+  },
+  {
+    "code": 23111,
+    "en-gb": "Teso",
+    "cy": "Teso"
+  },
+  {
+    "code": 37520,
+    "en-gb": "Tetun",
+    "cy": "Tetun"
+  },
+  {
+    "code": 37901,
+    "en-gb": "Thai",
+    "cy": "thai"
+  },
+  {
+    "code": 36001,
+    "en-gb": "Tibetan",
+    "cy": "tibetan"
+  },
+  {
+    "code": 22002,
+    "en-gb": "Tigre",
+    "cy": "Tigre"
+  },
+  {
+    "code": 22003,
+    "en-gb": "Tigrinya",
+    "cy": "Tigrinya"
+  },
+  {
+    "code": 24901,
+    "en-gb": "Tiv",
+    "cy": "Tiv"
+  },
+  {
+    "code": 85906,
+    "en-gb": "Tiwi",
+    "cy": "Tiwi"
+  },
+  {
+    "code": 37505,
+    "en-gb": "Toba batak",
+    "cy": "Toba Batak"
+  },
+  {
+    "code": 89001,
+    "en-gb": "Tok pisin",
+    "cy": "Tok Pisin"
+  },
+  {
+    "code": 87205,
+    "en-gb": "Tongan",
+    "cy": "Tongan"
+  },
+  {
+    "code": 89004,
+    "en-gb": "Torres strait creole",
+    "cy": "Torres creole culfor"
+  },
+  {
+    "code": 69502,
+    "en-gb": "Traveller irish",
+    "cy": "Teithwyr irish"
+  },
+  {
+    "code": 69503,
+    "en-gb": "Traveller scottish",
+    "cy": "Teithwyr scottish"
+  },
+  {
+    "code": 79006,
+    "en-gb": "Trinidad and tobago creole",
+    "cy": "Trinidad a Thobago creole"
+  },
+  {
+    "code": 24964,
+    "en-gb": "Tsonga",
+    "cy": "Tsonga"
+  },
+  {
+    "code": 40105,
+    "en-gb": "Tulu",
+    "cy": "Tulu"
+  },
+  {
+    "code": 24956,
+    "en-gb": "Tumbuka",
+    "cy": "Tumbuka"
+  },
+  {
+    "code": 50501,
+    "en-gb": "Turkish",
+    "cy": "turkish"
+  },
+  {
+    "code": 50503,
+    "en-gb": "Turkmen",
+    "cy": "Tyrcmeneg"
+  },
+  {
+    "code": 87204,
+    "en-gb": "Tuvaluan",
+    "cy": "Tuvaluan"
+  },
+  {
+    "code": 24810,
+    "en-gb": "Tyap",
+    "cy": "Tyap"
+  },
+  {
+    "code": 78105,
+    "en-gb": "Tzeltal",
+    "cy": "Tzeltal"
+  },
+  {
+    "code": 78106,
+    "en-gb": "Tzotzil",
+    "cy": "Tzotzil"
+  },
+  {
+    "code": 61401,
+    "en-gb": "Ukrainian",
+    "cy": "Wcreineg"
+  },
+  {
+    "code": 24916,
+    "en-gb": "Umbundu",
+    "cy": "Umbundu"
+  },
+  {
+    "code": 41926,
+    "en-gb": "Urdu",
+    "cy": "Urdu"
+  },
+  {
+    "code": 24711,
+    "en-gb": "Urhobo",
+    "cy": "Urhobo"
+  },
+  {
+    "code": 30501,
+    "en-gb": "Uyghur",
+    "cy": "Uyghur"
+  },
+  {
+    "code": 50504,
+    "en-gb": "Uzbek",
+    "cy": "Wsbeceg"
+  },
+  {
+    "code": 24005,
+    "en-gb": "Vai",
+    "cy": "Vai"
+  },
+  {
+    "code": 24963,
+    "en-gb": "Venda",
+    "cy": "venda"
+  },
+  {
+    "code": 61214,
+    "en-gb": "Venetian",
+    "cy": "venetian"
+  },
+  {
+    "code": 35401,
+    "en-gb": "Vietnamese",
+    "cy": "Fietnameg"
+  },
+  {
+    "code": 24305,
+    "en-gb": "Wali",
+    "cy": "Wali"
+  },
+  {
+    "code": 35201,
+    "en-gb": "Wa-paraok",
+    "cy": "Wa-paraok"
+  },
+  {
+    "code": 37104,
+    "en-gb": "Waraynon",
+    "cy": "Waraynon"
+  },
+  {
+    "code": 85907,
+    "en-gb": "Warlpiri",
+    "cy": "Warlpiri"
+  },
+  {
+    "code": 61001,
+    "en-gb": "Welsh/cymraeg",
+    "cy": "Cymraeg / cymraeg"
+  },
+  {
+    "code": 29090,
+    "en-gb": "West african creole english",
+    "cy": "Gorllewin Affrica Saesneg creole"
+  },
+  {
+    "code": 79005,
+    "en-gb": "Windward islands creole",
+    "cy": "ynysoedd wynebu'r gwynt creole"
+  },
+  {
+    "code": 22401,
+    "en-gb": "Wolaytta",
+    "cy": "Wolaytta"
+  },
+  {
+    "code": 24102,
+    "en-gb": "Wolof",
+    "cy": "wolof"
+  },
+  {
+    "code": 36612,
+    "en-gb": "Wu chinese",
+    "cy": "wu chinese"
+  },
+  {
+    "code": 24971,
+    "en-gb": "Xhosa",
+    "cy": "Xhosa"
+  },
+  {
+    "code": 36613,
+    "en-gb": "Xiang chinese",
+    "cy": "Xiang Tseiniaidd"
+  },
+  {
+    "code": 24717,
+    "en-gb": "Yekhee",
+    "cy": "Yekhee"
+  },
+  {
+    "code": 52004,
+    "en-gb": "Yemeni arabic",
+    "cy": "Yemeni arabic"
+  },
+  {
+    "code": 61104,
+    "en-gb": "Yiddish",
+    "cy": "Iddeweg"
+  },
+  {
+    "code": 24701,
+    "en-gb": "Yoruba",
+    "cy": "yoruba"
+  },
+  {
+    "code": 61491,
+    "en-gb": "Yugoslav",
+    "cy": "Iwgoslafaidd"
+  },
+  {
+    "code": 24401,
+    "en-gb": "Zande",
+    "cy": "Zande"
+  },
+  {
+    "code": 51815,
+    "en-gb": "Zazaki",
+    "cy": "Zazaki"
+  },
+  {
+    "code": 37910,
+    "en-gb": "Zhuang (northern)",
+    "cy": "Zhuang (gogledd)"
+  },
+  {
+    "code": 37911,
+    "en-gb": "Zhuang (southern)",
+    "cy": "Zhuang (deheuol)"
+  },
+  {
+    "code": 24973,
+    "en-gb": "Zulu",
+    "cy": "Zwlw"
+  }
+]
