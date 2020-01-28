@@ -12,7 +12,7 @@ layout: user-generated-account/views/_master
 
     <div class="grid">
         <div class="grid__col col-8@m">
-            <p><a href="{{ pageInfo.rootPath }}/01-surveys-list.html">< Back to surveys</a></p>
+            <p><a href="{{ pageInfo.rootPath }}/10-surveys-list.html">< Back to surveys</a></p>
             <h1>My account</h1>
             <dl class="metadata metadata__list grid grid--gutterless u-cf u-mb-l" title="This is an example of the metadata component" aria-label="This is an example of the metadata component">
                 <dt class="metadata__term grid__col col-2@m">First name:</dt>
@@ -22,8 +22,14 @@ layout: user-generated-account/views/_master
                 <dt class="metadata__term grid__col col-2@m">Email:</dt>
                 <dd class="metadata__value grid__col col-10@m">joseph.bloggs@vcp.com</dd>
             </dl>
-            <p class="u-mb-xs"><a href="{{ pageInfo.rootPath }}/30-add-new-account.html">Add a new account</a> if you want someone else to complete a survey</p>
-            <p class="u-mb-xs"><a href="{{ pageInfo.rootPath }}/40-transfer-account.html">Transfer account</a> if you've got a new email or are leaving the company</p>
+            <p class="field">
+                <span class="u-fw-b">Need someone else to complete a survey?</span><br>
+                <a href="{{ pageInfo.rootPath }}/30-add-new-account.html">Add a new account</a>
+            </p>
+            <p class="field">
+                <span class="u-fw-b">Got a new email or leaving the company?</span><br>
+                <a href="{{ pageInfo.rootPath }}/40-transfer-account.html">Transfer account</a></p>
+            </p>
         </div>
     </div>
 
