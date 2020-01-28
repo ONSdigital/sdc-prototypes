@@ -1,0 +1,50 @@
+---
+group: Frontstage
+title: User generated account
+version: 14.4.0
+layout: user-generated-account/views/_master
+---
+
+{% from "components/input/_macro.njk" import onsInput %}
+
+{% block main %}
+
+    <div class="grid">
+        <div class="grid__col col-8@m">
+            <h1>Transfer your account</h1>
+            <p>
+                <div class="panel panel--info panel--simple">
+                    <div class="panel__body">
+                        <p>All survey enrolments will be transfered to the new account</p>
+                    </div>
+                </div>
+            </p>
+
+            <p>You'll need to:</p>
+            <ol>
+                <li>Provide the email address</li>
+                <li>Send the enrolment code</li>
+            </ol>
+            <p>To whom would you like to transfer your account?</p>
+            <p class="field">
+            {{ 
+                onsInput({
+                    "id": "text",
+                    "label": {
+                        "text": "Email address"
+                    }
+                }) 
+            }}
+            </p>
+            <p class="field">
+                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/41-send-enrolment-codes.html';">
+                    <span class="btn__inner">Continue</span>
+                </button>
+            </p>
+            <p class="field">
+                <a href="{{ pageInfo.rootPath }}/20-my-account.html">Cancel</a>
+            </p>
+        </div>
+    </div>
+
+{% endblock %}

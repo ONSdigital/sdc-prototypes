@@ -1,0 +1,40 @@
+{% extends "page-templates/_template.njk" %}
+
+{% block head %}
+  <link rel="stylesheet" href="{{ pageInfo.rootPath }}/styles.css"/>
+{% endblock %}
+
+{% set page = { 
+    "title": "Survey Data Collection",
+    "footer": {
+        "OGLLink": {
+            "pre": 'All content is available under the',
+            "link": 'Open Government Licence v3.0',
+            "url": 'https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/',
+            "post": ', except where otherwise stated'
+        }
+    }
+} %}
+
+{% block header %}
+{% from "components/header/_macro.njk" import onsHeader %}
+{{ 
+    onsHeader({
+        "title": "Survey collection data",
+        "logoHref": "#"
+    })
+}}
+{% endblock %}
+
+{% block pageContent %}
+  {% block preMain %}{% endblock %}
+  <div class="page__container container">
+    <main id="main-content" class="page__main {{ pageClasses }}">
+      {% block main %}{% endblock %}
+    </main>
+  </div>
+{% endblock %}
+
+{% block bodyEnd %}
+  <script src="{{ pageInfo.rootPath }}/index.js"></script>
+{% endblock %}

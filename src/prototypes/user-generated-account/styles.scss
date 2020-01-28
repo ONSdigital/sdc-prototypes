@@ -1,0 +1,12 @@
+table {
+  caption {
+    display: none;
+  }
+  .td-status,
+  .td-submit-by {
+    white-space: nowrap;
+  }
+  .td-period-covered {
+    width: 10rem;
+  }
+}

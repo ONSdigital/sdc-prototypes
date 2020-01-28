@@ -1,0 +1,34 @@
+---
+group: Frontstage
+title: User generated account
+version: 14.4.0
+layout: user-generated-account/views/_master
+---
+
+{% from "components/input/_macro.njk" import onsInput %}
+
+{% block main %}
+
+    <div class="grid">
+        <div class="grid__col col-8@m">
+            <h1>Send enrolment codes</h1>
+
+            <p><b>jane.doe@vcp.com</b> will be enrolled onto the following surveys:</p>
+            <div class="text-indent">
+                <ul class="list list--bare">
+                    <li>Quarterly Business Survey</li>
+                    <li>Monthly Business Survey</li>
+                </ul>
+            </div>
+            <p class="field">
+                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/33-confirmation.html';">
+                    <span class="btn__inner">Send</span>
+                </button>
+            </p>
+            <p class="field">
+                <a href="{{ pageInfo.rootPath }}/20-my-account.html">Cancel</a>
+            </p>
+        </div>
+    </div>
+
+{% endblock %}
