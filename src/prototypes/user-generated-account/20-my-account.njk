@@ -12,25 +12,54 @@ layout: user-generated-account/views/_master
 
     <div class="grid">
         <div class="grid__col col-8@m">
-            <p><a href="{{ pageInfo.rootPath }}/10-surveys-list.html">< Back to surveys</a></p>
-            <h1>My account</h1>
-            <dl class="metadata metadata__list grid grid--gutterless u-cf u-mb-l" title="This is an example of the metadata component" aria-label="This is an example of the metadata component">
-                <dt class="metadata__term grid__col col-2@m">First name:</dt>
-                <dd class="metadata__value grid__col col-10@m">Joseph</dd>
-                <dt class="metadata__term grid__col col-2@m">Surname:</dt>
-                <dd class="metadata__value grid__col col-10@m">Bloggs</dd>
-                <dt class="metadata__term grid__col col-2@m">Email:</dt>
-                <dd class="metadata__value grid__col col-10@m">joseph.bloggs@vcp.com</dd>
-            </dl>
-            <p class="field">
-                <span class="u-fw-b">Need someone else to complete a survey?</span><br>
-                <a href="{{ pageInfo.rootPath }}/30-add-new-account.html">Add a new account</a>
-            </p>
-            <p class="field">
-                <span class="u-fw-b">Got a new email or leaving the company?</span><br>
-                <a href="{{ pageInfo.rootPath }}/40-transfer-account.html">Transfer account</a></p>
-            </p>
-        </div>
-    </div>
+            <p>
+                <a href="{{ pageInfo.rootPath }}/10-surveys-list.html">
+                    < Back to surveys</a></p>
+                        <h1>Manage access to my surveys</h1>
+                        
+                        <fieldset class="fieldset">
+                            <legend class="fieldset__legend"></legend>
+                            <div class="radios__items">
+                                <p class="radios__item">
+                                    <span class="radio">
+                                        <input type="radio" id="colleague" class="radio__input js-radio " value="colleague" name="food">
+                                        <label class="radio__label " for="colleague">
+                                            Give a colleague access to my surveys
+                                        </label>
+                                    </span>
+                                </p>
+                                <br>
+                                <p class="radios__item">
+                                    <span class="radio">
+                                        <input type="radio" id="changed-email" class="radio__input js-radio " value="changed-email" name="food">
+                                        <label class="radio__label " for="changed-email">
+                                            I've changed my email address
+                                        </label>
+                                    </span>
+                                </p>
+                                <p class="radios__item">
+                                    <span class="radio">
+                                        <input type="radio" id="leaving" class="radio__input js-radio " value="leaving" name="food">
+                                        <label class="radio__label " for="leaving">
+                                            I'm leaving the company
+                                        </label>
+                                    </span>
+                                </p>
+                                <p class="field">
+                                    <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/31-allocate-surveys.html';">
+                                        <span class="btn__inner">Continue</span>
+                                    </button>
+                                </p>
+                            </div>
+                        </fieldset>
 
-{% endblock %}
+                        <p class="field">
+                            <a href="{{ pageInfo.rootPath }}/30-add-new-account.html">1</a>, 
+                            <a href="{{ pageInfo.rootPath }}/40-transfer-account.html">2</a>, 
+                            <a href="{{ pageInfo.rootPath }}/40-transfer-account.html">3</a>
+                        </p>
+                    </p>
+                </div>
+            </div>
+
+        {% endblock %}
