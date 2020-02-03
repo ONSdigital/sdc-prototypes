@@ -5,61 +5,64 @@ version: 14.4.0
 layout: user-generated-account/views/_master
 ---
 
+{% from "components/radios/_macro.njk" import onsRadios %}
 {% from "components/button/_macro.njk" import onsButton %}
-{% from "components/metadata/_macro.njk" import onsMetadata %}
 
 {% block main %}
 
     <div class="grid">
         <div class="grid__col col-8@m">
-            <p>
-                <a href="{{ pageInfo.rootPath }}/10-surveys-list.html">
-                    < Back to surveys</a></p>
-                        <h1>Manage access to my surveys</h1>
-                        
-                        <fieldset class="fieldset">
-                            <legend class="fieldset__legend"></legend>
-                            <div class="radios__items">
-                                <p class="radios__item">
-                                    <span class="radio">
-                                        <input type="radio" id="colleague" class="radio__input js-radio " value="colleague" name="food">
-                                        <label class="radio__label " for="colleague">
-                                            Give a colleague access to my surveys
-                                        </label>
-                                    </span>
-                                </p>
-                                <br>
-                                <p class="radios__item">
-                                    <span class="radio">
-                                        <input type="radio" id="changed-email" class="radio__input js-radio " value="changed-email" name="food">
-                                        <label class="radio__label " for="changed-email">
-                                            I've changed my email address
-                                        </label>
-                                    </span>
-                                </p>
-                                <p class="radios__item">
-                                    <span class="radio">
-                                        <input type="radio" id="leaving" class="radio__input js-radio " value="leaving" name="food">
-                                        <label class="radio__label " for="leaving">
-                                            I'm leaving the company
-                                        </label>
-                                    </span>
-                                </p>
-                                <p class="field">
-                                    <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/31-allocate-surveys.html';">
-                                        <span class="btn__inner">Continue</span>
-                                    </button>
-                                </p>
-                            </div>
-                        </fieldset>
-
-                        <p class="field">
-                            <a href="{{ pageInfo.rootPath }}/30-add-new-account.html">1</a>, 
-                            <a href="{{ pageInfo.rootPath }}/40-transfer-account.html">2</a>, 
-                            <a href="{{ pageInfo.rootPath }}/40-transfer-account.html">3</a>
-                        </p>
-                    </p>
-                </div>
+            <h1>Manage access to my surveys</h1>
+            <form>
+                <p>
+                    {{ 
+                        onsRadios({
+                            "legend": "What do you want to do?",
+                            "name": "food",
+                            "radios": [
+                                {
+                                    "id": "colleague",
+                                    "label": {
+                                        "text": "I need to give a colleague access to my surveys"
+                                    },
+                                    "value": "colleague",
+                                    "attributes": {
+                                        "data-action-url": pageInfo.parentPath + "/30-add-new-account.html"
+                                    }
+                                },
+                                {
+                                    "id": "changed",
+                                    "label": {
+                                        "text": "I've changed my email address"
+                                    },
+                                    "value": "changed",
+                                    "attributes": {
+                                        "data-action-url": pageInfo.parentPath + "/40-transfer-account.html"
+                                    }
+                                },
+                                {
+                                    "id": "leaving",
+                                    "label": {
+                                        "text": "I'm leaving the company"
+                                    },
+                                    "value": "leaving",
+                                    "attributes": {
+                                        "data-action-url": pageInfo.parentPath + "/40-transfer-account.html"
+                                    }
+                                }
+                            ]
+                        }) 
+                    }}
+                </p>
+                <p class="field">
+                    {% from "components/button/_macro.njk" import onsButton %}
+                    {{ 
+                            onsButton({
+                                "text": 'Continue'
+                            }) 
+                        }}
+                </p>
             </div>
+        </div>
 
-        {% endblock %}
+    {% endblock %}
