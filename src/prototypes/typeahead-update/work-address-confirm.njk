@@ -9,7 +9,7 @@ layout: typeahead-update/views/_master
     <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/work-address.html">Previous</a>
     <form class="js-question-no-summary" action="{{ pageInfo.parentPath }}/summary.html?previous={{ pageInfo.path }}.html">
         <fieldset class="u-mt-s">
-            <legend><h1 class="u-fs-l">Can you confirm this address is correct?</h1></legend>
+            <legend><h1>Can you confirm this address is correct?</h1></legend>
             <p class="js-address-confirm" data-address-input-url="{{ pageInfo.parentPath }}/work-address.html"></p>
             {{ onsRadios({
                 "name": "address-confirm",
