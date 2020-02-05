@@ -8,7 +8,7 @@ layout: typeahead-update/views/_master
 {% block main %}
     <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/passport.html">Previous</a>
     <form action="{{ pageInfo.parentPath }}/summary.html?previous={{ pageInfo.path }}.html">
-        <h1 class="u-mt-s">You selected "Other". What other passports do you hold?</h1>
+        <h1 class="u-mt-s js-passport-title" data-passport-answers="{{ pageInfo.parentPath }}/passport.html">You selected "Other". What {x} passports do you hold?</h1>
         {{
             onsInput({
                 "id": "passport-other",

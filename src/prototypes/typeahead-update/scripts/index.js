@@ -5,6 +5,7 @@ import SummaryManager from './summary-manager';
 import summaryTemplate from '!nunjucks-loader!../views/partials/_summary.njk';
 import './piping';
 import './student-address-check';
+import './passport-other-title';
 import './address-initialiser';
 import './one-year-ago-census-address';
 import './address-confirmer';
