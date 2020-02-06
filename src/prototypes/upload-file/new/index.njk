@@ -6,18 +6,99 @@ layout: upload-file/views/_index
 ---
 
 {% block main %}
-    <div class="grid">
-        <div class="grid__col col-12@m">
-            <h1>Upload component styling</h1>
-            <div id="drop-area">
-                <form class="my-form">
-                    <p>Upload multiple files with the file dialog or by dragging and dropping images onto the dashed region</p>
-                    <input type="file" id="fileElem" multiple accept="image/*" onchange="handleFiles(this.files)">
-                    <label class="button" for="fileElem">Select some files</label>
-                </form>
-                <progress id="progress-bar" max=100 value=0></progress>
-                <div id="gallery"/></div>
+    <main id="content" role="main" class="help">
+        <div class="phase-banner-beta">
+            <p>
+                <strong class="phase-tag">BETA</strong>
+                <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+            </p>
+        </div>
+        <h1 class="heading-large">Choose your files</h1>
+        <p class="lede">Make sure you've formatted your data using the rules and saved your file as <abbr title="Comma-separated values">CSV</abbr>.</p>
+        <!-- The fileinput-button span is used to style the file input field as button -->
+        <button class="btn btn--secondary button-choose-files fileinput-button"><span class="btn__inner">Choose files</span></button>
+        
+        
+        
+        <div id="file-upload" class="dropzone">
+            <div class="statusbar statusbar-title" style="display:none">
+                <div class="filename">Name of data file to be checked</div>
+                <!-- inline-block break fix -->
+                <div class="status">Status</div>
+                <!-- inline-block break fix -->
+                <div class="action">Action</div>
+            </div>
+            <div class="files" id="previews">
+                <div id="preview-template" style="display: none;">
+                    <div class="statusbar" class="dz-preview">
+                        <div class="filename">
+                            <span class="name" data-dz-name></span>
+                        </div>
+                        <!-- inline-block break fix-->
+                        <div class="status">
+                            <div class="dz-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                                <div class="dz-upload" style="width:0%;" data-dz-uploadprogress></div>
+                            </div>
+                            <div class="dz-error-message">
+                                <span data-dz-errormessage></span></div>
+                        </div>
+                        <!-- inline-block break fix -->
+                        <div class="action">
+                            <a class="link" href="#">
+                                <span>View details</span>
+                            </a>
+                        </div>
+                        <!-- inline-block break fix -->
+                        <div class="remove">
+                            <button data-dz-remove class="link delete">
+								Remove<span> file</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+        <!-- #file-upload -->
+        <p class="correct-errors">You must correct any errors before this file can be sent to the Environment Agency.</p>
+        <input type="submit" disabled="disabled" name="submit" value="Continue" class="button" id="check-for-errors-btn">
+        <script>
+            Dropzone.options.fileUpload = {
+                url: "/target-url", // Set the url
+                previewsContainer: "#previews", // Define the container to display the previews
+                previewTemplate: document
+                    .getElementById('preview-template')
+                    .innerHTML,
+                dictDefaultMessage: "Or drag and drop files here.",
+                clickable: ".fileinput-button" // Define the element that should be used as click trigger to select files.
+            };
+            Dropzone.on("addedfile", function (file) {
+                // Show the status bar when files is dragged over dropzone
+                document
+                    .querySelector(".statusbar")
+                    .style
+                    .display = "block";
+            });
+            Dropzone.on("reset", function (file) {
+                // Hide the status bar when dropzone is reset
+                document
+                    .querySelector(".statusbar")
+                    .style
+                    .display = "none";
+            });
+            myDropzone.on("addedfile", function (file) {
+                // Show the status bar when files is dragged over dropzone
+                document
+                    .querySelector(".correct-errors")
+                    .style
+                    .display = "block";
+            });
+            myDropzone.on("reset", function (file) {
+                // Hide the status bar when dropzone is reset
+                document
+                    .querySelector(".correct-errors")
+                    .style
+                    .display = "none";
+            });
+        </script>
+    </main>
 {% endblock %}
