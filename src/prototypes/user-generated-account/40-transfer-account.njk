@@ -12,11 +12,11 @@ layout: user-generated-account/views/_master
     <div class="grid">
         <div class="grid__col col-8@m">
             <h1>Transfer your account</h1>
-             
+
             <p>
                 <div class="panel panel--info panel--simple">
                     <div class="panel__body">
-                        <p>All your survey enrolments will be transfered to the new email address</p>
+                        <p>All your survey enrolments will be transfered to the following email accounts</p>
                     </div>
                 </div>
             </p>
@@ -28,17 +28,50 @@ layout: user-generated-account/views/_master
                 <li>Send the enrolment code</li>
             </ol>
             -->
-            <p>To whom would you like to transfer your surveys?</p>
-            <p class="field">
-            {{ 
-                onsInput({
-                    "id": "text",
-                    "label": {
-                        "text": "Enter the recipient's email address"
-                    }
-                }) 
-            }}
-            </p>
+
+            <!-- <p>To whom would you like to transfer your surveys?</p> -->
+
+            <div class="field">
+                <p>
+                    {{ 
+                        onsInput({
+                            "id": "recipient-one",
+                            "class": "hello",
+                            "label": {
+                                "text": "Email address"
+                            }
+                        }) 
+                    }}
+                </p>
+            </div>
+
+            <div class="field">
+                <p>
+                    {{ 
+                        onsInput({
+                            "id": "recipient-two",
+                            "label": {
+                                "text": "Email address (optional)"
+                            }
+                        }) 
+                    }}
+                </p>
+            </div>
+
+            <div class="field">
+                <p>
+                    {{ 
+                        onsInput({
+                            "id": "recipient-three",
+                            "label": {
+                                "text": "Email address (optional)"
+                            }
+                        }) 
+                    }}
+                </p>
+            </div>
+
+        
             <p class="field">
                 <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/41-send-enrolment-codes.html';">
                     <span class="btn__inner">Continue</span>
