@@ -19,7 +19,7 @@ layout: seft-upload/views/_modal
             <div role="main" id="main" class="page__main">
                 <div class="spoke__header">
                     <div class="spoke__header-title">
-                        <h1 class="u-fs-xl">Change response status</h1>
+                        <h1 class="u-fs-xl">Response status</h1>
                     </div>
                 </div>
                 <div class="spoke__body" id="spoke__body">
@@ -74,7 +74,15 @@ layout: seft-upload/views/_modal
                                     "term": "Current status:",
                                     "descriptions": [ 
                                         {
-                                            "description": "Completed by phone"
+                                            "description": "Completed"
+                                        }                 
+                                    ]
+                                },
+                                {
+                                    "term": "Date and time:",
+                                    "descriptions": [ 
+                                        {
+                                            "description": "22 Jan 2020 10:30"
                                         }                 
                                     ]
                                 },
@@ -85,15 +93,7 @@ layout: seft-upload/views/_modal
                                             "description": "2201"
                                         }                 
                                     ]
-                                },
-                                {
-                                    "term": "Period:",
-                                    "descriptions": [ 
-                                        {
-                                            "description": "2201"
-                                        }                 
-                                    ]
-                                }                                                                            
+                                }                                                                         
                             ]
                         }) 
                     }}
@@ -110,13 +110,6 @@ layout: seft-upload/views/_modal
                                         "text": "Not started"
                                     },
                                     "value": "not-started"
-                                },
-                                {
-                                    "id": "no-longer-required",
-                                    "label": {
-                                        "text": "No longer required"
-                                    },
-                                    "value": "no-longer-required"
                                 }
                             ]
                         }) 
