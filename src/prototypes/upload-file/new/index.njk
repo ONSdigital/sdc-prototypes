@@ -14,48 +14,48 @@ layout: upload-file/views/_index
             <p>Files must be xlsx</p>
 
             <p class="field">
-            <button class="btn btn--secondary button-choose-files fileinput-button u-mb-s">
-                <span class="btn__inner">Choose files</span>
-            </button>
-            <div id="file-upload" class="dropzone">
-                <div class="statusbar statusbar-title" style="display:none">
-                    <div class="filename">Name of data file to be checked</div>
-                    <!-- inline-block break fix -->
-                    <div class="status">Status</div>
-                    <!-- inline-block break fix -->
-                    <div class="action">Action</div>
-                </div>
-                <div class="files" id="previews">
-                    <div id="preview-template" style="display: none;">
-                        <div class="statusbar" class="dz-preview">
-                            <div class="filename">
-                                <span class="name" data-dz-name></span>
-                            </div>
-                            <!-- inline-block break fix-->
-                            <div class="status">
-                                <div class="dz-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-                                    <div class="dz-upload" style="width:0%;" data-dz-uploadprogress></div>
+                <button class="btn btn--secondary button-choose-files fileinput-button u-mb-s">
+                    <span class="btn__inner">Choose files</span>
+                </button>
+                <div id="file-upload" class="dropzone">
+                    <div class="statusbar statusbar-title" style="display:none">
+                        <div class="filename">Name of data file to be checked</div>
+                        <!-- inline-block break fix -->
+                        <div class="status">Status</div>
+                        <!-- inline-block break fix -->
+                        <div class="action">Action</div>
+                    </div>
+                    <div class="files" id="previews">
+                        <div id="preview-template" style="display: none;">
+                            <div class="statusbar" class="dz-preview">
+                                <div class="filename">
+                                    <span class="name" data-dz-name></span>
                                 </div>
-                                <div class="dz-error-message">
-                                    <span data-dz-errormessage></span></div>
-                            </div>
-                            <!-- inline-block break fix -->
-                            <div class="action">
-                                <a class="link" href="#">
-                                    <span>View details</span>
-                                </a>
-                            </div>
-                            <!-- inline-block break fix -->
-                            <div class="remove">
-                                <button data-dz-remove class="link delete">
+                                <!-- inline-block break fix-->
+                                <div class="status">
+                                    <div class="dz-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                                        <div class="dz-upload" style="width:0%;" data-dz-uploadprogress></div>
+                                    </div>
+                                    <div class="dz-error-message">
+                                        <span data-dz-errormessage></span></div>
+                                </div>
+                                <!-- inline-block break fix -->
+                                <div class="action">
+                                    <a class="link" href="#">
+                                        <span>View details</span>
+                                    </a>
+                                </div>
+                                <!-- inline-block break fix -->
+                                <div class="remove">
+                                    <button data-dz-remove class="link delete">
 								Remove<span> file</span>
-                                </button>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- #file-upload -->
+                <!-- #file-upload -->
             </p>
 
             <p class="field">
@@ -66,7 +66,8 @@ layout: upload-file/views/_index
 
             <script>
                 Dropzone.options.fileUpload = {
-                    url: "/target-url", // Set the url
+                    url: "https://api.cloudinary.com/v1_1/dlha38s4m/image/upload", // Set the url
+                    parallelUploads: 6,
                     previewsContainer: "#previews", // Define the container to display the previews
                     previewTemplate: document
                         .getElementById('preview-template')
@@ -74,6 +75,15 @@ layout: upload-file/views/_index
                     dictDefaultMessage: "Or drag and drop files here.",
                     clickable: ".fileinput-button" // Define the element that should be used as click trigger to select files.
                 };
+                myDropzone.on('sending', function (file, xhr, formData) {
+                    formData.append('api_key', 737368216118754);
+                    formData.append('timestamp', Date.now() / 1000 | 0);
+                    formData.append('upload_preset', 'presetname');
+                });
+                myDropzone.on('success', function (file, response) {
+                    console.log('Success! Cloudinary public ID is', response.public_id);
+                });
+
                 Dropzone.on("addedfile", function (file) {
                     // Show the status bar when files is dragged over dropzone
                     document
