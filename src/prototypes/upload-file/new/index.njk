@@ -59,16 +59,17 @@ layout: upload-file/views/_index
             <!-- #file-upload -->
             <p class="field">
                 
-        <input type="submit" disabled="disabled" name="submit" value="Continue" class="button" id="check-for-errors-btn">
+            <button type="button" class="btn btn--disabled" disabled="true">
+                <span class="btn__inner">Submit</span>
+            </button>
             </p>
+
+
+
 
             <script>
                 Dropzone.options.fileUpload = {
                     url: "/target-url", // Set the url
-                    previewsContainer: "#previews", // Define the container to display the previews
-                    previewTemplate: document
-                        .getElementById('preview-template')
-                        .innerHTML,
                     dictDefaultMessage: "You can also drop files here.",
                     clickable: ".fileinput-button" // Define the element that should be used as click trigger to select files.
                 };

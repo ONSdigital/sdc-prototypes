@@ -159,7 +159,9 @@
   min-height: 150px;
   border: 1px dashed #222222;
   background: white;
-  padding: 20px 20px;
+  padding: 0.38911rem 0.5rem;
+  border-radius: 3px;
+  font-size: 1rem;
 
   &.dz-started {
     .dz-message {
@@ -169,8 +171,9 @@
 
   &.dz-drag-hover {
     border-style: solid;
+    box-shadow: rgb(255, 221, 0) 0px 0px 0px 3px;
     .dz-message {
-      opacity: 0.5;
+      opacity: 1;
     }
   }
   .dz-message {
