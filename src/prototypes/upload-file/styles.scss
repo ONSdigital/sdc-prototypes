@@ -434,7 +434,7 @@
 
     &.dz-error {
       .dz-error-message {
-        display: block;
+        // display: block;
       }
       &:hover .dz-error-message {
         opacity: 1;
@@ -449,7 +449,7 @@
       pointer-events: none;
       z-index: 1000;
       position: absolute;
-      display: block;
+      // display: block;
       display: none;
       opacity: 0;
       @include prefix(
