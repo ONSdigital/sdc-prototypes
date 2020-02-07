@@ -37,18 +37,13 @@ layout: upload-file/views/_index
                                         <div class="dz-upload" style="width:0%;" data-dz-uploadprogress></div>
                                     </div>
                                     <div class="dz-error-message">
-                                        <span data-dz-errormessage></span></div>
-                                </div>
-                                <!-- inline-block break fix -->
-                                <div class="action">
-                                    <a class="link" href="#">
-                                        <span>View details</span>
-                                    </a>
+                                        <span data-dz-errormessage></span>
+                                    </div>
                                 </div>
                                 <!-- inline-block break fix -->
                                 <div class="remove">
                                     <button data-dz-remove class="link delete">
-								Remove<span> file</span>
+								        Remove<span> file</span>
                                     </button>
                                 </div>
                             </div>
@@ -63,9 +58,14 @@ layout: upload-file/views/_index
                 <span class="btn__inner">Submit</span>
             </button>
             </p>
+
+
+
+
             <script>
                 Dropzone.options.fileUpload = {
                     url: "/target-url", // Set the url
+                    method: "put",
                     dictDefaultMessage: "You can also drop files here.",
                     clickable: ".fileinput-button" // Define the element that should be used as click trigger to select files.
                 };
