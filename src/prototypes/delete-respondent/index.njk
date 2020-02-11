@@ -1,0 +1,25 @@
+---
+group: SCD Internal
+title: Delete respondent
+version: 14.4.0
+layout: delete-respondent/views/_index
+---
+
+{% block main %}
+    {% from "components/button/_macro.njk" import onsButton %}
+    <h1>Delete respondent</h1>
+
+    <div class="grid">
+        <div class="grid__col col-6@m">
+            <ul>
+                <li>
+                    <a href="/prototypes/delete-respondent/respondent.html">Respondent</a>
+                </li>
+                <li>
+                    <a href="/prototypes/delete-respondent/respondent-edit.html">Edit respondent modal</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}
+

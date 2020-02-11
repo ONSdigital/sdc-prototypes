@@ -65,6 +65,7 @@ layout: upload-file/views/_index
             </p>
 
             <script>
+
                 Dropzone.options.fileUpload = {
                     url: "https://api.cloudinary.com/v1_1/dlha38s4m/image/upload", // Set the url
                     parallelUploads: 6,
@@ -75,17 +76,20 @@ layout: upload-file/views/_index
                     dictDefaultMessage: "Or drag and drop files here.",
                     clickable: ".fileinput-button" // Define the element that should be used as click trigger to select files.
                 };
-                myDropzone.on('sending', function (file, xhr, formData) {
+                Dropzone.on('sending', function (file, xhr, formData) {
+                    alert("you added a file");
+                });
+                Dropzone.on('sending', function (file, xhr, formData) {
+                    console.log("Adding api key " + 737368216118754);
                     formData.append('api_key', 737368216118754);
                     formData.append('timestamp', Date.now() / 1000 | 0);
-                    formData.append('upload_preset', 'presetname');
+                    formData.append('upload_preset', 'v1elzsec');
                 });
-                myDropzone.on('success', function (file, response) {
-                    console.log('Success! Cloudinary public ID is', response.public_id);
+                Dropzone.on('success', function (file, response) {
+                    console.log('Success! uploading file to Cloudinary. public id - ' + response.public_id);
                 });
-
                 Dropzone.on("addedfile", function (file) {
-                    // Show the status bar when files is dragged over dropzone
+                    // Show the status bar when files are dragged over dropzone
                     document
                         .querySelector(".statusbar")
                         .style
@@ -98,14 +102,14 @@ layout: upload-file/views/_index
                         .style
                         .display = "none";
                 });
-                myDropzone.on("addedfile", function (file) {
+                Dropzone.on("addedfile", function (file) {
                     // Show the status bar when files is dragged over dropzone
                     document
                         .querySelector(".correct-errors")
                         .style
                         .display = "block";
                 });
-                myDropzone.on("reset", function (file) {
+                Dropzone.on("reset", function (file) {
                     // Hide the status bar when dropzone is reset
                     document
                         .querySelector(".correct-errors")
