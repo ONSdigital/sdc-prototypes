@@ -1,0 +1,53 @@
+---
+title: Safari 10
+group: Test
+version: 13.6.7
+layout: safari-10-issue-test/views/_master
+---
+
+{% from "components/details/_macro.njk" import onsDetails %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% block main %}
+    <form action="#">
+        <h1 class="u-fs-l">Welcome to the Census</h1>
+        {{
+            onsDetails({
+                "id": "details",
+                "title": "What is a photovoltaic system?",
+                "content": "<p>A typical photovoltaic system employs solar panels, each comprising a number of solar cells, which generate electrical power. PV installations may be ground-mounted, rooftop mounted or wall mounted. The mount may be fixed, or use a solar tracker to follow the sun across the sky.</p>",
+                "button": {
+                    "close": "Hide this",
+                    "contextSuffix": "content"
+                }
+            })
+        }}
+        {{ 
+            onsRadios({
+                "legend": "Select your favourite topping",
+                "name": "food",
+                "radios": [
+                    {
+                        "id": "bacon",
+                        "label": {
+                            "text": "Bacon"
+                        },
+                        "value": "bacon"
+                    },
+                    {
+                        "id": "olives",
+                        "label": {
+                            "text": "Olives"
+                        },
+                        "value": "olives"
+                    }
+                ]
+            }) 
+        }}
+        {{ onsButton({
+            "text": "Submit",
+            "classes": "u-mt-xl"
+        }) }}
+    </form>
+{% endblock %}
