@@ -21,13 +21,6 @@ layout: voluntary-radios-v1/views/_master
         "title": "On 13 December 2019, what is your legal marital or registered civil partnership status?",
         "useFieldset": true
     }) %}
-        {{
-            onsDetails({
-                "id": "details",
-                "title": "What is afdsfdsfds photovoltaic system?",
-                "content": "<p>A typical photovoltaic system employs solar panels, each comprising a number of solar cells, which generate electrical power. PV installations may be ground-mounted, rooftop mounted or wall mounted. The mount may be fixed, or use a solar tracker to follow the sun across the sky.</p>"
-            })
-        }}
         {{ onsRadios({
             "noField": true,
             "id": "marriage-type-answer",
@@ -92,7 +85,13 @@ layout: voluntary-radios-v1/views/_master
         }) }}
     {% endcall %}
 
-
+    {{
+        onsDetails({
+            "id": "details",
+            "title": "What is afdsfdsfds photovoltaic system?",
+            "content": "<p>A typical photovoltaic system employs solar panels, each comprising a number of solar cells, which generate electrical power. PV installations may be ground-mounted, rooftop mounted or wall mounted. The mount may be fixed, or use a solar tracker to follow the sun across the sky.</p>"
+        })
+    }}
     {{ onsButton({
         "text": "Save and continue",
         "classes": "u-ml-no u-mt-xl u-mb-xl"
