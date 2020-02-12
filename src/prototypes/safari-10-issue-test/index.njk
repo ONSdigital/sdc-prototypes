@@ -1,1 +1,42 @@
-<div class="group" id=""><div class="block" id="primary-person-list-collector"><div id="primary-confirmation-question" class="question"><h1 class="question__title">Do you usually live at 68 Abingdon Road, Goathill?</h1><details id="" class="details js-collapsible u-mb-s details--initialised" data-btn-close="Hide this" role="group"><summary class="details__summary js-collapsible-summary" data-ga="click" data-ga-category="Question definition" data-ga-action="Close panel" data-ga-label="What does “usually live” mean?" role="link" aria-controls="" tabindex="0" aria-expanded="false"><div class="details__heading"><span class="details__title u-fs-r--b">What does “usually live” mean?</span></div></summary><div id="-content" class="details__content js-collapsible-content" aria-hidden="true"><p>It means the address at which you generally spend most time. For most people, this will be their permanent or family home.</p><p><strong>Full-time students</strong>, include yourself at your term time address.</p><p><strong>Armed forces members</strong>, include yourself at your home address if you have one.</p><button type="button" class="btn btn--small js-collapsible-button btn--secondary" data-ga="click" data-ga-category="Question definition" data-ga-action="Close panel" data-ga-label="What does “usually live” mean?" aria-controls=""><span class="btn__inner js-collapsible-button-inner">Hide this</span><span class="btn__context u-vh">What does “usually live” mean? content</span></button></div></details><fieldset id="you-live-here-answer" class="fieldset"><legend class="fieldset__legend u-vh">Do you usually live at 68 Abingdon Road, Goathill? </legend><div class="radios__items"><p class="radios__item"><span class="radio"><input type="radio" id="you-live-here-answer-0" class="radio__input js-radio " value="Yes, I usually live here" name="you-live-here-answer"><label class="radio__label " for="you-live-here-answer-0"> Yes, I usually live here </label></span></p><br><p class="radios__item"><span class="radio"><input type="radio" id="you-live-here-answer-1" class="radio__input js-radio " value="No, I don’t usually live here" name="you-live-here-answer"><label class="radio__label " for="you-live-here-answer-1"> No, I don’t usually live here </label></span></p></div></fieldset></div></div></div>
+---
+group: Safari 10 issue
+title: Test
+version: 15.0.0
+layout: safari-10-issue-test/views/_master
+---
+
+{% block main %}
+    <h1 class="question__title">Do you usually live at 68 Abingdon Road, Goathill?</h1>
+    <details id="" class="details js-collapsible u-mb-s details--initialised" data-btn-close="Hide this" role="group">
+        <summary class="details__summary js-collapsible-summary" data-ga="click" data-ga-category="Question definition" data-ga-action="Close panel" data-ga-label="What does “usually live” mean?" role="link" aria-controls="" tabindex="0" aria-expanded="false">
+            <div class="details__heading">
+                <span class="details__title u-fs-r--b">What does “usually live” mean?</span>
+            </div>
+        </summary>
+        <div id="-content" class="details__content js-collapsible-content" aria-hidden="true">
+            <p>It means the address at which you generally spend most time. For most people, this will be their permanent or family home.</p><p><strong>Full-time students</strong>, include yourself at your term time address.</p><p><strong>Armed forces members</strong>, include yourself at your home address if you have one.</p>
+            <button type="button" class="btn btn--small js-collapsible-button btn--secondary" data-ga="click" data-ga-category="Question definition" data-ga-action="Close panel" data-ga-label="What does “usually live” mean?" aria-controls=""><span class="btn__inner js-collapsible-button-inner">Hide this</span>
+                <span class="btn__context u-vh">What does “usually live” mean? content</span>
+            </button>
+        </div>
+    </details>
+    <fieldset id="you-live-here-answer" class="fieldset">
+        <legend class="fieldset__legend u-vh">Do you usually live at 68 Abingdon Road, Goathill? </legend>
+        <div class="radios__items">
+            <p class="radios__item">
+                <span class="radio">
+                    <input type="radio" id="you-live-here-answer-0" class="radio__input js-radio " value="Yes, I usually live here" name="you-live-here-answer">
+                        <label class="radio__label " for="you-live-here-answer-0"> Yes, I usually live here </label>
+                </span>
+            </p>
+            <br>
+            <p class="radios__item">
+                <span class="radio">
+                    <input type="radio" id="you-live-here-answer-1" class="radio__input js-radio " value="No, I don’t usually live here" name="you-live-here-answer">
+                        <label class="radio__label " for="you-live-here-answer-1"> No, I don’t usually live here </label>
+                </span>
+            </p>
+        </div>
+    </fieldset>
+    <button type="submit" class="btn u-mt-xl" data-qa="btn-submit"><span class="btn__inner">Save and continue</span></button>
+{% endblock %}
