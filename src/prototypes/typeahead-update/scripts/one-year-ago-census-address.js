@@ -9,7 +9,7 @@ function setCensusAddress() {
     const address = JSON.parse(sessionStorage.getItem(questionKey));
     const label = document.querySelector(`label[for=${input.id}]`);
 
-    label.innerHTML = addressToDisplay(address.inputs);
+    label.innerHTML = addressToDisplay(address.inputs) !== '' ? addressToDisplay(address.inputs) : 'No address provided';
     input.value = questionKey;
   }
 }
