@@ -8,13 +8,13 @@ layout: typeahead-update/views/_master
 {% block main %}
     <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/ethnic-group-black.html">Previous</a>
     <form action="{{ pageInfo.parentPath }}/religion.html?previous={{ pageInfo.path }}.html">
-        <h1 class="u-mt-s">You selected "Black, Black British or Caribbean ethnic group". How would you describe your Black, Black British or Caribbean ethnic group or background?</h1>
+        <h1 class="u-mt-s">You selected "Black, Black British or Caribbean ethnic group". How would you describe your Black, Black British or Caribbean background?</h1>
         {{
             onsInput({
                 "id": "ethnic-group-black-other",
                 "dontWrap": true,
                 "label": {
-                    "text": "Black, Black British or Caribbean ethnic group or background",
+                    "text": "Black, Black British or Caribbean background",
                     "description": "Enter your own answer or select from suggestions"
                 },
                 "typeahead":{
