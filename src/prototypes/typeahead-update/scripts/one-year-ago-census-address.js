@@ -6,8 +6,9 @@ function setCensusAddress() {
 
   if (input) {
     const questionKey = input.getAttribute('data-census-address');
-    const address = JSON.parse(sessionStorage.getItem(questionKey + '/index.html'));
+    const address = JSON.parse(sessionStorage.getItem(questionKey));
     const label = document.querySelector(`label[for=${input.id}]`);
+
     label.innerHTML = addressToDisplay(address.inputs) !== '' ? addressToDisplay(address.inputs) : label.innerHTML;
     input.value = questionKey;
   }
