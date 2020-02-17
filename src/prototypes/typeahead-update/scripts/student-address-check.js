@@ -14,7 +14,7 @@ function studentAddressCheck() {
         {
           id: 'home',
           label: {
-            text: addressToDisplay(address.inputs)
+            text: addressToDisplay(address.inputs) !== '' ? addressToDisplay(address.inputs) : 'Census letter address'
           },
           value: key
         }
