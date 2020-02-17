@@ -8,7 +8,7 @@ layout: typeahead-update/views/_master
 
 {% block main %}
     <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/ethnic-group.html">Previous</a>
-    <form action="{{ pageInfo.parentPath }}/ethnic-group-arab-other.html">
+    <form action="{{ pageInfo.parentPath }}/ethnic-group-arab-other.html?previous={{ pageInfo.path }}.html">
         {{ 
             onsRadios({
                 "legend": " <h1 class=\"u-fs-l\">Which one best describes your other ethnic group or background?</h1>",

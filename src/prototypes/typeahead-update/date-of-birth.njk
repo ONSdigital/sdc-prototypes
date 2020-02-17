@@ -8,7 +8,7 @@ layout: typeahead-update/views/_master
 
 {% block main %}
     <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/name.html">Previous</a>
-    <form action="{{ pageInfo.parentPath }}/address-check.html">
+    <form action="{{ pageInfo.parentPath }}/address-check.html?previous={{ pageInfo.path }}.html">
         {% call onsQuestion({
             "title": "What is your date of birth?",
             "description": "For example, 31 3 1980"

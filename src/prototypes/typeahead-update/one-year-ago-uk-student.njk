@@ -8,7 +8,7 @@ layout: typeahead-update/views/_master
 
 {% block main %}
     <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/one-year-ago-address.html">Previous</a>
-    <form action="{{ pageInfo.parentPath }}/one-year-ago-uk-student-confirm.html">
+    <form action="{{ pageInfo.parentPath }}/one-year-ago-uk-student-confirm.html?previous={{ pageInfo.path }}.html">
         {% call onsQuestion({
             "title": "What was your student term-time or boarding school address one year ago?"
         }) %}

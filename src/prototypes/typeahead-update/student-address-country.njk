@@ -7,7 +7,7 @@ layout: typeahead-update/views/_master
 
 {% block main %}
     <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/student-address-uk-check.html">Previous</a>
-    <form action="{{ pageInfo.parentPath }}/country-of-birth.html">
+    <form action="{{ pageInfo.parentPath }}/country-of-birth.html?previous={{ pageInfo.path }}.html">
         <h1 class="u-mt-s">During term time, in which country outside the UK do you usually live?</h1>
         {{
             onsInput({

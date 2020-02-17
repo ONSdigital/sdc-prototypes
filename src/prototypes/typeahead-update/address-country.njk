@@ -8,7 +8,7 @@ layout: typeahead-update/views/_master
 
 {% block main %}
     <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/address-check.html">Previous</a>
-    <form action="{{ pageInfo.parentPath }}/outside-address-type.html">
+    <form action="{{ pageInfo.parentPath }}/outside-address-type.html?previous={{ pageInfo.path }}.html">
         {% call onsQuestion({
             "title": "Which country outside of the UK do you stay in for more than 30 days a year?"
         }) %}        

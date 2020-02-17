@@ -9,7 +9,7 @@ layout: typeahead-update/views/_master
 
 {% block main %}
     <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/date-of-birth.html">Previous</a>
-    <form action="{{ pageInfo.parentPath }}/student-check.html">
+    <form action="{{ pageInfo.parentPath }}/student-check.html?previous={{ pageInfo.path }}.html">
     {% call onsQuestion({
         "title": "Do you stay at another address for more than 30 days a year?",
         "description": "<p>This could be more than 30 days in a row or divided accross the year</p>"

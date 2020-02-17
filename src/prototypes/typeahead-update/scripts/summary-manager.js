@@ -31,6 +31,7 @@ export default class SummaryManager {
       .map(key => ({ key, ...JSON.parse(sessionStorage.getItem(key)) }));
 
     const firstQuestion = unsortedQuestions.find(question => question.previousURL === '/prototypes/typeahead-update/index.html');
+
     const remainingUnsortedQuestions = unsortedQuestions.filter(question => question.previousURL).length;
 
     const questions = [firstQuestion];
@@ -38,6 +39,8 @@ export default class SummaryManager {
     for (let i = 0; i < remainingUnsortedQuestions; i++) {
       const lastQuestionKey = questions[questions.length - 1].key;
       const nextQuestion = unsortedQuestions.find(question => question.previousURL === lastQuestionKey);
+      console.log(lastQuestionKey);
+
       if (nextQuestion) {
         questions.push(nextQuestion);
       }
@@ -110,11 +113,11 @@ export default class SummaryManager {
         };
 
         this.config.params.rows.push(row);
+
       });
   }
 
   render() {
-    console.log(this.config);
     const html = this.template.render(this.config);
 
     this.placeholder.innerHTML = html;

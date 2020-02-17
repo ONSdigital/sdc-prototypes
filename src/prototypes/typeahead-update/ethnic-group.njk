@@ -8,7 +8,7 @@ layout: typeahead-update/views/_master
 
 {% block main %}
     <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/national-identity.html">Previous</a>
-    <form action="{{ pageInfo.parentPath }}/religion.html">
+    <form action="{{ pageInfo.parentPath }}/religion.html?previous={{ pageInfo.path }}.html">
         {{ 
             onsRadios({
                 "legend": "<h1 class=\"u-fs-l\">What is your ethnic group?</h1>",

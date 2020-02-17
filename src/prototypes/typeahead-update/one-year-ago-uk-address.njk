@@ -8,7 +8,7 @@ layout: typeahead-update/views/_master
 
 {% block main %}
     <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/one-year-ago-address.html">Previous</a>
-    <form action="{{ pageInfo.parentPath }}/one-year-ago-uk-address-confirm.html">
+    <form action="{{ pageInfo.parentPath }}/one-year-ago-uk-address-confirm.html?previous={{ pageInfo.path }}.html">
         {% call onsQuestion({
             "title": "What was your UK address one year ago?"
         }) %}
