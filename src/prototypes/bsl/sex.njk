@@ -1,43 +1,60 @@
 ---
-title: BSL
-group: BSL
-version: 13.6.7
-layout: bsl/views/_master
+version: 15.0.2
+layout: bsl/views/_question
 ---
-
+{% from "components/question/_macro.njk" import onsQuestion %}
 {% from "components/button/_macro.njk" import onsButton %}
+{% from "components/input/_macro.njk" import onsInput %}
 {% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+{% from "components/details/_macro.njk" import onsDetails %}
+{% from "components/video/_macro.njk" import onsVideo %}
 
-{% block main %}
-    <form action="{{ pageInfo.rootPath }}/country-of-birth.html">
-        <div class = "grid__col col-5@m">
-            <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/name.html">Previous</a>
-            {{ 
-                onsRadios({
-                    "legend": "<h1 class=\"u-fs-l\">What is your sex?</h1>",
-                    "name": "sex",
-                    "radios": [
-                        {
-                            "id": "male",
-                            "label": {
-                                "text": "Male"
-                            },
-                            "value": "male"
-                        },
-                        {
-                            "id": "female",
-                            "label": {
-                                "text": "Female"
-                            },
-                            "value": "female"
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/marital-status.html"
+    }
+} %}
+    {% block preMain %}
+    <div class="container page__container container u-mt-s">
+        <a href="/prototypes/bsl/name.html">Previous</a>
+    </div>
+    {% endblock %}
+    {% block main %}
+        {% call onsQuestion({
+            "title": "What is your sex?",
+            "useFieldset": true
+        }) %}
+           {% call onsPanel({
+            }) %}
+                <p>A question about gender will follow</p>
+            {% endcall %}
+
+            {{ onsRadios({
+                "noField": true,
+                "id": "do-you-live",
+                "name": "do-you-live",
+                "classes": "js-radios",
+                "radios": [
+                    {
+                        "id": "female",
+                        "label": {
+                            "text": "Female"
                         }
-                    ]
-                }) 
-            }}
-            {{ onsButton({
-                "text": "Save and continue",
-                "classes": "u-mt-xl"
+                    },
+                    {
+                        "id": "male",
+                        "label": {
+                            "text": "Male"
+                        }
+                    }
+                ]
             }) }}
-        </div>
-    </form>
-{% endblock %}
+        {% endcall %}
+
+        {{ onsButton({
+            "text": "Save and continue",
+            "classes": "u-ml-no u-mt-xl u-mb-xl"
+        }) }}
+    {% endblock %}

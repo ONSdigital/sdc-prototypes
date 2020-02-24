@@ -12,12 +12,12 @@ layout: bsl/views/_question
 {% set form =  {
     "method": "GET",
     "attributes": {
-        "action":  pageInfo.rootPath + "/marriage-type.html"
+        "action":  pageInfo.rootPath + "/sex.html"
     }
 } %}
     {% block preMain %}
     <div class="container page__container container u-mt-s">
-        <a href="/prototypes/bsl/index.html">Previous</a>
+       
     </div>
     {% endblock %}
     {% block main %}
@@ -45,7 +45,7 @@ layout: bsl/views/_question
                 "label": {
                     "text": "Last name"
                 }
-            }) }}                        
+            }) }}
         {% endcall %}
 
         {{ onsButton({
