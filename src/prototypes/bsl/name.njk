@@ -1,39 +1,55 @@
 ---
-title: BSL
-group: BSL
-version: 13.6.7
-layout: bsl/views/_master
+version: 15.0.2
+layout: bsl/views/_question
 ---
-
 {% from "components/question/_macro.njk" import onsQuestion %}
-{% from "components/input/_macro.njk" import onsInput %}
 {% from "components/button/_macro.njk" import onsButton %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+{% from "components/details/_macro.njk" import onsDetails %}
+{% from "components/video/_macro.njk" import onsVideo %}
 
-{% block main %}
-    <form action="{{ pageInfo.rootPath }}/sex.html">
-        <div class = "grid__col col-5@m">
-            <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/index.html">Previous</a>
-            <h1 class="u-fs-l">What is your name?</h1>
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/marriage-type.html"
+    }
+} %}
+    {% block preMain %}
+    <div class="container page__container container u-mt-s">
+        <a href="/prototypes/bsl/index.html">Previous</a>
+    </div>
+    {% endblock %}
+    {% block main %}
+        {% call onsQuestion({
+            "title": "What is your name?",
+            "useFieldset": true
+        }) %}
             {{ onsInput({
-                "id": "first-name",
-                "name": "first-name",
-                "type": "text",
+                "id": "your-name",
+                "name": "your-name",
                 "label": {
-                    "text": "First Name"
+                    "text": "First name"
                 }
             }) }}
             {{ onsInput({
-                "id": "last-name",
-                "name": "last-name",
-                "type": "text",
+                "id": "your-name",
+                "name": "your-name",
                 "label": {
-                    "text": "Last Name"
+                    "text": "Middle names"
                 }
             }) }}
-            {{ onsButton({
-                "text": "Save and continue",
-                "classes": "u-mt-xl"
-            }) }}
-        </div>
-    </form>
-{% endblock %}
+            {{ onsInput({
+                "id": "your-name",
+                "name": "your-name",
+                "label": {
+                    "text": "Last name"
+                }
+            }) }}                        
+        {% endcall %}
+
+        {{ onsButton({
+            "text": "Save and continue",
+            "classes": "u-ml-no u-mt-xl u-mb-xl"
+        }) }}
+    {% endblock %}
