@@ -89,4 +89,15 @@ layout: bsl/views/_question
             "text": "Save and continue",
             "classes": "u-ml-no u-mt-xl u-mb-xl"
         }) }}
+
+        <div class="bsl-video u-d-no">
+            {{ onsButton({
+                "text": "Hide BSL",
+                "classes": "u-mb-xs u-fr js-bsl-btn btn--secondary u-mt-l",
+                "innerClasses": "icon--bsl-btn"
+            }) }}
+            <div class="bsl-video__video">
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/6CFw2_Rt3D4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>        
     {% endblock %}
