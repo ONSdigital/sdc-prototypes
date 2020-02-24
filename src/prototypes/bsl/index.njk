@@ -44,7 +44,7 @@ layout: bsl/views/_master
             <div class="bsl__icon"><span class="icon icon--bsl"></span></div>
             <p class="bsl__message">You can <a class="bsl__link" href="#">view BSL translations</a> to help you complete your census.</p>
         </div>
-        <h2 class="u-fs-m u-mb-s">If you don't have a household code</h2>
+        <h2 class="u-fs-m u-mb-s">If you don't have a household access code</h2>
         <p>
             You can <a href="#">request a new household access code</a> to start a new census if you have lost, forgotten or not received an access code.
         </p>
@@ -65,7 +65,19 @@ layout: bsl/views/_master
                 }
             })
         }} #}
-        <h2 class="u-fs-m u-mt-m">Need to answer separately from your household?</h2>
-        <p>If you prefer to answer separately from the people you live with, you can <a href="#">request an individual access code</a>.</p>
+        {%
+            call onsDetails({
+                "id": "details",
+                "classes": "u-mt-m u-mb-m",
+                "title": "Need to answer separately from your household?",
+                "button": {
+                    "close": "Hide this",
+                    "contextSuffix": "content"
+                }
+            }) %}
+            <p>If you prefer to answer separately from the people you live with, you can <a href="#">request an individual access code</a>.</p>
+        {% endcall %}
+        {# <h2 class="u-fs-m u-mt-m">Need to answer separately from your household?</h2>
+        <p>If you prefer to answer separately from the people you live with, you can <a href="#">request an individual access code</a>.</p> #}
     {% endcall %}
 {% endblock %}
