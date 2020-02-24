@@ -1,5 +1,9 @@
 @import '../components/uac/uac';
 
+.page__container {
+  position: relative;
+}
+
 .previous-link {
   line-height: 1;
 }
@@ -8,6 +12,47 @@
 .bsl {
   display: -webkit-box;
   display: flex;
+}
+
+.bsl-video {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 999;
+  width: 325px;
+  height: auto;
+  iframe {
+    float: right;
+  }
+}
+@media only screen and (min-width: 740px) {
+  .bsl-video {
+    width: 300px;
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    bottom: auto;
+  }
+  iframe {
+    width: 300px;
+    height: 180px;
+  }
+}
+
+.icon--bsl-btn:after {
+  display: inline-block;
+  background-repeat: no-repeat;
+  content: '';
+  background-image: url(/prototypes/bsl/img/icons/icons--hide.svg);
+  vertical-align: middle;
+  width: 1.2rem;
+  height: 1.2rem;
+  background-size: 100%;
+  margin: 0 0 0 0.5rem;
+}
+
+.icon--bsl-btn--closed:after {
+  background-image: url(/prototypes/bsl/img/icons/icons--show.svg);
 }
 
 .icon--bsl:before {
