@@ -79,3 +79,7 @@
   height: 102px; /* Height of new image */
   padding-left: 120px; /* Equal to width of new image */
 }
+
+.icon--external-link:after {
+  background-image: url(/prototypes/bsl/img/icons/icons--external-link.svg);
+}
