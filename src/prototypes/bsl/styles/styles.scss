@@ -16,13 +16,25 @@
 
 .bsl-video {
   position: fixed;
-  bottom: 0;
-  right: 0;
+  bottom: 1rem;
+  right: 1rem;
   z-index: 999;
-  width: 325px;
+  width: 94%;
   height: auto;
-  iframe {
-    float: right;
+  &__video {
+    clear: both;
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
   }
 }
 @media only screen and (min-width: 740px) {
@@ -48,7 +60,7 @@
   width: 1.2rem;
   height: 1.2rem;
   background-size: 100%;
-  margin: 0 0 0 0.5rem;
+  margin: -0.2rem 0 0 0.5rem;
 }
 
 .icon--bsl-btn--closed:after {

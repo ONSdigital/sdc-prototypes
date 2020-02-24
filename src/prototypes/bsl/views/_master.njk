@@ -42,7 +42,7 @@
                     {
                         "text": "BSL translation",
                         "classes": 'icon--bsl',
-                        "url": './index-bsl.html'
+                        "url": pageInfo.path + '?bsl'
                     }
                 ]
             },
@@ -66,3 +66,6 @@
     }
 } %}
 
+{% block bodyEnd %}
+    <script src="{{ pageInfo.rootPath }}/scripts/index.js"></script>
+{% endblock %}

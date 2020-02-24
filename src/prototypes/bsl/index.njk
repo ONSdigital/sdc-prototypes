@@ -21,7 +21,6 @@ layout: bsl/views/_master
     {% call onsQuestion({
     }) %}
         <h1 class="u-mt-l">Start census</h1>
-
         {{ onsUACInput({
             "id": "uac",
             "name": "uac",
@@ -36,35 +35,12 @@ layout: bsl/views/_master
             "text": "Access census",
             "classes": "u-mb-xl"
         }) }}
-        {# {{ onsButton({
-            "text": "BSL translations",
-            "classes": "u-fl btn--secondary"
-        }) }} #}
-        {# <div class="bsl u-mb-l">
-            <div class="bsl__icon"><span class="icon icon--bsl"></span></div>
-            <p class="bsl__message">You can <a class="bsl__link" href="#">view BSL translations</a> to help you complete your census.</p>
-        </div> #}
+
         <h2 class="u-fs-m u-mb-s">If you don't have a household access code</h2>
         <p>
             You can <a href="#">request a new household access code</a> to start a new census if you have lost, forgotten or not received an access code.
         </p>
-        {# <p style="border-left: 8px solid #ccc; padding-left: 1rem">The householder is responsible for ensuring that your census questionnaire is completed and submitted.</p>
-        {{
-            onsDetails({
-                "id": "details",
-                "classes": "u-mt-m u-mb-m",
-                "title": "What we mean by \"householder\"",
-                "content": "<p>A householder is a person who, individually or jointly</p>
-                <ul>
-                <li>owns or rents the accommodation</li>
-                <li>is responsible for paying the household bills and expenses</li>
-                </ul>",
-                "button": {
-                    "close": "Hide this",
-                    "contextSuffix": "content"
-                }
-            })
-        }} #}
+
         {%
             call onsDetails({
                 "id": "details",
@@ -77,7 +53,15 @@ layout: bsl/views/_master
             }) %}
             <p>If you prefer to answer separately from the people you live with, you can <a href="#">request an individual access code</a>.</p>
         {% endcall %}
-        {# <h2 class="u-fs-m u-mt-m">Need to answer separately from your household?</h2>
-        <p>If you prefer to answer separately from the people you live with, you can <a href="#">request an individual access code</a>.</p> #}
     {% endcall %}
+    <div class="bsl-video u-d-no">
+        {{ onsButton({
+            "text": "Hide BSL",
+            "classes": "u-mb-xs u-fr js-bsl-btn btn--secondary u-mt-l",
+            "innerClasses": "icon--bsl-btn"
+        }) }}
+        <div class="bsl-video__video">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/6UUHGw_R28k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+        </div>
+    </div>
 {% endblock %}
