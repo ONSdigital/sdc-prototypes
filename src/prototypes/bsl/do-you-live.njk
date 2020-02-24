@@ -1,0 +1,67 @@
+---
+version: 15.0.2
+layout: bsl/views/_question
+---
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+{% from "components/details/_macro.njk" import onsDetails %}
+{% from "components/video/_macro.njk" import onsVideo %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/marriage-type.html"
+    }
+} %}
+
+    {% block main %}
+        {% call onsQuestion({
+            "title": "Do you usually live at 68 Abingdon Road, Goathill?",
+            "useFieldset": true
+        }) %}
+            {% call onsDetails({
+                    "id": "details",
+                    "title": "What we mean by 'usually live'",
+                    "button": {
+                        "close": "Hide this",
+                        "contextSuffix": "content"
+                    }
+            }) %}
+                <p>This is often your permanent or family home.</p>
+                <p>If you have more than one address, include yourself at the home address where you generally spend most of your time. If you split your time equally then use the home address where you are staying overnight on Sunday 26 January 2020.</p>
+                <ul class="list list--bare u-mb-s">
+                    <li class="list__item"><strong>Students,</strong> include yourself  at both your term-time and out of term-time addresses.</li>
+                    <li class="list__item"><strong>People with a second address for work,</strong> include yourself  at your home address.</li>
+                    <li class="list__item"><strong>Armed forces members,</strong> include yourself at your home address if you have one.</li>
+                </ul>
+            {% endcall %}
+
+            {{ onsRadios({
+                "noField": true,
+                "id": "do-you-live",
+                "name": "do-you-live",
+                "classes": "js-radios",
+                "radios": [
+                    {
+                        "id": "yes",
+                        "label": {
+                            "text": "Yes, I usually live here"
+                        }
+                    },
+                    {
+                        "id": "no",
+                        "label": {
+                            "text": "No, I don’t usually live here"
+                        }
+                    }
+                ]
+            }) }}
+        {% endcall %}
+
+        {{ onsButton({
+            "text": "Save and continue",
+            "classes": "u-ml-no u-mt-xl u-mb-xl"
+        }) }}
+    {% endblock %}
