@@ -16,11 +16,13 @@
 
 .bsl-video {
   position: fixed;
-  bottom: 1rem;
-  right: 1rem;
+  bottom: 0;
+  right: 0;
   z-index: 999;
-  width: 94%;
+  width: 100%;
   height: auto;
+  background: #4c4c4c;
+  padding: 10px 10px 0;
   &__video {
     clear: both;
     position: relative;
@@ -28,6 +30,7 @@
     height: 0;
     overflow: hidden;
     max-width: 100%;
+    margin-bottom: 10px;
     iframe {
       position: absolute;
       top: 0;
@@ -37,13 +40,30 @@
     }
   }
 }
-@media only screen and (min-width: 740px) {
+@media only screen and (min-width: 480px) {
+  .bsl-video {
+    width: 450px;
+    &--closed {
+      background: none;
+    }
+  }
+}
+@media only screen and (min-width: 960px) {
   .bsl-video {
     width: 300px;
     position: absolute;
-    top: 0;
+    top: 2rem;
     right: 1rem;
     bottom: auto;
+    background: none;
+    padding: 0;
+
+    .btn {
+      font-size: 0.9rem;
+      &__inner {
+        padding: 0.5em 0.7em;
+      }
+    }
   }
   iframe {
     width: 300px;

@@ -19,11 +19,13 @@ if (bsl) {
     e.preventDefault();
     if (open === true) {
       video.classList.add('u-d-no');
+      videoWrap.classList.add('bsl-video--closed');
       buttonInner.classList.add('icon--bsl-btn--closed');
       buttonInner.textContent = 'Show BSL';
       open = false;
     } else {
       video.classList.remove('u-d-no');
+      videoWrap.classList.remove('bsl-video--closed');
       buttonInner.classList.remove('icon--bsl-btn--closed');
       buttonInner.textContent = 'Hide BSL';
       open = true;
