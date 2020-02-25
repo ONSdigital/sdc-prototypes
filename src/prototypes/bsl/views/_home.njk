@@ -6,7 +6,7 @@
 
 {% set pageConfig =  {
     "title": "Census 2021",
-    "theme": "census",    
+    "theme": "census",
     "language": {
         "allLanguagesUrl": "#",
         "languages": [
@@ -66,6 +66,12 @@
         ]
     }
 } %}
+
+
+{% block pageContent %}
+    {% block preMain %}{% endblock %}
+    {% block main %}{% endblock %}
+{% endblock %}
 
 {% block bodyEnd %}
     <script src="{{ pageInfo.rootPath }}/scripts/index.js"></script>

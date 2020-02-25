@@ -2,14 +2,15 @@
 title: BSL
 group: BSL
 version: 15.0.2
-layout: bsl/views/_master
-theme: census
+layout: bsl/views/_home
 ---
 {% from "components/question/_macro.njk" import onsQuestion %}
 {% from "components/panel/_macro.njk" import onsPanel %}
 {% from "bsl/components/uac/_macro.njk" import onsUACInput %}
 {% from "components/button/_macro.njk" import onsButton %}
 {% from "components/details/_macro.njk" import onsDetails %}
+{% from "components/hero/_macro.njk" import onsHero %}
+{% from "components/card/_macro.njk" import onsCard %}
 
 {% set form =  {
     "method": "GET",
@@ -19,50 +20,61 @@ theme: census
 } %}
 
 {% block main %}
-    {% call onsQuestion({
-    }) %}
-        <h1 class="u-mt-l">Start census</h1>
-        {{ onsUACInput({
-            "id": "uac",
-            "name": "uac",
-            "label": {
-                "text": "Enter your 16<span aria-hidden=\"true\">-</span>character access code",
-                "description": "Keep this code safe and only share it with others in your household"
+    {{ 
+        onsHero({
+            title: 'Census 2021 is happening now',
+            subtitle: 'Ready to start your census online?',
+            text: 'You’ll need your 16-character access code.',
+            button: {
+                url: pageInfo.rootPath + "/start.html",
+                text: 'Start census'
             },
-            "securityMessage": "Your personal information is protected by law and will be kept confidential."
-        }) }}
-
-        {{ onsButton({
-            "text": "Access census",
-            "classes": "u-mb-xl"
-        }) }}
-
-        <h2 class="u-fs-m u-mb-s">If you don't have a household access code</h2>
-        <p>
-            You can <a href="#">request a new household access code</a> to start a new census if you have lost, forgotten or not received an access code.
-        </p>
-
-        {%
-            call onsDetails({
-                "id": "details",
-                "classes": "u-mt-m u-mb-m",
-                "title": "Need to answer separately from your household?",
-                "button": {
-                    "close": "Hide this",
-                    "contextSuffix": "content"
-                }
-            }) %}
-            <p>If you prefer to answer separately from the people you live with, you can <a href="#">request an individual access code</a>.</p>
-        {% endcall %}
-    {% endcall %}
-    <div class="bsl-video u-d-no">
-        {{ onsButton({
-            "text": "Hide BSL",
-            "classes": "u-fr js-bsl-btn btn--secondary u-mb-xs",
-            "innerClasses": "icon--bsl-btn"
-        }) }}
-        <div class="bsl-video__video">
-            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/XQu8TTBmGhA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
+            image: {
+                src: pageInfo.rootPath + '/img/census-hero-banner.jpg',
+                alt: 'Image number 1'
+            }
+        })
+    }}
+    <div class="page__container container u-mt-l u-mb-l">
+        <section>
+            <div class="grid grid--flex grid--column@xs@s">
+                <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
+                    {{-
+                        onsCard({
+                            "ariaBy": 'Section highlight',
+                            "id": 'title1',
+                            "textId": 'text1',
+                            "title": 'About the census',
+                            "url": '#',
+                            "text": 'The census is a survey that gives us information about all the households in England and Wales.'
+                        })
+                    }}
+                </div>
+                <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
+                    {{- 
+                        onsCard({
+                            "ariaBy": 'Section highlight',
+                            "id": 'title2',
+                            "textId": 'text2',
+                            "title": 'Why should I take part in the census?',
+                            "url": '#',
+                            "text": 'Why the information we collect is important and what we use it for.'
+                        })
+                    }}
+                </div>
+                <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
+                    {{-
+                        onsCard({
+                            "ariaBy": 'Section highlight',
+                            "id": 'title3',
+                            "textId": 'text3',
+                            "title": 'Keeping your data safe',
+                            "url": '#',
+                            "text": 'How we keep your data safe and what happens to your personal information.'
+                        })
+                    }}
+                </div>
+            </div>
+        </section>
     </div>
 {% endblock %}
