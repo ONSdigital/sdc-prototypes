@@ -21,7 +21,7 @@
   z-index: 999;
   width: 100%;
   height: auto;
-  background: #4c4c4c;
+  background: rgba(0, 0, 0, 0.7);
   padding: 10px 10px 0;
   &__video {
     clear: both;
@@ -46,28 +46,6 @@
     &--closed {
       background: none;
     }
-  }
-}
-@media only screen and (min-width: 960px) {
-  .bsl-video {
-    width: 300px;
-    position: absolute;
-    top: 2rem;
-    right: 1rem;
-    bottom: auto;
-    background: none;
-    padding: 0;
-
-    .btn {
-      font-size: 0.9rem;
-      &__inner {
-        padding: 0.5em 0.7em;
-      }
-    }
-  }
-  iframe {
-    width: 300px;
-    height: 180px;
   }
 }
 
