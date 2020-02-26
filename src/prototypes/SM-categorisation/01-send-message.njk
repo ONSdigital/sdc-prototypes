@@ -1,0 +1,113 @@
+---
+group: Frontstage
+title: SM Categorisation
+version: 14.4.0
+layout: SM-categorisation/views/_master-messages
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+
+{% block main %}
+    <div class="grid">
+        <div id="main" class="grid__col col-12@m">
+            <h1>Send a message</h1>
+            <form action="{{ pageInfo.parentPath }}/index.html">
+                <p class="field">
+                    <fieldset class="fieldset">
+                        <legend class="fieldset__legend">What is your message about?</legend>
+                        <div class="radios__items">
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                        type="radio"
+                                        id="answering-a-survey-question"
+                                        data-action-url="{{ pageInfo.parentPath }}/10-category-one/00-send-message.html"
+                                        class="radio__input js-radio"
+                                        value="question-one"
+                                        name="message-query">
+                                    <label class="radio__label" for="answering-a-survey-question">Answering a survey question</label>
+                                </span>
+                            </p>
+                            <br>
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                        type="radio"
+                                        id="information-about-the-survey"
+                                        data-action-url="{{ pageInfo.parentPath }}/20-category-two/00-category-list.html"
+                                        class="radio__input js-radio"
+                                        value="question-two"
+                                        name="message-query">
+                                    <label class="radio__label" for="information-about-the-survey">Information about the survey</label>
+                                </span>
+                            </p>
+                            <br>
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                        type="radio"
+                                        id="my-company-details-have-changed"
+                                        data-action-url="{{ pageInfo.parentPath }}/30-category-three/00-send-message.html"
+                                        class="radio__input js-radio"
+                                        value="question--three"
+                                        name="message-query">
+                                    <label class="radio__label" for="my-company-details-have-changed">My company details have changed</label>
+                                </span>
+                            </p>
+                            <br>
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                        type="radio"
+                                        id="my-contact-details-have-changed"
+                                        data-action-url="{{ pageInfo.parentPath }}/40-category-four/00-send-message.html"
+                                        class="radio__input js-radio"
+                                        value="question--four"
+                                        name="message-query">
+                                    <label class="radio__label" for="my-contact-details-have-changed">My contact details have changed</label>
+                                </span>
+                            </p>
+                            <br>
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                        type="radio"
+                                        id="a-technical-issue"
+                                        data-action-url="{{ pageInfo.parentPath }}/50-category-five/00-send-message.html"
+                                        class="radio__input js-radio"
+                                        value="question-five"
+                                        name="message-query">
+                                    <label class="radio__label" for="a-technical-issue">A technical issue</label>
+                                </span>
+                            </p>
+                            <br>
+                            <span class="radios__label u-mt-s u-fs-r--b" aria-hidden="true">Or, </span>
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                        type="radio"
+                                        id="something-else"
+                                        data-action-url="{{ pageInfo.parentPath }}/60-category-six/00-send-message.html"
+                                        class="radio__input js-radio"
+                                        value="question-six"
+                                        name="message-query">
+                                    <label class="radio__label" for="something-else">
+                                        <span class="u-vh">Or</span>
+                                        Something else
+                                    </label>
+                                </span>
+                            </p>
+                        </div>
+                    </fieldset>
+                </p>
+                <p class="field">
+                    <button type="submit" class="btn">
+                        <span class="btn__inner">Continue</span>
+                    </button>
+                </p>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

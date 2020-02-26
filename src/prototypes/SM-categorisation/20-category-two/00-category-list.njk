@@ -1,0 +1,115 @@
+---
+group: Frontstage
+title: SM Categorisation
+version: 14.4.0
+layout: SM-categorisation/views/_master-messages
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+
+{% block main %}
+    <div class="grid">
+        <div id="main" class="grid__col col-8@m">
+            <h1>Send a message</h1>
+            <form>
+                <p class="field">
+                    <fieldset class="fieldset">
+                        <legend class="fieldset__legend">What information do you need?</legend>
+                        <div class="radios__items">
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                        type="radio"
+                                        id="answering-a-survey-question"
+                                        class="radio__input js-radio"
+                                        value="question-one"
+                                        name="message-query">
+                                    <label class="radio__label" for="answering-a-survey-question">How/Why/How long have I been selected?</label>
+                                </span>
+                            </p>
+                            <br>
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                        type="radio"
+                                        id="information-about-the-survey"
+                                        class="radio__input js-radio"
+                                        value="question-two"
+                                        name="message-query">
+                                    <label class="radio__label" for="information-about-the-survey">Can I be removed from the survey?</label>
+                                </span>
+                            </p>
+                            <br>
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                        type="radio"
+                                        id="my-company-details-have-changed"
+                                        class="radio__input js-radio"
+                                        value="question-three"
+                                        name="message-query">
+                                    <label class="radio__label" for="my-company-details-have-changed">I've already completed this survey</label>
+                                </span>
+                            </p>
+                            <br>
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                        type="radio"
+                                        id="a-technical-issue"
+                                        class="radio__input js-radio"
+                                        value="question-four"
+                                        name="message-query">
+                                    <label class="radio__label" for="a-technical-issue">Has my survey questionnaire been received?</label>
+                                </span>
+                            </p>
+                            <br>
+                            <span class="radios__label u-mt-s u-fs-r--b" aria-hidden="true">Or, </span>
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                        type="radio"
+                                        id="something-else"
+                                        class="radio__input js-radio"
+                                        value="question-five"
+                                        name="message-query">
+                                    <label class="radio__label" for="something-else">
+                                        <span class="u-vh">Or</span>
+                                        Something else
+                                    </label>
+                                </span>
+                            </p>
+                        </div>
+                    </fieldset>
+                </p>
+                <p class="field">
+                    <button type="submit" class="btn" id-"btnFormSubmit">
+                        <span class="btn__inner">Continue</span>
+                    </button>
+                </p>
+            </form>
+        </div>
+    </div>
+    <script>
+        var submit = document.getElementById('btnFormSubmit');
+        submit.addEventListener('click', submitForm);
+
+        function submitForm(event) {
+            event.preventDefault();
+            event.stopPropagation();
+
+            var href = '',
+                inputs = this
+                    .parentNode
+                    .getElementsByTagName('input')
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].getAttribute('name') == 'button' && inputs[i].checked) {
+                    href = inputs[i].getAttribute('data-href');
+                    window.location = href;
+                }
+            }
+        }
+    </script>
+
+{% endblock %}

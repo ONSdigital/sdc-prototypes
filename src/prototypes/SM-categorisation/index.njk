@@ -1,0 +1,80 @@
+---
+group: Frontstage
+title: SM Categorisation
+version: 14.4.0
+layout: surveys-list/views/_index
+---
+
+{% block main %}
+    {% from "components/button/_macro.njk" import onsButton %}
+    <h1>User generated account</h1>
+
+    <div class="grid">
+        <div class="grid__col col-6@m">
+            <h2>Start</h2>
+            <ul>
+                <li>
+                    <a href="{{ pageInfo.rootPath }}/00-surveys-list.html">Surveys list</a>
+                </li>
+            </ul>
+
+            <h2>Category 1</h2>
+            <ul>
+                <li>
+                    <a href="{{ pageInfo.rootPath }}/10-category-one/01-send-message.html">Category 1 - Send a message</a>
+                </li>
+            </ul>
+
+            <h2>Category 2</h2>
+            <ul>
+                <li>
+                    <a href="{{ pageInfo.rootPath }}/20-category-two/00-category-list.html">Category 2 sub-category list</a>
+                </li>
+                <li>
+                    <a href="{{ pageInfo.rootPath }}/20-category-two/10-category-one-send-message.html">Sub-category 1 - Send a message</a>
+                </li>
+                <li>
+                    <a href="{{ pageInfo.rootPath }}/20-category-two/20-category-two-send-message.html">Sub-category 2 - Send a message</a>
+                </li>
+                <li>
+                    <a href="{{ pageInfo.rootPath }}/20-category-two/30-category-three-send-message.html">Sub-category 3 - Send a message</a>
+                </li>
+                <li>
+                    <a href="{{ pageInfo.rootPath }}/20-category-two/40-category-four-send-message.html">Sub-category 4 - Send a message</a>
+                </li>
+                <li>
+                    <a href="{{ pageInfo.rootPath }}/20-category-two/50-category-five-send-message.html">Sub-category 5 - Send a message</a>
+                </li>
+            </ul>
+
+            <h2>Category 3</h2>
+            <ul>
+                <li>
+                    <a href="{{ pageInfo.rootPath }}/30-category-three/00-category-list.html">Category 3 sub-category list</a>
+                </li>
+            </ul>
+
+            <h2>Category 4</h2>
+            <ul>
+                <li>
+                    <a href="{{ pageInfo.rootPath }}/40-category-four/01-send-a-message.html">Category 4 - Send a message</a>
+                </li>
+            </ul>
+            
+            <h2>Category 5</h2>
+            <ul>
+                <li>
+                    <a href="{{ pageInfo.rootPath }}/50-category-five/01-send-a-message.html">Category 5 - Send a message</a>
+                </li>
+            </ul>
+            
+            <h2>Category 6</h2>
+            <ul>
+                <li>
+                    <a href="{{ pageInfo.rootPath }}/60-category-six/01-send-a-message.html">Category 6 - Send a message</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}
+
