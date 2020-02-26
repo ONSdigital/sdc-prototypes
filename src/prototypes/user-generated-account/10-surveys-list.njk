@@ -2,7 +2,7 @@
 group: Frontstage
 title: User generated account
 version: 14.4.0
-layout: user-generated-account/views/_master
+layout: user-generated-account/views/_master-todo
 ---
 
 {% from "components/button/_macro.njk" import onsButton %}
@@ -13,18 +13,6 @@ layout: user-generated-account/views/_master
         <div class="grid__col col-12@m">
             <div class="pl-grid-col">
                 <section role="region" class="tabs">
-                    <h2 class="tabs__title">Tabs</h2>
-                    <ul class="tabs__list">
-                        <li id="tabId1Item" class="tab__list-item">
-                            <a href="#tabId1" class="tab" data=ga="click" data-ga-category="tabs" data-ga-action="Show: UKIS" data-ga-label="Show: UKIS">To do</a>
-                        </li>
-                        <li id="tabId2Item" class="tab__list-item">
-                            <a href="#tabId2" class="tab" data=ga="click" data-ga-category="tabs" data-ga-action="Show: Vacancy survey" data-ga-label="Show: Vacancy survey">History</a>
-                        </li>
-                        <li id="tabId3Item" class="tab__list-item">
-                            <a href="#tabId3" class="tab" data=ga="click" data-ga-category="tabs" data-ga-action="Show: QBS" data-ga-label="Show: QBS">Messages</a>
-                        </li>
-                    </ul>
                     <section id="tabId1" class="tabs__panel">
                         <p class='u-fs-r'><a href="#">Add a survey</a> Using your enrolment code</p>
                         <table class="table table--row-hover">
