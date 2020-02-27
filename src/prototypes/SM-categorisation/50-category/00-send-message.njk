@@ -8,6 +8,7 @@ layout: SM-categorisation/views/_master-messages
 {% from "components/button/_macro.njk" import onsButton %}
 {% from "components/radios/_macro.njk" import onsRadios %}
 {% from "components/textarea/_macro.njk" import onsTextarea %}
+{% from "components/metadata/_macro.njk" import onsMetadata %}
 
 {% block main %}
 
@@ -25,6 +26,31 @@ layout: SM-categorisation/views/_master-messages
         </div>
         <div class="grid__col col-6@m">
             <h1>Create message</h1>
+            {{ 
+                onsMetadata({
+                    "metadataLabel": "This is an example of the metadata component",
+                    "termCol": "2",
+                    "descriptionCol": "10",
+                    "itemsList": [
+                        {
+                            "term": "Survey:",
+                            "descriptions": [ 
+                                {
+                                    "description": "Monthly Business Survey"
+                                }
+                            ]
+                        },
+                        {
+                            "term": "About:",
+                            "descriptions": [ 
+                                {
+                                    "description": "A technical issue"
+                                }                  
+                            ]
+                        }                                                         
+                    ]
+                }) 
+            }}
             <p class="field">
             {{
                 onsTextarea({
@@ -35,6 +61,24 @@ layout: SM-categorisation/views/_master-messages
                     }
                 })
             }}
+            </p>
+            <p class="field">
+                <div class="btn-group">
+                    {{ 
+                        onsButton({
+                            "type": 'button',
+                            "text": 'Send message',
+                            "classes": 'btn-group__btn'
+                        }) 
+                    }}
+                    {{ 
+                        onsButton({
+                            "type": 'button',
+                            "text": 'Cancel',
+                            "classes": 'btn--secondary btn-group__btn'
+                        }) 
+                    }}
+                </div>
             </p>
         </div>
     </div>
