@@ -1,88 +1,66 @@
 {% extends "page-templates/_template.njk" %}
 
 {% block head %}
-    <link rel="stylesheet" href="{{ pageInfo.rootPath }}/styles.css" />
+    <link rel="stylesheet" href="{{ pageInfo.rootPath }}/styles.css"/>
 {% endblock %}
 
-{% set page = { 
-    "title": "Survey Data Collection",
-    "footer": {
-        "OGLLink": {
-            "pre": 'All content is available under the',
-            "link": 'Open Government Licence v3.0',
-            "url": 'https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/',
-            "post": ', except where otherwise stated'
-        }
-    }
+{% set pageConfig = { 
+    "cdn": "14.4.0",
+    "title": "Design system test",
+    "header": {
+        "logoAlt": "ONS",
+        "logoHref": "/prototypes/SM-categorisation/"
+    },
+    "navigation": {
+        "classes": "nav--inline nav--light nav--header nav--h-m js-main-nav",
+        "id": "main-nav",
+        "ariaLabel": "Main menu",
+        "ariraListLabel": "Navigation menu",
+        "currentPath": "/00-surveys-list.html",
+        "itemsList": [
+            {
+                "title": "To do",
+                "path": "/00-surveys-list.html",
+                "classes": "header-nav__item--active"
+            },
+            {
+                "title": "History",
+                "path": "#"
+            },
+            {
+                "title": "Messages",
+                "path": "#"
+            }
+        ]},
+    "serviceLinks": {
+        "classes": "header-service-nav--internal",
+        "ariaLabel": "Site services menu",
+        "ariaListLabel": "Navigation menu",
+        "itemsList": [
+            {
+                "text": "Manage access to my surveys",
+                "url": "/prototypes/SM-categorisation/manage-surveys/20-my-account.html"
+            },
+            {
+                "text": "Sign out",
+                "url": "#"
+            }
+        ]} 
 } %}
-
-
-{% block header %}
-<header class="header ">
-  <div class="header__top" role="banner">
-    <div class="container">
-      <div class="header__grid-top grid grid--gutterless grid--flex grid--between grid--vertical-center grid--no-wrap">
-        <div class="grid__col col-auto">
-          <img class="header__logo" src="/img/ons-logo-pos-en.svg" alt="Office for National Statistics logo">
-        </div>
-        <div class="header__links grid__col col-auto">
-          <div class="grid__col col-auto u-d-no@xs@m ">
-            <ul class="language-links u-d-no@xs@m">
-              <li class="language-links__item">
-                <a href="{{ pageInfo.rootPath }}/manage-surveys/20-my-account.html">Manage access to my surveys</a>
-              </li>
-              <li class="language-links__item">
-                <a href="#">Sign out</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="header__main">
-    <div class="container">
-      <div class="grid grid--gutterless grid--flex grid--between grid--vertical-center grid--no-wrap">
-        <div class="grid__col col-auto u-flex-shrink">
-          <div class="header__title">Survey data collection</div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="header__bottom">
-    <div class="container container--gutterless@xs@m">
-      <nav class="header-nav js-header-nav" id="main-nav" aria-label="Main menu" data-analytics="header-navigation">
-        <ul class="header-nav__list" aria-label="" role="menubar">
-          <li class="header-nav__item  header-nav__item--active">
-            <a href="/get-started" class="header-nav__link" role="menuitem">To do</a>
-          </li>
-          <li class="header-nav__item ">
-            <a href="#" class="header-nav__link" role="menuitem">History</a>
-          </li>
-          <li class="header-nav__item ">
-            <a href="#" class="header-nav__link" role="menuitem">Messages</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </div>
-</header>
-{% endblock %}
 
 
 {% block pageContent %}
     {% block preMain %}{% endblock %}
     <div class="page__container container">
-      <main id="main-content" class="page__main {{ pageClasses }}">
-          {% block main %}{% endblock %}
-      </main>
+        <main id="main-content" class="page__main {{ pageClasses }}">
+            {% block main %}{% endblock %}
+        </main>
     </div>
 {% endblock %}
 
-
 {% block footer %}
-{% from "components/footer/_macro.njk" import onsFooter %}
-{{ 
+    {% from "components/footer/_macro.njk" import onsFooter %}
+    {{ 
     onsFooter({
         "OGLLink": {
             "pre": "All content is available under the",
@@ -139,8 +117,7 @@
 }}
 {% endblock %}
 
-
 {% block bodyEnd %}
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script src="{{ pageInfo.rootPath }}/scripts/index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="{{ pageInfo.rootPath }}/scripts/index.js"></script>
 {% endblock %}

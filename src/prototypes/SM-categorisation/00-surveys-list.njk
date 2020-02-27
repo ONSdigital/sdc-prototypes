@@ -15,7 +15,7 @@ layout: SM-categorisation/views/_master-todo
             {{ 
                 onsCheckboxes({
                     "legend": "Filter surveys",
-                    "name": "food",
+                    "name": "filter",
                     "checkboxes": [
                         {
                             "id": "not-started",
@@ -44,17 +44,18 @@ layout: SM-categorisation/views/_master-todo
                     ]
                 }) 
             }}
-            <p class="field">
+            <!-- <p class="field">
                 <button type="button" class="btn btn--small">
                     <span class="btn__inner">Apply filter</span>
                 </button>
-            </p>
+            </p> -->
         </div>
 
-        <div id="main" class="grid__col col-10@m">
+        <div id="main" class="grid__col col-12@m">
             <p class='u-fs-r'>
                 <a href="#">Add a survey</a> Using your enrolment code
             </p>
+            <!--
             <p class="field show-hide">
                 <button id="openNavBtn" type="button" class="btn btn--secondary btn--small" onclick="openNav()">
                     <span class="btn__inner">Show filter</span>
@@ -63,10 +64,11 @@ layout: SM-categorisation/views/_master-todo
                     <span class="btn__inner">Hide filter</span>
                 </button>
             </p>
+            -->
 
             <div class="panel panel--error panel--simple u-mt-s u-pb-xs">
                 <div class="panel__body">
-                    <section class="u-ml-s">
+                    <section class="survey u-ml-s">
                         <div class="grid">
                             <div class="grid__col col-5@m u-pl-no">
                                 <h2 class="u-fs-r u-fw-b u-mb-xs">
@@ -88,7 +90,7 @@ layout: SM-categorisation/views/_master-todo
                                     <span class="status status--success">In progress</span> 
                                 </h2>
                                 <p class="u-fs-s u-mb-xs u-ta-right">
-                                    <a href="{{ pageInfo.rootPath }}/01-message-categories.html">Send a message</a>
+                                    <a href="{{ pageInfo.rootPath }}/01-message-categories.html">Send a message about this survey</a>
                                 </p>
                             </div>
                         </div>
@@ -96,7 +98,7 @@ layout: SM-categorisation/views/_master-todo
                 </div>
             </div>
 
-            <section class="u-bb u-ml-s">
+            <section class="survey u-bb u-ml-s">
                 <div class="grid">
                     <div class="grid__col col-5@m u-pt-s u-pb-s">
                         <h2 class="u-fs-r u-fw-b u-mb-xs">
@@ -116,14 +118,14 @@ layout: SM-categorisation/views/_master-todo
                         <h2 class="u-fs-r u-mb-xs u-ta-right">
                             Not started
                         </h2>
-                        <p class="u-fs-s u-mb-xs u-ta-right">
-                            <a href="#">Send a message</a>
+                        <p class="u-fs-s u-mb-m u-ta-right">
+                            <a href="#">Send a message about this survey</a>
                         </p>
                     </div>
                 </div>
             </section>
 
-            <section class="u-bb u-ml-s">
+            <section class="survey u-bb u-ml-s">
                 <div class="grid">
                     <div class="grid__col col-5@m u-pt-s u-pb-s">
                         <h2 class="u-fs-r u-fw-b u-mb-xs">
@@ -143,14 +145,14 @@ layout: SM-categorisation/views/_master-todo
                         <h2 class="u-fs-r u-fw-b u-mb-xs u-ta-right">
                             <span class="status status--success">In progress</span> 
                         </h2>
-                        <p class="u-fs-s u-mb-xs u-ta-right">
-                            <a href="#">Send a message</a>
+                        <p class="u-fs-s u-mb-m u-ta-right">
+                            <a href="#">Send a message about this survey</a>
                         </p>
                     </div>
                 </div>
             </section>
 
-            <section class="u-bb u-ml-s">
+            <section class="survey u-bb u-ml-s">
                 <div class="grid">
                     <div class="grid__col col-5@m u-pt-s u-pb-s">
                         <h2 class="u-fs-r u-fw-b u-mb-xs">
@@ -170,14 +172,14 @@ layout: SM-categorisation/views/_master-todo
                         <h2 class="u-fs-r u-mb-xs u-ta-right">
                             Not started
                         </h2>
-                        <p class="u-fs-s u-mb-xs u-ta-right">
-                            <a href="#">Send a message</a>
+                        <p class="u-fs-s u-mb-m u-ta-right">
+                            <a href="#">Send a message about this survey</a>
                         </p>
                     </div>
                 </div>
             </section>
 
-            <section class="u-ml-s">
+            <section class="survey u-ml-s">
                 <div class="grid">
                     <div class="grid__col col-5@m u-pt-s u-pb-s">
                         <h2 class="u-fs-r u-fw-b u-mb-xs">
@@ -197,8 +199,8 @@ layout: SM-categorisation/views/_master-todo
                         <h2 class="u-fs-r u-mb-xs u-ta-right">
                             Not started
                         </h2>
-                        <p class="u-fs-s u-mb-xs u-ta-right">
-                            <a href="#">Send a message</a>
+                        <p class="u-fs-s u-mb-m u-ta-right">
+                            <a href="#">Send a message about this survey</a>
                         </p>
                     </div>
                 </div>

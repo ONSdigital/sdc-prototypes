@@ -1,11 +1,23 @@
-/* Headwer logo fix */
+/* Headwer logo fix
 .header__logo {
   width: fit-content;
 }
+ */
 
 .grid {
   position: relative;
 }
+
+/* section.survey {
+  .grid {
+    display: flex;
+    div:last-child {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+} */
 
 .sidenav {
   height: 100%;

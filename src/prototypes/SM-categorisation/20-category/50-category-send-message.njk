@@ -12,24 +12,26 @@ layout: SM-categorisation/views/_master-messages
 {% block main %}
 
     <div class="grid">
-        <div class="grid__col col-8@m">
-            <div class="panel panel--info panel--simple u-mb-s">
-                <div class="panel__body">
-                    <p>Contextually relevant help which should either:</p>
-                    <ul>
-                        <li><a href="#">Redirect the user</a> to help within the site</li>
-                        <li>Give advice on what to write in an email to get the ideal solution</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
         <div class="grid__col col-6@m">
             <h1>Create message</h1>
-            <p>To: ONS Business Surveys team</p>
-            <p class="field">
-                <label class="label" for="text">Subject</label>
-                <input type="text" id="text" value="" class="input input--text input-type__input" />
-            </p>
+            {% from "components/metadata/_macro.njk" import onsMetadata %}
+            {{ 
+                onsMetadata({
+                    "metadataLabel": "This is an example of the metadata component",
+                    "termCol": "2",
+                    "descriptionCol": "10",
+                    "itemsList": [
+                        {
+                            "term": "Survey:",
+                            "descriptions": [ 
+                                {
+                                    "description": "Monthly Business Survey"
+                                }
+                            ]
+                        }                                                    
+                    ]
+                }) 
+            }}
             <p class="field">
             {{
                 onsTextarea({
