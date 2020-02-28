@@ -17,91 +17,113 @@ layout: bsl-v2/views/_question
         "action":  pageInfo.rootPath + "/ethnic-group.html"
     }
 } %}
-    {% block preMain %}
-    <div class="container page__container container u-mt-s">
-        <a href="/prototypes/bsl-v2/marital-status.html">Previous</a>
-    </div>
-    {% endblock %}
-    {% block main %}
-        {% call onsQuestion({
-            "title": "How would you describe your national identity?",
-            "useFieldset": true
+{% block preMain %}
+<div class="container page__container container u-mt-s">
+    <a href="/prototypes/bsl-v2/marital-status.html">Previous</a>
+</div>
+{% endblock %}
+{% block main %}
+    {% call onsQuestion({
+        "title": "How would you describe your national identity?",
+        "useFieldset": true
+    }) %}
+        {% call onsDetails({
+                "id": "details",
+                "title": "What we mean by 'national identity'",
+                "button": {
+                    "close": "Hide this",
+                    "contextSuffix": "content"
+                }
         }) %}
-            {% call onsDetails({
-                    "id": "details",
-                    "title": "What we mean by 'national identity'",
-                    "button": {
-                        "close": "Hide this",
-                        "contextSuffix": "content"
-                    }
-            }) %}
-                <p>National identity is not dependent on your ethnic group or citizenship.</p>
-                <p>It is about the country or countries where you feel you belong or think of as home.</p>
-            {% endcall %}
-            {{ 
-                onsCheckboxes({
-                    "legend": "What are your favourite pizza toppings?",
-                    "legendClasses": "u-vh",
-                    "checkboxesLabel": "Select all that apply",
-                    "name": "food-other",
-                    "checkboxes": [
-                        {
-                            "id": "English",
-                            "label": {
-                                "text": "English"
-                            },
-                            "value": "English"
+            <p>National identity is not dependent on your ethnic group or citizenship.</p>
+            <p>It is about the country or countries where you feel you belong or think of as home.</p>
+        {% endcall %}
+        {{ 
+            onsCheckboxes({
+                "legend": "What are your favourite pizza toppings?",
+                "legendClasses": "u-vh",
+                "checkboxesLabel": "Select all that apply",
+                "name": "food-other",
+                "checkboxes": [
+                    {
+                        "id": "English",
+                        "label": {
+                            "text": "English"
                         },
-                        {
-                            "id": "Welsh",
-                            "label": {
-                                "text": "Welsh"
-                            },
-                            "value": "Welsh"
+                        "value": "English"
+                    },
+                    {
+                        "id": "Welsh",
+                        "label": {
+                            "text": "Welsh"
                         },
-                        {
-                            "id": "Scottish",
-                            "label": {
-                                "text": "Scottish"
-                            },
-                            "value": "Scottish"
+                        "value": "Welsh"
+                    },
+                    {
+                        "id": "Scottish",
+                        "label": {
+                            "text": "Scottish"
                         },
-                        {
-                            "id": "northern-irish",
-                            "label": {
-                                "text": "Northern Irish"
-                            },
-                            "value": "Northern Irish"
+                        "value": "Scottish"
+                    },
+                    {
+                        "id": "northern-irish",
+                        "label": {
+                            "text": "Northern Irish"
                         },
-                        {
-                            "id": "British",
-                            "label": {
-                                "text": "British"
-                            },
-                            "value": "British"
+                        "value": "Northern Irish"
+                    },
+                    {
+                        "id": "British",
+                        "label": {
+                            "text": "British"
                         },
-                        {
-                            "id": "Other",
+                        "value": "British"
+                    },
+                    {
+                        "id": "Other",
+                        "label": {
+                            "text": "Other",
+                            "description": "Select to enter answer"
+                        },
+                        "value": "Other",
+                        "other": {
+                            "id": "other-textbox",
+                            "name": "other-answer",
                             "label": {
-                                "text": "Other",
-                                "description": "Select to enter answer"
-                            },
-                            "value": "Other",
-                            "other": {
-                                "id": "other-textbox",
-                                "name": "other-answer",
-                                "label": {
-                                    "text": "Describe your national identity"
-                                }
+                                "text": "Describe your national identity"
                             }
                         }
-                    ]
-                }) 
-            }}
-        {% endcall %}
+                    }
+                ]
+            }) 
+        }}
+    {% endcall %}
 
-        {{ onsButton({
-            "text": "Save and continue",
-            "classes": "u-ml-no u-mt-xl u-mb-xl"
-        }) }}     
-    {% endblock %}
+    {{ onsButton({
+        "text": "Save and continue",
+        "classes": "u-ml-no u-mt-xl u-mb-xl"
+    }) }}     
+{% endblock %}
+{% block bodyEnd %}
+    <div class="bsl-video u-d-no">
+        <div class="bsl-video__container">
+            <div class="bsl-video__video">
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/woHnv4CGRZw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="bsl-video__controls">
+            <div class="grid grid--gutterless grid--flex grid--between grid--vertical-center grid--no-wrap">
+                <div class="grid__col col-auto">
+                    <a class="js-remove-bsl bsl-video__remove-link" href="{{ pageInfo.path + '.html' }}">Turn off BSL</a>
+                </div>
+                {{ onsButton({
+                    "text": "Hide BSL",
+                    "classes": "js-bsl-btn btn--ghost btn--small u-mb-xs u-mt-xs grid__col col-auto",
+                    "innerClasses": "icon--bsl-btn"
+                }) }}
+            </div>
+        </div>
+    </div>
+    <script src="{{ pageInfo.rootPath }}/scripts/index.js"></script>
+{% endblock %}

@@ -15,45 +15,45 @@ layout: bsl-v2/views/_question
         "action":  pageInfo.rootPath + "/sex.html"
     }
 } %}
-    {% block preMain %}
-    <div class="container page__container container u-mt-s">
-       
-    </div>
-    {% endblock %}
-    {% block main %}
-        {% call onsQuestion({
-            "title": "What is your name?",
-            "useFieldset": true
-        }) %}
-            {{ onsInput({
-                "id": "your-name",
-                "name": "your-name",
-                "label": {
-                    "text": "First name"
-                }
-            }) }}
-            {{ onsInput({
-                "id": "your-name",
-                "name": "your-name",
-                "label": {
-                    "text": "Middle names"
-                }
-            }) }}
-            {{ onsInput({
-                "id": "your-name",
-                "name": "your-name",
-                "label": {
-                    "text": "Last name"
-                }
-            }) }}
-        {% endcall %}
+{% block preMain %}
+<div class="container page__container container u-mt-s">
 
-        {{ onsButton({
-            "text": "Save and continue",
-            "classes": "u-ml-no u-mt-xl u-mb-xl"
+</div>
+{% endblock %}
+{% block main %}
+    {% call onsQuestion({
+        "title": "What is your name?",
+        "useFieldset": true
+    }) %}
+        {{ onsInput({
+            "id": "your-name",
+            "name": "your-name",
+            "label": {
+                "text": "First name"
+            }
         }) }}
-    {% endblock %}
-    {% block bodyEnd %}
+        {{ onsInput({
+            "id": "your-name",
+            "name": "your-name",
+            "label": {
+                "text": "Middle names"
+            }
+        }) }}
+        {{ onsInput({
+            "id": "your-name",
+            "name": "your-name",
+            "label": {
+                "text": "Last name"
+            }
+        }) }}
+    {% endcall %}
+
+    {{ onsButton({
+        "text": "Save and continue",
+        "classes": "u-ml-no u-mt-xl u-mb-xl"
+    }) }}
+{% endblock %}
+{% block bodyEnd %}
     <div class="bsl-video u-d-no">
         <div class="bsl-video__container">
             <div class="bsl-video__video">

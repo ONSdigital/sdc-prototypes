@@ -16,46 +16,68 @@ layout: bsl-v2/views/_question
         "action":  pageInfo.rootPath + "/marital-status.html"
     }
 } %}
-    {% block preMain %}
-    <div class="container page__container container u-mt-s">
-        <a href="/prototypes/bsl-v2/name.html">Previous</a>
-    </div>
-    {% endblock %}
-    {% block main %}
-        {% call onsQuestion({
-            "title": "What is your sex?",
-            "useFieldset": true
+{% block preMain %}
+<div class="container page__container container u-mt-s">
+    <a href="/prototypes/bsl-v2/name.html">Previous</a>
+</div>
+{% endblock %}
+{% block main %}
+    {% call onsQuestion({
+        "title": "What is your sex?",
+        "useFieldset": true
+    }) %}
+        {% call onsPanel({
         }) %}
-           {% call onsPanel({
-            }) %}
-                <p>A question about gender will follow</p>
-            {% endcall %}
-
-            {{ onsRadios({
-                "noField": true,
-                "id": "do-you-live",
-                "name": "do-you-live",
-                "classes": "js-radios",
-                "radios": [
-                    {
-                        "id": "female",
-                        "label": {
-                            "text": "Female"
-                        }
-                    },
-                    {
-                        "id": "male",
-                        "label": {
-                            "text": "Male"
-                        }
-                    }
-                ]
-            }) }}
+            <p>A question about gender will follow</p>
         {% endcall %}
 
-        {{ onsButton({
-            "text": "Save and continue",
-            "classes": "u-ml-no u-mt-xl u-mb-xl"
+        {{ onsRadios({
+            "noField": true,
+            "id": "do-you-live",
+            "name": "do-you-live",
+            "classes": "js-radios",
+            "radios": [
+                {
+                    "id": "female",
+                    "label": {
+                        "text": "Female"
+                    }
+                },
+                {
+                    "id": "male",
+                    "label": {
+                        "text": "Male"
+                    }
+                }
+            ]
         }) }}
- 
-    {% endblock %}
+    {% endcall %}
+
+    {{ onsButton({
+        "text": "Save and continue",
+        "classes": "u-ml-no u-mt-xl u-mb-xl"
+    }) }}
+
+{% endblock %}
+{% block bodyEnd %}
+    <div class="bsl-video u-d-no">
+        <div class="bsl-video__container">
+            <div class="bsl-video__video">
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/uyQgkQ4UD6k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="bsl-video__controls">
+            <div class="grid grid--gutterless grid--flex grid--between grid--vertical-center grid--no-wrap">
+                <div class="grid__col col-auto">
+                    <a class="js-remove-bsl bsl-video__remove-link" href="{{ pageInfo.path + '.html' }}">Turn off BSL</a>
+                </div>
+                {{ onsButton({
+                    "text": "Hide BSL",
+                    "classes": "js-bsl-btn btn--ghost btn--small u-mb-xs u-mt-xs grid__col col-auto",
+                    "innerClasses": "icon--bsl-btn"
+                }) }}
+            </div>
+        </div>
+    </div>
+    <script src="{{ pageInfo.rootPath }}/scripts/index.js"></script>
+{% endblock %}
