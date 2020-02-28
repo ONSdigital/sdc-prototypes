@@ -9,22 +9,44 @@
     "title": "Design system test",
     "header": {
         "logoAlt": "ONS",
-        "logoHref": "/prototypes/SM-categorisation/"
+        "logoHref": "/prototypes/SM-categorisation/",
+        "classes": "header--internal header--thin",
+        "logo": "ons-logo-white",
+        "button": {
+            "text": "Sign out",
+            "url": "#"
+        }
     },
-    "serviceLinks": {
-        "classes": "header-service-nav--internal",
-        "ariaLabel": "Site services menu",
-        "ariaListLabel": "Navigation menu",
+    "navigation": {
+        "classes": "nav--inline nav--light nav--header nav--h-m js-main-nav",
+        "id": "main-nav",
+        "ariaLabel": "Main menu",
+        "ariraListLabel": "Navigation menu",
+        "currentPath": "/surveys",
         "itemsList": [
             {
-                "text": "Manage access to my surveys",
-                "url": "/prototypes/SM-categorisation/manage-surveys/20-my-account.html"
+                "title": "Dashboard",
+                "path": "/surveys"
             },
             {
-                "text": "Sign out",
-                "url": "#"
+                "title": "Messages",
+                "classes": "header-nav__item--active",
+                "path": "#"
+            },
+            {
+                "title": "Reporting units",
+                "path": "#"
+            },
+            {
+                "title": "Respondents",
+                "path": "/surveys"
+            },
+            {
+                "title": "Surveys",
+                "path": "#"
             }
-        ]} 
+        ]
+    }
 } %}
 
 {% block pageContent %}

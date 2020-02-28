@@ -2,7 +2,7 @@
 group: Frontstage
 title: SM Categorisation
 version: 14.4.0
-layout: SM-categorisation/views/_master-messages
+layout: SM-categorisation/views/_master-internal
 ---
 
 {% from "components/button/_macro.njk" import onsButton %}
@@ -13,33 +13,90 @@ layout: SM-categorisation/views/_master-messages
 {% block main %}
 
     <div class="grid">
-        <div class="grid__col col-6@m">
+        <div class="grid__col col-8@m">
             <h1>Create message</h1>
             {{ 
                 onsMetadata({
                     "metadataLabel": "This is an example of the metadata component",
-                    "termCol": "2",
-                    "descriptionCol": "10",
+                    "termCol": "3",
+                    "descriptionCol": "9",
                     "itemsList": [
                         {
                             "term": "Survey:",
                             "descriptions": [ 
                                 {
-                                    "description": "Monthly Business Survey"
+                                    "description": "MBS"
                                 }
                             ]
                         },
                         {
-                            "term": "About:",
+                            "term": "RU Ref:",
                             "descriptions": [ 
                                 {
-                                    "description": "Answering a survey question"
+                                    "description": "11100000110"
+                                }                  
+                            ]
+                        },
+                        {
+                            "term": "Business:",
+                            "descriptions": [ 
+                                {
+                                    "description": "Bolts and Ratchets"
+                                }
+                            ]
+                        },
+                        {
+                            "term": "To:",
+                            "descriptions": [ 
+                                {
+                                    "description": "Jane Doe"
                                 }                  
                             ]
                         }                                                         
                     ]
                 }) 
             }}
+             
+             <p class="field">
+            {% from "components/radios/_macro.njk" import onsRadios %}
+            {{ 
+                onsRadios({
+                    "legend": "What is your message about?",
+                    "name": "category",
+                    "radios": [
+                        {
+                            "id": "data-query",
+                            "label": {
+                                "text": "A data query"
+                            },
+                            "value": "data-query"
+                        },
+                        {
+                            "id": "response-chase",
+                            "label": {
+                                "text": "Response chase"
+                            },
+                            "value": "response-chase"
+                        },
+                        {
+                            "id": "other-checkbox",
+                            "label": {
+                                "text": "Something else"
+                            },
+                            "value": "other",
+                            "other": {
+                                "id": "other-textbox",
+                                "name": "other-answer",
+                                "label": {
+                                    "text": "Please specify"
+                                }
+                            }
+                        }
+                    ]
+                }) 
+            }}
+            </p>
+
             <p class="field">
             {{
                 onsTextarea({
