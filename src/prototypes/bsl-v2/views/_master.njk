@@ -6,7 +6,13 @@
 
 {% set pageConfig =  {
     "title": "Census 2021",
-    "theme": "census",  
+    "theme": "census",
+    "header": {
+        "logoHref": "#",
+        "titleLogo": "/img/census-logo-en.svg",
+        "titleLogoHref": pageInfo.rootPath + '.html',
+        "titleLogoAlt": "Census 2021"
+    },
     "serviceLinks": {
         "ariaLabel": "Site services menu",
         "ariaListLabel": "Navigation menu",
