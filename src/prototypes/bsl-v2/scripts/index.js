@@ -1,9 +1,12 @@
 import domReady from 'helpers/domready';
 
 function loadBSL() {
-  const bslLink = document.querySelector('.header-service-nav__link');
+  const bslLink = [...document.querySelectorAll('.header-service-nav__link')];
 
-  bslLink.addEventListener('click', setBSL.bind(this));
+  bslLink.forEach(link => {
+    link.addEventListener('click', setBSL.bind(this));
+  });
+
   function setBSL() {
     window.sessionStorage.setItem('bsl', true);
   }
