@@ -1,0 +1,73 @@
+{% extends "page-templates/_template.njk" %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ pageInfo.rootPath }}/styles/styles.css" />
+{% endblock %}
+
+{% set pageConfig =  {
+    "title": "Census 2021",
+    "theme": "census",
+    "language": {
+        "allLanguagesUrl": "#",
+        "languages": [
+            {
+                "url": "#",
+                "ISOCode": "en",
+                "text": "English",
+                "buttonAriaLabel": "Language selector. Current language: English",
+                "chooseLanguage": "Choose language",
+                "current": true
+            },
+            {
+                "url": "#",
+                "ISOCode": "cy",
+                "text": "Cymraeg",
+                "buttonAriaLabel": "Dewisydd iaith. Iaith gyfredol: Cymraeg",
+                "chooseLanguage": "Dewiswch iaith",
+                "current": false
+            }
+        ]
+    },
+    "footer": {
+        "rows": [
+            {
+                "itemsList": [
+                    {
+                        "text": 'Help',
+                        "url": '#'
+                    },
+                    {
+                        "text": 'Contact us',
+                        "url": '#'
+                    }
+                ]
+            },
+            {
+                "itemsList": [
+                    {
+                        "text": 'Cookies',
+                        "url": '#'
+                    },
+                    {
+                        "text": 'Accessibility',
+                        "url": '#'
+                    },
+                    {
+                        "text": 'Privacy and data protection',
+                        "url": '#'
+                    }
+                ]
+            }
+        ]
+    }
+} %}
+
+
+{% block pageContent %}
+    {% block preMain %}{% endblock %}
+    {% block main %}{% endblock %}
+{% endblock %}
+
+{% block bodyEnd %}
+    <script src="{{ pageInfo.rootPath }}/scripts/index.js"></script>
+{% endblock %}
