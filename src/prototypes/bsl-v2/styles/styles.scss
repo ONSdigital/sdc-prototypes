@@ -53,16 +53,22 @@
   font-size: 16px;
 }
 
+@media only screen and (min-width: 425px) {
+  .header__logo {
+    width: 220px;
+  }
+
+  .header__links a {
+    font-size: 18px;
+  }
+}
+
 @media only screen and (min-width: 480px) {
   .bsl-video {
     &__container {
       width: 480px;
       margin: 0 auto;
     }
-  }
-
-  .header__logo {
-    width: 220px;
   }
 }
 
