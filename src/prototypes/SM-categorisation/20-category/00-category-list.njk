@@ -69,20 +69,29 @@ layout: SM-categorisation/views/_master-messages
                                 </span>
                             </p>
                             <br>
-                            <span class="radios__label u-mt-s u-fs-r--b" aria-hidden="true">Or, </span>
                             <p class="radios__item">
                                 <span class="radio">
                                     <input
                                         type="radio"
-                                        id="something-else"
+                                        id="other-checkbox"
                                         data-action-url="{{ pageInfo.parentPath }}/50-category-send-message.html"
-                                        class="radio__input js-radio"
-                                        value="question-five"
-                                        name="message-query">
-                                    <label class="radio__label" for="something-else">
-                                        <span class="u-vh">Or</span>
-                                        Something else
-                                    </label>
+                                        class="radio__input js-radio "
+                                        value="other" 
+                                        name="message-query"
+                                        aria-controls="other-checkbox-other-wrap" aria-haspopup="true">
+                                        <label class="radio__label" for="other-checkbox">
+                                            Something else
+                                        </label>
+                                        <span class="radio__other" id="other-checkbox-other-wrap">
+                                            <label class="label u-fs-s--b" for="other-textbox">
+                                                Please specify
+                                            </label>
+                                        <input
+                                            type="text"
+                                            id="other-textbox"
+                                            class="input input--text input-type__input  input--w-auto "
+                                            name="other-answer"/>
+                                    </span>
                                 </span>
                             </p>
                         </div>
