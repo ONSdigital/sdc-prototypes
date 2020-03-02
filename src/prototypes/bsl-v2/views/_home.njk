@@ -1,4 +1,4 @@
-{% extends "page-templates/_template.njk" %}
+{% extends "../page-template/_template.njk" %}
 
 {% block head %}
     <link rel="stylesheet" href="{{ pageInfo.rootPath }}/styles/styles.css" />
@@ -8,11 +8,11 @@
     "title": "Census 2021",
     "theme": "census",
     "header": {
-        "logoHref": "#",
+        "logoHref": "https://www.ons.gov.uk",
         "titleLogo": "/img/census-logo-en.svg",
-        "titleLogoHref": pageInfo.rootPath + '.html',
+        "titleLogoHref": pageInfo.rootPath,
         "titleLogoAlt": "Census 2021"
-    },    
+    },
     "language": {
         "allLanguagesUrl": "#",
         "languages": [

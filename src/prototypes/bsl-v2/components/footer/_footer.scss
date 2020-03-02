@@ -1,0 +1,28 @@
+.footer {
+  padding: 2rem 0 4rem;
+  background-color: $color-grey-5;
+
+  &__heading {
+    margin: 0 0 1rem;
+  }
+
+  &__ogl-img {
+    margin: 0 0.5rem 0.2rem 0;
+    height: 1.333333rem;
+    opacity: 0.75;
+  }
+
+  &__poweredby-img {
+    width: 272px;
+    height: auto;
+  }
+
+  &__poweredby-img--small {
+    width: 150px;
+  }
+
+  &__hr {
+    border: 0;
+    border-top: 1px solid $color-borders;
+  }
+}
