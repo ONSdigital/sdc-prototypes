@@ -9,6 +9,8 @@
     "theme": "census",
     "header": {
         "logoHref": "https://www.ons.gov.uk",
+        "logo": pageInfo.rootPath + "/img/ons-logo-en.svg",
+        "logoAlt": "Office for National Statistics",        
         "titleLogo": "/img/census-logo-en.svg",
         "titleLogoHref": pageInfo.rootPath,
         "titleLogoAlt": "Census 2021"
@@ -19,7 +21,7 @@
         "itemsList": [
             {
                 "text": "BSL",
-                "url": pageInfo.path + '.html',
+                "url": pageInfo.path,
                 "classes": "header-service-nav__link"
             }
         ]
@@ -89,7 +91,7 @@
         <div class="bsl-video__controls">
             <div class="grid grid--gutterless grid--flex grid--between grid--vertical-center grid--no-wrap">
                 <div class="grid__col col-auto">
-                    <a class="js-remove-bsl bsl-video__remove-link" href="{{ pageInfo.path + '.html' }}">Turn off BSL</a>
+                    <a class="js-remove-bsl bsl-video__remove-link" href="{{ pageInfo.path }}">Turn off BSL</a>
                 </div>
                 {{ onsButton({
                     "text": "Hide BSL",
