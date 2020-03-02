@@ -40,19 +40,27 @@ layout: SM-categorisation/views/_master-messages
                                     "description": "Monthly Business Survey"
                                 }
                             ]
+                        },
+                        {
+                            "term": "About:",
+                            "descriptions": [ 
+                                {
+                                    "description": "Custom message"
+                                }                  
+                            ]
                         }                                                    
                     ]
                 }) 
             }}
             <p class="field">
-            {{ 
+            <!-- {{ 
                 onsInput({
                     "id": "text",
                     "label": {
                         "text": "What is your message about?"
                     }
                 }) 
-            }}
+            }} -->
             {{
                 onsTextarea({
                     "id": "textarea",
