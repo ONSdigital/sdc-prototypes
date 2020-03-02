@@ -1,8 +1,12 @@
-/* Headwer logo fix
-.header__logo {
-  width: fit-content;
+/* Remove image from link button */
+.btn--link:not(.btn--secondary) .btn__inner:after,
+.btn--link:not(.btn--secondary):active .btn__inner:after,
+.btn--link:not(.btn--secondary):hover:focus .btn__inner:after,
+.btn--link.btn--secondary .btn__inner:after,
+.btn--link:focus.btn--secondary .btn__inner:after {
+  background-image: none;
+  display: none;
 }
- */
 
 .grid {
   position: relative;

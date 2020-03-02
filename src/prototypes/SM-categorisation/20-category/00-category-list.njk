@@ -98,9 +98,19 @@ layout: SM-categorisation/views/_master-messages
                     </fieldset>
                 </p>
                 <p class="field">
-                    <button type="submit" class="btn" id-"btnFormSubmit">
-                        <span class="btn__inner">Continue</span>
-                    </button>
+                    <div class="btn-group">
+                        <button type="submit" class="btn">
+                            <span class="btn__inner">Continue</span>
+                        </button>
+                        {{ 
+                            onsButton({
+                                "type": 'button',
+                                "text": 'Cancel',
+                                "classes": 'btn--secondary btn-group__btn',
+                                "url": "/prototypes/SM-categorisation/00-surveys-list.html"
+                            }) 
+                        }}
+                    </div>
                 </p>
             </form>
         </div>
