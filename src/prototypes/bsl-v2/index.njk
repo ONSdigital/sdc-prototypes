@@ -78,3 +78,25 @@ layout: bsl-v2/views/_home
         </section>
     </div>
 {% endblock %}
+{% block bodyEnd %}
+    <div class="bsl-video u-d-no">
+        <div class="bsl-video__container">
+            <div class="bsl-video__video">
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/XQu8TTBmGhA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="bsl-video__controls">
+            <div class="grid grid--gutterless grid--flex grid--between grid--vertical-center grid--no-wrap">
+                <div class="grid__col col-auto">
+                    <a class="js-remove-bsl bsl-video__remove-link" href="{{ pageInfo.path }}">Turn off BSL</a>
+                </div>
+                {{ onsButton({
+                    "text": "Hide BSL",
+                    "classes": "js-bsl-btn btn--ghost btn--small u-mb-xs u-mt-xs grid__col col-auto",
+                    "innerClasses": "icon--bsl-btn"
+                }) }}
+            </div>
+        </div>
+    </div>
+    <script src="{{ pageInfo.rootPath }}/scripts/index.js"></script>
+{% endblock %}
