@@ -1,0 +1,43 @@
+---
+title: Respondent Home - Requests (Fulfilments)
+group: Census
+version: 10.0.1
+layout: rh-fulfilments/views/_master
+---
+{% from "components/lists/_macro.njk" import onsList %}
+
+{% block main %}
+    {{ onsList({
+        "classes": "u-mt-l",
+        "itemsList": [
+            {
+                "text": "Request Household Code",
+                "url": pageInfo.rootPath + "/request-household-code.html"
+            },
+            {
+                "text": "Request Household Form",
+                "url": pageInfo.rootPath + "/request-household-form.html"
+            },
+            {
+                "text": "Request Household Translation Booklet",
+                "url": pageInfo.rootPath + "/request-household-booklet.html"
+            },
+            {
+                "text": "Request Household Large Print",
+                "url": pageInfo.rootPath + "/request-household-largeprint.html"
+            },
+            {
+                "text": "Request Household Continuation",
+                "url": pageInfo.rootPath + "/request-household-continuation.html"
+            },
+            {
+                "text": "Request Individual Code",
+                "url": pageInfo.rootPath + "/request-individual-code.html"
+            },
+            {
+                "text": "Request Individual Form",
+                "url": pageInfo.rootPath + "/request-individual-form.html"
+            }
+        ]
+    }) }}
+{% endblock %}
