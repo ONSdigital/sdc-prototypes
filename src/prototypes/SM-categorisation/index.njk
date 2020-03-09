@@ -9,59 +9,71 @@ layout: SM-categorisation/views/_index
     {% from "components/button/_macro.njk" import onsButton %}
     <h1>Secure messages categorisation</h1>
 
-    <p>This prototype combines secure messages categorisation with <a href="/prototypes/user-generated-account/">user generated account.</a></p>
+    <div class="grid">
+        <div class="grid__col col-8@m">
+            <p>This prototype combines secure messages categorisation with <a href="/prototypes/user-generated-account/">user generated account.</a>
+            </p>
+            <h3>About this prototype</h3>
+            <p>When <a href="{{ pageInfo.rootPath }}/00-internal/00-send-message.html">internal users send a message</a>, they are prompted to categorise the message.</p>
 
+            <p>For external users, the protype begins on the <a href="{{ pageInfo.rootPath }}/00-surveys-list.html">Surveys list</a> screen. WHen <a href="{{ pageInfo.rootPath }}/01-message-categories.html">the send a message</a>, they are prompted to <a href="{{ pageInfo.rootPath }}/01-message-categories.html">categorise the message</a>. Before they write their message we provide information which may help resolve their issue</p>
+
+            <hr>
+            <br>
+        </div>
+    </div>
     <div class="grid">
         <div class="grid__col col-6@m">
-            <h2>Internal</h2>
+            <h2>Screens</h2>
+            <h3>Internal</h3>
             <ul class="list list--bare">
-                 <li class="list__item">
+                <li class="list__item">
                     <a href="{{ pageInfo.rootPath }}/00-internal/00-send-message.html">Send a message</a>
                 </li>
             </ul>
 
-            <h2>External</h2>
+            <h3>External</h3>
             <ul class="list list--bare">
-                 <li class="list__item">
+                <li class="list__item">
                     <a href="{{ pageInfo.rootPath }}/00-surveys-list.html">Surveys list</a>
                 </li>
             </ul>
 
             <ul class="list list--bare">
-                 <li class="list__item">
+                <li class="list__item">
                     <a href="{{ pageInfo.rootPath }}/01-message-categories.html">Send a message - category list</a>
                 </li>
             </ul>
 
             <ul class="list list--bare">
-                 <li class="list__item">
+                <li class="list__item">
                     <a href="{{ pageInfo.rootPath }}/10-category/00-send-message.html">Category 1 - Send a message</a>
                 </li>
             </ul>
 
             <ul class="list list--bare">
-                 <li class="list__item">
+                <li class="list__item">
                     <a href="{{ pageInfo.rootPath }}/02-contact-us">Contact us</a>
                 </li>
             </ul>
 
             <ul class="list list--bare">
-                 <li class="list__item">
+                <li class="list__item">
                     <a href="{{ pageInfo.rootPath }}/20-category/00-category-list.html">Category 2 sub-category list</a>
                     <ul class="list u-mt-s">
-                         <li class="list__item">
+                        <li class="list__item">
                             <a href="{{ pageInfo.rootPath }}/20-category/10-category-send-message.html">Sub-category 1 - Send a message</a>
                         </li>
-                         <li class="list__item">
+                        <li class="list__item">
                             <a href="{{ pageInfo.rootPath }}/20-category/20-category-send-message.html">Sub-category 2 - Send a message</a>
                         </li>
-                         <li class="list__item">
+                        <li class="list__item">
                             <a href="{{ pageInfo.rootPath }}/20-category/30-category-send-message.html">Sub-category 3 - Send a message</a>
                         </li>
-                         <li class="list__item">
+                        <li class="list__item">
                             <a href="{{ pageInfo.rootPath }}/20-category/40-category-send-message.html">Sub-category 4 - Send a message</a>
                         </li>
-                         <li class="list__item">
+                        <li class="list__item">
                             <a href="{{ pageInfo.rootPath }}/20-category/50-category-send-message.html">Sub-category 5 - Send a message</a>
                         </li>
                     </ul>
@@ -69,25 +81,25 @@ layout: SM-categorisation/views/_index
             </ul>
 
             <ul class="list list--bare">
-                 <li class="list__item">
+                <li class="list__item">
                     <a href="{{ pageInfo.rootPath }}/30-category/00-send-message.html">Category 3 - Send a message</a>
                 </li>
             </ul>
 
             <ul class="list list--bare">
-                 <li class="list__item">
+                <li class="list__item">
                     <a href="{{ pageInfo.rootPath }}/40-category/00-send-message.html">Category 4 - Send a message</a>
                 </li>
             </ul>
 
             <ul class="list list--bare">
-                 <li class="list__item">
+                <li class="list__item">
                     <a href="{{ pageInfo.rootPath }}/50-category/00-send-message.html">Category 5 - Send a message</a>
                 </li>
             </ul>
 
             <ul class="list list--bare">
-                 <li class="list__item">
+                <li class="list__item">
                     <a href="{{ pageInfo.rootPath }}/60-category/00-send-message.html">Category 6 - Send a message</a>
                 </li>
             </ul>
