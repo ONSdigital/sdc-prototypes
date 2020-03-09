@@ -2,16 +2,15 @@
 group: Frontstage
 title: SM Categorisation
 version: 14.4.0
-layout: SM-categorisation/views/_master-messages
+layout: SM-categorisation/views/_master
 ---
 
 {% from "components/button/_macro.njk" import onsButton %}
-{% from "components/radios/_macro.njk" import onsRadios %}
 
 {% block main %}
     <div class="grid">
-        <div id="main" class="grid__col col-8@m">
-            <h1>What information about the Monthly Business Survey do you need?</h1>
+        <div id="main" class="grid__col col-12@m">
+            <h1>How may we help you?</h1>
             <form action="{{ pageInfo.parentPath }}/index.html">
                 <p class="field">
                     <fieldset class="fieldset">
@@ -20,52 +19,65 @@ layout: SM-categorisation/views/_master-messages
                             <p class="radios__item">
                                 <span class="radio">
                                     <input
-                                        type="radio"
-                                        id="answering-a-survey-question"
-                                        data-action-url="{{ pageInfo.parentPath }}/10-category-send-message.html"
-                                        class="radio__input js-radio"
-                                        value="question-one"
-                                        name="message-query">
-                                    <label class="radio__label" for="answering-a-survey-question">How/Why/How long have I been selected?</label>
+                                    type="radio"
+                                    id="answering-a-survey-question"
+                                    data-action-url="{{ pageInfo.parentPath }}/10-category/00-send-message.html"
+                                    class="radio__input js-radio"
+                                    value="question-one"
+                                    name="message-query">
+                                    <label class="radio__label" for="answering-a-survey-question">Answering a survey question</label>
                                 </span>
                             </p>
                             <br>
                             <p class="radios__item">
                                 <span class="radio">
                                     <input
-                                        type="radio"
-                                        id="information-about-the-survey"
-                                        data-action-url="{{ pageInfo.parentPath }}/20-category-send-message.html"
-                                        class="radio__input js-radio"
-                                        value="question-two"
-                                        name="message-query">
-                                    <label class="radio__label" for="information-about-the-survey">Can I be removed from the survey?</label>
+                                    type="radio"
+                                    id="information-about-the-survey"
+                                    data-action-url="{{ pageInfo.parentPath }}/20-category/00-category-list.html"
+                                    class="radio__input js-radio"
+                                    value="question-two"
+                                    name="message-query">
+                                    <label class="radio__label" for="information-about-the-survey">Information about the survey</label>
                                 </span>
                             </p>
                             <br>
                             <p class="radios__item">
                                 <span class="radio">
                                     <input
-                                        type="radio"
-                                        id="my-company-details-have-changed"
-                                        data-action-url="{{ pageInfo.parentPath }}/30-category-send-message.html"
-                                        class="radio__input js-radio"
-                                        value="question-three"
-                                        name="message-query">
-                                    <label class="radio__label" for="my-company-details-have-changed">I've already completed this survey</label>
+                                    type="radio"
+                                    id="my-company-details-have-changed"
+                                    data-action-url="{{ pageInfo.parentPath }}/30-category/00-send-message.html"
+                                    class="radio__input js-radio"
+                                    value="question--three"
+                                    name="message-query">
+                                    <label class="radio__label" for="my-company-details-have-changed">My company details</label>
                                 </span>
                             </p>
                             <br>
                             <p class="radios__item">
                                 <span class="radio">
                                     <input
-                                        type="radio"
-                                        id="a-technical-issue"
-                                        data-action-url="{{ pageInfo.parentPath }}/40-category-send-message.html"
-                                        class="radio__input js-radio"
-                                        value="question-four"
-                                        name="message-query">
-                                    <label class="radio__label" for="a-technical-issue">Has my survey questionnaire been received?</label>
+                                    type="radio"
+                                    id="my-contact-details-have-changed"
+                                    data-action-url="{{ pageInfo.parentPath }}/40-category/00-send-message.html"
+                                    class="radio__input js-radio"
+                                    value="question--four"
+                                    name="message-query">
+                                    <label class="radio__label" for="my-contact-details-have-changed">My contact details</label>
+                                </span>
+                            </p>
+                            <br>
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                    type="radio"
+                                    id="a-technical-issue"
+                                    data-action-url="{{ pageInfo.parentPath }}/50-category/00-send-message.html"
+                                    class="radio__input js-radio"
+                                    value="question-five"
+                                    name="message-query">
+                                    <label class="radio__label" for="a-technical-issue">A technical issue</label>
                                 </span>
                             </p>
                             <br>
@@ -74,7 +86,7 @@ layout: SM-categorisation/views/_master-messages
                                     <input
                                         type="radio"
                                         id="other-checkbox"
-                                        data-action-url="{{ pageInfo.parentPath }}/50-category-send-message.html"
+                                        data-action-url="{{ pageInfo.parentPath }}/60-category/00-send-message.html"
                                         class="radio__input js-radio "
                                         value="other" 
                                         name="message-query"
@@ -115,25 +127,5 @@ layout: SM-categorisation/views/_master-messages
             </form>
         </div>
     </div>
-    <script>
-        var submit = document.getElementById('btnFormSubmit');
-        submit.addEventListener('click', submitForm);
-
-        function submitForm(event) {
-            event.preventDefault();
-            event.stopPropagation();
-
-            var href = '',
-                inputs = this
-                    .parentNode
-                    .getElementsByTagName('input')
-            for (var i = 0; i < inputs.length; i++) {
-                if (inputs[i].getAttribute('name') == 'button' && inputs[i].checked) {
-                    href = inputs[i].getAttribute('data-href');
-                    window.location = href;
-                }
-            }
-        }
-    </script>
 
 {% endblock %}
