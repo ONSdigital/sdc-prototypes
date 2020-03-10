@@ -1,0 +1,176 @@
+---
+version: 13.6.9
+layout: rh-fulfilments/views/_master
+---
+
+{% from 'components/question/_macro.njk' import onsQuestion %}
+{% from 'components/button/_macro.njk' import onsButton %}
+{% from 'components/radios/_macro.njk' import onsRadios %}
+
+{% set form =  {
+    'method': 'GET',
+    'attributes': {
+        'action': pageInfo.parentPath + "/enter-address/"
+    }
+} %}
+
+{% set question_description = '<p class="u-fs-r--b">Description here</p>' %}
+
+{% block main %}
+
+    {% call onsQuestion({
+        'title': 'Select a translation booklet',
+        'description': question_description
+    }) %}
+
+            {{
+                onsRadios({
+                    'name': 'request-booklet-select',
+                    'radios': [
+                        {
+                            "id": "10023122451",
+                            "label": {
+                                "text": 'Translation Booklet for England & Wales - Arabic'
+                            },
+                            "value": 'Translation Booklet for England & Wales - Arabic'
+                        },
+                        {
+                            "id": "10023122452",
+                            "label": {
+                                "text": 'Translation Booklet for England & Wales - Bengali'
+                            },
+                            "value": 'Translation Booklet for England & Wales - Bengali'
+                        },
+                        {
+                            "id": "10023122453",
+                            "label": {
+                                "text": 'Translation Booklet for England & Wales - Cantonese'
+                            },
+                            "value": 'Translation Booklet for England & Wales - Cantonese'
+                        },
+                        {
+                            "id": "10023122454",
+                            "label": {
+                                "text": 'Translation Booklet for England & Wales - French'
+                            },
+                            "value": 'Translation Booklet for England & Wales - French'
+                        },
+                        {
+                            "id": "10023122455",
+                            "label": {
+                                "text": 'Translation Booklet for England & Wales - Gujarati'
+                            },
+                            "value": 'Translation Booklet for England & Wales - Gujarati'
+                        },
+                        {
+                            "id": "10023122456",
+                            "label": {
+                                "text": 'Translation Booklet for England & Wales - Panjabi Gurmukhi'
+                            },
+                            "value": 'Translation Booklet for England & Wales - Panjabi Gurmukhi'
+                        },
+                        {
+                            "id": "10023122457",
+                            "label": {
+                                "text": 'Translation Booklet for England & Wales - Italian'
+                            },
+                            "value": 'Translation Booklet for England & Wales - Italian'
+                        },
+                        {
+                            "id": "10023122458",
+                            "label": {
+                                "text": 'Translation Booklet for England & Wales - Kurdish'
+                            },
+                            "value": 'Translation Booklet for England & Wales - Kurdish'
+                        },
+                        {
+                            "id": "10023122459",
+                            "label": {
+                                "text": 'Translation Booklet for England & Wales - Lithuanian'
+                            },
+                            "value": 'Translation Booklet for England & Wales - Lithuanian'
+                        },
+                        {
+                            "id": "10023122460",
+                            "label": {
+                                "text": 'Translation Booklet for England & Wales - Mandarin Chinese'
+                            },
+                            "value": 'Translation Booklet for England & Wales - Mandarin Chinese'
+                        },
+                        {
+                            "id": "10023122461",
+                            "label": {
+                                "text": 'Translation Booklet for England & Wales - Polish'
+                            },
+                            "value": 'Translation Booklet for England & Wales - Polish'
+                        },
+                        {
+                            "id": "10023122462",
+                            "label": {
+                                "text": 'Translation Booklet for England & Wales - Portuguese'
+                            },
+                            "value": 'Translation Booklet for England & Wales - Portuguese'
+                        },
+                        {
+                            "id": "10023122463",
+                            "label": {
+                                "text": 'Translation Booklet for England & Wales - Russian'
+                            },
+                            "value": 'Translation Booklet for England & Wales - Russian'
+                        },
+                        {
+                            "id": "10023122464",
+                            "label": {
+                                "text": 'Translation Booklet for England & Wales - Somali'
+                            },
+                            "value": 'Translation Booklet for England & Wales - Somali'
+                        },
+                        {
+                            "id": "10023122465",
+                            "label": {
+                                "text": 'Translation Booklet for England & Wales - Spanish'
+                            },
+                            "value": 'Translation Booklet for England & Wales - Spanish'
+                        },
+                        {
+                            "id": "10023122466",
+                            "label": {
+                                "text": 'Translation Booklet for England & Wales - Turkish'
+                            },
+                            "value": 'Translation Booklet for England & Wales - Turkish'
+                        },
+                        {
+                            "id": "10023122467",
+                            "label": {
+                                "text": 'Translation Booklet for England & Wales - Urdu'
+                            },
+                            "value": 'Translation Booklet for England & Wales - Urdu'
+                        },
+                        {
+                            "id": "10023122468",
+                            "label": {
+                                "text": 'Translation Booklet for England & Wales - Vietnamese'
+                            },
+                            "value": 'Translation Booklet for England & Wales - Vietnamese'
+                        },
+                        {
+                            "id": "10023122469",
+                            "label": {
+                                "text": 'Translation Booklet for England & Wales - Yiddish'
+                            },
+                            "value": 'Translation Booklet for England & Wales - Yiddish'
+                        }
+                    ]
+                })
+            }}
+
+    {% endcall %}
+
+    {{
+        onsButton({
+            'text': 'Continue',
+            'classes': 'u-mt-l'
+        })
+    }}
+
+{% endblock %}

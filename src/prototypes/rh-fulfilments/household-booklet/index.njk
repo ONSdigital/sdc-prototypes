@@ -8,6 +8,8 @@ layout: rh-fulfilments/views/_master
 {% from "components/panel/_macro.njk" import onsPanel %}
 
 {% block main %}
+
+    <script>sessionStorage.clear();</script>
     
     <h1 class="u-mb-l u-fs-xxl">Request a household translation booklet</h1>
     
@@ -30,7 +32,7 @@ layout: rh-fulfilments/views/_master
             'type': 'button',
             'text': 'Request a household translation booklet',
             'classes': 'u-mb-m',
-            'url': pageInfo.rootPath + "/enter-address.html",
+            'url': pageInfo.path + "/select-booklet/",
             'innerClasses': 'icon--chevron-right-white'
         })
     }}

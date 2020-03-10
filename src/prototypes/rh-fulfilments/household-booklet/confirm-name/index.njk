@@ -8,31 +8,21 @@ layout: rh-fulfilments/views/_master
 {% from 'components/radios/_macro.njk' import onsRadios %}
 
 {% set form =  {
-    "method": "GET",
-    "attributes": {
-        "action": "{{ pageInfo.parentPath }}/choose-method/"
+    'method': 'GET',
+    'attributes': {
+        'action': pageInfo.parentPath + "/booklet-sent-post/"
     }
 } %}
 
-{% block main %}
-
-    {% call onsQuestion({
-        'title': 'Is this address correct?',
-        'description': '<p class="js-address-confirm" data-address-input-url="' + pageInfo.parentPath + '/select-address"></p>'
-    }) %}
-
-    {{
-        onsRadios({
-            'name': 'address-confirm',
-            'radios': [
+{% set form_options = [
                 {
                     'id': 'yes',
                     'label': {
-                        'text': 'Yes, this address is correct'
+                        'text': 'Yes, the name is correct'
                     },
                     'value': 'yes',
                     "attributes": {
-                        "data-action-url": pageInfo.parentPath + "/choose-method/"
+                        "data-action-url": pageInfo.parentPath + "/booklet-sent-post/"
                     }
                 },
                 {
@@ -42,10 +32,23 @@ layout: rh-fulfilments/views/_master
                     },
                     'value': 'no',
                     "attributes": {
-                        "data-action-url": pageInfo.parentPath + "/enter-address/"
+                        "data-action-url": pageInfo.parentPath + "/enter-name/"
                     }
                 }
             ]
+%}
+
+{% block main %}
+
+    {% call onsQuestion({
+        'title': 'Is this name correct?',
+        'description': '<p class="u-fs-r--b js-name-confirm" data-name-input-url="' + pageInfo.parentPath + '/enter-name"></p>'
+    }) %}
+
+    {{
+        onsRadios({
+            'name': 'request-name-confirmation',
+            'radios': form_options
         })
     }}
 
