@@ -1,0 +1,88 @@
+---
+version: 13.6.9
+layout: rh-fulfilments/views/_master
+---
+
+{% from 'components/question/_macro.njk' import onsQuestion %}
+{% from 'components/button/_macro.njk' import onsButton %}
+{% from 'components/radios/_macro.njk' import onsRadios %}
+
+{% block main %}
+    <form action="{{ pageInfo.rootPath }}/household-code/confirm-address/">
+
+        {% call onsQuestion({
+            'title': 'Select your address',
+            'description': '<p class="u-fs-r--b">26 addresses found for postcode EX2 6GA</p>'
+        }) %}
+
+
+        {{
+            onsRadios({
+                'name': 'request-address-select',
+                'or': 'Or',
+                'radios': [
+                    {
+                        "id": "10023122451",
+                        "label": {
+                            "text": '1 Gate Reach, Exeter, EX2 6GA'
+                        },
+                        "value": '1 Gate Reach, Exeter, EX2 6GA'
+                    },
+                    {
+                        "id": "10023122452",
+                        "label": {
+                            "text": '2 Gate Reach, Exeter, EX2 6GA'
+                        },
+                        "value": '2 Gate Reach, Exeter, EX2 6GA'
+                    },
+                    {
+                        "id": "10023122453",
+                        "label": {
+                            "text": '3 Gate Reach, Exeter, EX2 6GA'
+                        },
+                        "value": '3 Gate Reach, Exeter, EX2 6GA'
+                    },
+                    {
+                        "id": "10023122454",
+                        "label": {
+                            "text": '4 Gate Reach, Exeter, EX2 6GA'
+                        },
+                        "value": '4 Gate Reach, Exeter, EX2 6GA'
+                    },
+                    {
+                        "id": "10023122455",
+                        "label": {
+                            "text": 'Register House General And New Register House, 2 Princes Street, Edinburgh, EH1 3YY'
+                        },
+                        "value": 'Register House General And New Register House, 2 Princes Street, Edinburgh, EH1 3YY',
+                        "attributes": {
+                            "data-action-url": pageInfo.rootPath + "/household-code/confirm-address-scotland/"
+                        }
+                    },
+                    {
+                        "id": "xxxx",
+                        "label": {
+                            "text": 'I cannot find my address'
+                        },
+                        "value": 'I cannot find my address',
+                        "attributes": {
+                            "data-action-url": pageInfo.rootPath + "/household-code/address-not-listed/"
+                        }
+                    }
+                ]
+            })
+        }}
+
+
+        {% endcall %}
+
+        {{
+            onsButton({
+                'text': 'Continue',
+                'classes': 'u-mt-l'
+            })
+        }}
+       
+    </form>
+
+{% endblock %}

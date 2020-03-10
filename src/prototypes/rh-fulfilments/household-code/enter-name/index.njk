@@ -1,0 +1,74 @@
+---
+version: 13.6.9
+layout: rh-fulfilments/views/_master
+---
+
+{% from 'components/question/_macro.njk' import onsQuestion %}
+{% from 'components/button/_macro.njk' import onsButton %}
+{% from 'components/input/_macro.njk' import onsInput %}
+
+{% set form =  {
+    'method': 'GET',
+    'attributes': {
+        'action': "/prototypes/rh-fulfilments/household-code/confirm-name/"
+    }
+} %}
+
+{% block main %}
+
+    <script>
+        sessionStorage.removeItem("/prototypes/rh-fulfilments/household-code/enter-name");
+        sessionStorage.removeItem("/prototypes/rh-fulfilments/household-code/confirm-name");
+    </script>
+
+    {% call onsQuestion({
+        'title': 'What is your name?',
+        'description': '<p>We will send an access code by post to this name.</p>'
+    }) %}
+
+            {{
+                onsInput({
+                    'id': 'name_title',
+                    'classes': 'input--w-8',
+                    'label': {
+                        'text': 'Title'
+                    },
+                    'value': form_value_name_title,
+                    'name': 'name_title'
+                })
+            }}
+
+            {{
+                onsInput({
+                    'id': 'name_forename',
+                    'classes': 'input--w-8',
+                    'label': {
+                        'text': 'Forename'
+                    },
+                    'value': form_value_name_forename,
+                    'name': 'name_forename'
+                })
+            }}
+
+            {{
+                onsInput({
+                    'id': 'name_surname',
+                    'classes': 'input--w-8',
+                    'label': {
+                        'text': 'Surname'
+                    },
+                    'value': form_value_name_surname,
+                    'name': 'name_surname'
+                })
+            }}
+
+    {% endcall %}
+
+    {{
+        onsButton({
+            'text': 'Continue',
+            'classes': 'u-mt-l'
+        })
+    }}
+
+{% endblock %}

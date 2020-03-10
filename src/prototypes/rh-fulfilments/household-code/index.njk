@@ -1,15 +1,17 @@
 ---
 title: Respondent Home - Requests (Fulfilments)
 group: Census
-version: 10.0.1
+version: 13.6.9
 layout: rh-fulfilments/views/_master
 ---
 {% from 'components/button/_macro.njk' import onsButton %}
 {% from "components/panel/_macro.njk" import onsPanel %}
 
 {% block main %}
+
+    <script>sessionStorage.clear();</script>
     
-    <h1 class="u-mb-l u-fs-xxl">Request an individual code</h1>
+    <h1 class="u-mb-l u-fs-xxl">Request a new access code</h1>
     
     <p>To do the census online you need a 16 character unique access code which we have sent you in a letter.</p>
     
@@ -28,9 +30,9 @@ layout: rh-fulfilments/views/_master
     {{
         onsButton({
             'type': 'button',
-            'text': Request an individual code,
+            'text': "Request a new code",
             'classes': 'u-mb-m',
-            'url': pageInfo.rootPath + "/enter-address.html",
+            'url': pageInfo.rootPath + "/household-code/enter-address/",
             'innerClasses': 'icon--chevron-right-white'
         })
     }}

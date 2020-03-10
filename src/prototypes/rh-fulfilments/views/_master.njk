@@ -10,42 +10,52 @@
         "titleLogo": "/img/census-logo-en.svg",
         "titleLogoAlt": "Census 2021"
     },
-    "footer": {
-        "rows": [
+    'footer': {
+        'poweredBy': true,
+        'lang': 'en',
+        'rows': [
             {
-                "itemsList": [
+                'itemsList': [
                     {
-                        "text": "About the census",
-                        "url": "/prototypes/census-website/about-the-census"
+                        'text': 'About the census',
+                        'url': domain_url_en + '/about-the-census/',
+                        'target': '_blank'
                     },
                     {
-                        "text": "Help with your census",
-                        "url": "/prototypes/census-website/help"
+                        'text': 'Help with your census',
+                        'url': domain_url_en + '/help/',
+                        'target': '_blank'
                     },
                     {
-                        "text": "Contact us",
-                        "url": "#"
+                        'text': 'Contact us',
+                        'url': domain_url_en + '/contact-us/',
+                        'target': '_blank'
+                    }
+                ]
+            },
+            {
+                'itemsList': [
+                    {
+                        'text': 'Cookies',
+                        'url': domain_url_en + '/cookies/',
+                        'target': '_blank'
                     },
                     {
-                        "text": "Cookies and privacy",
-                        "url": "#"
+                        'text': 'Accessibility',
+                        'url': domain_url_en + '/en/start/accessibility/',
+                        'target': '_blank'
                     },
                     {
-                        "text": "Terms and conditions",
-                        "url": "#"
+                        'text': 'Privacy and data protection',
+                        'url': domain_url_en + '/privacy-and-data-protection/',
+                        'target': '_blank'
                     }
                 ]
             }
-        ],
-        "OGLLink": {
-            "pre": 'All content is available under the',
-            "link": 'Open Government Licence v3.0',
-            "url": 'https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/',
-            "post": ', except where otherwise stated'
-        }
+        ]
     }
 } %}
 
 {% block bodyEnd %}
-    <script src="{{ pageInfo.rootPath }}/index.js"></script>
+    <script src="{{ pageInfo.rootPath }}/scripts/index.js"></script>
 {% endblock %}
