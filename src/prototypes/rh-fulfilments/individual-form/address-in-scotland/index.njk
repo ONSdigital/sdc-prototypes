@@ -1,0 +1,17 @@
+---
+version: 13.6.9
+layout: rh-fulfilments/views/_master
+---
+
+{% block main %}
+
+    <h1 class="u-mt-l">Your address is in Scotland</h1>
+
+    <p class="js-address-confirm" data-address-input-url="' + pageInfo.parentPath + '/select-address">{{ address }}</p>
+
+    <p>The address you entered is in Scotland. The Census in Scotland is run separately to the England and Wales Census.</p>
+
+    <p>To find out more about the Scottish Census, and to take part, please visit the <a href="https://www.scotlandscensus.gov.uk/">Scottish Census website</a>.</p>
+
+
+{% endblock %}

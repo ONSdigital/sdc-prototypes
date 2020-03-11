@@ -1,0 +1,44 @@
+---
+title: Respondent Home - Requests (Fulfilments)
+group: Census
+version: 13.6.9
+layout: rh-fulfilments/views/_master
+---
+{% from 'components/button/_macro.njk' import onsButton %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+
+{% block main %}
+
+    <script>sessionStorage.clear();</script>
+    
+    <h1 class="u-mb-l u-fs-xxl">Request an individual form</h1>
+    
+    <p>If you would prefer to complete an individual form on paper, you can request a paper form.</p>
+    
+    {% call
+        onsPanel({
+            'classes': 'u-mb-l'
+        })
+    %}
+            <p>This page is also available in Welsh (<a href="#">Cymraeg</a>).</p>
+    {% endcall %}
+    
+    {{
+        onsButton({
+            'type': 'button',
+            'text': 'Request an individual form',
+            'classes': 'u-mb-m',
+            'url': pageInfo.path + "/enter-address/",
+            'innerClasses': 'icon--chevron-right-white'
+        })
+    }}
+    
+    <h2>Before you start</h2>
+    
+    <p>You will need to provide:</p>
+    <ul>
+        <li>your name to address the form to</li>
+        <li>your address to address the form to, and to ensure you get the correct form for your location</li>
+    </ul>
+
+{% endblock %}
