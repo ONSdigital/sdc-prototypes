@@ -10,7 +10,7 @@ layout: rh-fulfilments/views/_master
 {% set form =  {
     'method': 'GET',
     'attributes': {
-        'action': pageInfo.parentPath + "/code-sent-sms/"
+        'action': pageInfo.parentPath + "/code-sent-post/"
     }
 } %}
 
@@ -18,11 +18,11 @@ layout: rh-fulfilments/views/_master
                 {
                     'id': 'yes',
                     'label': {
-                        'text': 'Yes, send the text now'
+                        'text': 'Yes, the name is correct'
                     },
                     'value': 'yes',
                     "attributes": {
-                        "data-action-url": pageInfo.parentPath + "/code-sent-sms/"
+                        "data-action-url": pageInfo.parentPath + "/code-sent-post/"
                     }
                 },
                 {
@@ -32,7 +32,7 @@ layout: rh-fulfilments/views/_master
                     },
                     'value': 'no',
                     "attributes": {
-                        "data-action-url": pageInfo.parentPath + "/enter-mobile/"
+                        "data-action-url": pageInfo.parentPath + "/enter-name/"
                     }
                 }
             ]
@@ -41,14 +41,13 @@ layout: rh-fulfilments/views/_master
 {% block main %}
 
     {% call onsQuestion({
-        'title': 'Is this mobile phone number correct?',
-        'description': '<p><em class="u-fs-r--b highlight js-mobile-number" data-mobile-input-url="' + pageInfo.parentPath + '/enter-mobile">{x}</em></p>'
+        'title': 'Is this name correct?',
+        'description': '<p class="u-fs-r--b js-name-confirm" data-name-input-url="' + pageInfo.parentPath + '/enter-name"></p>'
     }) %}
-
 
     {{
         onsRadios({
-            'name': 'mobile-confirm',
+            'name': 'request-name-confirmation',
             'radios': form_options
         })
     }}

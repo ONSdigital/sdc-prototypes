@@ -8,21 +8,31 @@ layout: rh-fulfilments/views/_master
 {% from 'components/radios/_macro.njk' import onsRadios %}
 
 {% set form =  {
-    'method': 'GET',
-    'attributes': {
-        'action': pageInfo.parentPath + "/code-sent-sms/"
+    "method": "GET",
+    "attributes": {
+        "action": pageInfo.parentPath + "/choose-method/"
     }
 } %}
 
-{% set form_options = [
+{% block main %}
+
+    {% call onsQuestion({
+        'title': 'Is this address correct?',
+        'description': '<p class="js-address-confirm" data-address-input-url="' + pageInfo.parentPath + '/select-address"></p>'
+    }) %}
+
+    {{
+        onsRadios({
+            'name': 'address-confirm',
+            'radios': [
                 {
                     'id': 'yes',
                     'label': {
-                        'text': 'Yes, send the text now'
+                        'text': 'Yes, this address is correct'
                     },
                     'value': 'yes',
                     "attributes": {
-                        "data-action-url": pageInfo.parentPath + "/code-sent-sms/"
+                        "data-action-url": pageInfo.parentPath + "/address-in-scotland/"
                     }
                 },
                 {
@@ -32,24 +42,10 @@ layout: rh-fulfilments/views/_master
                     },
                     'value': 'no',
                     "attributes": {
-                        "data-action-url": pageInfo.parentPath + "/enter-mobile/"
+                        "data-action-url": pageInfo.parentPath + "/enter-address/"
                     }
                 }
             ]
-%}
-
-{% block main %}
-
-    {% call onsQuestion({
-        'title': 'Is this mobile phone number correct?',
-        'description': '<p><em class="u-fs-r--b highlight js-mobile-number" data-mobile-input-url="' + pageInfo.parentPath + '/enter-mobile">{x}</em></p>'
-    }) %}
-
-
-    {{
-        onsRadios({
-            'name': 'mobile-confirm',
-            'radios': form_options
         })
     }}
 
