@@ -1,0 +1,222 @@
+---
+group: Frontstage
+title: SM Templates
+version: 14.4.0
+layout: SM-templates/views/_master-internal
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/metadata/_macro.njk" import onsMetadata %}
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+
+{% block main %}
+
+    <div class="grid">
+        <div class="grid__col col-6@m">
+            <h1>Create message</h1>
+            {{ 
+                onsMetadata({
+                    "metadataLabel": "This is an example of the metadata component",
+                    "termCol": "3",
+                    "descriptionCol": "9",
+                    "itemsList": [
+                        {
+                            "term": "Survey:",
+                            "descriptions": [ 
+                                {
+                                    "description": "MBS"
+                                }
+                            ]
+                        },
+                        {
+                            "term": "RU Ref:",
+                            "descriptions": [ 
+                                {
+                                    "description": "11100000110"
+                                }                  
+                            ]
+                        },
+                        {
+                            "term": "Business:",
+                            "descriptions": [ 
+                                {
+                                    "description": "Bolts and Ratchets"
+                                }
+                            ]
+                        },
+                        {
+                            "term": "To:",
+                            "descriptions": [ 
+                                {
+                                    "description": "Jane Doe"
+                                }                  
+                            ]
+                        }                                                         
+                    ]
+                }) 
+            }}
+             
+             <p class="field">
+                <fieldset class="fieldset">
+                    <legend class="fieldset__legend">What is your message about?</legend>
+                    <div class="radios__items">
+                        <p class="radios__item">
+                            <span class="radio">
+                                <input
+                                    type="radio"
+                                    id="data-query"
+                                    class="radio__input js-radio "
+                                    value="data-query" 
+                                    name="category"
+                                    onclick="javascript:dataQuery(); return false;">
+                                <label class="radio__label " for="data-query">
+                                    A data query
+                                </label>
+                            </span>
+                        </p>
+                        <br>
+                        <p class="radios__item">
+                            <span class="radio">
+                                <input
+                                    type="radio"
+                                    id="response-chase"
+                                    class="radio__input js-radio "
+                                    value="response-chase" 
+                                    name="category"
+                                    onclick="javascript:requestUpdate(); return false;">
+                                <label class="radio__label " for="response-chase">
+                                    Response chase
+                                </label>
+                            </span>
+                        </p>
+                        <br>
+                        <p class="radios__item">
+                            <span class="radio">
+                                <input
+                                    type="radio"
+                                    id="other-checkbox"
+                                    class="radio__input js-radio "
+                                    value="other" 
+                                    name="category"
+                                    aria-controls="other-checkbox-other-wrap" aria-haspopup="true"
+                                    onclick="javascript:clearMessage(); return false;">
+                                <label class="radio__label " for="other-checkbox">Something else</label>
+                                <span class="radio__other " id="other-checkbox-other-wrap">
+                                <label class="label u-fs-s--b" for="other-textbox">Please specify</label>
+                                <input
+                                    type="text"
+                                    id="other-textbox"
+                                    class="input input--text input-type__input  input--w-auto "
+                                    name="other-answer" />
+                                </span>
+                            </span>
+                        </p>
+                    </div>
+                </fieldset>
+            </p>
+        </div>
+    </div>
+
+    <div class="grid">
+        <div class="grid__col col-8@m">
+            <p class="field">
+            {{
+                onsTextarea({
+                    "id": "messageArea",
+                    "name": "feedback",
+                    "classes": 'messageArea',
+                    "label": {
+                        "text": "Message"
+                    }
+                })
+            }}
+            </p>
+            <p class="field">
+                <div class="btn-group">
+                    {{ 
+                        onsButton({
+                            "type": 'button',
+                            "text": 'Send message',
+                            "classes": 'btn-group__btn',
+                            "url": "/prototypes/SM-categorisation/10-message-sent.html"
+                        }) 
+                    }}
+                    {{ 
+                        onsButton({
+                            "type": 'button',
+                            "text": 'Cancel',
+                            "classes": 'btn--secondary btn-group__btn',
+                            "url": "/prototypes/SM-categorisation/00-surveys-list.html"
+                        }) 
+                    }}
+                </div>
+            </p>
+        </div>
+        <div class="grid__col col-4@m">
+            <p class="field">
+            <p class="field">
+                <h2 class="u-fs-r u-fw-b u-mb-no">Message templates</h2>
+                <ul class="list list--bare">
+                    <li class="list__item "><a href="#" onclick="javascript:dataQuery(); return false;">Data query</li>
+                    <li class="list__item "><a href="#" onclick="javascript:newlySelected(); return false;">Newly selected</li>
+                    <li class="list__item "><a href="#" onclick="javascript:newContact(); return false;">New contact</li>
+                    <li class="list__item "><a href="#" onclick="javascript:lateReturn(); return false;">Late return</li>
+                    <li class="list__item "><a href="#" onclick="javascript:amendDataReceived(); return false;">Amend data received</li>
+                    <li class="list__item "><a href="#" onclick="javascript:amendDataRequest(); return false;">Amend data request</li>
+                    <li class="list__item "><a href="#" onclick="javascript:outOfSelection(); return false;">Out of selection</li>
+                    <li class="list__item "><a href="#" onclick="javascript:ceaseToTrade(); return false;">Cease to trade</li>
+                    <li class="list__item "><a href="#" onclick="javascript:correctData(); return false;">Correct data</li>
+                    <li class="list__item "><a href="#" onclick="javascript:complaint(); return false;">Complaint</li>
+                    <li class="list__item "><a href="#" onclick="javascript:unfairlySelected(); return false;">Unfairly selected</li>
+                </ul>
+            </p>
+            </p>
+            <script>
+                function clearMessage() {
+                    document.getElementById("messageArea").value = "";
+                }
+                function dataQuery() {
+                    document.getElementById("messageArea").value = "Good Morning/Afternoon\, \r\rThank you for completing the Monthly Wages & Salaries Survey\. I have a few questions if you don't mind answering\. \r\rWe look at average salaries by taking the Total Gross Pay \(TGP\) \- Holiday Pay \(HP\) \- Bonus \- Arrears \= Regular Pay \(RP\)\. RP \= HeadCount \(HC\) \= Average Per Calendar Month\/Week Wage (PCM/PW)\. \r\rMay\'19\. TGP\=\£ \- Arrears\=f \- Bonus\=\£ \= RP\=\£ \÷ HC\= \= \£ PCM \r\rAs you can see there is a large increase in the wages excluding Bonus/Arrears figures. Overall a Regular Pay increase of \£ or on average\, an additional \£ for all .... employees for this month. Are these figures correct and are there reasons for this\? \r\rKind Regards";
+                }
+                function newlySelected() {
+                    document.getElementById("messageArea").value = "Good Morning/Afternoon\, \r\rThank you for completing the Monthly Wages & Salaries Survey. I have a few questions if you don't mind answering. \r\r1. What is the company's main activity? \r\r2. At present we currently have a range of 1-2?? employees whose Total Gross is roughly £000-£000. Is there a reason behind these variations in the TGP/Emp? (Remove this if only 1 return and add this) Are there likely to be any large fluctuations in the Total Gross Pay or Employees at any time of the year? When & What is this due to? \r\r3. Is there any Bonuses given to the employees? What months? What are they based on? \r\r4. Does the company offer any types of additional pay such as overtime, unsocial hours etc? Any months in particular? \r\r5. Does the company offer Pay Rises/Reviews? What months?  \r\rKind Regards";
+                }
+                function newContact() {
+                    document.getElementById("messageArea").value = "Good Morning/Afternoon\, \r\rAre you able to provide the new contact with this enrolment code /**$$$$$**/ is we cannot XXXXXX  those who aren\'t registered. Once they have set up a new online account we can remove you from the system if that is what is required. \r\rPlease can you ask the new contact to add survey from their home screen once logged in to be able to gain access to this survey\? \r\rKind Regards";
+                }
+                function lateReturn() {
+                    document.getElementById("messageArea").value = "Good Morning/Afternoon\, \r\rThank you for letting us know. I have made a note on the system to advise the team. This will stop calls but not reminders as they are generated automatically. \r\rKind Regards";
+                }
+                function requestUpdate() {
+                    document.getElementById("messageArea").value = "Good Morning/Afternoon\, \r\rIs there an update regarding the above query? We will be running our results shortly and the information you provide is imperative to the publishing of these results. Kind Regards";
+                }
+                function amendDataReceived() {
+                    document.getElementById("messageArea").value = "Good Morning/Afternoon\, \r\rThank you for letting us know. I have updated our systems accordingly. \r\rKind Regards";
+                }
+                function amendDataRequest() {
+                    document.getElementById("messageArea").value = "Good Morning/Afternoon\, \r\rWe are unable to re-open submitted returns at present. Are you able to provide me with the correct data & I can update our system? \r\rKind Regards";
+                }
+                function outOfSelection() {
+                    document.getElementById("messageArea").value = "Good Morning/Afternoon\, \r\rIt appears you are now out of selection for the Monthly Wages & Salaries Survey. This may change in the future dependent on the need for the data. For now though, thank you for completing. \r\rKind Regards";
+                }
+                function ceaseToTrade() {
+                    document.getElementById("messageArea").value = "Good Morning/Afternoon\, \r\rThank you for letting us know. Are you able to answer a few queries before I can take any further action? \r\r1. Do you have a cease to trade date? \r2. What has happened to the employees? \r3. What has happened to the sites? \r4. Is there a date that the PAYE/VAT will be de-registered? \r\r** Remember to check company names of TUPE'd Emp or new companies name/address/contact etc **";
+                }
+                function correctData() {
+                    document.getElementById("messageArea").value = "Ultimately, the Office for National Statistics must rely on the integrity of its respondents to support reliable information which is vitally important. \r\rThe results of our business surveys are used by Government, as both short and long-term indicators for monitoring levels and trends in the economy. We request the minimum information to enable Government to make informed decisions based on the measure of Gross Domestic Product (GDE and to produce the National Accounts. \r\rAt present we are unable to confirm the accuracy of the figures that are being provided, therefore it is imperative that yourself or a member of the staff team who is knowledgeable of the data please contact me.";
+                }
+                function complaint() {
+                    document.getElementById("messageArea").value = "It may help if I explain that the Office of National Statistics selects businesses for its surveys from the Inter Departmental Business Register (IDBR), which is a directory of businesses within the UK derived from administrative sources and updated from data gathered from the ONS business surveys. \r\rFor most ONS business surveys selection is based on the level of employment (and sometimes turnover) so in order to help with the selection process, companies are placed into cells depending on the number of people they employ and the industry they are in. This gives us an indication of how many businesses are available for selection - the greater number of similar sized businesses there are, the fewer ONS needs to select to ensure the results we produce are representative of the industry. \r\rThe rotation period for the Monthly Wages and Salaries Survey is usually 60 months but this is not a guarantee. It can fluctuate depending on a number of factors i.e the number of businesses available in the cell, movement between cells, how many new businesses are generated and how many cease to trade. Consequently ONS cannot give a definitive period of selection for this survey. \r\rWe do appreciate that, for some businesses, completing our surveys can be a particularly onerous task especially when the resources available to do so are limited; however, the demand for high quality statistics which inform Government's monetary and economic policies is continually increasing. Unfortunately, without some imposition on the business community ONS would be unable to undertake its work and, for now, the surveys are considered to be the most practical means of obtaining the information needed.";
+                }
+                function unfairlySelected() {
+                    document.getElementById("messageArea").value = "The Office for National Statistics (ONS) is bound by the Statistics of Trade Act 1947 for undertaking surveys and does not have the authority to exempt respondents under this legislation. If we were to grant exemption to a business, selection for our surveys could no longer be declared as fair and it could lead to potential bias in the survey samples and hence, the results based on them. Therefore, failure to comply can result in legal proceedings being instigated. \r\rPlease let me assure you that ONS sampling procedures are designed to be fair and no business is singled out to complete our questionnaires. Selection for ONS business surveys is based on the principle that businesses of a similar size, and within the same industry, have the same probability of being selected. All the samples for our surveys are selected independently which is why a business can be selected for more than one survey at a time, be reselected for a particular survey at some point in time, or equally may find itself not selected at all. ";
+                }
+            </script>
+
+        </div>
+    </div>
+
+{% endblock %}
+
+

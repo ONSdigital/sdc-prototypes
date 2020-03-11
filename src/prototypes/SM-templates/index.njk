@@ -1,0 +1,23 @@
+---
+group: Frontstage
+title: SM Templates
+version: 14.4.0
+layout: SM-templates/views/_index
+---
+
+{% block main %}
+    {% from "components/button/_macro.njk" import onsButton %}
+    <h1>Secure messages templates</h1>
+
+    <div class="grid">
+        <div class="grid__col col-6@m">
+            <h2>Screens</h2>
+            <h3>Internal</h3>
+            <ul class="list list--bare">
+                <li class="list__item">
+                    <a href="{{ pageInfo.rootPath }}/00-internal/00-send-message.html">Send a message</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}
