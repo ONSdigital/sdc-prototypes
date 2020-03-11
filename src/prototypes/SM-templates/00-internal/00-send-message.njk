@@ -68,8 +68,7 @@ layout: SM-templates/views/_master-internal
                                     id="data-query"
                                     class="radio__input js-radio "
                                     value="data-query" 
-                                    name="category"
-                                    onclick="javascript:dataQuery(); return false;">
+                                    name="category">
                                 <label class="radio__label " for="data-query">
                                     A data query
                                 </label>
@@ -83,8 +82,7 @@ layout: SM-templates/views/_master-internal
                                     id="response-chase"
                                     class="radio__input js-radio "
                                     value="response-chase" 
-                                    name="category"
-                                    onclick="javascript:requestUpdate(); return false;">
+                                    name="category">
                                 <label class="radio__label " for="response-chase">
                                     Response chase
                                 </label>
@@ -99,8 +97,7 @@ layout: SM-templates/views/_master-internal
                                     class="radio__input js-radio "
                                     value="other" 
                                     name="category"
-                                    aria-controls="other-checkbox-other-wrap" aria-haspopup="true"
-                                    onclick="javascript:clearMessage(); return false;">
+                                    aria-controls="other-checkbox-other-wrap" aria-haspopup="true">
                                 <label class="radio__label " for="other-checkbox">Something else</label>
                                 <span class="radio__other " id="other-checkbox-other-wrap">
                                 <label class="label u-fs-s--b" for="other-textbox">Please specify</label>
@@ -157,7 +154,7 @@ layout: SM-templates/views/_master-internal
             <p class="field">
             <p class="field">
                 <h2 class="u-fs-r u-fw-b u-mb-no">Message templates</h2>
-                <ul class="list list--bare">
+                <ul class="list list--bare u-mt-s">
                     <li class="list__item "><a href="#" onclick="javascript:dataQuery(); return false;">Data query</li>
                     <li class="list__item "><a href="#" onclick="javascript:newlySelected(); return false;">Newly selected</li>
                     <li class="list__item "><a href="#" onclick="javascript:newContact(); return false;">New contact</li>
