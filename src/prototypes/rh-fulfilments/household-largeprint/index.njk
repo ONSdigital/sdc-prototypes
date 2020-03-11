@@ -11,9 +11,9 @@ layout: rh-fulfilments/views/_master
 
     <script>sessionStorage.clear();</script>
     
-    <h1 class="u-mb-l u-fs-xxl">Request a household continuation form</h1>
+    <h1 class="u-mb-l u-fs-xxl">Request a household form in large print format</h1>
     
-    <p>If you would prefer to complete your household form on paper and have more than 6 occupants, you can request a paper continuation form for your household.</p>
+    <p>If you would prefer to complete your household form on paper and need a large print format, you can request a paper form for your household in large print.</p>
     
     {% call
         onsPanel({
@@ -26,7 +26,7 @@ layout: rh-fulfilments/views/_master
     {{
         onsButton({
             'type': 'button',
-            'text': 'Request a household continuation form',
+            'text': 'Request a household form in large print format',
             'classes': 'u-mb-m',
             'url': pageInfo.path + "/enter-address/",
             'innerClasses': 'icon--chevron-right-white'
