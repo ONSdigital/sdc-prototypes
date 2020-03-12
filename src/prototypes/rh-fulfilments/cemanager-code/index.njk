@@ -4,22 +4,22 @@ group: Census
 version: 13.6.9
 layout: rh-fulfilments/views/_master
 ---
-{% from "components/button/_macro.njk" import onsButton %}
+{% from 'components/button/_macro.njk' import onsButton %}
 {% from "components/panel/_macro.njk" import onsPanel %}
 
 {% block main %}
 
     <script>sessionStorage.clear();</script>
     
-    <h1 class="u-mb-l u-fs-xxl">Request an individual code</h1>
+    <h1 class="u-mb-l u-fs-xxl">Request a CE Manager access code</h1>
     
     <p>To do the census online you need a 16 character unique access code which we have sent you in a letter.</p>
     
-    <p>To respond as an individual within a household separately from the rest of your household you will need your own code.</p>
+    <p>If you did not receive or have lost your code you can get a new one.</p>
     
     {% call
         onsPanel({
-            "classes": "u-mb-l"
+            'classes': 'u-mb-l'
         })
     %}
         <p>This page is also available in Welsh (<a href="#">Cymraeg</a>).</p>
@@ -29,8 +29,8 @@ layout: rh-fulfilments/views/_master
     
     {{
         onsButton({
-            "type": "button",
-            "text": "Request an individual code",
+            'type': 'button',
+            'text': "Request a CE Manager access code",
             'classes': 'u-mb-m',
             'url': pageInfo.path + "/enter-address/",
             'innerClasses': 'icon--chevron-right-white'

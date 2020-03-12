@@ -11,11 +11,11 @@ layout: rh-fulfilments/views/_master
 
     <script>sessionStorage.clear();</script>
     
-    <h1 class="u-mb-l u-fs-xxl">Request a new access code</h1>
+    <h1 class="u-mb-l u-fs-xxl">Request a household access code</h1>
     
     <p>To do the census online you need a 16 character unique access code which we have sent you in a letter.</p>
     
-    <p>If you are in a rehearsal area and don’t have a code you can get a new one.</p>
+    <p>If you did not receive or have lost your code you can get a new one.</p>
     
     {% call
         onsPanel({
@@ -30,7 +30,7 @@ layout: rh-fulfilments/views/_master
     {{
         onsButton({
             'type': 'button',
-            'text': "Request a new code",
+            'text': "Request a household access code",
             'classes': 'u-mb-m',
             'url': pageInfo.rootPath + "/household-code/enter-address/",
             'innerClasses': 'icon--chevron-right-white'
@@ -41,7 +41,8 @@ layout: rh-fulfilments/views/_master
     
     <p>You will need to provide:</p>
     <ul>
-        <li>your address so we can confirm you are in the rehearsal area</li>
+        <li>your address so that we can send you the appropriate form</li>
+        <li>either name to address a letter containing the code to, or a UK mobile telephone number to text the code to</li>
     </ul>
 
 {% endblock %}

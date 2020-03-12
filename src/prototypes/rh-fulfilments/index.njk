@@ -7,6 +7,10 @@ layout: rh-fulfilments/views/_master
 {% from "components/lists/_macro.njk" import onsList %}
 
 {% block main %}
+
+    <h1>Census RH Fulfilment Journeys</h1>
+    
+    <h2>Household Journeys</h2>
     {{ onsList({
         "classes": "u-mt-l",
         "itemsList": [
@@ -29,7 +33,14 @@ layout: rh-fulfilments/views/_master
             {
                 "text": "Request Household Continuation",
                 "url": pageInfo.rootPath + "/household-continuation/"
-            },
+            }
+        ]
+    }) }}
+    
+    <h2>Individual Journeys</h2>
+    {{ onsList({
+        "classes": "u-mt-l",
+        "itemsList": [
             {
                 "text": "Request Individual Code",
                 "url": pageInfo.rootPath + "/individual-code/"
@@ -40,4 +51,28 @@ layout: rh-fulfilments/views/_master
             }
         ]
     }) }}
+    
+    <h2>CE Journeys</h2>
+    {{ onsList({
+        "classes": "u-mt-l",
+        "itemsList": [
+            {
+                "text": "Request CE Manager Code",
+                "url": pageInfo.rootPath + "/cemanager-code/"
+            },
+            {
+                "text": "Request CE Manager Form",
+                "url": pageInfo.rootPath + "/cemanager-form/"
+            },
+            {
+                "text": "Request CE Resident Code",
+                "url": pageInfo.rootPath + "/ceresident-code/"
+            },
+            {
+                "text": "Request CE Resident Form",
+                "url": pageInfo.rootPath + "/ceresident-form/"
+            }
+        ]
+    }) }}
+    
 {% endblock %}
