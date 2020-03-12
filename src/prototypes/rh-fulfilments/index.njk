@@ -8,71 +8,39 @@ layout: rh-fulfilments/views/_master
 
 {% block main %}
 
-    <h1>Census RH Fulfilment Journeys</h1>
+    <h1 class="u-mt-l">Request something for the Census</h1>
+
+    <p>You can request a variety of items to help or enable you to complete your Census.</p>
+
+    <h2 class="u-mt-m">Request a code by text or post</h2>
+
+    <p><a href="{{ pageInfo.rootPath + "/household-code/" }}">Request a new/replacement household code</a></p>
+
+    <p><a href="{{ pageInfo.rootPath + "/individual-code/" }}">Request an individual code</a></p>
     
-    <h2>Household Journeys</h2>
-    {{ onsList({
-        "classes": "u-mt-l",
-        "itemsList": [
-            {
-                "text": "Request Household Code",
-                "url": pageInfo.rootPath + "/household-code/"
-            },
-            {
-                "text": "Request Household Form",
-                "url": pageInfo.rootPath + "/household-form/"
-            },
-            {
-                "text": "Request Household Translation Booklet",
-                "url": pageInfo.rootPath + "/household-booklet/"
-            },
-            {
-                "text": "Request Household Large Print",
-                "url": pageInfo.rootPath + "/household-largeprint/"
-            },
-            {
-                "text": "Request Household Continuation",
-                "url": pageInfo.rootPath + "/household-continuation/"
-            }
-        ]
-    }) }}
+    <p><a href="{{ pageInfo.rootPath + "/cemanager-code/" }}">Request a CE manager code</a></p>
     
-    <h2>Individual Journeys</h2>
-    {{ onsList({
-        "classes": "u-mt-l",
-        "itemsList": [
-            {
-                "text": "Request Individual Code",
-                "url": pageInfo.rootPath + "/individual-code/"
-            },
-            {
-                "text": "Request Individual Form",
-                "url": pageInfo.rootPath + "/individual-form/"
-            }
-        ]
-    }) }}
+    <p><a href="{{ pageInfo.rootPath + "/ceresident-code/" }}">Request a CE resident code</a></p>
+
+
+    <h2 class="u-mt-m">Request a form by post</h2>
+
+    <p><a href="{{ pageInfo.rootPath + "/household-form/" }}">Request a household form</a></p>
+
+    <p><a href="{{ pageInfo.rootPath + "/household-largeprint/" }}">Request a household form in large print format</a></p>
+
+    <p><a href="{{ pageInfo.rootPath + "/household-continuation/" }}">Request a household continuation form</a></p>
+
+    <p><a href="{{ pageInfo.rootPath + "/individual-form/" }}">Request an individual form</a></p>
+   
+    <p><a href="{{ pageInfo.rootPath + "/cemanager-form/" }}">Request a CE manager form</a></p>
     
-    <h2>CE Journeys</h2>
-    {{ onsList({
-        "classes": "u-mt-l",
-        "itemsList": [
-            {
-                "text": "Request CE Manager Code",
-                "url": pageInfo.rootPath + "/cemanager-code/"
-            },
-            {
-                "text": "Request CE Manager Form",
-                "url": pageInfo.rootPath + "/cemanager-form/"
-            },
-            {
-                "text": "Request CE Resident Code",
-                "url": pageInfo.rootPath + "/ceresident-code/"
-            },
-            {
-                "text": "Request CE Resident Form",
-                "url": pageInfo.rootPath + "/ceresident-form/"
-            }
-        ]
-    }) }}
+    <p><a href="{{ pageInfo.rootPath + "/ceresident-form/" }}">Request a CE resident form</a></p>
+
+
+    <h2 class="u-mt-m">Request a translation booklet by post</h2>
+
+    <p><a href="{{ pageInfo.rootPath + "/household-booklet/" }}">Request a translation booklet</a></p>
+
     
 {% endblock %}
