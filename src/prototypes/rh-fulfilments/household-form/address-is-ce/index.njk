@@ -1,0 +1,17 @@
+---
+version: 13.6.9
+layout: rh-fulfilments/views/_master
+---
+
+{% block main %}
+
+    <h1 class="u-mt-l">The selected address is not a household</h1>
+
+    <p>The address that you have selected is a communal establishment, but you are requesting a form for a household.</p>
+    
+    <p><a href="{{ pageInfo.rootPath }}/cemanager-form/">Request an CE Manager form</a> or 
+    <a href="{{ pageInfo.rootPath }}/ceresident-form/">Request an CE Resident form</a></p>
+
+    <p>If you believe that the address that you selected should be classified as a 'household' please call us free on 0800 085 7376.</p>
+
+{% endblock %}

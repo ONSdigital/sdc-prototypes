@@ -1,0 +1,61 @@
+---
+version: 13.6.9
+layout: rh-fulfilments/views/_master
+---
+
+{% from 'components/question/_macro.njk' import onsQuestion %}
+{% from 'components/button/_macro.njk' import onsButton %}
+{% from 'components/radios/_macro.njk' import onsRadios %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action": "{{ pageInfo.parentPath }}/enter-name/"
+    }
+} %}
+
+{% block main %}
+
+    {% call onsQuestion({
+        'title': 'Is this address correct?',
+        'description': '<p class="js-address-confirm" data-address-input-url="' + pageInfo.parentPath + '/select-address"></p>'
+    }) %}
+
+    {{
+        onsRadios({
+            'name': 'address-confirm',
+            'radios': [
+                {
+                    'id': 'yes',
+                    'label': {
+                        'text': 'Yes, this address is correct'
+                    },
+                    'value': 'yes',
+                    "attributes": {
+                        "data-action-url": pageInfo.parentPath + "/enter-name/"
+                    }
+                },
+                {
+                    'id': 'no',
+                    'label': {
+                        'text': 'No, I need to change it'
+                    },
+                    'value': 'no',
+                    "attributes": {
+                        "data-action-url": pageInfo.parentPath + "/enter-address/"
+                    }
+                }
+            ]
+        })
+    }}
+
+    {% endcall %}
+
+    {{
+        onsButton({
+            'text': 'Continue',
+            'classes': 'u-mt-l'
+        })
+    }}
+
+{% endblock %}

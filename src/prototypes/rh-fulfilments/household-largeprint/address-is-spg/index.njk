@@ -1,0 +1,14 @@
+---
+version: 13.6.9
+layout: rh-fulfilments/views/_master
+---
+
+{% block main %}
+
+    <h1 class="u-mt-l">The requested item is not available for your address type.</h1>
+
+    <p>The address that you have selected is a SPG, but you are requesting a large print form for a household.</p>
+    
+    <p><a href="{{ pageInfo.rootPath }}">Select a different item</a></p>
+
+{% endblock %}
