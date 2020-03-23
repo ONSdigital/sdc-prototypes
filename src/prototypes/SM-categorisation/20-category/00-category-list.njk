@@ -11,7 +11,7 @@ layout: SM-categorisation/views/_master-messages
 {% block main %}
     <div class="grid">
         <div id="main" class="grid__col col-8@m">
-            <h1>What information about the Monthly Business Survey do you need?</h1>
+            <h1>What information do you need?</h1>
             <form action="{{ pageInfo.parentPath }}/index.html">
                 <p class="field">
                     <fieldset class="fieldset">
@@ -26,7 +26,7 @@ layout: SM-categorisation/views/_master-messages
                                         class="radio__input js-radio"
                                         value="question-one"
                                         name="message-query">
-                                    <label class="radio__label" for="answering-a-survey-question">How/Why/How long have I been selected?</label>
+                                    <label class="radio__label" for="answering-a-survey-question">Why has my business been selected?</label>
                                 </span>
                             </p>
                             <br>
@@ -39,9 +39,10 @@ layout: SM-categorisation/views/_master-messages
                                         class="radio__input js-radio"
                                         value="question-two"
                                         name="message-query">
-                                    <label class="radio__label" for="information-about-the-survey">Can I be removed from the survey?</label>
+                                    <label class="radio__label" for="information-about-the-survey">Can I be exempt from completing the survey questionnaire?</label>
                                 </span>
                             </p>
+                            <!--
                             <br>
                             <p class="radios__item">
                                 <span class="radio">
@@ -68,7 +69,9 @@ layout: SM-categorisation/views/_master-messages
                                     <label class="radio__label" for="a-technical-issue">Has my survey questionnaire been received?</label>
                                 </span>
                             </p>
+                            -->
                             <br>
+                            <span class="radios__label u-mt-s u-fs-r--b" aria-hidden="true">Or, </span>
                             <p class="radios__item">
                                 <span class="radio">
                                     <input
@@ -84,7 +87,7 @@ layout: SM-categorisation/views/_master-messages
                                         </label>
                                         <span class="radio__other" id="other-checkbox-other-wrap">
                                             <label class="label u-fs-s--b" for="other-textbox">
-                                                Please specify
+                                                What information do you need?
                                             </label>
                                         <input
                                             type="text"

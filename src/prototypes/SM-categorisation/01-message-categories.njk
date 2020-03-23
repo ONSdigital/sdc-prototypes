@@ -83,7 +83,7 @@ layout: SM-categorisation/views/_master-messages
 
                     <p class="field">
                         <fieldset class="fieldset">
-                            <legend class="fieldset__legend">What is your message about?</legend>
+                            <legend class="fieldset__legend">Choose an option</legend>
                             <div class="radios__items">
                                 <p class="radios__item">
                                     <span class="radio">
@@ -94,7 +94,7 @@ layout: SM-categorisation/views/_master-messages
                                         class="radio__input js-radio"
                                         value="question-one"
                                         name="message-query">
-                                        <label class="radio__label" for="answering-a-survey-question">Answering a survey question</label>
+                                        <label class="radio__label" for="answering-a-survey-question">I need help answering a survey question</label>
                                     </span>
                                 </p>
                                 <br>
@@ -107,10 +107,10 @@ layout: SM-categorisation/views/_master-messages
                                         class="radio__input js-radio"
                                         value="question-two"
                                         name="message-query">
-                                        <label class="radio__label" for="information-about-the-survey">Information about the Monthly Business Survey</label>
+                                        <label class="radio__label" for="information-about-the-survey">I have a question about the Monthly Business Survey</label>
                                     </span>
                                 </p>
-                                <br>
+                                <!-- <br>
                                 <p class="radios__item">
                                     <span class="radio">
                                         <input
@@ -122,7 +122,7 @@ layout: SM-categorisation/views/_master-messages
                                         name="message-query">
                                         <label class="radio__label" for="my-company-details-have-changed">My company details</label>
                                     </span>
-                                </p>
+                                </p> -->
                                 <br>
                                 <p class="radios__item">
                                     <span class="radio">
@@ -133,7 +133,7 @@ layout: SM-categorisation/views/_master-messages
                                         class="radio__input js-radio"
                                         value="question--four"
                                         name="message-query">
-                                        <label class="radio__label" for="my-contact-details-have-changed">My contact details</label>
+                                        <label class="radio__label" for="my-contact-details-have-changed">I need to change who completes this survey</label>
                                     </span>
                                 </p>
                                 <br>
@@ -146,11 +146,12 @@ layout: SM-categorisation/views/_master-messages
                                         class="radio__input js-radio"
                                         value="question-five"
                                         name="message-query">
-                                        <label class="radio__label" for="a-technical-issue">A technical issue</label>
+                                        <label class="radio__label" for="a-technical-issue">I have a technical issue</label>
                                     </span>
                                 </p>
-                                <br>
-                                <p class="radios__item">
+    <br>
+    <span class="radios__label u-mt-s u-fs-r--b" aria-hidden="true">Or, </span>
+                                <p class="field radios__item">
                                     <span class="radio">
                                         <input
                                             type="radio"
@@ -165,7 +166,7 @@ layout: SM-categorisation/views/_master-messages
                                             </label>
                                             <span class="radio__other" id="other-checkbox-other-wrap">
                                                 <label class="label u-fs-s--b" for="other-textbox">
-                                                    Please specify
+                                                    What is your message about?
                                                 </label>
                                             <input
                                                 type="text"
