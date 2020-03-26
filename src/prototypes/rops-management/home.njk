@@ -1,0 +1,1087 @@
+---
+group: Frontstage
+title: ROps Manangement
+version: 17.0.0
+layout: rops-management/views/_master
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/metadata/_macro.njk" import onsMetadata %}
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+
+{% block main %}
+
+    <div class="grid">
+        <div class="grid__col col-12@m">
+            <h1>Case details</h1>
+            {{ 
+                onsMetadata({
+                    "metadataLabel": "This is an example of the metadata component",
+                    "termCol": "2",
+                    "descriptionCol": "10",
+                    "itemsList": [
+                        {
+                            "term": "Case ID:",
+                            "descriptions": [ 
+                                {
+                                    "description": "51f00c68-8f9a-4abb-99fe-e918c251e6b7"
+                                }
+                            ]
+                        },
+                        {
+                            "term": "Address:",
+                            "descriptions": [ 
+                                {
+                                    "description": "2 St Marks Court"
+                                },
+                                {
+                                    "description": "Lower Boston Road"
+                                },
+                                {
+                                    "description": "Windleybury"
+                                },
+                                {
+                                    "description": "GU16 6DG"
+                                }                            
+                            ]
+                        }                                                
+                    ]
+                }) 
+            }}
+            <h2>Event history</h2>
+
+            <div class="timeline">
+                <ul class="list list--bare">
+                    <li class="list__item u-mb-m">
+                        <h3 class="u-fs-r u-fw-b u-mb-no">Create case sample received</h3>
+                        <p class="u-mb-no">Response management</p>
+                        <p class="u-mb-no time">24 February 2020 at 11.28am</p>
+                        <div id="collapsible-with-save" class="collapsible js-collapsible" open data-btn-close="Hide this" data-save-state="true">
+                            <div class="collapsible__heading js-collapsible-heading">
+                                <div class="collapsible__controls">
+                                    <div class="collapsible__title u-fs-r--b">Details</div>
+                                </div>
+                            </div>
+                            <div id="collapsible-with-save-content" class="collapsible__content js-collapsible-content">
+
+                                {{ 
+                                onsMetadata({
+                                    "metadataLabel": "This is an example of the metadata component",
+                                    "termCol": "4",
+                                    "descriptionCol": "8",
+                                    "itemsList": [
+                                        {
+                                            "term": "oa",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "E00074236"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "lad",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "E06000023"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "arid",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "DDR190314000000320079"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "lsoa",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "E01033361"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "msoa",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "E02003050"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "uprn",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "10093293647"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "region",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "E12000009"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "abpCode",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "RD06"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "latitude",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "51.4451742"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "postcode",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "WI10XX"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "townName",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "Windleybury"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "estabArid",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "DDR190314000000320079"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "estabType",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "Household"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "longitude",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "-2.5975551"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "htcDigital",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "3"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "addressType",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "HH"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "actionPlanId",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "0a426f03-2865-48c8-918c-08a7c247eefa"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "addressLevel",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "U"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "addressLine1",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "Flat 2"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "addressLine2",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "60 Coronation Road"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "addressLine3",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": ""
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "treatmentCode",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "HH_LF3R3BE"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "fieldOfficerId",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": ""
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "htcWillingness",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "3"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "organisationName",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": ""
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "ceExpectedCapacity",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "0"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "fieldCoordinatorId",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "TWH1-HA"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "collectionExerciseId",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "0a426f03-2865-48c8-918c-08a7c247eefa"
+                                                }                            
+                                            ]
+                                        }                                                
+                                    ]
+                                }) 
+                            }}
+
+                                <button type="button" class="btn btn--small js-collapsible-button u-d-no btn--secondary">
+                                    <span class="btn__inner js-collapsible-button-inner">Hide this</span>
+                                    <span class="btn__context u-vh">What is a photovoltaic system? undefined</span>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list__item u-mb-m">
+                        <h3 class="u-fs-r u-fw-b u-mb-no">Create case sample received</h3>
+                        <p class="u-mb-no">Response management</p>
+                        <p class="u-mb-no time">24 February 2020 at 11.28am</p>
+                        <div id="collapsible-with-save" class="collapsible js-collapsible" open data-btn-close="Hide this" data-save-state="true">
+                            <div class="collapsible__heading js-collapsible-heading">
+                                <div class="collapsible__controls">
+                                    <div class="collapsible__title u-fs-r--b">Details</div>
+                                </div>
+                            </div>
+                            <div id="collapsible-with-save-content" class="collapsible__content js-collapsible-content">
+
+                                {{ 
+                                onsMetadata({
+                                    "metadataLabel": "This is an example of the metadata component",
+                                    "termCol": "4",
+                                    "descriptionCol": "8",
+                                    "itemsList": [
+                                        {
+                                            "term": "oa",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "W00002859"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "lad",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "W06000008"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "arid",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "ABPXXXXXX000049039990"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "lsoa",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "W01000535"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "msoa",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "W02000123"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "uprn",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "200062545652"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "region",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "W99999999"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "abpCode",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "PP"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "latitude",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "-149.7898"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "postcode",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "GU16 6DD"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "townName",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "Guide Hamlet"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "estabArid",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "ABPXXXXXX000049039990"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "estabType",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "Residential Caravanner"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "longitude",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "-58.1096"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "htcDigital",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "4"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "addressType",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "SPG"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "actionPlanId",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "0a426f03-2865-48c8-918c-08a7c247eefa"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "addressLevel",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "E"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "addressLine1",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "391 Case Total Avenue"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "addressLine2",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "Creuddyn Bridge"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "addressLine3",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": ""
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "treatmentCode",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "SPG_QDHSW"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "fieldOfficerId",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "CGN1-SA-06"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "htcWillingness",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "1"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "organisationName",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "Dave Caravan Site"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "ceExpectedCapacity",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "0"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "fieldCoordinatorId",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "TWH1-HA"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "collectionExerciseId",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "0a426f03-2865-48c8-918c-08a7c247eefa"
+                                                }
+                                            ]
+                                        }                                                  
+                                    ]
+                                }) 
+                            }}
+
+                                <button type="button" class="btn btn--small js-collapsible-button u-d-no btn--secondary">
+                                    <span class="btn__inner js-collapsible-button-inner">Hide this</span>
+                                    <span class="btn__context u-vh">What is a photovoltaic system? undefined</span>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list__item u-mb-m">
+                        <h3 class="u-fs-r u-fw-b u-mb-no">Refusal received for individual on Estab</h3>
+                        <p class="u-mb-no">Contact centre</p>
+                        <p class="u-mb-no time">25 February 2020 at 9.13am</p>
+                        <div id="collapsible-with-save" class="collapsible js-collapsible" open data-btn-close="Hide this" data-save-state="true">
+                            <div class="collapsible__heading js-collapsible-heading">
+                                <div class="collapsible__controls">
+                                    <div class="collapsible__title u-fs-r--b">Details</div>
+                                </div>
+                            </div>
+                            <div id="collapsible-with-save-content" class="collapsible__content js-collapsible-content">
+
+                                {{ 
+                                onsMetadata({
+                                    "metadataLabel": "This is an example of the metadata component",
+                                    "termCol": "4",
+                                    "descriptionCol": "8",
+                                    "itemsList": [
+                                        {
+                                            "term": "type",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "HARD_REFUSAL"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "report",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "respondent unwilling"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "agentId",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "110001"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "collectionCase id",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "a6d236a7-6545-419a-8354-754e87dcf182"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "collectionCase handDelivery",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "false"
+                                                }
+                                            ]
+                                        }                                                       
+                                    ]
+                                }) 
+                            }}
+
+                                <button type="button" class="btn btn--small js-collapsible-button u-d-no btn--secondary">
+                                    <span class="btn__inner js-collapsible-button-inner">Hide this</span>
+                                    <span class="btn__context u-vh">What is a photovoltaic system? undefined</span>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list__item u-mb-m">
+                        <h3 class="u-fs-r u-fw-b u-mb-no">Refusal received</h3>
+                        <p class="u-mb-no">Field management</p>
+                        <p class="u-mb-no time">25 February 2020 at 9.27am</p>
+                        <div id="collapsible-with-save" class="collapsible js-collapsible" open data-btn-close="Hide this" data-save-state="true">
+                            <div class="collapsible__heading js-collapsible-heading">
+                                <div class="collapsible__controls">
+                                    <div class="collapsible__title u-fs-r--b">Details</div>
+                                </div>
+                            </div>
+                            <div id="collapsible-with-save-content" class="collapsible__content js-collapsible-content">
+
+                                {{ 
+                                onsMetadata({
+                                    "metadataLabel": "This is an example of the metadata component",
+                                    "termCol": "4",
+                                    "descriptionCol": "8",
+                                    "itemsList": [
+                                        {
+                                            "term": "type",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "HARD_REFUSAL"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "report",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "respondent unwilling"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "agentId",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "110001"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "collectionCase id",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "a6d236a7-6545-419a-8354-754e87dcf182"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "collectionCase handDelivery",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "false"
+                                                }
+                                            ]
+                                        }                                                       
+                                    ]
+                                }) 
+                            }}
+
+                                <button type="button" class="btn btn--small js-collapsible-button u-d-no btn--secondary">
+                                    <span class="btn__inner js-collapsible-button-inner">Hide this</span>
+                                    <span class="btn__context u-vh">What is a photovoltaic system? undefined</span>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list__item u-mb-m">
+                        <h3 class="u-fs-r u-fw-b u-mb-no">Respondent authenticated</h3>
+                        <p class="u-mb-no">Respondent's home</p>
+                        <p class="u-mb-no time">25 February 2020 at 11.33am</p>
+                        <div id="collapsible-with-save" class="collapsible js-collapsible" open data-btn-close="Hide this" data-save-state="true">
+                            <div class="collapsible__heading js-collapsible-heading">
+                                <div class="collapsible__controls">
+                                    <div class="collapsible__title u-fs-r--b">Details</div>
+                                </div>
+                            </div>
+                            <div id="collapsible-with-save-content" class="collapsible__content js-collapsible-content">
+
+                                {{ 
+                                onsMetadata({
+                                    "metadataLabel": "This is an example of the metadata component",
+                                    "termCol": "4",
+                                    "descriptionCol": "8",
+                                    "itemsList": [
+                                        {
+                                            "term": "caseId",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "75d6cf47-9942-4441-9bc3-29802cdfe15c"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "questionnaireId",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "0120000006970650"
+                                                }
+                                            ]
+                                        }                                                           
+                                    ]
+                                }) 
+                            }}
+
+                                <button type="button" class="btn btn--small js-collapsible-button u-d-no btn--secondary">
+                                    <span class="btn__inner js-collapsible-button-inner">Hide this</span>
+                                    <span class="btn__context u-vh">What is a photovoltaic system? undefined</span>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list__item u-mb-m">
+                        <h3 class="u-fs-r u-fw-b u-mb-no">Survey launched</h3>
+                        <p class="u-mb-no time">25 February 2020 at 11.33am</p>
+                        <div id="collapsible-with-save" class="collapsible js-collapsible" open data-btn-close="Hide this" data-save-state="true">
+                            <div class="collapsible__heading js-collapsible-heading">
+                                <div class="collapsible__controls">
+                                    <div class="collapsible__title u-fs-r--b">Details</div>
+                                </div>
+                            </div>
+                            <div id="collapsible-with-save-content" class="collapsible__content js-collapsible-content">
+
+                                {{ 
+                                onsMetadata({
+                                    "metadataLabel": "This is an example of the metadata component",
+                                    "termCol": "4",
+                                    "descriptionCol": "8",
+                                    "itemsList": [
+                                        {
+                                            "term": "caseId",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "75d6cf47-9942-4441-9bc3-29802cdfe15c"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "agentId",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": ""
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "questionnaireId",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "0120000006970650"
+                                                }
+                                            ]
+                                        }                                                            
+                                    ]
+                                }) 
+                            }}
+
+                                <button type="button" class="btn btn--small js-collapsible-button u-d-no btn--secondary">
+                                    <span class="btn__inner js-collapsible-button-inner">Hide this</span>
+                                    <span class="btn__context u-vh">What is a photovoltaic system? undefined</span>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list__item u-mb-m">
+                        <h3 class="u-fs-r u-fw-b u-mb-no">Respondent authenticated</h3>
+                        <p class="u-mb-no">Respondent's home</p>
+                        <p class="u-mb-no time">3rd March 2020 at 12.01pm</p>
+                        <div id="collapsible-with-save" class="collapsible js-collapsible" open data-btn-close="Hide this" data-save-state="true">
+                            <div class="collapsible__heading js-collapsible-heading">
+                                <div class="collapsible__controls">
+                                    <div class="collapsible__title u-fs-r--b">Details</div>
+                                </div>
+                            </div>
+                            <div id="collapsible-with-save-content" class="collapsible__content js-collapsible-content">
+
+                                {{ 
+                                onsMetadata({
+                                    "metadataLabel": "This is an example of the metadata component",
+                                    "termCol": "4",
+                                    "descriptionCol": "8",
+                                    "itemsList": [
+                                        {
+                                            "term": "caseId",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "75d6cf47-9942-4441-9bc3-29802cdfe15c"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "questionnaireId",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "0120000006970650"
+                                                }
+                                            ]
+                                        }                                                              
+                                    ]
+                                }) 
+                            }}
+
+                                <button type="button" class="btn btn--small js-collapsible-button u-d-no btn--secondary">
+                                    <span class="btn__inner js-collapsible-button-inner">Hide this</span>
+                                    <span class="btn__context u-vh">What is a photovoltaic system? undefined</span>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list__item u-mb-m">
+                        <h3 class="u-fs-r u-fw-b u-mb-no">Survey launched</h3>
+                        <p class="u-mb-no">Respondent's home</p>
+                        <p class="u-mb-no time">3rd March 2020 at 12.01pm</p>
+                        <div id="collapsible-with-save" class="collapsible js-collapsible" open data-btn-close="Hide this" data-save-state="true">
+                            <div class="collapsible__heading js-collapsible-heading">
+                                <div class="collapsible__controls">
+                                    <div class="collapsible__title u-fs-r--b">Details</div>
+                                </div>
+                            </div>
+                            <div id="collapsible-with-save-content" class="collapsible__content js-collapsible-content">
+
+                                {{ 
+                                onsMetadata({
+                                    "metadataLabel": "This is an example of the metadata component",
+                                    "termCol": "4",
+                                    "descriptionCol": "8",
+                                    "itemsList": [
+                                        {
+                                            "term": "caseId",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "75d6cf47-9942-4441-9bc3-29802cdfe15c"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "agentId",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": ""
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "questionnaireId",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "0120000006970650"
+                                                }
+                                            ]
+                                        }                                                              
+                                    ]
+                                }) 
+                            }}
+
+                                <button type="button" class="btn btn--small js-collapsible-button u-d-no btn--secondary">
+                                    <span class="btn__inner js-collapsible-button-inner">Hide this</span>
+                                    <span class="btn__context u-vh">What is a photovoltaic system? undefined</span>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list__item u-mb-m">
+                        <h3 class="u-fs-r u-fw-b u-mb-no">Respondent authenticated</h3>
+                        <p class="u-mb-no">Respondent's home</p>
+                        <p class="u-mb-no time">3rd March 2020 at 13.12pm</p>
+                        <div id="collapsible-with-save" class="collapsible js-collapsible" open data-btn-close="Hide this" data-save-state="true">
+                            <div class="collapsible__heading js-collapsible-heading">
+                                <div class="collapsible__controls">
+                                    <div class="collapsible__title u-fs-r--b">Details</div>
+                                </div>
+                            </div>
+                            <div id="collapsible-with-save-content" class="collapsible__content js-collapsible-content">
+
+                                {{ 
+                                onsMetadata({
+                                    "metadataLabel": "This is an example of the metadata component",
+                                    "termCol": "4",
+                                    "descriptionCol": "8",
+                                    "itemsList": [
+                                        {
+                                            "term": "caseId",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "75d6cf47-9942-4441-9bc3-29802cdfe15c"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "questionnaireId",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "0120000006970650"
+                                                }
+                                            ]
+                                        }                                                             
+                                    ]
+                                }) 
+                            }}
+
+                                <button type="button" class="btn btn--small js-collapsible-button u-d-no btn--secondary">
+                                    <span class="btn__inner js-collapsible-button-inner">Hide this</span>
+                                    <span class="btn__context u-vh">What is a photovoltaic system? undefined</span>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list__item u-mb-m">
+                        <h3 class="u-fs-r u-fw-b u-mb-no">Respondent authenticated</h3>
+                        <p class="u-mb-no time">3rd March 2020 at 14.52pm</p>
+                        <div id="collapsible-with-save" class="collapsible js-collapsible" open data-btn-close="Hide this" data-save-state="true">
+                            <div class="collapsible__heading js-collapsible-heading">
+                                <div class="collapsible__controls">
+                                    <div class="collapsible__title u-fs-r--b">Details</div>
+                                </div>
+                            </div>
+                            <div id="collapsible-with-save-content" class="collapsible__content js-collapsible-content">
+
+                                {{ 
+                                onsMetadata({
+                                    "metadataLabel": "This is an example of the metadata component",
+                                    "termCol": "4",
+                                    "descriptionCol": "8",
+                                    "itemsList": [
+                                        {
+                                            "term": "caseId",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "75d6cf47-9942-4441-9bc3-29802cdfe15c"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "questionnaireId",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "0120000006970650"
+                                                }
+                                            ]
+                                        }                                                             
+                                    ]
+                                }) 
+                            }}
+
+                                <button type="button" class="btn btn--small js-collapsible-button u-d-no btn--secondary">
+                                    <span class="btn__inner js-collapsible-button-inner">Hide this</span>
+                                    <span class="btn__context u-vh">What is a photovoltaic system? undefined</span>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list__item u-mb-m">
+                        <h3 class="u-fs-r u-fw-b u-mb-no">Survey launched</h3>
+                        <p class="u-mb-no">Respondent's home</p>
+                        <p class="u-mb-no time">3rd March 2020 at 14.53pm</p>
+                        <div id="collapsible-with-save" class="collapsible js-collapsible" open data-btn-close="Hide this" data-save-state="true">
+                            <div class="collapsible__heading js-collapsible-heading">
+                                <div class="collapsible__controls">
+                                    <div class="collapsible__title u-fs-r--b">Details</div>
+                                </div>
+                            </div>
+                            <div id="collapsible-with-save-content" class="collapsible__content js-collapsible-content">
+
+                                {{ 
+                                onsMetadata({
+                                    "metadataLabel": "This is an example of the metadata component",
+                                    "termCol": "4",
+                                    "descriptionCol": "8",
+                                    "itemsList": [
+                                        {
+                                            "term": "caseId",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "75d6cf47-9942-4441-9bc3-29802cdfe15c"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "agentId",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": ""
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "questionnaireId",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "0120000006970650"
+                                                }
+                                            ]
+                                        }                                                             
+                                    ]
+                                }) 
+                            }}
+
+                                <button type="button" class="btn btn--small js-collapsible-button u-d-no btn--secondary">
+                                    <span class="btn__inner js-collapsible-button-inner">Hide this</span>
+                                    <span class="btn__context u-vh">What is a photovoltaic system? undefined</span>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list__item u-mb-m">
+                        <h3 class="u-fs-r u-fw-b u-mb-no">QID Receipted</h3>
+                        <p class="u-mb-no">Respondent's home</p>
+                        <p class="u-mb-no time">3rd March 2020 at 14.53pm</p>
+                        <div id="collapsible-with-save" class="collapsible js-collapsible" open data-btn-close="Hide this" data-save-state="true">
+                            <div class="collapsible__heading js-collapsible-heading">
+                                <div class="collapsible__controls">
+                                    <div class="collapsible__title u-fs-r--b">Details</div>
+                                </div>
+                            </div>
+                            <div id="collapsible-with-save-content" class="collapsible__content js-collapsible-content">
+
+                                {{ 
+                                onsMetadata({
+                                    "metadataLabel": "This is an example of the metadata component",
+                                    "termCol": "4",
+                                    "descriptionCol": "8",
+                                    "itemsList": [
+                                        {
+                                            "term": "unreceipt",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "false"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "term": "questionnaireId",
+                                            "descriptions": [ 
+                                                {
+                                                    "description": "0120000006970650"
+                                                }
+                                            ]
+                                        }                                                             
+                                    ]
+                                }) 
+                            }}
+
+                                <button type="button" class="btn btn--small js-collapsible-button u-d-no btn--secondary">
+                                    <span class="btn__inner js-collapsible-button-inner">Hide this</span>
+                                    <span class="btn__context u-vh">What is a photovoltaic system? undefined</span>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
