@@ -129,7 +129,7 @@ layout: SM-categorisation/views/_master-messages
                                         <input
                                         type="radio"
                                         id="my-contact-details-have-changed"
-                                        data-action-url="{{ pageInfo.parentPath }}/40-category/00-send-message.html"
+                                        data-action-url="{{ pageInfo.parentPath }}/manage-surveys/20-my-account.html"
                                         class="radio__input js-radio"
                                         value="question--four"
                                         name="message-query">
@@ -141,16 +141,29 @@ layout: SM-categorisation/views/_master-messages
                                     <span class="radio">
                                         <input
                                         type="radio"
+                                        id="my-email-address-has-changed"
+                                        data-action-url="{{ pageInfo.parentPath }}/manage-surveys/50-changed-email-address.html"
+                                        class="radio__input js-radio"
+                                        value="question--five"
+                                        name="message-query">
+                                        <label class="radio__label" for="my-email-address-has-changed">My email address has changed</label>
+                                    </span>
+                                </p>
+                                <br>
+                                <p class="radios__item">
+                                    <span class="radio">
+                                        <input
+                                        type="radio"
                                         id="a-technical-issue"
                                         data-action-url="{{ pageInfo.parentPath }}/50-category/00-send-message.html"
                                         class="radio__input js-radio"
-                                        value="question-five"
+                                        value="question--six"
                                         name="message-query">
                                         <label class="radio__label" for="a-technical-issue">I have a technical issue</label>
                                     </span>
                                 </p>
-    <br>
-    <span class="radios__label u-mt-s u-fs-r--b" aria-hidden="true">Or, </span>
+                                <br>
+                                <span class="radios__label u-mt-s u-fs-r--b" aria-hidden="true">Or, </span>
                                 <p class="field radios__item">
                                     <span class="radio">
                                         <input
