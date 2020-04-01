@@ -2,7 +2,7 @@
 group: Frontstage
 title: SM Categorisation
 version: 14.4.0
-layout: SM-categorisation/views/_master-messages
+layout: SM-categorisation/views/_master-todo
 ---
 
 {% from "components/button/_macro.njk" import onsButton %}
@@ -12,7 +12,7 @@ layout: SM-categorisation/views/_master-messages
     <div class="grid">
         <div id="main" class="grid__col col-12@m">
 
-            <h1>Send a message</h1>
+            <h1>Help with this survey</h1>
             <form action="{{ pageInfo.parentPath }}/index.html">
                 <p class="field">
                     <!-- {% from "components/radios/_macro.njk" import onsRadios %}
@@ -142,11 +142,11 @@ layout: SM-categorisation/views/_master-messages
                                         <input
                                         type="radio"
                                         id="my-email-address-has-changed"
-                                        data-action-url="{{ pageInfo.parentPath }}/manage-surveys/50-changed-email-address.html"
+                                        data-action-url="{{ pageInfo.parentPath }}/40-category/00-category-list.html"
                                         class="radio__input js-radio"
                                         value="question--five"
                                         name="message-query">
-                                        <label class="radio__label" for="my-email-address-has-changed">My email address has changed</label>
+                                        <label class="radio__label" for="my-email-address-has-changed">My business or contact details have changed</label>
                                     </span>
                                 </p>
                                 <br>
