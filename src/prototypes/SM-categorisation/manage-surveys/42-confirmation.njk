@@ -6,11 +6,36 @@ layout: SM-categorisation/views/_master
 ---
 
 {% from "components/input/_macro.njk" import onsInput %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
 
 {% block main %}
 
     <div class="grid">
-        <div class="grid__col col-8@m">
+        <div id="main" class="grid__col col-8@m u-pt-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/',
+                            "text": 'Home'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'Monthly Business Survey help'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'Manage access to surveys'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'Transfer account',
+                            "current": true
+                        }
+                    ]
+                }) 
+            }}
             <h1>Almost done</h1>
             <p>We’ve sent an email to the new respondents</p>
             <p>Once they have received it, they need to follow the link in the email to confirm their email address and finish setting up their account</p>

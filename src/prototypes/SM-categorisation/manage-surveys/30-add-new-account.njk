@@ -6,11 +6,36 @@ layout: SM-categorisation/views/_master
 ---
 
 {% from "components/input/_macro.njk" import onsInput %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
 
 {% block main %}
 
     <div class="grid">
-        <div class="grid__col col-8@m">
+        <div id="main" class="grid__col col-8@m u-pt-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/',
+                            "text": 'Home'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'Monthly Business Survey help'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'Manage access to surveys'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'Share access',
+                            "current": true
+                        }
+                    ]
+                }) 
+            }}
             <h1>Share access to my surveys</h1>
             
             <!--

@@ -8,32 +8,36 @@ layout: SM-categorisation/views/_master-messages
 {% from "components/button/_macro.njk" import onsButton %}
 {% from "components/radios/_macro.njk" import onsRadios %}
 {% from "components/textarea/_macro.njk" import onsTextarea %}
-{% from "components/metadata/_macro.njk" import onsMetadata %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
 
 {% block main %}
 
     <div class="grid">
-        <div class="grid__col col-8@m">
-            <h1>Get help answering a survey question</h1>
-        </div>
-        <div class="grid__col col-6@m">
+        <div id="main" class="grid__col col-8@m u-pt-no">
             {{ 
-                onsMetadata({
-                    "metadataLabel": "This is an example of the metadata component",
-                    "termCol": "2",
-                    "descriptionCol": "10",
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
                     "itemsList": [
                         {
-                            "term": "Survey:",
-                            "descriptions": [ 
-                                {
-                                    "description": "Monthly Business Survey"
-                                }
-                            ]
-                        }                                                       
+                            "url": '/',
+                            "text": 'Home'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'Monthly Business Survey help'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'Help answering a question',
+                            "current": true
+                        }
                     ]
                 }) 
             }}
+            <h1>Get help answering a survey question</h1>
+            <p>Send us a message with a description of your issue and we'll get back to you.</p>
+        </div>
+        <div class="grid__col col-6@m">
             <p class="field">
             {{
                 onsTextarea({

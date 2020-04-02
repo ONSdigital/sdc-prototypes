@@ -9,11 +9,38 @@ layout: SM-categorisation/views/_master-messages
 {% from "components/radios/_macro.njk" import onsRadios %}
 {% from "components/textarea/_macro.njk" import onsTextarea %}
 {% from "components/metadata/_macro.njk" import onsMetadata %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
 
 {% block main %}
 
     <div class="grid">
-        <div class="grid__col col-8@m">
+        <div id="main" class="grid__col col-12@m u-pt-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/',
+                            "text": 'Home'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'Monthly Business Survey help'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'Information about the survey'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'How was my business selected?',
+                            "current": true
+                        }
+                    ]
+                }) 
+            }}
+        </div>
+        <div id="main" class="grid__col col-8@m u-pt-no">
             <h1>How was my business selected?</h1>
             <p>Businesses are selected from the Inter-Departmental Business Register (IDBR), which is a register of businesses in the UK that are registered for PAYE, VAT or with Companies House.</p>
             <p>Selection depends on several factors, for example, the number of people employed, how many other businesses are operating in the same industry and the size of those businesses.</p>
@@ -35,7 +62,7 @@ layout: SM-categorisation/views/_master-messages
                         "type": 'button',
                         "text": 'No',
                         "classes": 'btn--secondary btn-group__btn',
-                        "url": "/prototypes/SM-categorisation/20-category/100-create-message.html"
+                        "url": "/prototypes/SM-categorisation/20-category/10-create-message.html"
                     }) 
                 }}
                 </div>

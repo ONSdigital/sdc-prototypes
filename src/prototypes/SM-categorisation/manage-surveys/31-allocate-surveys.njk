@@ -6,12 +6,37 @@ layout: SM-categorisation/views/_master
 ---
 
 {% from "components/input/_macro.njk" import onsInput %}
-            {% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
+{% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
 
 {% block main %}
 
     <div class="grid">
-        <div class="grid__col col-8@m">
+        <div id="main" class="grid__col col-8@m u-pt-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/',
+                            "text": 'Home'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'Monthly Business Survey help'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'Manage access to surveys'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'Share access',
+                            "current": true
+                        }
+                    ]
+                }) 
+            }}
             <h1>Which surveys do you want to allocate to jane.doe@vcp.com?</h1>
             <p class="field">
             {{ 

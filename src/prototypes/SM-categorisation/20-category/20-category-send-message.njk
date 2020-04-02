@@ -9,11 +9,38 @@ layout: SM-categorisation/views/_master-messages
 {% from "components/radios/_macro.njk" import onsRadios %}
 {% from "components/textarea/_macro.njk" import onsTextarea %}
 {% from "components/metadata/_macro.njk" import onsMetadata %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
 
 {% block main %}
 
     <div class="grid">
-        <div class="grid__col col-8@m">
+        <div id="main" class="grid__col col-12@m u-pt-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/',
+                            "text": 'Home'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'Monthly Business Survey help'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'Information about the survey'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'Can I be exempt?',
+                            "current": true
+                        }
+                    ]
+                }) 
+            }}
+        </div>
+        <div id="main" class="grid__col col-8@m u-pt-no">
             <h1>Can I be exempt from completing the survey questionnaire?</h1>
             <p>No. Once selected a business is legally obliged to complete the survey because it is conducted under the provisions of the Statistics of Trade Act 1947</p>
             <p>See more <a href="https://www.ons.gov.uk/surveys/informationforbusinesses" class="icon--external-link" target="_blank" rel="noopener">information for businesses</a></p>
@@ -33,7 +60,7 @@ layout: SM-categorisation/views/_master-messages
                         "type": 'button',
                         "text": 'No',
                         "classes": 'btn--secondary btn-group__btn',
-                        "url": "/prototypes/SM-categorisation/20-category/100-create-message.html"
+                        "url": "/prototypes/SM-categorisation/20-category/20-create-message.html"
                     })
                 }}
                 </div>
