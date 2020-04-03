@@ -12,7 +12,7 @@ layout: SM-categorisation/views/_master
 {% block main %}
 
     <div class="grid">
-        <div id="main" class="grid__col col-8@m u-pt-no">
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
             {{ 
                 onsBreadcrumb({
                     "ariaLabel": 'Breadcrumb',
@@ -22,7 +22,7 @@ layout: SM-categorisation/views/_master
                             "text": 'Home'
                         },
                         {
-                            "url": '/',
+                            "url": '/prototypes/SM-categorisation/01-message-categories.html',
                             "text": 'Monthly Business Survey help'
                         },
                         {
@@ -33,6 +33,8 @@ layout: SM-categorisation/views/_master
                     ]
                 }) 
             }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
             <h1>Manage access to my surveys</h1>
             <form>
                 <p>

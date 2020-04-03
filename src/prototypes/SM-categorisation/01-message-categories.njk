@@ -11,7 +11,7 @@ layout: SM-categorisation/views/_master-todo
 
 {% block main %}
     <div class="grid">
-        <div id="main" class="grid__col col-12@m u-pt-no">
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
             {{ 
                 onsBreadcrumb({
                     "ariaLabel": 'Breadcrumb',
@@ -28,6 +28,8 @@ layout: SM-categorisation/views/_master-todo
                     ]
                 }) 
             }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
             <h1>Help with this survey</h1>
             <form action="{{ pageInfo.parentPath }}/index.html">
                 <p class="field">

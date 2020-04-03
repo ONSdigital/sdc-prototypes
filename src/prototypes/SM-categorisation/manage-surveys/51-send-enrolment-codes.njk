@@ -9,8 +9,9 @@ layout: SM-categorisation/views/_master
 {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
 
 {% block main %}
+
     <div class="grid">
-        <div id="main" class="grid__col col-8@m u-pt-no">
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
             {{ 
                 onsBreadcrumb({
                     "ariaLabel": 'Breadcrumb',
@@ -20,11 +21,11 @@ layout: SM-categorisation/views/_master
                             "text": 'Home'
                         },
                         {
-                            "url": '/',
+                            "url": '/prototypes/SM-categorisation/01-message-categories.html',
                             "text": 'Monthly Business Survey help'
                         },
                         {
-                            "url": '/',
+                            "url": '/prototypes/SM-categorisation/40-category/00-category-list.html',
                             "text": 'Details have changed'
                         },
                         {
@@ -35,6 +36,8 @@ layout: SM-categorisation/views/_master
                     ]
                 }) 
             }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
             <h1>Send enrolment codes</h1>
 
             <p>The following surveys will be transferred to <b>jane.doe@vcp.com</b></p>

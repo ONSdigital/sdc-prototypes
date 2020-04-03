@@ -14,7 +14,7 @@ layout: SM-categorisation/views/_master-messages
 {% block main %}
 
     <div class="grid">
-        <div id="main" class="grid__col col-12@m u-pt-no">
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
             {{ 
                 onsBreadcrumb({
                     "ariaLabel": 'Breadcrumb',
@@ -24,11 +24,11 @@ layout: SM-categorisation/views/_master-messages
                             "text": 'Home'
                         },
                         {
-                            "url": '/',
+                            "url": '/prototypes/SM-categorisation/01-message-categories.html',
                             "text": 'Monthly Business Survey help'
                         },
                         {
-                            "url": '/',
+                            "url": '/prototypes/SM-categorisation/20-category/00-category-list.html',
                             "text": 'Information about the survey'
                         },
                         {
@@ -40,7 +40,7 @@ layout: SM-categorisation/views/_master-messages
                 }) 
             }}
         </div>
-        <div id="main" class="grid__col col-8@m u-pt-no">
+        <div class="grid__col col-8@m u-pt-no">
             <h1>Can I be exempt from completing the survey questionnaire?</h1>
             <p>No. Once selected a business is legally obliged to complete the survey because it is conducted under the provisions of the Statistics of Trade Act 1947</p>
             <p>See more <a href="https://www.ons.gov.uk/surveys/informationforbusinesses" class="icon--external-link" target="_blank" rel="noopener">information for businesses</a></p>
