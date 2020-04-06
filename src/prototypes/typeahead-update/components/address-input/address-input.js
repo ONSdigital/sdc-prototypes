@@ -4,7 +4,6 @@ import { sanitiseTypeaheadText } from '../input/typeahead.helpers';
 import domReady from 'helpers/domready';
 import triggerChange from 'helpers/trigger-change-event';
 import AbortableFetch from 'helpers/abortable-fetch';
-import formBodyFromObject from 'helpers/form-body-from-object';
 import dice from 'dice-coefficient';
 import { sortBy } from 'sort-by-typescript';  
 
@@ -67,6 +66,14 @@ class AddressInput {
     this.searchButton.addEventListener('click', this.toggleMode.bind(this));
     this.manualButton.addEventListener('click', this.toggleMode.bind(this));
 
+    this.user = 'equser';
+    this.password = '$4c@ec1zLBu';
+    this.auth = btoa(this.user + ':' + this.password);
+    this.headers = new Headers({
+      'Authorization': 'Basic ' + this.auth,
+    });
+
+
     if (this.form) {
       this.form.addEventListener('submit', this.handleSubmit.bind(this));
     }
@@ -118,33 +125,31 @@ class AddressInput {
   }
 
   findAddress(text) {
-    const queryUrl = lookupURL + text;
-    const user = 'equser';
-    const password = '$4c@ec1zLBu';
-    const auth = btoa(user + ':' + password);
-    const headers = new Headers({
-      'Authorization': 'Basic ' + auth
-    });
     return new Promise((resolve, reject) => {
+      const queryUrl = lookupURL + text;
       this.fetch = new AbortableFetch(queryUrl, {
-        'method': 'GET',
-        'credentials': 'include',
-        'mode': 'cors',
-        'headers': headers
+        method: 'GET',
+        headers: this.headers
       });
       this.fetch
         .send()
-        .then(response => {
-          const data = response.json();
-          console.log(data);
+        .then(async response => {
+          const data = (await response.json()).response.addresses;
           resolve(this.mapFindResults(data));
         })
         .catch(reject);
     });
   }
+
   mapFindResults(results) {
-    const mappedResults = results.map(({ uprn, text }) => {
-      const sanitisedText = sanitiseTypeaheadText(text, addressReplaceChars);
+    let updatedResults;
+    if (results[0].bestMatchAddress) {
+      updatedResults = results.map(({ uprn, bestMatchAddress }) => ({ uprn: uprn, address: bestMatchAddress }));
+    } else {
+      updatedResults = results.map(({ uprn, formattedAddress }) => ({ uprn: uprn, address: formattedAddress }));
+    }
+    const mappedResults = updatedResults.map(({ uprn, address }) => {
+      const sanitisedText = sanitiseTypeaheadText(address, addressReplaceChars);
 
       let queryIndex = sanitisedText.indexOf(this.currentQuery);
 
@@ -155,7 +160,7 @@ class AddressInput {
       const querySimilarity = dice(sanitisedText, this.currentQuery);
 
       return {
-        'en-gb': text,
+        'en-gb': address,
         sanitisedText,
         querySimilarity,
         queryIndex,
@@ -173,18 +178,10 @@ class AddressInput {
 
   retrieveAddress(id) {
     return new Promise((resolve, reject) => {
-      const query = {
-        q: id
-      };
-
-      const body = formBodyFromObject(query);
-
-      this.fetch = new AbortableFetch(retrieveURL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        body
+      const queryUrl = retrieveURL + id + '?addresstype=paf';
+      this.fetch = new AbortableFetch(queryUrl, {
+        method: 'GET',
+        headers: this.headers
       });
 
       this.fetch
@@ -210,25 +207,12 @@ class AddressInput {
 
   setAddress(data, resolve) {
     this.clearManualInputs(false);
-    this.line1.value = data.address.field1;
-    this.line2.value = data.address.field2;
-    if (data.address.field4 && !data.address.field6) {
-      this.town.value = data.address.field3;
-      if (!data.address.field5) {
-        this.postcode.value = data.address.field4;
-      } else {
-        this.county.value = data.address.field4;
-        this.postcode.value = data.address.field5;
-      }
-    } else if (data.address.field6) {
-      this.line1.value = data.address.field1 + ' ' + data.address.field2;
-      this.line2.value = data.address.field3;
-      this.town.value = data.address.field4;
-      this.county.value = data.address.field5;
-      this.postcode.value = data.address.field6;
-    } else {
-      this.postcode.value = data.address.field3;
-    }
+    const value = data.response.address;
+    this.line1.value = value.addressLine1;
+    this.line2.value = value.addressLine2;
+    this.county.value = value.addressLine3;
+    this.town.value = value.townName;
+    this.postcode.value = value.postcode;
 
     this.triggerManualInputsChanges();
 
