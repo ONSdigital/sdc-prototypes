@@ -6,10 +6,10 @@ import triggerChange from 'helpers/trigger-change-event';
 import AbortableFetch from 'helpers/abortable-fetch';
 import formBodyFromObject from 'helpers/form-body-from-object';
 import dice from 'dice-coefficient';
-import { sortBy } from 'sort-by-typescript';
+import { sortBy } from 'sort-by-typescript';  
 
-const baseURL = 'https://mark.address-lookup-api.gcp.dev.eq.ons.digital';
-const lookupURL = `${baseURL}/address_api/`;
+const baseURL = 'https://whitelodge-ai-api.ai.census-gcp.onsdigital.uk/addresses/eq';
+const lookupURL = `${baseURL}?input=`;
 const retrieveURL = `${baseURL}/uprn/`;
 const addressReplaceChars = [','];
 
@@ -110,7 +110,6 @@ class AddressInput {
         }
 
         this.reject = reject;
-
         this.findAddress(query)
           .then(resolve)
           .catch(reject);
@@ -119,28 +118,30 @@ class AddressInput {
   }
 
   findAddress(text) {
+    const queryUrl = lookupURL + text;
+    const user = 'equser';
+    const password = '$4c@ec1zLBu';
+    const auth = btoa(user + ':' + password);
+    const headers = new Headers({
+      'Authorization': 'Basic ' + auth
+    });
     return new Promise((resolve, reject) => {
-      const body = formBodyFromObject({ q: text });
-
-      this.fetch = new AbortableFetch(lookupURL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        body
+      this.fetch = new AbortableFetch(queryUrl, {
+        'method': 'GET',
+        'credentials': 'include',
+        'mode': 'cors',
+        'headers': headers
       });
-
       this.fetch
         .send()
-        .then(async response => {
-          const data = (await response.json()).addresses;
-
+        .then(response => {
+          const data = response.json();
+          console.log(data);
           resolve(this.mapFindResults(data));
         })
         .catch(reject);
     });
   }
-
   mapFindResults(results) {
     const mappedResults = results.map(({ uprn, text }) => {
       const sanitisedText = sanitiseTypeaheadText(text, addressReplaceChars);
@@ -190,7 +191,7 @@ class AddressInput {
         .send()
         .then(async response => {
           const data = await response.json();
-
+          console.log(data);
           resolve(data);
         })
         .catch(reject);
@@ -208,7 +209,6 @@ class AddressInput {
   }
 
   setAddress(data, resolve) {
-    window.location = this.form.action;
     this.clearManualInputs(false);
     this.line1.value = data.address.field1;
     this.line2.value = data.address.field2;
@@ -249,7 +249,7 @@ class AddressInput {
     }
 
     this.addressSelected = false;
-  }
+  } 
 
   triggerManualInputsChanges() {
     this.manualInputs.forEach(triggerChange);
