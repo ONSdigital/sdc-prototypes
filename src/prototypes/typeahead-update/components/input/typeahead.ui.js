@@ -12,6 +12,7 @@ export const classTypeaheadOptionFocused = `${classTypeaheadOption}--focused`;
 export const classTypeaheadOptionNoResults = `${classTypeaheadOption}--no-results u-fs-s`;
 export const classTypeaheadOptionMoreResults = `${classTypeaheadOption}--more-results u-fs-s`;
 export const classTypeaheadHasResults = 'typeahead-input--has-results';
+export const classTypeaheadResultsTitle = 'typeahead-input__results-title';
 
 export default class TypeaheadUI {
   constructor({
@@ -25,6 +26,7 @@ export default class TypeaheadUI {
     onError,
     onUnsetResult,
     suggestionFunction,
+    handleUpdate,
     lang,
   }) {
     // DOM Elements
@@ -47,6 +49,7 @@ export default class TypeaheadUI {
     this.onSelect = onSelect;
     this.onUnsetResult = onUnsetResult;
     this.onError = onError;
+    this.handleUpdate = handleUpdate;
 
     if (suggestionFunction) {
       this.fetchSuggestions = suggestionFunction;
@@ -121,6 +124,7 @@ export default class TypeaheadUI {
 
     this.listbox.addEventListener('mouseover', this.handleMouseover.bind(this));
     this.listbox.addEventListener('mouseout', this.handleMouseout.bind(this));
+
   }
 
   handleKeydown(event) {
@@ -165,7 +169,10 @@ export default class TypeaheadUI {
   }
 
   handleChange() {
-    if (!this.blurring && this.input.value.trim()) {
+    if (!this.blurring && this.input.value.trim() || this.handleUpdate) {
+      if (this.handleUpdate) {
+        this.settingResult = false;
+      }
       this.getSuggestions();
     } else {
       this.abortFetch();
@@ -222,6 +229,7 @@ export default class TypeaheadUI {
     if (!this.settingResult) {
       const query = this.input.value;
       const sanitisedQuery = sanitiseTypeaheadText(query, this.sanitisedQueryReplaceChars);
+
       if (sanitisedQuery !== this.sanitisedQuery || (force && !this.resultSelected)) {
         this.unsetResults();
         this.setAriaStatus();
@@ -297,8 +305,7 @@ export default class TypeaheadUI {
 
   handleResults(result) {
     this.foundResults = result.totalResults;
-
-    if (result.results.length > 10) {
+    if (result.results.length > 20) {
       result.results = result.results.slice(0, this.resultLimit);
     }
 
@@ -337,8 +344,10 @@ export default class TypeaheadUI {
           listElement.addEventListener('click', () => {
             this.selectResult(index);
           });
-
+          
           this.listbox.appendChild(listElement);
+          
+          this.context.querySelector(`.${classTypeaheadResultsTitle}`).classList.remove('u-d-no');
 
           return listElement;
         });
@@ -357,8 +366,11 @@ export default class TypeaheadUI {
         this.context.classList[!!this.numberOfResults ? 'add' : 'remove'](classTypeaheadHasResults);
       }
     }
-
     if (this.numberOfResults === 0 && this.content.no_results) {
+      console.log(this.numberOfResults);
+
+      this.context.classList.add(classTypeaheadHasResults);
+      this.context.querySelector(`.${classTypeaheadResultsTitle}`).classList.add('u-d-no');
       this.listbox.innerHTML = `<li class="${classTypeaheadOption} ${classTypeaheadOptionNoResults}">${this.content.no_results}</li>`;
       this.input.setAttribute('aria-expanded', true);
     }
@@ -432,9 +444,8 @@ export default class TypeaheadUI {
           result.displayText = result[this.lang];
         }
       } else {
-        result.displayText = result[this.lang];
+        result.displayText = result;
       }
-
       this.onSelect(result).then(() => (this.settingResult = false));
 
       const ariaMessage = `${this.content.aria_you_have_selected}: ${result.displayText}.`;
@@ -445,19 +456,11 @@ export default class TypeaheadUI {
   }
 
   emboldenMatch(string, query) {
-    query = query.toLowerCase().trim();
+    let reg = new RegExp(this.escapeRegExp(query).split('').join('\\s*'), 'gi');
+    return string.replace(reg, '<strong>$&</strong>');
+  }
 
-    if (string.toLowerCase().includes(query)) {
-      const queryLength = query.length;
-      const matchIndex = string.toLowerCase().indexOf(query);
-      const matchEnd = matchIndex + queryLength;
-      const before = string.substr(0, matchIndex);
-      const match = string.substr(matchIndex, queryLength);
-      const after = string.substr(matchEnd, string.length - matchEnd);
-
-      return `${before}<strong>${match}</strong>${after}`;
-    } else {
-      return string;
-    }
+  escapeRegExp(string) {
+    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   }
 }

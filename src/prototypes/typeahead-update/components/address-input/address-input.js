@@ -4,8 +4,6 @@ import { sanitiseTypeaheadText } from '../input/typeahead.helpers';
 import domReady from 'helpers/domready';
 import triggerChange from 'helpers/trigger-change-event';
 import AbortableFetch from 'helpers/abortable-fetch';
-import dice from 'dice-coefficient';
-import { sortBy } from 'sort-by-typescript';  
 
 const baseURL = 'https://whitelodge-ai-api.ai.census-gcp.onsdigital.uk/addresses/eq';
 const lookupURL = `${baseURL}?input=`;
@@ -38,7 +36,8 @@ class AddressInput {
     this.searchButton = context.querySelector(`.${classSearchButton}`);
     this.manualButton = context.querySelector(`.${classManualButton}`);
     this.form = context.closest('form');
-
+    this.lang = document.documentElement.getAttribute('lang').toLowerCase();
+  
     // State
     this.manualMode = true;
     this.currentQuery = null;
@@ -55,9 +54,10 @@ class AddressInput {
       suggestionFunction: this.suggestAddresses.bind(this),
       onError: this.onError.bind(this),
       sanitisedQueryReplaceChars: addressReplaceChars,
-      resultLimit: 10,
+      resultLimit: 20,
       minChars: 5,
-      suggestOnBoot: true
+      suggestOnBoot: true,
+      handleUpdate: true
     });    
 
     this.searchButtonContainer.classList.remove('u-d-no');
@@ -68,6 +68,9 @@ class AddressInput {
 
     this.user = 'equser';
     this.password = '$4c@ec1zLBu';
+    // this.user = process.env.AIMS_USER;
+    // this.password = process.env.AIMS_PASSWORD;
+    // console.log(this.user);
     this.auth = btoa(this.user + ':' + this.password);
     this.headers = new Headers({
       'Authorization': 'Basic ' + this.auth,
@@ -126,7 +129,7 @@ class AddressInput {
 
   findAddress(text) {
     return new Promise((resolve, reject) => {
-      const queryUrl = lookupURL + text;
+      const queryUrl = lookupURL + text + '&limit=100';
       this.fetch = new AbortableFetch(queryUrl, {
         method: 'GET',
         headers: this.headers
@@ -135,40 +138,49 @@ class AddressInput {
         .send()
         .then(async response => {
           const data = (await response.json()).response.addresses;
-          resolve(this.mapFindResults(data));
+          resolve(this.mapFindResults(data, text));
         })
         .catch(reject);
     });
   }
 
-  mapFindResults(results) {
-    let updatedResults;
-    if (results[0].bestMatchAddress) {
-      updatedResults = results.map(({ uprn, bestMatchAddress }) => ({ uprn: uprn, address: bestMatchAddress }));
+  mapFindResults(results, input) {
+    let updatedResults, mappedResults;
+    let groups = results[0] && results[0].bestMatchAddress ? this.postcodeSearch(results, input) : null;
+
+    if (groups) {
+      mappedResults = groups.map(({ address, count, postcode }) => {
+        const countAdjust = count - 1;
+        const addressText = countAdjust === 1 ? 'address' : 'addresses';
+        return {
+          'en-gb': countAdjust === 0 ? address : address + ' (' + countAdjust + ' more ' + addressText + ')',
+          postcode
+        };
+      });
+      this.currentResults = mappedResults.sort();
+
+    } else if (results[0]) {
+
+      if (results[0] && results[0].bestMatchAddress) {
+        updatedResults = results.map(({ uprn, bestMatchAddress }) => ({ uprn: uprn, address: bestMatchAddress }));
+
+      } else if (results[0] && results[0].formattedAddress) {
+        updatedResults = results.map(({ uprn, formattedAddress }) => ({ uprn: uprn, address: formattedAddress }));
+      }  
+
+      mappedResults = updatedResults.map(({ uprn, address }) => {
+        const sanitisedText = sanitiseTypeaheadText(address, addressReplaceChars);
+        return {
+          'en-gb': address,
+          sanitisedText,
+          uprn
+        };
+      });
+      this.currentResults = mappedResults.sort();
+
     } else {
-      updatedResults = results.map(({ uprn, formattedAddress }) => ({ uprn: uprn, address: formattedAddress }));
+      this.currentResults = results;
     }
-    const mappedResults = updatedResults.map(({ uprn, address }) => {
-      const sanitisedText = sanitiseTypeaheadText(address, addressReplaceChars);
-
-      let queryIndex = sanitisedText.indexOf(this.currentQuery);
-
-      if (queryIndex < 0) {
-        queryIndex = Infinity;
-      }
-
-      const querySimilarity = dice(sanitisedText, this.currentQuery);
-
-      return {
-        'en-gb': address,
-        sanitisedText,
-        querySimilarity,
-        queryIndex,
-        uprn
-      };
-    });
-
-    this.currentResults = mappedResults.sort(sortBy('queryIndex', '-querySimilarity', 'sanitisedText'));
 
     return {
       results: this.currentResults,
@@ -188,20 +200,57 @@ class AddressInput {
         .send()
         .then(async response => {
           const data = await response.json();
-          console.log(data);
           resolve(data);
         })
         .catch(reject);
     });
   }
 
+  postcodeSearch(results, input) {
+    const postcodeRegex = /([A-Za-z]{1,2}\d{1,2})(\s?(\d?\w{2}))?/;
+    const testForPostcode = postcodeRegex.test(input);
+    
+    if (testForPostcode) {
+      const addressesByPostcode = new Map();
+  
+      results.forEach(address => {
+        const postcode = address.bestMatchAddress.match(postcodeRegex);
+
+        if (!addressesByPostcode.has(postcode[0]))
+          addressesByPostcode.set(postcode[0], []);
+        addressesByPostcode.get(postcode[0]).push(address);
+      });
+  
+  
+      const groups = Array.from(addressesByPostcode)
+        .map(([postcode, addresses]) => ({
+          address:  addresses[0].bestMatchAddress,
+          count:    addresses.length,
+          postcode: postcode,
+        }));
+      
+      return groups;
+    }
+  }
+
   onAddressSelect(selectedResult) {
     return new Promise((resolve, reject) => {
-      this.retrieveAddress(selectedResult.uprn)
-        .then(data => {
-          this.setAddress(data, resolve);
-        })
-        .catch(reject);
+      if (selectedResult.uprn) {
+        this.retrieveAddress(selectedResult.uprn)
+          .then(data => {
+            this.setAddress(data, resolve);
+          })
+          .catch(reject);
+      } else if (selectedResult.postcode) {
+        const event = new Event('input', {
+          'bubbles': true,
+          'cancelable': true
+        });
+        this.typeahead.input.value = selectedResult.postcode;
+        this.typeahead.input.focus();
+        this.typeahead.input.dispatchEvent(event);
+
+      }
     });
   }
 
@@ -251,12 +300,8 @@ class AddressInput {
     // Prevent error message from firing twice
     if (!this.errored) {
       this.errored = true;
-
+      console.log('error');
       setTimeout(() => {
-        alert('There was error looking up your address. Enter your address manually');
-
-        this.setManualMode(true);
-
         this.errored = false;
       });
     }
