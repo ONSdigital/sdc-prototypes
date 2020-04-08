@@ -153,7 +153,7 @@ class AddressInput {
         const countAdjust = count - 1;
         const addressText = countAdjust === 1 ? 'address' : 'addresses';
         return {
-          'en-gb': countAdjust === 0 ? address : address + ' (' + countAdjust + ' more ' + addressText + ')',
+          'en-gb': countAdjust === 0 ? address : address + ' <span class="group-text">(' + countAdjust + ' more ' + addressText + ')</span>',
           postcode
         };
       });

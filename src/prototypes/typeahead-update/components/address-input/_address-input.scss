@@ -1,5 +1,4 @@
 .address-input {
-  max-width: 580px;
 
   &__search {
     display: none;
@@ -23,5 +22,15 @@
     .typeahead__combobox {
       display: block;
     }
+  }
+}
+
+.group-text {
+  color: #4263c2;
+  text-decoration: underline;
+}
+.typeahead-input__option--focused:not(.typeahead-input__option--no-results), .typeahead-input__option:not(.typeahead-input__option--no-results):not(.typeahead-input__option--more-results):hover {
+  .group-text {
+    color: #fff;
   }
 }
