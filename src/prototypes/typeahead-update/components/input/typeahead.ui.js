@@ -9,7 +9,7 @@ export const baseClass = 'js-typeahead';
 
 export const classTypeaheadOption = 'typeahead-input__option';
 export const classTypeaheadOptionFocused = `${classTypeaheadOption}--focused`;
-export const classTypeaheadOptionNoResults = `${classTypeaheadOption}--no-results u-fs-s`;
+export const classTypeaheadOptionNoResults = `${classTypeaheadOption}--no-results`;
 export const classTypeaheadOptionMoreResults = `${classTypeaheadOption}--more-results u-fs-s`;
 export const classTypeaheadHasResults = 'typeahead-input--has-results';
 export const classTypeaheadResultsTitle = 'typeahead-input__results-title';
@@ -367,8 +367,6 @@ export default class TypeaheadUI {
       }
     }
     if (this.numberOfResults === 0 && this.content.no_results) {
-      console.log(this.numberOfResults);
-
       this.context.classList.add(classTypeaheadHasResults);
       this.context.querySelector(`.${classTypeaheadResultsTitle}`).classList.add('u-d-no');
       this.listbox.innerHTML = `<li class="${classTypeaheadOption} ${classTypeaheadOptionNoResults}">${this.content.no_results}</li>`;
