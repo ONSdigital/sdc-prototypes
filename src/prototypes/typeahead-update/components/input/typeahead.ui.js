@@ -305,7 +305,7 @@ export default class TypeaheadUI {
 
   handleResults(result) {
     this.foundResults = result.totalResults;
-    if (result.results.length > 20) {
+    if (result.results.length > 50) {
       result.results = result.results.slice(0, this.resultLimit);
     }
 

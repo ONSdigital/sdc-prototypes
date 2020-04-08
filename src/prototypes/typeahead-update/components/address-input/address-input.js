@@ -54,7 +54,7 @@ class AddressInput {
       suggestionFunction: this.suggestAddresses.bind(this),
       onError: this.onError.bind(this),
       sanitisedQueryReplaceChars: addressReplaceChars,
-      resultLimit: 20,
+      resultLimit: 50,
       minChars: 5,
       suggestOnBoot: true,
       handleUpdate: true
