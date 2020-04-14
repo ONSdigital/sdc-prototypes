@@ -10,15 +10,49 @@ layout: SM-categorisation/views/_master-survey
 {% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
 
 {% block header %}
-{{
-    onsHeader({
-        "title": "Survey title",
-        "button": {
-            "text": "Sign out",
-            "url": "#"
-        }
-    })
-}}
+<header class="header ">
+  <div class="header__top" role="banner">
+    <div class="container">
+      <div class="header__grid-top grid grid--gutterless grid--flex grid--between grid--vertical-center grid--no-wrap">
+        <div class="grid__col col-auto">
+            <a class="header__logo-link" href="/prototypes/SM-categorisation/">
+            <img class="header__logo" src="https://cdn.ons.gov.uk/sdc/design-system/14.4.0/img/ons-logo-pos-en.svg" alt="ONS">
+            </a>
+        </div>
+                
+        
+        <div class="header__links grid__col col-auto">
+            <div class="grid__col col-auto u-d-no@xs@m">
+            <nav class="header-service-nav header-service-nav--internal" aria-label="Site services menu">
+                <ul class="header-service-nav__list" aria-label="Navigation menu">
+                <li class="header-service-nav__item">
+                    <a href="01-message-categories.html" class="header-service-nav__link">Help</a>
+                </li>
+                <li class="header-service-nav__item">
+                    <a href="00-surveys-list.html" class="header-service-nav__link">My account</a>
+                </li>
+                </ul>
+            </nav>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="header__main">
+    <div class="container">
+      <div class="grid grid--gutterless grid--flex grid--between grid--vertical-center grid--no-wrap">
+        <div class="grid__col col-auto u-flex-shrink">
+          <div class="header__title">Monthly Business Survey</div>
+        </div>
+        <div class="grid__col col-auto u-flex-no-shrink u-d-no@xs@m">
+          <a href="#" role="button" class="btn btn--ghost u-d-no@xs@m btn--link">
+            <span class="btn__inner">Sign out</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
 {% endblock %}
 
 
@@ -101,45 +135,5 @@ layout: SM-categorisation/views/_master-survey
             </div>
         </div>
     </div>
-
-    <script>
-        function openNav() {
-            document
-                .getElementById("mySidenav")
-                .style
-                .width = "20%";
-            document
-                .getElementById("main")
-                .style
-                .marginLeft = "20%";
-            document
-                .getElementById("openNavBtn")
-                .style
-                .display = "none";
-            document
-                .getElementById("closeNavBtn")
-                .style
-                .display = "block";
-        }
-
-        function closeNav() {
-            document
-                .getElementById("mySidenav")
-                .style
-                .width = "0";
-            document
-                .getElementById("main")
-                .style
-                .marginLeft = "0";
-            document
-                .getElementById("closeNavBtn")
-                .style
-                .display = "none";
-            document
-                .getElementById("openNavBtn")
-                .style
-                .display = "block";
-        }
-    </script>
 
 {% endblock %}
