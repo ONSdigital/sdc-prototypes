@@ -38,35 +38,36 @@ layout: SM-categorisation/views/_master
             <h1>Manage access to my surveys</h1>
             <form>
                 <p>
-                    {{ 
-                        onsRadios({
-                            "legend": "Choose an option:",
-                            "name": "food",
-                            "checked": "false",
-                            "radios": [
-                                {
-                                    "id": "colleague",
-                                    "label": {
-                                        "text": "I need to share access to my surveys"
-                                    },
-                                    "value": "colleague",
-                                    "attributes": {
-                                        "data-action-url": pageInfo.parentPath + "/30-add-new-account.html"
-                                    }
-                                },
-                                {
-                                    "id": "leaving",
-                                    "label": {
-                                        "text": "I'm no longer responsible for completing surveys"
-                                    },
-                                    "value": "leaving",
-                                    "attributes": {
-                                        "data-action-url": pageInfo.parentPath + "/40-transfer-account.html"
-                                    }
-                                }
-                            ]
-                        }) 
-                    }}
+                 <fieldset class="fieldset">
+                        <legend class="fieldset__legend">Choose an option</legend>
+                        <div class="radios__items">
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                        type="radio"
+                                        id="answering-a-survey-question"
+                                        data-action-url="{{ pageInfo.parentPath }}/30-add-new-account.html"
+                                        class="radio__input js-radio"
+                                        value="question-one"
+                                        name="message-query">
+                                    <label class="radio__label" for="answering-a-survey-question">I need to share access to my surveys</label>
+                                </span>
+                            </p>
+                            <br>
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                        type="radio"
+                                        id="information-about-the-survey"
+                                        data-action-url="{{ pageInfo.parentPath }}/40-transfer-account.html"
+                                        class="radio__input js-radio"
+                                        value="question-two"
+                                        name="message-query">
+                                    <label class="radio__label" for="information-about-the-survey">I'm no longer responsible for completing surveys</label>
+                                </span>
+                            </p>
+                        </div>
+                    </fieldset>
                 </p>
                 <p class="field">
                     {% from "components/button/_macro.njk" import onsButton %}
