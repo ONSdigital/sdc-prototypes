@@ -4,11 +4,18 @@ layout: typeahead-update/views/_master
 ---
 {% from "components/button/_macro.njk" import onsButton %}
 {% from "typeahead-update/components/input/_macro.njk" import onsInput %}
+{% from "components/panel/_macro.njk" import onsPanel %}
 
 {% block main %}
     <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/passport.html">Previous</a>
     <form action="{{ pageInfo.parentPath }}/summary.html?previous={{ pageInfo.path }}.html">
         <h1 class="u-mt-s js-passport-title" data-passport-answers="{{ pageInfo.parentPath }}/passport.html">You selected "Other". What {x} passports do you hold?</h1>
+        {{ 
+            onsPanel({
+                body: "<p class='js-passport-panel'>Include all {x} passports. If you have more than one, enter them all separated by a comma.</p>"
+            }) 
+        }}
+        <br>
         {{
             onsInput({
                 "id": "passport-other",

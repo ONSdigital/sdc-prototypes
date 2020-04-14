@@ -4,11 +4,18 @@ layout: typeahead-update/views/_master
 ---
 {% from "components/button/_macro.njk" import onsButton %}
 {% from "typeahead-update/components/input/_macro.njk" import onsInput %}
+{% from "components/panel/_macro.njk" import onsPanel %}
 
 {% block main %}
     <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/nation-identity.html">Previous</a>
     <form action="{{ pageInfo.parentPath }}/ethnic-group.html?previous={{ pageInfo.path }}.html">
-        <h1 class="u-mt-s">You selected "Other". How would you describe your national identity?</h1>
+        <h1 class="u-mt-s js-ni-title" data-ni-answers="{{ pageInfo.parentPath }}/national-identity.html">You selected "Other". How would you describe your {x} national identity?</h1>
+        {{ 
+            onsPanel({
+                body: "<p class='js-ni-panel'>Include all {x} national identities. If you have more than one, enter them all separated by a comma.</p>"
+            }) 
+        }}
+        <br>
         {{
             onsInput({
                 "id": "passport-other",
