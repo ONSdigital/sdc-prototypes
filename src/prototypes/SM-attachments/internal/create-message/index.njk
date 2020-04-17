@@ -1,14 +1,15 @@
 ---
 group: Frontstage
-title: SM Categorisation
-version: 14.4.0
-layout: SM-categorisation/views/_master-internal
+title: SM Attachments
+version: 17.0.0
+layout: SM-attachments/views/_master-int-messages
 ---
 
 {% from "components/button/_macro.njk" import onsButton %}
 {% from "components/radios/_macro.njk" import onsRadios %}
 {% from "components/metadata/_macro.njk" import onsMetadata %}
 {% from "components/textarea/_macro.njk" import onsTextarea %}
+{% from "components/upload/_macro.njk" import onsUpload %}
 
 {% block main %}
 
@@ -108,6 +109,21 @@ layout: SM-categorisation/views/_master-internal
                 })
             }}
             </p>
+
+            
+            <p class="field">
+            {{
+                onsUpload({
+                    "id": "file",
+                    "accept": ".xls,.xlsx,.pdf",
+                    "label": {
+                        "description": "File types accepted are .xls and .xlsx",
+                        "text": "Add attachment"
+                    }
+                })
+            }}
+            </p>
+
             <p class="field">
                 <div class="btn-group">
                     {{ 

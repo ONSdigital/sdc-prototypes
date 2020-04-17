@@ -1,7 +1,7 @@
 {% extends "page-templates/_template.njk" %}
 
 {% block head %}
-    <link rel="stylesheet" href="{{ pageInfo.rootPath }}/styles.css" />
+    <link rel="stylesheet" href="{{ pageInfo.rootPath }}/styles.css"/>
 {% endblock %}
 
 {% set pageConfig = { 
@@ -9,45 +9,41 @@
     "title": "Survey data collection",
     "header": {
         "logoAlt": "ONS",
-        "logoHref": "/prototypes/SM-attachments/",
-        "classes": "header--internal header--thin",
-        "logo": "ons-logo-white",
-        "button": {
-            "text": "Sign out",
-            "url": "#"
-        }
+        "logoHref": "/prototypes/SM-attachments/"
     },
     "navigation": {
         "classes": "nav--inline nav--light nav--header nav--h-m js-main-nav",
         "id": "main-nav",
         "ariaLabel": "Main menu",
         "ariraListLabel": "Navigation menu",
-        "currentPath": "/surveys",
+        "currentPath": "/prototypes/SM-attachments/00-surveys-list.html",
         "itemsList": [
             {
-                "title": "Dashboard",
-                "path": "/surveys"
+                "title": "To do",
+                "path": "/prototypes/SM-attachments/00-surveys-list.html"
+            },
+            {
+                "title": "History",
+                "path": "#"
             },
             {
                 "title": "Messages",
-                "classes": "header-nav__item--active",
-                "path": "#"
-            },
+                "path": "#",
+                "classes": "header-nav__item--active"
+            }
+        ]},
+    "serviceLinks": {
+        "classes": "header-service-nav--internal",
+        "ariaLabel": "Site services menu",
+        "ariaListLabel": "Navigation menu",
+        "itemsList": [
             {
-                "title": "Reporting units",
-                "path": "#"
-            },
-            {
-                "title": "Respondents",
-                "path": "/surveys"
-            },
-            {
-                "title": "Surveys",
+                "text": "Sign out",
                 "path": "#"
             }
-        ]
-    }
+        ]} 
 } %}
+
 
 {% block pageContent %}
     {% block preMain %}{% endblock %}
