@@ -1,1 +1,3 @@
-// import './dropzone.min.js';
+import './dropzone.js';
+
+

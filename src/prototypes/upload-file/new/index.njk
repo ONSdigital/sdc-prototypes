@@ -6,7 +6,6 @@ layout: upload-file/views/_index
 ---
 
 {% block main %}
-    <script src="https://rawgit.com/enyo/dropzone/master/dist/dropzone.js"></script>
 
     <div class="grid">
         <div class="grid__col col-8@m">
@@ -17,45 +16,14 @@ layout: upload-file/views/_index
                 <button class="btn btn--secondary button-choose-files fileinput-button u-mb-s">
                     <span class="btn__inner">Choose files</span>
                 </button>
-                <div id="file-upload" class="dropzone">
-                    <div class="statusbar statusbar-title" style="display:none">
-                        <div class="filename">Name of data file to be checked</div>
-                        <!-- inline-block break fix -->
-                        <div class="status">Status</div>
-                        <!-- inline-block break fix -->
-                        <div class="action">Action</div>
-                    </div>
-                    <div class="files" id="previews">
-                        <div id="preview-template" style="display: none;">
-                            <div class="statusbar" class="dz-preview">
-                                <div class="filename">
-                                    <span class="name" data-dz-name></span>
-                                </div>
-                                <!-- inline-block break fix-->
-                                <div class="status">
-                                    <div class="dz-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-                                        <div class="dz-upload" style="width:0%;" data-dz-uploadprogress></div>
-                                    </div>
-                                    <div class="dz-error-message">
-                                        <span data-dz-errormessage></span></div>
-                                </div>
-                                <!-- inline-block break fix -->
-                                <div class="action">
-                                    <a class="link" href="#">
-                                        <span>View details</span>
-                                    </a>
-                                </div>
-                                <!-- inline-block break fix -->
-                                <div class="remove">
-                                    <button data-dz-remove class="link delete">
-								Remove<span> file</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- #file-upload -->
+
+                <form id="upload_form" enctype="multipart/form-data" method="post">
+                    <input type="file" name="file1" id="file1" onchange="uploadFile()"><br>
+                    <progress id="progressBar" value="0" max="100" style="width:300px;"></progress>
+                    <h3 id="status"></h3>
+                    <p id="loaded_n_total"></p>
+                </form>
+
             </p>
 
             <p class="field">
@@ -63,60 +31,47 @@ layout: upload-file/views/_index
                     <span class="btn__inner">Submit</span>
                 </button>
             </p>
-
-            <script>
-
-                Dropzone.options.fileUpload = {
-                    url: "https://api.cloudinary.com/v1_1/dlha38s4m/image/upload", // Set the url
-                    parallelUploads: 6,
-                    previewsContainer: "#previews", // Define the container to display the previews
-                    previewTemplate: document
-                        .getElementById('preview-template')
-                        .innerHTML,
-                    dictDefaultMessage: "Or drag and drop files here.",
-                    clickable: ".fileinput-button" // Define the element that should be used as click trigger to select files.
-                };
-                Dropzone.on('sending', function (file, xhr, formData) {
-                    alert("you added a file");
-                });
-                Dropzone.on('sending', function (file, xhr, formData) {
-                    console.log("Adding api key " + 737368216118754);
-                    formData.append('api_key', 737368216118754);
-                    formData.append('timestamp', Date.now() / 1000 | 0);
-                    formData.append('upload_preset', 'v1elzsec');
-                });
-                Dropzone.on('success', function (file, response) {
-                    console.log('Success! uploading file to Cloudinary. public id - ' + response.public_id);
-                });
-                Dropzone.on("addedfile", function (file) {
-                    // Show the status bar when files are dragged over dropzone
-                    document
-                        .querySelector(".statusbar")
-                        .style
-                        .display = "block";
-                });
-                Dropzone.on("reset", function (file) {
-                    // Hide the status bar when dropzone is reset
-                    document
-                        .querySelector(".statusbar")
-                        .style
-                        .display = "none";
-                });
-                Dropzone.on("addedfile", function (file) {
-                    // Show the status bar when files is dragged over dropzone
-                    document
-                        .querySelector(".correct-errors")
-                        .style
-                        .display = "block";
-                });
-                Dropzone.on("reset", function (file) {
-                    // Hide the status bar when dropzone is reset
-                    document
-                        .querySelector(".correct-errors")
-                        .style
-                        .display = "none";
-                });
-            </script>
         </div>
     </div>
+    <script>
+        function _(el) {
+            return document.getElementById(el);
+        }
+
+        function uploadFile() {
+            var file = _("file1").files[0];
+            // alert(file.name+" | "+file.size+" | "+file.type);
+            var formdata = new FormData();
+            formdata.append("file1", file);
+            var ajax = new XMLHttpRequest();
+            ajax
+                .upload
+                .addEventListener("progress", progressHandler, false);
+            ajax.addEventListener("load", completeHandler, false);
+            ajax.addEventListener("error", errorHandler, false);
+            ajax.addEventListener("abort", abortHandler, false);
+            ajax.open("POST", "file_upload_parser.php");
+            ajax.send(formdata);
+        }
+
+        function progressHandler(event) {
+            _("loaded_n_total").innerHTML = "Uploaded " + event.loaded + " bytes of " + event.total;
+            var percent = (event.loaded / event.total) * 100;
+            _("progressBar").value = Math.round(percent);
+            _("status").innerHTML = Math.round(percent) + "% uploaded... please wait";
+        }
+
+        function completeHandler(event) {
+            _("status").innerHTML = event.target.responseText;
+            _("progressBar").value = 0; //wil clear progress bar after successful upload
+        }
+
+        function errorHandler(event) {
+            _("status").innerHTML = "Upload Failed";
+        }
+
+        function abortHandler(event) {
+            _("status").innerHTML = "Upload Aborted";
+        }
+    </script>
 {% endblock %}

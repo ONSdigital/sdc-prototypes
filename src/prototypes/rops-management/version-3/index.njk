@@ -1,0 +1,312 @@
+---
+group: Frontstage
+title: ROps Manangement
+version: 17.0.0
+layout: rops-management/views/_master
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/metadata/_macro.njk" import onsMetadata %}
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+
+{% block main %}
+
+    {% from "prototypes/rops-management/data/Census_Cases_table.dta" import cases %}
+
+    <ul>
+        {% for case in cases %}
+            <li>{{ case.id }}</li>
+            <li>{{ case.event_channel }}</li>
+            <li>{{ case.event_date }}</li>
+            <li>{{ case.event_type }}</li>
+            <li>{{ case.event_description }}</li>
+            <li>{{ case.oa }}</li>
+            <li>{{ case.lad }}</li>
+            <li>{{ case.arid }}</li>
+            <li>{{ case.lsoa }}</li>
+            <li>{{ case.msoa }}</li>
+            <li>{{ case.uprn }}</li>
+            <li>{{ case.region }}</li>
+            <li>{{ case.abpCode }}</li>
+            <li>{{ case.latitude }}</li>
+            <li>{{ case.postcode }}</li>
+            <li>{{ case.townName }}</li>
+            <li>{{ case.estabArid }}</li>
+            <li>{{ case.estabType }}</li>
+            <li>{{ case.longitude }}</li>
+            <li>{{ case.htcDigital }}</li>
+            <li>{{ case.addressType }}</li>
+            <li>{{ case.actionPlanId }}</li>
+            <li>{{ case.addressLevel }}</li>
+            <li>{{ case.addressLine1 }}</li>
+            <li>{{ case.addressLine2 }}</li>
+            <li>{{ case.addressLine3 }}</li>
+            <li>{{ case.treatmentCode }}</li>
+            <li>{{ case.fieldOfficerId }}</li>
+            <li>{{ case.htcWillingness }}</li>
+            <li>{{ case.organisationName }}</li>
+            <li>{{ case.ceExpectedCapacity }}</li>
+            <li>{{ case.fieldCoordinatorId }}</li>
+            <li>{{ case.collectionExerciseId }}</li>
+            <li>{{ case.event_source }}</li>
+            <li>{{ case.event_transaction_id }}</li>
+            <li>{{ case.rm_event_processed }}</li>
+            <li>{{ case.uac_qid_link_id }}</li>
+            <li>{{ case.caze_case_id }}</li>
+            <li>{{ case.message_timestamp }}</li>
+        {% else %}
+        hello
+        {% endfor %}
+    </ul>
+
+    <div class="grid">
+        <div class="grid__col col-12@m">
+            <h1>Case details</h1>
+            <table id="case-details" border="2">
+                <thead>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email Address</th>
+                    <th>City</th>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <h2>Event history</h2>
+
+            <div class="timeline">
+                <ul class="list list--bare">
+                    <li class="list__item u-mb-m">
+                        <h3 class="u-fs-r u-fw-b u-mb-no">Create case sample received</h3>
+                        <p class="u-mb-no">Response management</p>
+                        <p class="u-mb-no time">24 February 2020 at 11.28am</p>
+                        <div id="collapsible-with-save" class="collapsible js-collapsible" open data-btn-close="Hide this" data-save-state="true">
+                            <div class="collapsible__heading js-collapsible-heading">
+                                <div class="collapsible__controls">
+                                    <div class="collapsible__title u-fs-r--b">Details</div>
+                                </div>
+                            </div>
+                            <div id="collapsible-with-save-content" class="collapsible__content js-collapsible-content">
+
+                                <button type="button" class="btn btn--small js-collapsible-button u-d-no btn--secondary">
+                                    <span class="btn__inner js-collapsible-button-inner">Hide this</span>
+                                    <span class="btn__context u-vh">What is a photovoltaic system? undefined</span>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list__item u-mb-m">
+                        <h3 class="u-fs-r u-fw-b u-mb-no">Create case sample received</h3>
+                        <p class="u-mb-no">Response management</p>
+                        <p class="u-mb-no time">24 February 2020 at 11.28am</p>
+                        <div id="collapsible-with-save" class="collapsible js-collapsible" open data-btn-close="Hide this" data-save-state="true">
+                            <div class="collapsible__heading js-collapsible-heading">
+                                <div class="collapsible__controls">
+                                    <div class="collapsible__title u-fs-r--b">Details</div>
+                                </div>
+                            </div>
+                            <div id="collapsible-with-save-content" class="collapsible__content js-collapsible-content">
+
+                                <button type="button" class="btn btn--small js-collapsible-button u-d-no btn--secondary">
+                                    <span class="btn__inner js-collapsible-button-inner">Hide this</span>
+                                    <span class="btn__context u-vh">What is a photovoltaic system? undefined</span>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list__item u-mb-m">
+                        <h3 class="u-fs-r u-fw-b u-mb-no">Refusal received for individual on Estab</h3>
+                        <p class="u-mb-no">Contact centre</p>
+                        <p class="u-mb-no time">25 February 2020 at 9.13am</p>
+                        <div id="collapsible-with-save" class="collapsible js-collapsible" open data-btn-close="Hide this" data-save-state="true">
+                            <div class="collapsible__heading js-collapsible-heading">
+                                <div class="collapsible__controls">
+                                    <div class="collapsible__title u-fs-r--b">Details</div>
+                                </div>
+                            </div>
+                            <div id="collapsible-with-save-content" class="collapsible__content js-collapsible-content">
+
+                                <button type="button" class="btn btn--small js-collapsible-button u-d-no btn--secondary">
+                                    <span class="btn__inner js-collapsible-button-inner">Hide this</span>
+                                    <span class="btn__context u-vh">What is a photovoltaic system? undefined</span>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list__item u-mb-m">
+                        <h3 class="u-fs-r u-fw-b u-mb-no">Refusal received</h3>
+                        <p class="u-mb-no">Field management</p>
+                        <p class="u-mb-no time">25 February 2020 at 9.27am</p>
+                        <div id="collapsible-with-save" class="collapsible js-collapsible" open data-btn-close="Hide this" data-save-state="true">
+                            <div class="collapsible__heading js-collapsible-heading">
+                                <div class="collapsible__controls">
+                                    <div class="collapsible__title u-fs-r--b">Details</div>
+                                </div>
+                            </div>
+                            <div id="collapsible-with-save-content" class="collapsible__content js-collapsible-content">
+
+                                <button type="button" class="btn btn--small js-collapsible-button u-d-no btn--secondary">
+                                    <span class="btn__inner js-collapsible-button-inner">Hide this</span>
+                                    <span class="btn__context u-vh">What is a photovoltaic system? undefined</span>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list__item u-mb-m">
+                        <h3 class="u-fs-r u-fw-b u-mb-no">Respondent authenticated</h3>
+                        <p class="u-mb-no">Respondent's home</p>
+                        <p class="u-mb-no time">25 February 2020 at 11.33am</p>
+                        <div id="collapsible-with-save" class="collapsible js-collapsible" open data-btn-close="Hide this" data-save-state="true">
+                            <div class="collapsible__heading js-collapsible-heading">
+                                <div class="collapsible__controls">
+                                    <div class="collapsible__title u-fs-r--b">Details</div>
+                                </div>
+                            </div>
+                            <div id="collapsible-with-save-content" class="collapsible__content js-collapsible-content">
+
+                                <button type="button" class="btn btn--small js-collapsible-button u-d-no btn--secondary">
+                                    <span class="btn__inner js-collapsible-button-inner">Hide this</span>
+                                    <span class="btn__context u-vh">What is a photovoltaic system? undefined</span>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list__item u-mb-m">
+                        <h3 class="u-fs-r u-fw-b u-mb-no">Survey launched</h3>
+                        <p class="u-mb-no">Respondent's home</p>
+                        <p class="u-mb-no time">25 February 2020 at 11.33am</p>
+                        <div id="collapsible-with-save" class="collapsible js-collapsible" open data-btn-close="Hide this" data-save-state="true">
+                            <div class="collapsible__heading js-collapsible-heading">
+                                <div class="collapsible__controls">
+                                    <div class="collapsible__title u-fs-r--b">Details</div>
+                                </div>
+                            </div>
+                            <div id="collapsible-with-save-content" class="collapsible__content js-collapsible-content">
+
+                                <button type="button" class="btn btn--small js-collapsible-button u-d-no btn--secondary">
+                                    <span class="btn__inner js-collapsible-button-inner">Hide this</span>
+                                    <span class="btn__context u-vh">What is a photovoltaic system? undefined</span>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list__item u-mb-m">
+                        <h3 class="u-fs-r u-fw-b u-mb-no">Respondent authenticated</h3>
+                        <p class="u-mb-no">Respondent's home</p>
+                        <p class="u-mb-no time">3rd March 2020 at 12.01pm</p>
+                        <div id="collapsible-with-save" class="collapsible js-collapsible" open data-btn-close="Hide this" data-save-state="true">
+                            <div class="collapsible__heading js-collapsible-heading">
+                                <div class="collapsible__controls">
+                                    <div class="collapsible__title u-fs-r--b">Details</div>
+                                </div>
+                            </div>
+                            <div id="collapsible-with-save-content" class="collapsible__content js-collapsible-content">
+
+                                <button type="button" class="btn btn--small js-collapsible-button u-d-no btn--secondary">
+                                    <span class="btn__inner js-collapsible-button-inner">Hide this</span>
+                                    <span class="btn__context u-vh">What is a photovoltaic system? undefined</span>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list__item u-mb-m">
+                        <h3 class="u-fs-r u-fw-b u-mb-no">Survey launched</h3>
+                        <p class="u-mb-no">Respondent's home</p>
+                        <p class="u-mb-no time">3rd March 2020 at 12.01pm</p>
+                        <div id="collapsible-with-save" class="collapsible js-collapsible" open data-btn-close="Hide this" data-save-state="true">
+                            <div class="collapsible__heading js-collapsible-heading">
+                                <div class="collapsible__controls">
+                                    <div class="collapsible__title u-fs-r--b">Details</div>
+                                </div>
+                            </div>
+                            <div id="collapsible-with-save-content" class="collapsible__content js-collapsible-content">
+
+                                <button type="button" class="btn btn--small js-collapsible-button u-d-no btn--secondary">
+                                    <span class="btn__inner js-collapsible-button-inner">Hide this</span>
+                                    <span class="btn__context u-vh">What is a photovoltaic system? undefined</span>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list__item u-mb-m">
+                        <h3 class="u-fs-r u-fw-b u-mb-no">Respondent authenticated</h3>
+                        <p class="u-mb-no">Respondent's home</p>
+                        <p class="u-mb-no time">3rd March 2020 at 13.12pm</p>
+                        <div id="collapsible-with-save" class="collapsible js-collapsible" open data-btn-close="Hide this" data-save-state="true">
+                            <div class="collapsible__heading js-collapsible-heading">
+                                <div class="collapsible__controls">
+                                    <div class="collapsible__title u-fs-r--b">Details</div>
+                                </div>
+                            </div>
+                            <div id="collapsible-with-save-content" class="collapsible__content js-collapsible-content">
+
+                                <button type="button" class="btn btn--small js-collapsible-button u-d-no btn--secondary">
+                                    <span class="btn__inner js-collapsible-button-inner">Hide this</span>
+                                    <span class="btn__context u-vh">What is a photovoltaic system? undefined</span>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list__item u-mb-m">
+                        <h3 class="u-fs-r u-fw-b u-mb-no">Respondent authenticated</h3>
+                        <p class="u-mb-no">Respondent's home</p>
+                        <p class="u-mb-no time">3rd March 2020 at 14.52pm</p>
+                        <div id="collapsible-with-save" class="collapsible js-collapsible" open data-btn-close="Hide this" data-save-state="true">
+                            <div class="collapsible__heading js-collapsible-heading">
+                                <div class="collapsible__controls">
+                                    <div class="collapsible__title u-fs-r--b">Details</div>
+                                </div>
+                            </div>
+                            <div id="collapsible-with-save-content" class="collapsible__content js-collapsible-content">
+
+                                <button type="button" class="btn btn--small js-collapsible-button u-d-no btn--secondary">
+                                    <span class="btn__inner js-collapsible-button-inner">Hide this</span>
+                                    <span class="btn__context u-vh">What is a photovoltaic system? undefined</span>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list__item u-mb-m">
+                        <h3 class="u-fs-r u-fw-b u-mb-no">Survey launched</h3>
+                        <p class="u-mb-no">Respondent's home</p>
+                        <p class="u-mb-no time">3rd March 2020 at 14.53pm</p>
+                        <div id="collapsible-with-save" class="collapsible js-collapsible" open data-btn-close="Hide this" data-save-state="true">
+                            <div class="collapsible__heading js-collapsible-heading">
+                                <div class="collapsible__controls">
+                                    <div class="collapsible__title u-fs-r--b">Details</div>
+                                </div>
+                            </div>
+                            <div id="collapsible-with-save-content" class="collapsible__content js-collapsible-content">
+
+                                <button type="button" class="btn btn--small js-collapsible-button u-d-no btn--secondary">
+                                    <span class="btn__inner js-collapsible-button-inner">Hide this</span>
+                                    <span class="btn__context u-vh">What is a photovoltaic system? undefined</span>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list__item u-mb-m">
+                        <h3 class="u-fs-r u-fw-b u-mb-no">QID Receipted</h3>
+                        <p class="u-mb-no">Respondent's home</p>
+                        <p class="u-mb-no time">3rd March 2020 at 14.53pm</p>
+                        <div id="collapsible-with-save" class="collapsible js-collapsible" open data-btn-close="Hide this" data-save-state="true">
+                            <div class="collapsible__heading js-collapsible-heading">
+                                <div class="collapsible__controls">
+                                    <div class="collapsible__title u-fs-r--b">Details</div>
+                                </div>
+                            </div>
+                            <div id="collapsible-with-save-content" class="collapsible__content js-collapsible-content">
+
+                                <button type="button" class="btn btn--small js-collapsible-button u-d-no btn--secondary">
+                                    <span class="btn__inner js-collapsible-button-inner">Hide this</span>
+                                    <span class="btn__context u-vh">What is a photovoltaic system? undefined</span>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
