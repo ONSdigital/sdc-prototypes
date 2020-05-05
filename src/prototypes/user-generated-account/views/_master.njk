@@ -4,52 +4,49 @@
     <link rel="stylesheet" href="{{ pageInfo.rootPath }}/styles.css" />
 {% endblock %}
 
-{% set page = { 
-    "title": "Survey Data Collection",
-    "footer": {
-        "OGLLink": {
-            "pre": 'All content is available under the',
-            "link": 'Open Government Licence v3.0',
-            "url": 'https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/',
-            "post": ', except where otherwise stated'
-        }
-    }
+{% set pageConfig = { 
+    "cdn": "14.4.0",
+    "title": "Monthly Business Survey",
+    "header": {
+        "logoAlt": "ONS",
+        "logoHref": "/prototypes/user-generated-account/"
+    },
+    "navigation": {
+        "classes": "nav--inline nav--light nav--header nav--h-m js-main-nav",
+        "id": "main-nav",
+        "ariaLabel": "Main menu",
+        "ariraListLabel": "Navigation menu",
+        "currentPath": "/prototypes/user-generated-account/00-surveys-list.html",
+        "itemsList": [
+            {
+                "title": "To do",
+                "path": "/prototypes/user-generated-account/00-surveys-list.html"
+            },
+            {
+                "title": "History",
+                "path": "#"
+            },
+            {
+                "title": "Messages",
+                "path": "#"
+            }
+        ]},
+    "serviceLinks": {
+        "classes": "header-service-nav--internal",
+        "ariaLabel": "Site services menu",
+        "ariaListLabel": "Navigation menu",
+        "itemsList": [
+            {
+                "text": "Manage access to my surveys",
+                "url": "/prototypes/user-generated-account/manage-surveys/20-my-account.html"
+            },
+            {
+                "text": "Sign out",
+                "url": "#"
+            }
+        ]} 
 } %}
 
-{% block header %}
-<header class="header ">
-  <div class="header__top" role="banner">
-    <div class="container">
-      <div class="header__grid-top grid grid--gutterless grid--flex grid--between grid--vertical-center grid--no-wrap">
-        <div class="grid__col col-auto">
-          <img class="header__logo" src="/img/ons-logo-pos-en.svg" alt="Office for National Statistics logo">
-        </div>
-        <div class="header__links grid__col col-auto">
-          <div class="grid__col col-auto u-d-no@xs@m ">
-            <ul class="language-links u-d-no@xs@m">
-              <li class="language-links__item">
-                <a href="{{ pageInfo.rootPath }}/20-my-account.html">Manage access to my surveys</a>
-              </li>
-              <li class="language-links__item">
-                <a href="#">Sign out</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="header__main">
-    <div class="container">
-      <div class="grid grid--gutterless grid--flex grid--between grid--vertical-center grid--no-wrap">
-        <div class="grid__col col-auto u-flex-shrink">
-          <div class="header__title">Survey data collection</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</header>
-{% endblock %}
 
 {% block pageContent %}
     {% block preMain %}{% endblock %}
