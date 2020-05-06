@@ -14,6 +14,20 @@ layout: nudge-emails/views/_master
     <div class="grid__col col-8@m">
       <div class="pl-grid-col">
         <h1 name="page-ce-title">Edit nudge email</h1>
+        <fieldset class="fieldset">
+          <legend class="fieldset__legend" style="display:none">What are your favourite pizza toppings?</legend>
+          <div class="checkboxes__items">
+            <p class="checkboxes__item" style="min-width:inherit">
+              <span class="checkbox ">
+                <input type="checkbox" id="delete" class="checkbox__input js-checkbox " value="delete">
+                <label id="delete-label" class="checkbox__label " for="delete">
+            Remove nudge email
+        </label>
+              </span>
+            </p>
+          </div>
+        </fieldset>
+
         <dl class="ce-info" id="ce-attributes">
           <dt class="ce-status__title item-headlines-term ce-status">Survey:</dt>
           <dd class="ce-status__data item-headlines-definition ce-status" id="ce_status">009 MBS</dd>
@@ -32,7 +46,8 @@ layout: nudge-emails/views/_master
                     },
                     "name": "day",
                     "attributes": {
-                        "autocomplete": "bday-day"
+                        "autocomplete": "bday-day",
+                        "value": "25"
                     }
                 },
                 "month": {
@@ -41,7 +56,8 @@ layout: nudge-emails/views/_master
                     },
                     "name": "month",
                     "attributes": {
-                        "autocomplete": "bday-month"
+                        "autocomplete": "bday-month",
+                        "value": "02"
                     }
                 },
                 "year": {
@@ -50,7 +66,8 @@ layout: nudge-emails/views/_master
                     },
                     "name": "year",
                     "attributes": {
-                        "autocomplete": "bday-year"
+                        "autocomplete": "bday-year",
+                        "value": "2020"
                     }
                 }
             })
