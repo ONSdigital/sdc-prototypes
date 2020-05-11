@@ -4,8 +4,16 @@
   <link rel="stylesheet" href="{{ pageInfo.rootPath }}/styles.css"/>
 {% endblock %}
 
-{% set page = { 
-    "title": "Survey Data Collection",
+{% set pageConfig = { 
+    "cdn": "14.4.0",
+    "title": "Survey data collection",
+    "wide": true,
+    "header": {
+      "logoAlt": "ONS",
+      "logoHref": "/prototypes/SM-attachments/",
+      "classes": "header--internal header--thin",
+      "logo": "ons-logo-white"
+    },
     "footer": {
         "OGLLink": {
             "pre": 'All content is available under the',
@@ -15,50 +23,6 @@
         }
     }
 } %}
-
-{% block header %}
-  <header class="header header--internal header--thin">
-    <div class="header__top" role="banner">
-      <div class="container container--wide">
-        <div class="header__grid-top grid grid--gutterless grid--flex grid--between grid--vertical-center grid--no-wrap">
-          <div class="grid__col col-auto">
-            <a href="/prototypes/section-navigation/">
-              <a href="/prototypes/section-navigation/"><img class="header__logo" src="/img/ons-logo-white.svg" alt="Office for National Statistics logo"></a>
-            </a>
-          </div>
-          <div class="header__links grid__col col-auto">
-            <div class="grid__col col-auto u-d-no@xs@m">
-              <nav class="header-service-nav header-service-nav--internal" aria-label="Site services menu">
-                <ul class="header-service-nav__list" aria-label="Navigation menu">
-                  <li class="header-service-nav__item">
-                    <a href="" class="header-service-nav__link"></a>
-                  </li>
-                  <li class="header-service-nav__item">
-                    <a href="" class="header-service-nav__link"></a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="header__main">
-      <div class="container container--wide">
-        <div class="grid grid--gutterless grid--flex grid--between grid--vertical-center grid--no-wrap">
-          <div class="grid__col col-auto u-flex-shrink">
-            <div class="header__title">Survey Data Collection</div>
-          </div>
-          <div class="grid__col col-auto u-flex-no-shrink u-d-no@m">
-            <button type="submit" class="btn btn--mobile u-ml-s u-d-no js-toggle-main" aria-label="Toggle main navigation" aria-controls="main-nav" aria-haspopup="true" aria-expanded="false">
-              <span class="btn__inner">Menu</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-{% endblock %}
 
 {% block pageContent %}
   {% block preMain %}{% endblock %}

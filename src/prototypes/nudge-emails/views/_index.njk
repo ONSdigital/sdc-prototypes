@@ -4,8 +4,16 @@
     <link rel="stylesheet" href="{{ pageInfo.rootPath }}/styles.css" />
 {% endblock %}
 
-{% set page = { 
-    "title": "Survey Data Collection",
+{% set pageConfig = { 
+    "cdn": "14.4.0",
+    "title": "Survey data collection",
+    "wide": true,
+    "header": {
+      "logoAlt": "ONS",
+      "logoHref": "/prototypes/SM-attachments/",
+      "classes": "header--internal header--thin",
+      "logo": "ons-logo-white"
+    },
     "footer": {
         "OGLLink": {
             "pre": 'All content is available under the',

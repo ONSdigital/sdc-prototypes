@@ -4,8 +4,46 @@
     <link rel="stylesheet" href="{{ pageInfo.rootPath }}/styles.css" />
 {% endblock %}
 
-{% set page = { 
-    "title": "Survey Data Collection",
+{% set pageConfig = { 
+    "cdn": "14.4.0",
+    "title": "Survey data collection",
+    "wide": true,
+    "header": {
+      "logoAlt": "ONS",
+      "logoHref": "/prototypes/SM-attachments/",
+      "classes": "header--internal header--thin",
+      "logo": "ons-logo-white"
+    },
+    "navigation": {
+        "classes": "nav--inline nav--light nav--header nav--h-m js-main-nav",
+        "id": "main-nav",
+        "ariaLabel": "Main menu",
+        "ariraListLabel": "Navigation menu",
+        "currentPath": "/surveys",
+        "itemsList": [
+            {
+                "title": "Home",
+                "url": "#"
+            },
+            {
+                "title": "Surveys",
+                "classes": "header-nav__item--active",
+                "url": "#"
+            },
+            {
+                "title": "Reporting units",
+                "url": "#"
+            },
+            {
+                "title": "Respondents",
+                "url": "#"
+            },
+            {
+                "title": "Messages",
+                "url": "#"
+            }
+        ]
+    },
     "footer": {
         "OGLLink": {
             "pre": 'All content is available under the',
@@ -15,71 +53,6 @@
         }
     }
 } %}
-
-{% block header %}
-<header class="header header--internal header--thin">
-  <div class="header__top" role="banner">
-    <div class="container container--wide">
-      <div class="header__grid-top grid grid--gutterless grid--flex grid--between grid--vertical-center grid--no-wrap">
-        <div class="grid__col col-auto">
-          <img class="header__logo" src="/img/ons-logo-white.svg" alt="Office for National Statistics logo">
-        </div>
-        <div class="header__links grid__col col-auto">
-          <div class="grid__col col-auto u-d-no@xs@m">
-            <nav class="header-service-nav header-service-nav--internal" aria-label="Site services menu">
-              <ul class="header-service-nav__list" aria-label="Navigation menu">
-                <li class="header-service-nav__item">
-                  <a href="" class="header-service-nav__link"></a>
-                </li>
-                <li class="header-service-nav__item">
-                  <a href="" class="header-service-nav__link"></a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="header__main">
-    <div class="container container--wide">
-      <div class="grid grid--gutterless grid--flex grid--between grid--vertical-center grid--no-wrap">
-        <div class="grid__col col-auto u-flex-shrink">
-          <div class="header__title">Survey Data Collection</div>
-        </div>
-        <div class="grid__col col-auto u-flex-no-shrink u-d-no@m">
-          <button type="submit" class="btn btn--mobile u-ml-s u-d-no js-toggle-main" aria-label="Toggle main navigation" aria-controls="main-nav" aria-haspopup="true" aria-expanded="false">
-            <span class="btn__inner">Menu</span>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="header__bottom">
-    <div class="container container--wide container--gutterless@xs@m">
-      <nav class="header-nav js-header-nav" id="main-nav" aria-label="Main menu" data-analytics="header-navigation">
-        <ul class="header-nav__list" aria-label="" role="menubar">
-          <li class="header-nav__item">
-            <a href="" class="header-nav__link" role="menuitem">Home</a>
-          </li>
-          <li class="header-nav__item header-nav__item--active">
-            <a href="" class="header-nav__link" role="menuitem">Surveys</a>
-          </li>
-          <li class="header-nav__item">
-            <a href="" class="header-nav__link" role="menuitem">Reporting units</a>
-          </li>
-          <li class="header-nav__item">
-            <a href="" class="header-nav__link" role="menuitem">Respondents</a>
-          </li>
-          <li class="header-nav__item">
-            <a href="" class="header-nav__link" role="menuitem">Messages</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </div>
-</header>
-{% endblock %}
 
 
 {% block pageContent %}
