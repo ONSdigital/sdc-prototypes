@@ -1,0 +1,103 @@
+{% extends "../page-template/_template.njk" %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ pageInfo.rootPath }}/styles/styles.css" />
+{% endblock %}
+
+{% set pageConfig =  {
+    "title": "Census 2021",
+    "theme": "census",
+    "header": {
+        "logoHref": "https://www.ons.gov.uk",
+        "logo": pageInfo.rootPath + "/img/ons-logo-en.svg",
+        "logoAlt": "Office for National Statistics",
+        "titleLogo": "/img/census-logo-en.svg",
+        "titleLogoHref": pageInfo.rootPath,
+        "titleLogoAlt": "Census 2021"
+    },
+    "serviceLinks": {
+        "ariaLabel": "Site services menu",
+        "ariaListLabel": "Navigation menu",
+        "itemsList": [
+            {
+                "text": "BSL",
+                "url": pageInfo.rootPath + "/bsl",
+                "classes": "icon--bsl-show" 
+            }
+        ]
+    },
+    "language": {
+        "allLanguagesUrl": "#",
+        "languages": [
+            {
+                "url": "#",
+                "ISOCode": "en",
+                "text": "English",
+                "buttonAriaLabel": "Language selector. Current language: English",
+                "chooseLanguage": "Choose language",
+                "current": true
+            },
+            {
+                "url": "#",
+                "ISOCode": "cy",
+                "text": "Cymraeg",
+                "buttonAriaLabel": "Dewisydd iaith. Iaith gyfredol: Cymraeg",
+                "chooseLanguage": "Dewiswch iaith",
+                "current": false
+            }
+        ]
+    },
+    "footer": {
+        "rows": [
+            {
+                "itemsList": [
+                    {
+                        "text": 'Help',
+                        "url": '#'
+                    },
+                    {
+                        "text": 'Contact us',
+                        "url": '#'
+                    },
+                    {
+                        "text": 'Web chat',
+                        "classes": "icon--external-link",
+                        "target": "_blank",
+                        "url": 'https://test-rh.int.census-gcp.onsdigital.uk/en/web-chat/'
+                    }
+                ]
+            },
+            {
+                "itemsList": [
+                    {
+                        "text": 'Cookies',
+                        "url": '#'
+                    },
+                    {
+                        "text": 'Accessibility',
+                        "url": '#'
+                    },
+                    {
+                        "text": 'Privacy and data protection',
+                        "url": '#'
+                    }
+                ]
+            }
+        ]
+    }
+} %}
+{% block pageContent %}
+    {% block preMain %}{% endblock %}
+    <div class="page__container container {{ containerClasses }}">
+        <div class="grid">
+            <div class="grid__col col-8@m">
+                <main id="main-content" class="page__main {{ pageClasses }}">
+                    {% block main %}{% endblock %}
+                </main>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block bodyEnd %}
+    <script src="{{ pageInfo.rootPath }}/scripts/index.js"></script>
+{% endblock %}

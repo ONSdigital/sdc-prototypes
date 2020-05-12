@@ -1,0 +1,45 @@
+---
+version: 15.0.2
+layout: bsl-v3/views/_page
+---
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+{% from "components/details/_macro.njk" import onsDetails %}
+{% from "components/video/_macro.njk" import onsVideo %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/index.html"
+    }
+} %}
+    {% block preMain %}
+    <div class="container page__container container u-mt-s">
+       
+    </div>
+    {% endblock %}
+    {% block main %}
+        {% call onsQuestion({
+            "title": "British Sign Language (BSL) support",
+            "useFieldset": true
+        }) %}
+        {% endcall %}
+        {{ onsVideo ({
+            "youtubeUrl": "https://www.youtube.com/embed/_EGJlvkgbPo"
+        }) }}
+        <h2 class="u-mb-xs">Ready to start the census online?</h2>
+        {{ onsButton({
+            "text": "Start census",
+            "url": pageInfo.rootPath + "/start.html",
+            "classes": "u-ml-no u-mt-s btn--link js-start-bsl"
+        }) }}
+        <script>
+            window.sessionStorage.removeItem('bsl');
+
+            function startBSL() {
+                window.sessionStorage.setItem('bsl', true);
+            }
+        </script>
+    {% endblock %}
