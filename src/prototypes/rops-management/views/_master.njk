@@ -3,29 +3,29 @@
 {% block head %}
     <link rel="stylesheet" href="{{ pageInfo.rootPath }}/styles.css" />
 {% endblock %}
-
 {% set pageConfig = { 
     "cdn": "17.0.0",
-    "title": "Census case management",
+    "title": "Census ROps Case Management",
+    "wide": true,
     "header": {
-        "logoAlt": "ONS",
-        "logoHref": "/prototypes/rops-management/"
+      "logoAlt": "ONS",
+      "logoHref": "/",
+      "classes": "header--internal header--thin",
+      "logo": "ons-logo-white"
     },
-    "serviceLinks": {
-        "classes": "header-service-nav--internal",
-        "ariaLabel": "Site services menu",
-        "ariaListLabel": "Navigation menu",
-        "itemsList": [
-            {
-                "text": "Sign out",
-                "url": "#"
-            }
-        ]} 
+    "footer": {
+        "OGLLink": {
+            "pre": 'All content is available under the',
+            "link": 'Open Government Licence v3.0',
+            "url": 'https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/',
+            "post": ', except where otherwise stated'
+        }
+    }
 } %}
 
 {% block pageContent %}
     {% block preMain %}{% endblock %}
-    <div class="page__container container">
+    <div class="page__container container container--wide">
       <main id="main-content" class="page__main {{ pageClasses }}">
           {% block main %}{% endblock %}
       </main>

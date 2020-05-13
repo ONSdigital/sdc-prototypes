@@ -14,50 +14,166 @@ layout: rops-management/views/_master
 
     {% from "prototypes/rops-management/data/Census_Cases_table.dta" import cases %}
 
-    <ul>
+    <ul class="list list--bare">
         {% for case in cases %}
-            <li>{{ case.id }}</li>
-            <li>{{ case.event_channel }}</li>
-            <li>{{ case.event_date }}</li>
-            <li>{{ case.event_type }}</li>
-            <li>{{ case.event_description }}</li>
-            <li>{{ case.oa }}</li>
-            <li>{{ case.lad }}</li>
-            <li>{{ case.arid }}</li>
-            <li>{{ case.lsoa }}</li>
-            <li>{{ case.msoa }}</li>
-            <li>{{ case.uprn }}</li>
-            <li>{{ case.region }}</li>
-            <li>{{ case.abpCode }}</li>
-            <li>{{ case.latitude }}</li>
-            <li>{{ case.postcode }}</li>
-            <li>{{ case.townName }}</li>
-            <li>{{ case.estabArid }}</li>
-            <li>{{ case.estabType }}</li>
-            <li>{{ case.longitude }}</li>
-            <li>{{ case.htcDigital }}</li>
-            <li>{{ case.addressType }}</li>
-            <li>{{ case.actionPlanId }}</li>
-            <li>{{ case.addressLevel }}</li>
-            <li>{{ case.addressLine1 }}</li>
-            <li>{{ case.addressLine2 }}</li>
-            <li>{{ case.addressLine3 }}</li>
-            <li>{{ case.treatmentCode }}</li>
-            <li>{{ case.fieldOfficerId }}</li>
-            <li>{{ case.htcWillingness }}</li>
-            <li>{{ case.organisationName }}</li>
-            <li>{{ case.ceExpectedCapacity }}</li>
-            <li>{{ case.fieldCoordinatorId }}</li>
-            <li>{{ case.collectionExerciseId }}</li>
-            <li>{{ case.event_source }}</li>
-            <li>{{ case.event_transaction_id }}</li>
-            <li>{{ case.rm_event_processed }}</li>
-            <li>{{ case.uac_qid_link_id }}</li>
-            <li>{{ case.caze_case_id }}</li>
-            <li>{{ case.message_timestamp }}</li>
+            {% if case.id.length > 0 %}
+                <li>{{ case.id }}</li>
+            {% endif %}
+
+            {% if case.event_channel.length > 0 %}
+                <li>{{ case.event_channel }}</li>
+            {% endif %}
+
+            {% if case.event_date.length > 0 %}
+                <li>{{ case.event_date }}</li>
+            {% endif %}
+
+            {% if case.event_type.length > 0 %}
+                <li>{{ case.event_type }}</li>
+            {% endif %}
+
+            {% if case.event_description.length > 0 %}
+                <li>{{ case.event_description }}</li>
+            {% endif %}
+
+            {% if case.oa.length > 0 %}
+                <li>{{ case.oa }}</li>
+            {% endif %}
+
+            {% if case.lad.length > 0 %}
+                <li>{{ case.lad }}</li>
+            {% endif %}
+
+            {% if case.arid.length > 0 %}
+                <li>{{ case.arid }}</li>
+            {% endif %}
+
+            {% if case.lsoa.length > 0 %}
+                <li>{{ case.lsoa }}</li>
+            {% endif %}
+
+            {% if case.msoa.length > 0 %}
+                <li>{{ case.msoa }}</li>
+            {% endif %}
+
+            {% if case.uprn.length > 0 %}
+                <li>{{ case.uprn }}</li>
+            {% endif %}
+
+            {% if case.region.length > 0 %}
+                <li>{{ case.region }}</li>
+            {% endif %}
+
+            {% if case.abpCode.length > 0 %}
+                <li>{{ case.abpCode }}</li>
+            {% endif %}
+
+            {% if case.latitude.length > 0 %}
+                <li>{{ case.latitude }}</li>
+            {% endif %}
+
+            {% if case.postcode.length > 0 %}
+                <li>{{ case.postcode }}</li>
+            {% endif %}
+
+            {% if case.townName.length > 0 %}
+                <li>{{ case.townName }}</li>
+            {% endif %}
+
+            {% if case.estabArid.length > 0 %}
+                <li>{{ case.estabArid }}</li>
+            {% endif %}
+
+            {% if case.estabType.length > 0 %}
+                <li>{{ case.estabType }}</li>
+            {% endif %}
+
+            {% if case.longitude.length > 0 %}
+                <li>{{ case.longitude }}</li>
+            {% endif %}
+
+            {% if case.htcDigital.length > 0 %}
+                <li>{{ case.htcDigital }}</li>
+            {% endif %}
+
+            {% if case.addressType.length > 0 %}
+                <li>{{ case.addressType }}</li>
+            {% endif %}
+
+            {% if case.actionPlanId.length > 0 %}
+                <li>{{ case.actionPlanId }}</li>
+            {% endif %}
+
+            {% if case.addressLevel.length > 0 %}
+                <li>{{ case.addressLevel }}</li>
+            {% endif %}
+
+            {% if case.addressLine1.length > 0 %}
+                <li>{{ case.addressLine1 }}</li>
+            {% endif %}
+
+            {% if case.addressLine2.length > 0 %}
+                <li>{{ case.addressLine2 }}</li>
+            {% endif %}
+
+            {% if case.addressLine3.length > 0 %}
+                <li>{{ case.addressLine3 }}</li>
+            {% endif %}
+
+            {% if case.treatmentCode.length > 0 %}
+                <li>{{ case.treatmentCode }}</li>
+            {% endif %}
+
+            {% if case.fieldOfficerId.length > 0 %}
+                <li>{{ case.fieldOfficerId }}</li>
+            {% endif %}
+
+            {% if case.htcWillingness.length > 0 %}
+                <li>{{ case.htcWillingness }}</li>
+            {% endif %}
+
+            {% if case.organisationName.length > 0 %}
+                <li>{{ case.organisationName }}</li>
+            {% endif %}
+
+            {% if case.ceExpectedCapacity.length > 0 %}
+                <li>{{ case.ceExpectedCapacity }}</li>
+            {% endif %}
+
+            {% if case.fieldCoordinatorId.length > 0 %}
+                <li>{{ case.fieldCoordinatorId }}</li>
+            {% endif %}
+
+            {% if case.collectionExerciseId.length > 0 %}
+                <li>{{ case.collectionExerciseId }}</li>
+            {% endif %}
+
+            {% if case.event_source.length > 0 %}
+                <li>{{ case.event_source }}</li>
+            {% endif %}
+
+            {% if case.event_transaction_id.length > 0 %}
+                <li>{{ case.event_transaction_id }}</li>
+            {% endif %}
+
+            {% if case.rm_event_processed.length > 0 %}
+                <li>{{ case.rm_event_processed }}</li>
+            {% endif %}
+
+            {% if case.uac_qid_link_id.length > 0 %}
+                <li>{{ case.uac_qid_link_id }}</li>
+            {% endif %}
+
+            {% if case.caze_case_id.length > 0 %}
+                <li>{{ case.caze_case_id }}</li>
+            {% endif %}
+
+            {% if case.message_timestamp.length > 0 %}
+                <li>{{ case.message_timestamp }}</li>
+            {% endif %}
         {% else %}
-        hello
-        {% endfor %}
+            hello
+      {% endfor %}
     </ul>
 
     <div class="grid">
@@ -87,10 +203,9 @@ layout: rops-management/views/_master
                                 </div>
                             </div>
                             <div id="collapsible-with-save-content" class="collapsible__content js-collapsible-content">
-
+                                Stuff
                                 <button type="button" class="btn btn--small js-collapsible-button u-d-no btn--secondary">
                                     <span class="btn__inner js-collapsible-button-inner">Hide this</span>
-                                    <span class="btn__context u-vh">What is a photovoltaic system? undefined</span>
                                 </button>
                             </div>
                         </div>
@@ -106,10 +221,9 @@ layout: rops-management/views/_master
                                 </div>
                             </div>
                             <div id="collapsible-with-save-content" class="collapsible__content js-collapsible-content">
-
+                                Stuff
                                 <button type="button" class="btn btn--small js-collapsible-button u-d-no btn--secondary">
                                     <span class="btn__inner js-collapsible-button-inner">Hide this</span>
-                                    <span class="btn__context u-vh">What is a photovoltaic system? undefined</span>
                                 </button>
                             </div>
                         </div>
@@ -125,10 +239,9 @@ layout: rops-management/views/_master
                                 </div>
                             </div>
                             <div id="collapsible-with-save-content" class="collapsible__content js-collapsible-content">
-
+                                Stuff
                                 <button type="button" class="btn btn--small js-collapsible-button u-d-no btn--secondary">
                                     <span class="btn__inner js-collapsible-button-inner">Hide this</span>
-                                    <span class="btn__context u-vh">What is a photovoltaic system? undefined</span>
                                 </button>
                             </div>
                         </div>
@@ -144,10 +257,9 @@ layout: rops-management/views/_master
                                 </div>
                             </div>
                             <div id="collapsible-with-save-content" class="collapsible__content js-collapsible-content">
-
+                                Stuff
                                 <button type="button" class="btn btn--small js-collapsible-button u-d-no btn--secondary">
                                     <span class="btn__inner js-collapsible-button-inner">Hide this</span>
-                                    <span class="btn__context u-vh">What is a photovoltaic system? undefined</span>
                                 </button>
                             </div>
                         </div>
@@ -163,10 +275,9 @@ layout: rops-management/views/_master
                                 </div>
                             </div>
                             <div id="collapsible-with-save-content" class="collapsible__content js-collapsible-content">
-
+                                Stuff
                                 <button type="button" class="btn btn--small js-collapsible-button u-d-no btn--secondary">
                                     <span class="btn__inner js-collapsible-button-inner">Hide this</span>
-                                    <span class="btn__context u-vh">What is a photovoltaic system? undefined</span>
                                 </button>
                             </div>
                         </div>
@@ -182,10 +293,9 @@ layout: rops-management/views/_master
                                 </div>
                             </div>
                             <div id="collapsible-with-save-content" class="collapsible__content js-collapsible-content">
-
+                                Stuff
                                 <button type="button" class="btn btn--small js-collapsible-button u-d-no btn--secondary">
                                     <span class="btn__inner js-collapsible-button-inner">Hide this</span>
-                                    <span class="btn__context u-vh">What is a photovoltaic system? undefined</span>
                                 </button>
                             </div>
                         </div>
@@ -201,10 +311,9 @@ layout: rops-management/views/_master
                                 </div>
                             </div>
                             <div id="collapsible-with-save-content" class="collapsible__content js-collapsible-content">
-
+                                Stuff
                                 <button type="button" class="btn btn--small js-collapsible-button u-d-no btn--secondary">
                                     <span class="btn__inner js-collapsible-button-inner">Hide this</span>
-                                    <span class="btn__context u-vh">What is a photovoltaic system? undefined</span>
                                 </button>
                             </div>
                         </div>
@@ -220,10 +329,9 @@ layout: rops-management/views/_master
                                 </div>
                             </div>
                             <div id="collapsible-with-save-content" class="collapsible__content js-collapsible-content">
-
+                                Stuff
                                 <button type="button" class="btn btn--small js-collapsible-button u-d-no btn--secondary">
                                     <span class="btn__inner js-collapsible-button-inner">Hide this</span>
-                                    <span class="btn__context u-vh">What is a photovoltaic system? undefined</span>
                                 </button>
                             </div>
                         </div>
@@ -239,10 +347,9 @@ layout: rops-management/views/_master
                                 </div>
                             </div>
                             <div id="collapsible-with-save-content" class="collapsible__content js-collapsible-content">
-
+                                Stuff
                                 <button type="button" class="btn btn--small js-collapsible-button u-d-no btn--secondary">
                                     <span class="btn__inner js-collapsible-button-inner">Hide this</span>
-                                    <span class="btn__context u-vh">What is a photovoltaic system? undefined</span>
                                 </button>
                             </div>
                         </div>
@@ -258,10 +365,9 @@ layout: rops-management/views/_master
                                 </div>
                             </div>
                             <div id="collapsible-with-save-content" class="collapsible__content js-collapsible-content">
-
+                                Stuff
                                 <button type="button" class="btn btn--small js-collapsible-button u-d-no btn--secondary">
                                     <span class="btn__inner js-collapsible-button-inner">Hide this</span>
-                                    <span class="btn__context u-vh">What is a photovoltaic system? undefined</span>
                                 </button>
                             </div>
                         </div>
@@ -277,10 +383,9 @@ layout: rops-management/views/_master
                                 </div>
                             </div>
                             <div id="collapsible-with-save-content" class="collapsible__content js-collapsible-content">
-
+                                Stuff
                                 <button type="button" class="btn btn--small js-collapsible-button u-d-no btn--secondary">
                                     <span class="btn__inner js-collapsible-button-inner">Hide this</span>
-                                    <span class="btn__context u-vh">What is a photovoltaic system? undefined</span>
                                 </button>
                             </div>
                         </div>
@@ -296,10 +401,9 @@ layout: rops-management/views/_master
                                 </div>
                             </div>
                             <div id="collapsible-with-save-content" class="collapsible__content js-collapsible-content">
-
+                                Stuff
                                 <button type="button" class="btn btn--small js-collapsible-button u-d-no btn--secondary">
                                     <span class="btn__inner js-collapsible-button-inner">Hide this</span>
-                                    <span class="btn__context u-vh">What is a photovoltaic system? undefined</span>
                                 </button>
                             </div>
                         </div>

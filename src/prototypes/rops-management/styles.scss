@@ -12,16 +12,14 @@
   position: relative;
 }
 
-/* section.survey {
-  .grid {
-    display: flex;
-    div:last-child {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-  }
-} */
+.td-date,
+.td-time,
+.td-channel {
+  white-space: nowrap;
+}
+.td-event {
+  width: 60%;
+}
 
 .sidenav {
   height: 100%;

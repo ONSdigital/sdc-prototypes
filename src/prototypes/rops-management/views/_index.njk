@@ -6,10 +6,13 @@
 
 {% set pageConfig = { 
     "cdn": "17.0.0",
-    "title": "Census case management",
+    "title": "Census ROps Case Management",
+    "wide": true,
     "header": {
       "logoAlt": "ONS",
-      "logoHref": "/prototypes/rops-management/"
+      "logoHref": "/",
+      "classes": "header--internal header--thin",
+      "logo": "ons-logo-white"
     },
     "footer": {
         "OGLLink": {
@@ -23,7 +26,7 @@
 
 {% block pageContent %}
   {% block preMain %}{% endblock %}
-  <div class="page__container container">
+  <div class="page__container container container--wide">
     <main id="main-content" class="page__main {{ pageClasses }}">
       {% block main %}{% endblock %}
     </main>
