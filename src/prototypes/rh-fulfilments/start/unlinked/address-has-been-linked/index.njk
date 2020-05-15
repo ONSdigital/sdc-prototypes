@@ -8,7 +8,7 @@ layout: rh-fulfilments/views/_master
 {% set form =  {
     'method': 'POST',
     'attributes': {
-        "action": "{{ pageInfo.parentPath }}/address-has-been-linked/"
+        "action": ""
     }
 } %}
 
@@ -20,8 +20,8 @@ layout: rh-fulfilments/views/_master
 
     {{
         onsButton({
-            'text': _('Continue'),
-            'classes': 'u-mt-l',
+            'text': 'Continue',
+            'classes': 'u-mt-l'
         })
     }}
 

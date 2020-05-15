@@ -11,13 +11,6 @@ layout: rh-fulfilments/views/_master
 {% from 'components/lists/_macro.njk' import onsList %}
 {% from "components/input/_macro.njk" import onsInput %}
 
-{% set form =  {
-    'method': 'POST',
-    'attributes': {
-        "action": "{{ pageInfo.parentPath }}/unlinked/enter-address/"
-    }
-} %}
-
 {% set uac_input = onsUACInput({
         'id': 'uac',
         'name': 'uac',
@@ -32,6 +25,8 @@ layout: rh-fulfilments/views/_master
 {% block main %}
 
     <h1 class="u-mt-l">Start Census</h1>
+    
+    <form action="{{ pageInfo.parentPath }}/unlinked/enter-address/">
 
         {{ uac_input }}
 
@@ -40,6 +35,8 @@ layout: rh-fulfilments/views/_master
         'classes': 'u-mb-xl',
         'name': 'action[save_continue]'
     }) }}
+    
+    </form>
 
     <h2 class="u-fs-r--b u-mb-no">Don't have a code?</h2>
 
