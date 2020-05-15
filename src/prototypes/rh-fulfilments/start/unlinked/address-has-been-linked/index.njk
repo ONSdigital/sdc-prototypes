@@ -5,14 +5,9 @@ layout: rh-fulfilments/views/_master
 
 {% from 'components/button/_macro.njk' import onsButton %}
 
-{% set form =  {
-    'method': 'POST',
-    'attributes': {
-        "action": ""
-    }
-} %}
-
 {% block main %}
+
+<form action="{{ pageInfo.parentPath }}/census-form/">
 
     <h1 class="u-mt-l">Your address has been linked to your code</h1>
 
@@ -25,5 +20,6 @@ layout: rh-fulfilments/views/_master
         })
     }}
 
+</form>
 
 {% endblock %}
