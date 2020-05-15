@@ -1,0 +1,106 @@
+---
+version: 13.6.9
+layout: rh-fulfilments/views/_master
+---
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action": "{{ pageInfo.parentPath }}/confirm-address/"
+    }
+} %}
+
+{% block main %}
+
+
+{% from 'components/question/_macro.njk' import onsQuestion %}
+{% from 'components/button/_macro.njk' import onsButton %}
+{% from 'components/radios/_macro.njk' import onsRadios %}
+
+        {% call onsQuestion({
+            'title': 'Select your address',
+            'description': '<p class="u-fs-r--b">5 addresses found for postcode EX2 6GA</p>'
+        }) %}
+
+
+        {{
+            onsRadios({
+                'name': 'request-address-select',
+                'or': 'Or',
+                'radios': [
+                    {
+                        "id": "10023122451",
+                        "label": {
+                            "text": '1 Gate Reach, Exeter, EX2 6GA'
+                        },
+                        "value": '1 Gate Reach, Exeter, EX2 6GA',
+                        "attributes": {
+                            "data-action-url": pageInfo.parentPath + "/confirm-address/"
+                        }
+                    },
+                    {
+                        "id": "10023122452",
+                        "label": {
+                            "text": '2 Gate Reach, Exeter, EX2 6GA'
+                        },
+                        "value": '2 Gate Reach, Exeter, EX2 6GA',
+                        "attributes": {
+                            "data-action-url": pageInfo.parentPath + "/confirm-address/"
+                        }
+                    },
+                    {
+                        "id": "10023122452",
+                        "label": {
+                            "text": '3 Gate Reach, Exeter, EX2 6GA'
+                        },
+                        "value": '3 Gate Reach, Exeter, EX2 6GA',
+                        "attributes": {
+                            "data-action-url": pageInfo.parentPath + "/confirm-address/"
+                        }
+                    },
+                    {
+                        "id": "10023122452",
+                        "label": {
+                            "text": '4 Gate Reach, Exeter, EX2 6GA'
+                        },
+                        "value": '4 Gate Reach, Exeter, EX2 6GA',
+                        "attributes": {
+                            "data-action-url": pageInfo.parentPath + "/confirm-address/"
+                        }
+                    },
+                    {
+                        "id": "10023122452",
+                        "label": {
+                            "text": '5 Gate Reach, Exeter, EX2 6GA'
+                        },
+                        "value": '5 Gate Reach, Exeter, EX2 6GA',
+                        "attributes": {
+                            "data-action-url": pageInfo.parentPath + "/confirm-address/"
+                        }
+                    },
+                    {
+                        "id": "xxxx",
+                        "label": {
+                            "text": 'I cannot find my address'
+                        },
+                        "value": 'I cannot find my address',
+                        "attributes": {
+                            "data-action-url": pageInfo.parentPath + "/address-not-listed/"
+                        }
+                    }
+                ]
+            })
+        }}
+
+
+        {% endcall %}
+
+        {{
+            onsButton({
+                'text': 'Continue',
+                'classes': 'u-mt-l'
+            })
+        }}
+
+
+{% endblock %}

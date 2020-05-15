@@ -1,0 +1,29 @@
+---
+version: 13.6.9
+layout: rh-fulfilments/views/_master
+---
+
+{% from 'components/button/_macro.njk' import onsButton %}
+
+{% set form =  {
+    'method': 'POST',
+    'attributes': {
+        "action": "{{ pageInfo.parentPath }}/address-has-been-linked/"
+    }
+} %}
+
+{% block main %}
+
+    <h1 class="u-mt-l">Your address has been linked to your code</h1>
+
+    <p>You are now ready to start your Census questions</p>
+
+    {{
+        onsButton({
+            'text': _('Continue'),
+            'classes': 'u-mt-l',
+        })
+    }}
+
+
+{% endblock %}
