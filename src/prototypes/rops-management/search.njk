@@ -1,0 +1,37 @@
+---
+group: Frontstage
+title: ROps case management
+version: 17.0.0
+layout: rops-management/views/_index
+---
+
+{% block main %}
+    {% from "components/input/_macro.njk" import onsInput %}
+    {% from "components/button/_macro.njk" import onsButton %}
+
+    <div class="grid">
+        <div class="grid__col col-8@m">
+            <h2>Search cases</h2>
+            <p class="field">
+            {{ 
+                onsInput({
+                    "id": "search",
+                    "label": {
+                        "text": "Enter an address or postcode"
+                    }
+                }) 
+            }}
+            </p>
+            <p class="field">
+            {{ 
+                onsButton({
+                    "type": 'button',
+                    "text": 'Submit',
+                    "url": '/prototypes/rops-management/search-results.html'
+                }) 
+            }}
+            </p>
+        </div>
+    </div>
+{% endblock %}
+

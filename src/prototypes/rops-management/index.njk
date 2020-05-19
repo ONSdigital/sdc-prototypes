@@ -7,13 +7,18 @@ layout: rops-management/views/_index
 
 {% block main %}
     {% from "components/button/_macro.njk" import onsButton %}
-    <h1>Screens</h1>
 
     <div class="grid">
         <div class="grid__col col-8@m">
-            <p><a href="/prototypes/rops-management/version-1/index.html">Version 1</a>  Simple semantic html with metadata component</p>
-            <p><a href="/prototypes/rops-management/version-2/index.html">Version 2</a>  Added collapsible component</p>
-            <p><a href="/prototypes/rops-management/version-3/index.html">Version 3</a>  json version</p>
+            <h1>Screens</h1>
+            <p><a href="/prototypes/rops-management/search.html">Search</a> (Start here)<br>Search by address/postcode </p>
+            <p><a href="/prototypes/rops-management/search-and-find.html">Search and find</a>  <br>Search by address/postcode + case reference + questionnaire ID</p>
+            <p><a href="/prototypes/rops-management/version-2/index.html">View a case</a></p>
+
+            <h2>Archive</h2>
+            <p><a href="/prototypes/rops-management/version-1/index.html">View a case: Version 1</a>  Simple semantic html with metadata component</p>
+            <p><a href="/prototypes/rops-management/version-2/index.html">View a case: Version 2</a>  Collapsible component</p>
+            <p><a href="/prototypes/rops-management/version-3/index.html">View a case: Version 3</a>  json version</p>
         </div>
     </div>
 {% endblock %}

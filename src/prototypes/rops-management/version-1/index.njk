@@ -15,52 +15,32 @@ layout: rops-management/views/_master
     <div class="grid">
         <div class="grid__col col-12@m">
             <h1>Case details</h1>
-            {{ 
-                onsMetadata({
-                    "metadataLabel": "This is an example of the metadata component",
-                    "termCol": "2",
-                    "descriptionCol": "10",
-                    "itemsList": [
-                        {
-                            "term": "Case ID:",
-                            "descriptions": [ 
-                                {
-                                    "description": "51f00c68-8f9a-4abb-99fe-e918c251e6b7"
-                                }
-                            ]
-                        },
-                        {
-                            "term": "Address:",
-                            "descriptions": [ 
-                                {
-                                    "description": "2 St Marks Court"
-                                },
-                                {
-                                    "description": "Lower Boston Road"
-                                },
-                                {
-                                    "description": "Windleybury"
-                                },
-                                {
-                                    "description": "GU16 6DG"
-                                }                            
-                            ]
-                        }                                                
-                    ]
-                }) 
-            }}
+            <dl class="metadata metadata__list grid grid--gutterless u-cf u-mb-l" title="This is an example of the metadata component" aria-label="This is an example of the metadata component">
+                <dt class="metadata__term grid__col col-2@m">Address:</dt>
+                <dd class="metadata__value grid__col col-10@m">661 Students Total Way</dd>
+                <dd class="metadata__value grid__col col-10@m">Beaumont Court</dd>
+                <dd class="metadata__value grid__col col-10@m">Westfield Way</dd>
+                <dd class="metadata__value grid__col col-10@m">GU16 6DD</dd>
+                <dt class="metadata__term grid__col col-2@m">Establishment type:</dt>
+                <dd class="metadata__value grid__col col-10@m">Hall Of Residence</dd>
+                <dt class="metadata__term grid__col col-2@m">Case ID:</dt>
+                <dd class="metadata__value grid__col col-10@m">8d4b10f5-e80d-4ca5-aa82-c4edb2a5637c</dd>
+                <dt class="metadata__term grid__col col-2@m">Status</dt>
+                <dd class="metadata__value grid__col col-10@m">
+                    <span class="status status--success">Active</span></dd>
+            </dl>
             <h2>Event history</h2>
 
             <div class="timeline">
                 <ul class="list list--bare">
                     <li class="list__item u-mb-m">
                         <h3 class="">Create case sample received</h3>
-                        
-                                {{ 
+
+                        {{ 
                                 onsMetadata({
                                     "metadataLabel": "This is an example of the metadata component",
-                                    "termCol": "4",
-                                    "descriptionCol": "8",
+                                    "termCol": "2",
+                                    "descriptionCol": "10",
                                     "itemsList": [
                                         {
                                             "term": "Event channel",
@@ -308,11 +288,11 @@ layout: rops-management/views/_master
                     </li>
                     <li class="list__item u-mb-m">
                         <h3 class="">Create case sample received</h3>
-                                {{ 
+                        {{ 
                                 onsMetadata({
                                     "metadataLabel": "This is an example of the metadata component",
-                                    "termCol": "4",
-                                    "descriptionCol": "8",
+                                    "termCol": "2",
+                                    "descriptionCol": "10",
                                     "itemsList": [
                                         {
                                             "term": "Event channel",
@@ -560,11 +540,11 @@ layout: rops-management/views/_master
                     </li>
                     <li class="list__item u-mb-m">
                         <h3 class="">Refusal received for individual on Estab</h3>
-                                {{ 
+                        {{ 
                                 onsMetadata({
                                     "metadataLabel": "This is an example of the metadata component",
-                                    "termCol": "4",
-                                    "descriptionCol": "8",
+                                    "termCol": "2",
+                                    "descriptionCol": "10",
                                     "itemsList": [
                                         {
                                             "term": "Event channel",
@@ -628,11 +608,11 @@ layout: rops-management/views/_master
                     </li>
                     <li class="list__item u-mb-m">
                         <h3 class="">Refusal received</h3>
-                                {{ 
+                        {{ 
                                 onsMetadata({
                                     "metadataLabel": "This is an example of the metadata component",
-                                    "termCol": "4",
-                                    "descriptionCol": "8",
+                                    "termCol": "2",
+                                    "descriptionCol": "10",
                                     "itemsList": [
                                         {
                                             "term": "Event channel",
@@ -696,11 +676,11 @@ layout: rops-management/views/_master
                     </li>
                     <li class="list__item u-mb-m">
                         <h3 class="">Respondent authenticated</h3>
-                                {{ 
+                        {{ 
                                 onsMetadata({
                                     "metadataLabel": "This is an example of the metadata component",
-                                    "termCol": "4",
-                                    "descriptionCol": "8",
+                                    "termCol": "2",
+                                    "descriptionCol": "10",
                                     "itemsList": [
                                         {
                                             "term": "Event channel",
@@ -740,11 +720,11 @@ layout: rops-management/views/_master
                     </li>
                     <li class="list__item u-mb-m">
                         <h3 class="">Survey launched</h3>
-                                {{ 
+                        {{ 
                                 onsMetadata({
                                     "metadataLabel": "This is an example of the metadata component",
-                                    "termCol": "4",
-                                    "descriptionCol": "8",
+                                    "termCol": "2",
+                                    "descriptionCol": "10",
                                     "itemsList": [
                                         {
                                             "term": "Event channel",
@@ -792,11 +772,11 @@ layout: rops-management/views/_master
                     </li>
                     <li class="list__item u-mb-m">
                         <h3 class="">Respondent authenticated</h3>
-                                {{ 
+                        {{ 
                                 onsMetadata({
                                     "metadataLabel": "This is an example of the metadata component",
-                                    "termCol": "4",
-                                    "descriptionCol": "8",
+                                    "termCol": "2",
+                                    "descriptionCol": "10",
                                     "itemsList": [
                                         {
                                             "term": "Event channel",
@@ -836,11 +816,11 @@ layout: rops-management/views/_master
                     </li>
                     <li class="list__item u-mb-m">
                         <h3 class="">Survey launched</h3>
-                                {{ 
+                        {{ 
                                 onsMetadata({
                                     "metadataLabel": "This is an example of the metadata component",
-                                    "termCol": "4",
-                                    "descriptionCol": "8",
+                                    "termCol": "2",
+                                    "descriptionCol": "10",
                                     "itemsList": [
                                         {
                                             "term": "Event channel",
@@ -888,11 +868,11 @@ layout: rops-management/views/_master
                     </li>
                     <li class="list__item u-mb-m">
                         <h3 class="">Respondent authenticated</h3>
-                                {{ 
+                        {{ 
                                 onsMetadata({
                                     "metadataLabel": "This is an example of the metadata component",
-                                    "termCol": "4",
-                                    "descriptionCol": "8",
+                                    "termCol": "2",
+                                    "descriptionCol": "10",
                                     "itemsList": [
                                         {
                                             "term": "Event channel",
@@ -932,11 +912,11 @@ layout: rops-management/views/_master
                     </li>
                     <li class="list__item u-mb-m">
                         <h3 class="">Respondent authenticated</h3>
-                                {{ 
+                        {{ 
                                 onsMetadata({
                                     "metadataLabel": "This is an example of the metadata component",
-                                    "termCol": "4",
-                                    "descriptionCol": "8",
+                                    "termCol": "2",
+                                    "descriptionCol": "10",
                                     "itemsList": [
                                         {
                                             "term": "Event channel",
@@ -976,11 +956,11 @@ layout: rops-management/views/_master
                     </li>
                     <li class="list__item u-mb-m">
                         <h3 class="">Survey launched</h3>
-                                {{ 
+                        {{ 
                                 onsMetadata({
                                     "metadataLabel": "This is an example of the metadata component",
-                                    "termCol": "4",
-                                    "descriptionCol": "8",
+                                    "termCol": "2",
+                                    "descriptionCol": "10",
                                     "itemsList": [
                                         {
                                             "term": "Event channel",
@@ -1028,11 +1008,11 @@ layout: rops-management/views/_master
                     </li>
                     <li class="list__item u-mb-m">
                         <h3 class="">QID Receipted</h3>
-                                {{ 
+                        {{ 
                                 onsMetadata({
                                     "metadataLabel": "This is an example of the metadata component",
-                                    "termCol": "4",
-                                    "descriptionCol": "8",
+                                    "termCol": "2",
+                                    "descriptionCol": "10",
                                     "itemsList": [
                                         {
                                             "term": "Event channel",
