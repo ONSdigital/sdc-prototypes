@@ -1,12 +1,12 @@
 ---
-title: BSL
+title: BSL V2
 group: BSL
 version: 15.0.2
-layout: bsl/views/_home
+layout: bsl-v2/views/_home
 ---
 {% from "components/question/_macro.njk" import onsQuestion %}
 {% from "components/panel/_macro.njk" import onsPanel %}
-{% from "bsl/components/uac/_macro.njk" import onsUACInput %}
+{% from "bsl-v2/components/uac/_macro.njk" import onsUACInput %}
 {% from "components/button/_macro.njk" import onsButton %}
 {% from "components/details/_macro.njk" import onsDetails %}
 {% from "components/hero/_macro.njk" import onsHero %}
@@ -22,7 +22,7 @@ layout: bsl/views/_home
 {% block main %}
     {{ 
         onsHero({
-            title: 'Census 2021 is happening now',
+            "title": 'Census 2021 is happening now',
             subtitle: 'Ready to start your census online?',
             text: 'You’ll need your 16-character access code.',
             button: {
@@ -77,4 +77,26 @@ layout: bsl/views/_home
             </div>
         </section>
     </div>
+{% endblock %}
+{% block bodyEnd %}
+    <div class="bsl-video u-d-no">
+        <div class="bsl-video__container">
+            <div class="bsl-video__video">
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/XQu8TTBmGhA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="bsl-video__controls">
+            <div class="grid grid--gutterless grid--flex grid--between grid--vertical-center grid--no-wrap">
+                <div class="grid__col col-auto">
+                    <a class="js-remove-bsl bsl-video__remove-link" href="{{ pageInfo.path }}">Turn off BSL</a>
+                </div>
+                {{ onsButton({
+                    "text": "Hide BSL",
+                    "classes": "js-bsl-btn btn--ghost btn--small u-mb-xs u-mt-xs grid__col col-auto",
+                    "innerClasses": "icon--bsl-btn"
+                }) }}
+            </div>
+        </div>
+    </div>
+    <script src="{{ pageInfo.rootPath }}/scripts/index.js"></script>
 {% endblock %}
