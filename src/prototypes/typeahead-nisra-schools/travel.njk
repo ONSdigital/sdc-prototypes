@@ -1,0 +1,54 @@
+---
+version: 14.4.4
+layout: typeahead-nisra-schools/views/_master
+---
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/question/_macro.njk" import onsQuestion %}
+
+{% block main %}
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/index.html">Previous</a>
+    <form action="{{ pageInfo.parentPath }}/school-address.html?previous={{ pageInfo.path }}.html">
+        {% call onsQuestion({
+            "title": "How do you usually travel to your place of study, including school?"
+        }) %}
+        {{ 
+            onsRadios({
+                "legend": " <h1 class=\"u-fs-l\">How do you usually travel to your place of study, including school?</h1>",
+                "legendClasses": "u-vh",
+                "name": "travel",
+                "classes": "u-mt-s",
+                "radios": [
+                    {
+                        "id": "car-or-van",
+                        "label": {
+                            "text": "Driving a car or van"
+                        },
+                        "name": "car or van"
+                    },
+                    {
+                        "id": "no-republic",
+                        "label": {
+                            "text": "Passenger in a car or van"
+                        },
+                        "name": "no republic"
+                    },
+                    {
+                        "id": "no-another",
+                        "label": {
+                            "text": "No, it is in another country"
+                        },
+                        "name": "no-another"
+                    }
+                ]
+            }) 
+        }}
+        {% endcall %}
+        {{
+           onsButton({
+                "text": "Save and continue",
+                "classes": "u-mt-l"
+            })
+        }}
+    </form>
+{% endblock %}

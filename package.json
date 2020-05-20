@@ -3,11 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "author": {
-    "email": "bameyrick@gmail.com",
-    "name": "Ben Meyrick",
-    "url": "https://github.com/bameyrick"
-  },
+  "author": "Ben Meyrick <bameyrick@gmail.com> (https://github.com/bameyrick)",
   "scripts": {
     "start": "yarn tidy-clean && yarn webpack-dev-server --host 0.0.0.0 --watch --config webpack.dev.babel.js",
     "build": "yarn tidy-clean && yarn webpack --config webpack.prod.babel.js",
@@ -58,7 +54,7 @@
     "circular-dependency-plugin": "^5.0.2",
     "copy-webpack-plugin": "^4.6.0",
     "cssnano": "^4.1.8",
-    "eslint": "^5.13.0",
+    "eslint": "1.4.3",
     "eslint-cli": "^1.1.1",
     "eslint-config-prettier": "^4.0.0",
     "eslint-plugin-prettier": "^3.0.1",
@@ -124,5 +120,6 @@
     "node-fetch": "^2.6.0",
     "querystring-helpers": "^1.0.2",
     "uuid": "^3.3.2"
-  }
+  },
+  "repository": "git@github.com:ONSdigital/sdc-prototypes.git"
 }
