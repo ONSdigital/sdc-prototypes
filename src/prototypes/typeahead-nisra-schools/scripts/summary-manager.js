@@ -30,7 +30,7 @@ export default class SummaryManager {
       })
       .map(key => ({ key, ...JSON.parse(sessionStorage.getItem(key)) }));
 
-    const firstQuestion = unsortedQuestions.find(question => question.previousURL === '/prototypes/typeahead-update/index.html');
+    const firstQuestion = unsortedQuestions.find(question => question.previousURL === '/prototypes/typeahead-nisra-schools/index.html');
 
     const remainingUnsortedQuestions = unsortedQuestions.filter(question => question.previousURL).length;
 
