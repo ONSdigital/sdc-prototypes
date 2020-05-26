@@ -1,0 +1,63 @@
+@import 'scss/settings/all';
+
+// Filter
+.adv-filter__gallery {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.adv-filter__item {
+  margin-top: 24px;
+}
+
+.adv-filter__selection {
+  color: $text-secondary;
+  font-size: 14px;
+  line-height: (24/14);
+  margin-bottom: 8px;
+}
+
+.adv-filter__results-count {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.filter__item {
+  border-top: 1px solid $border-color;
+  margin-bottom: 0; // Reset default margin bottom on list items
+  padding-top: 24px;
+  padding-bottom: 24px;
+  display: block; // An accessible way of removing bullets (don’t use list-style-type: none; https://github.com/jensimmons/cssremedy/issues/15#issuecomment-462174177)
+}
+
+// No JavaScript
+html:not(.js-enabled) {
+  .adv-filter__no-results {
+    display: none;
+  }
+
+  .adv-filter__selection {
+    display: none;
+  }
+}
+
+// Resource
+.resource__heading {
+  font-size: 18px;
+  line-height: (24/18);
+  margin-bottom: 8px;
+}
+
+.resource__meta {
+  color: $text-secondary;
+  display: block;
+  font-size: 14px;
+  line-height: (24/14);
+  margin-bottom: 8px;
+}
+
+.resource__excerpt {
+  font-size: 16px;
+  line-height: (24/16); // Override 28px line height with 24px line height for vertical rhythm.
+  margin-bottom: 0;
+}

@@ -1,0 +1,103 @@
+{% extends "page-templates/_template.njk" %}
+
+{% set page = { 
+    "theme": "census",
+    "header": {
+        "titleLogo": "/img/census-logo-en.svg",
+        "titleLogoAlt": "Census 2021"
+    },
+    "title": "Resources for partners",
+    "language": {
+        "languages": [
+            {
+                "url": "#",
+                "ISOCode": "en",
+                "text": "English",
+                "buttonAriaLabel": "Language selector. Current language: English",
+                "chooseLanguage": "Choose language",
+                "current": true
+            },
+            {
+                "url": "#",
+                "ISOCode": "cy",
+                "text": "Cymraeg",
+                "buttonAriaLabel": "Dewisydd iaith. Iaith gyfredol: Cymraeg",
+                "chooseLanguage": "Dewiswch iaith",
+                "current": false
+            }
+        ]
+    },
+    "footer": {
+        "cols": [
+            {
+                "title": 'Get in touch',
+                "itemsList": [
+                    {
+                        "text": 'Contact us',
+                        "url": '#0'
+                    },
+                    {
+                        "text": 'Media enquiries',
+                        "url": '#0'
+                    }
+                ]
+            },
+            {
+                "title": 'Working on the census',
+                "itemsList": [
+                    {
+                        "text": 'Jobs',
+                        "url": '#0'
+                    },
+                    {
+                        "text": 'Media and campaigns',
+                        "url": '#0'
+                    },
+                    {
+                        "text": 'Our partners',
+                        "url": '#0'
+                    }
+                ]
+            },
+            {
+                "title": 'Legal information',
+                "itemsList": [
+                    {
+                        "text": 'Cookies',
+                        "url": '#0'
+                    },
+                    {
+                        "text": 'Accessibility statement',
+                        "url": '#0'
+                    },
+                    {
+                        "text": 'Privacy and data protection',
+                        "url": '#0'
+                    },
+                    {
+                        "text": 'Terms and conditions',
+                        "url": '#0'
+                    }
+                ]
+            }
+        ],
+        "OGLLink": {
+            "pre": 'All content is available under the',
+            "link": 'Open Government Licence v3.0',
+            "url": 'https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/',
+            "post": ', except where otherwise stated'
+        }
+    }
+} %}
+
+{% block head %}
+    <script>document.getElementsByTagName('html')[0].className += 'js-enabled';</script>
+    <link rel="stylesheet" href="{{ pageInfo.rootPath }}/main.css">
+{% endblock %}
+
+{% block page %}
+{% endblock %}
+
+{% block bodyEnd %}
+    <script src="{{ pageInfo.rootPath }}/index.js"></script>
+{% endblock %}
