@@ -613,11 +613,11 @@ Math.easeInOutQuad = function (t, b, c, d) {
 
     for(var i = 0; i < filter.items.length; i++) { 
       
-      // Remove is-hidden class from items now visible and scale to zero
-      if( Util.hasClass(filter.items[i], 'is-hidden') && filter.filterList[i]) {
+      // Remove u-hidden class from items now visible and scale to zero
+      if( Util.hasClass(filter.items[i], 'u-hidden') && filter.filterList[i]) {
         filter.items[i].setAttribute('data-scale', 'on');
         filter.items[i].setAttribute('style', filter.accelerateStyle+'transform: scale(0.5); opacity: 0;')
-        Util.removeClass(filter.items[i], 'is-hidden');
+        Util.removeClass(filter.items[i], 'u-hidden');
       }
     }
     
@@ -642,7 +642,7 @@ Math.easeInOutQuad = function (t, b, c, d) {
     for(var i = 0; i < filter.sortingList.length; i++) {
       var item = filter.items[filter.sortingList[i][1]];
 
-      if(Util.hasClass(item, 'is-hidden') || !filter.filterList[filter.sortingList[i][1]]) {
+      if(Util.hasClass(item, 'u-hidden') || !filter.filterList[filter.sortingList[i][1]]) {
 
         // Item is hidden or was previously hidden -> final position equal to first one
         filter.itemsFinalPosition[filter.sortingList[i][1]] = filter.itemsIterPosition[filter.sortingList[i][1]];
@@ -684,7 +684,7 @@ Math.easeInOutQuad = function (t, b, c, d) {
     // Animation was off or animation is over -> reset attributes
     for(var i = 0; i < filter.items.length; i++) {
       filter.items[i].removeAttribute('style');
-      Util.toggleClass(filter.items[i], 'is-hidden', !filter.filterList[i]);
+      Util.toggleClass(filter.items[i], 'u-hidden', !filter.filterList[i]);
       filter.items[i].removeAttribute('data-scale');
     }
 
@@ -723,7 +723,7 @@ Math.easeInOutQuad = function (t, b, c, d) {
 
     // Get offset first visible element
     for(var i = 0; i < filter.items.length; i++) {
-      if( !Util.hasClass(filter.items[i], 'is-hidden') ) {
+      if( !Util.hasClass(filter.items[i], 'u-hidden') ) {
         itemStyle = window.getComputedStyle(filter.items[i]),
         itemWidth = parseFloat(itemStyle.getPropertyValue('width')),
         itemHeight = parseFloat(itemStyle.getPropertyValue('height')),
@@ -772,10 +772,10 @@ Math.easeInOutQuad = function (t, b, c, d) {
     if(bool) { 
       
       // Reset visibility before animation is triggered
-      if(!show) Util.addClass(filter.fallbackMessage, 'is-hidden');
+      if(!show) Util.addClass(filter.fallbackMessage, 'u-hidden');
       return;
     }
-    Util.toggleClass(filter.fallbackMessage, 'is-hidden', !show);
+    Util.toggleClass(filter.fallbackMessage, 'u-hidden', !show);
   };
 
   function getMultipleSelectValues(multipleSelect) {

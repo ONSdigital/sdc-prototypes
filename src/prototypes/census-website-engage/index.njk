@@ -1,247 +1,47 @@
 ---
 title: Campaign Website (engage phase)
 group: Census
-version: 13.4.6
+version: 17.2.0
 layout: census-website-engage/views/_page
 ---
 
-{% block page %}
+{% block pageContent %}
+   
+    {% block main %}
 
-<div class="container u-mt-l u-mb-l">
-    
-    <h1 class="u-fs-xxl">Resources for partners</h1>
+        <div class="page__container container">
 
-    <p>Access promotional materials and resources relating to Census 2021.</p>
+            <div class="grid u-mt-s@m">
 
-    <div class="js-adv-filter">
+                <div class="grid__col col-12@m">
 
-        <div class="grid grid--between">
+                    <main class="page__main" id="main-content" role="main">
 
-            <div class="grid__col col-4@m">
-            
-                <div class="pl-grid-col">
+                        <div class="grid grid--column@xs@s u-mb-m@m">
 
-                    <h2>Filters</h2>
-
-                    <form class="js-adv-filter__form" method="POST">
-
-                        <!-- Reset filters -->
-                        <button class="js-adv-filter__reset" type="reset">Reset all filters</button>
-
-                        <!-- Filter item -->
-                        <div class="adv-filter__item js-adv-filter__item" data-default-text="All type" data-multi-select-text="{n} filters selected">
-
-                            <fieldset class="fieldset" aria-controls="adv-filter-gallery">
-
-                                <legend class="fieldset__legend">Type</legend>
-                                
-                                <div class="adv-filter__selection">
-                                    <span class="sr-only">Active filters: </span>
-                                    <span class="js-adv-filter__selection">All type</span>
-                                </div>
-
-                                <div class="checkboxes__items">
-
-                                    <div class="checkbox checkbox--toggle u-mb-xs">
-                                        <input class="checkbox__input" id="booklet" type="checkbox" data-filter="booklet">
-                                        <label class="checkbox__label" for="booklet">Booklet</label>
-                                    </div>
-
-                                    <div class="checkbox checkbox--toggle u-mb-xs">
-                                        <input class="checkbox__input" id="logo" type="checkbox" data-filter="logo">
-                                        <label class="checkbox__label" for="logo">Logo</label>
-                                    </div>
-
-                                    <div class="checkbox checkbox--toggle u-mb-xs">
-                                        <input class="checkbox__input" id="poster" type="checkbox" data-filter="poster">
-                                        <label class="checkbox__label" for="poster">Poster</label>
-                                    </div>
-
-                                </div>
-
-                            </fieldset>
+                            <div class="grid__col col-4@m">
+                                {{-
+                                    onsCard({
+                                        "ariaBy": 'Section highlight',
+                                        "id": 'title1',
+                                        "textId": 'text1',
+                                        "title": 'Resources for partners',
+                                        "url": pageInfo.rootPath + '/our-partners/resources-for-partners',
+                                        "text": 'The census is a survey that gives us information about all households in England and Wales.'
+                                    })
+                                }}
+                            </div>
 
                         </div>
 
-                        <!-- Filter item -->
-                        <div class="adv-filter__item js-adv-filter__item" data-default-text="All audience" data-multi-select-text="{n} filters selected">
+                    </main>
 
-                            <fieldset class="fieldset" aria-controls="adv-filter-gallery">
-
-                                <legend class="fieldset__legend">Audience</legend>
-                                
-                                <div class="adv-filter__selection">
-                                    <span class="sr-only">Active filters: </span>
-                                    <span class="js-adv-filter__selection">All audience</span>
-                                </div>
-
-                                <div class="checkboxes__items">
-
-                                    <div class="checkbox checkbox--toggle u-mb-xs">
-                                        <input class="checkbox__input" id="local-authorities" type="checkbox" data-filter="local-authorities">
-                                        <label class="checkbox__label" for="local-authorities">Local authorities</label>
-                                    </div>
-
-                                    <div class="checkbox checkbox--toggle u-mb-xs">
-                                        <input class="checkbox__input" id="community-groups" type="checkbox" data-filter="community-groups">
-                                        <label class="checkbox__label" for="community-groups">Community groups</label>
-                                    </div>
-
-                                    <div class="checkbox checkbox--toggle u-mb-xs">
-                                        <input class="checkbox__input" id="general-public" type="checkbox" data-filter="general-public">
-                                        <label class="checkbox__label" for="general-public">General public</label>
-                                    </div>
-
-                                    <div class="checkbox checkbox--toggle u-mb-xs">
-                                        <input class="checkbox__input" id="recruitment" type="checkbox" data-filter="recruitment">
-                                        <label class="checkbox__label" for="recruitment">Recruitment</label>
-                                    </div>
-
-                                </div>
-
-                            </fieldset>
-
-                        </div>
-
-                        <!-- Filter item -->
-                        <div class="adv-filter__item js-adv-filter__item" data-default-text="All languages" data-multi-select-text="{n} filters selected">
-
-                            <fieldset class="fieldset" aria-controls="adv-filter-gallery">
-
-                                <legend class="fieldset__legend">Languages</legend>
-                                
-                                <div class="adv-filter__selection">
-                                    <span class="sr-only">Active filters: </span>
-                                    <span class="js-adv-filter__selection">All languages</span>
-                                </div>
-
-                                <div class="checkboxes__items">
-
-                                    <div class="checkbox checkbox--toggle u-mb-xs">
-                                        <input class="checkbox__input" id="english" type="checkbox" data-filter="english">
-                                        <label class="checkbox__label" for="english">English</label>
-                                    </div>
-
-                                    <div class="checkbox checkbox--toggle u-mb-xs">
-                                        <input class="checkbox__input" id="welsh" type="checkbox" data-filter="welsh">
-                                        <label class="checkbox__label" for="welsh">Welsh (Cymraeg)</label>
-                                    </div>
-
-                                    <div class="checkbox checkbox--toggle u-mb-xs">
-                                        <input class="checkbox__input" id="irish" type="checkbox" data-filter="irish">
-                                        <label class="checkbox__label" for="irish">Irish (Gaeilge)</label>
-                                    </div>
-
-                                </div>
-
-                            </fieldset>
-
-                        </div>
-
-                    </div>
-
-                </form>
-
-            </div>
-
-            <div class="grid__col col-8@m">
-
-                <p class="adv-filter__results-count"><span class="js-adv-filter__results-count">5</span> results of 150</p>
-
-                <!-- Results -->
-                <ul class="adv-filter__gallery js-adv-filter__gallery" id="adv-filter-gallery" data-filter-animation="off">
-                    
-                    <!-- Result item -->
-                    <li class="filter__item js-filter__item" data-filter="booklet english">
-                        <div class="resource">
-                            <div class="resource__image"></div>
-                            <div class="resource__content">
-                                <h3 class="resource__heading"><a href="#0">Brand guidelines for Census 2021</a></h3>
-                                <span class="resource__meta">Booklet, PDF, 890KB, 18 pages</span>  
-                                <p class="resource__excerpt">A complete brand guidelines document for Census 2021.</p>  
-                            </div>
-                         </div>
-                    </li>
-
-                    <!-- Result item -->
-                    <li class="filter__item js-filter__item" data-filter="poster english">
-                        <div class="resource">
-                            <div class="resource__content">
-                                <h3 class="resource__heading"><a href="#0">‘Make if count’ campaign posters for Census 2021</a></h3>
-                                <span class="resource__meta">Poster, PDF, 2MB, 4 pages</span>  
-                                <p class="resource__excerpt">Core campaign engagement posters for the ‘Make it Count’ television campaign.</p>  
-                            </div>
-                         </div>
-                    </li>
-
-                    <!-- Result item -->
-                    <li class="filter__item js-filter__item" data-filter="poster english">
-                        <div class="resource">
-                            <div class="resource__content">
-                                <h3 class="resource__heading"><a href="#0">Default awareness pop-up stand for graphics for Census 2021</a></h3>
-                                <span class="resource__meta">Poster, EPS, 12MB, 6 files</span>  
-                                <p class="resource__excerpt">Awareness pop-up stand graphics for the initial launch engagement.</p>  
-                            </div>
-                         </div>
-                    </li>
-
-                    <!-- Result item -->
-                    <li class="filter__item js-filter__item" data-filter="poster english">
-                        <div class="resource">
-                            <div class="resource__content">
-                                <h3 class="resource__heading"><a href="#0">Field officer jobs poster for Census 2021</a></h3>
-                                <span class="resource__meta">Poster, EPS, 12MB, 6 files</span>  
-                                <p class="resource__excerpt">Collection of posters to advertise a field officer job for the census 2021.</p>  
-                            </div>
-                         </div>
-                    </li>
-
-                    <!-- Result item -->
-                    <li class="filter__item js-filter__item" data-filter="logo english">
-                        <div class="resource">
-                            <div class="resource__content">
-                                <h3 class="resource__heading"><a href="#0">Census 2021 logos pack for print and web</a></h3>
-                                <span class="resource__meta">Logo, ZIP, 5MB, 24 files</span>  
-                                <p class="resource__excerpt">A collection of logos suitable for print and web advertising.</p>  
-                            </div>
-                         </div>
-                    </li>
-
-                    <!-- Result item -->
-                    <li class="filter__item js-filter__item" data-filter="poster english">
-                        <div class="resource">
-                            <div class="resource__content">
-                                <h3 class="resource__heading"><a href="#0">Default awareness posters for Census 2021</a></h3>
-                                <span class="resource__meta">Poster, PDF, 2MB, 2 pages</span>  
-                                <p class="resource__excerpt">Awareness posters for initial launch engagement.</p>  
-                            </div>
-                         </div>
-                    </li>
-
-                    <!-- Result item -->
-                    <li class="filter__item js-filter__item" data-filter="booklet english welsh irish">
-                        <div class="resource">
-                            <div class="resource__content">
-                                <h3 class="resource__heading"><a href="#0">Census 2021 community handbook</a></h3>
-                                <span class="resource__meta">Booklet, PDF, 890KB, 24 pages</span>  
-                                <p class="resource__excerpt">A useful community handbook as a guide for the Census 2021.</p>  
-                            </div>
-                         </div>
-                    </li>
-
-                </ul>
-
-                <!-- No results -->
-                <div class="adv-filter__no-results" data-fallback-gallery-id="adv-filter-gallery">
-                    <p>No results</p>
                 </div>
 
             </div>
 
         </div>
-
-    </div>
-
-</div>
+    
+    {% endblock %}
 
 {% endblock %}

@@ -1,0 +1,95 @@
+---
+title: Our partners
+group: Census
+version: 17.2.0
+layout: census-website-engage/views/_page
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/prototypes/census-website-engage/',
+                            "text": 'Home'
+                        },
+                        {
+                            "text": 'Our partners',
+                            "current": true
+                        }
+                    ]
+                }) 
+            }}
+
+            <div class="grid">
+
+                <div class="grid__col col-12@m">
+
+                    <main class="page__main" id="main-content" role="main">
+                            
+                        <h1 class="u-mb-l u-fs-xxl">Our partners</h1>
+
+                        <div class="col-8@m u-mb-l">
+                            <p>If you’re from a local authority or community group and want to support communities in your area with the census, we’d really appreciate your help. There are many things you can do. You could raise awareness, share information or help people fill in a questionnaire.</p>
+                        </div>
+
+                        <div class="grid grid--column@xs@s u-mb-m@m">
+
+                            <div class="grid__col col-4@m">
+                                {{-
+                                    onsCard({
+                                        "ariaBy": 'Section highlight',
+                                        "id": 'title1',
+                                        "textId": 'text1',
+                                        "title": 'Local authorities',
+                                        "url": '#0',
+                                        "text": 'If you work for a local authority, find out how you can help support the census in your area.'
+                                    })
+                                }}
+                            </div>
+
+                            <div class="grid__col col-4@m">
+                                {{- 
+                                    onsCard({
+                                        "ariaBy": 'Section highlight',
+                                        "id": 'title2',
+                                        "textId": 'text2',
+                                        "title": 'Community groups',
+                                        "url": '#0',
+                                        "text": 'If you’re a community group leader, find out how you can help support the census in your community.'
+                                    })
+                                }}
+                            </div>
+
+                            <div class="grid__col col-4@m">
+                                {{-
+                                    onsCard({
+                                        "ariaBy": 'Section highlight',
+                                        "id": 'title3',
+                                        "textId": 'text3',
+                                        "title": 'Resources for partners',
+                                        "url": pageInfo.rootPath + '/our-partners/resources-for-partners',
+                                        "text": 'We’ve produced downloadable materials for community groups and local authorities to use.'
+                                    })
+                                }}
+                            </div>
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}

@@ -1,12 +1,22 @@
 {% extends "page-templates/_template.njk" %}
 
-{% set page = { 
+{% from "components/card/_macro.njk" import onsCard %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+{% from "components/select/_macro.njk" import onsSelect %}
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% block head %}
+    <script>document.getElementsByTagName('html')[0].className += 'js-enabled';</script>
+    <link rel="stylesheet" href="{{ pageInfo.rootPath }}/main.css">
+{% endblock %}
+
+{% set pageConfig =  { 
     "theme": "census",
     "header": {
         "titleLogo": "/img/census-logo-en.svg",
         "titleLogoAlt": "Census 2021"
     },
-    "title": "Resources for partners",
+    "title": "Census 2021",
     "language": {
         "languages": [
             {
@@ -24,6 +34,31 @@
                 "buttonAriaLabel": "Dewisydd iaith. Iaith gyfredol: Cymraeg",
                 "chooseLanguage": "Dewiswch iaith",
                 "current": false
+            }
+        ]
+    },
+    "navigation": {
+        "id": "main-nav",
+        "ariaLabel": "Main menu",
+        "ariaListLabel": "Navigation menu",
+        "currentPath": pageInfo.path,
+        "siteBasePath": pageInfo.rootPath,
+        "itemsList": [
+            {
+                "title": "Home",
+                "url": "/prototypes/census-website-engage"
+            },
+            {
+                "title": "About the census",
+                "url": "#0"
+            },
+            {
+                "title": "Keeping your data safe",
+                "url": "#0"
+            },
+            {
+                "title": "Contact us",
+                "url": "#0"
             }
         ]
     },
@@ -55,7 +90,7 @@
                     },
                     {
                         "text": 'Our partners',
-                        "url": '#0'
+                        "url": pageInfo.rootPath + '/our-partners'
                     }
                 ]
             },
@@ -90,13 +125,12 @@
     }
 } %}
 
-{% block head %}
-    <script>document.getElementsByTagName('html')[0].className += 'js-enabled';</script>
-    <link rel="stylesheet" href="{{ pageInfo.rootPath }}/main.css">
+
+{% block pageContent %}
+    {% block preMain %}{% endblock %}
+    {% block main %}{% endblock %}
 {% endblock %}
 
-{% block page %}
-{% endblock %}
 
 {% block bodyEnd %}
     <script src="{{ pageInfo.rootPath }}/index.js"></script>
