@@ -1,0 +1,51 @@
+/* --------------------------------
+
+Title:
+Resource
+
+Description:
+Downloadable file listing
+
+-------------------------------- */
+
+.resource {
+  display: flex;
+}
+
+.resource__heading {
+  font-size: 18px;
+  line-height: (24/18);
+  margin-bottom: 8px;
+}
+
+.resource__image {
+  flex: 0 0 auto;
+  margin-right: 32px;
+  width: 100px;
+}
+
+.resource__image-link {
+  border: 2px solid $border-color;
+  display: block;
+  height: 100%;
+  width: 100%;
+
+  &:focus {
+    border-color: #222;
+    outline: 4px solid #fd0 !important; // Not ideal
+  }
+}
+
+.resource__meta {
+  color: $text-secondary;
+  display: block;
+  font-size: 14px;
+  line-height: (24/14);
+  margin-bottom: 8px;
+}
+
+.resource__excerpt {
+  font-size: 16px;
+  line-height: (24/16);
+  margin-bottom: 0;
+}

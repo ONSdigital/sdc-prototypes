@@ -49,131 +49,164 @@ layout: census-website-engage/views/_page
 
                                 <div class="grid__col col-4@m">
 
-                                    <h2>Filters</h2>
+                                    <!-- Toggle filters -->
+                                    <button class="adv-filter__trigger js-adv-filter__trigger btn btn--secondary btn--small u-mb-m" aria-label="Toggle filters" aria-expanded="false" aria-controls="filter-panel" >
+                                        <span class="btn__inner">Show filters</span>
+                                    </button>
 
-                                    <form class="js-adv-filter__form" method="POST">
+                                    <!-- Filter panel -->
+                                    <div class="adv-filter__panel js-adv-filter__panel" id="filter-panel">
 
-                                        <!-- Reset all filters -->
-                                        {{ 
-                                            onsButton({
-                                                "type": 'button',
-                                                "text": 'Reset all filters',
-                                                "classes": 'btn--secondary btn--small js-adv-filter__reset',
-                                                "type": 'reset'
-                                            }) 
-                                        }}
+                                        <h2 class="u-fs-l">Filters</h2>
 
-                                        <!-- Filter item -->
-                                        <div class="adv-filter__item js-adv-filter__item" data-default-text="All type" data-multi-select-text="{n} filters selected">
+                                        <form class="js-adv-filter__form" method="POST">
 
-                                            <fieldset class="fieldset" aria-controls="adv-filter-gallery">
+                                            <!-- Reset all filters -->
+                                            {{ 
+                                                onsButton({
+                                                    "type": 'button',
+                                                    "text": 'Reset all filters',
+                                                    "classes": 'btn--secondary btn--small js-adv-filter__reset',
+                                                    "type": 'reset'
+                                                }) 
+                                            }}
 
-                                                <legend class="fieldset__legend">Type</legend>
-                                                
-                                                <div class="adv-filter__selection">
-                                                    <span class="u-vh">Active filters: </span>
-                                                    <span class="js-adv-filter__selection">All type</span>
-                                                </div>
+                                            <!-- Filter item -->
+                                            <div class="adv-filter__item js-adv-filter__item" data-default-text="All type" data-multi-select-text="{n} filters selected">
 
-                                                <div class="checkboxes__items">
+                                                <fieldset class="fieldset" aria-controls="adv-filter-gallery">
 
-                                                    <div class="checkbox checkbox--toggle u-mb-xs">
-                                                        <input class="checkbox__input" id="booklet" type="checkbox" data-filter="booklet">
-                                                        <label class="checkbox__label" for="booklet">Booklet</label>
+                                                    <legend class="fieldset__legend">Type</legend>
+                                                    
+                                                    <div class="adv-filter__selection">
+                                                        <span class="u-vh">Active filters: </span>
+                                                        <span class="js-adv-filter__selection">All type</span>
                                                     </div>
 
-                                                    <div class="checkbox checkbox--toggle u-mb-xs">
-                                                        <input class="checkbox__input" id="logo" type="checkbox" data-filter="logo">
-                                                        <label class="checkbox__label" for="logo">Logo</label>
+                                                    <div class="checkboxes__items">
+
+                                                        <div class="checkbox checkbox--toggle u-mb-xs">
+                                                            <input class="checkbox__input" id="booklet" type="checkbox" data-filter="booklet">
+                                                            <label class="checkbox__label" for="booklet">Booklet</label>
+                                                        </div>
+
+                                                        <div class="checkbox checkbox--toggle u-mb-xs">
+                                                            <input class="checkbox__input" id="logo" type="checkbox" data-filter="logo">
+                                                            <label class="checkbox__label" for="logo">Logo</label>
+                                                        </div>
+
+                                                        <div class="checkbox checkbox--toggle">
+                                                            <input class="checkbox__input" id="poster" type="checkbox" data-filter="poster">
+                                                            <label class="checkbox__label" for="poster">Poster</label>
+                                                        </div>
+
                                                     </div>
 
-                                                    <div class="checkbox checkbox--toggle u-mb-xs">
-                                                        <input class="checkbox__input" id="poster" type="checkbox" data-filter="poster">
-                                                        <label class="checkbox__label" for="poster">Poster</label>
+                                                </fieldset>
+
+                                            </div>
+
+                                            <!-- Filter item -->
+                                            <div class="adv-filter__item js-adv-filter__item" data-default-text="All audience" data-multi-select-text="{n} filters selected">
+
+                                                <fieldset class="fieldset" aria-controls="adv-filter-gallery">
+
+                                                    <legend class="fieldset__legend">Audience</legend>
+                                                    
+                                                    <div class="adv-filter__selection">
+                                                        <span class="u-vh">Active filters: </span>
+                                                        <span class="js-adv-filter__selection">All audience</span>
                                                     </div>
 
-                                                </div>
+                                                    <div class="checkboxes__items">
 
-                                            </fieldset>
+                                                        <div class="checkbox checkbox--toggle u-mb-xs">
+                                                            <input class="checkbox__input" id="local-authorities" type="checkbox" data-filter="local-authorities">
+                                                            <label class="checkbox__label" for="local-authorities">Local authorities</label>
+                                                        </div>
 
-                                        </div>
+                                                        <div class="checkbox checkbox--toggle u-mb-xs">
+                                                            <input class="checkbox__input" id="community-groups" type="checkbox" data-filter="community-groups">
+                                                            <label class="checkbox__label" for="community-groups">Community groups</label>
+                                                        </div>
 
-                                        <!-- Filter item -->
-                                        <div class="adv-filter__item js-adv-filter__item" data-default-text="All audience" data-multi-select-text="{n} filters selected">
+                                                        <div class="checkbox checkbox--toggle u-mb-xs">
+                                                            <input class="checkbox__input" id="general-public" type="checkbox" data-filter="general-public">
+                                                            <label class="checkbox__label" for="general-public">General public</label>
+                                                        </div>
 
-                                            <fieldset class="fieldset" aria-controls="adv-filter-gallery">
+                                                        <div class="checkbox checkbox--toggle">
+                                                            <input class="checkbox__input" id="recruitment" type="checkbox" data-filter="recruitment">
+                                                            <label class="checkbox__label" for="recruitment">Recruitment</label>
+                                                        </div>
 
-                                                <legend class="fieldset__legend">Audience</legend>
-                                                
-                                                <div class="adv-filter__selection">
-                                                    <span class="u-vh">Active filters: </span>
-                                                    <span class="js-adv-filter__selection">All audience</span>
-                                                </div>
-
-                                                <div class="checkboxes__items">
-
-                                                    <div class="checkbox checkbox--toggle u-mb-xs">
-                                                        <input class="checkbox__input" id="local-authorities" type="checkbox" data-filter="local-authorities">
-                                                        <label class="checkbox__label" for="local-authorities">Local authorities</label>
                                                     </div>
 
-                                                    <div class="checkbox checkbox--toggle u-mb-xs">
-                                                        <input class="checkbox__input" id="community-groups" type="checkbox" data-filter="community-groups">
-                                                        <label class="checkbox__label" for="community-groups">Community groups</label>
+                                                </fieldset>
+
+                                            </div>
+
+                                            <!-- Filter item -->
+                                            <div class="adv-filter__item js-adv-filter__item" data-default-text="All languages" data-multi-select-text="{n} filters selected">
+
+                                                <fieldset class="fieldset" aria-controls="adv-filter-gallery">
+
+                                                    <legend class="fieldset__legend">Languages</legend>
+                                                    
+                                                    <div class="adv-filter__selection">
+                                                        <span class="u-vh">Active filters: </span>
+                                                        <span class="js-adv-filter__selection">All languages</span>
                                                     </div>
 
-                                                    <div class="checkbox checkbox--toggle u-mb-xs">
-                                                        <input class="checkbox__input" id="general-public" type="checkbox" data-filter="general-public">
-                                                        <label class="checkbox__label" for="general-public">General public</label>
+                                                    <div class="checkboxes__items">
+
+                                                        <div class="checkbox checkbox--toggle u-mb-xs">
+                                                            <input class="checkbox__input" id="english" type="checkbox" data-filter="english">
+                                                            <label class="checkbox__label" for="english">English</label>
+                                                        </div>
+
+                                                        <div class="checkbox checkbox--toggle u-mb-xs">
+                                                            <input class="checkbox__input" id="welsh" type="checkbox" data-filter="welsh">
+                                                            <label class="checkbox__label" for="welsh">Welsh (Cymraeg)</label>
+                                                        </div>
+
+                                                        <div class="checkbox checkbox--toggle">
+                                                            <input class="checkbox__input" id="irish" type="checkbox" data-filter="irish">
+                                                            <label class="checkbox__label" for="irish">Irish (Gaeilge)</label>
+                                                        </div>
+
                                                     </div>
 
-                                                    <div class="checkbox checkbox--toggle u-mb-xs">
-                                                        <input class="checkbox__input" id="recruitment" type="checkbox" data-filter="recruitment">
-                                                        <label class="checkbox__label" for="recruitment">Recruitment</label>
-                                                    </div>
+                                                </fieldset>
 
-                                                </div>
+                                            </div>
 
-                                            </fieldset>
+                                            <!-- Filter actions -->
+                                            <div class="adv-filter__actions">
+                                            
+                                                {{ 
+                                                    onsButton({
+                                                        "type": 'button',
+                                                        "text": 'Update',
+                                                        "classes": 'btn--small btn--full-width js-adv-filter__update',
+                                                        "type": 'button'
+                                                    }) 
+                                                }}
 
-                                        </div>
+                                                {{ 
+                                                    onsButton({
+                                                        "type": 'button',
+                                                        "text": 'Cancel',
+                                                        "classes": 'btn--small btn--secondary js-adv-filter__close',
+                                                        "type": 'button'
+                                                    }) 
+                                                }}
 
-                                        <!-- Filter item -->
-                                        <div class="adv-filter__item js-adv-filter__item" data-default-text="All languages" data-multi-select-text="{n} filters selected">
+                                            </div>
 
-                                            <fieldset class="fieldset" aria-controls="adv-filter-gallery">
+                                        </form>
 
-                                                <legend class="fieldset__legend">Languages</legend>
-                                                
-                                                <div class="adv-filter__selection">
-                                                    <span class="u-vh">Active filters: </span>
-                                                    <span class="js-adv-filter__selection">All languages</span>
-                                                </div>
-
-                                                <div class="checkboxes__items">
-
-                                                    <div class="checkbox checkbox--toggle u-mb-xs">
-                                                        <input class="checkbox__input" id="english" type="checkbox" data-filter="english">
-                                                        <label class="checkbox__label" for="english">English</label>
-                                                    </div>
-
-                                                    <div class="checkbox checkbox--toggle u-mb-xs">
-                                                        <input class="checkbox__input" id="welsh" type="checkbox" data-filter="welsh">
-                                                        <label class="checkbox__label" for="welsh">Welsh (Cymraeg)</label>
-                                                    </div>
-
-                                                    <div class="checkbox checkbox--toggle u-mb-xs">
-                                                        <input class="checkbox__input" id="irish" type="checkbox" data-filter="irish">
-                                                        <label class="checkbox__label" for="irish">Irish (Gaeilge)</label>
-                                                    </div>
-
-                                                </div>
-
-                                            </fieldset>
-
-                                        </div>
-
-                                    </form>
+                                    </div>
 
                                 </div>
 
@@ -191,7 +224,7 @@ layout: census-website-engage/views/_page
                                             <label class="label" for="sort">Sort by</label>
                                             <select class="input input--select" id="sort" name="sort" aria-controls="adv-filter-gallery" data-sort="true">
                                                 <option value="index" data-sort-number="true">Latest</option>
-                                                <option value="index" data-sort-order="desc" data-sort-number="true">Oldest</option>
+                                                <option value="index" data-sort-number="true" data-sort-order="desc">Oldest</option>
                                             </select>
                                         </div>
 

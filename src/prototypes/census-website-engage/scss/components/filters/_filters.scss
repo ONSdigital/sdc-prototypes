@@ -1,0 +1,174 @@
+/* --------------------------------
+
+Title:
+Advanced filter
+
+Description:
+A filter panel template
+
+-------------------------------- */
+
+.adv-filter__gallery {
+  border-top: 1px solid $border-color;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.adv-filter__item {
+  margin-bottom: 24px;
+
+  &:first-of-type {
+    margin-top: 24px;
+  }
+}
+
+.adv-filter__selection {
+  color: $text-secondary;
+  font-size: 14px;
+  line-height: (24/14);
+  margin-bottom: 8px;
+}
+
+.adv-filter__results-count {
+  font-size: 16px;
+  line-height: (24/16);
+}
+
+.adv-filter__results-options {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.adv-filter__results-sort {
+  align-items: center;
+  display: flex;
+
+  .label {
+    font-size: 16px;
+    font-weight: normal;
+    line-height: (24/16);
+    margin-bottom: 0;
+    margin-right: 8px;
+  }
+
+  .input--select {
+    font-size: 16px;
+    line-height: (24/16);
+    width: auto !important; // NASTY override of globally defined width on selects...
+  }
+}
+
+.adv-filter__panel {
+  display: none;
+}
+
+.adv-filter__panel--is-visible {
+  display: block;
+}
+
+.adv-filter__actions {
+  display: none;
+}
+
+.adv-filter__actions {
+  .btn {
+    width: 50%;
+  }
+
+  .btn + .btn {
+    margin-left: 16px;
+  }
+}
+
+.filter__item {
+  border-bottom: 1px solid $border-color;
+  display: block; // Accessible way of removing bullets (don’t use list-style-type: none; https://github.com/jensimmons/cssremedy/issues/15#issuecomment-462174177)
+  margin-bottom: 0; // Reset default margin bottom on list items
+  padding-bottom: 24px;
+  padding-top: 24px;
+}
+
+// Target mobile only
+@media only screen and (max-width: 740px) {
+  .adv-filter__panel--is-visible {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    padding: 16px;
+    height: calc(100% - 72px); // Height of action buttons
+    overflow-y: scroll;
+    z-index: 10;
+  }
+
+  .adv-filter__actions {
+    background-color: white;
+    display: flex;
+    box-shadow: 0 0 5px 0 rgba(11, 12, 12, 0.5), 0 -1px 0 0 rgba(177, 180, 182, 0.5);
+    bottom: 0;
+    left: 0;
+    padding: 16px;
+    position: fixed;
+    width: 100%;
+    z-index: 11;
+  }
+}
+
+// Not mobile
+@media only screen and (min-width: 740px) {
+  .adv-filter__actions {
+    display: none;
+  }
+
+  .adv-filter__trigger {
+    display: none;
+  }
+
+  .adv-filter__panel {
+    display: block;
+  }
+}
+
+// No JavaScript
+body:not(.js-enabled) {
+  .adv-filter__actions {
+    display: none;
+  }
+
+  .adv-filter__panel {
+    display: block;
+  }
+
+  .adv-filter__toggle {
+    display: none;
+  }
+
+  .adv-filter__no-results {
+    display: none;
+  }
+
+  .adv-filter__selection {
+    display: none;
+  }
+}
+
+// Prevent scrollbars on body only on mobile (JS)
+
+@media only screen and (max-width: 600px) {
+  .no-scroll {
+    overflow-y: hidden;
+  }
+}
+
+// Full width button
+.btn--full-width {
+  width: 100%;
+
+  .btn__inner {
+    display: block;
+  }
+}
