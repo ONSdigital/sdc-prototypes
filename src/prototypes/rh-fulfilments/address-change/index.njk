@@ -1,0 +1,51 @@
+---
+title: Respondent Home - Requests (Fulfilments)
+group: Census
+version: 13.6.9
+layout: rh-fulfilments/views/_master
+---
+
+{% from 'components/uac/_macro.njk' import onsUACInput %}
+{% from 'components/button/_macro.njk' import onsButton %}
+{% from 'components/panel/_macro.njk' import onsPanel %}
+{% from 'components/lists/_macro.njk' import onsList %}
+{% from "components/input/_macro.njk" import onsInput %}
+
+{% set uac_input = onsUACInput({
+        'id': 'uac',
+        'name': 'uac',
+        'label': {
+            'text': 'Enter the 16 character code printed on the letter',
+            'description': 'Keep this code safe and only share it with others in your household'
+        },
+        'securityMessage': 'Your personal information is protected by law and will be kept confidential.'
+    })
+%}
+
+{% block main %}
+
+    <h1 class="u-mt-l">Start Census</h1>
+    
+    <form action="{{ pageInfo.parentPath }}/address-change/address-confirmation/">
+
+        {{ uac_input }}
+
+    {{ onsButton({
+        'text': 'Access Census',
+        'classes': 'u-mb-xl',
+        'name': 'action[save_continue]'
+    }) }}
+    
+    </form>
+
+    <h2 class="u-fs-r--b u-mb-no">Don't have a code?</h2>
+
+        <p>You can <a href="#">request a new code</a> to start a new survey if you have lost, forgotten or not received an access code.</p>
+
+    <h2 class="u-fs-r--b u-mb-no">Want to answer separately from your household?</h2>
+
+        <p>If you prefer to answer separately from the people you live with, you can <a href="#">request an individual access code</a>.</p>
+
+
+
+{% endblock %}
