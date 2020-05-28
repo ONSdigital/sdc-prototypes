@@ -1,0 +1,30 @@
+---
+version: 13.6.9
+layout: rh-fulfilments/views/_master
+---
+
+{% from 'components/button/_macro.njk' import onsButton %}
+
+{% block main %}
+
+<h1 class="u-fs-xl">People who live at <span class="full-address-text">Address not set</span></h2>
+
+<p>In this section, we are counting the people at <span class="full-address-text">Address not set</span> on <strong><span class="js-significant-date"></span></strong>.</p>
+
+<h2 class="u-fs-l">You will need to know</h2>
+<ul>
+    <li>names of people living at this address, including anyone currently away</li>
+    <li>names of visitors staying overnight in this household on <span class="js-significant-date"></span></li>
+</ul>
+
+<p>The Householder is responsible for ensuring that this questionnaire is completed and submitted.</p>
+
+    {{
+        onsButton({
+            'text': 'Continue',
+            'classes': 'u-mt-l'
+        })
+    }}
+
+
+{% endblock %}

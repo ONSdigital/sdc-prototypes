@@ -1,0 +1,54 @@
+---
+title: Respondent Home - Requests (Fulfilments)
+group: Census
+version: 13.6.9
+layout: rh-fulfilments/views/_master
+---
+{% from "components/lists/_macro.njk" import onsList %}
+
+{% block main %}
+
+    <h1 class="u-mt-l">Request something for the Census</h1>
+
+    <p>You can request a variety of items to help or enable you to complete your Census.</p>
+
+    <h2 class="u-mt-m">Request a code by text or post</h2>
+
+    <p><a href="{{ pageInfo.rootPath + "/household-code/" }}">Request a new/replacement household code</a></p>
+
+    <p><a href="{{ pageInfo.rootPath + "/individual-code/" }}">Request an individual code</a></p>
+    
+    <p><a href="{{ pageInfo.rootPath + "/cemanager-code/" }}">Request a CE manager code</a></p>
+    
+    <p><a href="{{ pageInfo.rootPath + "/ceresident-code/" }}">Request a CE resident code</a></p>
+
+
+    <h2 class="u-mt-m">Request a form by post</h2>
+
+    <p><a href="{{ pageInfo.rootPath + "/household-form/" }}">Request a household form</a></p>
+
+    <p><a href="{{ pageInfo.rootPath + "/household-largeprint/" }}">Request a household form in large print format</a></p>
+
+    <p><a href="{{ pageInfo.rootPath + "/household-continuation/" }}">Request a household continuation form</a></p>
+
+    <p><a href="{{ pageInfo.rootPath + "/individual-form/" }}">Request an individual form</a></p>
+   
+    <p><a href="{{ pageInfo.rootPath + "/cemanager-form/" }}">Request a CE manager form</a></p>
+    
+    <p><a href="{{ pageInfo.rootPath + "/ceresident-form/" }}">Request a CE resident form</a></p>
+
+
+    <h2 class="u-mt-m">Request a translation booklet by post</h2>
+
+    <p><a href="{{ pageInfo.rootPath + "/household-booklet/" }}">Request a translation booklet</a></p>
+    
+    <h2 class="u-mt-m">Other</h2>
+
+    <p><a href="{{ pageInfo.rootPath + "/unlinked-tell/" }}">Unlinked journey - Tell user</a></p>   
+    
+    <p><a href="{{ pageInfo.rootPath + "/unlinked-dont-tell/" }}">Unlinked journey - Don't tell user</a></p> 
+    
+    <p><a href="{{ pageInfo.rootPath + "/address-change/" }}">Change Address</a></p>
+
+    
+{% endblock %}

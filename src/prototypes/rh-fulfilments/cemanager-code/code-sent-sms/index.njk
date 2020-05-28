@@ -1,0 +1,27 @@
+---
+version: 13.6.9
+layout: rh-fulfilments/views/_master
+---
+
+{% from 'components/button/_macro.njk' import onsButton %}
+
+{% block main %}
+    <h1 class="u-mt-l js-mobile-number" data-mobile-input-url="{{ pageInfo.parentPath }}/enter-mobile">We have sent an access code to <br>{x}</h1>
+
+    <p>A text with the code should arrive shortly. Once you get the code, you can start the survey.</p>
+
+    {{
+        onsButton({
+            'type': 'button',
+            'text': 'Start your survey',
+            'classes': 'u-mb-m',
+            'url': start_survey_link,
+            'innerClasses': 'icon--chevron-right-white'
+        })
+    }}
+
+    <h2>Didn't receive a text?</h2>
+
+    <p>It can take a few minutes for the text to arrive. If it doesn't arrive, you can <a href="{{ pageInfo.parentPath }}">request a new code</a>.</p>
+
+{% endblock %}

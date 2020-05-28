@@ -1,0 +1,14 @@
+{% macro rhTelephone(params) %}
+
+    {% set prefix_code = params.number[0:2] %}
+    {% set area_code = params.number[2:4] %}
+    {% set first_four = params.number[4:8] %}
+    {% set last_four = params.number[8:12] %}
+
+    {% if params.highlight == 'true' %}
+        <em class='highlight'>+{{ prefix_code }} (0){{ area_code }} {{ first_four }} {{ last_four }}</em>
+    {% else %}
+        <span>+{{ prefix_code }} (0){{ area_code }} {{ first_four }} {{ last_four }}</span>
+    {% endif %}
+
+{% endmacro %}

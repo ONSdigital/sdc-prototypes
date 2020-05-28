@@ -1,0 +1,48 @@
+---
+title: Respondent Home - Requests (Fulfilments)
+group: Census
+version: 13.6.9
+layout: rh-fulfilments/views/_master
+---
+{% from 'components/button/_macro.njk' import onsButton %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+
+{% block main %}
+
+    <script>sessionStorage.clear();</script>
+    
+    <h1 class="u-mb-l u-fs-xxl">Request a household access code</h1>
+    
+    <p>To do the census online you need a 16 character unique access code which we have sent you in a letter.</p>
+    
+    <p>If you did not receive or have lost your code you can get a new one.</p>
+    
+    {% call
+        onsPanel({
+            'classes': 'u-mb-l'
+        })
+    %}
+        <p>This page is also available in Welsh (<a href="#">Cymraeg</a>).</p>
+    
+    {% endcall %}
+    
+    
+    {{
+        onsButton({
+            'type': 'button',
+            'text': "Request a household access code",
+            'classes': 'u-mb-m',
+            'url': pageInfo.rootPath + "/household-code/enter-address/",
+            'innerClasses': 'icon--chevron-right-white'
+        })
+    }}
+    
+    <h2>Before you start</h2>
+    
+    <p>You will need to provide:</p>
+    <ul>
+        <li>your address so that we can send you the appropriate form</li>
+        <li>either name to address a letter containing the code to, or a UK mobile telephone number to text the code to</li>
+    </ul>
+
+{% endblock %}

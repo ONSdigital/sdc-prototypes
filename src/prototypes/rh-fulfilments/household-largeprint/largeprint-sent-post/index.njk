@@ -1,0 +1,21 @@
+---
+version: 13.6.9
+layout: rh-fulfilments/views/_master
+---
+
+{% from 'components/button/_macro.njk' import onsButton %}
+
+{% block main %}
+    <h1 class="u-mt-l">We will send a large print form to you shortly by post.</h1>
+
+    <p>The form will be sent to:</p>
+
+    <p>
+        <div class="js-name-confirm" data-name-input-url="{{ pageInfo.parentPath }}/enter-name"></div>
+        
+        <div class="js-address-confirm" data-address-input-url="{{ pageInfo.parentPath }}/select-address"></div>
+    </p>
+
+    <p>The form should arrive within 3-5 working days.</p>
+
+{% endblock %}

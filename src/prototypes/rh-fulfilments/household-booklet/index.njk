@@ -1,0 +1,48 @@
+---
+title: Respondent Home - Requests (Fulfilments)
+group: Census
+version: 13.6.9
+layout: rh-fulfilments/views/_master
+---
+{% from 'components/button/_macro.njk' import onsButton %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+
+{% block main %}
+
+    <script>sessionStorage.clear();</script>
+    
+    <h1 class="u-mb-l u-fs-xxl">Request a household translation booklet</h1>
+    
+    <p>If you would help and guidance on completing your Census in another language, you can request a translation booklet for your household.</p>
+    
+
+    {% call
+        onsPanel({
+            'classes': 'u-mb-l'
+        })
+    %}
+
+    <p>This page is also available in Welsh (<a href="#">Cymraeg</a>).</p>
+
+    {% endcall %}
+
+    
+    {{
+        onsButton({
+            'type': 'button',
+            'text': 'Request a household translation booklet',
+            'classes': 'u-mb-m',
+            'url': pageInfo.path + "/select-booklet/",
+            'innerClasses': 'icon--chevron-right-white'
+        })
+    }}
+    
+    <h2>Before you start</h2>
+    
+    <p>You will need to provide:</p>
+    <ul>
+        <li>your name to address the booklet to</li>
+        <li>your address to address the booklet to</li>
+    </ul>
+
+{% endblock %}

@@ -1,0 +1,68 @@
+---
+version: 13.6.9
+layout: rh-fulfilments/views/_master
+---
+
+{% from 'components/question/_macro.njk' import onsQuestion %}
+{% from 'components/button/_macro.njk' import onsButton %}
+{% from 'components/radios/_macro.njk' import onsRadios %}
+
+{% set form =  {
+    'method': 'GET',
+    'attributes': {
+        'action': pageInfo.parentPath + "/enter-mobile/"
+    }
+} %}
+
+{% set form_options = [
+                {
+                    'id': 'sms',
+                    'label': {
+                        'text': 'Receive code by SMS',
+                        'description': 'We will ask for your mobile phone number, and send you a code via text message'
+                    },
+                    'value': 'sms',
+                    "attributes": {
+                        "data-action-url": pageInfo.parentPath + "/enter-mobile/"
+                    }
+                },
+                {
+                    'id': 'post',
+                    'label': {
+                        'text': 'Receive code by post',
+                        'description': 'We will ask for your name, and send you a code via post'
+                    },
+                    'value': 'post',
+                    "attributes": {
+                        "data-action-url": pageInfo.parentPath + "/enter-name/"
+                    }
+                }
+            ]
+%}
+
+{% set question_description = '<p class="u-fs-r--b">Choose how you would like us to send you a code</p>' %}
+
+{% block main %}
+
+    {% call onsQuestion({
+        'title': 'Choose a delivery method',
+        'description': question_description
+    }) %}
+
+    {{
+        onsRadios({
+            'name': 'request-method',
+            'radios': form_options
+        })
+    }}
+
+    {% endcall %}
+
+    {{
+        onsButton({
+            'text': 'Continue',
+            'classes': 'u-mt-l'
+        })
+    }}
+
+{% endblock %}
