@@ -1,30 +1,26 @@
-export default class AbortableFetch {
+class AboratableFetch {
   constructor(url, options) {
     this.url = url;
-    this.options = options;
     this.controller = new window.AbortController();
-    this.status = 'UNSENT';
+    this.options = { ...options, signal: this.controller.signal };
+
+    fetch(url, options).then(response => {
+      if (response.ok) {
+        this.thenCallback(response);
+      } else {
+        this.catchCallback(response);
+      }
+    });
   }
 
-  send() {
-    this.status = 'LOADING';
+  then(callback) {
+    this.thenCallback = callback;
+    return this;
+  }
 
-    return new Promise((resolve, reject) => {
-      abortableFetch(this.url, { signal: this.controller.signal, ...this.options })
-        .then(response => {
-          if (response.status >= 200 && response.status < 300) {
-            this.status = 'DONE';
-            resolve(response);
-          } else {
-            this.status = 'DONE';
-            reject(response);
-          }
-        })
-        .catch(error => {
-          this.status = 'DONE';
-          reject(error);
-        });
-    });
+  catch(callback) {
+    this.catchCallback = callback;
+    return this;
   }
 
   abort() {
@@ -32,18 +28,4 @@ export default class AbortableFetch {
   }
 }
 
-function abortableFetch(url, options) {
-  return window.fetch(url, options)
-    .then(response => {
-      if (response.ok) {
-        return response;
-      } else {
-        const error = new Error(response.statusText);
-        error.response = response;
-        throw error;
-      }
-    })
-    .catch(error => {
-      throw error;
-    });
-}
+export default (url, options) => new AboratableFetch(url, options);

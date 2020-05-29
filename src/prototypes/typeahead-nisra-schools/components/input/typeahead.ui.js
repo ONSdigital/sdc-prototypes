@@ -5,7 +5,8 @@ import queryJson from './code.list.searcher';
 import { sanitiseTypeaheadText } from './typeahead.helpers';
 import fetch from 'helpers/abortable-fetch';
 
-export const baseClass = 'js-typeahead';
+export const baseClass = 'js-address-typeahead';
+export const coreClass = 'js-typeahead';
 
 export const classTypeaheadOption = 'typeahead-input__option';
 export const classTypeaheadOptionFocused = `${classTypeaheadOption}--focused`;
@@ -31,11 +32,11 @@ export default class TypeaheadUI {
   }) {
     // DOM Elements
     this.context = context;
-    this.input = context.querySelector(`.${baseClass}-input`);
-    this.resultsContainer = context.querySelector(`.${baseClass}-results`);
-    this.listbox = this.resultsContainer.querySelector(`.${baseClass}-listbox`);
-    this.instructions = context.querySelector(`.${baseClass}-instructions`);
-    this.ariaStatus = context.querySelector(`.${baseClass}-aria-status`);
+    this.input = context.querySelector(`.${coreClass}-input`);
+    this.resultsContainer = context.querySelector(`.${coreClass}-results`);
+    this.listbox = this.resultsContainer.querySelector(`.${coreClass}-listbox`);
+    this.instructions = context.querySelector(`.${coreClass}-instructions`);
+    this.ariaStatus = context.querySelector(`.${coreClass}-aria-status`);
     // Settings
     this.typeaheadData = typeaheadData || context.getAttribute('typeahead-data');
     this.content = JSON.parse(context.getAttribute('data-content'));
@@ -98,21 +99,14 @@ export default class TypeaheadUI {
   }
 
   fetchData() {
-    async function loadJSON(jsonPath) {
-      try {
-        const jsonResponse = await fetch(jsonPath);
-        if (jsonResponse.status === 500) {
-          throw new Error('Error fetching json data: ' + jsonResponse.status);
-        }
-        const jsonData = await jsonResponse.json();
-        return jsonData;
-      } catch (error) {
-        console.log(error);
-      }
-    }
-
-    // Call loading of json file
-    this.data = loadJSON(this.typeaheadData);
+    return new Promise((resolve, reject) => {
+      fetch(this.typeaheadData)
+        .then(async response => {
+          this.data = await response.json();
+          resolve(this.data);
+        })
+        .catch(reject);
+    });
   }
 
   bindEventListeners() {
@@ -124,6 +118,7 @@ export default class TypeaheadUI {
 
     this.listbox.addEventListener('mouseover', this.handleMouseover.bind(this));
     this.listbox.addEventListener('mouseout', this.handleMouseout.bind(this));
+
   }
 
   handleKeydown(event) {
@@ -168,7 +163,7 @@ export default class TypeaheadUI {
   }
 
   handleChange() {
-    if ((!this.blurring && this.input.value.trim()) || this.handleUpdate) {
+    if (!this.blurring && this.input.value.trim() || this.handleUpdate) {
       if (this.handleUpdate) {
         this.settingResult = false;
       }
@@ -227,7 +222,7 @@ export default class TypeaheadUI {
   getSuggestions(force) {
     if (!this.settingResult) {
       const query = this.input.value;
-      const sanitisedQuery = sanitiseTypeaheadText(query, this.sanitisedQueryReplaceChars);
+      const sanitisedQuery = sanitiseTypeaheadText(query, this.sanitisedQueryReplaceChars, this.sanitisedQuerySplitNumsChars);
 
       if (sanitisedQuery !== this.sanitisedQuery || (force && !this.resultSelected)) {
         this.unsetResults();
@@ -235,15 +230,14 @@ export default class TypeaheadUI {
 
         this.query = query;
         this.sanitisedQuery = sanitisedQuery;
-
         if (this.sanitisedQuery.length >= this.minChars) {
-          this.fetchSuggestions(this.sanitisedQuery, this.data)
-            .then(this.handleResults.bind(this))
-            .catch(error => {
-              if (error.name !== 'AbortError' && this.onError) {
-                this.onError(error);
-              }
-            });
+            this.fetchSuggestions(this.sanitisedQuery, this.data)
+              .then(this.handleResults.bind(this))
+              .catch(error => {
+                if (error.name !== 'AbortError' && this.onError) {
+                  this.onError(error);
+                }
+          });
         } else {
           this.clearListbox();
         }
@@ -271,7 +265,7 @@ export default class TypeaheadUI {
     });
     return {
       results,
-      totalResults: results.length
+      totalResults: results.length,
     };
   }
 
@@ -303,8 +297,9 @@ export default class TypeaheadUI {
   }
 
   handleResults(result) {
+    this.resultLimit = result.limit ? result.limit : this.resultLimit;
     this.foundResults = result.totalResults;
-    if (result.results.length > 50) {
+    if (this.foundResults > this.resultLimit) {
       result.results = result.results.slice(0, this.resultLimit);
     }
 
@@ -323,7 +318,7 @@ export default class TypeaheadUI {
 
           if (Array.isArray(result.sanitisedAlternatives)) {
             const alternativeMatch = result.sanitisedAlternatives.find(
-              alternative => alternative !== result.sanitisedText && alternative.includes(this.sanitisedQuery)
+              alternative => alternative !== result.sanitisedText && alternative.includes(this.sanitisedQuery),
             );
 
             if (alternativeMatch) {
@@ -343,9 +338,9 @@ export default class TypeaheadUI {
           listElement.addEventListener('click', () => {
             this.selectResult(index);
           });
-
+          
           this.listbox.appendChild(listElement);
-
+          
           this.context.querySelector(`.${classTypeaheadResultsTitle}`).classList.remove('u-d-no');
 
           return listElement;
@@ -357,6 +352,29 @@ export default class TypeaheadUI {
           listElement.setAttribute('aria-hidden', 'true');
           listElement.innerHTML = this.content.more_results;
           this.listbox.appendChild(listElement);
+        }
+
+        if (this.resultLimit === 100 && this.foundResults > this.resultLimit) {
+          const warningListElement = document.createElement('li');
+          const warningElement = document.createElement('div');
+          const warningSpanElement = document.createElement('span');
+          const warningBodyElement = document.createElement('div');
+
+          warningListElement.setAttribute('aria-hidden', 'true');
+          warningListElement.className = 'typeahead-input__warning';
+          warningElement.className = 'panel panel--warning panel--warning--small panel--simple';
+
+          warningSpanElement.className = 'panel__icon';
+          warningSpanElement.setAttribute('aria-hidden', 'true');
+          warningSpanElement.innerHTML = '!';
+          
+          warningBodyElement.className = 'panel__text';
+          warningBodyElement.innerHTML = this.foundResults + ' results found. Enter more of the address to improve results.';
+
+          warningElement.appendChild(warningSpanElement);
+          warningElement.appendChild(warningBodyElement);
+          warningListElement.appendChild(warningElement);
+          this.listbox.insertBefore(warningListElement, this.listbox.firstChild);
         }
 
         this.setHighlightedResult(null);
@@ -413,7 +431,6 @@ export default class TypeaheadUI {
         }
       }
     }
-
     this.ariaStatus.innerHTML = content;
   }
 
@@ -422,14 +439,13 @@ export default class TypeaheadUI {
       this.settingResult = true;
 
       const result = this.results[index || this.highlightedResultIndex || 0];
-
       this.resultSelected = true;
 
       if (result.sanitisedText !== this.sanitisedQuery && result.sanitisedAlternatives && result.sanitisedAlternatives.length) {
         const bestMatchingAlternative = result.sanitisedAlternatives
           .map((alternative, index) => ({
             score: dice(this.sanitisedQuery, alternative),
-            index
+            index,
           }))
           .sort(sortBy('score'))[0];
 
@@ -441,9 +457,9 @@ export default class TypeaheadUI {
           result.displayText = result[this.lang];
         }
       } else {
-        result.displayText = result;
+        result.displayText = result[this.lang];
       }
-      this.onSelect(result).then(() => (this.settingResult = false));
+      this.onSelect(result);
 
       const ariaMessage = `${this.content.aria_you_have_selected}: ${result.displayText}.`;
 
@@ -453,12 +469,7 @@ export default class TypeaheadUI {
   }
 
   emboldenMatch(string, query) {
-    let reg = new RegExp(
-      this.escapeRegExp(query)
-        .split('')
-        .join('\\s*'),
-      'gi'
-    );
+    let reg = new RegExp(this.escapeRegExp(query).split('').join('[\\s,]*'), 'gi');
     return string.replace(reg, '<strong>$&</strong>');
   }
 
