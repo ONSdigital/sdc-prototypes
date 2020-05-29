@@ -10,14 +10,12 @@ Util.hasClass = function(el, className) {
   else return !!el.className.match(new RegExp('(\\s|^)' + className + '(\\s|$)'));
 };
 
-
 Util.addClass = function(el, className) {
   var classList = className.split(' ');
   if (el.classList) el.classList.add(classList[0]);
   else if (!Util.hasClass(el, classList[0])) el.className += ' ' + classList[0];
   if (classList.length > 1) Util.addClass(el, classList.slice(1).join(' '));
 };
-
 
 Util.removeClass = function(el, className) {
   var classList = className.split(' ');
@@ -29,19 +27,16 @@ Util.removeClass = function(el, className) {
   if (classList.length > 1) Util.removeClass(el, classList.slice(1).join(' '));
 };
 
-
 Util.toggleClass = function(el, className, bool) {
   if (bool) Util.addClass(el, className);
   else Util.removeClass(el, className);
 };
-
 
 Util.setAttributes = function(el, attrs) {
   for (var key in attrs) {
     el.setAttribute(key, attrs[key]);
   }
 };
-
 
 /*
   DOM manipulation
@@ -248,6 +243,7 @@ Math.easeInOutQuad = function(t, b, c, d) {
 */
 
 (function() {
+
   // Make focus ring visible only for keyboard navigation (i.e., tab key)
   var focusTab = document.getElementsByClassName('js-tab-focus');
 
@@ -275,6 +271,7 @@ Math.easeInOutQuad = function(t, b, c, d) {
 
   window.addEventListener('mousedown', detectClick);
 })();
+
 
 // FILTERS
 
@@ -328,6 +325,7 @@ Math.easeInOutQuad = function(t, b, c, d) {
       (function(i) {
         filter.controllers[i].addEventListener('change', function(event) {
           if (event.target.tagName.toLowerCase() == 'select') {
+            
             // Select elements
             !event.target.getAttribute('data-filter')
               ? setSortingString(filter, event.target.value, event.target.options[event.target.selectedIndex])
@@ -336,11 +334,13 @@ Math.easeInOutQuad = function(t, b, c, d) {
             event.target.tagName.toLowerCase() == 'input' &&
             (event.target.getAttribute('type') == 'radio' || event.target.getAttribute('type') == 'checkbox')
           ) {
-            // input (radio/checkboxed) elements
+            
+            // Input (radio/checkboxed) elements
             !event.target.getAttribute('data-filter')
               ? setSortingString(filter, event.target.getAttribute('data-sort'), event.target)
               : setFilterString(filter, i, 'input');
           } else {
+            
             // Generic inout element
             !filter.controllers[i].getAttribute('data-filter')
               ? setSortingString(filter, filter.controllers[i].getAttribute('data-sort'), filter.controllers[i])
@@ -348,9 +348,11 @@ Math.easeInOutQuad = function(t, b, c, d) {
           }
 
           updateFilterArray(filter);
+
         });
 
         filter.controllers[i].addEventListener('click', function(event) {
+          
           // Return if target is select/input elements
           var filterEl = event.target.closest('[data-filter]');
           var sortEl = event.target.closest('[data-sort]');
@@ -382,6 +384,7 @@ Math.easeInOutQuad = function(t, b, c, d) {
 
     // Reset filtering results if filter selection was changed by an external control (e.g., form reset)
     filter.element.addEventListener('update-filter-results', function(event) {
+      
       // Reset filters first
       for (var i = 0; i < filter.controllers.length; i++) filter.filterString[i] = '';
       filter.sortingString = '';
@@ -391,6 +394,7 @@ Math.easeInOutQuad = function(t, b, c, d) {
 
   function checkInitialFiltering(filter) {
     for (var i = 0; i < filter.controllers.length; i++) {
+      
       // Check if there’s a selected option
       // Buttons list
       var selectedButton = filter.controllers[i].getElementsByClassName('js-filter-selected');
@@ -434,6 +438,7 @@ Math.easeInOutQuad = function(t, b, c, d) {
   }
 
   function setSortingString(filter, value, item) {
+    
     // Get sorting string value-> sortName:order:type
     var order = item.getAttribute('data-sort-order') ? 'desc' : 'asc';
     var type = item.getAttribute('data-sort-number') ? 'number' : 'string';
@@ -441,6 +446,7 @@ Math.easeInOutQuad = function(t, b, c, d) {
   }
 
   function setFilterString(filter, index, type) {
+    
     // Get filtering array -> [filter1:filter2, filter3, filter4:filter5]
     if (type == 'input') {
       var checkedInputs = filter.controllers[index].querySelectorAll('input:checked');
@@ -450,12 +456,15 @@ Math.easeInOutQuad = function(t, b, c, d) {
       }
     } else if (type == 'select') {
       if (filter.controllers[index].multiple) {
+        
         // Select with multiple options
         filter.filterString[index] = getMultipleSelectValues(filter.controllers[index]);
       } else {
+        
         // Select with single option
         filter.filterString[index] = filter.controllers[index].value;
       }
+
     } else if (type == 'button') {
       var selectedButtons = filter.controllers[index].querySelectorAll('.js-filter-selected');
       filter.filterString[index] = '';
@@ -468,17 +477,20 @@ Math.easeInOutQuad = function(t, b, c, d) {
   }
 
   function resetControllersList(filter, index, target1, target2) {
+    
     // For a <button>s list -> toggle js-filter-selected + custom classes
     var multi = filter.controllers[index].getAttribute('data-filter-checkbox'),
       customClass = filter.controllers[index].getAttribute('data-selected-class');
 
     customClass = customClass ? 'js-filter-selected ' + customClass : 'js-filter-selected';
     if (multi == 'true') {
+      
       // Multiple options can be on
       target1
         ? Util.toggleClass(target1, customClass, !Util.hasClass(target1, 'js-filter-selected'))
         : Util.toggleClass(target2, customClass, !Util.hasClass(target2, 'js-filter-selected'));
     } else {
+      
       // Only one element at the time
       // Remove the class from all siblings
       var selectedOption = filter.controllers[index].querySelector('.js-filter-selected');
@@ -488,6 +500,7 @@ Math.easeInOutQuad = function(t, b, c, d) {
   }
 
   function updateFilterArray(filter) {
+    
     // Sort/filter strings have been updated -> so you can update the gallery
     if (filter.animating) {
       filter.reanimate = true;
@@ -507,14 +520,18 @@ Math.easeInOutQuad = function(t, b, c, d) {
   }
 
   function sortingGallery(filter) {
+    
     // Use sorting string to reorder gallery
     var sortOptions = filter.sortingString.split(':');
     if (sortOptions[0] == '' || sortOptions[0] == '*') {
+      
       // No sorting needed
       restoreSortOrder(filter);
     } else {
+      
       // Need to sort
       if (filter.options[sortOptions[0]]) {
+        
         // Custom sort function -> user takes care of it
         filter.sortingList = filter.options[sortOptions[0]](filter.sortingList);
       } else {
@@ -533,11 +550,13 @@ Math.easeInOutQuad = function(t, b, c, d) {
   }
 
   function filteringGallery(filter) {
+    
     // Use filtering string to reorder gallery
     resetFilterSortArray(filter, true, false);
 
     // We can have multiple filters
     for (var i = 0; i < filter.filterString.length; i++) {
+      
       // Check if multiple filters inside the same controller
       if (filter.filterString[i] != '' && filter.filterString[i] != '*' && filter.filterString[i] != ' ') {
         singleFilterGallery(filter, filter.filterString[i].split(':'));
@@ -552,6 +571,7 @@ Math.easeInOutQuad = function(t, b, c, d) {
     var customFilterArray = [];
     for (var j = 0; j < subfilter.length; j++) {
       if (filter.options[subfilter[j]]) {
+        
         // Custom function
         customFilterArray[subfilter[j]] = filter.options[subfilter[j]](filter.items);
       }
@@ -562,6 +582,7 @@ Math.easeInOutQuad = function(t, b, c, d) {
       var present = false;
       for (var j = 0; j < subfilter.length; j++) {
         if (filter.options[subfilter[j]] && customFilterArray[subfilter[j]][i]) {
+          
           // Custom function
           present = true;
           break;
@@ -575,6 +596,7 @@ Math.easeInOutQuad = function(t, b, c, d) {
   }
 
   function updateItemsAttributes(filter) {
+    
     // Set items before triggering the update animation
     // Get offset of all elements before animation
     storeOffset(filter, filter.itemsInitPosition);
@@ -586,6 +608,7 @@ Math.easeInOutQuad = function(t, b, c, d) {
     );
 
     for (var i = 0; i < filter.items.length; i++) {
+      
       // Remove u-hidden class from items now visible and scale to zero
       if (Util.hasClass(filter.items[i], 'u-hidden') && filter.filterList[i]) {
         filter.items[i].setAttribute('data-scale', 'on');
@@ -625,6 +648,7 @@ Math.easeInOutQuad = function(t, b, c, d) {
       var item = filter.items[filter.sortingList[i][1]];
 
       if (Util.hasClass(item, 'u-hidden') || !filter.filterList[filter.sortingList[i][1]]) {
+        
         // Item is hidden or was previously hidden -> final position equal to first one
         filter.itemsFinalPosition[filter.sortingList[i][1]] = filter.itemsIterPosition[filter.sortingList[i][1]];
         if (item.getAttribute('data-scale') == 'on') j = j + 1;
@@ -639,6 +663,7 @@ Math.easeInOutQuad = function(t, b, c, d) {
     setTimeout(function() {
       for (var i = 0; i < filter.items.length; i++) {
         if (filter.filterList[i] && filter.items[i].getAttribute('data-scale') == 'on') {
+          
           // Scale up item
           filter.items[i].setAttribute(
             'style',
@@ -652,6 +677,7 @@ Math.easeInOutQuad = function(t, b, c, d) {
               'px) scale(1); opacity: 1;'
           );
         } else if (filter.filterList[i]) {
+          
           // Translate item
           filter.items[i].setAttribute(
             'style',
@@ -665,6 +691,7 @@ Math.easeInOutQuad = function(t, b, c, d) {
               'px);'
           );
         } else {
+          
           // Scale down item
           filter.items[i].setAttribute(
             'style',
@@ -681,6 +708,7 @@ Math.easeInOutQuad = function(t, b, c, d) {
   }
 
   function resetItems(filter) {
+    
     // Animation was off or animation is over -> reset attributes
     for (var i = 0; i < filter.items.length; i++) {
       filter.items[i].removeAttribute('style');
@@ -689,6 +717,7 @@ Math.easeInOutQuad = function(t, b, c, d) {
     }
 
     for (var i = 0; i < filter.items.length; i++) {
+     
       // Reorder
       filter.element.appendChild(filter.items[filter.sortingList[i][1]]);
     }
@@ -774,6 +803,7 @@ Math.easeInOutQuad = function(t, b, c, d) {
       }
     }
     if (bool) {
+      
       // Reset visibility before animation is triggered
       if (!show) Util.addClass(filter.fallbackMessage, 'u-hidden');
       return;
@@ -782,6 +812,7 @@ Math.easeInOutQuad = function(t, b, c, d) {
   }
 
   function getMultipleSelectValues(multipleSelect) {
+    
     // Get selected options of a <select multiple> element
     var options = multipleSelect.options,
       value = '';
@@ -815,23 +846,29 @@ Math.easeInOutQuad = function(t, b, c, d) {
 
 
 // ADVANCED FILTERS
-
 (function() {
-  // the AdvFilter object is used to handle:
+  
+  // The Adv Filter object is used to handle:
+
   // - number of results
   // - form reset
   // - filtering sections label (to show a preview of the option selected by the users)
 
   var AdvFilter = function(element) {
+   
     this.element = element;
     this.form = this.element.getElementsByClassName('js-adv-filter__form');
     this.resultsList = this.element.getElementsByClassName('js-adv-filter__gallery')[0];
     this.resultsCount = this.element.getElementsByClassName('js-adv-filter__results-count');
+    this.showCount = this.element.getElementsByClassName('js-adv-filter__show-results');
+
     initAdvFilter(this);
+
   };
 
   function initAdvFilter(filter) {
     if (filter.form.length > 0) {
+      
       // Reset form
       filter.form[0].addEventListener('reset', function(event) {
         setTimeout(function() {
@@ -845,6 +882,7 @@ Math.easeInOutQuad = function(t, b, c, d) {
         var section = event.target.closest('.js-adv-filter__item');
         if (section) resetSelection(filter, section);
         else if (Util.is(event.target, '.js-adv-filter__form')) {
+          
           // Reset the entire form lables
           var sections = filter.form[0].getElementsByClassName('js-adv-filter__item');
           for (var i = 0; i < sections.length; i++) resetSelection(filter, sections[i]);
@@ -861,6 +899,7 @@ Math.easeInOutQuad = function(t, b, c, d) {
   }
 
   function resetFilters(filter) {
+    
     // Check if there are custom form elemets - reset appearance
     // Custom select
     var customSelect = filter.element.getElementsByClassName('js-select');
@@ -876,6 +915,7 @@ Math.easeInOutQuad = function(t, b, c, d) {
   }
 
   function resetSelection(filter, section) {
+    
     // Change label value based on input types
     var labelSelection = section.getElementsByClassName('js-adv-filter__selection');
     if (labelSelection.length == 0) return;
@@ -936,6 +976,7 @@ Math.easeInOutQuad = function(t, b, c, d) {
       if (number[i].value != number[i].min) counter = counter + 1;
     }
     if (number.length > 1) {
+      
       // Multiple input number in this section
       if (counter > 0) {
         return section.getAttribute('data-multi-select-text').replace('{n}', counter);
@@ -974,19 +1015,28 @@ Math.easeInOutQuad = function(t, b, c, d) {
   }
 
   function resetGallery(filter) {
+    
     // Emit change event + reset filtering
     filter.form[0].dispatchEvent(new CustomEvent('change'));
     filter.resultsList.dispatchEvent(new CustomEvent('update-filter-results'));
   }
 
+
+
   function updateResultsCount(filter) {
-    var resultItems = filter.resultsList.children,
-      counter = 0;
+   
+    var resultItems = filter.resultsList.children, counter = 0;
+
     for (var i = 0; i < resultItems.length; i++) {
       if (isVisible(resultItems[i])) counter = counter + 1;
     }
-    filter.resultsCount[0].textContent = counter;
+
+    filter.resultsCount[0].textContent = counter; // Update results count
+    filter.showCount[0].textContent = counter; // Update show count
+
   }
+
+
 
   function isVisible(element) {
     return element.offsetWidth || element.offsetHeight || element.getClientRects().length;
@@ -1015,6 +1065,7 @@ Math.easeInOutQuad = function(t, b, c, d) {
 
       // This is your gallery element
       priceRange: function(items) {
+        
         // This is the price custom function
         var filteredArray = [],
           minVal = document.getElementById('slider-min-value').value,
@@ -1026,6 +1077,7 @@ Math.easeInOutQuad = function(t, b, c, d) {
         return filteredArray;
       },
       indexValue: function(items) {
+        
         // This is the index custom function
         var filteredArray = [],
           value = document.getElementById('index-value').value;
@@ -1045,81 +1097,68 @@ Math.easeInOutQuad = function(t, b, c, d) {
 
   var filters = document.getElementsByClassName('js-adv-filter');
 
-    if (filters.length > 0 ) {
+  if (filters.length > 0) {
+    
+    var filtersTrigger = filters[0].getElementsByClassName('js-adv-filter__trigger')[0];
+    var filtersClose = filters[0].getElementsByClassName('js-adv-filter__close')[0];
+    var filtersShow = filters[0].getElementsByClassName('js-adv-filter__show')[0];
+    var filtersPanel = filters[0].getElementsByClassName('js-adv-filter__panel')[0];
+    var body = document.getElementsByTagName('body')[0];
 
-      var filtersTrigger = filters[0].getElementsByClassName('js-adv-filter__trigger')[0];
-      var filtersClose = filters[0].getElementsByClassName('js-adv-filter__close')[0];
-      var filtersUpdate = filters[0].getElementsByClassName('js-adv-filter__update')[0];
-      var filtersPanel = filters[0].getElementsByClassName('js-adv-filter__panel')[0];
-      var body = document.getElementsByTagName('body')[0];
+    // Detect click on filters trigger
+    filtersTrigger.addEventListener('click', function(event) {
+      event.preventDefault();
+      toggleFilters(!Util.hasClass(filtersPanel, 'adv-filter__panel--is-visible'));
+    });
 
+    // Detect click on update
+    filtersShow.addEventListener('click', function(event) {
+      event.preventDefault();
+      filtersTrigger.click();
+    });
 
-      // Detect click on filters trigger
-      filtersTrigger.addEventListener('click', function(event) {
-        event.preventDefault();
-        toggleFilters(!Util.hasClass(filtersPanel, 'adv-filter__panel--is-visible'));
-      });
+    // Detect click on close
+    filtersClose.addEventListener('click', function(event) {
+      event.preventDefault();
+      filtersTrigger.click();
+    });
 
+    // Listen for key events
+    window.addEventListener('keyup', function(event) {
+     
+      // Listen for ESC key
+      if ((event.keyCode && event.keyCode == 27) || (event.key && event.key.toLowerCase() == 'escape')) {
 
-      // Detect click on update
-      filtersUpdate.addEventListener('click', function(event) {
-        event.preventDefault();
-        filtersTrigger.click();
-        // alert('Clicked update');
-      });
-
-
-      // Detect click on close
-      filtersClose.addEventListener('click', function(event) {
-        event.preventDefault();
-        filtersTrigger.click();
-        // alert('Clicked close');
-      });
-
-      
-      // Listen for key events
-      window.addEventListener('keyup', function(event) {
-
-        // Listen for ESC key
-        if (( event.keyCode && event.keyCode == 27) || ( event.key && event.key.toLowerCase() == 'escape' )) {
-
-          // Close filter panel on mobile if open
-          if(filtersTrigger.getAttribute('aria-expanded') == 'true' && isVisible(trigger)) {
-            filtersTrigger.click();
-          }
-
+        // Close filter panel on mobile if open
+        if (filtersTrigger.getAttribute('aria-expanded') == 'true' && isVisible(filtersTrigger)) {
+          filtersTrigger.click();
         }
-
-      });
-
-
-      // Listen for resize
-      var resizingId = false;
-
-      window.addEventListener('resize', function() {
-        clearTimeout(resizingId);
-        resizingId = setTimeout(doneResizing, 500);
-      });
-
-
-      function doneResizing() {
-        if( !isVisible(filtersTrigger) ) toggleFilters(false); 
-      };
-
-
-      function isVisible(element) {
-        return (element.offsetWidth || element.offsetHeight || element.getClientRects().length);
-      };
-
-
-      // Toggle filters visibility on small devices
-      function toggleFilters(bool) {
-        Util.toggleClass(filtersPanel, 'adv-filter__panel--is-visible', bool);
-        Util.toggleClass(body, 'no-scroll', bool);
-        filtersTrigger.setAttribute('aria-expanded', bool);
       }
 
+    });
 
-    };
+    // Listen for resize
+    var resizingId = false;
 
-}());
+    window.addEventListener('resize', function() {
+      clearTimeout(resizingId);
+      resizingId = setTimeout(doneResizing, 500);
+    });
+
+    function doneResizing() {
+      if (!isVisible(filtersTrigger)) toggleFilters(false);
+    }
+
+    function isVisible(element) {
+      return element.offsetWidth || element.offsetHeight || element.getClientRects().length;
+    }
+
+    // Toggle filters visibility on small devices
+    function toggleFilters(bool) {
+      Util.toggleClass(filtersPanel, 'adv-filter__panel--is-visible', bool);
+      Util.toggleClass(body, 'no-scroll', bool);
+      filtersTrigger.setAttribute('aria-expanded', bool);
+    }
+  }
+
+})();

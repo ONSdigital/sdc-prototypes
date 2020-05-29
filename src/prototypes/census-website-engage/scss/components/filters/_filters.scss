@@ -41,6 +41,20 @@ A filter panel template
   margin-bottom: 8px;
 }
 
+.adv-filter__reset {
+  border: 0 none;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+
+  &:focus {
+    background-color: #fd0;
+    box-shadow: 0 -2px #fd0, 0 4px #222;
+    outline: 3px solid transparent;
+    text-decoration: none;
+  }
+}
+
 .adv-filter__results-sort {
   align-items: center;
   display: flex;
@@ -70,11 +84,9 @@ A filter panel template
 
 .adv-filter__actions {
   display: none;
-}
 
-.adv-filter__actions {
-  .btn {
-    width: 50%;
+  .btn:first-of-type {
+    flex-grow: 1;
   }
 
   .btn + .btn {
@@ -93,15 +105,15 @@ A filter panel template
 // Target mobile only
 @media only screen and (max-width: 740px) {
   .adv-filter__panel--is-visible {
-    position: fixed;
+    background-color: white;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: white;
-    padding: 16px;
     height: calc(100% - 72px); // Height of action buttons
     overflow-y: scroll;
+    padding: 16px;
+    position: fixed;
     z-index: 10;
   }
 
@@ -156,19 +168,9 @@ body:not(.js-enabled) {
   }
 }
 
-// Prevent scrollbars on body only on mobile (JS)
-
-@media only screen and (max-width: 600px) {
+// Prevent scrollbars on body
+@media only screen and (max-width: 740px) {
   .no-scroll {
     overflow-y: hidden;
-  }
-}
-
-// Full width button
-.btn--full-width {
-  width: 100%;
-
-  .btn__inner {
-    display: block;
   }
 }

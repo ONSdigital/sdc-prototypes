@@ -62,14 +62,7 @@ layout: census-website-engage/views/_page
                                         <form class="js-adv-filter__form" method="POST">
 
                                             <!-- Reset all filters -->
-                                            {{ 
-                                                onsButton({
-                                                    "type": 'button',
-                                                    "text": 'Reset all filters',
-                                                    "classes": 'btn--secondary btn--small js-adv-filter__reset',
-                                                    "type": 'reset'
-                                                }) 
-                                            }}
+                                            <button class="adv-filter__reset js-adv-filter__reset" type="reset">Reset all filters</button>
 
                                             <!-- Filter item -->
                                             <div class="adv-filter__item js-adv-filter__item" data-default-text="All type" data-multi-select-text="{n} filters selected">
@@ -183,20 +176,15 @@ layout: census-website-engage/views/_page
 
                                             <!-- Filter actions -->
                                             <div class="adv-filter__actions">
-                                            
-                                                {{ 
-                                                    onsButton({
-                                                        "type": 'button',
-                                                        "text": 'Update',
-                                                        "classes": 'btn--small btn--full-width js-adv-filter__update',
-                                                        "type": 'button'
-                                                    }) 
-                                                }}
+
+                                                <button class="btn btn--small js-adv-filter__show" type="button">
+                                                    <span class="btn__inner">Show (<span class="js-adv-filter__show-results">7</span> results)</span>
+                                                </button>
 
                                                 {{ 
                                                     onsButton({
                                                         "type": 'button',
-                                                        "text": 'Cancel',
+                                                        "text": 'Close',
                                                         "classes": 'btn--small btn--secondary js-adv-filter__close',
                                                         "type": 'button'
                                                     }) 
