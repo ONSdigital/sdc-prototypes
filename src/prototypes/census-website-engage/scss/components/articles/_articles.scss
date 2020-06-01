@@ -1,0 +1,39 @@
+/* --------------------------------
+
+Title:
+Articles
+
+Description:
+Article listing
+
+-------------------------------- */
+
+.article {
+}
+
+.article__heading {
+  font-size: 18px;
+  line-height: (24/18);
+  margin-bottom: 8px;
+}
+
+.article__meta {
+  color: $text-secondary;
+  display: flex;
+  font-size: 14px;
+  line-height: (24/14);
+  margin-bottom: 8px;
+  padding-left: 0;
+}
+
+.article__meta-item {
+  display: block;
+  margin: 0 16px 0 0;
+  padding-left: 0;
+}
+
+.article__excerpt {
+  font-size: 16px;
+  line-height: (24/16);
+  margin-bottom: 0;
+}

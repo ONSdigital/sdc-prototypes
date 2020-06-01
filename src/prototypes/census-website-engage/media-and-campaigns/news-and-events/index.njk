@@ -1,0 +1,301 @@
+---
+title: Resources for partners
+group: Census
+version: 17.2.0
+layout: census-website-engage/views/_page
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": pageInfo.rootPath + '/',
+                            "text": 'Home'
+                        },
+                        {
+                            "url": pageInfo.rootPath + '/media-and-campaigns',
+                            "text": 'Media and campaigns'
+                        },
+                        {
+                            "text": 'News and events',
+                            "current": true
+                        }
+                    ]
+                }) 
+            }}
+
+            <div class="grid">
+
+                <div class="grid__col col-12@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-l u-fs-xxl">News and events</h1>
+
+                        <div class="col-8@m u-mb-l">
+                            <p>The latest news, press releases and statements from the Office for National Statistics (ONS) census team.</p>
+
+                            {{
+                                onsSearch({
+                                    "input": {
+                                        "id": 'search-field',
+                                        "type": 'text'
+                                    },
+                                    "button": {
+                                        "text": 'Search'
+                                    }
+                                })
+                            }}
+
+                        </div>
+
+                        <div class="js-adv-filter">
+
+                            <div class="grid grid--column@xs@s u-mb-m@m">
+
+                                <div class="grid__col col-4@m">
+
+                                    <!-- Toggle filters -->
+                                    <button class="adv-filter__trigger js-adv-filter__trigger btn btn--secondary btn--small u-mb-m" aria-label="Toggle filters" aria-expanded="false" aria-controls="filter-panel" >
+                                        <span class="btn__inner">Show filters</span>
+                                    </button>
+
+                                    <!-- Filter panel -->
+                                    <div class="adv-filter__panel js-adv-filter__panel" id="filter-panel">
+
+                                        <h2 class="u-fs-l">Filters</h2>
+
+                                        <form class="js-adv-filter__form" method="POST">
+
+                                            <!-- Reset all filters -->
+                                            <button class="adv-filter__reset js-adv-filter__reset" type="reset">Reset all filters</button>
+
+                                            <!-- Filter item -->
+                                            <div class="adv-filter__item js-adv-filter__item" data-default-text="All categories" data-multi-select-text="{n} filters selected">
+
+                                                <fieldset class="fieldset" aria-controls="adv-filter-gallery">
+
+                                                    <legend class="fieldset__legend">Categories</legend>
+                                                    
+                                                    <div class="adv-filter__selection">
+                                                        <span class="u-vh">Active filters: </span>
+                                                        <span class="js-adv-filter__selection">All categories</span>
+                                                    </div>
+
+                                                    <div class="checkboxes__items">
+
+                                                        <div class="checkbox checkbox--toggle u-mb-xs">
+                                                            <input class="checkbox__input" id="press-release" type="checkbox" data-filter="press-release">
+                                                            <label class="checkbox__label" for="press-release">Press release</label>
+                                                        </div>
+
+                                                        <div class="checkbox checkbox--toggle u-mb-xs">
+                                                            <input class="checkbox__input" id="guidance" type="checkbox" data-filter="guidance">
+                                                            <label class="checkbox__label" for="guidance">Guidance</label>
+                                                        </div>
+
+                                                        <div class="checkbox checkbox--toggle u-mb-xs">
+                                                            <input class="checkbox__input" id="statement" type="checkbox" data-filter="statement">
+                                                            <label class="checkbox__label" for="statement">Statement</label>
+                                                        </div>
+
+                                                        <div class="checkbox checkbox--toggle">
+                                                            <input class="checkbox__input" id="report" type="checkbox" data-filter="report">
+                                                            <label class="checkbox__label" for="report">Report</label>
+                                                        </div>
+
+                                                    </div>
+
+                                                </fieldset>
+
+                                            </div>
+
+                                            <!-- Filter actions -->
+                                            <div class="adv-filter__actions">
+
+                                                <button class="btn btn--small js-adv-filter__show" type="button">
+                                                    <span class="btn__inner">Show (<span class="js-adv-filter__show-results">5</span> results)</span>
+                                                </button>
+
+                                                {{ 
+                                                    onsButton({
+                                                        "type": 'button',
+                                                        "text": 'Close',
+                                                        "classes": 'btn--small btn--secondary js-adv-filter__close',
+                                                        "type": 'button'
+                                                    }) 
+                                                }}
+
+                                            </div>
+
+                                        </form>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="grid__col col-8@m">
+                                    
+                                    <div class="adv-filter__results-options">
+
+                                        <!-- Result count -->
+                                        <div class="adv-filter__results-count">
+                                            <span class="js-adv-filter__results-count">5</span> results of 548
+                                        </div>
+
+                                        <!-- Sort by -->
+                                        <div class="adv-filter__results-sort">
+                                            <label class="label" for="sort">Sort by</label>
+                                            <select class="input input--select" id="sort" name="sort" aria-controls="adv-filter-gallery" data-sort="true">
+                                                <option value="index" data-sort-number="true">Latest</option>
+                                                <option value="index" data-sort-order="desc" data-sort-number="true">Oldest</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+
+                                    <!-- Results -->
+                                    <ul class="adv-filter__gallery js-adv-filter__gallery" id="adv-filter-gallery" data-filter-animation="off">
+                                        
+                                        <!-- Result item -->
+                                        <li class="filter__item js-filter__item" data-filter="report" data-sort-index="1">
+
+                                            <div class="article">
+                                            
+                                                <div class="article__content">
+                                                    
+                                                    <h3 class="article__heading"><a href="#0">Census 2021 question development reports</a></h3>
+                                                    
+                                                    <ul class="article__meta">
+                                                        <li class="article__meta-item"><span class="u-hidden">Posted on </span> <time datetime="2020-05-20">20 May 2020</time></li>
+                                                        <li class="article__meta-item"><span class="u-hidden">in </span> <span>Report</span></li>
+                                                    </ul>
+
+                                                    <p class="article__excerpt">The ONS is publishing a series of Census 2021 question development reports. These provide a detailed explanation of the research, testing...</p>  
+
+                                                </div>
+
+                                            </div>
+
+                                        </li>
+
+                                        <!-- Result item -->
+                                        <li class="filter__item js-filter__item" data-filter="report" data-sort-index="2">
+
+                                            <div class="article">
+                                            
+                                                <div class="article__content">
+                                                    
+                                                    <h3 class="article__heading"><a href="#0">Children in need census 2020 to 2021: reports specifications</a></h3>
+                                                    
+                                                    <ul class="article__meta">
+                                                        <li class="article__meta-item"><span class="u-hidden">Posted on </span> <time datetime="2020-05-19">19 May 2020</time></li>
+                                                        <li class="article__meta-item"><span class="u-hidden">in </span> <span>Report</span></li>
+                                                    </ul>
+
+                                                    <p class="article__excerpt">Specifications of children in need census reports that local authorities can run in collect.</p>  
+
+                                                </div>
+
+                                            </div>
+
+                                        </li>
+
+                                        <!-- Result item -->
+                                        <li class="filter__item js-filter__item" data-filter="guidance" data-sort-index="3">
+
+                                            <div class="article">
+                                            
+                                                <div class="article__content">
+                                                    
+                                                    <h3 class="article__heading"><a href="#0">Alternative provision census 2021: technical specification</a></h3>
+                                                    
+                                                    <ul class="article__meta">
+                                                        <li class="article__meta-item"><span class="u-hidden">Posted on </span> <time datetime="2020-05-18">18 May 2020</time></li>
+                                                        <li class="article__meta-item"><span class="u-hidden">in </span> <span>Guidance</span></li>
+                                                    </ul>
+
+                                                    <p class="article__excerpt">Business and technical specification for local authorities and software suppliers to prepare for the alternative provision census 2021.</p>  
+
+                                                </div>
+
+                                            </div>
+
+                                        </li>
+
+                                        <!-- Result item -->
+                                        <li class="filter__item js-filter__item" data-filter="guidance" data-sort-index="4">
+
+                                            <div class="article">
+                                            
+                                                <div class="article__content">
+                                                    
+                                                    <h3 class="article__heading"><a href="#0">Children in need census 2020 to 2021: specification</a></h3>
+                                                    
+                                                    <ul class="article__meta">
+                                                        <li class="article__meta-item"><span class="u-hidden">Posted on </span> <time datetime="2020-05-17">17 May 2020</time></li>
+                                                        <li class="article__meta-item"><span class="u-hidden">in </span> <span>Guidance</span></li>
+                                                    </ul>
+
+                                                    <p class="article__excerpt">Specification and validation rules for local authorities and software suppliers preparing for the 2020 to 2021 children in need census.</p>  
+
+                                                </div>
+
+                                            </div>
+
+                                        </li>
+
+                                        <!-- Result item -->
+                                        <li class="filter__item js-filter__item" data-filter="guidance" data-sort-index="5">
+
+                                            <div class="article">
+                                            
+                                                <div class="article__content">
+                                                    
+                                                    <h3 class="article__heading"><a href="#0">Children in need census 2020 to 2021: specification</a></h3>
+                                                    
+                                                    <ul class="article__meta">
+                                                        <li class="article__meta-item"><span class="u-hidden">Posted on </span> <time datetime="2020-05-16">16 May 2020</time></li>
+                                                        <li class="article__meta-item"><span class="u-hidden">in </span> <span>Guidance</span></li>
+                                                    </ul>
+
+                                                    <p class="article__excerpt">Specification and validation rules for local authorities and software suppliers preparing for the 2020 to 2021 children in need census.</p>  
+
+                                                </div>
+
+                                            </div>
+
+                                        </li>
+
+                                    </ul>
+
+                                    <!-- No results -->
+                                    <div class="adv-filter__no-results" data-fallback-gallery-id="adv-filter-gallery">
+                                        <h2>No results found</h2>
+                                        <p>There are no results found due to your filters setup.</p>
+                                    </div>
+                            
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}
