@@ -101,6 +101,7 @@ export default class TypeaheadUI {
   fetchData() {
     return new Promise((resolve, reject) => {
       fetch(this.typeaheadData)
+        .send()
         .then(async response => {
           this.data = await response.json();
           resolve(this.data);
