@@ -1,0 +1,79 @@
+---
+group: SDC Internal
+title: Overview
+version: 17.0.0
+layout: onboard-survey/views/_master
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/metadata/_macro.njk" import onsMetadata %}
+
+{% block main %}
+
+    <h1 name="page-surveys-title">Create new survey</h1>
+    <div class="grid overview">
+        <div class="grid__col col-12@m">
+            <p class="field">
+                {{ 
+                    onsMetadata({
+                        "metadataLabel": "This is an example of the metadata component",
+                        "termCol": "2",
+                        "descriptionCol": "10",
+                        "itemsList": [
+                            {
+                                "term": "Survey ID:",
+                                "descriptions": [ 
+                                    {
+                                        "description": "001"
+                                    }
+                                ]
+                            },
+                            {
+                                "term": "Survey title:",
+                                "descriptions": [ 
+                                    {
+                                        "description": "New Test Survey"
+                                    }                    
+                                ]
+                            },
+                            {
+                                "term": "Abbreviation:",
+                                "descriptions": [ 
+                                    {
+                                        "description": "NEW"
+                                    }                                     
+                                ]
+                            },
+                            {
+                                "term": "Trading as:",
+                                "descriptions": [ 
+                                    {
+                                        "description": "Bolts & Ratchets"
+                                    }
+                                ]
+                            },
+                            {
+                                "term": "Legal basis:",
+                                "descriptions": [ 
+                                    {
+                                        "description": "Statistics of Trade Act 1947"
+                                    }                  
+                                ]
+                            }                                                             
+                        ]
+                    }) 
+                }}
+            </p>
+            <p class="field u-mt-l">
+                {{ 
+                    onsButton({
+                        "text": 'Create collection exercise',
+                        "url": '/prototypes/onboard-survey/create-collection-exercise.html'
+                    }) 
+                }}
+            </p>
+        </div>
+    </div>
+
+{% endblock %}

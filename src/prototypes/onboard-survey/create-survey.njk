@@ -1,0 +1,100 @@
+---
+group: SDC Internal
+title: Overview
+version: 17.0.0
+layout: onboard-survey/views/_master
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/input/_macro.njk" import onsInput %}
+
+{% block main %}
+
+    <h1 name="page-surveys-title">Create new survey</h1>
+    <div class="grid overview">
+        <div class="grid__col col-12@m">
+            <p class="field">
+                {{ 
+                    onsInput({
+                        "id": "id",
+                        "label": {
+                            "text": "Survey ID",
+                            "description": "For example: 001"
+                        }
+                    }) 
+                }}
+            </p>
+            <p class="field">
+                {{ 
+                    onsInput({
+                        "id": "name",
+                        "label": {
+                            "text": "Survey name",
+                            "description": "For example: Monthly Business Survey"
+                        }
+                    }) 
+                }}
+            </p>
+            <p class="field">
+                {{ 
+                    onsInput({
+                        "id": "text",
+                        "label": {
+                            "text": "Abbreviation",
+                            "description": "For example: MBS"
+                        }
+                    }) 
+                }}
+            </p>
+            <p class="field">
+            {% from "components/select/_macro.njk" import onsSelect %}
+            {{ 
+                onsSelect({
+                    "id": "legal",
+                    "name": "legal",
+                    "label": {
+                        "text": "Legal basis"
+                    },
+                    "options": [
+                        {
+                            "value": "",
+                            "text": "Select an option",
+                            "disabled": true,
+                            "selected": true
+                        },
+                        {
+                            "value": "goverd",
+                            "text": "GovERD"
+                        },
+                        {
+                            "value": "sta1947",
+                            "text": "Statistics of Trade Act 1947"
+                        },
+                        {
+                            "value": "sta1947beis",
+                            "text": "Statistics of Trade Act 1947 - BEIS"
+                        },
+                        {
+                            "value": "volnotstated",
+                            "text": "Voluntary Not Stated"
+                        },
+                        {
+                            "value": "volbeis",
+                            "text": "Voluntary - BEIS"
+                        }
+                    ]
+                })
+            }}
+            </p>
+            <p class="field u-mt-l">
+                {{ 
+                    onsButton({
+                        "text": 'Save and continue',
+                        "url": '/prototypes/onboard-survey/new-survey-list.html'
+                    }) 
+                }}
+            </p>
+        </div>
+    </div>
+
+{% endblock %}
