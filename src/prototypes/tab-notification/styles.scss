@@ -1,102 +1,61 @@
-@import 'dropzone.scss';
-
-// Overrides
-.input--upload {
-  border: 1px solid #222;
-}
-.input--upload::-webkit-file-upload-button {
-  background: #d0d0d0;
-  border-right: 1px solid #222;
-  color: #222;
-  font-size: 1rem;
-}
-.input--upload:hover::-webkit-file-upload-button {
-  border-right-color: #222;
-}
-
-.statusbar {
-  display: flex;
-  justify-content: space-between;
-}
-
-.dropzone {
-  min-height: 0;
-  border: none;
+.navigation-tabs {
+  margin-bottom: 27px;
+  margin-bottom: 1.5rem;
   padding: 0;
-  border-radius: 0;
-  .dz-preview {
-    width: 100%;
-    position: relative;
-    margin: 0;
-    .dz-image {
-      display: none;
-    }
-    .dz-details {
-      border: 1px solid #f33;
-      display: flex;
-      justify-content: space-between;
-      position: relative;
-      text-align: left;
-      padding: 0;
-      line-height: inherit;
-      font-size: inherit;
-      max-width: inherit;
-      min-width: inherit;
-      opacity: 1;
-      .dz-size {
-        span {
-          padding: 0;
-        }
-      }
-      .dz-filename {
-        span {
-          padding: 0;
-        }
-      }
-    }
-    .progress {
-      display: flex;
-      justify-content: space-between;
-      .dz-progress {
-        position: relative;
-        border: 1px solid #7f3;
-        border-radius: 0;
-        left: inherit;
-        top: inherit;
-        margin-top: inherit;
-        width: 100%;
-        margin-left: inherit;
-      }
-    }
-    .dz-error-message {
-      border: 1px solid #33f;
-    }
-    .dz-success-mark {
-      border: 1px solid #0f0;
-      position: relative;
-      top: inherit;
-      width: auto;
-      height: inherit;
-      left: inherit;
-      margin-left: 0;
-    }
-    .dz-error-mark {
-      border: 1px solid #937;
-      position: relative;
-      top: inherit;
-      width: auto;
-      height: inherit;
-      left: inherit;
-      margin-left: 0;
-    }
-  }
-  .dz-message {
-    text-align: left;
-    margin: 1em 0;
-  }
-  &.dz-started {
-    .dz-message {
-      display: block;
-    }
-  }
+  list-style-type: none;
+  border-bottom: 1px solid #555;
+}
+.navigation-tabs .notification-badge {
+  display: inline-block;
+  min-width: 28px;
+  padding: 0px 4px 0 3px;
+  margin-left: 2px;
+  border-radius: 16px;
+  color: #fff;
+  background: #4263c2;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+}
+.navigation-tabs:after {
+  content: '.';
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+.navigation-tabs-component {
+  padding: 0;
+  margin: 0;
+}
+.navigation-tabs .navigation-tabs__item {
+  margin-bottom: 0;
+  margin-left: 10px;
+  padding: 9px 18px 0;
+  // padding: 0.5rem 1rem -0.506rem; //
+  border: 1px solid transparent;
+  border-radius: 0.3rem;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom: none;
+}
+.navigation-tabs .navigation-tabs__item .navigation-tabs__tab {
+  margin-bottom: 0;
+  display: block;
+}
+.navigation-tabs .navigation-tabs__item.navigation-tabs__item--primary {
+  float: left;
+}
+.navigation-tabs .navigation-tabs__item.navigation-tabs__item--secondary {
+  float: right;
+}
+.navigation-tabs .navigation-tabs__item.navigation-tabs__item--active {
+  margin-bottom: -1px;
+  padding-bottom: 8px;
+  border-color: #555;
+  border-bottom: 1px solid #fff;
+}
+.no-js .hide-if-no-js {
+  display: none;
 }
