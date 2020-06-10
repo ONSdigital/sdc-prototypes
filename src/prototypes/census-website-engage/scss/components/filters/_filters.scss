@@ -42,10 +42,20 @@ A filter panel template
 }
 
 .adv-filter__reset {
+  background-color: transparent;
   border: 0 none;
   cursor: pointer;
+  color: $text-secondary;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: (24/16);
   padding: 0;
   text-decoration: underline;
+
+  &:hover {
+    color: #222222;
+  }
 
   &:focus {
     background-color: #fd0;
