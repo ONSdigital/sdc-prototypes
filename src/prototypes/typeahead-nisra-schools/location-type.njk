@@ -10,7 +10,8 @@ layout: typeahead-nisra-schools/views/_master
     <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/index.html">Previous</a>
     <form action="{{ pageInfo.parentPath }}/in-ni.html?previous={{ pageInfo.path }}.html">
         {% call onsQuestion({
-            "title": "Where do you mainly study?"
+            "title": "Where do you mainly study?",
+            "description": "Answer for the place where you spend the most time. If student or schoolchild, answer for your study address."
         }) %}
         {{ 
             onsRadios({
@@ -24,21 +25,30 @@ layout: typeahead-nisra-schools/views/_master
                         "label": {
                             "text": "At a campus or school"
                         },
-                        "name": "campus or school"
+                        "name": "campus or school",
+                        "attributes": {
+                            "data-action-url": pageInfo.parentPath  + "/in-ni.html" + "?previous=" + pageInfo.path + ".html"
+                        }
                     },
                     {
                         "id": "home",
                         "label": {
                             "text": "At or from home"
                         },
-                        "name": "home"
+                        "name": "home",
+                        "attributes": {
+                            "data-action-url": pageInfo.parentPath  + "/summary.html" + "?previous=" + pageInfo.path + ".html"
+                        }
                     },
                     {
                         "id": "no-fixed-place",
                         "label": {
                             "text": "No fixed place"
                         },
-                        "name": "no fixed place"
+                        "name": "no fixed place",
+                        "attributes": {
+                            "data-action-url": pageInfo.parentPath  + "/summary.html" + "?previous=" + pageInfo.path + ".html"
+                        }
                     }
                 ]
             }) 

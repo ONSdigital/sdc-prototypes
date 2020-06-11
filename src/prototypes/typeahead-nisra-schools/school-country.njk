@@ -8,17 +8,17 @@ layout: typeahead-nisra-schools/views/_master
 {% from "typeahead-nisra-schools/components/input/_macro.njk" import onsInput %}
 
 {% block main %}
-    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/country-of-birth.html">Previous</a>
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/in-ni.html">Previous</a>
     <form action="{{ pageInfo.parentPath }}/travel.html?previous={{ pageInfo.path }}.html">
         {% call onsQuestion({
-            "title": 'What address do you travel to for your course of study, including school?'
+            "title": 'In which country is your main place of study?'
         }) %}
         {{
             onsInput({
                 "id": "study-address",
-                "classes": "input--w-auto",
                 "label": {
-                    "text": "Enter an address or postcode and select from results"
+                    "text": "Current name of country",
+                    "description": "Enter your own answer or select from suggestions"
                 },
                 "typeahead":{
                     "instructions": "Use up and down keys to navigate suggestions once you\'ve typed more than two characters. Use the enter key to select a suggestion. Touch device users, explore by touch or with swipe gestures.",
@@ -28,10 +28,10 @@ layout: typeahead-nisra-schools/views/_master
                         "aria_one_result": "There is one result available.",
                         "aria_n_results": "There are {n} results available.",
                         "aria_limited_results": "Results have been limited to 10. Enter more characters to improve results.",
-                        "more_results": "Continue entering to improve results",
-                        "results_title": "Select an address"
+                        "more_results": "Continue entering to improve suggestions",
+                        "results_title": "Suggestions"
                     },
-                    "typeaheadData": "https://gist.githubusercontent.com/jrbarnes9/9136942c965eb8f76f194e90e497d264/raw/dde39f4054d53bdbf8a2eab30aa74db2d17b5e81/nisra-schools.json"
+                    "typeaheadData": "https://gist.githubusercontent.com/rmccar/08794cd217fbc08b7c2a470371f0390d/raw/b3dae8c70bb8c25d609a1e1dfe5a47ea104daee1/COB_FEL.json"
                 }
             })
         }}
