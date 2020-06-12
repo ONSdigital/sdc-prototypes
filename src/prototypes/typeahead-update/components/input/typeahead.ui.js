@@ -27,7 +27,7 @@ export default class TypeaheadUI {
     onUnsetResult,
     suggestionFunction,
     handleUpdate,
-    lang,
+    lang
   }) {
     // DOM Elements
     this.context = context;
@@ -124,7 +124,6 @@ export default class TypeaheadUI {
 
     this.listbox.addEventListener('mouseover', this.handleMouseover.bind(this));
     this.listbox.addEventListener('mouseout', this.handleMouseout.bind(this));
-
   }
 
   handleKeydown(event) {
@@ -169,7 +168,7 @@ export default class TypeaheadUI {
   }
 
   handleChange() {
-    if (!this.blurring && this.input.value.trim() || this.handleUpdate) {
+    if ((!this.blurring && this.input.value.trim()) || this.handleUpdate) {
       if (this.handleUpdate) {
         this.settingResult = false;
       }
@@ -272,7 +271,7 @@ export default class TypeaheadUI {
     });
     return {
       results,
-      totalResults: results.length,
+      totalResults: results.length
     };
   }
 
@@ -313,58 +312,53 @@ export default class TypeaheadUI {
     this.numberOfResults = Math.max(this.results.length, 0);
 
     if (!this.deleting || (this.numberOfResults && this.deleting)) {
-      if (this.numberOfResults === 1 && this.results[0].sanitisedText === this.sanitisedQuery) {
-        this.clearListbox(true);
-        this.selectResult(0);
-      } else {
-        this.listbox.innerHTML = '';
-        this.resultOptions = this.results.map((result, index) => {
-          let ariaLabel = result[this.lang];
-          let innerHTML = this.emboldenMatch(ariaLabel, this.query);
+      this.listbox.innerHTML = '';
+      this.resultOptions = this.results.map((result, index) => {
+        let ariaLabel = result[this.lang];
+        let innerHTML = this.emboldenMatch(ariaLabel, this.query);
 
-          if (Array.isArray(result.sanitisedAlternatives)) {
-            const alternativeMatch = result.sanitisedAlternatives.find(
-              alternative => alternative !== result.sanitisedText && alternative.includes(this.sanitisedQuery),
-            );
+        if (Array.isArray(result.sanitisedAlternatives)) {
+          const alternativeMatch = result.sanitisedAlternatives.find(
+            alternative => alternative !== result.sanitisedText && alternative.includes(this.sanitisedQuery)
+          );
 
-            if (alternativeMatch) {
-              const alternativeText = result.alternatives[result.sanitisedAlternatives.indexOf(alternativeMatch)];
-              innerHTML += ` <small>(${this.emboldenMatch(alternativeText, this.query)})</small>`;
-              ariaLabel += `, (${alternativeText})`;
-            }
+          if (alternativeMatch) {
+            const alternativeText = result.alternatives[result.sanitisedAlternatives.indexOf(alternativeMatch)];
+            innerHTML += ` <small>(${this.emboldenMatch(alternativeText, this.query)})</small>`;
+            ariaLabel += `, (${alternativeText})`;
           }
-
-          const listElement = document.createElement('li');
-          listElement.className = classTypeaheadOption;
-          listElement.setAttribute('id', `${this.listboxId}__option--${index}`);
-          listElement.setAttribute('role', 'option');
-          listElement.setAttribute('aria-label', ariaLabel);
-          listElement.innerHTML = innerHTML;
-
-          listElement.addEventListener('click', () => {
-            this.selectResult(index);
-          });
-          
-          this.listbox.appendChild(listElement);
-          
-          this.context.querySelector(`.${classTypeaheadResultsTitle}`).classList.remove('u-d-no');
-
-          return listElement;
-        });
-
-        if (this.numberOfResults < this.foundResults) {
-          const listElement = document.createElement('li');
-          listElement.className = `${classTypeaheadOption} ${classTypeaheadOptionMoreResults}`;
-          listElement.setAttribute('aria-hidden', 'true');
-          listElement.innerHTML = this.content.more_results;
-          this.listbox.appendChild(listElement);
         }
 
-        this.setHighlightedResult(null);
+        const listElement = document.createElement('li');
+        listElement.className = classTypeaheadOption;
+        listElement.setAttribute('id', `${this.listboxId}__option--${index}`);
+        listElement.setAttribute('role', 'option');
+        listElement.setAttribute('aria-label', ariaLabel);
+        listElement.innerHTML = innerHTML;
 
-        this.input.setAttribute('aria-expanded', !!this.numberOfResults);
-        this.context.classList[!!this.numberOfResults ? 'add' : 'remove'](classTypeaheadHasResults);
+        listElement.addEventListener('click', () => {
+          this.selectResult(index);
+        });
+
+        this.listbox.appendChild(listElement);
+
+        this.context.querySelector(`.${classTypeaheadResultsTitle}`).classList.remove('u-d-no');
+
+        return listElement;
+      });
+
+      if (this.numberOfResults < this.foundResults) {
+        const listElement = document.createElement('li');
+        listElement.className = `${classTypeaheadOption} ${classTypeaheadOptionMoreResults}`;
+        listElement.setAttribute('aria-hidden', 'true');
+        listElement.innerHTML = this.content.more_results;
+        this.listbox.appendChild(listElement);
       }
+
+      this.setHighlightedResult(null);
+
+      this.input.setAttribute('aria-expanded', !!this.numberOfResults);
+      this.context.classList[!!this.numberOfResults ? 'add' : 'remove'](classTypeaheadHasResults);
     }
     if (this.numberOfResults === 0 && this.content.no_results) {
       this.context.classList.add(classTypeaheadHasResults);
@@ -430,7 +424,7 @@ export default class TypeaheadUI {
         const bestMatchingAlternative = result.sanitisedAlternatives
           .map((alternative, index) => ({
             score: dice(this.sanitisedQuery, alternative),
-            index,
+            index
           }))
           .sort(sortBy('score'))[0];
 
@@ -454,7 +448,12 @@ export default class TypeaheadUI {
   }
 
   emboldenMatch(string, query) {
-    let reg = new RegExp(this.escapeRegExp(query).split('').join('\\s*'), 'gi');
+    let reg = new RegExp(
+      this.escapeRegExp(query)
+        .split('')
+        .join('\\s*'),
+      'gi'
+    );
     return string.replace(reg, '<strong>$&</strong>');
   }
 
