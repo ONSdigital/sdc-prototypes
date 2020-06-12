@@ -48,12 +48,25 @@ class FuseAddressInput {
 
   createAddressLines(selectedResult) {
     let values = (selectedResult[this.lang]).split(',');
-    const addressLines = {
-      addressLine1: values[0],
-      addressLine2: values[1],
-      addressLine3: values[2],
-      townName: values[3],
-      postcode: values[4]
+    let addressLines;
+    if (values[5]) {
+      addressLines = {
+        addressLine1: values[0],
+        addressLine2: values[1],
+        addressLine3: values[2],
+        townName: values[3],
+        countyName: values[4],
+        postcode: values[5]
+      }    
+    } else {
+      addressLines = {
+        addressLine1: values[0],
+        addressLine2: values[1],
+        addressLine3: null,
+        townName: values[2],
+        countyName: values[3],
+        postcode: values[4]
+      }
     }
     this.addressSetter.setAddress(addressLines);
   }

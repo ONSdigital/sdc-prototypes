@@ -39,6 +39,16 @@
             }}
             {{
                 onsInput({
+                    "id": params.id + "-line-3",
+                    "label": {
+                        "text": params.line3.label
+                    },
+                    "classes": "input--w-20@m js-address-line-3",
+                    "name": params.id + "-line-3"
+                })
+            }}
+            {{
+                onsInput({
                     "id": params.id + "-town",
                     "label": {
                         "text": params.town.label

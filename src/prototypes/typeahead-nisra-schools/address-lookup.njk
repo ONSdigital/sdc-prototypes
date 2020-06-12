@@ -3,7 +3,7 @@ version: 14.4.4
 layout: typeahead-nisra-schools/views/_master
 ---
 {% from "components/button/_macro.njk" import onsButton %}
-{% from "typeahead-update/components/address-input/_macro.njk" import prototypeAddressInput %}
+{% from "typeahead-nisra-schools/components/address-input/_macro.njk" import prototypeAddressInput %}
 
 {% block main %}
     <h1>Enter an address to start the prototype</h1>
@@ -24,9 +24,6 @@ layout: typeahead-nisra-schools/views/_master
                 },
                 "town": {
                     "label": "Town or City"
-                },
-                "county": {
-                    "label": "County"
                 },
                 "postcode": {
                     "label": "Postcode"

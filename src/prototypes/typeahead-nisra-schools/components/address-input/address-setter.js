@@ -4,6 +4,7 @@ const classTypeaheadInput = 'js-typeahead-input';
 const classOrganisation = 'js-address-organisation';
 const classLine1 = 'js-address-line-1';
 const classLine2 = 'js-address-line-2';
+const classLine3 = 'js-address-line-3';
 const classTown = 'js-address-town';
 const classCounty = 'js-address-county';
 const classPostcode = 'js-address-postcode';
@@ -18,10 +19,11 @@ export default class AddressSetter{
     this.organisation = context.querySelector(`.${classOrganisation}`);
     this.line1 = context.querySelector(`.${classLine1}`);
     this.line2 = context.querySelector(`.${classLine2}`);
+    this.line3 = context.querySelector(`.${classLine3}`);
     this.town = context.querySelector(`.${classTown}`);
     this.county = context.querySelector(`.${classCounty}`);
     this.postcode = context.querySelector(`.${classPostcode}`);
-    this.manualInputs = [this.line1, this.line2, this.town, this.county, this.postcode];
+    this.manualInputs = [this.line1, this.line2, this.town, this.postcode];
     this.searchButtonContainer = context.querySelector(`.${classSearchButtonContainer}`);
     this.searchButton = context.querySelector(`.${classSearchButton}`);
     this.manualButton = context.querySelector(`.${classManualButton}`);
@@ -41,7 +43,7 @@ export default class AddressSetter{
       this.manualButton.addEventListener('click', this.toggleMode.bind(this));
     }
 
-    if (!(this.line1.value || this.line2.value || this.town.value || this.county.value || this.county.value)) {
+    if (!(this.line1.value || this.line2.value || this.town.value || this.postcode.value)) {
       this.toggleMode();
     }
 
@@ -67,15 +69,20 @@ export default class AddressSetter{
 
   setAddress(addressLines) {
     this.clearManualInputs(false);
-    if (addressLines.addressLine3) {
+    if (addressLines.addressLine3 && !addressLines.countyName) {
       this.line1.value = addressLines.addressLine1 + ', ' + addressLines.addressLine2;
       this.line2.value = addressLines.addressLine3;
     } else {
       this.line1.value = addressLines.addressLine1;
       this.line2.value = addressLines.addressLine2;
+      if (addressLines.addressLine3) {
+        this.line3.value = addressLines.addressLine3;
+      }
     }
-    
     this.town.value = addressLines.townName;
+    if (addressLines.countyName) {
+      this.county.value = addressLines.countyName;
+    }
     this.postcode.value = addressLines.postcode;
 
     this.triggerManualInputsChanges();
