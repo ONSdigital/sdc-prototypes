@@ -751,10 +751,17 @@
   dependencies:
     "@ons/design-system" "^13.3.0"
 
+
 "@ons/design-system/14.4.4@npm:@ons/design-system@14.4.4":
   version "14.4.4"
   resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-14.4.4.tgz#aaa1e1125919bd9c781b61ee9368b288ff32b648"
   integrity sha512-5any7IbhA91L4gXIXCUazIyvp6EeNF4ovm5TtvK/vdkb5PquipFtk5m4ju8ppFxHrTsmdxvUL2F9Rh3XctO7eA==
+
+"@ons/design-system/15.0.2@npm:@ons/design-system@15.0.2":
+  version "15.0.2"
+  resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-15.0.2.tgz#d41275f88cda76ce2f12f0fd226f239e6a94fae1"
+  integrity sha512-y08Uo4pVt/iooahyYUdCWHiisDqCNYnYWs3IBfUmOPX15gc0CEcm4Nmb4Ugd9b39A87y09dylfM2yFp9WifteA==
+
   dependencies:
     "@ons/design-system" "^13.3.0"
     fuse.js "^3.4.6"

@@ -1,0 +1,77 @@
+---
+version: 15.0.2
+layout: bsl-v2/views/_question
+---
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+{% from "components/details/_macro.njk" import onsDetails %}
+{% from "components/video/_macro.njk" import onsVideo %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/sex.html"
+    }
+} %}
+{% block preMain %}
+<div class="container page__container container u-mt-s">
+
+</div>
+{% endblock %}
+{% block main %}
+    {% call onsQuestion({
+        "title": "What is your name?",
+        "useFieldset": true
+    }) %}
+        {{ onsInput({
+            "id": "your-name",
+            "name": "your-name",
+            "label": {
+                "text": "First name"
+            }
+        }) }}
+        {{ onsInput({
+            "id": "your-name",
+            "name": "your-name",
+            "label": {
+                "text": "Middle names"
+            }
+        }) }}
+        {{ onsInput({
+            "id": "your-name",
+            "name": "your-name",
+            "label": {
+                "text": "Last name"
+            }
+        }) }}
+    {% endcall %}
+
+    {{ onsButton({
+        "text": "Save and continue",
+        "classes": "u-ml-no u-mt-xl u-mb-xl"
+    }) }}
+{% endblock %}
+{% block bodyEnd %}
+    <div class="bsl-video u-d-no">
+        <div class="bsl-video__container">
+            <div class="bsl-video__video">
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/k0U1dX67d1M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="bsl-video__controls">
+            <div class="grid grid--gutterless grid--flex grid--between grid--vertical-center grid--no-wrap">
+                <div class="grid__col col-auto">
+                    <a class="js-remove-bsl bsl-video__remove-link" href="{{ pageInfo.path + '.html' }}">Turn off BSL</a>
+                </div>
+                {{ onsButton({
+                    "text": "Hide BSL",
+                    "classes": "js-bsl-btn btn--ghost btn--small u-mb-xs u-mt-xs grid__col col-auto",
+                    "innerClasses": "icon--bsl-btn"
+                }) }}
+            </div>
+        </div>
+    </div>
+    <script src="{{ pageInfo.rootPath }}/scripts/index.js"></script>
+{% endblock %}
