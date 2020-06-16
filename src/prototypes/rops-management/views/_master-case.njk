@@ -1,0 +1,332 @@
+{% extends "page-templates/_template.njk" %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ pageInfo.rootPath }}/styles.css"/>
+{% endblock %}
+{% set pageConfig = { 
+    "cdn": "17.0.0",
+    "title": "Census ROps Case Management",
+    "wide": true,
+    "header": {
+      "logoAlt": "ONS",
+      "logoHref": "/",
+      "classes": "header--internal header--thin",
+      "logo": "ons-logo-white"
+    },
+    "footer": {
+        "OGLLink": {
+            "pre": 'All content is available under the',
+            "link": 'Open Government Licence v3.0',
+            "url": 'https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/',
+            "post": ', except where otherwise stated'
+        }
+    }
+} %}
+
+{% block pageContent %}
+    {% block preMain %}{% endblock %}
+    <div class="page__container container container--wide">
+        <main id="main-content" class="page__main {{ pageClasses }}">
+            <div class="grid">
+                <div class="grid__col col-12@m">
+                    {% for case in casedetails %}
+                        <h1>
+                            {% if case.organisation_name.length > 0 %}
+                                {{ case.organisation_name }}
+                            {% endif %}
+                            {% if case.address_line1.length > 0 %}
+                                {{ case.address_line1 }}
+                            {% endif %}
+                        </h1>
+                        <h2>Case summary</h2>
+                        <dl class="metadata metadata__list grid grid--gutterless u-cf u-mb-s" title="This is an example of the metadata component" aria-label="This is an example of the metadata component">
+                            <dt class="metadata__term grid__col col-3@m">Address:</dt>
+
+                            {% if case.organisation_name.length > 0 %}
+                                <dd class="metadata__value grid__col col-9@m">
+                                    {{ case.organisation_name }}
+                                </dd>
+                            {% endif %}
+                            {% if case.address_line1.length > 0 %}
+                                <dd class="metadata__value grid__col col-9@m">
+                                    {{ case.address_line1 }}
+                                </dd>
+                            {% endif %}
+                            {% if case.address_line2.length > 0 %}
+                                <dd class="metadata__value grid__col col-9@m">
+                                    {{ case.address_line2 }}
+                                </dd>
+                            {% endif %}
+                            {% if case.address_line3.length > 0 %}
+                                <dd class="metadata__value grid__col col-9@m">
+                                    {{ case.address_line3 }}
+                                </dd>
+                            {% endif %}
+                            {% if case.town_name.length > 0 %}
+                                <dd class="metadata__value grid__col col-9@m">
+                                    {{ case.town_name }}
+                                </dd>
+                            {% endif %}
+                            {% if case.postcode.length > 0 %}
+                                <dd class="metadata__value grid__col col-9@m">
+                                    {{ case.postcode }}
+                                </dd>
+                            {% endif %}
+                            {% if case.address_level.length > 0 %}
+                                <dt class="metadata__term grid__col col-3@m">Address level</dt>
+                                <dd class="metadata__value grid__col col-9@m">
+                                    {{ case.address_level }}
+                                </dt>
+                            {% endif %}
+                            {% if case.case_type.length > 0 %}
+                                <dt class="metadata__term grid__col col-3@m">Case type</dt>
+                                <dd class="metadata__value grid__col col-9@m">
+                                    {{ case.case_type }}
+                                </dt>
+                            {% endif %}
+                            {% if case.estab_type.length > 0 %}
+                                <dt class="metadata__term grid__col col-3@m">Establishment type</dt>
+                                <dd class="metadata__value grid__col col-9@m">
+                                    {{ case.estab_type }}
+                                </dt>
+                            {% endif %}
+                            {% if case.case_ref.length > 0 %}
+                                <dt class="metadata__term grid__col col-3@m">Case reference</dt>
+                                <dd class="metadata__value grid__col col-9@m">
+                                    {{ case.case_ref }}
+                                </dt>
+                            {% endif %}
+                            <dt class="metadata__term grid__col col-3@m">Status:</dt>
+                            <dd class="metadata__value grid__col col-9@m">
+                                <span class="status status--success">Receipted</span>
+                            </dd>
+                        </dl>
+                    {% else %}
+                        No data
+                    {% endfor %}
+                    <p class="u-mb-l">
+                        <a href="full-details.html">Show all case details</a>
+                    </p>
+
+                    <h2>Event history for QID: 0120000006970650</h2>
+
+                    <table id="basic-table" class="table ">
+                        <thead class="table__head">
+                            <tr class="table__row">
+                                <th scope="col" class="table__header ">Date</th>
+                                <th scope="col" class="table__header ">Time</th>
+                                <th scope="col" class="table__header ">Channel</th>
+                                <th scope="col" class="table__header ">Event</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table__body">
+                            {% for case in cases %}
+                                <tr class="table__row">
+                                    <td class="table__cell td-date">
+                                        {% if case.event_date.length > 0 %}
+                                            {{ case.event_date }}
+                                        {% endif %}
+                                    </td>
+                                    <td class="table__cell td-time">
+                                        {% if case.event_time.length > 0 %}
+                                            {{ case.event_time }}
+                                        {% endif %}
+                                    </td>
+                                    <td class="table__cell td-channel">
+                                        {% if case.event_channel.length > 0 %}
+                                            {{ case.event_channel }}
+                                        {% endif %}
+                                    </td>
+                                    <td class="table__cell td-event">
+                                        <div id="{{ case.id }}" class="collapsible js-collapsible" open data-btn-close="Hide this" data-save-state="true">
+                                            <div class="collapsible__heading js-collapsible-heading">
+                                                <div class="collapsible__controls">
+                                                    <div class="collapsible__title u-fs-r--b">
+                                                        {% if case.event_description.length > 0 %}
+                                                            {{ case.event_description }}
+                                                        {% endif %}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="{{ case.id }}-content" class="collapsible__content js-collapsible-content">
+                                                <dl class="metadata metadata__list grid grid--gutterless u-cf u-mb-l" title="This is an example of the metadata component" aria-label="This is an example of the metadata component">
+                                                    {% if case.id.length > 0 %}
+                                                        <dt class="metadata__term grid__col col-4@m">Case ID</dt>
+                                                        <dd class="metadata__value grid__col col-8@m">{{ case.id }}</dd>
+                                                    {% endif %}
+                                                    {% if case.event_type.length > 0 %}
+                                                        <dt class="metadata__term grid__col col-4@m">Event type</dt>
+                                                        <dd class="metadata__value grid__col col-8@m">{{ case.event_type }}</dd>
+                                                    {% endif %}
+                                                    {% if case.event_payload.length > 0 %}
+                                                        <dt class="metadata__term grid__col col-4@m">Event payload</dt>
+                                                        <dd class="metadata__value grid__col col-8@m">{{ case.event_payload }}</dd>
+                                                    {% endif %}
+                                                    {% if case.event_payload.oa.length > 0 %}
+                                                        <dt class="metadata__term grid__col col-4@m">OA</dt>
+                                                        <dd class="metadata__value grid__col col-8@m">{{ case.event_payload.oa }}</dd>
+                                                    {% endif %}
+                                                    {% if case.event_payload.lad.length > 0 %}
+                                                        <dt class="metadata__term grid__col col-4@m">LAD</dt>
+                                                        <dd class="metadata__value grid__col col-8@m">{{ case.event_payload.lad }}</dd>
+                                                    {% endif %}
+                                                    {% if case.event_payload.arid.length > 0 %}
+                                                        <dt class="metadata__term grid__col col-4@m">ARID</dt>
+                                                        <dd class="metadata__value grid__col col-8@m">{{ case.event_payload.arid }}</dd>
+                                                    {% endif %}
+                                                    {% if case.event_payload.lsoa.length > 0 %}
+                                                        <dt class="metadata__term grid__col col-4@m">LSOA</dt>
+                                                        <dd class="metadata__value grid__col col-8@m">{{ case.event_payload.lsoa }}</dd>
+                                                    {% endif %}
+                                                    {% if case.event_payload.msoa.length > 0 %}
+                                                        <dt class="metadata__term grid__col col-4@m">MSOA</dt>
+                                                        <dd class="metadata__value grid__col col-8@m">{{ case.event_payload.msoa }}</dd>
+                                                    {% endif %}
+                                                    {% if case.event_payload.uprn.length > 0 %}
+                                                        <dt class="metadata__term grid__col col-4@m">UPRN</dt>
+                                                        <dd class="metadata__value grid__col col-8@m">{{ case.event_payload.uprn }}</dd>
+                                                    {% endif %}
+                                                    {% if case.event_payload.region.length > 0 %}
+                                                        <dt class="metadata__term grid__col col-4@m">Region</dt>
+                                                        <dd class="metadata__value grid__col col-8@m">{{ case.event_payload.region }}</dd>
+                                                    {% endif %}
+                                                    {% if case.event_payload.abpCode.length > 0 %}
+                                                        <dt class="metadata__term grid__col col-4@m">ABP code</dt>
+                                                        <dd class="metadata__value grid__col col-8@m">{{ case.event_payload.abpCode }}</dd>
+                                                    {% endif %}
+                                                    {% if case.event_payload.latitude.length > 0 %}
+                                                        <dt class="metadata__term grid__col col-4@m">Latitude</dt>
+                                                        <dd class="metadata__value grid__col col-8@m">{{ case.event_payload.latitude }}</dd>
+                                                    {% endif %}
+                                                    {% if case.event_payload.postcode.length > 0 %}
+                                                        <dt class="metadata__term grid__col col-4@m">Postcode</dt>
+                                                        <dd class="metadata__value grid__col col-8@m">{{ case.event_payload.postcode }}</dd>
+                                                    {% endif %}
+                                                    {% if case.event_payload.townName.length > 0 %}
+                                                        <dt class="metadata__term grid__col col-4@m">Town name</dt>
+                                                        <dd class="metadata__value grid__col col-8@m">{{ case.event_payload.townName }}</dd>
+                                                    {% endif %}
+                                                    {% if case.event_payload.estabArid.length > 0 %}
+                                                        <dt class="metadata__term grid__col col-4@m">ESTAB ARID</dt>
+                                                        <dd class="metadata__value grid__col col-8@m">{{ case.event_payload.estabArid }}</dd>
+                                                    {% endif %}
+                                                    {% if case.event_payload.estabType.length > 0 %}
+                                                        <dt class="metadata__term grid__col col-4@m">ESTAB Type</dt>
+                                                        <dd class="metadata__value grid__col col-8@m">{{ case.event_payload.estabType }}</dd>
+                                                    {% endif %}
+                                                    {% if case.event_payload.longitude.length > 0 %}
+                                                        <dt class="metadata__term grid__col col-4@m">Longitude</dt>
+                                                        <dd class="metadata__value grid__col col-8@m">{{ case.event_payload.longitude }}</dd>
+                                                    {% endif %}
+                                                    {% if case.event_payload.htcDigital.length > 0 %}
+                                                        <dt class="metadata__term grid__col col-4@m">HTC digital</dt>
+                                                        <dd class="metadata__value grid__col col-8@m">{{ case.event_payload.htcDigital }}</dd>
+                                                    {% endif %}
+                                                    {% if case.event_payload.addressType.length > 0 %}
+                                                        <dt class="metadata__term grid__col col-4@m">Address type</dt>
+                                                        <dd class="metadata__value grid__col col-8@m">{{ case.event_payload.addressType }}</dd>
+                                                    {% endif %}
+                                                    {% if case.event_payload.actionPlanId.length > 0 %}
+                                                        <dt class="metadata__term grid__col col-4@m">Action plan ID</dt>
+                                                        <dd class="metadata__value grid__col col-8@m">{{ case.event_payload.actionPlanId }}</dd>
+                                                    {% endif %}
+                                                    {% if case.event_payload.addressLevel.length > 0 %}
+                                                        <dt class="metadata__term grid__col col-4@m">Address level</dt>
+                                                        <dd class="metadata__value grid__col col-8@m">{{ case.event_payload.addressLevel }}</dd>
+                                                    {% endif %}
+                                                    {% if case.event_payload.addressLine1.length > 0 %}
+                                                        <dt class="metadata__term grid__col col-4@m">Address line 1</dt>
+                                                        <dd class="metadata__value grid__col col-8@m">{{ case.event_payload.addressLine1 }}</dd>
+                                                    {% endif %}
+                                                    {% if case.event_payload.addressLine2.length > 0 %}
+                                                        <dt class="metadata__term grid__col col-4@m">Address line 2</dt>
+                                                        <dd class="metadata__value grid__col col-8@m">{{ case.event_payload.addressLine2 }}</dd>
+                                                    {% endif %}
+                                                    {% if case.event_payload.addressLine3.length > 0 %}
+                                                        <dt class="metadata__term grid__col col-4@m">Address line 3</dt>
+                                                        <dd class="metadata__value grid__col col-8@m">{{ case.event_payload.addressLine3 }}</dd>
+                                                    {% endif %}
+                                                    {% if case.event_payload.treatmentCode.length > 0 %}
+                                                        <dt class="metadata__term grid__col col-4@m">Treatment code</dt>
+                                                        <dd class="metadata__value grid__col col-8@m">{{ case.event_payload.treatmentCode }}</dd>
+                                                    {% endif %}
+                                                    {% if case.event_payload.fieldOfficerId.length > 0 %}
+                                                        <dt class="metadata__term grid__col col-4@m">Field officer ID</dt>
+                                                        <dd class="metadata__value grid__col col-8@m">{{ case.event_payload.fieldOfficerId }}</dd>
+                                                    {% endif %}
+                                                    {% if case.event_payload.htcWillingness.length > 0 %}
+                                                        <dt class="metadata__term grid__col col-4@m">HTC willingness</dt>
+                                                        <dd class="metadata__value grid__col col-8@m">{{ case.event_payload.htcWillingness }}</dd>
+                                                    {% endif %}
+                                                    {% if case.event_payload.organisationName.length > 0 %}
+                                                        <dt class="metadata__term grid__col col-4@m">Organisation name</dt>
+                                                        <dd class="metadata__value grid__col col-8@m">{{ case.event_payload.organisationName }}</dd>
+                                                    {% endif %}
+                                                    {% if case.event_payload.ceExpectedCapacity.length > 0 %}
+                                                        <dt class="metadata__term grid__col col-4@m">CE expected capacity</dt>
+                                                        <dd class="metadata__value grid__col col-8@m">{{ case.event_payload.ceExpectedCapacity }}</dd>
+                                                    {% endif %}
+                                                    {% if case.event_payload.fieldCoordinatorId.length > 0 %}
+                                                        <dt class="metadata__term grid__col col-4@m">Field coordinator ID</dt>
+                                                        <dd class="metadata__value grid__col col-8@m">{{ case.event_payload.fieldCoordinatorId }}</dd>
+                                                    {% endif %}
+                                                    {% if case.event_payload.collectionExerciseId.length > 0 %}
+                                                        <dt class="metadata__term grid__col col-4@m">Collection exercise ID</dt>
+                                                        <dd class="metadata__value grid__col col-8@m">{{ case.event_payload.collectionExerciseId }}</dd>
+                                                    {% endif %}
+                                                    {% if case.event_source.length > 0 %}
+                                                        <dt class="metadata__term grid__col col-4@m">Event source</dt>
+                                                        <dd class="metadata__value grid__col col-8@m">{{ case.event_source }}</dd>
+                                                    {% endif %}
+                                                    {% if case.event_transaction_id.length > 0 %}
+                                                        <dt class="metadata__term grid__col col-4@m">Transaction ID</dt>
+                                                        <dd class="metadata__value grid__col col-8@m">{{ case.event_transaction_id }}</dd>
+                                                    {% endif %}
+                                                    {% if case.rm_event_processed.length > 0 %}
+                                                        <dt class="metadata__term grid__col col-4@m">Event processed</dt>
+                                                        <dd class="metadata__value grid__col col-8@m">{{ case.rm_event_processed }}</dd>
+                                                    {% endif %}
+                                                    {% if case.uac_qid_link_id.length > 0 %}
+                                                        <dt class="metadata__term grid__col col-4@m">UAC QID link ID</dt>
+                                                        <dd class="metadata__value grid__col col-8@m">{{ case.uac_qid_link_id }}</dd>
+                                                    {% endif %}
+                                                    {% if case.caze_case_id.length > 0 %}
+                                                        <dt class="metadata__term grid__col col-4@m">Caze case ID</dt>
+                                                        <dd class="metadata__value grid__col col-8@m">{{ case.caze_case_id }}</dd>
+                                                    {% endif %}
+                                                    {% if case.message_timestamp.length > 0 %}
+                                                        <dt class="metadata__term grid__col col-4@m">Message timestamp</dt>
+                                                        <dd class="metadata__value grid__col col-8@m">{{ case.message_timestamp }}</dd>
+                                                    {% endif %}
+
+                                                </dl>
+                                                <button type="button" class="btn btn--small js-collapsible-button u-d-no btn--secondary">
+                                                    <span class="btn__inner js-collapsible-button-inner">Hide this</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            {% else %}
+                                No data
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            {% block main %}{% endblock %}
+        </main>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {% from "components/footer/_macro.njk" import onsFooter %}
+    {{ 
+        onsFooter() 
+    }}
+{% endblock %}
+
+{% block bodyEnd %}
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="{{ pageInfo.rootPath }}/scripts/index.js"></script>
+{% endblock %}
