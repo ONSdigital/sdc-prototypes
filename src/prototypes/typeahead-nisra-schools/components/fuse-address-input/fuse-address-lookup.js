@@ -21,7 +21,7 @@ class FuseAddressInput {
 
     // Initialise address setter
     this.addressSetter = new AddressSetter(context);
-    
+
     // Initialise typeahead
     this.typeahead = new TypeaheadUI({
       context: context.querySelector(`.${baseClass}`),
@@ -41,32 +41,43 @@ class FuseAddressInput {
     }
   }
 
-
   onAddressSelect(selectedResult) {
     this.createAddressLines(selectedResult);
   }
 
   createAddressLines(selectedResult) {
-    let values = (selectedResult[this.lang]).split(',');
+    let values = selectedResult[this.lang].split(',');
     let addressLines;
-    if (values[5]) {
+    if (values[6]) {
       addressLines = {
-        addressLine1: values[0],
-        addressLine2: values[1],
-        addressLine3: values[2],
+        organisation: values[0],
+        addressLine1: values[1],
+        addressLine2: values[2],
+        addressLine3: values[3],
+        townName: values[4],
+        countyName: values[5],
+        postcode: values[6]
+      };
+    } else if (values[5]) {
+      addressLines = {
+        organisation: values[0],
+        addressLine1: values[1],
+        addressLine2: values[2],
+        addressLine3: null,
         townName: values[3],
         countyName: values[4],
         postcode: values[5]
-      }    
+      };
     } else {
       addressLines = {
-        addressLine1: values[0],
-        addressLine2: values[1],
+        organisation: values[0],
+        addressLine1: values[1],
+        addressLine2: null,
         addressLine3: null,
         townName: values[2],
         countyName: values[3],
         postcode: values[4]
-      }
+      };
     }
     this.addressSetter.setAddress(addressLines);
   }

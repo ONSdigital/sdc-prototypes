@@ -26,7 +26,7 @@ class AddressInput {
     this.errored = false;
     this.isEditable = context.querySelector(`.${classNotEditable}`) ? false : true;
     this.isRhLookup = context.querySelector(`.${classRHLookup}`) ? true : false;
-    
+
     // Initialise address setter
     this.addressSetter = new AddressSetter(context);
 
@@ -48,17 +48,17 @@ class AddressInput {
     if (this.form) {
       this.form.addEventListener('submit', this.handleSubmit.bind(this));
     }
-    
+
     this.baseURL = 'https://whitelodge-ai-api.ai.census-gcp.onsdigital.uk/addresses/';
     this.lookupURL = `${this.baseURL}eq?input=`;
     this.retrieveURL = this.isRhLookup ? `${this.baseURL}rh/uprn/` : `${this.baseURL}eq/uprn/`;
-    
+
     this.user = 'equser';
     this.password = '$4c@ec1zLBu';
     this.auth = btoa(this.user + ':' + this.password);
     this.headers = new Headers({
-      'Authorization': 'Basic ' + this.auth,
-    }); 
+      Authorization: 'Basic ' + this.auth
+    });
   }
 
   suggestAddresses(query) {
@@ -112,44 +112,41 @@ class AddressInput {
 
     // let groupPostcodes = addresses[0] && addresses[0].bestMatchAddress ? this.groupPostcodes(addresses, input) : null;
     let groupPostcodes = null;
-    
+
     if (groupPostcodes) {
       mappedResults = groupPostcodes.map(({ address, count, postcode, uprn }) => {
         const countAdjust = count - 1;
         const addressText = countAdjust === 1 ? 'address' : 'addresses';
         return {
-          'en-gb': countAdjust === 0 ? address : address + ' <span class="group-text">(' + countAdjust + ' more ' + addressText + ')</span>',
+          'en-gb':
+            countAdjust === 0 ? address : address + ' <span class="group-text">(' + countAdjust + ' more ' + addressText + ')</span>',
           postcode,
           uprn,
-          countAdjust,
+          countAdjust
         };
       });
 
       limit = originalLimit;
       this.currentResults = mappedResults.sort();
-
     } else if (addresses[0]) {
-
       if (addresses[0] && addresses[0].bestMatchAddress) {
         updatedResults = addresses.map(({ uprn, bestMatchAddress }) => ({ uprn: uprn, address: bestMatchAddress }));
         limit = originalLimit;
-
       } else if (addresses[0] && addresses[0].formattedAddress) {
         updatedResults = addresses.map(({ uprn, formattedAddress }) => ({ uprn: uprn, address: formattedAddress }));
         limit = 100;
-      }  
+      }
 
       mappedResults = updatedResults.map(({ uprn, address }) => {
         const sanitisedText = sanitiseTypeaheadText(address, this.addressReplaceChars);
         return {
           'en-gb': address,
           sanitisedText,
-          uprn,
+          uprn
         };
       });
-    
-      this.currentResults = mappedResults.sort();
 
+      this.currentResults = mappedResults.sort();
     } else {
       this.currentResults = addresses;
       limit = originalLimit;
@@ -185,22 +182,20 @@ class AddressInput {
     const testForPostcode = postcodeRegex.test(input);
     if (testForPostcode) {
       const addressesByPostcode = new Map();
-  
+
       results.forEach(address => {
         const postcode = address.bestMatchAddress.match(postcodeRegex);
-        if (!addressesByPostcode.has(postcode[0]))
-          addressesByPostcode.set(postcode[0], []);
+        if (!addressesByPostcode.has(postcode[0])) addressesByPostcode.set(postcode[0], []);
         addressesByPostcode.get(postcode[0]).push(address);
       });
 
-      const groupPostcodes = Array.from(addressesByPostcode)
-        .map(([postcode, addresses]) => ({
-          address:  addresses[0].bestMatchAddress,
-          count:    addresses.length,
-          postcode: postcode,
-          uprn: addresses[0].uprn
-        }));
-      
+      const groupPostcodes = Array.from(addressesByPostcode).map(([postcode, addresses]) => ({
+        address: addresses[0].bestMatchAddress,
+        count: addresses.length,
+        postcode: postcode,
+        uprn: addresses[0].uprn
+      }));
+
       return groupPostcodes;
     }
   }
@@ -233,13 +228,12 @@ class AddressInput {
           .catch(reject);
       } else if (selectedResult.postcode && selectedResult.countAdjust > 0) {
         const event = new Event('input', {
-          'bubbles': true,
-          'cancelable': true
+          bubbles: true,
+          cancelable: true
         });
         this.typeahead.input.value = selectedResult.postcode;
         this.typeahead.input.focus();
         this.typeahead.input.dispatchEvent(event);
-
       }
     });
   }
@@ -247,12 +241,13 @@ class AddressInput {
   createAddressLines(data, resolve) {
     const values = data.response.address;
     const addressLines = {
+      organisation: values.organisation,
       addressLine1: values.addressLine1,
       addressLine2: values.addressLine2,
       addressLine3: values.addressLine3,
       townName: values.townName,
       postcode: values.postcode
-    }
+    };
     this.addressSetter.setAddress(addressLines);
     resolve();
   }

@@ -10,7 +10,7 @@ layout: typeahead-nisra-schools/views/_master
     <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/in-ni.html">Previous</a>
     <form action="{{ pageInfo.parentPath }}/travel.html?previous={{ pageInfo.path }}.html">
         {% call onsQuestion({
-            "title": 'What is the address of your main place of study?'
+            "title": 'What is the name and address of your main place of study?'
         }) %}
         {{
             prototypeFuseAddressInput({
@@ -19,6 +19,9 @@ layout: typeahead-nisra-schools/views/_master
                 "label": {
                     "text": "Initialise prototype",
                     "description": "The researcher testing this prototype should ask the person they are testing with for their address and fill this in for them before handing over the prototype."
+                },
+                "organisation": {
+                    "label": "Name"
                 },
                 "line1": {
                     "label": "Address line 1"
@@ -40,7 +43,7 @@ layout: typeahead-nisra-schools/views/_master
                 },
                 "typeahead": {
                     "label": {
-                        "text": "Enter address or postcode and select from results"
+                        "text": "Enter name, address or postcode and select from results"
                         
                     },
                     "typeahead": {
