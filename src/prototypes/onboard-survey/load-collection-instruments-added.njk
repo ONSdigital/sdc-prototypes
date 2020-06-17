@@ -13,34 +13,28 @@ layout: onboard-survey/views/_master
     <h1 name="page-surveys-title">Manage collection instruments for 001 NEW</h1>
     <div class="grid overview">
         <div class="grid__col col-4@m">
-            <p class="field">
-                <div class="grid">
-                    <div class="grid__col col-6@m">
-                        {{ 
-                        onsInput({
-                            "id": "EQid",
-                            "classes": "input--w-6",
-                            "label": {
-                                "text": "Eq ID",
-                                "description": "For example: mbs"
-                            }
-                        }) 
-                    }}
-                    </div>
-                    <div class="grid__col col-6@m">
-                        {{ 
-                        onsInput({
-                            "id": "formtype",
-                            "classes": "input--w-6",
-                            "label": {
-                                "text": "Form type",
-                                "description": "For example: 001"
-                            }
-                        }) 
-                    }}
-                    </div>
-                </div>
-            </p>
+            <div class="field-group">
+                {{ 
+                    onsInput({
+                        "id": "EQid",
+                        "classes": "input--w-6",
+                        "label": {
+                            "text": "Eq ID",
+                            "description": "For example: mbs"
+                        }
+                    }) 
+                }}
+                {{ 
+                    onsInput({
+                        "id": "formtype",
+                        "classes": "input--w-6",
+                        "label": {
+                            "text": "Form type",
+                            "description": "For example: 001"
+                        }
+                    }) 
+                }}
+            </div>
             <p class="field">
                 <form action="" method="get">
                     {{ 
