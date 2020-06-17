@@ -10,7 +10,7 @@ layout: typeahead-nisra-schools/views/_master
     <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/in-ni.html">Previous</a>
     <form action="{{ pageInfo.parentPath }}/travel.html?previous={{ pageInfo.path }}.html">
         {% call onsQuestion({
-            "title": 'What is the name and address of your main place of study?'
+            "title": 'What is the address of your main place of study?'
         }) %}
         {{
             prototypeFuseAddressInput({
