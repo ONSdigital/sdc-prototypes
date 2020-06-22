@@ -1,0 +1,75 @@
+---
+title: Assisted Digital Lookup
+group: Census
+version: 17.2.0
+layout: census-website-engage/views/_page
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": pageInfo.rootPath + '/',
+                            "text": 'Home'
+                        }
+                    ]
+                }) 
+            }}
+
+            <div class="grid">
+
+                <div class="grid__col col-12@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-l u-fs-xxl">Find a support centre</h1>
+
+                        <div class="col-8@m u-mb-l">
+                            <p>To find your nearest support centre, we need your postcode.</p>
+
+                            {% from "components/input/_macro.njk" import onsInput %}
+                            {% from "components/button/_macro.njk" import onsButton %}
+
+                            <form method="get" action="/prototypes/census-website-engage/find-a-support-centre/results">
+
+                                {{
+                                    onsInput({
+                                        "id": 'postal-code',
+                                        "label": {
+                                            "text": 'Enter your postcode'
+                                        },
+                                        "autocomplete": 'postal-code',
+                                        "classes": 'input--w-5 u-mb-m'
+                                    })
+                                }}
+
+                                {{
+                                    onsButton({
+                                        "type": 'submit',
+                                        "text": 'Find',
+                                        "classes": 'btn--small'
+                                    })
+                                }}
+
+                            </form>
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}

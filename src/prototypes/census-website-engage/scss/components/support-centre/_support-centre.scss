@@ -1,0 +1,58 @@
+/* --------------------------------
+
+Title:
+Support centre
+
+Description:
+Support centre listing
+
+-------------------------------- */
+
+.support-centre {
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+.support-centre__item {
+  display: block;
+  margin-bottom: 0;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.support-centre__item:not(:first-child) {
+  border-top: 1px solid $border-color;
+  padding-top: 32px;
+}
+
+.support-centre__item:not(:last-child) {
+  padding-bottom: 32px;
+}
+
+.support-centre__distance {
+  background-color: rgba(#00a3a6, 0.2);
+  font-size: 16px;
+  display: inline-block;
+  line-height: 24px;
+  padding: 4px 8px;
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+
+.support-centre__location {
+  margin-bottom: 0;
+}
+
+// Details
+.support-centre__heading {
+  font-size: 18px;
+  line-height: (24/18);
+  margin-bottom: 8px;
+}
+
+.support-centre__list-item {
+  list-style-type: disc;
+  margin-bottom: 0;
+}
