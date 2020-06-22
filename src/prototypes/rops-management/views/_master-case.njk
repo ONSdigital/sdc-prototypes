@@ -27,20 +27,27 @@
     {% block preMain %}{% endblock %}
     <div class="page__container container container--wide">
         <main id="main-content" class="page__main {{ pageClasses }}">
+            <p class="field u-mb-l">
+                <a href="../search-results.html">Back to search results</a>
+            </p>
             <div class="grid">
                 <div class="grid__col col-12@m">
                     {% for case in casedetails %}
                         <h1>
+                            {% if case.case_ref.length > 0 %}
+                                {{ case.case_ref }} 
+                            {% endif %}
+                            <span class="u-fw-n"> 
                             {% if case.organisation_name.length > 0 %}
-                                {{ case.organisation_name }}
+                                {{ case.organisation_name }},
                             {% endif %}
                             {% if case.address_line1.length > 0 %}
                                 {{ case.address_line1 }}
                             {% endif %}
+                            </span>
                         </h1>
-                        <h2>Case summary</h2>
                         <dl class="metadata metadata__list grid grid--gutterless u-cf u-mb-s" title="This is an example of the metadata component" aria-label="This is an example of the metadata component">
-                            <dt class="metadata__term grid__col col-3@m">Address:</dt>
+                            <dt class="metadata__term grid__col col-3@m">Full address:</dt>
 
                             {% if case.organisation_name.length > 0 %}
                                 <dd class="metadata__value grid__col col-9@m">
@@ -88,12 +95,6 @@
                                 <dt class="metadata__term grid__col col-3@m">Establishment type</dt>
                                 <dd class="metadata__value grid__col col-9@m">
                                     {{ case.estab_type }}
-                                </dt>
-                            {% endif %}
-                            {% if case.case_ref.length > 0 %}
-                                <dt class="metadata__term grid__col col-3@m">Case reference</dt>
-                                <dd class="metadata__value grid__col col-9@m">
-                                    {{ case.case_ref }}
                                 </dt>
                             {% endif %}
                             <dt class="metadata__term grid__col col-3@m">Status:</dt>
