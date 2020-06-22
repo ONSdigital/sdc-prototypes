@@ -2,7 +2,7 @@
 [
   {
   "case_id":"51f00c68-8f9a-4abb-99fe-e918c251e6b7",
-  "case_ref":"63869069",
+  "case_ref":"63869067",
   "abp_code":"RD06",
   "action_plan_id":"f84c75a3-3ed3-4bdb-bb64-75ddc616f984",
   "address_level":"U",
@@ -26,7 +26,7 @@
   "longitude":-0.3400823,
   "lsoa":"E01001254",
   "msoa":"E02000267",
-  "oa":"E00006248",
+  "oa":"E00006248",§
   "organisation_name":null,
   "postcode":"GU166DG",
   "region":"E12000007",
