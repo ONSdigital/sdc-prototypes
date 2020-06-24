@@ -117,30 +117,15 @@
                     <table id="basic-table" class="table ">
                         <thead class="table__head">
                             <tr class="table__row">
+                                <th scope="col" class="table__header ">Event</th>
+                                <th scope="col" class="table__header ">Channel</th>
                                 <th scope="col" class="table__header ">Date</th>
                                 <th scope="col" class="table__header ">Time</th>
-                                <th scope="col" class="table__header ">Channel</th>
-                                <th scope="col" class="table__header ">Event</th>
                             </tr>
                         </thead>
                         <tbody class="table__body">
                             {% for case in cases %}
                                 <tr class="table__row">
-                                    <td class="table__cell td-date">
-                                        {% if case.event_date.length > 0 %}
-                                            {{ case.event_date }}
-                                        {% endif %}
-                                    </td>
-                                    <td class="table__cell td-time">
-                                        {% if case.event_time.length > 0 %}
-                                            {{ case.event_time }}
-                                        {% endif %}
-                                    </td>
-                                    <td class="table__cell td-channel">
-                                        {% if case.event_channel.length > 0 %}
-                                            {{ case.event_channel }}
-                                        {% endif %}
-                                    </td>
                                     <td class="table__cell td-event">
                                         <div id="{{ case.id }}" class="collapsible js-collapsible" open data-btn-close="Hide this" data-save-state="true">
                                             <div class="collapsible__heading js-collapsible-heading">
@@ -355,6 +340,21 @@
                                                 </button>
                                             </div>
                                         </div>
+                                    </td>
+                                    <td class="table__cell td-channel">
+                                        {% if case.event_channel.length > 0 %}
+                                            {{ case.event_channel }}
+                                        {% endif %}
+                                    </td>
+                                    <td class="table__cell td-date">
+                                        {% if case.event_date.length > 0 %}
+                                            {{ case.event_date }}
+                                        {% endif %}
+                                    </td>
+                                    <td class="table__cell td-time">
+                                        {% if case.event_time.length > 0 %}
+                                            {{ case.event_time }}
+                                        {% endif %}
                                     </td>
                                 </tr>
                             {% else %}
