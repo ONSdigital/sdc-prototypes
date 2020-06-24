@@ -24,7 +24,7 @@
 } %}
 
 {% block pageContent %}
-    {% block preMain %}{% endblock %}
+    {% block preMain %}
     <div class="page__container container container--wide">
         <main id="main-content" class="page__main {{ pageClasses }}">
             <p class="field u-mb-l">
@@ -314,7 +314,7 @@
                                                 
 
                 
-                                                    <!-- Print case selected --> 
+
                                                     {% if case.event_payload.printCaseSelected.batchId.length > 0 %}
                                                         <dt class="metadata__term grid__col col-4@m"> - Batch ID</dt>
                                                         <dd class="metadata__value grid__col col-8@m">{{ case.event_payload.printCaseSelected.batchId }}</dd>
@@ -379,6 +379,7 @@
                     </p>
                 </div>
             </div>
+            {% endblock %}
             {% block main %}{% endblock %}
         </main>
     </div>
