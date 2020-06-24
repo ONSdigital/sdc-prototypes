@@ -33,14 +33,49 @@
             {% for case in casedetails %}
                 <div class="grid">
                     <div class="grid__col col-12@m">
-                        <h1>Case details for
+                        <h1>Case details for<br>
+                            <span class="u-fs-m u-fw-n"> 
                             {% if case.organisation_name.length > 0 %}
                                 {{ case.organisation_name }}
                             {% endif %}
                             {% if case.address_line1.length > 0 %}
                                 {{ case.address_line1 }}
                             {% endif %}
+                            </span><br>
+                            {% if case.case_ref.length > 0 %}
+                                {{ case.case_ref }} 
+                            {% endif %}
                         </h1>
+                        
+                        <h2>Status</h2>
+                        <dl class="metadata metadata__list grid grid--gutterless u-cf u-mb-s" title="Status" aria-label="Status">
+
+                            {% if case.receipt_received.length > 0 %}
+                                <dt class="metadata__term grid__col col-2@m">receipt_received</dt>
+                                <dd class="metadata__value grid__col col-10@m">
+                                    {{ case.receipt_received }}
+                                </dd>
+                            {% endif %}
+                            {% if case.refusal_received.length > 0 %}
+                                <dt class="metadata__term grid__col col-2@m">refusal_received</dt>
+                                <dd class="metadata__value grid__col col-10@m">
+                                    {{ case.refusal_received }}
+                                </dd>
+                            {% endif %}
+                            {% if case.address_invalid.length > 0 %}
+                                <dt class="metadata__term grid__col col-2@m">address_invalid</dt>
+                                <dd class="metadata__value grid__col col-10@m">
+                                    {{ case.address_invalid }}
+                                </dd>
+                            {% endif %}
+                            {% if case.undelivered_as_addressed.length > 0 %}
+                                <dt class="metadata__term grid__col col-2@m">undelivered_as_addressed</dt>
+                                <dd class="metadata__value grid__col col-10@m">
+                                    {{ case.undelivered_as_addressed }}
+                                </dd>
+                            {% endif %}
+                        </dl>
+
 
                         <h2>Case details</h2>
                         <dl class="metadata metadata__list grid grid--gutterless u-cf u-mb-s" title="Case details" aria-label="Case details">
@@ -261,35 +296,6 @@
                                 <dt class="metadata__term grid__col col-2@m">last_updated</dt>
                                 <dd class="metadata__value grid__col col-10@m">
                                     {{ case.last_updated }}
-                                </dd>
-                            {% endif %}
-                        </dl>
-
-                        <h2>Status</h2>
-                        <dl class="metadata metadata__list grid grid--gutterless u-cf u-mb-s" title="Status" aria-label="Status">
-
-                            {% if case.receipt_received.length > 0 %}
-                                <dt class="metadata__term grid__col col-2@m">receipt_received</dt>
-                                <dd class="metadata__value grid__col col-10@m">
-                                    {{ case.receipt_received }}
-                                </dd>
-                            {% endif %}
-                            {% if case.refusal_received.length > 0 %}
-                                <dt class="metadata__term grid__col col-2@m">refusal_received</dt>
-                                <dd class="metadata__value grid__col col-10@m">
-                                    {{ case.refusal_received }}
-                                </dd>
-                            {% endif %}
-                            {% if case.address_invalid.length > 0 %}
-                                <dt class="metadata__term grid__col col-2@m">address_invalid</dt>
-                                <dd class="metadata__value grid__col col-10@m">
-                                    {{ case.address_invalid }}
-                                </dd>
-                            {% endif %}
-                            {% if case.undelivered_as_addressed.length > 0 %}
-                                <dt class="metadata__term grid__col col-2@m">undelivered_as_addressed</dt>
-                                <dd class="metadata__value grid__col col-10@m">
-                                    {{ case.undelivered_as_addressed }}
                                 </dd>
                             {% endif %}
                         </dl>

@@ -34,20 +34,23 @@
                 <div class="grid__col col-12@m">
                     {% for case in casedetails %}
                         <h1>
+                            <span class="u-fs-m u-fw-n"> 
+                                Case reference
+                            </span><br>
                             {% if case.case_ref.length > 0 %}
                                 {{ case.case_ref }} 
                             {% endif %}
-                            <span class="u-fw-n"> 
+                            <!-- <span class="u-fw-n"> 
                             {% if case.organisation_name.length > 0 %}
                                 {{ case.organisation_name }},
                             {% endif %}
                             {% if case.address_line1.length > 0 %}
                                 {{ case.address_line1 }}
                             {% endif %}
-                            </span>
+                            </span> -->
                         </h1>
                         <dl class="metadata metadata__list grid grid--gutterless u-cf u-mb-s" title="This is an example of the metadata component" aria-label="This is an example of the metadata component">
-                            <dt class="metadata__term grid__col col-3@m">Full address:</dt>
+                            <dt class="metadata__term grid__col col-3@m">Address:</dt>
 
                             {% if case.organisation_name.length > 0 %}
                                 <dd class="metadata__value grid__col col-9@m">
@@ -109,7 +112,7 @@
                         <a href="full-details.html">Show all case details</a>
                     </p>
 
-                    <h2>Event history for QID: 0120000006970650</h2>
+                    <h2>Event history</h2>
 
                     <table id="basic-table" class="table ">
                         <thead class="table__head">
@@ -287,14 +290,58 @@
                                                         <dt class="metadata__term grid__col col-4@m">Event processed</dt>
                                                         <dd class="metadata__value grid__col col-8@m">{{ case.rm_event_processed }}</dd>
                                                     {% endif %}
-                                                    {% if case.uac_qid_link_id.length > 0 %}
-                                                        <dt class="metadata__term grid__col col-4@m">UAC QID link ID</dt>
-                                                        <dd class="metadata__value grid__col col-8@m">{{ case.uac_qid_link_id }}</dd>
+
+
+
+
+                                                    <!-- UAC QID link ID --> 
+
+                                                
+                                                    {% if case.event_payload.uacQidCreated.qid.length > 0 %}
+                                                        <dt class="metadata__term grid__col col-4@m"> - QID</dt>
+                                                        <dd class="metadata__value grid__col col-8@m">{{ case.event_payload.uacQidCreated.qid }}</dd>
                                                     {% endif %}
+
+                                                    {% if case.event_payload.uacQidCreated.uac.length > 0 %}
+                                                        <dt class="metadata__term grid__col col-4@m"> - UAC</dt>
+                                                        <dd class="metadata__value grid__col col-8@m">{{ case.event_payload.uacQidCreated.uac }}</dd>
+                                                    {% endif %}
+
+                                                    {% if case.event_payload.uacQidCreated.caseId.length > 0 %}
+                                                        <dt class="metadata__term grid__col col-4@m"> - Case ID</dt>
+                                                        <dd class="metadata__value grid__col col-8@m">{{ case.event_payload.uacQidCreated.caseId }}</dd>
+                                                    {% endif %}
+                                                
+
+                
+                                                    <!-- Print case selected --> 
+                                                    {% if case.event_payload.printCaseSelected.batchId.length > 0 %}
+                                                        <dt class="metadata__term grid__col col-4@m"> - Batch ID</dt>
+                                                        <dd class="metadata__value grid__col col-8@m">{{ case.event_payload.printCaseSelected.batchId }}</dd>
+                                                    {% endif %}
+
+                                                    {% if case.event_payload.printCaseSelected.caseRef.length > 0 %}
+                                                        <dt class="metadata__term grid__col col-4@m"> - Case ref</dt>
+                                                        <dd class="metadata__value grid__col col-8@m">{{ case.event_payload.printCaseSelected.caseRef }}</dd>
+                                                    {% endif %}
+
+                                                    {% if case.event_payload.printCaseSelected.packCode.length > 0 %}
+                                                        <dt class="metadata__term grid__col col-4@m"> - Pack code</dt>
+                                                        <dd class="metadata__value grid__col col-8@m">{{ case.event_payload.printCaseSelected.packCode }}</dd>
+                                                    {% endif %}
+
+                                                    {% if case.event_payload.printCaseSelected.actionRuleId.length > 0 %}
+                                                        <dt class="metadata__term grid__col col-4@m"> - Action rule ID</dt>
+                                                        <dd class="metadata__value grid__col col-8@m">{{ case.event_payload.printCaseSelected.actionRuleId }}</dd>
+                                                    {% endif %}
+
+
+
                                                     {% if case.caze_case_id.length > 0 %}
                                                         <dt class="metadata__term grid__col col-4@m">Caze case ID</dt>
                                                         <dd class="metadata__value grid__col col-8@m">{{ case.caze_case_id }}</dd>
                                                     {% endif %}
+
                                                     {% if case.message_timestamp.length > 0 %}
                                                         <dt class="metadata__term grid__col col-4@m">Message timestamp</dt>
                                                         <dd class="metadata__value grid__col col-8@m">{{ case.message_timestamp }}</dd>
