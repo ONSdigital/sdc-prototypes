@@ -360,6 +360,23 @@
                             {% endfor %}
                         </tbody>
                     </table>
+                    
+                    <h2>Case actions</h2>
+                    <p class="field">
+                    {{ 
+                        onsButton({
+                            "type": 'button',
+                            "text": 'Pause case',
+                            "classes": 'btn--secondary btn--small'
+                        }) 
+                    }}{{ 
+                        onsButton({
+                            "type": 'button',
+                            "text": 'Mark as refusal',
+                            "classes": 'btn--secondary btn--small'
+                        }) 
+                    }}
+                    </p>
                 </div>
             </div>
             {% block main %}{% endblock %}
