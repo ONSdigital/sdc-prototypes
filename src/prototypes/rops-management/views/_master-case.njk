@@ -298,40 +298,42 @@
 
                                                 
                                                     {% if case.event_payload.uacQidCreated.qid.length > 0 %}
-                                                        <dt class="metadata__term grid__col col-4@m"> - QID</dt>
+                                                        <dt class="metadata__term grid__col col-4@m">New QID</dt>
                                                         <dd class="metadata__value grid__col col-8@m">{{ case.event_payload.uacQidCreated.qid }}</dd>
                                                     {% endif %}
 
                                                     {% if case.event_payload.uacQidCreated.uac.length > 0 %}
-                                                        <dt class="metadata__term grid__col col-4@m"> - UAC</dt>
+                                                        <dt class="metadata__term grid__col col-4@m">New UAC</dt>
                                                         <dd class="metadata__value grid__col col-8@m">{{ case.event_payload.uacQidCreated.uac }}</dd>
                                                     {% endif %}
 
                                                     {% if case.event_payload.uacQidCreated.caseId.length > 0 %}
-                                                        <dt class="metadata__term grid__col col-4@m"> - Case ID</dt>
+                                                        <dt class="metadata__term grid__col col-4@m">New Case ID</dt>
                                                         <dd class="metadata__value grid__col col-8@m">{{ case.event_payload.uacQidCreated.caseId }}</dd>
                                                     {% endif %}
-                                                
 
-                
+
+
+                                                    <!-- Print Case --> 
+
 
                                                     {% if case.event_payload.printCaseSelected.batchId.length > 0 %}
-                                                        <dt class="metadata__term grid__col col-4@m"> - Batch ID</dt>
+                                                        <dt class="metadata__term grid__col col-4@m">Print case: Batch ID</dt>
                                                         <dd class="metadata__value grid__col col-8@m">{{ case.event_payload.printCaseSelected.batchId }}</dd>
                                                     {% endif %}
 
                                                     {% if case.event_payload.printCaseSelected.caseRef.length > 0 %}
-                                                        <dt class="metadata__term grid__col col-4@m"> - Case ref</dt>
+                                                        <dt class="metadata__term grid__col col-4@m">Print case: Case ref</dt>
                                                         <dd class="metadata__value grid__col col-8@m">{{ case.event_payload.printCaseSelected.caseRef }}</dd>
                                                     {% endif %}
 
                                                     {% if case.event_payload.printCaseSelected.packCode.length > 0 %}
-                                                        <dt class="metadata__term grid__col col-4@m"> - Pack code</dt>
+                                                        <dt class="metadata__term grid__col col-4@m">Print case: Pack code</dt>
                                                         <dd class="metadata__value grid__col col-8@m">{{ case.event_payload.printCaseSelected.packCode }}</dd>
                                                     {% endif %}
 
                                                     {% if case.event_payload.printCaseSelected.actionRuleId.length > 0 %}
-                                                        <dt class="metadata__term grid__col col-4@m"> - Action rule ID</dt>
+                                                        <dt class="metadata__term grid__col col-4@m">Print case: Action rule ID</dt>
                                                         <dd class="metadata__value grid__col col-8@m">{{ case.event_payload.printCaseSelected.actionRuleId }}</dd>
                                                     {% endif %}
 
