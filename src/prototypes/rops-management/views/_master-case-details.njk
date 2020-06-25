@@ -33,7 +33,10 @@
             {% for case in casedetails %}
                 <div class="grid">
                     <div class="grid__col col-12@m">
-                        <h1>Case details for<br>
+                        <h1>Case details for
+                            {% if case.case_ref.length > 0 %}
+                                {{ case.case_ref }} 
+                            {% endif %}
                             <span class="u-fs-m u-fw-n"> 
                             {% if case.organisation_name.length > 0 %}
                                 {{ case.organisation_name }}
@@ -41,13 +44,10 @@
                             {% if case.address_line1.length > 0 %}
                                 {{ case.address_line1 }}
                             {% endif %}
-                            </span><br>
-                            {% if case.case_ref.length > 0 %}
-                                {{ case.case_ref }} 
-                            {% endif %}
+                            </span>
                         </h1>
                         
-                        <h2>Status</h2>
+                        <h2 class="u-mt-l">Status</h2>
                         <dl class="metadata metadata__list grid grid--gutterless u-cf u-mb-s" title="Status" aria-label="Status">
 
                             {% if case.receipt_received.length > 0 %}
@@ -77,7 +77,7 @@
                         </dl>
 
 
-                        <h2>Case details</h2>
+                        <h2 class="u-mt-l">Case details</h2>
                         <dl class="metadata metadata__list grid grid--gutterless u-cf u-mb-s" title="Case details" aria-label="Case details">
                             {% if case.case_id.length > 0 %}
                                 <dt class="metadata__term grid__col col-2@m">case_id</dt>
@@ -135,7 +135,7 @@
                             {% endif %}
                         </dl>
 
-                        <h2>Address</h2>
+                        <h2 class="u-mt-l">Address</h2>
                         <dl class="metadata metadata__list grid grid--gutterless u-cf u-mb-s" title="Case address" aria-label="Case address">
                             {% if case.organisation_name.length > 0 %}
                                 <dt class="metadata__term grid__col col-2@m">organisation_name</dt>
@@ -217,7 +217,7 @@
                             {% endif %}
                         </dl>
 
-                        <h2>CE</h2>
+                        <h2 class="u-mt-l">CE</h2>
                         <dl class="metadata metadata__list grid grid--gutterless u-cf u-mb-s" title="CE" aria-label="CE">
                             {% if case.ce_actual_responses.length > 0 %}
                                 <dt class="metadata__term grid__col col-2@m">ce_actual_responses</dt>
@@ -233,7 +233,7 @@
                             {% endif %}
                         </dl>
 
-                        <h2>Field officer details</h2>
+                        <h2 class="u-mt-l">Field officer details</h2>
                         <dl class="metadata metadata__list grid grid--gutterless u-cf u-mb-s" title="Field officer details" aria-label="Field officer details">
                             {% if case.field_coordinator_id.length > 0 %}
                                 <dt class="metadata__term grid__col col-2@m">field_coordinator_id</dt>
@@ -249,7 +249,7 @@
                             {% endif %}
                         </dl>
 
-                        <h2>Geographic details</h2>
+                        <h2 class="u-mt-l">Geographic details</h2>
                         <dl class="metadata metadata__list grid grid--gutterless u-cf u-mb-s" title="Geographic details" aria-label="Geographic details">
                             {% if case.latitude.length > 0 %}
                                 <dt class="metadata__term grid__col col-2@m">latitude</dt>
@@ -283,7 +283,7 @@
                             {% endif %}
                         </dl>
 
-                        <h2>Date and time</h2>
+                        <h2 class="u-mt-l">Date and time</h2>
                         <dl class="metadata metadata__list grid grid--gutterless u-cf u-mb-s" title="Date and time" aria-label="Date and time">
 
                             {% if case.created_date_time.length > 0 %}
