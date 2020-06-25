@@ -37,7 +37,7 @@
   "refusal_received":"FALSE",
   "address_invalid":"FALSE",
   "undelivered_as_addressed":"FALSE",
-  "case_type":"HH",
+  "case_type":"HI",
   "secret_sequence_number":53,
   "survey":"CENSUS",
   "last_updated":"2020-02-11 11:53:40.938373+00",
