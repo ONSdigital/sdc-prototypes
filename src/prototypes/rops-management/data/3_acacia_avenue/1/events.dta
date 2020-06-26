@@ -45,7 +45,8 @@
     "uac_qid_link_id":"NULL"
   },
   {
-    "event_date":"2020-06-11 13:19:17.127+00",
+    "event_date":"2020-06-11",
+    "event_time":"13:19:17",
     "event_description":"Respondent authenticated",
     "event_payload":
     {
@@ -61,7 +62,8 @@
     "uac_qid_link_id":"7d45a9e5-b7c5-49d3-ad1a-d214a3a9900c"
   },
   {
-    "event_date":"2020-06-11 13:20:15.184+00",
+    "event_date":"2020-06-11",
+    "event_time":"13:20:15",
     "event_description":"Survey launched",
     "event_payload":
     {
@@ -78,7 +80,8 @@
     "uac_qid_link_id":"7d45a9e5-b7c5-49d3-ad1a-d214a3a9900c"
   },
   {
-    "event_date":"2020-06-11 13:23:00.2+00",
+    "event_date":"2020-06-11",
+    "event_time":"13:23:00",
     "event_description":"QID Receipted",
     "event_payload":
     {
