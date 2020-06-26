@@ -7,21 +7,12 @@ layout: onboard-survey/views/_master
 
 {% from "components/button/_macro.njk" import onsButton %}
 {% from "components/input/_macro.njk" import onsInput %}
-{% from "components/panel/_macro.njk" import onsPanel %}
 
 {% block main %}
-    <div class="u-mb-m">
-    {{ 
-        onsPanel({
-            "type": "success",
-            "id": "success-id",
-            body: "<p>New survey <a href=\"\/prototypes\/onboard-survey\/survey.html\">Test New Survey</a> has been added.</p>"
-        })
-    }}
-    </div>
+
     <h1 name="page-surveys-title">Surveys</h1>
     <p class="field u-mb-l">
-        <a href="/prototypes/onboard-survey/create-survey.html">Create new survey</a>
+        <a href="create-survey.html">Create new survey</a>
     </p>
     <div class="grid overview">
         <div class="grid__col col-12@m">
@@ -36,20 +27,6 @@ layout: onboard-survey/views/_master
                     </tr>
                 </thead>
                 <tbody class="table__body">
-                    <tr class="table__row">
-                        <td class="table__cell " name="tbl-surveys-id" data-th="ID">001</td>
-                        <td class="table__cell " name="tbl-surveys-title" data-th="Title">
-                            <a href="/prototypes/onboard-survey/survey.html" name="survey-link-MBS">Test New Survey</a>
-                        </td>
-                        <td class="table__cell " name="tbl-surveys-abbreviation" data-th="Abbreviation">NEW</td>
-                        <td class="table__cell " name="tbl-surveys-legal-basis" data-th="Legal basis">Statistics of Trade Act 1947</td>
-                        <td class="table__cell u-ta-right">
-                            <form action="/surveys/edit-survey-details/MBS?long_name=Monthly+Business+Survey&amp;legal_basis=Statistics+of+Trade+Act+1947&amp;survey_ref=009" method="get">
-                                <button type="submit" class="btn btn--secondary btn--small" id="edit-survey-details-009">
-                                    <span class="btn__inner">Edit</span></button>
-                            </form>
-                        </td>
-                    </tr>
                     <tr class="table__row">
                         <td class="table__cell " name="tbl-surveys-id" data-th="ID">009</td>
                         <td class="table__cell " name="tbl-surveys-title" data-th="Title">
