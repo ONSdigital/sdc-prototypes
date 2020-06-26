@@ -14,18 +14,14 @@ layout: onboard-survey/views/_master
     <h1 name="page-surveys-title">Load collection instruments for 001 NEW</h1>
     <div class="grid overview">
         <div class="grid__col col-5@m">
-            {{
-                onsTextarea({
-                    "id": "textarea",
-                    "name": "formtype",
-                    "rows": "3",
-                    "label": {
-                        "text": "Add form types",
-                        "description": "Separate multiple form types with a comma. For example: 001, 002, 003",
-                        "classes": "u-fs-m"
-                    }
-                })
-            }}
+            
+            <p class="field">
+                <label class="label u-fs-m" for="file">Upload SEFT files
+                        <br>
+                    <span class="label__description">File types accepted are .csv, .xls and .xlsx</span>
+                </label>
+                <input type="file" id="file" class="input input--text input-type__input  input--upload input--w-20" accept=".xls,.xlsx"/>
+            </p>
             <p class="field">
                 <form action="" method="get">
                     {{ 
@@ -38,7 +34,7 @@ layout: onboard-survey/views/_master
                 </form>
             </p>
         </div>
-        <div class="grid__col col-4@m push-1@m">
+        <div class="grid__col col-4@m">
             <h2 class="u-fs-m">Collection instruments</h3>
             <p>When the collection instruments have been loaded they  will be listed here.</p>
             <p class="field u-mt-l">

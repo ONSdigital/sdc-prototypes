@@ -142,8 +142,10 @@
     "event_time":"11:33:10",
     "event_type":"RESPONDENT_AUTHENTICATED",
     "event_description":"Respondent authenticated",
-    "event_payload":{"caseId": "75d6cf47-9942-4441-9bc3-29802cdfe15c",
-        "questionnaireId": "0120000006970650"},
+    "event_payload":{
+        "caseId": "75d6cf47-9942-4441-9bc3-29802cdfe15c",
+        "questionnaireId": "0120000006970650"
+      },
     "event_source":"RESPONDENT_HOME",
     "event_transaction_id":"a6af343f-1c29-495f-a958-a2da78fb63b6",
     "rm_event_processed":"2020-02-25 11:33:11.285538+00",
