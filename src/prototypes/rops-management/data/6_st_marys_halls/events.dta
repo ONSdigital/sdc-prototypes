@@ -1,7 +1,8 @@
 {% set cases =
 [
   {
-    "event_date":"2020-05-27 14:22:53.762772+00",
+    "event_date":"2020-05-27",
+    "event_time":"14:22:53",
     "event_description":"Create case sample received",
     "event_payload":
     {
