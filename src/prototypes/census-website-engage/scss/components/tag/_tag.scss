@@ -1,0 +1,19 @@
+/* --------------------------------
+Tag
+-------------------------------- */
+
+// Colours
+$color-branded-supporting: #00a3a6;
+$color-branded-supporting-tint: rgba(#00a3a6, 0.2);
+
+// Assignment
+$color-tag-bg: $color-branded-supporting-tint;
+
+.tag {
+  background-color: $color-tag-bg;
+  display: inline-block;
+  font-size: 1rem;
+  line-height: 1.4;
+  padding: 0.3rem;
+  text-decoration: none;
+}
