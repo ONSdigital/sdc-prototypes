@@ -2,7 +2,7 @@
 title: Campaign Website (engage phase)
 group: Census
 version: 17.2.0
-layout: census-website-engage/views/_master
+layout: census-website-engage/views/_rh-master
 ---
 
 {% block pageContent %}
@@ -10,55 +10,38 @@ layout: census-website-engage/views/_master
     {% block main %}
 
         <div class="page__container container">
+        
+            <div class="grid">
 
-            <div class="grid u-mt-s@m">
-
-                <div class="grid__col col-12@m">
-
+                <div class="grid__col col-8@m">
+                
                     <main class="page__main" id="main-content" role="main">
 
-                        <div class="grid grid--column@xs@s u-mb-m@m">
+                        <h1>Prototypes</h1>
 
-                            <div class="grid__col col-4@m">
-                                {{-
-                                    onsCard({
-                                        "ariaBy": 'Section highlight',
-                                        "id": 'title1',
-                                        "textId": 'text1',
-                                        "title": 'Resources for partners',
+                        {{
+                            onsList({
+                                "classes": 'list--bare',
+                                "itemsList": [
+                                    {
                                         "url": pageInfo.rootPath + '/our-partners/resources-for-partners',
-                                        "text": 'The census is a survey that gives us information about all households in England and Wales.'
-                                    })
-                                }}
-                            </div>
-
-                            <div class="grid__col col-4@m">
-                                {{-
-                                    onsCard({
-                                        "ariaBy": 'Section highlight',
-                                        "id": 'title2',
-                                        "textId": 'text2',
-                                        "title": 'News and events',
+                                        "text": 'Resources for partners'
+                                    },
+                                    {
                                         "url": pageInfo.rootPath + '/media-and-campaigns/news-and-events',
-                                        "text": 'Census press releases and statements from the Office for National Statistics.'
-                                    })
-                                }}
-                            </div>
-
-                            <div class="grid__col col-4@m">
-                                {{-
-                                    onsCard({
-                                        "ariaBy": 'Section highlight',
-                                        "id": 'title3',
-                                        "textId": 'text3',
-                                        "title": 'Find a support centre',
+                                        "text": 'News and events'
+                                    },
+                                    {
                                         "url": pageInfo.rootPath + '/find-a-support-centre',
-                                        "text": 'Find support centres near you and get help with your online Census 2021 questionnaire.'
-                                    })
-                                }}
-                            </div>
-
-                        </div>
+                                        "text": 'Find a support centre'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/web-form',
+                                        "text": 'Web form'
+                                    }
+                                ]
+                            })
+                        }}
 
                     </main>
 
