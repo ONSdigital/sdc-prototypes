@@ -106,7 +106,11 @@ layout: census-website-engage/views/_rh-master
                                 "name": 'more-detail',
                                 "label": {
                                     "text": 'Please provide more detail'
-                                }
+                                },
+                                "rows": 6,
+                                "maxlength": 400,
+                                "charCountSingular": 'You have {x} character remaining',
+                                "charCountPlural": 'You have {x} characters remaining'
                             })
                         }}
 
@@ -135,8 +139,8 @@ layout: census-website-engage/views/_rh-master
 
                         {{
                             onsButton({
-                                "text": "Send message",
-                                "classes": "u-mb-m u-mt-l"
+                                "text": 'Send message',
+                                "classes": 'u-mb-m u-mt-l'
                             })
                         }}
 
