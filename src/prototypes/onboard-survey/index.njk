@@ -5,13 +5,23 @@ version: 17.0.0
 layout: onboard-survey/views/_index
 ---
 
+{% from "components/button/_macro.njk" import onsButton %}
+
 {% block main %}
     <h1>Onboard survey</h1>
 
     <div class="grid">
         <div class="grid__col col-6@m">
             <h2>Prototypes</h2>
-            <h3>Version 2 <span class="u-fs-r u-fw-r"><a href="/prototypes/onboard-survey/version-2/survey-list.html">Start</a></span></h3>
+            <h3>Version 2</h3>
+            {{ 
+                onsButton({
+                    "type": 'button',
+                    "text": 'Start',
+                    "classes": 'btn--small u-mb-s',
+                    "url": "/prototypes/onboard-survey/version-2/survey-list.html"
+                }) 
+            }}
             <p>Simplified design</p>
             <ul>
                 <li>Added SEFT/eQ option when setting up survey</li>
@@ -21,14 +31,30 @@ layout: onboard-survey/views/_index
                 <li>Replaced drop-downs with radio buttons</li>
             </ul>
             
-            <h3>Version 1 <span class="u-fs-r u-fw-r"><a href="/prototypes/onboard-survey/version-1/survey-list.html">Start</a></span></h3>
+            <h3>Version 1</h3>
+            {{ 
+                onsButton({
+                    "type": 'button',
+                    "text": 'Start',
+                    "classes": 'btn--small u-mb-s',
+                    "url": "/prototypes/onboard-survey/version-1/survey-list.html"
+                }) 
+            }}
             <p>Includes recommendations from user testing 23rd June 2020:</p>
             <ul>
                 <li>Remove eQ column</li>
                 <li>Copy updates on CI manage screen</li>
             </ul>
             
-            <h2>Archive <span class="u-fs-r u-fw-r"><a href="/prototypes/onboard-survey/archive/archive/version-1/survey-list.html">Start</a></span></h2>
+            <h3>Archive</h3>
+            {{ 
+                onsButton({
+                    "type": 'button',
+                    "text": 'Start',
+                    "classes": 'btn--small u-mb-s',
+                    "url": "/prototypes/onboard-survey/archive/version-1/survey-list.html"
+                }) 
+            }}
             <p>Initial design based on developer UI. Includes recommendations from user testing 29th May 2020</p>
             <ul>
                 <li>Multimode</li>
