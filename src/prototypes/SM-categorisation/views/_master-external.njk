@@ -1,7 +1,7 @@
 {% extends "page-templates/_template.njk" %}
 
 {% block head %}
-    <link rel="stylesheet" href="{{ pageInfo.rootPath }}/version-1/styles.css"/>
+    <link rel="stylesheet" href="{{ pageInfo.rootPath }}/version-2/styles.css"/>
 {% endblock %}
 
 {% set pageConfig = { 
@@ -9,34 +9,39 @@
     "title": "Survey data collection",
     "header": {
         "logoAlt": "ONS",
-        "logoHref": "/prototypes/SM-categorisation/version-1/"
+        "logoHref": "/prototypes/SM-categorisation/version-2/"
     },
     "navigation": {
         "classes": "nav--inline nav--light nav--header nav--h-m js-main-nav",
         "id": "main-nav",
         "ariaLabel": "Main menu",
         "ariraListLabel": "Navigation menu",
-        "currentPath": "/prototypes/SM-categorisation/version-1/00-surveys-list.html",
+        "currentPath": "/prototypes/SM-categorisation/version-2/00-surveys-list.html",
         "itemsList": [
             {
-                "title": "To do",
-                "path": "/prototypes/SM-categorisation/version-1/00-surveys-list.html",
+                "title": "Surveys",
+                "url": "/prototypes/SM-categorisation/version-2/00-surveys-list.html",
                 "classes": "header-nav__item--active"
             },
             {
-                "title": "History",
-                "path": "#"
-            },
-            {
                 "title": "Messages",
-                "path": "#"
+                "url": "#"
             }
         ]},
     "serviceLinks": {
-        "classes": "header-service-nav--internal",
+        "classes": "header-service-nav--internal u-mr-s",
         "ariaLabel": "Site services menu",
         "ariaListLabel": "Navigation menu",
         "itemsList": [
+            {
+                "text": "Account",
+                "path": "",
+                "url": "#"
+            },
+            {
+                "text": "Help",
+                "url": "/prototypes/SM-categorisation/version-2/01-message-categories.html"
+            },
             {
                 "text": "Sign out",
                 "url": "#"
@@ -83,7 +88,7 @@
                     },
                     {
                         "text": 'Contact us',
-                        "url": '/prototypes/SM-categorisation/version-1/02-contact-us.html'
+                        "url": '/prototypes/SM-categorisation/version-2/02-contact-us.html'
                     },
                     {
                         "text": 'Accessibility',
@@ -115,5 +120,5 @@
 
 {% block bodyEnd %}
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="{{ pageInfo.rootPath }}/version-1/scripts/index.js"></script>
+    <script src="{{ pageInfo.rootPath }}/version-2/scripts/index.js"></script>
 {% endblock %}

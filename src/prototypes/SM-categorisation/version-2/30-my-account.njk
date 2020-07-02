@@ -1,0 +1,150 @@
+---
+group: Frontstage
+title: SM Categorisation
+version: 17.0.0
+layout: SM-categorisation/views/_master-survey
+---
+
+{% from "components/metadata/_macro.njk" import onsMetadata %}
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% block main %}
+    <div class="grid">
+        <div id="main" class="grid__col col-8@m">
+            <h1>Account details</h1>
+
+            {{
+                onsMetadata({
+                    "metadataLabel": "This is an example of the metadata component",
+                    "termCol": "4",
+                    "descriptionCol": "8",
+                    "itemsList": [
+                        {
+                            "term": "Name:",
+                            "descriptions": [
+                                {
+                                    "description": "Jane Doe"
+                                }
+                            ]
+                        },
+                        {
+                            "term": "Email address:",
+                            "descriptions": [
+                                {
+                                    "description": "jane.doe@acme.com"
+                                }
+                            ]
+                        },
+                        {
+                            "term": "Phone number:",
+                            "descriptions": [
+                                {
+                                    "description": "07789 123 456"
+                                }
+                            ]
+                        }
+                    ]
+                })
+            }}
+
+            <p><a href="">Change account details</a></p>
+            <p><a href="">Change password</a></p>
+
+            <!--
+            <hr class="u-mb-l">
+            -->
+
+            <h1>Help with your account</h1>
+            <form action="{{ pageInfo.parentPath }}/index.html">
+                <p class="field">
+                    <fieldset class="fieldset">
+                        <legend class="fieldset__legend">Choose an option</legend>
+                        <div class="radios__items">
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                        type="radio"
+                                        id="access-to-my-surveys"
+                                        data-action-url="{{ pageInfo.parentPath }}/account/30-add-new-account.html"
+                                        class="radio__input js-radio"
+                                        value="question-one"
+                                        name="message-query">
+                                    <label class="radio__label" for="access-to-my-surveys">I need to share access to my surveys</label>
+                                </span>
+                            </p>
+                            <br>
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                        type="radio"
+                                        id="no-longer-responsible"
+                                        data-action-url="{{ pageInfo.parentPath }}/account/40-transfer-account.html"
+                                        class="radio__input js-radio"
+                                        value="question-two"
+                                        name="message-query">
+                                    <label class="radio__label" for="no-longer-responsible">I'm no longer responsible for completing surveys</label>
+                                </span>
+                            </p>
+                            <br>
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                        type="radio"
+                                        id="my-email-address-has-changed"
+                                        data-action-url="{{ pageInfo.parentPath }}/40-category/00-category-list.html"
+                                        class="radio__input js-radio"
+                                        value="question--five"
+                                        name="message-query">
+                                    <label class="radio__label" for="my-email-address-has-changed">My business or contact details have changed</label>
+                                </span>
+                            </p>
+                            <br>
+                            <span class="radios__label u-mt-s u-fs-r--b" aria-hidden="true">Or, </span>
+                            <p class="field radios__item">
+                                <span class="radio">
+                                    <input
+                                            type="radio"
+                                            id="other-checkbox"
+                                            data-action-url="{{ pageInfo.parentPath }}/60-category/00-send-message.html"
+                                            class="radio__input js-radio "
+                                            value="other" 
+                                            name="message-query"
+                                            aria-controls="other-checkbox-other-wrap" aria-haspopup="true">
+                                    <label class="radio__label" for="other-checkbox">
+                                                Something else
+                                            </label>
+                                    <span class="radio__other" id="other-checkbox-other-wrap">
+                                        <label class="label u-fs-s--b" for="other-textbox">
+                                                    What is your message about?
+                                                </label>
+                                        <input
+                                                type="text"
+                                                id="other-textbox"
+                                                class="input input--text input-type__input  input--w-auto "
+                                                name="other-answer"/>
+                                    </span>
+                                </span>
+                            </p>
+                        </div>
+                    </fieldset>
+                </p>
+                <p class="field">
+                    <div class="btn-group">
+                        <button type="submit" class="btn">
+                            <span class="btn__inner">Continue</span>
+                        </button> 
+                        {{ 
+                            onsButton({
+                                "type": 'button',
+                                "text": 'Cancel',
+                                "classes": 'btn--secondary btn-group__btn',
+                                "url": "/prototypes/SM-categorisation/version-2/50-survey-start.html"
+                            }) 
+                        }}
+                    </div>
+                </p>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

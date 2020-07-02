@@ -1,0 +1,71 @@
+---
+group: Frontstage
+title: SM Categorisation
+version: 17.0.0
+layout: SM-categorisation/views/_master-survey
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+{% from "components/metadata/_macro.njk" import onsMetadata %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+
+{% block main %}
+
+    <div class="grid">
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/prototypes/SM-categorisation/version-2/00-surveys-list.html',
+                            "text": 'Surveys'
+                        },
+                        {
+                            "url": '/prototypes/SM-categorisation/version-2/01-message-categories.html',
+                            "text": 'Help'
+                        },
+                        {
+                            "url": '/prototypes/SM-categorisation/version-2/20-category/00-category-list.html',
+                            "text": 'Information about the survey'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'Can I be exempt?',
+                            "current": true
+                        }
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+            <h1>Can I be exempt from completing the survey questionnaire?</h1>
+            <p>No. Once selected a business is legally obliged to complete the survey because it is conducted under the provisions of the Statistics of Trade Act 1947</p>
+            <p>See more <a href="https://www.ons.gov.uk/surveys/informationforbusinesses" class="icon--external-link" target="_blank" rel="noopener">information for businesses</a></p>
+            <h2>Did this answer your question?</h2>
+            <p class="field">
+                <div class="btn-group">
+                {{ 
+                    onsButton({
+                        "type": 'button',
+                        "text": 'Yes',
+                        "classes": 'btn-group__btn',
+                        "url": "/prototypes/SM-categorisation/version-2/50-survey-start.html"
+                    }) 
+                }}
+                {{ 
+                    onsButton({
+                        "type": 'button',
+                        "text": 'No',
+                        "classes": 'btn--secondary btn-group__btn',
+                        "url": "/prototypes/SM-categorisation/version-2/20-category/20-create-message.html"
+                    })
+                }}
+                </div>
+            </p>
+        </div>
+    </div>
+
+{% endblock %}

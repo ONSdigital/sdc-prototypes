@@ -7,6 +7,7 @@ layout: onboard-survey/views/_master
 
 {% from "components/button/_macro.njk" import onsButton %}
 {% from "components/input/_macro.njk" import onsInput %}
+{% from "components/radios/_macro.njk" import onsRadios %}
 
 {% block main %}
 
@@ -17,6 +18,7 @@ layout: onboard-survey/views/_master
                 {{ 
                     onsInput({
                         "id": "id",
+                        "classes":"input--w-5",
                         "label": {
                             "text": "Survey ID",
                             "description": "For example: 001"
@@ -39,6 +41,7 @@ layout: onboard-survey/views/_master
                 {{ 
                     onsInput({
                         "id": "text",
+                        "classes":"input--w-5",
                         "label": {
                             "text": "Abbreviation",
                             "description": "For example: MBS"
@@ -47,8 +50,7 @@ layout: onboard-survey/views/_master
                 }}
             </p>
             <p class="field">
-            {% from "components/radios/_macro.njk" import onsRadios %}
-            {{
+                {{
                 onsRadios({
                     "legend": "Choose legal basis",
                     "name": "legal",
@@ -91,39 +93,42 @@ layout: onboard-survey/views/_master
                 })
             }}
             </p>
-            <form>
-                <p>
-                    <fieldset class="fieldset">
-                        <legend class="fieldset__legend">Choose mode</legend>
-                        <div class="radios__items">
-                            <p class="radios__item">
-                                <span class="radio">
-                                    <input
-                                        type="radio"
-                                        id="eQ"
-                                        data-action-url="{{ pageInfo.parentPath }}/eQ/new-survey-list.html"
-                                        class="radio__input js-radio"
-                                        value="one"
-                                        name="mode">
-                                    <label class="radio__label" for="eQ">eQ</label>
-                                </span>
-                            </p>
-                            <br>
-                            <p class="radios__item">
-                                <span class="radio">
-                                    <input
-                                        type="radio"
-                                        id="seft"
-                                        data-action-url="{{ pageInfo.parentPath }}/SEFT/new-survey-list.html"
-                                        class="radio__input js-radio"
-                                        value="two"
-                                        name="mode">
-                                    <label class="radio__label" for="seft">SEFT</label>
-                                </span>
-                            </p>
-                        </div>
-                    </fieldset>
-                </p>
+            <form>{{
+                onsRadios({
+                    "legend": "Choose mode",
+                    "name": "legal",
+                    "radios": [
+                        {
+                            "id": "eq",
+                            "label": {
+                                "text": "eQ"
+                            },
+                            "value": "eq",
+                            "other": {
+                                "id": "other-textbox",
+                                "name": "other-answer",
+                                "label": {
+                                    "text": "Please specify eQ ID"
+                                }
+                            },
+                            "attributes": {
+                                "data-action-url": "/prototypes/onboard-survey/version-2/eQ/new-survey-list.html"
+                            }
+                        },
+                        {
+                            "id": "seft",
+                            "label": {
+                                "text": "SEFT"
+                            },
+                            "value": "seft",
+                            "attributes": {
+                                "data-action-url": "/prototypes/onboard-survey/version-2/SEFT/new-survey-list.html"
+                            }
+                        }          
+                    ]
+                })
+            }}
+
                 <p class="field">
                     {% from "components/button/_macro.njk" import onsButton %}
                     {{ 
