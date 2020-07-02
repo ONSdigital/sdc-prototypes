@@ -7,8 +7,7 @@ layout: typeahead-update/views/_master
 {% from "components/panel/_macro.njk" import onsPanel %}
 
 {% block main %}
-    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/national-identity.html">Previous</a><br>
-    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/national-identity-other-cy.html">Welsh NI test</a>
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/national-identity.html">Previous</a>
     <form action="{{ pageInfo.parentPath }}/ethnic-group.html?previous={{ pageInfo.path }}.html">
         <h1 class="u-mt-s js-ni-title" data-ni-answers="{{ pageInfo.parentPath }}/national-identity.html">You selected "Other". How would you describe your {x} national identity?</h1>
         {{ 
@@ -38,7 +37,7 @@ layout: typeahead-update/views/_master
                         "results_title": "Suggestions"
                     },
                     "autocomplete": "off",
-                    "typeaheadData": "https://gist.githubusercontent.com/rmccar/045965173d8ce59f4e78e7de42d33dbc/raw/bb8a41e57cecde85ecba371d5c39e5cee91bc8ae/National_Identity_FEL.json"
+                    "typeaheadData": "https://gist.githubusercontent.com/rmccar/f083817d9c85b2126b798423b5b53b83/raw/4a9625a8a9df5d9e2a70a1452d04409273baa3ba/National_Identity_FEL_CY.json"
                 }
             })
         }}
