@@ -1,4 +1,4 @@
-{% extends "page-templates/_template.njk" %}
+{% extends "../page-template/_template.njk" %}
 
 {% block head %}
     <link rel="stylesheet" href="{{ pageInfo.rootPath }}/styles/styles.css" />
@@ -6,7 +6,26 @@
 
 {% set pageConfig =  {
     "title": "Census 2021",
-    "theme": "census",    
+    "theme": "census",
+    "header": {
+        "logoHref": "https://www.ons.gov.uk",
+        "logo": pageInfo.rootPath + "/img/ons-logo-en.svg",
+        "logoAlt": "Office for National Statistics",        
+        "titleLogo": "/img/census-logo-en.svg",
+        "titleLogoHref": pageInfo.rootPath,
+        "titleLogoAlt": "Census 2021"
+    },
+    "serviceLinks": {
+        "ariaLabel": "Site services menu",
+        "ariaListLabel": "Navigation menu",
+        "itemsList": [
+            {
+                "text": "BSL",
+                "url": pageInfo.path + ".html",
+                "classes": "icon--bsl" 
+            }
+        ]
+    },
     "language": {
         "allLanguagesUrl": "#",
         "languages": [
@@ -27,7 +46,7 @@
                 "current": false
             }
         ]
-    },
+    },    
     "footer": {
         "rows": [
             {
@@ -39,11 +58,6 @@
                     {
                         "text": 'Contact us',
                         "url": '#'
-                    },
-                    {
-                        "text": "BSL translation",
-                        "classes": 'icon--bsl js-bsl-activate',
-                        "url": pageInfo.path 
                     }
                 ]
             },
@@ -68,5 +82,24 @@
 } %}
 
 {% block bodyEnd %}
+    <div class="bsl-video u-d-no">
+        <div class="bsl-video__container">
+            <div class="bsl-video__video">
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/XQu8TTBmGhA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="bsl-video__controls">
+            <div class="grid grid--gutterless grid--flex grid--between grid--vertical-center grid--no-wrap">
+                <div class="grid__col col-auto">
+                    <a class="js-remove-bsl bsl-video__remove-link" href="{{ pageInfo.path + '.html' }}">Turn off BSL</a>
+                </div>
+                {{ onsButton({
+                    "text": "Hide BSL",
+                    "classes": "js-bsl-btn btn--ghost btn--small u-mb-xs u-mt-xs grid__col col-auto",
+                    "innerClasses": "icon--bsl-btn"
+                }) }}
+            </div>
+        </div>
+    </div>
     <script src="{{ pageInfo.rootPath }}/scripts/index.js"></script>
 {% endblock %}
