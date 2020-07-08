@@ -40,7 +40,7 @@ layout: onboard-survey/views/_master
                     <p class="panel__error field">
                         <strong>2 files have not been uploaded</strong>
                     </p>
-                    <table class="table table--sortable" data-aria-sort="Sort by" data-aria-asc="ascending" data-aria-desc="descending">
+                    <table id="error-one" class="table table--sortable" data-aria-sort="Sort by" data-aria-asc="ascending" data-aria-desc="descending">
                         <thead class="table__head">
                             <tr class="table__row">
                                 <th scope="col" class="table__header">File name</th>
@@ -64,7 +64,7 @@ layout: onboard-survey/views/_master
                     <p class="panel__error field">
                         <strong>1 file returned an error</strong>
                     </p>
-                    <table class="table  table--sortable" data-aria-sort="Sort by" data-aria-asc="ascending" data-aria-desc="descending">
+                    <table id="error-two" class="table  table--sortable" data-aria-sort="Sort by" data-aria-asc="ascending" data-aria-desc="descending">
                         <thead class="table__head">
                             <tr class="table__row">
                                 <th scope="col" class="table__header">File name</th>
@@ -83,7 +83,7 @@ layout: onboard-survey/views/_master
                         <br>
                         <span class="label__description">File types accepted are .csv, .xls and .xlsx</span>
                     </label>
-                    <input type="file" id="file" class="input input--text input-type__input  input--upload input--w-20" accept=".xls,.xlsx"/>
+                    <input type="file" id="file" class="input input--text input-type__input input--error input--upload input--w-20" accept=".xls,.xlsx"/>
                 </p>
             </div>
         </div>
