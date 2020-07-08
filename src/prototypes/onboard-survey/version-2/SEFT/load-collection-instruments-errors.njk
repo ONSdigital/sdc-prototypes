@@ -1,0 +1,262 @@
+---
+group: RAS/RM
+title: Overview
+version: 17.0.0
+layout: onboard-survey/views/_master
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+{% from "components/input/_macro.njk" import onsInput %}
+
+{% block main %}
+    <div class="grid overview">
+        <div class="grid__col col-6@m">
+            <div class="panel panel--error">
+                <div class="panel__header">
+                    <div data-qa="error-header" class="panel__title u-fs-r--b">There are problems with 3 of your files</div>
+                </div>
+                <div class="panel__body">
+                    <ul class="list list--bare">
+                        <li class="list__item ">
+                            <span class="list__prefix" aria-hidden="true">1. </span>
+                            <a href="#error-one" class="list__link js-inpagelink" data-qa="list-item-1">
+                                2 files have not been uploaded
+                            </a>
+                        </li>
+                        <li class="list__item ">
+                            <span class="list__prefix" aria-hidden="true">2. </span>
+                            <a href="#error-two" class="list__link js-inpagelink" data-qa="list-item-1">
+                                1 file has returned an error
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <h1 name="page-surveys-title" class="u-mt-m">Load collection instruments for 001 NEW</h1>
+            <div class="panel panel--error panel--simple">
+                <div class="panel__body">
+                    <p class="panel__error field">
+                        <strong>2 files have not been uploaded</strong>
+                    </p>
+                    <table class="table  table--sortable" data-aria-sort="Sort by" data-aria-asc="ascending" data-aria-desc="descending">
+                        <thead class="table__head">
+                            <tr class="table__row">
+                                <th scope="col" class="table__header">File name</th>
+                                <th scope="col" class="table__header">Error</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table__body">
+                            <tr class="table__row">
+                                <td class="table__cell " name="tbl-ci-id" data-th="ID">001_0869.xlsx</td>
+                                <td class="table__cell" data-th="progress">
+                                    The file is empty</td>
+                            </tr>
+                            <tr class="table__row">
+                                <td class="table__cell " name="tbl-ci-id" data-th="ID">001_0870.xlsx</td>
+                                <td class="table__cell" data-th="progress">
+                                    The file is a duplicate</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p class="panel__error field">
+                        <strong>1 file returned an error</strong>
+                    </p>
+                    <table class="table  table--sortable" data-aria-sort="Sort by" data-aria-asc="ascending" data-aria-desc="descending">
+                        <thead class="table__head">
+                            <tr class="table__row">
+                                <th scope="col" class="table__header">File name</th>
+                                <th scope="col" class="table__header">Error</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table__body">
+                            <tr class="table__row">
+                                <td class="table__cell " name="tbl-ci-id" data-th="ID">001_0898.xlsx</td>
+                                <td class="table__cell" data-th="progress">
+                                    The file contains restricted characters</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <label class="label u-fs-m" for="file">Upload SEFT files
+                        <br>
+                        <span class="label__description">File types accepted are .csv, .xls and .xlsx</span>
+                    </label>
+                    <input type="file" id="file" class="input input--text input-type__input  input--upload input--w-20" accept=".xls,.xlsx"/>
+                </p>
+            </div>
+        </div>
+
+        <!-- <p class="field">
+                <form action="" method="get">
+                    {{ 
+                    onsButton({
+                        "text": 'Add',
+                        "url": 'load-collection-instruments-added.html',
+                        "classes": 'btn--secondary btn--small'
+                    }) 
+                }}
+                </form>
+            </p>
+            -->
+        <!--
+        </div>
+        <div class="grid__col col-4@m push-1@m">
+        -->
+
+        <h2 class="u-fs-m u-mt-l u-mb-no">Collection instruments</h3>
+        <table class="table  table--sortable" data-aria-sort="Sort by" data-aria-asc="ascending" data-aria-desc="descending">
+            <thead class="table__head">
+                <tr class="table__row">
+                    <th scope="col" class="table__header">File name</th>
+                    <th scope="col" class="table__header">Progress</th>
+                    <th scope="col" class="table__header"></th>
+                </tr>
+            </thead>
+            <tbody class="table__body">
+                <tr class="table__row">
+                    <td class="table__cell " name="tbl-ci-id" data-th="ID">001_0873.xlsx</td>
+                    <td class="table__cell" data-th="progress">
+                        <span class="status status--info">Ready</span>
+                    </td>
+                    <td class="table__cell u-ta-right">
+                        <form action="manage-collection-instruments.html" method="get">
+                            <button type="submit" class="btn btn--secondary btn--small" id="edit-survey-details-009">
+                                <span class="btn__inner">Remove</span></button>
+                        </form>
+                    </td>
+                </tr>
+                <tr class="table__row">
+                    <td class="table__cell " name="tbl-ci-id" data-th="ID">001_0867.xlsx</td>
+                    <td class="table__cell" data-th="progress">
+                        <span class="status status--info">Ready</span>
+                    </td>
+                    <td class="table__cell u-ta-right">
+                        <form action="manage-collection-instruments.html" method="get">
+                            <button type="submit" class="btn btn--secondary btn--small" id="edit-survey-details-009">
+                                <span class="btn__inner">Remove</span></button>
+                        </form>
+                    </td>
+                </tr>
+                <tr class="table__row">
+                    <td class="table__cell " name="tbl-ci-id" data-th="ID">001_0255.xlsx</td>
+                    <td class="table__cell" data-th="progress">
+                        <span class="status status--info">Ready</span>
+                    </td>
+                    <td class="table__cell u-ta-right">
+                        <form action="manage-collection-instruments.html" method="get">
+                            <button type="submit" class="btn btn--secondary btn--small" id="edit-survey-details-009">
+                                <span class="btn__inner">Remove</span></button>
+                        </form>
+                    </td>
+                </tr>
+                <tr class="table__row">
+                    <td class="table__cell " name="tbl-ci-id" data-th="ID">001_0243.xlsx</td>
+                    <td class="table__cell" data-th="progress">
+                        <span class="status status--info">Ready</span>
+                    </td>
+                    <td class="table__cell u-ta-right">
+                        <form action="manage-collection-instruments.html" method="get">
+                            <button type="submit" class="btn btn--secondary btn--small" id="edit-survey-details-009">
+                                <span class="btn__inner">Remove</span></button>
+                        </form>
+                    </td>
+                </tr>
+                <tr class="table__row">
+                    <td class="table__cell " name="tbl-ci-id" data-th="ID">001_0251.xlsx</td>
+                    <td class="table__cell" data-th="progress">
+                        <span class="status status--info">Ready</span>
+                    </td>
+                    <td class="table__cell u-ta-right">
+                        <form action="manage-collection-instruments.html" method="get">
+                            <button type="submit" class="btn btn--secondary btn--small" id="edit-survey-details-009">
+                                <span class="btn__inner">Remove</span></button>
+                        </form>
+                    </td>
+                </tr>
+                <tr class="table__row">
+                    <td class="table__cell " name="tbl-ci-id" data-th="ID">001_0867.xlsx</td>
+                    <td class="table__cell" data-th="progress">
+                        <span class="status status--info">Ready</span>
+                    </td>
+                    <td class="table__cell u-ta-right">
+                        <form action="manage-collection-instruments.html" method="get">
+                            <button type="submit" class="btn btn--secondary btn--small" id="edit-survey-details-009">
+                                <span class="btn__inner">Remove</span></button>
+                        </form>
+                    </td>
+                </tr>
+                <tr class="table__row">
+                    <td class="table__cell " name="tbl-ci-id" data-th="ID">001_0255.xlsx</td>
+                    <td class="table__cell" data-th="progress">
+                        <span class="status status--info">Ready</span>
+                    </td>
+                    <td class="table__cell u-ta-right">
+                        <form action="manage-collection-instruments.html" method="get">
+                            <button type="submit" class="btn btn--secondary btn--small" id="edit-survey-details-009">
+                                <span class="btn__inner">Remove</span></button>
+                        </form>
+                    </td>
+                </tr>
+                <tr class="table__row">
+                    <td class="table__cell " name="tbl-ci-id" data-th="ID">001_0243.xlsx</td>
+                    <td class="table__cell" data-th="progress">
+                        <span class="status status--info">Ready</span>
+                    </td>
+                    <td class="table__cell u-ta-right">
+                        <form action="manage-collection-instruments.html" method="get">
+                            <button type="submit" class="btn btn--secondary btn--small" id="edit-survey-details-009">
+                                <span class="btn__inner">Remove</span></button>
+                        </form>
+                    </td>
+                </tr>
+                <tr class="table__row">
+                    <td class="table__cell " name="tbl-ci-id" data-th="ID">001_0244.xlsx</td>
+                    <td class="table__cell" data-th="progress">
+                        <span class="status status--info">Ready</span>
+                    </td>
+                    <td class="table__cell u-ta-right">
+                        <form action="manage-collection-instruments.html" method="get">
+                            <button type="submit" class="btn btn--secondary btn--small" id="edit-survey-details-009">
+                                <span class="btn__inner">Remove</span></button>
+                        </form>
+                    </td>
+                </tr>
+                <tr class="table__row">
+                    <td class="table__cell " name="tbl-ci-id" data-th="ID">001_0251.xlsx</td>
+                    <td class="table__cell" data-th="progress">
+                        <span class="status status--info">Ready</span>
+                    </td>
+                    <td class="table__cell u-ta-right">
+                        <form action="manage-collection-instruments.html" method="get">
+                            <button type="submit" class="btn btn--secondary btn--small" id="edit-survey-details-009">
+                                <span class="btn__inner">Remove</span></button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        {% from "components/pagination/_macro.njk" import onsPagination %}
+        {{
+                onsPagination({
+                    "previous": "Previous",
+                    "next": "Next",
+                    "hideRangeIndicator": true,
+                    "pages": [
+                        { "url": "#", "current": true },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false },{ "url": "#", "current": false }
+                    ]
+                })
+            }}
+        <p class="field u-mt-l">
+            {{ 
+                    onsButton({
+                        "text": 'Save and exit',
+                        "url": 'create-collection-exercise-added.html'
+                    }) 
+                }}
+        </p>
+    </div>
+</div>
+
+{% endblock %}
