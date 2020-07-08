@@ -142,6 +142,56 @@ layout: onboard-survey/views/_master
                     </tr>
                 </tbody>
             </table>
+            {% from "components/pagination/_macro.njk" import onsPagination %}
+            {{
+                onsPagination({
+                    "previous": "Previous",
+                    "next": "Next",
+                    "hideRangeIndicator": true,
+                    "pages": [
+                        { "url": "#", "current": true },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false } 
+                    ]
+                })
+            }}
             <p class="field u-mt-l">
                 {{ 
                     onsButton({
