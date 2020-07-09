@@ -1,0 +1,16 @@
+.social-list {
+  align-items: center;
+  display: flex;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+.social-list__item {
+  align-items: center;
+  display: flex;
+  margin-bottom: 0;
+
+  &:not(:first-child) {
+    margin-left: 24px;
+  }
+}

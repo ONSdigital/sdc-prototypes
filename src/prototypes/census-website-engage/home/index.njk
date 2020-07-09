@@ -7,12 +7,14 @@ layout: census-website-engage/views/_master
 
 {% block pageContent %}
    
+
     {% block main %}
 
-        <!-- Hero -->
-        <section class="hero grid--flex grid--gutterless grid--vertical-center">
 
-            <div class="container">
+        <!-- Hero -->
+        <section class="hero grid--gutterless">
+
+            <div class="hero__container container">
 
                 <!-- Details -->
                 <div class="hero__details grid__col col-6@m">
@@ -22,7 +24,7 @@ layout: census-website-engage/views/_master
 
                 <!-- Image circle -->
                 <div class="hero__circle-image">
-                    <img height="" width="" srcset="/prototypes/census-website-engage/img/hero-man.png 1x, /prototypes/census-website-engage/img/hero-man@2x.png 2x" src="/prototypes/census-website-engage/img/hero-man.png" loading="lazy" alt="">
+                    <img height="560px" width="560px" srcset="/prototypes/census-website-engage/img/hero-man.png 1x, /prototypes/census-website-engage/img/hero-man@2x.png 2x" src="/prototypes/census-website-engage/img/hero-man.png" loading="lazy" alt="">
                 </div>
 
                 <!-- Lined circle -->
@@ -65,7 +67,144 @@ layout: census-website-engage/views/_master
             </div>
 
         </section>
+
+
+        <!-- CTAs -->
+        <section class="container">
+
+            <div class="grid grid--column@xs@s u-mt-l u-pb-s@m">
+
+                <div class="grid__col col-4@m">
+                    {{-
+                        onsCard({
+                            "ariaBy": 'Section highlight',
+                            "id": 'title1',
+                            "textId": 'text1',
+                            "title": 'What is the census?',
+                            "url": '#0',
+                            "text": 'The census is a survey that gives us information about all the households in England and Wales.'
+                        })
+                    }}
+                </div>
+
+                <div class="grid__col col-4@m">
+                    {{-
+                        onsCard({
+                            "ariaBy": 'Section highlight',
+                            "id": 'title2',
+                            "textId": 'text2',
+                            "title": 'Working on the census',
+                            "url": '#0',
+                            "text": 'For Census 2021, we’ll be hiring at least 30,000 field staff across England and Wales.'
+                        })
+                    }}
+                </div>
+
+                <div class="grid__col col-4@m">
+                    {{-
+                        onsCard({
+                            "ariaBy": 'Section highlight',
+                            "id": 'title3',
+                            "textId": 'text3',
+                            "title": 'Keeping your data safe',
+                            "url": '#0',
+                            "text": 'How we keep your data safe and what happens to your personal information.'
+                        })
+                    }}
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Case studies -->
+        <section class="container">
+
+            <div class="u-bt u-mb-l u-pt-m">
+
+                <h2 class="u-fs-xl u-mb-l">Help organisations plan for the future</h2>
+
+                <div class="grid grid--column@xs@s u-mb-l">
+                    
+                    <div class="grid__col col-4@m">
+                        <div class="u-pr-m@m u-mb-l@xs@m">
+                            <h3>Census information can help to make a difference</h3>
+                            <p>Businesses use it to decide where to set up and charities use it to help get the funding they need.</p>
+                            <p><a href="#0">Read some of our case studies</a></p>
+                        </div>
+                    </div>
+
+                    <div class="grid__col col-6@s@m col-4@m">
+                        
+                        <div class="card" role="navigation">
+                            <a href="#0" tabindex="-1" aria-hidden="true"><img class="card__image u-mb-s" height="200" width="303" srcset="/prototypes/census-website-engage/img/mental-health-foundation.png 1x, /prototypes/census-website-engage/img/mental-health-foundation@2x.png 2x" src="/prototypes/census-website-engage/img/mental-health-foundation.png" loading="lazy" alt="Mental Health Foundation"></a>
+                            <h3 class="u-fs-m" id="title2"><a href="#0">Healthier communities</a></h3>
+                            <p>How census data helped the Mental Health Foundation help and support those more at risk of mental ill health.</p>
+                        </div>
+
+                    </div>
+
+                    <div class="grid__col col-6@s@m col-4@m">
+                        
+                        <div class="card" role="navigation">
+                            <a href="#0" tabindex="-1" aria-hidden="true"><img class="card__image u-mb-s" height="200" width="303" srcset="/prototypes/census-website-engage/img/london-fire-brigade.png 1x, /prototypes/census-website-engage/img/london-fire-brigade@2x.png 2x" src="/prototypes/census-website-engage/img/london-fire-brigade.png" loading="lazy" alt="London Fire Brigade"></a>
+                            <h3 class="u-fs-m"><a href="#0">Fire-fighting with facts</a></h3>
+                            <p>The London Fire Brigade used census data to identify and prevent fires in high risk areas.</p>
+                        </div>
+
+                    </div>
+                    
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Contact and social links -->
+        <section class="container">
+
+            <div class="u-bt u-mb-l u-pt-m">
+
+                <div class="grid grid--column@xs@s">
+
+                    <div class="grid__col col-6@m">
+                    
+                        <h3>Get in touch</h3>
+
+                        <p>If you have any questions, <a href="#0">get in touch with us</a></p>
+
+                    </div>
+
+                    <div class="grid__col push-2@m col-4@m">
+                        
+                        <h3>Follow us</h3>
+                       
+                        <ul class="social-list">
+                            
+                            <li class="social-list__item">
+                                <svg class="social__icon u-mr-xs" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32"><path d="M24.04,12.95c0,0.17,0,0.33,0,0.5c0.01,4.01-2.17,7.71-5.69,9.64c-3.52,1.93-7.81,1.78-11.19-0.38c0.31,0.04,0.61,0.05,0.92,0.05c1.73,0,3.42-0.58,4.78-1.65c-1.65-0.04-3.09-1.11-3.6-2.68c0.25,0.05,0.51,0.07,0.76,0.07c0.34,0,0.68-0.05,1.01-0.14C9.23,18,7.93,16.4,7.95,14.55v-0.05c0.54,0.29,1.13,0.46,1.74,0.48c-1.66-1.12-2.2-3.33-1.23-5.08c1.96,2.41,4.85,3.87,7.95,4.03c-0.07-0.29-0.1-0.58-0.1-0.88c0-1.58,0.97-3,2.44-3.59c1.47-0.58,3.15-0.21,4.23,0.94c0.86-0.17,1.69-0.49,2.45-0.94c-0.28,0.9-0.88,1.65-1.69,2.13c0.76-0.09,1.51-0.29,2.21-0.6C25.43,11.76,24.79,12.42,24.04,12.95zM16,0C7.16,0,0,7.16,0,16s7.16,16,16,16s16-7.16,16-16c0-4.24-1.69-8.31-4.69-11.31S20.24,0,16,0z"/></svg>
+                                <a class="social-list__link" href="#0">Twitter</a>
+                            </li>
+
+                            <li class="social-list__item">
+                                <svg class="social__icon u-mr-xs" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32"><path d="M18.5,31.9V20.72h3.73l0.72-4.62H18.5v-3c0-1.26,0.62-2.5,2.61-2.5h2.02V6.66c-1.18-0.19-2.38-0.3-3.58-0.31c-3.66,0-6.04,2.22-6.04,6.22v3.53H9.44v4.62h4.06V31.9C5.09,30.57-0.8,22.89,0.09,14.43C0.98,5.96,8.34-0.33,16.84,0.12S32,7.59,32,16.1C32,23.97,26.27,30.67,18.5,31.9z"/></svg>
+                                <a class="social-list__link" href="#0">Facebook</a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
     
     {% endblock %}
+
 
 {% endblock %}

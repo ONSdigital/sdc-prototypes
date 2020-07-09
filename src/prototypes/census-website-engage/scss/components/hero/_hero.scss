@@ -1,11 +1,21 @@
+@import 'node_modules/@ons/design-system/17.2.0/scss/vars/grid';
+@import 'node_modules/@ons/design-system/17.2.0/scss/helpers/mq';
+
 .hero {
   background-color: #902082;
   background-image: linear-gradient(46deg, #3c388e 0%, #902082 100%);
   color: #ffffff;
-  padding: 24px;
+  display: flex;
+  padding: 0;
   margin-top: 2px;
-  min-height: 400px;
   overflow: hidden;
+  position: relative;
+}
+
+.hero__container {
+  align-items: flex-end;
+  display: flex;
+  min-height: 400px;
   position: relative;
 }
 
@@ -16,37 +26,81 @@
 }
 
 .hero__details {
+  padding-top: 250px;
   position: relative;
   z-index: 4;
 }
 
 .hero__circle-image {
+  background-color: #3c388e;
   border-radius: 50%;
-  bottom: 16px;
-  height: 560px;
-  right: 216px;
-  width: 560px;
+  top: -145px;
+  height: 382px;
+  right: -8px;
+  width: 382px;
   z-index: 1;
 
   img {
-    clip-path: circle(280px at center); // Half width of circle
+    clip-path: circle(191px at center); // Half width of circle
     display: block;
     height: 100%;
   }
 }
 
 .hero__circle-gradient {
-  height: 342px;
-  right: 48px;
+  height: 234px;
+  right: -117px; // Half the circle
   top: 16px;
-  width: 342px;
+  width: 234px;
   z-index: 2;
 }
 
 .hero__circle-lined {
-  bottom: -64px;
-  height: 248px;
-  right: 200px;
-  width: 248px;
+  top: 148px;
+  height: 171px;
+  opacity: 0.4;
+  right: -24px;
+  width: 171px;
   z-index: 3;
+}
+
+// Adjustments at 740px
+@include mq('m') {
+  .hero__details {
+    padding-top: 0;
+  }
+
+  .hero__container {
+    align-items: center;
+  }
+}
+
+// Adjustments at 980px
+@include mq('l') {
+  .hero__circle-image {
+    bottom: 16px;
+    height: 560px;
+    margin: auto;
+    right: 84px;
+    top: auto; // Reset
+    width: 560px;
+
+    img {
+      clip-path: circle(280px at center); // Half width of circle
+    }
+  }
+
+  .hero__circle-gradient {
+    height: 342px;
+    right: -84px;
+    width: 342px;
+  }
+
+  .hero__circle-lined {
+    top: auto; // Reset
+    bottom: -64px;
+    height: 248px;
+    right: 84px;
+    width: 248px;
+  }
 }
