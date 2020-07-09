@@ -37,6 +37,163 @@ layout: onboard-survey/views/_master
         <div class="grid__col col-4@m push-1@m">
         -->
             <h2 class="u-fs-m u-mt-l u-mb-no">Collection instruments</h3>
+    {% from "components/table/_macro.njk" import onsTable %}
+    {{
+        onsTable({
+            "sortable": true,
+            "table_class": " table--sortable",
+            "sort_by": "Sort by",
+            "aria_asc": "ascending",
+            "aria_desc": "descending",
+            "classes": "u-fs-m u-mt-l u-mb-no",
+            "ths": [
+                    {
+                        "value": "File name",
+                        "aria_sort": "none"
+                    },
+                    {
+                        "value": "Status",
+                        "aria_sort": "none"
+                    },
+                    {
+                        "value": "Action",
+                        "aria_sort": "none"
+                    }
+                ],
+                "trs": [
+                    {
+                        "tds": [
+                            {
+                                "value": "001-0873.xlsx"
+                            },
+                            {
+                                "value": "<span class='status status--success'>Ready</span>"
+                            },
+                            {
+                                "value": "RSI"
+                            }
+                        ]
+                    },
+                    {
+                        "tds": [
+                            {
+                                "value": "001-0867.xlsx"
+                            },
+                            {
+                                "value": "<span class='status status--success'>Ready</span>"
+                            },
+                            {
+                                "value": "AIFDI"
+                            }
+                        ]
+                    },
+                    {
+                        "tds": [
+                            {
+                                "value": "001-0255.xlsx"
+                            },
+                            {
+                                "value": "<img src='/prototypes/onboard-survey/img/loading.gif' width='24' height='24'> Checking"
+                            },
+                            {
+                                "value": "BRES"
+                            }
+                        ]
+                    },
+                    {
+                        "tds": [
+                            {
+                                "value": "001-0243.xlsx"
+                            },
+                            {
+                                "value": "<img src='/prototypes/onboard-survey/img/loading.gif' width='24' height='24'> Checking"
+                            },
+                            {
+                                "value": "QBMS"
+                            }
+                        ]
+                    },
+                    {
+                        "tds": [
+                            {
+                                "value": "001-0251.xlsx"
+                            },
+                            {
+                                "value": "<img src='/prototypes/onboard-survey/img/loading.gif' width='24' height='24'> Checking"
+                            },
+                            {
+                                "value": "MSBB"
+                            }
+                        ]
+                    },
+                    {
+                        "tds": [
+                            {
+                                "value": "001-0867.xlsx"
+                            },
+                            {
+                                "value": "<img src='/prototypes/onboard-survey/img/loading.gif' width='24' height='24'> Checking"
+                            },
+                            {
+                                "value": "RSI"
+                            }
+                        ]
+                    },
+                    {
+                        "tds": [
+                            {
+                                "value": "001-0255.xlsx"
+                            },
+                            {
+                                "value": "<img src='/prototypes/onboard-survey/img/loading.gif' width='24' height='24'> Checking"
+                            },
+                            {
+                                "value": "AIFDI"
+                            }
+                        ]
+                    },
+                    {
+                        "tds": [
+                            {
+                                "value": "001-0243.xlsx"
+                            },
+                            {
+                                "value": "<img src='/prototypes/onboard-survey/img/loading.gif' width='24' height='24'> Checking"
+                            },
+                            {
+                                "value": "BRES"
+                            }
+                        ]
+                    },
+                    {
+                        "tds": [
+                            {
+                                "value": "001-0251.xlsx"
+                            },
+                            {
+                                "value": "<img src='/prototypes/onboard-survey/img/loading.gif' width='24' height='24'> Checking"
+                            },
+                            {
+                                "value": "QBMS"
+                            }
+                        ]
+                    },
+                    {
+                        "tds": [
+                            {
+                                "value": "001-0250.xlsx"
+                            },
+                            {
+                                "value": "<img src='/prototypes/onboard-survey/img/loading.gif' width='24' height='24'> Checking"
+                            },
+                            {
+                                "value": "MSBB"
+                            }
+                        ]
+                    }
+                ]
+        })
+    }}
             <table class="table  table--sortable" data-aria-sort="Sort by" data-aria-asc="ascending" data-aria-desc="descending">
                 <thead class="table__head">
                     <tr class="table__row">
@@ -47,7 +204,17 @@ layout: onboard-survey/views/_master
                 </thead>
                 <tbody class="table__body">
                     <tr class="table__row">
-                        <td class="table__cell " name="tbl-ci-id" data-th="ID">001_0873.xlsx</td>
+                        <td class="table__cell " name="tbl-ci-id" data-th="ID"></td>
+                        <td class="table__cell" data-th="status"></td>
+                        <td class="table__cell u-ta-right">
+                            <form action="manage-collection-instruments.html" method="get">
+                                <button type="submit" class="btn btn--secondary btn--small" id="edit-survey-details-009">
+                                    <span class="btn__inner">Remove</span></button>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell " name="tbl-ci-id" data-th="ID"></td>
                         <td class="table__cell" data-th="status"><span class="status status--success">Ready</span></td>
                         <td class="table__cell u-ta-right">
                             <form action="manage-collection-instruments.html" method="get">
@@ -57,17 +224,7 @@ layout: onboard-survey/views/_master
                         </td>
                     </tr>
                     <tr class="table__row">
-                        <td class="table__cell " name="tbl-ci-id" data-th="ID">001_0867.xlsx</td>
-                        <td class="table__cell" data-th="status"><span class="status status--success">Ready</span></td>
-                        <td class="table__cell u-ta-right">
-                            <form action="manage-collection-instruments.html" method="get">
-                                <button type="submit" class="btn btn--secondary btn--small" id="edit-survey-details-009">
-                                    <span class="btn__inner">Remove</span></button>
-                            </form>
-                        </td>
-                    </tr>
-                    <tr class="table__row">
-                        <td class="table__cell " name="tbl-ci-id" data-th="ID">001_0255.xlsx</td>
+                        <td class="table__cell " name="tbl-ci-id" data-th="ID"></td>
                         <td class="table__cell" data-th="status"><img src="/prototypes/onboard-survey/img/loading.gif" width="24" height="24"> Checking</td>
                         <td class="table__cell u-ta-right">
                             <form action="manage-collection-instruments.html" method="get">
@@ -77,7 +234,7 @@ layout: onboard-survey/views/_master
                         </td>
                     </tr>
                     <tr class="table__row">
-                        <td class="table__cell " name="tbl-ci-id" data-th="ID">001_0243.xlsx</td>
+                        <td class="table__cell " name="tbl-ci-id" data-th="ID"></td>
                         <td class="table__cell" data-th="status"><img src="/prototypes/onboard-survey/img/loading.gif" width="24" height="24"> Checking</td>
                         <td class="table__cell u-ta-right">
                             <form action="manage-collection-instruments.html" method="get">
@@ -87,7 +244,7 @@ layout: onboard-survey/views/_master
                         </td>
                     </tr>
                     <tr class="table__row">
-                        <td class="table__cell " name="tbl-ci-id" data-th="ID">001_0251.xlsx</td>
+                        <td class="table__cell " name="tbl-ci-id" data-th="ID"></td>
                         <td class="table__cell" data-th="status"><img src="/prototypes/onboard-survey/img/loading.gif" width="24" height="24"> Checking</td>
                         <td class="table__cell u-ta-right">
                             <form action="manage-collection-instruments.html" method="get">
@@ -97,7 +254,7 @@ layout: onboard-survey/views/_master
                         </td>
                     </tr>
                     <tr class="table__row">
-                        <td class="table__cell " name="tbl-ci-id" data-th="ID">001_0867.xlsx</td>
+                        <td class="table__cell " name="tbl-ci-id" data-th="ID"></td>
                         <td class="table__cell" data-th="status"><img src="/prototypes/onboard-survey/img/loading.gif" width="24" height="24"> Checking</td>
                         <td class="table__cell u-ta-right">
                             <form action="manage-collection-instruments.html" method="get">
@@ -107,7 +264,7 @@ layout: onboard-survey/views/_master
                         </td>
                     </tr>
                     <tr class="table__row">
-                        <td class="table__cell " name="tbl-ci-id" data-th="ID">001_0255.xlsx</td>
+                        <td class="table__cell " name="tbl-ci-id" data-th="ID"></td>
                         <td class="table__cell" data-th="status"><img src="/prototypes/onboard-survey/img/loading.gif" width="24" height="24"> Checking</td>
                         <td class="table__cell u-ta-right">
                             <form action="manage-collection-instruments.html" method="get">
@@ -117,7 +274,7 @@ layout: onboard-survey/views/_master
                         </td>
                     </tr>
                     <tr class="table__row">
-                        <td class="table__cell " name="tbl-ci-id" data-th="ID">001_0243.xlsx</td>
+                        <td class="table__cell " name="tbl-ci-id" data-th="ID"></td>
                         <td class="table__cell" data-th="status"><img src="/prototypes/onboard-survey/img/loading.gif" width="24" height="24"> Checking</td>
                         <td class="table__cell u-ta-right">
                             <form action="manage-collection-instruments.html" method="get">
@@ -127,7 +284,7 @@ layout: onboard-survey/views/_master
                         </td>
                     </tr>
                     <tr class="table__row">
-                        <td class="table__cell " name="tbl-ci-id" data-th="ID">001_0251.xlsx</td>
+                        <td class="table__cell " name="tbl-ci-id" data-th="ID"></td>
                         <td class="table__cell" data-th="status"><img src="/prototypes/onboard-survey/img/loading.gif" width="24" height="24"> Checking</td>
                         <td class="table__cell u-ta-right">
                             <form action="manage-collection-instruments.html" method="get">
@@ -137,7 +294,7 @@ layout: onboard-survey/views/_master
                         </td>
                     </tr>
                     <tr class="table__row">
-                        <td class="table__cell " name="tbl-ci-id" data-th="ID">001_0250.xlsx</td>
+                        <td class="table__cell " name="tbl-ci-id" data-th="ID"></td>
                         <td class="table__cell" data-th="status"><img src="/prototypes/onboard-survey/img/loading.gif" width="24" height="24"> Checking</td>
                         <td class="table__cell u-ta-right">
                             <form action="manage-collection-instruments.html" method="get">
