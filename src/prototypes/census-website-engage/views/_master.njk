@@ -11,6 +11,9 @@
 {% from "components/textarea/_macro.njk" import onsTextarea %}
 {% from "components/input/_macro.njk" import onsInput %}
 {% from "components/panel/_macro.njk" import onsPanel %}
+{% from "components/related-links/_macro.njk" import onsRelatedLinks %}
+{% from "components/toc/_macro.njk" import onsTableOfContents %}
+{% from "components/content-pagination/_macro.njk" import onsContentPagination %}
 
 {% block head %}
     <link rel="stylesheet" href="{{ pageInfo.rootPath }}/main.css">
@@ -56,19 +59,19 @@
         "itemsList": [
             {
                 "title": 'Home',
-                "url": '/prototypes/census-website-engage'
+                "url": pageInfo.rootPath + '/home'
             },
             {
                 "title": 'About the census',
-                "url": "#0"
+                "url": pageInfo.rootPath + '/about-the-census'
             },
             {
                 "title": 'Keeping your data safe',
-                "url": '#0'
+                "url": pageInfo.rootPath + '/keeping-your-data-safe'
             },
             {
                 "title": 'Contact us',
-                "url": '#0'
+                "url": pageInfo.rootPath + '/contact-us'
             }
         ]
     },
@@ -79,7 +82,7 @@
                 "itemsList": [
                     {
                         "text": 'Contact us',
-                        "url": '#0'
+                        "url": pageInfo.rootPath + '/contact-us'
                     },
                     {
                         "text": 'Media enquiries',
@@ -92,11 +95,11 @@
                 "itemsList": [
                     {
                         "text": 'Jobs',
-                        "url": '#0'
+                        "url": pageInfo.rootPath + '/jobs'
                     },
                     {
                         "text": 'Media and campaigns',
-                        "url": '#0'
+                        "url": pageInfo.rootPath + '/media-and-campaigns'
                     },
                     {
                         "text": 'Our partners',

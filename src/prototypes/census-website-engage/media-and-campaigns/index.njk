@@ -11,18 +11,6 @@ layout: census-website-engage/views/_master
 
         <div class="page__container container">
 
-            {{ 
-                onsBreadcrumb({
-                    "ariaLabel": 'Breadcrumb',
-                    "itemsList": [
-                        {
-                            "url": '/prototypes/census-website-engage/',
-                            "text": 'Home'
-                        }
-                    ]
-                }) 
-            }}
-
             <div class="grid">
 
                 <div class="grid__col col-12@m">
@@ -39,9 +27,9 @@ layout: census-website-engage/views/_master
                                         "ariaBy": 'Section highlight',
                                         "id": 'title1',
                                         "textId": 'text1',
-                                        "title": 'Local authorities',
+                                        "title": 'Media enquiries',
                                         "url": '#0',
-                                        "text": 'If you work for a local authority, find out how you can help support the census in your area.'
+                                        "text": 'If you’re a journalist looking to talk to someone about the census, contact our media team.'
                                     })
                                 }}
                             </div>
@@ -52,9 +40,9 @@ layout: census-website-engage/views/_master
                                         "ariaBy": 'Section highlight',
                                         "id": 'title2',
                                         "textId": 'text2',
-                                        "title": 'Community groups',
-                                        "url": '#0',
-                                        "text": 'If you’re a community group leader, find out how you can help support the census in your community.'
+                                        "title": 'News and events',
+                                        "url": pageInfo.rootPath + '/media-and-campaigns/news-and-events',
+                                        "text": 'Census press releases and statements from the Office for National Statistics.'
                                     })
                                 }}
                             </div>
@@ -65,9 +53,9 @@ layout: census-website-engage/views/_master
                                         "ariaBy": 'Section highlight',
                                         "id": 'title3',
                                         "textId": 'text3',
-                                        "title": 'Resources for partners',
-                                        "url": pageInfo.rootPath + '/our-partners/resources-for-partners',
-                                        "text": 'We’ve produced downloadable materials for community groups and local authorities to use.'
+                                        "title": 'Let’s Count!',
+                                        "url": '#0',
+                                        "text": 'Let’s Count! is a free educational programme that helps primary school children learn about census.'
                                     })
                                 }}
                             </div>
