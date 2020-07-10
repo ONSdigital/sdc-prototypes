@@ -17,54 +17,58 @@
 {% endblock %}
 
 {% set pageConfig =  { 
-    "theme": "census",
+    "theme": 'census',
     "header": {
-        "titleLogo": "/img/census-logo-en.svg",
-        "titleLogoAlt": "Census 2021"
+        "titleLogo": '/img/census-logo-en.svg',
+        "titleLogoAlt": 'Census 2021'
     },
-    "title": "Census 2021",
+    "title": 'Census 2021',
+    "toggleButton": {
+        "text": "Menu",
+        "ariaLabel": "Toggle main navigation"
+    },
     "language": {
         "languages": [
             {
-                "url": "#",
-                "ISOCode": "en",
-                "text": "English",
-                "buttonAriaLabel": "Language selector. Current language: English",
-                "chooseLanguage": "Choose language",
+                "url": '#',
+                "ISOCode": 'en',
+                "text": 'English',
+                "buttonAriaLabel": 'Language selector. Current language: English',
+                "chooseLanguage": 'Choose language',
                 "current": true
             },
             {
-                "url": "#",
-                "ISOCode": "cy",
-                "text": "Cymraeg",
-                "buttonAriaLabel": "Dewisydd iaith. Iaith gyfredol: Cymraeg",
-                "chooseLanguage": "Dewiswch iaith",
+                "url": '#',
+                "ISOCode": 'cy',
+                "text": 'Cymraeg',
+                "buttonAriaLabel": 'Dewisydd iaith. Iaith gyfredol: Cymraeg',
+                "chooseLanguage": 'Dewiswch iaith',
                 "current": false
             }
         ]
     },
     "navigation": {
-        "id": "main-nav",
-        "ariaLabel": "Main menu",
-        "ariaListLabel": "Navigation menu",
+        "id": 'main-nav',
+        "ariaLabel": 'Main menu',
+        "ariaListLabel": 'Navigation menu',
         "currentPath": pageInfo.path,
         "siteBasePath": pageInfo.rootPath,
         "itemsList": [
             {
-                "title": "Home",
-                "url": "/prototypes/census-website-engage"
+                "title": 'Home',
+                "url": '/prototypes/census-website-engage'
             },
             {
-                "title": "About the census",
+                "title": 'About the census',
                 "url": "#0"
             },
             {
-                "title": "Keeping your data safe",
-                "url": "#0"
+                "title": 'Keeping your data safe',
+                "url": '#0'
             },
             {
-                "title": "Contact us",
-                "url": "#0"
+                "title": 'Contact us',
+                "url": '#0'
             }
         ]
     },
@@ -121,13 +125,7 @@
                     }
                 ]
             }
-        ],
-        "OGLLink": {
-            "pre": 'All content is available under the',
-            "link": 'Open Government Licence v3.0',
-            "url": 'https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/',
-            "post": ', except where otherwise stated'
-        }
+        ]
     }
 } %}
 
