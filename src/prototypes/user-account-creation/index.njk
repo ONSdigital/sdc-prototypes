@@ -1,0 +1,37 @@
+---
+group: Frontstage
+title: User generated account
+version: 17.0.0
+layout: user-account-creation/views/_index
+---
+
+{% block main %}
+    {% from "components/button/_macro.njk" import onsButton %}
+    <h1>User account creation</h1>
+
+    <div class="grid">
+        <div class="grid__col col-8@m">
+            <h2>Version 2</h2>
+            {{ 
+                onsButton({
+                    "type": 'button',
+                    "text": 'Start',
+                    "classes": 'btn--small u-mb-s',
+                    "url": "/prototypes/user-account-creation/version-2/00-surveys-list.html"
+                }) 
+            }}
+            
+            <h2 class="u-mt-l">Version 1</h2>
+            {{ 
+                onsButton({
+                    "type": 'button',
+                    "text": 'Start',
+                    "classes": 'btn--small u-mb-s',
+                    "url": "/prototypes/user-account-creation/version-1/10-surveys-list.html"
+                }) 
+            }}
+            
+        </div>
+    </div>
+{% endblock %}
+

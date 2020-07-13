@@ -1,7 +1,7 @@
 {% extends "page-templates/_template.njk" %}
 
 {% block head %}
-    <link rel="stylesheet" href="{{ pageInfo.rootPath }}/version-1/styles.css" />
+    <link rel="stylesheet" href="{{ pageInfo.rootPath }}/version-2/styles.css" />
 {% endblock %}
 
 {% set pageConfig = { 
@@ -9,7 +9,7 @@
     "title": "Survey data collection",
     "header": {
         "logoAlt": "ONS",
-        "logoHref": "/prototypes/SM-categorisation/version-1/",
+        "logoHref": "/prototypes/SM-categorisation/version-2/",
         "classes": "header--internal header--thin",
         "logo": "ons-logo-white",
         "button": {
@@ -88,7 +88,7 @@
                     },
                     {
                         "text": 'Contact us',
-                        "url": '/prototypes/SM-categorisation/version-1/02-contact-us.html'
+                        "url": '/prototypes/SM-categorisation/version-2/02-contact-us.html'
                     },
                     {
                         "text": 'Accessibility',
@@ -121,5 +121,5 @@
 
 {% block bodyEnd %}
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script src="{{ pageInfo.rootPath }}/version-1/scripts/index.js"></script>
+  <script src="{{ pageInfo.rootPath }}/version-2/scripts/index.js"></script>
 {% endblock %}

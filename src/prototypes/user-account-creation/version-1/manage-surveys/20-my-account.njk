@@ -1,0 +1,70 @@
+---
+group: Frontstage
+title: User generated account
+version: 14.4.0
+layout: user-account-creation/views/version-1/_master
+---
+
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% block main %}
+
+    <div class="grid">
+        <div class="grid__col col-8@m">
+            <h1>Manage access to my surveys</h1>
+            <form action="{{ pageInfo.parentPath }}/index.html">
+                <p>
+                    {{ 
+                        onsRadios({
+                            "legend": "Choose an option:",
+                            "name": "food",
+                            "checked": "false",
+                            "radios": [
+                                {
+                                    "id": "colleague",
+                                    "label": {
+                                        "text": "I need to share access to my surveys"
+                                    },
+                                    "value": "colleague",
+                                    "attributes": {
+                                        "data-action-url": pageInfo.parentPath + "/30-add-new-account.html"
+                                    }
+                                },
+                                {
+                                    "id": "changed",
+                                    "label": {
+                                        "text": "I've changed my email address"
+                                    },
+                                    "value": "changed",
+                                    "attributes": {
+                                        "data-action-url": pageInfo.parentPath + "/50-changed-email-address.html"
+                                    }
+                                },
+                                {
+                                    "id": "leaving",
+                                    "label": {
+                                        "text": "I'm no longer responsible for completing surveys"
+                                    },
+                                    "value": "leaving",
+                                    "attributes": {
+                                        "data-action-url": pageInfo.parentPath + "/40-transfer-account.html"
+                                    }
+                                }
+                            ]
+                        }) 
+                    }}
+                </p>
+                <p class="field">
+                    {% from "components/button/_macro.njk" import onsButton %}
+                    {{ 
+                            onsButton({
+                                "text": 'Continue'
+                            }) 
+                        }}
+                </p>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

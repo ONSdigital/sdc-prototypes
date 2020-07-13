@@ -1,0 +1,41 @@
+---
+group: Frontstage
+title: User generated account
+version: 14.4.0
+layout: user-account-creation/views/version-1/_master
+---
+
+{% from "components/input/_macro.njk" import onsInput %}
+
+{% block main %}
+
+    <div class="grid">
+        <div class="grid__col col-8@m">
+            <h1>Send enrolment codes</h1>
+
+            <p><b>jane.doe@vcp.com</b> will be enrolled onto the following surveys:</p>
+            <h2 class="u-fs-m">ACME Consumer Products</h2>
+            <div class="text-indent">
+                <ul class="list list--bare">
+                    <li>Quarterly Business Survey</li>
+                    <li>Monthly Business Survey</li>
+                </ul>
+            </div> 
+            <h2 class="u-fs-m">ACME Group Ltd</h2>
+            <div class="text-indent">
+                <ul class="list list--bare">
+                    <li>Business Register and Employment Survey</li>
+                </ul>
+            </div>
+            <p class="field">
+                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/manage-surveys/33-confirmation.html';">
+                    <span class="btn__inner">Send</span>
+                </button>
+            </p>
+            <p class="field">
+                <a href="{{ pageInfo.rootPath }}/manage-surveys/20-my-account.html">Cancel</a>
+            </p>
+        </div>
+    </div>
+
+{% endblock %}

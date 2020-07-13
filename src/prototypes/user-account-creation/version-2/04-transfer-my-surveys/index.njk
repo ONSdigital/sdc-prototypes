@@ -1,8 +1,8 @@
 ---
 group: Frontstage
-title: SM Categorisation
+title: User account creation
 version: 17.0.0
-layout: SM-categorisation/views/version-2/_master-survey
+layout: user-account-creation/views/version-2/_master-survey
 ---
 
 {% from "components/input/_macro.njk" import onsInput %}
@@ -17,12 +17,12 @@ layout: SM-categorisation/views/version-2/_master-survey
                     "ariaLabel": 'Breadcrumb',
                     "itemsList": [
                         {
-                            "url": '/prototypes/SM-categorisation/version-2/account/30-my-account.html',
+                            "url": '/prototypes/user-account-creation/version-2/30-my-account.html',
                             "text": 'Account'
                         },
                         {
                             "url": '/',
-                            "text": 'Change your account details',
+                            "text": 'Transfer account',
                             "current": true
                         }
                     ]
@@ -30,8 +30,10 @@ layout: SM-categorisation/views/version-2/_master-survey
             }}
         </div>
         <div class="grid__col col-8@m u-pt-no">
-            <h1>Change your account details</h1>
-            <p><a href="{{ pageInfo.rootPath }}/version-2/account/01-change-account-details/02-change-email-address.html">Change your email address</a></p>
+            <h1>Transfer all your surveys</h1>
+
+            <p>If you are no longer responsible for completing surveys you can transfer privilages to up to 3 recipients.</p>
+
             <!--
             <p>You'll need to:</p>
             <ol>
@@ -46,9 +48,10 @@ layout: SM-categorisation/views/version-2/_master-survey
                 <p>
                     {{ 
                         onsInput({
-                            "id": "firstname",
+                            "id": "recipient-one",
+                            "class": "hello",
                             "label": {
-                                "text": "First name"
+                                "text": "Email address"
                             }
                         }) 
                     }}
@@ -59,9 +62,9 @@ layout: SM-categorisation/views/version-2/_master-survey
                 <p>
                     {{ 
                         onsInput({
-                            "id": "Surname",
+                            "id": "recipient-two",
                             "label": {
-                                "text": "Surname"
+                                "text": "Email address (optional)"
                             }
                         }) 
                     }}
@@ -72,18 +75,19 @@ layout: SM-categorisation/views/version-2/_master-survey
                 <p>
                     {{ 
                         onsInput({
-                            "id": "phonenumber",
+                            "id": "recipient-three",
                             "label": {
-                                "text": "Phone number"
+                                "text": "Email address (optional)"
                             }
                         }) 
                     }}
                 </p>
             </div>
 
+        
             <p class="field">
-                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-2/30-my-account.html';">
-                    <span class="btn__inner">Save</span>
+                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-2/04-transfer-my-surveys/02-send-enrolment-codes.html';">
+                    <span class="btn__inner">Continue</span>
                 </button>
                 <button type="submit" class="btn btn--secondary" onclick="location.href='{{ pageInfo.rootPath }}/version-2/30-my-account.html';">
                     <span class="btn__inner">Cancel</span>

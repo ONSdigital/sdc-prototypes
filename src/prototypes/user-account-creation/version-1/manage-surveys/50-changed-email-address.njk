@@ -1,0 +1,53 @@
+---
+group: Frontstage
+title: User generated account
+version: 14.4.0
+layout: user-account-creation/views/version-1/_master
+---
+
+{% from "components/input/_macro.njk" import onsInput %}
+
+{% block main %}
+
+    <div class="grid">
+        <div class="grid__col col-8@m">
+            <h1>Transfer your surveys</h1>
+
+
+            <!--
+            <p>You'll need to:</p>
+            <ol>
+                <li>Provide the email address</li>
+                <li>Send the enrolment code</li>
+            </ol>
+            -->
+
+            <!-- <p>To whom would you like to transfer your surveys?</p> -->
+
+            <div class="field">
+                <p>
+                    {{ 
+                        onsInput({
+                            "id": "recipient-one",
+                            "class": "hello",
+                            "label": {
+                                "text": "What's your new email address?"
+                            }
+                        }) 
+                    }}
+                </p>
+            </div>
+
+        
+            <p class="field">
+                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/manage-surveys/51-send-enrolment-codes.html';">
+                    <span class="btn__inner">Continue</span>
+                </button>
+            </p>
+            <p class="field">
+                <a href="{{ pageInfo.rootPath }}/manage-surveys/20-my-account.html">Cancel</a>
+            </p>
+        </div>
+    </div>
+
+{% endblock %}

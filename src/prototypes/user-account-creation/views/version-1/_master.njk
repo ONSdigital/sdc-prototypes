@@ -1,27 +1,30 @@
 {% extends "page-templates/_template.njk" %}
 
 {% block head %}
-    <link rel="stylesheet" href="{{ pageInfo.rootPath }}/version-2/styles.css"/>
+    <link rel="stylesheet" href="{{ pageInfo.rootPath }}/styles.css" />
 {% endblock %}
 
 {% set pageConfig = { 
     "cdn": "14.4.0",
-    "title": "Survey data collection",
+    "title": "Monthly Business Survey",
     "header": {
         "logoAlt": "ONS",
-        "logoHref": "/prototypes/SM-categorisation/version-2/"
+        "logoHref": "/prototypes/user-account-creation/version-1/"
     },
     "navigation": {
         "classes": "nav--inline nav--light nav--header nav--h-m js-main-nav",
         "id": "main-nav",
         "ariaLabel": "Main menu",
         "ariraListLabel": "Navigation menu",
-        "currentPath": "/prototypes/SM-categorisation/version-2/00-surveys-list.html",
+        "currentPath": "/prototypes/user-account-creation/version-1/00-surveys-list.html",
         "itemsList": [
             {
-                "title": "Surveys",
-                "path": "/prototypes/SM-categorisation/version-2/00-surveys-list.html",
-                "classes": "header-nav__item--active"
+                "title": "To do",
+                "path": "/prototypes/user-account-creation/version-1/00-surveys-list.html"
+            },
+            {
+                "title": "History",
+                "path": "#"
             },
             {
                 "title": "Messages",
@@ -29,13 +32,13 @@
             }
         ]},
     "serviceLinks": {
-        "classes": "header-service-nav--internal u-mr-s",
+        "classes": "header-service-nav--internal",
         "ariaLabel": "Site services menu",
         "ariaListLabel": "Navigation menu",
         "itemsList": [
             {
-                "text": "Account",
-                "url": "/prototypes/SM-categorisation/version-2/30-my-account.html"
+                "text": "Manage access to my surveys",
+                "url": "/prototypes/user-account-creation/version-1/manage-surveys/20-my-account.html"
             },
             {
                 "text": "Sign out",
@@ -48,15 +51,16 @@
 {% block pageContent %}
     {% block preMain %}{% endblock %}
     <div class="page__container container">
-        <main id="main-content" class="page__main {{ pageClasses }}">
-            {% block main %}{% endblock %}
-        </main>
+      <main id="main-content" class="page__main {{ pageClasses }}">
+          {% block main %}{% endblock %}
+      </main>
     </div>
 {% endblock %}
 
+
 {% block footer %}
-    {% from "components/footer/_macro.njk" import onsFooter %}
-    {{ 
+{% from "components/footer/_macro.njk" import onsFooter %}
+{{ 
     onsFooter({
         "OGLLink": {
             "pre": "All content is available under the",
@@ -83,7 +87,7 @@
                     },
                     {
                         "text": 'Contact us',
-                        "url": '/prototypes/SM-categorisation/version-2/02-contact-us.html'
+                        "url": '#'
                     },
                     {
                         "text": 'Accessibility',
@@ -113,7 +117,8 @@
 }}
 {% endblock %}
 
+
 {% block bodyEnd %}
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="{{ pageInfo.rootPath }}/version-2/scripts/index.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="{{ pageInfo.rootPath }}/scripts/index.js"></script>
 {% endblock %}
