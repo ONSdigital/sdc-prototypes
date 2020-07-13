@@ -22,8 +22,10 @@
 {% set pageConfig =  { 
     "theme": 'census',
     "header": {
-        "titleLogo": '/img/census-logo-en.svg',
-        "titleLogoAlt": 'Census 2021'
+        "logoHref": pageInfo.rootPath,
+        "titleLogo": "census-logo-en",
+        "titleLogoHref": pageInfo.rootPath + '/home',
+        "titleLogoAlt": "Census 2021"
     },
     "title": 'Census 2021',
     "toggleButton": {
