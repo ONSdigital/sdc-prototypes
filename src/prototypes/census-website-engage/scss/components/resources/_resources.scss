@@ -21,11 +21,12 @@ Downloadable file listing
 .resource__image {
   flex: 0 0 auto;
   margin-right: 32px;
-  width: 100px;
+  width: 96px; // Max width of image
 }
 
 .resource__image-link {
   border: 2px solid $border-color;
+  box-sizing: content-box;
   display: block;
   width: 100%;
 

@@ -23,14 +23,14 @@
     "theme": 'census',
     "header": {
         "logoHref": pageInfo.rootPath,
-        "titleLogo": "census-logo-en",
+        "titleLogo": 'census-logo-en',
         "titleLogoHref": pageInfo.rootPath + '/home',
-        "titleLogoAlt": "Census 2021"
+        "titleLogoAlt": 'Census 2021'
     },
     "title": 'Census 2021',
     "toggleButton": {
-        "text": "Menu",
-        "ariaLabel": "Toggle main navigation"
+        "text": 'Menu',
+        "ariaLabel": 'Toggle main navigation'
     },
     "language": {
         "languages": [
@@ -134,12 +134,10 @@
     }
 } %}
 
-
 {% block pageContent %}
     {% block preMain %}{% endblock %}
     {% block main %}{% endblock %}
 {% endblock %}
-
 
 {% block bodyEnd %}
     <script src="{{ pageInfo.rootPath }}/index.js"></script>
