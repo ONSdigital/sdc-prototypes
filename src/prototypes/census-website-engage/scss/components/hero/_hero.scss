@@ -81,7 +81,7 @@
     bottom: 16px;
     height: 560px;
     margin: auto;
-    right: 84px;
+    right: 0;
     top: auto; // Reset
     width: 560px;
 
@@ -92,7 +92,7 @@
 
   .hero__circle-gradient {
     height: 342px;
-    right: -84px;
+    right: -171px; // Half of circle
     width: 342px;
   }
 
@@ -101,6 +101,7 @@
     bottom: -64px;
     height: 248px;
     right: 84px;
+    right: 0;
     width: 248px;
   }
 }
