@@ -1,7 +1,7 @@
 ---
 title: Get prepared for Census 2021
 group: Census
-version: 19.2.3
+version: 19.3.0
 layout: census-website-engage/views/_master
 ---
 
@@ -118,8 +118,105 @@ layout: census-website-engage/views/_master
         </section>
 
 
-        <!-- Case studies -->
+        <!-- Resources for partners and get involved -->
         <section class="container">
+
+            <div class="u-bt u-mb-l u-pt-m">
+
+                <div class="grid grid--column@xs@s u-mb-l">
+                    
+                    <div class="grid__col col-7@m">
+                        
+                        <h2 class="u-fs-xl u-mb-m">Resource for partners</h2>
+
+                        <div class="resource u-mb-m u-pr-s">
+
+                            <div class="resource__image" aria-hidden="true">
+                                <a class="resource__image-link" href="#0" tabindex="-1">
+                                    <img srcset="/prototypes/census-website-engage/img/census-2021-matters-to-everyone.png 1x, /prototypes/census-website-engage/img/census-2021-matters-to-everyone@2x.png 2x" src="/prototypes/census-website-engage/img/census-2021-matters-to-everyone.png" loading="lazy" alt="Including everyone n Census 2021 document thumbnail">
+                                </a>
+                            </div>
+
+                            <div class="resource__content">
+                                <h3 class="u-fs-m u-mb-xs"><a href="#0">Census 2021 matters to everyone</a></h3>
+                                <span class="u-fs-s u-mb-xs resource__meta">Poster, PDF, 866KB, 1 page</span>  
+                                <p class="u-mb-no">By taking part and encouraging others to do the same, you’ll make sure your community gets the services it needs.</p>  
+                            </div>
+
+                        </div>
+                    
+                        <div class="resource u-mb-m u-pr-s">
+
+                            <div class="resource__image" aria-hidden="true">
+                                <a class="resource__image-link" href="#0" tabindex="-1">
+                                    <img height="" width="" srcset="/prototypes/census-website-engage/img/census-2021-community-handbook.png 1x, /prototypes/census-website-engage/img/census-2021-community-handbook@2x.png 2x" src="/prototypes/census-website-engage/img/census-2021-community-handbook.png" loading="lazy" alt="Community handbook for Census 2021 document thumbnail">
+                                </a>
+                            </div>
+
+                            <div class="resource__content">
+                                <h3 class="u-fs-m u-mb-xs"><a href="#0">Community handbook for Census 2021</a></h3>
+                                <span class="u-fs-s u-mb-xs resource__meta">Booklet, PDF, 3.3MB, 16 pages</span>  
+                                <p class="u-mb-no">This handbook explains what the census is, why it matters to everyone and how we can work together to spread the word within your community.</p>  
+                            </div>
+
+                        </div>
+
+                        <p><a href="{{ pageInfo.rootPath + '/our-partners/resources-for-partners' }}">View all resources for partners</a></p>
+
+                    </div>
+
+                    <div class="grid__col col-5@m">
+                        
+                        <h2 class="u-pl-m@m u-fs-xl u-mb-m">Get involved</h2>
+
+                        <div class="u-pl-m@m u-bl@m u-pt-m@xs@s">
+
+                            {{
+                                onsCard({
+                                    "ariaBy": 'Section highlight',
+                                    "id": 'title',
+                                    "textId": 'text',
+                                    "title": 'Working on the census',
+                                    "url": pageInfo.rootPath + '/jobs',
+                                    "text": 'We’re hiring thousands of people like you in a range of exciting temporary roles to make Census 2021 a success.'
+                                })
+                            }}
+
+                            {{
+                                onsCard({
+                                    "ariaBy": 'Section highlight',
+                                    "id": 'title',
+                                    "textId": 'text',
+                                    "title": 'Community groups',
+                                    "url": pageInfo.rootPath + '/our-partners/community-groups',
+                                    "text": 'If you’re a community group leader, find out how you can help support the census in your community.'
+                                })
+                            }}
+
+                            {{
+                                onsCard({
+                                    "ariaBy": 'Section highlight',
+                                    "id": 'title',
+                                    "textId": 'text',
+                                    "title": 'Local authorities',
+                                    "url": pageInfo.rootPath + '/our-partners/local-authorities',
+                                    "text": 'If you work for a local authority, find out how you can help support the census in your area.'
+                                })
+                            }}
+
+                        </div>
+
+                    </div>
+                    
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Case studies -->
+        <!--section class="container">
 
             <div class="u-bt u-mb-l u-pt-m">
 
@@ -159,7 +256,7 @@ layout: census-website-engage/views/_master
 
             </div>
 
-        </section>
+        </section-->
 
 
         <!-- Contact and social links -->
@@ -173,7 +270,7 @@ layout: census-website-engage/views/_master
                     
                         <h3>Get in touch</h3>
 
-                        <p>If you have any questions, <a href="#0">get in touch with us</a></p>
+                        <p>If you have any questions, <a href="{{ pageInfo.rootPath + '/contact-us' }}">get in touch</a></p>
 
                     </div>
 

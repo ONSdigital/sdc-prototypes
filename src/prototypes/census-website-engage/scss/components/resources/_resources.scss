@@ -12,12 +12,6 @@ Downloadable file listing
   display: flex;
 }
 
-.resource__heading {
-  font-size: 18px;
-  line-height: (24/18);
-  margin-bottom: 8px;
-}
-
 .resource__image {
   flex: 0 0 auto;
   margin-right: 32px;
@@ -39,13 +33,4 @@ Downloadable file listing
 .resource__meta {
   color: $text-secondary;
   display: block;
-  font-size: 14px;
-  line-height: (24/14);
-  margin-bottom: 8px;
-}
-
-.resource__excerpt {
-  font-size: 16px;
-  line-height: (24/16);
-  margin-bottom: 0;
 }

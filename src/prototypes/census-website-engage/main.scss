@@ -2,3 +2,12 @@
 @import 'scss/components/all';
 @import 'scss/helpers/all';
 @import 'scss/elements/all';
+
+/*
+  Overrides due to bugs in the design system (that need resolving at a later date)
+*/
+
+.list .list__link {
+  display: inline-block;
+  vertical-align: top;
+}
