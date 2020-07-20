@@ -1,0 +1,127 @@
+---
+group: RAS/RM
+title: Alert banner management
+version: 17.0.0
+layout: alert-banner-management/views/version-1/_master
+---
+
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/date-input/_macro.njk" import onsDateInput %}
+
+{% block main %}
+
+    <div class="grid">
+        <div class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '',
+                            "text": 'Surveys'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'Create an alert',
+                            "current": true
+                        }
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+            <form action="{{ pageInfo.parentPath }}/index.html">
+                <h1>Specify time and date</h1>
+                <p class="field">
+                {{
+                    onsDateInput({
+                        "id": "date",
+                        "legend": "Date of birth",
+                        "description": "For example, 31 3 1980",
+                        "day": {
+                            "label": {
+                                "text": "Day"
+                            },
+                            "name": "day",
+                            "attributes": {
+                                "autocomplete": "publish-day"
+                            }
+                        },
+                        "month": {
+                            "label": {
+                                "text": "Month"
+                            },
+                            "name": "month",
+                            "attributes": {
+                                "autocomplete": "publish-month"
+                            }
+                        },
+                        "year": {
+                            "label": {
+                                "text": "Year"
+                            },
+                            "name": "year",
+                            "attributes": {
+                                "autocomplete": "publish-year"
+                            }
+                        }
+                    })
+                }}
+                </p>
+                <p class="field">
+                {{
+                    onsDateInput({
+                        "id": "date",
+                        "legend": "Date of birth",
+                        "description": "For example, 31 3 1980",
+                        "day": {
+                            "label": {
+                                "text": "Day"
+                            },
+                            "name": "day",
+                            "attributes": {
+                                "autocomplete": "remove-day"
+                            }
+                        },
+                        "month": {
+                            "label": {
+                                "text": "Month"
+                            },
+                            "name": "month",
+                            "attributes": {
+                                "autocomplete": "remove-month"
+                            }
+                        },
+                        "year": {
+                            "label": {
+                                "text": "Year"
+                            },
+                            "name": "year",
+                            "attributes": {
+                                "autocomplete": "remove-year"
+                            }
+                        }
+                    })
+                }}
+                </p>
+                <p class="field">
+                    <button type="submit" class="btn">
+                        <span class="btn__inner">Continue</span>
+                    </button>
+                    {{ 
+                    onsButton({
+                        "type": 'button',
+                        "text": 'Cancel',
+                        "classes": 'btn--secondary btn-group__btn',
+                        "url": "/prototypes/publish-banner-management/version-1/survey-list.html"
+                    }) 
+                }}
+                </p>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
