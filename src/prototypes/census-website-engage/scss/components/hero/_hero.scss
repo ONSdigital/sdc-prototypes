@@ -27,9 +27,9 @@
 
 .hero__details {
   padding-top: 250px;
-  padding-bottom: 36px;
+  padding-bottom: 2rem;
   position: relative;
-  z-index: 4;
+  z-index: 5;
 
   &--ondark {
     color: #ffffff;
@@ -38,9 +38,9 @@
 
 .hero__circle-image {
   border-radius: 50%;
-  top: -145px;
   height: 382px;
   right: -8px;
+  top: -145px;
   width: 382px;
   z-index: 2;
 
@@ -53,22 +53,23 @@
 
 .hero__circle-gradient {
   background-image: linear-gradient(-45deg, #902082 0%, #902082 20%, #2d2f8a 60%, #005489 90%);
-  height: 234px;
-  right: -117px; // Half the circle
-  top: 16px;
-  width: 234px;
-  z-index: 3;
   border-radius: 50%;
   display: block;
+  height: 234px;
+  right: -117px; // Half with of circle
+  top: 1rem;
+  width: 234px;
+  z-index: 3;
 }
 
 .hero__circle-white {
   background-color: #ffffff;
   border-radius: 50%;
+  display: block;
   height: 913px;
-  right: 40%;
-  top: 50%;
-  margin-top: -450px;
+  right: 50%;
+  top: 1rem;
+  transform: translateX(50%);
   width: 913px;
   z-index: 1;
 }
@@ -85,20 +86,26 @@
 // Adjustments at 740px
 @include mq('m') {
   .hero__details {
-    // padding-top: 0;
-    padding-top: 36px;
-    padding-bottom: 36px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
 
   .hero__container {
     align-items: center;
+  }
+
+  .hero__circle-white {
+    margin-top: -450px;
+    transform: none;
+    right: 191px; // Half the image circle
+    top: 50%;
   }
 }
 
 // Adjustments at 980px
 @include mq('l') {
   .hero__circle-image {
-    bottom: 16px;
+    bottom: 1rem;
     height: 560px;
     margin: auto;
     right: 0;
@@ -112,15 +119,19 @@
 
   .hero__circle-gradient {
     height: 342px;
-    right: -171px; // Half of circle
+    right: -171px; // Half width of circle
     width: 342px;
+  }
+
+  .hero__circle-white {
+    right: 490px;
+    left: auto;
   }
 
   .hero__circle-lined {
     top: auto; // Reset
     bottom: -88px;
     height: 248px;
-    right: 84px;
     right: 0;
     width: 248px;
   }
