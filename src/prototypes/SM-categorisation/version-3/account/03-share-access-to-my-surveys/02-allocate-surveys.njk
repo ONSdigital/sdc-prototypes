@@ -18,12 +18,20 @@ layout: SM-categorisation/views/version-3/_master-survey
                     "ariaLabel": 'Breadcrumb',
                     "itemsList": [
                         {
+                            "url": '/prototypes/SM-categorisation/version-3/00-surveys-list.html',
+                            "text": 'Surveys'
+                        },
+                        {
                             "url": '/prototypes/SM-categorisation/version-3/account/30-my-account.html',
                             "text": 'Account'
                         },
                         {
+                            "url": '/prototypes/SM-categorisation/version-3/account/03-share-access-to-my-surveys/index.html',
+                            "text": 'Share access to my surveys'
+                        },
+                        {
                             "url": '/',
-                            "text": 'Share access',
+                            "text": 'Allocate surveys',
                             "current": true
                         }
                     ]
@@ -104,10 +112,10 @@ layout: SM-categorisation/views/version-3/_master-survey
             }}
             </p>
             <p class="field">
-                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-3/account/03-change-who-completes-surveys/01-share-access-to-my-surveys/03-send-enrolment-codes.html';">
+                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-3/account/03-share-access-to-my-surveys/03-send-enrolment-codes.html';">
                     <span class="btn__inner">Continue</span>
                 </button>
-                <button type="submit" class="btn btn--secondary" onclick="location.href='{{ pageInfo.rootPath }}/version-3/30-my-account.html';">
+                <button type="submit" class="btn btn--secondary" onclick="location.href='{{ pageInfo.rootPath }}/version-3/account/30-my-account.html';">
                     <span class="btn__inner">Cancel</span>
                 </button>
             </p>

@@ -17,12 +17,24 @@ layout: SM-categorisation/views/version-3/_master-survey
                     "ariaLabel": 'Breadcrumb',
                     "itemsList": [
                         {
+                            "url": '/prototypes/SM-categorisation/version-3/00-surveys-list.html',
+                            "text": 'Surveys'
+                        },
+                        {
                             "url": '/prototypes/SM-categorisation/version-3/account/30-my-account.html',
                             "text": 'Account'
                         },
                         {
+                            "url": '/prototypes/SM-categorisation/version-3/account/03-share-access-to-my-surveys/index.html',
+                            "text": 'Share access to my surveys'
+                        },
+                        {
+                            "url": '/prototypes/SM-categorisation/version-3/account/03-share-access-to-my-surveys/02-allocate-surveys.html',
+                            "text": 'Allocate surveys'
+                        },
+                        {
                             "url": '/',
-                            "text": 'Transfer account',
+                            "text": 'Send enrolment codes',
                             "current": true
                         }
                     ]
@@ -32,7 +44,7 @@ layout: SM-categorisation/views/version-3/_master-survey
         <div class="grid__col col-8@m u-pt-no">
             <h1>Send enrolment codes</h1>
 
-            <p><b>jane.doe@acme.com</b>, <b>joe.bloggs@acme.com</b> and <b>joe.bloggs@acme.com</b> will be enrolled onto the following surveys:</p>
+            <p><b>jane.doe@acme.com</b> will be enrolled onto the following surveys:</p>
             <h2 class="u-fs-m">ACME Consumer Products</h2>
             <div class="text-indent">
                 <ul class="list list--bare">
@@ -44,17 +56,13 @@ layout: SM-categorisation/views/version-3/_master-survey
             <div class="text-indent">
                 <ul class="list list--bare">
                     <li>Business Register and Employment Survey</li>
-                    <li>Monthly Business Survey</li>
-                    <li>Quarterly Business Survey</li>
-                    <li>Monthly Wages and Salary Survey</li>
-                    <li>Quarterly Acquisitions and Disposals of Capital Assets</li>
                 </ul>
             </div>
             <p class="field">
-                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-3/account/03-change-who-completes-surveys/02-transfer-my-surveys/03-confirmation.html';">
+                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-3/account/03-share-access-to-my-surveys/04-confirmation.html';">
                     <span class="btn__inner">Send</span>
                 </button>
-                <button type="submit" class="btn btn--secondary" onclick="location.href='{{ pageInfo.rootPath }}/version-3/30-my-account.html';">
+                <button type="submit" class="btn btn--secondary" onclick="location.href='{{ pageInfo.rootPath }}/version-3/account/30-my-account.html';">
                     <span class="btn__inner">Cancel</span>
                 </button>
             </p>

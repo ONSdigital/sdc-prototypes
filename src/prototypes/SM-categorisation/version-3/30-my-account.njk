@@ -1,6 +1,6 @@
 ---
 group: Frontstage
-title: SM Categorisation
+title: User account creation
 version: 17.0.0
 layout: SM-categorisation/views/version-3/_master-survey
 ---
@@ -74,7 +74,7 @@ layout: SM-categorisation/views/version-3/_master-survey
             <hr class="u-mb-l">
 
             <h1>Help with your account</h1>
-            <form action="{{ pageInfo.parentPath }}/index.html">
+            <form action="{{ pageInfo.parentPath }}/account/index.html">
                 <p class="field">
                     <fieldset class="fieldset">
                         <legend class="fieldset__legend">Choose an option</legend>
@@ -96,35 +96,33 @@ layout: SM-categorisation/views/version-3/_master-survey
                                 <span class="radio">
                                     <input
                                         type="radio"
-                                        id="no-longer-responsible"
-                                        data-action-url="{{ pageInfo.parentPath }}/account/03-change-who-completes-surveys/01-change-who-completes-my-surveys.html"
+                                        id="answering-a-survey-question"
+                                        data-action-url="{{ pageInfo.parentPath }}/account/03-share-access-to-my-surveys/index.html"
                                         class="radio__input js-radio"
-                                        value="question-two"
+                                        value="question-one"
                                         name="message-query">
-                                    <label class="radio__label" for="no-longer-responsible">Change who completes my surveys</label>
+                                    <label class="radio__label" for="answering-a-survey-question">Share access to my surveys</label>
                                 </span>
                             </p>
-                            <!--
                             <br>
                             <p class="radios__item">
                                 <span class="radio">
                                     <input
                                         type="radio"
-                                        id="my-email-address-has-changed"
-                                        data-action-url="{{ pageInfo.parentPath }}/account/04-change-business-details/index.html"
+                                        id="information-about-the-survey"
+                                        data-action-url="{{ pageInfo.parentPath }}/account/04-transfer-my-surveys/index.html"
                                         class="radio__input js-radio"
-                                        value="question--five"
+                                        value="question-two"
                                         name="message-query">
-                                    <label class="radio__label" for="my-email-address-has-changed">My business details have changed</label>
+                                    <label class="radio__label" for="information-about-the-survey">I'm no longer responsible for completing surveys</label>
                                 </span>
                             </p>
-                            -->
                             <p class="radios__item">
                                 <span class="radio">
                                     <input
                                         type="radio"
                                         id="other-checkbox"
-                                        data-action-url="{{ pageInfo.parentPath }}/account/05-something-else/index.html"
+                                        data-action-url="{{ pageInfo.parentPath }}/account/06-something-else/index.html"
                                         class="radio__input js-radio "
                                         value="other" 
                                         name="message-query"

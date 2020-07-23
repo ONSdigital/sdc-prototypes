@@ -1,0 +1,62 @@
+---
+group: RAS/RM
+title: Overview
+version: 17.0.0
+layout: onboard-survey/views/_master
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+{% from "components/input/_macro.njk" import onsInput %}
+
+{% block main %}
+
+    <h1 name="page-surveys-title">Load collection instruments for 001 NEW</h1>
+    <div class="grid overview">
+        <div class="grid__col col-6@m">
+            
+            <p class="field">
+                <label class="label u-fs-m" for="file">Upload SEFT files
+                        <br>
+                    <span class="label__description">File types accepted are .csv, .xls and .xlsx</span>
+                </label>
+                <input type="file" id="file" class="input input--text input-type__input  input--upload input--w-20" accept=".xls,.xlsx"/>
+            </p>
+            <!--<p class="field">
+                <form action="" method="get">
+                    {{ 
+                    onsButton({
+                        "text": 'Add',
+                        "url": 'load-collection-instruments-checking.html',
+                        "classes": 'btn--secondary btn--small'
+                    }) 
+                }}
+                </form>
+            </p>-->
+            <!--
+        </div>
+        <div class="grid__col col-4@m push-1@m">
+        
+            <h2 class="u-fs-m u-mt-l u-mb-no">Collection instruments</h3>
+            <p>When the collection instruments have been loaded they  will be listed here.</p>
+            -->
+            <p class="field u-mt-l">
+                {{ 
+                    onsButton({
+                        "text": 'Save and exit',
+                        "url": 'create-collection-exercise.html',
+                        "classes": 'btn--disabled'
+                    }) 
+                }}
+                {{ 
+                    onsButton({
+                        "text": 'Cancel',
+                        "url": 'create-collection-exercise.html',
+                        "classes": 'btn--secondary'
+                    }) 
+                }}
+            </p>
+        </div>
+    </div>
+
+{% endblock %}

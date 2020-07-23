@@ -13,6 +13,23 @@ layout: onboard-survey/views/_index
     <div class="grid">
         <div class="grid__col col-8@m">
             <h2>Prototypes</h2>
+            <h3>Version 3 (MVP)</h3>
+            {{ 
+                onsButton({
+                    "type": 'button',
+                    "text": 'Start',
+                    "classes": 'btn--small u-mb-s',
+                    "url": "/prototypes/onboard-survey/version-3/survey-list.html"
+                }) 
+            }}
+            <h4>Single file/formtype upload</h4>
+            <ol>
+                <li>Load collection instruments on the survey screen</li>
+                <li>Single field formtype upload</li>
+                <li>Formtype upload count</li>
+                <li>Removed pagination</li>
+                <li>Added 'Add' to upload page</li>
+            </ol>
             <h3>Version 2</h3>
             {{ 
                 onsButton({
