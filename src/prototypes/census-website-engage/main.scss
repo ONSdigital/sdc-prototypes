@@ -7,6 +7,10 @@
   Overrides due to bugs in the design system (that need resolving at a later date)
 */
 
+html {
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .list .list__link {
   display: inline-block;
   vertical-align: top;
