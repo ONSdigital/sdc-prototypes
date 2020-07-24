@@ -20,7 +20,14 @@ layout: SM-categorisation/views/_index
                     "url": "/prototypes/SM-categorisation/version-3/00-surveys-list.html"
                 }) 
             }}
-            <p>Merged updated <a href="/prototypes/user-account-creation/index.html">user-account-creation</a></p>
+            <p>Merged updated <a href="/prototypes/user-account-creation/index.html">user-account-creation</a>
+            </p>
+            <ul>
+                <li>Routing content and conupdates</li>
+                <li>Added <a href="{{ pageInfo.rootPath }}/version-3/00-internal/10-secure-messages.html">Internal secure messages</a>
+                </li>
+            </ul>
+
             <h2>Version 2</h2>
             {{ 
                 onsButton({
@@ -39,8 +46,7 @@ layout: SM-categorisation/views/_index
                 <li>Added 'Surveys' to main nav</li>
                 <li>Moved 'history' and 'To do' from main nav to sub nav in 'Surveys'</li>
             </ul>
-            
-            
+
             <h2 class="u-mt-l">Version 1</h2>
             {{ 
                 onsButton({
@@ -51,7 +57,8 @@ layout: SM-categorisation/views/_index
                 }) 
             }}
             <ul>
-                <li>Combines secure messages categorisation with <a href="/prototypes/user-generated-account/">User account creation.</a></li>
+                <li>Combines secure messages categorisation with <a href="/prototypes/user-generated-account/">User account creation.</a>
+                </li>
                 <li>In this prototype, when respondents <a href="{{ pageInfo.rootPath }}/version-1/01-message-categories.html">ask for help</a> we attempt to solve a respondent's query before they send a message.</li>
                 <li>The most common issues are <a href="{{ pageInfo.rootPath }}/version-1/manage-surveys/20-my-account.html">managing access to surveys</a> and <a href="{{ pageInfo.rootPath }}/version-1/20-category/00-category-list.html">information about a survey</a>. This prototype attempts to allow respondents to solve these issues without using a secure message.</li>
                 <li>When <a href="{{ pageInfo.rootPath }}/version-1/00-internal/00-send-message.html">internal users send a message</a>, they are prompted to categorise the message.</li>

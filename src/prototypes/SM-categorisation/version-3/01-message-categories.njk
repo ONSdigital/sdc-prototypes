@@ -33,178 +33,98 @@ layout: SM-categorisation/views/version-3/_master-survey
             <h1>Help with this survey</h1>
             <form action="{{ pageInfo.parentPath }}/index.html">
                 <p class="field">
-                    <!-- {% from "components/radios/_macro.njk" import onsRadios %}
-            {{ 
-                onsRadios({
-                    "legend": "What is your message about?",
-                    "name": "category",
-                    "radios": [
-                        {
-                            "id": "answering-a-survey-question",
-                            "label": {
-                                "text": "Answering a survey question"
-                            },
-                            "value": "answering-a-survey-question",
-                            "data-action-url": "/prototypes/SM-categorisation/version-3/10-category/00-send-message.html"
-                        },
-                        {
-                            "id": "information-about-the-survey",
-                            "label": {
-                                "text": "Information about the survey"
-                            },
-                            "value": "information-about-the-survey",
-                            "data-action-url": "/prototypes/SM-categorisation/version-3/20-category/00-category-list.html"
-                        },
-                        {
-                            "id": "my-company-details",
-                            "label": {
-                                "text": "My company details"
-                            },
-                            "value": "my-company-details",
-                            "data-action-url": "/prototypes/SM-categorisation/version-3/30-category/00-send-message.html"
-                        },
-                        {
-                            "id": "my-contact-details",
-                            "label": {
-                                "text": "My contact details"
-                            },
-                            "value": "my-contact-details",
-                            "data-action-url": "/prototypes/SM-categorisation/version-3/40-category/00-send-message.html"
-                        },
-                        {
-                            "id": "a-technical-issue",
-                            "label": {
-                                "text": "A technical issue"
-                            },
-                            "value": "a-technical-issue",
-                            "data-action-url": "/prototypes/SM-categorisation/version-3/50-category/00-send-message.html"
-                        },
-                        {
-                            "id": "other-checkbox",
-                            "label": {
-                                "text": "Something else"
-                            },
-                            "value": "other",
-                            "other": {
-                                "id": "other-textbox",
-                                "name": "other-answer",
-                                "label": {
-                                    "text": "Please specify"
-                                },
-                                "data-action-url": "/prototypes/SM-categorisation/version-3/60-category/00-send-message.html"
-                            }
-                        }
-                    ]
-                }) 
-            }}
-            </p> -->
+                    <fieldset class="fieldset">
+                        <legend class="fieldset__legend">Choose an option</legend>
+                        <div class="radios__items">
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                    type="radio"
+                                    id="answering-a-survey-question"
+                                    data-action-url="{{ pageInfo.parentPath }}/10-category/00-send-message.html"
+                                    class="radio__input js-radio"
+                                    value="question-one"
+                                    name="message-query">
+                                    <label class="radio__label" for="answering-a-survey-question">Help answering a survey question</label>
+                                </span>
+                            </p>
+                            <br>
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                    type="radio"
+                                    id="information-about-the-survey"
+                                    data-action-url="{{ pageInfo.parentPath }}/20-category/00-category-list.html"
+                                    class="radio__input js-radio"
+                                    value="question-two"
+                                    name="message-query">
+                                    <label class="radio__label" for="information-about-the-survey">Information about the survey</label>
+                                </span>
+                            </p>
+                            <br>
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                    type="radio"
+                                    id="my-contact-details-have-changed"
+                                    data-action-url="{{ pageInfo.parentPath }}/30-category/00-category-list.html"
+                                    class="radio__input js-radio"
+                                    value="question--four"
+                                    name="message-query">
+                                    <label class="radio__label" for="my-contact-details-have-changed">Change who completes this survey</label>
+                                </span>
+                            </p>
+                            <br>
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                    type="radio"
+                                    id="my-email-address-has-changed"
+                                    data-action-url="{{ pageInfo.parentPath }}/40-category/00-category-list.html"
+                                    class="radio__input js-radio"
+                                    value="question--five"
+                                    name="message-query">
+                                    <label class="radio__label" for="my-email-address-has-changed">My business or contact details have changed</label>
+                                </span>
+                            </p>
+                            <br>
+                            <p class="field radios__item">
+                                <span class="radio">
+                                    <input
+                                        type="radio"
+                                        id="other-checkbox"
+                                        data-action-url="{{ pageInfo.parentPath }}/60-category/00-send-message.html"
+                                        class="radio__input js-radio "
+                                        value="other" 
+                                        name="message-query"
+                                        aria-controls="other-checkbox-other-wrap"
+                                        aria-haspopup="true">
+                                    <label class="radio__label" for="other-checkbox">
+                                            Something else
+                                        </label>
+                                </span>
+                            </span>
+                        </p>
+                    </div>
+                </fieldset>
+            </p>
+            <p class="field">
+                <div class="btn-group">
+                    <button type="submit" class="btn">
+                        <span class="btn__inner">Continue</span>
+                    </button>
+                    {{ 
+                            onsButton({
+                                "type": 'button',
+                                "text": 'Cancel',
+                                "classes": 'btn--secondary btn-group__btn',
+                                "url": "/prototypes/SM-categorisation/version-3/00-surveys-list.html"
+                            }) 
+                        }}
+                </div>
+            </p>
+        </form>
+    </div>
+</div>
 
-                    <p class="field">
-                        <fieldset class="fieldset">
-                            <legend class="fieldset__legend">Choose an option</legend>
-                            <div class="radios__items">
-                                <p class="radios__item">
-                                    <span class="radio">
-                                        <input
-                                        type="radio"
-                                        id="answering-a-survey-question"
-                                        data-action-url="{{ pageInfo.parentPath }}/10-category/00-send-message.html"
-                                        class="radio__input js-radio"
-                                        value="question-one"
-                                        name="message-query">
-                                        <label class="radio__label" for="answering-a-survey-question">I need help answering a survey question</label>
-                                    </span>
-                                </p>
-                                <br>
-                                <p class="radios__item">
-                                    <span class="radio">
-                                        <input
-                                        type="radio"
-                                        id="information-about-the-survey"
-                                        data-action-url="{{ pageInfo.parentPath }}/20-category/00-category-list.html"
-                                        class="radio__input js-radio"
-                                        value="question-two"
-                                        name="message-query">
-                                        <label class="radio__label" for="information-about-the-survey">I need information about the survey</label>
-                                    </span>
-                                </p>
-                                <!-- <br>
-                                <p class="radios__item">
-                                    <span class="radio">
-                                        <input
-                                        type="radio"
-                                        id="my-company-details-have-changed"
-                                        data-action-url="{{ pageInfo.parentPath }}/30-category/00-send-message.html"
-                                        class="radio__input js-radio"
-                                        value="question--three"
-                                        name="message-query">
-                                        <label class="radio__label" for="my-company-details-have-changed">My company details</label>
-                                    </span>
-                                </p> -->
-                                <br>
-                                <p class="radios__item">
-                                    <span class="radio">
-                                        <input
-                                        type="radio"
-                                        id="my-contact-details-have-changed"
-                                        data-action-url="{{ pageInfo.parentPath }}/30-my-account.html"
-                                        class="radio__input js-radio"
-                                        value="question--four"
-                                        name="message-query">
-                                        <label class="radio__label" for="my-contact-details-have-changed">I need to change who completes this survey</label>
-                                    </span>
-                                </p>
-                                <br>
-                                <p class="radios__item">
-                                    <span class="radio">
-                                        <input
-                                        type="radio"
-                                        id="my-email-address-has-changed"
-                                        data-action-url="{{ pageInfo.parentPath }}/40-category/00-category-list.html"
-                                        class="radio__input js-radio"
-                                        value="question--five"
-                                        name="message-query">
-                                        <label class="radio__label" for="my-email-address-has-changed">My business or contact details have changed</label>
-                                    </span>
-                                </p>
-                                <br>
-                                <p class="field radios__item">
-                                    <span class="radio">
-                                        <input
-                                            type="radio"
-                                            id="other-checkbox"
-                                            data-action-url="{{ pageInfo.parentPath }}/60-category/00-send-message.html"
-                                            class="radio__input js-radio "
-                                            value="other" 
-                                            name="message-query"
-                                            aria-controls="other-checkbox-other-wrap"
-                                            aria-haspopup="true">
-                                            <label class="radio__label" for="other-checkbox">
-                                                Something else
-                                            </label>
-                                        </span>
-                                    </span>
-                                </p>
-                            </div>
-                        </fieldset>
-                    </p>
-                    <p class="field">
-                        <div class="btn-group">
-                            <button type="submit" class="btn">
-                                <span class="btn__inner">Continue</span>
-                            </button>
-                            {{ 
-                                onsButton({
-                                    "type": 'button',
-                                    "text": 'Cancel',
-                                    "classes": 'btn--secondary btn-group__btn',
-                                    "url": "/prototypes/SM-categorisation/version-3/00-surveys-list.html"
-                                }) 
-                            }}
-                        </div>
-                    </p>
-                </form>
-            </div>
-        </div>
-
-    {% endblock %}
+{% endblock %}
