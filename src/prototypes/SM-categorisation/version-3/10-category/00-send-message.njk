@@ -38,10 +38,27 @@ layout: SM-categorisation/views/version-3/_master-survey
         <div class="grid__col col-8@m u-pt-no">
             <h1>Send a message</h1>
             <p>Send us a message with a description of your issue and we'll get back to you.</p>
+            {% from "components/metadata/_macro.njk" import onsMetadata %}
+            {{
+                onsMetadata({
+                    "metadataLabel": "Message subject",
+                    "termCol": "2",
+                    "descriptionCol": "10",
+                    "itemsList": [
+                        {
+                            "term": "Subject:",
+                            "descriptions": [
+                                {
+                                    "description": "Help answering a survey question"
+                                }
+                            ]
+                        }
+                    ]
+                })
+            }}
         </div>
         <div class="grid__col col-6@m">
-            <p class="field">
-            {{
+                {{
                 onsTextarea({
                     "id": "textarea",
                     "name": "feedback",
@@ -50,7 +67,6 @@ layout: SM-categorisation/views/version-3/_master-survey
                     }
                 })
             }}
-            </p>
             <p class="field">
                 <div class="btn-group">
                     {{ 
@@ -66,7 +82,7 @@ layout: SM-categorisation/views/version-3/_master-survey
                             "type": 'button',
                             "text": 'Cancel',
                             "classes": 'btn--secondary btn-group__btn',
-                            "url": "/prototypes/SM-categorisation/version-3/50-survey-start.html"
+                            "url": "/prototypes/SM-categorisation/version-3/01-message-categories.html"
                         }) 
                     }}
                 </div>

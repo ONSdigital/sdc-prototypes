@@ -21,7 +21,7 @@ layout: SM-categorisation/views/version-3/_master-survey
                             "text": 'Surveys'
                         },
                         {
-                            "url": '/prototypes/SM-categorisation/version-3/account/30-my-account.html',
+                            "url": '/prototypes/SM-categorisation/version-3/30-my-account.html',
                             "text": 'Account'
                         },
                         {
@@ -36,7 +36,8 @@ layout: SM-categorisation/views/version-3/_master-survey
         <div class="grid__col col-8@m u-pt-no">
             <h1>Transfer all your surveys</h1>
 
-            <p>Enter the email addresses of the people who need access. They'll receive a survey enrolment code by email which will expire within 7 days.</p>
+            <p>Enter the email addresses of the people who need access.
+
             <p class="field">
                 {{ 
                 onsInput({
@@ -53,11 +54,19 @@ layout: SM-categorisation/views/version-3/_master-survey
                 </div>
             </div>
 
+            <h2 class="u-mt-l">What will happen?</h2>
+            <ul>
+                <li>We'll send an enrolment code for each survey to the email recipients.</li>
+                <li>We'll transfer all your surveys as soon as they are authenticated.</li>
+                <li>You will no longer receive notifications about any future surveys.</li>
+            </ul>
+            <p>Please note enrolment codes expire in 7 days.</p>
+            
             <p class="field u-mt-l">
-                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-3/account/03-share-access-to-my-surveys/02-allocate-surveys.html';">
+                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-3/account/04-transfer-my-surveys/02-send-enrolment-codes.html';">
                     <span class="btn__inner">Continue</span>
                 </button>
-                <button type="submit" class="btn btn--secondary" onclick="location.href='{{ pageInfo.rootPath }}/version-3/account/30-my-account.html';">
+                <button type="submit" class="btn btn--secondary" onclick="location.href='{{ pageInfo.rootPath }}/version-3/30-my-account.html';">
                     <span class="btn__inner">Cancel</span>
                 </button>
             </p>

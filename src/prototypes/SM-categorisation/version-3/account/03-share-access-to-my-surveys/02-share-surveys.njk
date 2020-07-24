@@ -22,7 +22,7 @@ layout: SM-categorisation/views/version-3/_master-survey
                             "text": 'Surveys'
                         },
                         {
-                            "url": '/prototypes/SM-categorisation/version-3/account/30-my-account.html',
+                            "url": '/prototypes/SM-categorisation/version-3/30-my-account.html',
                             "text": 'Account'
                         },
                         {
@@ -31,7 +31,7 @@ layout: SM-categorisation/views/version-3/_master-survey
                         },
                         {
                             "url": '/',
-                            "text": 'Allocate surveys',
+                            "text": 'Share surveys',
                             "current": true
                         }
                     ]
@@ -39,7 +39,7 @@ layout: SM-categorisation/views/version-3/_master-survey
             }}
         </div>
         <div class="grid__col col-8@m u-pt-no">
-            <h1>Which surveys do you want to allocate to jane.doe@acme.com?</h1>
+            <h1>Which surveys do you want to share with jane.doe@acme.com?</h1>
             <p class="field">
             {{ 
                 onsCheckboxes({
@@ -115,7 +115,7 @@ layout: SM-categorisation/views/version-3/_master-survey
                 <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-3/account/03-share-access-to-my-surveys/03-send-enrolment-codes.html';">
                     <span class="btn__inner">Continue</span>
                 </button>
-                <button type="submit" class="btn btn--secondary" onclick="location.href='{{ pageInfo.rootPath }}/version-3/account/30-my-account.html';">
+                <button type="submit" class="btn btn--secondary" onclick="location.href='{{ pageInfo.rootPath }}/version-3/30-my-account.html';">
                     <span class="btn__inner">Cancel</span>
                 </button>
             </p>

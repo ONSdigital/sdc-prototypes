@@ -45,11 +45,11 @@ layout: SM-categorisation/views/version-3/_master-survey
                                     <input
                                         type="radio"
                                         id="answering-a-survey-question"
-                                        data-action-url="/prototypes/SM-categorisation/version-3/account/50-changed-email-address.html"
+                                        data-action-url="/prototypes/SM-categorisation/version-3/account/01-change-account-details/01-change-details.html"
                                         class="radio__input js-radio"
                                         value="question-one"
                                         name="message-query">
-                                    <label class="radio__label" for="answering-a-survey-question">My email address has changed</label>
+                                    <label class="radio__label" for="answering-a-survey-question">My contact details have changed</label>
                                 </span>
                             </p>
                             <br>
@@ -65,36 +65,7 @@ layout: SM-categorisation/views/version-3/_master-survey
                                     <label class="radio__label" for="information-about-the-survey">My business details have changed</label>
                                 </span>
                             </p>
-                            <!--
                             <br>
-                            <p class="radios__item">
-                                <span class="radio">
-                                    <input
-                                        type="radio"
-                                        id="my-company-details-have-changed"
-                                        data-action-url="{{ pageInfo.parentPath }}/30-category-send-message.html"
-                                        class="radio__input js-radio"
-                                        value="question-three"
-                                        name="message-query">
-                                    <label class="radio__label" for="my-company-details-have-changed">I've already completed this survey</label>
-                                </span>
-                            </p>
-                            <br>
-                            <p class="radios__item">
-                                <span class="radio">
-                                    <input
-                                        type="radio"
-                                        id="a-technical-issue"
-                                        data-action-url="{{ pageInfo.parentPath }}/40-category-send-message.html"
-                                        class="radio__input js-radio"
-                                        value="question-four"
-                                        name="message-query">
-                                    <label class="radio__label" for="a-technical-issue">Has my survey questionnaire been received?</label>
-                                </span>
-                            </p>
-                            -->
-                            <br>
-                            <span class="radios__label u-mt-s u-fs-r--b" aria-hidden="true">Or, </span>
                             <p class="radios__item">
                                 <span class="radio">
                                     <input
@@ -108,15 +79,6 @@ layout: SM-categorisation/views/version-3/_master-survey
                                         <label class="radio__label" for="other-checkbox">
                                             Something else
                                         </label>
-                                        <span class="radio__other" id="other-checkbox-other-wrap">
-                                            <label class="label u-fs-s--b" for="other-textbox">
-                                                What information do you need?
-                                            </label>
-                                        <input
-                                            type="text"
-                                            id="other-textbox"
-                                            class="input input--text input-type__input  input--w-auto "
-                                            name="other-answer"/>
                                     </span>
                                 </span>
                             </p>
@@ -133,7 +95,7 @@ layout: SM-categorisation/views/version-3/_master-survey
                                 "type": 'button',
                                 "text": 'Cancel',
                                 "classes": 'btn--secondary btn-group__btn',
-                                "url": "/prototypes/SM-categorisation/version-3/50-survey-start.html"
+                                "url": "/prototypes/SM-categorisation/version-3/00-surveys-list.html"
                             }) 
                         }}
                     </div>
