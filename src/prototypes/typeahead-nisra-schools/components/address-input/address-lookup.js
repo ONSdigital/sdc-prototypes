@@ -49,7 +49,7 @@ class AddressInput {
       this.form.addEventListener('submit', this.handleSubmit.bind(this));
     }
 
-    this.baseURL = 'https://whitelodge-ai-api.ai.census-gcp.onsdigital.uk/addresses/';
+    this.baseURL = 'https://whitelodge-ai-api.census-gcp.onsdigital.uk/addresses/';
     this.lookupURL = `${this.baseURL}eq?input=`;
     this.retrieveURL = this.isRhLookup ? `${this.baseURL}rh/uprn/` : `${this.baseURL}eq/uprn/`;
 

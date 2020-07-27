@@ -5,7 +5,7 @@ import domReady from 'helpers/domready';
 import triggerChange from 'helpers/trigger-change-event';
 import AbortableFetch from 'helpers/abortable-fetch';
 
-const baseURL = 'https://whitelodge-ai-api.ai.census-gcp.onsdigital.uk/addresses/eq';
+const baseURL = 'https://whitelodge-ai-api.census-gcp.onsdigital.uk/addresses/eq';
 const lookupURL = `${baseURL}?input=`;
 const retrieveURL = `${baseURL}/uprn/`;
 const addressReplaceChars = [','];
