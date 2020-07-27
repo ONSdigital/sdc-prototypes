@@ -1,0 +1,104 @@
+---
+version: 14.4.4
+layout: typeahead-nisra-schools/views/_master
+---
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/question/_macro.njk" import onsQuestion %}
+
+{% block main %}
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/index.html">Previous</a>
+    <form action="{{ pageInfo.parentPath }}/summary.html?previous={{ pageInfo.path }}.html">
+        {% call onsQuestion({
+            "title": "How do you usually travel to your main place of study?",
+            "description": "Select one option only, for the longest part, <strong>by distance</strong>, of your usual journey to your main place of study"
+        }) %}
+        {{ 
+            onsRadios({
+                "legend": " <h1 class=\"u-fs-l\">How do you usually travel to your main place of study?</h1>",
+                "legendClasses": "u-vh",
+                "name": "travel",
+                "classes": "u-mt-s",
+                "radios": [
+                    {
+                        "id": "car-or-van",
+                        "label": {
+                            "text": "Driving a car or van"
+                        },
+                        "name": "car or van"
+                    },
+                    {
+                        "id": "car-passenger",
+                        "label": {
+                            "text": "Passenger in a car or van"
+                        },
+                        "name": "car passenger"
+                    },
+                    {
+                        "id": "car-share",
+                        "label": {
+                            "text": "Car or van pool, sharing driving"
+                        },
+                        "name": "car share"
+                    },
+                    {
+                        "id": "bus",
+                        "label": {
+                            "text": "Bus, minibus or coach (public or private)"
+                        },
+                        "name": "bus"
+                    },
+                    {
+                        "id": "on-foot",
+                        "label": {
+                            "text": "On foot"
+                        },
+                        "name": "on foot"
+                    },
+                    {
+                        "id": "taxi",
+                        "label": {
+                            "text": "Taxi"
+                        },
+                        "name": "taxi"
+                    },
+                    {
+                        "id": "train",
+                        "label": {
+                            "text": "Train"
+                        },
+                        "name": "train"
+                    },
+                    {
+                        "id": "bicycle",
+                        "label": {
+                            "text": "Bicycle"
+                        },
+                        "name": "bicycle"
+                    },
+                    {
+                        "id": "motorcycle",
+                        "label": {
+                            "text": "Motorcycle, scooter or moped"
+                        },
+                        "name": "Motorcycle"
+                    },
+                    {
+                        "id": "other",
+                        "label": {
+                            "text": "Other"
+                        },
+                        "name": "other"
+                    }
+                ]
+            }) 
+        }}
+        {% endcall %}
+        {{
+           onsButton({
+                "text": "Save and continue",
+                "classes": "u-mt-l"
+            })
+        }}
+    </form>
+{% endblock %}

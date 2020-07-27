@@ -1,0 +1,29 @@
+---
+version: 14.4.4
+layout: typeahead-update/views/_master
+---
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "typeahead-update/components/input/_macro.njk" import onsInput %}
+
+{% block main %}
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/ethnic-group-mixed.html">Previous</a>
+    <form action="{{ pageInfo.parentPath }}/religion.html?previous={{ pageInfo.path }}.html">
+        <h1 class="u-mt-s">You selected “Any other Mixed or Multiple background”. How would you describe your Mixed or Multiple ethnic group or background?
+</h1>
+        {{
+            onsInput({
+                "id": "ethnic-group-mixed-other",
+                "dontWrap": true,
+                "label": {
+                    "text": "Mixed or Multiple ethnic group or background"
+                }
+            })
+        }}
+        {{
+           onsButton({
+                "text": "Save and continue",
+                "classes": "u-mt-l"
+            })
+        }}
+    </form>
+{% endblock %}

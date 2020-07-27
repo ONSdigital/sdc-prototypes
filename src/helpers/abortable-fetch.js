@@ -1,4 +1,4 @@
-export default class AbortableFetch {
+class AbortableFetch {
   constructor(url, options) {
     this.url = url;
     this.options = options;
@@ -47,3 +47,5 @@ function abortableFetch(url, options) {
       throw error;
     });
 }
+
+export default (url, options) => new AbortableFetch(url, options);

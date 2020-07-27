@@ -7,7 +7,7 @@ function studentAddressCheck() {
   if (destination) {
     const key = destination.getAttribute('data-census-address');
     const address = JSON.parse(sessionStorage.getItem(key));
-
+    console.log(address);
     const params = {
       id: 'student-address-check',
       name: 'student-address-check',
@@ -73,7 +73,7 @@ function studentAddressCheck() {
         }
       }
 
-      return `<div class="field__item">
+      return `<div class="radios__item">
         <div class="radio">
           <input class="radio__input" name="${params.name}" id="${radio.id}" value="${radio.value}" aria-labeledby="${radio.id}-label" type="radio" ${attributes.join(' ')}>
           <label id="${radio.id}-label" aria-hidden="true" class="radio__label" for="${radio.id}">${radio.label.text}</label>
@@ -82,7 +82,7 @@ function studentAddressCheck() {
     });
 
     const html = `
-      <div class="field__items">
+      <div class="radios__items">
         ${radios.join('<br>')}
       </div>
     `;

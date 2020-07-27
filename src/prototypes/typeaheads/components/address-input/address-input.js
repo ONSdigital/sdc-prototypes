@@ -60,7 +60,7 @@ class AddressInput {
       minChars: 2,
       suggestOnBoot: true
     });
-
+    console.log(this.typeahead);
     this.searchButtonContainer.classList.remove('u-d-no');
 
     // Bind Event Listeners

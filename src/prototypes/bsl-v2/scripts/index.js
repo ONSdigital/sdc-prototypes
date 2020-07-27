@@ -23,7 +23,7 @@ function loadBSL() {
     const form = document.getElementsByTagName('form')[0];
     const formInputs = [...form.getElementsByTagName('input')];
     let open = true;
-    
+
     initialiseBSL();
     window.addEventListener('resize', setPageOffset.bind(this));
 

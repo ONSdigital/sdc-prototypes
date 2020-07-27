@@ -1,0 +1,19 @@
+---
+title: NISRA census - schools typeahead
+group: Typeaheads
+version: 14.4.4
+layout: typeahead-nisra-schools/views/_master
+---
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "typeahead-nisra-schools/components/address-input/_macro.njk" import prototypeAddressInput %}
+
+{% block main %}
+    <h1>Start prototype</h1>
+    <form action="{{ pageInfo.rootPath }}/location-type.html">
+        
+        {{ onsButton({
+                "text": "Start",
+                "classes": "u-mt-l"
+        }) }}
+    </form>
+{% endblock %}

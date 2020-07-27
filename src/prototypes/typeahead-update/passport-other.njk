@@ -1,0 +1,51 @@
+---
+version: 14.4.4
+layout: typeahead-update/views/_master
+---
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "typeahead-update/components/input/_macro.njk" import onsInput %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+
+{% block main %}
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/passport.html">Previous</a>
+    <form action="{{ pageInfo.parentPath }}/summary.html?previous={{ pageInfo.path }}.html">
+        <h1 class="u-mt-s js-passport-title" data-passport-answers="{{ pageInfo.parentPath }}/passport.html">You selected "Other". What {x} passports do you hold?</h1>
+        {{ 
+            onsPanel({
+                body: "<p class='js-passport-panel'>Include all {x} passports. If you have more than one, enter them all separated by commas.</p>"
+            }) 
+        }}
+        <br>
+        {{
+            onsInput({
+                "id": "passport-other",
+                "dontWrap": true,
+                "label": {
+                    "text": "Passports",
+                    "description": "Enter your own answer or select from suggestions"
+                },
+                "typeahead": {
+                    "instructions": "Use up and down keys to navigate suggestions once you\'ve typed more than two characters. Use the enter key to select a suggestion. Touch device users, explore by touch or with swipe gestures.",
+                    "content": {
+                        "aria_you_have_selected": "You have selected",
+                        "aria_found_by_alternative_name": "found by alternative name",
+                        "aria_min_chars": "Type in 2 or more characters for suggestions.",
+                        "aria_one_result": "There is one suggestion available.",
+                        "aria_n_results": "There are {n} suggestions available.",
+                        "aria_limited_results": "Results have been limited to 10 suggestions. Type more characters to refine your search.",
+                        "more_results": "Continue typing to refine suggestions",
+                        "results_title": "Suggestions"
+                    },
+                    "autocomplete": "off",
+                    "typeaheadData": "https://gist.githubusercontent.com/rmccar/7735f8bcf9be2d0b8f54123df9c7fb97/raw/5fc18fa5a395d74866e85cfeea1bbe75311d4ea2/Passports_FEL.json"
+                }
+            })
+        }}
+        {{
+           onsButton({
+                "text": "Save and continue",
+                "classes": "u-mt-l"
+            })
+        }}
+    </form>
+{% endblock %}

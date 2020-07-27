@@ -1,0 +1,53 @@
+---
+version: 14.4.4
+layout: typeahead-nisra-schools/views/_master
+---
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/question/_macro.njk" import onsQuestion %}
+
+{% block main %}
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/index.html">Previous</a>
+    <form action="{{ pageInfo.parentPath }}/school-address-fuse.html?previous={{ pageInfo.path }}.html">
+        {% call onsQuestion({
+            "title": "Is your main place of study in Northern Ireland?"
+        }) %}
+        {{ 
+            onsRadios({
+                "legend": " <h1 class=\"u-fs-l\">Is your main place of study in Northern Ireland?</h1>",
+                "legendClasses": "u-vh",
+                "name": "in-ni",
+                "classes": "u-mt-s",
+                "radios": [
+                    {
+                        "id": "yes",
+                        "label": {
+                            "text": "Yes"
+                        },
+                        "name": "yes",
+                        "attributes": {
+                            "data-action-url": pageInfo.parentPath  + "/school-address-fuse.html" + "?previous=" + pageInfo.path + ".html"
+                        }
+                    },
+                    {
+                        "id": "no",
+                        "label": {
+                            "text": "No, it is in another country"
+                        },
+                        "name": "no",
+                        "attributes": {
+                            "data-action-url": pageInfo.parentPath  + "/school-country.html" + "?previous=" + pageInfo.path + ".html"
+                        }
+                    }
+                ]
+            }) 
+        }}
+        {% endcall %}
+        {{
+           onsButton({
+                "text": "Save and continue",
+                "classes": "u-mt-l"
+            })
+        }}
+    </form>
+{% endblock %}

@@ -1,0 +1,64 @@
+---
+version: 14.4.4
+layout: typeahead-nisra-schools/views/_master
+---
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/question/_macro.njk" import onsQuestion %}
+
+{% block main %}
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/index.html">Previous</a>
+    <form action="{{ pageInfo.parentPath }}/in-ni.html?previous={{ pageInfo.path }}.html">
+        {% call onsQuestion({
+            "title": "Where do you mainly study?",
+            "description": "Answer for the place where you spend the most time. If student or schoolchild, answer for your study address."
+        }) %}
+        {{ 
+            onsRadios({
+                "legend": " <h1 class=\"u-fs-l\">Where do you mainly study?</h1>",
+                "legendClasses": "u-vh",
+                "name": "where-study",
+                "classes": "u-mt-s",
+                "radios": [
+                    {
+                        "id": "campus-school",
+                        "label": {
+                            "text": "At a campus or school"
+                        },
+                        "name": "campus or school",
+                        "attributes": {
+                            "data-action-url": pageInfo.parentPath  + "/in-ni.html" + "?previous=" + pageInfo.path + ".html"
+                        }
+                    },
+                    {
+                        "id": "home",
+                        "label": {
+                            "text": "At or from home"
+                        },
+                        "name": "home",
+                        "attributes": {
+                            "data-action-url": pageInfo.parentPath  + "/summary.html" + "?previous=" + pageInfo.path + ".html"
+                        }
+                    },
+                    {
+                        "id": "no-fixed-place",
+                        "label": {
+                            "text": "No fixed place"
+                        },
+                        "name": "no fixed place",
+                        "attributes": {
+                            "data-action-url": pageInfo.parentPath  + "/summary.html" + "?previous=" + pageInfo.path + ".html"
+                        }
+                    }
+                ]
+            }) 
+        }}
+        {% endcall %}
+        {{
+           onsButton({
+                "text": "Save and continue",
+                "classes": "u-mt-l"
+            })
+        }}
+    </form>
+{% endblock %}

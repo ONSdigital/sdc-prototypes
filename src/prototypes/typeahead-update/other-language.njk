@@ -1,0 +1,44 @@
+---
+version: 14.4.4
+layout: typeahead-update/views/_master
+---
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "typeahead-update/components/input/_macro.njk" import onsInput %}
+
+{% block main %}
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/main-language.html">Previous</a>
+    <form action="{{ pageInfo.parentPath }}/passport.html?previous={{ pageInfo.path }}.html">
+       <h1 class="u-mt-s">You selected "Other, including British Sign Language". What is your main language?</h1>
+        {{
+            onsInput({
+                "id": "language",
+                "dontWrap": true,
+                "label": {
+                    "text": "Main language",
+                    "description": "Enter your own answer or select from suggestions"
+                },
+                "typeahead":{
+                    "instructions": "Use up and down keys to navigate suggestions once you\'ve typed more than two characters. Use the enter key to select a suggestion. Touch device users, explore by touch or with swipe gestures.",
+                    "content": {
+                        "aria_you_have_selected": "You have selected",
+                        "aria_min_chars": "Enter 3 or more characters for suggestions.",
+                        "aria_one_result": "There is one suggestion available.",
+                        "aria_n_results": "There are {n} suggestions available.",
+                        "aria_limited_results": "Results have been limited to 10 suggestions. Type more characters to improve your search.",
+                        "more_results": "Continue entering to improve suggestions",
+                        "results_title": "Suggestions"
+                    },
+                    "typeaheadData": "https://gist.githubusercontent.com/rmccar/f0227f56d2a16cb1ca6079be656c6a84/raw/a39e80c4e37622c413274c11c78bdd4d834b3e6f/Main_Language_FEL.json"
+                }
+            })
+        }}
+        {{
+            onsButton({
+                "text": "Save and continue",
+                "classes": "u-mt-l"
+            })
+        }}
+    </form>
+{% endblock %}
+
+

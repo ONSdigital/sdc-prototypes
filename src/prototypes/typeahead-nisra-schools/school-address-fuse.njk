@@ -1,0 +1,80 @@
+---
+version: 14.4.4
+layout: typeahead-nisra-schools/views/_master
+---
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "typeahead-nisra-schools/components/fuse-address-input/_macro.njk" import prototypeFuseAddressInput %}
+
+{% block main %}
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/in-ni.html">Previous</a>
+    <form action="{{ pageInfo.parentPath }}/travel.html?previous={{ pageInfo.path }}.html">
+        {% call onsQuestion({
+            "title": 'What is the address of your main place of study?'
+        }) %}
+        {{
+            prototypeFuseAddressInput({
+                "id": "address",
+                "questionMode": true,
+                "label": {
+                    "text": "Initialise prototype",
+                    "description": "The researcher testing this prototype should ask the person they are testing with for their address and fill this in for them before handing over the prototype."
+                },
+                "organisation": {
+                    "label": "Name"
+                },
+                "line1": {
+                    "label": "Address line 1"
+                },
+                "line2": {
+                    "label": "Address line 2"
+                },
+                "line3": {
+                    "label": "Address line 3"
+                },
+                "town": {
+                    "label": "Town or city"
+                },
+                "county": {
+                    "label": "County"
+                },
+                "postcode": {
+                    "label": "Postcode"
+                },
+                "typeahead": {
+                    "label": {
+                        "text": "Enter name, address or postcode and select from results"
+                        
+                    },
+                    "typeahead": {
+                        "instructions": "Use up and down keys to navigate addresses once you\'ve typed more than two characters. Use the enter key to select an address. Touch device users, explore by touch or with swipe gestures.",
+                        "content": {
+                            "no_results": "No results found. Try entering a different part of the address.",
+                            "aria_no_results": "No addresses found",
+                            "aria_you_have_selected": "You have selected",
+                            "aria_found_by_alternative_name": "found by alternative name",
+                            "aria_min_chars": "Type in 5 or more characters for addresses.",
+                            "aria_one_result": "There is one address available.",
+                            "aria_n_results": "There are {n} addresses available.",
+                            "aria_limited_results": "Results have been limited to 10 addresses. Type more characters to refine your search.",
+                            "more_results": "Continue entering to improve results",
+                            "results_title": "Select an address"
+                        },
+                        "typeaheadData": "https://gist.githubusercontent.com/jrbarnes9/9136942c965eb8f76f194e90e497d264/raw/dde39f4054d53bdbf8a2eab30aa74db2d17b5e81/nisra-schools.json"
+                    },
+                    "autocomplete": "new-address"
+                },
+                "searchButton": "Search for an address",
+                "manualButton": "Manually enter address",
+                "selectError": "Select an address to continue."
+            })
+        }}
+        {% endcall %}
+        {{
+           onsButton({
+                "text": "Save and continue",
+                "classes": "u-mt-l"
+            })
+        }}
+    </form>
+{% endblock %}
