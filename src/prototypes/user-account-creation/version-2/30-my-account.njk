@@ -84,11 +84,11 @@ layout: user-account-creation/views/version-2/_master-survey
                                     <input
                                         type="radio"
                                         id="access-to-my-surveys"
-                                        data-action-url="{{ pageInfo.parentPath }}/02-reset-password/01-reset-password.html"
+                                        data-action-url="{{ pageInfo.parentPath }}/02-change-password/01-change-password.html"
                                         class="radio__input js-radio"
                                         value="question-one"
                                         name="message-query">
-                                    <label class="radio__label" for="access-to-my-surveys">Reset my password</label>
+                                    <label class="radio__label" for="access-to-my-surveys">Change my password</label>
                                 </span>
                             </p>
                             <br>
@@ -109,14 +109,28 @@ layout: user-account-creation/views/version-2/_master-survey
                                 <span class="radio">
                                     <input
                                         type="radio"
-                                        id="information-about-the-survey"
+                                        id="transfer-my-surveys"
                                         data-action-url="/prototypes/user-account-creation/version-2/04-transfer-my-surveys/index.html"
                                         class="radio__input js-radio"
                                         value="question-two"
                                         name="message-query">
-                                    <label class="radio__label" for="information-about-the-survey">I'm no longer responsible for completing surveys</label>
+                                    <label class="radio__label" for="transfer-my-surveys">I'm no longer responsible for completing surveys</label>
                                 </span>
                             </p>
+                            <br>
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                        type="radio"
+                                        id="change-business-details"
+                                        data-action-url="/prototypes/user-account-creation/version-2/05-change-business-details/index.html"
+                                        class="radio__input js-radio"
+                                        value="question-two"
+                                        name="message-query">
+                                    <label class="radio__label" for="change-business-details">Change my business details</label>
+                                </span>
+                            </p>
+                            <br>
                             <p class="radios__item">
                                 <span class="radio">
                                     <input

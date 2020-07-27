@@ -5,39 +5,69 @@ version: 17.0.0
 layout: SM-categorisation/views/version-3/_master-survey
 ---
 
-{% from "components/button/_macro.njk" import onsButton %}
-{% from "components/radios/_macro.njk" import onsRadios %}
-{% from "components/textarea/_macro.njk" import onsTextarea %}
-{% from "components/metadata/_macro.njk" import onsMetadata %}
 {% from "components/input/_macro.njk" import onsInput %}
+{% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
 
 {% block main %}
 
     <div class="grid">
-        <div class="grid__col col-6@m">
-            <h1>Change of business details</h1>
-            <p>Send us a message with your new business details and we’ll respond to confirm the changes.</p>
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/prototypes/SM-categorisation/version-3/00-surveys-list.html',
+                            "text": 'Surveys'
+                        },
+                        {
+                            "url": '/prototypes/SM-categorisation/version-3/30-my-account.html',
+                            "text": 'Account'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'Change business details',
+                            "current": true
+                        }
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+            <h1>Which company’s details do you need to change?</h1>
             <p class="field">
-        
-            {{
-                onsTextarea({
-                    "id": "textarea",
-                    "name": "feedback",
-                    "label": {
-                        "text": "Create message"
-                    }
-                })
+            {{ 
+                onsCheckboxes({
+                    "legend": "",
+                    "checkboxesLabel": "Select all that apply",
+                    "name": "food",
+                    "checkboxes": [
+                        {
+                            "id": "MBS",
+                            "label": {
+                                "text": "ACME Consumer Products"
+                            },
+                            "value": "mbs"
+                        },
+                        {
+                            "id": "QBS",
+                            "label": {
+                                "text": "ACME Group Ltd"
+                            },
+                            "value": "QBS"
+                        }
+                    ]
+                }) 
             }}
             </p>
             <p class="field">
-                <div class="btn-group">
-                    <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-3/account/10-message-sent.html';">
-                        <span class="btn__inner">Send</span>
-                    </button>
-                    <button type="submit" class="btn btn--secondary" onclick="location.href='{{ pageInfo.rootPath }}/version-3/30-my-account.html';">
-                        <span class="btn__inner">Cancel</span>
-                    </button>
-                </div>
+                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-3/account/05-change-business-details/01-send-message.html';">
+                    <span class="btn__inner">Continue</span>
+                </button>
+                <button type="submit" class="btn btn--secondary" onclick="location.href='{{ pageInfo.rootPath }}/version-3/30-my-account.html';">
+                    <span class="btn__inner">Cancel</span>
+                </button>
             </p>
         </div>
     </div>

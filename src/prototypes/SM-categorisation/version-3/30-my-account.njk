@@ -1,6 +1,6 @@
 ---
 group: Frontstage
-title: User account creation
+title: SM Categorisation
 version: 17.0.0
 layout: SM-categorisation/views/version-3/_master-survey
 ---
@@ -74,7 +74,7 @@ layout: SM-categorisation/views/version-3/_master-survey
             <hr class="u-mb-l">
 
             <h1>Help with your account</h1>
-            <form action="{{ pageInfo.parentPath }}/account/index.html">
+            <form action="{{ pageInfo.parentPath }}/index.html">
                 <p class="field">
                     <fieldset class="fieldset">
                         <legend class="fieldset__legend">Choose an option</legend>
@@ -84,11 +84,11 @@ layout: SM-categorisation/views/version-3/_master-survey
                                     <input
                                         type="radio"
                                         id="access-to-my-surveys"
-                                        data-action-url="{{ pageInfo.parentPath }}/account/02-reset-password/01-reset-password.html"
+                                        data-action-url="{{ pageInfo.parentPath }}/account/02-change-password/01-change-password.html"
                                         class="radio__input js-radio"
                                         value="question-one"
                                         name="message-query">
-                                    <label class="radio__label" for="access-to-my-surveys">Reset my password</label>
+                                    <label class="radio__label" for="access-to-my-surveys">Change my password</label>
                                 </span>
                             </p>
                             <br>
@@ -97,7 +97,7 @@ layout: SM-categorisation/views/version-3/_master-survey
                                     <input
                                         type="radio"
                                         id="answering-a-survey-question"
-                                        data-action-url="{{ pageInfo.parentPath }}/account/03-share-access-to-my-surveys/index.html"
+                                        data-action-url="/prototypes/SM-categorisation/version-3/account03-share-access-to-my-surveys/index.html"
                                         class="radio__input js-radio"
                                         value="question-one"
                                         name="message-query">
@@ -109,14 +109,28 @@ layout: SM-categorisation/views/version-3/_master-survey
                                 <span class="radio">
                                     <input
                                         type="radio"
-                                        id="information-about-the-survey"
-                                        data-action-url="{{ pageInfo.parentPath }}/account/04-transfer-my-surveys/index.html"
+                                        id="transfer-my-surveys"
+                                        data-action-url="/prototypes/SM-categorisation/version-3/account04-transfer-my-surveys/index.html"
                                         class="radio__input js-radio"
                                         value="question-two"
                                         name="message-query">
-                                    <label class="radio__label" for="information-about-the-survey">I'm no longer responsible for completing surveys</label>
+                                    <label class="radio__label" for="transfer-my-surveys">I'm no longer responsible for completing surveys</label>
                                 </span>
                             </p>
+                            <br>
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                        type="radio"
+                                        id="change-business-details"
+                                        data-action-url="/prototypes/SM-categorisation/version-3/account/05-change-business-details/index.html"
+                                        class="radio__input js-radio"
+                                        value="question-two"
+                                        name="message-query">
+                                    <label class="radio__label" for="change-business-details">Change my business details</label>
+                                </span>
+                            </p>
+                            <br>
                             <p class="radios__item">
                                 <span class="radio">
                                     <input
