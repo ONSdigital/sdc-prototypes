@@ -1,0 +1,68 @@
+---
+group: RAS/RM
+title: Delete user
+version: 17.0.0
+layout: delete-user/views/_master
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+
+{% block main %}
+    <div class="grid">
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
+            {% from "components/panel/_macro.njk" import onsPanel %}
+            {{
+            onsPanel({
+                "type": "success",
+                "id": "success-id",
+                "icon": "check-green",
+                body: "<p>Respondent's data has been successfully removed.</p>"
+            })
+        }}
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/',
+                            "text": 'Home'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'Respondents',
+                            "current": true
+                        }
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-12@m u-pt-no"> 
+        <h1 class="u-fs-xl">Find a respondent</h1>
+
+            <form action="/respondents/search" method="post">
+                <input id="csrf_token" name="csrf_token" type="hidden" value="IjMyZTk5YjFkYzM1NzI1M2M0OWM4ZmFhZjc0MDNkMTQ0NzU0YzljMDAi.Xfi-Fg.vhdWW119nqbHPJBeureomvOAHJo">
+                <div class="field u-mb-s">
+                    <label class="label">First name</label>
+                    <input class="respondent-search-box input input--text" id="first_name" name="first_name" size="20" type="text" value="">
+                </div>
+
+                <div class="field u-mb-s">
+                    <label class="label">Last name</label>
+                    <input class="respondent-search-box input input--text" id="last_name" name="last_name" size="20" type="text" value="">
+                </div>
+
+                <div class="field u-mb-s">
+                    <label class="label">Email address</label>
+                    <input class="respondent-search-box input input--text" id="email_address" name="email_address" size="20" type="text" value="">
+                </div>
+
+                <button type="button" class="btn js-timer js-submit-btn">
+                    <span class="btn__inner">Search</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

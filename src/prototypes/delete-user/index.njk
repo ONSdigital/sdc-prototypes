@@ -1,0 +1,26 @@
+---
+group: RAS/RM
+title: Delete user
+version: 17.0.0
+layout: delete-user/views/_index
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% block main %}
+    <h1>Delete user prototype</h1>
+
+    <div class="grid">
+        <div class="grid__col col-8@m">
+            <h3>Version 1</h3>
+            {{ 
+                onsButton({
+                    "type": 'button',
+                    "text": 'Start',
+                    "classes": 'btn--small u-mb-s',
+                    "url": "/prototypes/delete-user/respondent-summary.html"
+                }) 
+            }}
+        </div>
+    </div>
+{% endblock %}

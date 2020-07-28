@@ -1,0 +1,63 @@
+---
+group: RAS/RM
+title: Delete user
+version: 17.0.0
+layout: delete-user/views/_master
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+
+{% block main %}
+    <div class="grid">
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/',
+                            "text": 'Home'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'Respondents'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'jeremy.gillies@ext.ons.gov.uk'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'Delete',
+                            "current": true
+                        }
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-6@m u-pt-no">
+            <h1>Delete Jeremy Gillies' data</h1> 
+
+            {% from "components/panel/_macro.njk" import onsPanel %}
+            {% call onsPanel({
+                    type: "warn"
+                })
+            %}
+            <p>All of the information about this person will be deleted</p>
+            <p>Once their data has been removed, it is unrecoverable</p>
+            <p>Allow 24 hours for this to be completed.</p>
+            {% endcall %}
+            <p class="field">
+                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/respondent-summary-notice.html';">
+                    <span class="btn__inner">Delete respondent</span>
+                </button>
+                <button type="submit" class="btn btn--secondary" onclick="{{ pageInfo.rootPath }}/respondent-summary.html';">
+                    <span class="btn__inner">Cancel</span>
+                </button>
+            </p>
+        </div>
+    </div>
+
+{% endblock %}
