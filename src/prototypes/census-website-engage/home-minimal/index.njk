@@ -30,59 +30,61 @@ layout: census-website-engage/views/_master
         </section>
 
 
-        <!-- CTAs -->
-        <section class="container">
+        <!-- Page contents -->
+        <div class="page__container container">
 
-            <div class="grid grid--column@xs@s u-mt-l u-pb-s@m">
 
-                <div class="grid__col col-4@m">
-                    {{-
-                        onsCard({
-                            "ariaBy": 'Section highlight',
-                            "id": 'title1',
-                            "textId": 'text1',
-                            "title": 'About the census',
-                            "url": pageInfo.rootPath + '/about-the-census',
-                            "text": 'The census is a survey that gives us information about all the households in England and Wales.'
-                        })
-                    }}
+            <!-- CTAs -->
+            <section class="u-pt-l u-mb-s u-bb u-pb-m">
+
+                <div class="grid grid--column@xs@s">
+
+                    <div class="grid__col col-4@m">
+                        {{-
+                            onsCard({
+                                "ariaBy": 'Section highlight',
+                                "id": 'title1',
+                                "textId": 'text1',
+                                "title": 'About the census',
+                                "url": pageInfo.rootPath + '/about-the-census',
+                                "text": 'The census is a survey that gives us information about all the households in England and Wales.'
+                            })
+                        }}
+                    </div>
+
+                    <div class="grid__col col-4@m">
+                        {{-
+                            onsCard({
+                                "ariaBy": 'Section highlight',
+                                "id": 'title2',
+                                "textId": 'text2',
+                                "title": 'Working on the census',
+                                "url": pageInfo.rootPath + '/jobs',
+                                "text": 'For Census 2021, we’ll be hiring at least 30,000 field staff across England and Wales.'
+                            })
+                        }}
+                    </div>
+
+                    <div class="grid__col col-4@m">
+                        {{-
+                            onsCard({
+                                "ariaBy": 'Section highlight',
+                                "id": 'title3',
+                                "textId": 'text3',
+                                "title": 'Keeping your data safe',
+                                "url": pageInfo.rootPath + '/keeping-your-data-safe',
+                                "text": 'How we keep your data safe and what happens to your personal information.'
+                            })
+                        }}
+                    </div>
+
                 </div>
 
-                <div class="grid__col col-4@m">
-                    {{-
-                        onsCard({
-                            "ariaBy": 'Section highlight',
-                            "id": 'title2',
-                            "textId": 'text2',
-                            "title": 'Working on the census',
-                            "url": pageInfo.rootPath + '/jobs',
-                            "text": 'For Census 2021, we’ll be hiring at least 30,000 field staff across England and Wales.'
-                        })
-                    }}
-                </div>
-
-                <div class="grid__col col-4@m">
-                    {{-
-                        onsCard({
-                            "ariaBy": 'Section highlight',
-                            "id": 'title3',
-                            "textId": 'text3',
-                            "title": 'Keeping your data safe',
-                            "url": pageInfo.rootPath + '/keeping-your-data-safe',
-                            "text": 'How we keep your data safe and what happens to your personal information.'
-                        })
-                    }}
-                </div>
-
-            </div>
-
-        </section>
+            </section>
 
 
-        <!-- Case studies -->
-        <section class="container">
-
-            <div class="u-bt u-mb-l u-pt-m">
+            <!-- Case studies -->
+            <section class="u-pt-m u-bb u-pb-s">
 
                 <h2 class="u-fs-xl u-mb-l">Help organisations plan for the future</h2>
 
@@ -92,7 +94,7 @@ layout: census-website-engage/views/_master
                         <div class="u-pr-m@m u-mb-l@xs@m">
                             <h3>Census information can help to make a difference</h3>
                             <p>Businesses use it to decide where to set up and charities use it to help get the funding they need.</p>
-                            <p><a href="#0">Read some of our case studies</a></p>
+                            <p class="u-mb-no"><a href="#0">Read some of our case studies</a></p>
                         </div>
                     </div>
 
@@ -101,7 +103,7 @@ layout: census-website-engage/views/_master
                         <div class="card" role="navigation">
                             <a href="#0" tabindex="-1" aria-hidden="true"><img class="card__image u-mb-s" height="200" width="303" srcset="{{ pageInfo.rootPath }}/img/mental-health-foundation.png 1x, {{ pageInfo.rootPath }}/img/mental-health-foundation@2x.png 2x" src="{{ pageInfo.rootPath }}/img/mental-health-foundation.png" loading="lazy" alt="Mental Health Foundation"></a>
                             <h3 class="u-fs-m" id="title2"><a href="#0">Healthier communities</a></h3>
-                            <p>How census data helped the Mental Health Foundation help and support those more at risk of mental ill health.</p>
+                            <p class="u-mb-no">How census data helped the Mental Health Foundation help and support those more at risk of mental ill health.</p>
                         </div>
 
                     </div>
@@ -111,22 +113,18 @@ layout: census-website-engage/views/_master
                         <div class="card" role="navigation">
                             <a href="#0" tabindex="-1" aria-hidden="true"><img class="card__image u-mb-s" height="200" width="303" srcset="{{ pageInfo.rootPath }}/img/london-fire-brigade.png 1x, {{ pageInfo.rootPath }}/img/london-fire-brigade@2x.png 2x" src="{{ pageInfo.rootPath }}/img/london-fire-brigade.png" loading="lazy" alt="London Fire Brigade"></a>
                             <h3 class="u-fs-m"><a href="#0">Fire-fighting with facts</a></h3>
-                            <p>The London Fire Brigade used census data to identify and prevent fires in high risk areas.</p>
+                            <p class="u-mb-no">The London Fire Brigade used census data to identify and prevent fires in high risk areas.</p>
                         </div>
 
                     </div>
                     
                 </div>
 
-            </div>
-
-        </section>
+            </section>
 
 
-        <!-- Contact and social links -->
-        <section class="container">
-
-            <div class="u-bt u-mb-l u-pt-m">
+            <!-- Contact and social links -->
+            <section class="u-mb-l u-pt-m">
 
                 <div class="grid grid--column@xs@s">
 
@@ -141,7 +139,7 @@ layout: census-website-engage/views/_master
                     <div class="grid__col col-6@m">
                         
                         <h3>Follow us</h3>
-                       
+                    
                         <ul class="social-list">
                             
                             <li class="social-list__item">
@@ -165,9 +163,10 @@ layout: census-website-engage/views/_master
 
                 </div>
 
-            </div>
+            </section>
 
-        </section>
+
+        </div>
 
     
     {% endblock %}

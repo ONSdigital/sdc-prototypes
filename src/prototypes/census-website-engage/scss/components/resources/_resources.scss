@@ -19,18 +19,18 @@ Downloadable file listing
 }
 
 .resource__image-link {
-  border: 2px solid $border-color;
+  border: 2px solid $color-grey-3;
   box-sizing: content-box;
   display: block;
   width: 100%;
 
   &:focus {
-    border-color: #222;
-    outline: 4px solid #fd0 !important; // Not ideal
+    border-color: $color-black;
+    outline: 3px solid $color-yellow !important; // Not ideal
   }
 }
 
 .resource__meta {
-  color: $text-secondary;
+  color: $color-grey-1;
   display: block;
 }

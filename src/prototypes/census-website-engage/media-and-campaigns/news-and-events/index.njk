@@ -67,10 +67,18 @@ layout: census-website-engage/views/_master
 
                                 <div class="grid__col col-4@m">
 
-                                    <!-- Toggle filters -->
-                                    <button class="adv-filter__trigger js-adv-filter__trigger btn btn--secondary btn--small u-mb-m" aria-label="Toggle filters" aria-expanded="false" aria-controls="filter-panel" >
-                                        <span class="btn__inner">Show filters</span>
-                                    </button>
+                                    {{
+                                        onsButton({
+                                            "type": 'button',
+                                            "text": 'Show filters',
+                                            "classes": 'adv-filter__trigger js-adv-filter__trigger btn btn--secondary btn--small u-mb-m',
+                                            "attributes": {
+                                                "aria-label": 'Toggle filters',
+                                                "aria-expanded": 'false',
+                                                "aria-controls": 'filter-panel'
+                                            }
+                                        })
+                                    }}
 
                                     <!-- Filter panel -->
                                     <div class="adv-filter__panel js-adv-filter__panel" id="filter-panel">
@@ -91,7 +99,7 @@ layout: census-website-engage/views/_master
                                                     
                                                     <div class="adv-filter__selection">
                                                         <span class="u-vh">Active filters: </span>
-                                                        <span class="js-adv-filter__selection">All categories</span>
+                                                        <span class="u-fs-s js-adv-filter__selection">All categories</span>
                                                     </div>
 
                                                     <div class="checkboxes__items">
@@ -125,9 +133,13 @@ layout: census-website-engage/views/_master
                                             <!-- Filter actions -->
                                             <div class="adv-filter__actions">
 
-                                                <button class="btn btn--small js-adv-filter__show" type="button">
-                                                    <span class="btn__inner">Show (<span class="js-adv-filter__show-results">5</span> results)</span>
-                                                </button>
+                                                {{
+                                                    onsButton({
+                                                        "type": 'button',
+                                                        "html": 'Show (<span class="js-adv-filter__show-results">5</span> results)',
+                                                        "classes": 'btn btn--small js-adv-filter__show'
+                                                    })
+                                                }}
 
                                                 {{ 
                                                     onsButton({
@@ -177,12 +189,12 @@ layout: census-website-engage/views/_master
                                                     
                                                     <h3 class="article__heading"><a href="#0">Census 2021 question development reports</a></h3>
                                                     
-                                                    <ul class="article__meta">
+                                                    <ul class="u-fs-s article__meta">
                                                         <li class="article__meta-item"><span class="u-hidden">Posted on </span> <time datetime="2020-05-20">20 May 2020</time></li>
                                                         <li class="article__meta-item"><span class="u-hidden">in </span> <span>Report</span></li>
                                                     </ul>
 
-                                                    <p class="article__excerpt">The ONS is publishing a series of Census 2021 question development reports. These provide a detailed explanation of the research, testing...</p>  
+                                                    <p class="u-mb-no">The ONS is publishing a series of Census 2021 question development reports. These provide a detailed explanation of the research, testing...</p>  
 
                                                 </div>
 
@@ -199,12 +211,12 @@ layout: census-website-engage/views/_master
                                                     
                                                     <h3 class="article__heading"><a href="#0">Children in need census 2020 to 2021: reports specifications</a></h3>
                                                     
-                                                    <ul class="article__meta">
+                                                    <ul class="u-fs-s article__meta">
                                                         <li class="article__meta-item"><span class="u-hidden">Posted on </span> <time datetime="2020-05-19">19 May 2020</time></li>
                                                         <li class="article__meta-item"><span class="u-hidden">in </span> <span>Report</span></li>
                                                     </ul>
 
-                                                    <p class="article__excerpt">Specifications of children in need census reports that local authorities can run in collect.</p>  
+                                                    <p class="u-mb-no">Specifications of children in need census reports that local authorities can run in collect.</p>  
 
                                                 </div>
 
@@ -221,12 +233,12 @@ layout: census-website-engage/views/_master
                                                     
                                                     <h3 class="article__heading"><a href="#0">Alternative provision census 2021: technical specification</a></h3>
                                                     
-                                                    <ul class="article__meta">
+                                                    <ul class="u-fs-s article__meta">
                                                         <li class="article__meta-item"><span class="u-hidden">Posted on </span> <time datetime="2020-05-18">18 May 2020</time></li>
                                                         <li class="article__meta-item"><span class="u-hidden">in </span> <span>Guidance</span></li>
                                                     </ul>
 
-                                                    <p class="article__excerpt">Business and technical specification for local authorities and software suppliers to prepare for the alternative provision census 2021.</p>  
+                                                    <p class="u-mb-no">Business and technical specification for local authorities and software suppliers to prepare for the alternative provision census 2021.</p>  
 
                                                 </div>
 
@@ -243,12 +255,12 @@ layout: census-website-engage/views/_master
                                                     
                                                     <h3 class="article__heading"><a href="#0">Children in need census 2020 to 2021: specification</a></h3>
                                                     
-                                                    <ul class="article__meta">
+                                                    <ul class="u-fs-s article__meta">
                                                         <li class="article__meta-item"><span class="u-hidden">Posted on </span> <time datetime="2020-05-17">17 May 2020</time></li>
                                                         <li class="article__meta-item"><span class="u-hidden">in </span> <span>Guidance</span></li>
                                                     </ul>
 
-                                                    <p class="article__excerpt">Specification and validation rules for local authorities and software suppliers preparing for the 2020 to 2021 children in need census.</p>  
+                                                    <p class="u-mb-no">Specification and validation rules for local authorities and software suppliers preparing for the 2020 to 2021 children in need census.</p>  
 
                                                 </div>
 
@@ -265,12 +277,12 @@ layout: census-website-engage/views/_master
                                                     
                                                     <h3 class="article__heading"><a href="#0">Children in need census 2020 to 2021: specification</a></h3>
                                                     
-                                                    <ul class="article__meta">
+                                                    <ul class="u-fs-s article__meta">
                                                         <li class="article__meta-item"><span class="u-hidden">Posted on </span> <time datetime="2020-05-16">16 May 2020</time></li>
                                                         <li class="article__meta-item"><span class="u-hidden">in </span> <span>Guidance</span></li>
                                                     </ul>
 
-                                                    <p class="article__excerpt">Specification and validation rules for local authorities and software suppliers preparing for the 2020 to 2021 children in need census.</p>  
+                                                    <p class="u-mb-no">Specification and validation rules for local authorities and software suppliers preparing for the 2020 to 2021 children in need census.</p>  
 
                                                 </div>
 
@@ -287,12 +299,12 @@ layout: census-website-engage/views/_master
                                                     
                                                     <h3 class="article__heading"><a href="#0">Children in need census 2020 to 2021: specification</a></h3>
                                                     
-                                                    <ul class="article__meta">
+                                                    <ul class="u-fs-s article__meta">
                                                         <li class="article__meta-item"><span class="u-hidden">Posted on </span> <time datetime="2020-05-15">15 May 2020</time></li>
                                                         <li class="article__meta-item"><span class="u-hidden">in </span> <span>Guidance</span></li>
                                                     </ul>
 
-                                                    <p class="article__excerpt">Specification and validation rules for local authorities and software suppliers preparing for the 2020 to 2021 children in need census.</p>  
+                                                    <p class="u-mb-no">Specification and validation rules for local authorities and software suppliers preparing for the 2020 to 2021 children in need census.</p>  
 
                                                 </div>
 
@@ -309,12 +321,12 @@ layout: census-website-engage/views/_master
                                                     
                                                     <h3 class="article__heading"><a href="#0">Children in need census 2020 to 2021: specification</a></h3>
                                                     
-                                                    <ul class="article__meta">
+                                                    <ul class="u-fs-s article__meta">
                                                         <li class="article__meta-item"><span class="u-hidden">Posted on </span> <time datetime="2020-05-14">14 May 2020</time></li>
                                                         <li class="article__meta-item"><span class="u-hidden">in </span> <span>Guidance</span></li>
                                                     </ul>
 
-                                                    <p class="article__excerpt">Specification and validation rules for local authorities and software suppliers preparing for the 2020 to 2021 children in need census.</p>  
+                                                    <p class="u-mb-no">Specification and validation rules for local authorities and software suppliers preparing for the 2020 to 2021 children in need census.</p>  
 
                                                 </div>
 
@@ -331,12 +343,12 @@ layout: census-website-engage/views/_master
                                                     
                                                     <h3 class="article__heading"><a href="#0">Our future analytical work programme in response to COVID-19</a></h3>
                                                     
-                                                    <ul class="article__meta">
+                                                    <ul class="u-fs-s article__meta">
                                                         <li class="article__meta-item"><span class="u-hidden">Posted on </span> <time datetime="2020-05-13">13 May 2020</time></li>
                                                         <li class="article__meta-item"><span class="u-hidden">in </span> <span>Statement</span></li>
                                                     </ul>
 
-                                                    <p class="article__excerpt">The Office for National Statistics (ONS) is currently working at speed to ensure that the country has the best possible information on the UK’s society.</p>  
+                                                    <p class="u-mb-no">The Office for National Statistics (ONS) is currently working at speed to ensure that the country has the best possible information on the UK’s society.</p>  
 
                                                 </div>
 
@@ -353,12 +365,12 @@ layout: census-website-engage/views/_master
                                                     
                                                     <h3 class="article__heading"><a href="#0">Communities in Carlisle will get extra support as they take part in a census rehearsal</a></h3>
                                                     
-                                                    <ul class="article__meta">
+                                                    <ul class="u-fs-s article__meta">
                                                         <li class="article__meta-item"><span class="u-hidden">Posted on </span> <time datetime="2020-05-12">12 May 2020</time></li>
                                                         <li class="article__meta-item"><span class="u-hidden">in </span> <span>Press release</span></li>
                                                     </ul>
 
-                                                    <p class="article__excerpt">The Office for National Statistics (ONS) has appointed a census engagement manager to support Carlisle residents help rehearse the census this October.</p>  
+                                                    <p class="u-mb-no">The Office for National Statistics (ONS) has appointed a census engagement manager to support Carlisle residents help rehearse the census this October.</p>  
 
                                                 </div>
 

@@ -1,65 +1,51 @@
 /* --------------------------------
-
-Title:
 Advanced filter
-
-Description:
-A filter panel template
-
 -------------------------------- */
 
 .adv-filter__gallery {
-  border-top: 1px solid $border-color;
+  border-top: 1px solid $color-grey-3;
   margin-left: 0;
   padding-left: 0;
 }
 
 .adv-filter__item {
-  margin-bottom: 24px;
+  margin-top: 1.5rem;
 
   &:first-of-type {
-    margin-top: 24px;
+    margin-top: 1.5rem;
   }
 }
 
 .adv-filter__selection {
-  color: $text-secondary;
-  font-size: 14px;
-  line-height: (24/14);
-  margin-bottom: 8px;
-}
-
-.adv-filter__results-count {
-  font-size: 16px;
-  line-height: (24/16);
+  color: $color-grey-1;
+  margin-bottom: 0.5rem;
 }
 
 .adv-filter__results-options {
   align-items: center;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 8px;
+  margin-bottom: 0.5rem;
 }
 
 .adv-filter__reset {
   background-color: transparent;
   border: 0 none;
   cursor: pointer;
-  color: $text-secondary;
+  color: $color-grey-1;
   font-family: inherit;
-  font-size: 16px;
   font-weight: normal;
-  line-height: (24/16);
   padding: 0;
   text-decoration: underline;
 
   &:hover {
-    color: #222222;
+    color: $color-black;
   }
 
   &:focus {
-    background-color: #fd0;
-    box-shadow: 0 -2px #fd0, 0 4px #222;
+    background-color: $color-yellow;
+    box-shadow: 0 -2px $color-yellow, 0 4px $color-black;
+    color: $color-black;
     outline: 3px solid transparent;
     text-decoration: none;
   }
@@ -70,16 +56,12 @@ A filter panel template
   display: flex;
 
   .label {
-    font-size: 16px;
     font-weight: normal;
-    line-height: (24/16);
     margin-bottom: 0;
-    margin-right: 8px;
+    margin-right: 0.5rem;
   }
 
   .input--select {
-    font-size: 16px;
-    line-height: (24/16);
     width: auto !important; // NASTY override of globally defined width on selects...
   }
 }
@@ -89,59 +71,49 @@ A filter panel template
 }
 
 .adv-filter__panel--is-visible {
+  background-color: $color-white;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: calc(100% - 76px); // Height of action buttons
+  overflow-y: scroll;
+  padding: 1rem;
+  position: fixed;
+  z-index: 10;
   display: block;
 }
 
 .adv-filter__actions {
-  display: none;
+  background-color: $color-white;
+  display: flex;
+  box-shadow: 0 0 5px 0 rgba($color-black, 0.5), 0 -1px 0 0 rgba($color-grey-1, 0.5);
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  position: fixed;
+  width: 100%;
+  z-index: 11;
 
   .btn:first-of-type {
     flex-grow: 1;
   }
 
   .btn + .btn {
-    margin-left: 16px;
+    margin-left: 1rem;
   }
 }
 
 .filter__item {
-  border-bottom: 1px solid $border-color;
+  border-bottom: 1px solid $color-grey-3;
   display: block; // Accessible way of removing bullets (don’t use list-style-type: none; https://github.com/jensimmons/cssremedy/issues/15#issuecomment-462174177)
   margin-bottom: 0; // Reset default margin bottom on list items
-  padding-bottom: 24px;
-  padding-top: 24px;
+  padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
 }
 
-// Target mobile only
-@media only screen and (max-width: 740px) {
-  .adv-filter__panel--is-visible {
-    background-color: white;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    height: calc(100% - 72px); // Height of action buttons
-    overflow-y: scroll;
-    padding: 16px;
-    position: fixed;
-    z-index: 10;
-  }
-
-  .adv-filter__actions {
-    background-color: white;
-    display: flex;
-    box-shadow: 0 0 5px 0 rgba(11, 12, 12, 0.5), 0 -1px 0 0 rgba(177, 180, 182, 0.5);
-    bottom: 0;
-    left: 0;
-    padding: 16px;
-    position: fixed;
-    width: 100%;
-    z-index: 11;
-  }
-}
-
-// Not mobile
-@media only screen and (min-width: 740px) {
+// Not for mobile
+@include mq('m') {
   .adv-filter__actions {
     display: none;
   }
@@ -152,6 +124,10 @@ A filter panel template
 
   .adv-filter__panel {
     display: block;
+  }
+
+  .no-scroll {
+    overflow: auto;
   }
 }
 
@@ -179,8 +155,6 @@ body:not(.js-enabled) {
 }
 
 // Prevent scrollbars on body
-@media only screen and (max-width: 740px) {
-  .no-scroll {
-    overflow-y: hidden;
-  }
+.no-scroll {
+  overflow-y: hidden;
 }

@@ -1,15 +1,13 @@
-@import 'scss/settings/all';
 @import 'scss/components/all';
 @import 'scss/helpers/all';
-@import 'scss/elements/all';
 
 /*
   Overrides due to bugs in the design system (that need resolving at a later date)
 */
 
-html {
-  -moz-osx-font-smoothing: grayscale;
-}
+// html {
+//   -moz-osx-font-smoothing: grayscale;
+// }
 
 .list .list__link {
   display: inline-block;

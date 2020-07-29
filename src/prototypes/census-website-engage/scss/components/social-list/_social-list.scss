@@ -1,22 +1,19 @@
 .social-list {
   align-items: center;
   display: flex;
-  margin-bottom: 0;
+  flex-wrap: wrap;
+  margin: 0 -1rem -1rem;
   padding-left: 0;
 }
 
 .social-list__item {
   align-items: center;
   display: flex;
-  margin-bottom: 0;
-
-  &:not(:first-child) {
-    margin-left: 24px;
-  }
+  margin: 0 1rem 1rem;
 }
 
 .social__icon {
-  fill: #222;
+  fill: $color-black;
   height: 32px;
   width: 32px;
 }
