@@ -38,37 +38,14 @@ layout: user-account-creation/views/version-2/_master-survey
             }}
         </div>
         <div class="grid__col col-8@m u-pt-no">
-            <h1>Change email address</h1>
-            <p>To change your email address we will create a new account and transfer all your surveys to the new account.</p>
-
-            <!--
-            <p>You'll need to:</p>
-            <ol>
-                <li>Provide the email address</li>
-                <li>Send the enrolment code</li>
-            </ol>
-            -->
-
-            <!-- <p>To whom would you like to transfer your surveys?</p> -->
-
-            <div class="field">
-                <p>
-                    {{ 
-                        onsInput({
-                            "id": "recipient-one",
-                            "class": "hello",
-                            "label": {
-                                "text": "New email address"
-                            }
-                        }) 
-                    }}
-                </p>
-            </div>
+            <h1>Send email address confirmation</h1>
+            <p>You have requested to change your email address</p>
+            <p>We'll send a confirmation email to <b>jane.doe@acme.com</b>.</p>
 
         
-            <p class="field">
-                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-2/01-change-account-details/03-send-enrolment-codes.html';">
-                    <span class="btn__inner">Continue</span>
+            <p class="field u-mt-l">
+                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-2/01-change-account-details/04-confirmation.html';">
+                    <span class="btn__inner">Send</span>
                 </button>
                 <button type="submit" class="btn btn--secondary" onclick="location.href='{{ pageInfo.rootPath }}/version-2/01-change-account-details/01-change-details.html';">
                     <span class="btn__inner">Cancel</span>

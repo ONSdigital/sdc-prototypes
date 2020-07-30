@@ -33,8 +33,8 @@ layout: user-account-creation/views/version-2/_master-survey
                             "text": 'Change email address'
                         },
                         {
-                            "url": '/prototypes/user-account-creation/version-2/01-change-account-details/03-send-enrolment-codes.html',
-                            "text": 'Send enrolment codes'
+                            "url": '/prototypes/user-account-creation/version-2/01-change-account-details/03-send-confirmation.html',
+                            "text": 'Send confirmation email'
                         },
                         {
                             "url": '/',
@@ -48,11 +48,11 @@ layout: user-account-creation/views/version-2/_master-survey
         <div class="grid__col col-8@m u-pt-no">
             <h1>Almost done</h1>
             <p>We’ve sent an email to your new email address</p>
-            <p>Once you have received it, you need to follow the link in the email to confirm your email address and finish setting up your new account</p>
+            <p>Once you have received it, you need to follow the link in the email to confirm and finish setting up your new account</p>
             <p>Email not arrived? It might be in your spam folder.</p>
             <p>If it doesn’t arrive in the next 15 minutes, please call 0300 1234 931</p>
             <p class="field">
-                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-2/00-surveys-list.html';">
+                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-2/00-surveys-list-new.html';">
                     <span class="btn__inner">Back to surveys</span>
                 </button>
             </p>

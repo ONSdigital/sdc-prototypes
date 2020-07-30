@@ -33,8 +33,8 @@ layout: user-account-creation/views/version-2/_master-survey
                             "text": 'Change email address'
                         },
                         {
-                            "url": '/prototypes/user-account-creation/version-2/01-change-account-details/03-send-enrolment-codes.html',
-                            "text": 'Send enrolment codes',
+                            "url": '/',
+                            "text": 'Send confirmation email',
                             "current": true
                         }
                     ]
@@ -42,25 +42,9 @@ layout: user-account-creation/views/version-2/_master-survey
             }}
         </div>
         <div class="grid__col col-8@m u-pt-no">
-            <h1>Send enrolment codes</h1>
-            <p>We will send enrolment codes for the following surveys to <b>jane.doe@acme.com</b>.</p>
-            <h2 class="u-fs-m">ACME Consumer Products</h2>
-            <div class="text-indent">
-                <ul class="list list--bare">
-                    <li>Quarterly Business Survey</li>
-                    <li>Monthly Business Survey</li>
-                </ul>
-            </div> 
-            <h2 class="u-fs-m">ACME Group Ltd</h2>
-            <div class="text-indent">
-                <ul class="list list--bare">
-                    <li>Business Register and Employment Survey</li>
-                    <li>Monthly Business Survey</li>
-                    <li>Quarterly Business Survey</li>
-                    <li>Monthly Wages and Salary Survey</li>
-                    <li>Quarterly Acquisitions and Disposals of Capital Assets</li>
-                </ul>
-            </div>
+            <h1>Send confirmation email</h1>
+            <p>We will send confirmation <b>jane.doe@acme.com</b>.</p>
+
             <p class="field">
                 <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-2/01-change-account-details/04-confirmation.html';">
                     <span class="btn__inner">Send</span>
