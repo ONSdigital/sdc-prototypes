@@ -1,0 +1,80 @@
+---
+title: Important dates
+group: Census
+version: 19.3.0
+layout: census-website-engage/views/_master
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            <div class="grid u-mt-s@m">
+
+                <div class="grid__col col-8@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-fs-xxl">Important dates</h1>
+
+                        <p>Key dates for local authorities to prepare for Census 2021.</p>
+
+                        <div class="timeline u-mt-l u-mb-xl">
+
+                            <div class="timeline__item">
+                                <h2 class="timeline__date">August 2020</h2>
+                                <p class="timeline__note">ONS to share overview of Census Support Centres assistance and locations</p>
+                            </div>
+
+                            <div class="timeline__item">
+                                <h2 class="timeline__date">September 2020</h2>
+                                <p class="timeline__note">Meet your Community Engagement Manager and set up regular catch up meetings</p>
+                                <p class="timeline__note">Local Authority Toolkit available online</p>
+                            </div>
+
+                            <div class="timeline__item">
+                                <h2 class="timeline__date">September to October 2020</h2>
+                                <p class="timeline__note">ONS to provide Councillor Handbook for distribution</p>
+                            </div>
+
+                            <div class="timeline__item">
+                                <h2 class="timeline__date">November 2020</h2>
+                                <p class="timeline__note">ONS to provide you with content for magazines and publications</p>
+                            </div>
+
+                            <div class="timeline__item">
+                                <h2 class="timeline__date">January to March 2021</h2>
+                                <p class="timeline__note">ONS to provide a range of press releases for external use</p>
+                            </div>
+
+                            <div class="timeline__item">
+                                <h2 class="timeline__date">February to April 2021</h2>
+                                <p class="timeline__note">Promote your local Census Support Centres</p>
+                            </div>
+
+                        </div>
+
+                        {% from "components/panel/_macro.njk" import onsPanel %}
+                            
+                            {% call onsPanel()
+                            %}
+
+                            <h2 class="u-fs-m u-mb-xs">Stay up to date</h2>
+                            <p><a href="#0">Subscribe to our email alerts</a> and get news and activities. Select the “2021 Census Community Engagement” topic.</p>
+
+                        {% endcall %}
+
+
+                    </main>
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}
