@@ -16,10 +16,6 @@ Timeline
   }
 }
 
-.timeline__note {
-  margin-bottom: 0.5rem;
-}
-
 .timeline__item {
   margin-bottom: 1.5rem;
   position: relative;
@@ -34,7 +30,7 @@ Timeline
     width: 12px;
   }
 
-  &:last-child {
+  :last-child {
     margin-bottom: 0;
   }
 }
