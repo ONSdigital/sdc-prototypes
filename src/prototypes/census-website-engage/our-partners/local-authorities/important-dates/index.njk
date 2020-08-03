@@ -36,7 +36,7 @@ layout: census-website-engage/views/_master
                         <h1 class="u-mb-l">
                             <span class="u-fs-m u-db u-mb-xs u-lighter">Local authorities</span>
                             <span class="u-vh">: </span>
-                            <span class="u-fs-xxl u-db">Overview</span>
+                            <span class="u-fs-xxl u-db">Important dates for local authorities</span>
                         </h1>
 
                         {{-
@@ -45,12 +45,13 @@ layout: census-website-engage/views/_master
                                 "ariaLabel": 'Pages in this guide',
                                 "itemsList": [
                                     {
-                                        "text": 'Overview',
-                                        "current": true
+                                        "url": pageInfo.rootPath + '/our-partners/local-authorities',
+                                        "text": 'Overview'
                                     },
                                     {
-                                        "url": pageInfo.rootPath + '/our-partners/local-authorities/important-dates',
-                                        "text": 'Important dates for local authorities'
+                                        "url": '#0',
+                                        "text": 'Important dates for local authorities',
+                                        "current": true
                                     },
                                     {
                                         "url": '#0',
@@ -76,11 +77,55 @@ layout: census-website-engage/views/_master
                             })
                         }}
 
-                        <div class="page__body">
-                            
-                            <p>Just as census statistics may well be vital to you, your support is vital to us. By working together, we can make sure Census 2021 gets a great response and represents everyone.</p>
+                        <p>Key dates for local authorities to prepare for Census 2021.</p>
 
-                            <p><a href="mailto:2021Census.LA.Liaison@ons.gov.uk">Please email our Local Authority Partnerships team</a>.</p>
+                        <div class="timeline u-mt-l u-mb-xl">
+
+                            <div class="timeline__item">
+                                <h2 class="u-fs-r–b timeline__date">August 2020</h2>
+                                <p>ONS to share overview of Census Support Centres assistance and locations</p>
+                            </div>
+
+                            <div class="timeline__item">
+                                <h2 class="timeline__date">September 2020</h2>
+                                <ul class="list--bare">
+                                    <li>Meet your Community Engagement Manager and set up regular catch up meetings</li>
+                                    <li>Local Authority Toolkit available online</li>
+                                </ul>
+                            </div>
+
+                            <div class="timeline__item">
+                                <h2 class="timeline__date">September to October 2020</h2>
+                                <p>ONS to provide Councillor Handbook for distribution</p>
+                            </div>
+
+                            <div class="timeline__item">
+                                <h2 class="timeline__date">November 2020</h2>
+                                <p>ONS to provide you with content for magazines and publications</p>
+                            </div>
+
+                            <div class="timeline__item">
+                                <h2 class="timeline__date">January to March 2021</h2>
+                                <p>ONS to provide a range of press releases for external use</p>
+                            </div>
+
+                            <div class="timeline__item">
+                                <h2 class="timeline__date">February to April 2021</h2>
+                                <p>Promote your local Census Support Centres</p>
+                            </div>
+
+                        </div>
+
+                        {% from "components/panel/_macro.njk" import onsPanel %}
+                            
+                            {% call onsPanel() %}
+
+                            <h2 class="u-fs-m u-mb-xs">Stay up to date</h2>
+                            <p><a href="https://public.govdelivery.com/accounts/UKONS/subscribers/new">Subscribe to our email alerts</a> and get news and activities. Select the “2021 Census Community Engagement” topic.</p>
+
+                        {% endcall %}
+
+                        <div class="page__body">
 
                             <div class="u-mt-xl">
                                 {{-
@@ -89,8 +134,8 @@ layout: census-website-engage/views/_master
                                         {
                                             "rel": 'next',
                                             "text": 'Next',
-                                            "url": pageInfo.rootPath + '/our-partners/local-authorities/important-dates',
-                                            "label": 'Important dates for local authorities'
+                                            "url": '#',
+                                            "label": 'How you can prepare for 2021'
                                         }
                                         ]
                                     })
