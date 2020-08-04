@@ -7,6 +7,7 @@ layout: user-account-creation/views/version-2/_master-survey
 
 {% from "components/input/_macro.njk" import onsInput %}
 {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+{% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
 
 {% block main %}
 
@@ -27,6 +28,10 @@ layout: user-account-creation/views/version-2/_master-survey
                         {
                             "url": '/prototypes/user-account-creation/version-2/04-transfer-my-surveys/index.html',
                             "text": 'Transfer surveys'
+                        },
+                        {
+                            "url": '/prototypes/user-account-creation/version-2/04-transfer-my-surveys/02-delete-account.html',
+                            "text": 'Delete account'
                         },
                         {
                             "url": '/',
@@ -62,7 +67,7 @@ layout: user-account-creation/views/version-2/_master-survey
                 <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-2/04-transfer-my-surveys/03-confirmation.html';">
                     <span class="btn__inner">Send</span>
                 </button>
-                <button type="submit" class="btn btn--secondary" onclick="location.href='{{ pageInfo.rootPath }}/version-2/30-my-account.html';">
+                <button type="submit" class="btn btn--secondary" onclick="location.href='{{ pageInfo.rootPath }}/version-2/04-transfer-my-surveys/02-delete-account.html';">
                     <span class="btn__inner">Cancel</span>
                 </button>
             </p>

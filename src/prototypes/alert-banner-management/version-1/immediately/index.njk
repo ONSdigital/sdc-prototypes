@@ -33,15 +33,20 @@ layout: alert-banner-management/views/version-1/_master
         </div>
         <div class="grid__col col-8@m u-pt-no">
             <h1>Publish alert</h1>
+            <p>The following alert will be published immediately:</p>
             <div class="panel panel--info panel--simple">
                 <div class="panel__body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p>The Quarterly Vacancy Survey is unavailable until Tuesday 7 July 2020, as we are currently experiencing some technical difficulties.</p>
                 </div>
             </div>
             <p class="field">
-                <button type="submit" class="btn">
-                    <span class="btn__inner">Publish</span>
-                </button>
+                {{ 
+                    onsButton({
+                        "type": 'button',
+                        "text": 'Publish',
+                        "url": "/prototypes/alert-banner-management/version-1/survey-list-published.html"
+                    }) 
+                }}
                 {{ 
                     onsButton({
                         "type": 'button',

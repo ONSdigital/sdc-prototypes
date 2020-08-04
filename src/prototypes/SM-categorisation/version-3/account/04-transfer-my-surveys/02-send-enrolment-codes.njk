@@ -7,6 +7,7 @@ layout: SM-categorisation/views/version-3/_master-survey
 
 {% from "components/input/_macro.njk" import onsInput %}
 {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+{% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
 
 {% block main %}
 
@@ -58,6 +59,26 @@ layout: SM-categorisation/views/version-3/_master-survey
                     <li>Quarterly Acquisitions and Disposals of Capital Assets</li>
                 </ul>
             </div>
+            <h1>Delete account</h1>
+            <p>If you no longer wish to hold an ONS account please tick below. This will take up to 24 hours and cannot be reversed.</p>
+            <p class="field">
+            {{
+                onsCheckboxes({
+                    "legend": "What are your favourite pizza toppings?",
+                    "checkboxesLabel": "Select this checkbox to delete your account",
+                    "name": "food",
+                    "checkboxes": [
+                        {
+                            "id": "delete",
+                            "label": {
+                                "text": "Delete account"
+                            },
+                            "value": "delete"
+                        }
+                    ]
+                })
+            }}
+            </p>
             <p class="field">
                 <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-3/account/04-transfer-my-surveys/03-confirmation.html';">
                     <span class="btn__inner">Send</span>

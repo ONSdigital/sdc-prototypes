@@ -1,0 +1,80 @@
+---
+group: Frontstage
+title: User account creation
+version: 17.0.0
+layout: user-account-creation/views/version-2/_master-survey
+---
+
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+{% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
+
+{% block main %}
+
+    <div class="grid">
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/prototypes/user-account-creation/version-2/00-surveys-list.html',
+                            "text": 'Surveys'
+                        },
+                        {
+                            "url": '/prototypes/user-account-creation/version-2/30-my-account.html',
+                            "text": 'Account'
+                        },
+                        {
+                            "url": '/prototypes/user-account-creation/version-2/04-transfer-my-surveys/index.html',
+                            "text": 'Transfer surveys'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'Delete account',
+                            "current": true
+                        }
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+            <h1>Delete account</h1>
+            <p>If you choose to delete your account it cannot be reversed. It will take up to 24 hours to complete.</p>
+            <p class="field">
+            {{
+                onsCheckboxes({
+                    "legend": "Would you like us to delete your account?",
+                    "checkboxesLabel": "Select an option",
+                    "name": "food",
+                    "checkboxes": [
+                        {
+                            "id": "yes",
+                            "label": {
+                                "text": "Yes"
+                            },
+                            "value": "yes"
+                        },
+                        {
+                            "id": "no",
+                            "label": {
+                                "text": "No"
+                            },
+                            "value": "no"
+                        }
+                    ]
+                })
+            }}
+            </p>
+            <p class="field">
+                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-2/04-transfer-my-surveys/02-send-enrolment-codes.html';">
+                    <span class="btn__inner">Continue</span>
+                </button>
+                <button type="submit" class="btn btn--secondary" onclick="location.href='{{ pageInfo.rootPath }}/version-3/30-my-account.html';">
+                    <span class="btn__inner">Cancel</span>
+                </button>
+            </p>
+        </div>
+    </div>
+
+{% endblock %}

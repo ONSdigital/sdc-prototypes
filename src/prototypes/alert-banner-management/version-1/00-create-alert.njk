@@ -32,10 +32,9 @@ layout: alert-banner-management/views/version-1/_master
             }}
         </div>
         <div class="grid__col col-8@m u-pt-no">
-            <form action="{{ pageInfo.parentPath }}/index.html">
-                <h1>Create an alert</h1>
-                <p class="field">
-                    {{
+            <h1>Create an alert</h1>
+            <p class="field">
+                {{
                         onsTextarea({
                             "id": "textarea-char-limit",
                             "name": "alert-text",
@@ -48,11 +47,12 @@ layout: alert-banner-management/views/version-1/_master
                             "charCountPlural": "You have {x} characters remaining"
                         })
                     }}
-                </p>
+            </p>
+            <form action="{{ pageInfo.parentPath }}/index.html">
                 <h2 class="u-mt-l u-mb-xs">When should the alert be published?</h2>
                 <p class="u-mt-no">If you don’t provide a date it will be published as soon as you confirm it.</p>
                 <fieldset class="fieldset">
-                    <legend class="fieldset__legend">Select your favourite topping</legend>
+                    <legend class="fieldset__legend">Select an option</legend>
                     <div class="radios__items">
                         <p class="radios__item">
                             <span class="radio">
