@@ -1,0 +1,58 @@
+---
+version: 20.0.0
+layout: census-support/views/_master
+---
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/fieldset/_macro.njk" import onsFieldset %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "census-support/components/input/_macro.njk" import onsInput %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/confirm-mobile-phone-number.html"
+    }
+} %}
+{% block preMain %}
+    <div class="u-mt-s">
+        <a href="{{ pageInfo.rootPath }}/enter-your-address.html">Previous</a>
+    </div>
+{% endblock %}
+{% block main %}
+    {% call onsQuestion({
+        "title": "What is your mobile phone number?"
+    }) %}
+        <p>This will not be stored and only used once to send you an access code by text</p>
+        {{
+            onsInput({
+                "id": "tel",
+                "type": "number",
+                "label": {
+                    "text": "UK mobile number"
+                },
+                "mutuallyExclusive": {
+                    "or": "Or",
+                    "deselectMessage": "Selecting this will clear your email",
+                    "deselectGroupAdjective": "cleared",
+                    "deselectCheckboxAdjective": "deselected",
+                    "checkbox": {
+                        "id": "email-checkbox",
+                        "name": "no-mobile",
+                        "value": "no-mobile",
+                        "label": {
+                            "text": "I don&rsquo;t have a mobile phone"
+                        }
+                    }
+                }
+            })
+        }}
+        {{ 
+            onsButton({
+                "text": "Continue",
+                "classes": "u-mt-xl u-mb-xl"
+            }) 
+        }}
+    {% endcall %}
+
+{% endblock %}

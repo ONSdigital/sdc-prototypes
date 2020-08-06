@@ -1,0 +1,51 @@
+---
+title: Census support - Generate an access code
+group: Census
+version: 20.0.0
+layout: census-support/views/_master
+---
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/what-is-your-address.html"
+    }
+} %}
+
+{% block main %}
+    {% call onsQuestion({
+        "title": "How would you like to complete your census?",
+        "useFieldset": true
+    }) %}
+        {{
+            onsRadios({
+                "name": "method",
+                "radios": [
+                    {
+                        "id": "online",
+                        "label": {
+                            "text": "Online"                        },
+                        "value": "online"
+                    },
+                    {
+                        "id": "on paper",
+                        "label": {
+                            "text": "On paper"
+                        },
+                        "value": "on paper"
+                    }
+                ]
+            })
+        }}
+    {% endcall %}
+
+    {{ onsButton({
+        "text": "Continue",
+        "classes": "u-mt-xl u-mb-xl"
+    }) }}
+
+{% endblock %}
