@@ -30,6 +30,10 @@ layout: SM-categorisation/views/version-3/_master-survey
                             "text": 'Transfer surveys'
                         },
                         {
+                            "url": '/prototypes/SM-categorisation/version-3/account/04-transfer-my-surveys/02-delete-account.html',
+                            "text": 'Delete account'
+                        },
+                        {
                             "url": '/',
                             "text": 'Send enrolment codes',
                             "current": true
@@ -59,31 +63,11 @@ layout: SM-categorisation/views/version-3/_master-survey
                     <li>Quarterly Acquisitions and Disposals of Capital Assets</li>
                 </ul>
             </div>
-            <h1>Delete account</h1>
-            <p>If you no longer wish to hold an ONS account please tick below. This will take up to 24 hours and cannot be reversed.</p>
-            <p class="field">
-            {{
-                onsCheckboxes({
-                    "legend": "What are your favourite pizza toppings?",
-                    "checkboxesLabel": "Select this checkbox to delete your account",
-                    "name": "food",
-                    "checkboxes": [
-                        {
-                            "id": "delete",
-                            "label": {
-                                "text": "Delete account"
-                            },
-                            "value": "delete"
-                        }
-                    ]
-                })
-            }}
-            </p>
-            <p class="field">
+            <p class="field u-mt-l">
                 <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-3/account/04-transfer-my-surveys/03-confirmation.html';">
                     <span class="btn__inner">Send</span>
                 </button>
-                <button type="submit" class="btn btn--secondary" onclick="location.href='{{ pageInfo.rootPath }}/version-3/30-my-account.html';">
+                <button type="submit" class="btn btn--secondary" onclick="location.href='{{ pageInfo.rootPath }}/version-3/account/04-transfer-my-surveys/02-delete-account.html';">
                     <span class="btn__inner">Cancel</span>
                 </button>
             </p>
