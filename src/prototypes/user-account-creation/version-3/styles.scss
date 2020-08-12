@@ -3,9 +3,7 @@
 .btn--link:not(.btn--secondary):active .btn__inner:after,
 .btn--link:not(.btn--secondary):hover:focus .btn__inner:after,
 .btn--link.btn--secondary .btn__inner:after,
-.btn--link:focus.btn--secondary .btn__inner:after,
-.btn--link.btn--small.btn--secondary .btn__inner:after,
-.btn--link:focus.btn--small.btn--secondary .btn__inner:after {
+.btn--link:focus.btn--secondary .btn__inner:after {
   background-image: none;
   display: none;
 }
@@ -14,6 +12,10 @@
   position: relative;
 }
 
+.td-submit-by,
+.td-status {
+  white-space: nowrap;
+}
 /* section.survey {
   .grid {
     display: flex;

@@ -1,8 +1,8 @@
 ---
 group: RAS/RM
+version: 20.0.3
 title: Alert banner management
-version: 17.0.0
-layout: alert-banner-management/views/version-1/_master
+layout: alert-banner-management/views/version-3/_master
 ---
 
 {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
@@ -23,8 +23,12 @@ layout: alert-banner-management/views/version-1/_master
                             "text": 'Surveys'
                         },
                         {
-                            "url": '/',
-                            "text": 'Create an alert',
+                            "url": '/prototypes/alert-banner-management/version-3/00-create-alert.html',
+                            "text": 'Create an alert'
+                        },
+                        {
+                            "url": '',
+                            "text": 'Manage alert templates',
                             "current": true
                         }
                     ]
@@ -32,75 +36,22 @@ layout: alert-banner-management/views/version-1/_master
             }}
         </div>
         <div class="grid__col col-8@m u-pt-no">
+            <h1>Manage message templates</h1>
+            <p><a href="">Create a new message template</a></p>
             <form action="{{ pageInfo.parentPath }}/index.html">
-                <fieldset name="Group1">
-                    <legend>
-                        <h1>Create an alert</h1>
-                    </legend>
-                    <div class="field u-mb-s">
-                        <label class="label " for="select">Message template (optional)</label>
-                        <select name="template" onChange="setTemplate(this);" class="input input--select ">
-                            <option value="0" selected disabled>
-                                Select an option
-                            </option>
-                            <option value="1">
-                                Unexpected outage
-                            </option>
-                            <option value="2">
-                                SDX is not working
-                            </option>
-                            <option value="3">
-                                System performance issues
-                            </option>
-                            <option value="4">
-                                Vacancies survey
-                            </option>
-                        </select>
-                    </div>
-                    <p class="field u-mt-no">
-                        <a href="{{ pageInfo.parentPath }}/01-manage-alert-templates.html">Manage message templates</a>      
-                    </p>
-
-                    <!-- <p class="field u-mt-no">
-                        {{
-                            onsButton({
-                                "type": 'button',
-                                "text": 'Add to alert text',
-                                "classes": 'btn--secondary btn--small'
-                            })
-                        }}
-                    </p> -->
-                    <p class="field">
-                        {{
-                        onsTextarea({
-                            "id": "templatemessage",
-                            "name": "templatemessage",
-                            "classes": "input--w-30",
-                            "label": {
-                                "text": "Alert text"
-                            },
-                            "maxlength": 400,
-                            "charCountSingular": "You have {x} character remaining",
-                            "charCountPlural": "You have {x} characters remaining"
-                        })
-                    }}
-                    </p>
-                </fieldset>
-
-                <h2 class="u-mt-l u-mb-xs">When should the alert be published?</h2>
-                <fieldset class="fieldset">
-                    <legend class="fieldset__legend">Select an option</legend>
+                <fieldset class="fieldset u-mt-l">
+                    <legend class="fieldset__legend">Choose a template to edit</legend>
                     <div class="radios__items">
                         <p class="radios__item">
                             <span class="radio">
                                 <input
                                     type="radio"
-                                    id="immediately"
+                                    id="outage"
                                     class="radio__input js-radio"
-                                    data-action-url="/prototypes/alert-banner-management/version-1/immediately/index.html"
-                                    value="immediately"
+                                    data-action-url="/prototypes/alert-banner-management/version-3/03-edit-alert-template.html"
+                                    value="outage"
                                     name="food">
-                                <label class="radio__label  " for="immediately" id="immediately-label">Immediately</label>
+                                <label class="radio__label  " for="outage" id="outage-label">Unexpected outage</label>
                             </span>
                         </p>
                         <br>
@@ -108,16 +59,43 @@ layout: alert-banner-management/views/version-1/_master
                             <span class="radio">
                                 <input 
                                     type="radio"
-                                    id="specific"
+                                    id="SDX"
                                     class="radio__input js-radio"
-                                    data-action-url="/prototypes/alert-banner-management/version-1/specific/index.html"
-                                    value="specific"
+                                    data-action-url="/prototypes/alert-banner-management/version-3/03-edit-alert-template.html"
+                                    value="SDX"
                                     name="food">
-                                <label class="radio__label" for="specific" id="specific-label">On a specific date and time</label>
+                                <label class="radio__label" for="SDX" id="SDX-label">SDX is not working</label>
+                            </span>
+                        </p>
+                        <br>
+                        <p class="radios__item">
+                            <span class="radio">
+                                <input 
+                                    type="radio"
+                                    id="system-performance"
+                                    class="radio__input js-radio"
+                                    data-action-url="/prototypes/alert-banner-management/version-3/03-edit-alert-template.html"
+                                    value="system-performance"
+                                    name="food">
+                                <label class="radio__label" for="system-performance" id="system-performance-label">System performance issues</label>
+                            </span>
+                        </p>
+                        <br>
+                        <p class="radios__item">
+                            <span class="radio">
+                                <input 
+                                    type="radio"
+                                    id="vacancies"
+                                    class="radio__input js-radio"
+                                    data-action-url="/prototypes/alert-banner-management/version-3/03-edit-alert-template.html"
+                                    value="vacancies"
+                                    name="food">
+                                <label class="radio__label" for="vacancies" id="vacancies-label">Vacancies survey</label>
                             </span>
                         </p>
                     </div>
                 </fieldset>
+
 
                 <p class="field">
                     <button type="submit" class="btn">
@@ -128,7 +106,7 @@ layout: alert-banner-management/views/version-1/_master
                             "type": 'button',
                             "text": 'Cancel',
                             "classes": 'btn--secondary btn-group__btn',
-                            "url": "/prototypes/alert-banner-management/version-1/survey-list.html"
+                            "url": "/prototypes/alert-banner-management/version-3/01-manage-alert-templates.html"
                         }) 
                     }}
                 </p>

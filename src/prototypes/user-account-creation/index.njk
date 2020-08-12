@@ -11,7 +11,22 @@ layout: user-account-creation/views/_index
 
     <div class="grid">
         <div class="grid__col col-8@m">
-            <h2>Version 2</h2>
+            <h2>Version 3</h2>
+            {{ 
+                onsButton({
+                    "type": 'button',
+                    "text": 'Start',
+                    "classes": 'btn--small u-mb-s',
+                    "url": "/prototypes/user-account-creation/version-3/00-surveys-list.html"
+                }) 
+            }}
+            <p>Changes in this version</p>
+            <ul>
+                <li>Upgraded to design system 20.0.3</li>
+                <li>Change business details: Added ability for user to choose survey the change applies to</li>
+            </ul>
+            
+            <h2 class="u-mt-l">Version 2</h2>
             {{ 
                 onsButton({
                     "type": 'button',

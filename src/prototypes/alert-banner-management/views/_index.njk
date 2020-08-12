@@ -4,8 +4,13 @@
   <link rel="stylesheet" href="{{ pageInfo.rootPath }}/styles.css"/>
 {% endblock %}
 
-{% set page = { 
-    "title": "Survey Data Collection",
+{% set pageConfig = { 
+    "cdn": "14.4.0",
+    "title": "Design system test",
+    "header": {
+      "logoAlt": "ONS",
+      "logoHref": "/prototypes/SM-templates/"
+    },
     "footer": {
         "OGLLink": {
             "pre": 'All content is available under the',
@@ -15,16 +20,6 @@
         }
     }
 } %}
-
-{% block header %}
-{% from "components/header/_macro.njk" import onsHeader %}
-{{ 
-    onsHeader({
-        "title": "Survey collection data",
-        "logoHref": "#"
-    })
-}}
-{% endblock %}
 
 {% block pageContent %}
   {% block preMain %}{% endblock %}

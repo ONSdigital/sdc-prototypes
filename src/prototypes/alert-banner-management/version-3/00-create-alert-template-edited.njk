@@ -1,8 +1,8 @@
 ---
 group: RAS/RM
+version: 20.0.3
 title: Alert banner management
-version: 17.0.0
-layout: alert-banner-management/views/version-1/_master
+layout: alert-banner-management/views/version-3/_master
 ---
 
 {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
@@ -14,12 +14,17 @@ layout: alert-banner-management/views/version-1/_master
 
     <div class="grid">
         <div class="grid__col col-12@m u-pt-no u-pb-no">
+            <div class="panel panel--success panel--simple u-mb-l">
+                <div class="panel__body">
+                    <p>The template has been successfully edited</p>
+                </div>
+            </div>
             {{ 
                 onsBreadcrumb({
                     "ariaLabel": 'Breadcrumb',
                     "itemsList": [
                         {
-                            "url": '',
+                            "url": '/prototypes/alert-banner-management/version-3/survey-list.html',
                             "text": 'Surveys'
                         },
                         {
@@ -32,10 +37,10 @@ layout: alert-banner-management/views/version-1/_master
             }}
         </div>
         <div class="grid__col col-8@m u-pt-no">
+            <h1>Create a new alert</h1>
             <form action="{{ pageInfo.parentPath }}/index.html">
                 <fieldset name="Group1">
                     <legend>
-                        <h1>Create an alert</h1>
                     </legend>
                     <div class="field u-mb-s">
                         <label class="label " for="select">Message template (optional)</label>
@@ -60,16 +65,6 @@ layout: alert-banner-management/views/version-1/_master
                     <p class="field u-mt-no">
                         <a href="{{ pageInfo.parentPath }}/01-manage-alert-templates.html">Manage message templates</a>      
                     </p>
-
-                    <!-- <p class="field u-mt-no">
-                        {{
-                            onsButton({
-                                "type": 'button',
-                                "text": 'Add to alert text',
-                                "classes": 'btn--secondary btn--small'
-                            })
-                        }}
-                    </p> -->
                     <p class="field">
                         {{
                         onsTextarea({
@@ -86,53 +81,25 @@ layout: alert-banner-management/views/version-1/_master
                     }}
                     </p>
                 </fieldset>
-
-                <h2 class="u-mt-l u-mb-xs">When should the alert be published?</h2>
-                <fieldset class="fieldset">
-                    <legend class="fieldset__legend">Select an option</legend>
-                    <div class="radios__items">
-                        <p class="radios__item">
-                            <span class="radio">
-                                <input
-                                    type="radio"
-                                    id="immediately"
-                                    class="radio__input js-radio"
-                                    data-action-url="/prototypes/alert-banner-management/version-1/immediately/index.html"
-                                    value="immediately"
-                                    name="food">
-                                <label class="radio__label  " for="immediately" id="immediately-label">Immediately</label>
-                            </span>
-                        </p>
-                        <br>
-                        <p class="radios__item">
-                            <span class="radio">
-                                <input 
-                                    type="radio"
-                                    id="specific"
-                                    class="radio__input js-radio"
-                                    data-action-url="/prototypes/alert-banner-management/version-1/specific/index.html"
-                                    value="specific"
-                                    name="food">
-                                <label class="radio__label" for="specific" id="specific-label">On a specific date and time</label>
-                            </span>
-                        </p>
-                    </div>
-                </fieldset>
+            </form>
 
                 <p class="field">
-                    <button type="submit" class="btn">
-                        <span class="btn__inner">Continue</span>
-                    </button>
+                    {{ 
+                        onsButton({
+                            "type": 'button',
+                            "text": 'Continue',
+                            "url": "/prototypes/alert-banner-management/version-3/01-publish-alert.html"
+                        }) 
+                    }}
                     {{ 
                         onsButton({
                             "type": 'button',
                             "text": 'Cancel',
                             "classes": 'btn--secondary btn-group__btn',
-                            "url": "/prototypes/alert-banner-management/version-1/survey-list.html"
+                            "url": "/prototypes/alert-banner-management/version-3/survey-list.html"
                         }) 
                     }}
                 </p>
-            </form>
         </div>
     </div>
     <script>
