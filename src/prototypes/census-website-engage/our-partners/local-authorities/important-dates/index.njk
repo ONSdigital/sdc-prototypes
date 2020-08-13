@@ -79,37 +79,40 @@ layout: census-website-engage/views/_master
 
                         <p>Key dates for local authorities to prepare for Census 2021.</p>
 
-                        <div class="timeline u-mt-l u-mb-xl">
-
-                            <div class="timeline__item">
-                                <h2 class="timeline__date">September 2020</h2>
-                                <ul class="list--bare">
-                                    <li>Meet your Community Engagement Manager and set up regular catch up meetings</li>
-                                    <li>Local Authority Toolkit available online</li>
-                                </ul>
-                            </div>
-
-                            <div class="timeline__item">
-                                <h2 class="timeline__date">September to October 2020</h2>
-                                <p>ONS to provide Councillor Handbook for distribution</p>
-                            </div>
-
-                            <div class="timeline__item">
-                                <h2 class="timeline__date">November 2020</h2>
-                                <p>ONS to provide you with content for magazines and publications</p>
-                            </div>
-
-                            <div class="timeline__item">
-                                <h2 class="timeline__date">January to March 2021</h2>
-                                <p>ONS to provide a range of press releases for external use</p>
-                            </div>
-
-                            <div class="timeline__item">
-                                <h2 class="timeline__date">February to April 2021</h2>
-                                <p>Promote your local Census Support Centres</p>
-                            </div>
-
-                        </div>
+                        {{
+                            onsTimeline({
+                            "classes": "u-mt-l u-mb-xl",
+                            "items": [
+                                    {
+                                        "heading": 'September',
+                                        "itemsList": [
+                                            {
+                                                "text": "Meet your Community Engagement Manager and set up regular catch up meetings"
+                                            },
+                                            {
+                                                "text": "Local Authority Toolkit available online"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "heading": 'September to to October 2020',
+                                        "content": '<p>ONS to provide Councillor Handbook for distribution</p>'
+                                    },
+                                    {
+                                        "heading": 'November 2020',
+                                        "content": '<p>ONS to provide you with content for magazines and publications</p>'
+                                    },
+                                    {
+                                        "heading": 'January to March 2021',
+                                        "content": '<p>ONS to provide a range of press releases for external use</p>'
+                                    },
+                                    {
+                                        "heading": 'February to April 2021',
+                                        "content": '<p>Promote your local Census Support Centres</p>'
+                                    }
+                                ]
+                            })
+                        }}
 
                         {% from "components/panel/_macro.njk" import onsPanel %}
                             
