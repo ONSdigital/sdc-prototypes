@@ -1,33 +1,29 @@
 ---
 title: Get prepared for Census 2021
 group: Census
-version: 19.3.0
+version: 21.0.0
 layout: census-website-engage/views/_master
 ---
 
 {% block pageContent %}
-   
 
     {% block main %}
 
-
         <!-- Hero -->
-        <section class="hero grid--gutterless">
-
-            <div class="hero__container container">
-
-                <div class="hero__details hero__details--ondark grid__col col-6@m">
-                    <h1 class="u-fs-xxxl">Get prepared for Census 2021</h1>
-                    <p class="u-mb-no">Census 2021 is taking place in March 2021.</p>
-                </div>
-
-                <div class="hero__circle-image"><img height="560px" width="560px" srcset="{{ pageInfo.rootPath }}/img/hero-man.png 1x, {{ pageInfo.rootPath }}/img/hero-man@2x.png 2x" src="{{ pageInfo.rootPath }}/img/hero-man.png" alt=""></div>
-                <div class="hero__circle-lined"><img src="{{ pageInfo.rootPath }}/img/circle-lines.svg" alt=""></div>
-                <div class="hero__circle-gradient"></div>
-
-            </div>
-
-        </section>
+        {{
+            onsHero({
+                censusTheme: true,
+                censusThemeDark: true,
+                title: 'Get prepared for Census 2021',
+                text: 'Census 2021 is taking place in March 2021.',
+                image: {
+                    smallSrc: pageInfo.rootPath + '/img/hero/small/',
+                    largeSrc: pageInfo.rootPath + '/img/hero/large/',
+                    filename: 'hero-man.png',
+                    alt: 'Man in a multi-coloured setting'
+                }
+            })
+        }}
 
 
         <!-- Page contents -->
