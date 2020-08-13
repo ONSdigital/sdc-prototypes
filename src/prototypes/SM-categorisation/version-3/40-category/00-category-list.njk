@@ -1,7 +1,7 @@
 ---
 group: Frontstage
 title: SM Categorisation
-version: 17.0.0
+version: 20.0.3
 layout: SM-categorisation/views/version-3/_master-survey
 ---
 
@@ -26,7 +26,7 @@ layout: SM-categorisation/views/version-3/_master-survey
                         },
                         {
                             "url": '/',
-                            "text": 'Details have changed',
+                            "text": 'Account details have changed',
                             "current": true
                         }
                     ]
@@ -34,7 +34,7 @@ layout: SM-categorisation/views/version-3/_master-survey
             }}
         </div>
         <div class="grid__col col-8@m u-pt-no">
-            <h1>What details have changed?</h1>
+            <h1>Which account details have changed?</h1>
             <form action="{{ pageInfo.parentPath }}/index.html">
                 <p class="field">
                     <fieldset class="fieldset">
@@ -58,7 +58,7 @@ layout: SM-categorisation/views/version-3/_master-survey
                                     <input
                                         type="radio"
                                         id="information-about-the-survey"
-                                        data-action-url="{{ pageInfo.parentPath }}/10-send-message.html"
+                                        data-action-url="/prototypes/SM-categorisation/version-3/account/05-change-business-details/index.html"
                                         class="radio__input js-radio"
                                         value="question-two"
                                         name="message-query">

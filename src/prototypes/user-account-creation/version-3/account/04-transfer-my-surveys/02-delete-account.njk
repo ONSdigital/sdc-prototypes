@@ -26,7 +26,7 @@ layout: user-account-creation/views/version-3/_master-survey
                             "text": 'Account'
                         },
                         {
-                            "url": '/prototypes/user-account-creation/version-3/04-transfer-my-surveys/index.html',
+                            "url": '/prototypes/user-account-creation/version-3/account/04-transfer-my-surveys/index.html',
                             "text": 'Transfer surveys'
                         },
                         {
@@ -40,7 +40,7 @@ layout: user-account-creation/views/version-3/_master-survey
         </div>
         <div class="grid__col col-8@m u-pt-no">
             <h1>Delete your account</h1>
-            <p>We can delete your account once your surveys have been transferred. It will take up to 24 hours to complete and cannot be reversed.</p>
+            <p>Once your surveys have been transferred we can delete your account. It will take up to 24 hours to complete and cannot be reversed.</p>
             <p class="field">
             {{
                 onsRadios({
@@ -65,11 +65,11 @@ layout: user-account-creation/views/version-3/_master-survey
                 })
             }}
             </p>
-            <p class="field">
-                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-3/04-transfer-my-surveys/02-send-enrolment-codes.html';">
+            <p class="field u-mt-l">
+                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-3/account/04-transfer-my-surveys/02-send-enrolment-codes.html';">
                     <span class="btn__inner">Continue</span>
                 </button>
-                <button type="submit" class="btn btn--secondary" onclick="location.href='{{ pageInfo.rootPath }}/version-3/04-transfer-my-surveys/index.html';">
+                <button type="submit" class="btn btn--secondary" onclick="location.href='{{ pageInfo.rootPath }}/version-3/account/04-transfer-my-surveys/index.html';">
                     <span class="btn__inner">Cancel</span>
                 </button>
             </p>
