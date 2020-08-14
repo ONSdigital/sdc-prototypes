@@ -131,52 +131,76 @@ layout: census-website-engage/views/_master
                         
                         <h2 class="u-fs-xl u-mb-l">Latest resources</h2>
 
-                        <div class="resource u-mb-m">
-
-                            <div class="resource__image" aria-hidden="true">
-                                <a class="resource__image-link" href="{{ pageInfo.rootPath + '/documents/Print-Ready-A4GIP1-2021-v1-0-120620.pdf' }}" tabindex="-1">
-                                    <img height="136" width="96" srcset="{{ pageInfo.rootPath }}/img/census-2021-matters-to-everyone.png 1x, {{ pageInfo.rootPath }}/img/census-2021-matters-to-everyone@2x.png 2x" src="{{ pageInfo.rootPath }}/img/census-2021-matters-to-everyone.png" loading="lazy" alt="Including everyone n Census 2021 document thumbnail">
-                                </a>
-                            </div>
-
-                            <div class="resource__content">
-                                <h3 class="u-fs-m u-mb-xs"><a href="{{ pageInfo.rootPath + '/documents/Print-Ready-A4GIP1-2021-v1-0-120620.pdf' }}">Census 2021 matters to everyone<span class="u-vh">, PDF document download, 866KB, 1 page</span></a></h3>
-                                <span class="u-fs-s u-mb-xs resource__meta" aria-hidden="true">Poster, PDF, 866KB, 1 page</span>  
-                                <p class="u-mb-no">By taking part and encouraging others to do the same, you’ll make sure your community gets the services it needs.</p>  
-                            </div>
-
-                        </div>
-                    
-                        <div class="resource u-mb-m">
-
-                            <div class="resource__image" aria-hidden="true">
-                                <a class="resource__image-link" href="{{ pageInfo.rootPath }}/documents/CHDE1-Community-Handbook-v0.6.pdf" tabindex="-1">
-                                    <img height="136" width="96" srcset="{{ pageInfo.rootPath }}/img/census-2021-community-handbook.png 1x, {{ pageInfo.rootPath }}/img/census-2021-community-handbook@2x.png 2x" src="{{ pageInfo.rootPath }}/img/census-2021-community-handbook.png" loading="lazy" alt="Community handbook for Census 2021 document thumbnail">
-                                </a>
-                            </div>
-
-                            <div class="resource__content">
-                                <h3 class="u-fs-m u-mb-xs"><a href="{{ pageInfo.rootPath }}/documents/CHDE1-Community-Handbook-v0.6.pdf">Community handbook for Census 2021<span class="u-vh">, PDF document download, 3.3MB, 16 pages</span></a></h3>
-                                <span class="u-fs-s u-mb-xs resource__meta" aria-hidden="true">Booklet, PDF, 3.3MB, 16 pages</span>  
-                                <p class="u-mb-no">This handbook explains what the census is, why it matters to everyone and how we can work together to spread the word within your community.</p>  
-                            </div>
-
+                        <div class="u-mb-m">
+                            {{ onsDownloads({
+                                "downloads": [
+                                    {
+                                        "thumbnail": {
+                                            "smallSrc": pageInfo.rootPath + "/img/download-resources/small/",
+                                            "largeSrc": pageInfo.rootPath + "/img/download-resources/large/",
+                                            "filename": "census-2021-matters-to-everyone.png",
+                                            "alt": "Census 2021 matters to everyone document thumbnail"
+                                        },
+                                        "url": pageInfo.rootPath + "/documents/Print-Ready-A4GIP1-2021-v1-0-120620.pdf",                                                
+                                        "title": "Census 2021 matters to everyone",
+                                        "type": "Poster",
+                                        "meta": {
+                                            "fileType": "PDF",
+                                            "fileSize": "866KB",
+                                            "filePages": "1 page"
+                                        },
+                                        "excerpt": "By taking part and encouraging others to do the same, you’ll make sure your community gets the services it needs."
+                                    }
+                                ]
+                            }) }}
                         </div>
 
-                        <div class="resource">
+                        <div class="u-mb-m">
+                            {{ onsDownloads({
+                                "downloads": [
+                                    {
+                                        "thumbnail": {
+                                            "smallSrc": pageInfo.rootPath + "/img/download-resources/small/",
+                                            "largeSrc": pageInfo.rootPath + "/img/download-resources/large/",
+                                            "filename": "including-everyone-in-census-2021-v2.png",
+                                            "alt": "Census 2021 matters to everyone document thumbnail"
+                                        },
+                                        "url": pageInfo.rootPath + "/documents/Print-Ready-A4EB1-2021-v1-0-120620.pdf",                                                
+                                        "title": "Including everyone in Census 2021",
+                                        "type": "Poster",
+                                        "meta": {
+                                            "fileType": "PDF",
+                                            "fileSize": "499KB",
+                                            "filePages": "1 page"
+                                        },
+                                        "excerpt": "Empty belly poster, aimed at advertising census events."
+                                    }
+                                ]
+                            }) }}
+                        </div>
 
-                            <div class="resource__image" aria-hidden="true">
-                                <a class="resource__image-link" href="{{ pageInfo.rootPath }}/documents/Census-Tone-of-Voice-v4-07.pdf" tabindex="-1">
-                                    <img height="136" width="96" srcset="{{ pageInfo.rootPath }}/img/census-2021-tone-of-voice.png 1x, {{ pageInfo.rootPath }}/img/census-2021-tone-of-voice@2x.png 2x" src="{{ pageInfo.rootPath }}/img/census-2021-tone-of-voice.png" alt="Tone of voice for Census 2021 thumbnail preview">
-                                </a>
-                            </div>
-
-                            <div class="resource__content">
-                                <h3 class="u-fs-m u-mb-xs"><a href="{{ pageInfo.rootPath }}/documents/Census-Tone-of-Voice-v4-07.pdf">Tone of voice for Census 2021<span class="u-vh">, PDF document download, 1.1MB, 34 pages</span></a></h3>
-                                <span class="u-fs-s u-mb-xs resource__meta" aria-hidden="true">Booklet, PDF, 1.1MB, 34 pages</span>  
-                                <p class="u-mb-no">A guide to how we write and talk about the census.</p>  
-                            </div>
-
+                        <div>
+                            {{ onsDownloads({
+                                "downloads": [
+                                    {
+                                        "thumbnail": {
+                                            "smallSrc": pageInfo.rootPath + "/img/download-resources/small/",
+                                            "largeSrc": pageInfo.rootPath + "/img/download-resources/large/",
+                                            "filename": "census-2021-brand-guidelines.png",
+                                            "alt": "Tone of voice for Census 2021 thumbnail preview"
+                                        },
+                                        "url": pageInfo.rootPath + "/documents/Census-Tone-of-Voice-v4-07.pdf",                                                
+                                        "title": "Tone of voice for Census 2021",
+                                        "type": "Booklet",
+                                        "meta": {
+                                            "fileType": "PDF",
+                                            "fileSize": "1.1MB",
+                                            "filePages": "34 pages"
+                                        },
+                                        "excerpt": "A guide to how we write and talk about the census."
+                                    }
+                                ]
+                            }) }}
                         </div>
 
                     </div>

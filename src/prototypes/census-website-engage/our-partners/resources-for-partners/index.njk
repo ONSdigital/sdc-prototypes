@@ -69,7 +69,7 @@ layout: census-website-engage/views/_master
                                             <button class="adv-filter__reset js-adv-filter__reset" type="reset">Reset all filters</button>
 
                                             <!-- Filter item -->
-                                            <div class="adv-filter__item js-adv-filter__item" data-default-text="All audience" data-multi-select-text="{n} filters selected">
+                                            <div class="adv-filter__item js-adv-filter__item" data-default-text="All audiences" data-multi-select-text="{n} filters selected">
 
                                                 <fieldset class="fieldset" aria-controls="adv-filter-gallery">
 
@@ -77,39 +77,69 @@ layout: census-website-engage/views/_master
                                                     
                                                     <div class="adv-filter__selection">
                                                         <span class="u-vh">Active filters: </span>
-                                                        <span class="u-fs-s js-adv-filter__selection">All audience</span>
+                                                        <span class="u-fs-s js-adv-filter__selection">All audiences</span>
                                                     </div>
 
-                                                    <div class="checkboxes__items">
-
-                                                        <div class="checkbox checkbox--toggle u-mb-xs">
-                                                            <input class="checkbox__input" id="local-authorities" type="checkbox" data-filter="local-authorities">
-                                                            <label class="checkbox__label" for="local-authorities">Local authorities</label>
-                                                        </div>
-
-                                                        <div class="checkbox checkbox--toggle u-mb-xs">
-                                                            <input class="checkbox__input" id="community-groups" type="checkbox" data-filter="community-groups">
-                                                            <label class="checkbox__label" for="community-groups">Community groups</label>
-                                                        </div>
-
-                                                        <div class="checkbox checkbox--toggle u-mb-xs">
-                                                            <input class="checkbox__input" id="general-public" type="checkbox" data-filter="general-public">
-                                                            <label class="checkbox__label" for="general-public">General public</label>
-                                                        </div>
-
-                                                        <div class="checkbox checkbox--toggle">
-                                                            <input class="checkbox__input" id="recruitment" type="checkbox" data-filter="recruitment">
-                                                            <label class="checkbox__label" for="recruitment">Recruitment</label>
-                                                        </div>
-
-                                                    </div>
+                                                    {{
+                                                        onsCheckboxes({
+                                                            "dontWrap": "true",
+                                                            "legend": "Audience",
+                                                            "name": "audience",
+                                                            "checkboxes": [
+                                                                {
+                                                                    "classes": "checkbox--toggle",
+                                                                    "id": "local-authorities",
+                                                                    "label": {
+                                                                        "text": "Local authorities"
+                                                                    },
+                                                                    "value": "local-authorities",
+                                                                    "attributes": {
+                                                                        "data-filter": "local-authorities"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "classes": "checkbox--toggle",
+                                                                    "id": "community-groups",
+                                                                    "label": {
+                                                                        "text": "Community groups"
+                                                                    },
+                                                                    "value": "community-groups",
+                                                                    "attributes": {
+                                                                        "data-filter": "community-groups"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "classes": "checkbox--toggle",
+                                                                    "id": "general-public",
+                                                                    "label": {
+                                                                        "text": "General public"
+                                                                    },
+                                                                    "value": "general-public",
+                                                                    "attributes": {
+                                                                        "data-filter": "general-public"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "classes": "checkbox--toggle",
+                                                                    "id": "recruitment",
+                                                                    "label": {
+                                                                        "text": "Recruitment"
+                                                                    },
+                                                                    "value": "recruitment",
+                                                                    "attributes": {
+                                                                        "data-filter": "recruitment"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        })
+                                                    }}
 
                                                 </fieldset>
 
                                             </div>
 
                                             <!-- Filter item -->
-                                            <div class="adv-filter__item js-adv-filter__item" data-default-text="All type" data-multi-select-text="{n} filters selected">
+                                            <div class="adv-filter__item js-adv-filter__item" data-default-text="All types" data-multi-select-text="{n} filters selected">
 
                                                 <fieldset class="fieldset" aria-controls="adv-filter-gallery">
 
@@ -117,27 +147,51 @@ layout: census-website-engage/views/_master
                                                     
                                                     <div class="adv-filter__selection">
                                                         <span class="u-vh">Active filters: </span>
-                                                        <span class="u-fs-s js-adv-filter__selection">All type</span>
+                                                        <span class="u-fs-s js-adv-filter__selection">All types</span>
                                                     </div>
 
-                                                    <div class="checkboxes__items">
-
-                                                        <div class="checkbox checkbox--toggle u-mb-xs">
-                                                            <input class="checkbox__input" id="booklet" type="checkbox" data-filter="booklet">
-                                                            <label class="checkbox__label" for="booklet">Booklet</label>
-                                                        </div>
-
-                                                        <div class="checkbox checkbox--toggle u-mb-xs">
-                                                            <input class="checkbox__input" id="logo" type="checkbox" data-filter="logo">
-                                                            <label class="checkbox__label" for="logo">Logo</label>
-                                                        </div>
-
-                                                        <div class="checkbox checkbox--toggle">
-                                                            <input class="checkbox__input" id="poster" type="checkbox" data-filter="poster">
-                                                            <label class="checkbox__label" for="poster">Poster</label>
-                                                        </div>
-
-                                                    </div>
+                                                    {{
+                                                        onsCheckboxes({
+                                                            "dontWrap": "true",
+                                                            "legend": "Audience",
+                                                            "name": "audience",
+                                                            "checkboxes": [
+                                                                {
+                                                                    "classes": "checkbox--toggle",
+                                                                    "id": "booklet",
+                                                                    "label": {
+                                                                        "text": "Booklet"
+                                                                    },
+                                                                    "value": "booklet",
+                                                                    "attributes": {
+                                                                        "data-filter": "booklet"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "classes": "checkbox--toggle",
+                                                                    "id": "logo",
+                                                                    "label": {
+                                                                        "text": "Logo"
+                                                                    },
+                                                                    "value": "logo",
+                                                                    "attributes": {
+                                                                        "data-filter": "logo"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "classes": "checkbox--toggle",
+                                                                    "id": "poster",
+                                                                    "label": {
+                                                                        "text": "Poster"
+                                                                    },
+                                                                    "value": "poster",
+                                                                    "attributes": {
+                                                                        "data-filter": "poster"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        })
+                                                    }}
 
                                                 </fieldset>
 
@@ -155,24 +209,48 @@ layout: census-website-engage/views/_master
                                                         <span class="u-fs-s js-adv-filter__selection">All languages</span>
                                                     </div>
 
-                                                    <div class="checkboxes__items">
-
-                                                        <div class="checkbox checkbox--toggle u-mb-xs">
-                                                            <input class="checkbox__input" id="english" type="checkbox" data-filter="english">
-                                                            <label class="checkbox__label" for="english">English</label>
-                                                        </div>
-
-                                                        <div class="checkbox checkbox--toggle u-mb-xs">
-                                                            <input class="checkbox__input" id="welsh" type="checkbox" data-filter="welsh">
-                                                            <label class="checkbox__label" for="welsh">Welsh (Cymraeg)</label>
-                                                        </div>
-
-                                                        <div class="checkbox checkbox--toggle">
-                                                            <input class="checkbox__input" id="irish" type="checkbox" data-filter="irish">
-                                                            <label class="checkbox__label" for="irish">Irish (Gaeilge)</label>
-                                                        </div>
-
-                                                    </div>
+                                                    {{
+                                                        onsCheckboxes({
+                                                            "dontWrap": "true",
+                                                            "legend": "Audience",
+                                                            "name": "audience",
+                                                            "checkboxes": [
+                                                                {
+                                                                    "classes": "checkbox--toggle",
+                                                                    "id": "english",
+                                                                    "label": {
+                                                                        "text": "English"
+                                                                    },
+                                                                    "value": "english",
+                                                                    "attributes": {
+                                                                        "data-filter": "english"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "classes": "checkbox--toggle",
+                                                                    "id": "welsh",
+                                                                    "label": {
+                                                                        "text": "Welsh (Cymraeg)"
+                                                                    },
+                                                                    "value": "welsh",
+                                                                    "attributes": {
+                                                                        "data-filter": "welsh"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "classes": "checkbox--toggle",
+                                                                    "id": "irish",
+                                                                    "label": {
+                                                                        "text": "Irish (Gaeilge)"
+                                                                    },
+                                                                    "value": "irish",
+                                                                    "attributes": {
+                                                                        "data-filter": "irish"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        })
+                                                    }}
 
                                                 </fieldset>
 
@@ -231,231 +309,270 @@ layout: census-website-engage/views/_master
                                         <!-- Item -->
                                         <li class="filter__item js-filter__item" data-filter="poster english local-authorities community-groups recruitment" data-sort-index="1">
                                         
-                                            <div class="resource">
-
-                                                <div class="resource__image" aria-hidden="true">
-                                                    <a class="resource__image-link" href="{{ pageInfo.rootPath }}/documents/Print-Ready-A4GIP1-2021-v1-0-120620.pdf" tabindex="-1">
-                                                        <img height="136" width="96" srcset="{{ pageInfo.rootPath }}/img/census-2021-matters-to-everyone.png 1x, {{ pageInfo.rootPath }}/img/census-2021-matters-to-everyone@2x.png 2x" src="{{ pageInfo.rootPath }}/img/census-2021-matters-to-everyone.png" loading="lazy" alt="Census 2021 matters to everyone document thumbnail">
-                                                    </a>
-                                                </div>
-
-                                                <div class="resource__content">
-                                                    <h3 class="u-fs-m u-mb-xs"><a href="{{ pageInfo.rootPath }}/documents/Print-Ready-A4GIP1-2021-v1-0-120620.pdf">Census 2021 matters to everyone<span class="u-vh">, PDF document download, 866KB, 1 page</span></a></h3>
-                                                    <span class="u-fs-s u-mb-xs resource__meta" aria-hidden="true">Poster, PDF, 866KB, 1 page</span>  
-                                                    <p class="u-mb-no">By taking part and encouraging others to do the same, you’ll make sure your community gets the services it needs.</p>  
-                                                </div>
-
-                                            </div>
+                                            {{ onsDownloads({
+                                                "downloads": [
+                                                    {
+                                                        "thumbnail": {
+                                                            "smallSrc": pageInfo.rootPath + "/img/download-resources/small/",
+                                                            "largeSrc": pageInfo.rootPath + "/img/download-resources/large/",
+                                                            "filename": "census-2021-matters-to-everyone.png",
+                                                            "alt": "Census 2021 matters to everyone document thumbnail"
+                                                        },
+                                                        "url": pageInfo.rootPath + "/documents/Print-Ready-A4GIP1-2021-v1-0-120620.pdf",                                                
+                                                        "title": "Census 2021 matters to everyone",
+                                                        "type": "Poster",
+                                                        "meta": {
+                                                            "fileType": "PDF",
+                                                            "fileSize": "866KB",
+                                                            "filePages": "1 page"
+                                                        },
+                                                        "excerpt": "By taking part and encouraging others to do the same, you’ll make sure your community gets the services it needs."
+                                                    }
+                                                ]
+                                            }) }}
 
                                         </li>
 
                                         <!-- Item -->
                                         <li class="filter__item js-filter__item" data-filter="poster english local-authorities community-groups recruitment" data-sort-index="2">
                                         
-                                            <div class="resource">
-
-                                                <div class="resource__image" aria-hidden="true">
-                                                    <a class="resource__image-link" href="{{ pageInfo.rootPath }}/documents/Print-Ready-A4EB1-2021-v1-0-120620.pdf" tabindex="-1">
-                                                        <img height="136" width="96" srcset="{{ pageInfo.rootPath }}/img/including-everyone-in-census-2021-v2.png 1x, {{ pageInfo.rootPath }}/img/including-everyone-in-census-2021-v2@2x.png 2x" src="{{ pageInfo.rootPath }}/img/including-everyone-in-census-2021-v2.png" loading="lazy" alt="Including everyone in Census 2021 document thumbnail">
-                                                    </a>
-                                                </div>
-
-                                                <div class="resource__content">
-                                                    <h3 class="u-fs-m u-mb-xs"><a href="{{ pageInfo.rootPath }}/documents/Print-Ready-A4EB1-2021-v1-0-120620.pdf">Including everyone in Census 2021<span class="u-vh">, PDF document download, 499KB, 1 page</span></a></h3>
-                                                    <span class="u-fs-s u-mb-xs resource__meta" aria-hidden="true">Poster, PDF, 499KB, 1 page</span>  
-                                                    <p class="u-mb-no">Empty belly poster, aimed at advertising census events.</p>  
-                                                </div>
-
-                                            </div>
+                                            {{ onsDownloads({
+                                                "downloads": [
+                                                    {
+                                                        "thumbnail": {
+                                                            "smallSrc": pageInfo.rootPath + "/img/download-resources/small/",
+                                                            "largeSrc": pageInfo.rootPath + "/img/download-resources/large/",
+                                                            "filename": "including-everyone-in-census-2021-v2.png",
+                                                            "alt": "Census 2021 matters to everyone document thumbnail"
+                                                        },
+                                                        "url": pageInfo.rootPath + "/documents/Print-Ready-A4EB1-2021-v1-0-120620.pdf",                                                
+                                                        "title": "Including everyone in Census 2021",
+                                                        "type": "Poster",
+                                                        "meta": {
+                                                            "fileType": "PDF",
+                                                            "fileSize": "499KB",
+                                                            "filePages": "1 page"
+                                                        },
+                                                        "excerpt": "Empty belly poster, aimed at advertising census events."
+                                                    }
+                                                ]
+                                            }) }}
 
                                         </li>
 
                                         <!-- Item -->
                                         <li class="filter__item js-filter__item" data-filter="poster english local-authorities community-groups recruitment" data-sort-index="3">
                                         
-                                            <div class="resource">
-
-                                                <div class="resource__image" aria-hidden="true">
-                                                    <a class="resource__image-link" href="{{ pageInfo.rootPath }}/documents/A6PCA1-v1-0-Print-Ready-Pack1.pdf" tabindex="-1">
-                                                        <img height="136" width="96" srcset="{{ pageInfo.rootPath }}/img/including-everyone-in-census-2021.png 1x, {{ pageInfo.rootPath }}/img/including-everyone-in-census-2021@2x.png 2x" src="{{ pageInfo.rootPath }}/img/including-everyone-in-census-2021.png" loading="lazy" alt="Including everyone in Census 2021 document thumbnail">
-                                                    </a>
-                                                </div>
-
-                                                <div class="resource__content">
-                                                    <h3 class="u-fs-m u-mb-xs"><a href="{{ pageInfo.rootPath }}/documents/A6PCA1-v1-0-Print-Ready-Pack1.pdf">Including everyone in Census 2021<span class="u-vh">, PDF document download, 499KB, 1 page</span></a></h3>
-                                                    <span class="u-fs-s u-mb-xs resource__meta" aria-hidden="true">Poster, PDF, 499KB, 1 page</span>  
-                                                    <p class="u-mb-no">Generic poster advertising census 2021.</p>  
-                                                </div>
-
-                                            </div>
+                                            {{ onsDownloads({
+                                                "downloads": [
+                                                    {
+                                                        "thumbnail": {
+                                                            "smallSrc": pageInfo.rootPath + "/img/download-resources/small/",
+                                                            "largeSrc": pageInfo.rootPath + "/img/download-resources/large/",
+                                                            "filename": "including-everyone-in-census-2021.png",
+                                                            "alt": "Census 2021 matters to everyone document thumbnail"
+                                                        },
+                                                        "url": pageInfo.rootPath + "/documents/A6PCA1-v1-0-Print-Ready-Pack1.pdf",                                                
+                                                        "title": "Including everyone in Census 2021",
+                                                        "type": "Poster",
+                                                        "meta": {
+                                                            "fileType": "PDF",
+                                                            "fileSize": "499KB",
+                                                            "filePages": "1 page"
+                                                        },
+                                                        "excerpt": "Generic poster advertising census 2021."
+                                                    }
+                                                ]
+                                            }) }}
 
                                         </li>
 
                                         <!-- Item -->
                                         <li class="filter__item js-filter__item" data-filter="booklet english local-authorities community-groups recruitment" data-sort-index="4">
                                         
-                                            <div class="resource">
-
-                                                <div class="resource__image" aria-hidden="true">
-                                                    <a class="resource__image-link" href="{{ pageInfo.rootPath }}/documents/CHDE1-Community-Handbook-v0.6.pdf" tabindex="-1">
-                                                        <img height="136" width="96" srcset="{{ pageInfo.rootPath }}/img/census-2021-community-handbook.png 1x, {{ pageInfo.rootPath }}/img/census-2021-community-handbook@2x.png 2x" src="{{ pageInfo.rootPath }}/img/census-2021-community-handbook.png" loading="lazy" alt="Community handbook for Census 2021 document thumbnail">
-                                                    </a>
-                                                </div>
-
-                                                <div class="resource__content">
-                                                    <h3 class="u-fs-m u-mb-xs"><a href="{{ pageInfo.rootPath }}/documents/CHDE1-Community-Handbook-v0.6.pdf">Community handbook for Census 2021<span class="u-vh">, PDF document download, 3.3MB, 16 pages</span></a></h3>
-                                                    <span class="u-fs-s u-mb-xs resource__meta" aria-hidden="true">Booklet, PDF, 3.3MB, 16 pages</span>  
-                                                    <p class="u-mb-no">This handbook explains what the census is, why it matters to everyone and how we can work together to spread the word within your community.</p>  
-                                                </div>
-
-                                            </div>
+                                            {{ onsDownloads({
+                                                "downloads": [
+                                                    {
+                                                        "thumbnail": {
+                                                            "smallSrc": pageInfo.rootPath + "/img/download-resources/small/",
+                                                            "largeSrc": pageInfo.rootPath + "/img/download-resources/large/",
+                                                            "filename": "census-2021-community-handbook.png",
+                                                            "alt": "Community handbook for Census 2021 document thumbnail"
+                                                        },
+                                                        "url": pageInfo.rootPath + "/documents/CHDE1-Community-Handbook-v0.6.pdf",                                                
+                                                        "title": "Community handbook for Census 2021",
+                                                        "type": "Booklet",
+                                                        "meta": {
+                                                            "fileType": "PDF",
+                                                            "fileSize": "3.3MB",
+                                                            "filePages": "16 pages"
+                                                        },
+                                                        "excerpt": "This handbook explains what the census is, why it matters to everyone and how we can work together to spread the word within your community."
+                                                    }
+                                                ]
+                                            }) }}
 
                                         </li>
 
                                         <!-- Item -->
                                         <li class="filter__item js-filter__item" data-filter="booklet english local-authorities community-groups recruitment" data-sort-index="5">
                                         
-                                            <div class="resource">
-
-                                                <div class="resource__image" aria-hidden="true">
-                                                    <a class="resource__image-link" href="{{ pageInfo.rootPath }}/documents/ONS-Census-2021-Brand-Guidelines-v3-03.pdf" tabindex="-1">
-                                                        <img height="136" width="96" srcset="{{ pageInfo.rootPath }}/img/census-2021-brand-guidelines.png 1x, {{ pageInfo.rootPath }}/img/census-2021-brand-guidelines@2x.png 2x" src="{{ pageInfo.rootPath }}/img/census-2021-brand-guidelines.png" loading="lazy" alt="Brand guidelines document thumbnail preview">
-                                                    </a>
-                                                </div>
-
-                                                <div class="resource__content">
-                                                    <h3 class="u-fs-m u-mb-xs"><a href="{{ pageInfo.rootPath }}/documents/ONS-Census-2021-Brand-Guidelines-v3-03.pdf">Brand guidelines for Census 2021<span class="u-vh">, PDF document download, 7.4MB, 70 pages</span></a></h3>
-                                                    <span class="u-fs-s u-mb-xs resource__meta" aria-hidden="true">Booklet, PDF, 7.4MB, 70 pages</span>  
-                                                    <p class="u-mb-no">Guidelines to help produce branded communications for the census, which are clear and consistent across print and digital platforms.</p>
-                                                </div>
-
-                                            </div>
+                                            {{ onsDownloads({
+                                                "downloads": [
+                                                    {
+                                                        "thumbnail": {
+                                                            "smallSrc": pageInfo.rootPath + "/img/download-resources/small/",
+                                                            "largeSrc": pageInfo.rootPath + "/img/download-resources/large/",
+                                                            "filename": "census-2021-brand-guidelines.png",
+                                                            "alt": "Brand guidelines document thumbnail preview"
+                                                        },
+                                                        "url": pageInfo.rootPath + "/documents/ONS-Census-2021-Brand-Guidelines-v3-03.pdf",                                                
+                                                        "title": "Brand guidelines for Census 2021",
+                                                        "type": "Booklet",
+                                                        "meta": {
+                                                            "fileType": "PDF",
+                                                            "fileSize": "7.4MB",
+                                                            "filePages": "70 pages"
+                                                        },
+                                                        "excerpt": "Guidelines to help produce branded communications for the census, which are clear and consistent across print and digital platforms."
+                                                    }
+                                                ]
+                                            }) }}
 
                                         </li>
 
                                         <!-- Item -->
                                         <li class="filter__item js-filter__item" data-filter="booklet english local-authorities community-groups recruitment" data-sort-index="6">
 
-                                            <div class="resource">
-                                            
-                                                <div class="resource__image" aria-hidden="true">
-                                                    <a class="resource__image-link" href="{{ pageInfo.rootPath }}/documents/Census-Tone-of-Voice-v4-07.pdf" tabindex="-1">
-                                                        <img height="136" width="96" srcset="{{ pageInfo.rootPath }}/img/census-2021-tone-of-voice.png 1x, {{ pageInfo.rootPath }}/img/census-2021-tone-of-voice@2x.png 2x" src="{{ pageInfo.rootPath }}/img/census-2021-tone-of-voice.png" loading="lazy" alt="Tone of voice for Census 2021 thumbnail preview">
-                                                    </a>
-                                                </div>
-
-                                                <div class="resource__content">
-                                                    <h3 class="u-fs-m u-mb-xs"><a href="{{ pageInfo.rootPath }}/documents/Census-Tone-of-Voice-v4-07.pdf">Tone of voice for Census 2021<span class="u-vh">, PDF document download, 1.1MB, 34 pages</span></a></h3>
-                                                    <span class="u-fs-s u-mb-xs resource__meta" aria-hidden="true">Booklet, PDF, 1.1MB, 34 pages</span>  
-                                                    <p class="u-mb-no">A guide to how we write and talk about the census.</p>  
-                                                </div>
-
-                                            </div>
+                                            {{ onsDownloads({
+                                                "downloads": [
+                                                    {
+                                                        "thumbnail": {
+                                                            "smallSrc": pageInfo.rootPath + "/img/download-resources/small/",
+                                                            "largeSrc": pageInfo.rootPath + "/img/download-resources/large/",
+                                                            "filename": "census-2021-brand-guidelines.png",
+                                                            "alt": "Tone of voice for Census 2021 thumbnail preview"
+                                                        },
+                                                        "url": pageInfo.rootPath + "/documents/Census-Tone-of-Voice-v4-07.pdf",                                                
+                                                        "title": "Tone of voice for Census 2021",
+                                                        "type": "Booklet",
+                                                        "meta": {
+                                                            "fileType": "PDF",
+                                                            "fileSize": "1.1MB",
+                                                            "filePages": "34 pages"
+                                                        },
+                                                        "excerpt": "A guide to how we write and talk about the census."
+                                                    }
+                                                ]
+                                            }) }}
 
                                         </li>
 
                                         <!-- Item -->
                                         <li class="filter__item js-filter__item" data-filter="poster english local-authorities community-groups recruitment" data-sort-index="7">
 
-                                            <div class="resource">
-                                            
-                                                <div class="resource__image" aria-hidden="true">
-                                                    <a class="resource__image-link" href="#0" tabindex="-1">
-                                                        <img height="136" width="96" srcset="{{ pageInfo.rootPath }}/img/placeholder-portrait.png 1x, {{ pageInfo.rootPath }}/img/placeholder-portrait@2x.png 2x" src="{{ pageInfo.rootPath }}/img/placeholder-portrait.png" loading="lazy" alt="Placeholder">
-                                                    </a>
-                                                </div>
-                                            
-                                                <div class="resource__content">
-                                                    <h3 class="u-fs-m u-mb-xs"><a href="#0">Default awareness pop-up stand for graphics for Census 2021<span class="u-vh">, ZIP document download, 12MB, 6 files<span></a></h3>
-                                                    <span class="u-fs-s resource__meta" aria-hidden="true">Poster, ZIP, 12MB, 6 files</span>  
-                                                    <p class="u-mb-no u-mt-xs">Awareness pop-up stand graphics for the initial launch engagement.</p>  
-                                                </div>
-
-                                            </div>
+                                            {{ onsDownloads({
+                                                "downloads": [
+                                                    {
+                                                        "thumbnail": {
+                                                            "smallSrc": pageInfo.rootPath + "/img/download-resources/small/",
+                                                            "largeSrc": pageInfo.rootPath + "/img/download-resources/large/",
+                                                            "filename": "placeholder-portrait.png",
+                                                            "alt": "Placeholder"
+                                                        },
+                                                        "url": "#0",                                                
+                                                        "title": "Default awareness pop-up stand for graphics for Census 2021",
+                                                        "type": "Poster",
+                                                        "meta": {
+                                                            "fileType": "ZIP",
+                                                            "fileSize": "12MB",
+                                                            "filePages": "6 files"
+                                                        },
+                                                        "excerpt": "Awareness pop-up stand graphics for the initial launch engagement."
+                                                    }
+                                                ]
+                                            }) }}
 
                                         </li>
 
                                         <!-- Item -->
                                         <li class="filter__item js-filter__item" data-filter="poster english" data-sort-index="8">
                                             
-                                            <div class="resource">
-
-                                                <div class="resource__image" aria-hidden="true">
-                                                    <a class="resource__image-link" href="#0" tabindex="-1">
-                                                        <img height="136" width="96" srcset="{{ pageInfo.rootPath }}/img/placeholder-portrait.png 1x, {{ pageInfo.rootPath }}/img/placeholder-portrait@2x.png 2x" src="{{ pageInfo.rootPath }}/img/placeholder-portrait.png" loading="lazy" alt="Placeholder">
-                                                    </a>
-                                                </div>
-                                            
-                                                <div class="resource__content">
-                                                    <h3 class="u-fs-m u-mb-xs"><a href="#0">Field officer jobs poster for Census 2021<span class="u-vh">, ZIP document download, 12MB, 6 files</span></a></h3>
-                                                    <span class="u-fs-s u-mb-xs resource__meta" aria-hidden="true">Poster, ZIP, 12MB, 6 files</span>  
-                                                    <p class="u-mb-no">Collection of posters to advertise a field officer job for the census 2021.</p>  
-                                                </div>
-
-                                            </div>
+                                            {{ onsDownloads({
+                                                "downloads": [
+                                                    {
+                                                        "thumbnail": {
+                                                            "smallSrc": pageInfo.rootPath + "/img/download-resources/small/",
+                                                            "largeSrc": pageInfo.rootPath + "/img/download-resources/large/",
+                                                            "filename": "placeholder-portrait.png",
+                                                            "alt": "Placeholder"
+                                                        },
+                                                        "url": "#0",                                                
+                                                        "title": "Field officer jobs poster for Census 2021",
+                                                        "type": "Poster",
+                                                        "meta": {
+                                                            "fileType": "ZIP",
+                                                            "fileSize": "12MB",
+                                                            "filePages": "6 files"
+                                                        },
+                                                        "excerpt": "Collection of posters to advertise a field officer job for the census 2021."
+                                                    }
+                                                ]
+                                            }) }}
 
                                         </li>
 
                                         <!-- Item -->
                                         <li class="filter__item js-filter__item" data-filter="logo english local-authorities community-groups recruitment" data-sort-index="9">
                                             
-                                            <div class="resource">
-                                            
-                                                <div class="resource__image" aria-hidden="true">
-                                                    <a class="resource__image-link" href="#0" tabindex="-1">
-                                                        <img height="136" width="96" srcset="{{ pageInfo.rootPath }}/img/placeholder-portrait.png 1x, {{ pageInfo.rootPath }}/img/placeholder-portrait@2x.png 2x" src="{{ pageInfo.rootPath }}/img/placeholder-portrait.png" loading="lazy" alt="Placeholder">
-                                                    </a>
-                                                </div>
-
-                                                <div class="resource__content">
-                                                    <h3 class="u-fs-m u-mb-xs"><a href="#0">Census 2021 logos pack for print and web<span class="u-vh">, ZIP document download, 5MB, 24 files</span></a></h3>
-                                                    <span class="u-fs-s u-mb-xs resource__meta" aria-hidden="true">Logo, ZIP, 5MB, 24 files</span>  
-                                                    <p class="u-mb-no">A collection of logos suitable for print and web advertising.</p>  
-                                                </div>
-
-                                            </div>
+                                            {{ onsDownloads({
+                                                "downloads": [
+                                                    {
+                                                        "thumbnail": {
+                                                            "smallSrc": pageInfo.rootPath + "/img/download-resources/small/",
+                                                            "largeSrc": pageInfo.rootPath + "/img/download-resources/large/",
+                                                            "filename": "placeholder-portrait.png",
+                                                            "alt": "Placeholder"
+                                                        },
+                                                        "url": "#0",                                                
+                                                        "title": "Census 2021 logos pack for print and web",
+                                                        "type": "Poster",
+                                                        "meta": {
+                                                            "fileType": "Logo",
+                                                            "fileSize": "5MB",
+                                                            "filePages": "24 files"
+                                                        },
+                                                        "excerpt": "A collection of logos suitable for print and web advertising."
+                                                    }
+                                                ]
+                                            }) }}
 
                                         </li>
 
                                         <!-- Item -->
                                         <li class="filter__item js-filter__item" data-filter="poster english" data-sort-index="10">
                                         
-                                            <div class="resource">
-
-                                                <div class="resource__image" aria-hidden="true">
-                                                    <a class="resource__image-link" href="#0" tabindex="-1">
-                                                        <img height="136" width="96" srcset="{{ pageInfo.rootPath }}/img/placeholder-portrait.png 1x, {{ pageInfo.rootPath }}/img/placeholder-portrait@2x.png 2x" src="{{ pageInfo.rootPath }}/img/placeholder-portrait.png" loading="lazy" alt="Placeholder">
-                                                    </a>
-                                                </div>
-                                            
-                                                <div class="resource__content">
-                                                    <h3 class="u-fs-m u-mb-xs"><a href="#0">Default awareness posters for Census 2021<span class="u-vh">, PDF document download, 2MB, 2 pages</span></a></h3>
-                                                    <span class="u-fs-s u-mb-xs resource__meta" aria-hidden="true">Poster, PDF, 2MB, 2 pages</span>  
-                                                    <p class="u-mb-no">Awareness posters for initial launch engagement.</p>  
-                                                </div>
-
-                                            </div>
-
-                                        </li>
-
-                                        <!-- Item -->
-                                        <li class="filter__item js-filter__item" data-filter="booklet english welsh irish local-authorities community-groups recruitment" data-sort-index="11">
-                                        
-                                            <div class="resource">
-
-                                                <div class="resource__image" aria-hidden="true">
-                                                    <a class="resource__image-link" href="#0" tabindex="-1">
-                                                        <img height="136" width="96" srcset="{{ pageInfo.rootPath }}/img/placeholder-portrait.png 1x, {{ pageInfo.rootPath }}/img/placeholder-portrait@2x.png 2x" src="{{ pageInfo.rootPath }}/img/placeholder-portrait.png" loading="lazy" alt="Placeholder">
-                                                    </a>
-                                                </div>
-                                            
-                                                <div class="resource__content">
-                                                    <h3 class="u-fs-m u-mb-xs"><a href="#0">Census 2021 community handbook<span class="u-vh">, PDF document download, 890KB, 24 pages</span></a></h3>
-                                                    <span class="u-fs-s u-mb-xs resource__meta" aria-hidden="true">Booklet, PDF, 890KB, 24 pages</span>  
-                                                    <p class="u-mb-no">A useful community handbook as a guide for the Census 2021.</p>  
-                                                </div>
-
-                                            </div>
+                                            {{ onsDownloads({
+                                                "downloads": [
+                                                    {
+                                                        "thumbnail": {
+                                                            "smallSrc": pageInfo.rootPath + "/img/download-resources/small/",
+                                                            "largeSrc": pageInfo.rootPath + "/img/download-resources/large/",
+                                                            "filename": "placeholder-portrait.png",
+                                                            "alt": "Placeholder"
+                                                        },
+                                                        "url": "#0",                                                
+                                                        "title": "Default awareness posters for Census 2021",
+                                                        "type": "Poster",
+                                                        "meta": {
+                                                            "fileType": "PDF",
+                                                            "fileSize": "2MB",
+                                                            "filePages": "2 pages"
+                                                        },
+                                                        "excerpt": "Awareness posters for initial launch engagement."
+                                                    }
+                                                ]
+                                            }) }}
 
                                         </li>
 
