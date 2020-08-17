@@ -48,14 +48,28 @@ layout: alert-banner-management/views/version-3/_master
                     <div class="radios__items">
                         <p class="radios__item">
                             <span class="radio">
-                                <input type="radio" id="manually" class="radio__input js-radio" value="manually" name="remove-alert">
+                                <input
+                                    type="radio"
+                                    id="manually"
+                                    class="radio__input js-radio"
+                                    value="manually"
+                                    data-action-url="/prototypes/alert-banner-management/version-3/03-schedule-alert-ps-rm.html"
+                                    name="remove-alert">
                                 <label class="radio__label  " for="manually" id="manually-label">I'll remove it manually</label>
                             </span>
                         </p>
                         <br>
                         <div class="radios__item">
                             <span class="radio">
-                                <input type="radio" id="other-remove" class="radio__input js-radio" value="other" name="remove-alert" aria-controls="other-remove-other-wrap" aria-haspopup="true">
+                                <input
+                                    type="radio"
+                                    id="other-remove"
+                                    class="radio__input js-radio"
+                                    value="other"
+                                    name="remove-alert"
+                                    data-action-url="/prototypes/alert-banner-management/version-3/03-schedule-alert-ps-rs.html"
+                                    aria-controls="other-remove-other-wrap"
+                                    aria-haspopup="true">
                                 <label class="radio__label  label--with-description u-pb-xs" aria-describedby="other-remove-label-description-hint" for="other-remove" id="other-remove-label">At a specific moment</label>
                                 <!-- <span id="other-remove-label-description-hint" class="label__description radio__label--with-description">
                                     Any other topping
@@ -92,16 +106,11 @@ layout: alert-banner-management/views/version-3/_master
                         </div>
                     </div>
                 </fieldset>
-            </form>
 
             <p class="field">
-                {{ 
-                    onsButton({
-                        "type": 'button',
-                        "text": 'Continue',
-                        "url": "/prototypes/alert-banner-management/version-3/03-schedule-alert.html"
-                    }) 
-                }}
+                <button type="submit" class="btn">
+                    <span class="btn__inner">Continue</span>
+                </button>
                 {{ 
                     onsButton({
                         "type": 'button',
@@ -111,6 +120,7 @@ layout: alert-banner-management/views/version-3/_master
                     }) 
                 }}
             </p>
+            </form>
         </div>
     </div>
 {% endblock %}

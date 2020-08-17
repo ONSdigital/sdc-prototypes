@@ -39,19 +39,32 @@ layout: alert-banner-management/views/version-3/_master
             <h1>When should the alert be published?</h1>
             <form action="{{ pageInfo.parentPath }}/index.html">
                 <fieldset class="fieldset u-mb-l">
-                    <legend class="fieldset__legend">Choose an option
-                </legend>
+                    <legend class="fieldset__legend">Choose an option</legend>
                     <div class="radios__items">
                         <p class="radios__item">
                             <span class="radio">
-                                <input type="radio" id="immediately" class="radio__input js-radio" value="immediately" name="publish-alert">
+                                <input
+                                    type="radio"
+                                    id="immediately"
+                                    class="radio__input js-radio"
+                                    value="immediately"
+                                    data-action-url="/prototypes/alert-banner-management/version-3/02-remove-alert-publish-immediately.html"
+                                    name="publish-alert">
                                 <label class="radio__label  " for="immediately" id="immediately-label">Immediately</label>
                             </span>
                         </p>
                         <br>
                         <div class="radios__item">
                             <span class="radio">
-                                <input type="radio" id="other-publish" class="radio__input js-radio" value="other" name="publish-alert" aria-controls="other-publish-other-wrap" aria-haspopup="true">
+                                <input
+                                    type="radio"
+                                    id="other-publish"
+                                    class="radio__input js-radio"
+                                    value="other"
+                                    name="publish-alert"
+                                    data-action-url="/prototypes/alert-banner-management/version-3/02-remove-alert-publish-specific-time.html"
+                                    aria-controls="other-publish-other-wrap"
+                                    aria-haspopup="true">
                                 <label class="radio__label  label--with-description u-pb-xs" aria-describedby="other-publish-label-description-hint" for="other-publish" id="other-publish-label">At a specific moment</label>
                                 <!-- <span id="other-publish-label-description-hint" class="label__description radio__label--with-description">
                                     Any other topping
@@ -88,25 +101,21 @@ layout: alert-banner-management/views/version-3/_master
                         </div>
                     </div>
                 </fieldset>
-            </form>
 
-            <p class="field">
-                {{ 
-                    onsButton({
-                        "type": 'button',
-                        "text": 'Continue',
-                        "url": "/prototypes/alert-banner-management/version-3/02-remove-alert.html"
-                    }) 
-                }}
-                {{ 
-                    onsButton({
-                        "type": 'button',
-                        "text": 'Cancel',
-                        "classes": 'btn--secondary btn-group__btn',
-                        "url": "/prototypes/alert-banner-management/version-3/survey-list.html"
-                    }) 
-                }}
-            </p>
+                <p class="field">
+                    <button type="submit" class="btn">
+                        <span class="btn__inner">Continue</span>
+                    </button>
+                    {{ 
+                        onsButton({
+                            "type": 'button',
+                            "text": 'Cancel',
+                            "classes": 'btn--secondary btn-group__btn',
+                            "url": "/prototypes/alert-banner-management/version-3/survey-list.html"
+                        }) 
+                    }}
+                </p>
+            </form>
         </div>
     </div>
 {% endblock %}
