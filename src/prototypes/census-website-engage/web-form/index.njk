@@ -51,6 +51,36 @@ layout: census-website-engage/views/_rh-master
 
                         {{
                             onsRadios({
+                                "legend": 'Select your country',
+                                "name": 'select-your-country',
+                                "radios": [
+                                    {
+                                        "id": 'england',
+                                        "label": {
+                                            "text": 'England'
+                                        },
+                                        "value": 'england'
+                                    },
+                                    {
+                                        "id": 'wales',
+                                        "label": {
+                                            "text": 'Wales'
+                                        },
+                                        "value": 'wales'
+                                    },
+                                    {
+                                        "id": 'northern-ireland',
+                                        "label": {
+                                            "text": 'Northern Ireland'
+                                        },
+                                        "value": 'northern-ireland'
+                                    }
+                                ]
+                            })
+                        }}
+
+                        {{
+                            onsRadios({
                                 "legend": 'What do you need help with?',
                                 "name": 'what-do-you-need-help-with',
                                 "radios": [
@@ -140,7 +170,7 @@ layout: census-website-engage/views/_rh-master
                         {{
                             onsButton({
                                 "text": 'Send message',
-                                "classes": 'u-mb-m u-mt-l'
+                                "classes": 'u-mb-m u-mt-s'
                             })
                         }}
 
