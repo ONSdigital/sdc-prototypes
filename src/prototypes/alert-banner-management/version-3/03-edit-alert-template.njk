@@ -28,7 +28,7 @@ layout: alert-banner-management/views/version-3/_master
                             "text": 'Create an alert'
                         },
                         {
-                            "url": '/prototypes/alert-banner-management/version-3/01-manage-alert-templates.njk',
+                            "url": '/prototypes/alert-banner-management/version-3/01-manage-alert-templates.html',
                             "text": 'Manage message templates'
                         },
                         {
@@ -41,17 +41,15 @@ layout: alert-banner-management/views/version-3/_master
             }}
             <h1>Edit message template</h1>
             <fieldset>
-                <p class="field">
-                    {{
-                        onsInput({
-                            "id": "text",
-                            "value":"Unexpected outage",
-                            "label": {
-                                "text": "Message template title"
-                            }
-                        })
-                    }}
-                </p>
+                {{
+                    onsInput({
+                        "id": "text",
+                        "value":"Unexpected outage",
+                        "label": {
+                            "text": "Message template title"
+                        }
+                    })
+                }}
                 <p class="field">
                     {{
                         onsTextarea({
@@ -68,6 +66,19 @@ layout: alert-banner-management/views/version-3/_master
                         })
                     }}
                 </p>
+            </fieldset>
+
+            <fieldset class="fieldset">
+                <legend class="fieldset__legend u-vh">Delete template</legend>
+                <p class="checkboxes__label u-fw-b">Select to delete this template</p>
+                <div class="checkboxes__items">
+                    <p class="checkboxes__item">
+                    <span class="checkbox ">
+                        <input type="checkbox" id="Delete" class="checkbox__input js-checkbox " value="Delete">
+                        <label class="checkbox__label  " for="Delete" id="Delete-label">Delete template</label>
+                    </span>
+                    </p>
+                </div>
             </fieldset>
 
             <p class="field">
