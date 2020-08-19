@@ -28,15 +28,20 @@ layout: census-support/views/_master
                     {
                         "id": "online",
                         "label": {
-                            "text": "Online"                        },
+                            "text": "Online"
+                        },
+                        "name": "online",
+                        "attributes": {
+                            "data-action-url": pageInfo.parentPath + "/what-is-your-address-online.html"
+                        },
                         "value": "online"
                     },
                     {
-                        "id": "on paper",
+                        "id": "paper",
                         "label": {
                             "text": "On paper"
                         },
-                        "value": "on paper"
+                        "value": "paper"
                     }
                 ]
             })
@@ -47,5 +52,17 @@ layout: census-support/views/_master
         "text": "Continue",
         "classes": "u-mt-xl u-mb-xl"
     }) }}
+
+                        {
+                        "id": "other",
+                        "label": {
+                            "text": "Any other White ethnic group or background ",
+                            "description": "You can enter this on the next question"
+                        },
+                        "name": "other",
+                        "attributes": {
+                            "data-action-url": pageInfo.parentPath + "/ethnic-group-white-other.html"
+                        }
+                    }
 
 {% endblock %}

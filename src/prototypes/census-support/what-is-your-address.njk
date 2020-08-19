@@ -1,10 +1,10 @@
 ---
-version: 20.0.0
+version: 21.1.0
 layout: census-support/views/_master
 ---
 {% from "components/question/_macro.njk" import onsQuestion %}
 {% from "components/button/_macro.njk" import onsButton %}
-{% from "census-support/components/input/_macro.njk" import onsInput %}
+{% from "components/input/_macro.njk" import onsInput %}
 {% from "components/panel/_macro.njk" import onsPanel %}
 
 {% set form =  {
@@ -23,10 +23,10 @@ layout: census-support/views/_master
         "title": "What is your address?"
     }) %}
     <p>To start your census, we need your address</p>
-    <div class="grid grid--gutterless">
-        <div class="grid__col col-8@m js-address-autosuggest">
+    <div class="js-address-autosuggest">
         {{ onsInput({
             "id": "address-lookup",
+            "classes": "input--w-30",
             "label": {
                 "text": "Enter your address or postcode and select from results",
                 "classes": "js-autosuggest-label"
@@ -53,9 +53,8 @@ layout: census-support/views/_master
                 "errorMessageAPI": "Sorry, there was a problem loading addresses. We are working to fix the problem. Please try again later."
             }
         }) }}
-        </div>
     </div>
-    <p><a href="{{ pageInfo.rootPath }}/enter-your-address.html">I can&rsquo;t find my address</a></p>
+    <p class="u-mb-no"><a href="{{ pageInfo.rootPath }}/enter-your-address.html">I can&rsquo;t find my address</a></p>
     {{ onsButton({
         "text": "Continue",
         "classes": "u-mt-xl u-mb-xl"
