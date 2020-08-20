@@ -172,89 +172,24 @@ layout: onboard-survey/views/_master
                 }}
             </form>
         </p>
-        <h4 class="u-mt-l u-bb">Collection instruments</a>
-    </h4>
-    {{
-    onsCheckboxes({
-            "name": "collection-instruments",
-            "checkboxes": [
-                {
-                    "id": "001_0873_eQ",
-                    "label": {
-                        "text": "001 0873"
-                    },
-                    "value": "001_0873_eQ"
-                },
-                {
-                    "id": "001_0867_eQ",
-                    "label": {
-                        "text": "001 0867"
-                    },
-                    "value": "001_0867_eQ"
-                },
-                {
-                    "id": "001_0255_eQ",
-                    "label": {
-                        "text": "001 0255"
-                    },
-                    "value": "001_0255_eQ"
-                },
-                {
-                    "id": "001_0243_eQ",
-                    "label": {
-                        "text": "001 0243"
-                    },
-                    "value": "001_0243_eQ"
-                },
-                {
-                    "id": "001_0251_eQ",
-                    "label": {
-                        "text": "001 0251"
-                    },
-                    "value": "001_0251_eQ"
-                },
-                {
-                    "id": "001_0868_eQ",
-                    "label": {
-                        "text": "001 0867"
-                    },
-                    "value": "001_0867_eQ"
-                },
-                {
-                    "id": "001_0275_eQ",
-                    "label": {
-                        "text": "001 0255"
-                    },
-                    "value": "001_0255_eQ"
-                },
-                {
-                    "id": "001_0276_eQ",
-                    "label": {
-                        "text": "001 0243"
-                    },
-                    "value": "001_0243_eQ"
-                },
-                {
-                    "id": "001_0238_eQ",
-                    "label": {
-                        "text": "001 0251"
-                    },
-                    "value": "001_0251_eQ"
-                }
-            ]
-        })
-    }}
-    <p class="field">
-        <form action="" method="get">
-            {{ 
-                onsButton({
-                    "text": 'Add collection instruments',
-                    "url": '',
-                    "classes": ''
-                }) 
-            }}
-        </form>
-    </p>
+        <table class="table  table--sortable" data-aria-sort="Sort by" data-aria-asc="ascending" data-aria-desc="descending">
+            <thead class="table__head">
+                <tr class="table__row">
+                    <th scope="col" class="table__header">Collection instruments</th>
+                </tr>
+            </thead>
+            <tbody class="table__body">
+                <tr class="table__row">
+                    <td class="table__cell " name="tbl-ci-id" data-th="ID">001_0255.xlsx</td>
+                </tr>
+                <tr class="table__row">
+                    <td class="table__cell " name="tbl-ci-id" data-th="ID">001_0873.xlsx</td>
+                </tr>
+                <tr class="table__row">
+                    <td class="table__cell " name="tbl-ci-id" data-th="ID">001_0867.xlsx</td>
+                </tr>
+            </tbody>
+        </table>
     <p class="field">
         <form action="" method="get">
             {{ 
