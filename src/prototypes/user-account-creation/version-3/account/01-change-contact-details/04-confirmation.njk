@@ -25,16 +25,20 @@ layout: user-account-creation/views/version-3/_master-survey
                             "text": 'Account'
                         },
                         {
-                            "url": '/prototypes/user-account-creation/version-3/account/01-change-account-details/01-change-details.html',
-                            "text": 'Change your account details'
+                            "url": '/prototypes/user-account-creation/version-3/account/01-change-contact-details/01-change-contact-details.html',
+                            "text": 'Change your contact details'
                         },
                         {
-                            "url": '/prototypes/user-account-creation/version-3/account/01-change-account-details/02-change-email-address.html',
+                            "url": '/prototypes/user-account-creation/version-3/account/01-change-contact-details/02-change-email-address.html',
                             "text": 'Change email address'
                         },
                         {
+                            "url": '/prototypes/user-account-creation/version-3/account/01-change-contact-details/03-send-confirmation.html',
+                            "text": 'Send confirmation email'
+                        },
+                        {
                             "url": '/',
-                            "text": 'Send confirmation email',
+                            "text": 'Confirmation',
                             "current": true
                         }
                     ]
@@ -42,15 +46,14 @@ layout: user-account-creation/views/version-3/_master-survey
             }}
         </div>
         <div class="grid__col col-8@m u-pt-no">
-            <h1>Send confirmation email</h1>
-            <p>We will send confirmation <b>jane.doe@acme.com</b>.</p>
-
+            <h1>Almost done</h1>
+            <p>We’ve sent an email to your new email address</p>
+            <p>Once you have received it, you need to follow the link in the email to confirm and finish setting up your new account</p>
+            <p>Email not arrived? It might be in your spam folder.</p>
+            <p>If it doesn’t arrive in the next 15 minutes, please call 0300 1234 931</p>
             <p class="field">
-                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-3/account/01-change-account-details/04-confirmation.html';">
-                    <span class="btn__inner">Send</span>
-                </button>
-                <button type="submit" class="btn btn--secondary" onclick="location.href='{{ pageInfo.rootPath }}/version-3/account/01-change-account-details/01-change-details.html';">
-                    <span class="btn__inner">Cancel</span>
+                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-3/00-surveys-list-new.html';">
+                    <span class="btn__inner">Back to surveys</span>
                 </button>
             </p>
         </div>

@@ -2,7 +2,7 @@
 group: Frontstage
 title: User account creation
 version: 20.0.3
-layout: user-account-creation/views/version-3/_master-survey
+layout: SM-categorisation/views/version-4/_master-survey
 ---
 
 {% from "components/input/_macro.njk" import onsInput %}
@@ -17,16 +17,16 @@ layout: user-account-creation/views/version-3/_master-survey
                     "ariaLabel": 'Breadcrumb',
                     "itemsList": [
                         {
-                            "url": '/prototypes/user-account-creation/version-3/00-surveys-list.html',
+                            "url": '/prototypes/SM-categorisation/version-4/00-surveys-list.html',
                             "text": 'Surveys'
                         },
                         {
-                            "url": '/prototypes/user-account-creation/version-3/30-my-account.html',
+                            "url": '/prototypes/SM-categorisation/version-4/30-my-account.html',
                             "text": 'Account'
                         },
                         {
                             "url": '/',
-                            "text": 'Change your account details',
+                            "text": 'Change your contact details',
                             "current": true
                         }
                     ]
@@ -34,7 +34,7 @@ layout: user-account-creation/views/version-3/_master-survey
             }}
         </div>
         <div class="grid__col col-8@m u-pt-no">
-            <h1>Change your account details</h1>
+            <h1>Change your contact details</h1>
             <!--
             <p>You'll need to:</p>
             <ol>
@@ -103,10 +103,10 @@ layout: user-account-creation/views/version-3/_master-survey
             </div>
 
             <p class="field">
-                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-3/account/01-change-account-details/02-change-email-address.html';">
+                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-4/account/01-change-contact-details/02-change-email-address.html';">
                     <span class="btn__inner">Save</span>
                 </button>
-                <button type="submit" class="btn btn--secondary" onclick="location.href='{{ pageInfo.rootPath }}/version-3/30-my-account.html';">
+                <button type="submit" class="btn btn--secondary" onclick="location.href='{{ pageInfo.rootPath }}/version-4/30-my-account.html';">
                     <span class="btn__inner">Cancel</span>
                 </button>
             </p>

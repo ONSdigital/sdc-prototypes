@@ -11,6 +11,17 @@ layout: SM-categorisation/views/_index
 
     <div class="grid">
         <div class="grid__col col-8@m">
+            <h2>Version 4</h2>
+            {{ 
+                onsButton({
+                    "type": 'button',
+                    "text": 'Start',
+                    "classes": 'btn--small u-mb-s',
+                    "url": "/prototypes/SM-categorisation/version-4/00-surveys-list.html"
+                }) 
+            }}
+            <p>Merged updated <a href="/prototypes/user-account-creation/index.html">User account creation</a></p>
+
             <h2>Version 3</h2>
             {{ 
                 onsButton({
@@ -20,10 +31,8 @@ layout: SM-categorisation/views/_index
                     "url": "/prototypes/SM-categorisation/version-3/00-surveys-list.html"
                 }) 
             }}
-            <p>Updated design system (to 20.0.3)</a>
-            </p>
-            <p>Merged updated <a href="/prototypes/user-account-creation/index.html">user-account-creation</a>
-            </p>
+            <p>Updated design system (to 20.0.3)</p>
+            <p>Merged updated <a href="/prototypes/user-account-creation/index.html">User account creation</a></p>
             <ul>
                 <li>Routing content and conupdates</li>
                 <li>Added <a href="{{ pageInfo.rootPath }}/version-3/00-internal/10-secure-messages.html">Internal secure messages</a>
