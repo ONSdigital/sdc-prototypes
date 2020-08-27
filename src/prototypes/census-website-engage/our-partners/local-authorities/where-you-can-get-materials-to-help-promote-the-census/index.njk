@@ -1,5 +1,5 @@
 ---
-title: Local authorities
+title: Where you can get materials to help promote the census
 group: Census
 version: 23.0.0
 layout: census-website-engage/views/_master
@@ -22,6 +22,10 @@ layout: census-website-engage/views/_master
                         {
                             "url": pageInfo.rootPath + '/our-partners',
                             "text": 'Our partners'
+                        },
+                        {
+                            "url": pageInfo.rootPath + '/our-partners/local-authorities',
+                            "text": 'Local authorities'
                         }
                     ]
                 })
@@ -36,7 +40,7 @@ layout: census-website-engage/views/_master
                         <h1 class="u-mb-l">
                             <span class="u-fs-m u-db u-mb-xs u-lighter">Local authorities</span>
                             <span class="u-vh">: </span>
-                            <span class="u-fs-xxl u-db">Overview</span>
+                            <span class="u-fs-xxl u-db">Where you can get materials to help promote the census</span>
                         </h1>
 
                         {{-
@@ -45,11 +49,11 @@ layout: census-website-engage/views/_master
                                 "ariaLabel": 'Pages in this guide',
                                 "itemsList": [
                                     {
-                                        "text": 'Overview',
-                                        "current": true
+                                        "url": pageInfo.rootPath + '/our-partners/local-authorities',
+                                        "text": 'Overview'
                                     },
                                     {
-                                        "url": pageInfo.rootPath + '/our-partners/local-authorities/important-dates-for-local-authorities',
+                                        "url": pageInfo.rootPath + '/our-partners/local-authorities/how-you-can-prepare-for-2021',
                                         "text": 'Important dates for local authorities'
                                     },
                                     {
@@ -61,8 +65,8 @@ layout: census-website-engage/views/_master
                                         "text": 'What you can do now'
                                     },
                                     {
-                                        "url": pageInfo.rootPath + '/our-partners/local-authorities/where-you-can-get-materials-to-help-promote-the-census',
-                                        "text": 'Where you can get materials to help promote the census'
+                                        "text": 'Where you can get materials to help promote the census',
+                                        "current": true
                                     },
                                     {
                                         "url": pageInfo.rootPath + '/our-partners/local-authorities/who-you-can-contact-at-ons-for-support',
@@ -73,21 +77,37 @@ layout: census-website-engage/views/_master
                         }}
 
                         <div class="page__body">
-                            
-                            <p>Just as census statistics may well be vital to you, your support is vital to us. By working together, we can make sure Census 2021 gets a great response and represents everyone.</p>
 
-                            <p><a href="mailto:2021Census.LA.Liaison@ons.gov.uk">Please email our Local Authority Partnerships team</a></p>
+                            <p><a href="#0">Visit our materials page, where you can download promotional and guidance leaflets</a></p>
+
+                            <p>Closer to Census 2021, we’ll be publishing a wider selection of census-related materials on this website. You’ll be able to use these for things like:</p>
+
+                            <ul>
+                                <li>informing your local authority staff about the census</li>
+                                <li>answering questions from residents</li>
+                                <li>spreading the word locally to organisations like parish councils and community groups</li>
+                            </ul>
+
+                            <p>We’ll include things like census factsheets and ready-made articles that can be used on your website and by local community organisations.</p>
+
+                            <p>You’ll be able to download, print and use these materials as you need to. Please keep checking, as we’ll add more as the census gets closer.</p>
 
                             <div class="u-mt-xl">
                                 {{-
                                     onsContentPagination({
                                         "contentPaginationItems": [
-                                        {
-                                            "rel": 'next',
-                                            "text": 'Next',
-                                            "url": pageInfo.rootPath + '/our-partners/local-authorities/important-dates-for-local-authorities',
-                                            "label": 'Important dates for local authorities'
-                                        }
+                                            {
+                                                "rel": 'prev',
+                                                "text": 'Previous',
+                                                "url": pageInfo.rootPath + '/our-partners/local-authorities/what-you-can-do-now',
+                                                "label": 'What you can do now'
+                                            },
+                                            {
+                                                "rel": 'next',
+                                                "text": 'Next',
+                                                "url": pageInfo.rootPath + '/our-partners/local-authorities/who-you-can-contact-at-ons-for-support',
+                                                "label": 'Who you can contact at ONS for support'
+                                            }
                                         ]
                                     })
                                 }}

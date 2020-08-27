@@ -1,5 +1,5 @@
 ---
-title: Local authorities
+title: How you can prepare for 2021
 group: Census
 version: 23.0.0
 layout: census-website-engage/views/_master
@@ -22,6 +22,10 @@ layout: census-website-engage/views/_master
                         {
                             "url": pageInfo.rootPath + '/our-partners',
                             "text": 'Our partners'
+                        },
+                        {
+                            "url": pageInfo.rootPath + '/our-partners/local-authorities',
+                            "text": 'Local authorities'
                         }
                     ]
                 })
@@ -36,7 +40,7 @@ layout: census-website-engage/views/_master
                         <h1 class="u-mb-l">
                             <span class="u-fs-m u-db u-mb-xs u-lighter">Local authorities</span>
                             <span class="u-vh">: </span>
-                            <span class="u-fs-xxl u-db">Overview</span>
+                            <span class="u-fs-xxl u-db">How you can prepare for 2021</span>
                         </h1>
 
                         {{-
@@ -45,16 +49,16 @@ layout: census-website-engage/views/_master
                                 "ariaLabel": 'Pages in this guide',
                                 "itemsList": [
                                     {
-                                        "text": 'Overview',
-                                        "current": true
+                                        "url": pageInfo.rootPath + '/our-partners/local-authorities',
+                                        "text": 'Overview'
                                     },
                                     {
                                         "url": pageInfo.rootPath + '/our-partners/local-authorities/important-dates-for-local-authorities',
                                         "text": 'Important dates for local authorities'
                                     },
                                     {
-                                        "url": pageInfo.rootPath + '/our-partners/local-authorities/how-you-can-prepare-for-2021',
-                                        "text": 'How you can prepare for 2021'
+                                        "text": 'How you can prepare for 2021',
+                                        "current": true
                                     },
                                     {
                                         "url": pageInfo.rootPath + '/our-partners/local-authorities/what-you-can-do-now',
@@ -73,21 +77,27 @@ layout: census-website-engage/views/_master
                         }}
 
                         <div class="page__body">
-                            
-                            <p>Just as census statistics may well be vital to you, your support is vital to us. By working together, we can make sure Census 2021 gets a great response and represents everyone.</p>
 
-                            <p><a href="mailto:2021Census.LA.Liaison@ons.gov.uk">Please email our Local Authority Partnerships team</a></p>
+                            <p>There are lots of things your local authority can do to help, both now and around the time of the census.</p>
+
+                            <p>We’ve developed our activity based on feedback from local authorities on what worked well for the 2011 Census. We’ve added new activities to support the digital-first focus for 2021 and to maximise use of census data.</p>
 
                             <div class="u-mt-xl">
                                 {{-
                                     onsContentPagination({
                                         "contentPaginationItems": [
-                                        {
-                                            "rel": 'next',
-                                            "text": 'Next',
-                                            "url": pageInfo.rootPath + '/our-partners/local-authorities/important-dates-for-local-authorities',
-                                            "label": 'Important dates for local authorities'
-                                        }
+                                            {
+                                                "rel": 'prev',
+                                                "text": 'Previous',
+                                                "url": pageInfo.rootPath + '/our-partners/local-authorities/important-dates-for-local-authorities',
+                                                "label": 'Important dates for local authorities'
+                                            },
+                                            {
+                                                "rel": 'next',
+                                                "text": 'Next',
+                                                "url": pageInfo.rootPath + '/our-partners/local-authorities/what-you-can-do-now',
+                                                "label": 'What you can do now'
+                                            }
                                         ]
                                     })
                                 }}
