@@ -107,28 +107,6 @@ layout: census-website-engage/views/_master
                                                                     "attributes": {
                                                                         "data-filter": 'community-groups'
                                                                     }
-                                                                },
-                                                                {
-                                                                    "classes": 'checkbox--toggle',
-                                                                    "id": 'general-public',
-                                                                    "label": {
-                                                                        "text": 'General public'
-                                                                    },
-                                                                    "value": 'general-public',
-                                                                    "attributes": {
-                                                                        "data-filter": 'general-public'
-                                                                    }
-                                                                },
-                                                                {
-                                                                    "classes": 'checkbox--toggle',
-                                                                    "id": 'recruitment',
-                                                                    "label": {
-                                                                        "text": 'Recruitment'
-                                                                    },
-                                                                    "value": 'recruitment',
-                                                                    "attributes": {
-                                                                        "data-filter": 'recruitment'
-                                                                    }
                                                                 }
                                                             ]
                                                         })
@@ -169,24 +147,24 @@ layout: census-website-engage/views/_master
                                                                 },
                                                                 {
                                                                     "classes": 'checkbox--toggle',
-                                                                    "id": 'logo',
+                                                                    "id": 'leaflet',
                                                                     "label": {
-                                                                        "text": 'Logo'
+                                                                        "text": 'Leaflet'
                                                                     },
-                                                                    "value": 'logo',
+                                                                    "value": 'leaflet',
                                                                     "attributes": {
-                                                                        "data-filter": 'logo'
+                                                                        "data-filter": 'leaflet'
                                                                     }
                                                                 },
                                                                 {
                                                                     "classes": 'checkbox--toggle',
-                                                                    "id": 'poster',
+                                                                    "id": 'presentation',
                                                                     "label": {
-                                                                        "text": 'Poster'
+                                                                        "text": 'Presentation'
                                                                     },
-                                                                    "value": 'poster',
+                                                                    "value": 'presentation',
                                                                     "attributes": {
-                                                                        "data-filter": 'poster'
+                                                                        "data-filter": 'presentation'
                                                                     }
                                                                 }
                                                             ]
@@ -278,7 +256,7 @@ layout: census-website-engage/views/_master
 
                                         <!-- Result count -->
                                         <div class="adv-filter__results-count">
-                                            <span class="js-adv-filter__results-count">11</span> results of 150
+                                            <span class="js-adv-filter__results-count">11</span> results of 12
                                         </div>
 
                                         <!-- Sort by -->
@@ -296,7 +274,7 @@ layout: census-website-engage/views/_master
                                     <ul class="adv-filter__gallery js-adv-filter__gallery" id="adv-filter-gallery" data-filter-animation="off">
 
                                         <!-- Item -->
-                                        <li class="filter__item js-filter__item" data-filter="poster english local-authorities community-groups recruitment" data-sort-index="1">
+                                        <li class="filter__item js-filter__item" data-filter="leaflet english local-authorities community-groups" data-sort-index="1">
                                         
                                             {{ onsDownloads({
                                                 "downloads": [
@@ -304,261 +282,315 @@ layout: census-website-engage/views/_master
                                                         "thumbnail": {
                                                             "smallSrc": pageInfo.rootPath + '/img/small/',
                                                             "largeSrc": pageInfo.rootPath + '/img/large/',
-                                                            "filename": 'census-2021-matters-to-everyone.png',
-                                                            "alt": 'Census 2021 matters to everyone document thumbnail'
+                                                            "filename": 'engagement-leaflet-english.png',
+                                                            "alt": 'Engagement leaflet english document thumbnail'
                                                         },
-                                                        "url": pageInfo.rootPath + '/documents/Print-Ready-A4GIP1-2021-v1-0-120620.pdf',                                                
-                                                        "title": 'Census 2021 matters to everyone',
-                                                        "type": 'Poster',
+                                                        "url": pageInfo.rootPath + '/documents/Digital_Ready_ELA1-2021_v7-0_280820.pdf',                                                
+                                                        "title": 'Engagement leaflet (English)',
+                                                        "type": 'Leaflet',
                                                         "meta": {
                                                             "fileType": 'PDF',
-                                                            "fileSize": '866KB',
-                                                            "filePages": '1 page'
-                                                        },
-                                                        "excerpt": 'By taking part and encouraging others to do the same, you’ll make sure your community gets the services it needs.'
-                                                    }
-                                                ]
-                                            }) }}
-
-                                        </li>
-
-                                        <!-- Item -->
-                                        <li class="filter__item js-filter__item" data-filter="poster english local-authorities community-groups recruitment" data-sort-index="2">
-                                        
-                                            {{ onsDownloads({
-                                                "downloads": [
-                                                    {
-                                                        "thumbnail": {
-                                                            "smallSrc": pageInfo.rootPath + '/img/small/',
-                                                            "largeSrc": pageInfo.rootPath + '/img/large/',
-                                                            "filename": 'including-everyone-in-census-2021-v2.png',
-                                                            "alt": 'Census 2021 matters to everyone document thumbnail'
-                                                        },
-                                                        "url": pageInfo.rootPath + '/documents/Print-Ready-A4EB1-2021-v1-0-120620.pdf',                                                
-                                                        "title": 'Including everyone in Census 2021',
-                                                        "type": 'Poster',
-                                                        "meta": {
-                                                            "fileType": 'PDF',
-                                                            "fileSize": '499KB',
-                                                            "filePages": '1 page'
-                                                        },
-                                                        "excerpt": 'Empty belly poster, aimed at advertising census events.'
-                                                    }
-                                                ]
-                                            }) }}
-
-                                        </li>
-
-                                        <!-- Item -->
-                                        <li class="filter__item js-filter__item" data-filter="poster english local-authorities community-groups recruitment" data-sort-index="3">
-                                        
-                                            {{ onsDownloads({
-                                                "downloads": [
-                                                    {
-                                                        "thumbnail": {
-                                                            "smallSrc": pageInfo.rootPath + '/img/small/',
-                                                            "largeSrc": pageInfo.rootPath + '/img/large/',
-                                                            "filename": 'including-everyone-in-census-2021.png',
-                                                            "alt": 'Census 2021 matters to everyone document thumbnail'
-                                                        },
-                                                        "url": pageInfo.rootPath + '/documents/A6PCA1-v1-0-Print-Ready-Pack1.pdf',                                                
-                                                        "title": 'Including everyone in Census 2021',
-                                                        "type": 'Poster',
-                                                        "meta": {
-                                                            "fileType": 'PDF',
-                                                            "fileSize": '499KB',
-                                                            "filePages": '1 page'
-                                                        },
-                                                        "excerpt": 'Generic poster advertising census 2021.'
-                                                    }
-                                                ]
-                                            }) }}
-
-                                        </li>
-
-                                        <!-- Item -->
-                                        <li class="filter__item js-filter__item" data-filter="booklet english local-authorities community-groups recruitment" data-sort-index="4">
-                                        
-                                            {{ onsDownloads({
-                                                "downloads": [
-                                                    {
-                                                        "thumbnail": {
-                                                            "smallSrc": pageInfo.rootPath + '/img/small/',
-                                                            "largeSrc": pageInfo.rootPath + '/img/large/',
-                                                            "filename": 'census-2021-community-handbook.png',
-                                                            "alt": 'Community handbook for Census 2021 document thumbnail'
-                                                        },
-                                                        "url": pageInfo.rootPath + '/documents/CHDE1-Community-Handbook-v0.6.pdf',                                                
-                                                        "title": 'Community handbook for Census 2021',
-                                                        "type": 'Booklet',
-                                                        "meta": {
-                                                            "fileType": 'PDF',
-                                                            "fileSize": '3.3MB',
-                                                            "filePages": '16 pages'
-                                                        },
-                                                        "excerpt": 'This handbook explains what the census is, why it matters to everyone and how we can work together to spread the word within your community.'
-                                                    }
-                                                ]
-                                            }) }}
-
-                                        </li>
-
-                                        <!-- Item -->
-                                        <li class="filter__item js-filter__item" data-filter="booklet english local-authorities community-groups recruitment" data-sort-index="5">
-                                        
-                                            {{ onsDownloads({
-                                                "downloads": [
-                                                    {
-                                                        "thumbnail": {
-                                                            "smallSrc": pageInfo.rootPath + '/img/small/',
-                                                            "largeSrc": pageInfo.rootPath + '/img/large/',
-                                                            "filename": 'census-2021-brand-guidelines.png',
-                                                            "alt": 'Brand guidelines document thumbnail preview'
-                                                        },
-                                                        "url": pageInfo.rootPath + '/documents/ONS-Census-2021-Brand-Guidelines-v3-03.pdf',                                                
-                                                        "title": 'Brand guidelines for Census 2021',
-                                                        "type": 'Booklet',
-                                                        "meta": {
-                                                            "fileType": 'PDF',
-                                                            "fileSize": '7.4MB',
-                                                            "filePages": '70 pages'
-                                                        },
-                                                        "excerpt": 'Guidelines to help produce branded communications for the census, which are clear and consistent across print and digital platforms.'
-                                                    }
-                                                ]
-                                            }) }}
-
-                                        </li>
-
-                                        <!-- Item -->
-                                        <li class="filter__item js-filter__item" data-filter="booklet english local-authorities community-groups recruitment" data-sort-index="6">
-
-                                            {{ onsDownloads({
-                                                "downloads": [
-                                                    {
-                                                        "thumbnail": {
-                                                            "smallSrc": pageInfo.rootPath + '/img/small/',
-                                                            "largeSrc": pageInfo.rootPath + '/img/large/',
-                                                            "filename": 'census-2021-brand-guidelines.png',
-                                                            "alt": 'Tone of voice for Census 2021 thumbnail preview'
-                                                        },
-                                                        "url": pageInfo.rootPath + '/documents/Census-Tone-of-Voice-v4-07.pdf',                                                
-                                                        "title": 'Tone of voice for Census 2021',
-                                                        "type": 'Booklet',
-                                                        "meta": {
-                                                            "fileType": 'PDF',
-                                                            "fileSize": '1.1MB',
-                                                            "filePages": '34 pages'
-                                                        },
-                                                        "excerpt": 'A guide to how we write and talk about the census.'
-                                                    }
-                                                ]
-                                            }) }}
-
-                                        </li>
-
-                                        <!-- Item -->
-                                        <li class="filter__item js-filter__item" data-filter="poster english local-authorities community-groups recruitment" data-sort-index="7">
-
-                                            {{ onsDownloads({
-                                                "downloads": [
-                                                    {
-                                                        "thumbnail": {
-                                                            "smallSrc": pageInfo.rootPath + '/img/small/',
-                                                            "largeSrc": pageInfo.rootPath + '/img/large/',
-                                                            "filename": 'placeholder-portrait.png',
-                                                            "alt": 'Placeholder'
-                                                        },
-                                                        "url": '#0',                                                
-                                                        "title": 'Default awareness pop-up stand for graphics for Census 2021',
-                                                        "type": 'Poster',
-                                                        "meta": {
-                                                            "fileType": 'ZIP',
-                                                            "fileSize": '12MB',
-                                                            "filePages": '6 files'
-                                                        },
-                                                        "excerpt": 'Awareness pop-up stand graphics for the initial launch engagement.'
-                                                    }
-                                                ]
-                                            }) }}
-
-                                        </li>
-
-                                        <!-- Item -->
-                                        <li class="filter__item js-filter__item" data-filter="poster english" data-sort-index="8">
-                                            
-                                            {{ onsDownloads({
-                                                "downloads": [
-                                                    {
-                                                        "thumbnail": {
-                                                            "smallSrc": pageInfo.rootPath + '/img/small/',
-                                                            "largeSrc": pageInfo.rootPath + '/img/large/',
-                                                            "filename": 'placeholder-portrait.png',
-                                                            "alt": 'Placeholder'
-                                                        },
-                                                        "url": '#0',                                                
-                                                        "title": 'Field officer jobs poster for Census 2021',
-                                                        "type": 'Poster',
-                                                        "meta": {
-                                                            "fileType": 'ZIP',
-                                                            "fileSize": '12MB',
-                                                            "filePages": '6 files'
-                                                        },
-                                                        "excerpt": 'Collection of posters to advertise a field officer job for the census 2021.'
-                                                    }
-                                                ]
-                                            }) }}
-
-                                        </li>
-
-                                        <!-- Item -->
-                                        <li class="filter__item js-filter__item" data-filter="logo english local-authorities community-groups recruitment" data-sort-index="9">
-                                            
-                                            {{ onsDownloads({
-                                                "downloads": [
-                                                    {
-                                                        "thumbnail": {
-                                                            "smallSrc": pageInfo.rootPath + '/img/small/',
-                                                            "largeSrc": pageInfo.rootPath + '/img/large/',
-                                                            "filename": 'placeholder-portrait.png',
-                                                            "alt": 'Placeholder'
-                                                        },
-                                                        "url": '#0',                                                
-                                                        "title": 'Census 2021 logos pack for print and web',
-                                                        "type": 'Poster',
-                                                        "meta": {
-                                                            "fileType": 'Logo',
-                                                            "fileSize": '5MB',
-                                                            "filePages": '24 files'
-                                                        },
-                                                        "excerpt": 'A collection of logos suitable for print and web advertising.'
-                                                    }
-                                                ]
-                                            }) }}
-
-                                        </li>
-
-                                        <!-- Item -->
-                                        <li class="filter__item js-filter__item" data-filter="poster english" data-sort-index="10">
-                                        
-                                            {{ onsDownloads({
-                                                "downloads": [
-                                                    {
-                                                        "thumbnail": {
-                                                            "smallSrc": pageInfo.rootPath + '/img/small/',
-                                                            "largeSrc": pageInfo.rootPath + '/img/large/',
-                                                            "filename": 'placeholder-portrait.png',
-                                                            "alt": 'Placeholder'
-                                                        },
-                                                        "url": '#0',                                                
-                                                        "title": 'Default awareness posters for Census 2021',
-                                                        "type": 'Poster',
-                                                        "meta": {
-                                                            "fileType": 'PDF',
-                                                            "fileSize": '2MB',
+                                                            "fileSize": '2.7MB',
                                                             "filePages": '2 pages'
                                                         },
-                                                        "excerpt": 'Awareness posters for initial launch engagement.'
+                                                        "excerpt": 'Integer aliquam magna nunc, id elementum felis aliquet eu. Donec sed ultrices tortor. Nulla facilisi.'
+                                                    }
+                                                ]
+                                            }) }}
+
+                                        </li>
+
+                                        <!-- Item -->
+                                        <li class="filter__item js-filter__item" data-filter="leaflet welsh local-authorities community-groups" data-sort-index="2">
+                                        
+                                            {{ onsDownloads({
+                                                "downloads": [
+                                                    {
+                                                        "thumbnail": {
+                                                            "smallSrc": pageInfo.rootPath + '/img/small/',
+                                                            "largeSrc": pageInfo.rootPath + '/img/large/',
+                                                            "filename": 'engagement-leaflet-welsh.png',
+                                                            "alt": 'Engagement leaflet welsh document thumbnail'
+                                                        },
+                                                        "url": pageInfo.rootPath + '/documents/Digital_Ready_ELA2W-2021_v8-0_210720.pdf',                                                
+                                                        "title": 'Engagement leaflet (Welsh)',
+                                                        "type": 'Leaflet',
+                                                        "meta": {
+                                                            "fileType": 'PDF',
+                                                            "fileSize": '2.7MB',
+                                                            "filePages": '2 pages'
+                                                        },
+                                                        "excerpt": 'Integer aliquam magna nunc, id elementum felis aliquet eu. Donec sed ultrices tortor. Nulla facilisi.'
+                                                    }
+                                                ]
+                                            }) }}
+
+                                        </li>
+
+                                        <!-- Item -->
+                                        <li class="filter__item js-filter__item" data-filter="booklet english local-authorities" data-sort-index="3">
+                                        
+                                            {{ onsDownloads({
+                                                "downloads": [
+                                                    {
+                                                        "thumbnail": {
+                                                            "smallSrc": pageInfo.rootPath + '/img/small/',
+                                                            "largeSrc": pageInfo.rootPath + '/img/large/',
+                                                            "filename": 'community-handbook-english.png',
+                                                            "alt": 'Community handbook english document thumbnail'
+                                                        },
+                                                        "url": pageInfo.rootPath + '/documents/Digital_Ready_CHDE1-2021_v4-0_280820.pdf',                                                
+                                                        "title": 'Community handbook (English)',
+                                                        "type": 'Booklet',
+                                                        "meta": {
+                                                            "fileType": 'PDF',
+                                                            "fileSize": '6.6MB',
+                                                            "filePages": '16 pages'
+                                                        },
+                                                        "excerpt": 'Integer aliquam magna nunc, id elementum felis aliquet eu. Donec sed ultrices tortor. Nulla facilisi.'
+                                                    }
+                                                ]
+                                            }) }}
+
+                                        </li>
+
+                                        <!-- Item -->
+                                        <li class="filter__item js-filter__item" data-filter="booklet welsh local-authorities" data-sort-index="4">
+                                        
+                                            {{ onsDownloads({
+                                                "downloads": [
+                                                    {
+                                                        "thumbnail": {
+                                                            "smallSrc": pageInfo.rootPath + '/img/small/',
+                                                            "largeSrc": pageInfo.rootPath + '/img/large/',
+                                                            "filename": 'community-handbook-welsh.png',
+                                                            "alt": 'Community handbook welsh document thumbnail'
+                                                        },
+                                                        "url": pageInfo.rootPath + '/documents/Digital_Ready_CHDE2B-2021_v2-0_280820.pdf',                                                
+                                                        "title": 'Community handbook (Welsh)',
+                                                        "type": 'Booklet',
+                                                        "meta": {
+                                                            "fileType": 'PDF',
+                                                            "fileSize": '7.9MB',
+                                                            "filePages": '32 pages'
+                                                        },
+                                                        "excerpt": 'Integer aliquam magna nunc, id elementum felis aliquet eu. Donec sed ultrices tortor. Nulla facilisi.'
+                                                    }
+                                                ]
+                                            }) }}
+
+                                        </li>
+
+                                        <!-- Item -->
+                                        <li class="filter__item js-filter__item" data-filter="booklet english local-authorities" data-sort-index="5">
+                                        
+                                            {{ onsDownloads({
+                                                "downloads": [
+                                                    {
+                                                        "thumbnail": {
+                                                            "smallSrc": pageInfo.rootPath + '/img/small/',
+                                                            "largeSrc": pageInfo.rootPath + '/img/large/',
+                                                            "filename": 'councillor-handbook-english.png',
+                                                            "alt": 'Councillor handbook english document thumbnail'
+                                                        },
+                                                        "url": pageInfo.rootPath + '/documents/Digital_Ready_CHE1-2021_v4-0_280820.pdf',                                                
+                                                        "title": 'Councillor handbook (English)',
+                                                        "type": 'Booklet',
+                                                        "meta": {
+                                                            "fileType": 'PDF',
+                                                            "fileSize": '6.9MB',
+                                                            "filePages": '20 pages'
+                                                        },
+                                                        "excerpt": 'Integer aliquam magna nunc, id elementum felis aliquet eu. Donec sed ultrices tortor. Nulla facilisi.'
+                                                    }
+                                                ]
+                                            }) }}
+
+                                        </li>
+
+                                        <!-- Item -->
+                                        <li class="filter__item js-filter__item" data-filter="booklet welsh local-authorities" data-sort-index="6">
+                                        
+                                            {{ onsDownloads({
+                                                "downloads": [
+                                                    {
+                                                        "thumbnail": {
+                                                            "smallSrc": pageInfo.rootPath + '/img/small/',
+                                                            "largeSrc": pageInfo.rootPath + '/img/large/',
+                                                            "filename": 'councillor-handbook-welsh.png',
+                                                            "alt": 'Councillor handbook welsh document thumbnail'
+                                                        },
+                                                        "url": pageInfo.rootPath + '/documents/Digital_Ready_CHDE2B-2021_v2-0_280820.pdf',                                                
+                                                        "title": 'Councillor handbook (Welsh)',
+                                                        "type": 'Booklet',
+                                                        "meta": {
+                                                            "fileType": 'PDF',
+                                                            "fileSize": '7.7MB',
+                                                            "filePages": '40 pages'
+                                                        },
+                                                        "excerpt": 'Integer aliquam magna nunc, id elementum felis aliquet eu. Donec sed ultrices tortor. Nulla facilisi.'
+                                                    }
+                                                ]
+                                            }) }}
+
+                                        </li>
+
+                                        <!-- Item -->
+                                        <li class="filter__item js-filter__item" data-filter="booklet english local-authorities" data-sort-index="7">
+                                        
+                                            {{ onsDownloads({
+                                                "downloads": [
+                                                    {
+                                                        "thumbnail": {
+                                                            "smallSrc": pageInfo.rootPath + '/img/small/',
+                                                            "largeSrc": pageInfo.rootPath + '/img/large/',
+                                                            "filename": 'data-security-english.png',
+                                                            "alt": 'Data security handout english document thumbnail'
+                                                        },
+                                                        "url": pageInfo.rootPath + '/documents/Digital_Ready_DSHO1-2021_v2-0_100720.pdf',                                                
+                                                        "title": 'Data security handout (English)',
+                                                        "type": 'Booklet',
+                                                        "meta": {
+                                                            "fileType": 'PDF',
+                                                            "fileSize": '172KB',
+                                                            "filePages": '2 pages'
+                                                        },
+                                                        "excerpt": 'Integer aliquam magna nunc, id elementum felis aliquet eu. Donec sed ultrices tortor. Nulla facilisi.'
+                                                    }
+                                                ]
+                                            }) }}
+
+                                        </li>
+
+                                        <!-- Item -->
+                                        <li class="filter__item js-filter__item" data-filter="booklet welsh local-authorities" data-sort-index="8">
+                                        
+                                            {{ onsDownloads({
+                                                "downloads": [
+                                                    {
+                                                        "thumbnail": {
+                                                            "smallSrc": pageInfo.rootPath + '/img/small/',
+                                                            "largeSrc": pageInfo.rootPath + '/img/large/',
+                                                            "filename": 'data-security-welsh.png',
+                                                            "alt": 'Data security handout welsh document thumbnail'
+                                                        },
+                                                        "url": pageInfo.rootPath + '/documents/Digital_Ready_DSHO2W-2021_v2-0_100720.pdf',                                                
+                                                        "title": 'Data security handout (Welsh)',
+                                                        "type": 'Booklet',
+                                                        "meta": {
+                                                            "fileType": 'PDF',
+                                                            "fileSize": '188KB',
+                                                            "filePages": '2 pages'
+                                                        },
+                                                        "excerpt": 'Integer aliquam magna nunc, id elementum felis aliquet eu. Donec sed ultrices tortor. Nulla facilisi.'
+                                                    }
+                                                ]
+                                            }) }}
+
+                                        </li>
+
+                                        <!-- Item -->
+                                        <li class="filter__item js-filter__item" data-filter="booklet english local-authorities" data-sort-index="9">
+                                        
+                                            {{ onsDownloads({
+                                                "downloads": [
+                                                    {
+                                                        "thumbnail": {
+                                                            "smallSrc": pageInfo.rootPath + '/img/small/',
+                                                            "largeSrc": pageInfo.rootPath + '/img/large/',
+                                                            "filename": 'postcard-english.png',
+                                                            "alt": 'Postcard english document thumbnail'
+                                                        },
+                                                        "url": pageInfo.rootPath + '/documents/Digital_Ready_A6PCA1-2021_280820.pdf',                                                
+                                                        "title": 'Postcard (English)',
+                                                        "type": 'Booklet',
+                                                        "meta": {
+                                                            "fileType": 'PDF',
+                                                            "fileSize": '303KB',
+                                                            "filePages": '2 pages'
+                                                        },
+                                                        "excerpt": 'Integer aliquam magna nunc, id elementum felis aliquet eu. Donec sed ultrices tortor. Nulla facilisi.'
+                                                    }
+                                                ]
+                                            }) }}
+
+                                        </li>
+
+                                        <!-- Item -->
+                                        <li class="filter__item js-filter__item" data-filter="booklet welsh local-authorities" data-sort-index="10">
+                                        
+                                            {{ onsDownloads({
+                                                "downloads": [
+                                                    {
+                                                        "thumbnail": {
+                                                            "smallSrc": pageInfo.rootPath + '/img/small/',
+                                                            "largeSrc": pageInfo.rootPath + '/img/large/',
+                                                            "filename": 'postcard-welsh.png',
+                                                            "alt": 'Postcard welsh document thumbnail'
+                                                        },
+                                                        "url": pageInfo.rootPath + '/documents/Digital_Ready_A6PCA2B-2021_v6-0_280820.pdf',                                                
+                                                        "title": 'Postcard (Welsh)',
+                                                        "type": 'Booklet',
+                                                        "meta": {
+                                                            "fileType": 'PDF',
+                                                            "fileSize": '340KB',
+                                                            "filePages": '2 pages'
+                                                        },
+                                                        "excerpt": 'Integer aliquam magna nunc, id elementum felis aliquet eu. Donec sed ultrices tortor. Nulla facilisi.'
+                                                    }
+                                                ]
+                                            }) }}
+
+                                        </li>
+
+                                        <!-- Item -->
+                                        <li class="filter__item js-filter__item" data-filter="presentation english local-authorities" data-sort-index="11">
+                                        
+                                            {{ onsDownloads({
+                                                "downloads": [
+                                                    {
+                                                        "thumbnail": {
+                                                            "smallSrc": pageInfo.rootPath + '/img/small/',
+                                                            "largeSrc": pageInfo.rootPath + '/img/large/',
+                                                            "filename": 'la-presentation-english.png',
+                                                            "alt": 'Local authority presentation english document thumbnail'
+                                                        },
+                                                        "url": pageInfo.rootPath + '/documents/LABP1_LA_Branded_Presentation.pptx',                                                
+                                                        "title": 'Local authority presentation (English)',
+                                                        "type": 'Presentation',
+                                                        "meta": {
+                                                            "fileType": 'PowerPoint',
+                                                            "fileSize": '1.6MB',
+                                                            "filePages": '13 pages'
+                                                        },
+                                                        "excerpt": 'Integer aliquam magna nunc, id elementum felis aliquet eu. Donec sed ultrices tortor. Nulla facilisi.'
+                                                    }
+                                                ]
+                                            }) }}
+
+                                        </li>
+
+                                        <!-- Item -->
+                                        <li class="filter__item js-filter__item" data-filter="presentation welsh local-authorities" data-sort-index="12">
+                                        
+                                            {{ onsDownloads({
+                                                "downloads": [
+                                                    {
+                                                        "thumbnail": {
+                                                            "smallSrc": pageInfo.rootPath + '/img/small/',
+                                                            "largeSrc": pageInfo.rootPath + '/img/large/',
+                                                            "filename": 'la-presentation-welsh.png',
+                                                            "alt": 'Local authority presentation welsh document thumbnail'
+                                                        },
+                                                        "url": pageInfo.rootPath + '/documents/LABP2W_Branded_Presentation_Welsh.pptx',                                                
+                                                        "title": 'Local authority presentation (Welsh)',
+                                                        "type": 'Presentation',
+                                                        "meta": {
+                                                            "fileType": 'PowerPoint',
+                                                            "fileSize": '1.6MB',
+                                                            "filePages": '13 pages'
+                                                        },
+                                                        "excerpt": 'Integer aliquam magna nunc, id elementum felis aliquet eu. Donec sed ultrices tortor. Nulla facilisi.'
                                                     }
                                                 ]
                                             }) }}
