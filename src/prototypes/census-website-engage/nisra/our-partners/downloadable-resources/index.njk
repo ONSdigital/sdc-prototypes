@@ -147,72 +147,24 @@ layout: census-website-engage/views/_nisra-master
                                                                 },
                                                                 {
                                                                     "classes": 'checkbox--toggle',
-                                                                    "id": 'logo',
+                                                                    "id": 'leaflet',
                                                                     "label": {
-                                                                        "text": 'Logo'
+                                                                        "text": 'Leaflet'
                                                                     },
-                                                                    "value": 'logo',
+                                                                    "value": 'leaflet',
                                                                     "attributes": {
-                                                                        "data-filter": 'logo'
+                                                                        "data-filter": 'leaflet'
                                                                     }
                                                                 },
                                                                 {
                                                                     "classes": 'checkbox--toggle',
-                                                                    "id": 'poster',
+                                                                    "id": 'presentation',
                                                                     "label": {
-                                                                        "text": 'Poster'
+                                                                        "text": 'Presentation'
                                                                     },
-                                                                    "value": 'poster',
+                                                                    "value": 'presentation',
                                                                     "attributes": {
-                                                                        "data-filter": 'poster'
-                                                                    }
-                                                                }
-                                                            ]
-                                                        })
-                                                    }}
-
-                                                </fieldset>
-
-                                            </div>
-
-                                            <!-- Filter item -->
-                                            <div class="adv-filter__item js-adv-filter__item" data-default-text="All languages" data-multi-select-text="{n} filters selected">
-
-                                                <fieldset class="fieldset" aria-controls="adv-filter-gallery">
-
-                                                    <legend class="fieldset__legend">Language</legend>
-                                                    
-                                                    <div class="adv-filter__selection">
-                                                        <span class="u-vh">Active filters: </span>
-                                                        <span class="u-fs-s js-adv-filter__selection">All languages</span>
-                                                    </div>
-
-                                                    {{
-                                                        onsCheckboxes({
-                                                            "dontWrap": 'true',
-                                                            "legend": 'Audience',
-                                                            "name": 'audience',
-                                                            "checkboxes": [
-                                                                {
-                                                                    "classes": 'checkbox--toggle',
-                                                                    "id": 'english',
-                                                                    "label": {
-                                                                        "text": 'English'
-                                                                    },
-                                                                    "value": 'english',
-                                                                    "attributes": {
-                                                                        "data-filter": 'english'
-                                                                    }
-                                                                },
-                                                                {
-                                                                    "classes": 'checkbox--toggle',
-                                                                    "id": 'irish',
-                                                                    "label": {
-                                                                        "text": 'Irish (Gaeilge)'
-                                                                    },
-                                                                    "value": 'irish',
-                                                                    "attributes": {
-                                                                        "data-filter": 'irish'
+                                                                        "data-filter": 'presentation'
                                                                     }
                                                                 }
                                                             ]
@@ -274,7 +226,7 @@ layout: census-website-engage/views/_nisra-master
                                     <ul class="adv-filter__gallery js-adv-filter__gallery" id="adv-filter-gallery" data-filter-animation="off">
 
                                         <!-- Item -->
-                                        <li class="filter__item js-filter__item" data-filter="leaflet english local-authorities community-groups" data-sort-index="1">
+                                        <li class="filter__item js-filter__item" data-filter="leaflet local-authorities community-groups" data-sort-index="1">
                                         
                                             {{ onsDownloads({
                                                 "downloads": [
@@ -283,7 +235,7 @@ layout: census-website-engage/views/_nisra-master
                                                             "smallSrc": pageInfo.rootPath + '/img/small/',
                                                             "largeSrc": pageInfo.rootPath + '/img/large/',
                                                             "filename": 'engagement-leaflet-english.png',
-                                                            "alt": 'Engagement leaflet english document thumbnail'
+                                                            "alt": 'Engagement leaflet document thumbnail'
                                                         },
                                                         "url": pageInfo.rootPath + '/documents/Digital_Ready_ELA1-2021_v7-0_280820.pdf',                                                
                                                         "title": 'Engagement leaflet',
@@ -301,7 +253,7 @@ layout: census-website-engage/views/_nisra-master
                                         </li>
 
                                         <!-- Item -->
-                                        <li class="filter__item js-filter__item" data-filter="booklet english local-authorities" data-sort-index="3">
+                                        <li class="filter__item js-filter__item" data-filter="booklet local-authorities" data-sort-index="3">
                                         
                                             {{ onsDownloads({
                                                 "downloads": [
@@ -310,7 +262,7 @@ layout: census-website-engage/views/_nisra-master
                                                             "smallSrc": pageInfo.rootPath + '/img/small/',
                                                             "largeSrc": pageInfo.rootPath + '/img/large/',
                                                             "filename": 'community-handbook-english.png',
-                                                            "alt": 'Community handbook english document thumbnail'
+                                                            "alt": 'Community handbook document thumbnail'
                                                         },
                                                         "url": pageInfo.rootPath + '/documents/Digital_Ready_CHDE1-2021_v4-0_280820.pdf',                                                
                                                         "title": 'Community handbook',
@@ -328,7 +280,7 @@ layout: census-website-engage/views/_nisra-master
                                         </li>
 
                                         <!-- Item -->
-                                        <li class="filter__item js-filter__item" data-filter="booklet english local-authorities" data-sort-index="5">
+                                        <li class="filter__item js-filter__item" data-filter="booklet local-authorities" data-sort-index="5">
                                         
                                             {{ onsDownloads({
                                                 "downloads": [
@@ -337,7 +289,7 @@ layout: census-website-engage/views/_nisra-master
                                                             "smallSrc": pageInfo.rootPath + '/img/small/',
                                                             "largeSrc": pageInfo.rootPath + '/img/large/',
                                                             "filename": 'councillor-handbook-english.png',
-                                                            "alt": 'Councillor handbook english document thumbnail'
+                                                            "alt": 'Councillor handbook document thumbnail'
                                                         },
                                                         "url": pageInfo.rootPath + '/documents/Digital_Ready_CHE1-2021_v4-0_280820.pdf',                                                
                                                         "title": 'Councillor handbook',
@@ -355,7 +307,7 @@ layout: census-website-engage/views/_nisra-master
                                         </li>
 
                                         <!-- Item -->
-                                        <li class="filter__item js-filter__item" data-filter="booklet english local-authorities" data-sort-index="7">
+                                        <li class="filter__item js-filter__item" data-filter="booklet local-authorities" data-sort-index="7">
                                         
                                             {{ onsDownloads({
                                                 "downloads": [
@@ -364,7 +316,7 @@ layout: census-website-engage/views/_nisra-master
                                                             "smallSrc": pageInfo.rootPath + '/img/small/',
                                                             "largeSrc": pageInfo.rootPath + '/img/large/',
                                                             "filename": 'data-security-english.png',
-                                                            "alt": 'Data security handout english document thumbnail'
+                                                            "alt": 'Data security handout document thumbnail'
                                                         },
                                                         "url": pageInfo.rootPath + '/documents/Digital_Ready_DSHO1-2021_v2-0_100720.pdf',                                                
                                                         "title": 'Data security handout',
@@ -382,7 +334,7 @@ layout: census-website-engage/views/_nisra-master
                                         </li>
 
                                         <!-- Item -->
-                                        <li class="filter__item js-filter__item" data-filter="booklet english local-authorities" data-sort-index="9">
+                                        <li class="filter__item js-filter__item" data-filter="booklet local-authorities" data-sort-index="9">
                                         
                                             {{ onsDownloads({
                                                 "downloads": [
@@ -391,7 +343,7 @@ layout: census-website-engage/views/_nisra-master
                                                             "smallSrc": pageInfo.rootPath + '/img/small/',
                                                             "largeSrc": pageInfo.rootPath + '/img/large/',
                                                             "filename": 'postcard-english.png',
-                                                            "alt": 'Postcard english document thumbnail'
+                                                            "alt": 'Postcard document thumbnail'
                                                         },
                                                         "url": pageInfo.rootPath + '/documents/Digital_Ready_A6PCA1-2021_280820.pdf',                                                
                                                         "title": 'Postcard',
@@ -409,7 +361,7 @@ layout: census-website-engage/views/_nisra-master
                                         </li>
 
                                         <!-- Item -->
-                                        <li class="filter__item js-filter__item" data-filter="presentation english local-authorities" data-sort-index="11">
+                                        <li class="filter__item js-filter__item" data-filter="presentation local-authorities" data-sort-index="11">
                                         
                                             {{ onsDownloads({
                                                 "downloads": [
@@ -418,7 +370,7 @@ layout: census-website-engage/views/_nisra-master
                                                             "smallSrc": pageInfo.rootPath + '/img/small/',
                                                             "largeSrc": pageInfo.rootPath + '/img/large/',
                                                             "filename": 'la-presentation-english.png',
-                                                            "alt": 'Local authority presentation english document thumbnail'
+                                                            "alt": 'Local authority presentation document thumbnail'
                                                         },
                                                         "url": pageInfo.rootPath + '/documents/LABP1_LA_Branded_Presentation.pptx',                                                
                                                         "title": 'Local authority presentation',
