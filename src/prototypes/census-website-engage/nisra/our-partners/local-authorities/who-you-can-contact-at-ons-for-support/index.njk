@@ -1,0 +1,137 @@
+---
+title: Who you can contact at ONS for support
+group: Census
+version: 23.0.1
+layout: census-website-engage/views/_nisra-master
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": pageInfo.rootPath + '/nisra/home',
+                            "text": 'Home'
+                        },
+                        {
+                            "url": pageInfo.rootPath + '/nisra/our-partners',
+                            "text": 'Our partners'
+                        },
+                        {
+                            "url": pageInfo.rootPath + '/nisra/our-partners/local-authorities',
+                            "text": 'Local authorities'
+                        }
+                    ]
+                })
+            }}
+
+            <div class="grid u-mt-s@m">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-l">
+                            <span class="u-fs-m u-db u-mb-xs u-lighter">Local authorities</span>
+                            <span class="u-vh">: </span>
+                            <span class="u-fs-xxl u-db">Who you can contact at ONS for support</span>
+                        </h1>
+
+                        {{-
+                            onsTableOfContents({
+                                "title": 'Contents',
+                                "ariaLabel": 'Pages in this guide',
+                                "itemsList": [
+                                    {
+                                        "url": pageInfo.rootPath + '/nisra/our-partners/local-authorities',
+                                        "text": 'Overview'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/nisra/our-partners/local-authorities/important-dates-for-local-authorities',
+                                        "text": 'Important dates for local authorities'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/nisra/our-partners/local-authorities/how-you-can-prepare-for-2021',
+                                        "text": 'How you can prepare for 2021'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/nisra/our-partners/local-authorities/what-you-can-do-now',
+                                        "text": 'What you can do now'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/nisra/our-partners/local-authorities/where-you-can-get-materials-to-help-promote-the-census',
+                                        "text": 'Where you can get materials to help promote the census'
+                                    },
+                                    {
+                                        "text": 'Who you can contact at ONS for support',
+                                        "current": true
+                                    }
+                                ]
+                            })
+                        }}
+
+                        <div class="page__body">
+
+                            <p>Your local authority should have appointed a dedicated census liaison manager and assistant census liaison manager, who act as the main points of contact with us at ONS. If you have any questions, please speak to them in the first instance.</p>
+
+                            <p>If you need to contact ONS directly about anything to do with Census 2021, please <a href="#0">email our Local Authority Partnerships team</a>.</p>
+
+                            <div class="u-mt-xl">
+                                {{-
+                                    onsContentPagination({
+                                        "contentPaginationItems": [
+                                            {
+                                                "rel": 'prev',
+                                                "text": 'Previous',
+                                                "url": pageInfo.rootPath + '/nisra/our-partners/local-authorities/where-you-can-get-materials-to-help-promote-the-census',
+                                                "label": 'Where you can get materials to help promote the census'
+                                            }
+                                        ]
+                                    })
+                                }}
+                            </div>
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+                <div class="grid__col col-4@m push-1@m u-mt-m">
+
+                    {{-
+                        onsRelatedLinks({
+                            "id": 'related-links',
+                            "title": 'Related content',
+                            "itemsList": [
+                                {
+                                    "url": '#0',
+                                    "text": 'Community groups'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/nisra/our-partners/downloadable-resources',
+                                    "text": 'Downloadable resources'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/nisra/contact-us',
+                                    "text": 'Contact us'
+                                }
+                            ]
+                        })
+                    }}
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}

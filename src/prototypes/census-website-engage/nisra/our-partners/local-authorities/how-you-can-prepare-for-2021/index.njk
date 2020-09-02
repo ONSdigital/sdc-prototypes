@@ -1,0 +1,143 @@
+---
+title: How you can prepare for 2021
+group: Census
+version: 23.0.1
+layout: census-website-engage/views/_nisra-master
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": pageInfo.rootPath + '/nisra/home',
+                            "text": 'Home'
+                        },
+                        {
+                            "url": pageInfo.rootPath + '/nisra/our-partners',
+                            "text": 'Our partners'
+                        },
+                        {
+                            "url": pageInfo.rootPath + '/nisra/our-partners/local-authorities',
+                            "text": 'Local authorities'
+                        }
+                    ]
+                })
+            }}
+
+            <div class="grid u-mt-s@m">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-l">
+                            <span class="u-fs-m u-db u-mb-xs u-lighter">Local authorities</span>
+                            <span class="u-vh">: </span>
+                            <span class="u-fs-xxl u-db">How you can prepare for 2021</span>
+                        </h1>
+
+                        {{-
+                            onsTableOfContents({
+                                "title": 'Contents',
+                                "ariaLabel": 'Pages in this guide',
+                                "itemsList": [
+                                    {
+                                        "url": pageInfo.rootPath + '/nisra/our-partners/local-authorities',
+                                        "text": 'Overview'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/nisra/our-partners/local-authorities/important-dates-for-local-authorities',
+                                        "text": 'Important dates for local authorities'
+                                    },
+                                    {
+                                        "text": 'How you can prepare for 2021',
+                                        "current": true
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/nisra/our-partners/local-authorities/what-you-can-do-now',
+                                        "text": 'What you can do now'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/nisra/our-partners/local-authorities/where-you-can-get-materials-to-help-promote-the-census',
+                                        "text": 'Where you can get materials to help promote the census'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/nisra/our-partners/local-authorities/who-you-can-contact-at-ons-for-support',
+                                        "text": 'Who you can contact at ONS for support'
+                                    }
+                                ]
+                            })
+                        }}
+
+                        <div class="page__body">
+
+                            <p>There are lots of things your local authority can do to help, both now and around the time of the census.</p>
+
+                            <p>We’ve developed our activity based on feedback from local authorities on what worked well for the 2011 Census. We’ve added new activities to support the digital-first focus for 2021 and to maximise use of census data.</p>
+
+                            <div class="u-mt-xl">
+                                {{-
+                                    onsContentPagination({
+                                        "contentPaginationItems": [
+                                            {
+                                                "rel": 'prev',
+                                                "text": 'Previous',
+                                                "url": pageInfo.rootPath + '/nisra/our-partners/local-authorities/important-dates-for-local-authorities',
+                                                "label": 'Important dates for local authorities'
+                                            },
+                                            {
+                                                "rel": 'next',
+                                                "text": 'Next',
+                                                "url": pageInfo.rootPath + '/nisra/our-partners/local-authorities/what-you-can-do-now',
+                                                "label": 'What you can do now'
+                                            }
+                                        ]
+                                    })
+                                }}
+                            </div>
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+                <div class="grid__col col-4@m push-1@m u-mt-m">
+
+                    {{-
+                        onsRelatedLinks({
+                            "id": 'related-links',
+                            "title": 'Related content',
+                            "itemsList": [
+                                {
+                                    "url": '#0',
+                                    "text": 'Community groups'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/nisra/our-partners/downloadable-resources',
+                                    "text": 'Downloadable resources'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/nisra/contact-us',
+                                    "text": 'Contact us'
+                                }
+                            ]
+                        })
+                    }}
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}

@@ -1,0 +1,157 @@
+---
+title: Local authorities
+group: Census
+version: 23.0.1
+layout: census-website-engage/views/_nisra-master
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": pageInfo.rootPath + '/nisra/home',
+                            "text": 'Home'
+                        },
+                        {
+                            "url": pageInfo.rootPath + '/nisra/our-partners',
+                            "text": 'Our partners'
+                        },
+                        {
+                            "url": pageInfo.rootPath + '/nisra/our-partners/local-authorities',
+                            "text": 'Local authorities'
+                        }
+                    ]
+                })
+            }}
+
+            <div class="grid u-mt-s@m">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-l">
+                            <span class="u-fs-m u-db u-mb-xs u-lighter">Local authorities</span>
+                            <span class="u-vh">: </span>
+                            <span class="u-fs-xxl u-db">What you can do now</span>
+                        </h1>
+
+                        {{-
+                            onsTableOfContents({
+                                "title": 'Contents',
+                                "ariaLabel": 'Pages in this guide',
+                                "itemsList": [
+                                    {
+                                        "url": pageInfo.rootPath + '/nisra/our-partners/local-authorities',
+                                        "text": 'Overview'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/nisra/our-partners/local-authorities/important-dates-for-local-authorities',
+                                        "text": 'Important dates for local authorities'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/nisra/our-partners/local-authorities/how-you-can-prepare-for-2021',
+                                        "text": 'How you can prepare for 2021'
+                                    },
+                                    {
+                                        "text": 'What you can do now',
+                                        "current": true
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/nisra/our-partners/local-authorities/where-you-can-get-materials-to-help-promote-the-census',
+                                        "text": 'Where you can get materials to help promote the census'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/nisra/our-partners/local-authorities/who-you-can-contact-at-ons-for-support',
+                                        "text": 'Who you can contact at ONS for support'
+                                    }
+                                ]
+                            })
+                        }}
+
+                        <div class="page__body">
+                            
+                            <p>To prepare for the census, appointing a Census Liaison Manager (CLM) and Assistant Census Liaison Manager (ACLM) can help you co-ordinate census activity within your local authority. These people will be the main point of contact for us at ONS.</p>
+
+                            <p>You may already have a CLM and ACLM in place, but if your council has not yet appointed these roles, now is the time.</p>
+
+                            <p>Ideally, the CLM should be a senior officer who can allocate resources and will understand the financial significance of the census. The ACLM should be someone at an operational level, who has an interest in the census and can co-ordinate support for the census within the authority. For full job descriptions please <a href="#">email our Local Authority Partnerships team</a>.</p>
+
+                            <p>We’d also like to use your local knowledge to help us to:</p>
+
+                            <ul>
+                                <li>address issues</li>
+                                <li>identify communal establishments</li>
+                                <li>help target our checking and quality assurance processes</li>
+                            </ul>
+
+                            <p>We’re using Geoplace AddressBase for the census. It’ll help if you can work with GeoPlace to make sure your address register is accurate and up to date for your area. Your council’s local land and property gazetteer custodians should already be working with them to provide address data.</p>
+
+                            <p>We’d also recommend you encourage any of your staff with an interest to <a href="#0">sign up for email updates</a> on the census.</p>
+
+                            <div class="u-mt-xl">
+                                {{-
+                                    onsContentPagination({
+                                        "contentPaginationItems": [
+                                            {
+                                                "rel": 'prev',
+                                                "text": 'Previous',
+                                                "url": pageInfo.rootPath + '/nisra/our-partners/local-authorities/how-you-can-prepare-for-2021',
+                                                "label": 'How you can prepare for 2021'
+                                            },
+                                            {
+                                                "rel": 'next',
+                                                "text": 'Next',
+                                                "url": pageInfo.rootPath + '/nisra/our-partners/local-authorities/where-you-can-get-materials-to-help-promote-the-census',
+                                                "label": 'Where you can get materials to help promote the census'
+                                            }
+                                        ]
+                                    })
+                                }}
+                            </div>
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+                <div class="grid__col col-4@m push-1@m u-mt-m">
+
+                    {{-
+                        onsRelatedLinks({
+                            "id": 'related-links',
+                            "title": 'Related content',
+                            "itemsList": [
+                                {
+                                    "url": '#0',
+                                    "text": 'Community groups'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/nisra/our-partners/downloadable-resources',
+                                    "text": 'Downloadable resources'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/nisra/contact-us',
+                                    "text": 'Contact us'
+                                }
+                            ]
+                        })
+                    }}
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}
