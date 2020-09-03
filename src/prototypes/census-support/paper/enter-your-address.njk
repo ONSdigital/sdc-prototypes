@@ -1,5 +1,5 @@
 ---
-version: 20.0.0
+version: 23.0.1
 layout: census-support/views/_master
 ---
 {% from "components/question/_macro.njk" import onsQuestion %}
@@ -11,12 +11,12 @@ layout: census-support/views/_master
 {% set form =  {
     "method": "GET",
     "attributes": {
-        "action":  pageInfo.rootPath + "/what-is-your-mobile-phone-number.html"
+        "action":  pageInfo.parentPath + "/code-text-sent.html"
     }
 } %}
 {% block preMain %}
     <div class="u-mt-s">
-        <a href="{{ pageInfo.rootPath }}/what-is-your-address.html">Previous</a>
+        <a class="back-link" href="{{ pageInfo.parentPath }}/what-is-your-address.html">Back</a>
     </div>
 {% endblock %}
 {% block main %}
@@ -24,8 +24,9 @@ layout: census-support/views/_master
         "title": "Enter your address manually"
     }) %}
         {% call onsFieldset({
-            "legend": "Enter your address",
-            "legendClasses": "u-vh"
+            "legend": "Enter your address manually",
+            "legendClasses": "u-vh",
+            "classes": "u-mb-no"
         }) %}
             {{
                 onsInput({
@@ -56,7 +57,7 @@ layout: census-support/views/_master
             {{
                 onsInput({
                     "id": "address-postcode",
-                    "classes": "input--w-5",
+                    "classes": "input--w-5 u-mb-no",
                     "label": {
                         "text": "Postcode"
                     }
@@ -66,9 +67,12 @@ layout: census-support/views/_master
         {{ 
             onsButton({
                 "text": "Continue",
-                "classes": "u-mt-xl u-mb-xl"
+                "classes": "u-mt-l u-mb-xl"
             }) 
         }}
     {% endcall %}
 
+    <script>
+        sessionStorage.removeItem("{{ pageInfo.parentPath }}/enter-your-address.html");
+    </script>
 {% endblock %}

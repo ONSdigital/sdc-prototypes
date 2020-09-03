@@ -1,5 +1,5 @@
 ---
-version: 20.0.0
+version: 23.0.1
 layout: census-support/views/_master
 ---
 {% from "components/question/_macro.njk" import onsQuestion %}
@@ -10,7 +10,6 @@ layout: census-support/views/_master
 
 {% block preMain %}
     <div class="u-mt-s">
-        <a href="{{ pageInfo.rootPath }}/enter-your-address.html">Previous</a>
     </div>
 {% endblock %}
 {% block main %}
@@ -21,8 +20,11 @@ layout: census-support/views/_master
         <p><code class="uac__input u-fs-xl">A1B2 C3D4 E5F6 G7H8</code></p>
     {% endcall %}
     {% call onsPanel({ 
-        "type": "warn"
+        "type": "warn",
+        "classes": "u-mb-l"
     }) %}
         <p>Keep this code safe. You will need to enter it every time you access your census</p>
     {% endcall %}
+    <h2 class="u-fs-m u-mb-xs">Need another access code?</h2>
+    <a href="{{ pageInfo.rootPath }}/index.html">Get a new access code</a>
 {% endblock %}

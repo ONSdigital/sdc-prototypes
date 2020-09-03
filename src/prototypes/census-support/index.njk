@@ -1,7 +1,7 @@
 ---
 title: Census support - Generate an access code
 group: Census
-version: 20.0.0
+version: 23.0.1
 layout: census-support/views/_master
 ---
 {% from "components/question/_macro.njk" import onsQuestion %}
@@ -12,14 +12,15 @@ layout: census-support/views/_master
 {% set form =  {
     "method": "GET",
     "attributes": {
-        "action":  pageInfo.rootPath + "/what-is-your-address.html"
+        "action":  "#"
     }
 } %}
 
 {% block main %}
     {% call onsQuestion({
         "title": "How would you like to complete your census?",
-        "useFieldset": true
+        "useFieldset": true,
+        "classes": "u-mt-l"
     }) %}
         {{
             onsRadios({
@@ -32,16 +33,18 @@ layout: census-support/views/_master
                         },
                         "name": "online",
                         "attributes": {
-                            "data-action-url": pageInfo.parentPath + "/what-is-your-address-online.html"
-                        },
-                        "value": "online"
+                            "data-action-url": pageInfo.rootPath + "/online/" + "what-is-your-address.html"
+                        }
                     },
                     {
                         "id": "paper",
                         "label": {
                             "text": "On paper"
                         },
-                        "value": "paper"
+                        "name": "paper",
+                        "attributes": {
+                            "data-action-url": pageInfo.rootPath + "/paper/" + "what-is-your-paper-code.html"
+                        }
                     }
                 ]
             })
@@ -53,16 +56,8 @@ layout: census-support/views/_master
         "classes": "u-mt-xl u-mb-xl"
     }) }}
 
-                        {
-                        "id": "other",
-                        "label": {
-                            "text": "Any other White ethnic group or background ",
-                            "description": "You can enter this on the next question"
-                        },
-                        "name": "other",
-                        "attributes": {
-                            "data-action-url": pageInfo.parentPath + "/ethnic-group-white-other.html"
-                        }
-                    }
+    <script>
+        sessionStorage.clear();    
+    </script>
 
 {% endblock %}

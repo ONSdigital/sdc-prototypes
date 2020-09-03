@@ -1,5 +1,5 @@
 ---
-version: 20.0.0
+version: 23.0.1
 layout: census-support/views/_master
 ---
 {% from "components/question/_macro.njk" import onsQuestion %}
@@ -11,12 +11,12 @@ layout: census-support/views/_master
 {% set form =  {
     "method": "GET",
     "attributes": {
-        "action":  pageInfo.rootPath + "/code-text-sent.html"
+        "action":  "#"
     }
 } %}
 {% block preMain %}
     <div class="u-mt-s">
-        <a href="{{ pageInfo.rootPath }}/what-is-your-mobile-phone-number.html">Previous</a>
+        <a class="back-link" href="{{ pageInfo.parentPath }}/what-is-your-mobile-phone-number.html">Back</a>
     </div>
 {% endblock %}
 {% block main %}
@@ -24,7 +24,7 @@ layout: census-support/views/_master
         "title": "Is this mobile number correct?",
         "useFieldset": true
     }) %}
-        <p>01234567890</p>
+        <p id="js-number">01234567890</p>
         {{
             onsRadios({
                 "name": "mobile-correct",
@@ -34,14 +34,18 @@ layout: census-support/views/_master
                         "label": {
                             "text": "Yes, send the text message"
                         },
-                        "value": "yes"
+                        "attributes": {
+                            "data-action-url": pageInfo.parentPath + "/code-text-sent.html"
+                        }
                     },
                     {
                         "id": "no",
                         "label": {
                             "text": "No, I need to change it"
                         },
-                        "value": "no"
+                        "attributes": {
+                            "data-action-url": pageInfo.parentPath + "/what-is-your-mobile-phone-number.html"
+                        }
                     }
                 ]
             })
@@ -53,5 +57,23 @@ layout: census-support/views/_master
             }) 
         }}
     {% endcall %}
+
+    <script>
+        sessionStorage.removeItem("{{ pageInfo.parentPath }}/confirm-mobile-phone-number.html");    
+
+        var numberBlock = document.getElementById("js-number");
+
+        function getInputs(){
+            var numberInputs = JSON.parse(sessionStorage.getItem('/prototypes/census-support/online/what-is-your-mobile-phone-number.html') || '[]');
+            return userNumber = numberInputs.inputs[0].value;
+        }
+
+        function displayNumber(){
+            var userNumber = getInputs();
+            numberBlock.innerHTML = userNumber;
+        }
+
+        displayNumber();
+    </script>
 
 {% endblock %}

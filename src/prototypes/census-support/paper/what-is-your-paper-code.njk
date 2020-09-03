@@ -1,0 +1,60 @@
+---
+version: 23.0.1
+layout: census-support/views/_master
+---
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/fieldset/_macro.njk" import onsFieldset %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "census-support/components/input/_macro.njk" import onsInput %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+{% from "census-support/components/mutually-exclusive/_macro.njk" import onsMutuallyExclusive %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  "#"
+    }
+} %}
+{% block preMain %}
+    <div class="u-mt-s">
+        <a class="back-link" href="{{ pageInfo.rootPath }}/index.html">Back</a>
+    </div>
+{% endblock %}
+{% block main %}
+    {% call onsQuestion({
+        "title": "What is your paper questionnaire code?"
+    }) %}
+        <p>This is the 6-digit code printed under the barcode at the bottom of the paper questionnaire</p>
+        <img class="u-mb-l" src="{{ pageInfo.rootPath }}/img/paper-q-code.png" width="400" alt="An example of a census paper questionnaire highlighting the code">
+        {{
+            onsInput({
+                "id": "code",
+                "classes": "input--w-4",
+                "type": "number",
+                "label": {
+                    "text": "Paper questionnaire code"
+                },
+                "attributes": {
+                    "data-action-url": pageInfo.parentPath + "/what-is-your-address.html"
+                }
+            })
+        }}
+        {% from "components/panel/_macro.njk" import onsPanel %}
+        <p>
+        
+        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="0.8rem" fill="#222" viewBox="0 0 18 18">
+            <polygon points="15.9 13.5 15.9 15.8 15.7 15.8 2.3 15.8 2.1 15.8 2.1 13.5 0 13.5 0 18 0.1 18 17.9 18 18 18 18 13.5 15.9 13.5"/>
+            <polyline points="0 8.4 0 9.6 0.1 9.6 18 9.6 18 8.4"/>
+            <polygon points="0 0 0 4.4 2.3 4.4 2.3 2.2 15.7 2.2 15.7 4.4 18 4.4 18 0 0 0"/>
+        </svg><span class="u-ml-xs">Scan the barcode</span></a>
+        </p>
+        {{ 
+            onsButton({
+                "text": "Continue",
+                "classes": "u-mt-xl u-mb-xl"
+            }) 
+        }}
+    {% endcall %}
+
+
+{% endblock %}

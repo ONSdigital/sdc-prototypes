@@ -1,0 +1,87 @@
+---
+version: 23.0.1
+layout: census-support/views/_master
+---
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/fieldset/_macro.njk" import onsFieldset %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.parentPath + "/what-is-your-mobile-phone-number.html"
+    }
+} %}
+{% block preMain %}
+    <div class="u-mt-s">
+        <a class="back-link" href="{{ pageInfo.parentPath }}/what-is-your-address.html">Back</a>
+    </div>
+{% endblock %}
+{% block main %}
+    {% call onsQuestion({
+        "title": "Is this the correct address?",
+        "useFieldset": true
+    }) %}
+        <p id="js-address"></p>
+        {{
+            onsRadios({
+                "name": "mobile-correct",
+                "radios": [
+                    {
+                        "id": "yes",
+                        "attributes": {
+                            "data-action-url": pageInfo.parentPath + "/confirm-your-address.html"
+                        },
+                        "label": {
+                            "text": "Yes, this is the correct address"
+                        }
+                    },
+                    {
+                        "id": "no",
+                        "attributes": {
+                            "data-action-url": pageInfo.parentPath + "/what-is-your-address.html"
+                        },
+                        "label": {
+                            "text": "No, search again for an address"
+                        }
+                    }
+                ]
+            })
+        }}
+        {{ 
+            onsButton({
+                "text": "Continue",
+                "classes": "u-mt-xl u-mb-xl"
+            }) 
+        }}
+    {% endcall %}
+
+    <script>
+        sessionStorage.removeItem("{{ pageInfo.parentPath }}/confirm-your-address.html"); 
+        var addressBlock = document.getElementById("js-address");
+
+        function getAddressInputs(){
+            if ('{{ pageInfo.parentPath }}/what-is-your-address.html' in sessionStorage){
+                var addressInputs = JSON.parse(sessionStorage.getItem('{{ pageInfo.parentPath }}/what-is-your-address.html') || '[]');
+                return userAddress = addressInputs.inputs[0].value.replace(/,/g, '<br>');
+            }
+            else if ('{{ pageInfo.parentPath }}/enter-your-address.html' in sessionStorage){
+                var addressInputs = JSON.parse(sessionStorage.getItem('{{ pageInfo.parentPath }}/enter-your-address.html') || '[]');
+                var addressLine1 = addressInputs.inputs[0].value;
+                var addressLine2 = addressInputs.inputs[1].value;
+                var townCity = addressInputs.inputs[2].value;
+                var postCode = addressInputs.inputs[3].value;
+                return userAddress = addressLine1 + '<br>' + addressLine2 + '<br>' + townCity + '<br>' + postCode;
+            }
+        }
+
+        function displayAddress(){
+            var userAddress = getAddressInputs();
+            addressBlock.innerHTML = userAddress;
+        }
+
+        displayAddress();
+    </script>
+{% endblock %}

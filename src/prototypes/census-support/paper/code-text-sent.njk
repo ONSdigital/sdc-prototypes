@@ -1,0 +1,26 @@
+---
+version: 23.0.1
+layout: census-support/views/_master
+---
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/fieldset/_macro.njk" import onsFieldset %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "census-support/components/input/_macro.njk" import onsInput %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+
+{% block preMain %}
+    <div class="u-mt-s">
+    </div>
+{% endblock %}
+{% block main %}
+    {% call onsPanel({ 
+        "type": "success",
+        "icon": "check",
+        "classes": "u-mb-l"
+    }) %}
+        <h1>You can now fill in your paper questionnaire</h1>
+    {% endcall %}
+
+    <h2 class="u-fs-m u-mb-xs">Need another access code?</h2>
+    <a href="{{ pageInfo.rootPath }}/index.html">Get a new access code</a>
+{% endblock %}

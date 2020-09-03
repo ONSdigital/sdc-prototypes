@@ -1,0 +1,30 @@
+---
+version: 23.0.1
+layout: census-support/views/_master
+---
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/fieldset/_macro.njk" import onsFieldset %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "census-support/components/input/_macro.njk" import onsInput %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+
+{% block preMain %}
+    <div class="u-mt-s">
+    </div>
+{% endblock %}
+{% block main %}
+    <h1>Your 16-character access code</h1>
+    {% call onsPanel({ 
+        "type": "success"
+    }) %}
+        <p><code class="uac__input u-fs-xl">A1B2 C3D4 E5F6 G7H8</code></p>
+    {% endcall %}
+    {% call onsPanel({ 
+        "type": "warn",
+        "classes": "u-mb-l"
+    }) %}
+        <p>Keep this code safe. You will need to enter it every time you access your census</p>
+    {% endcall %}
+    <h2 class="u-fs-m u-mb-xs">Need another access code?</h2>
+    <a href="{{ pageInfo.rootPath }}/index.html">Get a new access code</a>
+{% endblock %}
