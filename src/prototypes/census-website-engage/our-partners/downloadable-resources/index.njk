@@ -166,6 +166,17 @@ layout: census-website-engage/views/_master
                                                                     "attributes": {
                                                                         "data-filter": 'presentation'
                                                                     }
+                                                                },
+                                                                {
+                                                                    "classes": 'checkbox--toggle',
+                                                                    "id": 'logo',
+                                                                    "label": {
+                                                                        "text": 'Logo'
+                                                                    },
+                                                                    "value": 'logo',
+                                                                    "attributes": {
+                                                                        "data-filter": 'logo'
+                                                                    }
                                                                 }
                                                             ]
                                                         })
@@ -256,7 +267,7 @@ layout: census-website-engage/views/_master
 
                                         <!-- Result count -->
                                         <div class="adv-filter__results-count">
-                                            <span class="js-adv-filter__results-count">11</span> results of 12
+                                            <span class="js-adv-filter__results-count">13</span> results of 13
                                         </div>
 
                                         <!-- Sort by -->
@@ -589,6 +600,33 @@ layout: census-website-engage/views/_master
                                                             "fileType": 'PowerPoint',
                                                             "fileSize": '1.6MB',
                                                             "filePages": '13 pages'
+                                                        },
+                                                        "excerpt": 'Integer aliquam magna nunc, id elementum felis aliquet eu. Donec sed ultrices tortor. Nulla facilisi.'
+                                                    }
+                                                ]
+                                            }) }}
+
+                                        </li>
+
+                                        <!-- Item -->
+                                        <li class="filter__item js-filter__item" data-filter="logo english welsh community-groups" data-sort-index="13">
+                                        
+                                            {{ onsDownloads({
+                                                "downloads": [
+                                                    {
+                                                        "thumbnail": {
+                                                            "smallSrc": pageInfo.rootPath + '/img/small/',
+                                                            "largeSrc": pageInfo.rootPath + '/img/large/',
+                                                            "filename": 'census-2021-logos.png',
+                                                            "alt": 'Census 2021 logos document thumbnail'
+                                                        },
+                                                        "url": pageInfo.rootPath + '/documents/census-2021-logos.zip',                                                
+                                                        "title": 'Census 2021 logos (English, Welsh, Bilingual)',
+                                                        "type": 'Logo',
+                                                        "meta": {
+                                                            "fileType": 'Zip',
+                                                            "fileSize": '2.9MB',
+                                                            "filePages": '46 files'
                                                         },
                                                         "excerpt": 'Integer aliquam magna nunc, id elementum felis aliquet eu. Donec sed ultrices tortor. Nulla facilisi.'
                                                     }

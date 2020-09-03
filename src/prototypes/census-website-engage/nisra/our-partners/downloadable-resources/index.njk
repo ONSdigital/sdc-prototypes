@@ -166,6 +166,17 @@ layout: census-website-engage/views/_nisra-master
                                                                     "attributes": {
                                                                         "data-filter": 'presentation'
                                                                     }
+                                                                },
+                                                                {
+                                                                    "classes": 'checkbox--toggle',
+                                                                    "id": 'logo',
+                                                                    "label": {
+                                                                        "text": 'Logo'
+                                                                    },
+                                                                    "value": 'logo',
+                                                                    "attributes": {
+                                                                        "data-filter": 'logo'
+                                                                    }
                                                                 }
                                                             ]
                                                         })
@@ -208,7 +219,7 @@ layout: census-website-engage/views/_nisra-master
 
                                         <!-- Result count -->
                                         <div class="adv-filter__results-count">
-                                            <span class="js-adv-filter__results-count">6</span> results of 6
+                                            <span class="js-adv-filter__results-count">7</span> results of 7
                                         </div>
 
                                         <!-- Sort by -->
@@ -253,7 +264,7 @@ layout: census-website-engage/views/_nisra-master
                                         </li>
 
                                         <!-- Item -->
-                                        <li class="filter__item js-filter__item" data-filter="booklet local-authorities" data-sort-index="3">
+                                        <li class="filter__item js-filter__item" data-filter="booklet local-authorities" data-sort-index="2">
                                         
                                             {{ onsDownloads({
                                                 "downloads": [
@@ -280,7 +291,7 @@ layout: census-website-engage/views/_nisra-master
                                         </li>
 
                                         <!-- Item -->
-                                        <li class="filter__item js-filter__item" data-filter="booklet local-authorities" data-sort-index="5">
+                                        <li class="filter__item js-filter__item" data-filter="booklet local-authorities" data-sort-index="3">
                                         
                                             {{ onsDownloads({
                                                 "downloads": [
@@ -307,7 +318,7 @@ layout: census-website-engage/views/_nisra-master
                                         </li>
 
                                         <!-- Item -->
-                                        <li class="filter__item js-filter__item" data-filter="booklet local-authorities" data-sort-index="7">
+                                        <li class="filter__item js-filter__item" data-filter="booklet local-authorities" data-sort-index="4">
                                         
                                             {{ onsDownloads({
                                                 "downloads": [
@@ -334,7 +345,7 @@ layout: census-website-engage/views/_nisra-master
                                         </li>
 
                                         <!-- Item -->
-                                        <li class="filter__item js-filter__item" data-filter="booklet local-authorities" data-sort-index="9">
+                                        <li class="filter__item js-filter__item" data-filter="booklet local-authorities" data-sort-index="5">
                                         
                                             {{ onsDownloads({
                                                 "downloads": [
@@ -361,7 +372,7 @@ layout: census-website-engage/views/_nisra-master
                                         </li>
 
                                         <!-- Item -->
-                                        <li class="filter__item js-filter__item" data-filter="presentation local-authorities" data-sort-index="11">
+                                        <li class="filter__item js-filter__item" data-filter="presentation local-authorities" data-sort-index="6">
                                         
                                             {{ onsDownloads({
                                                 "downloads": [
@@ -379,6 +390,33 @@ layout: census-website-engage/views/_nisra-master
                                                             "fileType": 'PowerPoint',
                                                             "fileSize": '1.6MB',
                                                             "filePages": '13 pages'
+                                                        },
+                                                        "excerpt": 'Integer aliquam magna nunc, id elementum felis aliquet eu. Donec sed ultrices tortor. Nulla facilisi.'
+                                                    }
+                                                ]
+                                            }) }}
+
+                                        </li>
+
+                                        <!-- Item -->
+                                        <li class="filter__item js-filter__item" data-filter="logo community-groups" data-sort-index="7">
+                                        
+                                            {{ onsDownloads({
+                                                "downloads": [
+                                                    {
+                                                        "thumbnail": {
+                                                            "smallSrc": pageInfo.rootPath + '/img/small/',
+                                                            "largeSrc": pageInfo.rootPath + '/img/large/',
+                                                            "filename": 'census-2021-logos.png',
+                                                            "alt": 'Census 2021 logos document thumbnail'
+                                                        },
+                                                        "url": pageInfo.rootPath + '/documents/census-2021-logos.zip',                                                
+                                                        "title": 'Census 2021 logos',
+                                                        "type": 'Logo',
+                                                        "meta": {
+                                                            "fileType": 'Zip',
+                                                            "fileSize": '2.9MB',
+                                                            "filePages": '46 files'
                                                         },
                                                         "excerpt": 'Integer aliquam magna nunc, id elementum felis aliquet eu. Donec sed ultrices tortor. Nulla facilisi.'
                                                     }
