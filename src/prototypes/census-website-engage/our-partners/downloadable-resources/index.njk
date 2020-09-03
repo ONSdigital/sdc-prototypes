@@ -267,7 +267,7 @@ layout: census-website-engage/views/_master
 
                                         <!-- Result count -->
                                         <div class="adv-filter__results-count">
-                                            <span class="js-adv-filter__results-count">13</span> results of 13
+                                            <span class="js-adv-filter__results-count">13</span> results of 14
                                         </div>
 
                                         <!-- Sort by -->
@@ -609,7 +609,34 @@ layout: census-website-engage/views/_master
                                         </li>
 
                                         <!-- Item -->
-                                        <li class="filter__item js-filter__item" data-filter="logo english welsh community-groups" data-sort-index="13">
+                                        <li class="filter__item js-filter__item" data-filter="booklet english community-groups" data-sort-index="13">
+                                        
+                                            {{ onsDownloads({
+                                                "downloads": [
+                                                    {
+                                                        "thumbnail": {
+                                                            "smallSrc": pageInfo.rootPath + '/img/small/',
+                                                            "largeSrc": pageInfo.rootPath + '/img/large/',
+                                                            "filename": 'census-2021-brand-guidelines.png',
+                                                            "alt": 'ONS Census 2021 brand guidelines document thumbnail'
+                                                        },
+                                                        "url": pageInfo.rootPath + '/documents/ONS_Census_2021_Brand_Guidelines.pdf',                                                
+                                                        "title": 'Brand guidelines (English)',
+                                                        "type": 'Booklet',
+                                                        "meta": {
+                                                            "fileType": 'PDF',
+                                                            "fileSize": '7.06MB',
+                                                            "filePages": '70 pages'
+                                                        },
+                                                        "excerpt": 'Integer aliquam magna nunc, id elementum felis aliquet eu. Donec sed ultrices tortor. Nulla facilisi.'
+                                                    }
+                                                ]
+                                            }) }}
+
+                                        </li>
+
+                                        <!-- Item -->
+                                        <li class="filter__item js-filter__item" data-filter="logo english welsh community-groups" data-sort-index="14">
                                         
                                             {{ onsDownloads({
                                                 "downloads": [
