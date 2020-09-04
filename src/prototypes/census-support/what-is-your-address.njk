@@ -10,7 +10,7 @@ layout: census-support/views/_master
 {% set form =  {
     "method": "GET",
     "attributes": {
-        "action":  pageInfo.parentPath + "/confirm-your-address.html"
+        "action":  pageInfo.rootPath + "/confirm-your-address.html"
     }
 } %}
 {% block preMain %}
@@ -54,7 +54,7 @@ layout: census-support/views/_master
             }
         }) }}
     </div>
-    <p class="u-mb-no"><a href="{{ pageInfo.parentPath }}/enter-your-address.html">I can&rsquo;t find my address</a></p>
+    <p class="u-mb-no"><a href="{{ pageInfo.rootPath }}/enter-your-address.html">I can&rsquo;t find my address</a></p>
     {{ onsButton({
         "text": "Continue",
         "classes": "u-mt-xl u-mb-xl"
@@ -62,6 +62,6 @@ layout: census-support/views/_master
     {% endcall %}
 
     <script>
-        sessionStorage.removeItem("{{ pageInfo.parentPath }}/what-is-your-address.html"); 
+        sessionStorage.removeItem("{{ pageInfo.rootPath }}/what-is-your-address.html"); 
     </script>
 {% endblock %}

@@ -8,56 +8,32 @@ layout: census-support/views/_master
 {% from "components/button/_macro.njk" import onsButton %}
 {% from "components/radios/_macro.njk" import onsRadios %}
 {% from "components/panel/_macro.njk" import onsPanel %}
-
-{% set form =  {
-    "method": "GET",
-    "attributes": {
-        "action":  "#"
-    }
-} %}
+{% from "components/lists/_macro.njk" import onsList %}
 
 {% block main %}
-    {% call onsQuestion({
-        "title": "How would you like to complete your census?",
-        "useFieldset": true,
-        "classes": "u-mt-l"
-    }) %}
-        {{
-            onsRadios({
-                "name": "method",
-                "radios": [
-                    {
-                        "id": "online",
-                        "label": {
-                            "text": "Online"
-                        },
-                        "name": "online",
-                        "attributes": {
-                            "data-action-url": pageInfo.rootPath + "/online/" + "what-is-your-address.html"
-                        }
-                    },
-                    {
-                        "id": "paper",
-                        "label": {
-                            "text": "On paper"
-                        },
-                        "name": "paper",
-                        "attributes": {
-                            "data-action-url": pageInfo.rootPath + "/paper/" + "what-is-your-paper-code.html"
-                        }
-                    }
-                ]
-            })
-        }}
-    {% endcall %}
-
+    <h1 class="u-mt-l">Create a online access code or activate a paper questionnaire</h1>
+    <p>This service allows a Census Community Engagement Officer to</p>
+    {{
+        onsList({
+            "classes": "u-mb-no",
+            "itemsList": [
+                {
+                    "text": "create a new online access code"
+                },
+                {
+                    "text": "activate a paper questionnaire"
+                }
+            ]
+        })
+    }}
     {{ onsButton({
-        "text": "Continue",
-        "classes": "u-mt-xl u-mb-xl"
+        "text": "Start now",
+        "url": pageInfo.rootPath + "/what-is-your-address.html",
+        "classes": "u-mt-xl"
     }) }}
 
     <script>
-        sessionStorage.clear();    
+        sessionStorage.clear();
     </script>
 
 {% endblock %}

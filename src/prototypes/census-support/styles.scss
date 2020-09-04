@@ -38,3 +38,28 @@
 .panel--bare {
   border-left: none;
 }
+
+.scanner {
+  position: relative;
+}
+
+.scanner,
+.scanner__window,
+.scanner__capture {
+  width: 300px;
+  height: 225px;
+}
+
+.scanner__window,
+.scanner__capture {
+  display: block;
+}
+
+.scanner__overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  opacity: 0.7;
+}

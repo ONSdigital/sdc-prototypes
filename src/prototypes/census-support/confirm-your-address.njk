@@ -11,12 +11,12 @@ layout: census-support/views/_master
 {% set form =  {
     "method": "GET",
     "attributes": {
-        "action":  pageInfo.parentPath + "/what-is-your-mobile-phone-number.html"
+        "action":  pageInfo.rootPath + "/how-would-you-like-to-complete.html"
     }
 } %}
 {% block preMain %}
     <div class="u-mt-s">
-        <a class="back-link" href="{{ pageInfo.parentPath }}/what-is-your-address.html">Back</a>
+        <a class="back-link" href="{{ pageInfo.rootPath }}/what-is-your-address.html">Back</a>
     </div>
 {% endblock %}
 {% block main %}
@@ -32,7 +32,7 @@ layout: census-support/views/_master
                     {
                         "id": "yes",
                         "attributes": {
-                            "data-action-url": pageInfo.parentPath + "/confirm-your-address.html"
+                            "data-action-url": pageInfo.rootPath + "/how-would-you-like-to-complete.html"
                         },
                         "label": {
                             "text": "Yes, this is the correct address"
@@ -41,7 +41,7 @@ layout: census-support/views/_master
                     {
                         "id": "no",
                         "attributes": {
-                            "data-action-url": pageInfo.parentPath + "/what-is-your-address.html"
+                            "data-action-url": pageInfo.rootPath + "/what-is-your-address.html"
                         },
                         "label": {
                             "text": "No, search again for an address"
@@ -59,16 +59,16 @@ layout: census-support/views/_master
     {% endcall %}
 
     <script>
-        sessionStorage.removeItem("{{ pageInfo.parentPath }}/confirm-your-address.html"); 
+        sessionStorage.removeItem("{{ pageInfo.rootPath }}/confirm-your-address.html"); 
         var addressBlock = document.getElementById("js-address");
 
         function getAddressInputs(){
-            if ('{{ pageInfo.parentPath }}/what-is-your-address.html' in sessionStorage){
-                var addressInputs = JSON.parse(sessionStorage.getItem('{{ pageInfo.parentPath }}/what-is-your-address.html') || '[]');
+            if ('{{ pageInfo.rootPath }}/what-is-your-address.html' in sessionStorage){
+                var addressInputs = JSON.parse(sessionStorage.getItem('{{ pageInfo.rootPath }}/what-is-your-address.html') || '[]');
                 return userAddress = addressInputs.inputs[0].value.replace(/,/g, '<br>');
             }
-            else if ('{{ pageInfo.parentPath }}/enter-your-address.html' in sessionStorage){
-                var addressInputs = JSON.parse(sessionStorage.getItem('{{ pageInfo.parentPath }}/enter-your-address.html') || '[]');
+            else if ('{{ pageInfo.rootPath }}/enter-your-address.html' in sessionStorage){
+                var addressInputs = JSON.parse(sessionStorage.getItem('{{ pageInfo.rootPath }}/enter-your-address.html') || '[]');
                 var addressLine1 = addressInputs.inputs[0].value;
                 var addressLine2 = addressInputs.inputs[1].value;
                 var townCity = addressInputs.inputs[2].value;

@@ -11,7 +11,7 @@ layout: census-support/views/_master
 {% set form =  {
     "method": "GET",
     "attributes": {
-        "action":  pageInfo.parentPath + "/code-text-sent.html"
+        "action":  pageInfo.parentPath + "/how-would-you-like-to-complete.html"
     }
 } %}
 {% block preMain %}
@@ -73,6 +73,6 @@ layout: census-support/views/_master
     {% endcall %}
 
     <script>
-        sessionStorage.removeItem("{{ pageInfo.parentPath }}/enter-your-address.html");
+        sessionStorage.removeItem("{{ pageInfo.rootPath }}/enter-your-address.html");
     </script>
 {% endblock %}

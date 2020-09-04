@@ -16,11 +16,30 @@ layout: census-support/views/_master
     {% call onsPanel({ 
         "type": "success",
         "icon": "check",
-        "classes": "u-mb-l"
+        "classes": "u-mb-no"
     }) %}
         <h1>You can now fill in your paper questionnaire</h1>
     {% endcall %}
 
-    <h2 class="u-fs-m u-mb-xs">Need another access code?</h2>
-    <a href="{{ pageInfo.rootPath }}/index.html">Get a new access code</a>
+    <form onsubmit="return false;">
+        <div class="btn-group">
+            {{
+                onsButton({
+                    "id": "done",
+                    "text": "Done",
+                    "classes": "u-mt-xl u-mb-no"
+                })
+            }}
+        </div>
+    </form>
+    <script>
+        var doneButton = document.getElementById('done');
+
+        document.getElementById("done").addEventListener("click", function(e) {
+            e.preventDefault();
+
+            window.location.href = '{{ pageInfo.rootPath }}/index.html';
+
+        });
+    </script>
 {% endblock %}
