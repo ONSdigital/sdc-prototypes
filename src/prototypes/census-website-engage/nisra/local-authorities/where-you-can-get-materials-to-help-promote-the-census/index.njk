@@ -1,0 +1,149 @@
+---
+title: Where you can get materials to help promote the census
+group: Census
+version: 24.0.0
+layout: census-website-engage/views/_nisra-master
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": pageInfo.rootPath + '/nisra/home',
+                            "text": 'Home'
+                        },
+                        {
+                            "url": pageInfo.rootPath + '/nisra/local-authorities',
+                            "text": 'Local authorities'
+                        }
+                    ]
+                })
+            }}
+
+            <div class="grid u-mt-s@m">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-l">
+                            <span class="u-fs-m u-db u-mb-xs u-lighter">Local authorities</span>
+                            <span class="u-vh">: </span>
+                            <span class="u-fs-xxl u-db">Where you can get materials to help promote the census</span>
+                        </h1>
+
+                        {{-
+                            onsTableOfContents({
+                                "title": 'Contents',
+                                "ariaLabel": 'Pages in this guide',
+                                "itemsList": [
+                                    {
+                                        "url": pageInfo.rootPath + '/nisra/local-authorities',
+                                        "text": 'Overview'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/nisra/local-authorities/how-you-can-prepare-for-2021',
+                                        "text": 'Important dates for local authorities'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/nisra/local-authorities/how-you-can-prepare-for-2021',
+                                        "text": 'How you can prepare for 2021'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/nisra/local-authorities/what-you-can-do-now',
+                                        "text": 'What you can do now'
+                                    },
+                                    {
+                                        "text": 'Where you can get materials to help promote the census',
+                                        "current": true
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/nisra/local-authorities/who-you-can-contact-at-ons-for-support',
+                                        "text": 'Who you can contact at ONS for support'
+                                    }
+                                ]
+                            })
+                        }}
+
+                        <div class="page__body">
+
+                            <p><a href="#0">Visit our materials page, where you can download promotional and guidance leaflets</a></p>
+
+                            <p>Closer to Census 2021, we’ll be publishing a wider selection of census-related materials on this website. You’ll be able to use these for things like:</p>
+
+                            <ul>
+                                <li>informing your local authority staff about the census</li>
+                                <li>answering questions from residents</li>
+                                <li>spreading the word locally to organisations like parish councils and community groups</li>
+                            </ul>
+
+                            <p>We’ll include things like census factsheets and ready-made articles that can be used on your website and by local community organisations.</p>
+
+                            <p>You’ll be able to download, print and use these materials as you need to. Please keep checking, as we’ll add more as the census gets closer.</p>
+
+                            <div class="u-mt-xl">
+                                {{-
+                                    onsContentPagination({
+                                        "contentPaginationItems": [
+                                            {
+                                                "rel": 'prev',
+                                                "text": 'Previous',
+                                                "url": pageInfo.rootPath + '/nisra/local-authorities/what-you-can-do-now',
+                                                "label": 'What you can do now'
+                                            },
+                                            {
+                                                "rel": 'next',
+                                                "text": 'Next',
+                                                "url": pageInfo.rootPath + '/nisra/local-authorities/who-you-can-contact-at-ons-for-support',
+                                                "label": 'Who you can contact at ONS for support'
+                                            }
+                                        ]
+                                    })
+                                }}
+                            </div>
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+                <div class="grid__col col-4@m push-1@m u-mt-m">
+
+                    {{-
+                        onsRelatedLinks({
+                            "id": 'related-links',
+                            "title": 'Related content',
+                            "itemsList": [
+                                {
+                                    "url": '#0',
+                                    "text": 'Community groups'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/nisra/downloadable-resources',
+                                    "text": 'Downloadable resources'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/nisra/contact-us',
+                                    "text": 'Contact us'
+                                }
+                            ]
+                        })
+                    }}
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}

@@ -18,6 +18,10 @@ layout: census-website-engage/views/_master
                         {
                             "url": pageInfo.rootPath + '/home',
                             "text": 'Home'
+                        },
+                        {
+                            "url": pageInfo.rootPath + '/about-the-census',
+                            "text": 'About the census'
                         }
                     ]
                 })
@@ -42,12 +46,12 @@ layout: census-website-engage/views/_master
                                 "itemsList": [
                                     {
                                         "url": pageInfo.rootPath + '/about-the-census',
-                                        "text": 'Overview',
-                                        "current": true
+                                        "text": 'Overview'
                                     },
                                     {
                                         "url": pageInfo.rootPath + '/about-the-census/2019-rehearsal',
-                                        "text": '2019 Rehearsal'
+                                        "text": '2019 Rehearsal',
+                                        "current": true
                                     },
                                     {
                                         "url": pageInfo.rootPath + '/about-the-census/why-should-i-take-part-in-the-census',
@@ -71,36 +75,24 @@ layout: census-website-engage/views/_master
 
                         <div class="page__body">
                             
-                            <h2>What is the census?</h2>
-                            
-                            <p>The census is a once-in-a-decade survey that gives us the most accurate estimate of all the people and households in England and Wales. The information you give helps decide how services are planned and funded in your local area. This could mean things like doctors’ surgeries, housing or new bus routes.</p>
-                            
-                            <p>It asks questions about you and your household to build a picture of all of us. It looks at who we are and how we live. There’s no other survey that gives as much information about our society and future needs.</p>
-                            
-                            <h2>Past, present and future</h2>
-                            
-                            <p>The census takes place every 10 years. The first census was in 1801 and the most recent in 2011. The next census is planned for 2021. The Office for National Statistics (ONS) delivers the census. We need every household in England and Wales to take part to make it accurate.</p>
-                            
-                            <h2>Between censuses</h2>
-                            
-                            <p>We also need your help between each census. At the ONS, we rely on ongoing studies to provide detailed, up-to-date information about changes to society. To ensure that we represent everyone, we ask people to take part in these studies. We carry out some face to face, some over the phone and some online.</p>
-                            
-                            <p>These studies do not stop while the census takes place. To find out more about the types of studies we run throughout the year, visit <a href="#0">the ONS website</a>.</p>
-                            
-                            <h2>The census in Scotland and Northern Ireland</h2><p>At the ONS, we’re responsible for planning and running the census for England and Wales.</p>
-                            
-                            <p>Find out more about how the census is run in Scotland and Northern Ireland and how to take part from the <a href="#0">National Records of Scotland</a> and <a href="#0">Northern Ireland Statistics and Research Agency</a>.</p>
+                            <p>Content...</p>
                             
                             <div class="u-mt-xl">
                                 {{-
                                     onsContentPagination({
                                         "contentPaginationItems": [
-                                        {
-                                            "rel": 'next',
-                                            "text": 'Next',
-                                            "url": pageInfo.rootPath + '/about-the-census/2019-rehearsal',
-                                            "label": '2019 Rehearsal'
-                                        }
+                                            {
+                                                "rel": 'prev',
+                                                "text": 'Previous',
+                                                "url": pageInfo.rootPath + '/about-the-census/',
+                                                "label": 'Overview'
+                                            },
+                                            {
+                                                "rel": 'next',
+                                                "text": 'Next',
+                                                "url": pageInfo.rootPath + '/about-the-census/why-should-i-take-part-in-the-census/',
+                                                "label": 'Why should I take part in the census?'
+                                            }
                                         ]
                                     })
                                 }}

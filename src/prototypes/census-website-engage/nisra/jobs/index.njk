@@ -11,6 +11,18 @@ layout: census-website-engage/views/_nisra-master
 
         <div class="page__container container">
 
+            {{
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": pageInfo.rootPath + '/nisra/home',
+                            "text": 'Home'
+                        }
+                    ]
+                })
+            }}
+
             <div class="grid u-mt-s@m">
 
                 <div class="grid__col col-7@m">
@@ -23,7 +35,7 @@ layout: census-website-engage/views/_nisra-master
                         
                             <h2>Applying for jobs</h2>
                             
-                            <p>If you’re a people person, have great customer service skills and want to be part of something that affects all of us, then <a href="#">apply for a job with the census</a>.</p>
+                            <p>If you’re a people person, have great customer service skills and want to be part of something that affects all of us, then <a href="https://censusjobs.co.uk">apply for a job with the census</a>.</p>
                             
                             <p>For Census 2021, we’ll be hiring at least 30,000 field staff across England and Wales. As it gets closer, we’ll be advertising the opportunities online.</p>
                             

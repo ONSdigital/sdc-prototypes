@@ -1,0 +1,179 @@
+---
+title: Important dates for local authorities
+group: Census
+version: 24.0.0
+layout: census-website-engage/views/_master
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": pageInfo.rootPath + '/home',
+                            "text": 'Home'
+                        },
+                        {
+                            "url": pageInfo.rootPath + '/local-authorities',
+                            "text": 'Local authorities'
+                        }
+                    ]
+                })
+            }}
+
+            <div class="grid u-mt-s@m">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-l">
+                            <span class="u-fs-m u-db u-mb-xs u-lighter">Local authorities</span>
+                            <span class="u-vh">: </span>
+                            <span class="u-fs-xxl u-db">Important dates for local authorities</span>
+                        </h1>
+
+                        {{-
+                            onsTableOfContents({
+                                "title": 'Contents',
+                                "ariaLabel": 'Pages in this guide',
+                                "itemsList": [
+                                    {
+                                        "url": pageInfo.rootPath + '/local-authorities',
+                                        "text": 'Overview'
+                                    },
+                                    {
+                                        "text": 'Important dates for local authorities',
+                                        "current": true
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/local-authorities/how-you-can-prepare-for-2021',
+                                        "text": 'How you can prepare for 2021'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/local-authorities/what-you-can-do-now',
+                                        "text": 'What you can do now'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/local-authorities/where-you-can-get-materials-to-help-promote-the-census',
+                                        "text": 'Where you can get materials to help promote the census'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/local-authorities/who-you-can-contact-at-ons-for-support',
+                                        "text": 'Who you can contact at ONS for support'
+                                    }
+                                ]
+                            })
+                        }}
+
+                        <p>Key dates for local authorities to prepare for Census 2021.</p>
+
+                        {{
+                            onsTimeline({
+                            "classes": "u-mt-l u-mb-xl",
+                            "items": [
+                                    {
+                                        "heading": 'September 2020',
+                                        "content": '<p>Local Authority Toolkit available online</p>'
+                                    },
+                                    {
+                                        "heading": 'September to October 2020',
+                                        "content": '<p>ONS to provide Councillor Handbook for distribution</p>'
+                                    },
+                                    {
+                                        "heading": 'October to November 2020',
+                                        "content": '<p>Meet your Census Engagement Manager and set up regular catch up meetings</p>'
+                                    },
+                                    {
+                                        "heading": 'November 2020',
+                                        "content": '<p>ONS to provide you with content for magazines and publications</p>'
+                                    },
+                                    {
+                                        "heading": 'January to March 2021',
+                                        "content": '<p>ONS to provide a range of press releases for external use</p>'
+                                    },
+                                    {
+                                        "heading": 'February to April 2021',
+                                        "content": '<p>Promote your local Census Support Centres</p>'
+                                    }
+                                ]
+                            })
+                        }}
+
+                        {% from "components/panel/_macro.njk" import onsPanel %}
+                            
+                            {% call onsPanel() %}
+
+                            <h2 class="u-fs-m u-mb-xs">Sign up to our mailing list</h2>
+                            <p>Stay up to date on the latest news and events for local authorities through our mailing list.</p>
+                            <p>Please <a href="mailto:2021Census.LA.Liaison@ons.gov.uk">email our Local Authority Partnerships team</a> from your work email address.</p>
+
+                        {% endcall %}
+
+                        <div class="page__body">
+
+                            <div class="u-mt-xl">
+                                {{-
+                                    onsContentPagination({
+                                        "contentPaginationItems": [
+                                            {
+                                                "rel": 'prev',
+                                                "text": 'Previous',
+                                                "url": pageInfo.rootPath + '/local-authorities/',
+                                                "label": 'Overview'
+                                            },
+                                            {
+                                                "rel": 'next',
+                                                "text": 'Next',
+                                                "url": pageInfo.rootPath + '/local-authorities/how-you-can-prepare-for-2021',
+                                                "label": 'How you can prepare for 2021'
+                                            }
+                                        ]
+                                    })
+                                }}
+                            </div>
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+                <div class="grid__col col-4@m push-1@m u-mt-m">
+
+                    {{-
+                        onsRelatedLinks({
+                            "id": 'related-links',
+                            "title": 'Related content',
+                            "itemsList": [
+                                {
+                                    "url": pageInfo.rootPath + '/community-groups',
+                                    "text": 'Community groups'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/downloadable-resources',
+                                    "text": 'Downloadable resources'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/contact-us',
+                                    "text": 'Contact us'
+                                }
+                            ]
+                        })
+                    }}
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}
