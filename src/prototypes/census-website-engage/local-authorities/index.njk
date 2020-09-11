@@ -1,5 +1,5 @@
 ---
-title: Local authorities
+title: Help the census succeed in your area
 group: Census
 version: 24.0.0
 layout: census-website-engage/views/_master
@@ -23,7 +23,7 @@ layout: census-website-engage/views/_master
                 })
             }}
 
-            <div class="grid u-mt-s@m">
+            <div class="grid">
 
                 <div class="grid__col col-7@m">
 
@@ -32,7 +32,7 @@ layout: census-website-engage/views/_master
                         <h1 class="u-mb-l">
                             <span class="u-fs-m u-db u-mb-xs u-lighter">Local authorities</span>
                             <span class="u-vh">: </span>
-                            <span class="u-fs-xxl u-db">Overview</span>
+                            <span class="u-fs-xxl u-db">Help the census succeed in your area</span>
                         </h1>
 
                         {{-
@@ -41,28 +41,29 @@ layout: census-website-engage/views/_master
                                 "ariaLabel": 'Pages in this guide',
                                 "itemsList": [
                                     {
-                                        "text": 'Overview',
+                                        "url": pageInfo.rootPath + '/local-authorities/',
+                                        "text": 'Help the census succeed in your area',
                                         "current": true
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/local-authorities/how-you-can-work-with-us',
+                                        "text": 'How you can work with us'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/local-authorities/what-you-can-do-to-help',
+                                        "text": 'What you can do to help'
                                     },
                                     {
                                         "url": pageInfo.rootPath + '/local-authorities/important-dates-for-local-authorities',
                                         "text": 'Important dates for local authorities'
                                     },
                                     {
-                                        "url": pageInfo.rootPath + '/local-authorities/how-you-can-prepare-for-2021',
-                                        "text": 'How you can prepare for 2021'
+                                        "url": pageInfo.rootPath + '/local-authorities/materials-to-help-promote-the-census',
+                                        "text": 'Materials to help promote the census'
                                     },
                                     {
-                                        "url": pageInfo.rootPath + '/local-authorities/what-you-can-do-now',
-                                        "text": 'What you can do now'
-                                    },
-                                    {
-                                        "url": pageInfo.rootPath + '/local-authorities/where-you-can-get-materials-to-help-promote-the-census',
-                                        "text": 'Where you can get materials to help promote the census'
-                                    },
-                                    {
-                                        "url": pageInfo.rootPath + '/local-authorities/who-you-can-contact-at-ons-for-support',
-                                        "text": 'Who you can contact at ONS for support'
+                                        "url": pageInfo.rootPath + '/local-authorities/who-you-can-contact-for-help',
+                                        "text": 'Who you can contact for help'
                                     }
                                 ]
                             })
@@ -70,9 +71,9 @@ layout: census-website-engage/views/_master
 
                         <div class="page__body">
                             
-                            <p>Just as census statistics may well be vital to you, your support is vital to us. By working together, we can make sure Census 2021 gets a great response and represents everyone.</p>
+                            <p>Just as census statistics may well be vital to you, your support is vital to us. We need your help to raise awareness of the census in your area and encourage people to fill in their census questionnaires.</p>
 
-                            <p><a href="mailto:2021Census.LA.Liaison@ons.gov.uk">Please email our Local Authority Partnerships team</a></p>
+                            <p>By working together, we can make sure Census 2021 gets a great response and represents everyone.</p>
 
                             <div class="u-mt-xl">
                                 {{-
@@ -81,8 +82,8 @@ layout: census-website-engage/views/_master
                                         {
                                             "rel": 'next',
                                             "text": 'Next',
-                                            "url": pageInfo.rootPath + '/local-authorities/important-dates-for-local-authorities',
-                                            "label": 'Important dates for local authorities'
+                                            "url": pageInfo.rootPath + '/local-authorities/how-you-can-work-with-us',
+                                            "label": 'How you can work with us'
                                         }
                                         ]
                                     })

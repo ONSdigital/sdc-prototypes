@@ -3,13 +3,13 @@ Articles
 -------------------------------- */
 
 .article__heading {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .article__meta {
   color: $color-grey-1;
   display: flex;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   padding-left: 0;
 }
 
@@ -17,4 +17,71 @@ Articles
   display: block;
   margin: 0 1rem 0 0;
   padding-left: 0;
+}
+
+.article {
+  border-top: 1px solid $color-grey-3;
+  padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
+
+  @include mq(s) {
+    display: flex;
+  }
+}
+
+.article__image {
+  flex-shrink: 0;
+  margin-right: 1.5rem;
+}
+
+.article__image-link {
+  outline-offset: 0;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+
+  // Override standard focus settings
+  &:focus {
+    box-shadow: 0 0 0 2px $color-black !important;
+    outline-offset: 2px; // Accounts for 2px border
+    outline: 4px solid $color-focus !important;
+  }
+}
+
+.article--featured {
+  background-color: $color-grey-5;
+  border-top: 0; // Reset
+  padding-bottom: 0;
+  padding-top: 0;
+
+  .article__image {
+    margin-right: 0; // Reset
+    margin-bottom: 1.5rem;
+
+    @include mq(m) {
+      margin-right: 1.5rem;
+      margin-bottom: 0; // Reset
+    }
+  }
+
+  .article__image img {
+    width: 100%;
+  }
+}
+
+.link-text {
+  color: inherit;
+
+  &:hover {
+    color: $color-black;
+  }
+}
+
+.u-bt {
+  border-color: $color-grey-3 !important;
+}
+
+// Link needs hover colour change globally for Census 2021
+a:hover {
+  color: $color-black;
 }

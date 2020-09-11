@@ -1,7 +1,4 @@
 .social-list {
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
   margin: 0 -1rem -1rem;
   padding-left: 0;
 }
@@ -16,4 +13,11 @@
   fill: $color-black;
   height: 32px;
   width: 32px;
+}
+
+// Inline
+.social-list--inline {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
 }

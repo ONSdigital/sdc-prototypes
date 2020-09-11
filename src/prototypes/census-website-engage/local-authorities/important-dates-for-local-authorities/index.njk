@@ -27,7 +27,7 @@ layout: census-website-engage/views/_master
                 })
             }}
 
-            <div class="grid u-mt-s@m">
+            <div class="grid">
 
                 <div class="grid__col col-7@m">
 
@@ -45,34 +45,35 @@ layout: census-website-engage/views/_master
                                 "ariaLabel": 'Pages in this guide',
                                 "itemsList": [
                                     {
-                                        "url": pageInfo.rootPath + '/local-authorities',
-                                        "text": 'Overview'
+                                        "url": pageInfo.rootPath + '/local-authorities/',
+                                        "text": 'Help the census succeed in your area'
                                     },
                                     {
+                                        "url": pageInfo.rootPath + '/local-authorities/how-you-can-work-with-us',
+                                        "text": 'How you can work with us'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/local-authorities/what-you-can-do-to-help',
+                                        "text": 'What you can do to help'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/local-authorities/important-dates-for-local-authorities',
                                         "text": 'Important dates for local authorities',
                                         "current": true
                                     },
                                     {
-                                        "url": pageInfo.rootPath + '/local-authorities/how-you-can-prepare-for-2021',
-                                        "text": 'How you can prepare for 2021'
+                                        "url": pageInfo.rootPath + '/local-authorities/materials-to-help-promote-the-census',
+                                        "text": 'Materials to help promote the census'
                                     },
                                     {
-                                        "url": pageInfo.rootPath + '/local-authorities/what-you-can-do-now',
-                                        "text": 'What you can do now'
-                                    },
-                                    {
-                                        "url": pageInfo.rootPath + '/local-authorities/where-you-can-get-materials-to-help-promote-the-census',
-                                        "text": 'Where you can get materials to help promote the census'
-                                    },
-                                    {
-                                        "url": pageInfo.rootPath + '/local-authorities/who-you-can-contact-at-ons-for-support',
-                                        "text": 'Who you can contact at ONS for support'
+                                        "url": pageInfo.rootPath + '/local-authorities/who-you-can-contact-for-help',
+                                        "text": 'Who you can contact for help'
                                     }
                                 ]
                             })
                         }}
 
-                        <p>Key dates for local authorities to prepare for Census 2021.</p>
+                        <p>Important dates for local authorities to prepare for Census 2021.</p>
 
                         {{
                             onsTimeline({
@@ -84,19 +85,19 @@ layout: census-website-engage/views/_master
                                     },
                                     {
                                         "heading": 'September to October 2020',
-                                        "content": '<p>ONS to provide Councillor Handbook for distribution</p>'
+                                        "content": '<p>The ONS to provide Councillor Handbook for distribution</p>'
                                     },
                                     {
                                         "heading": 'October to November 2020',
-                                        "content": '<p>Meet your Census Engagement Manager and set up regular catch up meetings</p>'
+                                        "content": '<p>Meet your Census Engagement Manager and set up regular catch-up meetings</p>'
                                     },
                                     {
                                         "heading": 'November 2020',
-                                        "content": '<p>ONS to provide you with content for magazines and publications</p>'
+                                        "content": '<p>The ONS to provide you with content for magazines and publications</p>'
                                     },
                                     {
                                         "heading": 'January to March 2021',
-                                        "content": '<p>ONS to provide a range of press releases for external use</p>'
+                                        "content": '<p>The ONS to provide a range of press releases for external use</p>'
                                     },
                                     {
                                         "heading": 'February to April 2021',
@@ -105,16 +106,6 @@ layout: census-website-engage/views/_master
                                 ]
                             })
                         }}
-
-                        {% from "components/panel/_macro.njk" import onsPanel %}
-                            
-                            {% call onsPanel() %}
-
-                            <h2 class="u-fs-m u-mb-xs">Sign up to our mailing list</h2>
-                            <p>Stay up to date on the latest news and events for local authorities through our mailing list.</p>
-                            <p>Please <a href="mailto:2021Census.LA.Liaison@ons.gov.uk">email our Local Authority Partnerships team</a> from your work email address.</p>
-
-                        {% endcall %}
 
                         <div class="page__body">
 
@@ -125,14 +116,14 @@ layout: census-website-engage/views/_master
                                             {
                                                 "rel": 'prev',
                                                 "text": 'Previous',
-                                                "url": pageInfo.rootPath + '/local-authorities/',
-                                                "label": 'Overview'
+                                                "url": pageInfo.rootPath + '/local-authorities/what-you-can-do-to-help',
+                                                "label": 'What you can do to help'
                                             },
                                             {
                                                 "rel": 'next',
                                                 "text": 'Next',
-                                                "url": pageInfo.rootPath + '/local-authorities/how-you-can-prepare-for-2021',
-                                                "label": 'How you can prepare for 2021'
+                                                "url": pageInfo.rootPath + '/local-authorities/materials-to-help-promote-the-census',
+                                                "label": 'Materials to help promote the census'
                                             }
                                         ]
                                     })
