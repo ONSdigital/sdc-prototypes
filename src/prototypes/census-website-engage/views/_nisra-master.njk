@@ -20,7 +20,7 @@
 {% from "components/downloads/_macro.njk" import onsDownloads %}
 
 {% block head %}
-    <link rel="stylesheet" href="{{ pageInfo.rootPath }}/main.css">
+    <link rel="stylesheet" href="{{pageInfo.rootPath}}/main.css">
 {% endblock %}
 
 {% set pageConfig =  { 
@@ -124,5 +124,5 @@
 {% endblock %}
 
 {% block bodyEnd %}
-    <script src="{{ pageInfo.rootPath }}/index.js"></script>
+    <script src="{{pageInfo.rootPath}}/index.js"></script>
 {% endblock %}
