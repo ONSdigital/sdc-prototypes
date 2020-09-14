@@ -45,34 +45,35 @@ layout: census-website-engage/views/_nisra-master
                                 "ariaLabel": 'Pages in this guide',
                                 "itemsList": [
                                     {
-                                        "url": pageInfo.rootPath + '/nisra/local-authorities',
-                                        "text": 'Overview'
+                                        "url": pageInfo.rootPath + '/nisra/local-authorities/',
+                                        "text": 'Help the census succeed in your area'
                                     },
                                     {
+                                        "url": pageInfo.rootPath + '/nisra/local-authorities/how-you-can-work-with-us',
+                                        "text": 'How you can work with us'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/nisra/local-authorities/what-you-can-do-to-help',
+                                        "text": 'What you can do to help'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/nisra/local-authorities/important-dates-for-local-authorities',
                                         "text": 'Important dates for local authorities',
                                         "current": true
                                     },
                                     {
-                                        "url": pageInfo.rootPath + '/nisra/local-authorities/how-you-can-prepare-for-2021',
-                                        "text": 'How you can prepare for 2021'
+                                        "url": pageInfo.rootPath + '/nisra/local-authorities/materials-to-help-promote-the-census',
+                                        "text": 'Materials to help promote the census'
                                     },
                                     {
-                                        "url": pageInfo.rootPath + '/nisra/local-authorities/what-you-can-do-now',
-                                        "text": 'What you can do now'
-                                    },
-                                    {
-                                        "url": pageInfo.rootPath + '/nisra/local-authorities/where-you-can-get-materials-to-help-promote-the-census',
-                                        "text": 'Where you can get materials to help promote the census'
-                                    },
-                                    {
-                                        "url": pageInfo.rootPath + '/nisra/local-authorities/who-you-can-contact-at-ons-for-support',
-                                        "text": 'Who you can contact at ONS for support'
+                                        "url": pageInfo.rootPath + '/nisra/local-authorities/who-you-can-contact-for-help',
+                                        "text": 'Who you can contact for help'
                                     }
                                 ]
                             })
                         }}
 
-                        <p>Key dates for local authorities to prepare for Census 2021.</p>
+                       <p>Important dates for local authorities to prepare for Census 2021.</p>
 
                         {{
                             onsTimeline({
@@ -106,16 +107,6 @@ layout: census-website-engage/views/_nisra-master
                             })
                         }}
 
-                        {% from "components/panel/_macro.njk" import onsPanel %}
-                            
-                            {% call onsPanel() %}
-
-                            <h2 class="u-fs-m u-mb-xs">Sign up to our mailing list</h2>
-                            <p>Stay up to date on the latest news and events for local authorities through our mailing list.</p>
-                            <p>Please <a href="mailto:2021Census.LA.Liaison@ons.gov.uk">email our Local Authority Partnerships team</a> from your work email address.</p>
-
-                        {% endcall %}
-
                         <div class="page__body">
 
                             <div class="u-mt-xl">
@@ -125,14 +116,14 @@ layout: census-website-engage/views/_nisra-master
                                             {
                                                 "rel": 'prev',
                                                 "text": 'Previous',
-                                                "url": pageInfo.rootPath + '/nisra/local-authorities/',
-                                                "label": 'Overview'
+                                                "url": pageInfo.rootPath + '/local-authorities/what-you-can-do-to-help',
+                                                "label": 'What you can do to help'
                                             },
                                             {
                                                 "rel": 'next',
                                                 "text": 'Next',
-                                                "url": pageInfo.rootPath + '/nisra/local-authorities/how-you-can-prepare-for-2021',
-                                                "label": 'How you can prepare for 2021'
+                                                "url": pageInfo.rootPath + '/local-authorities/materials-to-help-promote-the-census',
+                                                "label": 'Materials to help promote the census'
                                             }
                                         ]
                                     })
@@ -153,7 +144,7 @@ layout: census-website-engage/views/_nisra-master
                             "title": 'Related content',
                             "itemsList": [
                                 {
-                                    "url": '#0',
+                                    "url": pageInfo.rootPath + '/nisra/community-groups',
                                     "text": 'Community groups'
                                 },
                                 {

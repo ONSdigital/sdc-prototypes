@@ -1,5 +1,5 @@
 ---
-title: Community groups
+title: Who to contact for help
 group: Census
 version: 24.0.0
 layout: census-website-engage/views/_nisra-master
@@ -16,7 +16,7 @@ layout: census-website-engage/views/_nisra-master
                     "ariaLabel": 'Breadcrumb',
                     "itemsList": [
                         {
-                            "url": pageInfo.rootPath + '/home',
+                            "url": pageInfo.rootPath + '/nisra/home',
                             "text": 'Home'
                         },
                         {
@@ -36,7 +36,7 @@ layout: census-website-engage/views/_nisra-master
                         <h1 class="u-mb-l">
                             <span class="u-fs-m u-db u-mb-xs u-lighter">Community groups</span>
                             <span class="u-vh">: </span>
-                            <span class="u-fs-xxl u-db">Overview</span>
+                            <span class="u-fs-xxl u-db">Who to contact for help</span>
                         </h1>
 
                         {{-
@@ -46,15 +46,20 @@ layout: census-website-engage/views/_nisra-master
                                 "itemsList": [
                                     {
                                         "url": pageInfo.rootPath + '/nisra/community-groups/',
-                                        "text": 'Overview'
+                                        "text": 'Why your help is vital'
                                     },
                                     {
-                                        "text": 'How to support the census',
+                                        "url": pageInfo.rootPath + '/nisra/community-groups/spread-the-word-before-the-census',
+                                        "text": 'Spread the word before the census'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/nisra/community-groups/what-you-can-do-around-census-day',
+                                        "text": 'What you can do around Census Day'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/nisra/community-groups/who-to-contact-for-help',
+                                        "text": 'Who to contact for help',
                                         "current": true
-                                    },
-                                    {
-                                        "url": pageInfo.rootPath + '/nisra/community-groups/what-is-a-census-completion-event',
-                                        "text": 'What is a census completion event?'
                                     }
                                 ]
                             })
@@ -62,7 +67,13 @@ layout: census-website-engage/views/_nisra-master
 
                         <div class="page__body">
                             
-                            <p>Content...</p>
+                            <p>There’s a census engagement manager (CEM) in your area. Their job is to build links with local community organisations, trusted local leaders and charities, so that more people can take part in the census.</p>
+
+                            <p>In some areas, there’ll also be community advisers working with specific communities.</p>
+
+                            <p>Your local CEM will be pleased to work with you.</p>
+
+                            <p>If you need to find out who your CEM is, <a href="maito:2021Census.Engagement@ons.gov.uk">email your details to our Community Partnerships team</a> and we’ll put you in touch with them.</p>
 
                             <div class="u-mt-xl">
                                 {{-
@@ -71,14 +82,8 @@ layout: census-website-engage/views/_nisra-master
                                             {
                                                 "rel": 'prev',
                                                 "text": 'Previous',
-                                                "url": pageInfo.rootPath + '/nisra/community-groups',
-                                                "label": 'Overview'
-                                            },
-                                            {
-                                                "rel": 'next',
-                                                "text": 'Next',
-                                                "url": pageInfo.rootPath + '/nisra/community-groups/what-is-a-census-completion-event',
-                                                "label": 'What is the census completion event?'
+                                                "url": pageInfo.rootPath + '/nisra/community-groups/what-you-can-do-around-census-day',
+                                                "label": 'What you can do around Census Day'
                                             }
                                         ]
                                     })
