@@ -147,7 +147,7 @@ Util.cssSupports = function(property, value) {
 // https://gomakethings.com/vanilla-javascript-version-of-jquery-extend/
 
 Util.extend = function() {
-  // letiables
+  // Variables
   let extended = {};
   let deep = false;
   let i = 0;
