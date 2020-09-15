@@ -1,0 +1,12 @@
+/* --------------------------------
+List
+-------------------------------- */
+
+.list {
+  &__link {
+    &[aria-current] {
+      color: $color-black;
+      text-decoration: none;
+    }
+  }
+}
