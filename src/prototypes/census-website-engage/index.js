@@ -43,7 +43,7 @@ Util.setAttributes = function(el, attrs) {
 */
 
 Util.getChildrenByClassName = function(el, className) {
-  childrenByClass = [];
+  let childrenByClass = [];
   for (let i = 0; i < el.children.length; i++) {
     if (Util.hasClass(el.children[i], className)) childrenByClass.push(el.children[i]);
   }
@@ -187,11 +187,11 @@ Util.osHasReducedMotion = function() {
   if (!window.matchMedia) return false;
   let matchMediaObj = window.matchMedia('(prefers-reduced-motion: reduce)');
   if (matchMediaObj) return matchMediaObj.matches;
-  return false; // return false if not supported
+  return false; // Return false if not supported
 };
 
 /*
-	Polyfills
+  Polyfills
 */
 
 // Closest() method
@@ -226,7 +226,7 @@ if (typeof window.CustomEvent !== 'function') {
 }
 
 /*
-	Animation curves
+  Animation curves
 */
 
 Math.easeInOutQuad = function(t, b, c, d) {
@@ -575,7 +575,7 @@ Math.easeInOutQuad = function(t, b, c, d) {
     // Set height of container
     filter.element.setAttribute(
       'style',
-      'height: ' + parseFloat(filter.element.offsetHeight) + 'px; width: ' + parseFloat(filter.element.offsetWidth) + 'px;'
+      'height: ' + parseFloat(filter.element.offsetHeight) + 'px; width: ' + parseFloat(filter.element.offsetWidth) + 'px;',
     );
 
     for (let i = 0; i < filter.items.length; i++) {
@@ -600,7 +600,7 @@ Math.easeInOutQuad = function(t, b, c, d) {
             parseInt(filter.itemsInitPosition[i][0] - filter.itemsIterPosition[i][0]) +
             'px) translateY(' +
             parseInt(filter.itemsInitPosition[i][1] - filter.itemsIterPosition[i][1]) +
-            'px);'
+            'px);',
         );
       }
     }
@@ -642,7 +642,7 @@ Math.easeInOutQuad = function(t, b, c, d) {
               parseInt(filter.itemsFinalPosition[i][0] - filter.itemsIterPosition[i][0]) +
               'px) translateY(' +
               parseInt(filter.itemsFinalPosition[i][1] - filter.itemsIterPosition[i][1]) +
-              'px) scale(1); opacity: 1;'
+              'px) scale(1); opacity: 1;',
           );
         } else if (filter.filterList[i]) {
           // Translate item
@@ -655,13 +655,13 @@ Math.easeInOutQuad = function(t, b, c, d) {
               parseInt(filter.itemsFinalPosition[i][0] - filter.itemsIterPosition[i][0]) +
               'px) translateY(' +
               parseInt(filter.itemsFinalPosition[i][1] - filter.itemsIterPosition[i][1]) +
-              'px);'
+              'px);',
           );
         } else {
           // Scale down item
           filter.items[i].setAttribute(
             'style',
-            filter.accelerateStyle + 'transition: ' + transitionValue + '; transform: scale(0.5); opacity: 0;'
+            filter.accelerateStyle + 'transition: ' + transitionValue + '; transform: scale(0.5); opacity: 0;',
           );
         }
       }
@@ -789,7 +789,7 @@ Math.easeInOutQuad = function(t, b, c, d) {
 
   Filter.defaults = {
     element: false,
-    duration: 400
+    duration: 400,
   };
 
   window.Filter = Filter;
@@ -1031,7 +1031,7 @@ Math.easeInOutQuad = function(t, b, c, d) {
           filteredArray[i] = index >= value;
         }
         return filteredArray;
-      }
+      },
     });
   }
 })();
@@ -1099,4 +1099,4 @@ Math.easeInOutQuad = function(t, b, c, d) {
       filtersTrigger.setAttribute('aria-expanded', bool);
     }
   }
-})();
+});
