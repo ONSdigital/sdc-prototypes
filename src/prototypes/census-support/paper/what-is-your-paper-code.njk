@@ -22,17 +22,17 @@ layout: census-support/views/_master
 {% endblock %}
 {% block main %}
     {% call onsQuestion({
-        "title": "What is your paper questionnaire code?"
+        "title": "What is the paper questionnaire barcode number?"
     }) %}
-        <p>This is the 6-digit code printed under the barcode at the bottom of the paper questionnaire</p>
+        <p>This is the 13-digit number printed under the barcode at the bottom of the questionnaire</p>
         <img class="u-mb-l" src="{{ pageInfo.rootPath }}/img/paper-q-code.png" width="400" alt="An example of a census paper questionnaire highlighting the code">
         {{
             onsInput({
                 "id": "code",
-                "classes": "input--w-4",
+                "classes": "input--w-8",
                 "type": "number",
                 "label": {
-                    "text": "Paper questionnaire code"
+                    "text": "Enter barcode number"
                 },
                 "attributes": {
                     "data-action-url": pageInfo.parentPath + "/complete.html"
@@ -40,7 +40,7 @@ layout: census-support/views/_master
             })
         }}
         {% from "components/panel/_macro.njk" import onsPanel %}
-        
+
         <p class="u-mb-no">
         <a href="{{ pageInfo.parentPath }}/scan-code.html"><svg xmlns="http://www.w3.org/2000/svg" height="0.8rem" fill="#222" viewBox="0 0 18 18">
             <polygon points="15.9 13.5 15.9 15.8 15.7 15.8 2.3 15.8 2.1 15.8 2.1 13.5 0 13.5 0 18 0.1 18 17.9 18 18 18 18 13.5 15.9 13.5"/>
@@ -48,11 +48,11 @@ layout: census-support/views/_master
             <polygon points="0 0 0 4.4 2.3 4.4 2.3 2.2 15.7 2.2 15.7 4.4 18 4.4 18 0 0 0"/>
         </svg><span class="u-ml-xs">Scan the barcode</span></a>
         </p>
-        {{ 
+        {{
             onsButton({
                 "text": "Continue",
                 "classes": "u-mt-xl u-mb-xl"
-            }) 
+            })
         }}
     {% endcall %}
 

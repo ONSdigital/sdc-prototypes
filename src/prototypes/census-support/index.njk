@@ -11,8 +11,8 @@ layout: census-support/views/_master
 {% from "components/lists/_macro.njk" import onsList %}
 
 {% block main %}
-    <h1 class="u-mt-l">Get a new online access code or activate a paper questionnaire</h1>
-    <p>This service allows a Census Community Engagement Officer to</p>
+    <h1 class="u-mt-l">Get a new access code or link a paper questionnaire</h1>
+    <p>This service allows a Census Engagement Manager or Community Advisor to help a respondent to either</p>
     {{
         onsList({
             "classes": "u-mb-no",
@@ -21,7 +21,7 @@ layout: census-support/views/_master
                     "text": "get a new online access code"
                 },
                 {
-                    "text": "activate a paper questionnaire"
+                    "text": "link a paper questionnaire to an address"
                 }
             ]
         })
