@@ -215,7 +215,7 @@ layout: census-website-engage/views/_nisra-master
 
                                         <!-- Result count -->
                                         <div class="adv-filter__results-count">
-                                            <span class="js-adv-filter__results-count">7</span> results of 8
+                                            <span class="js-adv-filter__results-count">8</span> results of 9
                                         </div>
 
                                         <!-- Sort by -->
@@ -233,7 +233,34 @@ layout: census-website-engage/views/_nisra-master
                                     <ul class="adv-filter__gallery js-adv-filter__gallery" id="adv-filter-gallery" data-filter-animation="off">
 
                                         <!-- Item -->
-                                        <li class="filter__item js-filter__item" data-filter="leaflet local-authorities community-groups" data-sort-index="1">
+                                        <li class="filter__item js-filter__item" data-filter="booklet local-authorities" data-sort-index="1">
+                                        
+                                            {{ onsDownloads({
+                                                "downloads": [
+                                                    {
+                                                        "thumbnail": {
+                                                            "smallSrc": pageInfo.rootPath + '/img/small/',
+                                                            "largeSrc": pageInfo.rootPath + '/img/large/',
+                                                            "filename": 'local-authority-partnerships-guide-english.png',
+                                                            "alt": 'Local authorities handbook document thumbnail'
+                                                        },
+                                                        "url": pageInfo.rootPath + '/documents/Local_Authority_Guide.pdf',                                                
+                                                        "title": 'Local authority partnership guide',
+                                                        "type": 'Booklet',
+                                                        "meta": {
+                                                            "fileType": 'PDF',
+                                                            "fileSize": '443KB',
+                                                            "filePages": '55 pages'
+                                                        },
+                                                        "excerpt": 'Guide for local authorities detailing how you can work with the Office for National Statistics (ONS) to make Census 2021 a success.'
+                                                    }
+                                                ]
+                                            }) }}
+
+                                        </li>
+
+                                        <!-- Item -->
+                                        <li class="filter__item js-filter__item" data-filter="leaflet local-authorities community-groups" data-sort-index="2">
                                         
                                             {{ onsDownloads({
                                                 "downloads": [
@@ -259,8 +286,10 @@ layout: census-website-engage/views/_nisra-master
 
                                         </li>
 
+
+
                                         <!-- Item -->
-                                        <li class="filter__item js-filter__item" data-filter="booklet local-authorities" data-sort-index="2">
+                                        <li class="filter__item js-filter__item" data-filter="booklet local-authorities" data-sort-index="3">
                                         
                                             {{ onsDownloads({
                                                 "downloads": [
@@ -287,7 +316,7 @@ layout: census-website-engage/views/_nisra-master
                                         </li>
 
                                         <!-- Item -->
-                                        <li class="filter__item js-filter__item" data-filter="booklet local-authorities" data-sort-index="3">
+                                        <li class="filter__item js-filter__item" data-filter="booklet local-authorities" data-sort-index="4">
                                         
                                             {{ onsDownloads({
                                                 "downloads": [
@@ -314,7 +343,7 @@ layout: census-website-engage/views/_nisra-master
                                         </li>
 
                                         <!-- Item -->
-                                        <li class="filter__item js-filter__item" data-filter="booklet local-authorities" data-sort-index="4">
+                                        <li class="filter__item js-filter__item" data-filter="booklet local-authorities" data-sort-index="5">
                                         
                                             {{ onsDownloads({
                                                 "downloads": [
@@ -341,7 +370,7 @@ layout: census-website-engage/views/_nisra-master
                                         </li>
 
                                         <!-- Item -->
-                                        <li class="filter__item js-filter__item" data-filter="booklet local-authorities" data-sort-index="5">
+                                        <li class="filter__item js-filter__item" data-filter="booklet local-authorities" data-sort-index="6">
                                         
                                             {{ onsDownloads({
                                                 "downloads": [
@@ -368,7 +397,7 @@ layout: census-website-engage/views/_nisra-master
                                         </li>
 
                                         <!-- Item -->
-                                        <li class="filter__item js-filter__item" data-filter="presentation local-authorities" data-sort-index="6">
+                                        <li class="filter__item js-filter__item" data-filter="presentation local-authorities" data-sort-index="7">
                                         
                                             {{ onsDownloads({
                                                 "downloads": [
@@ -395,7 +424,7 @@ layout: census-website-engage/views/_nisra-master
                                         </li>
 
                                         <!-- Item -->
-                                        <li class="filter__item js-filter__item" data-filter="booklet english community-groups" data-sort-index="7">
+                                        <li class="filter__item js-filter__item" data-filter="booklet community-groups" data-sort-index="8">
                                         
                                             {{ onsDownloads({
                                                 "downloads": [
@@ -422,7 +451,7 @@ layout: census-website-engage/views/_nisra-master
                                         </li>
 
                                         <!-- Item -->
-                                        <li class="filter__item js-filter__item" data-filter="logo community-groups" data-sort-index="8">
+                                        <li class="filter__item js-filter__item" data-filter="logo community-groups" data-sort-index="9">
                                         
                                             {{ onsDownloads({
                                                 "downloads": [
