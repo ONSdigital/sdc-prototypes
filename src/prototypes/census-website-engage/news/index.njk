@@ -1,7 +1,7 @@
 ---
 title: News
 group: Census
-version: 24.0.0
+version: 24.0.2
 layout: census-website-engage/views/_master
 ---
 
@@ -53,7 +53,7 @@ layout: census-website-engage/views/_master
                         <h2 class="article__heading"><a href="{{pageInfo.rootPath}}/news/article/">For the first time the ONS is using administrative data to count number of rooms</a></h2>
 
                         <ul class="u-fs-s article__meta">
-                            <li class="article__meta-item"><span class="u-hidden">Posted on </span> <time datetime="2020-05-20">31 July 2020</time></li>
+                            <li class="article__meta-item"><span class="u-hidden">Posted on </span> <time datetime="2020-07-31">31 July 2020</time></li>
                             <li class="article__meta-item"><span class="u-hidden">in </span> <a class="link-text" href="#0">Press releases</a></li>
                         </ul>
 
@@ -80,7 +80,8 @@ layout: census-website-engage/views/_master
 
                             <div class="grid__col col-8@m u-pr-m@m">
 
-                                <div class="article">
+                                <!-- Articles -->
+                                <article class="article">
 
                                     <div class="article__image" aria-hidden="true">
                                         <a class="article__image-link" href="{{pageInfo.rootPath}}/news/article/" tabindex="-1">
@@ -101,9 +102,9 @@ layout: census-website-engage/views/_master
 
                                     </div>
 
-                                </div>
+                                </article>
 
-                                <div class="article">
+                                <article class="article">
 
                                     <div class="article__image" aria-hidden="true">
                                         <a class="article__image-link" href="{{pageInfo.rootPath}}/news/article/" tabindex="-1">
@@ -124,9 +125,9 @@ layout: census-website-engage/views/_master
 
                                     </div>
 
-                                </div>
+                                </article>
 
-                                <div class="article">
+                                <article class="article">
 
                                     <div class="article__image" aria-hidden="true">
                                         <a class="article__image-link" href="{{pageInfo.rootPath}}/news/article/" tabindex="-1">
@@ -147,9 +148,9 @@ layout: census-website-engage/views/_master
 
                                     </div>
 
-                                </div>
+                                </article>
 
-                                <div class="article">
+                                <article class="article">
 
                                     <div class="article__image" aria-hidden="true">
                                         <a class="article__image-link" href="{{pageInfo.rootPath}}/news/article/" tabindex="-1">
@@ -170,9 +171,9 @@ layout: census-website-engage/views/_master
 
                                     </div>
 
-                                </div>
+                                </article>
 
-                                <div class="article">
+                                <article class="article">
 
                                     <div class="article__image" aria-hidden="true">
                                         <a class="article__image-link" href="{{pageInfo.rootPath}}/news/article/" tabindex="-1">
@@ -193,9 +194,9 @@ layout: census-website-engage/views/_master
 
                                     </div>
 
-                                </div>
+                                </article>
 
-                                <div class="article">
+                                <article class="article">
 
                                     <div class="article__image" aria-hidden="true">
                                         <a class="article__image-link" href="{{pageInfo.rootPath}}/news/article/" tabindex="-1">
@@ -216,7 +217,29 @@ layout: census-website-engage/views/_master
 
                                     </div>
 
-                                </div>
+                                </article>
+
+                                <!-- Pagination -->
+                                {{
+                                    onsPagination({
+                                        "classes": 'u-mt-m u-mb-m',
+                                        "previous": 'Previous',
+                                        "next": 'Next',
+                                        "hideRangeIndicator": true,
+                                        "pages": [
+                                            {
+                                                "url": '#0'
+                                            },
+                                            {
+                                                "url": '#0',
+                                                "current": true
+                                            },
+                                            {
+                                                "url": '#0'
+                                            }
+                                        ]
+                                    })
+                                }}
                         
                             </div>
 
