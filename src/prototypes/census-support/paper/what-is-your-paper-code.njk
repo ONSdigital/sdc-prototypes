@@ -8,6 +8,7 @@ layout: census-support/views/_master
 {% from "census-support/components/input/_macro.njk" import onsInput %}
 {% from "components/panel/_macro.njk" import onsPanel %}
 {% from "census-support/components/mutually-exclusive/_macro.njk" import onsMutuallyExclusive %}
+{% from "components/collapsible/_macro.njk" import onsCollapsible %}
 
 {% set form =  {
     "method": "GET",
@@ -25,7 +26,22 @@ layout: census-support/views/_master
         "title": "What is the paper questionnaire barcode number?"
     }) %}
         <p>This is the 13-digit number printed under the barcode at the bottom of the questionnaire</p>
-        <img class="u-mb-l" src="{{ pageInfo.rootPath }}/img/paper-q-code.svg" width="400" alt="An example of a Census 2021 paper questionnaire highlighting the location of the access code">
+        {% call onsCollapsible({
+                "id": "collapsible",
+                "title": "Where to find the barcode",
+                "titleTag": "h2",
+                "button": {
+                    "close": "Hide this",
+                    "contextSuffix": "content",
+                    "attributes": {
+                        "aria-hidden": "true"
+                    }
+                }
+            })
+        %}
+            <div><img class="u-mb-l" src="{{ pageInfo.rootPath }}/img/paper-q-code.svg" width="400" alt="An example of a Census 2021 paper questionnaire highlighting the location of the access code"></div>
+        {% endcall %}
+        
         {{
             onsInput({
                 "id": "code",
