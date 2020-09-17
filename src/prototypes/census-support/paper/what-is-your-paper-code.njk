@@ -1,5 +1,5 @@
 ---
-version: 23.0.1
+version: 24.0.3
 layout: census-support/views/_master
 ---
 {% from "components/question/_macro.njk" import onsQuestion %}
@@ -25,8 +25,8 @@ layout: census-support/views/_master
     {% call onsQuestion({
         "title": "What is the paper questionnaire barcode number?"
     }) %}
-        <p>This is the 13-digit number printed under the barcode at the bottom of the questionnaire</p>
-        {% call onsCollapsible({
+        <p>This is the 16-digit number printed under the barcode at the bottom of the questionnaire</p>
+        {# {% call onsCollapsible({
                 "id": "collapsible",
                 "title": "Where to find the barcode",
                 "titleTag": "h2",
@@ -38,20 +38,21 @@ layout: census-support/views/_master
                     }
                 }
             })
-        %}
+        %} #}
             <div><img class="u-mb-l" src="{{ pageInfo.rootPath }}/img/paper-q-code.svg" width="400" alt="An example of a Census 2021 paper questionnaire highlighting the location of the access code"></div>
-        {% endcall %}
+        {# {% endcall %} #}
         
         {{
             onsInput({
                 "id": "code",
-                "classes": "input--w-8",
+                "classes": "input--w-9 u-mb-s",
                 "type": "number",
                 "label": {
                     "text": "Enter barcode number"
                 },
                 "attributes": {
-                    "data-action-url": pageInfo.parentPath + "/complete.html"
+                    "data-action-url": pageInfo.parentPath + "/complete.html",
+                    "maxlength": "16"
                 }
             })
         }}
@@ -67,7 +68,7 @@ layout: census-support/views/_master
         {{
             onsButton({
                 "text": "Continue",
-                "classes": "u-mt-xl u-mb-xl"
+                "classes": "u-mt-xl"
             })
         }}
     {% endcall %}

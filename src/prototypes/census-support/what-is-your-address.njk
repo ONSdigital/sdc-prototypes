@@ -1,5 +1,5 @@
 ---
-version: 21.1.0
+version: 24.0.3
 layout: census-support/views/_master
 ---
 {% from "components/question/_macro.njk" import onsQuestion %}
@@ -26,7 +26,7 @@ layout: census-support/views/_master
     <div class="js-address-autosuggest">
         {{ onsInput({
             "id": "address-lookup",
-            "classes": "input--w-30",
+            "classes": "input--w-50 u-mb-s",
             "label": {
                 "text": "Enter your address or postcode and select from results",
                 "classes": "js-autosuggest-label"
@@ -57,7 +57,7 @@ layout: census-support/views/_master
     <p class="u-mb-no"><a href="{{ pageInfo.rootPath }}/enter-your-address.html">I can&rsquo;t find my address</a></p>
     {{ onsButton({
         "text": "Continue",
-        "classes": "u-mt-xl u-mb-xl"
+        "classes": "u-mt-xl"
     }) }}
     {% endcall %}
 
