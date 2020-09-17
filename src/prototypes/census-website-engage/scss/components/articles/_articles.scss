@@ -81,6 +81,10 @@ Articles
   border-color: $color-grey-3 !important;
 }
 
+.text-secondary {
+  color: $color-text-light;
+}
+
 // Link needs hover colour change globally for Census 2021
 a:hover {
   color: $color-black;
