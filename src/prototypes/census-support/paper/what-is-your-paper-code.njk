@@ -45,14 +45,15 @@ layout: census-support/views/_master
         {{
             onsInput({
                 "id": "code",
-                "classes": "input--w-9 u-mb-s",
+                "classes": "input--w-10 u-mb-s js-uac",
                 "type": "number",
                 "label": {
                     "text": "Enter barcode number"
                 },
                 "attributes": {
                     "data-action-url": pageInfo.parentPath + "/complete.html",
-                    "maxlength": "16"
+                    "maxlength": "19",
+                    "data-group-size": "4"
                 }
             })
         }}
