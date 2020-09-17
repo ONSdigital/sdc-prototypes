@@ -1,0 +1,73 @@
+---
+group: Frontstage
+title: SM Categorisation
+version: 20.0.3
+layout: SM-categorisation/views/version-5/_master-survey
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+{% from "components/metadata/_macro.njk" import onsMetadata %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+
+{% block main %}
+
+    <div class="grid">
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/prototypes/SM-categorisation/version-5/00-surveys-list.html',
+                            "text": 'Surveys'
+                        },
+                        {
+                            "url": '/prototypes/SM-categorisation/version-5/01-message-categories.html',
+                            "text": 'Help'
+                        },
+                        {
+                            "url": '/prototypes/SM-categorisation/version-5/20-category/00-category-list.html',
+                            "text": 'Information about the survey'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'How was my business selected?',
+                            "current": true
+                        }
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+            <h1>How was my business selected?</h1>
+            <p>Businesses are selected from the Inter-Departmental Business Register (IDBR), which is a register of businesses in the UK that are registered for PAYE, VAT or with Companies House.</p>
+            <p>Selection depends on several factors, for example, the number of people employed, how many other businesses are operating in the same industry and the size of those businesses.</p>
+            <p>Generally, large businesses (usually defined as having 100 plus employment) will always be included in a survey sample because the information they provide can be quite significant.</p>
+            <p>See more <a href="https://www.ons.gov.uk/surveys/informationforbusinesses" class="icon--external-link" target="_blank" rel="noopener">information for businesses</a></p>
+            <h2>Did this answer your question?</h2>
+            <p class="field">
+                <div class="btn-group">
+                {{ 
+                    onsButton({
+                        "type": 'button',
+                        "text": 'Yes',
+                        "classes": 'btn-group__btn',
+                        "url": "/prototypes/SM-categorisation/version-5/00-surveys-list.html"
+                    }) 
+                }}
+                {{ 
+                    onsButton({
+                        "type": 'button',
+                        "text": 'No',
+                        "classes": 'btn--secondary btn-group__btn',
+                        "url": "/prototypes/SM-categorisation/version-5/20-category/10-create-message.html"
+                    }) 
+                }}
+                </div>
+            </p>
+        </div>
+    </div>
+
+{% endblock %}
