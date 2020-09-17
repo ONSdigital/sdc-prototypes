@@ -1,0 +1,64 @@
+---
+title: Census support - Generate an access code
+group: Census
+version: 24.0.3
+layout: census-support/views/_master
+---
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  "#"
+    }
+} %}
+{% block preMain %}
+    <div class="u-mt-s">
+        <a class="back-link" href="{{ pageInfo.rootPath }}/what-is-your-address.html">Back</a>
+    </div>
+{% endblock %} 
+{% block main %}
+    {% call onsQuestion({
+        "title": "How would you like to complete your census?",
+        "useFieldset": true
+    }) %}
+        {{
+            onsRadios({
+                "name": "method",
+                "radios": [
+                    {
+                        "id": "online",
+                        "label": {
+                            "text": "Online"
+                        },
+                        "name": "online",
+                        "attributes": {
+                            "data-action-url": pageInfo.rootPath + "/online/" + "what-is-your-mobile-phone-number.html"
+                        }
+                    },
+                    {
+                        "id": "paper",
+                        "label": {
+                            "text": "On paper"                        },
+                        "name": "paper",
+                        "attributes": {
+                            "data-action-url": pageInfo.rootPath + "/paper/" + "what-is-your-paper-code.html"
+                        }
+                    }
+                ]
+            })
+        }}
+    {% endcall %}
+
+    {{ onsButton({
+        "text": "Continue",
+        "classes": "u-mt-xl"
+    }) }}
+
+    <script>
+    </script>
+
+{% endblock %}

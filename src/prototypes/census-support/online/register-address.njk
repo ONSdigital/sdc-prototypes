@@ -1,0 +1,21 @@
+---
+version: 24.0.3
+layout: census-support/views/_master
+---
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/fieldset/_macro.njk" import onsFieldset %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "census-support/components/input/_macro.njk" import onsInput %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+
+{% block preMain %}
+    <div class="u-mt-s">
+        <a class="back-link" href="{{ pageInfo.parentPath }}/what-is-your-address.html">Back</a>
+    </div>
+{% endblock %}
+{% block main %}
+    <h1>Register an address</h1>
+    <p>If you can’t find your address, it may not be registered on our system.</p>
+    <p>To register your address, we need you to get in touch. You can call us free on 0800 141 2021 or <a href="#contact-us">choose another way to contact us</a></p>
+
+{% endblock %}

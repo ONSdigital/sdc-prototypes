@@ -1,0 +1,65 @@
+---
+version: 24.0.3
+layout: census-support/views/_master
+---
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/fieldset/_macro.njk" import onsFieldset %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "census-support/components/input/_macro.njk" import onsInput %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+{% from "census-support/components/mutually-exclusive/_macro.njk" import onsMutuallyExclusive %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  "#"
+    }
+} %}
+{% block preMain %}
+    <div class="u-mt-s">
+        <a class="back-link" href="{{ pageInfo.rootPath }}/how-would-you-like-to-complete.html">Back</a>
+    </div>
+{% endblock %}
+{% block main %}
+    {% call onsQuestion({
+        "title": "What is your mobile phone number?"
+    }) %}
+        <p>This will not be stored and only used once to send you an access code by text</p>
+        {{
+            onsInput({
+                "id": "tel",
+                "type": "number",
+                "label": {
+                    "text": "UK mobile number"
+                },
+                "attributes": {
+                    "data-action-url": pageInfo.parentPath + "/confirm-mobile-phone-number.html"
+                },
+                "mutuallyExclusive": {
+                    "or": "Or",
+                    "deselectMessage": "Selecting this will clear your email",
+                    "deselectGroupAdjective": "cleared",
+                    "deselectCheckboxAdjective": "deselected",
+                    "checkbox": {
+                        "attributes": {
+                            "data-action-url": pageInfo.parentPath + "/your-access-code.html"
+                        },
+                        "id": "no-mobile",
+                        "name": "no-mobile",
+                        "label": {
+                            "text": "I don&rsquo;t have a mobile phone"
+                        }
+                    }
+                }
+            })
+        }}
+        {{ 
+            onsButton({
+                "text": "Continue",
+                "classes": "u-mt-xl"
+            }) 
+        }}
+    {% endcall %}
+
+
+{% endblock %}

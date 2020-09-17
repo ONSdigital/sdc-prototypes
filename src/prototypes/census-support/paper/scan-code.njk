@@ -1,0 +1,72 @@
+---
+version: 24.0.3
+layout: census-support/views/_master
+---
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% block preMain %}
+    <div class="u-mt-s">
+        <a class="back-link" href="{{ pageInfo.parentPath }}/what-is-your-paper-code.html">Back</a>
+    </div>
+{% endblock %}
+{% block main %}
+    <h1>Scan your paper questionnaire barcode</h1>
+    <p>Using your device's camera, align the barcode on the paper questionnaire with the red line</p>
+    <div class="scanner">
+        <div class="scanner__overlay">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81.35 37.46">
+                <polyline points="15.01 35.36 15.01 33.26 12.91 33.26 12.91 37.46 13.01 37.46 50.54 37.46 68.34 37.46 68.44 37.46 68.44 33.26 66.34 33.26 66.34 35.36" style="fill:#fff"/>
+                <polyline points="15.01 2.1 15.01 4.2 12.91 4.2 12.91 0 13.01 0 50.54 0 68.34 0 68.44 0 68.44 4.2 66.34 4.2 66.34 2.1" style="fill:#fff"/>
+                <polyline points="0 18 0 19.46 81.35 19.46 81.35 18" style="fill:#d0021b"/>
+            </svg>
+        </div>
+        <video id="video" class="scanner__window" autoplay></video>
+        <canvas id="canvas" class="scanner__capture u-d-no"></canvas>
+    </div>
+    <form onsubmit="return false;">
+        <div class="btn-group">
+            {{ 
+                onsButton({
+                    "id": "scan",
+                    "submitType": "loader",
+                    "text": "Scan code",
+                    "classes": "u-mt-xl u-mb-xl"
+                }) 
+            }}
+        </div>
+    </form>
+
+    <script>
+        // Grab elements, create settings, etc.
+        var canvas = document.getElementById('canvas');
+        var context = canvas.getContext('2d');
+        var video = document.getElementById('video');
+
+        // Get access to the camera
+        if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+            // Not adding `{ audio: true }` since we only want video now
+            navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
+                //video.src = window.URL.createObjectURL(stream);
+                video.srcObject = stream;
+                video.play();
+            });
+        }
+
+        // Trigger photo take
+        document.getElementById("scan").addEventListener("click", function(e) {
+            e.preventDefault();
+            canvas.classList.remove('u-d-no');
+            context.drawImage(video, 0, 0, 300, 150);
+            video.classList.add('u-d-no');
+            window.sessionStorage.setItem('paper-code', '9375010984503948');
+
+            // Load after timeout
+            setTimeout(function(){
+                window.location.href = '{{ pageInfo.parentPath }}/what-is-your-paper-code.html';
+            }, 4000);
+        });
+
+
+
+    </script>
+{% endblock %}
