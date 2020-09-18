@@ -1,0 +1,257 @@
+---
+title: Get prepared for Census 2021
+group: Census
+version: 24.0.5
+layout: census-website-engage/views/_nisra-master
+---
+
+{% block pageContent %}
+
+    {% block main %}
+
+        <!-- Hero -->
+        {{
+            onsHero({
+                censusTheme: true,
+                censusThemeDark: true,
+                title: 'Get ready for Census 2021',
+                subtitle: 'Census Day will be Sunday 21 March 2021.',
+                image: {
+                    smallSrc: pageInfo.rootPath + '/img/small/',
+                    largeSrc: pageInfo.rootPath + '/img/large/',
+                    filename: 'woman-in-purple-dress-shirt.jpg',
+                    alt: 'Woman in purple dress shirt using laptop'
+                }
+            })
+        }}
+
+        <!-- Page contents -->
+        <div class="page__container container">
+
+            <!-- CTAs -->
+            <section class="u-pt-l u-mb-s u-bb u-pb-s u-pb-m@m">
+
+                <div class="grid grid--column@xs@s">
+
+                    <div class="grid__col col-4@m">
+                        {{-
+                            onsCard({
+                                "ariaBy": 'Section highlight',
+                                "id": 'title1',
+                                "textId": 'text1',
+                                "title": 'About the census',
+                                "url": pageInfo.rootPath + '/ni/about-the-census',
+                                "text": 'The census is a survey that gives us information about all the households in Northern Ireland.'
+                            })
+                        }}
+                    </div>
+
+                    <div class="grid__col col-4@m">
+                        {{-
+                            onsCard({
+                                "ariaBy": 'Section highlight',
+                                "id": 'title2',
+                                "textId": 'text2',
+                                "title": 'Working on the census',
+                                "url": pageInfo.rootPath + '/ni/jobs',
+                                "text": 'For Census 2021, we’ll be hiring field staff across Northern Ireland.'
+                            })
+                        }}
+                    </div>
+
+                    <div class="grid__col col-4@m">
+                        {{-
+                            onsCard({
+                                "ariaBy": 'Section highlight',
+                                "id": 'title3',
+                                "textId": 'text3',
+                                "title": 'Keeping your data safe',
+                                "url": pageInfo.rootPath + '/ni/keeping-your-data-safe',
+                                "text": 'How we keep your data safe and what happens to your personal information.'
+                            })
+                        }}
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- Download resources and get involved -->
+            <section class="u-pt-m u-bb u-pb-s">
+
+                <div class="grid grid--column@xs@s u-mb-l">
+                    
+                    <div class="grid__col col-5@m">
+                        
+                        <h2 class="u-pr-m@m u-fs-xl u-mb-l">Get involved</h2>
+
+                        <div class="u-pr-m@m">
+
+                            {{
+                                onsCard({
+                                    "ariaBy": 'Section highlight',
+                                    "id": 'title',
+                                    "textId": 'text',
+                                    "title": 'Local authorities',
+                                    "url": pageInfo.rootPath + '/ni/local-authorities',
+                                    "text": 'If you work for a local authority, find out how you can help support the census in your area.'
+                                })
+                            }}
+
+                            {{
+                                onsCard({
+                                    "ariaBy": 'Section highlight',
+                                    "id": 'title',
+                                    "textId": 'text',
+                                    "title": 'Community groups',
+                                    "url": pageInfo.rootPath + '/ni/community-groups',
+                                    "text": 'If you’re a community group leader, find out how you can help support the census in your community.'
+                                })
+                            }}
+
+                            {{
+                                onsCard({
+                                    "ariaBy": 'Section highlight',
+                                    "id": 'title',
+                                    "textId": 'text',
+                                    "title": 'Downloadable resources',
+                                    "url": pageInfo.rootPath + '/ni/downloadable-resources',
+                                    "text": 'If you work for a local authority or you’re a community group leader, choose from our full range of downloadable resources.'
+                                })
+                            }}
+
+                        </div>
+
+                    </div>
+
+                    <div class="grid__col col-7@m u-bl@m u-pl-m@m">
+                        
+                        <h2 class="u-fs-xl u-mb-l">Featured downloadable resources</h2>
+
+                        <div class="u-mb-m">
+                            {{ onsDownloads({
+                                "downloads": [
+                                    {
+                                        "thumbnail": {
+                                            "smallSrc": pageInfo.rootPath + '/img/small/',
+                                            "largeSrc": pageInfo.rootPath + '/img/large/',
+                                            "filename": 'community-handbook-english.png',
+                                            "alt": 'Community handbook document thumbnail'
+                                        },
+                                        "url": pageInfo.rootPath + '/documents/Digital_Ready_CHDE1-2021_v4-0_280820.pdf',                                                
+                                        "title": 'Community handbook',
+                                        "type": 'Booklet',
+                                        "meta": {
+                                            "fileType": 'PDF',
+                                            "fileSize": '6.6MB',
+                                            "filePages": '16 pages'
+                                        },
+                                        "excerpt": 'Handbook for community leaders and representatives, introducing the census and how to help.'
+                                    }
+                                ]
+                            }) }}
+                        </div>
+
+                        <div class="u-mb-m">
+                            {{ onsDownloads({
+                                "downloads": [
+                                    {
+                                        "thumbnail": {
+                                            "smallSrc": pageInfo.rootPath + '/img/small/',
+                                            "largeSrc": pageInfo.rootPath + '/img/large/',
+                                            "filename": 'councillor-handbook-english.png',
+                                            "alt": 'Councillor handbook document thumbnail'
+                                        },
+                                        "url": pageInfo.rootPath + '/documents/Digital_Ready_CHE1-2021_v4-0_280820.pdf',                                                
+                                        "title": 'Councillor handbook',
+                                        "type": 'Booklet',
+                                        "meta": {
+                                            "fileType": 'PDF',
+                                            "fileSize": '6.9MB',
+                                            "filePages": '20 pages'
+                                        },
+                                        "excerpt": 'Handbook for councillors, introducing the census and how to help.'
+                                    }
+                                ]
+                            }) }}
+                        </div>
+
+                        <div>
+                            {{ onsDownloads({
+                                "downloads": [
+                                    {
+                                        "thumbnail": {
+                                            "smallSrc": pageInfo.rootPath + '/img/small/',
+                                            "largeSrc": pageInfo.rootPath + '/img/large/',
+                                            "filename": 'engagement-leaflet-english.png',
+                                            "alt": 'Engagement leaflet document thumbnail'
+                                        },
+                                        "url": pageInfo.rootPath + '/documents/Digital_Ready_ELA1-2021_v7-0_280820.pdf',                                                
+                                        "title": 'Engagement leaflet',
+                                        "type": 'Leaflet',
+                                        "meta": {
+                                            "fileType": 'PDF',
+                                            "fileSize": '2.7MB',
+                                            "filePages": '2 pages'
+                                        },
+                                        "excerpt": 'Leaflet for community leaders and representatives, introducing the census and asking for support.'
+                                    }
+                                ]
+                            }) }}
+                        </div>
+
+                        <div class="u-mt-m">
+                            <p class="u-mb-no"><a href="{{pageInfo.rootPath}}/ni/downloadable-resources">View all downloadable resources</a></p>
+                        </div>
+
+                    </div>
+                    
+                </div>
+
+            </section>
+
+            <!-- Contact and social links -->
+            <section class="u-mb-l u-pt-m">
+
+                <div class="grid grid--column@xs@s">
+
+                    <div class="grid__col col-6@m">
+                    
+                        <h3>Get in touch</h3>
+
+                        <p>If you have any questions, <a href="{{ pageInfo.rootPath }}/ni/contact-us">get in touch</a></p>
+
+                    </div>
+
+                    <div class="grid__col col-6@m">
+                        
+                        <h3>Follow us</h3>
+                    
+                        <ul class="social-list social-list--inline">
+                            
+                            <li class="social-list__item">
+                                <svg class="social__icon u-mr-xs" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M24.04,12.95c0,0.17,0,0.33,0,0.5c0.01,4.01-2.17,7.71-5.69,9.64c-3.52,1.93-7.81,1.78-11.19-0.38c0.31,0.04,0.61,0.05,0.92,0.05c1.73,0,3.42-0.58,4.78-1.65c-1.65-0.04-3.09-1.11-3.6-2.68c0.25,0.05,0.51,0.07,0.76,0.07c0.34,0,0.68-0.05,1.01-0.14C9.23,18,7.93,16.4,7.95,14.55v-0.05c0.54,0.29,1.13,0.46,1.74,0.48c-1.66-1.12-2.2-3.33-1.23-5.08c1.96,2.41,4.85,3.87,7.95,4.03c-0.07-0.29-0.1-0.58-0.1-0.88c0-1.58,0.97-3,2.44-3.59c1.47-0.58,3.15-0.21,4.23,0.94c0.86-0.17,1.69-0.49,2.45-0.94c-0.28,0.9-0.88,1.65-1.69,2.13c0.76-0.09,1.51-0.29,2.21-0.6C25.43,11.76,24.79,12.42,24.04,12.95zM16,0C7.16,0,0,7.16,0,16s7.16,16,16,16s16-7.16,16-16c0-4.24-1.69-8.31-4.69-11.31S20.24,0,16,0z"/></svg>
+                                <a href="https://www.twitter.com/NICensus2021" rel="noreferrer external">Twitter</a>
+                            </li>
+
+                            <li class="social-list__item">
+                                <svg class="social__icon u-mr-xs" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M18.5,31.9V20.72h3.73l0.72-4.62H18.5v-3c0-1.26,0.62-2.5,2.61-2.5h2.02V6.66c-1.18-0.19-2.38-0.3-3.58-0.31c-3.66,0-6.04,2.22-6.04,6.22v3.53H9.44v4.62h4.06V31.9C5.09,30.57-0.8,22.89,0.09,14.43C0.98,5.96,8.34-0.33,16.84,0.12S32,7.59,32,16.1C32,23.97,26.27,30.67,18.5,31.9z"/></svg>
+                                <a href="https://www.facebook.com/NICensus2021" rel="noreferrer external">Facebook</a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+    
+    {% endblock %}
+
+
+{% endblock %}

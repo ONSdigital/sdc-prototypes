@@ -1,0 +1,175 @@
+---
+title: What you can do to help
+group: Census
+version: 24.0.5
+layout: census-website-engage/views/_nisra-master
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": pageInfo.rootPath + '/ni/home',
+                            "text": 'Home'
+                        },
+                        {
+                            "url": pageInfo.rootPath + '/ni/local-authorities',
+                            "text": 'Local authorities'
+                        }
+                    ]
+                })
+            }}
+
+            <div class="grid">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-l">
+                            <span class="u-fs-m u-db u-mb-xs u-lighter">Local authorities</span>
+                            <span class="u-vh">: </span>
+                            <span class="u-fs-xxl u-db">What you can do to help</span>
+                        </h1>
+
+                        {{-
+                            onsTableOfContents({
+                                "title": 'Contents',
+                                "ariaLabel": 'Pages in this guide',
+                                "itemsList": [
+                                    {
+                                        "url": pageInfo.rootPath + '/ni/local-authorities/',
+                                        "text": 'Help the census succeed in your area'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/ni/local-authorities/how-you-can-work-with-us',
+                                        "text": 'How you can work with us'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/ni/local-authorities/what-you-can-do-to-help',
+                                        "text": 'What you can do to help',
+                                        "current": true
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/ni/local-authorities/important-dates-for-local-authorities',
+                                        "text": 'Important dates for local authorities'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/ni/local-authorities/materials-to-help-promote-the-census',
+                                        "text": 'Materials to help promote the census'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/ni/local-authorities/who-you-can-contact-for-help',
+                                        "text": 'Who you can contact for help'
+                                    }
+                                ]
+                            })
+                        }}
+
+                        <div class="page__body">
+                            
+
+                            <h2>Nominate your census liaison manager and assistant census liaison manager</h2>
+
+                            <p>If your council has not yet appointed a census liaison manager (CLM) and assistant census liaison manager (ACLM), now is the time.</p>
+
+                            <p>These people will be the main point of contact for us at the ONS. They will co-ordinate census activity within your local authority.</p>
+
+                            <p>Ideally, the CLM should be a senior officer who can allocate resources and will understand the financial significance of the census to your authority.</p>
+                            
+                            <p>The ACLM should be someone at an operational level, who has an interest in the census and can co-ordinate support for the census within the authority.</p>
+                            
+                            <p>If you’re not sure who your CLM or ACLM is or want to find out more about these roles, please <a href="mailto:2021Census.LA.Liaison@ons.gov.uk">email our Local Authority Partnerships team</a>.</p>
+
+                            
+                            <h2>Sign up for our newsletter</h2>
+
+                            <p>Keep up to date with our plans in our monthly local authority newsletter. To sign up to receive them, simply <a href="mailto:2021Census.LA.Liaison@ons.gov.uk">email our Local Authority Partnerships team</a> from your work email address.</p>
+
+
+                            <h2>Be part of our events</h2>
+
+                            <p>Make sure your council is represented at census workshops and briefing events over the coming months. Find out when they’re happening in our newsletter.</p>
+
+                            
+                            <h2>Keep AddressBase up to date</h2>
+
+                            <p>We’re using Geoplace AddressBase for the census. It’ll help if you can work with GeoPlace to make sure your address register is accurate and up to date for your area. Your council’s local land and property gazetteer custodians should already be working with them to provide address data.</p>
+
+
+                            <h2>Help us with recruitment</h2>
+
+                            <p>Support and promote recruitment for <a href="https://www.censusjobs.co.uk" target="_blank" rel="noopener external">census jobs</a> to make sure we get the best people in your area. One way to do this is to promote the vacancies on your website.</p>
+
+
+                            <h2>Promote the census</h2>
+
+                            <p>Use our downloadable resources to promote the census to people in your area. Keep checking our <a href="{{pageInfo.rootPath}}/ni/downloadable-resources">Downloadable resources</a> page for new resources and updated versions.</p>
+
+
+                            <div class="u-mt-xl">
+                                {{-
+                                    onsContentPagination({
+                                        "contentPaginationItems": [
+                                            {
+                                                "rel": 'prev',
+                                                "text": 'Previous',
+                                                "url": pageInfo.rootPath + '/ni/local-authorities/how-you-can-work-with-us',
+                                                "label": 'How you can work with us'
+                                            },
+                                            {
+                                                "rel": 'next',
+                                                "text": 'Next',
+                                                "url": pageInfo.rootPath + '/ni/local-authorities/important-dates-for-local-authorities',
+                                                "label": 'Important dates for local authorities'
+                                            }
+                                        ]
+                                    })
+                                }}
+                            </div>
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+                <div class="grid__col col-4@m push-1@m u-mt-m">
+
+                    {{-
+                        onsRelatedLinks({
+                            "id": 'related-links',
+                            "title": 'Related content',
+                            "itemsList": [
+                                {
+                                    "url": pageInfo.rootPath + '/ni/community-groups',
+                                    "text": 'Community groups'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/ni/downloadable-resources',
+                                    "text": 'Downloadable resources'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/ni/contact-us',
+                                    "text": 'Contact us'
+                                }
+                            ]
+                        })
+                    }}
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}
