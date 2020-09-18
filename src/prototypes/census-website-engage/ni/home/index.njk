@@ -159,30 +159,6 @@ layout: census-website-engage/views/_nisra-master
                                         "thumbnail": {
                                             "smallSrc": pageInfo.rootPath + '/img/small/',
                                             "largeSrc": pageInfo.rootPath + '/img/large/',
-                                            "filename": 'councillor-handbook-english.png',
-                                            "alt": 'Councillor handbook document thumbnail'
-                                        },
-                                        "url": pageInfo.rootPath + '/documents/Digital_Ready_CHE1-2021_v4-0_280820.pdf',                                                
-                                        "title": 'Councillor handbook',
-                                        "type": 'Booklet',
-                                        "meta": {
-                                            "fileType": 'PDF',
-                                            "fileSize": '6.9MB',
-                                            "filePages": '20 pages'
-                                        },
-                                        "excerpt": 'Handbook for councillors, introducing the census and how to help.'
-                                    }
-                                ]
-                            }) }}
-                        </div>
-
-                        <div>
-                            {{ onsDownloads({
-                                "downloads": [
-                                    {
-                                        "thumbnail": {
-                                            "smallSrc": pageInfo.rootPath + '/img/small/',
-                                            "largeSrc": pageInfo.rootPath + '/img/large/',
                                             "filename": 'engagement-leaflet-english.png',
                                             "alt": 'Engagement leaflet document thumbnail'
                                         },
@@ -200,9 +176,31 @@ layout: census-website-engage/views/_nisra-master
                             }) }}
                         </div>
 
-                        <div class="u-mt-m">
-                            <p class="u-mb-no"><a href="{{pageInfo.rootPath}}/ni/downloadable-resources">View all downloadable resources</a></p>
+                        <div class="u-mb-m">
+                            {{ onsDownloads({
+                                "downloads": [
+                                    {
+                                        "thumbnail": {
+                                            "smallSrc": pageInfo.rootPath + '/img/small/',
+                                            "largeSrc": pageInfo.rootPath + '/img/large/',
+                                            "filename": 'councillor-handbook-english.png',
+                                            "alt": 'Councillor handbook document thumbnail'
+                                        },
+                                        "url": pageInfo.rootPath + '/documents/Digital_Ready_CHE1-2021_v4-0_280820.pdf',                                                
+                                        "title": 'Councillor handbook',
+                                        "type": 'Booklet',
+                                        "meta": {
+                                            "fileType": 'PDF',
+                                            "fileSize": '6.9MB',
+                                            "filePages": '20 pages'
+                                        },
+                                        "excerpt": 'Handbook for councillors, introducing the census and how to help.'
+                                    }
+                                ]
+                            }) }}
                         </div>
+
+                        <p class="u-mb-no"><a href="{{pageInfo.rootPath}}/ni/downloadable-resources">View all downloadable resources</a></p>
 
                     </div>
                     
