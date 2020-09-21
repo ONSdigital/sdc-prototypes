@@ -25,11 +25,11 @@ layout: census-website-engage/views/_nisra-master
             })
         }}
 
-        <!-- Page contents -->
-        <div class="page__container container">
 
-            <!-- CTAs -->
-            <section class="u-pt-l u-mb-s u-bb u-pb-s u-pb-m@m">
+        <!-- CTAs -->
+        <div class="container">
+
+            <section class="u-pt-l u-mb-s u-pb-s u-pb-s@m">
 
                 <div class="grid grid--column@xs@s">
 
@@ -76,137 +76,36 @@ layout: census-website-engage/views/_nisra-master
 
             </section>
 
-            <!-- Download resources and get involved -->
-            <section class="u-pt-m u-bb u-pb-s">
+        </div>
 
-                <div class="grid grid--column@xs@s u-mb-l">
+
+        <!-- Promo banner -->
+        <section class="promo-banner promo-banner--dark-theme">
+
+            <div class="container">
+
+                <div class="grid grid--gutterless">
                     
-                    <div class="grid__col col-5@m">
+                    <div class="grid__col col-6@m">
                         
-                        <h2 class="u-pr-m@m u-fs-xl u-mb-l">Get involved</h2>
+                        <h2>Get involved</h2>
 
-                        <div class="u-pr-s@m">
+                        <p>There are lots of ways that you can get involved with Census 2021. Whether you are an individual, a group or organisation we would love to hear from you.</p>
 
-                            {{
-                                onsCard({
-                                    "ariaBy": 'Section highlight',
-                                    "id": 'title',
-                                    "textId": 'text',
-                                    "title": 'Local authorities',
-                                    "url": pageInfo.rootPath + '/ni/local-authorities',
-                                    "text": 'If you work for a local authority, find out how you can help support the census in your area.'
-                                })
-                            }}
+                        <p class="u-mb-no">By taking part and encouraging others to do the same, you’ll help make sure you and your community get the services you need.</p>
 
-                            {{
-                                onsCard({
-                                    "ariaBy": 'Section highlight',
-                                    "id": 'title',
-                                    "textId": 'text',
-                                    "title": 'Community groups',
-                                    "url": pageInfo.rootPath + '/ni/community-groups',
-                                    "text": 'If you’re a community group leader, find out how you can help support the census in your community.'
-                                })
-                            }}
-
-                            {{
-                                onsCard({
-                                    "ariaBy": 'Section highlight',
-                                    "id": 'title',
-                                    "textId": 'text',
-                                    "title": 'Downloadable resources',
-                                    "url": pageInfo.rootPath + '/ni/downloadable-resources',
-                                    "text": 'If you work for a local authority or you’re a community group leader, choose from our full range of downloadable resources.'
-                                })
-                            }}
-
-                        </div>
-
-                    </div>
-
-                    <div class="grid__col col-7@m u-bl@m u-pl-m@m">
-                        
-                        <h2 class="u-fs-xl u-mb-l">Featured downloadable resources</h2>
-
-                        <div class="u-mb-m">
-                            {{ onsDownloads({
-                                "downloads": [
-                                    {
-                                        "thumbnail": {
-                                            "smallSrc": pageInfo.rootPath + '/img/small/',
-                                            "largeSrc": pageInfo.rootPath + '/img/large/',
-                                            "filename": 'community-handbook-english.png',
-                                            "alt": 'Community handbook document thumbnail'
-                                        },
-                                        "url": pageInfo.rootPath + '/documents/Digital_Ready_CHDE1-2021_v4-0_280820.pdf',                                                
-                                        "title": 'Community handbook',
-                                        "type": 'Booklet',
-                                        "meta": {
-                                            "fileType": 'PDF',
-                                            "fileSize": '6.6MB',
-                                            "filePages": '16 pages'
-                                        },
-                                        "excerpt": 'Handbook for community leaders and representatives, introducing the census and how to help.'
-                                    }
-                                ]
-                            }) }}
-                        </div>
-
-                        <div class="u-mb-m">
-                            {{ onsDownloads({
-                                "downloads": [
-                                    {
-                                        "thumbnail": {
-                                            "smallSrc": pageInfo.rootPath + '/img/small/',
-                                            "largeSrc": pageInfo.rootPath + '/img/large/',
-                                            "filename": 'engagement-leaflet-english.png',
-                                            "alt": 'Engagement leaflet document thumbnail'
-                                        },
-                                        "url": pageInfo.rootPath + '/documents/Digital_Ready_ELA1-2021_v7-0_280820.pdf',                                                
-                                        "title": 'Engagement leaflet',
-                                        "type": 'Leaflet',
-                                        "meta": {
-                                            "fileType": 'PDF',
-                                            "fileSize": '2.7MB',
-                                            "filePages": '2 pages'
-                                        },
-                                        "excerpt": 'Leaflet for community leaders and representatives, introducing the census and asking for support.'
-                                    }
-                                ]
-                            }) }}
-                        </div>
-
-                        <div class="u-mb-m">
-                            {{ onsDownloads({
-                                "downloads": [
-                                    {
-                                        "thumbnail": {
-                                            "smallSrc": pageInfo.rootPath + '/img/small/',
-                                            "largeSrc": pageInfo.rootPath + '/img/large/',
-                                            "filename": 'councillor-handbook-english.png',
-                                            "alt": 'Councillor handbook document thumbnail'
-                                        },
-                                        "url": pageInfo.rootPath + '/documents/Digital_Ready_CHE1-2021_v4-0_280820.pdf',                                                
-                                        "title": 'Councillor handbook',
-                                        "type": 'Booklet',
-                                        "meta": {
-                                            "fileType": 'PDF',
-                                            "fileSize": '6.9MB',
-                                            "filePages": '20 pages'
-                                        },
-                                        "excerpt": 'Handbook for councillors, introducing the census and how to help.'
-                                    }
-                                ]
-                            }) }}
-                        </div>
-
-                        <p class="u-mb-no"><a href="{{pageInfo.rootPath}}/ni/downloadable-resources">View all downloadable resources</a></p>
+                        <img class="promo-banner-image" src="{{pageInfo.rootPath}}/img/census-promo-banner.svg" alt="" role="presentation" aria-hidden="true">
 
                     </div>
                     
                 </div>
 
-            </section>
+            </div>
+
+        </section>
+
+
+        <div class="container">
 
             <!-- Contact and social links -->
             <section class="u-mb-l u-pt-m">
@@ -244,7 +143,6 @@ layout: census-website-engage/views/_nisra-master
                 </div>
 
             </section>
-
 
         </div>
 

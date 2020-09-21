@@ -1,0 +1,35 @@
+.promo-banner {
+  background-image: linear-gradient(46deg, #3c388e, #902082);
+  padding-bottom: 5em;
+  padding-top: 3em;
+  position: relative;
+  overflow: hidden;
+
+  &--dark-theme {
+    h2,
+    h3,
+    li,
+    p,
+    a {
+      color: $color-white;
+    }
+
+    a {
+      &:hover,
+      &:focus {
+        color: $color-white;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.promo-banner-image {
+  bottom: 0;
+  height: 244px;
+  left: 50%;
+  max-width: none;
+  opacity: 0.15;
+  position: absolute;
+  transform: translate(-50%, 50%);
+}
