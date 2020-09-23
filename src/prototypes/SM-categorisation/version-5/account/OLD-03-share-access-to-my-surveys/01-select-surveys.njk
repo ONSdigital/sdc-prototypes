@@ -6,8 +6,8 @@ layout: SM-categorisation/views/version-5/_master-survey
 ---
 
 {% from "components/input/_macro.njk" import onsInput %}
-{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
 {% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
 
 {% block main %}
 
@@ -26,12 +26,8 @@ layout: SM-categorisation/views/version-5/_master-survey
                             "text": 'Account'
                         },
                         {
-                            "url": '/prototypes/SM-categorisation/version-5/account/04-transfer-my-surveys/index.html',
-                            "text": 'Transfer surveys'
-                        },
-                        {
                             "url": '/',
-                            "text": 'Send enrolment codes',
+                            "text": 'Choose surveys',
                             "current": true
                         }
                     ]
@@ -39,57 +35,20 @@ layout: SM-categorisation/views/version-5/_master-survey
             }}
         </div>
         <div class="grid__col col-8@m u-pt-no">
-            <h1>Select surveys to transfer</h1>
-
-            <p class="field u-mt-l">
-                <button type="submit" class="btn btn--secondary btn--small">
-                    <span class="btn__inner">Select all surveys</span>
-                </button>
-            </p>
-
-            {{
+            <h1>Which surveys do you want to share?</h1>
+            <p class="field">
+            {{ 
                 onsCheckboxes({
                     "legend": "ACME Consumer Products",
                     "checkboxesLabel": "Select all that apply",
-                    "name": "ACME Consumer Products",
+                    "name": "food",
                     "checkboxes": [
-                        {
-                            "id": "Quarterly Business Survey",
-                            "label": {
-                                "text": "Quarterly Business Survey"
-                            },
-                            "value": "Quarterly Business Survey"
-                        },
-                        {
-                            "id": "Monthly Business Survey",
-                            "label": {
-                                "text": "Monthly Business Survey"
-                            },
-                            "value": "Monthly Business Survey"
-                        }
-                    ]
-                })
-            }}
-
-            {{
-                onsCheckboxes({
-                    "legend": "ACME Group Ltd",
-                    "checkboxesLabel": "Select all that apply",
-                    "name": "ACME Group Ltd",
-                    "checkboxes": [
-                        {
-                            "id": "BRSS",
-                            "label": {
-                                "text": "Business Register and Employment Survey"
-                            },
-                            "value": "BRSS"
-                        },
                         {
                             "id": "MBS",
                             "label": {
                                 "text": "Monthly Business Survey"
                             },
-                            "value": "MBS"
+                            "value": "mbs"
                         },
                         {
                             "id": "QBS",
@@ -97,33 +56,65 @@ layout: SM-categorisation/views/version-5/_master-survey
                                 "text": "Quarterly Business Survey"
                             },
                             "value": "QBS"
+                        }
+                    ]
+                }) 
+            }}
+            </p>
+            <p class="field">
+            {{ 
+                onsCheckboxes({
+                    "legend": "ACME Group Ltd",
+                    "checkboxesLabel": "Select all that apply",
+                    "name": "food",
+                    "checkboxes": [
+                        {
+                            "id": "MRES",
+                            "label": {
+                                "text": "Business Register and Employment Survey"
+                            },
+                            "value": "mres"
+                        },
+                        {
+                            "id": "MBSb",
+                            "label": {
+                                "text": "Monthly Business Survey"
+                            },
+                            "value": "mbsb"
                         },
                         {
                             "id": "MWSS",
                             "label": {
                                 "text": "Monthly Wages and Salary Survey"
                             },
-                            "value": "MWSS"
+                            "value": "mwss"
                         },
                         {
                             "id": "QADCA",
                             "label": {
                                 "text": "Quarterly Acquisitions and Disposals of Capital Assets"
                             },
-                            "value": "QADCA"
+                            "value": "qadca"
+                        },
+                        {
+                            "id": "QBSb",
+                            "label": {
+                                "text": "Quarterly Business Survey"
+                            },
+                            "value": "QBSb"
                         }
                     ]
-                })
+                }) 
             }}
+            </p>
             <p class="field u-mt-l">
-                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-5/account/04-transfer-my-surveys/02-send-enrolment-codes.html';">
+                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-5/account/03-share-access-to-my-surveys/02-enter-email-addresses.html';">
                     <span class="btn__inner">Continue</span>
                 </button>
-                <button type="submit" class="btn btn--secondary" onclick="location.href='{{ pageInfo.rootPath }}/version-5/account/04-transfer-my-surveys/index.html';">
+                <button type="submit" class="btn btn--secondary" onclick="location.href='{{ pageInfo.rootPath }}/version-5/30-my-account.html';">
                     <span class="btn__inner">Cancel</span>
                 </button>
             </p>
-
         </div>
     </div>
 
