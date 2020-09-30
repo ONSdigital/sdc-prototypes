@@ -1,0 +1,103 @@
+---
+title: BSL v3 (Intermittent question switch)
+group: BSL
+sortOrder: 3
+version: 15.0.2
+layout: bsl-v3/views/_home
+---
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+{% from "bsl-v3/components/uac/_macro.njk" import onsUACInput %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/details/_macro.njk" import onsDetails %}
+{% from "components/hero/_macro.njk" import onsHero %}
+{% from "components/card/_macro.njk" import onsCard %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/name.html"
+    }
+} %}
+
+{% block main %}
+    {{ 
+        onsHero({
+            "title": 'Census 2021 is happening now',
+            subtitle: 'Ready to start your census online?',
+            text: 'You’ll need your 16-character access code.',
+            button: {
+                url: pageInfo.rootPath + "/start.html",
+                text: 'Start census'
+            },
+            image: {
+                src: pageInfo.rootPath + '/img/census-hero-banner.jpg',
+                alt: 'Image number 1'
+            }
+        })
+    }}
+    <div class="page__container container u-mt-l u-mb-l">
+        <section>
+            <div class="grid grid--flex grid--column@xs@s">
+                <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
+                    {{-
+                        onsCard({
+                            "ariaBy": 'Section highlight',
+                            "id": 'title1',
+                            "textId": 'text1',
+                            "title": 'About the census',
+                            "url": '#',
+                            "text": 'The census is a survey that gives us information about all the households in England and Wales.'
+                        })
+                    }}
+                </div>
+                <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
+                    {{- 
+                        onsCard({
+                            "ariaBy": 'Section highlight',
+                            "id": 'title2',
+                            "textId": 'text2',
+                            "title": 'Why should I take part in the census?',
+                            "url": '#',
+                            "text": 'Why the information we collect is important and what we use it for.'
+                        })
+                    }}
+                </div>
+                <div class="grid__col grid__col--flex u-flex-grow u-flex-no-basis@s col-12@xs@s">
+                    {{-
+                        onsCard({
+                            "ariaBy": 'Section highlight',
+                            "id": 'title3',
+                            "textId": 'text3',
+                            "title": 'Keeping your data safe',
+                            "url": '#',
+                            "text": 'How we keep your data safe and what happens to your personal information.'
+                        })
+                    }}
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}
+{% block bodyEnd %}
+    <div class="bsl-video u-d-no">
+        <div class="bsl-video__container">
+            <div class="bsl-video__video">
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/XQu8TTBmGhA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="bsl-video__controls">
+            <div class="grid grid--gutterless grid--flex grid--between grid--vertical-center grid--no-wrap">
+                <div class="grid__col col-auto">
+                    <a class="js-remove-bsl bsl-video__remove-link" href="{{ pageInfo.path }}">Turn off BSL</a>
+                </div>
+                {{ onsButton({
+                    "text": "Hide BSL",
+                    "classes": "js-bsl-btn btn--ghost btn--small u-mb-xs u-mt-xs grid__col col-auto",
+                    "innerClasses": "icon--bsl-btn"
+                }) }}
+            </div>
+        </div>
+    </div>
+    <script src="{{ pageInfo.rootPath }}/scripts/index.js"></script>
+{% endblock %}
