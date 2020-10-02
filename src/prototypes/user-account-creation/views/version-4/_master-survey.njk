@@ -38,7 +38,29 @@
     {% block preMain %}{% endblock %}
     <div class="page__container container">
         <main id="main-content" class="page__main {{ pageClasses }}">
-            {% block main %}{% endblock %}
+            <section role="region" class="tabs">
+                <h2 class="tabs__title">Tabs</h2>
+                <ul class="tabs__list">
+                    <li id="tabId1Item" class="tab__list-item">
+                        <a href="#tabId1" class="tab" data-ga="click" data-ga-category="tabs" data-ga-action="Show: Todo" data-ga-label="Show: Todo">Todo</a>
+                    </li>
+                    <li id="tabId2Item" class="tab__list-item">
+                        <a href="#tabId2" class="tab" data-ga="click" data-ga-category="tabs" data-ga-action="Show: History" data-ga-label="Show: History">History</a>
+                    </li>
+                    <li id="tabId3Item" class="tab__list-item">
+                        <a href="#tabId3" class="tab" data-ga="click" data-ga-category="tabs" data-ga-action="Show: Messages" data-ga-label="Show: Messages">Messages</a>
+                    </li>
+                </ul>
+                <section id="tabId1" class="tabs__panel">  
+                    {% block main %}{% endblock %}
+                </section>
+                <section id="tabId2" class="tabs__panel">
+                    <h3>History</h3>
+                </section>
+                <section id="tabId3" class="tabs__panel">
+                    <h3>Messages</h3>
+                </section>
+            </section>
         </main>
     </div>
 {% endblock %}
