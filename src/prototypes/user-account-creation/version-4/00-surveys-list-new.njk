@@ -1,0 +1,177 @@
+---
+group: Frontstage
+title: User acccount creation
+version: 20.0.3
+layout: user-account-creation/views/version-4/_master-surveys-list
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
+
+{% block main %}
+
+    <div class="grid">
+        <div class="grid__col col-12@m">
+            <div class="pl-grid-col">
+            {% from "components/panel/_macro.njk" import onsPanel %}
+            {{
+                onsPanel({
+                    "type": "success",
+                    "id": "success-id",
+                    "icon": "check-green",
+                    "classes": "u-mb-m",
+                    body: "<p>We've updated your last name and telephone number.</p>"
+                })
+            }}
+                <section role="region" class="tabs">
+                    <section id="tabId1" class="tabs__panel">
+                        <p class='u-fs-r'><a href="#">Add a survey</a> Using your enrolment code</p>
+                        <table class="table table--row-hover">
+                            <caption class="table__caption u-vh">Your surveys</caption>
+                            <thead class="table__head">
+                                <tr class="table__row">
+                                    <th scope="col" class="table__header">Survey</th>
+                                    <th scope="col" class="table__header">Period covered</th>
+                                    <th scope="col" class="table__header">Submit by</th>
+                                    <th scope="col" class="table__header">Status</th>
+                                    <th scope="col" class="table__header">
+                                        <span class="u-vh">Action</span></th>
+                                </tr>
+                            </thead>
+                            <tbody class="table__body">
+                                <tr class="table__row">
+                                    <td class="table__cell ">
+                                        <p class="u-mb-xs">Monthly Business Survey</p>
+                                        <p class="u-fs-s u-mb-xs">Business: Vehement Capital Partners</p>
+                                        <p class="u-fs-s u-mb-xs">Ref: 11110000009</p>
+                                    </td>
+                                    <td class="table__cell td-period-covered">
+                                        <p>December 2019</p>
+                                    </td>
+                                    <td class="table__cell td-submit-by">
+                                        <p>7th Jan 2019</p>
+                                    </td>
+                                    <td class="table__cell td-status">
+                                        <p>In progress</p>
+                                    </td>
+                                    <td class="table__cell ">
+                                        <button type="submit" class="btn btn--small">
+                                            <span class="btn__inner">Access&nbsp;survey</span>
+                                        </button>
+                                        <p class="u-mt-s">
+                                            <a id="create-message-link" href="#" class="u-fs-s survey-message history__message">Send a message </a>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td class="table__cell ">
+                                        <p class="u-mb-xs">Monthly Wages and Salary Survey</p>
+                                        <p class="u-fs-s u-mb-xs">Business: Vehement Capital Partners</p>
+                                        <p class="u-fs-s u-mb-xs">Ref: 11110000009</p>
+                                    </td>
+                                    <td class="table__cell td-period-covered">
+                                        <p>December 2019</p>
+                                    </td>
+                                    <td class="table__cell td-submit-by">
+                                        <p>7th Jan 2019</p>
+                                    </td>
+                                    <td class="table__cell td-status">
+                                        <p>In progress</p>
+                                    </td>
+                                    <td class="table__cell ">
+                                        <button type="submit" class="btn btn--small">
+                                            <span class="btn__inner">Access&nbsp;survey</span>
+                                        </button>
+                                        <p class="u-mt-s">
+                                            <a id="create-message-link" href="#" class="u-fs-s survey-message history__message">Send a message </a>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td class="table__cell ">
+                                        <p class="u-mb-xs">Quarterly Business Survey</p>
+                                        <p class="u-fs-s u-mb-xs">Business: Vehement Capital Partners</p>
+                                        <p class="u-fs-s u-mb-xs">Ref: 11110000009</p>
+                                    </td>
+                                    <td class="table__cell td-period-covered">
+                                        <p>December 2019</p>
+                                    </td>
+                                    <td class="table__cell td-submit-by">
+                                        <p>3rd Jan 2020</p>
+                                    </td>
+                                    <td class="table__cell td-status">
+                                        <p>In progress</p>
+                                    </td>
+                                    <td class="table__cell ">
+                                        <button type="submit" class="btn btn--small">
+                                            <span class="btn__inner">Access&nbsp;survey</span>
+                                        </button>
+                                        <p class="u-mt-s">
+                                            <a id="create-message-link" href="#" class="u-fs-s survey-message history__message">Send a message </a>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td class="table__cell ">
+                                        <p class="u-mb-xs">Quarterly Acquisitions and Disposals of Capital Assets</p>
+                                        <p class="u-fs-s u-mb-xs">Business: Vehement Capital Partners</p>
+                                        <p class="u-fs-s u-mb-xs">Ref: 11110000009</p>
+                                    </td>
+                                    <td class="table__cell td-period-covered">
+                                        <p>1st October to 31 December</p>
+                                    </td>
+                                    <td class="table__cell td-submit-by">
+                                        <p>7th Jan 2020</p>
+                                    </td>
+                                    <td class="table__cell td-status">
+                                        <p>In progress</p>
+                                    </td>
+                                    <td class="table__cell ">
+                                        <button type="submit" class="btn btn--small">
+                                            <span class="btn__inner">Access&nbsp;survey</span>
+                                        </button>
+                                        <p class="u-mt-s">
+                                            <a id="create-message-link" href="#" class="u-fs-s survey-message history__message">Send a message </a>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td class="table__cell ">
+                                        <p class="u-mb-xs">Business Register and Employment Survey</p>
+                                        <p class="u-fs-s u-mb-xs">Business: Vehement Capital Partners</p>
+                                        <p class="u-fs-s u-mb-xs">Ref: 11110000009</p>
+                                    </td>
+                                    <td class="table__cell td-period-covered">
+                                        <p>Please complete all questions as at 13/09/2020</p>
+                                    </td>
+                                    <td class="table__cell td-submit-by">
+                                        <p>4 October 2020</p>
+                                    </td>
+                                    <td class="table__cell td-status">
+                                        <p>In progress</p>
+                                    </td>
+                                    <td class="table__cell ">
+                                        <button type="submit" class="btn btn--small">
+                                            <span class="btn__inner">Access&nbsp;survey</span>
+                                        </button>
+                                        <p class="u-mt-s">
+                                            <a id="create-message-link" href="#" class="u-fs-s survey-message history__message">Send a message </a>
+                                        </p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <!-- <section id="tabId2" class="tabs__panel">
+                        <p class='u-fs-r'>Nothing here</p>
+                    </section>
+                    <section id="tabId3" class="tabs__panel">
+                        <p class='u-fs-r'>Nothing here</p>
+                    </section>-->
+                </section>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
