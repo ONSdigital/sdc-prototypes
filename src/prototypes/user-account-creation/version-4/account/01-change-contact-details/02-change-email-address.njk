@@ -38,6 +38,16 @@ layout: user-account-creation/views/version-4/_master-survey
             }}
         </div>
         <div class="grid__col col-8@m u-pt-no">
+            {% from "components/panel/_macro.njk" import onsPanel %}
+            {{
+                onsPanel({
+                    "type": "success",
+                    "id": "success-id",
+                    "icon": "check-green",
+                    "classes": "u-mb-m",
+                    body: "<p>We've updated your last name and telephone number.</p>"
+                })
+            }}
             <h1>Send email address confirmation</h1>
             <p>You need to authorise a change of email address.</p>
             <p>We'll send a confirmation email to <b>jane.doe@acme.com</b>.</p>
