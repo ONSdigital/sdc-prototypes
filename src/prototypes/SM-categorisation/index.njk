@@ -7,11 +7,11 @@ layout: SM-categorisation/views/_index
 
 {% block main %}
     {% from "components/button/_macro.njk" import onsButton %}
-    <h1>Secure messages categorisation</h1>
+    <h1>Account and survey help</h1>
 
     <div class="grid">
         <div class="grid__col col-8@m">
-            <h2>Version 4</h2>
+            <h2>Version 5</h2>
             {{ 
                 onsButton({
                     "type": 'button',
@@ -22,15 +22,23 @@ layout: SM-categorisation/views/_index
             }}
             <p>Includes recommendations from user testing 8/9th September 2020</p>
             <ul class="list ">
-                <li class="list__item ">Transfer enrolments
+                <li class="list__item ">Redesigned transfer surveys
                     <ul class="list ">
-                        <li class="list__item ">Added limit to one email address and accompanying content</li>
+                        <li class="list__item ">Limited to one email address</li>
+                        <li class="list__item ">Added intro screen "What will happen"</li>
                         <li class="list__item ">Removed delete acccount option</li>
-                        <li class="list__item ">Added <a href="/prototypes/SM-categorisation/version-5/account/04-transfer-my-surveys-1/index.html">Transferring one survey for one businesses</a> (<a href="https://docs.google.com/spreadsheets/d/1le37urxCLppJPo8DdOXa3DhMeqCrxS5wJHEcGE7UnbY/edit?usp=sharing">47% businesses on SDC</a>)</li>
+                        <li class="list__item ">Added <a href="/prototypes/SM-categorisation/version-5/account/04-transfer-my-surveys-1/index.html">Transferring one survey for one businesses</a></li>
                         <li class="list__item ">Added <a href="/prototypes/SM-categorisation/version-5/account/04-transfer-my-surveys-2/index.html">Transferring multiple surveys for one businesses</a></li>
                         <li class="list__item ">Added <a href="/prototypes/SM-categorisation/version-5/account/04-transfer-my-surveys-3/index.html">Transferring multiple surveys for multiple businesses</a></li>
                         <li class="list__item ">Added <a href="/prototypes/SM-categorisation/version-5/account/04-transfer-my-surveys-4/index.html">Transferring multiple surveys for large amount of businesses</a></li>
                     </ul>
+                </li>
+                <li class="list__item ">Redesigned <a href="/prototypes/SM-categorisation/version-5/account/03-share-access-to-my-surveys/index.html">share access to surveys</a>
+                    <ul class="list ">
+                        <li class="list__item ">Limited to one email address</li>
+                        <li class="list__item ">Added intro screen "What will happen"</li>
+                    </ul>
+                </li>
                 <li class="list__item ">Added "My password details have changed" to <a href="/prototypes/SM-categorisation/version-5/40-category/00-category-list.html">Account details</a> in Help</li>
                 <li class="list__item ">Added link to tranfer surveys to <a href="/prototypes/SM-categorisation/version-5/account/01-change-contact-details/02-change-email-address.html">email confirmation page</a></li>
             </ul>

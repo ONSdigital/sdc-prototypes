@@ -46,16 +46,21 @@ layout: SM-categorisation/views/version-5/_master-survey
             }}
         </div>
         <div class="grid__col col-8@m u-pt-no">
-            <h1>Enter email address</h1>
-            <p>This is who will take over access of your surveys.</p>
+            <h1>Enter recipient's email address</h1>
+            <p>This is the person who will be able to respond to your surveys in your absence.</p>
+            
+            <div class="panel panel--info panel--simple u-mb-m">
+                <div class="panel__body">
+                    <p>Ensure you are following your company's General Data Protection Regulation (GDPR) procedures and the recipient understands their data privacy commitments too.</p>
+                </div>
+            </div>
 
             <p class="field">
                 {{ 
                 onsInput({
                     "id": "text",
                     "label": {
-                        "text": "Recipient's email address",
-                        "description": "This is who will take over access of your surveys"
+                        "text": "Recipient's email address"
                     }
                 }) 
             }}
