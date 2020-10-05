@@ -1,5 +1,5 @@
 ---
-title: Local authorities
+title: Who you can contact for help
 group: Census
 version: 25.0.1
 layout: census-website-engage/views/_master
@@ -18,6 +18,10 @@ layout: census-website-engage/views/_master
                         {
                             "url": pageInfo.rootPath + '/home',
                             "text": 'Home'
+                        },
+                        {
+                            "url": pageInfo.rootPath + '/get-involved/local-authorities',
+                            "text": 'Local authorities'
                         }
                     ]
                 })
@@ -32,7 +36,7 @@ layout: census-website-engage/views/_master
                         <h1 class="u-mb-l">
                             <span class="u-fs-m u-db u-mb-xs u-lighter">Local authorities</span>
                             <span class="u-vh">: </span>
-                            <span class="u-fs-xxl u-db">Overview</span>
+                            <span class="u-fs-xxl u-db">Who you can contact for help</span>
                         </h1>
 
                         {{-
@@ -41,29 +45,29 @@ layout: census-website-engage/views/_master
                                 "ariaLabel": 'Pages in this guide',
                                 "itemsList": [
                                     {
-                                        "url": pageInfo.rootPath + '/local-authorities',
-                                        "text": 'Overview',
-                                        "current": true
+                                        "url": pageInfo.rootPath + '/get-involved/local-authorities',
+                                        "text": 'Overview'
                                     },
                                     {
-                                        "url": pageInfo.rootPath + '/local-authorities/how-you-can-work-with-us',
+                                        "url": pageInfo.rootPath + '/get-involved/local-authorities/how-you-can-work-with-us',
                                         "text": 'How you can work with us'
                                     },
                                     {
-                                        "url": pageInfo.rootPath + '/local-authorities/what-you-can-do-to-help',
+                                        "url": pageInfo.rootPath + '/get-involved/local-authorities/what-you-can-do-to-help',
                                         "text": 'What you can do to help'
                                     },
                                     {
-                                        "url": pageInfo.rootPath + '/local-authorities/important-dates-for-local-authorities',
+                                        "url": pageInfo.rootPath + '/get-involved/local-authorities/important-dates-for-local-authorities',
                                         "text": 'Important dates for local authorities'
                                     },
                                     {
-                                        "url": pageInfo.rootPath + '/local-authorities/materials-to-help-promote-the-census',
+                                        "url": pageInfo.rootPath + '/get-involved/local-authorities/materials-to-help-promote-the-census',
                                         "text": 'Materials to help promote the census'
                                     },
                                     {
-                                        "url": pageInfo.rootPath + '/local-authorities/who-you-can-contact-for-help',
-                                        "text": 'Who you can contact for help'
+                                        "url": pageInfo.rootPath + '/get-involved/local-authorities/who-you-can-contact-for-help',
+                                        "text": 'Who you can contact for help',
+                                        "current": true
                                     }
                                 ]
                             })
@@ -71,22 +75,34 @@ layout: census-website-engage/views/_master
 
                         <div class="page__body">
 
-                            <h2>Help the census succeed in your area</h2>
-                            
-                            <p>Just as census statistics may well be vital to you, your support is vital to us. We need your help to raise awareness of the census in your area and encourage people to fill in their census questionnaires.</p>
+                            <p>Your local authority should have appointed a dedicated census liaison manager (CLM) and assistant census liaison manager (ACLM). The CLM and ACLM act as your main points of contact with us at the ONS.</p>
 
-                            <p>By working together, we can make sure Census 2021 gets a great response and represents everyone.</p>
+                            <p>We’ve also appointed 200 full-time census engagement managers across England and Wales. One of their main tasks is to work with local authorities and they’ll be in touch with the CLMs and ACLMs in October 2020.</p>
+
+                            <p>If you need to contact our central team at the ONS about anything to do with Census 2021, please <a href="mailto:2021Census.LA.Liaison@ons.gov.uk">email our Local Authority Partnerships team</a>.</p>
+
+                            {% from "components/panel/_macro.njk" import onsPanel %}
+                            
+                            {% call onsPanel() %}
+
+                            <h3>Sign up to our mailing list</h3>
+
+                            <p>Stay up to date on the latest news and events for local authorities through our mailing list.</p>
+                            
+                            <p>Please <a href="mailto:2021Census.LA.Liaison@ons.gov.uk">email our Local Authority Partnerships team</a> from your work email address.</p>
+
+                            {% endcall %}
 
                             <div class="u-mt-xl">
                                 {{-
                                     onsContentPagination({
                                         "contentPaginationItems": [
-                                        {
-                                            "rel": 'next',
-                                            "text": 'Next',
-                                            "url": pageInfo.rootPath + '/local-authorities/how-you-can-work-with-us',
-                                            "label": 'How you can work with us'
-                                        }
+                                            {
+                                                "rel": 'prev',
+                                                "text": 'Previous',
+                                                "url": pageInfo.rootPath + '/get-involved/local-authorities/materials-to-help-promote-the-census',
+                                                "label": 'Materials to help promote the census'
+                                            }
                                         ]
                                     })
                                 }}
@@ -106,15 +122,15 @@ layout: census-website-engage/views/_master
                             "title": 'Related content',
                             "itemsList": [
                                 {
-                                    "url": pageInfo.rootPath + '/community-groups',
+                                    "url": pageInfo.rootPath + '/get-involved/community-groups',
                                     "text": 'Community groups'
                                 },
                                 {
-                                    "url": pageInfo.rootPath + '/communications-partners',
+                                    "url": pageInfo.rootPath + '/get-involved/communications-partners',
                                     "text": 'Communications partners'
                                 },
                                 {
-                                    "url": pageInfo.rootPath + '/downloadable-resources',
+                                    "url": pageInfo.rootPath + '/get-involved/downloadable-resources',
                                     "text": 'Downloadable resources'
                                 },
                                 {

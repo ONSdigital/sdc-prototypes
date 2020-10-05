@@ -1,5 +1,5 @@
 ---
-title: Who you can contact for help
+title: How you can work with us
 group: Census
 version: 25.0.1
 layout: census-website-engage/views/_master
@@ -20,7 +20,7 @@ layout: census-website-engage/views/_master
                             "text": 'Home'
                         },
                         {
-                            "url": pageInfo.rootPath + '/local-authorities',
+                            "url": pageInfo.rootPath + '/get-involved/local-authorities',
                             "text": 'Local authorities'
                         }
                     ]
@@ -36,7 +36,7 @@ layout: census-website-engage/views/_master
                         <h1 class="u-mb-l">
                             <span class="u-fs-m u-db u-mb-xs u-lighter">Local authorities</span>
                             <span class="u-vh">: </span>
-                            <span class="u-fs-xxl u-db">Who you can contact for help</span>
+                            <span class="u-fs-xxl u-db">How you can work with us</span>
                         </h1>
 
                         {{-
@@ -45,29 +45,29 @@ layout: census-website-engage/views/_master
                                 "ariaLabel": 'Pages in this guide',
                                 "itemsList": [
                                     {
-                                        "url": pageInfo.rootPath + '/local-authorities',
+                                        "url": pageInfo.rootPath + '/get-involved/local-authorities',
                                         "text": 'Overview'
                                     },
                                     {
-                                        "url": pageInfo.rootPath + '/local-authorities/how-you-can-work-with-us',
-                                        "text": 'How you can work with us'
+                                        "url": pageInfo.rootPath + '/get-involved/local-authorities/how-you-can-work-with-us',
+                                        "text": 'How you can work with us',
+                                        "current": true
                                     },
                                     {
-                                        "url": pageInfo.rootPath + '/local-authorities/what-you-can-do-to-help',
+                                        "url": pageInfo.rootPath + '/get-involved/local-authorities/what-you-can-do-to-help',
                                         "text": 'What you can do to help'
                                     },
                                     {
-                                        "url": pageInfo.rootPath + '/local-authorities/important-dates-for-local-authorities',
+                                        "url": pageInfo.rootPath + '/get-involved/local-authorities/important-dates-for-local-authorities',
                                         "text": 'Important dates for local authorities'
                                     },
                                     {
-                                        "url": pageInfo.rootPath + '/local-authorities/materials-to-help-promote-the-census',
+                                        "url": pageInfo.rootPath + '/get-involved/local-authorities/materials-to-help-promote-the-census',
                                         "text": 'Materials to help promote the census'
                                     },
                                     {
-                                        "url": pageInfo.rootPath + '/local-authorities/who-you-can-contact-for-help',
-                                        "text": 'Who you can contact for help',
-                                        "current": true
+                                        "url": pageInfo.rootPath + '/get-involved/local-authorities/who-you-can-contact-for-help',
+                                        "text": 'Who you can contact for help'
                                     }
                                 ]
                             })
@@ -75,23 +75,11 @@ layout: census-website-engage/views/_master
 
                         <div class="page__body">
 
-                            <p>Your local authority should have appointed a dedicated census liaison manager (CLM) and assistant census liaison manager (ACLM). The CLM and ACLM act as your main points of contact with us at the ONS.</p>
+                            <p>We’ve planned how to best work together with local authorities based on successes from the 2011 Census and the 2019 Rehearsal.</p>
 
-                            <p>We’ve also appointed 200 full-time census engagement managers across England and Wales. One of their main tasks is to work with local authorities and they’ll be in touch with the CLMs and ACLMs in October 2020.</p>
+                            <p>There are lots of different ways that your local authority can help with the census. This includes providing local insight in the lead-up to the census and practical support to help people fill in their forms during the census. You can also use census statistics afterwards to inform your decisions.</p>
 
-                            <p>If you need to contact our central team at the ONS about anything to do with Census 2021, please <a href="mailto:2021Census.LA.Liaison@ons.gov.uk">email our Local Authority Partnerships team</a>.</p>
-
-                            {% from "components/panel/_macro.njk" import onsPanel %}
-                            
-                            {% call onsPanel() %}
-
-                            <h3>Sign up to our mailing list</h3>
-
-                            <p>Stay up to date on the latest news and events for local authorities through our mailing list.</p>
-                            
-                            <p>Please <a href="mailto:2021Census.LA.Liaison@ons.gov.uk">email our Local Authority Partnerships team</a> from your work email address.</p>
-
-                            {% endcall %}
+                            <p>You can read much more about these activities in your <a href="{{pageInfo.rootPath}}/documents/Local_Authority_Guide.pdf" target="_blank">Local Authority Partnership Guide</a>.</p>
 
                             <div class="u-mt-xl">
                                 {{-
@@ -100,8 +88,14 @@ layout: census-website-engage/views/_master
                                             {
                                                 "rel": 'prev',
                                                 "text": 'Previous',
-                                                "url": pageInfo.rootPath + '/local-authorities/materials-to-help-promote-the-census',
-                                                "label": 'Materials to help promote the census'
+                                                "url": pageInfo.rootPath + '/get-involved/local-authorities',
+                                                "label": 'Overview'
+                                            },
+                                            {
+                                                "rel": 'next',
+                                                "text": 'Next',
+                                                "url": pageInfo.rootPath + '/get-involved/local-authorities/what-you-can-do-to-help',
+                                                "label": 'What you can do to help'
                                             }
                                         ]
                                     })
@@ -122,15 +116,15 @@ layout: census-website-engage/views/_master
                             "title": 'Related content',
                             "itemsList": [
                                 {
-                                    "url": pageInfo.rootPath + '/community-groups',
+                                    "url": pageInfo.rootPath + '/get-involved/community-groups',
                                     "text": 'Community groups'
                                 },
                                 {
-                                    "url": pageInfo.rootPath + '/communications-partners',
+                                    "url": pageInfo.rootPath + '/get-involved/communications-partners',
                                     "text": 'Communications partners'
                                 },
                                 {
-                                    "url": pageInfo.rootPath + '/downloadable-resources',
+                                    "url": pageInfo.rootPath + '/get-involved/downloadable-resources',
                                     "text": 'Downloadable resources'
                                 },
                                 {
