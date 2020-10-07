@@ -1,11 +1,16 @@
 {% extends "page-templates/_template.njk" %}
 
 {% block head %}
-  <link rel="stylesheet" href="{{ pageInfo.rootPath }}/styles.css"/>
+  <link rel="stylesheet" href="{{ pageInfo.rootPath }}/version-1/styles.css"/>
 {% endblock %}
 
-{% set page = { 
-    "title": "Survey Data Collection",
+{% set pageConfig = { 
+    "cdn": "14.4.0",
+    "title": "Survey data collection",
+    "header": {
+      "logoAlt": "ONS",
+      "logoHref": "/prototypes/SM-categorisation/version-1/"
+    },
     "footer": {
         "OGLLink": {
             "pre": 'All content is available under the',
@@ -15,16 +20,6 @@
         }
     }
 } %}
-
-{% block header %}
-{% from "components/header/_macro.njk" import onsHeader %}
-{{ 
-    onsHeader({
-        "title": "Survey collection data",
-        "logoHref": "#"
-    })
-}}
-{% endblock %}
 
 {% block pageContent %}
   {% block preMain %}{% endblock %}
@@ -36,5 +31,5 @@
 {% endblock %}
 
 {% block bodyEnd %}
-  <script src="{{ pageInfo.rootPath }}/scripts/index.js"></script>
+  <script src="{{ pageInfo.rootPath }}/version-1/scripts/index.js"></script>
 {% endblock %}
