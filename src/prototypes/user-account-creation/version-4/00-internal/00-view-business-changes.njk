@@ -34,7 +34,6 @@ layout: user-account-creation/views/version-4/_master-internal
 
             <h1>Filter messages by survey</h1>
 
-            <form method="post">
                 <input type="hidden" name="csrf_token" value="">
                 <div class="field">
                     <label class="label" for="survey-list">Select a survey to display messages for your team</label>
@@ -91,7 +90,7 @@ layout: user-account-creation/views/version-4/_master-internal
                     </select>
                 </div>
                 <p class="field">
-                    <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-4/account/01-change-contact-details/02-change-email-address.html';">
+                    <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-4/00-internal/10-secure-messages.html';">
                         <span class="btn__inner">Continue</span>
                     </button>
                 </p>
@@ -100,11 +99,10 @@ layout: user-account-creation/views/version-4/_master-internal
                 </p>
 
                 <p class="field">
-                    <button type="submit" class="btn btn--secondary btn--small" onclick="location.href='{{ pageInfo.rootPath }}/version-4/30-my-account.html';">
+                    <button type="submit" class="btn btn--secondary btn--small" onclick="location.href='{{ pageInfo.rootPath }}/version-4/00-internal/10-secure-messages.html';">
                         <span class="btn__inner">Filter by account change requests</span>
                     </button>
                 </p>
-            </form>
         </div>
     </div>
 
