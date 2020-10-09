@@ -36,7 +36,19 @@ layout: alert-banner-management/views/version-3/_master
             }}
         </div>
         <div class="grid__col col-8@m u-pt-no">
-            <h1>When should the alert be published?</h1>
+            <div class="panel panel--error js-error-panel">
+                <div class="panel__header">
+                    <div data-qa="error-header" class="panel__title u-fs-r--b">There is a problems with your answer</div>
+                </div>
+                <div class="panel__body">
+                    <ol class="list ">
+                        <li class="list__item ">
+                            <a href="#container-test-number" class="list__link js-inpagelink">Publish time cannot be in the past</a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <h1 class="u-mt-l">When should the alert be published?</h1>
             <form action="{{ pageInfo.parentPath }}/index.html">
                 <fieldset class="fieldset u-mb-l">
                     <legend class="fieldset__legend">Choose an option</legend>
@@ -60,6 +72,7 @@ layout: alert-banner-management/views/version-3/_master
                                     type="radio"
                                     id="other-publish"
                                     class="radio__input js-radio"
+                                    checked="true" 
                                     value="other"
                                     name="publish-alert"
                                     data-action-url="/prototypes/alert-banner-management/version-3/02-remove-alert-publish-specific-time.html"
@@ -74,7 +87,7 @@ layout: alert-banner-management/views/version-3/_master
                                     <div class="field-group">
                                         <div class="field u-mb-s">
                                             <label class="label  " for="date-day">Day</label>
-                                            <input type="text" id="date-day" class="input input--text input-type__input   input--w-2" name="day" min="1" max="31" maxlength="2" pattern="[0-9]*" inputmode="numeric" autocomplete="alert-day" value="27" />
+                                            <input type="text" id="date-day" class="input input--text input-type__input   input--w-2" name="day" min="1" max="31" maxlength="2" pattern="[0-9]*" inputmode="numeric" autocomplete="alert-day" value="27"/>
                                         </div>
                                         <div class="field u-mb-s">
                                             <label class="label  " for="date-month">Month</label>
