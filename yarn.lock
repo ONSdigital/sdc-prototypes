@@ -1012,7 +1012,7 @@
   resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-25.0.1.tgz#067c02bd8857231106574634a8327d65f80887cd"
   integrity sha512-LnRnhVzOYlu9e78ur2he2ue0v/TCgTSZIKvz0+NGYuq0kdHm8Zm6Ow8Sbfucdvp4oRmK0ZOu722XPz6UihW3IQ==
 
-"@ons/design-system/25.0.4@npm:@ons/design-system@25.0.4":
+"@ons/design-system/25.0.4@npm:@ons/design-system@25.0.4", "@ons/design-system/25.1.0@npm:@ons/design-system@25.1.0":
   version "25.0.4"
   resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-25.0.4.tgz#79704d69bd3d400534ca2339fe5b361d45870e2b"
   integrity sha512-keAZCuHKvt9zQ+eHWq8Pm5p/cc0PYsdTzahzsSMw0igsyhdmgur76ehoDxuNsFqSj/NhAvjJ9RF8kS+acZEf2w==
