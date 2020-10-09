@@ -50,8 +50,14 @@ layout: alert-banner-management/views/version-3/_master
                 <h2>Vacancies survey</h2>
                 <p>The Quarterly Vacancy Survey is unavailable until Tuesday 7 July 2020, as we are currently experiencing some technical difficulties.</p>
             </p>
-            <p class="field">
-                <a href="{{ pageInfo.rootPath }}/version-3/00-create-alert-no-js.html">Back to create an alert</a>
+            <p class="field u-mt-l">
+                {{ 
+                        onsButton({
+                            "type": 'button',
+                            "text": 'Back to create an alert',
+                            "url": "/prototypes/alert-banner-management/version-3/00-create-alert-no-js.html"
+                        }) 
+                    }}
             </p>
         </div>
     </div>
