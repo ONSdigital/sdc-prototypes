@@ -1017,6 +1017,11 @@
   resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-25.0.4.tgz#79704d69bd3d400534ca2339fe5b361d45870e2b"
   integrity sha512-keAZCuHKvt9zQ+eHWq8Pm5p/cc0PYsdTzahzsSMw0igsyhdmgur76ehoDxuNsFqSj/NhAvjJ9RF8kS+acZEf2w==
 
+"@ons/design-system/25.1.1@npm:@ons/design-system@25.1.1":
+  version "25.1.1"
+  resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-25.1.1.tgz#cc72a336452571d348411edf712304e491999f4c"
+  integrity sha512-87l9u2B4XdZfjS20YpbIUjRYFpKHaYtnOFuJ6d9oC+UVE32N2NogmPuwVkc/eDZXRbxgw6aLW+Rd9VegKnkiQw==
+
 "@ons/design-system/4.1.0@npm:@ons/design-system@4.1.0":
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-4.1.0.tgz#3d8c5c09642ee90bee5b6fc2d5b509b59b245491"

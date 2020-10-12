@@ -20,6 +20,7 @@
 {% from "components/downloads/_macro.njk" import onsDownloads %}
 {% from "components/pagination/_macro.njk" import onsPagination %}
 {% from "components/text-indent/_macro.njk" import onsTextIndent %}
+{% from "components/articles/_macro.njk" import onsArticles %}
 
 {% block head %}
     <link rel="stylesheet" href="{{pageInfo.rootPath}}/main.css">
@@ -42,7 +43,7 @@
         "ariaLabel": 'Toggle main navigation'
     },
     "cdn": {
-        "version": '25.1.0'
+        "version": '25.1.1'
     },
     "navigation": {
         "id": 'main-nav',
