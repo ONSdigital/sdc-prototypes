@@ -1,0 +1,71 @@
+---
+group: Frontstage
+title: User self serve
+version: 20.0.3
+layout: user-self-serve/views/version-4/_master-survey
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+{% from "components/metadata/_macro.njk" import onsMetadata %}
+{% from "components/input/_macro.njk" import onsInput %}
+
+{% block main %}
+
+    <div class="grid">
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
+            <h1>Create message</h1>
+            <p>Send us a message with a description of your issue and we'll get back to you.</p>
+            {{ 
+                onsMetadata({
+                    "metadataLabel": "Subject",
+                    "termCol": "2",
+                    "descriptionCol": "10",
+                    "itemsList": [
+                        {
+                            "term": "Subject:",
+                            "descriptions": [ 
+                                {
+                                    "description": "Help with Monthly Business Survey"
+                                }                  
+                            ]
+                        }                                                    
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+                {{
+                onsTextarea({
+                    "id": "textarea",
+                    "name": "feedback",
+                    "label": {
+                        "text": "Message"
+                    }
+                })
+            }}
+            <p class="field">
+                <div class="btn-group">
+                    {{ 
+                        onsButton({
+                            "type": 'button',
+                            "text": 'Send message',
+                            "classes": 'btn-group__btn',
+                            "url": "/prototypes/user-self-serve/version-4/10-message-sent.html"
+                        }) 
+                    }}
+                    {{ 
+                        onsButton({
+                            "type": 'button',
+                            "text": 'Cancel',
+                            "classes": 'btn--secondary btn-group__btn',
+                            "url": "/prototypes/user-self-serve/version-4/00-surveys-list.html"
+                        }) 
+                    }}
+                </div>
+            </p>
+        </div>
+    </div>
+
+{% endblock %}

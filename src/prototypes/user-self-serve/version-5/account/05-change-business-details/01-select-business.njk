@@ -1,0 +1,169 @@
+---
+group: Frontstage
+title: User account creation
+version: 20.0.3
+layout: user-self-serve/views/version-5/_master-survey
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+{% from "components/metadata/_macro.njk" import onsMetadata %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+
+{% block main %}
+    <div class="grid">
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/prototypes/user-self-serve/version-5/00-surveys-list.html',
+                            "text": 'Surveys'
+                        },
+                        {
+                            "url": '/prototypes/user-self-serve/version-5/30-my-account.html',
+                            "text": 'Account'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'Change business details',
+                            "current": true
+                        }
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+            <h1>Which business’s details need to be changed?</h1>
+            <h2 class="u-fs-m">MBI UNITED KINGDOM LTD</h2>
+            <p class="field">
+            {{
+                onsMetadata({
+                    "metadataLabel": "MBI UNITED KINGDOM LTD",
+                    "termCol": "3",
+                    "descriptionCol": "9",
+                    "itemsList": [
+                        {
+                            "term": "Trading as:",
+                            "descriptions": [
+                                {
+                                    "description": "MBI UNITED KINGDOM LTD"
+                                }
+                            ]
+                        },
+                        {
+                            "term": "Address:",
+                            "descriptions": [
+                                {
+                                    "description": "MAILPOINT A1F"
+                                },
+                                {
+                                    "description": "PO BOX 41"
+                                },
+                                {
+                                    "description": "NORTH HARBOUR"
+                                },
+                                {
+                                    "description": "PORTSMOUTH"
+                                },
+                                {
+                                    "description": "PO6 3AU"
+                                }
+                            ]
+                        },
+                        {
+                            "term": "Phone number:",
+                            "descriptions": [
+                                {
+                                    "description": "07789 367 678"
+                                }
+                            ]
+                        },
+                        {
+                            "term": "Fax number:",
+                            "descriptions": [
+                                {
+                                    "description": "0107 009 809"
+                                }
+                            ]
+                        }
+                    ]
+                })
+            }}
+            </p>
+            <p class="field">
+                <button type="submit" class="btn btn--secondary" onclick="location.href='{{ pageInfo.rootPath }}/version-5/account/05-change-business-details/02-change-business-details.html';">
+                    <span class="btn__inner">Change details</span>
+                </button>
+            </p>
+            <p class="field">
+                <hr>
+            </p>
+            <p class="field u-mt-l">
+            <h2 class="u-fs-m">MBI UK LTD INCL ALL VAT GRP MBS & MBI SVS CENTRE UK LTD EXCL MBI UNITED KINGDOM TRUST LTD</h2>
+            {{
+                onsMetadata({
+                    "metadataLabel": "MBI UK LTD INCL ALL VAT GRP MBS & MBI SVS CENTRE UK LTD EXCL MBI UNITED KINGDOM TRUST LTD",
+                    "termCol": "3",
+                    "descriptionCol": "9",
+                    "itemsList": [
+                        {
+                            "term": "Trading as:",
+                            "descriptions": [
+                                {
+                                    "description": "MBI UK LTD"
+                                }
+                            ]
+                        },
+                        {
+                            "term": "Address:",
+                            "descriptions": [
+                                {
+                                    "description": "MAILPOINT A1F"
+                                },
+                                {
+                                    "description": "PO BOX 41"
+                                },
+                                {
+                                    "description": "NORTH HARBOUR"
+                                },
+                                {
+                                    "description": "PORTSMOUTH"
+                                },
+                                {
+                                    "description": "PO6 3AU"
+                                }
+                            ]
+                        },
+                        {
+                            "term": "Phone number:",
+                            "descriptions": [
+                                {
+                                    "description": "07789 367 678"
+                                }
+                            ]
+                        },
+                        {
+                            "term": "Fax number:",
+                            "descriptions": [
+                                {
+                                    "description": "0107 009 809"
+                                }
+                            ]
+                        }
+                    ]
+                })
+            }}
+            </p>
+            <p class="field">
+                <button type="submit" class="btn btn--secondary" onclick="location.href='{{ pageInfo.rootPath }}/version-5/account/05-change-business-details/02-change-business-details.html';">
+                    <span class="btn__inner">Change details</span>
+                </button>
+            </p>
+        </div>
+    </div>
+
+{% endblock %}

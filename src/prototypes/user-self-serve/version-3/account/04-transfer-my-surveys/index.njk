@@ -1,0 +1,80 @@
+---
+group: Frontstage
+title: User account creation
+version: 20.0.3
+layout: user-self-serve/views/version-3/_master-survey
+---
+
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+
+{% block main %}
+
+    <div class="grid">
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/prototypes/user-self-serve/version-3/00-surveys-list.html',
+                            "text": 'Surveys'
+                        },
+                        {
+                            "url": '/prototypes/user-self-serve/version-3/30-my-account.html',
+                            "text": 'Account'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'Transfer surveys',
+                            "current": true
+                        }
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+            <h1>Transfer all your surveys</h1>
+
+            <p>If you are no longer required to respond you'll need to transfer your surveys.</p>
+            <p>Enter the new respondents email addresses to grant them access to your surveys. They'll receive a survey enrolment code by email which will expire within 7 days.</p>
+            <p class="field">
+                {{ 
+                onsInput({
+                    "id": "text",
+                    "label": {
+                        "text": "Email address"
+                    }
+                }) 
+            }}
+            </p>
+            <div class="optionBox">
+                <div class="block">
+                    <button type="submit" class="btn btn--secondary btn--small add"><span class="btn__inner">Add another</span></button>
+                </div>
+            </div>
+
+            <p class="field u-mt-l">
+                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-3/account/04-transfer-my-surveys/02-delete-account.html';">
+                    <span class="btn__inner">Continue</span>
+                </button>
+                <button type="submit" class="btn btn--secondary" onclick="location.href='{{ pageInfo.rootPath }}/version-3/30-my-account.html';">
+                    <span class="btn__inner">Cancel</span>
+                </button>
+            </p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script>
+        $('.add').click(function () {
+            $('.block:last').before('<div class="block u-mb-s"><label class="label" for="text">Email address</label><input type="text" id="text" class="input input--text input-type__input u-dib u-mr-s" /><button type="submit" class="btn btn--secondary btn--small remove u-dib"><span class="btn__inner">Remove</span></button></div>');
+        });
+        $('.optionBox').on('click', '.remove', function () {
+            $(this)
+                .parent()
+                .remove();
+        });
+    </script>
+
+{% endblock %}

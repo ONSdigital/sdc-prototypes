@@ -1,0 +1,48 @@
+---
+group: Frontstage
+title: User self serve
+version: 17.0.0
+layout: user-self-serve/views/version-1/_master
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% block main %}
+    <div class="grid">
+        <div id="main" class="grid__col col-12@m">
+            <form action="{{ pageInfo.parentPath }}/00-surveys-list.html">
+                <h1>Contact us</h1>
+                <h2>Telephone</h2>
+                <div class="u-fs-r">
+                    <p>
+                        <a class="nowrap" href="tel:+44-300-1234-931">0300 1234 931</a>
+                    </p>
+                </div>
+                <div class="u-fs-r">
+                    <p class="u-mb-l">
+                        Opening hours:<br>
+                        Monday to Thursday 8:30am – 5pm<br>
+                        Friday 8:30am - 4:30pm
+                    </p>
+                </div>
+                <h2>Post</h2>
+                <div class="u-fs-r">
+                    <p>
+                        Office for National Statistics<br>
+                        Government Buildings<br>
+                        Cardiff Road<br>
+                        Newport<br>
+                        South Wales<br>
+                        NP10 8XG
+                    </p>
+                </div>
+                <p class="field">
+                    <button type="submit" class="btn">
+                        <span class="btn__inner">Go to surveys</span>
+                    </button>
+                </p>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,58 @@
+---
+group: Frontstage
+title: User account creation
+version: 20.0.3
+layout: user-self-serve/views/version-5/_master-survey
+---
+
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+
+{% block main %}
+
+    <div class="grid">
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/prototypes/user-self-serve/version-5/00-surveys-list.html',
+                            "text": 'Surveys'
+                        },
+                        {
+                            "url": '/prototypes/user-self-serve/version-5/30-my-account.html',
+                            "text": 'Account'
+                        },
+                        {
+                            "url": '/prototypes/user-self-serve/version-5/account/01-change-contact-details/01-change-contact-details.html',
+                            "text": 'Change your contact details'
+                        },
+                        {
+                            "url": '/prototypes/user-self-serve/version-5/account/01-change-contact-details/02-change-email-address.html',
+                            "text": 'Change email address'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'Confirmation',
+                            "current": true
+                        }
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+            <h1>Almost done</h1>
+            <p>We’ve sent an email to your new email address</p>
+            <p>Once you have received it, you need to follow the link in the email to confirm and finish setting up your new account</p>
+            <p>Email not arrived? It might be in your spam folder.</p>
+            <p>If it doesn’t arrive in the next 15 minutes, please call 0300 1234 931.</p>
+            <p class="field">
+                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-5/00-surveys-list.html';">
+                    <span class="btn__inner">Back to surveys</span>
+                </button>
+            </p>
+        </div>
+    </div>
+
+{% endblock %}

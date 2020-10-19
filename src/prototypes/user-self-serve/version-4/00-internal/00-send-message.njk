@@ -1,0 +1,134 @@
+---
+group: Frontstage
+title: User self serve
+version: 20.0.3
+layout: user-self-serve/views/version-4/_master-internal
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/metadata/_macro.njk" import onsMetadata %}
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+
+{% block main %}
+
+    <div class="grid">
+        <div class="grid__col col-8@m">
+            <h1>Create message</h1>
+            {{ 
+                onsMetadata({
+                    "metadataLabel": "This is an example of the metadata component",
+                    "termCol": "3",
+                    "descriptionCol": "9",
+                    "itemsList": [
+                        {
+                            "term": "Survey:",
+                            "descriptions": [ 
+                                {
+                                    "description": "MBS"
+                                }
+                            ]
+                        },
+                        {
+                            "term": "RU Ref:",
+                            "descriptions": [ 
+                                {
+                                    "description": "11100000110"
+                                }                  
+                            ]
+                        },
+                        {
+                            "term": "Business:",
+                            "descriptions": [ 
+                                {
+                                    "description": "Bolts and Ratchets"
+                                }
+                            ]
+                        },
+                        {
+                            "term": "To:",
+                            "descriptions": [ 
+                                {
+                                    "description": "Jane Doe"
+                                }                  
+                            ]
+                        }                                                         
+                    ]
+                }) 
+            }}
+             
+             <p class="field">
+            {% from "components/radios/_macro.njk" import onsRadios %}
+            {{ 
+                onsRadios({
+                    "legend": "What is your message about?",
+                    "name": "category",
+                    "radios": [
+                        {
+                            "id": "data-query",
+                            "label": {
+                                "text": "A data query"
+                            },
+                            "value": "data-query"
+                        },
+                        {
+                            "id": "response-chase",
+                            "label": {
+                                "text": "Response chase"
+                            },
+                            "value": "response-chase"
+                        },
+                        {
+                            "id": "other-checkbox",
+                            "label": {
+                                "text": "Something else"
+                            },
+                            "value": "other",
+                            "other": {
+                                "id": "other-textbox",
+                                "name": "other-answer",
+                                "label": {
+                                    "text": "Please specify"
+                                }
+                            }
+                        }
+                    ]
+                }) 
+            }}
+            </p>
+
+            <p class="field">
+            {{
+                onsTextarea({
+                    "id": "textarea",
+                    "name": "feedback",
+                    "label": {
+                        "text": "Message"
+                    }
+                })
+            }}
+            </p>
+            <p class="field">
+                <div class="btn-group">
+                    {{ 
+                        onsButton({
+                            "type": 'button',
+                            "text": 'Send message',
+                            "classes": 'btn-group__btn',
+                            "url": "/prototypes/user-self-serve/version-4/10-message-sent.html"
+                        }) 
+                    }}
+                    {{ 
+                        onsButton({
+                            "type": 'button',
+                            "text": 'Cancel',
+                            "classes": 'btn--secondary btn-group__btn',
+                            "url": "/prototypes/user-self-serve/version-4/00-surveys-list.html"
+                        }) 
+                    }}
+                </div>
+            </p>
+        </div>
+    </div>
+
+{% endblock %}
