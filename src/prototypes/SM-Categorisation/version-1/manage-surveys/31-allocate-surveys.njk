@@ -1,0 +1,125 @@
+---
+group: Frontstage
+title: SM Templates
+version: 17.0.0
+layout: sm-categorisation/views/version-1/_master
+---
+
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+
+{% block main %}
+
+    <div class="grid">
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/prototypes/sm-categorisation/version-1/00-surveys-list.html',
+                            "text": 'Surveys'
+                        },
+                        {
+                            "url": '/prototypes/sm-categorisation/version-1/01-message-categories.html',
+                            "text": 'Help'
+                        },
+                        {
+                            "url": '/prototypes/sm-categorisation/version-1/manage-surveys/20-my-account.html',
+                            "text": 'Manage access to surveys'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'Share access',
+                            "current": true
+                        }
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+            <h1>Which surveys do you want to allocate to jane.doe@acme.com?</h1>
+            <p class="field">
+            {{ 
+                onsCheckboxes({
+                    "legend": "ACME Consumer Products",
+                    "checkboxesLabel": "Select all that apply",
+                    "name": "food",
+                    "checkboxes": [
+                        {
+                            "id": "MBS",
+                            "label": {
+                                "text": "Monthly Business Survey"
+                            },
+                            "value": "mbs"
+                        },
+                        {
+                            "id": "QBS",
+                            "label": {
+                                "text": "Quarterly Business Survey"
+                            },
+                            "value": "QBS"
+                        }
+                    ]
+                }) 
+            }}
+            </p>
+            <p class="field">
+            {{ 
+                onsCheckboxes({
+                    "legend": "ACME Group Ltd",
+                    "checkboxesLabel": "Select all that apply",
+                    "name": "food",
+                    "checkboxes": [
+                        {
+                            "id": "MRES",
+                            "label": {
+                                "text": "Business Register and Employment Survey"
+                            },
+                            "value": "mres"
+                        },
+                        {
+                            "id": "MBSb",
+                            "label": {
+                                "text": "Monthly Business Survey"
+                            },
+                            "value": "mbsb"
+                        },
+                        {
+                            "id": "MWSS",
+                            "label": {
+                                "text": "Monthly Wages and Salary Survey"
+                            },
+                            "value": "mwss"
+                        },
+                        {
+                            "id": "QADCA",
+                            "label": {
+                                "text": "Quarterly Acquisitions and Disposals of Capital Assets"
+                            },
+                            "value": "qadca"
+                        },
+                        {
+                            "id": "QBSb",
+                            "label": {
+                                "text": "Quarterly Business Survey"
+                            },
+                            "value": "QBSb"
+                        }
+                    ]
+                }) 
+            }}
+            </p>
+            <p class="field">
+                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-1/manage-surveys/32-send-enrolment-codes.html';">
+                    <span class="btn__inner">Continue</span>
+                </button>
+            </p>
+            <p class="field">
+                <a href="{{ pageInfo.rootPath }}/version-1/manage-surveys/20-my-account.html">Cancel</a>
+            </p>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,59 @@
+---
+group: Frontstage
+title: SM Templates
+version: 17.0.0
+layout: sm-categorisation/views/version-1/_master
+---
+
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+
+{% block main %}
+
+    <div class="grid">
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/prototypes/sm-categorisation/version-1/00-surveys-list.html',
+                            "text": 'Surveys'
+                        },
+                        {
+                            "url": '/prototypes/sm-categorisation/version-1/01-message-categories.html',
+                            "text": 'Help'
+                        },
+                        {
+                            "url": '/prototypes/sm-categorisation/version-1/manage-surveys/20-my-account.html',
+                            "text": 'Manage access to surveys'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'Share access',
+                            "current": true
+                        }
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+            <h1>Almost done</h1>
+            <p>We’ve sent an email to jane.doe@acme.com</p>
+            <p>Once they have received it, they need to follow the link in the email to confirm their email address and finish setting up their account</p>
+
+            <p>If it doesn’t arrive in the next 15 minutes, please call 0300 1234 931</p>
+
+            <h2 class="field u-fs-r u-fw-b">You can share your surveys with two more colleagues</h2>
+            <p><a href="{{ pageInfo.rootPath }}/version-1/manage-surveys/30-add-new-account.html">Add another colleague</a></p>
+            
+            
+            <p class="field u-mt-l">
+                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-1/00-surveys-list.html';">
+                    <span class="btn__inner">Back to surveys</span>
+                </button>
+            </p>
+        </div>
+    </div>
+
+{% endblock %}

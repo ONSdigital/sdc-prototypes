@@ -1,0 +1,82 @@
+---
+group: Frontstage
+title: SM Categorisation
+version: 17.0.0
+layout: sm-categorisation/views/version-1/_master-messages
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+{% from "components/metadata/_macro.njk" import onsMetadata %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+
+{% block main %}
+
+    <div class="grid">
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                         {
+                            "url": '/',
+                            "text": 'Home'
+                        },
+                        {
+                            "url": '/prototypes/sm-categorisation/version-1/01-message-categories.html',
+                            "text": 'Help'
+                        },
+                        {
+                            "url": '/prototypes/sm-categorisation/version-1/40-category/00-category-list.html',
+                            "text": 'Details have changed'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'Send a message',
+                            "current": true
+                        }
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+            <h1>Send a message</h1>
+            <p>You can inform us with a secure message about the changes.</p>
+        </div>
+        <div class="grid__col col-6@m">
+            <p class="field">
+            {{
+                onsTextarea({
+                    "id": "textarea",
+                    "name": "feedback",
+                    "label": {
+                        "text": "Create message"
+                    }
+                })
+            }}
+            </p>
+            <p class="field">
+                <div class="btn-group">
+                    {{ 
+                        onsButton({
+                            "type": 'button',
+                            "text": 'Send message',
+                            "classes": 'btn-group__btn',
+                            "url": "/prototypes/sm-categorisation/version-1/10-message-sent.html"
+                        }) 
+                    }}
+                    {{ 
+                        onsButton({
+                            "type": 'button',
+                            "text": 'Cancel',
+                            "classes": 'btn--secondary btn-group__btn',
+                            "url": "/prototypes/sm-categorisation/version-1/00-surveys-list.html"
+                        }) 
+                    }}
+                </div>
+            </p>
+        </div>
+    </div>
+
+{% endblock %}
