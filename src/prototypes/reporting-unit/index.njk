@@ -1,0 +1,34 @@
+---
+group: SCD Internal
+title: Reporting unit
+version: 20.0.3
+layout: reporting-unit/views/_index
+---
+
+{% block main %}
+    {% from "components/button/_macro.njk" import onsButton %}
+    <h1>Reporting unit</h1>
+    <p>Redesign of reporting unit index screen</p>
+
+    <div class="grid">
+        <div class="grid__col col-8@m">
+            <h2>Version 5</h2>
+            {{ 
+                onsButton({
+                    "type": 'button',
+                    "text": 'Start',
+                    "classes": 'btn--small u-mb-s',
+                    "url": "/prototypes/reporting-unit/current.html"
+                }) 
+            }}
+            <p>Includes the following</p>
+            <ul class="list ">
+                <li class="list__item "><a href="/prototypes/reporting-unit/current.html">Accordion</a></li>
+                <li class="list__item "><a href="/prototypes/reporting-unit/hub-and-spoke/index.html">Hub and spoke</a></li>
+            </ul>
+
+
+
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,104 @@
+---
+group: SCD Internal
+title: Reporting unit
+version: 20.0.3
+layout: reporting-unit/views/_master-internal
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
+{% from "components/metadata/_macro.njk" import onsMetadata %}
+
+{% block main %}
+
+    <div class="grid">
+
+        <div id="main" class="grid__col col-10@m">
+            <h1 id="RU_NAME" class="u-fs-xl">ARGOS LTD</h1>
+            {{
+                onsMetadata({
+                    "metadataLabel": "This is an example of the metadata component",
+                    "termCol": "2",
+                    "descriptionCol": "10",
+                    "itemsList": [
+                        {
+                            "term": "Reference:",
+                            "descriptions": [
+                                {
+                                    "description": "50000060765"
+                                }
+                            ]
+                        },
+                        {
+                            "term": "Trading as:",
+                            "descriptions": [
+                                {
+                                    "description": "ACTIVITY IN ENGLAND SCOTLAND & WALES"
+                                }
+                            ]
+                        }
+                    ]
+                })
+            }}
+        </div>
+        <div class="grid__col col-12@m">
+            <section>
+                <h2 class="u-fs-l">Surveys</h2>
+                <table id="basic-table" class="table ">
+                    <thead class="table__head">
+                        <tr class="table__row">
+                            <th scope="col" class="table__header ">
+                                <span>Survey</span>
+                            </th>
+                            <th scope="col" class="table__header ">
+                                <span>Current period</span>
+                            </th>
+                            <th scope="col" class="table__header ">
+                                <span>Current status</span>
+                            </th>
+                            <th scope="col" class="table__header ">
+                                <span>Contact</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="table__body">
+                        <tr class="table__row">
+                            <td class="table__cell " name="cell-name">
+                                <a href="#">017 QSS</a>
+                            </td>
+                            <td class="table__cell ">
+                                201909
+                            </td>
+                            <td class="table__cell ">
+                                Not started
+                            </td>
+                            <td class="table__cell ">
+                                John Payne<br>
+                                john.payne@email.com<br>
+                                07799777820<br>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+    <script>
+      (function() {
+        var s = '/scripts/main.js'.split(','),
+          c = document.createElement('script');
+        if (!('noModule' in c)) {
+          for (var i = 0; i < s.length; i++) {
+            s[i] = s[i].replace('.js', '.es5.js');
+          }
+        }
+        for (var i = 0; i < s.length; i++) {
+          var e = document.createElement('script');
+          e.src = s[i];
+          document.body.appendChild(e);
+        }
+      })();
+    </script>
+
+
+{% endblock %}

@@ -1,0 +1,1193 @@
+---
+group: SCD Internal
+title: Reporting unit
+version: 20.0.3
+layout: reporting-unit/views/_master-internal
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
+{% from "components/metadata/_macro.njk" import onsMetadata %}
+
+{% block main %}
+
+    <div class="grid">
+
+        <div id="main" class="grid__col col-10@m">
+            <h1 id="RU_NAME" class="u-fs-xl">ARGOS LTD</h1>
+            {{
+                onsMetadata({
+                    "metadataLabel": "This is an example of the metadata component",
+                    "termCol": "2",
+                    "descriptionCol": "10",
+                    "itemsList": [
+                        {
+                            "term": "Reference:",
+                            "descriptions": [
+                                {
+                                    "description": "50000060765"
+                                }
+                            ]
+                        },
+                        {
+                            "term": "Trading as:",
+                            "descriptions": [
+                                {
+                                    "description": "ACTIVITY IN ENGLAND SCOTLAND & WALES"
+                                }
+                            ]
+                        }
+                    ]
+                })
+            }}
+        </div>
+        <div class="grid__col col-12@m">
+            <section>
+                <h2 class="u-fs-l">Surveys</h2>
+                <div id="accordion" class="accordion">
+                    <button type="button" class="btn btn--secondary btn--small js-collapsible-all u-wa--@xs u-mb-s u-d-no" data-close-all="Hide all" data-group="accordion">
+                        <span class="btn__inner js-collapsible-all-inner">
+                            Show all
+                        </span>
+                    </button>
+                    <div id="accordion-1" class="collapsible js-collapsible collapsible--accordion" data-btn-close="Hide" data-group="accordion">
+                        <div class="collapsible__heading js-collapsible-heading">
+                            <div class="collapsible__controls">
+                                <h2 class="collapsible__title u-fs-r--b">017 QSS</h2>
+                                <span class="collapsible__icon">
+                                    <svg class="svg-icon" viewBox="0 0 7.5 12.85" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z" transform="translate(-5.02 -1.59)"/>
+                                    </svg>
+                                </span>
+                                <button type="button" class="btn collapsible__btn btn--secondary btn--small js-collapsible-button u-d-no u-d-no@xs@s">
+                                    <span class="btn__inner js-collapsible-button-inner">
+                                        Show
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                        <div id="accordion-1-content" class="collapsible__content js-collapsible-content">
+                            <div class="data-panel-body">
+                                <div class="ru-survey-ces">
+                                    <h4 class="u-fs-m">Collection exercises</h4>
+                                    <table name="tbl-ce-for-survey" class="table table--dense" summary="Collection exercises for QSS for 50000060765">
+                                        <thead class="table__head u-vhx">
+                                            <tr class="table__row">
+                                                <th scope="col" class="table__header"> Period </th>
+                                                <th scope="col" class="table__header"> Reporting unit name </th>
+                                                <th scope="col" class="table__header"> Trading as </th>
+                                                <th scope="col" class="table__header"> Region </th>
+                                                <th scope="col" class="table__header"> Status </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="table__body">
+                                            <tr class="table__row">
+                                                <td name="tbl-ce-period" class="table__cell"> 201909 </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ARGOS LTD </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ACTIVITY IN ENGLAND SCOTLAND &amp; WALES &#160; </td>
+                                                <td name="tbl-ce-company-region" class="table__cell"> GB </td>
+                                                <td name="tbl-ce-status" class="table__cell"> Not started&nbsp;<a href="/case/50000060765/response-status?survey=QSS&amp;period=201909">Change</a>
+                                                </td>
+                                            </tr>
+                                            <tr class="table__row">
+                                                <td name="tbl-ce-period" class="table__cell"> 1909 </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ARGOS LTD </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ACTIVITY IN ENGLAND SCOTLAND &amp; WALES &#160; </td>
+                                                <td name="tbl-ce-company-region" class="table__cell"> GB </td>
+                                                <td name="tbl-ce-status" class="table__cell"> Not started&nbsp;<a href="/case/50000060765/response-status?survey=QSS&amp;period=1909">Change</a>
+                                                </td>
+                                            </tr>
+                                            <tr class="table__row">
+                                                <td name="tbl-ce-period" class="table__cell"> 1906 </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ARGOS LTD </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ACTIVITY IN ENGLAND SCOTLAND &amp; WALES &#160; </td>
+                                                <td name="tbl-ce-company-region" class="table__cell"> GB </td>
+                                                <td name="tbl-ce-status" class="table__cell"> Not started&nbsp;<a href="/case/50000060765/response-status?survey=QSS&amp;period=1906">Change</a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="ru-survey-respondents u-pt-s">
+                                    <h4 class="u-fs-m">Respondents</h4>
+                                    <div class="ru-survey-enrolment-code u-pb-s" name="enrolment-code">
+                                        <div id="unused-enrolment-code"> Unused enrolment code: <code class="u-fs-r u-ml-s" id="unused-enrolment-code-QSS">x774tp2f9j5f</code>
+                                        </div>
+                                    </div>
+                                    <table name="tbl-respondents-for-survey" class="table table--dense tbl-ru-survey-respondents" summary="Respondents for QSS for 50000060765">
+                                        <thead class="table__head">
+                                            <tr class="table__row">
+                                                <th scope="col" class="table__header"> Contact details </th>
+                                                <th scope="col" class="table__header"> Account status </th>
+                                                <th scope="col" class="table__header"> Enrolment status </th>
+                                                <th scope="col" class="table__header"> Messages </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="table__body">
+                                            <tr class="table__row">
+                                                <td name="tbl-respondent-details" class="table__cell">
+                                                    <dl class="metadata metadata__list grid grid--gutterless u-cf u-mb-l" title="This is an example of the metadata component" aria-label="This is an example of the metadata component">
+                                                        <dt class="metadata__term grid__col col-4@m u-fs-s u-fw-b">Name:</dt>
+                                                        <dd class="metadata__value grid__col col-8@m u-fs-s">John Payne</dd>
+                                                        <dt class="metadata__term grid__col col-4@m u-fs-s u-fw-b">Email:</dt>
+                                                        <dd class="metadata__value grid__col col-8@m u-fs-s">john.payne@email.com</dd>
+                                                        <dt class="metadata__term grid__col col-4@m u-fs-s u-fw-b">Tel:</dt>
+                                                        <dd class="metadata__value grid__col col-8@m u-fs-s">07799777820</dd>
+                                                        <div>
+                                                            <form action="/reporting-units/50000060765/edit-contact-details/d64c90fd-9806-46e2-aec1-ea5e3ceffca1" method="get">
+                                                                <input type="hidden" name="csrf_token" value="ImMxYWI5NGNiNDczN2E4Njg3YjkzYTQyODNiODYwZjZkYTAwYzdmN2Mi.X5GX3A.uouNyRFb7Evq5RnmToWMjiK6Ac4"/>
+                                                                <a href=# id="edit-contact-details-btn-RSI-1"> Edit contact details </a>
+
+                                                            </form>
+                                                        </div>
+                                                    </dl>
+                                                </td>
+                                                <td name="tbl-respondent-status" class="table__cell">
+                                                    <div id="account-status">    Active  </div>
+                                                    <div></div>
+                                                </td>
+                                                <td name="tbl-enrolment-status" class="table__cell">
+                                                    <div id="enrolment-status"> Enabled </div>
+                                                    <div>
+                                                        <a href="/reporting-units/50000060765/change-enrolment-status?ru_name=ARGOS+LTD&amp;survey_id=75b19ea0-69a4-4c58-8d7f-4458c8f43f5c&amp;survey_name=RSI&amp;respondent_id=d64c90fd-9806-46e2-aec1-ea5e3ceffca1&amp;respondent_first_name=John&amp;respondent_last_name=Payne&amp;business_id=9656f12a-4d43-46f0-8ab4-f834cc50f25a&amp;trading_as=ACTIVITY+IN+ENGLAND+SCOTLAND+%26+WALES&amp;change_flag=DISABLED&amp;tab=reporting_units"   id="change-enrolment-status">Disable</a>
+                                                    </div>
+                                                </td>
+                                                <td class="table__cell">
+                                                    <form action="/messages/create-message" method="post" id="create-message-view">
+                                                        <button   type="submit" class="btn btn btn--small btn--secondary"       id="create-message-button-1"       value="create-message-view"       name="create-message"  >
+                                                            <span class="btn__inner">Create message</span>
+                                                        </button>
+                                                        <input type="hidden" name="ru_ref" value="50000060765">
+                                                        <input type="hidden" name="business_id" value="9656f12a-4d43-46f0-8ab4-f834cc50f25a">
+                                                        <input type="hidden" name="business" value="ARGOS LTD">
+                                                        <input type="hidden" name="survey" value="RSI">
+                                                        <input type="hidden" name="survey_id" value="75b19ea0-69a4-4c58-8d7f-4458c8f43f5c">
+                                                        <input type="hidden" name="msg_to_name" value="John Payne">
+                                                        <input type="hidden" name="msg_to" value="d64c90fd-9806-46e2-aec1-ea5e3ceffca1">
+                                                        <input type="hidden" name="csrf_token" value="ImMxYWI5NGNiNDczN2E4Njg3YjkzYTQyODNiODYwZjZkYTAwYzdmN2Mi.X5GX3A.uouNyRFb7Evq5RnmToWMjiK6Ac4"/>
+                                                    </form>
+                                                </td>
+                                            </tr></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="accordion-2" class="collapsible js-collapsible collapsible--accordion" data-btn-close="Hide" data-group="accordion">
+                        <div class="collapsible__heading js-collapsible-heading">
+                            <div class="collapsible__controls">
+                                <h2 class="collapsible__title u-fs-r--b">023 RSI</h2>
+                                <span class="collapsible__icon">
+                                    <svg class="svg-icon" viewBox="0 0 7.5 12.85" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z" transform="translate(-5.02 -1.59)"/>
+                                    </svg>
+                                </span>
+                                <button type="button" class="btn collapsible__btn btn--secondary btn--small js-collapsible-button u-d-no u-d-no@xs@s">
+                                    <span class="btn__inner js-collapsible-button-inner">
+                                        Show
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                        <div id="accordion-2-content" class="collapsible__content js-collapsible-content">
+                            <div class="data-panel-body">
+                                <div class="ru-survey-ces">
+                                    <h4 class="u-fs-m">Collection exercises</h4>
+                                    <table name="tbl-ce-for-survey" class="table table--dense" summary="Collection exercises for RSI for 50000060765">
+                                        <thead class="table__head u-vhx">
+                                            <tr class="table__row">
+                                                <th scope="col" class="table__header"> Period </th>
+                                                <th scope="col" class="table__header"> Reporting unit name </th>
+                                                <th scope="col" class="table__header"> Trading as </th>
+                                                <th scope="col" class="table__header"> Region </th>
+                                                <th scope="col" class="table__header"> Status </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="table__body">
+                                            <tr class="table__row">
+                                                <td name="tbl-ce-period" class="table__cell"> 1809 </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ARGOS LTD </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ACTIVITY IN ENGLAND SCOTLAND &amp; WALES &#160; </td>
+                                                <td name="tbl-ce-company-region" class="table__cell"> GB </td>
+                                                <td name="tbl-ce-status" class="table__cell"> Not started&nbsp;<a href="/case/50000060765/response-status?survey=RSI&amp;period=1809">Change</a>
+                                                </td>
+                                            </tr>
+                                            <tr class="table__row">
+                                                <td name="tbl-ce-period" class="table__cell"> 1807 </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ARGOS LTD </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ACTIVITY IN ENGLAND SCOTLAND &amp; WALES &#160; </td>
+                                                <td name="tbl-ce-company-region" class="table__cell"> GB </td>
+                                                <td name="tbl-ce-status" class="table__cell"> Completed  <a href="/case/50000060765/response-status?survey=RSI&amp;period=1807">View</a>
+                                                </td>
+                                            </tr>
+                                            <tr class="table__row">
+                                                <td name="tbl-ce-period" class="table__cell"> 1804 </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ARGOS LTD INCL ALL VAT GRP MEMBERS </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ACTIVITY IN ENGLAND SCOTLAND &amp; WALES &#160; </td>
+                                                <td name="tbl-ce-company-region" class="table__cell"> GB </td>
+                                                <td name="tbl-ce-status" class="table__cell"> Completed  <a href="/case/50000060765/response-status?survey=RSI&amp;period=1804">View</a>
+                                                </td>
+                                            </tr>
+                                            <tr class="table__row">
+                                                <td name="tbl-ce-period" class="table__cell"> 1806 </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ARGOS LTD INCL ALL VAT GRP MEMBERS </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ACTIVITY IN ENGLAND SCOTLAND &amp; WALES &#160; </td>
+                                                <td name="tbl-ce-company-region" class="table__cell"> GB </td>
+                                                <td name="tbl-ce-status" class="table__cell"> Completed by phone  <a href="/case/50000060765/response-status?survey=RSI&amp;period=1806">View</a>
+                                                </td>
+                                            </tr>
+                                            <tr class="table__row">
+                                                <td name="tbl-ce-period" class="table__cell"> 1811 </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ARGOS LTD </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ACTIVITY IN ENGLAND SCOTLAND &amp; WALES &#160; </td>
+                                                <td name="tbl-ce-company-region" class="table__cell"> GB </td>
+                                                <td name="tbl-ce-status" class="table__cell"> Not started&nbsp;<a href="/case/50000060765/response-status?survey=RSI&amp;period=1811">Change</a>
+                                                </td>
+                                            </tr>
+                                            <tr class="table__row">
+                                                <td name="tbl-ce-period" class="table__cell"> 1805 </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ARGOS LTD INCL ALL VAT GRP MEMBERS </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ACTIVITY IN ENGLAND SCOTLAND &amp; WALES &#160; </td>
+                                                <td name="tbl-ce-company-region" class="table__cell"> GB </td>
+                                                <td name="tbl-ce-status" class="table__cell"> Completed by phone  <a href="/case/50000060765/response-status?survey=RSI&amp;period=1805">View</a>
+                                                </td>
+                                            </tr>
+                                            <tr class="table__row">
+                                                <td name="tbl-ce-period" class="table__cell"> 1808 </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ARGOS LTD </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ACTIVITY IN ENGLAND SCOTLAND &amp; WALES &#160; </td>
+                                                <td name="tbl-ce-company-region" class="table__cell"> GB </td>
+                                                <td name="tbl-ce-status" class="table__cell"> Completed  <a href="/case/50000060765/response-status?survey=RSI&amp;period=1808">View</a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="ru-survey-respondents u-pt-s">
+                                    <h4 class="u-fs-m">Respondents</h4>
+                                    <div class="ru-survey-enrolment-code u-pb-s" name="enrolment-code">
+                                        <div id="unused-enrolment-code"> Unused enrolment code: <code class="u-fs-r u-ml-s" id="unused-enrolment-code-RSI">85tpyygnxtxd</code>
+                                        </div>
+                                    </div>
+                                    <table name="tbl-respondents-for-survey" class="table table--dense tbl-ru-survey-respondents" summary="Respondents for RSI for 50000060765">
+                                        <thead class="table__head">
+                                            <tr class="table__row">
+                                                <th scope="col" class="table__header"> Contact details </th>
+                                                <th scope="col" class="table__header"> Account status </th>
+                                                <th scope="col" class="table__header"> Enrolment status </th>
+                                                <th scope="col" class="table__header"> Messages </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="table__body">
+                                            <tr class="table__row">
+                                                <td name="tbl-respondent-details" class="table__cell">
+                                                    <dl class="metadata metadata__list grid grid--gutterless u-cf u-mb-l" title="This is an example of the metadata component" aria-label="This is an example of the metadata component">
+                                                        <dt class="metadata__term grid__col col-4@m u-fs-s u-fw-b">Name:</dt>
+                                                        <dd class="metadata__value grid__col col-8@m u-fs-s">John Payne</dd>
+                                                        <dt class="metadata__term grid__col col-4@m u-fs-s u-fw-b">Email:</dt>
+                                                        <dd class="metadata__value grid__col col-8@m u-fs-s">john.payne@email.com</dd>
+                                                        <dt class="metadata__term grid__col col-4@m u-fs-s u-fw-b">Tel:</dt>
+                                                        <dd class="metadata__value grid__col col-8@m u-fs-s">07799777820</dd>
+                                                        <div>
+                                                            <form action="/reporting-units/50000060765/edit-contact-details/d64c90fd-9806-46e2-aec1-ea5e3ceffca1" method="get">
+                                                                <input type="hidden" name="csrf_token" value="ImMxYWI5NGNiNDczN2E4Njg3YjkzYTQyODNiODYwZjZkYTAwYzdmN2Mi.X5GX3A.uouNyRFb7Evq5RnmToWMjiK6Ac4"/>
+                                                                <a href=# id="edit-contact-details-btn-RSI-1"> Edit contact details </a>
+
+                                                            </form>
+                                                        </div>
+                                                    </dl>
+                                                </td>
+                                                <td name="tbl-respondent-status" class="table__cell">
+                                                    <div id="account-status">    Active  </div>
+                                                    <div></div>
+                                                </td>
+                                                <td name="tbl-enrolment-status" class="table__cell">
+                                                    <div id="enrolment-status"> Enabled </div>
+                                                    <div>
+                                                        <a href="/reporting-units/50000060765/change-enrolment-status?ru_name=ARGOS+LTD&amp;survey_id=75b19ea0-69a4-4c58-8d7f-4458c8f43f5c&amp;survey_name=RSI&amp;respondent_id=d64c90fd-9806-46e2-aec1-ea5e3ceffca1&amp;respondent_first_name=John&amp;respondent_last_name=Payne&amp;business_id=9656f12a-4d43-46f0-8ab4-f834cc50f25a&amp;trading_as=ACTIVITY+IN+ENGLAND+SCOTLAND+%26+WALES&amp;change_flag=DISABLED&amp;tab=reporting_units"   id="change-enrolment-status">Disable</a>
+                                                    </div>
+                                                </td>
+                                                <td class="table__cell">
+                                                    <form action="/messages/create-message" method="post" id="create-message-view">
+                                                        <button   type="submit" class="btn btn btn--small btn--secondary"       id="create-message-button-1"       value="create-message-view"       name="create-message"  >
+                                                            <span class="btn__inner">Create message</span>
+                                                        </button>
+                                                        <input type="hidden" name="ru_ref" value="50000060765">
+                                                        <input type="hidden" name="business_id" value="9656f12a-4d43-46f0-8ab4-f834cc50f25a">
+                                                        <input type="hidden" name="business" value="ARGOS LTD">
+                                                        <input type="hidden" name="survey" value="RSI">
+                                                        <input type="hidden" name="survey_id" value="75b19ea0-69a4-4c58-8d7f-4458c8f43f5c">
+                                                        <input type="hidden" name="msg_to_name" value="John Payne">
+                                                        <input type="hidden" name="msg_to" value="d64c90fd-9806-46e2-aec1-ea5e3ceffca1">
+                                                        <input type="hidden" name="csrf_token" value="ImMxYWI5NGNiNDczN2E4Njg3YjkzYTQyODNiODYwZjZkYTAwYzdmN2Mi.X5GX3A.uouNyRFb7Evq5RnmToWMjiK6Ac4"/>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="accordion-3" class="collapsible js-collapsible collapsible--accordion" data-btn-close="Hide" data-group="accordion">
+                        <div class="collapsible__heading js-collapsible-heading">
+                            <div class="collapsible__controls">
+                                <h2 class="collapsible__title u-fs-r--b">092 MES</h2>
+                                <span class="collapsible__icon">
+                                    <svg class="svg-icon" viewBox="0 0 7.5 12.85" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z" transform="translate(-5.02 -1.59)"/>
+                                    </svg>
+                                </span>
+                                <button type="button" class="btn collapsible__btn btn--secondary btn--small js-collapsible-button u-d-no u-d-no@xs@s">
+                                    <span class="btn__inner js-collapsible-button-inner">
+                                        Show
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                        <div id="accordion-3-content" class="collapsible__content js-collapsible-content">
+                            <div class="data-panel-body">
+                                <div class="ru-survey-ces">
+                                    <h4 class="u-fs-m">Collection exercises</h4>
+                                    <table name="tbl-ce-for-survey" class="table table--dense" summary="Collection exercises for MES for 50000060765">
+                                        <thead class="table__head u-vhx">
+                                            <tr class="table__row">
+                                                <th scope="col" class="table__header"> Period </th>
+                                                <th scope="col" class="table__header"> Reporting unit name </th>
+                                                <th scope="col" class="table__header"> Trading as </th>
+                                                <th scope="col" class="table__header"> Region </th>
+                                                <th scope="col" class="table__header"> Status </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="table__body">
+                                            <tr class="table__row">
+                                                <td name="tbl-ce-period" class="table__cell"> 1410 </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ARGOS LTD </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ACTIVITY IN ENGLAND SCOTLAND &amp; WALES &#160; </td>
+                                                <td name="tbl-ce-company-region" class="table__cell"> GB </td>
+                                                <td name="tbl-ce-status" class="table__cell"> Not started&nbsp;<a href="/case/50000060765/response-status?survey=MES&amp;period=1410">Change</a>
+                                                </td>
+                                            </tr>
+                                            <tr class="table__row">
+                                                <td name="tbl-ce-period" class="table__cell"> 201912 </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ARGOS LTD </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ACTIVITY IN ENGLAND SCOTLAND &amp; WALES &#160; </td>
+                                                <td name="tbl-ce-company-region" class="table__cell"> GB </td>
+                                                <td name="tbl-ce-status" class="table__cell"> Not started&nbsp;<a href="/case/50000060765/response-status?survey=MES&amp;period=201912">Change</a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="ru-survey-respondents u-pt-s">
+                                    <h4 class="u-fs-m">Respondents</h4>
+                                    <div class="ru-survey-enrolment-code u-pb-s" name="enrolment-code">
+                                        <div id="unused-enrolment-code"> Unused enrolment code: <code class="u-fs-r u-ml-s" id="unused-enrolment-code-MES">xct37dld8wms</code>
+                                        </div>
+                                    </div>
+                                    <table name="tbl-respondents-for-survey" class="table table--dense tbl-ru-survey-respondents" summary="Respondents for MES for 50000060765">
+                                        <thead class="table__head">
+                                            <tr class="table__row">
+                                                <th scope="col" class="table__header"> Contact details </th>
+                                                <th scope="col" class="table__header"> Account status </th>
+                                                <th scope="col" class="table__header"> Enrolment status </th>
+                                                <th scope="col" class="table__header"> Messages </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="table__body">
+                                            <tr class="table__row">
+                                                <td name="tbl-respondent-details" class="table__cell">
+                                                    <dl class="metadata metadata__list grid grid--gutterless u-cf u-mb-l" title="This is an example of the metadata component" aria-label="This is an example of the metadata component">
+                                                        <dt class="metadata__term grid__col col-4@m u-fs-s u-fw-b">Name:</dt>
+                                                        <dd class="metadata__value grid__col col-8@m u-fs-s">John Payne</dd>
+                                                        <dt class="metadata__term grid__col col-4@m u-fs-s u-fw-b">Email:</dt>
+                                                        <dd class="metadata__value grid__col col-8@m u-fs-s">john.payne@email.com</dd>
+                                                        <dt class="metadata__term grid__col col-4@m u-fs-s u-fw-b">Tel:</dt>
+                                                        <dd class="metadata__value grid__col col-8@m u-fs-s">07799777820</dd>
+                                                        <div>
+                                                            <form action="/reporting-units/50000060765/edit-contact-details/d64c90fd-9806-46e2-aec1-ea5e3ceffca1" method="get">
+                                                                <input type="hidden" name="csrf_token" value="ImMxYWI5NGNiNDczN2E4Njg3YjkzYTQyODNiODYwZjZkYTAwYzdmN2Mi.X5GX3A.uouNyRFb7Evq5RnmToWMjiK6Ac4"/>
+                                                                <a href=# id="edit-contact-details-btn-RSI-1"> Edit contact details </a>
+
+                                                            </form>
+                                                        </div>
+                                                    </dl>
+                                                </td>
+                                                <td name="tbl-respondent-status" class="table__cell">
+                                                    <div id="account-status">    Active  </div>
+                                                    <div></div>
+                                                </td>
+                                                <td name="tbl-enrolment-status" class="table__cell">
+                                                    <div id="enrolment-status"> Enabled </div>
+                                                    <div>
+                                                        <a href="/reporting-units/50000060765/change-enrolment-status?ru_name=ARGOS+LTD&amp;survey_id=75b19ea0-69a4-4c58-8d7f-4458c8f43f5c&amp;survey_name=RSI&amp;respondent_id=d64c90fd-9806-46e2-aec1-ea5e3ceffca1&amp;respondent_first_name=John&amp;respondent_last_name=Payne&amp;business_id=9656f12a-4d43-46f0-8ab4-f834cc50f25a&amp;trading_as=ACTIVITY+IN+ENGLAND+SCOTLAND+%26+WALES&amp;change_flag=DISABLED&amp;tab=reporting_units"   id="change-enrolment-status">Disable</a>
+                                                    </div>
+                                                </td>
+                                                <td class="table__cell">
+                                                    <form action="/messages/create-message" method="post" id="create-message-view">
+                                                        <button   type="submit" class="btn btn btn--small btn--secondary"       id="create-message-button-1"       value="create-message-view"       name="create-message"  >
+                                                            <span class="btn__inner">Create message</span>
+                                                        </button>
+                                                        <input type="hidden" name="ru_ref" value="50000060765">
+                                                        <input type="hidden" name="business_id" value="9656f12a-4d43-46f0-8ab4-f834cc50f25a">
+                                                        <input type="hidden" name="business" value="ARGOS LTD">
+                                                        <input type="hidden" name="survey" value="RSI">
+                                                        <input type="hidden" name="survey_id" value="75b19ea0-69a4-4c58-8d7f-4458c8f43f5c">
+                                                        <input type="hidden" name="msg_to_name" value="John Payne">
+                                                        <input type="hidden" name="msg_to" value="d64c90fd-9806-46e2-aec1-ea5e3ceffca1">
+                                                        <input type="hidden" name="csrf_token" value="ImMxYWI5NGNiNDczN2E4Njg3YjkzYTQyODNiODYwZjZkYTAwYzdmN2Mi.X5GX3A.uouNyRFb7Evq5RnmToWMjiK6Ac4"/>
+                                                    </form>
+                                                </td>
+                                            </tr></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="accordion-4" class="collapsible js-collapsible collapsible--accordion" data-btn-close="Hide" data-group="accordion">
+                        <div class="collapsible__heading js-collapsible-heading">
+                            <div class="collapsible__controls">
+                                <h2 class="collapsible__title u-fs-r--b">139 QBS</h2>
+                                <span class="collapsible__icon">
+                                    <svg class="svg-icon" viewBox="0 0 7.5 12.85" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z" transform="translate(-5.02 -1.59)"/>
+                                    </svg>
+                                </span>
+                                <button type="button" class="btn collapsible__btn btn--secondary btn--small js-collapsible-button u-d-no u-d-no@xs@s">
+                                    <span class="btn__inner js-collapsible-button-inner">
+                                        Show
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                        <div id="accordion-4-content" class="collapsible__content js-collapsible-content">
+                            <div class="data-panel-body">
+                                <div class="ru-survey-ces">
+                                    <h4 class="u-fs-m">Collection exercises</h4>
+                                    <table name="tbl-ce-for-survey" class="table table--dense" summary="Collection exercises for QBS for 50000060765">
+                                        <thead class="table__head u-vhx">
+                                            <tr class="table__row">
+                                                <th scope="col" class="table__header"> Period </th>
+                                                <th scope="col" class="table__header"> Reporting unit name </th>
+                                                <th scope="col" class="table__header"> Trading as </th>
+                                                <th scope="col" class="table__header"> Region </th>
+                                                <th scope="col" class="table__header"> Status </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="table__body">
+                                            <tr class="table__row">
+                                                <td name="tbl-ce-period" class="table__cell"> 201909 </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ARGOS LTD </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ACTIVITY IN ENGLAND SCOTLAND &amp; WALES &#160; </td>
+                                                <td name="tbl-ce-company-region" class="table__cell"> GB </td>
+                                                <td name="tbl-ce-status" class="table__cell"> Not started&nbsp;<a href="/case/50000060765/response-status?survey=QBS&amp;period=201909">Change</a>
+                                                </td>
+                                            </tr>
+                                            <tr class="table__row">
+                                                <td name="tbl-ce-period" class="table__cell"> 1806 </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ARGOS LTD INCL ALL VAT GRP MEMBERS </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ACTIVITY IN ENGLAND SCOTLAND &amp; WALES &#160; </td>
+                                                <td name="tbl-ce-company-region" class="table__cell"> GB </td>
+                                                <td name="tbl-ce-status" class="table__cell"> Completed by phone  <a href="/case/50000060765/response-status?survey=QBS&amp;period=1806">View</a>
+                                                </td>
+                                            </tr>
+                                            <tr class="table__row">
+                                                <td name="tbl-ce-period" class="table__cell"> 1809 </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ARGOS LTD INCL ALL VAT GRP MEMBERS </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ACTIVITY IN ENGLAND SCOTLAND &amp; WALES &#160; </td>
+                                                <td name="tbl-ce-company-region" class="table__cell"> GB </td>
+                                                <td name="tbl-ce-status" class="table__cell"> Not started&nbsp;<a href="/case/50000060765/response-status?survey=QBS&amp;period=1809">Change</a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="ru-survey-respondents u-pt-s">
+                                    <h4 class="u-fs-m">Respondents</h4>
+                                    <div class="ru-survey-enrolment-code u-pb-s" name="enrolment-code">
+                                        <div id="unused-enrolment-code"> Unused enrolment code: <code class="u-fs-r u-ml-s" id="unused-enrolment-code-QBS">npnc7tw3qjwk</code>
+                                        </div>
+                                    </div>
+                                    <table name="tbl-respondents-for-survey" class="table table--dense tbl-ru-survey-respondents" summary="Respondents for QBS for 50000060765">
+                                        <thead class="table__head">
+                                            <tr class="table__row">
+                                                <th scope="col" class="table__header"> Contact details </th>
+                                                <th scope="col" class="table__header"> Account status </th>
+                                                <th scope="col" class="table__header"> Enrolment status </th>
+                                                <th scope="col" class="table__header"> Messages </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="table__body">
+                                            <tr class="table__row">
+                                                <td name="tbl-respondent-details" class="table__cell">
+                                                    <dl class="metadata metadata__list grid grid--gutterless u-cf u-mb-l" title="This is an example of the metadata component" aria-label="This is an example of the metadata component">
+                                                        <dt class="metadata__term grid__col col-4@m u-fs-s u-fw-b">Name:</dt>
+                                                        <dd class="metadata__value grid__col col-8@m u-fs-s">John Payne</dd>
+                                                        <dt class="metadata__term grid__col col-4@m u-fs-s u-fw-b">Email:</dt>
+                                                        <dd class="metadata__value grid__col col-8@m u-fs-s">john.payne@email.com</dd>
+                                                        <dt class="metadata__term grid__col col-4@m u-fs-s u-fw-b">Tel:</dt>
+                                                        <dd class="metadata__value grid__col col-8@m u-fs-s">07799777820</dd>
+                                                        <div>
+                                                            <form action="/reporting-units/50000060765/edit-contact-details/d64c90fd-9806-46e2-aec1-ea5e3ceffca1" method="get">
+                                                                <input type="hidden" name="csrf_token" value="ImMxYWI5NGNiNDczN2E4Njg3YjkzYTQyODNiODYwZjZkYTAwYzdmN2Mi.X5GX3A.uouNyRFb7Evq5RnmToWMjiK6Ac4"/>
+                                                                <a href=# id="edit-contact-details-btn-RSI-1"> Edit contact details </a>
+
+                                                            </form>
+                                                        </div>
+                                                    </dl>
+                                                </td>
+                                                <td name="tbl-respondent-status" class="table__cell">
+                                                    <div id="account-status">    Active  </div>
+                                                    <div></div>
+                                                </td>
+                                                <td name="tbl-enrolment-status" class="table__cell">
+                                                    <div id="enrolment-status"> Enabled </div>
+                                                    <div>
+                                                        <a href="/reporting-units/50000060765/change-enrolment-status?ru_name=ARGOS+LTD&amp;survey_id=75b19ea0-69a4-4c58-8d7f-4458c8f43f5c&amp;survey_name=RSI&amp;respondent_id=d64c90fd-9806-46e2-aec1-ea5e3ceffca1&amp;respondent_first_name=John&amp;respondent_last_name=Payne&amp;business_id=9656f12a-4d43-46f0-8ab4-f834cc50f25a&amp;trading_as=ACTIVITY+IN+ENGLAND+SCOTLAND+%26+WALES&amp;change_flag=DISABLED&amp;tab=reporting_units"   id="change-enrolment-status">Disable</a>
+                                                    </div>
+                                                </td>
+                                                <td class="table__cell">
+                                                    <form action="/messages/create-message" method="post" id="create-message-view">
+                                                        <button   type="submit" class="btn btn btn--small btn--secondary"       id="create-message-button-1"       value="create-message-view"       name="create-message"  >
+                                                            <span class="btn__inner">Create message</span>
+                                                        </button>
+                                                        <input type="hidden" name="ru_ref" value="50000060765">
+                                                        <input type="hidden" name="business_id" value="9656f12a-4d43-46f0-8ab4-f834cc50f25a">
+                                                        <input type="hidden" name="business" value="ARGOS LTD">
+                                                        <input type="hidden" name="survey" value="RSI">
+                                                        <input type="hidden" name="survey_id" value="75b19ea0-69a4-4c58-8d7f-4458c8f43f5c">
+                                                        <input type="hidden" name="msg_to_name" value="John Payne">
+                                                        <input type="hidden" name="msg_to" value="d64c90fd-9806-46e2-aec1-ea5e3ceffca1">
+                                                        <input type="hidden" name="csrf_token" value="ImMxYWI5NGNiNDczN2E4Njg3YjkzYTQyODNiODYwZjZkYTAwYzdmN2Mi.X5GX3A.uouNyRFb7Evq5RnmToWMjiK6Ac4"/>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div id="accordion-5" class="collapsible js-collapsible collapsible--accordion" data-btn-close="Hide" data-group="accordion">
+                        <div class="collapsible__heading js-collapsible-heading">
+                            <div class="collapsible__controls">
+                                <h2 class="collapsible__title u-fs-r--b">144 UKIS</h2>
+                                <span class="collapsible__icon">
+                                    <svg class="svg-icon" viewBox="0 0 7.5 12.85" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z" transform="translate(-5.02 -1.59)"/>
+                                    </svg>
+                                </span>
+                                <button type="button" class="btn collapsible__btn btn--secondary btn--small js-collapsible-button u-d-no u-d-no@xs@s">
+                                    <span class="btn__inner js-collapsible-button-inner">
+                                        Show
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                        <div id="accordion-5-content" class="collapsible__content js-collapsible-content">
+                            <div class="data-panel-body">
+                                <div class="ru-survey-ces">
+                                    <h4 class="u-fs-m">Collection exercises</h4>
+                                    <table name="tbl-ce-for-survey" class="table table--dense" summary="Collection exercises for UKIS for 50000060765">
+                                        <thead class="table__head u-vhx">
+                                            <tr class="table__row">
+                                                <th scope="col" class="table__header"> Period </th>
+                                                <th scope="col" class="table__header"> Reporting unit name </th>
+                                                <th scope="col" class="table__header"> Trading as </th>
+                                                <th scope="col" class="table__header"> Region </th>
+                                                <th scope="col" class="table__header"> Status </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="table__body">
+                                            <tr class="table__row">
+                                                <td name="tbl-ce-period" class="table__cell"> 201812 </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ARGOS LTD </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ACTIVITY IN ENGLAND SCOTLAND &amp; WALES &#160; </td>
+                                                <td name="tbl-ce-company-region" class="table__cell"> GB </td>
+                                                <td name="tbl-ce-status" class="table__cell"> Not started&nbsp;<a href="/case/50000060765/response-status?survey=UKIS&amp;period=201812">Change</a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="ru-survey-respondents u-pt-s">
+                                    <h4 class="u-fs-m">Respondents</h4>
+                                    <div class="ru-survey-enrolment-code u-pb-s" name="enrolment-code">
+                                        <div id="unused-enrolment-code"> Unused enrolment code: <code class="u-fs-r u-ml-s" id="unused-enrolment-code-UKIS">ycjqn5k6fyd6</code>
+                                        </div>
+                                    </div>
+                                    <table name="tbl-respondents-for-survey" class="table table--dense tbl-ru-survey-respondents" summary="Respondents for UKIS for 50000060765">
+                                        <thead class="table__head">
+                                            <tr class="table__row">
+                                                <th scope="col" class="table__header"> Contact details </th>
+                                                <th scope="col" class="table__header"> Account status </th>
+                                                <th scope="col" class="table__header"> Enrolment status </th>
+                                                <th scope="col" class="table__header"> Messages </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="table__body">
+                                            <tr class="table__row">
+                                                <td name="tbl-respondent-details" class="table__cell">
+                                                    <dl class="metadata metadata__list grid grid--gutterless u-cf u-mb-l" title="This is an example of the metadata component" aria-label="This is an example of the metadata component">
+                                                        <dt class="metadata__term grid__col col-4@m u-fs-s u-fw-b">Name:</dt>
+                                                        <dd class="metadata__value grid__col col-8@m u-fs-s">John Payne</dd>
+                                                        <dt class="metadata__term grid__col col-4@m u-fs-s u-fw-b">Email:</dt>
+                                                        <dd class="metadata__value grid__col col-8@m u-fs-s">john.payne@email.com</dd>
+                                                        <dt class="metadata__term grid__col col-4@m u-fs-s u-fw-b">Tel:</dt>
+                                                        <dd class="metadata__value grid__col col-8@m u-fs-s">07799777820</dd>
+                                                        <div>
+                                                            <form action="/reporting-units/50000060765/edit-contact-details/d64c90fd-9806-46e2-aec1-ea5e3ceffca1" method="get">
+                                                                <input type="hidden" name="csrf_token" value="ImMxYWI5NGNiNDczN2E4Njg3YjkzYTQyODNiODYwZjZkYTAwYzdmN2Mi.X5GX3A.uouNyRFb7Evq5RnmToWMjiK6Ac4"/>
+                                                                <a href=# id="edit-contact-details-btn-RSI-1"> Edit contact details </a>
+
+                                                            </form>
+                                                        </div>
+                                                    </dl>
+                                                </td>
+                                                <td name="tbl-respondent-status" class="table__cell">
+                                                    <div id="account-status">    Active  </div>
+                                                    <div></div>
+                                                </td>
+                                                <td name="tbl-enrolment-status" class="table__cell">
+                                                    <div id="enrolment-status"> Enabled </div>
+                                                    <div>
+                                                        <a href="/reporting-units/50000060765/change-enrolment-status?ru_name=ARGOS+LTD&amp;survey_id=75b19ea0-69a4-4c58-8d7f-4458c8f43f5c&amp;survey_name=RSI&amp;respondent_id=d64c90fd-9806-46e2-aec1-ea5e3ceffca1&amp;respondent_first_name=John&amp;respondent_last_name=Payne&amp;business_id=9656f12a-4d43-46f0-8ab4-f834cc50f25a&amp;trading_as=ACTIVITY+IN+ENGLAND+SCOTLAND+%26+WALES&amp;change_flag=DISABLED&amp;tab=reporting_units"   id="change-enrolment-status">Disable</a>
+                                                    </div>
+                                                </td>
+                                                <td class="table__cell">
+                                                    <form action="/messages/create-message" method="post" id="create-message-view">
+                                                        <button   type="submit" class="btn btn btn--small btn--secondary"       id="create-message-button-1"       value="create-message-view"       name="create-message"  >
+                                                            <span class="btn__inner">Create message</span>
+                                                        </button>
+                                                        <input type="hidden" name="ru_ref" value="50000060765">
+                                                        <input type="hidden" name="business_id" value="9656f12a-4d43-46f0-8ab4-f834cc50f25a">
+                                                        <input type="hidden" name="business" value="ARGOS LTD">
+                                                        <input type="hidden" name="survey" value="RSI">
+                                                        <input type="hidden" name="survey_id" value="75b19ea0-69a4-4c58-8d7f-4458c8f43f5c">
+                                                        <input type="hidden" name="msg_to_name" value="John Payne">
+                                                        <input type="hidden" name="msg_to" value="d64c90fd-9806-46e2-aec1-ea5e3ceffca1">
+                                                        <input type="hidden" name="csrf_token" value="ImMxYWI5NGNiNDczN2E4Njg3YjkzYTQyODNiODYwZjZkYTAwYzdmN2Mi.X5GX3A.uouNyRFb7Evq5RnmToWMjiK6Ac4"/>
+                                                    </form>
+                                                </td>
+                                            </tr></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="accordion-6" class="collapsible js-collapsible collapsible--accordion" data-btn-close="Hide" data-group="accordion">
+                        <div class="collapsible__heading js-collapsible-heading">
+                            <div class="collapsible__controls">
+                                <h2 class="collapsible__title u-fs-r--b">185 VACS5</h2>
+                                <span class="collapsible__icon">
+                                    <svg class="svg-icon" viewBox="0 0 7.5 12.85" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z" transform="translate(-5.02 -1.59)"/>
+                                    </svg>
+                                </span>
+                                <button type="button" class="btn collapsible__btn btn--secondary btn--small js-collapsible-button u-d-no u-d-no@xs@s">
+                                    <span class="btn__inner js-collapsible-button-inner">
+                                        Show
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                        <div id="accordion-6-content" class="collapsible__content js-collapsible-content">
+                            <div class="data-panel-body">
+                                <div class="ru-survey-ces">
+                                    <h4 class="u-fs-m">Collection exercises</h4>
+                                    <table name="tbl-ce-for-survey" class="table table--dense" summary="Collection exercises for VACS5 for 50000060765">
+                                        <thead class="table__head u-vhx">
+                                            <tr class="table__row">
+                                                <th scope="col" class="table__header"> Period </th>
+                                                <th scope="col" class="table__header"> Reporting unit name </th>
+                                                <th scope="col" class="table__header"> Trading as </th>
+                                                <th scope="col" class="table__header"> Region </th>
+                                                <th scope="col" class="table__header"> Status </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="table__body">
+                                            <tr class="table__row">
+                                                <td name="tbl-ce-period" class="table__cell"> 2006 </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ARGOS LTD </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ACTIVITY IN ENGLAND SCOTLAND &amp; WALES &#160; </td>
+                                                <td name="tbl-ce-company-region" class="table__cell"> GB </td>
+                                                <td name="tbl-ce-status" class="table__cell"> Not started&nbsp;<a href="/case/50000060765/response-status?survey=VACS5&amp;period=2006">Change</a>
+                                                </td>
+                                            </tr>
+                                            <tr class="table__row">
+                                                <td name="tbl-ce-period" class="table__cell"> 2004 </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ARGOS LTD </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ACTIVITY IN ENGLAND SCOTLAND &amp; WALES &#160; </td>
+                                                <td name="tbl-ce-company-region" class="table__cell"> GB </td>
+                                                <td name="tbl-ce-status" class="table__cell"> Not started&nbsp;<a href="/case/50000060765/response-status?survey=VACS5&amp;period=2004">Change</a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="ru-survey-respondents u-pt-s">
+                                    <h4 class="u-fs-m">Respondents</h4>
+                                    <div class="ru-survey-enrolment-code u-pb-s" name="enrolment-code">
+                                        <div id="unused-enrolment-code"> Unused enrolment code: <code class="u-fs-r u-ml-s" id="unused-enrolment-code-VACS5">54jzg84dm9dl</code>
+                                        </div>
+                                    </div>
+                                    <table name="tbl-respondents-for-survey" class="table table--dense tbl-ru-survey-respondents" summary="Respondents for VACS5 for 50000060765">
+                                        <thead class="table__head">
+                                            <tr class="table__row">
+                                                <th scope="col" class="table__header"> Contact details </th>
+                                                <th scope="col" class="table__header"> Account status </th>
+                                                <th scope="col" class="table__header"> Enrolment status </th>
+                                                <th scope="col" class="table__header"> Messages </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="table__body">
+                                            <tr class="table__row">
+                                                <td name="tbl-respondent-details" class="table__cell">
+                                                    <dl class="metadata metadata__list grid grid--gutterless u-cf u-mb-l" title="This is an example of the metadata component" aria-label="This is an example of the metadata component">
+                                                        <dt class="metadata__term grid__col col-4@m u-fs-s u-fw-b">Name:</dt>
+                                                        <dd class="metadata__value grid__col col-8@m u-fs-s">John Payne</dd>
+                                                        <dt class="metadata__term grid__col col-4@m u-fs-s u-fw-b">Email:</dt>
+                                                        <dd class="metadata__value grid__col col-8@m u-fs-s">john.payne@email.com</dd>
+                                                        <dt class="metadata__term grid__col col-4@m u-fs-s u-fw-b">Tel:</dt>
+                                                        <dd class="metadata__value grid__col col-8@m u-fs-s">07799777820</dd>
+                                                        <div>
+                                                            <form action="/reporting-units/50000060765/edit-contact-details/d64c90fd-9806-46e2-aec1-ea5e3ceffca1" method="get">
+                                                                <input type="hidden" name="csrf_token" value="ImMxYWI5NGNiNDczN2E4Njg3YjkzYTQyODNiODYwZjZkYTAwYzdmN2Mi.X5GX3A.uouNyRFb7Evq5RnmToWMjiK6Ac4"/>
+                                                                <a href=# id="edit-contact-details-btn-RSI-1"> Edit contact details </a>
+
+                                                            </form>
+                                                        </div>
+                                                    </dl>
+                                                </td>
+                                                <td name="tbl-respondent-status" class="table__cell">
+                                                    <div id="account-status">    Active  </div>
+                                                    <div></div>
+                                                </td>
+                                                <td name="tbl-enrolment-status" class="table__cell">
+                                                    <div id="enrolment-status"> Enabled </div>
+                                                    <div>
+                                                        <a href="/reporting-units/50000060765/change-enrolment-status?ru_name=ARGOS+LTD&amp;survey_id=75b19ea0-69a4-4c58-8d7f-4458c8f43f5c&amp;survey_name=RSI&amp;respondent_id=d64c90fd-9806-46e2-aec1-ea5e3ceffca1&amp;respondent_first_name=John&amp;respondent_last_name=Payne&amp;business_id=9656f12a-4d43-46f0-8ab4-f834cc50f25a&amp;trading_as=ACTIVITY+IN+ENGLAND+SCOTLAND+%26+WALES&amp;change_flag=DISABLED&amp;tab=reporting_units"   id="change-enrolment-status">Disable</a>
+                                                    </div>
+                                                </td>
+                                                <td class="table__cell">
+                                                    <form action="/messages/create-message" method="post" id="create-message-view">
+                                                        <button   type="submit" class="btn btn btn--small btn--secondary"       id="create-message-button-1"       value="create-message-view"       name="create-message"  >
+                                                            <span class="btn__inner">Create message</span>
+                                                        </button>
+                                                        <input type="hidden" name="ru_ref" value="50000060765">
+                                                        <input type="hidden" name="business_id" value="9656f12a-4d43-46f0-8ab4-f834cc50f25a">
+                                                        <input type="hidden" name="business" value="ARGOS LTD">
+                                                        <input type="hidden" name="survey" value="RSI">
+                                                        <input type="hidden" name="survey_id" value="75b19ea0-69a4-4c58-8d7f-4458c8f43f5c">
+                                                        <input type="hidden" name="msg_to_name" value="John Payne">
+                                                        <input type="hidden" name="msg_to" value="d64c90fd-9806-46e2-aec1-ea5e3ceffca1">
+                                                        <input type="hidden" name="csrf_token" value="ImMxYWI5NGNiNDczN2E4Njg3YjkzYTQyODNiODYwZjZkYTAwYzdmN2Mi.X5GX3A.uouNyRFb7Evq5RnmToWMjiK6Ac4"/>
+                                                    </form>
+                                                </td>
+                                            </tr></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="accordion-7" class="collapsible js-collapsible collapsible--accordion" data-btn-close="Hide" data-group="accordion">
+                        <div class="collapsible__heading js-collapsible-heading">
+                            <div class="collapsible__controls">
+                                <h2 class="collapsible__title u-fs-r--b">187 Ecommerce</h2>
+                                <span class="collapsible__icon">
+                                    <svg class="svg-icon" viewBox="0 0 7.5 12.85" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z" transform="translate(-5.02 -1.59)"/>
+                                    </svg>
+                                </span>
+                                <button type="button" class="btn collapsible__btn btn--secondary btn--small js-collapsible-button u-d-no u-d-no@xs@s">
+                                    <span class="btn__inner js-collapsible-button-inner">
+                                        Show
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                        <div id="accordion-7-content" class="collapsible__content js-collapsible-content">
+                            <div class="data-panel-body">
+                                <div class="ru-survey-ces">
+                                    <h4 class="u-fs-m">Collection exercises</h4>
+                                    <table name="tbl-ce-for-survey" class="table table--dense" summary="Collection exercises for Ecommerce for 50000060765">
+                                        <thead class="table__head u-vhx">
+                                            <tr class="table__row">
+                                                <th scope="col" class="table__header"> Period </th>
+                                                <th scope="col" class="table__header"> Reporting unit name </th>
+                                                <th scope="col" class="table__header"> Trading as </th>
+                                                <th scope="col" class="table__header"> Region </th>
+                                                <th scope="col" class="table__header"> Status </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="table__body">
+                                            <tr class="table__row">
+                                                <td name="tbl-ce-period" class="table__cell"> 2019 </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ARGOS LTD </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ACTIVITY IN ENGLAND SCOTLAND &amp; WALES &#160; </td>
+                                                <td name="tbl-ce-company-region" class="table__cell"> GB </td>
+                                                <td name="tbl-ce-status" class="table__cell"> Not started&nbsp;<a href="/case/50000060765/response-status?survey=Ecommerce&amp;period=2019">Change</a>
+                                                </td>
+                                            </tr>
+                                            <tr class="table__row">
+                                                <td name="tbl-ce-period" class="table__cell"> 2018 </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ARGOS LTD </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ACTIVITY IN ENGLAND SCOTLAND &amp; WALES &#160; </td>
+                                                <td name="tbl-ce-company-region" class="table__cell"> GB </td>
+                                                <td name="tbl-ce-status" class="table__cell"> Not started&nbsp;<a href="/case/50000060765/response-status?survey=Ecommerce&amp;period=2018">Change</a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="ru-survey-respondents u-pt-s">
+                                    <h4 class="u-fs-m">Respondents</h4>
+                                    <div class="ru-survey-enrolment-code u-pb-s" name="enrolment-code">
+                                        <div id="unused-enrolment-code"> Unused enrolment code: <code class="u-fs-r u-ml-s" id="unused-enrolment-code-Ecommerce">cryxwqhrk7kz</code>
+                                        </div>
+                                    </div>
+                                    <table name="tbl-respondents-for-survey" class="table table--dense tbl-ru-survey-respondents" summary="Respondents for Ecommerce for 50000060765">
+                                        <thead class="table__head">
+                                            <tr class="table__row">
+                                                <th scope="col" class="table__header"> Contact details </th>
+                                                <th scope="col" class="table__header"> Account status </th>
+                                                <th scope="col" class="table__header"> Enrolment status </th>
+                                                <th scope="col" class="table__header"> Messages </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="table__body">
+                                            <tr class="table__row">
+                                                <td name="tbl-respondent-details" class="table__cell">
+                                                    <dl class="metadata metadata__list grid grid--gutterless u-cf u-mb-l" title="This is an example of the metadata component" aria-label="This is an example of the metadata component">
+                                                        <dt class="metadata__term grid__col col-4@m u-fs-s u-fw-b">Name:</dt>
+                                                        <dd class="metadata__value grid__col col-8@m u-fs-s">John Payne</dd>
+                                                        <dt class="metadata__term grid__col col-4@m u-fs-s u-fw-b">Email:</dt>
+                                                        <dd class="metadata__value grid__col col-8@m u-fs-s">john.payne@email.com</dd>
+                                                        <dt class="metadata__term grid__col col-4@m u-fs-s u-fw-b">Tel:</dt>
+                                                        <dd class="metadata__value grid__col col-8@m u-fs-s">07799777820</dd>
+                                                        <div>
+                                                            <form action="/reporting-units/50000060765/edit-contact-details/d64c90fd-9806-46e2-aec1-ea5e3ceffca1" method="get">
+                                                                <input type="hidden" name="csrf_token" value="ImMxYWI5NGNiNDczN2E4Njg3YjkzYTQyODNiODYwZjZkYTAwYzdmN2Mi.X5GX3A.uouNyRFb7Evq5RnmToWMjiK6Ac4"/>
+                                                                <a href=# id="edit-contact-details-btn-RSI-1"> Edit contact details </a>
+
+                                                            </form>
+                                                        </div>
+                                                    </dl>
+                                                </td>
+                                                <td name="tbl-respondent-status" class="table__cell">
+                                                    <div id="account-status">    Active  </div>
+                                                    <div></div>
+                                                </td>
+                                                <td name="tbl-enrolment-status" class="table__cell">
+                                                    <div id="enrolment-status"> Enabled </div>
+                                                    <div>
+                                                        <a href="/reporting-units/50000060765/change-enrolment-status?ru_name=ARGOS+LTD&amp;survey_id=75b19ea0-69a4-4c58-8d7f-4458c8f43f5c&amp;survey_name=RSI&amp;respondent_id=d64c90fd-9806-46e2-aec1-ea5e3ceffca1&amp;respondent_first_name=John&amp;respondent_last_name=Payne&amp;business_id=9656f12a-4d43-46f0-8ab4-f834cc50f25a&amp;trading_as=ACTIVITY+IN+ENGLAND+SCOTLAND+%26+WALES&amp;change_flag=DISABLED&amp;tab=reporting_units"   id="change-enrolment-status">Disable</a>
+                                                    </div>
+                                                </td>
+                                                <td class="table__cell">
+                                                    <form action="/messages/create-message" method="post" id="create-message-view">
+                                                        <button   type="submit" class="btn btn btn--small btn--secondary"       id="create-message-button-1"       value="create-message-view"       name="create-message"  >
+                                                            <span class="btn__inner">Create message</span>
+                                                        </button>
+                                                        <input type="hidden" name="ru_ref" value="50000060765">
+                                                        <input type="hidden" name="business_id" value="9656f12a-4d43-46f0-8ab4-f834cc50f25a">
+                                                        <input type="hidden" name="business" value="ARGOS LTD">
+                                                        <input type="hidden" name="survey" value="RSI">
+                                                        <input type="hidden" name="survey_id" value="75b19ea0-69a4-4c58-8d7f-4458c8f43f5c">
+                                                        <input type="hidden" name="msg_to_name" value="John Payne">
+                                                        <input type="hidden" name="msg_to" value="d64c90fd-9806-46e2-aec1-ea5e3ceffca1">
+                                                        <input type="hidden" name="csrf_token" value="ImMxYWI5NGNiNDczN2E4Njg3YjkzYTQyODNiODYwZjZkYTAwYzdmN2Mi.X5GX3A.uouNyRFb7Evq5RnmToWMjiK6Ac4"/>
+                                                    </form>
+                                                </td>
+                                            </tr></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="accordion-8" class="collapsible js-collapsible collapsible--accordion" data-btn-close="Hide" data-group="accordion">
+                        <div class="collapsible__heading js-collapsible-heading">
+                            <div class="collapsible__controls">
+                                <h2 class="collapsible__title u-fs-r--b">221 BRES</h2>
+                                <span class="collapsible__icon">
+                                    <svg class="svg-icon" viewBox="0 0 7.5 12.85" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z" transform="translate(-5.02 -1.59)"/>
+                                    </svg>
+                                </span>
+                                <button type="button" class="btn collapsible__btn btn--secondary btn--small js-collapsible-button u-d-no u-d-no@xs@s">
+                                    <span class="btn__inner js-collapsible-button-inner">
+                                        Show
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                        <div id="accordion-8-content" class="collapsible__content js-collapsible-content">
+                            <div class="data-panel-body">
+                                <div class="ru-survey-ces">
+                                    <h4 class="u-fs-m">Collection exercises</h4>
+                                    <table name="tbl-ce-for-survey" class="table table--dense" summary="Collection exercises for BRES for 50000060765">
+                                        <thead class="table__head u-vhx">
+                                            <tr class="table__row">
+                                                <th scope="col" class="table__header"> Period </th>
+                                                <th scope="col" class="table__header"> Reporting unit name </th>
+                                                <th scope="col" class="table__header"> Trading as </th>
+                                                <th scope="col" class="table__header"> Region </th>
+                                                <th scope="col" class="table__header"> Status </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="table__body">
+                                            <tr class="table__row">
+                                                <td name="tbl-ce-period" class="table__cell"> 202012 </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ARGOS LTD </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ACTIVITY IN ENGLAND SCOTLAND &amp; WALES &#160; </td>
+                                                <td name="tbl-ce-company-region" class="table__cell"> GB </td>
+                                                <td name="tbl-ce-status" class="table__cell"> Not started&nbsp;<a href="/case/50000060765/response-status?survey=BRES&amp;period=202012">Change</a>
+                                                </td>
+                                            </tr>
+                                            <tr class="table__row">
+                                                <td name="tbl-ce-period" class="table__cell"> 201904 </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ARGOS LTD </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ACTIVITY IN ENGLAND SCOTLAND &amp; WALES &#160; </td>
+                                                <td name="tbl-ce-company-region" class="table__cell"> GB </td>
+                                                <td name="tbl-ce-status" class="table__cell"> Not started&nbsp;<a href="/case/50000060765/response-status?survey=BRES&amp;period=201904">Change</a>
+                                                </td>
+                                            </tr>
+                                            <tr class="table__row">
+                                                <td name="tbl-ce-period" class="table__cell"> 201812 </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ARGOS LTD </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ACTIVITY IN ENGLAND SCOTLAND &amp; WALES &#160; </td>
+                                                <td name="tbl-ce-company-region" class="table__cell"> GB </td>
+                                                <td name="tbl-ce-status" class="table__cell"> Not started&nbsp;<a href="/case/50000060765/response-status?survey=BRES&amp;period=201812">Change</a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="ru-survey-respondents u-pt-s">
+                                    <h4 class="u-fs-m">Respondents</h4>
+                                    <div class="ru-survey-enrolment-code u-pb-s" name="enrolment-code">
+                                        <div id="unused-enrolment-code"> Unused enrolment code: <code class="u-fs-r u-ml-s" id="unused-enrolment-code-BRES">mc5bybf2hn2v</code>
+                                        </div>
+                                    </div>
+                                    <table name="tbl-respondents-for-survey" class="table table--dense tbl-ru-survey-respondents" summary="Respondents for BRES for 50000060765">
+                                        <thead class="table__head">
+                                            <tr class="table__row">
+                                                <th scope="col" class="table__header"> Contact details </th>
+                                                <th scope="col" class="table__header"> Account status </th>
+                                                <th scope="col" class="table__header"> Enrolment status </th>
+                                                <th scope="col" class="table__header"> Messages </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="table__body">
+                                            <tr class="table__row">
+                                                <td name="tbl-respondent-details" class="table__cell">
+                                                    <dl class="metadata metadata__list grid grid--gutterless u-cf u-mb-l" title="This is an example of the metadata component" aria-label="This is an example of the metadata component">
+                                                        <dt class="metadata__term grid__col col-4@m u-fs-s u-fw-b">Name:</dt>
+                                                        <dd class="metadata__value grid__col col-8@m u-fs-s">John Payne</dd>
+                                                        <dt class="metadata__term grid__col col-4@m u-fs-s u-fw-b">Email:</dt>
+                                                        <dd class="metadata__value grid__col col-8@m u-fs-s">john.payne@email.com</dd>
+                                                        <dt class="metadata__term grid__col col-4@m u-fs-s u-fw-b">Tel:</dt>
+                                                        <dd class="metadata__value grid__col col-8@m u-fs-s">07799777820</dd>
+                                                        <div>
+                                                            <form action="/reporting-units/50000060765/edit-contact-details/d64c90fd-9806-46e2-aec1-ea5e3ceffca1" method="get">
+                                                                <input type="hidden" name="csrf_token" value="ImMxYWI5NGNiNDczN2E4Njg3YjkzYTQyODNiODYwZjZkYTAwYzdmN2Mi.X5GX3A.uouNyRFb7Evq5RnmToWMjiK6Ac4"/>
+                                                                <a href=# id="edit-contact-details-btn-RSI-1"> Edit contact details </a>
+
+                                                            </form>
+                                                        </div>
+                                                    </dl>
+                                                </td>
+                                                <td name="tbl-respondent-status" class="table__cell">
+                                                    <div id="account-status">    Active  </div>
+                                                    <div></div>
+                                                </td>
+                                                <td name="tbl-enrolment-status" class="table__cell">
+                                                    <div id="enrolment-status"> Enabled </div>
+                                                    <div>
+                                                        <a href="/reporting-units/50000060765/change-enrolment-status?ru_name=ARGOS+LTD&amp;survey_id=75b19ea0-69a4-4c58-8d7f-4458c8f43f5c&amp;survey_name=RSI&amp;respondent_id=d64c90fd-9806-46e2-aec1-ea5e3ceffca1&amp;respondent_first_name=John&amp;respondent_last_name=Payne&amp;business_id=9656f12a-4d43-46f0-8ab4-f834cc50f25a&amp;trading_as=ACTIVITY+IN+ENGLAND+SCOTLAND+%26+WALES&amp;change_flag=DISABLED&amp;tab=reporting_units"   id="change-enrolment-status">Disable</a>
+                                                    </div>
+                                                </td>
+                                                <td class="table__cell">
+                                                    <form action="/messages/create-message" method="post" id="create-message-view">
+                                                        <button   type="submit" class="btn btn btn--small btn--secondary"       id="create-message-button-1"       value="create-message-view"       name="create-message"  >
+                                                            <span class="btn__inner">Create message</span>
+                                                        </button>
+                                                        <input type="hidden" name="ru_ref" value="50000060765">
+                                                        <input type="hidden" name="business_id" value="9656f12a-4d43-46f0-8ab4-f834cc50f25a">
+                                                        <input type="hidden" name="business" value="ARGOS LTD">
+                                                        <input type="hidden" name="survey" value="RSI">
+                                                        <input type="hidden" name="survey_id" value="75b19ea0-69a4-4c58-8d7f-4458c8f43f5c">
+                                                        <input type="hidden" name="msg_to_name" value="John Payne">
+                                                        <input type="hidden" name="msg_to" value="d64c90fd-9806-46e2-aec1-ea5e3ceffca1">
+                                                        <input type="hidden" name="csrf_token" value="ImMxYWI5NGNiNDczN2E4Njg3YjkzYTQyODNiODYwZjZkYTAwYzdmN2Mi.X5GX3A.uouNyRFb7Evq5RnmToWMjiK6Ac4"/>
+                                                    </form>
+                                                </td>
+                                            </tr></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="accordion-9" class="collapsible js-collapsible collapsible--accordion" data-btn-close="Hide" data-group="accordion">
+                        <div class="collapsible__heading js-collapsible-heading">
+                            <div class="collapsible__controls">
+                                <h2 class="collapsible__title u-fs-r--b">888 TST </h2>
+                                <span class="collapsible__icon">
+                                    <svg class="svg-icon" viewBox="0 0 7.5 12.85" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z" transform="translate(-5.02 -1.59)"/>
+                                    </svg>
+                                </span>
+                                <button type="button" class="btn collapsible__btn btn--secondary btn--small js-collapsible-button u-d-no u-d-no@xs@s">
+                                    <span class="btn__inner js-collapsible-button-inner">
+                                        Show
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                        <div id="accordion-9-content" class="collapsible__content js-collapsible-content">
+                            <div class="data-panel-body">
+                                <div class="ru-survey-ces">
+                                    <h4 class="u-fs-m">Collection exercises</h4>
+                                    <table name="tbl-ce-for-survey" class="table table--dense" summary="Collection exercises for TST for 50000060765">
+                                        <thead class="table__head u-vhx">
+                                            <tr class="table__row">
+                                                <th scope="col" class="table__header"> Period </th>
+                                                <th scope="col" class="table__header"> Reporting unit name </th>
+                                                <th scope="col" class="table__header"> Trading as </th>
+                                                <th scope="col" class="table__header"> Region </th>
+                                                <th scope="col" class="table__header"> Status </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="table__body">
+                                            <tr class="table__row">
+                                                <td name="tbl-ce-period" class="table__cell"> 201907 </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ARGOS LTD </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ACTIVITY IN ENGLAND SCOTLAND &amp; WALES &#160; </td>
+                                                <td name="tbl-ce-company-region" class="table__cell"> GB </td>
+                                                <td name="tbl-ce-status" class="table__cell"> Not started&nbsp;<a href="/case/50000060765/response-status?survey=TST&amp;period=201907">Change</a>
+                                                </td>
+                                            </tr>
+                                            <tr class="table__row">
+                                                <td name="tbl-ce-period" class="table__cell"> 201912 </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ARGOS LTD </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ACTIVITY IN ENGLAND SCOTLAND &amp; WALES &#160; </td>
+                                                <td name="tbl-ce-company-region" class="table__cell"> GB </td>
+                                                <td name="tbl-ce-status" class="table__cell"> Not started&nbsp;<a href="/case/50000060765/response-status?survey=TST&amp;period=201912">Change</a>
+                                                </td>
+                                            </tr>
+                                            <tr class="table__row">
+                                                <td name="tbl-ce-period" class="table__cell"> 201909 </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ARGOS LTD </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ACTIVITY IN ENGLAND SCOTLAND &amp; WALES &#160; </td>
+                                                <td name="tbl-ce-company-region" class="table__cell"> GB </td>
+                                                <td name="tbl-ce-status" class="table__cell"> Not started&nbsp;<a href="/case/50000060765/response-status?survey=TST&amp;period=201909">Change</a>
+                                                </td>
+                                            </tr>
+                                            <tr class="table__row">
+                                                <td name="tbl-ce-period" class="table__cell"> 201906 </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ARGOS LTD </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ACTIVITY IN ENGLAND SCOTLAND &amp; WALES &#160; </td>
+                                                <td name="tbl-ce-company-region" class="table__cell"> GB </td>
+                                                <td name="tbl-ce-status" class="table__cell"> Not started&nbsp;<a href="/case/50000060765/response-status?survey=TST&amp;period=201906">Change</a>
+                                                </td>
+                                            </tr>
+                                            <tr class="table__row">
+                                                <td name="tbl-ce-period" class="table__cell"> 201904 </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ARGOS LTD </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ACTIVITY IN ENGLAND SCOTLAND &amp; WALES &#160; </td>
+                                                <td name="tbl-ce-company-region" class="table__cell"> GB </td>
+                                                <td name="tbl-ce-status" class="table__cell"> Not started&nbsp;<a href="/case/50000060765/response-status?survey=TST&amp;period=201904">Change</a>
+                                                </td>
+                                            </tr>
+                                            <tr class="table__row">
+                                                <td name="tbl-ce-period" class="table__cell"> 201903 </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ARGOS LTD </td>
+                                                <td name="tbl-ce-company-name" class="table__cell"> ACTIVITY IN ENGLAND SCOTLAND &amp; WALES &#160; </td>
+                                                <td name="tbl-ce-company-region" class="table__cell"> GB </td>
+                                                <td name="tbl-ce-status" class="table__cell"> Not started&nbsp;<a href="/case/50000060765/response-status?survey=TST&amp;period=201903">Change</a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="ru-survey-respondents u-pt-s">
+                                    <h4 class="u-fs-m">Respondents</h4>
+                                    <div class="ru-survey-enrolment-code u-pb-s" name="enrolment-code">
+                                        <div id="unused-enrolment-code"> Unused enrolment code: <code class="u-fs-r u-ml-s" id="unused-enrolment-code-TST">3cbqbh6vdydt</code>
+                                        </div>
+                                    </div>
+                                    <table name="tbl-respondents-for-survey" class="table table--dense tbl-ru-survey-respondents" summary="Respondents for TST for 50000060765">
+                                        <thead class="table__head">
+                                            <tr class="table__row">
+                                                <th scope="col" class="table__header"> Contact details </th>
+                                                <th scope="col" class="table__header"> Account status </th>
+                                                <th scope="col" class="table__header"> Enrolment status </th>
+                                                <th scope="col" class="table__header"> Messages </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="table__body">
+                                            <tr class="table__row">
+                                                <td name="tbl-respondent-details" class="table__cell">
+                                                    <dl class="metadata metadata__list grid grid--gutterless u-cf u-mb-l" title="This is an example of the metadata component" aria-label="This is an example of the metadata component">
+                                                        <dt class="metadata__term grid__col col-4@m u-fs-s u-fw-b">Name:</dt>
+                                                        <dd class="metadata__value grid__col col-8@m u-fs-s">John Payne</dd>
+                                                        <dt class="metadata__term grid__col col-4@m u-fs-s u-fw-b">Email:</dt>
+                                                        <dd class="metadata__value grid__col col-8@m u-fs-s">john.payne@email.com</dd>
+                                                        <dt class="metadata__term grid__col col-4@m u-fs-s u-fw-b">Tel:</dt>
+                                                        <dd class="metadata__value grid__col col-8@m u-fs-s">07799777820</dd>
+                                                        <div>
+                                                            <form action="/reporting-units/50000060765/edit-contact-details/d64c90fd-9806-46e2-aec1-ea5e3ceffca1" method="get">
+                                                                <input type="hidden" name="csrf_token" value="ImMxYWI5NGNiNDczN2E4Njg3YjkzYTQyODNiODYwZjZkYTAwYzdmN2Mi.X5GX3A.uouNyRFb7Evq5RnmToWMjiK6Ac4"/>
+                                                                <a href=# id="edit-contact-details-btn-RSI-1"> Edit contact details </a>
+
+                                                            </form>
+                                                        </div>
+                                                    </dl>
+                                                </td>
+                                                <td name="tbl-respondent-status" class="table__cell">
+                                                    <div id="account-status">    Active  </div>
+                                                    <div></div>
+                                                </td>
+                                                <td name="tbl-enrolment-status" class="table__cell">
+                                                    <div id="enrolment-status"> Enabled </div>
+                                                    <div>
+                                                        <a href="/reporting-units/50000060765/change-enrolment-status?ru_name=ARGOS+LTD&amp;survey_id=75b19ea0-69a4-4c58-8d7f-4458c8f43f5c&amp;survey_name=RSI&amp;respondent_id=d64c90fd-9806-46e2-aec1-ea5e3ceffca1&amp;respondent_first_name=John&amp;respondent_last_name=Payne&amp;business_id=9656f12a-4d43-46f0-8ab4-f834cc50f25a&amp;trading_as=ACTIVITY+IN+ENGLAND+SCOTLAND+%26+WALES&amp;change_flag=DISABLED&amp;tab=reporting_units"   id="change-enrolment-status">Disable</a>
+                                                    </div>
+                                                </td>
+                                                <td class="table__cell">
+                                                    <form action="/messages/create-message" method="post" id="create-message-view">
+                                                        <button   type="submit" class="btn btn btn--small btn--secondary"       id="create-message-button-1"       value="create-message-view"       name="create-message"  >
+                                                            <span class="btn__inner">Create message</span>
+                                                        </button>
+                                                        <input type="hidden" name="ru_ref" value="50000060765">
+                                                        <input type="hidden" name="business_id" value="9656f12a-4d43-46f0-8ab4-f834cc50f25a">
+                                                        <input type="hidden" name="business" value="ARGOS LTD">
+                                                        <input type="hidden" name="survey" value="RSI">
+                                                        <input type="hidden" name="survey_id" value="75b19ea0-69a4-4c58-8d7f-4458c8f43f5c">
+                                                        <input type="hidden" name="msg_to_name" value="John Payne">
+                                                        <input type="hidden" name="msg_to" value="d64c90fd-9806-46e2-aec1-ea5e3ceffca1">
+                                                        <input type="hidden" name="csrf_token" value="ImMxYWI5NGNiNDczN2E4Njg3YjkzYTQyODNiODYwZjZkYTAwYzdmN2Mi.X5GX3A.uouNyRFb7Evq5RnmToWMjiK6Ac4"/>
+                                                    </form>
+                                                </td>
+                                            </tr></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+
+{% endblock %}
