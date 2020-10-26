@@ -1,0 +1,73 @@
+---
+title: How to answer questions
+group: Census
+version: 25.1.6
+layout: census-website-engage/views/_master
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": pageInfo.rootPath + '/home',
+                            "text": 'Home'
+                        },
+                        {
+                            "url": pageInfo.rootPath + '/help',
+                            "text": 'Help with the census'
+                        }
+                    ]
+                })
+            }}
+
+            <main class="page__main" id="main-content" role="main">
+
+                <div class="col-8@m u-mb-l">
+                    <h1 class="u-mb-l u-fs-xxl">How to answer questions</h1>
+                    <p>Guidance on how to answer the census questions whether you're completing the census online or filling in the paper form.</p>
+                </div>
+
+                <div class="grid u-mb-m">
+
+                    <div class="grid__col col-4@m">
+                        {{-
+                            onsCard({
+                                "ariaBy": 'Section highlight',
+                                "id": 'title1',
+                                "textId": 'text1',
+                                "title": 'Online questions help',
+                                "url": pageInfo.rootPath + '/help/how-to-answer-questions/online',
+                                "text": 'Guidance on answering online questions and why we ask them.'
+                            })
+                        }}
+                    </div>
+
+                    <div class="grid__col col-4@m">
+                        {{-
+                            onsCard({
+                                "ariaBy": 'Section highlight',
+                                "id": 'title2',
+                                "textId": 'text2',
+                                "title": 'Paper questions help',
+                                "url": pageInfo.rootPath + '/help/how-to-answer-questions/paper',
+                                "text": 'Guidance on answering paper questions and why we ask them.'
+                            })
+                        }}
+                    </div>
+
+                </div>
+
+            </main>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}

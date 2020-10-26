@@ -1,0 +1,246 @@
+---
+title: Online questions help
+group: Census
+version: 25.1.6
+layout: census-website-engage/views/_master
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": pageInfo.rootPath + '/home',
+                            "text": 'Home'
+                        },
+                        {
+                            "url": pageInfo.rootPath + '/help',
+                            "text": 'Help with the census'
+                        },
+                        {
+                            "url": pageInfo.rootPath + '/help/how-to-answer-questions',
+                            "text": 'How to answer questions'
+                        }
+                    ]
+                })
+            }}
+
+            <div class="grid">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-l u-fs-xxl">Online questions help</h1>
+
+                        {{-
+                            onsTableOfContents({
+                                "title": 'Contents',
+                                "ariaLabel": 'Pages in this guide',
+                                "itemsList": [
+                                    {
+                                        "url": pageInfo.rootPath + '/help/how-to-answer-questions/online/#your-address-and-people-who-live-here',
+                                        "text": 'Your address and people who live here'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/how-to-answer-questions/online/#household-and-accomodation',
+                                        "text": 'Household and accommodation'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/how-to-answer-questions/online/#name-sex-date-of-birth-and-marital-status',
+                                        "text": 'Name, sex, date of birth and marital status'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/how-to-answer-questions/online/#sexual-orientation-and-gender',
+                                        "text": 'Sexual orientation and gender'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/how-to-answer-questions/online/#country-of-birth-passports-and-not-born-in-the-uk',
+                                        "text": 'Country of birth, passports, and not born in the UK'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/how-to-answer-questions/online/#national-identity-and-ethnic-groups',
+                                        "text": 'National identity and ethnic group'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/how-to-answer-questions/online/#languages-and-religion',
+                                        "text": 'Language and religion'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/how-to-answer-questions/online/#health-and-care',
+                                        "text": 'Health and care'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/how-to-answer-questions/online/#qualifications-and-full-time-education',
+                                        "text": 'Qualifications and full-time education'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/how-to-answer-questions/online/#main-job-and-armed-forces',
+                                        "text": 'Main job and Armed Forces'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/how-to-answer-questions/online/#visitors',
+                                        "text": 'Visitors'
+                                    }
+                                ]
+                            })
+                        }}
+
+                        <div class="page__body">
+
+                            <h2 id="your-address-and-people-who-live-here">Your address and people who live here</h2>
+
+                            <ul class="list list--bare list--spacious">
+                                <li class="list__item"><a href="#0">Who lives here?</a></li>
+                                <li class="list__item"><a href="#0">Are there any visitors staying overnight on 21 March 2021 at this address?</a></li>
+                                <li class="list__item"><a href="#0">Household relationships</a></li>
+                                <li class="list__item"><a href="#0">Do you stay at another address for more than 30 days a year?</a></li>
+                                <li class="list__item"><a href="#0">One year ago, what was your usual address?</a></li>
+                            </ul>
+
+                            <h2 id="household-and-accomodation">Household and accommodation</h2>
+
+                            <ul class="list list--bare list--spacious">
+                                <li class="list__item"><a href="#0">What type of accommodation is your address?</a></li>
+                                <li class="list__item"><a href="#0">Are all the rooms in this accommodation, including the kitchen, bathroom and toilet, behind a door that only this household can use?</a></li>
+                                <li class="list__item"><a href="#0">How many bedrooms are available for use only by this household?</a></li>
+                                <li class="list__item"><a href="#0">What type of central heating does this accommodation have?</a></li>
+                                <li class="list__item"><a href="#0">Does your household own or rent this address?</a></li>
+                                <li class="list__item"><a href="#0">In total, how many cars or vans are owned, or available for use, by members of this household?</a></li>
+                            </ul>
+
+                            <h2 id="name-sex-date-of-birth-and-marital-status">Name, sex, date of birth and marital status</h2>
+
+                            <ul class="list list--bare list--spacious">
+                                <li class="list__item"><a href="#0">What is your name?</a></li>
+                                <li class="list__item"><a href="#0">What is your date of birth?</a></li>
+                                <li class="list__item"><a href="#0">What is your sex?</a></li>
+                                <li class="list__item"><a href="#0">On 21 March 2021, what is your legal marital or registered civil partnership status?</a></li>
+                            </ul>
+
+                            <h2 id="sexual-orientation-and-gender">Sexual orientation and gender</h2>
+
+                            <ul class="list list--bare list--spacious">
+                                <li class="list__item"><a href="#0">Which of the following best describes your sexual orientation?</a></li>
+                                <li class="list__item"><a href="#0">Is the gender you identify with the same as your sex registered at birth?</a></li>
+                            </ul>
+
+                            <h2 id="country-of-birth-passports-and-not-born-in-the-uk">Country of birth, passports, and not born in the UK</h2>
+
+                            <ul class="list list--bare list--spacious">
+                                <li class="list__item"><a href="#0">What is your country of birth?</a></li>
+                                <li class="list__item"><a href="#0">What passports do you hold?</a></li>
+                                 <li class="list__item"><a href="#0">When did you most recently arrive to live in the United Kingdom?</a></li>
+                                  <li class="list__item"><a href="#0">Including the time already spent here, how long do you intend to stay in the United Kingdom?</a></li>
+                            </ul>
+
+                            <h2 id="national-identity-and-ethnic-groups">National identity and ethnic group</h2>
+
+                            <ul class="list list--bare list--spacious">
+                                <li class="list__item"><a href="#0">How would you describe your national identity?</a></li>
+                                <li class="list__item"><a href="#0">What is your ethnic group?</a></li>
+                            </ul>
+
+                            <h2 id="languages-and-religion">Language and religion</h2>
+
+                            <ul class="list list--bare list--spacious">
+                                <li class="list__item"><a href="#0">What is your main language? (If you live in England)</a></li>
+                                <li class="list__item"><a href="#0">What is your main language? (If you live in Wales)</a></li>
+                                <li class="list__item"><a href="#0">How well can you speak English?</a></li>
+                                <li class="list__item"><a href="#0">Can you understand, speak, read or write Welsh?</a></li>
+                                <li class="list__item"><a href="#0">What is your religion?</a></li>
+                            </ul>
+
+                            <h2 id="health-and-care">Health and care</h2>
+
+                            <ul class="list list--bare list--spacious">
+                                <li class="list__item"><a href="#0">How is your health in general?</a></li>
+                                <li class="list__item"><a href="#0">Do you have any physical or mental health conditions or illnesses lasting or expected to last 12 months or more?</a></li>
+                                <li class="list__item"><a href="#0">Do any of your conditions or illnesses reduce your ability to carry out day-to-day activities?</a></li>
+                                <li class="list__item"><a href="#0">Do you look after, or give any help or support to, anyone because they have long-term physical or mental health conditions or illnesses, or problems related to old age?</a></li>
+                            </ul>
+
+                            <h2 id="qualifications-and-full-time-education">Qualifications and full-time education</h2>
+
+                            <ul class="list list--bare list--spacious">
+                                <li class="list__item"><a href="#0">Are you a schoolchild or student in full-time education?</a></li>
+                                <li class="list__item"><a href="#0">During term time, where do you usually live?</a></li>
+                                <li class="list__item"><a href="#0">Have you completed an apprenticeship?</a></li>
+                                <li class="list__item"><a href="#0">Have you achieved a qualification at degree level or above?</a></li>
+                                <li class="list__item"><a href="#0">Have you achieved an NVQ or equivalent qualification?</a></li>
+                                <li class="list__item"><a href="#0">Have you achieved an A level, AS level or equivalent qualifications?</a></li>
+                                <li class="list__item"><a href="#0">Have you achieved a GCSE or equivalent qualification?</a></li>
+                                <li class="list__item"><a href="#0">Have you achieved any other qualifications?</a></li>
+                            </ul>
+
+                            <h2 id="main-job-and-armed-forces">Main job and Armed Forces</h2>
+
+                            <ul class="list list--bare list--spacious">
+                                <li class="list__item"><a href="#0">In the last seven days, were you doing any of the following?</a></li>
+                                <li class="list__item"><a href="#0">Which of the following describes what you were doing in the last seven days?</a></li>
+                                <li class="list__item"><a href="#0">In the last four weeks, were you actively looking for any kind of paid work?</a></li>
+                                <li class="list__item"><a href="#0">In the last seven days, were you waiting to start a job already accepted?</a></li>
+                                <li class="list__item"><a href="#0">Are you available to start work in the next two weeks?</a></li>
+                                <li class="list__item"><a href="#0">Have you ever done any paid work?</a></li>
+                                <li class="list__item"><a href="#0">In your main job, what is (was) your employment status?</a></li>
+                                <li class="list__item"><a href="#0">What is (was) the name of the organisation or business you work (worked) for?</a></li>
+                                <li class="list__item"><a href="#0">What is (was) your full job title?</a></li>
+                                <li class="list__item"><a href="#0">Briefly describe what you do (did) in your main job</a></li>
+                                <li class="list__item"><a href="#0">What is (was) the main activity of your organisation, business or freelance work?</a></li>
+                                <li class="list__item"><a href="#0">Do (did) you supervise or oversee the work of other employees on a day-to-day basis?</a></li>
+                                <li class="list__item"><a href="#0">In your main job, how many hours a week do you usually work?</a></li>
+                                <li class="list__item"><a href="#0">How do you usually travel to work?</a></li>
+                                <li class="list__item"><a href="#0">Where do you mainly work?</a></li>
+                                <li class="list__item"><a href="#0">What is the address of your workplace or depot?</a></li>
+                                <li class="list__item"><a href="#0">Have you previously served in the UK Armed Forces?</a></li>
+                            </ul>
+
+                            <h2 id="visitors">Visitors</h2>
+
+                            <ul class="list list--bare list--spacious">
+                                <li class="list__item"><a href="#0">What is the name of the visitor staying overnight on Sunday 21 March 2021 at this address?</a></li>
+                                <li class="list__item"><a href="#0">What is this visitor’s date of birth?</a></li>
+                                <li class="list__item"><a href="#0">What is this person’s sex?</a></li>
+                                <li class="list__item"><a href="#0">What is this visitor’s usual UK address?</a></li>
+                            </ul>
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+                <div class="grid__col col-4@m push-1@m u-mt-m">
+
+                    {{-
+                        onsRelatedLinks({
+                            "id": 'related-links',
+                            "title": 'Related content',
+                            "itemsList": [
+                                {
+                                    "url": pageInfo.rootPath + '/help/how-to-answer-questions/paper',
+                                    "text": 'Paper questions help'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/contact-us',
+                                    "text": 'Contact us'
+                                }
+                            ]
+                        })
+                    }}
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}

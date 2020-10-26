@@ -1,0 +1,70 @@
+---
+title: Languages and accessibility
+group: Census
+version: 25.1.6
+layout: census-website-engage/views/_master
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": pageInfo.rootPath + '/home',
+                            "text": 'Home'
+                        },
+                        {
+                            "url": pageInfo.rootPath + '/help',
+                            "text": 'Help with the census'
+                        }
+                    ]
+                })
+            }}
+
+            <main class="page__main" id="main-content" role="main">
+
+                <h1 class="u-mb-l u-fs-xxl">Languages and accessibility</h1>
+
+                <div class="grid u-mb-m">
+
+                    <div class="grid__col col-4@m">
+                        {{-
+                            onsCard({
+                                "ariaBy": 'Section highlight',
+                                "id": 'title1',
+                                "textId": 'text1',
+                                "title": 'Languages',
+                                "url": '#0',
+                                "text": 'Phasellus ac pulvinar massa, vel pretium massa. Integer id turpis ut nibh laoreet finibus.'
+                            })
+                        }}
+                    </div>
+
+                    <div class="grid__col col-4@m">
+                        {{-
+                            onsCard({
+                                "ariaBy": 'Section highlight',
+                                "id": 'title2',
+                                "textId": 'text2',
+                                "title": 'Accessible formats',
+                                "url": '#0',
+                                "text": 'Phasellus ac pulvinar massa, vel pretium massa. Integer id turpis ut nibh laoreet finibus.'
+                            })
+                        }}
+                    </div>
+
+                </div>
+
+            </main>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}
