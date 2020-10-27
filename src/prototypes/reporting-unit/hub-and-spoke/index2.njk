@@ -14,7 +14,7 @@ layout: reporting-unit/views/_master-internal
     <div class="grid">
 
         <div id="main" class="grid__col col-10@m">
-            <h1 id="RU_NAME" class="u-fs-xl">SARGOS LTD</h1>
+            <h1 id="RU_NAME" class="u-fs-xl">SPARKS & MERCER PLC</h1>
             {{
                 onsMetadata({
                     "metadataLabel": "",
@@ -25,7 +25,7 @@ layout: reporting-unit/views/_master-internal
                             "term": "Reference:",
                             "descriptions": [
                                 {
-                                    "description": "50000060765"
+                                    "description": "50000001703"
                                 }
                             ]
                         },
@@ -33,7 +33,7 @@ layout: reporting-unit/views/_master-internal
                             "term": "Trading as:",
                             "descriptions": [
                                 {
-                                    "description": "ACTIVITY IN ENGLAND SCOTLAND & WALES"
+                                    "description": "ALL ACTIVITY IN ENGLAND SCOTLAND AND WALES"
                                 }
                             ]
                         }
@@ -61,13 +61,13 @@ layout: reporting-unit/views/_master-internal
                                 <span>Survey</span>
                             </th>
                             <th scope="col" class="table__header ">
-                                <span>Most recent period</span>
+                                <span>Current period</span>
                             </th>
                             <th scope="col" class="table__header ">
-                                <span>Current status</span>
+                                <span>Status</span>
                             </th>
                             <th scope="col" class="table__header ">
-                                <span>Contact</span>
+                                <span>Most recent respondent</span>
                             </th>
                         </tr>
                     </thead>
@@ -80,10 +80,10 @@ layout: reporting-unit/views/_master-internal
                                 2009
                             </td>
                             <td class="table__cell ">
-                                In progress
+                                <span class="status status--success">Completed</span>
                             </td>
                             <td class="table__cell ">
-                                Maya Powell
+                                Christopher Holloway
                             </td>
                         </tr>
                         <tr class="table__row">
@@ -94,10 +94,10 @@ layout: reporting-unit/views/_master-internal
                                 2009
                             </td>
                             <td class="table__cell ">
-                                Not started
+                                <span class="status status--success">Completed</span>
                             </td>
                             <td class="table__cell ">
-                                Laura Chambers
+                                Oscar Blake
                             </td>
                         </tr>
                         <tr class="table__row">
@@ -108,12 +108,10 @@ layout: reporting-unit/views/_master-internal
                                 2010
                             </td>
                             <td class="table__cell ">
-                                Not started
+                                <span class="status status--dead">Not started</span>
                             </td>
                             <td class="table__cell ">
-                                Mason Hewitt<br>
-                                Evan Phillips<br>
-                                Harley Hopkins
+                                Nathan Southern
                             </td>
                         </tr>
                         <tr class="table__row">
@@ -124,10 +122,10 @@ layout: reporting-unit/views/_master-internal
                                 202010
                             </td>
                             <td class="table__cell ">
-                                Not started
+                                <span class="status status--success">Completed</span>
                             </td>
                             <td class="table__cell ">
-                                Aidan Holt
+                                Aidan Norton
                             </td>
                         </tr>
                         <tr class="table__row">
@@ -138,10 +136,10 @@ layout: reporting-unit/views/_master-internal
                                 2009
                             </td>
                             <td class="table__cell ">
-                                Completed
+                                <span class="status status--success">Completed</span>
                             </td>
                             <td class="table__cell ">
-                                Oliver Clarke
+                                Nathan Southern
                             </td>
                         </tr>
                         <tr class="table__row">
@@ -152,9 +150,11 @@ layout: reporting-unit/views/_master-internal
                                 201812
                             </td>
                             <td class="table__cell ">
-                                Not started
+                                <span class="status status--success">Completed</span>
                             </td>
-                            <td class="table__cell "></td>
+                            <td class="table__cell ">
+                                Aidan Norton
+                            </td>
                         </tr>
                         <tr class="table__row">
                             <td class="table__cell " name="cell-name">
@@ -164,10 +164,11 @@ layout: reporting-unit/views/_master-internal
                                 2010
                             </td>
                             <td class="table__cell ">
-                                Completed
+                                <span class="status status--pending">In progress</span>
+
                             </td>
                             <td class="table__cell ">
-                                Josh Little
+                                Nathan Southern
                             </td>
                         </tr>
                         <tr class="table__row">
@@ -178,10 +179,10 @@ layout: reporting-unit/views/_master-internal
                                 2019
                             </td>
                             <td class="table__cell ">
-                                Not started
+                                <span class="status status--success">Completed</span>
                             </td>
                             <td class="table__cell ">
-                                Kian Moore
+                                Aidan Norton
                             </td>
                         </tr>
                         <tr class="table__row">
@@ -192,10 +193,10 @@ layout: reporting-unit/views/_master-internal
                                 202012
                             </td>
                             <td class="table__cell ">
-                                Completed
+                                <span class="status status--success">Completed</span>
                             </td>
                             <td class="table__cell ">
-                                Oliver Clarke
+                                Rachel Ward
                             </td>
                         </tr>
                         <tr class="table__row">
@@ -206,16 +207,17 @@ layout: reporting-unit/views/_master-internal
                                 202106
                             </td>
                             <td class="table__cell ">
-                                Not started
+                                <span class="status status--dead">Not started</span>
                             </td>
                             <td class="table__cell ">
-                                Evan Phillips
+                                N/A
                             </td>
                         </tr>
                     </tbody>
                 </table>
                 </section>
                 <section id="tabId2" class="tabs__panel">
+
                 </section>
             </section>
         </div>
