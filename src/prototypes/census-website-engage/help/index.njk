@@ -9,6 +9,18 @@ layout: census-website-engage/views/_master
    
     {% block main %}
 
+        {{-
+            onsCallToAction({
+                "headingText": 'Ready to start your census?',
+                "paragraphText": 'You’ll need the access code from the letter we sent you.',
+                "button": {
+                    "text": 'Start census',
+                    "classes": 'btn--small btn--link',
+                    "url": '#0'
+                }
+            })
+        }}
+
         <div class="page__container container">
 
             {{
