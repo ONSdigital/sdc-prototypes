@@ -1,0 +1,105 @@
+---
+group: RAS/RM
+version: 20.0.3
+title: Alert banner management
+layout: alert-banner-management/views/version-4/_master
+---
+
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/input/_macro.njk" import onsInput %}
+
+{% block main %}
+
+    <div class="grid">
+        <div class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '',
+                            "text": 'Surveys'
+                        },
+                        {
+                            "url": '/prototypes/alert-banner-management/version-4/00-create-alert.html',
+                            "text": 'Create an alert'
+                        },
+                        {
+                            "url": '/prototypes/alert-banner-management/version-4/01-manage-alert-templates.html',
+                            "text": 'Manage message templates'
+                        },
+                        {
+                            "url": '',
+                            "text": 'Edit message template',
+                            "current": true
+                        }
+                    ]
+                }) 
+            }}
+            <h1>Edit message template</h1>
+            <fieldset>
+                {{
+                    onsInput({
+                        "id": "text",
+                        "value":"Unexpected outage",
+                        "label": {
+                            "text": "Message template title"
+                        }
+                    })
+                }}
+                <p class="field">
+                    {{
+                        onsTextarea({
+                            "id": "templatemessage",
+                            "name": "templatemessage",
+                            "classes": "input--w-30",
+                            "label": {
+                                "text": "Message"
+                            },
+                            "value":"We are currently experiencing technical difficulties. Our engineers are investigating and hope to have the service back up shortly. Thank you for your patience.",
+                            "maxlength": 400,
+                            "charCountSingular": "You have {x} character remaining",
+                            "charCountPlural": "You have {x} characters remaining"
+                        })
+                    }}
+                </p>
+            </fieldset>
+
+            <fieldset class="fieldset">
+                <legend class="fieldset__legend u-vh">Delete template</legend>
+                <p class="checkboxes__label u-fw-b">Select to delete this template</p>
+                <div class="checkboxes__items">
+                    <p class="checkboxes__item">
+                    <span class="checkbox ">
+                        <input type="checkbox" id="Delete" class="checkbox__input js-checkbox " value="Delete">
+                        <label class="checkbox__label  " for="Delete" id="Delete-label">Delete template</label>
+                    </span>
+                    </p>
+                </div>
+            </fieldset>
+
+            <p class="field">
+                {{ 
+                    onsButton({
+                        "type": 'button',
+                        "text": 'Done',
+                        "url": "/prototypes/alert-banner-management/version-4/00-create-alert-template-edited.html"
+                    }) 
+                }}
+                {{ 
+                    onsButton({
+                        "type": 'button',
+                        "text": 'Cancel',
+                        "classes": 'btn--secondary btn-group__btn',
+                        "url": "/prototypes/alert-banner-management/version-4/01-manage-alert-templates.html"
+                    }) 
+                }}
+            </p>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
