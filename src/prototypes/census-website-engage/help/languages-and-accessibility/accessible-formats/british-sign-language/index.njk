@@ -1,0 +1,664 @@
+---
+title: British Sign Language
+group: Census
+version: 26.0.1
+layout: census-website-engage/views/_master
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": pageInfo.rootPath + '/home',
+                            "text": 'Home'
+                        },
+                        {
+                            "url": pageInfo.rootPath + '/help',
+                            "text": 'Help with the census'
+                        },
+                        {
+                            "url": pageInfo.rootPath + '/help/languages-and-accessibility',
+                            "text": 'Languages and accessibility'
+                        },
+                        {
+                            "url": pageInfo.rootPath + '/help/languages-and-accessibility/accessible-formats',
+                            "text": 'Accessible formats'
+                        }
+                    ]
+                })
+            }}
+
+            <div class="grid">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-l u-fs-xxl">British Sign Language</h1>
+
+                        <div class="page__body">
+
+                            <p>All videos include:</p>
+
+                            <ul>
+                                <li>an introduction to Census 2021</li>
+                                <li>every single question included on the online form and the response options</li>
+                                <li>subtitles and audio voiceover</li>
+                            </ul>
+
+                            <h2>Introduction videos</h2>
+
+                            <p>Cras nunc ipsum, mattis id euismod id, accumsan euismod enim. Duis tellus ligula, eleifend vel porttitor quis.</p>
+
+                            <!-- Your address and people who live here -->
+                            {%
+                                call onsCollapsible({
+                                    "classes": 'u-mt-m',
+                                    "id": 'collapsible-0',
+                                    "title": 'Census 2021 introductions',
+                                    "titleTag": 'h3',
+                                    "button": {
+                                        "close": 'Hide this',
+                                        "contextSuffix": 'content',
+                                        "attributes": {
+                                            "aria-hidden": 'true'
+                                        }
+                                    }
+                                })
+                            %}
+
+                            {{
+                                onsList({
+                                    "classes": 'list--bare list--spacious',
+                                    "itemsList": [
+                                        {
+                                            "url": '#0',
+                                            "text": 'Information leaflet'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'Initial contact letter'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'Privacy notice'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'Thank you'
+                                        }
+                                    ]
+                                })
+                            }}
+
+                            {% endcall %}
+
+                            <h2>Question and response videos</h2>
+
+                            <p>Cras nunc ipsum, mattis id euismod id, accumsan euismod enim. Duis tellus ligula, eleifend vel porttitor quis.</p>
+
+                            <!-- Your address and people who live here -->
+                            {%
+                                call onsCollapsible({
+                                    "classes": 'u-mt-m',
+                                    "id": 'collapsible-1',
+                                    "title": 'Your address and people who live here',
+                                    "titleTag": 'h3',
+                                    "button": {
+                                        "close": 'Hide this',
+                                        "contextSuffix": 'content',
+                                        "attributes": {
+                                            "aria-hidden": 'true'
+                                        }
+                                    }
+                                })
+                            %}
+
+                            {{
+                                onsList({
+                                    "classes": 'list--bare list--spacious',
+                                    "itemsList": [
+                                        {
+                                            "url": '#0',
+                                            "text": 'Who lives here?'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'Are there any visitors staying overnight on 21 March 2021 at this address?'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'Household relationships'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'Do you stay at another address for more than 30 days a year?'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'One year ago, what was your usual address?'
+                                        }
+                                    ]
+                                })
+                            }}
+
+                            {% endcall %}
+
+
+                            <!-- Household and accomodation -->
+                            {%
+                                call onsCollapsible({
+                                    "id": 'collapsible-2',
+                                    "title": 'Household and accomodation',
+                                    "titleTag": 'h3',
+                                    "button": {
+                                        "close": 'Hide this',
+                                        "contextSuffix": 'content',
+                                        "attributes": {
+                                            "aria-hidden": 'true'
+                                        }
+                                    }
+                                })
+                            %}
+
+                            {{
+                                onsList({
+                                    "classes": 'list--bare list--spacious',
+                                    "itemsList": [
+                                        {
+                                            "url": '#0',
+                                            "text": 'What type of accomodation is your address?'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'Are all the rooms in this accommodation, including the kitchen, bathroom and toilet, behind a door that only this household can use?'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'How many bedrooms are available for use only by this household?'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'What type of central heating does this accommodation have?'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'Does your household own or rent this address?'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'Who is your landlord?'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'In total, how many cars or vans are owned, or available for use, by members of this household?'
+                                        }
+                                    ]
+                                })
+                            }}
+
+                            {% endcall %}
+
+
+                            <!-- Name, sex, date of birth and marital status -->
+                            {%
+                                call onsCollapsible({
+                                    "id": 'collapsible-3',
+                                    "title": 'Name, sex, date of birth and marital status',
+                                    "titleTag": 'h3',
+                                    "button": {
+                                        "close": 'Hide this',
+                                        "contextSuffix": 'content',
+                                        "attributes": {
+                                            "aria-hidden": 'true'
+                                        }
+                                    }
+                                })
+                            %}
+
+                            {{
+                                onsList({
+                                    "classes": 'list--bare list--spacious',
+                                    "itemsList": [
+                                        {
+                                            "url": '#0',
+                                            "text": 'What is your name?'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'What is your date of birth?'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'What is your sex?'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'On 21 March 2021, what is your legal marital or registered civil partnership status?'
+                                        }
+                                    ]
+                                })
+                            }}
+
+                            {% endcall %}
+
+
+                            <!-- Sexual orientation and gender -->
+                            {%
+                                call onsCollapsible({
+                                    "id": 'collapsible-4',
+                                    "title": 'Sexual orientation and gender',
+                                    "titleTag": 'h3',
+                                    "button": {
+                                        "close": 'Hide this',
+                                        "contextSuffix": 'content',
+                                        "attributes": {
+                                            "aria-hidden": 'true'
+                                        }
+                                    }
+                                })
+                            %}
+
+                            {{
+                                onsList({
+                                    "classes": 'list--bare list--spacious',
+                                    "itemsList": [
+                                        {
+                                            "url": '#0',
+                                            "text": 'Which of the following best describes your sexual orientation?'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'Is the gender you identify with the same as your sex registered at birth?'
+                                        }
+                                    ]
+                                })
+                            }}
+
+                            {% endcall %}
+
+
+                            <!-- Country of birth, passports, and not born in the UK -->
+                            {%
+                                call onsCollapsible({
+                                    "id": 'collapsible-5',
+                                    "title": 'Country of birth, passports, and not born in the UK',
+                                    "titleTag": 'h3',
+                                    "button": {
+                                        "close": 'Hide this',
+                                        "contextSuffix": 'content',
+                                        "attributes": {
+                                            "aria-hidden": 'true'
+                                        }
+                                    }
+                                })
+                            %}
+
+                            {{
+                                onsList({
+                                    "classes": 'list--bare list--spacious',
+                                    "itemsList": [
+                                        {
+                                            "url": '#0',
+                                            "text": 'What is your country of birth?'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'What passports do you hold?'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'When did you most recently arrive to live in the United Kingdom?'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'Including the time already spent here, how long do you intend to stay in the United Kingdom?'
+                                        }
+                                    ]
+                                })
+                            }}
+
+                            {% endcall %}
+
+
+                            <!-- National identity and ethnic group -->
+                            {%
+                                call onsCollapsible({
+                                    "id": 'collapsible-6',
+                                    "title": 'National identity and ethnic group',
+                                    "titleTag": 'h3',
+                                    "button": {
+                                        "close": 'Hide this',
+                                        "contextSuffix": 'content',
+                                        "attributes": {
+                                            "aria-hidden": 'true'
+                                        }
+                                    }
+                                })
+                            %}
+
+                            {{
+                                onsList({
+                                    "classes": 'list--bare list--spacious',
+                                    "itemsList": [
+                                        {
+                                            "url": '#0',
+                                            "text": 'How would you describe your national identity?'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'What is your ethnic group?'
+                                        }
+                                    ]
+                                })
+                            }}
+
+                            {% endcall %}
+
+
+                            <!-- Language and religion -->
+                            {%
+                                call onsCollapsible({
+                                    "id": 'collapsible-7',
+                                    "title": 'Language and religion',
+                                    "titleTag": 'h3',
+                                    "button": {
+                                        "close": 'Hide this',
+                                        "contextSuffix": 'content',
+                                        "attributes": {
+                                            "aria-hidden": 'true'
+                                        }
+                                    }
+                                })
+                            %}
+
+                            {{
+                                onsList({
+                                    "classes": 'list--bare list--spacious',
+                                    "itemsList": [
+                                        {
+                                            "url": '#0',
+                                            "text": 'What is your main language? (If you live in England)'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'What is your main language? (If you live in Wales)'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'How well can you speak English?'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'Can you understand, speak, read or write Welsh?'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'What is your religion?'
+                                        }
+                                    ]
+                                })
+                            }}
+
+                            {% endcall %}
+
+
+                            <!-- Health and care -->
+                            {%
+                                call onsCollapsible({
+                                    "id": 'collapsible-8',
+                                    "title": 'Health and care',
+                                    "titleTag": 'h3',
+                                    "button": {
+                                        "close": 'Hide this',
+                                        "contextSuffix": 'content',
+                                        "attributes": {
+                                            "aria-hidden": 'true'
+                                        }
+                                    }
+                                })
+                            %}
+
+                            {{
+                                onsList({
+                                    "classes": 'list--bare list--spacious',
+                                    "itemsList": [
+                                        {
+                                            "url": '#0',
+                                            "text": 'How is your health in general?'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'Do you have any physical or mental health conditions or illnesses lasting or expected to last 12 months or more?'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'Do any of your conditions or illnesses reduce your ability to carry out day-to-day activities?'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'Do you look after, or give any help or support to, anyone because they have long-term physical or mental health conditions or illnesses, or problems related to old age?'
+                                        }
+                                    ]
+                                })
+                            }}
+
+                            {% endcall %}
+
+
+                            <!-- Qualifications and full-time education -->
+                            {%
+                                call onsCollapsible({
+                                    "id": 'collapsible-9',
+                                    "title": 'Qualifications and full-time education',
+                                    "titleTag": 'h3',
+                                    "button": {
+                                        "close": 'Hide this',
+                                        "contextSuffix": 'content',
+                                        "attributes": {
+                                            "aria-hidden": 'true'
+                                        }
+                                    }
+                                })
+                            %}
+
+                            {{
+                                onsList({
+                                    "classes": 'list--bare list--spacious',
+                                    "itemsList": [
+                                        {
+                                            "url": '#0',
+                                            "text": 'Are you a schoolchild or student in full-time education?'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'During term time, where do you usually live?'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'Have you completed an apprenticeship?'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'Have you achieved a qualification at degree level or above?'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'Have you achieved an NVQ or equivalent qualification?'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'Have you achieved an A level, AS level or equivalent qualifications?'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'Have you achieved a GCSE or equivalent qualification?'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'Have you achieved any other qualifications?'
+                                        }
+                                    ]
+                                })
+                            }}
+
+                            {% endcall %}
+
+
+                            <!-- Main job and Armed Forces -->
+                            {%
+                                call onsCollapsible({
+                                    "id": 'collapsible-10',
+                                    "title": 'Main job and Armed Forces',
+                                    "titleTag": 'h3',
+                                    "button": {
+                                        "close": 'Hide this',
+                                        "contextSuffix": 'content',
+                                        "attributes": {
+                                            "aria-hidden": 'true'
+                                        }
+                                    }
+                                })
+                            %}
+
+                            {{
+                                onsList({
+                                    "classes": 'list--bare list--spacious',
+                                    "itemsList": [
+                                        {
+                                            "url": '#0',
+                                            "text": 'In the last seven days, were you doing any of the following?'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'Which of the following describes what you were doing in the last seven days?'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'In the last four weeks, were you actively looking for any kind of paid work?'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'In the last seven days, were you waiting to start a job already accepted?'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'Are you available to start work in the next two weeks?'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'Have you ever done any paid work?'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'In your main job, what is (was) your employment status?'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'What is (was) the name of the organisation or business you work (worked) for?'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'What is (was) your full job title?'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'Briefly describe what you do (did) in your main job'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'What is (was) the main activity of your organisation, business or freelance work?'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'Do (did) you supervise or oversee the work of other employees on a day-to-day basis?'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'In your main job, how many hours a week do you usually work?'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'How do you usually travel to work?'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'Where do you mainly work?'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'What is the address of your workplace or depot?'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'Have you previously served in the UK Armed Forces?'
+                                        }
+                                    ]
+                                })
+                            }}
+
+                            {% endcall %}
+
+
+                            <!-- Visitors -->
+                            {%
+                                call onsCollapsible({
+                                    "id": 'collapsible-11',
+                                    "title": 'Visitors',
+                                    "titleTag": 'h3',
+                                    "button": {
+                                        "close": 'Hide this',
+                                        "contextSuffix": 'content',
+                                        "attributes": {
+                                            "aria-hidden": 'true'
+                                        }
+                                    }
+                                })
+                            %}
+
+                            {{
+                                onsList({
+                                    "classes": 'list--bare list--spacious',
+                                    "itemsList": [
+                                        {
+                                            "url": '#0',
+                                            "text": 'What is the name of the visitor staying overnight on Sunday 21 March 2021 at this address?'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'What is this visitor’s date of birth?'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'What is this person’s sex?'
+                                        },
+                                        {
+                                            "url": '#0',
+                                            "text": 'What is this visitor’s usual UK address?'
+                                        }
+                                    ]
+                                })
+                            }}
+
+                            {% endcall %}
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}

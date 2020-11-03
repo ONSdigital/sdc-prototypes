@@ -1,0 +1,67 @@
+---
+title: Accessible formats
+group: Census
+version: 26.0.1
+layout: census-website-engage/views/_master
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": pageInfo.rootPath + '/home',
+                            "text": 'Home'
+                        },
+                        {
+                            "url": pageInfo.rootPath + '/help',
+                            "text": 'Help with the census'
+                        },
+                        {
+                            "url": pageInfo.rootPath + '/help/languages-and-accessibility',
+                            "text": 'Languages and accessibility'
+                        }
+                    ]
+                })
+            }}
+
+            <div class="grid">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-l u-fs-xxl">Accessible formats</h1>
+
+                        <div class="page__body">
+
+                            <p>Guidance is available in accessible formats in English and in Welsh.</p>
+
+                            <p>Options to complete your cesus forn include:</p>
+
+                            <ul>
+                                <li><a href="#0">Braille</a></li>
+                                <li><a href="#0">Large print</a></li>
+                                <li><a href="{{pageInfo.rootPath}}/help/languages-and-accessibility/accessible-formats/british-sign-language">British Sign Language</a></li>
+                                <li><a href="#0">Easy read</a></li>
+                            </ul>
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}
