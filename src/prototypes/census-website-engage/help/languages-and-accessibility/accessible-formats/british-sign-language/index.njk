@@ -655,6 +655,35 @@ layout: census-website-engage/views/_master
 
                 </div>
 
+                <div class="grid__col col-4@m push-1@m u-mt-m">
+
+                    {{-
+                        onsRelatedLinks({
+                            "id": 'related-links',
+                            "title": 'Related content',
+                            "itemsList": [
+                                {
+                                    "url": pageInfo.rootPath + '/help/languages-and-accessibility',
+                                    "text": 'Languages and accessibility'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/help/how-to-answer-questions',
+                                    "text": 'How to answer questions'
+                                },                                
+                                {
+                                    "url": '#0',
+                                    "text": 'Get help where you live'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/contact-us',
+                                    "text": 'Contact us'
+                                }
+                            ]
+                        })
+                    }}
+
+                </div>
+
             </div>
 
         </div>
