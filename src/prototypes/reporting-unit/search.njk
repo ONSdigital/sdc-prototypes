@@ -11,7 +11,12 @@ layout: reporting-unit/views/_master-internal
 
         <form action="" method="post">
             <div class="field u-mb-s">
-                <label class="label">Type a reference or company name</label>
+                <label class="label">Enter a reference </label>
+                <input class="ru-search-box input input--text" id="query" name="query" size="20" type="text" value="">
+            </div>
+            <span class="label u-mt-s u-fs-r--b" aria-hidden="true">Or, </span>
+            <div class="field u-mb-s">
+                <label class="label">Enter a company name </label>
                 <input class="ru-search-box input input--text" id="query" name="query" size="20" type="text" value="">
             </div>
             <button type="button" class="btn js-timer js-submit-btn">
