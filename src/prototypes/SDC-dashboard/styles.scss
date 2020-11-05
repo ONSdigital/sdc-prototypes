@@ -14,3 +14,22 @@
     font-weight: 600;
   }
 }
+
+.progress {
+  padding: 0;
+  margin: 6px 0;
+  height: 22px;
+  width: 100%;
+  span {
+    height: 22px;
+  }
+  .completed {
+    background-color: #0f8243;
+  }
+  .in-progress {
+    background-color: #033e58;
+  }
+  .not-started {
+    background-color: #d0d0d0;
+  }
+}
