@@ -19,8 +19,8 @@ layout: SDC-dashboard/views/_index
             <th scope="col" class="table__header">ID</th>
             <th scope="col" class="table__header">Abbreviation</th>
             <th scope="col" class="table__header">Title</th>
-            <th scope="col" class="table__header">Period</th>
-            <th scope="col" class="table__header">Progress</th>
+            <th scope="col" class="table__header">Current period</th>
+            <th scope="col" class="table__header u-ta-right">Progress</th>
             <th scope="col" class="table__header">
               <span class="u-vh">Action</th>
             </tr>
@@ -32,10 +32,22 @@ layout: SDC-dashboard/views/_index
                 <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">{{ survey.abbreviation }}</td>
                 <td class="table__cell" name="tbl-surveys-title" data-th="Title">{{ survey.surveyTitle }}</td>
                 <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Period">{{ survey.period }}</td>
-                <td class="table__cell" name="tbl-surveys-progress" data-th="Progress">
-                  <div class="progress">
-                    <span class="completed u-dib" style="width:calc({{ survey.completed }}/{{ survey.sampleSize }}*100%)"><span class="u-vh">Completed: </span></span><span class="in-progress u-dib" style="width:calc({{ survey.inProgress }}/{{ survey.sampleSize }}*100%)"><span class="u-vh">In progress: </span></span><span class="not-started u-dib" style="width:calc({{ survey.notStarted }}/{{ survey.sampleSize }}*100%)"><span class="u-vh">Not started: </span></span>
-                  </div>
+                <td class="table__cell u-ta-right" name="tbl-surveys-progress" data-th="Progress">
+
+                  {% if survey.completedPercentage.length > 0 %}
+
+                    <div class="progress">
+                      <div class="completed-percentage">
+                        {{ survey.completedPercentage }}
+                      </div>
+                      <div class="graph">
+                        <span class="completed u-dib" style="width:calc({{ survey.completed }}/{{ survey.sampleSize }}*100px)"><span class="u-vh">Completed: </span></span><span class="in-progress u-dib" style="width:calc({{ survey.inProgress }}/{{ survey.sampleSize }}*100px)"><span class="u-vh">In progress: </span></span><span class="not-started u-dib" style="width:calc({{ survey.notStarted }}/{{ survey.sampleSize }}*100px)"><span class="u-vh">Not started: </span></span>
+                      </div>
+                    </div>
+
+                  {% else %}
+                    Not started
+                  {% endif %}
                 </td>
                 <td class="table__cell" name="tbl-surveys-choose" data-th="Choose">
                   <button type="button" class="btn btn--secondary btn--small">

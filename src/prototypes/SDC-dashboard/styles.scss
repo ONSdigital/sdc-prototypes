@@ -16,20 +16,26 @@
 }
 
 .progress {
-  padding: 0;
-  margin: 6px 0;
-  height: 22px;
-  width: 100%;
-  span {
-    height: 22px;
+  display: flex;
+  justify-content: flex-end;
+  text-align: right;
+  .completed-percentage {
+    padding-right: 3px;
   }
-  .completed {
-    background-color: #0f8243;
-  }
-  .in-progress {
-    background-color: #033e58;
-  }
-  .not-started {
-    background-color: #d0d0d0;
+  .graph {
+    width: 100px;
+    margin-top: 2px;
+    span {
+      height: 24px;
+    }
+    .completed {
+      background-color: #0f8243;
+    }
+    .in-progress {
+      background-color: #ff600a;
+    }
+    .not-started {
+      background-color: #d0d0d0;
+    }
   }
 }
