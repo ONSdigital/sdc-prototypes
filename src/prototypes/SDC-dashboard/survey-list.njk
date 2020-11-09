@@ -50,11 +50,14 @@ layout: SDC-dashboard/views/_master
                   {% endif %}
                 </td>
                 <td class="table__cell" name="tbl-surveys-choose" data-th="Choose">
-                  <button type="button" class="btn btn--secondary btn--small">
-                    <span class="btn__inner">
-                      Choose
-                    </span>
-                  </button>
+                  {{ 
+                      onsButton({
+                          "type": 'button',
+                          "text": 'Choose',
+                          "classes": 'btn--secondary btn--small',
+                          "url": "survey.html"
+                      }) 
+                  }}
                 </td>
               </tr>
             {% endfor %}
