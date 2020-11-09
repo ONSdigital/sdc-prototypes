@@ -1,0 +1,106 @@
+---
+group: Frontstage
+title: User account creation
+version: 20.0.3
+layout: SM-categorisation/views/version-6/_master-survey
+---
+
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+{% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
+
+{% block main %}
+
+    <div class="grid">
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/prototypes/SM-categorisation/version-6/00-surveys-list.html',
+                            "text": 'Surveys'
+                        },
+                        {
+                            "url": '/prototypes/SM-categorisation/version-6/30-my-account.html',
+                            "text": 'Account'
+                        },
+                        {
+                            "url": '/prototypes/SM-categorisation/version-6/account/04-transfer-my-surveys-3/index.html',
+                            "text": 'Transfer surveys'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'Select business',
+                            "current": true
+                        }
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+            <h1>Select business</h1>
+            <p>You respond to surveys for more than one business.</p>
+            {{
+                onsCheckboxes({
+                    "legend": "Which business’s surveys do you want to transfer?",
+                    "checkboxesLabel": "Select all that apply",
+                    "name": "ACME Group Ltd",
+                    "checkboxes": [
+                        {
+                            "id": "1",
+                            "label": {
+                                "text": "SATURN HOTELS LTD"
+                            },
+                            "value": "1"
+                        },
+                        {
+                            "id": "2",
+                            "label": {
+                                "text": "SATURN HOTELS (WARWICK) LTD"
+                            },
+                            "value": "2"
+                        },
+                        {
+                            "id": "3",
+                            "label": {
+                                "text": "SATURN HOTELS (BEDFORD) LIMITED"
+                            },
+                            "value": "3"
+                        },
+                        {
+                            "id": "4",
+                            "label": {
+                                "text": "SATURN HOTELS (GROUP 1) LIMITED"
+                            },
+                            "value": "4"
+                        },
+                        {
+                            "id": "5",
+                            "label": {
+                                "text": "SATURN HOTELS (LIVERPOOL) LIMITED"
+                            },
+                            "value": "5"
+                        }
+                    ]
+                })
+            }}
+
+
+
+
+
+
+            <p class="field u-mt-l">
+                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-6/account/04-transfer-my-surveys-3/01-select-surveys.html';">
+                    <span class="btn__inner">Continue</span>
+                </button>
+                <button type="submit" class="btn btn--secondary" onclick="location.href='{{ pageInfo.rootPath }}/version-6/account/04-transfer-my-surveys-3/index.html';">
+                    <span class="btn__inner">Cancel</span>
+                </button>
+            </p>
+
+        </div>
+    </div>
+
+{% endblock %}

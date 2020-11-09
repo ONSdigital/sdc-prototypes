@@ -1,0 +1,73 @@
+---
+group: Frontstage
+title: User account creation
+version: 20.0.3
+layout: SM-categorisation/views/version-6/_master-survey
+---
+
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+
+{% block main %}
+
+    <div class="grid">
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/prototypes/SM-categorisation/version-6/00-surveys-list.html',
+                            "text": 'Surveys'
+                        },
+                        {
+                            "url": '/prototypes/SM-categorisation/version-6/30-my-account.html',
+                            "text": 'Account'
+                        },
+                        {
+                            "url": '/prototypes/SM-categorisation/version-6/account/01-change-contact-details/01-change-contact-details.html',
+                            "text": 'Change your contact details'
+                        },
+                        {
+                            "url": '/prototypes/SM-categorisation/version-6/account/01-change-contact-details/02-change-email-address.html',
+                            "text": 'Change email address',
+                            "current": true
+                        }
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+            {% from "components/panel/_macro.njk" import onsPanel %}
+            {{
+                onsPanel({
+                    "type": "success",
+                    "id": "success-id",
+                    "icon": "check-green",
+                    "classes": "u-mb-m",
+                    body: "<p>We've updated your last name and telephone number.</p>"
+                })
+            }}
+            <h1>Change email address</h1>
+
+            <p>You'll need to authorise a change of email address.</p>
+            <p>We'll send a confirmation email to <b>jane.doe@acme.com</b>.</p>
+
+            <div class="panel panel--info panel--simple u-mb-m">
+                <div class="panel__body">
+                    <p>If you are longer required to respond your surveys you can <a href="/prototypes/user-account-creation/version-4/account/04-transfer-my-surveys/index.html">transfer your surveys</a> to a colleague.</p>
+                </div>
+            </div>
+        
+            <p class="field u-mt-l">
+                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-6/account/01-change-contact-details/04-confirmation.html';">
+                    <span class="btn__inner">Send</span>
+                </button>
+                <button type="submit" class="btn btn--secondary" onclick="location.href='{{ pageInfo.rootPath }}/version-6/account/01-change-contact-details/01-change-contact-details.html';">
+                    <span class="btn__inner">Cancel</span>
+                </button>
+            </p>
+        </div>
+    </div>
+
+{% endblock %}

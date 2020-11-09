@@ -16,6 +16,22 @@ layout: SM-categorisation/views/_index
     </ul>
     <div class="grid">
         <div class="grid__col col-8@m">
+            <h2>Version 6</h2>
+            {{ 
+                onsButton({
+                    "type": 'button',
+                    "text": 'Start',
+                    "classes": 'btn--small u-mb-s',
+                    "url": "/prototypes/SM-categorisation/version-6/00-surveys-list.html"
+                }) 
+            }}
+            <p>Includes additional content updates (FAQs in BDOD and SPC)</p>
+            <ul class="list ">
+                <li class="list__item "> </li>
+                <li class="list__item "> </li>
+                <li class="list__item "> </li>
+            </ul>
+
             <h2>Version 5</h2>
             {{ 
                 onsButton({
@@ -117,87 +133,4 @@ layout: SM-categorisation/views/_index
             <h2>Archive</a>
         </div>
     </div>
-    <!-- <div class="grid">
-        <div class="grid__col col-6@m">
-            <h2>Screens</h2>
-            <h2>Internal</h2>
-            <ul class="list list--bare">
-                <li class="list__item">
-                    <a href="{{ pageInfo.rootPath }}/version-1/00-internal/00-send-message.html">Send a message</a>
-                </li>
-            </ul>
-
-            <h2>External</h2>
-            <ul class="list list--bare">
-                <li class="list__item">
-                    <a href="{{ pageInfo.rootPath }}/version-1/00-surveys-list.html">Surveys list</a>
-                </li>
-            </ul>
-
-            <ul class="list list--bare">
-                <li class="list__item">
-                    <a href="{{ pageInfo.rootPath }}/version-1/01-message-categories.html">Send a message - category list</a>
-                </li>
-            </ul>
-
-            <ul class="list list--bare">
-                <li class="list__item">
-                    <a href="{{ pageInfo.rootPath }}/version-1/10-category/00-send-message.html">Category 1 - Send a message</a>
-                </li>
-            </ul>
-
-            <ul class="list list--bare">
-                <li class="list__item">
-                    <a href="{{ pageInfo.rootPath }}/version-1/02-contact-us">Contact us</a>
-                </li>
-            </ul>
-
-            <ul class="list list--bare">
-                <li class="list__item">
-                    <a href="{{ pageInfo.rootPath }}/version-1/20-category/00-category-list.html">Category 2 sub-category list</a>
-                    <ul class="list u-mt-s">
-                        <li class="list__item">
-                            <a href="{{ pageInfo.rootPath }}/version-1/20-category/10-category-send-message.html">Sub-category 1 - Send a message</a>
-                        </li>
-                        <li class="list__item">
-                            <a href="{{ pageInfo.rootPath }}/version-1/20-category/20-category-send-message.html">Sub-category 2 - Send a message</a>
-                        </li>
-                        <li class="list__item">
-                            <a href="{{ pageInfo.rootPath }}/version-1/20-category/30-category-send-message.html">Sub-category 3 - Send a message</a>
-                        </li>
-                        <li class="list__item">
-                            <a href="{{ pageInfo.rootPath }}/version-1/20-category/40-category-send-message.html">Sub-category 4 - Send a message</a>
-                        </li>
-                        <li class="list__item">
-                            <a href="{{ pageInfo.rootPath }}/version-1/20-category/50-category-send-message.html">Sub-category 5 - Send a message</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-
-            <ul class="list list--bare">
-                <li class="list__item">
-                    <a href="{{ pageInfo.rootPath }}/version-1/30-category/00-send-message.html">Category 3 - Send a message</a>
-                </li>
-            </ul>
-
-            <ul class="list list--bare">
-                <li class="list__item">
-                    <a href="{{ pageInfo.rootPath }}/version-1/40-category/00-send-message.html">Category 4 - Send a message</a>
-                </li>
-            </ul>
-
-            <ul class="list list--bare">
-                <li class="list__item">
-                    <a href="{{ pageInfo.rootPath }}/version-1/50-category/00-send-message.html">Category 5 - Send a message</a>
-                </li>
-            </ul>
-
-            <ul class="list list--bare">
-                <li class="list__item">
-                    <a href="{{ pageInfo.rootPath }}/version-1/60-category/00-send-message.html">Category 6 - Send a message</a>
-                </li>
-            </ul>
-        </div>
-    </div> -->
 {% endblock %}

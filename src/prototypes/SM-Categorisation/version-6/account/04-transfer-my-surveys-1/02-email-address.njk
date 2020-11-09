@@ -1,0 +1,89 @@
+---
+group: Frontstage
+title: User account creation
+version: 20.0.3
+layout: SM-categorisation/views/version-6/_master-survey
+---
+
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+
+{% block main %}
+
+    <div class="grid">
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/prototypes/SM-categorisation/version-6/00-surveys-list.html',
+                            "text": 'Surveys'
+                        },
+                        {
+                            "url": '/prototypes/SM-categorisation/version-6/30-my-account.html',
+                            "text": 'Account'
+                        },
+                        {
+                            "url": '/prototypes/SM-categorisation/version-6/account/04-transfer-my-surveys-1/index.html',
+                            "text": 'Transfer surveys'
+                        },
+                        {
+                            "url": '/prototypes/SM-categorisation/version-6/account/04-transfer-my-surveys-1/01-select-surveys.html',
+                            "text": 'Select surveys'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'Enter email address',
+                            "current": true
+                        }
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+            <h1>Enter recipient's email address</h1>
+            <p>This is the person who will be able to respond to your surveys in your absence.</p>
+            
+            <div class="panel panel--info panel--simple u-mb-m">
+                <div class="panel__body">
+                    <p>Ensure you are following your company's General Data Protection Regulation (GDPR) procedures and the recipient understands their data privacy commitments too.</p>
+                </div>
+            </div>
+
+            <p class="field">
+                {{ 
+                onsInput({
+                    "id": "text",
+                    "label": {
+                        "text": "Recipient's email address"
+                    }
+                }) 
+            }}
+            </p>
+
+
+            <p class="field u-mt-l">
+                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-6/account/04-transfer-my-surveys-1/03-send-enrolment-codes.html';">
+                    <span class="btn__inner">Continue</span>
+                </button>
+                <button type="submit" class="btn btn--secondary" onclick="location.href='{{ pageInfo.rootPath }}/version-6/30-my-account.html';">
+                    <span class="btn__inner">Cancel</span>
+                </button>
+            </p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script>
+        $('.add').click(function () {
+            $('.block:last').before('<div class="block u-mb-s"><label class="label" for="text">Email address</label><input type="text" id="text" class="input input--text input-type__input u-dib u-mr-s" /><button type="submit" class="btn btn--secondary btn--small remove u-dib"><span class="btn__inner">Remove</span></button></div>');
+        });
+        $('.optionBox').on('click', '.remove', function () {
+            $(this)
+                .parent()
+                .remove();
+        });
+    </script>
+
+{% endblock %}
