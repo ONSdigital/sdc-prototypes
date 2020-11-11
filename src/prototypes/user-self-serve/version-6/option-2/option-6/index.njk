@@ -1,0 +1,67 @@
+---
+group: Frontstage
+title: User self serve
+version: 20.0.3
+layout: user-self-serve/views/version-6/_master-survey
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+{% from "components/metadata/_macro.njk" import onsMetadata %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+
+{% block main %}
+
+    <div class="grid">
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/prototypes/user-self-serve/version-6/00-surveys-list.html',
+                            "text": 'Surveys'
+                        },
+                        {
+                            "url": '/prototypes/user-self-serve/version-6/01-message-categories.html',
+                            "text": 'Help'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'What are the penalties for not completing a survey?',
+                            "current": true
+                        }
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+            <h1>What are the penalties for not completing a survey?</h1>
+            <p>Failure to comply could lead to prosecution at a Magistrates Court with a fine up to a maximum of £2,500 (last up dated by section 17 of the Criminal Justice Act 1991).</p>
+            <p>If this happens you will still need to complete the questionnaire.</p>
+            <h2>Did this answer your question?</h2>
+            <p class="field">
+                <div class="btn-group">
+                {{ 
+                    onsButton({
+                        "type": 'button',
+                        "text": 'Yes',
+                        "classes": 'btn-group__btn',
+                        "url": "/prototypes/user-self-serve/version-6/00-surveys-list.html"
+                    }) 
+                }}
+                {{ 
+                    onsButton({
+                        "type": 'button',
+                        "text": 'No',
+                        "classes": 'btn--secondary btn-group__btn',
+                        "url": "send-message.html"
+                    }) 
+                }}
+                </div>
+            </p>
+        </div>
+    </div>
+
+{% endblock %}
