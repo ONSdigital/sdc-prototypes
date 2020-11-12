@@ -1,0 +1,76 @@
+---
+title: What is your postcode?
+group: Census
+version: 26.0.4
+layout: census-website-engage/views/_master
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": pageInfo.rootPath + '/',
+                            "text": 'Home'
+                        },
+                        {
+                            "url": pageInfo.rootPath + '/find-a-support-centre',
+                            "text": 'Find a support centre'
+                        }
+                    ]
+                }) 
+            }}
+
+            <div class="grid">
+
+                <div class="grid__col col-12@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-l u-fs-xxl">What is your postcode?</h1>
+
+                        <div class="col-8@m u-mb-l">
+                        
+                            <p>To find your nearest support centre, we need your postcode.</p>
+
+                            <form method="get" action="/prototypes/census-website-engage/find-a-support-centre/results">
+
+                                {{
+                                    onsInput({
+                                        "id": 'postal-code',
+                                        "label": {
+                                            "text": 'Enter postcode'
+                                        },
+                                        "autocomplete": 'postal-code',
+                                        "classes": 'input--w-8 u-mb-m'
+                                    })
+                                }}
+
+                                {{
+                                    onsButton({
+                                        "type": 'submit',
+                                        "text": 'Continue'
+                                    })
+                                }}
+
+                            </form>
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}
