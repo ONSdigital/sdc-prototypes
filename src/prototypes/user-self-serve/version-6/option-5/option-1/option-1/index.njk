@@ -29,7 +29,7 @@ layout: user-self-serve/views/version-6/_master-survey
                         },
                         {
                             "url": '/',
-                            "text": 'Title',
+                            "text": 'I haven’t received password reset email',
                             "current": true
                         }
                     ]
@@ -37,8 +37,13 @@ layout: user-self-serve/views/version-6/_master-survey
             }}
         </div>
         <div class="grid__col col-8@m u-pt-no">
-            <h1>Title</h1>
-            <p>Description</p>
+            <h1>I haven't received the password reset email</h1>
+            <p>Check that the email address you use to sign in to <a href="#">your account</a> is correct.</p>
+
+            <p>If this is correct, check that your inbox isn't full, or that our email hasn't gone into your spam or junk folder.</p>
+
+            <p>Whitelist our email address: ons.surveys@notifications.service.gov.uk.</p>
+            
             <h2>Did this answer your question?</h2>
             <p class="field">
                 <div class="btn-group">
@@ -47,7 +52,7 @@ layout: user-self-serve/views/version-6/_master-survey
                         "type": 'button',
                         "text": 'Yes',
                         "classes": 'btn-group__btn',
-                        "url": "/prototypes/user-self-serve/version-6/"
+                        "url": "/prototypes/user-self-serve/version-6/00-surveys-list.html"
                     }) 
                 }}
                 {{ 
@@ -55,7 +60,7 @@ layout: user-self-serve/views/version-6/_master-survey
                         "type": 'button',
                         "text": 'No',
                         "classes": 'btn--secondary btn-group__btn',
-                        "url": "/prototypes/user-self-serve/version-6/"
+                        "url": "send-message.html"
                     }) 
                 }}
                 </div>
