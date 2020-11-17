@@ -8,7 +8,7 @@ layout: census-website-respond/views/_master
 {% block pageContent %}
    
     {% block main %}
-
+<!--
         {{-
             onsCallToAction({
                 "headingText": 'Ready to start your census?',
@@ -20,7 +20,7 @@ layout: census-website-respond/views/_master
                 }
             })
         }}
-
+-->
         <div class="page__container container">
 
             {{
@@ -39,7 +39,7 @@ layout: census-website-respond/views/_master
 
                 <h1 class="u-mb-l u-fs-xxl">Help with the census</h1>
 
-                <div class="grid u-mb-m">
+                <div class="grid grid--column@xs@s u-mb-m@m">
 
                     <div class="grid__col col-4@m">
                         {{-
@@ -47,8 +47,8 @@ layout: census-website-respond/views/_master
                                 "ariaBy": 'Section highlight',
                                 "id": 'title1',
                                 "textId": 'text1',
-                                "title": 'Get an access code or paper census',
-                                "url": pageInfo.rootPath + '/help/get-an-access-code-or-paper-census/',
+                                "title": 'How to complete your census',
+                                "url": pageInfo.rootPath + '/help/how-to-complete-your-census',
                                 "text": 'Phasellus ac pulvinar massa, vel pretium massa. Integer id turpis ut nibh laoreet finibus.'
                             })
                         }}
@@ -58,10 +58,10 @@ layout: census-website-respond/views/_master
                         {{-
                             onsCard({
                                 "ariaBy": 'Section highlight',
-                                "id": 'title2',
-                                "textId": 'text2',
-                                "title": 'Find a support centre',
-                                "url": pageInfo.rootPath + '/find-a-support-centre/',
+                                "id": 'title1',
+                                "textId": 'text1',
+                                "title": 'Get an access code or paper census',
+                                "url": pageInfo.rootPath + '/help/get-an-access-code-or-paper-census/',
                                 "text": 'Phasellus ac pulvinar massa, vel pretium massa. Integer id turpis ut nibh laoreet finibus.'
                             })
                         }}
@@ -88,6 +88,19 @@ layout: census-website-respond/views/_master
                         {{-
                             onsCard({
                                 "ariaBy": 'Section highlight',
+                                "id": 'title2',
+                                "textId": 'text2',
+                                "title": 'Find a support centre',
+                                "url": pageInfo.rootPath + '/help/find-a-support-centre/',
+                                "text": 'Phasellus ac pulvinar massa, vel pretium massa. Integer id turpis ut nibh laoreet finibus.'
+                            })
+                        }}
+                    </div>
+
+                    <div class="grid__col col-4@m">
+                        {{-
+                            onsCard({
+                                "ariaBy": 'Section highlight',
                                 "id": 'title4',
                                 "textId": 'text4',
                                 "title": 'How to answer questions',
@@ -101,22 +114,9 @@ layout: census-website-respond/views/_master
                         {{-
                             onsCard({
                                 "ariaBy": 'Section highlight',
-                                "id": 'title5',
-                                "textId": 'text5',
-                                "title": 'Frequently asked questions',
-                                "url": pageInfo.rootPath + '/help/frequently-asked-questions/',
-                                "text": 'Phasellus ac pulvinar massa, vel pretium massa. Integer id turpis ut nibh laoreet finibus.'
-                            })
-                        }}
-                    </div>
-
-                    <div class="grid__col col-4@m">
-                        {{-
-                            onsCard({
-                                "ariaBy": 'Section highlight',
                                 "id": 'title6',
                                 "textId": 'text6',
-                                "title": 'Get help where you live',
+                                "title": "Completing the census on some else’s behalf",
                                 "url": pageInfo.rootPath + '/help/',
                                 "text": 'Phasellus ac pulvinar massa, vel pretium massa. Integer id turpis ut nibh laoreet finibus.'
                             })
