@@ -1,0 +1,96 @@
+---
+title: Your data and security
+group: Census
+version: 26.0.4
+layout: census-website-engage/views/_master
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": pageInfo.rootPath + '/home',
+                            "text": 'Home'
+                        }
+                    ]
+                })
+            }}
+
+            <div class="grid">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-l u-fs-xxl">Your data and security</h1>
+
+                        <div class="page__body">
+
+                            <p>By filling in the census questionnaire, you help build a picture of all of us which helps decide how services are planned and funded in your local area. This could mean things like doctors’ surgeries, housing or new bus routes.</p>
+
+                            <p>The safety of your information is our top priority. When we publish the statistics from the census they’re completely anonymous, so none of your personal information is published. Your census record is kept secure for 100 years and only then can it be seen by future generations.</p>
+
+                            <p>We have a strict security regime that follows government standards. This includes physical and IT security measures to protect your data.</p>
+
+                            <p>All our systems, staff and suppliers must protect your confidentiality by law. Laws in place that cover protection of your data include:</p>
+
+                            <ul>
+                                <li>Data Protection Act 2018</li>
+                                <li>General Data Protection Regulation (GDPR)</li>
+                                <li>Census Act 1920</li>
+                                <li>Statistics and Registration Service Act 2007</li>
+                            </ul>
+                            
+                            <p>We follow the law to the letter.</p>
+                            
+                            <p>To find out more about how we keep your data safe, please <a href="https://www.ons.gov.uk/census/censustransformationprogramme/keepingyourinformationsecure">visit the ONS website</a>.
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+                <div class="grid__col col-4@m push-1@m u-mt-m">
+
+                    {{-
+                        onsRelatedLinks({
+                            "id": 'related-links',
+                            "title": 'Related content',
+                            "itemsList": [
+                                {
+                                    "url": pageInfo.rootPath + '/about-the-census',
+                                    "text": 'About the census'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/about-the-census/2019-rehearsal',
+                                    "text": '2019 Rehearsal'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/about-the-census/why-should-i-take-part-in-the-census',
+                                    "text": 'Why should I take part in the census?'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/contact-us',
+                                    "text": 'Contact us'
+                                }
+                            ]
+                        })
+                    }}
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}

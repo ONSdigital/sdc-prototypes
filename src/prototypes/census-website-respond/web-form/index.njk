@@ -1,0 +1,189 @@
+---
+title: Web form
+group: Census
+version: 26.0.4
+layout: census-website-respond/views/_rh-master
+---
+
+{% set form =  {
+    "method": 'GET',
+    "attributes": {
+        "action": pageInfo.rootPath + '/web-form/thank-you'
+    }
+} %}
+
+{% block main %}
+
+    <div class="page__container container">
+
+        {{ 
+            onsBreadcrumb({
+                "ariaLabel": 'Breadcrumb',
+                "itemsList": [
+                    {
+                        "url": pageInfo.rootPath + '/',
+                        "text": 'Home'
+                    }
+                ]
+            }) 
+        }}
+
+        <div class="grid">
+
+            <div class="grid__col col-12@m">
+
+                <main class="page__main" id="main-content" role="main">
+
+                    <div class="col-9@m u-mb-l">
+
+                        <h1 class="u-mb-l u-fs-xxl">Web form</h1>
+
+                        {% from "components/panel/_macro.njk" import onsPanel %}
+                            
+                            {% call onsPanel({
+                                    type: 'warn'
+                               })
+                            %}
+
+                            <p>Do not include any personal information, for example, your access code</p>
+
+                        {% endcall %}
+
+                        {{
+                            onsRadios({
+                                "legend": 'Select your country',
+                                "name": 'select-your-country',
+                                "radios": [
+                                    {
+                                        "id": 'england',
+                                        "label": {
+                                            "text": 'England'
+                                        },
+                                        "value": 'england'
+                                    },
+                                    {
+                                        "id": 'wales',
+                                        "label": {
+                                            "text": 'Wales'
+                                        },
+                                        "value": 'wales'
+                                    },
+                                    {
+                                        "id": 'northern-ireland',
+                                        "label": {
+                                            "text": 'Northern Ireland'
+                                        },
+                                        "value": 'northern-ireland'
+                                    }
+                                ]
+                            })
+                        }}
+
+                        {{
+                            onsRadios({
+                                "legend": 'What do you need help with?',
+                                "name": 'what-do-you-need-help-with',
+                                "radios": [
+                                    {
+                                        "id": 'dont-have-everythng',
+                                        "label": {
+                                            "text": 'I don’t have everything I need to complete my census'
+                                        },
+                                        "value": 'I don’t have everything I need to complete my census'
+                                    },
+                                    {
+                                        "id": 'difficulties',
+                                        "label": {
+                                            "text": 'I am having technical difficulties'
+                                        },
+                                        "value": 'I am having technical difficulties'
+                                    },
+                                    {
+                                        "id": 'census-form-help',
+                                        "label": {
+                                            "text": 'I need help with my census form'
+                                        },
+                                        "value": 'I need help with my census form'
+                                    },
+                                    {
+                                        "id": 'complaint',
+                                        "label": {
+                                            "text": 'I have a complaint'
+                                        },
+                                        "value": 'I have a complaint'
+                                    },
+                                    {
+                                        "id": 'address-help',
+                                        "label": {
+                                            "text": 'I need help with my address'
+                                        },
+                                        "value": 'I need help with my address'
+                                    },
+                                    {
+                                        "id": 'something-else',
+                                        "label": {
+                                            "text": 'Something else'
+                                        },
+                                        "value": 'Something else'
+                                    }
+                                ]
+                            })
+                        }}
+
+                        {{
+                            onsTextarea({
+                                "id": 'more-detail',
+                                "name": 'more-detail',
+                                "label": {
+                                    "text": 'Please provide more detail'
+                                },
+                                "rows": 6,
+                                "maxlength": 400,
+                                "charCountSingular": 'You have {x} character remaining',
+                                "charCountPlural": 'You have {x} characters remaining'
+                            })
+                        }}
+
+                        <h2 class="u-mt-m">Your contact details</h2>
+
+                        {{
+                            onsInput({
+                                "id": 'name',
+                                "label": {
+                                    "text": 'Name'
+                                }
+                            }) 
+                        }}
+
+                        {{
+                            onsInput({
+                                "id": 'email',
+                                "type": 'email',
+                                "autocomplete": 'email',
+                                "label": {
+                                    "text": 'Email address',
+                                    "description": 'We will only use this to send you a reply'
+                                }
+                            }) 
+                        }}
+
+                        {{
+                            onsButton({
+                                "text": 'Send message',
+                                "classes": 'u-mb-m u-mt-s'
+                            })
+                        }}
+
+                        <p class="u-fs-s">For information about what we do with your personal data see our <a href="#0">privacy and data protection</a>.</p>
+
+                    </div>
+
+                </main>
+
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock %}

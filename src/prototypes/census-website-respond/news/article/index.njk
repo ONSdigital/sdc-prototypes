@@ -1,0 +1,210 @@
+---
+title: News
+group: Census
+version: 26.0.4
+layout: census-website-respond/views/_master
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="container">
+
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": pageInfo.rootPath + '/home',
+                            "text": 'Home'
+                        },
+                        {
+                            "url": pageInfo.rootPath + '/news',
+                            "text": 'News'
+                        }
+                    ]
+                }) 
+            }}
+
+            <div class="grid">
+
+                <div class="grid__col col-11@m">
+
+                    <h1 class="u-mt-s u-mb-s u-mb-l@m u-fs-xxl">
+                        <span class="u-fs-m u-db u-mb-xs u-lighter">Press releases</span>
+                        <span class="u-vh">: </span>
+                        <span class="u-fs-xxl u-db">Primary and secondary school programmes launched to engage pupils in Census 2021</span>
+                    </h1>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Article -->
+        <div class="container">
+
+            <div class="grid">
+
+                <div class="grid__col col-12@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <div class="grid grid--column@xs@s u-mb-m@m">
+
+                            <div class="grid__col col-8@m u-pr-m@m">
+
+                                <div class="page__body">
+
+                                    <figure class="u-m-no u-mb-l">
+                                        <img srcset="{{pageInfo.rootPath}}/img/news/small/counter-cats-large.png 1x, {{pageInfo.rootPath}}/img/news/large/counter-cats-large.png 2x" src="{{pageInfo.rootPath}}/img/news/small/counter-cats-large.png" alt="Census 2021 counter cats">
+                                        <!--figcaption class="text-secondary u-mt-xs u-fs-s">Photo attribution if required</figcaption-->
+                                    </figure>
+
+                                    <p>The next generation is set to learn all about the census and how it benefits their local area as part of two new, engaging educational programmes launching this term.</p>
+
+                                    <p>With just 6 months until the next census, the Office for National Statistics (ONS) has developed a series of census-related lessons and activities for both primary and secondary schools across England and Wales. Now it is calling on schools to sign up.</p>
+
+                                    <p>The primary school campaign, Let’s Count!, is a cross-curricular programme developed in conjunction with Family and Education and their education resource centre, iChild. The education programme is designed to excite children and families alike about the census.</p>
+
+                                    <p>Let’s Count! has achieved accreditation from Mathematics in Education and Industry, National Association for the Teaching of English, and the Geographical Association. With maths and statistics at its core, the programme provides flexible lesson plans and engaging activities for pupils to learn how they can use statistics across many topics.</p>
+
+                                    <p>British historian, Professor David Olusoga OBE, is also on board and he will be delivering a special live stream lesson on equality and representation.</p>
+
+                                    <p><b>Professor Olusoga said:</b> “I am thrilled to be part of this campaign. I passionately believe in public history and above all in making the stories of everyone and every community in the UK accessible to children. 2020 has been a year in which young people have shown us that equality and representation, the issues my lesson will explore, are issues that acutely matter to them. The census - as ever - will provide a snapshot of who we are as a nation. History explains how we got here.”</p>
+
+                                    <p>Meanwhile, a secondary school campaign has been developed by EVERFI EdComs. The programme was co-created with teachers and students to develop engaging content to help raise awareness of the census with a pre-launch film profiling the diverse voices of the census being released today. Students will explore why the census matters to them and their local communities, covering topics across the curriculum.</p>
+
+                                    <p><b>Iain Bell, deputy national statistician at the ONS, said:</b> “These programmes offer a great opportunity for children to learn about the importance of the census. They help children learn more about maths and their own local area, and they will also raise awareness of the census, which informs many important issues like the number of school place or hospital beds. By running programmes in primary and secondary schools across England and Wales, we want to engage pupils of all ages in the census and by doing so make Census 2021 a huge success.”</p>
+
+                                    <p>The Let’s Count! primary school campaign was piloted during the 2019 Census rehearsal, with many schools taking part within the rehearsal areas. A selection of schools also took part in the Let’s Count! competition, creating school-centred census displays, with Jubilee Primary School in Hackney being crowned the winners.</p>
+
+                                    <p><b>George Gould, Head of Year 6 at Jubilee Primary school, said:</b> “This competition was a great way of developing all of our children’s statistics and citizenship skills, speaking and listening to members of the local community and collecting and presenting data.”</p>
+
+                                    <p><b>Phil Bird, CEO of Family &amp; Education/iChild said:</b> “We are delighted to be part of this unique event, and excited to develop and share time-saving Census 2021 education resources with our iChild network. The Let’s Count! programme will help improve maths, geography and writing skills, using Census 2021, a significant real-life event, as a stimulus. It has accreditation and exclusive content from MEI, NATE and the Geographical Association.”</p>
+
+                                    <p>The Secondary School Education Programme will aim to engage young people, empowering them to use their voices to encourage their families and community to complete the census. The programme will use real-world tasks to explore how data is used and influences decisions across society. The lesson content will inspire whole-school participation and link to curriculum subjects such as citizenship, PSHE, maths and history.</p>
+
+                                    <p><b>Darren Sayer, Secondary Deputy Headteacher at Hanson Academy, Bradford, said:</b> “The census is a very worthwhile topic and the resources provided by this programme form a very valuable insight into why data and information are so important and how they can affect change.”</p>
+
+                                    <p><b>Nick Fuller, President of EVERFI EdComs said:</b> “It’s great to be part of this historic campaign and we at EVERFI EdComs want to ensure young people and their families understand what Census 2021 means for them and the communities they live in.”</p>
+
+                                    <p>It is hoped the school campaigns will help raise awareness of the digital-first census, happening on 21 March 2021. The census occurs once every ten years and provides a snapshot of households in England and Wales, helping to plan and fund public services.</p>
+
+                                    <p><b>For more information, please contact Media Relations on 0845 604 1858 or email <a href="mailto:media.relations@ons.gov.uk">media.relations@ons.gov.uk</a>.</b></p>
+
+                                    <div class="u-mt-xl">
+                                        {{-
+                                            onsContentPagination({
+                                                "contentPaginationItems": [
+                                                    {
+                                                        "rel": 'prev',
+                                                        "text": 'Previous',
+                                                        "url": '#0',
+                                                        "label": 'Beyond 2021 – transforming the Census'
+                                                    },
+                                                    {
+                                                        "rel": 'next',
+                                                        "text": 'Next',
+                                                        "url": '#0',
+                                                        "label": 'Find out what users told us about our plans for 2021 Census Outputs'
+                                                    }
+                                                ]
+                                            })
+                                        }}
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="grid__col col-3@m push-1@m">
+
+                                <div class="related-links">
+
+                                    <div class="u-pb-s">
+                                        <h2 class="related-links__title u-fs-r--b u-mb-xs" id="related-links">Published on</h2>
+                                        <p><time datetime="2020-09-23">23 September 2020</time></p>
+                                    </div>
+
+                                    <div class="u-bt"></div>
+
+                                    <div class="u-pt-m u-pb-s">
+                                        <h2 class="related-links__title u-fs-r--b u-mb-xs" id="related-links">Posted in</h2>
+                                        <p><a href="{{pageInfo.rootPath}}/news/category/">Press releases</a></p>
+                                    </div>
+
+                                    <div class="u-bt"></div>
+
+                                    <div class="u-pt-m u-pb-s">
+                                        <h2 class="u-fs-r--b u-mb-xs">Tags</h2>
+                                        {{
+                                            onsList({
+                                                "classes": 'list--bare',
+                                                "itemsList": [
+                                                    {
+                                                        "url": pageInfo.rootPath + '/news/category/',
+                                                        "text": 'Census 2021',
+                                                        "rel": 'category tag'
+                                                    },
+                                                    {
+                                                        "url": pageInfo.rootPath + '/news/category/',
+                                                        "text": 'Counter Cats',
+                                                        "rel": 'category tag'
+                                                    },
+                                                    {
+                                                        "url": pageInfo.rootPath + '/news/category/',
+                                                        "text": 'Education',
+                                                        "rel": 'category tag'
+                                                    }
+                                                ]
+                                            })
+                                        }}
+                                    </div>
+
+                                    <div class="u-bt"></div>
+
+                                    <div class="u-pt-m">
+                                        <h2 class="u-fs-r--b u-mb-xs">Share this post</h2>
+                                        {{
+                                            onsList({
+                                                "classes": 'list--bare',
+                                                "itemsList": [
+                                                    {
+                                                        "url": '#0',
+                                                        "text": 'Twitter',
+                                                        "prefixIcon": 'twitter',
+                                                        "iconSize": 'xxl',
+                                                        "rel": 'noreferrer external'
+                                                    },
+                                                    {
+                                                        "url": '#0',
+                                                        "text": 'Facebook',
+                                                        "prefixIcon": 'facebook',
+                                                        "iconSize": 'xxl',
+                                                        "rel": 'noreferrer external'
+                                                    }
+                                                ]
+                                            })
+                                        }}
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}

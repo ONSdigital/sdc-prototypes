@@ -1,0 +1,93 @@
+---
+title: Join us as a communications partner for Census 2021
+group: Census
+version: 26.0.4
+layout: census-website-respond/views/_master
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": pageInfo.rootPath + '/home',
+                            "text": 'Home'
+                        }
+                    ]
+                })
+            }}
+
+            <div class="grid">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-l">
+                            <span class="u-fs-m u-db u-mb-xs u-lighter">Communications partners</span>
+                            <span class="u-vh">: </span>
+                            <span class="u-fs-xxl u-db">Join us as a communications partner for Census 2021</span>
+                        </h1>
+
+                        <div class="page__body">
+                        
+                            <p>The Office for National Statistics is looking for brands and businesses that would like to get involved in Census 2021. We want businesses to remind their customers, members or colleagues about the importance of taking part in Census 2021 and filling in their census form.</p>
+
+                            <h2>Why you should get involved</h2>
+                            
+                            <p>The census takes place every 10 years and gives us a picture of all the people and households in England and Wales. The information the census gathers informs things that affect everyone, like transport, education and healthcare.</p>
+                            
+                            <p>By taking part and encouraging others to get ready for Census Day on Sunday 21 March 2021, you’ll help make sure local communities get their fair share of the services they need.</p>
+
+                            <h2>The resources available to you</h2>
+
+                            <p>As a communications partner, we’ll give you access to free digital resources, including logos, copy, posters, leaflets, local case studies and social media content. These will make it easy for you to inform people about completing their census questionnaire.</p> 
+                            
+                            <p>You can display these on your premises or publish them on your own communication channels, such as in your customer newsletter or on your website.</p>
+                            
+                            <p><a href="{{pageInfo.rootPath}}/contact-us">Contact us</a> if you’re interested in supporting the Census 2021 campaign.</p>
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+                <div class="grid__col col-4@m push-1@m u-mt-m">
+
+                    {{-
+                        onsRelatedLinks({
+                            "id": 'related-links',
+                            "title": 'Related content',
+                            "itemsList": [
+                                {
+                                    "url": pageInfo.rootPath + '/about-the-census',
+                                    "text": 'About the census'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/about-the-census/about-census-2021',
+                                    "text": 'About Census 2021'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/contact-us',
+                                    "text": 'Contact us'
+                                }
+                            ]
+                        })
+                    }}
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}

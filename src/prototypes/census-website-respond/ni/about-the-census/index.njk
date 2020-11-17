@@ -1,0 +1,132 @@
+---
+title: About the census
+group: Census
+version: 26.0.4
+layout: census-website-respond/views/_nisra-master
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": pageInfo.rootPath + '/ni/home',
+                            "text": 'Home'
+                        }
+                    ]
+                })
+            }}
+
+            <div class="grid">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-l">
+                            <span class="u-fs-m u-db u-mb-xs u-lighter">About the census</span>
+                            <span class="u-vh">: </span>
+                            <span class="u-fs-xxl u-db">Overview</span>
+                        </h1>
+
+                        {{-
+                            onsTableOfContents({
+                                "title": 'Contents',
+                                "ariaLabel": 'Pages in this guide',
+                                "itemsList": [
+                                    {
+                                        "url": pageInfo.rootPath + '/ni/about-the-census',
+                                        "text": 'Overview',
+                                        "current": true
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/ni/about-the-census/2019-rehearsal',
+                                        "text": 'The 2019 Census Rehearsal'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/ni/about-the-census/the-next-census',
+                                        "text": 'About Census 2021'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/ni/about-the-census/census-coverage-survey-ccs',
+                                        "text": 'Census Coverage Survey (CCS)'
+                                    }
+                                ]
+                            })
+                        }}
+
+                        <div class="page__body">
+                            
+                            <h2>What is the census?</h2>
+
+                            <p>The census happens only once every 10 years. It gives us the most accurate estimate of all the people and households in Northern Ireland.</p> 
+                            
+                            <p>The information you give us helps decide how services are planned and funded in your local area. This could mean things like doctors’ surgeries, housing or new bus routes.</p>
+                            
+                            <p>It asks questions about you and your household to build a picture of us all. It looks at who we are and how we live. It provides vital information about us, our society and future needs.</p>
+                            
+                            <h2>Past, present and future</h2>
+                            
+                            <p>The first census in Northern Ireland was in 1926 and the most recent in 2011, which you may remember. The next census is planned for 2021. We need every household in Northern Ireland to take part to make it accurate.</p>
+                            
+                            <h2>The Census in England &amp; Wales</h2>
+
+                            <p>At the Northern Ireland Statistics and Research Agency (NISRA), we are responsible for planning and running the census for Northern Ireland. The censuses across Northern Ireland and England &amp; Wales will be held on the same day – 21 March 2021.</p>
+
+                            <p>You can find out more about the census in England &amp; Wales from the <a href="https://www.ons.gov.uk" target="_blank" rel="external">Office for National Statistics</a>.</p>
+                            
+                            <div class="u-mt-xl">
+                                {{-
+                                    onsContentPagination({
+                                        "contentPaginationItems": [
+                                        {
+                                            "rel": 'next',
+                                            "text": 'Next',
+                                            "url": pageInfo.rootPath + '/ni/about-the-census/2019-rehearsal',
+                                            "label": 'The 2019 Census Rehearsal'
+                                        }
+                                        ]
+                                    })
+                                }}
+                            </div>
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+                <div class="grid__col col-4@m push-1@m u-mt-m">
+
+                    {{-
+                        onsRelatedLinks({
+                            "id": 'related-links',
+                            "title": 'Related content',
+                            "itemsList": [
+                                {
+                                    "url": pageInfo.rootPath + '/ni/your-data-and-security',
+                                    "text": 'Your data and security'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/ni/contact-us',
+                                    "text": 'Contact us'
+                                }
+                            ]
+                        })
+                    }}
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}

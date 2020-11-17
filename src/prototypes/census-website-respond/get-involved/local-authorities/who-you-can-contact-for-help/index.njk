@@ -1,0 +1,152 @@
+---
+title: Who you can contact for help
+group: Census
+version: 26.0.4
+layout: census-website-respond/views/_master
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": pageInfo.rootPath + '/home',
+                            "text": 'Home'
+                        },
+                        {
+                            "url": pageInfo.rootPath + '/get-involved/local-authorities',
+                            "text": 'Local authorities'
+                        }
+                    ]
+                })
+            }}
+
+            <div class="grid">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-l">
+                            <span class="u-fs-m u-db u-mb-xs u-lighter">Local authorities</span>
+                            <span class="u-vh">: </span>
+                            <span class="u-fs-xxl u-db">Who you can contact for help</span>
+                        </h1>
+
+                        {{-
+                            onsTableOfContents({
+                                "title": 'Contents',
+                                "ariaLabel": 'Pages in this guide',
+                                "itemsList": [
+                                    {
+                                        "url": pageInfo.rootPath + '/get-involved/local-authorities',
+                                        "text": 'Overview'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/get-involved/local-authorities/how-you-can-work-with-us',
+                                        "text": 'How you can work with us'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/get-involved/local-authorities/what-you-can-do-to-help',
+                                        "text": 'What you can do to help'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/get-involved/local-authorities/important-dates-for-local-authorities',
+                                        "text": 'Important dates for local authorities'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/get-involved/local-authorities/materials-to-help-promote-the-census',
+                                        "text": 'Materials to help promote the census'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/get-involved/local-authorities/who-you-can-contact-for-help',
+                                        "text": 'Who you can contact for help',
+                                        "current": true
+                                    }
+                                ]
+                            })
+                        }}
+
+                        <div class="page__body">
+
+                            <p>Your local authority should have appointed a dedicated census liaison manager (CLM) and assistant census liaison manager (ACLM). The CLM and ACLM act as your main points of contact with us at the ONS.</p>
+
+                            <p>We’ve also appointed 200 full-time census engagement managers across England and Wales. One of their main tasks is to work with local authorities and they’ll be in touch with the CLMs and ACLMs in October 2020.</p>
+
+                            <p>If you need to contact our central team at the ONS about anything to do with Census 2021, please <a href="mailto:2021Census.LA.Liaison@ons.gov.uk">email our Local Authority Partnerships team</a>.</p>
+
+                            {% from "components/panel/_macro.njk" import onsPanel %}
+                            
+                            {% call onsPanel() %}
+
+                            <h3>Sign up to our mailing list</h3>
+
+                            <p>Stay up to date on the latest news and events for local authorities through our mailing list.</p>
+                            
+                            <p>Please <a href="mailto:2021Census.LA.Liaison@ons.gov.uk">email our Local Authority Partnerships team</a> from your work email address.</p>
+
+                            {% endcall %}
+
+                            <div class="u-mt-xl">
+                                {{-
+                                    onsContentPagination({
+                                        "contentPaginationItems": [
+                                            {
+                                                "rel": 'prev',
+                                                "text": 'Previous',
+                                                "url": pageInfo.rootPath + '/get-involved/local-authorities/materials-to-help-promote-the-census',
+                                                "label": 'Materials to help promote the census'
+                                            }
+                                        ]
+                                    })
+                                }}
+                            </div>
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+                <div class="grid__col col-4@m push-1@m u-mt-m">
+
+                    {{-
+                        onsRelatedLinks({
+                            "id": 'related-links',
+                            "title": 'Related content',
+                            "itemsList": [
+                                {
+                                    "url": pageInfo.rootPath + '/get-involved/community-groups',
+                                    "text": 'Community groups'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/get-involved/communications-partners',
+                                    "text": 'Communications partners'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/get-involved/downloadable-resources',
+                                    "text": 'Downloadable resources'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/contact-us',
+                                    "text": 'Contact us'
+                                }
+                            ]
+                        })
+                    }}
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}

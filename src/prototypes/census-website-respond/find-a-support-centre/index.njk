@@ -1,0 +1,111 @@
+---
+title: Find a census support centre
+group: Census
+version: 26.0.4
+layout: census-website-respond/views/_master
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": pageInfo.rootPath + '/',
+                            "text": 'Home'
+                        }
+                    ]
+                }) 
+            }}
+
+            <div class="grid">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-l u-fs-xxl">Find a support centre</h1>
+
+                        <div class="page__body">
+                        
+                            <p>Census Support Centres are available across England and Wales. Here you’ll find help to get online and complete your census.</p>
+
+                            {{
+                                onsButton({
+                                    "classes": 'u-mb-m',
+                                    "type": 'button',
+                                    "text": 'Find a support centre',
+                                    "url": pageInfo.rootPath + '/find-a-support-centre/enter-your-postcode'
+                                })
+                            }}
+
+                            <p>Find your nearest centre and note down the contact details.</p>
+
+                            <h2>If there’s a centre near you</h2>
+
+                            <p>Drop by to talk to our Census Support Advisors. You don’t need to ring and make an appointment first, but you can if you prefer to.</p>
+
+                            <p>Whether you need advice, instructions or a computer, we can help.</p>
+
+                            <h3>What to take</h3>
+
+                            {% call onsPanel({
+                                "classes": 'u-mb-m'
+                            }) %}
+
+                                <ul class="list list--bare list--spacious">
+                                    <li class="list__item"><strong>You will need</strong> the access code from your letter</li>
+                                    <li class="list__item"><strong>You might need</strong> information about the people you live with. The census asks questions about everyone who lives in your household. For example, there are questions on people’s health, qualifications, passports they have and where they were living a year ago</li>
+                                    <li class="list__item u-mb-no"><strong>You can take</strong> your own mobile device, or you can use a laptop or tablet provided at the centre</li>
+                                </ul>
+
+                            {% endcall %}
+
+                            <p>Don’t worry, you don’t need ID and you don’t need to prove any information about yourself. Our census support advisors will never ask you for evidence. They will not ask to see any documents you’ve brought with you, but you can show them if you wish.</p>
+
+                            <h2>If there’s not a centre near you</h2>
+
+                            <p>We’re sorry that our Census Support Centres cannot cover the whole country. We’ve researched very hard to find out where people need them most and where they can help the most people.</p>
+
+                            <p>Don’t worry, we haven’t forgotten about everywhere else. There are other support options for you:</p>
+
+                            <ul>
+                                <li><a href="#0">Census officers in your area</a></li>
+                                <li><a href="#0">Contact centre</a></li>
+                            </ul>
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+                <div class="grid__col col-4@m push-1@m u-mt-m">
+
+                    {{-
+                        onsRelatedLinks({
+                            "id": 'related-links',
+                            "title": 'Related content',
+                            "itemsList": [
+                                {
+                                    "url": pageInfo.rootPath + '/contact-us',
+                                    "text": 'Contact us'
+                                }
+                            ]
+                        })
+                    }}
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}

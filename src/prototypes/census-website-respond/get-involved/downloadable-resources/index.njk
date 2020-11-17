@@ -1,0 +1,712 @@
+---
+title: Downloadable resources
+group: Census
+version: 26.0.4
+layout: census-website-respond/views/_master
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": pageInfo.rootPath + '/home',
+                            "text": 'Home'
+                        }
+                    ]
+                }) 
+            }}
+
+            <div class="grid">
+
+                <div class="grid__col col-12@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-s u-mb-l@m u-fs-xxl">Downloadable resources</h1>
+
+                        <div class="col-8@m u-mb-l">
+                            <p>Census 2021 promotional materials and resources to help local authorities and community groups.</p>
+                        </div>
+
+                        <div class="js-adv-filter">
+
+                            <div class="grid grid--column@xs@s u-mb-m@m">
+
+                                <div class="grid__col col-4@m">
+
+                                    {{
+                                        onsButton({
+                                            "type": 'button',
+                                            "text": 'Show filters',
+                                            "classes": 'adv-filter__trigger js-adv-filter__trigger btn btn--secondary btn--small u-mb-m',
+                                            "attributes": {
+                                                "aria-label": 'Toggle filters',
+                                                "aria-expanded": 'false',
+                                                "aria-controls": 'filter-panel'
+                                            }
+                                        })
+                                    }}
+
+                                    <!-- Filter panel -->
+                                    <div class="adv-filter__panel js-adv-filter__panel" id="filter-panel">
+
+                                        <h2 class="u-fs-l">Filters</h2>
+
+                                        <form class="js-adv-filter__form" method="POST">
+
+                                            <!-- Reset all filters -->
+                                            <button class="adv-filter__reset js-adv-filter__reset" type="reset">Reset all filters</button>
+
+                                            <!-- Filter item -->
+                                            <div class="adv-filter__item js-adv-filter__item" data-default-text="All audiences" data-multi-select-text="{n} filters selected">
+
+                                                <fieldset class="fieldset" aria-controls="adv-filter-gallery">
+
+                                                    <legend class="fieldset__legend">Audience</legend>
+                                                    
+                                                    <div class="adv-filter__selection">
+                                                        <span class="u-vh">Active filters: </span>
+                                                        <span class="u-fs-s js-adv-filter__selection">All audiences</span>
+                                                    </div>
+
+                                                    {{
+                                                        onsCheckboxes({
+                                                            "dontWrap": 'true',
+                                                            "legend": 'Audience',
+                                                            "name": 'audience',
+                                                            "checkboxes": [
+                                                                {
+                                                                    "classes": 'checkbox--toggle',
+                                                                    "id": 'local-authorities',
+                                                                    "label": {
+                                                                        "text": 'Local authorities'
+                                                                    },
+                                                                    "value": 'local-authorities',
+                                                                    "attributes": {
+                                                                        "data-filter": 'local-authorities'
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "classes": 'checkbox--toggle',
+                                                                    "id": 'community-groups',
+                                                                    "label": {
+                                                                        "text": 'Community groups'
+                                                                    },
+                                                                    "value": 'community-groups',
+                                                                    "attributes": {
+                                                                        "data-filter": 'community-groups'
+                                                                    }
+                                                                }
+                                                            ]
+                                                        })
+                                                    }}
+
+                                                </fieldset>
+
+                                            </div>
+
+                                            <!-- Filter item -->
+                                            <div class="adv-filter__item js-adv-filter__item" data-default-text="All types" data-multi-select-text="{n} filters selected">
+
+                                                <fieldset class="fieldset" aria-controls="adv-filter-gallery">
+
+                                                    <legend class="fieldset__legend">Type</legend>
+                                                    
+                                                    <div class="adv-filter__selection">
+                                                        <span class="u-vh">Active filters: </span>
+                                                        <span class="u-fs-s js-adv-filter__selection">All types</span>
+                                                    </div>
+
+                                                    {{
+                                                        onsCheckboxes({
+                                                            "dontWrap": 'true',
+                                                            "legend": 'Audience',
+                                                            "name": 'audience',
+                                                            "checkboxes": [
+                                                                {
+                                                                    "classes": 'checkbox--toggle',
+                                                                    "id": 'booklet',
+                                                                    "label": {
+                                                                        "text": 'Booklet'
+                                                                    },
+                                                                    "value": 'booklet',
+                                                                    "attributes": {
+                                                                        "data-filter": 'booklet'
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "classes": 'checkbox--toggle',
+                                                                    "id": 'leaflet',
+                                                                    "label": {
+                                                                        "text": 'Leaflet'
+                                                                    },
+                                                                    "value": 'leaflet',
+                                                                    "attributes": {
+                                                                        "data-filter": 'leaflet'
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "classes": 'checkbox--toggle',
+                                                                    "id": 'presentation',
+                                                                    "label": {
+                                                                        "text": 'Presentation'
+                                                                    },
+                                                                    "value": 'presentation',
+                                                                    "attributes": {
+                                                                        "data-filter": 'presentation'
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "classes": 'checkbox--toggle',
+                                                                    "id": 'logo',
+                                                                    "label": {
+                                                                        "text": 'Logo'
+                                                                    },
+                                                                    "value": 'logo',
+                                                                    "attributes": {
+                                                                        "data-filter": 'logo'
+                                                                    }
+                                                                }
+                                                            ]
+                                                        })
+                                                    }}
+
+                                                </fieldset>
+
+                                            </div>
+
+                                            <!-- Filter item -->
+                                            <div class="adv-filter__item js-adv-filter__item" data-default-text="All languages" data-multi-select-text="{n} filters selected">
+
+                                                <fieldset class="fieldset" aria-controls="adv-filter-gallery">
+
+                                                    <legend class="fieldset__legend">Language</legend>
+                                                    
+                                                    <div class="adv-filter__selection">
+                                                        <span class="u-vh">Active filters: </span>
+                                                        <span class="u-fs-s js-adv-filter__selection">All languages</span>
+                                                    </div>
+
+                                                    {{
+                                                        onsCheckboxes({
+                                                            "dontWrap": 'true',
+                                                            "legend": 'Audience',
+                                                            "name": 'audience',
+                                                            "checkboxes": [
+                                                                {
+                                                                    "classes": 'checkbox--toggle',
+                                                                    "id": 'english',
+                                                                    "label": {
+                                                                        "text": 'English'
+                                                                    },
+                                                                    "value": 'english',
+                                                                    "attributes": {
+                                                                        "data-filter": 'english'
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "classes": 'checkbox--toggle',
+                                                                    "id": 'welsh',
+                                                                    "label": {
+                                                                        "text": 'Welsh (Cymraeg)'
+                                                                    },
+                                                                    "value": 'welsh',
+                                                                    "attributes": {
+                                                                        "data-filter": 'welsh'
+                                                                    }
+                                                                }
+                                                            ]
+                                                        })
+                                                    }}
+
+                                                </fieldset>
+
+                                            </div>
+
+                                            <!-- Filter actions -->
+                                            <div class="adv-filter__actions">
+
+                                                {{
+                                                    onsButton({
+                                                        "type": 'button',
+                                                        "html": 'Show (<span class="js-adv-filter__show-results">7</span> results)',
+                                                        "classes": 'btn btn--small js-adv-filter__show'
+                                                    })
+                                                }}
+
+                                                {{ 
+                                                    onsButton({
+                                                        "type": 'button',
+                                                        "text": 'Close',
+                                                        "classes": 'btn--small btn--secondary js-adv-filter__close'
+                                                    }) 
+                                                }}
+
+                                            </div>
+
+                                        </form>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="grid__col col-8@m">
+                                    
+                                    <div class="adv-filter__results-options">
+
+                                        <!-- Result count -->
+                                        <div class="adv-filter__results-count">
+                                            <span class="js-adv-filter__results-count">15</span> results of 15
+                                        </div>
+
+                                        <!-- Sort by -->
+                                        <div class="adv-filter__results-sort">
+                                            <label class="label" for="sort">Sort by</label>
+                                            <select class="input input--select" id="sort" name="sort" aria-controls="adv-filter-gallery" data-sort="true">
+                                                <option value="index" data-sort-number="true">Latest</option>
+                                                <option value="index" data-sort-order="desc" data-sort-number="true">Oldest</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+
+                                    <!-- Results -->
+                                    <ul class="adv-filter__gallery js-adv-filter__gallery" id="adv-filter-gallery" data-filter-animation="off">
+
+                                        <!-- Item -->
+                                        <li class="filter__item js-filter__item" data-filter="leaflet english local-authorities community-groups" data-sort-index="1">
+                                        
+                                            {{ onsDownloads({
+                                                "downloads": [
+                                                    {
+                                                        "thumbnail": {
+                                                            "smallSrc": pageInfo.rootPath + '/img/small/',
+                                                            "largeSrc": pageInfo.rootPath + '/img/large/',
+                                                            "filename": 'engagement-leaflet-english.png',
+                                                            "alt": 'Engagement leaflet english document thumbnail'
+                                                        },
+                                                        "url": pageInfo.rootPath + '/documents/Digital_Ready_ELA1-2021_v7-0_280820.pdf',                                                
+                                                        "title": 'Engagement leaflet (English)',
+                                                        "type": 'Leaflet',
+                                                        "meta": {
+                                                            "fileType": 'PDF',
+                                                            "fileSize": '2.7MB',
+                                                            "filePages": '2 pages'
+                                                        },
+                                                        "excerpt": 'Leaflet for community leaders and representatives, introducing the census and asking for support.'
+                                                    }
+                                                ]
+                                            }) }}
+
+                                        </li>
+
+                                        <!-- Item -->
+                                        <li class="filter__item js-filter__item" data-filter="leaflet welsh local-authorities community-groups" data-sort-index="2">
+                                        
+                                            {{ onsDownloads({
+                                                "downloads": [
+                                                    {
+                                                        "thumbnail": {
+                                                            "smallSrc": pageInfo.rootPath + '/img/small/',
+                                                            "largeSrc": pageInfo.rootPath + '/img/large/',
+                                                            "filename": 'engagement-leaflet-welsh.png',
+                                                            "alt": 'Engagement leaflet welsh document thumbnail'
+                                                        },
+                                                        "url": pageInfo.rootPath + '/documents/Digital_Ready_ELA2W-2021_v8-0_210720.pdf',                                                
+                                                        "title": 'Engagement leaflet (Welsh)',
+                                                        "type": 'Leaflet',
+                                                        "meta": {
+                                                            "fileType": 'PDF',
+                                                            "fileSize": '2.7MB',
+                                                            "filePages": '2 pages'
+                                                        },
+                                                        "excerpt": 'Leaflet for community leaders and representatives, introducing the census and asking for support.'
+                                                    }
+                                                ]
+                                            }) }}
+
+                                        </li>
+
+                                        <!-- Item -->
+                                        <li class="filter__item js-filter__item" data-filter="booklet english local-authorities" data-sort-index="3">
+                                        
+                                            {{ onsDownloads({
+                                                "downloads": [
+                                                    {
+                                                        "thumbnail": {
+                                                            "smallSrc": pageInfo.rootPath + '/img/small/',
+                                                            "largeSrc": pageInfo.rootPath + '/img/large/',
+                                                            "filename": 'local-authority-partnerships-guide-english.png',
+                                                            "alt": 'Local authorities handbook english document thumbnail'
+                                                        },
+                                                        "url": pageInfo.rootPath + '/documents/Local_Authority_Guide.pdf',                                                
+                                                        "title": 'Local authority partnership guide (English)',
+                                                        "type": 'Booklet',
+                                                        "meta": {
+                                                            "fileType": 'PDF',
+                                                            "fileSize": '443KB',
+                                                            "filePages": '55 pages'
+                                                        },
+                                                        "excerpt": 'Guide for local authorities detailing how you can work with the Office for National Statistics (ONS) to make Census 2021 a success.'
+                                                    }
+                                                ]
+                                            }) }}
+
+                                        </li>
+
+                                        <!-- Item -->
+                                        <li class="filter__item js-filter__item" data-filter="booklet english local-authorities" data-sort-index="4">
+                                        
+                                            {{ onsDownloads({
+                                                "downloads": [
+                                                    {
+                                                        "thumbnail": {
+                                                            "smallSrc": pageInfo.rootPath + '/img/small/',
+                                                            "largeSrc": pageInfo.rootPath + '/img/large/',
+                                                            "filename": 'community-handbook-english.png',
+                                                            "alt": 'Community handbook english document thumbnail'
+                                                        },
+                                                        "url": pageInfo.rootPath + '/documents/Digital_Ready_CHDE1-2021_v4-0_280820.pdf',                                                
+                                                        "title": 'Community handbook (English)',
+                                                        "type": 'Booklet',
+                                                        "meta": {
+                                                            "fileType": 'PDF',
+                                                            "fileSize": '6.6MB',
+                                                            "filePages": '16 pages'
+                                                        },
+                                                        "excerpt": 'Handbook for community leaders and representatives, introducing the census and how to help.'
+                                                    }
+                                                ]
+                                            }) }}
+
+                                        </li>
+
+                                        <!-- Item -->
+                                        <li class="filter__item js-filter__item" data-filter="booklet welsh local-authorities" data-sort-index="5">
+                                        
+                                            {{ onsDownloads({
+                                                "downloads": [
+                                                    {
+                                                        "thumbnail": {
+                                                            "smallSrc": pageInfo.rootPath + '/img/small/',
+                                                            "largeSrc": pageInfo.rootPath + '/img/large/',
+                                                            "filename": 'community-handbook-welsh.png',
+                                                            "alt": 'Community handbook welsh document thumbnail'
+                                                        },
+                                                        "url": pageInfo.rootPath + '/documents/Digital_Ready_CHDE2B-2021_v2-0_280820.pdf',                                                
+                                                        "title": 'Community handbook (Welsh)',
+                                                        "type": 'Booklet',
+                                                        "meta": {
+                                                            "fileType": 'PDF',
+                                                            "fileSize": '7.9MB',
+                                                            "filePages": '32 pages'
+                                                        },
+                                                        "excerpt": 'Handbook for community leaders and representatives, introducing the census and how to help.'
+                                                    }
+                                                ]
+                                            }) }}
+
+                                        </li>
+
+                                        <!-- Item -->
+                                        <li class="filter__item js-filter__item" data-filter="booklet english local-authorities" data-sort-index="6">
+                                        
+                                            {{ onsDownloads({
+                                                "downloads": [
+                                                    {
+                                                        "thumbnail": {
+                                                            "smallSrc": pageInfo.rootPath + '/img/small/',
+                                                            "largeSrc": pageInfo.rootPath + '/img/large/',
+                                                            "filename": 'councillor-handbook-english.png',
+                                                            "alt": 'Councillor handbook english document thumbnail'
+                                                        },
+                                                        "url": pageInfo.rootPath + '/documents/Digital_Ready_CHE1-2021_v4-0_280820.pdf',                                                
+                                                        "title": 'Councillor handbook (English)',
+                                                        "type": 'Booklet',
+                                                        "meta": {
+                                                            "fileType": 'PDF',
+                                                            "fileSize": '6.9MB',
+                                                            "filePages": '20 pages'
+                                                        },
+                                                        "excerpt": 'Handbook for councillors, introducing the census and how to help.'
+                                                    }
+                                                ]
+                                            }) }}
+
+                                        </li>
+
+                                        <!-- Item -->
+                                        <li class="filter__item js-filter__item" data-filter="booklet welsh local-authorities" data-sort-index="7">
+                                        
+                                            {{ onsDownloads({
+                                                "downloads": [
+                                                    {
+                                                        "thumbnail": {
+                                                            "smallSrc": pageInfo.rootPath + '/img/small/',
+                                                            "largeSrc": pageInfo.rootPath + '/img/large/',
+                                                            "filename": 'councillor-handbook-welsh.png',
+                                                            "alt": 'Councillor handbook welsh document thumbnail'
+                                                        },
+                                                        "url": pageInfo.rootPath + '/documents/Digital_Ready_CHE2B-2021_v2-0_280830.pdf',                                                
+                                                        "title": 'Councillor handbook (Welsh)',
+                                                        "type": 'Booklet',
+                                                        "meta": {
+                                                            "fileType": 'PDF',
+                                                            "fileSize": '7.7MB',
+                                                            "filePages": '40 pages'
+                                                        },
+                                                        "excerpt": 'Handbook for councillors, introducing the census and how to help.'
+                                                    }
+                                                ]
+                                            }) }}
+
+                                        </li>
+
+                                        <!-- Item -->
+                                        <li class="filter__item js-filter__item" data-filter="leaflet english local-authorities" data-sort-index="8">
+                                        
+                                            {{ onsDownloads({
+                                                "downloads": [
+                                                    {
+                                                        "thumbnail": {
+                                                            "smallSrc": pageInfo.rootPath + '/img/small/',
+                                                            "largeSrc": pageInfo.rootPath + '/img/large/',
+                                                            "filename": 'data-security-english.png',
+                                                            "alt": 'Data security handout english document thumbnail'
+                                                        },
+                                                        "url": pageInfo.rootPath + '/documents/Digital_Ready_DSHO1-2021_v2-0_100720.pdf',                                                
+                                                        "title": 'Data security handout (English)',
+                                                        "type": 'Leaflet',
+                                                        "meta": {
+                                                            "fileType": 'PDF',
+                                                            "fileSize": '172KB',
+                                                            "filePages": '2 pages'
+                                                        },
+                                                        "excerpt": 'Flyer addressing common data security concerns associated with the census.'
+                                                    }
+                                                ]
+                                            }) }}
+
+                                        </li>
+
+                                        <!-- Item -->
+                                        <li class="filter__item js-filter__item" data-filter="leaflet welsh local-authorities" data-sort-index="9">
+                                        
+                                            {{ onsDownloads({
+                                                "downloads": [
+                                                    {
+                                                        "thumbnail": {
+                                                            "smallSrc": pageInfo.rootPath + '/img/small/',
+                                                            "largeSrc": pageInfo.rootPath + '/img/large/',
+                                                            "filename": 'data-security-welsh.png',
+                                                            "alt": 'Data security handout welsh document thumbnail'
+                                                        },
+                                                        "url": pageInfo.rootPath + '/documents/Digital_Ready_DSHO2W-2021_v2-0_100720.pdf',                                                
+                                                        "title": 'Data security handout (Welsh)',
+                                                        "type": 'Leaflet',
+                                                        "meta": {
+                                                            "fileType": 'PDF',
+                                                            "fileSize": '188KB',
+                                                            "filePages": '2 pages'
+                                                        },
+                                                        "excerpt": 'Flyer addressing common data security concerns associated with the census.'
+                                                    }
+                                                ]
+                                            }) }}
+
+                                        </li>
+
+                                        <!-- Item -->
+                                        <li class="filter__item js-filter__item" data-filter="leaflet english local-authorities" data-sort-index="10">
+                                        
+                                            {{ onsDownloads({
+                                                "downloads": [
+                                                    {
+                                                        "thumbnail": {
+                                                            "smallSrc": pageInfo.rootPath + '/img/small/',
+                                                            "largeSrc": pageInfo.rootPath + '/img/large/',
+                                                            "filename": 'postcard-english.png',
+                                                            "alt": 'General information postcard english document thumbnail'
+                                                        },
+                                                        "url": pageInfo.rootPath + '/documents/Digital_Ready_A6PCA1-2021_280820.pdf',                                                
+                                                        "title": 'General information postcard (English)',
+                                                        "type": 'Leaflet',
+                                                        "meta": {
+                                                            "fileType": 'PDF',
+                                                            "fileSize": '303KB',
+                                                            "filePages": '2 pages'
+                                                        },
+                                                        "excerpt": 'Postcard for community groups and the general public introducing the census.'
+                                                    }
+                                                ]
+                                            }) }}
+
+                                        </li>
+
+                                        <!-- Item -->
+                                        <li class="filter__item js-filter__item" data-filter="leaflet welsh local-authorities" data-sort-index="11">
+                                        
+                                            {{ onsDownloads({
+                                                "downloads": [
+                                                    {
+                                                        "thumbnail": {
+                                                            "smallSrc": pageInfo.rootPath + '/img/small/',
+                                                            "largeSrc": pageInfo.rootPath + '/img/large/',
+                                                            "filename": 'postcard-welsh.png',
+                                                            "alt": 'General information postcard welsh document thumbnail'
+                                                        },
+                                                        "url": pageInfo.rootPath + '/documents/Digital_Ready_A6PCA2B-2021_v6-0_280820.pdf',                                                
+                                                        "title": 'General information postcard (Welsh)',
+                                                        "type": 'Leaflet',
+                                                        "meta": {
+                                                            "fileType": 'PDF',
+                                                            "fileSize": '340KB',
+                                                            "filePages": '2 pages'
+                                                        },
+                                                        "excerpt": 'Postcard for community groups and the general public introducing the census.'
+                                                    }
+                                                ]
+                                            }) }}
+
+                                        </li>
+
+                                        <!-- Item -->
+                                        <li class="filter__item js-filter__item" data-filter="presentation english local-authorities" data-sort-index="12">
+                                        
+                                            {{ onsDownloads({
+                                                "downloads": [
+                                                    {
+                                                        "thumbnail": {
+                                                            "smallSrc": pageInfo.rootPath + '/img/small/',
+                                                            "largeSrc": pageInfo.rootPath + '/img/large/',
+                                                            "filename": 'la-presentation-english.png',
+                                                            "alt": 'Local authority presentation english document thumbnail'
+                                                        },
+                                                        "url": pageInfo.rootPath + '/documents/LABP1_LA_Branded_Presentation.pptx',                                                
+                                                        "title": 'Local authority presentation (English)',
+                                                        "type": 'Presentation',
+                                                        "meta": {
+                                                            "fileType": 'PowerPoint',
+                                                            "fileSize": '1.6MB',
+                                                            "filePages": '13 pages'
+                                                        },
+                                                        "excerpt": 'Slideshow that can be adapted by local authorities to promote the census.'
+                                                    }
+                                                ]
+                                            }) }}
+
+                                        </li>
+
+                                        <!-- Item -->
+                                        <li class="filter__item js-filter__item" data-filter="presentation welsh local-authorities" data-sort-index="13">
+                                        
+                                            {{ onsDownloads({
+                                                "downloads": [
+                                                    {
+                                                        "thumbnail": {
+                                                            "smallSrc": pageInfo.rootPath + '/img/small/',
+                                                            "largeSrc": pageInfo.rootPath + '/img/large/',
+                                                            "filename": 'la-presentation-welsh.png',
+                                                            "alt": 'Local authority presentation welsh document thumbnail'
+                                                        },
+                                                        "url": pageInfo.rootPath + '/documents/LABP2W_Branded_Presentation_Welsh.pptx',                                                
+                                                        "title": 'Local authority presentation (Welsh)',
+                                                        "type": 'Presentation',
+                                                        "meta": {
+                                                            "fileType": 'PowerPoint',
+                                                            "fileSize": '1.6MB',
+                                                            "filePages": '13 pages'
+                                                        },
+                                                        "excerpt": 'Slideshow that can be adapted by local authorities to promote the census.'
+                                                    }
+                                                ]
+                                            }) }}
+
+                                        </li>
+
+                                        <!-- Item -->
+                                        <li class="filter__item js-filter__item" data-filter="booklet english community-groups" data-sort-index="14">
+                                        
+                                            {{ onsDownloads({
+                                                "downloads": [
+                                                    {
+                                                        "thumbnail": {
+                                                            "smallSrc": pageInfo.rootPath + '/img/small/',
+                                                            "largeSrc": pageInfo.rootPath + '/img/large/',
+                                                            "filename": 'census-2021-brand-guidelines.png',
+                                                            "alt": 'ONS Census 2021 brand guidelines document thumbnail'
+                                                        },
+                                                        "url": pageInfo.rootPath + '/documents/ONS_Census_2021_Brand_Guidelines.pdf',                                                
+                                                        "title": 'Brand guidelines (English)',
+                                                        "type": 'Booklet',
+                                                        "meta": {
+                                                            "fileType": 'PDF',
+                                                            "fileSize": '7.06MB',
+                                                            "filePages": '70 pages'
+                                                        },
+                                                        "excerpt": 'Guidelines on how to use the Census 2021 visual identity, including logos, typefaces, colours and more.'
+                                                    }
+                                                ]
+                                            }) }}
+
+                                        </li>
+
+                                        <!-- Item -->
+                                        <li class="filter__item js-filter__item" data-filter="logo english welsh community-groups" data-sort-index="15">
+                                        
+                                            {{ onsDownloads({
+                                                "downloads": [
+                                                    {
+                                                        "thumbnail": {
+                                                            "smallSrc": pageInfo.rootPath + '/img/small/',
+                                                            "largeSrc": pageInfo.rootPath + '/img/large/',
+                                                            "filename": 'census-2021-logos.png',
+                                                            "alt": 'Census 2021 logos document thumbnail'
+                                                        },
+                                                        "url": pageInfo.rootPath + '/documents/census-2021-logos.zip',                                                
+                                                        "title": 'Census 2021 logos (English, Welsh, Bilingual)',
+                                                        "type": 'Logo',
+                                                        "meta": {
+                                                            "fileType": 'Zip',
+                                                            "fileSize": '2.9MB',
+                                                            "filePages": '46 files'
+                                                        },
+                                                        "excerpt": 'Zip file containing census logos for digital use only.'
+                                                    }
+                                                ]
+                                            }) }}
+
+                                        </li>
+
+                                    </ul>
+
+                                    <!-- No results -->
+                                    <div class="adv-filter__no-results" data-fallback-gallery-id="adv-filter-gallery">
+                                        <h2>No results found</h2>
+                                        <p>There are no results found due to your filters setup.</p>
+                                    </div>
+                            
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}

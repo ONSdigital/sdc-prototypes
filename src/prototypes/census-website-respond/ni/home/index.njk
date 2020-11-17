@@ -1,0 +1,161 @@
+---
+title: Get ready for Census 2021
+group: Census
+version: 26.0.4
+layout: census-website-respond/views/_nisra-master
+---
+
+{% block pageContent %}
+
+    {% block main %}
+
+        <!-- Hero -->
+        {{
+            onsHero({
+                censusTheme: true,
+                censusThemeDark: true,
+                title: 'Get ready for Census 2021',
+                subtitle: 'Census Day will be Sunday 21 March 2021.',
+                image: {
+                    smallSrc: pageInfo.rootPath + '/img/small/',
+                    largeSrc: pageInfo.rootPath + '/img/large/',
+                    filename: 'mum-and-child-healthcare-belfast.jpg',
+                    alt: 'Mum and child at healthcare facilities in Belfast'
+                }
+            })
+        }}
+
+
+        <!-- CTAs -->
+        <div class="container">
+
+            <section class="u-pt-l u-mb-s u-pb-s u-pb-s@m">
+
+                <div class="grid grid--column@xs@s">
+
+                    <div class="grid__col col-4@m">
+                        {{-
+                            onsCard({
+                                "ariaBy": 'Section highlight',
+                                "id": 'title1',
+                                "textId": 'text1',
+                                "title": 'About the census',
+                                "url": pageInfo.rootPath + '/ni/about-the-census',
+                                "text": 'The census happens only once every 10 years and gives us a picture of all the people and households in Northern Ireland.'
+                            })
+                        }}
+                    </div>
+
+                    <div class="grid__col col-4@m">
+                        {{-
+                            onsCard({
+                                "ariaBy": 'Section highlight',
+                                "id": 'title2',
+                                "textId": 'text2',
+                                "title": 'Working on the census',
+                                "url": pageInfo.rootPath + '/ni/jobs',
+                                "text": 'For Census 2021, we will be hiring field staff across Northern Ireland.'
+                            })
+                        }}
+                    </div>
+
+                    <div class="grid__col col-4@m">
+                        {{-
+                            onsCard({
+                                "ariaBy": 'Section highlight',
+                                "id": 'title3',
+                                "textId": 'text3',
+                                "title": 'Your data and security',
+                                "url": pageInfo.rootPath + '/ni/your-data-and-security',
+                                "text": 'How we keep your data safe and what happens to your personal information.'
+                            })
+                        }}
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <!-- Promo banner -->
+        <section class="promo-banner promo-banner--dark-theme">
+
+            <div class="container">
+
+                <div class="grid grid--gutterless">
+                    
+                    <div class="grid__col col-6@m">
+                        
+                        <h2><a href="{{pageInfo.rootPath}}/ni/get-involved">Get involved</a></h2>
+
+                        <p>There are lots of ways that you can get involved with Census 2021. Whether you are an individual, a group or organisation we would love to hear from you.</p>
+
+                        <p class="u-mb-no">By taking part and encouraging others to do the same, you’ll help make sure you and your community get the services you need.</p>
+
+                        <img class="promo-banner-image" src="{{pageInfo.rootPath}}/img/census-promo-banner.svg" alt="" role="presentation" aria-hidden="true">
+
+                    </div>
+                    
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <div class="container">
+
+            <!-- Contact and social links -->
+            <section class="u-mb-l u-pt-m">
+
+                <div class="grid grid--column@xs@s">
+
+                    <div class="grid__col col-6@m">
+                    
+                        <h2>Get in touch</h2>
+
+                        <p class="u-m-no">For support with your census you can <a href="{{pageInfo.rootPath}}/ni/contact-us">contact us</a>.</p>
+
+                    </div>
+
+                    <div class="grid__col col-6@m">
+                        
+                        <h2>Follow us</h2>
+
+                        {{
+                            onsList({
+                                "classes": 'list--bare list--inline',
+                                "itemsList": [
+                                    {
+                                        "url": 'https://www.twitter.com/NICensus2021',
+                                        "text": 'Twitter',
+                                        "prefixIcon": 'twitter',
+                                        "iconSize": 'xxl',
+                                        "rel": 'noreferrer external'
+                                    },
+                                    {
+                                        "url": 'https://www.facebook.com/NICensus2021',
+                                        "text": 'Facebook',
+                                        "prefixIcon": 'facebook',
+                                        "iconSize": 'xxl',
+                                        "rel": 'noreferrer external'
+                                    }
+                                ]
+                            })
+                        }}
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    
+    {% endblock %}
+
+
+{% endblock %}

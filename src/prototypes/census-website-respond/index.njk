@@ -1,0 +1,65 @@
+---
+title: Campaign Website (respond phase)
+group: Census 2021
+version: 26.0.4
+layout: census-website-respond/views/_rh-master
+---
+
+{% block pageContent %}
+
+    {% block main %}
+
+        <div class="page__container container">
+
+            <div class="grid">
+
+                <div class="grid__col col-8@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-fs-xxl u-mt-l">Prototypes</h1>
+
+                        <p>A collection of prototypes for responding to Census 2021.</p>
+
+                        <h2 class="u-fs-l u-mt-l">England and Wales</h2>
+
+                        {{
+                            onsList({
+                                "classes": 'list--bare',
+                                "itemsList": [
+                                    {
+                                        "url": 'https://eqendtoend.netlify.app/end-to-end/index',
+                                        "text": 'End to end prototype'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help' ,
+                                        "text": 'Help'
+                                    }
+                                ]
+                            })
+                        }}
+
+                        <h2 class="u-fs-l u-mt-l">Northern Ireland</h2>
+
+                        {{
+                            onsList({
+                                "classes": 'list--bare',
+                                "itemsList": [
+                                    {
+                                        "text": 'TBC'
+                                    }
+                                ]
+                            })
+                        }}
+
+                    </main>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    {% endblock %}
+
+{% endblock %}

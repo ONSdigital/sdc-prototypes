@@ -1,0 +1,178 @@
+---
+title: Support centres near S1 1XN
+group: Census
+version: 26.0.4
+layout: census-website-respond/views/_master
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": pageInfo.rootPath + '/',
+                            "text": 'Home'
+                        },
+                        {
+                            "url": pageInfo.rootPath + '/find-a-support-centre',
+                            "text": 'Find a support centre'
+                        },
+                        {
+                            "url": pageInfo.rootPath + '/find-a-support-centre/enter-your-postcode',
+                            "text": 'Enter your postcode'
+                        }
+                    ]
+                }) 
+            }}
+
+            <main class="page__main" id="main-content" role="main">
+
+                <h1 class="u-mb-l u-fs-xxl">Support centres near <em class="highlight">S1 1XN</em></h1>
+
+                <div class="u-pb-m">
+
+                    <h2 class="u-fs-l u-mb-xs">Sheffield Central Library</h2>                    
+                    <span class="u-mb-s tag">0.7 miles away</span>
+
+                    <p>First Floor, Central Library <br> Surrey Street <br> Sheffield <br> S1 1XZ</p>
+
+                    <p>
+                        <a class="external-link" href="https://goo.gl/maps/X48tjZkXA4RaN3LL7" target="_blank" rel="noopener nofollow" class="external-link" aria-label="Find Sheffield Central Library on Google Maps">Find on Google Maps
+                            <svg id="external-link" class="svg-icon" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.5,9H13a.5.5,0,0,0-.5.5v3h-9v-9h3A.5.5,0,0,0,7,3V2.5A.5.5,0,0,0,6.5,2h-4a.5.5,0,0,0-.5.5v11a.5.5,0,0,0,.5.5h11a.5.5,0,0,0,.5-.5v-4A.5.5,0,0,0,13.5,9Z" transform="translate(-2 -1.99)" />
+                                <path d="M8.83,7.88a.51.51,0,0,0,.71,0l2.31-2.32,1.28,1.28A.51.51,0,0,0,14,6.49v-4a.52.52,0,0,0-.5-.5h-4A.51.51,0,0,0,9,2.52a.58.58,0,0,0,.14.33l1.28,1.28L8.12,6.46a.51.51,0,0,0,0,.71Z" transform="translate(-2 -1.99)" />
+                            </svg>
+                        </a>
+                    </p>
+
+                    {{
+                        onsList({
+                            "classes": 'list--bare',
+                            "itemsList": [
+                                {
+                                    "text": 'Telephone: 01142 734 712'
+                                },
+                                {
+                                    "text": 'Email: <a href="mailto:information.library@sheffield.gov.uk">information.library@sheffield.gov.uk</a>'
+                                }
+                            ]
+                        })
+                    }}
+
+                    {% call onsCollapsible({
+                        "id": 'collapsible-1',
+                        "title": 'Opening times and facilities',
+                        "button": {
+                            "close": 'Hide this'
+                        }
+                    }) %}
+
+                    <h3 class="u-fs-r--b u-mb-xs">Opening times</h3>
+
+                    <p>9am to 4pm - Monday to Friday <br> 9am to 5pm - Saturday to Sunday (Census weekend)</p>
+                    
+                    <h3 class="u-fs-r--b u-mb-xs">Centre facilities</h3>
+
+                    {{
+                        onsList({
+                            "itemsList": [
+                                {
+                                    "text": 'Public parking'
+                                },
+                                {
+                                    "text": 'Level access into building entrance'
+                                },
+                                {
+                                    "text": 'Wheelchair access'
+                                },
+                                {
+                                    "text": 'Staff are disability aware'
+                                },
+                                {
+                                    "text": 'Hearing loop system'
+                                }
+                            ]
+                        })
+                    }}
+
+                    {% endcall %}
+
+                </div>
+
+                <div class="u-pb-m u-pt-m u-bt">
+
+                    <h2 class="u-fs-l u-mb-xs">University of Sheffield</h2>
+                    <span class="u-mb-s tag">1.7 miles away</span>
+
+                    <p>The University of Sheffield <br> Western Bank <br> Sheffield <br> S10 2TN</p>
+
+                    <p>
+                        <a class="external-link" href="https://goo.gl/maps/SEaVUjW2KY9wDoPE8" target="_blank" rel="noopener nofollow" class="external-link" aria-label="Find University of Sheffield on Google Maps">Find on Google Maps
+                            <svg id="external-link" class="svg-icon" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.5,9H13a.5.5,0,0,0-.5.5v3h-9v-9h3A.5.5,0,0,0,7,3V2.5A.5.5,0,0,0,6.5,2h-4a.5.5,0,0,0-.5.5v11a.5.5,0,0,0,.5.5h11a.5.5,0,0,0,.5-.5v-4A.5.5,0,0,0,13.5,9Z" transform="translate(-2 -1.99)" />
+                                <path d="M8.83,7.88a.51.51,0,0,0,.71,0l2.31-2.32,1.28,1.28A.51.51,0,0,0,14,6.49v-4a.52.52,0,0,0-.5-.5h-4A.51.51,0,0,0,9,2.52a.58.58,0,0,0,.14.33l1.28,1.28L8.12,6.46a.51.51,0,0,0,0,.71Z" transform="translate(-2 -1.99)" />
+                            </svg>
+                        </a>
+                    </p>
+
+                    {{
+                        onsList({
+                            "classes": 'list--bare',
+                            "itemsList": [
+                                {
+                                    "text": 'Telephone: 0114 222 2000'
+                                },
+                                {
+                                    "text": 'Email: <a href="mailto:ask@sheffield.ac.uk">ask@sheffield.gov.uk</a>'
+                                }
+                            ]
+                        })
+                    }}
+
+                    {% call onsCollapsible({
+                        "id": 'collapsible-2',
+                        "title": 'Opening times and facilities',
+                        "button": {
+                            "close": 'Hide this'
+                        }
+                    }) %}
+
+                    <h3 class="u-fs-r--b u-mb-xs">Opening times</h3>
+
+                    <p>8am to 6pm - Monday to Friday</p>
+                    
+                    <h3 class="u-fs-r--b u-mb-xs">Centre facilities</h3>
+
+                    {{
+                        onsList({
+                            "itemsList": [
+                                {
+                                    "text": 'Public parking'
+                                },
+                                {
+                                    "text": 'Level access into building entrance'
+                                },
+                                {
+                                    "text": 'Wheelchair access'
+                                }
+                            ]
+                        })
+                    }}
+
+                    {% endcall %}
+
+                </div>
+
+            </main>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}

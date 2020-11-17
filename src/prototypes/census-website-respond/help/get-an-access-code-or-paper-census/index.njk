@@ -1,0 +1,126 @@
+---
+title: Get an access code or paper census
+group: Census
+version: 26.0.4
+layout: census-website-respond/views/_master
+---
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": pageInfo.rootPath + '/home',
+                            "text": 'Home'
+                        },
+                        {
+                            "url": pageInfo.rootPath + '/help',
+                            "text": 'Help with the census'
+                        }
+                    ]
+                })
+            }}
+
+            <div class="grid">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-l u-fs-xxl">Get an access code or paper census</h1>
+
+                        <div class="page__body">
+                            <p>To start your census online, you will need your access code printed on the invitation letter we sent you. Your 16-character access code will be a combination of letters and numbers.</p>
+
+                            <img class="census-letter-thumb u-mb-m" src="{{pageInfo.rootPath}}/img/census-letter.svg" alt="Census 2021 invitation letter example showing location of access code" />
+
+                            {% call onsPanel({
+                                "type": "warn",
+                                "classes": 'u-mb-m'
+                            }) %}
+
+                                Keep this code safe. You will need to enter it every time you access your census.
+
+                            {% endcall %}
+
+                            <h2>If you don’t have an access code</h2>
+
+                            <p>You can <a href="">request a new code</a> to start a new census if you have lost or not received an access code. This can be sent to you by text or post.</p>
+
+                            <p>A new access code will start a new census, and you will lose any answers entered using a previous access code.</p>
+
+                            {%
+                                call onsCollapsible({
+                                    "classes": 'u-mt-m',
+                                    "id": 'collapsible-0',
+                                    "title": 'Need to answer separately from your household?',
+                                    "titleTag": 'h3',
+                                    "button": {
+                                        "close": 'Hide this',
+                                        "contextSuffix": 'content',
+                                        "attributes": {
+                                            "aria-hidden": 'true'
+                                        }
+                                    }
+                                })
+                            %}
+
+                                <p>If you need to answer separately from the people you live with, you can <a href="#">request an individual access code</a> to start a separate census.</p>
+
+                                {% call onsPanel({
+                                    "type": "warn",
+                                    "classes": 'u-mb-m'
+                                }) %}
+
+                                    Someone in your household must still complete a census using a household access code
+
+                                {% endcall %}
+
+                            {% endcall %}
+
+                            <h2>If you want to fill out a paper census</h2>
+
+                            <p>You can <a href="">request a paper census questionnaire</a> to be sent in the post.</p>
+
+                            <h3>Continuation questionnaire</h2>
+
+                            <p>If you already have a paper questionnaire and there are more than five people in your household, you will need to <a href="#">request a continuation questionnaire</a>.</p>
+                        </div>
+
+                    </main>
+
+                </div>
+
+                <div class="grid__col col-4@m push-1@m u-mt-m">
+
+                    {{-
+                        onsRelatedLinks({
+                            "id": 'related-links',
+                            "title": 'Related content',
+                            "itemsList": [
+                                {
+                                    "url": pageInfo.rootPath + '/help/how-to-answer-questions/paper',
+                                    "text": 'Paper questions help'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/contact-us',
+                                    "text": 'Contact us'
+                                }
+                            ]
+                        })
+                    }}
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}
