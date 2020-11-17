@@ -28,6 +28,14 @@ layout: user-self-serve/views/version-6/_master-survey
                             "text": 'Help'
                         },
                         {
+                            "url": '/prototypes/user-self-serve/version-6/option-5/option-list.html',
+                            "text": 'Technical help'
+                        },
+                        {
+                            "url": '/prototypes/user-self-serve/version-6/option-5/option-1/option-list.html',
+                            "text": 'I’m having problems with my password'
+                        },
+                        {
                             "url": '/',
                             "text": 'I haven’t received password reset email',
                             "current": true
@@ -38,7 +46,7 @@ layout: user-self-serve/views/version-6/_master-survey
         </div>
         <div class="grid__col col-8@m u-pt-no">
             <h1>I haven't received the password reset email</h1>
-            <p>Check that the email address you use to sign in to <a href="#">your account</a> is correct.</p>
+            <p>Go to <a href="#">your account</a> and check that the email address you use to sign in is correct.</p>
 
             <p>If this is correct, check that your inbox isn't full, or that our email hasn't gone into your spam or junk folder.</p>
 
@@ -47,22 +55,22 @@ layout: user-self-serve/views/version-6/_master-survey
             <h2>Did this answer your question?</h2>
             <p class="field">
                 <div class="btn-group">
-                {{ 
-                    onsButton({
-                        "type": 'button',
-                        "text": 'Yes',
-                        "classes": 'btn-group__btn',
-                        "url": "/prototypes/user-self-serve/version-6/00-surveys-list.html"
-                    }) 
-                }}
-                {{ 
-                    onsButton({
-                        "type": 'button',
-                        "text": 'No',
-                        "classes": 'btn--secondary btn-group__btn',
-                        "url": "send-message.html"
-                    }) 
-                }}
+                    {{ 
+                        onsButton({
+                            "type": 'button',
+                            "text": 'Yes',
+                            "classes": 'btn-group__btn',
+                            "url": "/prototypes/user-self-serve/version-6/00-surveys-list.html"
+                        }) 
+                    }}
+                    {{ 
+                        onsButton({
+                            "type": 'button',
+                            "text": 'No',
+                            "classes": 'btn--secondary btn-group__btn',
+                            "url": "send-message.html"
+                        }) 
+                    }}
                 </div>
             </p>
         </div>
