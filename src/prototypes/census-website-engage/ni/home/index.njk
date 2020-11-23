@@ -10,21 +10,18 @@ layout: census-website-engage/views/_nisra-master
     {% block main %}
 
         <!-- Hero -->
-        {{
-            onsHero({
-                censusTheme: true,
-                censusThemeDark: true,
-                title: 'Get ready for Census 2021',
-                subtitle: 'Census Day will be Sunday 21 March 2021.',
-                image: {
-                    smallSrc: pageInfo.rootPath + '/img/small/',
-                    largeSrc: pageInfo.rootPath + '/img/large/',
-                    filename: 'mum-and-child-healthcare-belfast.jpg',
-                    alt: 'Mum and child at healthcare facilities in Belfast'
-                }
-            })
-        }}
-
+        {{ onsHero({
+            "censusTheme": true,
+            "censusThemeDark": true,
+            "title": 'Get ready for Census 2021',
+            "subtitle": 'Census Day will be Sunday 21 March 2021.',
+            "image": {
+                "smallSrc": pageInfo.rootPath + '/img/small/',
+                "largeSrc": pageInfo.rootPath + '/img/large/',
+                "filename": 'mum-and-child-healthcare-belfast.jpg',
+                "alt": 'Mum and child at healthcare facilities in Belfast'
+            }
+        }) }}
 
         <!-- CTAs -->
         <div class="container">
@@ -78,32 +75,16 @@ layout: census-website-engage/views/_nisra-master
 
         </div>
 
-
         <!-- Promo banner -->
-        <section class="promo-banner promo-banner--dark-theme">
-
-            <div class="container">
-
-                <div class="grid grid--gutterless">
-                    
-                    <div class="grid__col col-6@m">
-                        
-                        <h2><a href="{{pageInfo.rootPath}}/ni/get-involved">Get involved</a></h2>
-
-                        <p>There are lots of ways that you can get involved with Census 2021. Whether you are an individual, a group or organisation we would love to hear from you.</p>
-
-                        <p class="u-mb-no">By taking part and encouraging others to do the same, you’ll help make sure you and your community get the services you need.</p>
-
-                        <img class="promo-banner-image" src="{{pageInfo.rootPath}}/img/census-promo-banner.svg" alt="" role="presentation" aria-hidden="true">
-
-                    </div>
-                    
-                </div>
-
-            </div>
-
-        </section>
-
+        {% call
+            onsPromoBanner({
+                "darkTheme": true
+            })
+        %}
+            <h2><a href="{{pageInfo.rootPath}}/ni/get-involved">Get involved</a></h2>
+            <p>There are lots of ways that you can get involved with Census 2021. Whether you are an individual, a group or organisation we would love to hear from you.</p>
+            <p>By taking part and encouraging others to do the same, you’ll help make sure you and your community get the services you need.</p>
+        {% endcall %}
 
         <div class="container">
 
@@ -113,39 +94,31 @@ layout: census-website-engage/views/_nisra-master
                 <div class="grid grid--column@xs@s">
 
                     <div class="grid__col col-6@m">
-                    
                         <h2>Get in touch</h2>
-
                         <p class="u-m-no">For support with your census you can <a href="{{pageInfo.rootPath}}/ni/contact-us">contact us</a>.</p>
-
                     </div>
 
                     <div class="grid__col col-6@m">
-                        
                         <h2>Follow us</h2>
-
-                        {{
-                            onsList({
-                                "classes": 'list--bare list--inline list--icons',
-                                "itemsList": [
-                                    {
-                                        "url": 'https://www.twitter.com/NICensus2021',
-                                        "text": 'Twitter',
-                                        "prefixIcon": 'twitter',
-                                        "iconSize": 'xxl',
-                                        "rel": 'noreferrer external'
-                                    },
-                                    {
-                                        "url": 'https://www.facebook.com/NICensus2021',
-                                        "text": 'Facebook',
-                                        "prefixIcon": 'facebook',
-                                        "iconSize": 'xxl',
-                                        "rel": 'noreferrer external'
-                                    }
-                                ]
-                            })
-                        }}
-
+                        {{ onsList({
+                            "classes": 'list--bare list--inline list--icons',
+                            "itemsList": [
+                                {
+                                    "url": 'https://www.twitter.com/NICensus2021',
+                                    "text": 'Twitter',
+                                    "prefixIcon": 'twitter',
+                                    "iconSize": 'xxl',
+                                    "rel": 'noreferrer external'
+                                },
+                                {
+                                    "url": 'https://www.facebook.com/NICensus2021',
+                                    "text": 'Facebook',
+                                    "prefixIcon": 'facebook',
+                                    "iconSize": 'xxl',
+                                    "rel": 'noreferrer external'
+                                }
+                            ]
+                        }) }}
                     </div>
 
                 </div>
