@@ -1,0 +1,87 @@
+---
+title: Accessibility
+group: Census
+version: 28.0.1
+layout: census-website-respond/views/_master
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": 'https://eqendtoend.netlify.app/end-to-end/home/',
+                            "text": 'Home'
+                        },
+                        {
+                            "url": pageInfo.rootPath + '/help',
+                            "text": 'Help with the census'
+                        },
+                        {
+                            "url": pageInfo.rootPath + '/help/languages-and-accessibility',
+                            "text": 'Languages and accessibility'
+                        }
+                    ]
+                })
+            }}
+
+            <div class="grid">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-l u-fs-xxl">Accessibility</h1>
+
+                        <div class="page__body">
+
+                            <p>It is important that everyone in England and Wales takes part in the census. Your answers to the census questions will help organisations plan and fund public services in your area.</p>
+                            
+                            {{ onsPanel({
+                                    "body": 'You must fill in your census form in English. You can also answer in Welsh if you live in Wales.'
+                                })
+                            }}
+
+                            <h2>​Accessible content​</h2>
+
+                            <p>​We use simple language and clear link text to help you navigate the census website. You can navigate most of the website using speech recognition software and listen using a screen reader. Our accessibility statement gives more detail on how compatible this website is with assistive technology.​</p>
+
+                            <p>​Information about the census is also available in the following accessible formats:​</p>
+
+                            <ul>
+                                <li><a href="{{pageInfo.rootPath}}/help/languages-and-accessibility/accessible-formats/british-sign-language">videos with British Sign Language, subtitles and audio​</a></li>
+                                <li><a href="#0">Braille guidance​</a></li>
+                                <li><a href="#0">easy read guidance​</a></li>
+                                <li><a href="#0">large-print paper questionnaire</a></li>
+                            </ul>
+
+                            <h2>If you need help</h2>
+
+                            <p>To get help to complete your census you can also:​</p>
+
+                            <ul>
+                                <li>ask someone else to fill it in for you, or help you if you can’t do it yourself​</li>
+                                <li><a href="{{pageInfo.rootPath}}/help/find-a-support-centre">find a support centre</a>, where you can get help to complete your census online</li>
+                                <li>access web chat, call us on the phone or use the text relay system from our <a href="{{pageInfo.rootPath}}/contact-us">contact us page</a>​</li>
+                                <li>read translations of <a href="https://eqendtoend.netlify.app/end-to-end/languages-copy/">information about the census in different languages</a></li>
+                            <ul>
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}
