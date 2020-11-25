@@ -1,5 +1,5 @@
 ---
-title: Are there any visitors staying overnight on 21 March 2021 at this address?
+title: People who live in this household
 group: Census
 version: 28.0.1
 layout: census-website-respond/views/_master
@@ -31,9 +31,9 @@ layout: census-website-respond/views/_master
                     <main class="page__main" id="main-content" role="main">
 
                         <h1 class="u-mb-l">
-                            <span class="u-fs-m u-db u-mb-xs u-lighter">Your address and people who live here</span>
+                            <span class="u-fs-m u-db u-mb-xs u-lighter">People who live here</span>
                             <span class="u-vh">: </span>
-                            <span class="u-fs-xxl u-db">Are there any visitors staying overnight on 21 March 2021 at this address?</span>
+                            <span class="u-fs-xxl u-db">People who live in this household​</span>
                         </h1>
 
                         {{
@@ -42,25 +42,8 @@ layout: census-website-respond/views/_master
                             })
                         }}
 
-                        <div class="u-mt-xl">
-                            {{-
-                                onsContentPagination({
-                                    "contentPaginationItems": [
-                                        {
-                                            "rel": 'prev',
-                                            "text": 'Previous',
-                                            "url": '#0',
-                                            "label": 'Who lives here?'
-                                        },
-                                        {
-                                            "rel": 'next',
-                                            "text": 'Next',
-                                            "url": '#0',
-                                            "label": 'Household relationships'
-                                        }
-                                    ]
-                                })
-                            }}
+                        <div class="u-mt-l">
+                            <p><a href="{{pageInfo.rootPath}}/help/languages-and-accessibility/accessibility/british-sign-language/#collapsible-1">Return to People who live here</a></p>
                         </div>
 
                     </main>
@@ -79,14 +62,10 @@ layout: census-website-respond/views/_master
                                     {
                                         "url": pageInfo.rootPath + '/help/languages-and-accessibility',
                                         "text": 'Languages and accessibility'
-                                    },
+                                    },                      
                                     {
-                                        "url": pageInfo.rootPath + '/help/how-to-answer-questions',
-                                        "text": 'How to answer questions'
-                                    },                                
-                                    {
-                                        "url": '#0',
-                                        "text": 'Get help where you live'
+                                        "url": pageInfo.rootPath + '/help/find-a-support-centre',
+                                        "text": 'Find a support centre'
                                     },
                                     {
                                         "url": pageInfo.rootPath + '/contact-us',
