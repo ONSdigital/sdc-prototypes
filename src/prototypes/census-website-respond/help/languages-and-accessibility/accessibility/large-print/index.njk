@@ -1,5 +1,5 @@
 ---
-title: Large print information
+title: Large print
 group: Census
 version: 28.0.1
 layout: census-website-respond/views/_master
@@ -41,13 +41,41 @@ layout: census-website-respond/views/_master
 
                     <main class="page__main" id="main-content" role="main">
 
-                        <h1 class="u-mb-l u-fs-xxl">Large print information</h1>
+                        <h1 class="u-mb-l u-fs-xxl">Large print</h1>
 
                         <p>You can <a href="#0">request a large-print questionnaire</a> to be sent in the post. Select “I need a large-print questionnaire” when asked.</p>
 
-                        <p>[Download a large-print census information leaflet]</p>
+                        {{ onsDownloads({
+                            "classes": 'u-mt-l u-mb-l',
+                            "downloads": [
+                                {
+                                    "placeholderURL": cdnURL,
+                                    "url": '#0',
+                                    "title": 'Information leaflet (English)',
+                                    "type": 'Leaflet',
+                                    "meta": {
+                                        "fileType": 'PDF',
+                                        "fileSize": '13KB',
+                                        "filePages": '2 pages'
+                                    },
+                                    "excerpt": 'Short description of file contents...'
+                                },
+                                {
+                                    "placeholderURL": cdnURL,
+                                    "url": '#0',
+                                    "title": 'Information leaflet (Welsh)',
+                                    "type": 'Leaflet',
+                                    "meta": {
+                                        "fileType": 'PDF',
+                                        "fileSize": '13KB',
+                                        "filePages": '2 pages'
+                                    },
+                                    "excerpt": 'Short description of file contents...'
+                                }
+                            ]
+                        }) }}
 
-                        <p>You can also <a href="#0">contact us</a> to request a paper census questionnaire or information leaflet to be sent in the post.</p>
+                        <p>You can also <a href="{{pageInfo.rootPath}}/contact-us">contact us</a> to request a paper census questionnaire or information leaflet to be sent in the post.</p>
 
                     </main>
 
