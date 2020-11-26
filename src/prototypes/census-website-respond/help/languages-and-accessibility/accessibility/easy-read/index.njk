@@ -47,35 +47,36 @@ layout: census-website-respond/views/_master
 
                         <p>Download our easy-read census information, or <a href="#0">request an easy-ready guidance booklet</a>.</p>
 
-                        {{ onsDownloads({
-                            "classes": 'u-mt-l u-mb-l',
-                            "downloads": [
-                                {
-                                    "placeholderURL": cdnURL,
-                                    "url": '#0',
-                                    "title": 'Guidance booklet (English)',
-                                    "type": 'Leaflet',
-                                    "meta": {
-                                        "fileType": 'PDF',
-                                        "fileSize": '13KB',
-                                        "filePages": '2 pages'
+                        <div class="u-mt-l u-mb-l">
+                            {{ onsDownloads({
+                                "downloads": [
+                                    {
+                                        "placeholderURL": cdnURL,
+                                        "url": '#0',
+                                        "title": 'Guidance booklet (English)',
+                                        "type": 'Leaflet',
+                                        "meta": {
+                                            "fileType": 'PDF',
+                                            "fileSize": '13KB',
+                                            "filePages": '2 pages'
+                                        },
+                                        "excerpt": 'Easy-read information about the census.'
                                     },
-                                    "excerpt": 'Easy-read information about the census.'
-                                },
-                                {
-                                    "placeholderURL": cdnURL,
-                                    "url": '#0',
-                                    "title": 'Guidance booklet (Welsh)',
-                                    "type": 'Leaflet',
-                                    "meta": {
-                                        "fileType": 'PDF',
-                                        "fileSize": '13KB',
-                                        "filePages": '2 pages'
-                                    },
-                                    "excerpt": 'Easy-read information about the census.'
-                                }
-                            ]
-                        }) }}
+                                    {
+                                        "placeholderURL": cdnURL,
+                                        "url": '#0',
+                                        "title": 'Guidance booklet (Welsh)',
+                                        "type": 'Leaflet',
+                                        "meta": {
+                                            "fileType": 'PDF',
+                                            "fileSize": '13KB',
+                                            "filePages": '2 pages'
+                                        },
+                                        "excerpt": 'Easy-read information about the census.'
+                                    }
+                                ]
+                            }) }}
+                        </div>
 
                     </main>
 
