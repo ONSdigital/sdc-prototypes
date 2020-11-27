@@ -45,15 +45,21 @@ layout: census-website-respond/views/_master
 
                         <p>A Braille guidance booklet is available in English and Welsh.</p>
 
-                        <p>The booklet provides information in Braille that you may need to know about the census before you start. This includes:</p>
+                        <p>The booklet provides Braille translations of information about the census, including:</p>
 
                         <ul>
                             <li>what the census is and why you should take part</li>
                             <li>how to take part online or on paper</li>
-                            <li>who to include on your questionnaire</li>
                             <li>privacy and data protection information</li>
                             <li>how to get help</li>
                         </ul>
+
+                        {{
+                            onsPanel({
+                                "classes": 'u-mt-m u-mb-m',
+                                "body": 'You must fill in your census form in English. You can also answer in Welsh if you live in Wales.​​'
+                            })
+                        }}
 
                         <p><a href="{{pageInfo.rootPath}}/contact-us">Contact us to request a Braille guidance booklet</a></p>
 

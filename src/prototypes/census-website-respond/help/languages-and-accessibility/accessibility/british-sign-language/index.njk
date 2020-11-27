@@ -45,6 +45,15 @@ layout: census-website-respond/views/_master
 
                         <div class="page__body">
 
+                            <p>Use these videos alongside the census questionnaire to help you answer the questions.</p>
+
+                            {{
+                                onsPanel({
+                                    "classes": 'u-mt-m u-mb-m',
+                                    "body": 'You must fill in your census form in English. You can also answer in Welsh if you live in Wales.​'
+                                })
+                            }}
+
                             <p>Our accessible videos provide:</p>
 
                             <ul>
@@ -110,7 +119,7 @@ layout: census-website-respond/views/_master
 
                             <h2>Census question and answers videos</h2>
 
-                            <p>We have recreated each question along with the answer options as videos. Each video features British Sign Language, subtitles and audio voiceover.</p>
+                            <p>Each census question, along with its answer choices, is available as an accessible video.</p>
 
                             {%
                                 call onsCollapsible({
