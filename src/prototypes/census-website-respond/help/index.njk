@@ -8,8 +8,8 @@ layout: census-website-respond/views/_master
 {% block pageContent %}
    
     {% block main %}
-<!--
-        {{-
+
+        {# {{-
             onsCallToAction({
                 "headingText": 'Ready to start your census?',
                 "paragraphText": 'You’ll need the access code from the letter we sent you.',
@@ -19,8 +19,8 @@ layout: census-website-respond/views/_master
                     "url": 'https://deploy-preview-157--census-website-respond.netlify.app/end-to-end/uac-entry/'
                 }
             })
-        }}
--->
+        }} #}
+
         <div class="page__container container">
 
             {{
@@ -48,7 +48,7 @@ layout: census-website-respond/views/_master
                                 "id": 'title1',
                                 "textId": 'text1',
                                 "title": 'How to complete your census',
-                                "url": '#0',
+                                "url": pageInfo.rootPath + '/help/how-to-complete-your-census/',
                                 "text": 'Guidance to help you complete your census online or on paper.'
                             })
                         }}
@@ -58,11 +58,11 @@ layout: census-website-respond/views/_master
                         {{-
                             onsCard({
                                 "ariaBy": 'Section highlight',
-                                "id": 'title1',
-                                "textId": 'text1',
+                                "id": 'title2',
+                                "textId": 'text2',
                                 "title": 'Get an access code or paper census',
                                 "url": pageInfo.rootPath + '/help/get-an-access-code-or-paper-census/',
-                                "text": "What to do if you've lost or not received a code, want to complete on paper or do your own census."
+                                "text": 'What to do if you’ve lost or not received a code, want to complete on paper or do your own census.'
                             })
                         }}
                     </div>
@@ -88,8 +88,8 @@ layout: census-website-respond/views/_master
                         {{-
                             onsCard({
                                 "ariaBy": 'Section highlight',
-                                "id": 'title2',
-                                "textId": 'text2',
+                                "id": 'title4',
+                                "textId": 'text4',
                                 "title": 'Find a census support centre',
                                 "url": pageInfo.rootPath + '/help/find-a-support-centre/',
                                 "text": 'Get help to complete your online census at one of our support centres.'
@@ -101,8 +101,8 @@ layout: census-website-respond/views/_master
                         {{-
                             onsCard({
                                 "ariaBy": 'Section highlight',
-                                "id": 'title4',
-                                "textId": 'text4',
+                                "id": 'title5',
+                                "textId": 'text5',
                                 "title": 'How to answer questions',
                                 "url": pageInfo.rootPath + '/help/how-to-answer-questions/',
                                 "text": 'Guidance on answering the census questions and why we ask them.'
@@ -116,8 +116,8 @@ layout: census-website-respond/views/_master
                                 "ariaBy": 'Section highlight',
                                 "id": 'title6',
                                 "textId": 'text6',
-                                "title": "Help someone complete their census",
-                                "url": '#0',
+                                "title": 'Help someone complete their census',
+                                "url": pageInfo.rootPath + '/help/help-someone-complete-their-census/',
                                 "text": 'What you can do to support someone else with their census.'
                             })
                         }}
