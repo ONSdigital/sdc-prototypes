@@ -2,8 +2,11 @@
 title: Get an access code or paper census
 group: Census
 version: 28.0.1
-layout: census-website-respond/views/_master
+layout: census-website-respond/views/_languages-master
 ---
+
+{% set pageId = 'help' %}
+
 {% block pageContent %}
    
     {% block main %}
@@ -35,12 +38,13 @@ layout: census-website-respond/views/_master
                         <h1 class="u-mb-l u-fs-xxl">Get an access code or paper census</h1>
 
                         <div class="page__body">
+
                             <p>To start your census online, you will need your access code printed on the invitation letter we sent you. Your 16-character access code will be a combination of letters and numbers.</p>
 
-                            <img width="320" class="census-letter-thumb u-mb-m" src="{{pageInfo.rootPath}}/img/census-letter.svg" alt="Census 2021 invitation letter example showing location of access code" />
+                            <img width="320" class="census-letter-thumb u-mb-m" src="{{pageInfo.rootPath}}/img/census-letter.svg" alt="Census 2021 invitation letter example showing location of access code">
 
                             {% call onsPanel({
-                                "type": "warn",
+                                "type": 'warn',
                                 "classes": 'u-mb-m'
                             }) %}
 
@@ -50,7 +54,7 @@ layout: census-website-respond/views/_master
 
                             <h2>If you don’t have an access code</h2>
 
-                            <p>You can <a href="">request a new code</a> to start a new census if you have lost or not received an access code. This can be sent to you by text or post.</p>
+                            <p>You can <a href="#0">request a new code</a> to start a new census if you have lost or not received an access code. This can be sent to you by text or post.</p>
 
                             <p>A new access code will start a new census, and you will lose any answers entered using a previous access code.</p>
 
@@ -73,7 +77,7 @@ layout: census-website-respond/views/_master
                                 <p>If you need to answer separately from the people you live with, you can <a href="#">request an individual access code</a> to start a separate census.</p>
 
                                 {% call onsPanel({
-                                    "type": "warn",
+                                    "type": 'warn',
                                     "classes": 'u-mb-m'
                                 }) %}
 
@@ -85,11 +89,12 @@ layout: census-website-respond/views/_master
 
                             <h2>If you want to fill out a paper census</h2>
 
-                            <p>You can <a href="">request a paper census questionnaire</a> to be sent in the post.</p>
+                            <p>You can <a href="#0">request a paper census questionnaire</a> to be sent in the post.</p>
 
                             <h3>Continuation questionnaire</h2>
 
                             <p>If you already have a paper questionnaire and there are more than 5 people in your household, you will need to <a href="#">request a continuation questionnaire</a>.</p>
+                        
                         </div>
 
                     </main>

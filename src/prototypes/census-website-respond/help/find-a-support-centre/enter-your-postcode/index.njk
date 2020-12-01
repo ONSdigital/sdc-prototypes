@@ -2,8 +2,10 @@
 title: What is your postcode?
 group: Census
 version: 28.0.1
-layout: census-website-respond/views/_rh-master
+layout: census-website-respond/views/_languages-master
 ---
+
+{% set pageId = 'help' %}
 
 {% block pageContent %}
    
@@ -31,7 +33,7 @@ layout: census-website-respond/views/_rh-master
                 
                     <p>To find your nearest support centre, we need your postcode.</p>
 
-                    <form method="get" action="/prototypes/census-website-respond/help/find-a-support-centre/results">
+                    <form method="get" action="{{pageInfo.rootPath}}/help/find-a-support-centre/results">
 
                         {{
                             onsInput({
