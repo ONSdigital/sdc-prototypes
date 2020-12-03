@@ -53,22 +53,27 @@ layout: census-website-respond/views/_languages-master
                             {{ onsDownloads({
                                 "downloads": [
                                     {
-                                        "placeholderURL": cdnURL,
-                                        "url": '#0',
-                                        "title": 'Guidance booklet (English)',
-                                        "type": 'Leaflet',
+                                        "thumbnail": {
+                                            "smallSrc": pageInfo.rootPath + '/img/small/',
+                                            "largeSrc": pageInfo.rootPath + '/img/large/',
+                                            "filename": 'census-2021-easy-read-guidance-en.png',
+                                            "alt": 'Easy-read guidance booklet english document thumbnail'
+                                        },
+                                        "url": pageInfo.rootPath + '/documents/census-2021-easy-read-guidance-en.pdf',
+                                        "title": 'Easy-read guidance booklet (English)',
+                                        "type": 'Booklet',
                                         "meta": {
                                             "fileType": 'PDF',
-                                            "fileSize": '13KB',
-                                            "filePages": '2 pages'
+                                            "fileSize": '8.9MB',
+                                            "filePages": '12 pages'
                                         },
                                         "excerpt": 'Easy-read information about the census.'
                                     },
                                     {
                                         "placeholderURL": cdnURL,
                                         "url": '#0',
-                                        "title": 'Guidance booklet (Welsh)',
-                                        "type": 'Leaflet',
+                                        "title": 'Easy-read guidance booklet (Welsh)',
+                                        "type": 'Booklet',
                                         "meta": {
                                             "fileType": 'PDF',
                                             "fileSize": '13KB',
