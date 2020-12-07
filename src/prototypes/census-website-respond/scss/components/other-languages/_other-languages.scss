@@ -12,6 +12,7 @@ List
 
 .other-languages {
   border-left: 1px solid $color-grey-2;
+  display: flex;
   margin: 0;
   padding: 0;
   margin-left: 1rem;
@@ -20,6 +21,12 @@ List
   &__item {
     display: block;
     margin-bottom: 0;
+
+    &:not(:first-child) {
+      border-left: 1px solid $color-grey-2;
+      margin-left: 1rem;
+      padding-left: 1rem;
+    }
   }
 
   &__link {
