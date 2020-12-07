@@ -38,7 +38,7 @@ layout: census-website-respond/views/_languages-master
                         <h1 class="u-mb-l">
                             <span class="u-fs-m u-db u-mb-xs u-lighter">About the census</span>
                             <span class="u-vh">: </span>
-                            <span class="u-fs-xxl u-db">About the Census Quality Survey</span>
+                            <span class="u-fs-xxl u-db">When to complete your census</span>
                         </h1>
 
                         {{-
@@ -51,6 +51,10 @@ layout: census-website-respond/views/_languages-master
                                         "text": 'Overview'
                                     },
                                     {
+                                        "url": pageInfo.rootPath + '/about-the-census/who-should-fill-in-a-census',
+                                        "text": 'Who should fill in a census'
+                                    },
+                                    {
                                         "url": pageInfo.rootPath + '/about-the-census/why-you-should-take-part-in-the-census',
                                         "text": 'Why you should take part in the census'
                                     },
@@ -59,32 +63,32 @@ layout: census-website-respond/views/_languages-master
                                         "text": 'How your information is used'
                                     },
                                     {
-                                        "url": pageInfo.rootPath + '/about-the-census/about-the-census-coverage-survey',
-                                        "text": 'About the Census Coverage Survey'
-                                    },
-                                    {
-                                        "url": pageInfo.rootPath + '/about-the-census/about-the-census-quality-survey',
-                                        "text": 'About the Census Quality Survey',
+                                        "url": pageInfo.rootPath + '/about-the-census/when-to-complete-your-census',
+                                        "text": 'When to complete your census',
                                         "current": true
                                     }
                                 ]
                             })
-                        }}
+                        -}}
 
                         <div class="page__body">
                             
-                            <p>The Census Quality Survey (CQS) is a smaller survey we carry out after the census.</p>
+                            <p>Please fill in the form on Sunday 21 March 2021, or as soon as you can afterwards. This is so we can count the whole population on the same day.</p>
 
-                            <h2>How it works</h2>
+                            <h2>Can I fill it in early?</h2>
 
-                            <p>We ask a certain number of households in England and Wales to take part by answering some of the same questions from the census questionnaire.</p>
+                            <p>Yes, you can do it early, as long as you’re confident that the make-up of your household won’t change between when you fill it in and Census Day.</p>
 
-                            <h2>What it’s for</h2>
+                            <p>If you have responded before Census Day and things have changed, please <a href="">contact us</a>.</p>
 
-                            <p>The results of the CQS let us work out how accurate the information was that we collected in the census and improve our statistics.</p>
+                            <p>Please make sure you answer about your household as you expect it to be on Census Day, Sunday 21 March 2021.</p>
 
-                            <p>Our census statistics help to plan and fund public services in your area.</p>
-                            
+                            <p>To record overnight visitors, include who you expect to be visiting.</p>
+
+                            <h3>What if I'm away from home on census night?</h3>
+
+                            <p>If you’re away from home on Sunday 21 March 2021, you can fill in your household form before you go or as soon as you can afterwards. You can also use your access code to complete online while you're away.</p>
+
                             <div class="u-mt-xl">
                                 {{-
                                     onsContentPagination({
@@ -92,8 +96,8 @@ layout: census-website-respond/views/_languages-master
                                             {
                                                 "rel": 'prev',
                                                 "text": 'Previous',
-                                                "url": pageInfo.rootPath + '/about-the-census/about-the-census-coverage-survey',
-                                                "label": 'About the Census Coverage Survey'
+                                                "url": pageInfo.rootPath + '/about-the-census/how-your-information-is-used',
+                                                "label": 'How your information is used'
                                             }
                                         ]
                                     })

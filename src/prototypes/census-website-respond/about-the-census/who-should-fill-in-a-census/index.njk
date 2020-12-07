@@ -1,5 +1,5 @@
 ---
-title: About the Census Coverage Survey
+title: Who should fill in a census
 group: Census
 version: 29.0.3
 layout: census-website-respond/views/_languages-master
@@ -38,7 +38,7 @@ layout: census-website-respond/views/_languages-master
                         <h1 class="u-mb-l">
                             <span class="u-fs-m u-db u-mb-xs u-lighter">About the census</span>
                             <span class="u-vh">: </span>
-                            <span class="u-fs-xxl u-db">About the Census Coverage Survey</span>
+                            <span class="u-fs-xxl u-db">Who should fill in a census</span>
                         </h1>
 
                         {{-
@@ -51,6 +51,11 @@ layout: census-website-respond/views/_languages-master
                                         "text": 'Overview'
                                     },
                                     {
+                                        "url": pageInfo.rootPath + '/about-the-census/who-should-fill-in-a-census',
+                                        "text": 'Who should fill in a census',
+                                        "current": true
+                                    },
+                                    {
                                         "url": pageInfo.rootPath + '/about-the-census/why-you-should-take-part-in-the-census',
                                         "text": 'Why you should take part in the census'
                                     },
@@ -59,30 +64,27 @@ layout: census-website-respond/views/_languages-master
                                         "text": 'How your information is used'
                                     },
                                     {
-                                        "url": pageInfo.rootPath + '/about-the-census/about-the-census-coverage-survey',
-                                        "text": 'About the Census Coverage Survey',
-                                        "current": true
-                                    },
-                                    {
-                                        "url": pageInfo.rootPath + '/about-the-census/about-the-census-quality-survey',
-                                        "text": 'About the Census Quality Survey'
+                                        "url": pageInfo.rootPath + '/about-the-census/when-to-complete-your-census',
+                                        "text": 'When to complete your census'
                                     }
                                 ]
                             })
-                        }}
+                        -}}
 
                         <div class="page__body">
-                            
-                            <p>We try our hardest to make sure everyone is counted in a census. However, no census is perfect, and some people will be missed. We want to make sure the number missed is as small as possible.</p>
+                            <h2>Who is responsible for completing the census</h2>
+                            <p>Content TBC</p>
+                            <h2>What happens if you don't do the census</h2>
+                            <p>Content TBC</p>
+                            <h2>People not living at a fixed address</h2>
+                            <p>Content TBC</p>
+                            <h2>Students</h2>
+                            <p>Whether you live in halls, in a shared house or flat, or you're an international student, you must answer the census for your term-time address if you stay there most of the time. This applies even if you’re on term-time holidays or a reading week when you complete the questionnaire.</p>
+                            <h2>Communal establishments</h2>
+                            <p>Content TBC</p>
+                            <h2>Second homes, on holiday and away from home</h2>
+                            <p>Content TBC</p>
 
-                            <p>To do this we conduct the Census Coverage Survey (CCS). The CCS is a short survey to find out how many people have been missed and how many people have been counted more than once. If your house is chosen, someone will come to your door and ask you some questions.</p>
-
-                            <h2>Information the Census Coverage Survey collects</h2>
-
-                            <p>The CCS asks similar questions to those on the census questionnaire, just fewer of them. It’s carried out six weeks after the census in a sample of areas across England and Wales.<p>
-
-                            <p>The CCS records are then compared with those from the census. If needed, the census data is then adjusted. This is all to make sure the information produced is as accurate as possible for planning services such as health, education, housing and transport.<p>
-                            
                             <div class="u-mt-xl">
                                 {{-
                                     onsContentPagination({
@@ -90,14 +92,14 @@ layout: census-website-respond/views/_languages-master
                                             {
                                                 "rel": 'prev',
                                                 "text": 'Previous',
-                                                "url": pageInfo.rootPath + '/about-the-census/how-your-information-is-used',
-                                                "label": 'How your information is used'
+                                                "url": pageInfo.rootPath + '/about-the-census',
+                                                "label": 'Overview'
                                             },
                                             {
                                                 "rel": 'next',
                                                 "text": 'Next',
-                                                "url": pageInfo.rootPath + '/about-the-census/about-the-census-quality-survey',
-                                                "label": 'About the Census Quality Survey'
+                                                "url": pageInfo.rootPath + '/about-the-census/why-you-should-take-part-in-the-census',
+                                                "label": 'Why you should take part in the census'
                                             }
                                         ]
                                     })
