@@ -1,6 +1,4 @@
 ---
-title: How to complete your census
-group: Census
 version: 28.0.1
 layout: census-website-respond/views/_languages-master
 ---
@@ -23,10 +21,6 @@ layout: census-website-respond/views/_languages-master
                     {
                         "url": pageInfo.rootPath + '/help',
                         "text": 'Help with the census'
-                    },
-                    {
-                        "url": pageInfo.rootPath + '/help/languages-and-accessibility',
-                        "text": 'Languages and accessibility'
                     }
                 ]
             }) }}
@@ -37,10 +31,78 @@ layout: census-website-respond/views/_languages-master
 
                     <main class="page__main" id="main-content" role="main">
 
-                        <h1 class="u-mb-l u-fs-xxl">How to complete your census</h1>
+                        <h1 class="u-mb-l">
+                            <span class="u-fs-m u-db u-mb-xs u-lighter">How to complete your census</span>
+                            <span class="u-vh">: </span>
+                            <span class="u-fs-xxl u-db">Overview</span>
+                        </h1>
+
+                        {{-
+                            onsTableOfContents({
+                                "title": 'Contents',
+                                "ariaLabel": 'Pages in this guide',
+                                "itemsList": [
+                                    {
+                                        "url": pageInfo.rootPath + '/help/how-to-complete-your-census',
+                                        "text": 'Overview',
+                                        "current": true
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/how-to-complete-your-census/completing-your-census-online',
+                                        "text": 'Completing your census online'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/how-to-complete-your-census/completing-your-census-on-paper',
+                                        "text": 'Completing your census on paper'
+                                    }
+                                ]
+                            })
+                        }}
 
                         <div class="page__body">
-                            <p>Content TBC</p>
+
+                            <p>The census should take you about 10 minutes for the Household questions and 10 minutes per person.</p>
+
+                            <p>You can choose to either:</p>
+
+                            {{
+                                onsList({
+                                    "classes": 'u-mb-l',
+                                    "itemsList": [
+                                        {
+                                            "text": "fill in your census online",
+                                            "url": pageInfo.rootPath + '/help/how-to-complete-your-census/completing-your-census-online'
+                                        },
+                                        {
+                                            "text": "fill in your census on paper",
+                                            "url": pageInfo.rootPath + '/help/how-to-complete-your-census/completing-your-census-on-paper'
+                                        }
+                                    ]
+                                })
+                            }}
+
+                            {% call onsPanel()
+                            %}
+
+                                <p>If you live in Wales, you can <a href="{{pageInfo.rootPath}}/help/how-to-complete-your-census/completing-the-census-in-welsh">complete the census in Welsh or English</a>.</p>
+
+                            {% endcall %}
+
+                            <div class="u-mt-xl">
+                                {{-
+                                    onsContentPagination({
+                                        "contentPaginationItems": [
+                                        {
+                                            "rel": 'next',
+                                            "text": 'Next',
+                                            "url": pageInfo.rootPath + '/help/how-to-complete-your-census/completing-your-census-online',
+                                            "label": 'Completing your census online'
+                                        }
+                                        ]
+                                    })
+                                }}
+                            </div>
+
                         </div>
 
                     </main>
@@ -52,17 +114,17 @@ layout: census-website-respond/views/_languages-master
                     {{- onsRelatedLinks({
                         "id": 'related-links',
                         "title": 'Related content',
-                        "itemsList": [                
+                        "itemsList": [
+                            {
+                                "url": pageInfo.rootPath + '/help/get-an-access-code-or-paper-census/',
+                                "text": 'Get a new access code or paper form'
+                            },
                             {
                                 "url": pageInfo.rootPath + '/help/find-a-support-centre',
                                 "text": 'Find a support centre'
                             },
                             {
-                                "url": 'https://census-website-respond.netlify.app/end-to-end/languages',
-                                "text": 'Languages'
-                            },
-                            {
-                                "url": pageInfo.rootPath + '/contact-us',
+                                "url": pageInfo.rootPath + '/help/contact-us',
                                 "text": 'Contact us'
                             }
                         ]

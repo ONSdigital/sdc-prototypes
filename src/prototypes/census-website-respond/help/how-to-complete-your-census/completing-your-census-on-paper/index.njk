@@ -1,0 +1,198 @@
+---
+version: 28.0.1
+layout: census-website-respond/views/_languages-master
+---
+
+{% set pageId = 'help' %}
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{- onsBreadcrumb({
+                "ariaLabel": 'Breadcrumb',
+                "itemsList": [
+                    {
+                        "url": 'https://census-website-respond.netlify.app/end-to-end/home/',
+                        "text": 'Home'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help',
+                        "text": 'Help with the census'
+                    }
+                ]
+            }) }}
+
+            <div class="grid">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-l">
+                            <span class="u-fs-m u-db u-mb-xs u-lighter">How to complete your census</span>
+                            <span class="u-vh">: </span>
+                            <span class="u-fs-xxl u-db">Completing your census on paper</span>
+                        </h1>
+
+                        {{-
+                            onsTableOfContents({
+                                "title": 'Contents',
+                                "ariaLabel": 'Pages in this guide',
+                                "itemsList": [
+                                    {
+                                        "url": pageInfo.rootPath + '/help/how-to-complete-your-census',
+                                        "text": 'Overview'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/how-to-complete-your-census/completing-your-census-online',
+                                        "text": 'Completing your census online'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/how-to-complete-your-census/completing-your-census-on-paper',
+                                        "text": 'Completing your census on paper',
+                                        "current": true
+                                    }
+                                ]
+                            })
+                        }}
+
+                        <div class="page__body">
+
+                            <p>Use your access code to open an online census form.</p>
+
+                            {{
+                                onsPanel({
+                                    "classes": 'u-mt-m u-mb-l',
+                                    "body": "It's important to keep your access code safe to protect your personal information."
+                                })
+                            }}
+
+                            {{
+                                onsButton({
+                                    "type": 'button',
+                                    "text": 'Start census',
+                                    "classes": 'u-mb-m',
+                                    "url": '#'
+                                })
+                            }}
+
+                            <p>You don’t have to fill in the form all at once. You can save your progress at any time by clicking “save and sign out”. Don't forget to press "submit" when you're finished.</p>
+
+                            <p>If you lose your access code, you can <a href="https://census-website-respond.netlify.app/end-to-end/uac-request-address/?previous={{pageInfo.path}}">request a new one</a> to fill in your online form.</p>
+
+                            {{
+                                onsPanel({
+                                    "classes": 'u-mt-m u-mb-m',
+                                    "body": "If you lose your access code, you'll need to start again with a new code. You won't see any answers you entered using your original code."
+                                })
+                            }}
+
+                            {% call onsCollapsible({
+                                "id": 'collapsible-1',
+                                "classes": 'u-mb-m',
+                                "title": 'Help to get online',
+                                "button": {
+                                    "close": 'Hide this'
+                                }
+                            }) %}
+
+                                <p>If you need support to get online, you can go to one of the <a href="{{pageInfo.rootPath}}/help/find-a-support-centre">Census Support Centres</a>.</p>
+
+                                <p>You can also ask someone you trust to help you, for example a family member or friend.</p>
+
+                                <p>If you prefer not to do the census online, <a href="https://census-website-respond.netlify.app/end-to-end/uac-request-address/?previous={{pageInfo.rootPath}}">you can request a paper form</a>.</p>
+
+                            {% endcall %}
+
+                            <h2>Devices you can use</h2>
+
+                            <p>You can use any smartphone, tablet, laptop or desktop computer to fill in your online form. You can start it on one device and finish it on another, as long as you use the same access code.</p>
+
+                            <h2>You can use a public computer</h2>
+
+                            <p>Make sure you protect your access code to keep your information safe.</p>
+
+                            <p>You should:</p>
+
+                            {{
+                                onsList({
+                                    "itemsList": [
+                                        {
+                                            "text": "treat your access code the same way you would a password"
+                                        },
+                                        {
+                                            "text": "make sure you click &ldquo;save and sign out&rdquo; if you haven't finished, or press &ldquo;submit&rdquo; if you're all done"
+                                        },
+                                        {
+                                            "text": "not leave behind anything which has your access code details on"
+                                        }
+                                    ]
+                                })
+                            }}
+
+                            <h2>When you've finished</h2>
+
+                            <p>Check to make sure you've completed each section before you submit the form.</p>
+
+                            <p>You won’t be able to view your information after pressing submit.</p>
+
+                            <h2>Received more than one code</h2>
+
+                            <p>Whichever code you use, make sure you use the same code when returning to an online form you’ve already started. Destroy any others.</p>
+
+                            <p>If you've received a letter that has a different address to yours, please put it in a postbox so it can get to the right address.</p>
+
+                            <div class="u-mt-xl">
+                                {{-
+                                    onsContentPagination({
+                                        "contentPaginationItems": [
+                                        {
+                                            "rel": 'prev',
+                                            "text": 'Previous',
+                                            "url": pageInfo.rootPath + '/help/how-to-complete-your-census/completing-your-census-online',
+                                            "label": 'Completing your census online'
+                                        }
+                                        ]
+                                    })
+                                }}
+                            </div>
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+                <div class="grid__col col-4@m push-1@m u-mt-m">
+
+                    {{- onsRelatedLinks({
+                        "id": 'related-links',
+                        "title": 'Related content',
+                        "itemsList": [
+                            {
+                                "url": pageInfo.rootPath + '/help/get-an-access-code-or-paper-census/',
+                                "text": 'Get a new access code or paper form'
+                            },
+                            {
+                                "url": pageInfo.rootPath + '/help/find-a-support-centre',
+                                "text": 'Find a support centre'
+                            },
+                            {
+                                "url": pageInfo.rootPath + '/help/contact-us',
+                                "text": 'Contact us'
+                            }
+                        ]
+                    }) }}
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}

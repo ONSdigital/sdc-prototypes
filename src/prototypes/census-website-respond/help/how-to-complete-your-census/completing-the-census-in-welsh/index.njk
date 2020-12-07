@@ -1,0 +1,98 @@
+---
+version: 28.0.1
+layout: census-website-respond/views/_languages-master
+---
+
+{% set pageId = 'help' %}
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{- onsBreadcrumb({
+                "ariaLabel": 'Breadcrumb',
+                "itemsList": [
+                    {
+                        "url": 'https://census-website-respond.netlify.app/end-to-end/home/',
+                        "text": 'Home'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help',
+                        "text": 'Help with the census'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help/how-to-complete-your-census',
+                        "text": 'How to complete your census'
+                    }
+                ]
+            }) }}
+
+            <div class="grid">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-l u-fs-xxl">Completing the census in Welsh</h1>
+
+                        <div class="page__body">
+
+                            <h2>In Wales</h2>
+
+                            <p>If you're filling in the online census, there are "Cymraeg" and "English" buttons to switch between languages at any time. You can then see questions and instructions in your language of choice.</p>
+
+                            {{
+                                onsButton({
+                                    "type": 'button',
+                                    "text": 'Start your census in Welsh',
+                                    "classes": 'u-mb-m',
+                                    "url": '#'
+                                })
+                            }}
+
+                            <p>If you're filling in on paper, you can use Welsh and English on the same form if you wish. It doesn't matter whether you're using the Welsh or English language version of the form.</p>
+
+                            <h2>In England</h2>
+
+                            <p>You can fill in the census form in Welsh if you prefer, but we can't send you a Welsh language form.</p>
+
+                            <p>There are separate census forms in England and Wales. In England, the form is available in English only, and in Wales the form is available in Welsh and English.</p>
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+                <div class="grid__col col-4@m push-1@m u-mt-m">
+
+                    {{- onsRelatedLinks({
+                        "id": 'related-links',
+                        "title": 'Related content',
+                        "itemsList": [
+                            {
+                                "url": pageInfo.rootPath + '/help/get-an-access-code-or-paper-census/',
+                                "text": 'Get a new access code or paper form'
+                            },
+                            {
+                                "url": pageInfo.rootPath + '/help/find-a-support-centre',
+                                "text": 'Find a support centre'
+                            },
+                            {
+                                "url": pageInfo.rootPath + '/help/contact-us',
+                                "text": 'Contact us'
+                            }
+                        ]
+                    }) }}
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}
