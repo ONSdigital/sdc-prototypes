@@ -1,5 +1,5 @@
 ---
-title: 2019 Rehearsal
+title: Why you should take part in the census
 group: Census
 version: 28.0.1
 layout: census-website-respond/views/_languages-master
@@ -38,7 +38,7 @@ layout: census-website-respond/views/_languages-master
                         <h1 class="u-mb-l">
                             <span class="u-fs-m u-db u-mb-xs u-lighter">About the census</span>
                             <span class="u-vh">: </span>
-                            <span class="u-fs-xxl u-db">2019 Rehearsal</span>
+                            <span class="u-fs-xxl u-db">Why you should take part in the census</span>
                         </h1>
 
                         {{-
@@ -52,12 +52,12 @@ layout: census-website-respond/views/_languages-master
                                     },
                                     {
                                         "url": pageInfo.rootPath + '/about-the-census/2019-rehearsal',
-                                        "text": '2019 Rehearsal',
-                                        "current": true
+                                        "text": '2019 Rehearsal'
                                     },
                                     {
-                                        "url": pageInfo.rootPath + '/about-the-census/why-should-i-take-part-in-the-census',
-                                        "text": 'Why should I take part in the census?'
+                                        "url": pageInfo.rootPath + '/about-the-census/why-you-should-take-part-in-the-census',
+                                        "text": 'Why you should take part in the census',
+                                        "current": true
                                     },
                                     {
                                         "url": pageInfo.rootPath + '/about-the-census/about-census-2021',
@@ -77,21 +77,31 @@ layout: census-website-respond/views/_languages-master
 
                         <div class="page__body">
                             
-                            <p>To prepare for Census 2021, we at the Office for National Statistics (ONS) recently held a census rehearsal.</p>
+                            <p>It’s important you take part in the census. The information it gives has the power to make a real impact on our day-to-day lives.</p>
 
-                            <p>The rehearsal gave us a great chance to check our processes, systems and services were running smoothly ahead of the real thing. It took place in four local authority areas: Carlisle, Ceredigion, Hackney and Tower Hamlets.</p>
+                            <h2>The census is vital to all of us</h2>
 
-                            <p>We also held a Census Coverage Survey (CCS) Rehearsal and a Census Quality Survey (CQS) Rehearsal in the same areas. They helped us test those parts of the census operation.</p>
+                            <p>The census helps us understand what our society needs now and what it will likely need in the future. The information it collects helps with decisions on the planning and funding of services in your area. This could include schools, doctors’ surgeries, emergency services or even local support groups.</p>
 
-                            <h2>Thank you if you took part</h2>
+                            <p>Charities also use census information to help get the funding they need. Businesses use it to decide where to set up, which creates job opportunities.</p>
 
-                            <p>We’d like to say a big “thank you” if you filled in and submitted your census rehearsal questionnaire or took part in the CCS or CQS rehearsals. We’re grateful for your time. You’ve played an important part in making Census 2021 a success.</p>
+                            {% from "components/panel/_macro.njk" import onsPanel %}
+                            
+                            {% call onsPanel() %}
 
-                            <p>Below is a message from Iain Bell, Deputy National Statistician and Director General for Population and Public Policy at the Office for National Statistics, to say thank you to all who took part in the census rehearsal.</p>
+                            <p>You can read more about how the <a href="#0">Mental Health Foundation</a> and <a href="#0">London Fire Brigade</a> use census data to support and protect communities.</p>
 
-                            <h2>What’s next?</h2>
+                            {% endcall %}
 
-                            <p>We’re now starting to look back at how things went in the rehearsal to see if there’s anywhere we need to make improvements before the census in 2021.</p>
+                            <h2>Its success could help you</h2>
+
+                            <p>A successful census in 2021 will help give the best picture of the needs of everyone living in England and Wales.</p>
+
+                            <p>A total of 94% of people responded to the last census, helping each area receive its share of public funding. Without the census, it would be much more difficult to provide your area with the services you need.</p>
+
+                            <h2>You must complete the census by law</h2>
+
+                            <p>It is an offence to supply false information or to not complete the census, and you could be fined up to £1,000. Some questions are clearly labelled as voluntary. It is not an offence if you do not answer these.</p>
                             
                             <div class="u-mt-xl">
                                 {{-
@@ -100,14 +110,14 @@ layout: census-website-respond/views/_languages-master
                                             {
                                                 "rel": 'prev',
                                                 "text": 'Previous',
-                                                "url": pageInfo.rootPath + '/about-the-census/',
-                                                "label": 'Overview'
+                                                "url": pageInfo.rootPath + '/about-the-census/2019-rehearsal',
+                                                "label": '2019 Rehearsal'
                                             },
                                             {
                                                 "rel": 'next',
                                                 "text": 'Next',
-                                                "url": pageInfo.rootPath + '/about-the-census/why-should-i-take-part-in-the-census/',
-                                                "label": 'Why should I take part in the census?'
+                                                "url": pageInfo.rootPath + '/about-the-census/about-census-2021',
+                                                "label": 'About Census 2021'
                                             }
                                         ]
                                     })
