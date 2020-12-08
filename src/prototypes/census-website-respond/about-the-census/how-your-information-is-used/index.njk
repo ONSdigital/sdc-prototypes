@@ -1,7 +1,7 @@
 ---
-title: About the Census Quality Survey
+title: How your information is used
 group: Census
-version: 28.0.1
+version: 29.0.3
 layout: census-website-respond/views/_languages-master
 ---
 
@@ -38,7 +38,7 @@ layout: census-website-respond/views/_languages-master
                         <h1 class="u-mb-l">
                             <span class="u-fs-m u-db u-mb-xs u-lighter">About the census</span>
                             <span class="u-vh">: </span>
-                            <span class="u-fs-xxl u-db">About the Census Quality Survey</span>
+                            <span class="u-fs-xxl u-db">How your information is used</span>
                         </h1>
 
                         {{-
@@ -51,44 +51,30 @@ layout: census-website-respond/views/_languages-master
                                         "text": 'Overview'
                                     },
                                     {
-                                        "url": pageInfo.rootPath + '/about-the-census/2019-rehearsal',
-                                        "text": '2019 Rehearsal'
+                                        "url": pageInfo.rootPath + '/about-the-census/who-should-fill-in-a-census',
+                                        "text": 'Who should fill in a census'
                                     },
                                     {
                                         "url": pageInfo.rootPath + '/about-the-census/why-you-should-take-part-in-the-census',
                                         "text": 'Why you should take part in the census'
                                     },
                                     {
-                                        "url": pageInfo.rootPath + '/about-the-census/about-census-2021',
-                                        "text": 'About Census 2021'
-                                    },
-                                    {
-                                        "url": pageInfo.rootPath + '/about-the-census/about-the-census-coverage-survey',
-                                        "text": 'About the Census Coverage Survey'
-                                    },
-                                    {
-                                        "url": pageInfo.rootPath + '/about-the-census/about-the-census-quality-survey',
-                                        "text": 'About the Census Quality Survey',
+                                        "url": pageInfo.rootPath + '/about-the-census/how-your-information-is-used',
+                                        "text": 'How your information is used',
                                         "current": true
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/about-the-census/when-to-complete-your-census',
+                                        "text": 'When to complete your census'
                                     }
                                 ]
                             })
-                        }}
+                        -}}
 
                         <div class="page__body">
                             
-                            <p>The Census Quality Survey (CQS) is a smaller survey we carry out after the census.</p>
+                            <p>Content TBC</p>
 
-                            <h2>How it works</h2>
-
-                            <p>We ask a certain number of households in England and Wales to take part by answering some of the same questions from the census questionnaire.</p>
-
-                            <h2>What it’s for</h2>
-
-                            <p>The results of the CQS let us work out how accurate the information was that we collected in the census and improve our statistics.</p>
-
-                            <p>Our census statistics help to plan and fund public services in your area.</p>
-                            
                             <div class="u-mt-xl">
                                 {{-
                                     onsContentPagination({
@@ -96,8 +82,14 @@ layout: census-website-respond/views/_languages-master
                                             {
                                                 "rel": 'prev',
                                                 "text": 'Previous',
-                                                "url": pageInfo.rootPath + '/about-the-census/about-the-census-coverage-survey',
-                                                "label": 'About the Census Coverage Survey'
+                                                "url": pageInfo.rootPath + '/about-the-census/why-you-should-take-part-in-the-census',
+                                                "label": 'Why you should take part in the census'
+                                            },
+                                            {
+                                                "rel": 'next',
+                                                "text": 'Next',
+                                                "url": pageInfo.rootPath + '/about-the-census/when-to-complete-your-census',
+                                                "label": 'When to complete your census'
                                             }
                                         ]
                                     })
