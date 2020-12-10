@@ -39,9 +39,11 @@ layout: census-website-respond/views/_languages-master
 
                         <div class="page__body">
 
-                            <p>To start your census online, you will need your access code printed on the invitation letter we sent you. Your 16-character access code will be a combination of letters and numbers.</p>
+                            <p>To start your census online, you will need your access code printed on the invitation letter we sent you.</p>
+                            <p><a href="https://census-website-respond.netlify.app/end-to-end/where-to-find-your-access-code/">Where to find your access code</a></p>
 
-                            <img width="400" class="census-letter-thumb u-mb-m" src="{{pageInfo.rootPath}}/img/census-letter.svg" alt="Census 2021 invitation letter example showing location of access code">
+                            <!--
+                            <img width="400" class="census-letter-thumb u-mb-m u-mt-s" src="{{pageInfo.rootPath}}/img/census-letter.svg" alt="Census 2021 invitation letter example showing location of access code">
 
                             {% call onsPanel({
                                 "type": 'warn',
@@ -51,6 +53,7 @@ layout: census-website-respond/views/_languages-master
                                 Keep this code safe. You will need to enter it every time you access your census.
 
                             {% endcall %}
+                            -->
 
                             <h2>If you don’t have an access code</h2>
 
@@ -109,8 +112,8 @@ layout: census-website-respond/views/_languages-master
                             "title": 'Related content',
                             "itemsList": [
                                 {
-                                    "url": pageInfo.rootPath + '/help/how-to-answer-questions/paper',
-                                    "text": 'Paper questions help'
+                                    "url": 'https://census-website-respond.netlify.app/end-to-end/where-to-find-your-access-code/',
+                                    "text": 'Where to find your access code'
                                 },
                                 {
                                     "url": pageInfo.rootPath + '/contact-us',
