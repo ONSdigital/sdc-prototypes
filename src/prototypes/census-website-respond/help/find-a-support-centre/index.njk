@@ -39,51 +39,36 @@ layout: census-website-respond/views/_languages-master
 
                         <div class="page__body">
                         
-                            <p>Census Support Centres are available across England and Wales. Here you’ll find help to get online and complete your census.</p>
+                            <p>You can get help to complete your online census at one of our support centres across England and Wales.</p>
+
+                            <p>You can either bring your own device, or use a laptop or tablet provided at the centre. You don't need to bring ID with you, or to prove any information about yourself.</p>
+
+                            {% call onsPanel({
+                                "classes": 'u-mb-l'
+                            }) %}
+
+                                <p>You will need to bring the access code from the invitation letter we sent you</p>
+                                <p><a href="https://census-website-respond.netlify.app/end-to-end/where-to-find-your-access-code/?previous=website-find-a-support-centre">Where to find your access code</a></p>
+
+                            {% endcall %}
 
                             {{
                                 onsButton({
-                                    "classes": 'u-mb-m',
                                     "type": 'button',
                                     "text": 'Find a support centre',
                                     "url": pageInfo.rootPath + '/help/find-a-support-centre/enter-your-postcode'
                                 })
                             }}
 
-                            <p>Find your nearest centre and note down the contact details.</p>
+                            <h2>Coronavirus (COVID-19)</h2>
 
-                            <h2>If there’s a centre near you</h2>
-
-                            <p>Drop by to talk to our Census Support Advisors. You don’t need to ring and make an appointment first, but you can if you prefer to.</p>
+                            <p>All our support centres follow the government’s safety guidelines about coronavirus...(awaiting content about compliance)</p>
 
                             <p>Whether you need advice, instructions or a computer, we can help.</p>
 
-                            <h3>What to take</h3>
+                            <h2>If there isn’t a centre near you</h2>
 
-                            {% call onsPanel({
-                                "classes": 'u-mb-m'
-                            }) %}
-
-                                <ul class="list list--bare list--spacious">
-                                    <li class="list__item"><strong>You will need</strong> the access code from your letter</li>
-                                    <li class="list__item"><strong>You might need</strong> information about the people you live with. The census asks questions about everyone who lives in your household. For example, there are questions on people’s health, qualifications, passports they have and where they were living a year ago</li>
-                                    <li class="list__item u-mb-no"><strong>You can take</strong> your own mobile device, or you can use a laptop or tablet provided at the centre</li>
-                                </ul>
-
-                            {% endcall %}
-
-                            <p>Don’t worry, you don’t need ID and you don’t need to prove any information about yourself. Our census support advisors will never ask you for evidence. They will not ask to see any documents you’ve brought with you, but you can show them if you wish.</p>
-
-                            <h2>If there’s not a centre near you</h2>
-
-                            <p>We’re sorry that our Census Support Centres cannot cover the whole country. We’ve researched very hard to find out where people need them most and where they can help the most people.</p>
-
-                            <p>Don’t worry, we haven’t forgotten about everywhere else. There are other support options for you:</p>
-
-                            <ul>
-                                <li><a href="#0">Census officers in your area</a></li>
-                                <li><a href="#0">Contact centre</a></li>
-                            </ul>
+                            <p>Unfortunately our support centres cannot cover the whole country. If your area isn't included and you need further help, please <a href="{{pageInfo.rootPath}}/contact-us">contact us</a>.</p>
 
                         </div>
 
