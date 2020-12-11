@@ -1,7 +1,7 @@
 ---
 title: Get ready for Census 2021
 group: Census
-version: 28.0.4
+version: 29.0.5
 layout: census-website-engage/views/_master
 ---
 
@@ -9,18 +9,15 @@ layout: census-website-engage/views/_master
 
     {% block main %}
 
-        <!-- Hero -->
-        {{
-            onsHero({
-                censusTheme: true,
-                censusThemeDark: true,
-                title: 'Get ready for Census 2021',
-                subtitle: 'Census Day will be Sunday 21 March 2021.',
-                image: {
-                    smallSrc: pageInfo.rootPath + '/img/small/',
-                    largeSrc: pageInfo.rootPath + '/img/large/',
-                    filename: 'woman-in-purple-dress-shirt.jpg',
-                    alt: 'Woman in purple dress shirt using laptop'
+        {{ onsHero({
+                "censusTheme": true,
+                "censusThemeDark": true,
+                "title": 'Get ready for Census 2021',
+                "subtitle": 'Census Day will be Sunday 21 March 2021.',
+                "image": {
+                    "smallSrc": pageInfo.rootPath + '/img/small/woman-in-purple-dress-shirt.jpg',
+                    "largeSrc": pageInfo.rootPath + '/img/large/woman-in-purple-dress-shirt.jpg',
+                    "alt": 'Woman in purple dress shirt using laptop'
                 }
             })
         }}
@@ -133,9 +130,8 @@ layout: census-website-engage/views/_master
                                 "downloads": [
                                     {
                                         "thumbnail": {
-                                            "smallSrc": pageInfo.rootPath + '/img/small/',
-                                            "largeSrc": pageInfo.rootPath + '/img/large/',
-                                            "filename": 'community-handbook-english.png',
+                                            "smallSrc": pageInfo.rootPath + '/img/small/community-handbook-english.png',
+                                            "largeSrc": pageInfo.rootPath + '/img/large/community-handbook-english.png',
                                             "alt": 'Community handbook english document thumbnail'
                                         },
                                         "url": pageInfo.rootPath + '/documents/Digital_Ready_CHDE1-2021_v4-0_280820.pdf',                                                
@@ -157,9 +153,8 @@ layout: census-website-engage/views/_master
                                 "downloads": [
                                     {
                                         "thumbnail": {
-                                            "smallSrc": pageInfo.rootPath + '/img/small/',
-                                            "largeSrc": pageInfo.rootPath + '/img/large/',
-                                            "filename": 'engagement-leaflet-english.png',
+                                            "smallSrc": pageInfo.rootPath + '/img/small/engagement-leaflet-english.png',
+                                            "largeSrc": pageInfo.rootPath + '/img/large/engagement-leaflet-english.png',
                                             "alt": 'Engagement leaflet english document thumbnail'
                                         },
                                         "url": pageInfo.rootPath + '/documents/Digital_Ready_ELA1-2021_v7-0_280820.pdf',                                                
@@ -181,9 +176,8 @@ layout: census-website-engage/views/_master
                                 "downloads": [
                                     {
                                         "thumbnail": {
-                                            "smallSrc": pageInfo.rootPath + '/img/small/',
-                                            "largeSrc": pageInfo.rootPath + '/img/large/',
-                                            "filename": 'councillor-handbook-english.png',
+                                            "smallSrc": pageInfo.rootPath + '/img/small/councillor-handbook-english.png',
+                                            "largeSrc": pageInfo.rootPath + '/img/large/councillor-handbook-english.png',
                                             "alt": 'Councillor handbook english document thumbnail'
                                         },
                                         "url": pageInfo.rootPath + '/documents/Digital_Ready_CHE1-2021_v4-0_280820.pdf',                                                
