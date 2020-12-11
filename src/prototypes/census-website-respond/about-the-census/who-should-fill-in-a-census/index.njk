@@ -72,9 +72,71 @@ layout: census-website-respond/views/_languages-master
                         -}}
 
                         <div class="page__body">
-                            <p>Everyone in England and Wales must complete their census or be included on a census for the place where they're living or staying.</p>
+                            <p>Everyone in England and Wales must complete a census or be included on a census for the place where they're living or staying.</p>
+
+                            {% call onsPanel({
+                                "type": 'warn',
+                                "classes": 'u-mb-m'
+                            }) %}
+
+                                You must complete the census by law
+
+                            {% endcall %}
+
+                            <p>It is an offence to supply false information or to not complete the census, and you could be fined up to £1,000. Some questions are clearly labelled as voluntary. It is not an offence if you do not answer these.</p>
+
+                            <p>Every householder at an address is responsible for completing a census questionnaire for their household.</p>
 
                             {%
+                                call onsCollapsible({
+                                    "classes": 'u-mt-m',
+                                    "id": 'collapsible-0',
+                                    "title": 'What we mean by “householder” and “household”',
+                                    "button": {
+                                        "close": 'Hide this',
+                                        "contextSuffix": 'content',
+                                        "attributes": {
+                                            "aria-hidden": 'true'
+                                        }
+                                    }
+                                })
+                            %}
+
+                                <p>A <strong>householder</strong> is a person who usually lives at this address and, on their own or with someone else, owns or rents the accommodation, and/or pays the household bills and expenses.</p>
+
+                                <p>A <strong>household</strong> is one person living alone or a group of people, not necessarily related, living at the same address, who share cooking facilities <strong>and</strong> share a living room <strong>or</strong> sitting room <strong>or</strong> dining area.</p>
+
+                            {% endcall %}
+
+                            <h2 class="u-fs-l">Staying in the UK for less than three months</h2>
+                            <p>You are not responsible for filling in the census if you are staying in the UK for less than three months. The owner of your accommodation will need to fill in the census about the household and the people staying there.</p>
+
+                            <h2>Other types of accommodation</h2>
+                            <p>You need to complete a census if you:</p>
+                                <ul>
+                                    <li>
+                                        <a href="{{pageInfo.rootPath}}/help/types-of-accommodation/students">
+                                        are a student living away from home during term time</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{pageInfo.rootPath}}/help/types-of-accommodation/second-homes-away">
+                                        have a second home, are on holiday or away from home</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{pageInfo.rootPath}}/help/types-of-accommodation/mobile-homes">
+                                        live somewhere that is mobile, such as a canal boat or motorhome</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{pageInfo.rootPath}}/help/types-of-accommodation/communal-establishments">
+                                        live in a care home, armed forces base or similar establishment</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{pageInfo.rootPath}}/help/types-of-accommodation/no-fixed-address">
+                                        do not live at a fixed address</a>
+                                    </li>
+                                </ul>
+
+                            <!--{%
                                 call onsCollapsible({
                                     "classes": 'u-mt-m',
                                     "id": 'collapsible-0',
@@ -126,7 +188,7 @@ layout: census-website-respond/views/_languages-master
                                 </ul>
 
                             {% endcall %}
-
+                            -->
 
 
                             <div class="u-mt-xl">
@@ -168,8 +230,8 @@ layout: census-website-respond/views/_languages-master
                                     "text": 'Your data and security'
                                 },
                                 {
-                                    "url": pageInfo.rootPath + '/news',
-                                    "text": 'News'
+                                    "url": '#0',
+                                    "text": 'Answering separately from your household'
                                 },
                                 {
                                     "url": pageInfo.rootPath + '/contact-us',

@@ -1,0 +1,88 @@
+---
+version: 29.0.5
+layout: census-website-respond/views/_languages-master
+---
+
+{% set pageId = 'help' %}
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": 'https://census-website-respond.netlify.app/end-to-end/home/',
+                            "text": 'Home'
+                        },
+                        {
+                            "url": pageInfo.rootPath + '/help',
+                            "text": 'Help with the census'
+                        },
+                        {
+                            "url": pageInfo.rootPath + '/help/types-of-accommodation',
+                            "text": 'Types of accommodation and living situations'
+                        }
+                    ]
+                })
+            }}
+
+            <div class="grid">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-l u-fs-xxl">Second homes, on holiday or away from home</h1>
+
+                        <div class="page__body">
+
+                            <p>If you have not received a census letter or form by Sunday 21 March 2021 <strong>where you live</strong>, <a href="/help/get-an-access-code-or-paper-census">please order an access code or paper form</a>.<br></p>
+                            
+                            <ul>
+                                <li><a href="/help/frequently-asked-questions/households-what-you-need-to-know/second-homes-on-holiday-and-away-from-home/i-have-a-second-property">I have a second property</a><br></li>
+                                <li><a href="/help/frequently-asked-questions/households-what-you-need-to-know/second-homes-on-holiday-and-away-from-home/im-in-rented-holiday-accommodation">I'm in rented holiday accommodation</a></li>
+                                <li><a href="/help/frequently-asked-questions/households-what-you-need-to-know/second-homes-on-holiday-and-away-from-home/what-if-im-away-or-abroad-on-census-day">What if I'm away or abroad on Census Day?</a></li>
+                            </ul>
+                        </div>
+
+                    </main>
+
+                </div>
+
+                <div class="grid__col col-4@m push-1@m u-mt-m">
+
+                    {{-
+                        onsRelatedLinks({
+                            "id": 'related-links',
+                            "title": 'Related content',
+                            "itemsList": [
+                                {
+                                    "url": pageInfo.rootPath + '/help/find-a-support-centre',
+                                    "text": 'Find a support centre'
+                                },
+                                {
+                                    "url": 'https://census-website-respond.netlify.app/end-to-end/languages',
+                                    "text": 'Languages'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/contact-us',
+                                    "text": 'Contact us'
+                                }
+                            ]
+                        })
+                    }}
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}

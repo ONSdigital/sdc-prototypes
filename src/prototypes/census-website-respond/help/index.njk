@@ -84,7 +84,7 @@ layout: census-website-respond/views/_languages-master
 
                 </div>
 
-                <div class="grid">
+                <div class="grid grid--column@xs@s u-mb-m@m">
 
                     <div class="grid__col col-4@m">
                         {{-
@@ -121,6 +121,23 @@ layout: census-website-respond/views/_languages-master
                                 "title": 'Help someone complete their census',
                                 "url": pageInfo.rootPath + '/help/help-someone-complete-their-census/',
                                 "text": 'What you can do to support someone else with their census.'
+                            })
+                        }}
+                    </div>
+
+                </div>
+
+                <div class="grid grid--column@xs@s u-mb-m@m">
+
+                    <div class="grid__col col-4@m">
+                        {{-
+                            onsCard({
+                                "ariaBy": 'Section highlight',
+                                "id": 'title4',
+                                "textId": 'text4',
+                                "title": 'Types of accommodation and living situations',
+                                "url": pageInfo.rootPath + '/help/types-of-accommodation/',
+                                "text": 'Completing the census if are a student, away from home, have a second home or no fixed address.'
                             })
                         }}
                     </div>

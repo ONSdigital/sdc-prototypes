@@ -1,0 +1,115 @@
+---
+version: 29.0.5
+layout: census-website-respond/views/_languages-master
+---
+
+{% set pageId = 'help' %}
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": 'https://census-website-respond.netlify.app/end-to-end/home/',
+                            "text": 'Home'
+                        },
+                        {
+                            "url": pageInfo.rootPath + '/help',
+                            "text": 'Help with the census'
+                        }
+                    ]
+                })
+            }}
+
+            <main class="page__main" id="main-content" role="main">
+
+                <h1 class="u-mb-l u-fs-xxl">Types of accommodation and living situations</h1>
+
+                <div class="grid grid--column@xs@s u-mb-m@m">
+
+                    <div class="grid__col col-4@m">
+                        {{-
+                            onsCard({
+                                "ariaBy": 'Section highlight',
+                                "id": 'title6',
+                                "textId": 'text6',
+                                "title": 'Students living away from home',
+                                "url": pageInfo.rootPath + '/help/types-of-accommodation/students',
+                                "text": 'Completing the census if are a student living in halls of residence or in private rented term-time accommodation.'
+                            })
+                        }}
+                    </div>
+
+                    <div class="grid__col col-4@m">
+                        {{-
+                            onsCard({
+                                "ariaBy": 'Section highlight',
+                                "id": 'title6',
+                                "textId": 'text6',
+                                "title": 'Second homes, on holiday or away from home',
+                                "url": pageInfo.rootPath + '/help/types-of-accommodation/second-homes-away',
+                                "text": 'Completing the census if you own a second home, are on holiday or away from home.'
+                            })
+                        }}
+                    </div>
+
+                    <div class="grid__col col-4@m">
+                        {{-
+                            onsCard({
+                                "ariaBy": 'Section highlight',
+                                "id": 'title6',
+                                "textId": 'Boats, caravans and other mobile homes',
+                                "title": 'Boats, caravans and other mobile homes',
+                                "url": pageInfo.rootPath + '/help/types-of-accommodation/mobile-homes',
+                                "text": 'Completing the census if you live somewhere that is mobile, such as a canal boat or live-in vehicle.'
+                            })
+                        }}
+                    </div>
+
+                </div>
+
+                <div class="grid grid--column@xs@s u-mb-m@m">
+
+                    <div class="grid__col col-4@m">
+                        {{-
+                            onsCard({
+                                "ariaBy": 'Section highlight',
+                                "id": 'title6',
+                                "textId": 'text6',
+                                "title": 'Care homes and other communal establishments',
+                                "url": pageInfo.rootPath + '/help/types-of-accommodation/communal-establishment',
+                                "text": 'Completing the census if you live in a care home, armed forces base or other type of communal establishment.'
+                            })
+                        }}
+                    </div>
+
+                    <div class="grid__col col-4@m">
+                        {{-
+                            onsCard({
+                                "ariaBy": 'Section highlight',
+                                "id": 'title6',
+                                "textId": 'text6',
+                                "title": 'People not living at a fixed address',
+                                "url": pageInfo.rootPath + '/help/types-of-accommodation/no-fixed-address',
+                                "text": 'Completing the census if you are homeless, travelling or living in temporary accommodation.'
+                            })
+                        }}
+                    </div>
+
+                </div>
+
+                </div>
+
+            </main>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}
