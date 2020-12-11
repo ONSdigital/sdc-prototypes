@@ -81,7 +81,6 @@ layout: census-website-respond/views/_languages-master
                                     "classes": 'list--bare list--spacious',
                                     "itemsList": [
                                         {
-                                            "url": '#0',
                                             "text": 'What’s in the census information leaflet'
                                         },
                                         {
@@ -89,11 +88,9 @@ layout: census-website-respond/views/_languages-master
                                             "text": 'What’s in the letter we sent you'
                                         },
                                         {
-                                            "url": '#0',
                                             "text": 'Privacy information​'
                                         },
                                         {
-                                            "url": '#0',
                                             "text": 'What to do when you’ve finished your census​'
                                         }
                                     ]
@@ -140,23 +137,18 @@ layout: census-website-respond/views/_languages-master
                                             "text": 'What is your name?'
                                         },
                                         {
-                                            "url": '#0',
                                             "text": 'Do any of the following people also live at this address on Sunday 21 March 2021?​'
                                         },
                                         {
-                                            "url": '#0',
                                             "text": 'Who else lives at this address?'
                                         },
                                         {
-                                            "url": '#0',
                                             "text": 'Does anyone else live at this address?'
                                         },
                                         {
-                                            "url": '#0',
                                             "text": 'Do any of the following people live at this address on Sunday 21 March 2021?​'
                                         },
                                         {
-                                            "url": '#0',
                                             "text": 'Do you need to add anyone?'
                                         }
                                     ]
@@ -287,7 +279,17 @@ layout: census-website-respond/views/_languages-master
                                 })
                             %}
 
-                                <p>Content TBC</p>
+                                {{
+                                    onsList({
+                                        "classes": 'list--bare list--spacious',
+                                        "itemsList": [
+                                            {
+                                                "url": pageInfo.rootPath + '/help/languages-and-accessibility/accessibility/british-sign-language/have-you-achieved-a-gcse-or-equivalent-qualification',
+                                                "text": 'Have you achieved a GCSE or equivalent qualification?'
+                                            }
+                                        ]
+                                    })
+                                }}
 
                             {% endcall %}
 
