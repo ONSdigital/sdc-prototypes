@@ -35,46 +35,89 @@ layout: census-website-respond/views/_master
 
                             <div class="page__body">
                             <p>Contact us if you have any questions about filling in the census online or on paper. You can use any of these options if you need information or a census in an alternative format like Braille or large print.</p>
+
                             <h2>Telephone</h2>
-                            
-                            <p>+44 (0)1329 444972</p>
-                            
-                            <p>Our team is available to help you:</p>
-                            
-                            <p>Monday to Friday – 9am to 4pm</p>
-                            
-                            <h2>Email</h2>
-                            
-                            <p><a href="mailto:census.customerservices@ons.gov.uk">census.customerservices@ons.gov.uk</a></p>
-                            
-                            <h2>Social media</h2>
-                            
-                            <p>Follow us:</p>
+
+                            <p>We will have advisers available to help you at the following times:</p>
 
                             {{
                                 onsList({
-                                    "classes": 'list--bare list--inline',
+                                    "classes": 'list--bare',
                                     "itemsList": [
                                         {
-                                            "url": 'https://www.twitter.com/census2021',
-                                            "text": 'Twitter',
-                                            "prefixIcon": 'twitter',
-                                            "iconSize": 'xxl',
-                                            "rel": 'noreferrer external'
+                                            "text": 'Monday to Friday – 8am to 7pm'
                                         },
                                         {
-                                            "url": 'https://www.facebook.com/census2021',
-                                            "text": 'Facebook',
-                                            "prefixIcon": 'facebook',
-                                            "iconSize": 'xxl',
-                                            "rel": 'noreferrer external'
+                                            "text": 'Saturday – 8am to 1pm'
                                         },
                                         {
-                                            "url": 'https://www.instagram.com/census2021',
-                                            "text": 'Instagram',
-                                            "prefixIcon": 'instagram',
-                                            "iconSize": 'xxl',
-                                            "rel": 'noreferrer external'
+                                            "text": 'Sunday – closed'
+                                        }
+                                    ]
+                                })
+                            }}
+
+                            <h3>England</h3>
+                            <p>Telephone: 0800 141 2021</p>
+
+                            <h3>Wales</h3>
+                            <p>Telephone: 0800 169 202 <span class="u-fs-s">(Option 1 for Welsh, option 2 for English)</span></p>
+
+                            <h3>Other languages</h3>
+                            <p>If you need to speak to us in another language call our free language helpline on 0800 587 2021
+
+                            <h3>Text relay</h3>
+                            <p>Relay UK users dial 18001 followed by the phone number you need</p>
+
+                            <h2>Online</h2>
+
+                            <h3>Web chat</h3>
+
+                            <p>We will have advisers available to help you at the following times:</p>
+
+                            {{
+                                onsList({
+                                    "classes": 'list--bare u-mb-m',
+                                    "itemsList": [
+                                        {
+                                            "text": 'Monday to Friday – 8am to 7pm'
+                                        },
+                                        {
+                                            "text": 'Saturday – 8am to 1pm'
+                                        },
+                                        {
+                                            "text": 'Sunday – closed'
+                                        }
+                                    ]
+                                })
+                            }}
+
+                            {{
+                                onsButton({
+                                    "type": 'button',
+                                    "text": 'Start web chat',
+                                    "url": '#',
+                                    "newWindow": true
+                                })
+                            }}
+
+                            <h2>Text message (SMS)</h2>
+                            <p>Text 86677</p>
+
+                            <p>We will have advisers available to help you at the following times:</p>
+
+                            {{
+                                onsList({
+                                    "classes": 'list--bare',
+                                    "itemsList": [
+                                        {
+                                            "text": 'Monday to Friday – 8am to 7pm'
+                                        },
+                                        {
+                                            "text": 'Saturday – 8am to 1pm'
+                                        },
+                                        {
+                                            "text": 'Sunday – closed'
                                         }
                                     ]
                                 })
@@ -86,7 +129,7 @@ layout: census-website-respond/views/_master
 
                 </div>
 
-                <div class="grid__col col-4@m push-1@m u-mt-m">
+                <div class="grid__col col-4@m push-1@m u-mt-xl">
 
                     {{-
                         onsRelatedLinks({
@@ -94,13 +137,65 @@ layout: census-website-respond/views/_master
                             "title": 'Related content',
                             "itemsList": [
                                 {
-                                    "url": pageInfo.rootPath + '/media-enquiries',
-                                    "text": 'Media enquiries'
+                                    "url": pageInfo.rootPath + '/about-the-census/who-should-fill-in-a-census',
+                                    "text": 'Who should fill in a census'
+                                },
+                                {
+                                    "url": 'https://census-website-respond.netlify.app/end-to-end/languages/',
+                                    "text": 'Languages'
+                                },
+                                {
+                                    "url": 'https://census-website-respond.netlify.app/end-to-end/languages/',
+                                    "text": 'Languages'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/help/languages-and-accessibility/accessibility/',
+                                    "text": 'Accessibility'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/help/find-a-support-centre/',
+                                    "text": 'Find a census support centre'
                                 }
                             ]
                         })
                     }}
 
+                    <div class="u-pt-m u-pb-s u-bt">
+                        <h2 class="u-fs-r--b u-mb-xs">Media enquiries</h2>
+                        <p>Telephone: 0845 604 1858 <br> Monday to Friday, 8:30am to 5:30pm</p>
+                        <p>Out of hours: 07867 906 553</p>
+                        <p>Email: <a href="mailto:media.relations@ons.gov.uk">media.relations@ons.gov.uk</a></p>
+                    </div>
+
+                    <div class="u-pt-m u-bt">
+                        <h2 class="u-fs-r--b u-mb-xs">Follow us</h2>
+                        {{ onsList({
+                            "classes": 'list--bare list--icons',
+                            "itemsList": [
+                                {
+                                    "url": 'https://www.twitter.com/census2021',
+                                    "text": 'Twitter',
+                                    "prefixIcon": 'twitter',
+                                    "iconSize": 'xxl',
+                                    "rel": 'noreferrer external'
+                                },
+                                {
+                                    "url": 'https://www.facebook.com/census2021',
+                                    "text": 'Facebook',
+                                    "prefixIcon": 'facebook',
+                                    "iconSize": 'xxl',
+                                    "rel": 'noreferrer external'
+                                },
+                                {
+                                    "url": 'https://www.instagram.com/census2021',
+                                    "text": 'Instagram',
+                                    "prefixIcon": 'instagram',
+                                    "iconSize": 'xxl',
+                                    "rel": 'noreferrer external'
+                                }
+                            ]
+                        }) }}
+                    </div>
                 </div>
 
             </div>
