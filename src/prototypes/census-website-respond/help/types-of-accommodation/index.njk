@@ -29,9 +29,22 @@ layout: census-website-respond/views/_languages-master
 
             <main class="page__main" id="main-content" role="main">
 
-                <h1 class="u-mb-l u-fs-xxl">Types of accommodation and living situations</h1>
+                <h1 class="u-mb-l u-fs-xxl">Types of household or accommodation</h1>
 
                 <div class="grid grid--column@xs@s u-mb-m@m">
+
+                    <div class="grid__col col-4@m">
+                        {{-
+                            onsCard({
+                                "ariaBy": 'Section highlight',
+                                "id": 'title6',
+                                "textId": 'text6',
+                                "title": 'Family or shared households',
+                                "url": '#0',
+                                "text": "Completing the census if live in a household with family or people you're not related to."
+                            })
+                        }}
+                    </div>
 
                     <div class="grid__col col-4@m">
                         {{-
@@ -59,6 +72,10 @@ layout: census-website-respond/views/_languages-master
                         }}
                     </div>
 
+                </div>
+
+                <div class="grid grid--column@xs@s u-mb-m@m">
+
                     <div class="grid__col col-4@m">
                         {{-
                             onsCard({
@@ -71,10 +88,6 @@ layout: census-website-respond/views/_languages-master
                             })
                         }}
                     </div>
-
-                </div>
-
-                <div class="grid grid--column@xs@s u-mb-m@m">
 
                     <div class="grid__col col-4@m">
                         {{-
@@ -101,7 +114,6 @@ layout: census-website-respond/views/_languages-master
                             })
                         }}
                     </div>
-
                 </div>
 
                 </div>
