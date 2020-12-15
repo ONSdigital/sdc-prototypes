@@ -1,3 +1,5 @@
+import domReady from 'helpers/domready';
+
 // UTILITY
 function Util() {}
 
@@ -1100,3 +1102,16 @@ Math.easeInOutQuad = function(t, b, c, d) {
     }
   }
 });
+
+// OPEN POP UP WINDOW
+function openPopup() {
+  const trigger = document.querySelector('.js-popup');
+  const windowURL = document.querySelector('.js-popup').href;
+
+  trigger.addEventListener('click', e => {
+    e.preventDefault();
+    window.open(windowURL, '', 'width=600,height=800,left=0');
+  });
+}
+
+domReady(openPopup);

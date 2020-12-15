@@ -93,12 +93,12 @@ layout: census-website-respond/views/_master
                             {{
                                 onsButton({
                                     "type": 'button',
-                                    "id": 'js-webchat',
+                                    "classes": 'js-popup',
                                     "text": 'Chat with an adviser',
                                     "url": 'https://whitelodge.census-gcp.onsdigital.uk/en/web-chat/',
-                                    'icon': {
-                                        'iconType': 'external-link',
-                                        'iconPosition': 'after'
+                                    "icon": {
+                                        "iconType": 'external-link',
+                                        "iconPosition": 'after'
                                     }
                                 })
                             }}
@@ -202,18 +202,4 @@ layout: census-website-respond/views/_master
     
     {% endblock %}
 
-<script>
-
-    function openPopup () {
-        var webchatButton = document.getElementById("js-webchat");
-
-        webchatButton.addEventListener('click', (e) => {
-            e.preventDefault()
-            window.open("https://whitelodge.census-gcp.onsdigital.uk/en/web-chat/", "Census 2021 web chat", "width=600,height=800");
-        })
-    }
-
-    openPopup();
-
-</script>
 {% endblock %}
