@@ -58,10 +58,10 @@ layout: census-website-respond/views/_master
                             }}
 
                             <h3>England</h3>
-                            <p>Telephone: 0800 141 2021</p>
+                            <p>Telephone free: 0800 141 2021</p>
 
                             <h3>Wales</h3>
-                            <p>Telephone: 0800 169 202 <span class="u-fs-s">(Option 1 for Welsh, option 2 for English)</span></p>
+                            <p>Telephone free: 0800 169 202 <span class="u-fs-s">(Option 1 for Welsh, option 2 for English)</span></p>
 
                             <h3>Other languages</h3>
                             <p>If you need to speak to us in another language call our free language helpline on 0800 587 2021
@@ -69,9 +69,7 @@ layout: census-website-respond/views/_master
                             <h3>Text relay</h3>
                             <p>Relay UK users dial 18001 followed by the phone number you need</p>
 
-                            <h2>Online</h2>
-
-                            <h3>Live web chat</h3>
+                            <h2>Live web chat</h2>
 
                             <p>We will have advisers available to help you at the following times:</p>
 
@@ -138,15 +136,15 @@ layout: census-website-respond/views/_master
                     {{-
                         onsRelatedLinks({
                             "id": 'related-links',
-                            "title": 'Related content',
+                            "title": 'Help with the census',
                             "itemsList": [
-                                {
-                                    "url": pageInfo.rootPath + '/about-the-census/who-should-fill-in-a-census',
-                                    "text": 'Who should fill in a census'
-                                },
                                 {
                                     "url": pageInfo.rootPath + '/help/get-an-access-code-or-paper-census/',
                                     "text": 'Get an access code or paper census'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/help/find-a-support-centre/',
+                                    "text": 'Find a census support centre'
                                 },
                                 {
                                     "url": 'https://census-website-respond.netlify.app/end-to-end/languages/',
@@ -155,10 +153,6 @@ layout: census-website-respond/views/_master
                                 {
                                     "url": pageInfo.rootPath + '/help/languages-and-accessibility/accessibility/',
                                     "text": 'Accessibility'
-                                },
-                                {
-                                    "url": pageInfo.rootPath + '/help/find-a-support-centre/',
-                                    "text": 'Find a census support centre'
                                 }
                             ]
                         })
