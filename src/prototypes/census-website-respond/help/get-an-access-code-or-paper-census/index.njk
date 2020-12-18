@@ -1,7 +1,7 @@
 ---
 title: Get an access code or paper census
 group: Census
-version: 29.0.5
+version: 29.1.3
 layout: census-website-respond/views/_master
 ---
 
@@ -39,11 +39,11 @@ layout: census-website-respond/views/_master
 
                         <div class="page__body">
 
-                            <p>To start your census online, you will need your access code printed on the invitation letter we sent you.</p>
+                            <p>To start your census online, you will need your access code printed on the letter we sent you.</p>
                             <p><a href="https://census-website-respond.netlify.app/end-to-end/where-to-find-your-access-code/">Where to find your access code</a></p>
 
                             <!--
-                            <img width="400" class="census-letter-thumb u-mb-m u-mt-s" src="{{pageInfo.rootPath}}/img/census-letter.svg" alt="Census 2021 invitation letter example showing location of access code">
+                            <img width="400" class="census-letter-thumb u-mb-m u-mt-s" src="{{pageInfo.rootPath}}/img/census-letter.svg" alt="Census 2021 letter example showing location of access code">
 
                             {% call onsPanel({
                                 "type": 'warn',
@@ -57,7 +57,7 @@ layout: census-website-respond/views/_master
 
                             <h2>If you don’t have an access code</h2>
 
-                            <p>You can <a href="#0">request a new code</a> to start a new census if you have lost or not received an access code. This can be sent to you by text or post.</p>
+                            <p>You can <a href="https://census-website-respond.netlify.app/end-to-end/uac-request-address/?previous=website-get-a-code">request a new code</a> to start a new census if you have lost or not received an access code. This can be sent to you by text or post.</p>
 
                             <p>A new access code will start a new census, and you will lose any answers entered using a previous access code.</p>
 
@@ -77,7 +77,7 @@ layout: census-website-respond/views/_master
                                 })
                             %}
 
-                                <p>If you need to answer separately from the people you live with, you can <a href="#">request an individual access code</a> to start a separate census.</p>
+                                <p>If you need to answer separately from the people you live with, you can <a href="{{pageInfo.rootPath}}/help/get-an-access-code-or-paper-census/answering-separately-from-your-household">complete your own census</a>.</p>
 
                                 {% call onsPanel({
                                     "type": 'warn',

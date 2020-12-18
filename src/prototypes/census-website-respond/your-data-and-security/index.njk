@@ -1,7 +1,7 @@
 ---
 title: Your data and security
 group: Census
-version: 29.0.5
+version: 29.1.3
 layout: census-website-respond/views/_master
 ---
 
@@ -30,6 +30,26 @@ layout: census-website-respond/views/_master
                 <div class="grid__col col-7@m">
 
                     <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-l">
+                            <span class="u-fs-m u-db u-mb-xs u-lighter">Your data and security</span>
+                            <span class="u-vh">: </span>
+                            <span class="u-fs-xxl u-db">Overview</span>
+                        </h1>
+
+                        {{-
+                            onsTableOfContents({
+                                "title": 'Contents',
+                                "ariaLabel": 'Pages in this guide',
+                                "itemsList": [
+                                    {
+                                        "url": pageInfo.rootPath + '/about-the-census',
+                                        "text": 'Overview',
+                                        "current": true
+                                    }
+                                ]
+                            })
+                        -}}
 
                         <h1 class="u-mb-l u-fs-xxl">Your data and security</h1>
 
