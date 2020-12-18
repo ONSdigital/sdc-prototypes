@@ -32,7 +32,7 @@ layout: census-website-respond/views/_master
                     <main class="page__main" id="main-content" role="main">
 
                         <h1 class="u-mb-l">
-                            <span class="u-fs-m u-db u-mb-xs u-lighter">How to complete your census</span>
+                            <span class="u-fs-m u-db u-mb-xs u-lighter">How to complete the census</span>
                             <span class="u-vh">: </span>
                             <span class="u-fs-xxl u-db">Overview</span>
                         </h1>
@@ -43,16 +43,16 @@ layout: census-website-respond/views/_master
                                 "ariaLabel": 'Pages in this guide',
                                 "itemsList": [
                                     {
-                                        "url": pageInfo.rootPath + '/help/how-to-complete-your-census',
+                                        "url": pageInfo.rootPath + '/help/how-to-complete-the-census',
                                         "text": 'Overview',
                                         "current": true
                                     },
                                     {
-                                        "url": pageInfo.rootPath + '/help/how-to-complete-your-census/completing-your-census-online',
+                                        "url": pageInfo.rootPath + '/help/how-to-complete-the-census/completing-your-census-online',
                                         "text": 'Completing your census online'
                                     },
                                     {
-                                        "url": pageInfo.rootPath + '/help/how-to-complete-your-census/completing-your-census-on-paper',
+                                        "url": pageInfo.rootPath + '/help/how-to-complete-the-census/completing-your-census-on-paper',
                                         "text": 'Completing your census on paper'
                                     }
                                 ]
@@ -73,11 +73,11 @@ layout: census-website-respond/views/_master
                                     "itemsList": [
                                         {
                                             "text": "fill in your census online",
-                                            "url": pageInfo.rootPath + '/help/how-to-complete-your-census/completing-your-census-online'
+                                            "url": pageInfo.rootPath + '/help/how-to-complete-the-census/completing-your-census-online'
                                         },
                                         {
                                             "text": "fill in your census on paper",
-                                            "url": pageInfo.rootPath + '/help/how-to-complete-your-census/completing-your-census-on-paper'
+                                            "url": pageInfo.rootPath + '/help/how-to-complete-the-census/completing-your-census-on-paper'
                                         }
                                     ]
                                 })
@@ -86,9 +86,31 @@ layout: census-website-respond/views/_master
                             {% call onsPanel()
                             %}
 
-                                <p>If you live in Wales, you can <a href="{{pageInfo.rootPath}}/help/how-to-complete-your-census/completing-the-census-in-welsh">complete the census in Welsh or English</a>.</p>
+                                <p>If you live in Wales, you can <a href="{{pageInfo.rootPath}}/help/how-to-complete-the-census/completing-the-census-in-welsh">complete the census in Welsh or English</a>.</p>
 
                             {% endcall %}
+
+                            <h2>Completing the census on someone else's behalf</h2>
+
+                            {{
+                                onsList({
+                                    "classes": 'u-mb-l',
+                                    "itemsList": [
+                                        {
+                                            "text": "I need someone to complete the census on my behalf",
+                                            "url": pageInfo.rootPath + '/help/how-to-complete-the-census/i-need-someone-to-complete-the-census-on-my-behalf'
+                                        },
+                                        {
+                                            "text": "Helping someone who has asked for help",
+                                            "url": pageInfo.rootPath + '/help/how-to-complete-the-census/helping-someone-who-has-asked-for-help'
+                                        },
+                                        {
+                                            "text": "Helping someone who lacks the capacity to answer for themselves",
+                                            "url": pageInfo.rootPath + '/help/how-to-complete-the-census/helping-someone-who-lacks-the-capacity-to-answer-for-themselves'
+                                        }
+                                    ]
+                                })
+                            }}
 
                             <div class="u-mt-xl">
                                 {{-
@@ -97,7 +119,7 @@ layout: census-website-respond/views/_master
                                         {
                                             "rel": 'next',
                                             "text": 'Next',
-                                            "url": pageInfo.rootPath + '/help/how-to-complete-your-census/completing-your-census-online',
+                                            "url": pageInfo.rootPath + '/help/how-to-complete-the-census/completing-your-census-online',
                                             "label": 'Completing your census online'
                                         }
                                         ]
