@@ -38,17 +38,6 @@ layout: census-website-engage/views/_rh-master
 
                         <h1 class="u-mb-l u-fs-xxl">Web form</h1>
 
-                        {% from "components/panel/_macro.njk" import onsPanel %}
-                            
-                            {% call onsPanel({
-                                    type: 'warn'
-                               })
-                            %}
-
-                            <p>Do not include any personal information, for example, your access code</p>
-
-                        {% endcall %}
-
                         {{
                             onsRadios({
                                 "legend": 'Select your country',
@@ -174,7 +163,7 @@ layout: census-website-engage/views/_rh-master
                             })
                         }}
 
-                        <p class="u-fs-s">For information about what we do with your personal data see our <a href="#0">privacy and data protection</a>.</p>
+                        <p class="u-fs-s">Information about what we do with your personal data is available in our <a href="#0">privacy and data protection statement</a>.</p>
 
                     </div>
 
