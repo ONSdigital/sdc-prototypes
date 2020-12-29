@@ -34,11 +34,9 @@ layout: census-website-respond/views/_master
                             <span class="u-fs-xxl u-db">Do you usually live at this address?​</span>
                         </h1>
 
-                        {{
-                            onsVideo({
-                                "youtubeUrl": 'https://www.youtube.com/embed/HTmxgGYLnls'
-                            })
-                        }}
+                        {{ onsVideo({
+                            "youtubeUrl": 'https://www.youtube.com/embed/HTmxgGYLnls'
+                        }) }}
 
                         <div class="u-mt-l">
                             <p><a href="{{pageInfo.rootPath}}/help/languages-and-accessibility/accessibility/british-sign-language/#collapsible-1">Return to People who live here</a></p>
@@ -52,26 +50,24 @@ layout: census-website-respond/views/_master
 
                     <div class="u-bb">
 
-                        {{-
-                            onsRelatedLinks({
-                                "id": 'related-links',
-                                "title": 'Related content',
-                                "itemsList": [                
-                                    {
-                                        "url": pageInfo.rootPath + '/help/find-a-support-centre',
-                                        "text": 'Find a support centre'
-                                    },
-                                    {
-                                        "url": 'https://census-website-respond.netlify.app/end-to-end/languages',
-                                        "text": 'Languages'
-                                    },
-                                    {
-                                        "url": pageInfo.rootPath + '/contact-us',
-                                        "text": 'Contact us'
-                                    }
-                                ]
-                            })
-                        }}
+                        {{ onsRelatedLinks({
+                            "id": 'related-links',
+                            "title": 'Related content',
+                            "itemsList": [                
+                                {
+                                    "url": pageInfo.rootPath + '/help/find-a-support-centre',
+                                    "text": 'Find a support centre'
+                                },
+                                {
+                                    "url": 'https://census-website-respond.netlify.app/end-to-end/languages',
+                                    "text": 'Languages'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/contact-us',
+                                    "text": 'Contact us'
+                                }
+                            ]
+                        }) }}
 
                     </div>
 
@@ -79,27 +75,25 @@ layout: census-website-respond/views/_master
 
                         <h2 class="u-fs-r--b u-mb-xs">Share this post</h2>
 
-                        {{
-                            onsList({
-                                "classes": 'list--bare list--icons',
-                                "itemsList": [
-                                    {
-                                        "url": '#0',
-                                        "text": 'Twitter',
-                                        "prefixIcon": 'twitter',
-                                        "iconSize": 'xxl',
-                                        "rel": 'noreferrer external'
-                                    },
-                                    {
-                                        "url": '#0',
-                                        "text": 'Facebook',
-                                        "prefixIcon": 'facebook',
-                                        "iconSize": 'xxl',
-                                        "rel": 'noreferrer external'
-                                    }
-                                ]
-                            })
-                        }}
+                        {{ onsList({
+                            "classes": 'list--bare list--icons',
+                            "itemsList": [
+                                {
+                                    "url": '#0',
+                                    "text": 'Twitter',
+                                    "prefixIcon": 'twitter',
+                                    "iconSize": 'xxl',
+                                    "rel": 'noreferrer external'
+                                },
+                                {
+                                    "url": '#0',
+                                    "text": 'Facebook',
+                                    "prefixIcon": 'facebook',
+                                    "iconSize": 'xxl',
+                                    "rel": 'noreferrer external'
+                                }
+                            ]
+                        }) }}
 
                     </div>
 

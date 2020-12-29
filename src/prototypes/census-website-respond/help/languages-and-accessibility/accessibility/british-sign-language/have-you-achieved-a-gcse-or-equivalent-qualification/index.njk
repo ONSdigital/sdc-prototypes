@@ -5,26 +5,22 @@ version: 29.1.3
 layout: census-website-respond/views/_master
 ---
 
-{% set pageId = 'help' %}
-
 {% block pageContent %}
    
     {% block main %}
 
         <div class="page__container container">
 
-            {{
-                onsBreadcrumb({
-                    "ariaLabel": 'Back',
-                    "itemsList": [
-                        {
-                            "url": pageInfo.rootPath + '/help/languages-and-accessibility/accessibility/british-sign-language#collapsible-7',
-                            "id": 'back',
-                            "text": 'Back'
-                        }
-                    ]
-                })
-            }}
+            {{ onsBreadcrumb({
+                "ariaLabel": 'Back',
+                "itemsList": [
+                    {
+                        "url": pageInfo.rootPath + '/help/languages-and-accessibility/accessibility/british-sign-language#collapsible-7',
+                        "id": 'back',
+                        "text": 'Back'
+                    }
+                ]
+            }) }}
 
             <div class="grid">
 
@@ -38,11 +34,9 @@ layout: census-website-respond/views/_master
                             <span class="u-fs-xxl u-db">Have you achieved a GCSE or equivalent qualification?​</span>
                         </h1>
 
-                        {{
-                            onsVideo({
-                                "youtubeUrl": 'https://www.youtube.com/embed/5ca5k5TiI3k'
-                            })
-                        }}
+                        {{ onsVideo({
+                            "youtubeUrl": 'https://www.youtube.com/embed/5ca5k5TiI3k'
+                        }) }}
 
                         <div class="u-mt-l">
                             <p><a href="{{pageInfo.rootPath}}/help/languages-and-accessibility/accessibility/british-sign-language/#collapsible-7">Return to Qualifications</a></p>
@@ -83,27 +77,25 @@ layout: census-website-respond/views/_master
 
                         <h2 class="u-fs-r--b u-mb-xs">Share this post</h2>
 
-                        {{
-                            onsList({
-                                "classes": 'list--bare list--icons',
-                                "itemsList": [
-                                    {
-                                        "url": '#0',
-                                        "text": 'Twitter',
-                                        "prefixIcon": 'twitter',
-                                        "iconSize": 'xxl',
-                                        "rel": 'noreferrer external'
-                                    },
-                                    {
-                                        "url": '#0',
-                                        "text": 'Facebook',
-                                        "prefixIcon": 'facebook',
-                                        "iconSize": 'xxl',
-                                        "rel": 'noreferrer external'
-                                    }
-                                ]
-                            })
-                        }}
+                        {{ onsList({
+                            "classes": 'list--bare list--icons',
+                            "itemsList": [
+                                {
+                                    "url": '#0',
+                                    "text": 'Twitter',
+                                    "prefixIcon": 'twitter',
+                                    "iconSize": 'xxl',
+                                    "rel": 'noreferrer external'
+                                },
+                                {
+                                    "url": '#0',
+                                    "text": 'Facebook',
+                                    "prefixIcon": 'facebook',
+                                    "iconSize": 'xxl',
+                                    "rel": 'noreferrer external'
+                                }
+                            ]
+                        }) }}
 
                     </div>
 
