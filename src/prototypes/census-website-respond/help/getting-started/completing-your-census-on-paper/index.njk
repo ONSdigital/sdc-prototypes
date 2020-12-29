@@ -44,17 +44,21 @@ layout: census-website-respond/views/_master
                             "ariaLabel": 'Pages in this guide',
                             "itemsList": [
                                 {
-                                    "url": pageInfo.rootPath + '/help/how-to-complete-the-census',
+                                    "url": pageInfo.rootPath + '/help/getting-started',
                                     "text": 'Overview'
                                 },
                                 {
-                                    "url": pageInfo.rootPath + '/help/how-to-complete-the-census/completing-your-census-online',
+                                    "url": pageInfo.rootPath + '/help/getting-started/completing-your-census-online',
                                     "text": 'Completing your census online'
                                 },
                                 {
-                                    "url": pageInfo.rootPath + '/help/how-to-complete-the-census/completing-your-census-on-paper',
+                                    "url": pageInfo.rootPath + '/help/getting-started/completing-your-census-on-paper',
                                     "text": 'Completing your census on paper',
                                     "current": true
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/help/getting-started/completing-your-census-on-paper',
+                                    "text": 'Completing the census for someone else'
                                 }
                             ]
                         }) }}
@@ -70,21 +74,13 @@ layout: census-website-respond/views/_master
                             {{ onsList({
                                 "itemsList": [
                                     {
-                                        "url": pageInfo.rootPath + '/help/getting-started',
-                                        "text": 'Overview'
+                                        "text": 'If you’ve received a form in English and another in Welsh, fill in one in the language you prefer to use'
                                     },
                                     {
-                                        "url": pageInfo.rootPath + '/help/getting-started/completing-your-census-online',
-                                        "text": 'Completing your census online'
+                                        "text": 'If the addresses are the same, it’s up to you which one you use - otherwise use the form with the most accurate address'
                                     },
                                     {
-                                        "url": pageInfo.rootPath + '/help/getting-started/completing-your-census-on-paper',
-                                        "text": 'Completing your census on paper',
-                                        "current": true
-                                    },
-                                    {
-                                        "url": pageInfo.rootPath + '/help/getting-started/completing-the-census-for-someone-else',
-                                        "text": 'Completing the census for someone else'
+                                        "text": 'You can then recycle any spare forms, but remember to remove the front page with your details on first'
                                     }
                                 ]
                             }) }}
@@ -164,8 +160,8 @@ layout: census-website-respond/views/_master
                                         {
                                             "rel": 'next',
                                             "text": 'Next',
-                                            "url": pageInfo.rootPath + '/help/getting-started/help-someone-complete-their-census',
-                                            "label": 'Help someone complete their census'
+                                            "url": pageInfo.rootPath + '/help/getting-started/completing-the-census-for-someone-else',
+                                            "label": 'Completing the census for someone else'
                                         }
                                         ]
                                     })

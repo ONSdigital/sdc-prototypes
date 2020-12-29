@@ -36,7 +36,7 @@ layout: census-website-respond/views/_master
                         <h1 class="u-mb-l">
                             <span class="u-fs-m u-db u-mb-xs u-lighter">Getting started</span>
                             <span class="u-vh">: </span>
-                            <span class="u-fs-xxl u-db">Completing the census</span>
+                            <span class="u-fs-xxl u-db">Completing the census for someone else</span>
                         </h1>
 
                         {{-
@@ -98,18 +98,6 @@ layout: census-website-respond/views/_master
                                         {
                                             "rel": 'prev',
                                             "text": 'Previous',
-                                            "url": pageInfo.rootPath + '/help/getting-started',
-                                            "label": 'Overview'
-                                        }
-                                        ]
-                                    })
-                                }}
-                                {{-
-                                    onsContentPagination({
-                                        "contentPaginationItems": [
-                                        {
-                                            "rel": 'next',
-                                            "text": 'Next',
                                             "url": pageInfo.rootPath + '/help/getting-started/completing-your-census-on-paper',
                                             "label": 'Completing your census on paper'
                                         }
