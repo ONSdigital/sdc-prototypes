@@ -5,29 +5,25 @@ version: 29.1.3
 layout: census-website-respond/views/_master
 ---
 
-{% set pageId = 'data' %}
-
 {% block pageContent %}
    
     {% block main %}
 
         <div class="page__container container">
 
-            {{
-                onsBreadcrumb({
-                    "ariaLabel": 'Breadcrumb',
-                    "itemsList": [
-                        {
-                            "url": 'https://census-website-respond.netlify.app/end-to-end/home/',
-                            "text": 'Home'
-                        },
-                        {
-                            "url": pageInfo.rootPath + '/your-data-and-security',
-                            "text": 'Your data and security'
-                        }
-                    ]
-                })
-            }}
+            {{ onsBreadcrumb({
+                "ariaLabel": 'Breadcrumb',
+                "itemsList": [
+                    {
+                        "url": 'https://census-website-respond.netlify.app/end-to-end/home',
+                        "text": 'Home'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/your-data-and-security',
+                        "text": 'Your data and security'
+                    }
+                ]
+            }) }}
 
             <div class="grid">
 
@@ -38,34 +34,55 @@ layout: census-website-respond/views/_master
                         <h1 class="u-mb-l">
                             <span class="u-fs-m u-db u-mb-xs u-lighter">Your data and security</span>
                             <span class="u-vh">: </span>
-                            <span class="u-fs-xxl u-db">Overview</span>
+                            <span class="u-fs-xxl u-db">Answering separately from your household</span>
                         </h1>
 
-                        {{-
-                            onsTableOfContents({
-                                "title": 'Contents',
-                                "ariaLabel": 'Pages in this guide',
-                                "itemsList": [
-                                    {
-                                        "url": pageInfo.rootPath + '/your-data-and-security',
-                                        "text": 'Overview'
-                                    },
-                                    {
-                                        "url": pageInfo.rootPath + '/what-we-do-with-your-information',
-                                        "text": 'What we do with your information'
-                                    },
-                                    {
-                                        "url": pageInfo.rootPath + '/your-data-and-security/answering-separately-from-your-household',
-                                        "text": 'Answering separately from your household',
-                                        "current": true
-                                    }
-                                ]
-                            })
-                        -}}
+                        {{ onsTableOfContents({
+                            "title": 'Contents',
+                            "ariaLabel": 'Pages in this guide',
+                            "itemsList": [
+                                {
+                                    "url": pageInfo.rootPath + '/your-data-and-security',
+                                    "text": 'Overview'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/your-data-and-security/what-we-do-with-your-information',
+                                    "text": 'What we do with your information'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/your-data-and-security/answering-separately-from-your-household',
+                                    "text": 'Answering separately from your household',
+                                    "current": true
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/your-data-and-security/how-we-will-contact-or-visit-you',
+                                    "text": 'How we will contact or visit you'
+                                }
+                            ]
+                        }) }}
 
                         <div class="page__body">
 
-                            <p></p>
+                            <p>Content TBC.</p>
+
+                            <div class="u-mt-xl">
+                                {{ onsContentPagination({
+                                    "contentPaginationItems": [
+                                        {
+                                            "rel": 'prev',
+                                            "text": 'Prev',
+                                            "url": pageInfo.rootPath + '/your-data-and-security/what-we-do-with-your-information',
+                                            "label": 'What we do with your information'
+                                        },
+                                        {
+                                            "rel": 'next',
+                                            "text": 'Next',
+                                            "url": pageInfo.rootPath + '/your-data-and-security/how-we-will-contact-or-visit-you',
+                                            "label": 'How we will contact or visit you'
+                                        }
+                                    ]
+                                }) }}
+                            </div>
 
                         </div>
 
@@ -75,30 +92,28 @@ layout: census-website-respond/views/_master
 
                 <div class="grid__col col-4@m push-1@m u-mt-m">
 
-                    {{-
-                        onsRelatedLinks({
-                            "id": 'related-links',
-                            "title": 'Related content',
-                            "itemsList": [
-                                {
-                                    "url": pageInfo.rootPath + '/about-the-census',
-                                    "text": 'About the census'
-                                },
-                                {
-                                    "url": pageInfo.rootPath + '/about-the-census/2019-rehearsal',
-                                    "text": '2019 Rehearsal'
-                                },
-                                {
-                                    "url": pageInfo.rootPath + '/about-the-census/why-you-should-take-part-in-the-census',
-                                    "text": 'Why you should take part in the census'
-                                },
-                                {
-                                    "url": pageInfo.rootPath + '/contact-us',
-                                    "text": 'Contact us'
-                                }
-                            ]
-                        })
-                    }}
+                    {{ onsRelatedLinks({
+                        "id": 'related-links',
+                        "title": 'Related content',
+                        "itemsList": [
+                            {
+                                "url": pageInfo.rootPath + '/about-the-census',
+                                "text": 'About the census'
+                            },
+                            {
+                                "url": pageInfo.rootPath + '/about-the-census/2019-rehearsal',
+                                "text": '2019 Rehearsal'
+                            },
+                            {
+                                "url": pageInfo.rootPath + '/about-the-census/why-you-should-take-part-in-the-census',
+                                "text": 'Why you should take part in the census'
+                            },
+                            {
+                                "url": pageInfo.rootPath + '/contact-us',
+                                "text": 'Contact us'
+                            }
+                        ]
+                    }) }}
 
                 </div>
 
