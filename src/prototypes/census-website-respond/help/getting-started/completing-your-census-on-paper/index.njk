@@ -1,4 +1,6 @@
 ---
+title: Completing your census on paper
+group: Census
 version: 29.1.3
 layout: census-website-respond/views/_master
 ---
@@ -11,11 +13,11 @@ layout: census-website-respond/views/_master
 
         <div class="page__container container">
 
-            {{- onsBreadcrumb({
+            {{ onsBreadcrumb({
                 "ariaLabel": 'Breadcrumb',
                 "itemsList": [
                     {
-                        "url": 'https://census-website-respond.netlify.app/end-to-end/home/',
+                        "url": 'https://census-website-respond.netlify.app/end-to-end/home',
                         "text": 'Home'
                     },
                     {
@@ -37,10 +39,35 @@ layout: census-website-respond/views/_master
                             <span class="u-fs-xxl u-db">Completing your census on paper</span>
                         </h1>
 
-                        {{-
-                            onsTableOfContents({
-                                "title": 'Contents',
-                                "ariaLabel": 'Pages in this guide',
+                        {{ onsTableOfContents({
+                            "title": 'Contents',
+                            "ariaLabel": 'Pages in this guide',
+                            "itemsList": [
+                                {
+                                    "url": pageInfo.rootPath + '/help/how-to-complete-the-census',
+                                    "text": 'Overview'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/help/how-to-complete-the-census/completing-your-census-online',
+                                    "text": 'Completing your census online'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/help/how-to-complete-the-census/completing-your-census-on-paper',
+                                    "text": 'Completing your census on paper',
+                                    "current": true
+                                }
+                            ]
+                        }) }}
+
+                        <div class="page__body">
+
+                            <p>Follow the instructions on the paper form to help you fill it in. There are instructions on page two of the form and in the leaflet that came with it.</p>
+
+                            <p>If you’re helping someone else to fill in their paper form, see tips for filling in on paper.</p>
+
+                            <h2>I’ve received more than one form. Which do I use?</h2>
+
+                            {{ onsList({
                                 "itemsList": [
                                     {
                                         "url": pageInfo.rootPath + '/help/getting-started',
@@ -54,34 +81,13 @@ layout: census-website-respond/views/_master
                                         "url": pageInfo.rootPath + '/help/getting-started/completing-your-census-on-paper',
                                         "text": 'Completing your census on paper',
                                         "current": true
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/getting-started/completing-the-census-for-someone-else',
+                                        "text": 'Completing the census for someone else'
                                     }
                                 ]
-                            })
-                        }}
-
-                        <div class="page__body">
-
-                            <p>Follow the instructions on the paper form to help you fill it in. There are instructions on page two of the form and in the leaflet that came with it.</p>
-
-                            <p>If you're helping someone else to fill in their paper form, see tips for filling in on paper.</p>
-
-                            <h2>I've received more than one form. Which do I use?</h2>
-
-                            {{
-                                onsList({
-                                    "itemsList": [
-                                        {
-                                            "text": "If you've received a form in English and another in Welsh, fill in one in the language you prefer to use"
-                                        },
-                                        {
-                                            "text": "If the addresses are the same, it's up to you which one you use - otherwise use the form with the most accurate address"
-                                        },
-                                        {
-                                            "text": "You can then recycle any spare forms, but remember to remove the front page with your details on first"
-                                        }
-                                    ]
-                                })
-                            }}
+                            }) }}
 
                             <h2>The address on my form is wrong</h2>
 
@@ -89,65 +95,60 @@ layout: census-website-respond/views/_master
 
                             <h2>Tips for filling in a paper form</h2>
 
-                            {{
-                                onsList({
-                                    "itemsList": [
-                                        {
-                                            "text": "Write your answers in blue or black ink"
-                                        },
-                                        {
-                                            "text": "Include everyone living or staying at your household on the night of Sunday 21 March 2021"
-                                        },
-                                        {
-                                            "text": "Use capital letters, or tick the boxes as instructed"
-                                        },
-                                        {
-                                            "text": 'You can shorten words, for example "Rd" for "Road" or "St" for "Street"; give as much detail as you can'
-                                        },
-                                        {
-                                            "text": "Only use one character for each box, like this:"
-                                        }
-                                    ]
-                                })
-                            }}
+                            {{ onsList({
+                                "itemsList": [
+                                    {
+                                        "text": 'Write your answers in blue or black ink'
+                                    },
+                                    {
+                                        "text": 'Include everyone living or staying at your household on the night of Sunday 21 March 2021'
+                                    },
+                                    {
+                                        "text": 'Use capital letters, or tick the boxes as instructed'
+                                    },
+                                    {
+                                        "text": 'You can shorten words, for example “Rd” for “Road” or “St” for “Street”; give as much detail as you can'
+                                    },
+                                    {
+                                        "text": 'Only use one character for each box, like this:'
+                                    }
+                                ]
+                            }) }}
 
                             <figure class="figure"><img class="figure__image" src="{{pageInfo.rootPath}}/img/small/paper-form-name-example.png" alt="An example of how to enter a name on the paper census questionnaire"></figure>
 
                             <h2>Tips for returning after filling in a paper form</h2>
 
-                            {{
-                                onsList({
-                                    "itemsList": [
-                                        {
-                                            "text": "Check you’ve signed and dated the declaration on the front page of the paper form"
-                                        },
-                                        {
-                                            "text": "Do not send us anything else – only your paper form"
-                                        },
-                                        {
-                                            "text": "Use the prepaid envelope you received with the paper form"
-                                        },
-                                        {
-                                            "text": "If you've lost your envelope, return your paper form in an A4-sized envelope to FREEPOST, Census 2021"
-                                        },
-                                        {
-                                            "text": "Only send back one paper form per envelope"
-                                        },
-                                        {
-                                            "text": "Make sure the return address can be seen through the envelope window"
-                                        },
-                                        {
-                                            "text": "Post your paper form back to us as soon as you can, or ask someone you trust to do this for you"
-                                        }
+                            {{ onsList({
+                                "itemsList": [
+                                    {
+                                        "text": 'Check you’ve signed and dated the declaration on the front page of the paper form'
+                                    },
+                                    {
+                                        "text": 'Do not send us anything else – only your paper form'
+                                    },
+                                    {
+                                        "text": 'Use the prepaid envelope you received with the paper form'
+                                    },
+                                    {
+                                        "text": 'If you’ve lost your envelope, return your paper form in an A4-sized envelope to FREEPOST, Census 2021'
+                                    },
+                                    {
+                                        "text": 'Only send back one paper form per envelope'
+                                    },
+                                    {
+                                        "text": 'Make sure the return address can be seen through the envelope window'
+                                    },
+                                    {
+                                        "text": 'Post your paper form back to us as soon as you can, or ask someone you trust to do this for you'
+                                    }
 
-                                    ]
-                                })
-                            }}
+                                ]
+                            }) }}
 
                             <div class="u-mt-xl">
-                                {{-
-                                    onsContentPagination({
-                                        "contentPaginationItems": [
+                                {{ onsContentPagination({
+                                    "contentPaginationItems": [
                                         {
                                             "rel": 'prev',
                                             "text": 'Previous',
@@ -179,7 +180,7 @@ layout: census-website-respond/views/_master
 
                 <div class="grid__col col-4@m push-1@m u-mt-m">
 
-                    {{- onsRelatedLinks({
+                    {{ onsRelatedLinks({
                         "id": 'related-links',
                         "title": 'Related content',
                         "itemsList": [

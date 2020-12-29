@@ -5,33 +5,29 @@ version: 29.1.3
 layout: census-website-respond/views/_master
 ---
 
-{% set pageId = 'help' %}
-
 {% block pageContent %}
    
     {% block main %}
 
         <div class="page__container container">
 
-            {{
-                onsBreadcrumb({
-                    "ariaLabel": 'Breadcrumb',
-                    "itemsList": [
-                        {
-                            "url": 'https://census-website-respond.netlify.app/end-to-end/home/',
-                            "text": 'Home'
-                        },
-                        {
-                            "url": pageInfo.rootPath + '/help',
-                            "text": 'Help with the census'
-                        },
-                        {
-                            "url": pageInfo.rootPath + '/help/languages-and-accessibility',
-                            "text": 'Languages and accessibility'
-                        }
-                    ]
-                })
-            }}
+            {{ onsBreadcrumb({
+                "ariaLabel": 'Breadcrumb',
+                "itemsList": [
+                    {
+                        "url": 'https://census-website-respond.netlify.app/end-to-end/home',
+                        "text": 'Home'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help',
+                        "text": 'Help with the census'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help/languages-and-accessibility',
+                        "text": 'Languages and accessibility'
+                    }
+                ]
+            }) }}
 
             <div class="grid">
 
@@ -49,12 +45,26 @@ layout: census-website-respond/views/_master
 
                             <p>​Information about the census is available in the following accessible formats:​​</p>
 
-                            <ul>
-                                <li><a href="{{pageInfo.rootPath}}/help/languages-and-accessibility/accessibility/british-sign-language">videos with British Sign Language (BSL), subtitles and audio​</a></li>
-                                <li><a href="{{pageInfo.rootPath}}/help/languages-and-accessibility/accessibility/braille">Braille</a></li>
-                                <li><a href="{{pageInfo.rootPath}}/help/languages-and-accessibility/accessibility/easy-read">easy read</a></li>
-                                <li><a href="{{pageInfo.rootPath}}/help/languages-and-accessibility/accessibility/large-print">large print</a></li>
-                            </ul>
+                            {{ onsList({
+                                "itemsList": [
+                                    {
+                                        "text": 'videos with British Sign Language (BSL), subtitles and audio',
+                                        "url": pageInfo.rootPath + '/help/languages-and-accessibility/accessibility/british-sign-language'
+                                    },
+                                    {
+                                        "text": 'Braille',
+                                        "url": pageInfo.rootPath + '/help/languages-and-accessibility/accessibility/braille'
+                                    },
+                                    {
+                                        "text": 'easy read​',
+                                        "url": pageInfo.rootPath + '/help/languages-and-accessibility/accessibility/easy-read'
+                                    },
+                                    {
+                                        "text": 'large print​',
+                                        "url": pageInfo.rootPath + '/help/languages-and-accessibility/accessibility/large-print'
+                                    }
+                                ]
+                            }) }}
 
                             <p>​We use simple language and clear link text to help you navigate the census website. You can navigate the website using speech recognition software and listen using a screen reader.</p>
 
@@ -81,26 +91,24 @@ layout: census-website-respond/views/_master
 
                 <div class="grid__col col-4@m push-1@m u-mt-m">
 
-                    {{-
-                        onsRelatedLinks({
-                            "id": 'related-links',
-                            "title": 'Related content',
-                            "itemsList": [                
-                                {
-                                    "url": pageInfo.rootPath + '/help/find-a-support-centre',
-                                    "text": 'Find a support centre'
-                                },
-                                {
-                                    "url": 'https://census-website-respond.netlify.app/end-to-end/languages',
-                                    "text": 'Languages'
-                                },
-                                {
-                                    "url": pageInfo.rootPath + '/contact-us',
-                                    "text": 'Contact us'
-                                }
-                            ]
-                        })
-                    }}
+                    {{ onsRelatedLinks({
+                        "id": 'related-links',
+                        "title": 'Related content',
+                        "itemsList": [                
+                            {
+                                "url": pageInfo.rootPath + '/help/find-a-support-centre',
+                                "text": 'Find a support centre'
+                            },
+                            {
+                                "url": 'https://census-website-respond.netlify.app/end-to-end/languages',
+                                "text": 'Languages'
+                            },
+                            {
+                                "url": pageInfo.rootPath + '/contact-us',
+                                "text": 'Contact us'
+                            }
+                        ]
+                    }) }}
 
                 </div>
 

@@ -5,33 +5,29 @@ version: 29.1.3
 layout: census-website-respond/views/_master
 ---
 
-{% set pageId = 'help' %}
-
 {% block pageContent %}
    
     {% block main %}
 
         <div class="page__container container">
 
-            {{
-                onsBreadcrumb({
-                    "ariaLabel": 'Breadcrumb',
-                    "itemsList": [
-                        {
-                            "url": 'https://census-website-respond.netlify.app/end-to-end/home/',
-                            "text": 'Home'
-                        },
-                        {
-                            "url": pageInfo.rootPath + '/help',
-                            "text": 'Help with the census'
-                        },
-                        {
-                            "url": pageInfo.rootPath + '/help/how-to-answer-questions',
-                            "text": 'How to answer questions'
-                        }
-                    ]
-                })
-            }}
+            {{ onsBreadcrumb({
+                "ariaLabel": 'Breadcrumb',
+                "itemsList": [
+                    {
+                        "url": 'https://census-website-respond.netlify.app/end-to-end/home',
+                        "text": 'Home'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help',
+                        "text": 'Help with the census'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help/how-to-answer-questions',
+                        "text": 'How to answer questions'
+                    }
+                ]
+            }) }}
 
             <div class="grid">
 
@@ -41,58 +37,56 @@ layout: census-website-respond/views/_master
 
                         <h1 class="u-mb-l u-fs-xxl">Online questions help</h1>
 
-                        {{-
-                            onsTableOfContents({
-                                "title": 'Contents',
-                                "ariaLabel": 'Pages in this guide',
-                                "itemsList": [
-                                    {
-                                        "url": pageInfo.rootPath + '/help/how-to-answer-questions/online/#your-address-and-people-who-live-here',
-                                        "text": 'Your address and people who live here'
-                                    },
-                                    {
-                                        "url": pageInfo.rootPath + '/help/how-to-answer-questions/online/#household-and-accomodation',
-                                        "text": 'Household and accommodation'
-                                    },
-                                    {
-                                        "url": pageInfo.rootPath + '/help/how-to-answer-questions/online/#name-sex-date-of-birth-and-marital-status',
-                                        "text": 'Name, sex, date of birth and marital status'
-                                    },
-                                    {
-                                        "url": pageInfo.rootPath + '/help/how-to-answer-questions/online/#sexual-orientation-and-gender',
-                                        "text": 'Sexual orientation and gender'
-                                    },
-                                    {
-                                        "url": pageInfo.rootPath + '/help/how-to-answer-questions/online/#country-of-birth-passports-and-not-born-in-the-uk',
-                                        "text": 'Country of birth, passports, and not born in the UK'
-                                    },
-                                    {
-                                        "url": pageInfo.rootPath + '/help/how-to-answer-questions/online/#national-identity-and-ethnic-groups',
-                                        "text": 'National identity and ethnic group'
-                                    },
-                                    {
-                                        "url": pageInfo.rootPath + '/help/how-to-answer-questions/online/#languages-and-religion',
-                                        "text": 'Language and religion'
-                                    },
-                                    {
-                                        "url": pageInfo.rootPath + '/help/how-to-answer-questions/online/#health-and-care',
-                                        "text": 'Health and care'
-                                    },
-                                    {
-                                        "url": pageInfo.rootPath + '/help/how-to-answer-questions/online/#qualifications-and-full-time-education',
-                                        "text": 'Qualifications and full-time education'
-                                    },
-                                    {
-                                        "url": pageInfo.rootPath + '/help/how-to-answer-questions/online/#main-job-and-armed-forces',
-                                        "text": 'Main job and Armed Forces'
-                                    },
-                                    {
-                                        "url": pageInfo.rootPath + '/help/how-to-answer-questions/online/#visitors',
-                                        "text": 'Visitors'
-                                    }
-                                ]
-                            })
-                        }}
+                        {{ onsTableOfContents({
+                            "title": 'Contents',
+                            "ariaLabel": 'Pages in this guide',
+                            "itemsList": [
+                                {
+                                    "url": pageInfo.rootPath + '/help/how-to-answer-questions/online/#your-address-and-people-who-live-here',
+                                    "text": 'Your address and people who live here'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/help/how-to-answer-questions/online/#household-and-accomodation',
+                                    "text": 'Household and accommodation'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/help/how-to-answer-questions/online/#name-sex-date-of-birth-and-marital-status',
+                                    "text": 'Name, sex, date of birth and marital status'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/help/how-to-answer-questions/online/#sexual-orientation-and-gender',
+                                    "text": 'Sexual orientation and gender'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/help/how-to-answer-questions/online/#country-of-birth-passports-and-not-born-in-the-uk',
+                                    "text": 'Country of birth, passports, and not born in the UK'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/help/how-to-answer-questions/online/#national-identity-and-ethnic-groups',
+                                    "text": 'National identity and ethnic group'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/help/how-to-answer-questions/online/#languages-and-religion',
+                                    "text": 'Language and religion'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/help/how-to-answer-questions/online/#health-and-care',
+                                    "text": 'Health and care'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/help/how-to-answer-questions/online/#qualifications-and-full-time-education',
+                                    "text": 'Qualifications and full-time education'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/help/how-to-answer-questions/online/#main-job-and-armed-forces',
+                                    "text": 'Main job and Armed Forces'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/help/how-to-answer-questions/online/#visitors',
+                                    "text": 'Visitors'
+                                }
+                            ]
+                        }) }}
 
                         <div class="page__body">
 
@@ -220,22 +214,20 @@ layout: census-website-respond/views/_master
 
                 <div class="grid__col col-4@m push-1@m u-mt-m">
 
-                    {{-
-                        onsRelatedLinks({
-                            "id": 'related-links',
-                            "title": 'Related content',
-                            "itemsList": [
-                                {
-                                    "url": pageInfo.rootPath + '/help/how-to-answer-questions/paper',
-                                    "text": 'Paper questions help'
-                                },
-                                {
-                                    "url": pageInfo.rootPath + '/contact-us',
-                                    "text": 'Contact us'
-                                }
-                            ]
-                        })
-                    }}
+                    {{ onsRelatedLinks({
+                        "id": 'related-links',
+                        "title": 'Related content',
+                        "itemsList": [
+                            {
+                                "url": pageInfo.rootPath + '/help/how-to-answer-questions/paper',
+                                "text": 'Paper questions help'
+                            },
+                            {
+                                "url": pageInfo.rootPath + '/contact-us',
+                                "text": 'Contact us'
+                            }
+                        ]
+                    }) }}
 
                 </div>
 

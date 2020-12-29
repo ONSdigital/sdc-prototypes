@@ -1,9 +1,9 @@
 ---
+title: Shared or family households
+group: Census
 version: 29.1.3
 layout: census-website-respond/views/_master
 ---
-
-{% set pageId = 'help' %}
 
 {% block pageContent %}
    
@@ -11,25 +11,23 @@ layout: census-website-respond/views/_master
 
         <div class="page__container container">
 
-            {{
-                onsBreadcrumb({
-                    "ariaLabel": 'Breadcrumb',
-                    "itemsList": [
-                        {
-                            "url": 'https://census-website-respond.netlify.app/end-to-end/home/',
-                            "text": 'Home'
-                        },
-                        {
-                            "url": pageInfo.rootPath + '/help',
-                            "text": 'Help with the census'
-                        },
-                        {
-                            "url": pageInfo.rootPath + '/help/types-of-accommodation',
-                            "text": 'Types of household or accommodation'
-                        }
-                    ]
-                })
-            }}
+            {{ onsBreadcrumb({
+                "ariaLabel": 'Breadcrumb',
+                "itemsList": [
+                    {
+                        "url": 'https://census-website-respond.netlify.app/end-to-end/home',
+                        "text": 'Home'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help',
+                        "text": 'Help with the census'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help/types-of-accommodation',
+                        "text": 'Types of household or accommodation'
+                    }
+                ]
+            }) }}
 
             <div class="grid">
 
@@ -40,8 +38,7 @@ layout: census-website-respond/views/_master
                         <h1 class="u-mb-l u-fs-xxl">Shared or family households</h1>
 
                         <div class="page__body">
-
-                           
+                            <p>Content TBC.</p>
                         </div>
 
                     </main>
@@ -50,26 +47,24 @@ layout: census-website-respond/views/_master
 
                 <div class="grid__col col-4@m push-1@m u-mt-m">
 
-                    {{-
-                        onsRelatedLinks({
-                            "id": 'related-links',
-                            "title": 'Related content',
-                            "itemsList": [
-                                {
-                                    "url": pageInfo.rootPath + '/help/find-a-support-centre',
-                                    "text": 'Find a support centre'
-                                },
-                                {
-                                    "url": 'https://census-website-respond.netlify.app/end-to-end/languages',
-                                    "text": 'Languages'
-                                },
-                                {
-                                    "url": pageInfo.rootPath + '/contact-us',
-                                    "text": 'Contact us'
-                                }
-                            ]
-                        })
-                    }}
+                    {{ onsRelatedLinks({
+                        "id": 'related-links',
+                        "title": 'Related content',
+                        "itemsList": [
+                            {
+                                "url": pageInfo.rootPath + '/help/find-a-support-centre',
+                                "text": 'Find a support centre'
+                            },
+                            {
+                                "url": 'https://census-website-respond.netlify.app/end-to-end/languages',
+                                "text": 'Languages'
+                            },
+                            {
+                                "url": pageInfo.rootPath + '/contact-us',
+                                "text": 'Contact us'
+                            }
+                        ]
+                    }) }}
 
                 </div>
 

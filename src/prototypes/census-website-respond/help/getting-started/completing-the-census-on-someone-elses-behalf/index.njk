@@ -1,5 +1,5 @@
 ---
-title: How to complete the census
+title: Completing the census on someone elses behalf
 group: Census
 version: 29.1.3
 layout: census-website-respond/views/_master
@@ -36,7 +36,7 @@ layout: census-website-respond/views/_master
                         <h1 class="u-mb-l">
                             <span class="u-fs-m u-db u-mb-xs u-lighter">Getting started</span>
                             <span class="u-vh">: </span>
-                            <span class="u-fs-xxl u-db">Overview</span>
+                            <span class="u-fs-xxl u-db">Completing the census</span>
                         </h1>
 
                         {{-
@@ -46,8 +46,7 @@ layout: census-website-respond/views/_master
                                 "itemsList": [
                                     {
                                         "url": pageInfo.rootPath + '/help/getting-started',
-                                        "text": 'Overview',
-                                        "current": true
+                                        "text": 'Overview'
                                     },
                                     {
                                         "url": pageInfo.rootPath + '/help/getting-started/completing-your-census-online',
@@ -59,7 +58,8 @@ layout: census-website-respond/views/_master
                                     },
                                     {
                                         "url": pageInfo.rootPath + '/help/getting-started/completing-the-census-for-someone-else',
-                                        "text": 'Completing the census for someone else'
+                                        "text": 'Completing the census for someone else',
+                                        "current": true
                                     }
                                 ]
                             })
@@ -67,44 +67,48 @@ layout: census-website-respond/views/_master
 
                         <div class="page__body">
 
-                            <p>All households should complete the census on <strong>Sunday 21 March 2021</strong> or as soon as possible after. If you’ve responded before 21 March and things have changed, you can <a href="{{pageInfo.rootPath}}/contact-us">contact us</a> to let us know.</p>
-
-                            <p>The census should take around 10 minutes per person to fill in.</p>
-
-                            <p>You can choose to either:</p>
-
                             {{
                                 onsList({
                                     "classes": 'u-mb-l',
                                     "itemsList": [
                                         {
-                                            "text": "fill in your census online",
-                                            "url": pageInfo.rootPath + '/help/getting-started/completing-your-census-online'
+                                            "text": "I need someone to complete the census on my behalf",
+                                            "url": pageInfo.rootPath + '/help/getting-started/i-need-someone-to-complete-the-census-on-my-behalf'
                                         },
                                         {
-                                            "text": "fill in your census on paper",
-                                            "url": pageInfo.rootPath + '/help/getting-started/completing-your-census-on-paper'
+                                            "text": "Helping someone who has asked for help",
+                                            "url": pageInfo.rootPath + '/help/getting-started/helping-someone-who-has-asked-for-help'
+                                        },
+                                        {
+                                            "text": "Helping someone who lacks the capacity to answer for themselves",
+                                            "url": pageInfo.rootPath + '/help/getting-started/helping-someone-who-lacks-the-capacity-to-answer-for-themselves'
                                         }
                                     ]
                                 })
                             }}
 
-                            {% call onsPanel()
-                            %}
-
-                                <p>If you live in Wales, you can <a href="{{pageInfo.rootPath}}/help/getting-started/completing-the-census-in-welsh">complete the census in Welsh or English</a>.</p>
-
-                            {% endcall %}
-
+                            
                             <div class="u-mt-xl">
+                                {{-
+                                    onsContentPagination({
+                                        "contentPaginationItems": [
+                                        {
+                                            "rel": 'prev',
+                                            "text": 'Previous',
+                                            "url": pageInfo.rootPath + '/help/getting-started',
+                                            "label": 'Overview'
+                                        }
+                                        ]
+                                    })
+                                }}
                                 {{-
                                     onsContentPagination({
                                         "contentPaginationItems": [
                                         {
                                             "rel": 'next',
                                             "text": 'Next',
-                                            "url": pageInfo.rootPath + '/help/getting-started/completing-your-census-online',
-                                            "label": 'Completing your census online'
+                                            "url": pageInfo.rootPath + '/help/getting-started/completing-your-census-on-paper',
+                                            "label": 'Completing your census on paper'
                                         }
                                         ]
                                     })
