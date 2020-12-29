@@ -3,33 +3,29 @@ version: 29.1.3
 layout: census-website-respond/views/_master
 ---
 
-{% set pageId = 'help' %}
-
 {% block pageContent %}
    
     {% block main %}
 
         <div class="page__container container">
 
-            {{
-                onsBreadcrumb({
-                    "ariaLabel": 'Breadcrumb',
-                    "itemsList": [
-                        {
-                            "url": 'https://census-website-respond.netlify.app/end-to-end/home/',
-                            "text": 'Home'
-                        },
-                        {
-                            "url": pageInfo.rootPath + '/help',
-                            "text": 'Help with the census'
-                        },
-                        {
-                            "url": pageInfo.rootPath + '/help/types-of-accommodation',
-                            "text": 'Types of household or accommodation'
-                        }
-                    ]
-                })
-            }}
+            {{ onsBreadcrumb({
+                "ariaLabel": 'Breadcrumb',
+                "itemsList": [
+                    {
+                        "url": 'https://census-website-respond.netlify.app/end-to-end/home',
+                        "text": 'Home'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help',
+                        "text": 'Help with the census'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help/types-of-accommodation',
+                        "text": 'Types of household or accommodation'
+                    }
+                ]
+            }) }}
 
             <div class="grid">
 
@@ -51,7 +47,7 @@ layout: census-website-respond/views/_master
 
                                 <p>By current situation we are not referring to where you may have returned home for the Easter break. You will still need to fill in a census form for your term-time address.</p>
 
-                                <p>If you've decided not to continue your course or don't intend to return to term-time accommodation, you don't need to fill in a census form at your term-time address. However, you must fill in a form where you are currently living.</p>
+                                <p>If you’ve decided not to continue your course or don’t intend to return to term-time accommodation, you don’t need to fill in a census form at your term-time address. However, you must fill in a form where you are currently living.</p>
 
                             {% endcall %}
 
@@ -72,21 +68,21 @@ layout: census-website-respond/views/_master
 
                                 <p>If you prefer, you can answer separately from the rest of your household. You, or whoever is completing the household form, should list you as a resident and record your relationship to other household members. There will then be an opportunity to order an individual questionnaire for any member of the household that wants one.</p>
 
-                                <p>If you don't want others in your household to know that you're completing a separate form, you can order an individual form from the census website. If you or anyone on your household orders an individual form from the website, someone still needs to complete the household form.</p>
+                                <p>If you don’t want others in your household to know that you’re completing a separate form, you can order an individual form from the census website. If you or anyone on your household orders an individual form from the website, someone still needs to complete the household form.</p>
 
                             {% endcall %}
 
                             <h2>Living in halls</h2>
 
-                            <p>You'll receive a letter containing an access code to fill in your online form.</p>
+                            <p>You’ll receive a letter containing an access code to fill in your online form.</p>
 
-                            <p>If you're not at your halls of residence at the moment and you're unable to get your access code, you should order a new access code for your term-time address. We will send you your code by text. It will allow you to access your online form.</p>
+                            <p>If you’re not at your halls of residence at the moment and you’re unable to get your access code, you should order a new access code for your term-time address. We will send you your code by text. It will allow you to access your online form.</p>
 
                             <h2>Living in private rented accommodation</h2>
 
-                            <p>If you rent from a private landlord, you'll receive a letter addressed to the householder. You must open the letter and use the access code to complete the online form for the household.</p>
+                            <p>If you rent from a private landlord, you’ll receive a letter addressed to the householder. You must open the letter and use the access code to complete the online form for the household.</p>
 
-                            <p>If you're not at your term-time address at the moment and you're unable to get your access code, you should order a new access code for that address. We will send you your code by text. It will allow you to access your online form.</p>
+                            <p>If you’re not at your term-time address at the moment and you’re unable to get your access code, you should order a new access code for that address. We will send you your code by text. It will allow you to access your online form.</p>
 
                             <h2>Living in lodgings</h2>
 
@@ -94,28 +90,29 @@ layout: census-website-respond/views/_master
 
                             <h2>International students</h2>
 
-                            <p>You should be counted in the census if you'll be in the UK for three months or more as part of your course.</p>
+                            <p>You should be counted in the census if you’ll be in the UK for three months or more as part of your course.</p>
 
-                            <h2>I don't live here all the time - do I still need to fill in the form?</h2>
+                            <h2>I don’t live here all the time - do I still need to fill in the form?</h2>
 
                             <h3>Four nights or more per week at your student address</h3>
 
-                            <p>Yes, you need to fill in the census if you stay here for four nights or more per week during term time. This applies even if you’ve already gone home for the Easter break. Use the code you've been given to open and complete your online form.</p>
+                            <p>Yes, you need to fill in the census if you stay here for four nights or more per week during term time. This applies even if you’ve already gone home for the Easter break. Use the code you’ve been given to open and complete your online form.</p>
 
                             <p>Someone will also need to answer a few questions about you at your other address. We need you to be included on both forms so we can count the population accurately in all the places you live.</p>
 
                             <h3>Three nights or fewer per week at your student address</h3>
 
-                            <p>No, you don't need to complete a form here if you stay at this address for three nights or fewer during term time. You only need to be included on the form at your other address.</p>
+                            <p>No, you don’t need to complete a form here if you stay at this address for three nights or fewer during term time. You only need to be included on the form at your other address.</p>
                             
                             {% call onsPanel({
                                 "classes": 'u-mb-m'
                             }) %}
+
                                 <h2>Student FAQs</h2>
 
-                                <h3>Where's my letter?</h3>
+                                <h3>Where’s my letter?</h3>
 
-                                <p>Please check your pigeonhole or where you usually collect your post from. If you live in private accommodation, <a href="/contact-us">contact us</a> if you haven’t received a letter.</p>
+                                <p>Please check your pigeonhole or where you usually collect your post from. If you live in private accommodation, <a href="{{pageInfo.rootPath}}/contact-us">contact us</a> if you haven’t received a letter.</p>
 
                                 <h3>Do I answer about my term-time address or where I am?</h3>
                                 <p>Your answers should be about the address at the beginning of the form.</p>
@@ -127,17 +124,19 @@ layout: census-website-respond/views/_master
                                 <p>We need to count the population in every area, so that local authorities can plan services for the number of people there, both in and out of term time.</p>
 
                                 <h3>Can I fill it in early?</h3>
-                                <p>Yes, you can fill it in early. You don't have to, but it might be easier to do it as soon as you get it or before you go home for the Easter break.</p>
+                                <p>Yes, you can fill it in early. You don’t have to, but it might be easier to do it as soon as you get it or before you go home for the Easter break.</p>
 
                                 <h3>Do I have to complete it?</h3>
-                                <p>Everyone in England and Wales must complete their census or be included on a census for the place where they're living or staying.</p>
+                                <p>Everyone in England and Wales must complete their census or be included on a census for the place where they’re living or staying.</p>
 
-                                <h3>Will you know if I don't do it?</h3>
-                                <p>Yes, the letter will be addressed to your room, flat or other residence. We'll know who hasn't replied.</p>
+                                <h3>Will you know if I don’t do it?</h3>
+                                <p>Yes, the letter will be addressed to your room, flat or other residence. We’ll know who hasn’t replied.</p>
 
-                                <h3>What happens if I don't complete it?</h3>
-                                <p>You can be prosecuted and may have to pay a fine of up to <strong>£1,000</strong>, plus court costs, if you don't complete the census.</p>
+                                <h3>What happens if I don’t complete it?</h3>
+                                <p>You can be prosecuted and may have to pay a fine of up to <strong>£1,000</strong>, plus court costs, if you don’t complete the census.</p>
+
                             {% endcall %}
+                            
                         </div>
 
                     </main>
