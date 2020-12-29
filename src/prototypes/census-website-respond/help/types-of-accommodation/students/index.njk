@@ -1,4 +1,6 @@
 ---
+title: Students living away from home
+group: Census
 version: 29.1.3
 layout: census-website-respond/views/_master
 ---
@@ -145,26 +147,24 @@ layout: census-website-respond/views/_master
 
                 <div class="grid__col col-4@m push-1@m u-mt-m">
 
-                    {{-
-                        onsRelatedLinks({
-                            "id": 'related-links',
-                            "title": 'Related content',
-                            "itemsList": [
-                                {
-                                    "url": pageInfo.rootPath + '/help/find-a-support-centre',
-                                    "text": 'Find a support centre'
-                                },
-                                {
-                                    "url": 'https://census-website-respond.netlify.app/end-to-end/languages',
-                                    "text": 'Languages'
-                                },
-                                {
-                                    "url": pageInfo.rootPath + '/contact-us',
-                                    "text": 'Contact us'
-                                }
-                            ]
-                        })
-                    }}
+                    {{ onsRelatedLinks({
+                        "id": 'related-links',
+                        "title": 'Related content',
+                        "itemsList": [
+                            {
+                                "url": pageInfo.rootPath + '/help/find-a-support-centre',
+                                "text": 'Find a support centre'
+                            },
+                            {
+                                "url": 'https://census-website-respond.netlify.app/end-to-end/languages',
+                                "text": 'Languages'
+                            },
+                            {
+                                "url": pageInfo.rootPath + '/contact-us',
+                                "text": 'Contact us'
+                            }
+                        ]
+                    }) }}
 
                 </div>
 

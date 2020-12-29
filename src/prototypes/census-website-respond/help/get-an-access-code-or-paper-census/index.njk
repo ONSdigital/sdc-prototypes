@@ -13,21 +13,19 @@ layout: census-website-respond/views/_master
 
         <div class="page__container container">
 
-            {{
-                onsBreadcrumb({
-                    "ariaLabel": 'Breadcrumb',
-                    "itemsList": [
-                        {
-                            "url": 'https://census-website-respond.netlify.app/end-to-end/home/',
-                            "text": 'Home'
-                        },
-                        {
-                            "url": pageInfo.rootPath + '/help',
-                            "text": 'Help with the census'
-                        }
-                    ]
-                })
-            }}
+            {{ onsBreadcrumb({
+                "ariaLabel": 'Breadcrumb',
+                "itemsList": [
+                    {
+                        "url": 'https://census-website-respond.netlify.app/end-to-end/home',
+                        "text": 'Home'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help',
+                        "text": 'Help with the census'
+                    }
+                ]
+            }) }}
 
             <div class="grid">
 
@@ -40,7 +38,7 @@ layout: census-website-respond/views/_master
                         <div class="page__body">
 
                             <p>To start your census online, you will need your access code printed on the letter we sent you.</p>
-                            <p><a href="https://census-website-respond.netlify.app/end-to-end/where-to-find-your-access-code/">Where to find your access code</a></p>
+                            <p><a href="https://census-website-respond.netlify.app/end-to-end/where-to-find-your-access-code">Where to find your access code</a></p>
 
                             <!--
                             <img width="400" class="census-letter-thumb u-mb-m u-mt-s" src="{{pageInfo.rootPath}}/img/census-letter.svg" alt="Census 2021 letter example showing location of access code">
