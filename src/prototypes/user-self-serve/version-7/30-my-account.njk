@@ -19,11 +19,6 @@ layout: user-self-serve/views/version-7/_master-survey
                         {
                             "url": '/prototypes/user-self-serve/version-7/00-surveys-list.html',
                             "text": 'Surveys'
-                        },
-                        {
-                            "url": '/',
-                            "text": 'Account',
-                            "current": true
                         }
                     ]
                 }) 
@@ -80,7 +75,7 @@ layout: user-self-serve/views/version-7/_master-survey
                                     <input
                                         type="radio"
                                         id="change-contact-details"
-                                        data-action-url="/prototypes/user-self-serve/version-7/account/01-change-account-details/01-change-contact-details.html"
+                                        data-action-url="{{ pageInfo.parentPath }}/account/01-change-account-details/01-change-contact-details.html"
                                         class="radio__input js-radio"
                                         value="question-one"
                                         name="message-query">
@@ -93,7 +88,7 @@ layout: user-self-serve/views/version-7/_master-survey
                                     <input
                                         type="radio"
                                         id="change-business-details"
-                                        data-action-url="/prototypes/user-self-serve/version-7/account/05-change-business-details/index.html"
+                                        data-action-url="{{ pageInfo.parentPath }}/account/05-change-business-details/index.html"
                                         class="radio__input js-radio"
                                         value="question-two"
                                         name="message-query">
@@ -106,7 +101,7 @@ layout: user-self-serve/views/version-7/_master-survey
                                     <input
                                         type="radio"
                                         id="change-password"
-                                        data-action-url="/prototypes/user-self-serve/version-7/account/02-change-password/01-change-password.html"
+                                        data-action-url="{{ pageInfo.parentPath }}/account/02-change-password/01-change-password.html"
                                         class="radio__input js-radio"
                                         value="question-one"
                                         name="message-query">
@@ -119,7 +114,7 @@ layout: user-self-serve/views/version-7/_master-survey
                                     <input
                                     type="radio"
                                     id="option-3"
-                                    data-action-url="{{ pageInfo.parentPath }}/option-3/option-list.html"
+                                    data-action-url="{{ pageInfo.parentPath }}/account/03-change-who-completes-my-surveys/index.html"
                                     class="radio__input js-radio"
                                     value="question--four"
                                     name="message-query">

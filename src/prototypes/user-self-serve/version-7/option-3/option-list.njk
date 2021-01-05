@@ -23,11 +23,6 @@ layout: user-self-serve/views/version-7/_master-survey
                         {
                             "url": '/prototypes/user-self-serve/version-7/01-message-categories.html',
                             "text": 'Help'
-                        },
-                        {
-                            "url": '/',
-                            "text": 'Information about the survey',
-                            "current": true
                         }
                     ]
                 }) 
@@ -96,25 +91,5 @@ layout: user-self-serve/views/version-7/_master-survey
             </form>
         </div>
     </div>
-    <script>
-        var submit = document.getElementById('btnFormSubmit');
-        submit.addEventListener('click', submitForm);
-
-        function submitForm(event) {
-            event.preventDefault();
-            event.stopPropagation();
-
-            var href = '',
-                inputs = this
-                    .parentNode
-                    .getElementsByTagName('input')
-            for (var i = 0; i < inputs.length; i++) {
-                if (inputs[i].getAttribute('name') == 'button' && inputs[i].checked) {
-                    href = inputs[i].getAttribute('data-href');
-                    window.location = href;
-                }
-            }
-        }
-    </script>
 
 {% endblock %}
