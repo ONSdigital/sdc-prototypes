@@ -1,0 +1,78 @@
+---
+group: Frontstage
+title: User account creation
+version: 20.0.3
+layout: user-self-serve/views/version-7/_master-survey
+---
+
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+
+{% block main %}
+
+    <div class="grid">
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/prototypes/user-self-serve/version-7/00-surveys-list.html',
+                            "text": 'Surveys'
+                        },
+                        {
+                            "url": '/prototypes/user-self-serve/version-7/30-my-account.html',
+                            "text": 'Account'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'Transfer surveys',
+                            "current": true
+                        }
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+            <h1>Transfer your surveys</h1>
+            
+            <div class="panel panel--info panel--simple u-mb-m">
+                <div class="panel__body">
+                    <p>You will no longer have access to the surveys you transfer. If you still require access to your surveys, you can <a href="/prototypes/user-self-serve/version-7/account/03-share-access-to-my-surveys/index.html">share access</a>.</p>
+                </div>
+            </div>
+
+            <h2 class="u-fs-m">What happens?</h2>
+            <ul>
+                <li>Select which surveys you want to transfer</li>
+                <li>Enter the email address of the recipient</li>
+                <li>We’ll email the new respondent survey enrolment codes</li>
+                <li>Once confirmed, they will be able to share access to the surveys with their colleagues.</li>
+            </ul>
+
+
+
+            <p class="field u-mt-l">
+                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-7/account/04-transfer-my-surveys-1/01-select-surveys.html';">
+                    <span class="btn__inner">Continue</span>
+                </button>
+                <button type="submit" class="btn btn--secondary" onclick="location.href='{{ pageInfo.rootPath }}/version-7/30-my-account.html';">
+                    <span class="btn__inner">Cancel</span>
+                </button>
+            </p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script>
+        $('.add').click(function () {
+            $('.block:last').before('<div class="block u-mb-s"><label class="label" for="text">Email address</label><input type="text" id="text" class="input input--text input-type__input u-dib u-mr-s" /><button type="submit" class="btn btn--secondary btn--small remove u-dib"><span class="btn__inner">Remove</span></button></div>');
+        });
+        $('.optionBox').on('click', '.remove', function () {
+            $(this)
+                .parent()
+                .remove();
+        });
+    </script>
+
+{% endblock %}

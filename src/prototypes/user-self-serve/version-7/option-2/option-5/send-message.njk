@@ -1,0 +1,101 @@
+---
+group: Frontstage
+title: User self serve
+version: 20.0.3
+layout: user-self-serve/views/version-7/_master-survey
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+
+{% block main %}
+
+    <div class="grid">
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/prototypes/user-self-serve/version-7/00-surveys-list.html',
+                            "text": 'Surveys'
+                        },
+                        {
+                            "url": '/prototypes/user-self-serve/version-7/01-message-categories.html',
+                            "text": 'Help'
+                        },
+                        {
+                            "url": '/prototypes/user-self-serve/version-7/option-2/option-list.html',
+                            "text": 'Information about the survey'
+                        },
+                        {
+                            "url": '/prototypes/user-self-serve/version-7/option-2/option-5/index.html',
+                            "text": 'How safe is my data?'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'Send a message',
+                            "current": true
+                        }
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+            <h1>Send a message</h1>
+            <p>Send us a message with a description of your issue and we'll get back to you.</p>
+            {% from "components/metadata/_macro.njk" import onsMetadata %}
+            {{
+                onsMetadata({
+                    "metadataLabel": "Message subject",
+                    "termCol": "2",
+                    "descriptionCol": "10",
+                    "itemsList": [
+                        {
+                            "term": "Subject:",
+                            "descriptions": [
+                                {
+                                    "description": "How safe is my data?"
+                                }
+                            ]
+                        }
+                    ]
+                })
+            }}
+        </div>
+        <div class="grid__col col-6@m">
+                {{
+                onsTextarea({
+                    "id": "textarea",
+                    "name": "feedback",
+                    "label": {
+                        "text": "Create message"
+                    }
+                })
+            }}
+            <p class="field">
+                <div class="btn-group">
+                    {{ 
+                        onsButton({
+                            "type": 'button',
+                            "text": 'Send message',
+                            "classes": 'btn-group__btn',
+                            "url": "/prototypes/user-self-serve/version-7/10-message-sent.html"
+                        }) 
+                    }}
+                    {{ 
+                        onsButton({
+                            "type": 'button',
+                            "text": 'Cancel',
+                            "classes": 'btn--secondary btn-group__btn',
+                            "url": "/prototypes/user-self-serve/version-7/01-message-categories.html"
+                        }) 
+                    }}
+                </div>
+            </p>
+        </div>
+    </div>
+
+{% endblock %}

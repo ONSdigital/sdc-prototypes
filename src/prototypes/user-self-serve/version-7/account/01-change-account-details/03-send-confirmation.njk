@@ -1,0 +1,59 @@
+---
+group: Frontstage
+title: User account creation
+version: 20.0.3
+layout: user-self-serve/views/version-7/_master-survey
+---
+
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+
+{% block main %}
+
+    <div class="grid">
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/prototypes/user-self-serve/version-7/00-surveys-list.html',
+                            "text": 'Surveys'
+                        },
+                        {
+                            "url": '/prototypes/user-self-serve/version-7/30-my-account.html',
+                            "text": 'Account'
+                        },
+                        {
+                            "url": '/prototypes/user-self-serve/version-7/account/01-change-account-details/01-change-contact-details.html',
+                            "text": 'Change your contact details'
+                        },
+                        {
+                            "url": '/prototypes/user-self-serve/version-7/account/01-change-account-details/02-change-email-address.html',
+                            "text": 'Change email address'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'Send confirmation email',
+                            "current": true
+                        }
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+            <h1>Send confirmation email</h1>
+            <p>We will send confirmation <b>jane.doe@acme.com</b>.</p>
+
+            <p class="field">
+                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-7/account/01-change-account-details/04-confirmation.html';">
+                    <span class="btn__inner">Send</span>
+                </button>
+                <button type="submit" class="btn btn--secondary" onclick="location.href='{{ pageInfo.rootPath }}/version-7/account/01-change-account-details/01-change-contact-details.html';">
+                    <span class="btn__inner">Cancel</span>
+                </button>
+            </p>
+        </div>
+    </div>
+
+{% endblock %}
