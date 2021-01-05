@@ -1,7 +1,7 @@
 ---
 group: Frontstage
 title: User self serve
-version: 20.0.3
+version: 30.0.0
 layout: user-self-serve/views/version-7/_master-survey
 ---
 
@@ -34,7 +34,7 @@ layout: user-self-serve/views/version-7/_master-survey
             }}
         </div>
         <div class="grid__col col-8@m u-pt-no">
-            <h1>Change who completes this survey</h1>
+            <h1>Change who completes your surveys</h1>
             <form action="{{ pageInfo.parentPath }}/index.html">
                 <p class="field">
                     <fieldset class="fieldset">
@@ -49,7 +49,12 @@ layout: user-self-serve/views/version-7/_master-survey
                                         class="radio__input js-radio"
                                         value="option-1"
                                         name="message-query">
-                                    <label class="radio__label" for="option-1">Share access to my surveys</label>
+                                        <label class="radio__label  label--with-description " aria-describedby="label-description-hint" for="option-1">Share access to my surveys
+                                        <br>
+                                        <span id="white-label-description-hint" class="label__description radio__label--with-description">
+                                            Choose this option if you want to continue to complete your surveys
+                                        </span>
+                                    </label>
                                 </span>
                             </p>
                             <br>
@@ -62,22 +67,11 @@ layout: user-self-serve/views/version-7/_master-survey
                                         class="radio__input js-radio"
                                         value="option-2"
                                         name="message-query">
-                                    <label class="radio__label" for="option-2">I’m no longer required to complete any surveys</label>
-                                </span>
-                            </p>
-                            <br>
-                            <p class="radios__item">
-                                <span class="radio">
-                                    <input
-                                        type="radio"
-                                        id="other"
-                                        data-action-url="{{ pageInfo.parentPath }}/send-message.html"
-                                        class="radio__input js-radio "
-                                        value="other" 
-                                        name="message-query"
-                                        aria-controls="other-wrap" aria-haspopup="true">
-                                        <label class="radio__label" for="other">
-                                            Something else
+                                        <label class="radio__label  label--with-description " aria-describedby="label-description-hint" for="option-2">Transfer my surveys
+                                            <br>
+                                            <span id="white-label-description-hint" class="label__description radio__label--with-description">
+                                                Choose this option if you no longer want to access to your surveys
+                                            </span>
                                         </label>
                                 </span>
                             </p>

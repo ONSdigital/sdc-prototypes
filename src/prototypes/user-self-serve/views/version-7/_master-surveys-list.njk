@@ -6,7 +6,7 @@
 
 {% set pageConfig = { 
     'cdn': {
-        'version': '20.0.3'
+        'version': '30.0.0'
     },
     "title": "Survey data collection",
     "header": {
@@ -61,22 +61,16 @@
 {% endblock %}
 
 {% block footer %}
-    {% from "components/footer/_macro.njk" import onsFooter %}
-    {{ 
+ {% from "components/footer/_macro.njk" import onsFooter %}
+{{
     onsFooter({
-        "OGLLink": {
-            "pre": "All content is available under the",
-            "link": "Open Government Licence v3.0",
-            "url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
-            "post": ", except where otherwise stated"
-        },
         "cols": [
             {
                 "title": 'Legal information',
                 "itemsList": [
                     {
                         "text": 'Cookies and privacy',
-                        "url": '#'
+                        "url": '#0'
                     }
                 ]
             },
@@ -85,15 +79,15 @@
                 "itemsList": [
                     {
                         "text": 'What we do',
-                        "url": '#'
+                        "url": '#0'
                     },
                     {
                         "text": 'Contact us',
-                        "url": '/prototypes/user-self-serve/version-7/02-contact-us.html'
+                        "url": '#0'
                     },
                     {
                         "text": 'Accessibility',
-                        "url": '#'
+                        "url": '#0'
                     }
                 ]
             },
@@ -102,20 +96,26 @@
                 "itemsList": [
                     {
                         "text": 'UK Statistics Authority',
-                        "url": '#'
+                        "url": '#0'
                     },
                     {
                         "text": 'Release calendar',
-                        "url": '#'
+                        "url": '#0'
                     },
                     {
                         "text": 'News',
-                        "url": '#'
+                        "url": '#0'
                     }
                 ]
             }
-        ]
-    }) 
+        ],
+        "OGLLink": {
+            "pre": 'All content is available under the',
+            "link": 'Open Government Licence v3.0',
+            "url": 'https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/',
+            "post": ', except where otherwise stated'
+        }
+    })
 }}
 {% endblock %}
 
