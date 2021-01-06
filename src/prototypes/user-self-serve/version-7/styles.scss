@@ -8,6 +8,15 @@
   height: 24px;
   width: 59px;
 }
+
+.breadcrumb__item:last-child {
+  display: none;
+}
+
+.breadcrumb__item:nth-last-child(2) .svg-icon {
+  display: none;
+}
+
 .grid {
   position: relative;
 }
