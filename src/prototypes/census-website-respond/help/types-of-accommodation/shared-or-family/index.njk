@@ -38,7 +38,49 @@ layout: census-website-respond/views/_master
                         <h1 class="u-mb-l u-fs-xxl">Shared or family households</h1>
 
                         <div class="page__body">
-                            <p>Content TBC.</p>
+                            <p>You may live in a household with your family, friends or people you’re not related to. Someone will need to fill in the household census.</p>
+                            <p>It’s the householder’s responsibility to complete the census.</p>
+
+                            {%
+                                call onsCollapsible({
+                                    "classes": 'u-mt-m',
+                                    "id": 'collapsible-0',
+                                    "title": 'What we mean by “householder” and “household”',
+                                    "button": {
+                                        "close": 'Hide this',
+                                        "contextSuffix": 'content',
+                                        "attributes": {
+                                            "aria-hidden": 'true'
+                                        }
+                                    }
+                                })
+                            %}
+
+                                <p>A <strong>householder</strong> is a person who usually lives at this address and, on their own or with someone else, owns or rents the accommodation, and/or pays the household bills and expenses.</p>
+
+                                <p>A <strong>household</strong> is one person living alone or a group of people, not necessarily related, living at the same address, who share cooking facilities <strong>and</strong> share a living room <strong>or</strong> sitting room <strong>or</strong> dining area.</p>
+
+                            {% endcall %}
+
+                            <h2>If you live in rented accommodation</h2>
+
+                            <p>If the landlord lives here, the landlord and tenants who pay bills are all householders. One of you will need to complete the household questions, but each tenant can complete their own individual questions.</p>
+
+                            <p>If you live here but your landlord doesn't, the tenant or tenants who pay the bills for the household should complete the form. This could be you, someone else, or everyone who lives here.</p>
+
+                            <p>One person will need to take responsibility for answering the questions about the home, but each tenant can complete their own individual questions.</p>
+
+                            <h2>Family households</h2>
+
+                            <p>One person is responsible for answering the questions about the household. Anyone aged 16 years of over the age of 16.</p>
+
+                            <h2>Individual questions</h2>
+
+                            <p>There is a set of individual questions for each person in the household. You can share the code with others in the household so they can complete their section. You can also request individual questionnaires if they want to answer separately.</p>
+
+                            <h2>More than one household at this address</h2>
+                            <p>Any other household at this address will need to complete a census using a household access code or by completing a household paper questionnaire.</p>
+
                         </div>
 
                     </main>
