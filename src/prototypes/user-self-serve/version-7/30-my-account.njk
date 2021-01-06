@@ -19,6 +19,11 @@ layout: user-self-serve/views/version-7/_master-survey
                         {
                             "url": '/prototypes/user-self-serve/version-7/00-surveys-list.html',
                             "text": 'Surveys'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'Account',
+                            "current": true
                         }
                     ]
                 }) 
@@ -75,7 +80,7 @@ layout: user-self-serve/views/version-7/_master-survey
                                     <input
                                         type="radio"
                                         id="change-contact-details"
-                                        data-action-url="{{ pageInfo.parentPath }}/account/01-change-account-details/01-change-contact-details.html"
+                                        data-action-url="/prototypes/user-self-serve/version-7/account/01-change-account-details/01-change-contact-details.html"
                                         class="radio__input js-radio"
                                         value="question-one"
                                         name="message-query">
@@ -88,7 +93,7 @@ layout: user-self-serve/views/version-7/_master-survey
                                     <input
                                         type="radio"
                                         id="change-business-details"
-                                        data-action-url="{{ pageInfo.parentPath }}/account/05-change-business-details/index.html"
+                                        data-action-url="/prototypes/user-self-serve/version-7/account/05-change-business-details/index.html"
                                         class="radio__input js-radio"
                                         value="question-two"
                                         name="message-query">
@@ -101,7 +106,7 @@ layout: user-self-serve/views/version-7/_master-survey
                                     <input
                                         type="radio"
                                         id="change-password"
-                                        data-action-url="{{ pageInfo.parentPath }}/account/02-change-password/01-change-password.html"
+                                        data-action-url="/prototypes/user-self-serve/version-7/account/02-change-password/01-change-password.html"
                                         class="radio__input js-radio"
                                         value="question-one"
                                         name="message-query">
@@ -112,13 +117,26 @@ layout: user-self-serve/views/version-7/_master-survey
                             <p class="radios__item">
                                 <span class="radio">
                                     <input
-                                    type="radio"
-                                    id="option-3"
-                                    data-action-url="{{ pageInfo.parentPath }}/account/03-change-who-completes-my-surveys/index.html"
-                                    class="radio__input js-radio"
-                                    value="question--four"
-                                    name="message-query">
-                                    <label class="radio__label" for="option-3">Change who completes my surveys</label>
+                                        type="radio"
+                                        id="access-to-my-surveys"
+                                        data-action-url="{{ pageInfo.parentPath }}/account/03-share-access-to-my-surveys/index.html"
+                                        class="radio__input js-radio"
+                                        value="question-one"
+                                        name="message-query">
+                                    <label class="radio__label" for="access-to-my-surveys">Share access to my surveys</label>
+                                </span>
+                            </p>
+                            <br>
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                        type="radio"
+                                        id="transfer-my-surveys"
+                                        data-action-url="{{ pageInfo.parentPath }}/account/04-transfer-my-surveys/index.html"
+                                        class="radio__input js-radio"
+                                        value="question-two"
+                                        name="message-query">
+                                    <label class="radio__label" for="transfer-my-surveys">I’m no longer required to complete any surveys</label>
                                 </span>
                             </p>
                             <br>

@@ -19,6 +19,11 @@ layout: user-self-serve/views/version-7/_master-survey
                         {
                             "url": '/prototypes/user-self-serve/version-7/00-surveys-list.html',
                             "text": 'Surveys'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'Help',
+                            "current": true
                         }
                     ]
                 }) 
@@ -53,10 +58,10 @@ layout: user-self-serve/views/version-7/_master-survey
                                     class="radio__input js-radio"
                                     value="question-two"
                                     name="message-query">
-                                    <label class="radio__label" for="option-2">Information about this survey</label>
+                                    <label class="radio__label" for="option-2">Information about the Monthly Business Survey</label>
                                 </span>
                             </p>
-                            <br>
+                            <!-- <br>
                             <p class="radios__item">
                                 <span class="radio">
                                     <input
@@ -66,7 +71,20 @@ layout: user-self-serve/views/version-7/_master-survey
                                     class="radio__input js-radio"
                                     value="question--four"
                                     name="message-query">
-                                    <label class="radio__label" for="option-3">Change who completes my surveys</label>
+                                    <label class="radio__label" for="option-3">Change who completes this survey</label>
+                                </span>
+                            </p> -->
+                            <br>
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                    type="radio"
+                                    id="option-3"
+                                    data-action-url="{{ pageInfo.parentPath }}/option-3/option-list.html"
+                                    class="radio__input js-radio"
+                                    value="question--three"
+                                    name="message-query">
+                                    <label class="radio__label" for="option-3">Information about the ONS</label>
                                 </span>
                             </p>
                             <br>
@@ -75,11 +93,11 @@ layout: user-self-serve/views/version-7/_master-survey
                                     <input
                                     type="radio"
                                     id="option-4"
-                                    data-action-url="{{ pageInfo.parentPath }}/30-my-account.html"
+                                    data-action-url="{{ pageInfo.parentPath }}/option-4/option-list.html"
                                     class="radio__input js-radio"
-                                    value="question--five"
+                                    value="question--four"
                                     name="message-query">
-                                    <label class="radio__label" for="option-4">Change my account details</label>
+                                    <label class="radio__label" for="option-4">Changes to my account</label>
                                 </span>
                             </p>
                             <br>
@@ -92,7 +110,7 @@ layout: user-self-serve/views/version-7/_master-survey
                                     class="radio__input js-radio"
                                     value="question--five"
                                     name="message-query">
-                                    <label class="radio__label" for="option-5">Technical help</label>
+                                    <label class="radio__label" for="option-5">I'm having problems resetting my password</label>
                                 </span>
                             </p>
                             <br>

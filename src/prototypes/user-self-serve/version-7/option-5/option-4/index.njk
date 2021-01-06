@@ -8,7 +8,6 @@ layout: user-self-serve/views/version-7/_master-survey
 {% from "components/button/_macro.njk" import onsButton %}
 {% from "components/radios/_macro.njk" import onsRadios %}
 {% from "components/textarea/_macro.njk" import onsTextarea %}
-{% from "components/metadata/_macro.njk" import onsMetadata %}
 {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
 
 {% block main %}
@@ -29,35 +28,67 @@ layout: user-self-serve/views/version-7/_master-survey
                         },
                         {
                             "url": '/prototypes/user-self-serve/version-7/option-5/option-1/option-list.html',
-                            "text": 'Technical help'
+                            "text": 'I’m having problems resetting my password'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'Send a message',
+                            "current": true
                         }
                     ]
                 }) 
             }}
         </div>
         <div class="grid__col col-8@m u-pt-no">
-            <h1>I have two ONS accounts in error</h1>
-            <p>This may have occurred if you have received a new survey enrolment and set up a new account to complete it.</p>
-            <p>If this is the case, you should <a href="#">transfer the enrolment</a> your correct account.</p>
-            <h2>Did this answer your question?</h2>
+            <h1>Send a message</h1>
+            <p>Send us a message with a description of your issue and we'll get back to you.</p>
+            {% from "components/metadata/_macro.njk" import onsMetadata %}
+            {{
+                onsMetadata({
+                    "metadataLabel": "Message subject",
+                    "termCol": "2",
+                    "descriptionCol": "10",
+                    "itemsList": [
+                        {
+                            "term": "Subject:",
+                            "descriptions": [
+                                {
+                                    "description": "I’m having problems resetting my password"
+                                }
+                            ]
+                        }
+                    ]
+                })
+            }}
+        </div>
+        <div class="grid__col col-6@m">
+                {{
+                onsTextarea({
+                    "id": "textarea",
+                    "name": "feedback",
+                    "label": {
+                        "text": "Create message"
+                    }
+                })
+            }}
             <p class="field">
                 <div class="btn-group">
-                {{ 
-                    onsButton({
-                        "type": 'button',
-                        "text": 'Yes',
-                        "classes": 'btn-group__btn',
-                        "url": "/prototypes/user-self-serve/version-7/00-surveys-list.html"
-                    }) 
-                }}
-                {{ 
-                    onsButton({
-                        "type": 'button',
-                        "text": 'No',
-                        "classes": 'btn--secondary btn-group__btn',
-                        "url": "send-message.html"
-                    }) 
-                }}
+                    {{ 
+                        onsButton({
+                            "type": 'button',
+                            "text": 'Send message',
+                            "classes": 'btn-group__btn',
+                            "url": "/prototypes/user-self-serve/version-7/10-message-sent.html"
+                        }) 
+                    }}
+                    {{ 
+                        onsButton({
+                            "type": 'button',
+                            "text": 'Cancel',
+                            "classes": 'btn--secondary btn-group__btn',
+                            "url": "/prototypes/user-self-serve/version-7/01-message-categories.html"
+                        }) 
+                    }}
                 </div>
             </p>
         </div>

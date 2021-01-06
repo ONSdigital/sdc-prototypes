@@ -2,7 +2,7 @@
 group: Frontstage
 title: User self serve
 version: 30.0.0
-layout: user-self-serve/views/version-5/_master-survey
+layout: user-self-serve/views/version-6/_master-survey
 ---
 
 {% from "components/button/_macro.njk" import onsButton %}
@@ -30,6 +30,11 @@ layout: user-self-serve/views/version-5/_master-survey
                         {
                             "url": '/prototypes/user-self-serve/version-5/20-category/00-category-list.html',
                             "text": 'Information about the survey'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'Send message',
+                            "current": true
                         }
                     ]
                 }) 

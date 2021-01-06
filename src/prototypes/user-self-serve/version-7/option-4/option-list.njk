@@ -25,16 +25,18 @@ layout: user-self-serve/views/version-7/_master-survey
                             "text": 'Help'
                         },
                         {
-                            "url": '/prototypes/user-self-serve/version-7/option-5/option-1/option-list.html',
-                            "text": 'Technical help'
+                            "url": '/',
+                            "text": 'Changes to your account',
+                            "current": true
                         }
                     ]
                 }) 
             }}
         </div>
         <div class="grid__col col-8@m u-pt-no">
-            <h1>I'm having problems with my password</h1>
-            <form action="{{ pageInfo.parentPath }}/index.html">
+            <h1>Changes to your account</h1>
+            
+            <form action="{{ pageInfo.parentPath }}/account/index.html">
                 <p class="field">
                     <fieldset class="fieldset">
                         <legend class="fieldset__legend">Choose an option</legend>
@@ -43,12 +45,12 @@ layout: user-self-serve/views/version-7/_master-survey
                                 <span class="radio">
                                     <input
                                         type="radio"
-                                        id="option-1"
-                                        data-action-url="{{ pageInfo.parentPath }}/option-1/index.html"
+                                        id="change-account-details"
+                                        data-action-url="/prototypes/user-self-serve/version-7/30-my-account.html"
                                         class="radio__input js-radio"
-                                        value="option-1"
+                                        value="question-one"
                                         name="message-query">
-                                    <label class="radio__label" for="option-1">I haven't received the password reset email</label>
+                                    <label class="radio__label" for="change-account-details">Change account details</label>
                                 </span>
                             </p>
                             <br>
@@ -56,47 +58,60 @@ layout: user-self-serve/views/version-7/_master-survey
                                 <span class="radio">
                                     <input
                                         type="radio"
-                                        id="option-2"
+                                        id="access-to-my-surveys"
+                                        data-action-url="/prototypes/user-self-serve/version-7/account/03-share-access-to-my-surveys/index.html"
+                                        class="radio__input js-radio"
+                                        value="question-two"
+                                        name="message-query">
+                                    <label class="radio__label" for="access-to-my-surveys">Share access to my surveys</label>
+                                </span>
+                            </p>
+                            <br>
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                        type="radio"
+                                        id="transfer-my-surveys"
+                                        data-action-url="/prototypes/user-self-serve/version-7/account/04-transfer-my-surveys/index.html"
+                                        class="radio__input js-radio"
+                                        value="question-two"
+                                        name="message-query">
+                                    <label class="radio__label" for="transfer-my-surveys">I’m no longer required to complete any surveys</label>
+                                </span>
+                            </p>
+                            <br>
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                        type="radio"
+                                        id="two-accounts"
+                                        data-action-url="/prototypes/user-self-serve/version-7/option-4/option-1/index.html"
+                                        class="radio__input js-radio"
+                                        value="question-three"
+                                        name="message-query">
+                                    <label class="radio__label" for="two-accounts">I have two accounts in error</label>
+                                </span>
+                            </p>
+                            <br>
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                        type="radio"
+                                        id="other-checkbox"
                                         data-action-url="{{ pageInfo.parentPath }}/option-2/index.html"
-                                        class="radio__input js-radio"
-                                        value="option-2"
-                                        name="message-query">
-                                    <label class="radio__label" for="option-2">My new password isn't being accepted</label>
-                                </span>
-                            </p>
-                            <br>
-                            <p class="radios__item">
-                                <span class="radio">
-                                    <input
-                                        type="radio"
-                                        id="option-3"
-                                        data-action-url="{{ pageInfo.parentPath }}/option-3/index.html"
-                                        class="radio__input js-radio"
-                                        value="option-3"
-                                        name="message-query">
-                                    <label class="radio__label" for="option-3">I cannot reset my password using the link</label>
-                                </span>
-                            </p>
-                            <br>
-                            <p class="radios__item">
-                                <span class="radio">
-                                    <input
-                                        type="radio"
-                                        id="other"
-                                        data-action-url="{{ pageInfo.parentPath }}/option-4/index.html"
                                         class="radio__input js-radio "
                                         value="other" 
                                         name="message-query"
-                                        aria-controls="other-wrap" aria-haspopup="true">
-                                        <label class="radio__label" for="other">
-                                            Something else
-                                        </label>
+                                        aria-controls="other-checkbox-other-wrap" aria-haspopup="true">
+                                    <label class="radio__label" for="other-checkbox">
+                                        Something else
+                                    </label>
                                 </span>
                             </p>
                         </div>
                     </fieldset>
                 </p>
-                <p class="field">
+                <p class="field u-mt-l">
                     <div class="btn-group">
                         <button type="submit" class="btn">
                             <span class="btn__inner">Continue</span>

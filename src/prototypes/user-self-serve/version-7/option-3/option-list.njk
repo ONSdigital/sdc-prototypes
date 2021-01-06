@@ -23,13 +23,18 @@ layout: user-self-serve/views/version-7/_master-survey
                         {
                             "url": '/prototypes/user-self-serve/version-7/01-message-categories.html',
                             "text": 'Help'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'Information about the survey',
+                            "current": true
                         }
                     ]
                 }) 
             }}
         </div>
         <div class="grid__col col-8@m u-pt-no">
-            <h1>Change who completes your surveys</h1>
+            <h1>Change who completes this survey</h1>
             <form action="{{ pageInfo.parentPath }}/index.html">
                 <p class="field">
                     <fieldset class="fieldset">
@@ -44,12 +49,7 @@ layout: user-self-serve/views/version-7/_master-survey
                                         class="radio__input js-radio"
                                         value="option-1"
                                         name="message-query">
-                                        <label class="radio__label  label--with-description " aria-describedby="label-description-hint" for="option-1">Share access to my surveys
-                                        <br>
-                                        <span id="white-label-description-hint" class="label__description radio__label--with-description">
-                                            Choose this option if you want to continue to complete your surveys
-                                        </span>
-                                    </label>
+                                    <label class="radio__label" for="option-1">Share access to my surveys</label>
                                 </span>
                             </p>
                             <br>
@@ -62,11 +62,22 @@ layout: user-self-serve/views/version-7/_master-survey
                                         class="radio__input js-radio"
                                         value="option-2"
                                         name="message-query">
-                                        <label class="radio__label  label--with-description " aria-describedby="label-description-hint" for="option-2">Transfer my surveys
-                                            <br>
-                                            <span id="white-label-description-hint" class="label__description radio__label--with-description">
-                                                Choose this option if you no longer want to access to your surveys
-                                            </span>
+                                    <label class="radio__label" for="option-2">I’m no longer required to complete any surveys</label>
+                                </span>
+                            </p>
+                            <br>
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                        type="radio"
+                                        id="other"
+                                        data-action-url="{{ pageInfo.parentPath }}/send-message.html"
+                                        class="radio__input js-radio "
+                                        value="other" 
+                                        name="message-query"
+                                        aria-controls="other-wrap" aria-haspopup="true">
+                                        <label class="radio__label" for="other">
+                                            Something else
                                         </label>
                                 </span>
                             </p>
@@ -91,5 +102,25 @@ layout: user-self-serve/views/version-7/_master-survey
             </form>
         </div>
     </div>
+    <script>
+        var submit = document.getElementById('btnFormSubmit');
+        submit.addEventListener('click', submitForm);
+
+        function submitForm(event) {
+            event.preventDefault();
+            event.stopPropagation();
+
+            var href = '',
+                inputs = this
+                    .parentNode
+                    .getElementsByTagName('input')
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].getAttribute('name') == 'button' && inputs[i].checked) {
+                    href = inputs[i].getAttribute('data-href');
+                    window.location = href;
+                }
+            }
+        }
+    </script>
 
 {% endblock %}
