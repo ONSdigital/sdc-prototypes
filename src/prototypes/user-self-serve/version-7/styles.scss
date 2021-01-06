@@ -1,15 +1,13 @@
 /* Remove image from link button */
-.btn--link:not(.btn--secondary) .btn__inner:after,
-.btn--link:not(.btn--secondary):active .btn__inner:after,
-.btn--link:not(.btn--secondary):hover:focus .btn__inner:after,
-.btn--link.btn--secondary .btn__inner:after,
-.btn--link:focus.btn--secondary .btn__inner:after,
-.btn--link.btn--small.btn--secondary .btn__inner:after,
-.btn--link:focus.btn--small.btn--secondary .btn__inner:after {
+.btn--link svg {
   background-image: none;
   display: none;
 }
 
+.footer__license .footer__ogl-img {
+  height: 24px;
+  width: 59px;
+}
 .grid {
   position: relative;
 }

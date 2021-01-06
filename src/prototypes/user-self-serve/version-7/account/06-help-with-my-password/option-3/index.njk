@@ -8,6 +8,7 @@ layout: user-self-serve/views/version-7/_master-survey
 {% from "components/button/_macro.njk" import onsButton %}
 {% from "components/radios/_macro.njk" import onsRadios %}
 {% from "components/textarea/_macro.njk" import onsTextarea %}
+{% from "components/metadata/_macro.njk" import onsMetadata %}
 {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
 
 {% block main %}
@@ -27,12 +28,12 @@ layout: user-self-serve/views/version-7/_master-survey
                             "text": 'Help'
                         },
                         {
-                            "url": '/prototypes/user-self-serve/version-7/option-2/option-list.html',
-                            "text": 'Information about this survey'
+                            "url": '/prototypes/user-self-serve/version-7/option-5/option-1/option-list.html',
+                            "text": 'Help with my password'
                         },
                         {
                             "url": '/',
-                            "text": 'Send a message',
+                            "text": 'I cannot reset my password using the link',
                             "current": true
                         }
                     ]
@@ -40,8 +41,9 @@ layout: user-self-serve/views/version-7/_master-survey
             }}
         </div>
         <div class="grid__col col-8@m u-pt-no">
-            <h1>Information about the Monthly Business Survey</h1>
-            <p>You'll find answers to most of your questions in our <a href="https://www.ons.gov.uk/surveys/informationforbusinesses" class="icon--external-link" target="_blank" rel="noopener">information for businesses</a></p>
+            <h1>I cannot reset my password using the link</h1>
+            <p>Password reset links will expire after 3 days from when you request a reset.</p>
+            <p>If 3 days have passed since you reset, you can reset your password again. Otherwise contact us for assistance.</p>
             <h2>Did this answer your question?</h2>
             <p class="field">
                 <div class="btn-group">

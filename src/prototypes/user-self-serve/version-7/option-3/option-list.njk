@@ -26,7 +26,7 @@ layout: user-self-serve/views/version-7/_master-survey
                         },
                         {
                             "url": '/',
-                            "text": 'Information about the survey',
+                            "text": 'Information about the ONS',
                             "current": true
                         }
                     ]
@@ -34,7 +34,7 @@ layout: user-self-serve/views/version-7/_master-survey
             }}
         </div>
         <div class="grid__col col-8@m u-pt-no">
-            <h1>Change who completes this survey</h1>
+            <h1>Information about the ONS</h1>
             <form action="{{ pageInfo.parentPath }}/index.html">
                 <p class="field">
                     <fieldset class="fieldset">
@@ -45,11 +45,11 @@ layout: user-self-serve/views/version-7/_master-survey
                                     <input
                                         type="radio"
                                         id="option-1"
-                                        data-action-url="/prototypes/user-self-serve/version-7/account/03-share-access-to-my-surveys/index.html"
+                                        data-action-url="{{ pageInfo.parentPath }}/option-1/index.html"
                                         class="radio__input js-radio"
                                         value="option-1"
                                         name="message-query">
-                                    <label class="radio__label" for="option-1">Share access to my surveys</label>
+                                    <label class="radio__label" for="option-1">Who is the ONS?</label>
                                 </span>
                             </p>
                             <br>
@@ -58,11 +58,11 @@ layout: user-self-serve/views/version-7/_master-survey
                                     <input
                                         type="radio"
                                         id="option-2"
-                                        data-action-url="/prototypes/user-self-serve/version-7/account/04-transfer-my-surveys/index.html"
+                                        data-action-url="{{ pageInfo.parentPath }}/option-2/index.html"
                                         class="radio__input js-radio"
                                         value="option-2"
                                         name="message-query">
-                                    <label class="radio__label" for="option-2">I’m no longer required to complete any surveys</label>
+                                    <label class="radio__label" for="option-2">How safe is my data?</label>
                                 </span>
                             </p>
                             <br>
