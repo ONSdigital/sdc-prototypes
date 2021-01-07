@@ -1,5 +1,5 @@
 ---
-title: Second homes, empty properties and holiday lets
+title: I have a second property
 group: Census
 version: 31.0.0
 layout: census-website-respond/views/_master
@@ -38,7 +38,7 @@ layout: census-website-respond/views/_master
                         <h1 class="u-mb-l">
                             <span class="u-fs-m u-db u-mb-xs u-lighter">Second homes, empty properties and holiday lets</span>
                             <span class="u-vh">: </span>
-                            <span class="u-fs-xxl u-db">Overview</span>
+                            <span class="u-fs-xxl u-db">I have a second property</span>
                         </h1>
 
                         {{-
@@ -48,12 +48,12 @@ layout: census-website-respond/views/_master
                                 "itemsList": [
                                     {
                                         "url": pageInfo.rootPath + '/help/types-of-accommodation/second-homes-and-properties',
-                                        "text": 'Overview',
-                                        "current": true
+                                        "text": 'Overview'
                                     },
                                     {
                                         "url": pageInfo.rootPath + '/help/types-of-accommodation/second-homes-and-properties/i-have-a-second-property',
-                                        "text": 'I have a second property'
+                                        "text": 'I have a second property',
+                                        "current": true
                                     },
                                     {
                                         "url": pageInfo.rootPath + '/help/types-of-accommodation/second-homes-and-properties/empty-properties',
@@ -73,7 +73,38 @@ layout: census-website-respond/views/_master
 
                         <div class="page__body">
 
-                            <p>If you have not received a census letter or form by Sunday 21 March 2021 <strong>where you live</strong>, please <a href="/help/get-an-access-code-or-paper-census">order an access code or paper form</a>.</p>
+                            <p>If your second property is a holiday home that is only for your use, you're responsible for filling in the census form sent to that address.</p>
+
+                            <p>If no one's staying there overnight on Sunday 21 March 2021, just answer the questions about the property in the Household questions.</p>
+
+                            <h2>Short-term holiday lets</h2>
+
+                            <p>If your second property is rented out for holiday lets, you're responsible for filling in the census for that address.</p>
+
+                            <p>If you have guests staying on Sunday 21 March 2021, please record their details in the Visitor questions only.</p>
+
+                            <h2>Long-term lets</h2>
+
+                            <p>If your second property is rented out for tenants to live in for three months or more, and you have tenants living at your property on Sunday 21 March 2021, they're responsible for filling in the census form sent to that address.</p>
+
+                            <p>If you don't have tenants on this date, only answer the questions about the property in the Household questions.</p>
+
+                            <h2>Away from your property</h2>
+
+                            <p>You don't need to fill in the census form if:</p>
+
+                            {{
+                                onsList({
+                                    "itemsList": [
+                                        {
+                                            "text": 'you’re away for six months or more, and still in the UK'
+                                        },
+                                        {
+                                            "text": 'you’re away for 12 months or more, and outside the UK'
+                                        }
+                                    ]
+                                })
+                            }}
 
                             <div class="u-mt-xl">
                                 {{ onsContentPagination({
