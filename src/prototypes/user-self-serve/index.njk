@@ -20,38 +20,17 @@ layout: user-self-serve/views/_index
             {{ 
                 onsButton({
                     "type": 'button',
-                    "text": 'Version 7',
-                    "classes": 'btn--small u-mb-s',
-                    "url": "/prototypes/user-self-serve/version-7/00-surveys-list.html"
-                }) 
-            }}
-            <p>Includes <a href="https://docs.google.com/document/d/1r5IqesSBjWYU_GWMnA7L9iDFK0dOC6HA9RxHCtk2NRM/edit#">recommendations from Treejack survey</a> (Dec 20 / Jan 21)</p>
-            <ul class="list ">
-                <li class="list__item ">Upgraded Design System to v30.0.0</li>
-                <li class="list__item ">Removed 'current' breadcrumb</li>
-                <li class="list__item ">Added link to transfer surveys from <a href="/prototypes/user-self-serve/version-7/account/04-transfer-my-surveys/index.html">share access</a>
-                </li>
-            </ul>
-
-            <h2>In progress</h2>
-            {{ 
-                onsButton({
-                    "type": 'button',
                     "text": 'Version 8',
-                    "classes": 'btn--secondary btn--small u-mb-s',
+                    "classes": 'u-mb-s',
                     "url": "/prototypes/user-self-serve/version-8/index.html"
                 }) 
             }}
 
+            <p>Added signed out version</p>
             <ul class="list ">
-                <li class="list__item ">Added signed out version
-                    <ul class="list ">
-                        <li class="list__item ">Refactored code (new URLS)</li>
-                        <li class="list__item ">Removed survey specific help</li>
-                        <li class="list__item ">Added "Problems with password"</li>
-                    </ul>
-                </li>
-                <li class="list__item ">Added signed out version</li>
+                <li class="list__item ">Refactored code (new URLS)</li>
+                <li class="list__item ">Removed survey specific help</li>
+                <li class="list__item ">Added "Problems with password"</li>
             </ul>
 
             <hr class="u-mb-l">
@@ -61,8 +40,25 @@ layout: user-self-serve/views/_index
                     {{ 
                         onsButton({
                             "type": 'button',
+                            "text": 'Version 7',
+                            "classes": 'btn--secondary btn--small u-mb-s',
+                            "url": "/prototypes/user-self-serve/version-7/00-surveys-list.html"
+                        }) 
+                    }}
+                </li>
+                <p>Includes <a href="https://docs.google.com/document/d/1r5IqesSBjWYU_GWMnA7L9iDFK0dOC6HA9RxHCtk2NRM/edit#">recommendations from Treejack survey</a> (Dec 20 / Jan 21)</p>
+                <ul class="list ">
+                    <li class="list__item ">Upgraded Design System to v30.0.0</li>
+                    <li class="list__item ">Removed 'current' breadcrumb</li>
+                    <li class="list__item ">Added link to transfer surveys from <a href="/prototypes/user-self-serve/version-7/account/04-transfer-my-surveys/index.html">share access</a>
+                    </li>
+                </ul>
+                <li class="list__item ">
+                    {{ 
+                        onsButton({
+                            "type": 'button',
                             "text": 'Version 6',
-                            "classes": 'btn--secondary btn--link u-mb-s',
+                            "classes": 'btn--secondary btn--small u-mb-s',
                             "url": "/prototypes/user-self-serve/version-6/00-surveys-list.html"
                         }) 
                     }}
@@ -73,7 +69,7 @@ layout: user-self-serve/views/_index
                         onsButton({
                             "type": 'button',
                             "text": 'Version 5',
-                            "classes": 'btn--secondary btn--link u-mb-s',
+                            "classes": 'btn--secondary btn--small u-mb-s',
                             "url": "/prototypes/user-self-serve/version-5/00-surveys-list.html"
                         }) 
                     }}
