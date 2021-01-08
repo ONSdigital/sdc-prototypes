@@ -25,6 +25,10 @@ layout: census-website-respond/views/_master
                     {
                         "url": pageInfo.rootPath + '/help/types-of-accommodation',
                         "text": 'Types of household or accommodation'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help/types-of-accommodation/second-homes-and-properties',
+                        "text": 'Second homes, holiday lets and empty properties'
                     }
                 ]
             }) }}
@@ -56,8 +60,7 @@ layout: census-website-respond/views/_master
                                     },
                                     {
                                         "url": pageInfo.rootPath + '/help/types-of-accommodation/second-homes-and-properties/empty-properties',
-                                        "text": 'Empty properties',
-                                        "current": true
+                                        "text": 'Empty properties'
                                     },
                                     {
                                         "url": pageInfo.rootPath + '/help/types-of-accommodation/second-homes-and-properties/im-in-rented-holiday-accommodation',
@@ -66,6 +69,15 @@ layout: census-website-respond/views/_master
                                     {
                                         "url": pageInfo.rootPath + '/help/types-of-accommodation/second-homes-and-properties/im-staying-in-a-non-residential-property',
                                         "text": 'I’m staying in a non-residential property'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/types-of-accommodation/second-homes-and-properties/this-property-is-sublet-but-the-landlord-doesnt-know',
+                                        "text": 'This property is sublet, but the landlord doesn’t know'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/types-of-accommodation/second-homes-and-properties/properties-with-squatters',
+                                        "text": 'Properties with squatters',
+                                        "current": true
                                     }
                                 ]
                             })
@@ -107,20 +119,8 @@ layout: census-website-respond/views/_master
                                         {
                                             "rel": 'prev',
                                             "text": 'Previous',
-                                            "url": pageInfo.rootPath + '/help/getting-started/completing-your-census-online',
-                                            "label": 'Completing your census online'
-                                        }
-                                        ]
-                                    })
-                                }}
-                                {{-
-                                    onsContentPagination({
-                                        "contentPaginationItems": [
-                                        {
-                                            "rel": 'next',
-                                            "text": 'Next',
-                                            "url": pageInfo.rootPath + '/help/getting-started/completing-the-census-for-someone-else',
-                                            "label": 'Completing the census for someone else'
+                                            "url": pageInfo.rootPath + '/help/types-of-accommodation/second-homes-and-properties/this-property-is-sublet-but-the-landlord-doesnt-know',
+                                            "label": 'This property is sublet, but the landlord doesn’t know'
                                         }
                                         ]
                                     })

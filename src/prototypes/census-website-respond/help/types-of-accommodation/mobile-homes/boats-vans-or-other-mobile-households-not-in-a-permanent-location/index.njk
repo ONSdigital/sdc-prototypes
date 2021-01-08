@@ -1,5 +1,5 @@
 ---
-title: Boats, caravans and other mobile homes
+title: Boats, vans or other mobile households not in a permanent location
 group: Census
 version: 31.1.0
 layout: census-website-respond/views/_master
@@ -38,7 +38,7 @@ layout: census-website-respond/views/_master
                         <h1 class="u-mb-l">
                             <span class="u-fs-m u-db u-mb-xs u-lighter">Boats, caravans and other mobile homes</span>
                             <span class="u-vh">: </span>
-                            <span class="u-fs-xxl u-db">Overview</span>
+                            <span class="u-fs-xxl u-db">Boats, vans or tents in a permanent location</span>
                         </h1>
 
                         {{-
@@ -48,8 +48,7 @@ layout: census-website-respond/views/_master
                                 "itemsList": [
                                     {
                                         "url": pageInfo.rootPath + '/help/types-of-accommodation/mobile-homes',
-                                        "text": 'Overview',
-                                        "current": true
+                                        "text": 'Overview'
                                     },
                                     {
                                         "url": pageInfo.rootPath + '/help/types-of-accommodation/mobile-homes/boats-vans-or-tents-in-a-permanent-location',
@@ -57,7 +56,8 @@ layout: census-website-respond/views/_master
                                     },
                                     {
                                         "url": pageInfo.rootPath + '/help/types-of-accommodation/mobile-homes/boats-vans-or-other-mobile-households-not-in-a-permanent-location',
-                                        "text": 'Boats, vans or other mobile households not in a permanent location'
+                                        "text": 'Boats, vans or other mobile households not in a permanent location',
+                                        "current": true
                                     }
                                 ]
                             })
@@ -65,20 +65,14 @@ layout: census-website-respond/views/_master
 
                         <div class="page__body">
 
-                            <p>You should fill in your own household form. It doesn’t matter whether your home is in a permanent location or not.</p>
-
-                            <p>If your home is permanently located, for example at a site or marina, you should receive your census form in the post.</p><p>If you’re not in a permanent location, put the address of your location on Census Day.</p>
-
-                            <p>If you haven’t received a census letter or form by Sunday 21 March 2021, please <a href="{{pageInfo.rootPath}}/help/get-an-access-code-or-paper-census">order an access code or paper form</a>.</p>
-
+                           <p>Mobile households include continuous cruisers and campers. Accommodation includes boats, vans, tents, yurts and any structure that can be moved from place to place.<br></p><p>The easiest way for you to take part in the census is to <a href="/help/get-an-access-code-or-paper-census">order a code to be sent to you by text</a>. This will allow you to access your online census form.<br></p><p>In Wales, you will have the option to complete the census in either English or Welsh.</p><h2>Time split between mobile household and fixed address</h2><h3>I stay in mobile accommodation most of the time</h3><p>If you also have a fixed address, but you spend most of your time living in your mobile accommodation, you will need to complete a census for your mobile household. When asked for your address, please give as much information as you can about where your mobile accommodation is located overnight on Sunday 21 March 2021.</p><p>You will also need to ensure a form is completed for your home address.</p><p></p><div class="panel panel--info panel--no-title u-mb-m"><div class="panel__body"><h2>What do I put as my address?</h2><p>If your accommodation has a registered address, please use it on your form.</p><p>If you're staying on the grounds of a premises, please use that address.</p><p>If your location has no registered address, please describe your whereabouts as best you can.</p></div></div><h3>I stay at a fixed address most of the time</h3><p>If you also have a fixed address where you spend most of your time, but you're away overnight in your boat or van on Sunday 21 March 2021, you only need to complete your census form once you get home. You don't need to complete a form for your mobile accommodation.</p><h2>I need help to complete the form<br></h2><p>If you have difficulty filling in the form, try to get a family member or friend to help you.<br></p><p>You can <u>order a replacement code to be sent to you by text</u>. This will allow you to access your online census form.</p><p>If there's no one to help, please <u>contact us</u>.</p>
 
                             <div class="u-mt-xl">
-                                {{-
-                                    onsContentPagination({
-                                        "contentPaginationItems": [
+                                {{ onsContentPagination({
+                                    "contentPaginationItems": [
                                         {
-                                            "rel": 'next',
-                                            "text": 'Next',
+                                            "rel": 'prev',
+                                            "text": 'Previous',
                                             "url": pageInfo.rootPath + '/help/types-of-accommodation/mobile-homes/boats-vans-or-tents-in-a-permanent-location',
                                             "label": 'Boats, vans or tents in a permanent location'
                                         }
