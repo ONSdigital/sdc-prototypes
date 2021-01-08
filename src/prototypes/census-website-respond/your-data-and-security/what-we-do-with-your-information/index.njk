@@ -63,7 +63,39 @@ layout: census-website-respond/views/_master
 
                         <div class="page__body">
 
-                            <p>Content TBC.</p>
+                            <p>Any personal information you give us will be made anonymous and will not identify you or anyone you live with. Personal information includes things like your name, date of birth and address.</p>
+
+                            <p>We ask for names and dates of birth to help us make sure we only count each person once.</p>
+
+                            <p>The census information you give is only used for statistical purposes. Our statistics do not contain any information that will identify you. No one can tell who you are from the statistics we publish.</p>
+
+                            <h2>Your personal census information cannot be used by government</h2>
+
+                            <p>Only carefully selected and approved staff can access your personal census information. Approved staff use the information for statistical purposes only.</p>
+
+                            <p>Your personal census information cannot be seen or used by:</p>
+
+                            {{ onsList({
+                                "itemsList": [
+                                    {
+                                        "text": 'anyone who makes decisions about you or any services that you get'
+                                    },
+                                    {
+                                        "text": 'anyone making decisions about you – it will not affect any residency applications or your immigration status'
+                                    },
+                                    {
+                                        "text": 'anyone making decisions about individual services, such as taxes and benefits'
+                                    },
+                                    {
+                                        "text": 'anyone wanting to find you or sell you anything'
+                                    },
+                                    {
+                                        "text": 'staff in government departments who directly serve the public – it’s a crime for anyone to share it with them'
+                                    }
+                                ]
+                            }) }}
+
+                            <p>All our systems, staff and suppliers, and the way we do things follow strict government standards, and your confidentiality is protected by law. It’s a crime for anyone to share personal census information unless required or permitted by law.</p>
 
                             <div class="u-mt-xl">
                                 {{ onsContentPagination({
