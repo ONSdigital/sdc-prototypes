@@ -77,12 +77,24 @@ layout: census-website-respond/views/_master
 
                             <p>We’ll be providing a wide choice of materials to promote the census on our <a href="{{pageInfo.rootPath}}/get-involved/downloadable-resources">Downloadable resources</a> page. You’ll be able to use these resources for things like:</p>
 
-                            <ul>
-                                <li>informing your staff and councillors about the census</li>
-                                <li>answering questions from residents</li>
-                                <li>spreading the word locally to organisations like parish councils and community groups</li>
-                                <li>promoting the census on your website and social media</li>
-                            </ul>
+                            {{
+                                onsList({
+                                    "itemsList": [
+                                        {
+                                            "text": "informing your staff and councillors about the census"
+                                        },
+                                        {
+                                            "text": "answering questions from residents"
+                                        },
+                                        {
+                                            "text": "spreading the word locally to organisations like parish councils and community groups"
+                                        },
+                                        {
+                                            "text": "promoting the census on your website and social media"
+                                        }
+                                    ]
+                                })
+                            }}
 
                             <p>Visit our <a href="{{pageInfo.rootPath}}/get-involved/downloadable-resources">Downloadable resources</a> page regularly, as we’ll add more as the census gets closer.</p>
 

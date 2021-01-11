@@ -94,87 +94,37 @@ layout: census-website-respond/views/_master
 
                             <h2>Types of household or accommodation</h2>
                             <p>You need to complete a census if you:</p>
-                                <ul>
-                                    <li>
-                                        <a href="{{pageInfo.rootPath}}/help/types-of-accommodation/shared-or-family">
-                                        live in private or rented accommodation</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{pageInfo.rootPath}}/help/types-of-accommodation/students">
-                                        are a student living away from home during term time</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{pageInfo.rootPath}}/help/types-of-accommodation/second-homes">
-                                        have a second home or empty property</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{pageInfo.rootPath}}/help/types-of-accommodation/mobile-homes">
-                                        live somewhere that is mobile, such as a canal boat or motorhome</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{pageInfo.rootPath}}/help/types-of-accommodation/communal-establishments">
-                                        live in a care home, armed forces base or similar establishment</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{pageInfo.rootPath}}/help/types-of-accommodation/no-fixed-address">
-                                        do not live at a fixed address</a>
-                                    </li>
-                                </ul>
-
-                            <!--{%
-                                call onsCollapsible({
-                                    "classes": 'u-mt-m',
-                                    "id": 'collapsible-0',
-                                    "title": 'Content to be merged or removed',
-                                    "titleTag": 'h3',
-                                    "button": {
-                                        "close": 'Hide this',
-                                        "contextSuffix": 'content',
-                                        "attributes": {
-                                            "aria-hidden": 'true'
+                                
+                            {{
+                                onsList({
+                                    "itemsList": [
+                                        {
+                                            "url": "{{pageInfo.rootPath}}/help/types-of-accommodation/shared-or-family",
+                                            "text": "live in private or rented accommodation"
+                                        },
+                                        {
+                                            "url": "{{pageInfo.rootPath}}/help/types-of-accommodation/students",
+                                            "text": "are a student living away from home during term time"
+                                        },
+                                        {
+                                            "url": "{{pageInfo.rootPath}}/help/types-of-accommodation/second-homes",
+                                            "text": "have a second home or empty property"
+                                        },
+                                        {
+                                            "url": "{{pageInfo.rootPath}}/help/types-of-accommodation/boats-caravans-and-other-mobile-homes",
+                                            "text": "live somewhere that is mobile, such as a canal boat or motorhome"
+                                        },
+                                        {
+                                            "url": "{{pageInfo.rootPath}}/help/types-of-accommodation/communal-establishments",
+                                            "text": "live in a care home, armed forces base or similar establishment"
+                                        },
+                                        {
+                                            "url": "{{pageInfo.rootPath}}/help/types-of-accommodation/no-fixed-address",
+                                            "text": "do not live at a fixed address"
                                         }
-                                    }
+                                    ]
                                 })
-                            %}
-                                <h3>From Online help</h3>
-                                <ul>
-                                    <li>
-                                        <a href="https://blacklodge.census-gcp.onsdigital.uk/help/who-should-fill-in-a-census/">
-                                        Who should fill in a census</a>
-                                    </li>
-                                    <li>
-                                        <a href="https://blacklodge.census-gcp.onsdigital.uk/help/frequently-asked-questions/do-i-have-to-do-the-census/">
-                                        Do I have to do the census?</a>
-                                    </li>
-                                    <li>
-                                        <a href="https://blacklodge.census-gcp.onsdigital.uk/help/frequently-asked-questions/households-what-you-need-to-know/who-should-complete-the-census-for-this-household/">
-                                        Who should complete the census for this household?</a>
-                                    </li>
-                                    <li>
-                                        <a href="https://blacklodge.census-gcp.onsdigital.uk/help/frequently-asked-questions/households-what-you-need-to-know/i-live-in-a-mobile-home-boat-or-live-in-vehicle/">
-                                        I live in a mobile home, boat or live-in vehicle</a>
-                                    </li>
-                                    <li>
-                                        <a href="https://blacklodge.census-gcp.onsdigital.uk/help/frequently-asked-questions/households-what-you-need-to-know/second-homes-on-holiday-and-away-from-home/">
-                                        Second homes, on holiday and away from home</a>
-                                    </li>
-                                    <li>
-                                        <a href="https://blacklodge.census-gcp.onsdigital.uk/help/frequently-asked-questions/people-not-living-at-a-fixed-address/">
-                                        People not living at a fixed address</a>
-                                    </li>
-                                    <li>
-                                        <a href="https://blacklodge.census-gcp.onsdigital.uk/help/students/">
-                                        Students: what you need to know</a>
-                                    </li>
-                                    <li>
-                                        <a href="https://blacklodge.census-gcp.onsdigital.uk/help/communal-establishments/">
-                                        Communal establishments</a>
-                                    </li>
-                                </ul>
-
-                            {% endcall %}
-                            -->
-
+                            }}
 
                             <div class="u-mt-xl">
                                 {{-

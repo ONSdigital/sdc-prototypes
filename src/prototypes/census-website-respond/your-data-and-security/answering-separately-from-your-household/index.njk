@@ -87,11 +87,19 @@ layout: census-website-respond/views/_master
                             {% endcall %}
 
                             <p>You can choose to receive your individual access code:</p>
-                            
-                            <ul>
-                                <li>by text message</li>
-                                <li>by post</li>
-                            </ul>
+
+                            {{
+                                onsList({
+                                    "itemsList": [
+                                        {
+                                            "text": "by text message"
+                                        },
+                                        {
+                                            "text": "by post"
+                                        }
+                                    ]
+                                })
+                            }}
 
                             <h2>Access code by text message</h2>
                             <p>We will need your mobile number. This will not be stored and only used once to send the access code. The text will be sent from <strong>Census2021</strong>.</p>

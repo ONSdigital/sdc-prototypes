@@ -73,15 +73,33 @@ layout: census-website-respond/views/_master
                             
                             <p>Around Census Day, Sunday 21 March 2021, the main priority is to help people fill in their census form. You can do that in a number of ways. You can:</p>
 
-                            <ul>
-                                <li>tell people when the census is happening</li>
-                                <li>help friends, family and neighbours get the help they need to fill in their census form</li>
-                                <li>help someone get onto the internet, so they can fill in the census online</li>
-                                <li>direct people who need help getting online to one of our Census Support Centres</li>
-                                <li>arrange help for people in your community whose first language is not English</li>
-                                <li>direct people to the help in different languages and accessible formats we’ll be making available</li>
-                                <li>organise census completion activities</li>
-                            </ul>
+                            {{
+                                onsList({
+                                    "itemsList": [
+                                        {
+                                            "text": "tell people when the census is happening"
+                                        },
+                                        {
+                                            "text": "help friends, family and neighbours get the help they need to fill in their census form"
+                                        },
+                                        {
+                                            "text": "help someone get onto the internet, so they can fill in the census online"
+                                        },
+                                        {
+                                            "text": "direct people who need help getting online to one of our Census Support Centres"
+                                        },
+                                        {
+                                            "text": "arrange help for people in your community whose first language is not English"
+                                        },
+                                        {
+                                            "text": "direct people to the help in different languages and accessible formats we’ll be making available"
+                                        },
+                                        {
+                                            "text": "organise census completion activities"
+                                        }
+                                    ]
+                                })
+                            }}
                             
                             <div class="u-mt-xl">
                                 {{-

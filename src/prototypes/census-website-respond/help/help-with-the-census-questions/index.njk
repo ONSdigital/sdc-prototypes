@@ -1,5 +1,5 @@
 ---
-title: How to answer questions
+title: Help with the census questions
 group: Census
 version: 31.1.0
 layout: census-website-respond/views/_master
@@ -30,7 +30,7 @@ layout: census-website-respond/views/_master
             <main class="page__main" id="main-content" role="main">
 
                 <div class="col-8@m u-mb-l">
-                    <h1 class="u-mb-l u-fs-xxl">How to answer questions</h1>
+                    <h1 class="u-mb-l u-fs-xxl">Help with the census questions</h1>
                     <p>Guidance on how to answer the census questions whether you’re completing the census online or filling in the paper form.</p>
                 </div>
 
@@ -42,7 +42,7 @@ layout: census-website-respond/views/_master
                             "id": 'title1',
                             "textId": 'text1',
                             "title": 'Online questions help',
-                            "url": pageInfo.rootPath + '/help/how-to-answer-questions/online',
+                            "url": pageInfo.rootPath + '/help/help-with-the-census-questions/online',
                             "text": 'Guidance on answering online questions and why we ask them.'
                         }) }}
                     </div>
@@ -53,8 +53,19 @@ layout: census-website-respond/views/_master
                             "id": 'title2',
                             "textId": 'text2',
                             "title": 'Paper questions help',
-                            "url": pageInfo.rootPath + '/help/how-to-answer-questions/paper',
+                            "url": pageInfo.rootPath + '/help/help-with-the-census-questions/paper',
                             "text": 'Guidance on answering paper questions and why we ask them.'
+                        }) }}
+                    </div>
+
+                    <div class="grid__col col-4@m">
+                        {{ onsCard({
+                            "ariaBy": 'Section highlight',
+                            "id": 'title2',
+                            "textId": 'text2',
+                            "title": 'Help with the Individual Questionnaire',
+                            "url": pageInfo.rootPath + '/help/help-with-the-census-questions/individual',
+                            "text": 'The Individual Questionnaire is a form that asks questions about one person only.'
                         }) }}
                     </div>
 

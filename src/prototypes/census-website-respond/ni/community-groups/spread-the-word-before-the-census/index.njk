@@ -75,15 +75,33 @@ layout: census-website-respond/views/_nisra-master
 
                             <p>You could:</p>
 
-                            <ul>
-                                <li>start talking about the census with your friends and family</li>
-                                <li>tell people in your community about the census, its benefits and importance to them</li>
-                                <li>raise awareness of the census in community organisations and any places people go to for advice</li>
-                                <li>promote the census in things like community newsletters, meetings and social media groups</li>
-                                <li>arrange for information to be added to a community website</li>
-                                <li>offer the use of community spaces for census events</li>
-                                <li>run a presentation to members of your community</li>
-                            </ul>
+                            {{
+                                onsList({
+                                    "itemsList": [
+                                        {
+                                            "text": "start talking about the census with your friends and family"
+                                        },
+                                        {
+                                            "text": "tell people in your community about the census, its benefits and importance to them"
+                                        },
+                                        {
+                                            "text": "raise awareness of the census in community organisations and any places people go to for advice"
+                                        },
+                                        {
+                                            "text": "promote the census in things like community newsletters, meetings and social media groups"
+                                        },
+                                        {
+                                            "text": "arrange for information to be added to a community website"
+                                        },
+                                        {
+                                            "text": "offer the use of community spaces for census events"
+                                        },
+                                        {
+                                            "text": "run a presentation to members of your community"
+                                        }
+                                    ]
+                                })
+                            }}
 
                             <p>If you need help to promote the census, visit our <a href="{{pageInfo.rootPath}}/ni/downloadable-resources/">Downloadable resources</a> page. Here, we’ll provide resources that you can download and use in your community. There’ll be a range of materials from leaflets and posters to content for newsletters and social media posts.</p>
 

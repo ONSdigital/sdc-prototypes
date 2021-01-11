@@ -61,11 +61,21 @@ layout: census-website-respond/views/_master
 
                             <p>If a person in your establishment has asked for help, you could:</p>
 
-                            <ul>
-                                <li>help them to complete their census, if you have the time</li>
-                                <li>contact a friend or relative to help</li>
-                                <li>help them to call us and we can make an appointment to help them over the phone</li>
-                            </ul>
+                            {{
+                                onsList({
+                                    "itemsList": [
+                                        {
+                                            "text": "help them to complete their census, if you have the time"
+                                        },
+                                        {
+                                            "text": "contact a friend or relative to help"
+                                        },
+                                        {
+                                            "text": "help them to call us and we can make an appointment to help them over the phone"
+                                        }
+                                    ]
+                                })
+                            }}
 
                             <p>See more advice for <a href="{{pageInfo.rootPath}}/help/communal-establishments/i-manage-an-establishment">people managing establishments with residents</a>.</p>
 

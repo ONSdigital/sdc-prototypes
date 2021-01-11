@@ -42,10 +42,18 @@ layout: census-website-respond/views/_master
                             
                             <p>The householder is a person who usually lives at this address, and on their own or with someone else:</p>
                             
-                            <ul>
-                                <li>owns or rents the accommodation, or</li>
-                                <li>pays the household bills and expenses</li>
-                            </ul>
+                            {{
+                                onsList({
+                                    "itemsList": [
+                                        {
+                                            "text": "owns or rents the accommodation, or"
+                                        },
+                                        {
+                                            "text": "pays the household bills and expenses"
+                                        }
+                                    ]
+                                })
+                            }}
                             
                             <p>Still not sure? The following advice will help you understand who should complete the form.</p>
                             
@@ -60,8 +68,8 @@ layout: census-website-respond/views/_master
                             <p>One person will need to take responsibility for answering the questions about the home, but each tenant can complete their own individual questions.</p>
                             
                             <div id="details" class="collapsible js-collapsible u-mb-m collapsible--initialised" data-btn-close="Hide this" role="group">
-                            <div class="collapsible__heading js-collapsible-heading" role="link" aria-controls="details" tabindex="0" aria-expanded="false" data-ga-action="Close panel"><div class="collapsible__controls"><div class="collapsible__title">What's a household?</div><span class="collapsible__icon"><svg class="svg-icon" viewBox="0 0 7.5 12.85" xmlns="http://www.w3.org/2000/svg"><path d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z" transform="translate(-5.02 -1.59)"></path></svg></span></div></div><div id="details-content" class="collapsible__content js-collapsible-content" aria-hidden="true"><p>A household is either:<br></p><ul><li>one person living alone, or</li><li>a group of people (who don't have to be related) living at the same address who share cooking facilities and share a living room or sitting room or dining area</li></ul><button type="button" class="btn btn--small js-collapsible-button btn--secondary" aria-controls="details" data-ga-action="Close panel"><span class="btn__inner js-collapsible-button-inner">Hide this</span> <span class="btn__context u-vh">What's a household? undefined</span></button></div></div>
-
+                                <div class="collapsible__heading js-collapsible-heading" role="link" aria-controls="details" tabindex="0" aria-expanded="false" data-ga-action="Close panel"><div class="collapsible__controls">
+                                <div class="collapsible__title">What's a household?</div><span class="collapsible__icon"><svg class="svg-icon" viewBox="0 0 7.5 12.85" xmlns="http://www.w3.org/2000/svg"><path d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z" transform="translate(-5.02 -1.59)"></path></svg></span></div></div><div id="details-content" class="collapsible__content js-collapsible-content" aria-hidden="true"><p>A household is either:<br></p><ul><li>one person living alone, or</li><li>a group of people (who don't have to be related) living at the same address who share cooking facilities and share a living room or sitting room or dining area</li></ul><button type="button" class="btn btn--small js-collapsible-button btn--secondary" aria-controls="details" data-ga-action="Close panel"><span class="btn__inner js-collapsible-button-inner">Hide this</span> <span class="btn__context u-vh">What's a household? undefined</span></button></div></div>
                         </div>
 
                     </main>

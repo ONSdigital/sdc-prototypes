@@ -1,5 +1,5 @@
 ---
-title: Care homes, student halls and other establishments
+title: I manage an establishment
 group: Census
 version: 31.1.0
 layout: census-website-respond/views/_master
@@ -25,6 +25,10 @@ layout: census-website-respond/views/_master
                     {
                         "url": pageInfo.rootPath + '/help/types-of-accommodation',
                         "text": 'Types of household or accommodation'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help/types-of-accommodation/communal-establishments',
+                        "text": 'Care homes, student halls and other establishments'
                     }
                 ]
             }) }}
@@ -38,7 +42,7 @@ layout: census-website-respond/views/_master
                         <h1 class="u-mb-l">
                             <span class="u-fs-m u-db u-mb-xs u-lighter">Care homes, student halls and other establishments</span>
                             <span class="u-vh">: </span>
-                            <span class="u-fs-xxl u-db">Overview</span>
+                            <span class="u-fs-xxl u-db">I manage an establishment</span>
                         </h1>
 
                         {{-
@@ -48,8 +52,7 @@ layout: census-website-respond/views/_master
                                 "itemsList": [
                                     {
                                         "url": pageInfo.rootPath + '/help/types-of-accommodation/communal-establishments',
-                                        "text": 'Overview',
-                                        "current": true
+                                        "text": 'Overview'
                                     },
                                     {
                                         "url": pageInfo.rootPath + '/help/types-of-accommodation/communal-establishments/i-live-in-an-establishment',
@@ -57,7 +60,8 @@ layout: census-website-respond/views/_master
                                     },
                                     {
                                         "url": pageInfo.rootPath + '/help/types-of-accommodation/communal-establishments/i-manage-an-establishment',
-                                        "text": 'I manage an establishment'
+                                        "text": 'I manage an establishment',
+                                        "current": true
                                     },
                                     {
                                         "url": pageInfo.rootPath + '/help/types-of-accommodation/communal-establishments/establishments-that-are-treated-as-households',
@@ -68,49 +72,76 @@ layout: census-website-respond/views/_master
                         }}
 
                         <div class="page__body">
-                            <p>A communal establishment is a place providing managed residential accommodation. "Managed" here means full-time or part-time supervision of the accommodation.</p>
+                            <p>This guidance is for managers and supervisors of accommodation where residents live or stay.</p>
 
-                            <p>Examples of communal establishments include:</p>
+                            <p>The communal establishment manager is the person who’s overseeing the establishment at the time of filling out the census form.</p>
+
+                            <p>If you manage a communal establishment, a census officer will deliver your census packs.</p>
+
+                            <p><a href="{{pageInfo.rootPath}}/help/types-of-accommodation/communal-establishments/i-manage-an-establishment/help-with-the-communal-establishment-questions/">Help with the questions on the CE manager form</a></p>
+
+                            <h2>What type of establishment do you manage?</h2>
 
                             {{
                                 onsList({
                                     "itemsList": [
                                         {
-                                            "text": "university halls of residence and boarding schools"
+                                            "text": "Student accommodation",
+                                            "url": pageInfo.rootPath + "/help/communal-establishments/i-manage-an-establishment/student-accommodation-managers"
                                         },
                                         {
-                                            "text": "care homes, hospitals, hospices and maternity units"
+                                            "text": "Care home, hospital or hospice",
+                                            "url": pageInfo.rootPath + "/help/types-of-accommodation/communal-establishments/i-manage-an-establishment/i-live-or-stay-in-a-care-home-hospital-or-hospice"
                                         },
                                         {
-                                            "text": "hotels, guest houses, hostels and B&Bs, all with residential accommodation for seven or more guests"
+                                            "text": "Hotel, guest house, bed and breakfast (B&B) or hostel managers",
+                                            "url": pageInfo.rootPath + "/help/types-of-accommodation/communal-establishments/i-manage-an-establishment/hotel-guest-house-bed-and-breakfast-b-b-or-hostel-managers/"
                                         },
                                         {
-                                            "text": "prisons and other secure facilities"
+                                            "text": "Boarding school or children's home",
+                                            "url": pageInfo.rootPath + "/help/types-of-accommodation/communal-establishments/i-manage-an-establishment/boarding-school-or-childrens-home-managers"
                                         },
                                         {
-                                            "text": "Single Living Accommodation (SLA) in military bases"
+                                            "text": "Staff accommodation, religious establishment or commune",
+                                            "url": pageInfo.rootPath + "/help/types-of-accommodation/communal-establishments/i-manage-an-establishment/staff-accommodation-religious-establishment-or-commune-managers"
                                         },
                                         {
-                                            "text": "staff accommodation"
+                                            "text": "Prison, secure unit or young offender institution",
+                                            "url": pageInfo.rootPath + "/help/types-of-accommodation/communal-establishments/i-manage-an-establishment/prison-secure-unit-or-young-offender-institution-managers"
                                         },
                                         {
-                                            "text": "religious establishments"
+                                            "text": "Military base",
+                                            "url": pageInfo.rootPath + "/help/types-of-accommodation/communal-establishments/i-manage-an-establishment/military-base-commanding-officers"
                                         }
                                     ]
                                 })
                             }}
 
-                            <p>Communal establishments don’t include sheltered accommodation, serviced apartments, nurses’ accommodation and houses rented to students by private landlords. These are considered to be households.</p>
+                            <h2>What happens if I don’t complete the CE form?</h2>
+
+                            <p>Census officers will be in contact with you if the CE form is not returned. Refusing to complete the census is a crime. If prosecuted, you may have to pay a fine of up to £1,000 plus court costs.</p>
 
                             <div class="u-mt-xl">
                                 {{-
                                     onsContentPagination({
                                         "contentPaginationItems": [
                                             {
-                                                "rel": 'next',
-                                                "text": 'Next',
+                                                "rel": 'prev',
+                                                "text": 'Previous',
                                                 "url": pageInfo.rootPath + '/help/types-of-accommodation/communal-establishments/i-live-in-an-establishment',
                                                 "label": 'I live in an establishment'
+                                            }
+                                        ]
+                                    })
+                                }}
+                                {{-
+                                    onsContentPagination({
+                                        "contentPaginationItems": [
+                                            {
+                                                "rel": 'next',
+                                                "text": 'Next',
+                                                "url": pageInfo.rootPath + '/help/types-of-accommodation/communal-establishments/establishments-that-are-treated-as-households',
+                                                "label": 'Establishments that are treated as households'
                                             }
                                         ]
                                     })

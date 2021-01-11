@@ -81,11 +81,21 @@ layout: census-website-respond/views/_nisra-master
                             
                             <p>We asked people in the three areas of Northern Ireland to fill in the census rehearsal questionnaire. The areas were:</p>
 
-                            <ul>
-                                <li>South &amp; East Belfast</li>
-                                <li>Craigavon</li>
-                                <li>West Fermanagh</li>
-                            </ul>
+                            {{
+                                onsList({
+                                    "itemsList": [
+                                        {
+                                            "text": "South &amp; East Belfast"
+                                        },
+                                        {
+                                            "text": "Craigavon"
+                                        },
+                                        {
+                                            "text": "West Fermanagh"
+                                        }
+                                    ]
+                                })
+                            }}
 
                             <div class="u-mt-xl">
                                 {{-

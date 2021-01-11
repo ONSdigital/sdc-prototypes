@@ -1,5 +1,5 @@
 ---
-title: Care homes, student halls and other establishments
+title: Establishments that are treated as households
 group: Census
 version: 31.1.0
 layout: census-website-respond/views/_master
@@ -25,6 +25,10 @@ layout: census-website-respond/views/_master
                     {
                         "url": pageInfo.rootPath + '/help/types-of-accommodation',
                         "text": 'Types of household or accommodation'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help/types-of-accommodation/communal-establishments',
+                        "text": 'Care homes, student halls and other establishments'
                     }
                 ]
             }) }}
@@ -38,7 +42,7 @@ layout: census-website-respond/views/_master
                         <h1 class="u-mb-l">
                             <span class="u-fs-m u-db u-mb-xs u-lighter">Care homes, student halls and other establishments</span>
                             <span class="u-vh">: </span>
-                            <span class="u-fs-xxl u-db">Overview</span>
+                            <span class="u-fs-xxl u-db">Establishments that are treated as households</span>
                         </h1>
 
                         {{-
@@ -48,8 +52,7 @@ layout: census-website-respond/views/_master
                                 "itemsList": [
                                     {
                                         "url": pageInfo.rootPath + '/help/types-of-accommodation/communal-establishments',
-                                        "text": 'Overview',
-                                        "current": true
+                                        "text": 'Overview'
                                     },
                                     {
                                         "url": pageInfo.rootPath + '/help/types-of-accommodation/communal-establishments/i-live-in-an-establishment',
@@ -61,56 +64,47 @@ layout: census-website-respond/views/_master
                                     },
                                     {
                                         "url": pageInfo.rootPath + '/help/types-of-accommodation/communal-establishments/establishments-that-are-treated-as-households',
-                                        "text": 'Establishments that are treated as households'
+                                        "text": 'Establishments that are treated as households',
+                                        "current": true
                                     }
                                 ]
                             })
                         }}
 
                         <div class="page__body">
-                            <p>A communal establishment is a place providing managed residential accommodation. "Managed" here means full-time or part-time supervision of the accommodation.</p>
-
-                            <p>Examples of communal establishments include:</p>
+                            <p>The census considers nurses’ accommodation, embassies, consulates and royal households to be private households. They will receive a code for their household census form.</p>
 
                             {{
                                 onsList({
+                                    "type": "bare",
                                     "itemsList": [
                                         {
-                                            "text": "university halls of residence and boarding schools"
+                                            "text": "Nurses’ accommodation",
+                                            "url": "#"
                                         },
                                         {
-                                            "text": "care homes, hospitals, hospices and maternity units"
+                                            "text": "Embassies and consulates",
+                                            "url": "#"
                                         },
                                         {
-                                            "text": "hotels, guest houses, hostels and B&Bs, all with residential accommodation for seven or more guests"
-                                        },
-                                        {
-                                            "text": "prisons and other secure facilities"
-                                        },
-                                        {
-                                            "text": "Single Living Accommodation (SLA) in military bases"
-                                        },
-                                        {
-                                            "text": "staff accommodation"
-                                        },
-                                        {
-                                            "text": "religious establishments"
+                                            "text": "Royal residences",
+                                            "url": "#"
                                         }
                                     ]
                                 })
                             }}
 
-                            <p>Communal establishments don’t include sheltered accommodation, serviced apartments, nurses’ accommodation and houses rented to students by private landlords. These are considered to be households.</p>
+                            <p>See also <a href="#">advice for people living in refuges</a></p>
 
                             <div class="u-mt-xl">
                                 {{-
                                     onsContentPagination({
                                         "contentPaginationItems": [
                                             {
-                                                "rel": 'next',
-                                                "text": 'Next',
-                                                "url": pageInfo.rootPath + '/help/types-of-accommodation/communal-establishments/i-live-in-an-establishment',
-                                                "label": 'I live in an establishment'
+                                                "rel": 'prev',
+                                                "text": 'Previous',
+                                                "url": pageInfo.rootPath + '/help/types-of-accommodation/communal-establishments/i-manage-an-establishment',
+                                                "label": 'I manage in an establishment'
                                             }
                                         ]
                                     })
