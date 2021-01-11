@@ -1,0 +1,111 @@
+---
+title: I live or stay in a Care home, hospital or hospice
+group: Census
+version: 31.1.0
+layout: census-website-respond/views/_master
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{ onsBreadcrumb({
+                "ariaLabel": 'Breadcrumb',
+                "itemsList": [
+                    {
+                        "url": 'https://census-website-respond.netlify.app/end-to-end/home',
+                        "text": 'Home'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help',
+                        "text": 'Help with the census'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help/types-of-accommodation',
+                        "text": 'Types of household or accommodation'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help/types-of-accommodation/communal-establishments',
+                        "text": 'Care homes, student halls and other establishments'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help/types-of-accommodation/communal-establishments/i-live-in-an-establishment',
+                        "text": 'I live in an establishment'
+                    }
+                ]
+            }) }}
+
+            <div class="grid">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-l u-fs-xxl">
+                            I live or stay in a Care home, hospital or hospice
+                        </h1>
+
+                        <div class="page__body">
+                            <p>This is advice for residents in a care home, hospital or hospice. All residents need to complete the individual questionnaire.</p>
+
+                            <h2>Do I have to fill in a census form here?</h2>
+
+                            <p>You should fill in a form here if you’re a:</p>
+
+                            {{
+                                onsList({
+                                    "itemsList": [
+                                        {
+                                            "text": "UK resident who lives or plans to stay in the establishment for six months or more"
+                                        },
+                                        {
+                                            "text": "UK resident with no usual home elsewhere"
+                                        },
+                                        {
+                                            "text": "non-UK resident who lives or plans to stay in the UK for three months or more and you have no permanent UK address"
+                                        },
+                                        {
+                                            "text": "caretaker, maintenance worker or other staff, or a member of their family, who usually lives here and you have no other address"
+                                        }
+                                    ]
+                                })
+                            }}
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+                <div class="grid__col col-4@m push-1@m u-mt-m">
+
+                    {{ onsRelatedLinks({
+                        "id": 'related-links',
+                        "title": 'Related content',
+                        "itemsList": [
+                            {
+                                "url": pageInfo.rootPath + '/help/find-a-census-support-centre',
+                                "text": 'Find a census support centre'
+                            },
+                            {
+                                "url": 'https://census-website-respond.netlify.app/end-to-end/languages',
+                                "text": 'Languages'
+                            },
+                            {
+                                "url": pageInfo.rootPath + '/contact-us',
+                                "text": 'Contact us'
+                            }
+                        ]
+                    }) }}
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}
