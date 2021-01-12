@@ -34,7 +34,6 @@ layout: census-website-respond/views/_master
                         <h1 class="u-mb-l u-fs-xxl">Contact us</h1>
 
                             <div class="page__body">
-                            <p>Contact us if you have any questions about filling in the census online or on paper. You can use any of these options if you need information or a census in an alternative format like Braille or large print.</p>
 
                             <h2>Telephone</h2>
 
@@ -45,85 +44,21 @@ layout: census-website-respond/views/_master
                                     "classes": 'list--bare',
                                     "itemsList": [
                                         {
-                                            "text": 'Monday to Friday – 8am to 7pm'
+                                            "text": 'Monday to Friday, 9am to 5pm'
                                         },
                                         {
-                                            "text": 'Saturday – 8am to 1pm'
-                                        },
-                                        {
-                                            "text": 'Sunday – closed'
+                                            "text": 'Saturday and Sunday, closed'
                                         }
                                     ]
                                 })
                             }}
 
-                            <h3>England</h3>
-                            <p>Telephone free: 0800 141 2021</p>
+                            <p>Telephone: 01329 444 972</p>
+                            <p>Local call charges apply</p>
 
-                            <h3>Wales</h3>
-                            <p>Telephone free: 0800 169 202 <span class="u-fs-s">(Option 1 for Welsh, option 2 for English)</span></p>
+                            <h2>Email</h2>
 
-                            <h3>Other languages</h3>
-                            <p>If you need to speak to us in another language call our free language helpline on 0800 587 2021
-
-                            <h3>Text relay</h3>
-                            <p>Relay UK users dial 18001 followed by the phone number you need</p>
-
-                            <h2>Web chat</h2>
-
-                            <p>We will have advisers available to help you at the following times:</p>
-
-                            {{
-                                onsList({
-                                    "classes": 'list--bare u-mb-m',
-                                    "itemsList": [
-                                        {
-                                            "text": 'Monday to Friday – 8am to 7pm'
-                                        },
-                                        {
-                                            "text": 'Saturday – 8am to 1pm'
-                                        },
-                                        {
-                                            "text": 'Sunday – closed'
-                                        }
-                                    ]
-                                })
-                            }}
-
-                            {{
-                                onsButton({
-                                    "type": 'button',
-                                    "classes": 'js-popup',
-                                    "text": 'Chat with an adviser',
-                                    "url": 'https://whitelodge.census-gcp.onsdigital.uk/en/web-chat/',
-                                    "icon": {
-                                        "iconType": 'external-link',
-                                        "iconPosition": 'after'
-                                    }
-                                })
-                            }}
-
-                            <h2>Text message (SMS)</h2>
-                            <p>Text 86677</p>
-
-                            <p>We will have advisers available to help you at the following times:</p>
-
-                            {{
-                                onsList({
-                                    "classes": 'list--bare',
-                                    "itemsList": [
-                                        {
-                                            "text": 'Monday to Friday – 8am to 7pm'
-                                        },
-                                        {
-                                            "text": 'Saturday – 8am to 1pm'
-                                        },
-                                        {
-                                            "text": 'Sunday – closed'
-                                        }
-                                    ]
-                                })
-                            }}
+                            <p><a href="mailto:census.customerservices@ons.gov.uk">census.customerservices@ons.gov.uk</a></p>
 
                             <h2>Social media</h2>
 
@@ -167,32 +102,15 @@ layout: census-website-respond/views/_master
                     {{-
                         onsRelatedLinks({
                             "id": 'related-links',
-                            "title": 'Help with the census',
+                            "title": 'Related content',
                             "itemsList": [
                                 {
-                                    "url": pageInfo.rootPath + '/help/get-an-access-code-or-paper-census/',
-                                    "text": 'Get an access code or paper census'
-                                },
-                                {
-                                    "url": pageInfo.rootPath + '/help/find-a-census-support-centre/',
-                                    "text": 'Find a census support centre'
-                                },
-                                {
-                                    "url": 'https://census-website-respond.netlify.app/end-to-end/languages/',
-                                    "text": 'Languages'
-                                },
-                                {
-                                    "url": pageInfo.rootPath + '/help/languages-and-accessibility/accessibility/',
-                                    "text": 'Accessibility'
+                                    "url": pageInfo.rootPath + '/media-enquiries/',
+                                    "text": 'Media enquiries'
                                 }
                             ]
                         })
                     }}
-
-                    <div class="u-pt-m u-pb-s u-bt">
-                        <h2 class="u-fs-r--b u-mb-xs">Related content</h2>
-                        <p><a href="{{pageInfo.rootPath}}/media-enquiries/">Media enquiries</a></p>
-                    </div>
 
                 </div>
 
