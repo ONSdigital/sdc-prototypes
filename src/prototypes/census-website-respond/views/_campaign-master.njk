@@ -22,6 +22,7 @@
 {% from "components/call-to-action/_macro.njk" import onsCallToAction %}
 {% from "components/video/_macro.njk" import onsVideo %}
 {% from "census-website-respond/components/promo-banner/_macro.njk" import onsPromoBanner %}
+{% from "components/accordion/_macro.njk" import onsAccordion %}
 
 {% block head %}
     <link rel="stylesheet" href="{{pageInfo.rootPath}}/main.css">
@@ -61,25 +62,67 @@
     },
     "footer": {
         "crest": true,
-        "newTabWarning": 'The following links open in a new tab',
-        "rows": [
+        "cols": [
             {
+                "title": 'Help with the census',
                 "itemsList": [
                     {
-                        "text": 'Help',
-                        "url": '#0'
-                    },
-                    {
                         "text": 'Contact us',
-                        "url": '#0'
+                        "url": pageInfo.rootPath + '/contact-us'
                     },
                     {
                         "text": 'Languages',
+                        "url": 'https://census-website-respond.netlify.app/end-to-end/languages'
+                    },
+                    {
+                        "text": 'Accessibility',
+                        "url": pageInfo.rootPath + '/help/languages-and-accessibility/accessibility'
+                    }
+                ]
+            },
+            {
+                "title": 'Get involved',
+                "itemsList": [
+                    {
+                        "text": 'Local authorities',
+                        "url": pageInfo.rootPath + '/get-involved/local-authorities'
+                    },
+                    {
+                        "text": 'Community groups',
+                        "url": pageInfo.rootPath + '/get-involved/community-groups'
+                    },
+                    {
+                        "text": 'School campaigns',
                         "url": '#0'
                     },
                     {
-                        "text": 'Accessible videos with BSL',
+                        "text": 'Media enquiries',
+                        "url": pageInfo.rootPath + '/media-enquiries'
+                    },
+                    {
+                        "text": 'Jobs',
+                        "url": pageInfo.rootPath + '/jobs'
+                    }
+                ]
+            },
+            {
+                "title": 'About the census',
+                "itemsList": [
+                    {
+                        "text": 'What is the census',
+                        "url": pageInfo.rootPath + '/about-the-census'
+                    },
+                    {
+                        "text": 'Why you should take part',
+                        "url": pageInfo.rootPath + '/about-the-census/why-you-should-take-part-in-the-census'
+                    },
+                    {
+                        "text": 'Census stories',
                         "url": '#0'
+                    },
+                    {
+                        "text": 'News',
+                        "url": pageInfo.rootPath + '/news'
                     }
                 ]
             }
@@ -89,30 +132,23 @@
                 "itemsList": [
                     {
                         "text": 'Cookies',
-                        "url": '#0'
+                        "url": pageInfo.rootPath + '/cookies'
                     },
                     {
                         "text": 'Accessibility statement',
-                        "url": '#0'
+                        "url": pageInfo.rootPath + '/accessibility-statement'
                     },
                     {
                         "text": 'Privacy and data protection',
-                        "url": '#0'
+                        "url": pageInfo.rootPath + '/privacy-and-data-protection'
                     },
                     {
                         "text": 'Terms and conditions',
-                        "url": '#0'
+                        "url": pageInfo.rootPath + '/terms-and-conditions'
                     }
                 ]
             }
-        ],
-        "copyrightDeclaration": {
-            "copyright": 'Crown copyright and database rights 2020 OS 100019153.',
-            "text": 'Use of address data is subject to the',
-            "link": 'terms and conditions',
-            "url": '#0',
-            "newWindow": true
-        }
+        ]
     }
 } %}
 

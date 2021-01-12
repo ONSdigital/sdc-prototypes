@@ -15,19 +15,19 @@ layout: census-website-respond/views/_campaign-master
                 "title": 'Start your legacy',
                 "subtitle": 'The census is happening on Sunday 21 March 2021',
                 "image": {
-                    "smallSrc": pageInfo.rootPath + '/img/small/woman-in-purple-dress-shirt.jpg',
-                    "largeSrc": pageInfo.rootPath + '/img/large/woman-in-purple-dress-shirt.jpg',
-                    "alt": 'Woman in purple dress shirt using laptop'
+                    "smallSrc": pageInfo.rootPath + '/img/small/male-student-with-glasses.jpg',
+                    "largeSrc": pageInfo.rootPath + '/img/large/male-student-with-glasses.jpg',
+                    "alt": 'Male student smiling'
                 }
             })
         }}
 
         {% call
             onsPromoBanner({
-                "darkTheme": false,
-                "image": {
-                    "alt": '',
-                    "src": ''
+                "unbranded": true,
+                "video": {
+                    "youtubeUrl": "https://www.youtube.com/embed/_EGJlvkgbPo",
+                    "transcriptUrl": "https://www.youtube.com/embed/_EGJlvkgbPo"
                 }
             })
         %}
@@ -40,196 +40,111 @@ layout: census-website-respond/views/_campaign-master
             })
         %}
             <p class="u-mb-no">You must complete the census by law or you could be fined up to £1,000</p>
-          <p class="u-fs-r">Some questions are labelled as voluntary. It is not an offence if you do not answer these.</p>
+            <p class="u-fs-r">Some questions are labelled as voluntary. It is not an offence if you do not answer these.</p>
         {% endcall %}
 
-        <div class="page__container container">
+        <main id="main-content" role="main">
 
-            <div class="grid">
+            <div class="page__container container">
 
-                <div class="grid__col col-7@m">
+                <section class="u-pt-l">
 
-                    <main class="page__main" id="main-content" role="main">
+                    <div class="grid">
 
-                        <h1 class="u-mb-l u-fs-xxl">Contact us</h1>
+                        <div class="grid__col col-6@m">
 
-                            <div class="page__body">
+                                <h2>All students should fill in the census</h2>
 
-                            <h2>Telephone</h2>
+                                <p>As a student, you must answer the census for your term-time address if you stay there most of the time. This is the case whether you’re a student living in halls, a shared house or flat, or you’re an international student.</p>
 
-                            <p>We will have advisers available to help you at the following times:</p>
+                                <p>You should do this even if you’re on term-time holidays or a reading week when you complete the questionnaire.</p>
 
-                            {{
-                                onsList({
-                                    "classes": 'list--bare',
-                                    "itemsList": [
-                                        {
-                                            "text": 'Monday to Friday, 8am to 8pm'
-                                        },
-                                        {
-                                            "text": 'Saturday, 8am to 1pm'
-                                        },
-                                        {
-                                            "text": 'Sunday, closed'
-                                        },
-                                        {
-                                            "text": 'Census weekend (20 – 21 March), 8am to 8pm'
-                                        }
-                                    ]
-                                })
-                            }}
+                                <p>If you have a separate home address in England or Wales, your family needs to include you on their household questionnaire too.</p>
 
-                            <h3>England</h3>
-                            <p>Telephone free: 0800 141 2021</p>
+                                <p>They will not need to answer all the individual questions about you. You should complete these questions on the form about your term-time address.</p>
 
-                            <h3>Wales</h3>
-                            <p>Telephone free: 0800 169 2021 <span>(available in English or Welsh)</span></p>
+                                <h3>Not at your term-time address?</h3>
 
-                            <h3>Other languages</h3>
-                            <p>If you need to speak to us in another language, call our free language helpline on 0800 587 2021</p>
+                                <p>If you are not at your term-time address at the time of the census and are unable to collect your letter, you will need to <a href="#">request a new access code</a>.</p>
 
-                            <h3>Text relay</h3>
-                            <p>Relay UK users dial 18001 followed by the phone number you need</p>
-
-                            <h2>Web chat</h2>
-                            <p>We will have advisers available to help you at the following times:</p>
-
-                            {{
-                                onsList({
-                                    "classes": 'list--bare u-mb-m',
-                                    "itemsList": [
-                                        {
-                                            "text": 'Monday to Friday, 8am to 8pm'
-                                        },
-                                        {
-                                            "text": 'Saturday, 8am to 1pm'
-                                        },
-                                        {
-                                            "text": 'Sunday, closed'
-                                        },
-                                        {
-                                            "text": 'Census weekend (20 – 21 March), 8am to 8pm'
-                                        }
-                                    ]
-                                })
-                            }}
-
-                            {{
-                                onsButton({
-                                    "type": 'button',
-                                    "classes": 'js-popup',
-                                    "text": 'Open web chat',
-                                    "url": 'https://whitelodge.census-gcp.onsdigital.uk/en/web-chat/',
-                                    "icon": {
-                                        "iconType": 'external-link',
-                                        "iconPosition": 'after'
-                                    }
-                                })
-                            }}
-
-                            <h2>Web form</h2>
-                            <p>You can <a href="https://whitelodge.census-gcp.onsdigital.uk/en/web-form/">send us a message using our web form</a>. We will respond to your message by email within 2 working days.</p>
-
-                            <h2>Text message (SMS)</h2>
-
-                            <p>We will have advisers available to help you at the following times:</p>
-
-                            {{
-                                onsList({
-                                    "classes": 'list--bare',
-                                    "itemsList": [
-                                        {
-                                            "text": 'Monday to Friday, 8am to 8pm'
-                                        },
-                                        {
-                                            "text": 'Saturday, 8am to 1pm'
-                                        },
-                                        {
-                                            "text": 'Sunday, closed'
-                                        },
-                                        {
-                                            "text": 'Census weekend (20 – 21 March), 8am to 8pm'
-                                        }
-                                    ]
-                                })
-                            }}
-
-                            <p>Text: 86677</p>
-
-                            <h2>Social media</h2>
-
-                            {{
-                                onsList({
-                                    "classes": 'list--bare list--inline list--icons',
-                                    "itemsList": [
-                                        {
-                                            "url": 'https://www.twitter.com/census2021help',
-                                            "text": 'Twitter',
-                                            "prefixIcon": 'twitter',
-                                            "iconSize": 'xxl',
-                                            "rel": 'noreferrer external'
-                                        },
-                                        {
-                                            "url": 'https://www.facebook.com/census2021',
-                                            "text": 'Facebook',
-                                            "prefixIcon": 'facebook',
-                                            "iconSize": 'xxl',
-                                            "rel": 'noreferrer external'
-                                        },
-                                        {
-                                            "url": 'https://www.instagram.com/census2021',
-                                            "text": 'Instagram',
-                                            "prefixIcon": 'instagram',
-                                            "iconSize": 'xxl',
-                                            "rel": 'noreferrer external'
-                                        }
-                                    ]
-                                })
-                            }}
+                                {{
+                                    onsAccordion({
+                                        "id": "accordion",
+                                        "classes": "u-mt-l u-mb-l",
+                                        "itemsList": [
+                                            {
+                                                "title": "Students living in a shared house or flat",
+                                                "titleTag": "h2",
+                                                "content": '<p>You will receive a letter addressed to the householder that you or your housemates should open. You need to fill in a household census questionnaire. It’s your joint responsibility to do this, not your landlord’s. The form needs to include information on everyone who normally lives in the household.</p><ul class="list list--dashed"><li class="list__item"><a href="{{pageInfo.rootPath}}/help/types-of-household/students">Students living away from home</a></li><li class="list__item"><a href="{{pageInfo.rootPath}}/your-data-and-security/answering-separately-from-your-household">Answering separately from your household</a></li></ul>',
+                                                "button": {
+                                                    "open": "Show",
+                                                    "close": "Hide"
+                                                }
+                                            },
+                                            {
+                                                "title": "Students living in halls of residence",
+                                                "titleTag": "h2",
+                                                "content": '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><ul class="list list--dashed"><li class="list__item"><a href="{{pageInfo.rootPath}}/help/types-of-household/students">Students living away from home</a></li></ul>',
+                                                "button": {
+                                                    "open": "Show",
+                                                    "close": "Hide"
+                                                }
+                                            },
+                                            {
+                                                "title": "International students",
+                                                "titleTag": "h2",
+                                                "content": '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><ul class="list list--dashed"><li class="list__item"><a href="{{pageInfo.rootPath}}/help/types-of-household/students">Students living away from home</a></li></ul>',
+                                                "button": {
+                                                    "open": "Show",
+                                                    "close": "Hide"
+                                                }
+                                            },
+                                            {
+                                                "title": "Students living at home during term time",
+                                                "titleTag": "h2",
+                                                "content": '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>',
+                                                "button": {
+                                                    "open": "Show",
+                                                    "close": "Hide"
+                                                }
+                                            }
+                                        ]
+                                    })
+                                }}
 
                         </div>
 
-                    </main>
+                        <div class="grid__col col-5@m push-1@m">
 
-                </div>
+                            <figure class="u-m-no u-mb-l">
 
-                <div class="grid__col col-4@m push-1@m u-mt-xl">
+                                <img srcset="{{pageInfo.rootPath}}/img/small/female-student-holding-books.jpg 1x, {{pageInfo.rootPath}}/img/large/female-student-holding-books.jpg  2x" src="{{pageInfo.rootPath}}/img/small/female-student-holding-books.jpg " alt="Student holding books">
+                                <!--figcaption class="text-secondary u-mt-xs u-fs-s">Photo attribution if required</figcaption-->
 
-                    {{-
-                        onsRelatedLinks({
-                            "id": 'related-links',
-                            "title": 'Help with the census',
-                            "itemsList": [
-                                {
-                                    "url": pageInfo.rootPath + '/help/get-an-access-code-or-paper-census/',
-                                    "text": 'Get an access code or paper census'
-                                },
-                                {
-                                    "url": pageInfo.rootPath + '/help/find-a-census-support-centre/',
-                                    "text": 'Find a census support centre'
-                                },
-                                {
-                                    "url": 'https://census-website-respond.netlify.app/end-to-end/languages/',
-                                    "text": 'Languages'
-                                },
-                                {
-                                    "url": pageInfo.rootPath + '/help/languages-and-accessibility/accessibility/',
-                                    "text": 'Accessibility'
-                                }
-                            ]
-                        })
-                    }}
+                            </figure>
 
-                    <div class="u-pt-m u-pb-s u-bt">
-                        <h2 class="u-fs-r--b u-mb-xs">Related content</h2>
-                        <p><a href="{{pageInfo.rootPath}}/media-enquiries/">Media enquiries</a></p>
+                        </div>
+
                     </div>
 
-                </div>
+                </section>
 
             </div>
 
-        </div>
+            {% call
+                onsPromoBanner({
+                    "darkTheme": true
+                })
+            %}
+
+                <h2>What is the census?</h2>
+                <p>The census is a survey that happens every 10 years and gives us a picture of all the people and households in England and Wales.</p>
+                <p>The next census is happening on Sunday 21 March 2021 and we want to make it as easy as possible for students to take part.</p>
+                <p><a href="{{pageInfo.rootPath}}/about-the-census">Find out more about the census</a></p>
+
+            {% endcall %}
+
+        </main>
     
     {% endblock %}
 
