@@ -70,7 +70,7 @@ layout: census-website-respond/views/_master
 
                             {%
                                 call onsCollapsible({
-                                    "classes": 'u-mt-m',
+                                    "classes": 'u-mt-m u-mb-m',
                                     "id": 'collapsible-0',
                                     "title": 'What we mean by “householder” and “household”',
                                     "button": {
@@ -89,42 +89,42 @@ layout: census-website-respond/views/_master
 
                             {% endcall %}
 
-                            <h2 class="u-fs-l">Staying in the UK for less than three months</h2>
-                            <p>You are not responsible for filling in the census if you are staying in the UK for less than three months. The owner of your accommodation will need to fill in the census about the household and the people staying there.</p>
-
-                            <h2>Types of household or accommodation</h2>
                             <p>You need to complete a census if you:</p>
                                 
                             {{
                                 onsList({
                                     "itemsList": [
                                         {
-                                            "url": "{{pageInfo.rootPath}}/help/types-of-accommodation/shared-or-family",
+                                            "url": pageInfo.rootPath + "/help/types-of-accommodation/private-or-rented-accommodation",
                                             "text": "live in private or rented accommodation"
                                         },
                                         {
-                                            "url": "{{pageInfo.rootPath}}/help/types-of-accommodation/students",
+                                            "url": pageInfo.rootPath + "/help/types-of-accommodation/students",
                                             "text": "are a student living away from home during term time"
                                         },
                                         {
-                                            "url": "{{pageInfo.rootPath}}/help/types-of-accommodation/second-homes",
+                                            "url": pageInfo.rootPath + "/help/types-of-accommodation/second-homes-and-properties",
                                             "text": "have a second home or empty property"
                                         },
                                         {
-                                            "url": "{{pageInfo.rootPath}}/help/types-of-accommodation/boats-caravans-and-other-mobile-homes",
+                                            "url": pageInfo.rootPath + "/help/types-of-accommodation/boats-caravans-and-other-mobile-homes",
                                             "text": "live somewhere that is mobile, such as a canal boat or motorhome"
                                         },
                                         {
-                                            "url": "{{pageInfo.rootPath}}/help/types-of-accommodation/communal-establishments",
+                                            "url": pageInfo.rootPath + "/help/types-of-accommodation/communal-establishments",
                                             "text": "live in a care home, armed forces base or similar establishment"
                                         },
                                         {
-                                            "url": "{{pageInfo.rootPath}}/help/types-of-accommodation/no-fixed-address",
+                                            "url": pageInfo.rootPath + "/help/types-of-accommodation/no-fixed-address",
                                             "text": "do not live at a fixed address"
                                         }
                                     ]
                                 })
                             }}
+
+                            <h2 class="u-fs-l">Staying in the UK for less than three months</h2>
+
+                            <p>You are not responsible for filling in the census if you are staying in the UK for less than three months. The owner of your accommodation will need to fill in the census about the household and the people staying there.</p>
 
                             <div class="u-mt-xl">
                                 {{-
