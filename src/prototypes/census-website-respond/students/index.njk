@@ -1,29 +1,49 @@
 ---
-title: Contact us
+title: Students
 group: Census
 version: 31.2.0
-layout: census-website-respond/views/_master
+layout: census-website-respond/views/_campaign-master
 ---
-
-{% set pageId = 'contact' %}
 
 {% block pageContent %}
    
     {% block main %}
 
-        <div class="page__container container">
+        {{ onsHero({
+                "censusTheme": true,
+                "censusThemeDark": true,
+                "title": 'Start your legacy',
+                "subtitle": 'The census is happening on Sunday 21 March 2021',
+                "image": {
+                    "smallSrc": pageInfo.rootPath + '/img/small/woman-in-purple-dress-shirt.jpg',
+                    "largeSrc": pageInfo.rootPath + '/img/large/woman-in-purple-dress-shirt.jpg',
+                    "alt": 'Woman in purple dress shirt using laptop'
+                }
+            })
+        }}
 
-            {{
-                onsBreadcrumb({
-                    "ariaLabel": 'Breadcrumb',
-                    "itemsList": [
-                        {
-                            "url": 'https://census-website-respond.netlify.app/end-to-end/home/',
-                            "text": 'Home'
-                        }
-                    ]
-                })
-            }}
+        {% call
+            onsPromoBanner({
+                "darkTheme": false,
+                "image": {
+                    "alt": '',
+                    "src": ''
+                }
+            })
+        %}
+            <h2>Why students should take part in the census</h2>
+            <p>The information you give in the census informs funding decisions on things like university campus bus links and bike lanes, jobs and training. It also helps to decide where billions of pounds of public money are spent on services such as transport, healthcare and education.</p>
+        {% endcall %}
+
+        {% call onsPanel({
+            "type": 'warn-branded'
+            })
+        %}
+            <p class="u-mb-no">You must complete the census by law or you could be fined up to £1,000</p>
+          <p class="u-fs-r">Some questions are labelled as voluntary. It is not an offence if you do not answer these.</p>
+        {% endcall %}
+
+        <div class="page__container container">
 
             <div class="grid">
 
