@@ -201,8 +201,25 @@ layout: census-website-respond/views/_master
                     }}
 
                     <div class="u-pt-m u-pb-s u-bt">
+                        
                         <h2 class="u-fs-r--b u-mb-xs">Related content</h2>
-                        <p><a href="{{pageInfo.rootPath}}/media-enquiries/">Media enquiries</a></p>
+
+                        {{
+                                onsList({
+                                    "classes": 'list--bare',
+                                    "itemsList": [
+                                        {
+                                            "url": pageInfo.rootPath + '/your-data-and-security/how-we-will-contact-or-visit-you',
+                                            "text": 'How we will contact or visit you'
+                                        },
+                                        {
+                                            "url": pageInfo.rootPath + '/media-enquiries',
+                                            "text": 'Media enquiries'
+                                        }
+                                    ]
+                                })
+                            }}
+
                     </div>
 
                 </div>
