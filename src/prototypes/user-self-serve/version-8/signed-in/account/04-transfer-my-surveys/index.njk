@@ -7,6 +7,7 @@ layout: user-self-serve/views/version-8/_master-survey
 
 {% from "components/input/_macro.njk" import onsInput %}
 {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+{% from "components/panel/_macro.njk" import onsPanel %}
 
 {% block main %}
 
@@ -31,18 +32,19 @@ layout: user-self-serve/views/version-8/_master-survey
         <div class="grid__col col-8@m u-pt-no">
             <h1>Transfer your surveys</h1>
             
-            <div class="panel panel--info panel--simple u-mb-m">
-                <div class="panel__body">
-                    <p>You will no longer have access to the surveys you transfer. If you still require access to your surveys, you can <a href="/prototypes/user-self-serve/version-8/signed-in/account/03-share-access-to-my-surveys/index.html">share access</a>.</p>
-                </div>
-            </div>
+            {{
+                onsPanel({
+                    "body": "<p>You will no longer have access to the surveys you transfer. If you still require access to your surveys, you can <a href='/prototypes/user-self-serve/version-8/signed-in/account/03-share-access-to-my-surveys/index.html'>share access</a>.</p>"
+                })
+            }}
 
-            <h2 class="u-fs-m">What happens?</h2>
+            <h2 class="u-fs-m u-mt-m">What happens?</h2>
             <ul>
-                <li>Select which surveys you want to transfer</li>
-                <li>Enter the email address of the recipient</li>
-                <li>We’ll email the new respondent survey enrolment codes</li>
-                <li>Once confirmed, they will be able to share access to the surveys with their colleagues.</li>
+                <li>You select which surveys you want to transfer</li>
+                <li>You enter the email address of the recipient</li>
+                <li>We will email the new respondent survey enrolment codes</li>
+                <li>Once confirmed, they will be able to share access to the surveys with their colleagues</li>
+                <li>You will no longer have access to the surveys.</li>
             </ul>
 
 
