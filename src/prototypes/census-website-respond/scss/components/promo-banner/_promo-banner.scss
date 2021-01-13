@@ -3,8 +3,8 @@
   background-color: $color-branded;
   background-image: linear-gradient(46deg, $color-branded-tertiary 0%, $color-branded 100%);
   overflow: hidden;
-  padding-bottom: 5em;
-  padding-top: 3em;
+  padding-bottom: 2.5em;
+  padding-top: 1.5em;
   position: relative;
   &::after {
     background-image: url(img/census-promo-banner.svg);
@@ -18,6 +18,10 @@
     position: absolute;
     transform: translate(-50%, 50%);
     width: 100%;
+  }
+  @include mq(s) {
+    padding-bottom: 5em;
+    padding-top: 3em;
   }
   &__content {
     :last-child {
