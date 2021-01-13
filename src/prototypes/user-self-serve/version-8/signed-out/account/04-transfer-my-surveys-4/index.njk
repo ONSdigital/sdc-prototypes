@@ -2,7 +2,7 @@
 group: Frontstage
 title: User account creation
 version: 30.0.0
-layout: user-self-serve/views/version-8/_master-survey
+layout: user-self-serve/views/version-8/_master-survey-signed-out
 ---
 
 {% from "components/input/_macro.njk" import onsInput %}
@@ -17,11 +17,11 @@ layout: user-self-serve/views/version-8/_master-survey
                     "ariaLabel": 'Breadcrumb',
                     "itemsList": [
                         {
-                            "url": '/prototypes/user-self-serve/version-8/signed-in/00-surveys-list.html',
-                            "text": 'Surveys'
+                            "url": '/prototypes/user-self-serve/version-8/index.html',
+                            "text": 'Sign in'
                         },
                         {
-                            "url": '/prototypes/user-self-serve/version-8/signed-in/account/index.html',
+                            "url": '/prototypes/user-self-serve/version-8/signed-out/account/index.html',
                             "text": 'Account'
                         }
                     ]
@@ -33,7 +33,7 @@ layout: user-self-serve/views/version-8/_master-survey
             
             <div class="panel panel--info panel--simple u-mb-m">
                 <div class="panel__body">
-                    <p>You will no longer have access to the surveys you transfer. If you still require access to your surveys, you can <a href="/prototypes/user-self-serve/version-8/signed-in/account/03-share-access-to-my-surveys/index.html">share access</a>.</p>
+                    <p>You will no longer have access to the surveys you transfer. If you still require access to your surveys, you can <a href="/prototypes/user-self-serve/version-8/signed-out/account/03-share-access-to-my-surveys/index.html">share access</a>.</p>
                 </div>
             </div>
 
@@ -46,11 +46,12 @@ layout: user-self-serve/views/version-8/_master-survey
             </ul>
 
 
+
             <p class="field u-mt-l">
-                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-8/signed-in/account/04-transfer-my-surveys/00-select-business.html';">
+                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-8/signed-out/account/04-transfer-my-surveys-4/00-select-business.html';">
                     <span class="btn__inner">Continue</span>
                 </button>
-                <button type="submit" class="btn btn--secondary" onclick="location.href='{{ pageInfo.rootPath }}/version-8/signed-in/account/index.html';">
+                <button type="submit" class="btn btn--secondary" onclick="location.href='{{ pageInfo.rootPath }}/version-8/signed-out/account/index.html';">
                     <span class="btn__inner">Cancel</span>
                 </button>
             </p>

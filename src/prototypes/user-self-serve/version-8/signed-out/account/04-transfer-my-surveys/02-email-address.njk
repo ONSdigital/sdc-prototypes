@@ -2,7 +2,7 @@
 group: Frontstage
 title: User account creation
 version: 30.0.0
-layout: user-self-serve/views/version-8/_master-survey
+layout: user-self-serve/views/version-8/_master-survey-signed-out
 ---
 
 {% from "components/input/_macro.njk" import onsInput %}
@@ -17,40 +17,52 @@ layout: user-self-serve/views/version-8/_master-survey
                     "ariaLabel": 'Breadcrumb',
                     "itemsList": [
                         {
-                            "url": '/prototypes/user-self-serve/version-8/signed-in/00-surveys-list.html',
-                            "text": 'Surveys'
+                            "url": '/prototypes/user-self-serve/version-8/index.html',
+                            "text": 'Sign in'
                         },
                         {
-                            "url": '/prototypes/user-self-serve/version-8/signed-in/account/index.html',
+                            "url": '/prototypes/user-self-serve/version-8/signed-out/account/index.html',
                             "text": 'Account'
+                        },
+                        {
+                            "url": '/prototypes/user-self-serve/version-8/signed-out/account/04-transfer-my-surveys/index.html',
+                            "text": 'Transfer surveys'
+                        },
+                        {
+                            "url": '/prototypes/user-self-serve/version-8/signed-out/account/04-transfer-my-surveys/01-select-surveys.html',
+                            "text": 'Select surveys'
                         }
                     ]
                 }) 
             }}
         </div>
         <div class="grid__col col-8@m u-pt-no">
-            <h1>Transfer your surveys</h1>
+            <h1>Enter recipient's email address</h1>
+            <p>This is the person who will be able to respond to your surveys in your absence.</p>
             
             <div class="panel panel--info panel--simple u-mb-m">
                 <div class="panel__body">
-                    <p>You will no longer have access to the surveys you transfer. If you still require access to your surveys, you can <a href="/prototypes/user-self-serve/version-8/signed-in/account/03-share-access-to-my-surveys/index.html">share access</a>.</p>
+                    <p>Ensure you are following your company's General Data Protection Regulation (GDPR) procedures and the recipient understands their data privacy commitments too.</p>
                 </div>
             </div>
 
-            <h2 class="u-fs-m">What happens?</h2>
-            <ul>
-                <li>Select which surveys you want to transfer</li>
-                <li>Enter the email address of the recipient</li>
-                <li>We’ll email the new respondent survey enrolment codes</li>
-                <li>Once confirmed, they will be able to share access to the surveys with their colleagues.</li>
-            </ul>
+            <p class="field">
+                {{ 
+                onsInput({
+                    "id": "text",
+                    "label": {
+                        "text": "Recipient's email address"
+                    }
+                }) 
+            }}
+            </p>
 
 
             <p class="field u-mt-l">
-                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-8/signed-in/account/04-transfer-my-surveys/00-select-business.html';">
+                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-8/signed-out/account/04-transfer-my-surveys/03-send-enrolment-codes.html';">
                     <span class="btn__inner">Continue</span>
                 </button>
-                <button type="submit" class="btn btn--secondary" onclick="location.href='{{ pageInfo.rootPath }}/version-8/signed-in/account/index.html';">
+                <button type="submit" class="btn btn--secondary" onclick="location.href='{{ pageInfo.rootPath }}/version-8/signed-out/account/index.html';">
                     <span class="btn__inner">Cancel</span>
                 </button>
             </p>
