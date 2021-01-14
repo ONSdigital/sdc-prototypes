@@ -1,0 +1,180 @@
+---
+title: Help with the census
+group: Census
+version: 31.2.0
+layout: census-website-respond/views/_master
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        {# {{-
+            onsCallToAction({
+                "headingText": 'Ready to start your census?',
+                "paragraphText": 'You’ll need the access code from the letter we sent you.',
+                "button": {
+                    "text": 'Start census',
+                    "classes": 'btn--small btn--link',
+                    "url": 'https://census-website-respond.netlify.app/end-to-end/uac-entry'
+                }
+            })
+        }} #}
+
+        <div class="page__container container">
+
+            {{ onsBreadcrumb({
+                "ariaLabel": 'Breadcrumb',
+                "itemsList": [
+                    {
+                        "url": 'https://census-website-respond.netlify.app/end-to-end/home',
+                        "text": 'Home'
+                    }
+                ]
+            }) }}
+
+            <main class="page__main" id="main-content" role="main">
+
+                <h1 class="u-mb-l u-fs-xxl">Help with the census</h1>
+
+                <p><a href="#">Who should fill in a census?</a></p>
+                <p><a href="#">Students: what you need to know</a></p>
+
+                <div class="grid grid--column@xs@s u-mb-m@m">
+
+                    <div class="grid__col col-4@m">
+                        {{-
+                            onsCard({
+                                "ariaBy": 'Section highlight',
+                                "id": 'title1',
+                                "textId": 'text1',
+                                "title": 'Frequently asked questions',
+                                "url": pageInfo.rootPath + '/help/getting-started/',
+                                "itemsList": [
+                                    {
+                                        "url": '#0',
+                                        "text": 'Getting started'
+                                    },
+                                    {
+                                        "url": '#0',
+                                        "text": 'Households: what you need to know'
+                                    },
+                                    {
+                                        "url": '#0',
+                                        "text": 'Do I have to do the census?'
+                                    }
+                                ]
+                            })
+                        }}
+                    </div>
+
+                    <div class="grid__col col-4@m">
+                        {{ onsCard({
+                            "ariaBy": 'Section highlight',
+                            "id": 'title5',
+                            "textId": 'text5',
+                            "title": 'How to answer questions',
+                            "url": pageInfo.rootPath + '/help/help-with-the-census-questions/',
+                            "text": 'Guidance on answering the census questions and why we ask them.',
+                            "itemsList": [
+                                    {
+                                        "url": '#0',
+                                        "text": 'Online questions help'
+                                    },
+                                    {
+                                        "url": '#0',
+                                        "text": 'Paper questions help'
+                                    }
+                                ]
+                        }) }}
+                    </div>
+
+                    <div class="grid__col col-4@m">
+
+                        {{ onsCard({
+                            "ariaBy": 'Section highlight',
+                            "id": 'title2',
+                            "textId": 'text2',
+                            "title": 'Get a new code or paper census',
+                            "url": pageInfo.rootPath + '/help/get-an-access-code-or-paper-census/',
+                            "text": "What to do if you've lost or not received a code, want to complete on paper or do your own census.",
+                            "itemsList": [
+                                    {
+                                        "url": '#0',
+                                        "text": 'Answering separately from my household'
+                                    }
+                                ]
+                        }) }}
+                        
+                    </div>
+
+                </div>
+
+                <div class="grid grid--column@xs@s u-mb-m@m">
+
+                    <div class="grid__col col-4@m">
+                        {{ onsCard({
+                            "ariaBy": 'Section highlight',
+                            "id": 'title4',
+                            "textId": 'text4',
+                            "title": 'Get help where you live',
+                            "url": pageInfo.rootPath + '/help/find-a-census-support-centre/',
+                            "text": 'How to get help with your census form.',
+                            "itemsList": [
+                                    {
+                                        "url": '#0',
+                                        "text": 'Help to go online: our Census Support Centres'
+                                    },
+                                    {
+                                        "url": '#0',
+                                        "text": 'Census Officers in your area'
+                                    }
+                                ]
+                        }) }}
+                    </div>
+
+                    <div class="grid__col col-4@m">
+                        {{ onsCard({
+                            "ariaBy": 'Section highlight',
+                            "id": 'title3',
+                            "textId": 'text3',
+                            "title": 'Languages and accessible formats',
+                            "url": pageInfo.rootPath + '/help/languages-and-accessibility/',
+                            "text": 'Census in other formats, guides in other languages and accessible formats.'
+                        }) }}
+                    </div>
+
+                    <div class="grid__col col-4@m">
+                        {{ onsCard({
+                            "ariaBy": 'Section highlight',
+                            "id": 'title6',
+                            "textId": 'text6',
+                            "title": 'Communal establishments',
+                            "url": pageInfo.rootPath + '/help/types-of-accommodation/',
+                            "text": 'Advice about accommodation where residents live or stay.',
+                            "itemsList": [
+                                    {
+                                        "url": '#0',
+                                        "text": 'I manage an establishment'
+                                    },
+                                    {
+                                        "url": '#0',
+                                        "text": 'I live in an establishment'
+                                    },
+                                    {
+                                        "url": '#0',
+                                        "text": 'Establishments that are treated as households'
+                                    }
+                                ]
+                        }) }}
+                    </div>
+
+                </div>
+
+            </main>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}
