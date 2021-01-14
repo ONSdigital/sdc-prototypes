@@ -25,6 +25,14 @@ layout: user-self-serve/views/version-8/_master-survey-signed-out
                         {
                             "url": '/prototypes/user-self-serve/version-8/signed-out/help/index.html',
                             "text": 'Help'
+                        },
+                        {
+                            "url": '/prototypes/user-self-serve/version-8/signed-out/help/option-3/option-list.html',
+                            "text": 'Information about the ONS'
+                        },
+                        {
+                            "url": '/prototypes/user-self-serve/version-8/signed-out/help/option-2/option-5/index.html',
+                            "text": 'How safe is my data?'
                         }
                     ]
                 }) 
@@ -32,7 +40,7 @@ layout: user-self-serve/views/version-8/_master-survey-signed-out
         </div>
         <div class="grid__col col-8@m u-pt-no">
             <h1>Send a message</h1>
-            <p>Send us a message with a description of your issue and we'll get back to you.</p>
+            <p>Send us a message with a description of your issue and we will get back to you.</p>
             {% from "components/metadata/_macro.njk" import onsMetadata %}
             {{
                 onsMetadata({
@@ -44,7 +52,7 @@ layout: user-self-serve/views/version-8/_master-survey-signed-out
                             "term": "Subject:",
                             "descriptions": [
                                 {
-                                    "description": "Information about the ONS"
+                                    "description": "How safe is my data?"
                                 }
                             ]
                         }
