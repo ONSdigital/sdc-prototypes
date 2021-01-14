@@ -1,0 +1,87 @@
+---
+title: Help with who lives here
+group: Census
+version: 31.2.0
+layout: census-website-respond/views/_master
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{ onsBreadcrumb({
+                "ariaLabel": 'Breadcrumb',
+                "itemsList": [
+                    {
+                        "url": 'https://census-website-respond.netlify.app/end-to-end/home',
+                        "text": 'Home'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help',
+                        "text": 'Help with the census'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help/help-with-the-census-questions',
+                        "text": 'Help with the census questions'
+                    }
+                ]
+            }) }}
+
+            <div class="grid">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-l u-fs-xxl">Help with who lives here</h1>
+
+                        <div class="page__body">
+
+                            <h2>Housesharers, lodgers and live-in staff</h2>
+
+                            <p>If you have sharers, housemates, lodgers or staff, you need to include them if they live here most of the time.</p>
+
+                            <p>This includes someone who's employed to work for you at your home and lives there, for example nanny, au pair, carer or housekeeper.</p>
+
+                            <p>If the owner of the property is not present, housesharers should fill in the form themselves.</p>
+
+                            <h2>More than one household at the same address</h2>
+
+                            <p>The census counts households. Whether people in the same property are living in separate areas or conversions, all people should be included on the same form if they share:</p>
+
+                            <ul><li>cooking facilities, and</li><li>a living, sitting or dining area</li></ul><p>These may be in one room, for example a bedsit or studio flat. If each household has their own facilities they should fill in a separate household form. <a href="/help/get-an-access-code-or-paper-census">Order an access code or paper form</a> for the separate household.</p>
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+                <div class="grid__col col-4@m push-1@m u-mt-m">
+
+                    {{ onsRelatedLinks({
+                        "id": 'related-links',
+                        "title": 'Related content',
+                        "itemsList": [
+                            {
+                                "url": '#',
+                                "text": 'Your answers are confidential'
+                            },
+                            {
+                                "url": pageInfo.rootPath + '/contact-us',
+                                "text": 'Contact us'
+                            }
+                        ]
+                    }) }}
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}
