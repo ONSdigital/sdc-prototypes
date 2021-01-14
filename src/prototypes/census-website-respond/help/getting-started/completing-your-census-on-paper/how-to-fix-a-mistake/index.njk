@@ -1,0 +1,89 @@
+---
+title: How to fix a mistake
+group: Census
+version: 31.2.0
+layout: census-website-respond/views/_master
+---
+
+{% set pageId = 'help' %}
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{ onsBreadcrumb({
+                "ariaLabel": 'Breadcrumb',
+                "itemsList": [
+                    {
+                        "url": 'https://census-website-respond.netlify.app/end-to-end/home',
+                        "text": 'Home'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help',
+                        "text": 'Help with the census'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help/getting-started',
+                        "text": 'Getting started'
+                    }
+                ]
+            }) }}
+
+            <div class="grid">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-fs-xxl u-mb-l">How to fix a mistake</h1>
+
+                        <div class="page__body">
+
+                            <p>You can correct mistakes on your paper form. Just block out the box with the mistake and carry on. See the example shown on page two of the form.</p>
+
+                            <p>For bigger mistakes, you could <a href="{{ pageInfo.rootPath }}/help/get-an-access-code-or-paper-census">ask for a replacement form</a> if you prefer, or you could do it online. But you’d need to start again from the beginning.</p>
+
+                            <p>If you’ve already posted the form back to us, we cannot return it to you. Please <a href="{{ pageInfo.rootPath }}/contact-us">contact us</a>.</p>
+
+                            <h2>My address is wrong on the paper form</h2>
+
+                            <p>Please write your correct address in the space provided on the front page of the paper form.</p>
+
+                            <h2>I’ve missed someone from my paper form. What do I do?</h2>
+
+                            <p>If you’ve missed someone from your paper form and already sent it back, you can ask <a href="{{ pageInfo.rootPath }}/help/get-an-access-code-or-paper-census">for a continuation form</a> for you or them to fill in.</p>
+
+                            <h2>I've lost my envelope. How do I return my paper form?</h2>
+
+                            <p>If you've lost your envelope, you can return your form in any A4-sized envelope to FREEPOST, Census 2021.</p>
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+                <div class="grid__col col-4@m push-1@m u-mt-m">
+
+                    {{ onsRelatedLinks({
+                        "id": 'related-links',
+                        "title": 'Related content',
+                        "itemsList": [
+                            {
+                                "url": pageInfo.rootPath + '/help/contact-us',
+                                "text": 'Contact us'
+                            }
+                        ]
+                    }) }}
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}
