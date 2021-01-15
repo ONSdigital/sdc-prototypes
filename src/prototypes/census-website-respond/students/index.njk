@@ -10,11 +10,12 @@ layout: census-website-respond/views/_campaign-master
     {% block main %}
 
         {{ onsHero({
+                "placeholderURL": pageInfo.rootPath,
                 "censusTheme": true,
                 "censusThemeDark": true,
                 "preTitleImage": {
-                    name: 'its-about-us.svg',
-                    alt: 'It’s about us'
+                    "name": '/its-about-us.svg',
+                    "alt": 'It’s about us'
                 },
                 "title": 'Start your legacy',
                 "subtitle": 'The census is happening on Sunday 21 March 2021',
@@ -31,7 +32,7 @@ layout: census-website-respond/views/_campaign-master
                 "unbranded": true,
                 "video": {
                     "youtubeUrl": "https://www.youtube.com/embed/_EGJlvkgbPo",
-                    "transcriptUrl": "https://www.youtube.com/embed/_EGJlvkgbPo"
+                    "transcriptUrl": "https://www.youtube.com/EGJlvkgbPo"
                 }
             })
         %}
@@ -60,64 +61,164 @@ layout: census-website-respond/views/_campaign-master
 
                         <div class="grid__col col-6@m">
 
-                                <h2>All students should fill in the census</h2>
+                            <h2>All students should fill in the census</h2>
 
-                                <p>As a student, you must answer the census for your term-time address if you stay there most of the time. This is the case whether you’re a student living in halls, a shared house or flat, or you’re an international student.</p>
+                            <p>Wherever you are, from halls to your old bedroom at home, every student is legally required to complete Census 2021. You will be able to request a code to complete yours online.</p>
 
-                                <p>You should do this even if you’re on term-time holidays or a reading week when you complete the questionnaire.</p>
+                            <p>You must complete the census for your university address.</p>
 
-                                <p>If you have a separate home address in England or Wales, your family needs to include you on their household questionnaire too.</p>
+                            <p>If you have a separate home address in England or Wales, your family needs to include you on their household questionnaire too.</p>
 
-                                <p>They will not need to answer all the individual questions about you. You should complete these questions on the form about your term-time address.</p>
+                            <p>They will not need to answer all the individual questions about you. You should complete these questions on the form about your university address.</p>
 
-                                <h3>Not at your term-time address?</h3>
+                            <h3>Not at your university address?</h3>
 
-                                <p>If you are not at your term-time address at the time of the census and are unable to collect your letter, you will need to <a href="#">request a new access code</a>.</p>
+                            <p>If you are not currently staying at your university address, you can <a href="#">request a new access code</a> to complete the census.</p>
+
+
+                            {%
+                                call onsCollapsible({
+                                    "classes": 'u-mt-l u-mb-m u-pb-m u-bb',
+                                    "id": 'collapsible-0',
+                                    "title": 'Students living in a shared house or flat',
+                                    "button": {
+                                        "close": 'Hide this',
+                                        "contextSuffix": 'content',
+                                        "attributes": {
+                                            "aria-hidden": 'true'
+                                        }
+                                    }
+                                })
+                            %}
+
+                            <p>You and your housemates will need to request an access code to fill in a household census questionnaire. It’s your joint responsibility to do this, not your landlord’s. The form needs to include information on everyone who normally lives in the household.</p>
+
+                            <p>You can answer separately from your student household if you’d prefer to keep your answers private.</p>
+
+                            {{
+                                onsList({
+                                    "classes": 'list--dashed u-mb-m',
+                                    "itemsList": [
+                                        {
+                                            "url": pageInfo.rootPath + '/help/types-of-accommodation/students',
+                                            "text": 'Students living away from home'
+                                        },
+                                        {
+                                            "url": pageInfo.rootPath + '/your-data-and-security/answering-separately-from-your-household',
+                                            "text": 'Answering separately from your household'
+                                        }
+                                    ]
+                                })
+                            }}
+
+                            {% endcall %}
+
+                            {%
+                                call onsCollapsible({
+                                    "classes": 'u-mt-m u-mb-m u-pb-m u-bb',
+                                    "id": 'collapsible-0',
+                                    "title": 'Students living in halls of residence',
+                                    "button": {
+                                        "close": 'Hide this',
+                                        "contextSuffix": 'content',
+                                        "attributes": {
+                                            "aria-hidden": 'true'
+                                        }
+                                    }
+                                })
+                            %}
+
+                            <p>You will need to <a href="{{pageInfo.rootPat}}/help/get-an-access-code-or-paper-census">request an access code</a> to fill in an individual census questionnaire.</p>
+
+                            <p>Complete the census for your university  address.</p>
+
+                            {{
+                                onsList({
+                                    "classes": 'list--dashed u-mb-m',
+                                    "itemsList": [
+                                        {
+                                            "url": pageInfo.rootPath + '/help/types-of-accommodation/students',
+                                            "text": 'Help for students living away from home'
+                                        }
+                                    ]
+                                })
+                            }}
+
+                            {% endcall %}
+
+                            {%
+                                call onsCollapsible({
+                                    "classes": 'u-mt-m u-mb-m u-pb-m u-bb',
+                                    "id": 'collapsible-0',
+                                    "title": 'International students',
+                                    "button": {
+                                        "close": 'Hide this',
+                                        "contextSuffix": 'content',
+                                        "attributes": {
+                                            "aria-hidden": 'true'
+                                        }
+                                    }
+                                })
+                            %}
+
+                                <p>Everyone living in England and Wales must fill in a census questionnaire, including international students. If you are not currently staying at your university address, you will need to request a new access code to complete the census.</p>
+
+                                <p>Complete the census for your university address.</p>
+
+                                <p>You can get help to fill in your questionnaire if you need it. Guidance and support will be available in different languages. You can get help over the phone, or on webchat or social media.</p>
+
+                                <p>Census 2021 will be running a dedicated language helpline to help those who do not speak English as a first language. You can also ask family members or friends for support.</p>
 
                                 {{
-                                    onsAccordion({
-                                        "id": "accordion",
-                                        "classes": "u-mt-l u-mb-l",
+                                    onsList({
+                                        "classes": 'list--dashed u-mb-m',
                                         "itemsList": [
                                             {
-                                                "title": "Students living in a shared house or flat",
-                                                "titleTag": "h2",
-                                                "content": '<p>You will receive a letter addressed to the householder that you or your housemates should open. You need to fill in a household census questionnaire. It’s your joint responsibility to do this, not your landlord’s. The form needs to include information on everyone who normally lives in the household.</p><ul class="list list--dashed"><li class="list__item"><a href="\{{pageInfo.rootPath\}}/help/types-of-household/students">Students living away from home</a></li><li class="list__item"><a href="{{pageInfo.rootPath}}/your-data-and-security/answering-separately-from-your-household">Answering separately from your household</a></li></ul>',
-                                                "button": {
-                                                    "open": "Show",
-                                                    "close": "Hide"
-                                                }
+                                                "url": pageInfo.rootPath + '/help/languages-and-accessibility/languages',
+                                                "text": 'Get help in your language'
                                             },
                                             {
-                                                "title": "Students living in halls of residence",
-                                                "titleTag": "h2",
-                                                "content": '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><ul class="list list--dashed"><li class="list__item"><a href="{{pageInfo.rootPath}}/help/types-of-household/students">Students living away from home</a></li></ul>',
-                                                "button": {
-                                                    "open": "Show",
-                                                    "close": "Hide"
-                                                }
-                                            },
-                                            {
-                                                "title": "International students",
-                                                "titleTag": "h2",
-                                                "content": '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><ul class="list list--dashed"><li class="list__item"><a href="{{pageInfo.rootPath}}/help/types-of-household/students">Students living away from home</a></li></ul>',
-                                                "button": {
-                                                    "open": "Show",
-                                                    "close": "Hide"
-                                                }
-                                            },
-                                            {
-                                                "title": "Students living at home during term time",
-                                                "titleTag": "h2",
-                                                "content": '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>',
-                                                "button": {
-                                                    "open": "Show",
-                                                    "close": "Hide"
-                                                }
+                                                "url": pageInfo.rootPath + '/help/types-of-accommodation/students',
+                                                "text": 'Help for students living away from home'
                                             }
                                         ]
                                     })
                                 }}
+
+                            {% endcall %}
+
+                            {%
+                                call onsCollapsible({
+                                    "classes": 'u-mt-m u-mb-m u-pb-m',
+                                    "id": 'collapsible-0',
+                                    "title": 'Students living at home during term time',
+                                    "button": {
+                                        "close": 'Hide this',
+                                        "contextSuffix": 'content',
+                                        "attributes": {
+                                            "aria-hidden": 'true'
+                                        }
+                                    }
+                                })
+                            %}
+
+                                <p>If you live at home during term time, you need to be included on the household questionnaire.</p>
+
+                                <p>You can answer separately from your household if you’d prefer to keep your answers private.</p>
+
+                                {{
+                                    onsList({
+                                        "classes": 'list--dashed u-mb-m',
+                                        "itemsList": [
+                                            {
+                                                "url": pageInfo.rootPath + '/your-data-and-security/answering-separately-from-your-household',
+                                                "text": 'Answering separately from your household'
+                                            }
+                                        ]
+                                    })
+                                }}
+
+                            {% endcall %}
 
                         </div>
 
