@@ -1,7 +1,7 @@
 ---
 title: Students
 group: Census
-version: 31.2.0
+version: 31.3.0
 layout: census-website-respond/views/_campaign-master
 ---
 
@@ -12,6 +12,10 @@ layout: census-website-respond/views/_campaign-master
         {{ onsHero({
                 "censusTheme": true,
                 "censusThemeDark": true,
+                "preTitleImage": {
+                    name: 'its-about-us.svg',
+                    alt: 'It’s about us'
+                },
                 "title": 'Start your legacy',
                 "subtitle": 'The census is happening on Sunday 21 March 2021',
                 "image": {
@@ -32,7 +36,10 @@ layout: census-website-respond/views/_campaign-master
             })
         %}
             <h2>Why students should take part in the census</h2>
+
             <p>The information you give in the census informs funding decisions on things like university campus bus links and bike lanes, jobs and training. It also helps to decide where billions of pounds of public money are spent on services such as transport, healthcare and education.</p>
+
+            <p>Without the census, it would be more difficult to make these decisions. That’s why it’s so important everyone takes part and that you make sure you’re counted.</p>
         {% endcall %}
 
         {% call onsPanel({
