@@ -1,23 +1,12 @@
 ---
 group: ROps
 title: New internal account
-version: 13.6.9
+version: 30.0.0
+layout: new-account/views/_master-internal
 ---
 {% from "components/panel/_macro.njk" import onsPanel %}
 {% from "components/input/_macro.njk" import onsInput %}
 {% from "components/button/_macro.njk" import onsButton %}
-
-{% set page = {
-    "title":               "Survey Data Collection",
-    "footer":              {
-        "OGLLink":         {
-            "pre":         'All content is available under the',
-            "link":        'Open Government Licence v3.0',
-            "url":         'https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/',
-            "post":        ', except where otherwise stated'
-        }
-    }
-} %}
 
 {% block head %}
 <link rel="stylesheet" href="/prototypes/new-account/styles.css" />
@@ -27,10 +16,13 @@ version: 13.6.9
 
 {{
     onsPanel({
-        "type":            "success",
-        body:              "<p>You have confirmed your email address</p>"
+        "type": "success",
+        "id": "success-id",
+        "icon": "check",
+        "body": "You have confirmed your email address."
     })
 }}
+
 <form class="u-mt-m" action="{{ pageInfo.rootPath }}/create-account-errors.html">
   <h1>Create an account</h1>
 
@@ -55,11 +47,15 @@ version: 13.6.9
     }}
 
   <p class="field">
-    <label class="label" for="text">Choose a username
-      <br>
-      <span class="input__description">Hint: Use your Windows username</span>
-    </label>
-    <input id="text" name="username" type="text" class="input input--text input-type__input "/>
+  {{
+      onsInput({
+          "id": "text",
+          "label": {
+              "text": "Choose a username",
+              "description": "Hint: Use your Windows username"
+          }
+      })
+  }}
   </p>
 
   <div class="field">

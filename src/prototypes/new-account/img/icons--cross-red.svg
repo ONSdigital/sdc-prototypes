@@ -1,13 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
-    <title>icons--cross-red</title>
-    <desc>Created with Sketch.</desc>
-    <g id="SDC-Styles-Components-Patterns" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Icons/Cross" fill="#D0021B">
-            <g id="icons--cross-red">
-                <polygon id="Path" points="2.21052632 0 7.00000002 4.7894737 11.7894737 0 14 2.21052632 9.2097895 7.00073687 14 11.7894737 11.7894737 14 6.99926318 9.21126319 2.21052632 14 0 11.7894737 4.7894737 7.00000002 4.62764095e-16 2.21052632"></polygon>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg xmlns='http://www.w3.org/2000/svg'><path d='m2.21052632 0 4.7894737 4.7894737 4.78947368-4.7894737 2.2105263 2.21052632-4.7902105 4.79021055 4.7902105 4.78873683-2.2105263 2.2105263-4.79021052-4.78873681-4.78873686 4.78873681-2.21052632-2.2105263 4.7894737-4.78947368-4.7894737-4.7894737z' fill='#d0021b' fill-rule='evenodd'/></svg>
