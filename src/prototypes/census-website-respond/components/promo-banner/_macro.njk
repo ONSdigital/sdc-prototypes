@@ -26,7 +26,7 @@
 
             {% elif params.video is defined %}
 
-                <div class="grid__col col-6@s">
+                <div class="grid__col col-6@m">
                     
                     <div class="promo-banner__content">
                         {{ params.content | safe }}{{ caller() if caller }}
@@ -34,17 +34,17 @@
                     
                 </div>
             
-                <div class="grid__col col-5@s push-1@s u-mt-m@xs@s">
+                <div class="grid__col col-5@m push-1@m u-mt-m@xs@m">
                     
                     <div class="promo-banner__video">
                         <div class="video">
                             {% if params.video.youtubeUrl is defined and params.video.youtubeUrl %}
                                 <iframe class="video__iframe" src="{{ params.video.youtubeUrl }}" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             {% endif %}
-                            {% if params.video.transcriptUrl is defined and params.video.transcriptUrl %}
-                                <p class="video__transcript-link"><a href="{{ params.video.transcriptUrl }}">{{ params.video.transcriptText }}</a></p>
-                            {% endif %}
                         </div>
+                        {% if params.video.transcriptUrl is defined and params.video.transcriptUrl %}
+                            <p class="promo-banner__video-transcript-link"><a href="{{ params.video.transcriptUrl }}">{{ params.video.transcriptText }}</a></p>
+                        {% endif %}
                     </div>
 
                 </div>

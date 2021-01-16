@@ -32,7 +32,8 @@ layout: census-website-respond/views/_campaign-master
                 "unbranded": true,
                 "video": {
                     "youtubeUrl": "https://www.youtube.com/embed/_EGJlvkgbPo",
-                    "transcriptUrl": "https://www.youtube.com/EGJlvkgbPo"
+                    "transcriptText": "Video transcript",
+                    "transcriptUrl": "https://youtu.be/_EGJlvkgbPo"
                 }
             })
         %}
@@ -65,7 +66,13 @@ layout: census-website-respond/views/_campaign-master
 
                             <p>Wherever you are, from halls to your old bedroom at home, every student is legally required to complete Census 2021. You will be able to request a code to complete yours online.</p>
 
-                            <p>You must complete the census for your university address.</p>
+                            {% call onsPanel({
+                                    "type": 'warn'
+                                }) %}
+
+                                You must complete the census for your university address
+
+                            {% endcall %}
 
                             <p>If you have a separate home address in England or Wales, your family needs to include you on their household questionnaire too.</p>
 
@@ -73,7 +80,7 @@ layout: census-website-respond/views/_campaign-master
 
                             <h3>Not at your university address?</h3>
 
-                            <p>If you are not currently staying at your university address, you can <a href="#">request a new access code</a> to complete the census.</p>
+                            <p>If you are not currently staying at your university address, you will need to request a new access code to complete the census.</p>
 
 
                             {%
@@ -100,10 +107,6 @@ layout: census-website-respond/views/_campaign-master
                                     "classes": 'list--dashed u-mb-m',
                                     "itemsList": [
                                         {
-                                            "url": pageInfo.rootPath + '/help/types-of-accommodation/students',
-                                            "text": 'Students living away from home'
-                                        },
-                                        {
                                             "url": pageInfo.rootPath + '/your-data-and-security/answering-separately-from-your-household',
                                             "text": 'Answering separately from your household'
                                         }
@@ -128,9 +131,9 @@ layout: census-website-respond/views/_campaign-master
                                 })
                             %}
 
-                            <p>You will need to <a href="{{pageInfo.rootPat}}/help/get-an-access-code-or-paper-census">request an access code</a> to fill in an individual census questionnaire.</p>
+                            <p>You will need to request an access code to fill in an individual census questionnaire.</p>
 
-                            <p>Complete the census for your university  address.</p>
+                            <p><strong>Complete the census for your university address</strong>.</p>
 
                             {{
                                 onsList({
@@ -163,7 +166,7 @@ layout: census-website-respond/views/_campaign-master
 
                                 <p>Everyone living in England and Wales must fill in a census questionnaire, including international students. If you are not currently staying at your university address, you will need to request a new access code to complete the census.</p>
 
-                                <p>Complete the census for your university address.</p>
+                                <p><strong>Complete the census for your university address.</strong></p>
 
                                 <p>You can get help to fill in your questionnaire if you need it. Guidance and support will be available in different languages. You can get help over the phone, or on webchat or social media.</p>
 
@@ -222,7 +225,7 @@ layout: census-website-respond/views/_campaign-master
 
                         </div>
 
-                        <div class="grid__col col-5@m push-1@m u-d-no@xs@s">
+                        <div class="grid__col col-5@m push-1@m u-d-no@xs@m">
 
                             <figure class="u-m-no u-mb-l">
 
