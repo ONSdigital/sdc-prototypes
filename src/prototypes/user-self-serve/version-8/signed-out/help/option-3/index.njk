@@ -21,60 +21,17 @@ layout: user-self-serve/views/version-8/_master-survey
                     "ariaLabel": 'Breadcrumb',
                     "itemsList": [
                         {
-                            "url": '/prototypes/user-self-serve/version-8/signed-in/00-surveys-list.html',
-                            "text": 'Surveys'
-                        },
-                        {
-                            "url": '/prototypes/user-self-serve/version-8/signed-in/account/index.html',
-                            "text": 'Account'
+                            "url": '/prototypes/user-self-serve/version-8/index.html',
+                            "text": 'Sign in'
                         }
                     ]
                 }) 
             }}
         </div>
         <div class="grid__col col-8@m u-pt-no">
-            <h1>Send a message</h1>
-            <p>Send us a message with a description of your issue and we will get back to you.</p>
-            {% from "components/metadata/_macro.njk" import onsMetadata %}
-            {{
-                onsMetadata({
-                    "metadataLabel": "",
-                    "termCol": "2",
-                    "descriptionCol": "10",
-                    "itemsList": [
-                        {
-                            "term": "Subject:",
-                            "descriptions": [
-                                {
-                                    "description": "My account"
-                                }
-                            ]
-                        }
-                    ]
-                })
-            }}
-            <p class="field">
-        
-            {{
-                onsTextarea({
-                    "id": "textarea",
-                    "name": "feedback",
-                    "label": {
-                        "text": "Create message"
-                    }
-                })
-            }}
-            </p>
-            <p class="field">
-                <div class="btn-group">
-                    <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-8/signed-in/10-message-sent.html';">
-                        <span class="btn__inner">Send</span>
-                    </button>
-                    <button type="submit" class="btn btn--secondary" onclick="location.href='{{ pageInfo.rootPath }}/version-8/signed-in/account/index.html';">
-                        <span class="btn__inner">Cancel</span>
-                    </button>
-                </div>
-            </p>
+            <h1>Additional help</h1>
+            <p>You can find help for most issues if you <a href="/prototypes/user-self-serve/version-8/index.html">Sign in</a>.</p>
+            <p>If you are unable to sign in you can <a href="/prototypes/user-self-serve/version-8/signed-out/20-contact-us.html">Contact us</a>.</p>
         </div>
     </div>
 
