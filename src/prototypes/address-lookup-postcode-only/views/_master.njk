@@ -1,0 +1,186 @@
+{% extends "page-templates/_template.njk" %}
+
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+{% from "components/select/_macro.njk" import onsSelect %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/search/_macro.njk" import onsSearch %}
+{% from "components/collapsible/_macro.njk" import onsCollapsible %}
+{% from "components/lists/_macro.njk" import onsList %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ pageInfo.rootPath }}/styles.css" />
+{% endblock %}
+
+{% set designSystemVersion = "31.3.0" %}
+{% set cdnURL = "https://cdn.ons.gov.uk/sdc/design-system/" + designSystemVersion %}
+
+{% set pageConfig =  { 
+    "theme": 'census',
+    "header": {
+        "logoHref": pageInfo.rootPath,
+        "titleLogo": 'census-logo-en',
+        "titleLogoHref": 'https://census-website-respond.netlify.app/end-to-end/home/',
+        "titleLogoAlt": 'Census 2021'
+    },
+    "title": pageInfo.title + ' - Census 2021',
+    "toggleButton": {
+        "text": 'Menu',
+        "ariaLabel": 'Toggle main navigation'
+    },
+    "cdn": {
+        "version": '31.3.0'
+    },
+    "language": {
+        "languages": [
+            {
+                "url": '#',
+                "ISOCode": 'en',
+                "text": 'English',
+                "buttonAriaLabel": 'Language selector. Current language: English',
+                "chooseLanguage": 'Choose language',
+                "current": true
+            },
+            {
+                "url": '#',
+                "ISOCode": 'cy',
+                "text": 'Cymraeg',
+                "buttonAriaLabel": 'Dewisydd iaith. Iaith gyfredol: Cymraeg',
+                "chooseLanguage": 'Dewiswch iaith',
+                "current": false
+            }
+        ]
+    },
+    "navigation": {
+        "id": 'main-nav',
+        "ariaLabel": 'Main menu',
+        "ariaListLabel": 'Navigation menu',
+        "currentPath": pageInfo.path,
+        "siteBasePath": pageInfo.rootPath,
+        "itemsList": [
+            {
+                "title": 'Home',
+                "url": 'https://census-website-respond.netlify.app/end-to-end/home/'
+            },
+            {
+                "title": 'About the census',
+                "url": pageInfo.rootPath + '/about-the-census'
+            },
+            {
+                "title": 'Your data and security',
+                "url": pageInfo.rootPath + '/your-data-and-security'
+            },
+            {
+                "title": 'Help',
+                "url": pageInfo.rootPath + '/help'
+            },
+            {
+                "title": 'Contact us',
+                "url": pageInfo.rootPath + '/contact-us'
+            }
+        ]
+    },
+    "footer": {
+        "crest": true,
+        "cols": [
+            {
+                "title": 'Help with the census',
+                "itemsList": [
+                    {
+                        "text": 'Contact us',
+                        "url": pageInfo.rootPath + '/contact-us'
+                    },
+                    {
+                        "text": 'Languages',
+                        "url": 'https://census-website-respond.netlify.app/end-to-end/languages'
+                    },
+                    {
+                        "text": 'Accessibility',
+                        "url": pageInfo.rootPath + '/help/languages-and-accessibility/accessibility'
+                    }
+                ]
+            },
+            {
+                "title": 'Get involved',
+                "itemsList": [
+                    {
+                        "text": 'Local authorities',
+                        "url": pageInfo.rootPath + '/get-involved/local-authorities'
+                    },
+                    {
+                        "text": 'Community groups',
+                        "url": pageInfo.rootPath + '/get-involved/community-groups'
+                    },
+                    {
+                        "text": 'School campaigns',
+                        "url": '#0'
+                    },
+                    {
+                        "text": 'Media enquiries',
+                        "url": pageInfo.rootPath + '/media-enquiries'
+                    },
+                    {
+                        "text": 'Jobs',
+                        "url": pageInfo.rootPath + '/jobs'
+                    }
+                ]
+            },
+            {
+                "title": 'About the census',
+                "itemsList": [
+                    {
+                        "text": 'What is the census',
+                        "url": pageInfo.rootPath + '/about-the-census'
+                    },
+                    {
+                        "text": 'Why you should take part',
+                        "url": pageInfo.rootPath + '/about-the-census/why-you-should-take-part-in-the-census'
+                    },
+                    {
+                        "text": 'Census stories',
+                        "url": '#0'
+                    },
+                    {
+                        "text": 'News',
+                        "url": pageInfo.rootPath + '/news'
+                    }
+                ]
+            }
+        ],
+        "legal": [
+            {
+                "itemsList": [
+                    {
+                        "text": 'Cookies',
+                        "url": pageInfo.rootPath + '/cookies'
+                    },
+                    {
+                        "text": 'Accessibility statement',
+                        "url": pageInfo.rootPath + '/accessibility-statement'
+                    },
+                    {
+                        "text": 'Privacy and data protection',
+                        "url": pageInfo.rootPath + '/privacy-and-data-protection'
+                    },
+                    {
+                        "text": 'Terms and conditions',
+                        "url": pageInfo.rootPath + '/terms-and-conditions'
+                    }
+                ]
+            }
+        ]
+    }
+} %}
+
+{% block pageContent %}
+    {% block preMain %}{% endblock %}
+    {% block main %}{% endblock %}
+{% endblock %}
+
+{% block bodyEnd %}
+    <script src="{{pageInfo.rootPath}}/index.js"></script>
+{% endblock %}
