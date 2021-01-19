@@ -70,6 +70,13 @@ layout: census-website-respond/views/_master
                         <div class="page__body">
                             <p>Everyone in England and Wales must complete a census or be included on a census for the place where they're living or staying.</p>
 
+                            {% call onsPanel({
+                                    "type": 'warn'
+                                })
+                            %}
+                                You must complete the census by law
+                            {% endcall %}
+
                             <p>Every householder at an address is responsible for completing a census questionnaire for their household.</p>
 
                             {%
