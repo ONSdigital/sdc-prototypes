@@ -5,6 +5,24 @@ version: 31.3.0
 layout: address-lookup-postcode-only/views/_master
 ---
 
+{% block preMain %}
+    <div class="container">
+
+        {{
+            onsBreadcrumb({
+                "ariaLabel": 'Back',
+                "itemsList": [
+                    {
+                        "url": pageInfo.rootPath + '/',
+                        "id": "back",
+                        "text": 'Back'
+                    }
+                ]
+            })
+        }}
+
+    </div>
+{% endblock %}
 {% block main %}
 
     <div class="page__container container">
@@ -45,9 +63,17 @@ layout: address-lookup-postcode-only/views/_master
                                 })
                             -%}
 
-                                If you live somewhere that is mobile, such as a canal boat or motorhome, <a href="#">contact us to request an access code</a>.
+                                <p>If you live somewhere that is mobile, such as a canal boat or motorhome, <a href="#">contact us to request an access code</a>.</p>
 
                             {%- endcall -%}
+
+                            {{
+                                onsButton({
+                                    'text': 'Continue',
+                                    'classes': 'u-mt-l',
+                                    'submitType': 'loader'
+                                })
+                            }}
 
                         {% endcall %}
                 </main>
