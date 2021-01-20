@@ -33,7 +33,7 @@
         "ariaLabel": 'Toggle main navigation'
     },
     "cdn": {
-        "version": '31.3.0'
+        "version": designSystemVersion
     },
     "language": {
         "languages": [
@@ -52,6 +52,21 @@
                 "buttonAriaLabel": 'Dewisydd iaith. Iaith gyfredol: Cymraeg',
                 "chooseLanguage": 'Dewiswch iaith',
                 "current": false
+            }
+        ]
+    },
+    "breadcrumbs": {
+        "ariaLabel": 'Breadcrumb',
+        "classes": "test",
+        "itemsList": [
+            {
+                "url": '',
+                "id": 'back',
+                "text": 'Back',
+                "attributes": {
+                    "class": 'js-previous',
+                    "data-attribute": 'test'
+                }
             }
         ]
     },
@@ -148,8 +163,34 @@
 } %}
 
 {% block pageContent %}
-    {% block preMain %}{% endblock %}
-    {% block main %}{% endblock %}
+
+    <div class="page__container container">
+
+        {% block preMain %}
+
+            {{
+                onsBreadcrumb({
+                    "classes": "test",
+                    "itemsList": [
+                        {
+                            "url": '',
+                            "id": 'back',
+                            "text": 'Back',
+                            "attributes": {
+                                "class": 'js-previous',
+                                "data-attribute": 'test'
+                            }
+                        }
+                    ]
+                })
+            }}
+
+        {% endblock %}
+
+        {% block main %}{% endblock %}
+
+    </div>
+
 {% endblock %}
 
 {% block bodyEnd %}
