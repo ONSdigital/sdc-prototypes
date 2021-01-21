@@ -47,24 +47,21 @@ layout: census-website-respond/views/_master
                                 "ariaLabel": 'Pages in this guide',
                                 "itemsList": [
                                     {
-                                        "url": pageInfo.rootPath + '/your-data-and-security',
-                                        "text": 'Your data and security'
+                                        "url": pageInfo.rootPath + '/about-the-census',
+                                        "text": 'Overview'
                                     },
                                     {
-                                        "url": pageInfo.rootPath + '/help/getting-started/what-if-im-away-or-abroad-on-census-day',
-                                        "text": 'What if I’m away or abroad on Census Day?'
+                                        "url": pageInfo.rootPath + '/about-the-census/who-should-fill-in-a-census',
+                                        "text": 'Who should fill in a census'
                                     },
                                     {
-                                        "url": pageInfo.rootPath + '/about-the-census/help/getting-started/im-moving-house',
-                                        "text": 'I’m moving house'
+                                        "url": pageInfo.rootPath + '/about-the-census/why-you-should-take-part-in-the-census',
+                                        "text": 'Why you should take part in the census'
                                     },
                                     {
-                                        "url": pageInfo.rootPath + '/news',
-                                        "text": 'News'
-                                    },
-                                    {
-                                        "url": pageInfo.rootPath + '/contact-us',
-                                        "text": 'Contact us'
+                                        "url": pageInfo.rootPath + '/about-the-census/about-the-census-coverage-survey',
+                                        "text": 'About the Census Coverage Survey',
+                                        "current": true
                                     }
                                 ]
                             })
@@ -101,20 +98,50 @@ layout: census-website-respond/views/_master
                             "title": 'Related content',
                             "itemsList": [
                                 {
-                                    "url": pageInfo.rootPath + '/your-data-and-security',
-                                    "text": 'Your data and security'
+                                    "url": pageInfo.rootPath + '/your-data-and-security/what-we-do-with-your-information',
+                                    "text": 'What we do with your information'
                                 },
                                 {
-                                    "url": pageInfo.rootPath + '/your-data-and-security/answering-separately-from-your-household',
-                                    "text": 'Answering separately from your household'
+                                    "url": '#0',
+                                    "text": 'Census stories'
                                 },
                                 {
-                                    "url": pageInfo.rootPath + '/help/getting-started/completing-the-census-for-someone-else',
-                                    "text": 'Completing the census for someone else'
+                                    "url": pageInfo.rootPath + '/news',
+                                    "text": 'News'
                                 }
                             ]
                         })
                     }}
+
+                    <div class="u-pt-m u-pb-s u-bt">
+                        
+                        <h2 class="u-fs-r--b u-mb-xs">Help with the census</h2>
+
+                        {{
+                            onsList({
+                                "classes": 'list--bare',
+                                "itemsList": [
+                                    {
+                                        "url": pageInfo.rootPath + '/help/getting-started/what-if-im-away-or-abroad-on-census-day',
+                                        "text": 'What if I’m away or abroad on Census Day?'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/about-the-census/help/getting-started/im-moving-house',
+                                        "text": 'I’m moving house'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/getting-started/completing-the-census-for-someone-else',
+                                        "text": 'Completing the census for someone else'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/',
+                                        "text": 'More help'
+                                    }
+                                ]
+                            })
+                        }}
+
+                    </div>
 
                 </div>
 

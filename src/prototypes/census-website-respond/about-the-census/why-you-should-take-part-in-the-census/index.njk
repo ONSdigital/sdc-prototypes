@@ -116,32 +116,50 @@ layout: census-website-respond/views/_master
                             "title": 'Related content',
                             "itemsList": [
                                 {
-                                    "url": pageInfo.rootPath + '/your-data-and-security',
-                                    "text": 'Your data and security'
+                                    "url": pageInfo.rootPath + '/your-data-and-security/what-we-do-with-your-information',
+                                    "text": 'What we do with your information'
                                 },
                                 {
-                                    "url": pageInfo.rootPath + '/help/getting-started/what-if-im-away-or-abroad-on-census-day',
-                                    "text": 'What if I’m away or abroad on Census Day?'
-                                },
-                                {
-                                    "url": pageInfo.rootPath + '/about-the-census/help/getting-started/im-moving-house',
-                                    "text": 'I’m moving house'
-                                },
-                                {
-                                    "url": pageInfo.rootPath + '/help/getting-started/completing-the-census-for-someone-else',
-                                    "text": 'Completing the census for someone else'
+                                    "url": '#0',
+                                    "text": 'Census stories'
                                 },
                                 {
                                     "url": pageInfo.rootPath + '/news',
                                     "text": 'News'
-                                },
-                                {
-                                    "url": pageInfo.rootPath + '/contact-us',
-                                    "text": 'Contact us'
                                 }
                             ]
                         })
                     }}
+
+                    <div class="u-pt-m u-pb-s u-bt">
+                        
+                        <h2 class="u-fs-r--b u-mb-xs">Help with the census</h2>
+
+                        {{
+                            onsList({
+                                "classes": 'list--bare',
+                                "itemsList": [
+                                    {
+                                        "url": pageInfo.rootPath + '/help/getting-started/what-if-im-away-or-abroad-on-census-day',
+                                        "text": 'What if I’m away or abroad on Census Day?'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/about-the-census/help/getting-started/im-moving-house',
+                                        "text": 'I’m moving house'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/getting-started/completing-the-census-for-someone-else',
+                                        "text": 'Completing the census for someone else'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/',
+                                        "text": 'More help'
+                                    }
+                                ]
+                            })
+                        }}
+
+                    </div>
 
                 </div>
 
