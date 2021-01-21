@@ -173,36 +173,20 @@ layout: census-website-respond/views/_master
 
                 </div>
 
-                <div class="grid__col col-4@m push-1@m u-mt-xl">
+                <div class="grid__col col-4@m push-1@m u-mt-l">
 
                     {{-
                         onsRelatedLinks({
                             "id": 'related-links',
-                            "title": 'Help with the census',
+                            "title": 'Related content',
                             "itemsList": [
                                 {
-                                    "url": pageInfo.rootPath + '/help/getting-started/im-moving-house',
-                                    "text": 'I’m moving house'
+                                    "url": pageInfo.rootPath + '/your-data-and-security/how-we-will-contact-or-visit-you',
+                                    "text": 'How we will contact or visit you'
                                 },
                                 {
-                                    "url": pageInfo.rootPath + '/help/getting-started/what-if-im-away-or-abroad-on-census-day',
-                                    "text": 'What if I‘m away or abroad on Census Day?'
-                                },
-                                {
-                                    "url": pageInfo.rootPath + '/help/get-an-access-code-or-paper-census/',
-                                    "text": 'Get an access code or paper census'
-                                },
-                                {
-                                    "url": pageInfo.rootPath + '/help/find-a-census-support-centre/',
-                                    "text": 'Find a census support centre'
-                                },
-                                {
-                                    "url": 'https://census-website-respond.netlify.app/end-to-end/languages/',
-                                    "text": 'Languages'
-                                },
-                                {
-                                    "url": pageInfo.rootPath + '/help/languages-and-accessibility/accessibility/',
-                                    "text": 'Accessibility'
+                                    "url": pageInfo.rootPath + '/media-enquiries',
+                                    "text": 'Media enquiries'
                                 }
                             ]
                         })
@@ -210,19 +194,35 @@ layout: census-website-respond/views/_master
 
                     <div class="u-pt-m u-pb-s u-bt">
                         
-                        <h2 class="u-fs-r--b u-mb-xs">Related content</h2>
+                        <h2 class="u-fs-r--b u-mb-xs">Help with the census</h2>
 
                         {{
                                 onsList({
                                     "classes": 'list--bare',
                                     "itemsList": [
                                         {
-                                            "url": pageInfo.rootPath + '/your-data-and-security/how-we-will-contact-or-visit-you',
-                                            "text": 'How we will contact or visit you'
+                                            "url": pageInfo.rootPath + '/help/get-an-access-code-or-paper-census/',
+                                            "text": 'Get an access code or paper census'
                                         },
                                         {
-                                            "url": pageInfo.rootPath + '/media-enquiries',
-                                            "text": 'Media enquiries'
+                                            "url": pageInfo.rootPath + '/help/languages-and-accessibility/',
+                                            "text": 'Languages and accessibility'
+                                        },
+                                        {
+                                            "url": pageInfo.rootPath + '/help/find-a-census-support-centre/',
+                                            "text": 'Find a census support centre'
+                                        },
+                                        {
+                                            "url": pageInfo.rootPath + '/help/getting-started/im-moving-house',
+                                            "text": 'I’m moving house'
+                                        },
+                                        {
+                                            "url": pageInfo.rootPath + '/help/getting-started/what-if-im-away-or-abroad-on-census-day',
+                                            "text": 'What if I‘m away or abroad on Census Day?'
+                                        },
+                                        {
+                                            "url": pageInfo.rootPath + '/help/',
+                                            "text": 'More help'
                                         }
                                     ]
                                 })
