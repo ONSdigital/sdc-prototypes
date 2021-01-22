@@ -1,0 +1,110 @@
+{% extends "page-templates/_template.njk" %}
+
+{% from "components/card/_macro.njk" import onsCard %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+{% from "components/select/_macro.njk" import onsSelect %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/search/_macro.njk" import onsSearch %}
+{% from "components/collapsible/_macro.njk" import onsCollapsible %}
+{% from "components/lists/_macro.njk" import onsList %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+{% from "components/related-links/_macro.njk" import onsRelatedLinks %}
+{% from "components/toc/_macro.njk" import onsTableOfContents %}
+{% from "components/content-pagination/_macro.njk" import onsContentPagination %}
+{% from "components/hero/_macro.njk" import onsHero %}
+{% from "components/timeline/_macro.njk" import onsTimeline %}
+{% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
+{% from "components/downloads/_macro.njk" import onsDownloads %}
+{% from "components/pagination/_macro.njk" import onsPagination %}
+{% from "components/text-indent/_macro.njk" import onsTextIndent %}
+{% from "components/articles/_macro.njk" import onsArticles %}
+{% from "components/call-to-action/_macro.njk" import onsCallToAction %}
+{% from "components/video/_macro.njk" import onsVideo %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{pageInfo.rootPath}}/styles.css">
+{% endblock %}
+
+{% set designSystemVersion = "31.3.0" %}
+{% set cdnURL = "https://cdn.ons.gov.uk/sdc/design-system/" + designSystemVersion %}
+
+{% set pageConfig =  { 
+    "title": 'Business survey',
+    "signoutButton": {
+        "text": "Save and sign out",
+        "buttonStyle": "exit"
+    },
+    "cdn": {
+        "version": designSystemVersion
+    },
+    "language": {
+        "languages": [
+            {
+                "url": '#',
+                "ISOCode": 'en',
+                "text": 'English',
+                "buttonAriaLabel": 'Language selector. Current language: English',
+                "chooseLanguage": 'Choose language',
+                "current": true
+            },
+            {
+                "url": '#',
+                "ISOCode": 'cy',
+                "text": 'Cymraeg',
+                "buttonAriaLabel": 'Dewisydd iaith. Iaith gyfredol: Cymraeg',
+                "chooseLanguage": 'Dewiswch iaith',
+                "current": false
+            }
+        ]
+    },
+    "breadcrumbs": {
+        "ariaLabel": 'Breadcrumb',
+        "itemsList": [
+            {
+                "id": 'back',
+                "url": '/',
+                "text": 'Back'
+            }
+        ]
+    },
+    "footer": {
+        "rows": [
+            {
+                "itemsList": [
+                    {
+                        "text": 'Contact us',
+                        "url": '#'
+                    },
+                    {
+                        "text": 'Cookies and privacy',
+                        "url": '#'
+                    }
+                ]
+            }
+        ],
+        "OGLLink": {
+            "pre": 'All content is available under the',
+            "link": 'Open Government Licence v3.0',
+            "url": 'https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/',
+            "post": ', except where otherwise stated'
+        }
+    }
+} %}
+
+{% block page %}
+
+    <div class="container page__container">
+
+    {% block preMain %}{% endblock %}
+    {% block main %}{% endblock %}
+
+    </div>
+
+{% endblock %}
+
+{% block bodyEnd %}
+    <script src="{{pageInfo.rootPath}}/index.js"></script>
+{% endblock %}
