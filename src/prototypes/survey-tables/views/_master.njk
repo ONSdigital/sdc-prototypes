@@ -25,27 +25,20 @@
 {% from "components/video/_macro.njk" import onsVideo %}
 
 {% block head %}
-    <link rel="stylesheet" href="{{pageInfo.rootPath}}/main.css">
+    <link rel="stylesheet" href="{{pageInfo.rootPath}}/styles.css">
 {% endblock %}
 
 {% set designSystemVersion = "31.3.0" %}
 {% set cdnURL = "https://cdn.ons.gov.uk/sdc/design-system/" + designSystemVersion %}
 
 {% set pageConfig =  { 
-    "theme": 'census',
-    "header": {
-        "logoHref": pageInfo.rootPath,
-        "titleLogo": 'census-logo-en',
-        "titleLogoHref": 'https://census-website-respond.netlify.app/end-to-end/home/',
-        "titleLogoAlt": 'Census 2021'
-    },
-    "title": pageInfo.title + ' - Census 2021',
-    "toggleButton": {
-        "text": 'Menu',
-        "ariaLabel": 'Toggle main navigation'
+    "title": 'Business survey',
+    "signoutButton": {
+        "text": "Save and sign out",
+        "buttonStyle": "exit"
     },
     "cdn": {
-        "version": '31.3.0'
+        "version": designSystemVersion
     },
     "language": {
         "languages": [
@@ -67,130 +60,49 @@
             }
         ]
     },
-    "navigation": {
-        "id": 'main-nav',
-        "ariaLabel": 'Main menu',
-        "ariaListLabel": 'Navigation menu',
-        "currentPath": pageInfo.path,
-        "siteBasePath": pageInfo.rootPath,
+    "breadcrumbs": {
+        "ariaLabel": 'Breadcrumb',
         "itemsList": [
             {
-                "title": 'Home',
-                "url": 'https://census-website-respond.netlify.app/end-to-end/home/'
-            },
-            {
-                "title": 'About the census',
-                "url": pageInfo.rootPath + '/about-the-census'
-            },
-            {
-                "title": 'Your data and security',
-                "url": pageInfo.rootPath + '/your-data-and-security'
-            },
-            {
-                "title": 'Help',
-                "url": pageInfo.rootPath + '/help'
-            },
-            {
-                "title": 'Contact us',
-                "url": pageInfo.rootPath + '/contact-us'
+                "id": 'back',
+                "url": '/',
+                "text": 'Back'
             }
         ]
     },
     "footer": {
-        "crest": true,
-        "cols": [
+        "rows": [
             {
-                "title": 'Help with the census',
                 "itemsList": [
                     {
                         "text": 'Contact us',
-                        "url": pageInfo.rootPath + '/contact-us'
+                        "url": '#'
                     },
                     {
-                        "text": 'Languages',
-                        "url": 'https://census-website-respond.netlify.app/end-to-end/languages'
-                    },
-                    {
-                        "text": 'Accessibility',
-                        "url": pageInfo.rootPath + '/help/languages-and-accessibility/accessibility'
-                    }
-                ]
-            },
-            {
-                "title": 'Get involved',
-                "itemsList": [
-                    {
-                        "text": 'Local authorities',
-                        "url": pageInfo.rootPath + '/get-involved/local-authorities'
-                    },
-                    {
-                        "text": 'Community groups',
-                        "url": pageInfo.rootPath + '/get-involved/community-groups'
-                    },
-                    {
-                        "text": 'School campaigns',
-                        "url": '#0'
-                    },
-                    {
-                        "text": 'Media enquiries',
-                        "url": pageInfo.rootPath + '/media-enquiries'
-                    },
-                    {
-                        "text": 'Jobs',
-                        "url": pageInfo.rootPath + '/jobs'
-                    }
-                ]
-            },
-            {
-                "title": 'About the census',
-                "itemsList": [
-                    {
-                        "text": 'What is the census',
-                        "url": pageInfo.rootPath + '/about-the-census'
-                    },
-                    {
-                        "text": 'Why you should take part',
-                        "url": pageInfo.rootPath + '/about-the-census/why-you-should-take-part-in-the-census'
-                    },
-                    {
-                        "text": 'Census stories',
-                        "url": '#0'
-                    },
-                    {
-                        "text": 'News',
-                        "url": pageInfo.rootPath + '/news'
+                        "text": 'Cookies and privacy',
+                        "url": '#'
                     }
                 ]
             }
         ],
-        "legal": [
-            {
-                "itemsList": [
-                    {
-                        "text": 'Cookies',
-                        "url": pageInfo.rootPath + '/cookies'
-                    },
-                    {
-                        "text": 'Accessibility statement',
-                        "url": pageInfo.rootPath + '/accessibility-statement'
-                    },
-                    {
-                        "text": 'Privacy and data protection',
-                        "url": pageInfo.rootPath + '/privacy-and-data-protection'
-                    },
-                    {
-                        "text": 'Terms and conditions',
-                        "url": pageInfo.rootPath + '/terms-and-conditions'
-                    }
-                ]
-            }
-        ]
+        "OGLLink": {
+            "pre": 'All content is available under the',
+            "link": 'Open Government Licence v3.0',
+            "url": 'https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/',
+            "post": ', except where otherwise stated'
+        }
     }
 } %}
 
-{% block pageContent %}
+{% block page %}
+
+    <div class="container page__container">
+
     {% block preMain %}{% endblock %}
     {% block main %}{% endblock %}
+
+    </div>
+
 {% endblock %}
 
 {% block bodyEnd %}
