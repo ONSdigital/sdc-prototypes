@@ -16,8 +16,27 @@ layout: address-lookup-postcode-only/views/_master
 
                     {% call onsQuestion({
                         "title": "What is your postcode?",
-                        "description": "<p>To request an access code, we need your address</p>"
+                        "description": "<p>To request an access code, we need your usual address</p>"
                     }) %}
+
+                        {%- call onsCollapsible({
+                                'id': 'collapsible',
+                                'title': "If you have more than one address",
+                                'titleTag': 'h2',
+                                'classes': 'u-mt-m',
+                                'button': {
+                                    'close': 'Hide this',
+                                    'contextSuffix': 'content'
+                                }
+                            })
+                        -%}
+
+                            <p>Include yourself at the home address where you generally spend most of your time. If you split your time equally then use the home address where you are staying overnight on Sunday 21 March 2021.</p>
+                            <p><strong>Students</strong>, include yourself at both your term-time and out of term-time addresses.</p>
+                            <p><strong>People with a second address for work</strong>, include yourself at your home address.</p>
+                            <p><strong>Armed forces members</strong>, include yourself at your home address if you have one.</p>
+
+                        {%- endcall -%}
 
                         {{
                             onsInput({
@@ -32,26 +51,10 @@ layout: address-lookup-postcode-only/views/_master
                             })
                         }}
 
-                        {%- call onsCollapsible({
-                                'id': 'collapsible',
-                                'title': "I don’t live at a fixed address",
-                                'titleTag': 'h2',
-                                'classes': 'u-mt-m',
-                                'button': {
-                                    'close': 'Hide this',
-                                    'contextSuffix': 'content'
-                                }
-                            })
-                        -%}
-
-                            <p>If you live somewhere that is mobile, such as a canal boat or motorhome, <a href="#">contact us to request an access code</a>.</p>
-
-                        {%- endcall -%}
-
                         {{
                             onsButton({
                                 'id': 'js-submit',
-                                'text': 'Continue',
+                                'text': 'Find address',
                                 'classes': 'u-mt-l',
                                 'submitType': 'loader'
                             })
@@ -60,6 +63,22 @@ layout: address-lookup-postcode-only/views/_master
                     {% endcall %}
 
                 </form>
+
+                {%- call onsCollapsible({
+                        'id': 'collapsible',
+                        'title': "I don’t live at a fixed address",
+                        'titleTag': 'h2',
+                        'classes': 'u-mt-m',
+                        'button': {
+                            'close': 'Hide this',
+                            'contextSuffix': 'content'
+                        }
+                    })
+                -%}
+
+                    <p>If you live somewhere that is mobile, such as a canal boat or motorhome, <a href="#">contact us to request an access code</a>.</p>
+
+                {%- endcall -%}
 
             </main>
 
