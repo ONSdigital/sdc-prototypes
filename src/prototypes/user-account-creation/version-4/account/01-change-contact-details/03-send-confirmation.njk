@@ -45,14 +45,16 @@ layout: user-account-creation/views/version-4/_master
             <h1>Send confirmation email</h1>
             <p>We will send confirmation <b>jane.doe@acme.com</b>.</p>
 
-            <p class="field">
-                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-4/account/01-change-contact-details/04-confirmation.html';">
-                    <span class="btn__inner">Send</span>
-                </button>
-                <button type="submit" class="btn btn--secondary" onclick="location.href='{{ pageInfo.rootPath }}/version-4/account/01-change-contact-details/01-change-contact-details.html';">
-                    <span class="btn__inner">Cancel</span>
-                </button>
-            </p>
+            <div class="grid grid--flex grid--gutterless grid--vertical-center grid--no-wrap@s u-mt-m u-mb-m">
+                <div class="grid__col">
+                    <button type="button" class="btn btn-group__btn" onclick="location.href='{{ pageInfo.rootPath }}/version-4/account/01-change-contact-details/04-confirmation.html';">
+                        <span class="btn__inner">Send</span>
+                    </button>
+                </div>
+                <div class="grid__col u-ml-m">
+                    <a href="/prototypes/user-account-creation/version-4/account/01-change-contact-details/01-change-contact-details.html">Cancel</a>
+                </div>
+            </div>
         </div>
     </div>
 

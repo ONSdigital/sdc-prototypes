@@ -57,14 +57,17 @@ layout: user-account-creation/views/version-4/_master
                     ]
                 })
             }}
-            <p class="field u-mt-l">
-                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-4/account/04-transfer-my-surveys-1/02-email-address.html';">
+            <div class="grid grid--flex grid--gutterless grid--vertical-center grid--no-wrap@s u-mt-m u-mb-m">
+        <div class="grid__col">
+          <button type="button" class="btn btn-group__btn" onclick="location.href='{{ pageInfo.rootPath }}/version-4/account/04-transfer-my-surveys-1/02-email-address.html';">
                     <span class="btn__inner">Continue</span>
                 </button>
-                <button type="submit" class="btn btn--secondary" onclick="location.href='{{ pageInfo.rootPath }}/version-4/account/04-transfer-my-surveys-1/index.html';">
-                    <span class="btn__inner">Cancel</span>
-                </button>
-            </p>
+                
+                </div>
+                <div class="grid__col u-ml-m">
+                    <a href="/prototypes/user-account-creation/version-4/account/04-transfer-my-surveys-1/index.html">Cancel</a>
+                </div>
+            </div>
 
         </div>
     </div>

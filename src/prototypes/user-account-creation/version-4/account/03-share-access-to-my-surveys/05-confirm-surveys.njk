@@ -89,21 +89,17 @@ layout: user-account-creation/views/version-4/_master
                         </div>
                     </fieldset>
                 </p>
-                <p class="field u-mt-l">
-                    <div class="btn-group">
-                        <button type="submit" class="btn">
+
+                <div class="grid grid--flex grid--gutterless grid--vertical-center grid--no-wrap@s u-mt-m u-mb-m">
+                    <div class="grid__col">
+                        <button type="button" class="btn btn-group__btn">
                             <span class="btn__inner">Continue</span>
                         </button>
-                        {{ 
-                            onsButton({
-                                "type": 'button',
-                                "text": 'Cancel',
-                                "classes": 'btn--secondary btn-group__btn',
-                                "url": "/prototypes/user-account-creation/version-4/00-surveys-list.html"
-                            }) 
-                        }}
                     </div>
-                </p>
+                    <div class="grid__col u-ml-m">
+                        <a href="/prototypes/user-account-creation/version-4/00-surveys-list.html">Cancel</a>
+                    </div>
+                </div>
             </form>
         </div>
     </div>
