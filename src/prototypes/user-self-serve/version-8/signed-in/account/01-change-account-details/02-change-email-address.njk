@@ -36,13 +36,13 @@ layout: user-self-serve/views/version-8/_master-survey
             {% from "components/panel/_macro.njk" import onsPanel %}
             {{
                 onsPanel({
-                    "type": "success",
-                    "id": "success-id",
-                    "icon": "check-green",
-                    "classes": "u-mb-m",
-                    body: "<p>We've updated your last name and telephone number.</p>"
+                    "type": 'success',
+                    "id": 'success-id',
+                    "icon": 'check',
+                    "body": 'We have updated your last name and telephone number.'
                 })
             }}
+
             <h1>Change email address</h1>
             <p>You'll need to authorise a change of email address.</p>
             <p>We'll send a confirmation email to <b>jane.doe@acme.com</b>.</p>

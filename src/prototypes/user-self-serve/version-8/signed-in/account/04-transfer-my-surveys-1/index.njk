@@ -30,13 +30,13 @@ layout: user-self-serve/views/version-8/_master-survey
         </div>
         <div class="grid__col col-8@m u-pt-no">
             <h1>Transfer your surveys</h1>
-            
-            <div class="panel panel--info panel--simple u-mb-m">
-                <div class="panel__body">
-                    <p>You will no longer have access to the surveys you transfer. If you still require access to your surveys, you can <a href="/prototypes/user-self-serve/version-8/signed-in/account/03-share-access-to-my-surveys/index.html">share access</a>.</p>
-                </div>
-            </div>
 
+            {% from "components/panel/_macro.njk" import onsPanel %}
+            {{
+                onsPanel({
+                    "body": 'You will no longer have access to the surveys you transfer. If you still require access to your surveys, you can <a href="/prototypes/user-self-serve/version-8/signed-in/account/03-share-access-to-my-surveys/index.html">share access</a>.'
+                })
+            }}
             <h2 class="u-fs-m">What happens?</h2>
             <ul>
                 <li>Select which surveys you want to transfer</li>

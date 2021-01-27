@@ -39,12 +39,13 @@ layout: user-self-serve/views/version-8/_master-survey
         <div class="grid__col col-8@m u-pt-no">
             <h1>Enter recipient's email address</h1>
             <p>This is the person who will be able to respond to your surveys in your absence.</p>
-            
-            <div class="panel panel--info panel--simple u-mb-m">
-                <div class="panel__body">
-                    <p>Make sure you have permission from the recipient to provide their email address to us.</p>
-                </div>
-            </div>
+
+            {% from "components/panel/_macro.njk" import onsPanel %}
+            {{
+                onsPanel({
+                    "body": 'Make sure you have permission from the recipient to provide their email address to us.'
+                })
+            }}
 
             <p class="field">
                 {{ 
