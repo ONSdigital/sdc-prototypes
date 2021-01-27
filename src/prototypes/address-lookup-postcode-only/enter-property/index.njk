@@ -1,0 +1,90 @@
+---
+title: Enter property number
+group: Address Lookup
+version: 31.4.0
+layout: address-lookup-postcode-only/views/_master
+---
+{% block preMain %}
+
+    {{
+        onsBreadcrumb({
+            "ariaLabel": 'back',
+            "id": 'back',
+            "itemsList": [
+                {
+                    "url": pageInfo.rootPath + '/',
+                    "id": 'back-link',
+                    "classes": 'js-previous',
+                    "text": 'Back'
+                }
+            ]
+        })
+    }}
+
+{% endblock %}
+{% block main %}
+    <div class="grid">
+
+        <div class="grid__col col-8@m">
+
+            <main class="page__main" id="main-content" role="main">
+
+                <form action="{{ pageInfo.rootPath }}/select-address/">
+
+                    {% call onsQuestion({
+                        "title": 'What is the name or number of your property at <span class="highlight js-piping">AA1 1AA</span>?',
+                        "description": "<p>To request an access code, we need your usual address</p>"
+                    }) %}
+
+                        {{
+                            onsInput({
+                                'id': 'property',
+                                'type': 'text',
+                                'label': {
+                                    'text': "Property name or number"
+                                },
+                                'name': 'property'
+                            })
+                        }}
+
+                        {{
+                            onsButton({
+                                'id': 'js-submit',
+                                'text': 'Continue',
+                                'classes': 'u-mt-l',
+                                'submitType': 'loader'
+                            })
+                        }}
+
+                    {% endcall %}
+
+                </form>
+
+            </main>
+
+        </div>
+
+    </div>
+
+<script>
+    document.querySelector('form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const inputVal = document.querySelector('input').value;
+        const inputName = document.querySelector('input').name;
+
+        if (inputVal === 'AA1 1AA') {
+            window.location.href = '{{pageInfo.rootPath}}/select-address/';
+        }
+        else if (inputVal === 'BB2 2BB') {
+            window.location.href = '{{pageInfo.rootPath}}/enter-property-number/';
+        }
+        else {
+            window.location.href = '{{pageInfo.rootPath}}/no-address/';
+        }
+
+        sessionStorage.setItem(inputName, inputVal);
+        return true;
+    });
+</script>
+
+{% endblock %}

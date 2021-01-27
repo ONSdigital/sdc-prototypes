@@ -1,10 +1,27 @@
 ---
 title: Postcode lookup
 group: Address Lookup
-version: 31.3.0
+version: 31.4.0
 layout: address-lookup-postcode-only/views/_master
 ---
+{% block preMain %}
 
+    {{
+        onsBreadcrumb({
+            "ariaLabel": 'back',
+            "id": 'back',
+            "itemsList": [
+                {
+                    "url": pageInfo.rootPath + '/',
+                    "id": 'back-link',
+                    "classes": 'js-previous',
+                    "text": 'Back'
+                }
+            ]
+        })
+    }}
+
+{% endblock %}
 {% block main %}
     <div class="grid">
 
@@ -41,8 +58,8 @@ layout: address-lookup-postcode-only/views/_master
                         {{
                             onsInput({
                                 'id': 'postcode',
-                                'type': 'postcode',
-                                'autocomplete': 'postcode',
+                                'type': 'text',
+                                'autocomplete': 'postal-code',
                                 'classes': 'input--w-6',
                                 'label': {
                                     'text': "UK postcode"
@@ -80,6 +97,19 @@ layout: address-lookup-postcode-only/views/_master
 
                 {%- endcall -%}
 
+                {{
+                    onsPanel({
+                        "classes": "u-mt-xl",
+                        "body": '<h2 class="u-fs-m">Prototype instructions</h2>
+                                <p>This prototype uses dummy data. Enter the following postcodes to test the different scenarios:</p>
+                                <ul>
+                                    <li><strong>AA1 1AA</strong> &#8804; 30 addresses</li>
+                                    <li><strong>BB2 2BB</strong> &#62; 30 addresses</li>
+                                    <li><strong>CC3 3CC</strong> &#61; 0 addresses</li>
+                                </ul>'
+                    })
+                }}
+
             </main>
 
         </div>
@@ -89,9 +119,20 @@ layout: address-lookup-postcode-only/views/_master
 <script>
     sessionStorage.clear();
 
-    document.querySelector('form').addEventListener('submit', () => {
+    document.querySelector('form').addEventListener('submit', (e) => {
+        e.preventDefault();
         const inputVal = document.querySelector('input').value;
         const inputName = document.querySelector('input').name;
+
+        if (inputVal === 'AA1 1AA') {
+            window.location.href = '{{pageInfo.rootPath}}/select-address/';
+        }
+        else if (inputVal === 'BB2 2BB') {
+            window.location.href = '{{pageInfo.rootPath}}/enter-property-number/';
+        }
+        else {
+            window.location.href = '{{pageInfo.rootPath}}/no-address/';
+        }
 
         sessionStorage.setItem(inputName, inputVal);
         return true;

@@ -1,9 +1,26 @@
 ---
 title: Select your address
-version: 31.3.0
+version: 31.4.0
 layout: address-lookup-postcode-only/views/_master
 ---
+{% block preMain %}
 
+    {{
+        onsBreadcrumb({
+            "ariaLabel": 'back',
+            "id": 'back',
+            "itemsList": [
+                {
+                    "url": pageInfo.rootPath + '/',
+                    "id": 'back-link',
+                    "classes": 'js-previous',
+                    "text": 'Back'
+                }
+            ]
+        })
+    }}
+
+{% endblock %}
 {% block main %}
 
     <div class="grid">
@@ -12,11 +29,243 @@ layout: address-lookup-postcode-only/views/_master
 
             <main class="page__main" id="main-content" role="main">
 
-                <form action="{{ pageInfo.rootPath }}/select-address.html">
+                <form action="{{ pageInfo.rootPath }}/confirm-address">
 
-                    <h1>Select your address at <span class="highlight js-piping">{x}</span></h1>
+                    <h1>Select your address at <span class="highlight js-piping">AA1 1AA</span></h1>
 
+                    {{
+                        onsRadios({
+                            "legend": 'Select your address at <span class="js-piping">AA1 1AA</span>',
+                            "legendClasses": "u-vh",
+                            "name": "select-address",
+                            "radios": [
+                                {
+                                    "id": "1",
+                                    "label": {
+                                        "text": '1 Example Street, Exampletown, <span class="js-piping">AA1 1AA</span>'
+                                    },
+                                    "value": "1"
+                                },
+                                {
+                                    "id": "2",
+                                    "label": {
+                                        "text": '2 Example Street, Exampletown, <span class="js-piping">AA1 1AA</span>'
+                                    },
+                                    "value": "2"
+                                },
+                                {
+                                    "id": "3",
+                                    "label": {
+                                        "text": '3 Example Street, Exampletown, <span class="js-piping">AA1 1AA</span>'
+                                    },
+                                    "value": "3"
+                                },
+                                {
+                                    "id": "4",
+                                    "label": {
+                                        "text": '4 Example Street, Exampletown, <span class="js-piping">AA1 1AA</span>'
+                                    },
+                                    "value": "4"
+                                },
+                                {
+                                    "id": "5",
+                                    "label": {
+                                        "text": '5 Example Street, Exampletown, <span class="js-piping">AA1 1AA</span>'
+                                    },
+                                    "value": "5"
+                                },
+                                {
+                                    "id": "6",
+                                    "label": {
+                                        "text": '6 Example Street, Exampletown, <span class="js-piping">AA1 1AA</span>'
+                                    },
+                                    "value": "6"
+                                },
+                                {
+                                    "id": "7",
+                                    "label": {
+                                        "text": '7 Example Street, Exampletown, <span class="js-piping">AA1 1AA</span>'
+                                    },
+                                    "value": "7"
+                                },
+                                {
+                                    "id": "8",
+                                    "label": {
+                                        "text": '8 Example Street, Exampletown, <span class="js-piping">AA1 1AA</span>'
+                                    },
+                                    "value": "8"
+                                },
+                                {
+                                    "id": "9",
+                                    "label": {
+                                        "text": '9 Example Street, Exampletown, <span class="js-piping">AA1 1AA</span>'
+                                    },
+                                    "value": "9"
+                                },
+                                {
+                                    "id": "10",
+                                    "label": {
+                                        "text": '10 Example Street, Exampletown, <span class="js-piping">AA1 1AA</span>'
+                                    },
+                                    "value": "10"
+                                },
+                                {
+                                    "id": "11",
+                                    "label": {
+                                        "text": '11 Example Street, Exampletown, <span class="js-piping">AA1 1AA</span>'
+                                    },
+                                    "value": "11"
+                                },
+                                {
+                                    "id": "12",
+                                    "label": {
+                                        "text": '12 Example Street, Exampletown, <span class="js-piping">AA1 1AA</span>'
+                                    },
+                                    "value": "12"
+                                },
+                                {
+                                    "id": "13",
+                                    "label": {
+                                        "text": '13 Example Street, Exampletown, <span class="js-piping">AA1 1AA</span>'
+                                    },
+                                    "value": "13"
+                                },
+                                {
+                                    "id": "14",
+                                    "label": {
+                                        "text": '14 Example Street, Exampletown, <span class="js-piping">AA1 1AA</span>'
+                                    },
+                                    "value": "14"
+                                },
+                                {
+                                    "id": "15",
+                                    "label": {
+                                        "text": '15 Example Street, Exampletown, <span class="js-piping">AA1 1AA</span>'
+                                    },
+                                    "value": "15"
+                                },
+                                {
+                                    "id": "16",
+                                    "label": {
+                                        "text": '16 Example Street, Exampletown, <span class="js-piping">AA1 1AA</span>'
+                                    },
+                                    "value": "16"
+                                },
+                                {
+                                    "id": "17",
+                                    "label": {
+                                        "text": '17 Example Street, Exampletown, <span class="js-piping">AA1 1AA</span>'
+                                    },
+                                    "value": "17"
+                                },
+                                {
+                                    "id": "18",
+                                    "label": {
+                                        "text": '18 Example Street, Exampletown, <span class="js-piping">AA1 1AA</span>'
+                                    },
+                                    "value": "18"
+                                },
+                                {
+                                    "id": "19",
+                                    "label": {
+                                        "text": '19 Example Street, Exampletown, <span class="js-piping">AA1 1AA</span>'
+                                    },
+                                    "value": "19"
+                                },
+                                {
+                                    "id": "20",
+                                    "label": {
+                                        "text": '20 Example Street, Exampletown, <span class="js-piping">AA1 1AA</span>'
+                                    },
+                                    "value": "20"
+                                },
+                                {
+                                    "id": "21",
+                                    "label": {
+                                        "text": '21 Example Street, Exampletown, <span class="js-piping">AA1 1AA</span>'
+                                    },
+                                    "value": "21"
+                                },
+                                {
+                                    "id": "22",
+                                    "label": {
+                                        "text": '22 Example Street, Exampletown, <span class="js-piping">AA1 1AA</span>'
+                                    },
+                                    "value": "22"
+                                },
+                                {
+                                    "id": "23",
+                                    "label": {
+                                        "text": '23 Example Street, Exampletown, <span class="js-piping">AA1 1AA</span>'
+                                    },
+                                    "value": "23"
+                                },
+                                {
+                                    "id": "24",
+                                    "label": {
+                                        "text": '24 Example Street, Exampletown, <span class="js-piping">AA1 1AA</span>'
+                                    },
+                                    "value": "24"
+                                },
+                                {
+                                    "id": "24",
+                                    "label": {
+                                        "text": '24 Example Street, Exampletown, <span class="js-piping">AA1 1AA</span>'
+                                    },
+                                    "value": "24"
+                                },
+                                {
+                                    "id": "25",
+                                    "label": {
+                                        "text": '25 Example Street, Exampletown, <span class="js-piping">AA1 1AA</span>'
+                                    },
+                                    "value": "25"
+                                },
+                                {
+                                    "id": "26",
+                                    "label": {
+                                        "text": '26 Example Street, Exampletown, <span class="js-piping">AA1 1AA</span>'
+                                    },
+                                    "value": "26",
+                                    "name": "address"
+                                },
+                                {
+                                    "id": "27",
+                                    "label": {
+                                        "text": '27 Example Street, Exampletown, <span class="js-piping">AA1 1AA</span>'
+                                    },
+                                    "value": "27",
+                                    "name": "address"
+                                },
+                                {
+                                    "id": "28",
+                                    "label": {
+                                        "text": '28 Example Street, Exampletown, <span class="js-piping">AA1 1AA</span>'
+                                    },
+                                    "value": "28",
+                                    "name": "address"
+                                },
+                                {
+                                    "id": "29",
+                                    "label": {
+                                        "text": '29 Example Street, Exampletown, <span class="js-piping">AA1 1AA</span>'
+                                    },
+                                    "value": "29",
+                                    "name": "address"
+                                },
+                                {
+                                    "id": "30",
+                                    "label": {
+                                        "text": '30 Example Street, Exampletown, <span class="js-piping">AA1 1AA</span>'
+                                    },
+                                    "value": "30",
+                                    "name": "address"
+                                }
+                            ]
+                        })
+                    }}
 
+                    <p class="u-mt-s"><a href="{{ pageInfo.rootPath }}/register-address">I can’t find my address</a></p>
 
                     {{
                         onsButton({
@@ -37,15 +286,25 @@ layout: address-lookup-postcode-only/views/_master
 
 <script>
     const postCode = sessionStorage.getItem('postcode');
+    const displayPostCode = postCode.replace(/.{3}$/,' $&').toUpperCase();
     const pipingDestinations = Array.from(document.querySelectorAll('.js-piping'));
 
     pipingDestinations.forEach(function(pipingDestination) {
-        pipingDestination.innerHTML = pipingDestination.innerHTML.replace('{x}', postCode);
+        if (postCode) {
+            pipingDestination.innerHTML = pipingDestination.innerHTML.replace('AA1 1AA', displayPostCode);
+        }
     });
 
     document.querySelector('form').addEventListener('submit', () => {
-        const inputVal = document.querySelector('input').value;
+
+        const answer = document.querySelectorAll('input');
         const inputName = document.querySelector('input').name;
+
+        for (i = 0; i < answer.length; i++) {
+            if (answer.checked) {
+                const inputVal = answer.value;
+            }
+        }
 
         sessionStorage.setItem(inputName, inputVal);
         return true;
