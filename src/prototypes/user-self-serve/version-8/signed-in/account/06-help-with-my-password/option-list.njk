@@ -1,6 +1,6 @@
 ---
 group: Frontstage
-title: User account creation
+title: User self serve
 version: 30.0.0
 layout: user-self-serve/views/version-8/_master-survey
 ---
@@ -29,8 +29,8 @@ layout: user-self-serve/views/version-8/_master-survey
             }}
         </div>
         <div class="grid__col col-8@m u-pt-no">
-            <h1>Change your contact details</h1>
-            <form action="/prototypes/user-self-serve/version-8/signed-in/index.html">
+            <h1>Help with my password</h1>
+            <form action="{{ pageInfo.parentPath }}/index.html">
                 <p class="field">
                     <fieldset class="fieldset">
                         <legend class="fieldset__legend">Choose an option</legend>
@@ -39,38 +39,12 @@ layout: user-self-serve/views/version-8/_master-survey
                                 <span class="radio">
                                     <input
                                         type="radio"
-                                        id="answering-a-survey-question"
-                                        data-action-url="/prototypes/user-self-serve/version-8/signed-in/account/01-change-account-details/01-change-contact-details.html"
-                                        class="radio__input js-radio"
-                                        value="question-one"
-                                        name="message-query">
-                                    <label class="radio__label" for="answering-a-survey-question">Change contact details</label>
-                                </span>
-                            </p>
-                            <br>
-                            <p class="radios__item">
-                                <span class="radio">
-                                    <input
-                                        type="radio"
-                                        id="information-about-the-survey"
-                                        data-action-url="/prototypes/user-self-serve/version-8/signed-in/account/05-change-business-details/index.html"
-                                        class="radio__input js-radio"
-                                        value="question-two"
-                                        name="message-query">
-                                    <label class="radio__label" for="information-about-the-survey">Change business details</label>
-                                </span>
-                            </p>
-                            <br>
-                            <p class="radios__item">
-                                <span class="radio">
-                                    <input
-                                        type="radio"
-                                        id="access-to-my-surveys"
+                                        id="change-password"
                                         data-action-url="/prototypes/user-self-serve/version-8/signed-in/account/02-change-password/01-change-password.html"
                                         class="radio__input js-radio"
                                         value="question-one"
                                         name="message-query">
-                                    <label class="radio__label" for="access-to-my-surveys">Change password</label>
+                                    <label class="radio__label" for="change-password">Change password</label>
                                 </span>
                             </p>
                             <br>
@@ -78,22 +52,60 @@ layout: user-self-serve/views/version-8/_master-survey
                                 <span class="radio">
                                     <input
                                         type="radio"
-                                        id="other-checkbox"
-                                        data-action-url="/prototypes/user-self-serve/version-8/signed-in/account/07-something-else/index.html"
+                                        id="option-1"
+                                        data-action-url="{{ pageInfo.parentPath }}/option-1/index.html"
+                                        class="radio__input js-radio"
+                                        value="option-1"
+                                        name="message-query">
+                                    <label class="radio__label" for="option-1">I haven't received the password reset email</label>
+                                </span>
+                            </p>
+                            <br>
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                        type="radio"
+                                        id="option-2"
+                                        data-action-url="{{ pageInfo.parentPath }}/option-2/index.html"
+                                        class="radio__input js-radio"
+                                        value="option-2"
+                                        name="message-query">
+                                    <label class="radio__label" for="option-2">My new password isn't being accepted</label>
+                                </span>
+                            </p>
+                            <br>
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                        type="radio"
+                                        id="option-3"
+                                        data-action-url="{{ pageInfo.parentPath }}/option-3/index.html"
+                                        class="radio__input js-radio"
+                                        value="option-3"
+                                        name="message-query">
+                                    <label class="radio__label" for="option-3">I cannot reset my password using the link</label>
+                                </span>
+                            </p>
+                            <br>
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                        type="radio"
+                                        id="other"
+                                        data-action-url="{{ pageInfo.parentPath }}/option-4/index.html"
                                         class="radio__input js-radio "
                                         value="other" 
                                         name="message-query"
-                                        aria-controls="other-checkbox-other-wrap" aria-haspopup="true">
-                                        <label class="radio__label" for="other-checkbox">
+                                        aria-controls="other-wrap" aria-haspopup="true">
+                                        <label class="radio__label" for="other">
                                             Something else
                                         </label>
-                                    </span>
                                 </span>
                             </p>
                         </div>
                     </fieldset>
                 </p>
-                <p class="field u-mt-l">
+                <p class="field">
                     <div class="btn-group">
                         <button type="submit" class="btn">
                             <span class="btn__inner">Continue</span>
@@ -103,7 +115,7 @@ layout: user-self-serve/views/version-8/_master-survey
                                 "type": 'button',
                                 "text": 'Cancel',
                                 "classes": 'btn--secondary btn-group__btn',
-                                "url": "/prototypes/user-self-serve/version-8/signed-in/account/index.html"
+                                "url": "/prototypes/user-self-serve/version-8/signed-in/00-surveys-list.html"
                             }) 
                         }}
                     </div>
