@@ -1,6 +1,6 @@
 ---
 group: Frontstage
-title: User account creation
+title: User self serve
 version: 30.0.0
 layout: user-self-serve/views/version-8/_master-survey
 ---
@@ -30,10 +30,8 @@ layout: user-self-serve/views/version-8/_master-survey
         </div>
         <div class="grid__col col-8@m u-pt-no">
             <h1>Change your contact details</h1>
-
-
             <!--
-            <p>You will need to:</p>
+            <p>You'll need to:</p>
             <ol>
                 <li>Provide the email address</li>
                 <li>Send the enrolment code</li>
@@ -99,14 +97,16 @@ layout: user-self-serve/views/version-8/_master-survey
                 </p>
             </div>
 
-            <p class="field">
-                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-8/signed-in/account/01-change-account-details/02-change-email-address.html';">
-                    <span class="btn__inner">Save</span>
-                </button>
-                <button type="submit" class="btn btn--secondary" onclick="location.href='{{ pageInfo.rootPath }}/version-8/signed-in/account/index.html';">
-                    <span class="btn__inner">Cancel</span>
-                </button>
-            </p>
+            <div class="grid grid--flex grid--gutterless grid--vertical-center grid--no-wrap@s u-mt-m u-mb-m">
+                <div class="grid__col">
+                    <button type="button" class="btn btn-group__btn" onclick="location.href='{{ pageInfo.rootPath }}/version-8/signed-in/account/01-change-account-details/02-change-email-address.html';">
+                        <span class="btn__inner">Save</span>
+                    </button>
+                </div>
+                <div class="grid__col u-ml-m">
+                    <a href="/prototypes/user-self-serve/version-8/signed-in/account/index.html">Cancel</a>
+                </div>
+            </div>
         </div>
     </div>
 

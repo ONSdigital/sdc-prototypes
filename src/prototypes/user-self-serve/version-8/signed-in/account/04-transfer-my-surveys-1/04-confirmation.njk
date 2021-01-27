@@ -1,6 +1,6 @@
 ---
 group: Frontstage
-title: User account creation
+title: User self serve
 version: 30.0.0
 layout: user-self-serve/views/version-8/_master-survey
 ---
@@ -34,8 +34,8 @@ layout: user-self-serve/views/version-8/_master-survey
                         },
                         {
                             "url": '/prototypes/user-self-serve/version-8/signed-in/account/04-transfer-my-surveys-1/03-send-enrolment-codes.html',
-                            "text": 'Send enrolment codes'
-                        }
+                            "text": 'Send instructions'
+                        } 
                     ]
                 }) 
             }}
@@ -47,7 +47,7 @@ layout: user-self-serve/views/version-8/_master-survey
             <p>Email not arrived? It might be in their spam folder.</p>
             <p>If it doesn’t arrive in the next 15 minutes, please call 0300 1234 931.</p>
             <p class="field u-mt-l">
-                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-8/signed-in/00-surveys-list.html';">
+                <button type="button" class="btn btn-group__btn" onclick="location.href='{{ pageInfo.rootPath }}/version-8/signed-in/00-surveys-list.html';">
                     <span class="btn__inner">Back to surveys</span>
                 </button>
             </p>

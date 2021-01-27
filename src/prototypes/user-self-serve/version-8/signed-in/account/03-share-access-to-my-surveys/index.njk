@@ -1,6 +1,6 @@
 ---
 group: Frontstage
-title: User account creation
+title: User self serve
 version: 30.0.0
 layout: user-self-serve/views/version-8/_master-survey
 ---
@@ -23,37 +23,37 @@ layout: user-self-serve/views/version-8/_master-survey
                         {
                             "url": '/prototypes/user-self-serve/version-8/signed-in/account/index.html',
                             "text": 'Account'
-                        }
+                        } 
                     ]
                 }) 
             }}
         </div>
         <div class="grid__col col-8@m u-pt-no">
             <h1>Share access to your surveys</h1>
-            
+
             <div class="panel panel--info panel--simple u-mb-m">
                 <div class="panel__body">
                     <p>If you want to no longer want access to the surveys once you share them, you should <a href="/prototypes/user-self-serve/version-8/signed-in/account/04-transfer-my-surveys/index.html">transfer your surveys</a>.</p>
                 </div>
             </div>
 
-
             <h2 class="u-fs-m">What happens?</h2>
             <ul>
-                <li>You will select which surveys you want to share and enter the recipient's email address</li>
+                <li>You'll select which surveys you want to share and enter the recipient's email address</li>
                 <li>We’ll email the new respondent survey enrolment codes</li>
-                <li>Once confirmed, they will be able to respond to surveys on your behalf and share access to the surveys with their colleagues.</li>
+                <li>Once confirmed, they'll be able to respond to surveys on your behalf and share access to the surveys with their colleagues.</li>
             </ul>
 
-
-            <p class="field u-mt-l">
-                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-8/signed-in/account/03-share-access-to-my-surveys/00-select-business.html';">
-                    <span class="btn__inner">Continue</span>
-                </button>
-                <button type="submit" class="btn btn--secondary" onclick="location.href='{{ pageInfo.rootPath }}/version-8/signed-in/account/index.html';">
-                    <span class="btn__inner">Cancel</span>
-                </button>
-            </p>
+            <div class="grid grid--flex grid--gutterless grid--vertical-center grid--no-wrap@s u-mt-m u-mb-m">
+                <div class="grid__col">
+                    <button type="button" class="btn btn-group__btn" onclick="location.href='{{ pageInfo.rootPath }}/version-8/signed-in/account/03-share-access-to-my-surveys/00-select-business.html';">
+                        <span class="btn__inner">Continue</span>
+                    </button>
+                </div>
+                <div class="grid__col u-ml-m">
+                    <a href="/prototypes/user-self-serve/version-8/signed-in/account/index.html">Cancel</a>
+                </div>
+            </div>
         </div>
     </div>
 
