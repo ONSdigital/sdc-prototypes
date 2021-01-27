@@ -92,21 +92,17 @@ layout: user-self-serve/views/version-8/_master-survey
                         </div>
                     </fieldset>
                 </p>
-                <p class="field u-mt-l">
-                    <div class="btn-group">
-                        <button type="submit" class="btn">
+
+                <div class="grid grid--flex grid--gutterless grid--vertical-center grid--no-wrap@s u-mt-m u-mb-m">
+                    <div class="grid__col">
+                        <button type="submit" class="btn btn-group__btn">
                             <span class="btn__inner">Continue</span>
                         </button>
-                        {{ 
-                            onsButton({
-                                "type": 'button',
-                                "text": 'Cancel',
-                                "classes": 'btn--secondary btn-group__btn',
-                                "url": "/prototypes/user-self-serve/version-8/signed-in/00-surveys-list.html"
-                            }) 
-                        }}
                     </div>
-                </p>
+                    <div class="grid__col u-ml-m">
+                        <a href="/prototypes/user-self-serve/version-8/signed-in/00-surveys-list.html">Cancel</a>
+                    </div>
+                </div>
             </form>
         </div>
     </div>

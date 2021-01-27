@@ -53,13 +53,16 @@ layout: user-self-serve/views/version-8/_master-surveys-list
 
         <div id="main" class="grid__col col-12@m u-pt-no ">
         
-            <div class="panel panel--success panel--simple  u-mb-l" id="success-id">
-                <div class="panel__body">
-                    <p>Message sent. <a href="#">View message</a> </p>
-                </div>
-            </div>
-
-            <p class='u-fs-r'>
+            {% from "components/panel/_macro.njk" import onsPanel %}
+            {{
+                onsPanel({
+                    "type": 'success',
+                    "id": 'success-id',
+                    "icon": 'check',
+                    "body": 'Message sent. <a href="#">View message</a>'
+                })
+            }}
+            <p class='u-fs-r u-mt-l'>
                 <a href="#">Add a survey</a> Using your enrolment code
             </p>
             <!--

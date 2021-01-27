@@ -9,9 +9,16 @@ layout: user-account-creation/views/_index
     {% from "components/button/_macro.njk" import onsButton %}
     <h1>User account creation</h1>
 
+    {% from "components/panel/_macro.njk" import onsPanel %}
+    {{
+        onsPanel({
+            "body": 'Development of this prototype has been discontinued.</p><p>User account creation has been merged into <a href="/prototypes/user-self-serve/version-8/signed-in/account/index.html">User Self Serve Version 8</a>'
+        })
+    }}
+
     <div class="grid">
         <div class="grid__col col-8@m">
-            <h2>Version 4</h2>
+            <h2 class="u-mt-l">Version 4</h2>
             {{ 
                 onsButton({
                     "type": 'button',
