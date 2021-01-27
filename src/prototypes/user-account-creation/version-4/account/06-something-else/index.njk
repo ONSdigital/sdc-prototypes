@@ -59,8 +59,8 @@ layout: user-account-creation/views/version-4/_master
                 })
             }}
             <p class="field">
-        
-            {{
+
+                {{
                 onsTextarea({
                     "id": "textarea",
                     "name": "feedback",
@@ -71,19 +71,16 @@ layout: user-account-creation/views/version-4/_master
             }}
             </p>
             <div class="grid grid--flex grid--gutterless grid--vertical-center grid--no-wrap@s u-mt-m u-mb-m">
-        <div class="grid__col">
-          <button type="button" class="btn btn-group__btn" onclick="location.href='{{ pageInfo.rootPath }}/version-4/10-message-sent.html';">
+                <div class="grid__col">
+                    <button type="button" class="btn btn-group__btn" onclick="location.href='{{ pageInfo.rootPath }}/version-4/10-message-sent.html';">
                         <span class="btn__inner">Send</span>
                     </button>
-                    
+
                 </div>
                 <div class="grid__col u-ml-m">
-                    <a href="/prototypes/user-account-creation/version-4/30-my-account.html';">
-                        <span class="btn__inner">Cancel</span>
-                    </button>
+                    <a href="/prototypes/user-account-creation/version-4/30-my-account.html">Cancel</a>
                 </div>
-            </p>
+            </div>
         </div>
-    </div>
 
-{% endblock %}
+    {% endblock %}
