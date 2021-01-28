@@ -31,9 +31,8 @@ layout: census-website-respond/views/_campaign-master
                     "content": '<p>You still need to complete the census for your term-time university address, even if you are not living there at the moment. You can <a href="https://census-website-respond.netlify.app/end-to-end/uac-request-address/?previous=home&current-journey=new-hh-uac">request a new access code for your university address</a>.</p>'
                 },
                 "image": {
-                    "smallSrc": pageInfo.rootPath + '/img/small/two-male-students-sitting.jpg',
-                    "largeSrc": pageInfo.rootPath + '/img/large/two-male-students-sitting.jpg',
-                    "alt": 'Two male students sitting'
+                    "smallSrc": pageInfo.rootPath + '/img/small/student-standing-by-doors.jpg',
+                    "largeSrc": pageInfo.rootPath + '/img/large/student-standing-by-doors.jpg'
                 }
             })
         }}
@@ -50,9 +49,8 @@ layout: census-website-respond/views/_campaign-master
         %}
             <h2>Why students should take part in the census</h2>
 
-            <p>The information you give in the census informs funding decisions on things like university campus bus links and bike lanes, jobs and training. It also helps to decide where billions of pounds of public money are spent on services such as transport, healthcare and education.</p>
+            <p>The information you give in the census informs funding decisions on things like university campus bus links and bike lanes, jobs and training. It also helps to decide how to plan and fund public services such as healthcare and education. By taking part, you can make sure the student community gets the services it needs now and in the future.</p>
 
-            <p>Without the census, it would be more difficult to make these decisions. That’s why it’s so important everyone takes part and that you make sure you’re counted.</p>
         {% endcall %}
 
         {% call onsPanel({
@@ -75,9 +73,14 @@ layout: census-website-respond/views/_campaign-master
 
                             <h2>All students should fill in the census</h2>
 
-                            <p>Wherever you are, from halls to your old bedroom at home, every student is legally required to complete Census 2021. You will be able to request a code to complete yours online.</p>
+                            <p>Wherever you are, from halls to your old bedroom at home, every student is legally required to complete Census 2021. If you’re currently living at your university address, you should have received a letter in the post containing an access code to complete the census online.</p>
+
+                            <h3>If you are not at your university address</h3>
+
+                            <p>You may not be able to get your letter if you are not currently living at your university address. You will need to <a href="{{pageInfo.rootPath}}/help/get-an-access-code-or-paper-census">request a new access code</a> by text.</p>
 
                             {% call onsPanel({
+                                    "classes": 'u-mt-l',
                                     "type": 'warn'
                                 }) %}
 
@@ -85,14 +88,10 @@ layout: census-website-respond/views/_campaign-master
 
                             {% endcall %}
 
-                            <p>If you have a separate home address in England or Wales, your family needs to include you on their household questionnaire too.</p>
+                            <p>If you have a separate home address in England or Wales, you also need to be included on the census questionnaire at that address.</p>
 
-                            <p>They will not need to answer all the individual questions about you. You should complete these questions on the form about your university address.</p>
 
-                            <h3>Not at your university address?</h3>
-
-                            <p>If you are not currently staying at your university address, you can <a href="{{pageInfo.rootPath}}/help/get-an-access-code-or-paper-census">request a new access code</a> to complete the census.</p>
-
+                            <p>Those at your separate home address do not need to answer all the individual questions about you. You should complete these questions on the form about your university address.</p>
 
                             {%
                                 call onsCollapsible({
@@ -224,7 +223,8 @@ layout: census-website-respond/views/_campaign-master
                                 })
                             %}
 
-                                <p>If you live at home during term time, you need to be included on the household questionnaire.</p>
+                                <p>If you live permanently at home during term time, you need to be included on the household questionnaire. 
+                                You can answer separately from your household if you’d prefer to keep your answers private. You will be able to request an access code to fill in an individual questionnaire on the website.</p>
 
                                 <p>You can answer separately from your household if you’d prefer to keep your answers private.</p>
 
