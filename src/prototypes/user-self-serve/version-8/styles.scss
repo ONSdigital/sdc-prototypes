@@ -32,6 +32,18 @@
   padding-top: 0;
 }
 
+.add-colon::after {
+  content: ':';
+}
+
+dt,
+dd {
+  margin-block-start: 0px;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
 .sidenav {
   height: 100%;
   width: 0;
