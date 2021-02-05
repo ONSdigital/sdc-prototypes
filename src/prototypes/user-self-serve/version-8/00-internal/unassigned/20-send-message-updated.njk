@@ -13,7 +13,17 @@ layout: user-self-serve/views/version-8/_master-internal
 
 {% block main %}
 
-    <div class="grid">
+
+{% from "components/panel/_macro.njk" import onsPanel %}
+{{
+    onsPanel({
+        "type": 'success',
+        "id": 'success-id',
+        "icon": 'check',
+        "body": 'The category has been successfully updated.'
+    })
+}}
+    <div class="grid u-mt-l">
         <div class="grid__col col-8@m">
             <h1>Help with my account</h1>
             <dl class="metadata metadata__list grid grid--gutterless u-cf u-mb-l" title="This is an example of the metadata component" aria-label="This is an example of the metadata component">
