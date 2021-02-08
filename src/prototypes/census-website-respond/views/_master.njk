@@ -23,12 +23,14 @@
 {% from "components/articles/_macro.njk" import onsArticles %}
 {% from "components/call-to-action/_macro.njk" import onsCallToAction %}
 {% from "components/video/_macro.njk" import onsVideo %}
+{% from "components/related-content/_macro.njk" import onsRelatedContent %}
+{% from "components/images/_macro.njk" import onsImage %}
 
 {% block head %}
     <link rel="stylesheet" href="{{pageInfo.rootPath}}/main.css">
 {% endblock %}
 
-{% set designSystemVersion = "31.3.0" %}
+{% set designSystemVersion = "31.4.13" %}
 {% set cdnURL = "https://cdn.ons.gov.uk/sdc/design-system/" + designSystemVersion %}
 
 {% set pageConfig =  { 
@@ -45,7 +47,7 @@
         "ariaLabel": 'Toggle main navigation'
     },
     "cdn": {
-        "version": '31.3.0'
+        "version": '31.4.13'
     },
     "language": {
         "languages": [

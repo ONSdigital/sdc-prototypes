@@ -1,7 +1,7 @@
 ---
 title: News
 group: Census
-version: 31.4.0
+version: 31.4.13
 layout: census-website-respond/views/_master
 ---
 
@@ -23,19 +23,21 @@ layout: census-website-respond/views/_master
 
         </div>
 
-        <main class="page__main" id="main-content" role="main">
+        <main class="page__main u-mt-xs u-mt-m@m" id="main-content" role="main">
 
             <div class="container">
 
-                <div class="col-8@m">
-                    <h1 class="u-mb-s u-mb-l@m u-fs-xxl">News</h1>                           
-                    <p>The latest news, press releases and statements from the census media relations team.</p>
+                <div class="grid">
+                    <div class="grid__col col-7@m">
+                        <h1 class="u-fs-xxl">News</h1>                           
+                        <p>The latest news, press releases and statements from the census media relations team.</p>
+                    </div>
                 </div>
 
             </div>
 
             {{ onsArticles({
-                "classes": 'u-mt-l u-mb-m',
+                "classes": 'u-mt-m@m u-mb-m@m',
                 "articles": [
                     {
                         "featured": true,
@@ -63,10 +65,9 @@ layout: census-website-respond/views/_master
 
                 <div class="grid grid--column@xs@s">
 
-                    <div class="grid__col col-8@m u-pr-m@m">
-
-                        <div class="u-mb-m u-mt-m">
-
+                    <div class="grid__col col-8@m">
+                        
+                        <div class="u-mt-m u-mb-m">
                             {{ onsArticles({
                                 "articles": [
                                     {
@@ -161,7 +162,6 @@ layout: census-website-respond/views/_master
                                     }
                                 ]
                             }) }}
-
                         </div>
 
                         {{ onsPagination({
@@ -182,70 +182,98 @@ layout: census-website-respond/views/_master
                                 }
                             ]
                         }) }}
-                
+                        
                     </div>
 
-                    <div class="grid__col col-4@m">
+                    <div class="grid__col col-4@m push-1@m">
 
-                        <div class="related-links">
+                        <aside class="related-content" aria-label="Related content">
 
-                            <div class="u-pb-s u-bb">
-                                <h2 class="related-links__title u-fs-r--b u-mb-xs" id="related-links">Categories</h2>
-                                {{ onsList({
-                                    "classes": 'list--bare',
-                                    "itemsList": [
-                                        {
-                                            "url": pageInfo.rootPath + '/news/category/',
-                                            "text": 'Press releases',
-                                            "rel": 'category tag'
-                                        },
-                                        {
-                                            "url": pageInfo.rootPath + '/news/category/',
-                                            "text": 'Statements',
-                                            "rel": 'category tag'
-                                        }
-                                    ]
-                                }) }}
+                            <div class="related-content__body">
+
+                                <div class="related-content__section">
+
+                                    <h2 class="related-content__title u-fs-r--b u-mb-xs" id="related-categories">Categories</h2>
+
+                                    <nav class="related-content__navigation" aria-labelledby="related-categories">
+                                        {{
+                                            onsList({
+                                                "classes": 'list--bare',
+                                                "itemsList": [
+                                                    {
+                                                        "url": pageInfo.rootPath + '/news/category',
+                                                        "text": 'Press releases',
+                                                        "rel": 'category tag'
+                                                    },
+                                                    {
+                                                        "url": pageInfo.rootPath + '/news/category',
+                                                        "text": 'Statements',
+                                                        "rel": 'category tag'
+                                                    }
+                                                ]
+                                            })
+                                        }}
+                                    </nav>
+
+                                </div>
+
+                                <div class="related-content__section">
+
+                                    <h2 class="related-content__title u-fs-r--b u-mb-xs">Media enquiries</h2>
+
+                                    <p>Telephone: 0845 604 1858 <br> Monday to Friday, 8:30am to 5:30pm</p>
+
+                                    <p>Out of hours: 07867 906 553</p>
+
+                                    <p>Email: <a href="mailto:media.relations@ons.gov.uk">media.relations@ons.gov.uk</a></p>
+
+                                </div>
+
+                                <div class="related-content__section">
+
+                                    <h2 class="related-content__title u-fs-r--b u-mb-xs">Follow us</h2>
+
+                                    {{
+                                        onsList({
+                                            "classes": 'list--social',
+                                            "itemsList": [
+                                                {
+                                                    "url": 'https://twitter.com/census2021',
+                                                    "text": 'Twitter',
+                                                    "prefixIcon": 'twitter',
+                                                    "iconSize": 'xxl',
+                                                    "rel": 'noreferrer external'
+                                                },
+                                                {
+                                                    "url": 'https://facebook.com/census2021',
+                                                    "text": 'Facebook',
+                                                    "prefixIcon": 'facebook',
+                                                    "iconSize": 'xxl',
+                                                    "rel": 'noreferrer external'
+                                                },
+                                                {
+                                                    "url": 'https://instagram.com/census2021',
+                                                    "text": 'Instagram',
+                                                    "prefixIcon": 'instagram',
+                                                    "iconSize": 'xxl',
+                                                    "rel": 'noreferrer external'
+                                                },
+                                                {
+                                                    "url": 'https://linkedin.com/showcase/census2021',
+                                                    "text": 'LinkedIn',
+                                                    "prefixIcon": 'linkedin',
+                                                    "iconSize": 'xxl',
+                                                    "rel": 'noreferrer external'
+                                                }
+                                            ]
+                                        })
+                                    }}
+
+                                </div>
+
                             </div>
 
-                            <div class="u-pt-m u-pb-s u-bb">
-                                <h2 class="u-fs-r--b u-mb-xs">Media enquiries</h2>
-                                <p>Telephone: 0845 604 1858 <br> Monday to Friday, 8:30am to 5:30pm</p>
-                                <p>Out of hours: 07867 906 553</p>
-                                <p>Email: <a href="mailto:media.relations@ons.gov.uk">media.relations@ons.gov.uk</a></p>
-                            </div>
-
-                            <div class="u-pt-m">
-                                <h2 class="u-fs-r--b u-mb-xs">Follow us</h2>
-                                {{ onsList({
-                                    "classes": 'list--bare list--icons',
-                                    "itemsList": [
-                                        {
-                                            "url": 'https://www.twitter.com/census2021',
-                                            "text": 'Twitter',
-                                            "prefixIcon": 'twitter',
-                                            "iconSize": 'xxl',
-                                            "rel": 'noreferrer external'
-                                        },
-                                        {
-                                            "url": 'https://www.facebook.com/census2021',
-                                            "text": 'Facebook',
-                                            "prefixIcon": 'facebook',
-                                            "iconSize": 'xxl',
-                                            "rel": 'noreferrer external'
-                                        },
-                                        {
-                                            "url": 'https://www.instagram.com/census2021',
-                                            "text": 'Instagram',
-                                            "prefixIcon": 'instagram',
-                                            "iconSize": 'xxl',
-                                            "rel": 'noreferrer external'
-                                        }
-                                    ]
-                                }) }}
-                            </div>
-
-                        </div>
+                        </aside>
 
                     </div>
 

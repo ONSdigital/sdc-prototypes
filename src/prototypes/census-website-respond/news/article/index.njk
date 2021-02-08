@@ -1,7 +1,7 @@
 ---
 title: News
 group: Census
-version: 31.4.0
+version: 31.4.13
 layout: census-website-respond/views/_master
 ---
 
@@ -9,7 +9,7 @@ layout: census-website-respond/views/_master
    
     {% block main %}
 
-        <div class="page__container container">
+        <div class="container">
 
             {{ onsBreadcrumb({
                 "ariaLabel": 'Breadcrumb',
@@ -24,25 +24,37 @@ layout: census-website-respond/views/_master
                     }
                 ]
             }) }}
+
+        </div>
                    
-            <main class="page__main" id="main-content" role="main">
-                
-                <h1 class="u-mb-s u-mb-l@m u-fs-xxl">
+        <main class="page__main u-mt-xs u-mt-m@m" id="main-content" role="main">
+            
+            <div class="container">
+
+                <h1 class="u-fs-xxl">
                     <span class="u-fs-m u-db u-mb-xs u-lighter">Press releases</span>
                     <span class="u-vh">: </span>
                     <span class="u-fs-xxl u-db">Primary and secondary school programmes launched to engage pupils in Census 2021</span>
                 </h1>
 
+            </div>
+
+            <div class="container">
+
                 <div class="grid grid--column@xs@s">
 
-                    <div class="grid__col col-8@m u-mt-m u-pr-m@m">
+                    <div class="grid__col col-8@m">
 
-                        <div class="page__body">
+                        <div class="page__body u-mt-m">
 
-                            <figure class="u-m-no u-mb-l">
-                                <img srcset="{{pageInfo.rootPath}}/img/news/small/counter-cats-large.png 1x, {{pageInfo.rootPath}}/img/news/large/counter-cats-large.png 2x" src="{{pageInfo.rootPath}}/img/news/small/counter-cats-large.png" alt="Census 2021 counter cats">
-                                <!--figcaption class="text-secondary u-mt-xs u-fs-s">Photo attribution if required</figcaption-->
-                            </figure>
+                            {{
+                                onsImage({
+                                    "image": {
+                                        "smallSrc": pageInfo.rootPath + '/img/news/small/counter-cats-large.png',
+                                        "largeSrc": pageInfo.rootPath + '/img/news/large/counter-cats-large.png'
+                                    }
+                                })
+                            }}
 
                             <p>The next generation is set to learn all about the census and how it benefits their local area as part of two new, engaging educational programmes launching this term.</p>
 
@@ -101,45 +113,48 @@ layout: census-website-respond/views/_master
 
                     <div class="grid__col col-3@m push-1@m">
 
-                        <div class="related-links">
 
-                            <div class="u-pb-s u-bb">
-                                <h2 class="related-links__title u-fs-r--b u-mb-xs" id="related-links">Published on</h2>
-                                <p><time datetime="2020-09-23">23 September 2020</time></p>
-                            </div>
+                        <aside class="related-content" aria-label="Related content">
 
-                            <div class="u-pt-m u-pb-s u-bb">
-                                <h2 class="related-links__title u-fs-r--b u-mb-xs" id="related-links">Posted in</h2>
-                                <p><a href="{{pageInfo.rootPath}}/news/category/">Press releases</a></p>
-                            </div>
+                            <div class="related-content__body">
 
-                            <div class="u-pt-m u-pb-s u-bb">
-                                <h2 class="u-fs-r--b u-mb-xs">Tags</h2>
-                                {{ onsList({
-                                    "classes": 'list--bare',
-                                    "itemsList": [
-                                        {
-                                            "url": pageInfo.rootPath + '/news/category/',
-                                            "text": 'Census 2021',
-                                            "rel": 'category tag'
-                                        },
-                                        {
-                                            "url": pageInfo.rootPath + '/news/category/',
-                                            "text": 'Counter Cats',
-                                            "rel": 'category tag'
-                                        },
-                                        {
-                                            "url": pageInfo.rootPath + '/news/category/',
-                                            "text": 'Education',
-                                            "rel": 'category tag'
-                                        }
-                                    ]
-                                }) }}
-                            </div>
+                                <div class="related-content__section">
+                                    <h2 class="related-content__title u-fs-r--b u-mb-xs">Published on</h2>
+                                    <p><time datetime="2020-09-23">23 September 2020</time></p>
+                                </div>
 
-                            <div class="u-pt-m">
-                                <h2 class="u-fs-r--b u-mb-xs">Share this post</h2>
-                                {{ onsList({
+                                <div class="related-content__section">
+                                    <h2 class="related-content__title u-fs-r--b u-mb-xs">Posted in</h2>
+                                    <p><a href="{{pageInfo.rootPath}}/news/category">Press releases</a></p>
+                                </div>
+
+                                <div class="related-content__section">
+                                    <h2 class="related-content__title u-fs-r--b u-mb-xs">Tags</h2>
+                                    {{ onsList({
+                                        "classes": 'list--bare',
+                                        "itemsList": [
+                                            {
+                                                "url": pageInfo.rootPath + '/news/tag',
+                                                "text": 'Census 2021',
+                                                "rel": 'category tag'
+                                            },
+                                            {
+                                                "url": pageInfo.rootPath + '/news/tag',
+                                                "text": 'Counter Cats',
+                                                "rel": 'category tag'
+                                            },
+                                            {
+                                                "url": pageInfo.rootPath + '/news/tag',
+                                                "text": 'Education',
+                                                "rel": 'category tag'
+                                            }
+                                        ]
+                                    }) }}
+                                </div>
+
+                                <div class="related-content__section">
+                                    <h2 class="related-content__title u-fs-r--b u-mb-xs">Share this post</h2>
+                                    {{ onsList({
                                     "classes": 'list--bare list--icons',
                                     "itemsList": [
                                         {
@@ -158,17 +173,19 @@ layout: census-website-respond/views/_master
                                         }
                                     ]
                                 }) }}
+                                </div>
+
                             </div>
 
-                        </div>
+                        </aside>
 
                     </div>
 
                 </div>
 
-            </main>
+            </div>
 
-        </div>
+        </main>
     
     {% endblock %}
 
