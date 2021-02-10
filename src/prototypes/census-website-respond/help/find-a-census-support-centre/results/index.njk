@@ -63,12 +63,6 @@ layout: census-website-respond/views/_master
                                 })
                             }}
 
-                            {{
-                                onsPanel({
-                                    "body": 'Our staff team are specially trained in support adults with a range of needs, with specific specialist awareness of Autism, Learning Disabilities and Mental Health.'
-                                })
-                            }}
-
                             {% call onsCollapsible({
                                 "id": 'collapsible-1',
                                 "title": 'Opening times and facilities',
@@ -76,6 +70,13 @@ layout: census-website-respond/views/_master
                                     "close": 'Hide this'
                                 }
                             }) %}
+
+                            {{
+                                onsPanel({
+                                    "classes": 'u-mb-s',
+                                    "body": 'Our staff team are specially trained in support adults with a range of needs, with specific specialist awareness of Autism, Learning Disabilities and Mental Health.'
+                                })
+                            }}
 
                             <h3 class="u-fs-r--b u-mb-xs">Opening times</h3>
 
