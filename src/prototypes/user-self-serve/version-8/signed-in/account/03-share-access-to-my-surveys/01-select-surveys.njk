@@ -63,51 +63,7 @@ layout: user-self-serve/views/version-8/_master-survey
                 })
             }}
 
-            {{
-                onsCheckboxes({
-                    "legend": "ACME Group Ltd",
-                    "checkboxesLabel": "Select all that apply",
-                    "name": "ACME Group Ltd",
-                    "checkboxes": [
-                        {
-                            "id": "BRSS",
-                            "label": {
-                                "text": "Business Register and Employment Survey"
-                            },
-                            "value": "BRSS"
-                        },
-                        {
-                            "id": "MBS",
-                            "label": {
-                                "text": "Monthly Business Survey"
-                            },
-                            "value": "MBS"
-                        },
-                        {
-                            "id": "QBS",
-                            "label": {
-                                "text": "Quarterly Business Survey"
-                            },
-                            "value": "QBS"
-                        },
-                        {
-                            "id": "MWSS",
-                            "label": {
-                                "text": "Monthly Wages and Salary Survey"
-                            },
-                            "value": "MWSS"
-                        },
-                        {
-                            "id": "QADCA",
-                            "label": {
-                                "text": "Quarterly Acquisitions and Disposals of Capital Assets"
-                            },
-                            "value": "QADCA"
-                        }
-                    ]
-                })
-            }}
-            <div class="grid grid--flex grid--gutterless grid--vertical-center grid--no-wrap@s u-mt-m u-mb-m">
+    <div class="grid grid--flex grid--gutterless grid--vertical-center grid--no-wrap@s u-mt-m u-mb-m">
         <div class="grid__col">
           <button type="button" class="btn btn-group__btn" onclick="location.href='{{ pageInfo.rootPath }}/version-8/signed-in/account/03-share-access-to-my-surveys/02-email-address.html';">
                     <span class="btn__inner">Continue</span>

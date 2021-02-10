@@ -26,8 +26,7 @@ layout: password-hint/views/_master
                         </svg>
                     </span>
                 </dt>
-                <dd class="criteria-false">Criteria not met</dd>
-                <dd class="criteria-true">Criteria met</dd>
+                <dd class="u-vh"><span id="psw-length-status">Criteria not met</span></dd>
 
                 <dt id="uppercase">at least 1 uppercase letter
                     <span class="list__prefix" aria-hidden="true">
@@ -39,8 +38,7 @@ layout: password-hint/views/_master
                         </svg>
                     </span>
                 </dt>
-                <dd class="criteria-false">Criteria not met</dd>
-                <dd class="criteria-true">Criteria met</dd>
+                <dd class="u-vh"><span id="psw-uppercase-status">Criteria not met</span></dd>
 
                 <dt id="number">at least 1 number
                     <span class="list__prefix" aria-hidden="true">
@@ -52,10 +50,9 @@ layout: password-hint/views/_master
                         </svg>
                     </span>
                 </dt>
-                <dd class="criteria-false">Criteria not met</dd>
-                <dd class="criteria-true">Criteria met</dd>
+                <dd class="u-vh"><span id="psw-number-status">Criteria not met</span></dd>
 
-                <dt id="symbol">at least 1 symbol (for example: ?!£%)
+                <dt id="symbol">at least 1 symbol (for example: @ &amp; &pound; %)
                     <span class="list__prefix" aria-hidden="true">
                         <svg class="svg-icon criteria-false" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
                             <path d='m2.21052632 0 4.7894737 4.7894737 4.78947368-4.7894737 2.2105263 2.21052632-4.7902105 4.79021055 4.7902105 4.78873683-2.2105263 2.2105263-4.79021052-4.78873681-4.78873686 4.78873681-2.21052632-2.2105263 4.7894737-4.78947368-4.7894737-4.7894737z' fill='#d0021b' fill-rule='evenodd'/>
@@ -65,8 +62,7 @@ layout: password-hint/views/_master
                         </svg>
                     </span>
                 </dt>
-                <dd class="criteria-false">Criteria not met</dd>
-                <dd class="criteria-true">Criteria met</dd>
+                <dd class="u-vh"><span id="psw-symbol-status">Criteria not met</span></dd>
             </dl>
         </div>
         <label class="label" for="psw">New password</label>
@@ -76,13 +72,13 @@ layout: password-hint/views/_master
             </span>
         <input name="psw" type="password" id="psw" class="input input--text input-type__input u-mt-xs js-password-input"/>
 
-        <div aria-live="polite" class="u-vh aria-summary">
-            Your password still requires at least 8 characters
+        <div aria-live="polite" class="aria-summary u-mt-s">
+            <p>Your password still requires: <span class="">at least 8 characters <span class="">at least 1 uppercase letter</span> <span class="">at least 1 number</span> <span class="">at least 1 symbol (for example: @ &amp; &pound; %)</span></p>
         </div>
 
         <div class="field js-password u-mt-m">
             <label class="label  " for="password">Re-type your new password</label>
-            <input type="password" id="password" class="input input--text input-type__input   u-mt-xs js-password-input"/>
+            <input type="password" id="password" class="input input--text input-type__input u-mt-xs js-password-input"/>
         </div>
     </div>
 
@@ -99,46 +95,62 @@ layout: password-hint/views/_master
         var number = document.getElementById("number");
         var length = document.getElementById("length");
 
+        var symbolStatus = document.getElementById("psw-symbol-status");
+        var uppercaseStatus = document.getElementById("psw-uppercase-status");
+        var numberStatus = document.getElementById("psw-number-status");
+        var lengthStatus = document.getElementById("psw-length-status");
+
+
+
     // When the user starts to type something inside the password field
     myInput.onkeyup = function() {
         
         // Validate length
         if (myInput.value.length >= 8) {
-        length.classList.remove("invalid");
-        length.classList.add("valid");
+            lengthStatus.innerHTML = "Criteria met";
+            length.classList.remove("invalid");
+            length.classList.add("valid");
+
         } else {
-        length.classList.remove("valid");
-        length.classList.add("invalid");
+            lengthStatus.innerHTML = "Criteria not met";
+            length.classList.remove("valid");
+            length.classList.add("invalid");
         }
 
         // Validate uppercase letters
         var upperCaseLetters = /[A-Z]/g;
         if (myInput.value.match(upperCaseLetters)) {
-        uppercase.classList.remove("invalid");
-        uppercase.classList.add("valid");
+            uppercaseStatus.innerHTML = "Criteria met";
+            uppercase.classList.remove("invalid");
+            uppercase.classList.add("valid");
         } else {
-        uppercase.classList.remove("valid");
-        uppercase.classList.add("invalid");
+            uppercaseStatus.innerHTML = "Criteria not met";
+            uppercase.classList.remove("valid");
+            uppercase.classList.add("invalid");
         }
 
         // Validate symbols
         var symbols = /[-!@£$%^&*()_+|~=`{}\[\]:";'<>?,.\/]/g;
         if (myInput.value.match(symbols)) {
-        symbol.classList.remove("invalid");
-        symbol.classList.add("valid");
+            symbolStatus.innerHTML = "Criteria met";
+            symbol.classList.remove("invalid");
+            symbol.classList.add("valid");
         } else {
-        symbol.classList.remove("valid");
-        symbol.classList.add("invalid");
+            symbolStatus.innerHTML = "Criteria not met";
+            symbol.classList.remove("valid");
+            symbol.classList.add("invalid");
         }
 
         // Validate numbers
         var numbers = /[0-9]/g;
         if (myInput.value.match(numbers)) {
-        number.classList.remove("invalid");
-        number.classList.add("valid");
+            numberStatus.innerHTML = "Criteria met";
+            number.classList.remove("invalid");
+            number.classList.add("valid");
         } else {
-        number.classList.remove("valid");
-        number.classList.add("invalid");
+            numberStatus.innerHTML = "Criteria not met";
+            number.classList.remove("valid");
+            number.classList.add("invalid");
         }
     }
     </script>
