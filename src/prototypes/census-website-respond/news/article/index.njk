@@ -153,26 +153,15 @@ layout: census-website-respond/views/_master
                                 </div>
 
                                 <div class="related-content__section">
-                                    <h2 class="related-content__title u-fs-r--b u-mb-xs">Share this post</h2>
-                                    {{ onsList({
-                                    "classes": 'list--bare list--icons',
-                                    "itemsList": [
-                                        {
-                                            "url": '#0',
-                                            "text": 'Twitter',
-                                            "prefixIcon": 'twitter',
-                                            "iconSize": 'xxl',
-                                            "rel": 'noreferrer external'
-                                        },
-                                        {
-                                            "url": '#0',
-                                            "text": 'Facebook',
-                                            "prefixIcon": 'facebook',
-                                            "iconSize": 'xxl',
-                                            "rel": 'noreferrer external'
-                                        }
-                                    ]
-                                }) }}
+                                    {{
+                                        onsSharePage({
+                                            "title": "Share this post",
+                                            "pageTitle": "Share this post",
+                                            "pageURL": "https://example.com/a-page-to-share",
+                                            "facebook": true,
+                                            "twitter": true
+                                        })
+                                    }}
                                 </div>
 
                             </div>

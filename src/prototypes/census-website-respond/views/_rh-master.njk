@@ -21,6 +21,7 @@
 {% from "components/text-indent/_macro.njk" import onsTextIndent %}
 {% from "components/call-to-action/_macro.njk" import onsCallToAction %}
 {% from "components/video/_macro.njk" import onsVideo %}
+{% from "components/share/_macro.njk" import onsSharePage %}
 
 {% block head %}
     <link rel="stylesheet" href="{{pageInfo.rootPath}}/main.css">
@@ -107,10 +108,7 @@
         ],
         "copyrightDeclaration": {
             "copyright": 'Crown copyright and database rights 2020 OS 100019153.',
-            "text": 'Use of address data is subject to the',
-            "link": 'terms and conditions',
-            "url": '#0',
-            "newWindow": true
+            "text": 'Use of address data is subject to the terms and conditions.'
         }
     }
 } %}
