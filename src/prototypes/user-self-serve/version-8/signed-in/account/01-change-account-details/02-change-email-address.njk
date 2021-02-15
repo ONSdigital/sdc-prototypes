@@ -7,6 +7,7 @@ layout: user-self-serve/views/version-8/_master-survey
 
 {% from "components/input/_macro.njk" import onsInput %}
 {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+{% from "components/panel/_macro.njk" import onsPanel %}
 
 {% block main %}
 
@@ -33,7 +34,6 @@ layout: user-self-serve/views/version-8/_master-survey
             }}
         </div>
         <div class="grid__col col-8@m u-pt-no">
-            {% from "components/panel/_macro.njk" import onsPanel %}
             {{
                 onsPanel({
                     "type": 'success',
@@ -43,15 +43,15 @@ layout: user-self-serve/views/version-8/_master-survey
                 })
             }}
 
-            <h1>Change email address</h1>
+            <h1 class="u-mt-m">Change email address</h1>
             <p>You will need to authorise a change of email address.</p>
             <p>We will send a confirmation email to <b>jane.doe@acme.com</b>.</p>
 
-            <div class="panel panel--info panel--simple u-mb-m">
-                <div class="panel__body">
-                    <p>If you are longer required to respond your surveys you can <a href="/prototypes/user-self-serve/version-8/signed-in/account/04-transfer-my-surveys/index.html">transfer your surveys</a> to a colleague.</p>
-                </div>
-            </div>
+            {{
+                onsPanel({
+                    "body": 'If you are longer required to respond your surveys you can <a href="/prototypes/user-self-serve/version-8/signed-in/account/04-transfer-my-surveys/index.html">transfer your surveys</a> to a colleague.'
+                })
+            }}
 
             <div class="grid grid--flex grid--gutterless grid--vertical-center grid--no-wrap@s u-mt-m u-mb-m">
                 <div class="grid__col">

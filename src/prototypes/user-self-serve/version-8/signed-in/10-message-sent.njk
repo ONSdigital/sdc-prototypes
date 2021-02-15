@@ -9,50 +9,6 @@ layout: user-self-serve/views/version-8/_master-surveys-list
 {% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
 
 {% block main %}
-
-    <div class="grid">
-        <div id="mySidenav" class="grid__col col-2@m sidenav u-pt-s">
-            {{ 
-                onsCheckboxes({
-                    "legend": "Filter surveys",
-                    "name": "filter",
-                    "checkboxes": [
-                        {
-                            "id": "not-started",
-                            "classes": "input--w-8",
-                            "label": {
-                                "text": "Not started"
-                            },
-                            "value": "not-started"
-                        },
-                        {
-                            "id": "olives",
-                            "classes": "input--w-8",
-                            "label": {
-                                "text": "In progress"
-                            },
-                            "value": "in-progress"
-                        },
-                        {
-                            "id": "overdue",
-                            "classes": "input--w-8",
-                            "label": {
-                                "text": "Overdue"
-                            },
-                            "value": "overdue"
-                        }
-                    ]
-                }) 
-            }}
-            <!-- <p class="field">
-                <button type="button" class="btn btn--small">
-                    <span class="btn__inner">Apply filter</span>
-                </button>
-            </p> -->
-        </div>
-
-        <div id="main" class="grid__col col-12@m u-pt-no ">
-        
             {% from "components/panel/_macro.njk" import onsPanel %}
             {{
                 onsPanel({
@@ -62,161 +18,168 @@ layout: user-self-serve/views/version-8/_master-surveys-list
                     "body": 'Message sent. <a href="#">View message</a>'
                 })
             }}
-            <p class='u-fs-r u-mt-l'>
-                <a href="#">Add a survey</a> Using your enrolment code
-            </p>
-            <!--
-            <p class="field show-hide">
-                <button id="openNavBtn" type="button" class="btn btn--secondary btn--small" onclick="openNav()">
-                    <span class="btn__inner">Show filter</span>
-                </button>
-                <button id="closeNavBtn" type="button" style="display:none" class="btn btn--secondary btn--small" onclick="closeNav()">
-                    <span class="btn__inner">Hide filter</span>
-                </button>
-            </p>
-            -->
 
-            <!-- <div class="panel panel--error panel--simple u-mt-s u-pb-xs">
-                <div class="panel__body">
-                    <section class="survey">
-                        <div class="grid">
-                            <div class="grid__col col-5@m">
-                                <h2 class="u-fs-r u-fw-b u-mb-xs">
-                                    <a href="#">Monthly Business Survey</a>
-                                </h2>
-                                <p class="u-fs-s u-mb-xs">
-                                    <span>for ACME Consumer Products</span>
-                                </p>
-                                <p class="u-fs-s u-mb-xs">Period covered: December 2019</p>
-                            </div>
-                            <div class="grid__col col-4@m u-pl-xs">
-                                <h2 class="u-fs-r u-fw-b u-mb-xs">
-                                    <span class="panel__error">Overdue by 3 days</span>
-                                </h2>
-                                <p class="u-fs-s u-mb-xs">Submit by 11th Jan 2020, 23:59</p>
-                            </div>
-                            <div class="grid__col col-3@m u-pl-no">
-                                <h2 class="u-fs-r u-fw-b u-mb-xs u-ta-right">
-                                    <span class="status status--success">In progress</span> 
-                                </h2>
-                                <p class="u-fs-s u-mb-xs u-ta-right">
-                                    <a href="{{ pageInfo.rootPath }}/version-8/signed-in/help/index.html">Help with this survey</a>
-                                </p>
-                            </div>
-                        </div>
+            
+
+
+        <div class="grid">
+            <div class="grid__col col-12@m">
+                <div class="pl-grid-col">
+                    <section role="region" class="tabs">
+                        <section id="tabId1" class="tabs__panel">
+                            <p class='u-fs-r'>
+                                <a href="#">Add a survey</a> Using your enrolment code
+                            </p>
+                            <table class="table table--row-hover">
+                                <caption class="table__caption u-vh">Your surveys</caption>
+                                <thead class="table__head">
+                                    <tr class="table__row">
+                                        <th scope="col" class="table__header">Survey</th>
+                                        <th scope="col" class="table__header">Period covered</th>
+                                        <th scope="col" class="table__header">Submit by</th>
+                                        <th scope="col" class="table__header">Status</th>
+                                        <th scope="col" class="table__header">
+                                            <span class="u-vh">Action</span></th>
+                                    </tr>
+                                </thead>
+                                <tbody class="table__body">
+                                    <tr class="table__row">
+                                        <td class="table__cell ">
+                                            <p class="u-mb-xs">Monthly Business Survey</p>
+                                            <p class="u-fs-s u-mb-xs">Business: Vehement Capital Partners</p>
+                                            <p class="u-fs-s u-mb-xs">Ref: 11110000009</p>
+                                        </td>
+                                        <td class="table__cell td-period-covered">
+                                            <p>December 2019</p>
+                                        </td>
+                                        <td class="table__cell td-submit-by">
+                                            <p>7th Jan 2019</p>
+                                        </td>
+                                        <td class="table__cell td-status">
+                                            <p>In progress</p>
+                                        </td>
+                                        <td class="table__cell ">
+                                            <button type="submit" class="btn btn--small">
+                                                <span class="btn__inner">Access&nbsp;survey</span>
+                                            </button>
+                                            <p class="u-mt-s">
+                                                <a href="{{ pageInfo.rootPath }}/version-8/signed-in/help/index.html" class="u-fs-s u-nowrap">Help with this survey</a>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr class="table__row">
+                                        <td class="table__cell ">
+                                            <p class="u-mb-xs">Monthly Wages and Salary Survey</p>
+                                            <p class="u-fs-s u-mb-xs">Business: Vehement Capital Partners</p>
+                                            <p class="u-fs-s u-mb-xs">Ref: 11110000009</p>
+                                        </td>
+                                        <td class="table__cell td-period-covered">
+                                            <p>December 2019</p>
+                                        </td>
+                                        <td class="table__cell td-submit-by">
+                                            <p>7th Jan 2019</p>
+                                        </td>
+                                        <td class="table__cell td-status">
+                                            <p>In progress</p>
+                                        </td>
+                                        <td class="table__cell ">
+                                            <button type="submit" class="btn btn--small">
+                                                <span class="btn__inner">Access&nbsp;survey</span>
+                                            </button>
+                                            <p class="u-mt-s">
+                                                <a href="{{ pageInfo.rootPath }}/version-8/signed-in/help/index.html" class="u-fs-s u-nowrap">Help with this survey</a>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr class="table__row">
+                                        <td class="table__cell ">
+                                            <p class="u-mb-xs">Quarterly Business Survey</p>
+                                            <p class="u-fs-s u-mb-xs">Business: Vehement Capital Partners</p>
+                                            <p class="u-fs-s u-mb-xs">Ref: 11110000009</p>
+                                        </td>
+                                        <td class="table__cell td-period-covered">
+                                            <p>December 2019</p>
+                                        </td>
+                                        <td class="table__cell td-submit-by">
+                                            <p>3rd Jan 2020</p>
+                                        </td>
+                                        <td class="table__cell td-status">
+                                            <p>In progress</p>
+                                        </td>
+                                        <td class="table__cell ">
+                                            <button type="submit" class="btn btn--small">
+                                                <span class="btn__inner">Access&nbsp;survey</span>
+                                            </button>
+                                            <p class="u-mt-s">
+                                                <a href="{{ pageInfo.rootPath }}/version-8/signed-in/help/index.html" class="u-fs-s u-nowrap">Help with this survey</a>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr class="table__row">
+                                        <td class="table__cell ">
+                                            <p class="u-mb-xs">Quarterly Acquisitions and Disposals of Capital Assets</p>
+                                            <p class="u-fs-s u-mb-xs">Business: Vehement Capital Partners</p>
+                                            <p class="u-fs-s u-mb-xs">Ref: 11110000009</p>
+                                        </td>
+                                        <td class="table__cell td-period-covered">
+                                            <p>1st October to 31 December</p>
+                                        </td>
+                                        <td class="table__cell td-submit-by">
+                                            <p>7th Jan 2020</p>
+                                        </td>
+                                        <td class="table__cell td-status">
+                                            <p>In progress</p>
+                                        </td>
+                                        <td class="table__cell ">
+                                            <button type="submit" class="btn btn--small">
+                                                <span class="btn__inner">Access&nbsp;survey</span>
+                                            </button>
+                                            <p class="u-mt-s">
+                                                <a href="{{ pageInfo.rootPath }}/version-8/signed-in/help/index.html" class="u-fs-s u-nowrap">Help with this survey</a>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr class="table__row">
+                                        <td class="table__cell ">
+                                            <p class="u-mb-xs">Business Register and Employment Survey</p>
+                                            <p class="u-fs-s u-mb-xs">Business: Vehement Capital Partners</p>
+                                            <p class="u-fs-s u-mb-xs">Ref: 11110000009</p>
+                                        </td>
+                                        <td class="table__cell td-period-covered">
+                                            <p>Please complete all questions as at 13/09/2020</p>
+                                        </td>
+                                        <td class="table__cell td-submit-by">
+                                            <p>4 October 2020</p>
+                                        </td>
+                                        <td class="table__cell td-status">
+                                            <p>In progress</p>
+                                        </td>
+                                        <td class="table__cell ">
+                                            <button type="submit" class="btn btn--small">
+                                                <span class="btn__inner">Access&nbsp;survey</span>
+                                            </button>
+                                            <p class="u-mt-s">
+                                                <a href="{{ pageInfo.rootPath }}/version-8/signed-in/help/index.html" class="u-fs-s u-nowrap">Help with this survey</a>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <p class='u-fs-r'>
+                                <a href="#">Is your survey not listed?</a>
+                            </p>
+                        </section>
+                        <!-- <section id="tabId2" class="tabs__panel">
+                        <p class='u-fs-r'>Nothing here</p>
+                    </section>
+                    <section id="tabId3" class="tabs__panel">
+                        <p class='u-fs-r'>Nothing here</p>
+                    </section>-->
                     </section>
                 </div>
-            </div> -->
-
-            <section class="survey u-bb">
-                <div class="grid">
-                    <div class="grid__col col-5@m u-pt-s u-pb-s">
-                        <h2 class="u-fs-r u-fw-b u-mb-xs">
-                            <a href="{{ pageInfo.rootPath }}/version-8/signed-in/00-surveys-list.html">Monthly Wages and Salary Survey</a>
-                        </h2>
-                        <p class="u-fs-s u-mb-xs ">
-                            <span>for ACME Consumer Products</span></p>
-                        <p class="u-fs-s u-mb-xs ">Period covered: December 2019</p>
-                    </div>
-                    <div class="grid__col col-4@m u-pt-s u-pb-s">
-                        <h2 class="u-fs-r u-fw-b u-mb-xs">
-                            <span>Due in 3 days</span>
-                        </h2>
-                        <p class="u-fs-s u-mb-xs">Submit by 14th Jan 2020, 23:59</p>
-                    </div>
-                    <div class="grid__col col-3@m u-pt-s u-pl-no">
-                        <h2 class="u-fs-r u-fw-b u-mb-xs u-ta-right">
-                            <span class="status status--success">In progress</span> 
-                        </h2>
-                        <p class="u-mb-m u-ta-right">
-                            <a href="{{ pageInfo.rootPath }}/version-8/signed-in/help/index.html">Help with this survey</a>
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="survey u-bb">
-                <div class="grid">
-                    <div class="grid__col col-5@m u-pt-s u-pb-s">
-                        <h2 class="u-fs-r u-fw-b u-mb-xs">
-                            <a href="{{ pageInfo.rootPath }}/version-8/signed-in/00-surveys-list.html">Quarterly Business Survey</a>
-                        </h2>
-                        <p class="u-fs-s u-mb-xs ">
-                            <span>for ACME Consumer Products</span></p>
-                        <p class="u-fs-s u-mb-xs ">Period covered: December 2019</p>
-                    </div>
-                    <div class="grid__col col-4@m u-pt-s u-pb-s">
-                        <h2 class="u-fs-r u-fw-b u-mb-xs">
-                            <span>Due in 5 days</span>
-                        </h2>
-                        <p class="u-fs-s u-mb-xs">Submit by 16th Jan 2020, 23:59</p>
-                    </div>
-                    <div class="grid__col col-3@m u-pt-s u-pl-no">
-                        <h2 class="u-fs-r u-fw-b u-mb-xs u-ta-right">
-                            <span class="status status--success">In progress</span> 
-                        </h2>
-                        <p class="u-mb-m u-ta-right">
-                            <a href="{{ pageInfo.rootPath }}/version-8/signed-in/help/index.html">Help with this survey</a>
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="survey u-bb">
-                <div class="grid">
-                    <div class="grid__col col-5@m u-pt-s u-pb-s">
-                        <h2 class="u-fs-r u-fw-b u-mb-xs">
-                            <a href="{{ pageInfo.rootPath }}/version-8/signed-in/00-surveys-list.html">Quarterly Acquisitions and Disposals of Capital Assets</a>
-                        </h2>
-                        <p class="u-fs-s u-mb-xs ">
-                            <span>for ACME Consumer Products</span></p>
-                        <p class="u-fs-s u-mb-xs ">Period covered: December 2019</p>
-                    </div>
-                    <div class="grid__col col-4@m u-pt-s u-pb-s">
-                        <h2 class="u-fs-r u-fw-b u-mb-xs">
-                            <span>Due in 5 days</span>
-                        </h2>
-                        <p class="u-fs-s u-mb-xs">Submit by 16th Jan 2020, 23:59</p>
-                    </div>
-                    <div class="grid__col col-3@m u-pt-s u-pl-no">
-                        <h2 class="u-fs-r u-mb-xs u-ta-right">
-                            Not started
-                        </h2>
-                        <p class="u-mb-m u-ta-right">
-                            <a href="{{ pageInfo.rootPath }}/version-8/signed-in/help/index.html">Help with this survey</a>
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="survey">
-                <div class="grid">
-                    <div class="grid__col col-5@m u-pt-s u-pb-s">
-                        <h2 class="u-fs-r u-fw-b u-mb-xs">
-                            <a href="{{ pageInfo.rootPath }}/version-8/signed-in/00-surveys-list.html">Business Register and Employment Survey</a>
-                        </h2>
-                        <p class="u-fs-s u-mb-xs ">
-                            <span>for ACME Consumer Products</span></p>
-                        <p class="u-fs-s u-mb-xs ">Period covered: December 2019</p>
-                    </div>
-                    <div class="grid__col col-4@m u-pt-s u-pb-s">
-                        <h2 class="u-fs-r u-fw-b u-mb-xs">
-                            <span>Due in 15 days</span>
-                        </h2>
-                        <p class="u-fs-s u-mb-xs">Submit by 26th Jan 2020, 23:59</p>
-                    </div>
-                    <div class="grid__col col-3@m u-pt-s u-pl-no">
-                        <h2 class="u-fs-r u-mb-xs u-ta-right">
-                            Not started
-                        </h2>
-                        <p class="u-mb-m u-ta-right">
-                            <a href="{{ pageInfo.rootPath }}/version-8/signed-in/help/index.html">Help with this survey</a>
-                        </p>
-                    </div>
-                </div>
-            </section>
+            </div>
         </div>
-    </div>
 
     <script>
         function openNav() {
