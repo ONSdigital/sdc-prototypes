@@ -45,18 +45,19 @@ layout: user-self-serve/views/version-8/_master-survey
 
             <h1 class="u-mt-m">Change email address</h1>
             <p>You will need to authorise a change of email address.</p>
-            <p>We will send a confirmation email to <b>jane.doe@acme.com</b>.</p>
+
+            <p>We will send a verification email to <b>jane.doe@acme.com</b>.</p>
 
             {{
                 onsPanel({
-                    "body": 'If you are longer required to respond your surveys you can <a href="/prototypes/user-self-serve/version-8/signed-in/account/04-transfer-my-surveys/index.html">transfer your surveys</a> to a colleague.'
+                    "body": 'If you are longer required to respond to your surveys you can <a href="/prototypes/user-self-serve/version-8/signed-in/account/04-transfer-my-surveys/index.html">transfer your surveys</a> to a colleague.'
                 })
             }}
 
             <div class="grid grid--flex grid--gutterless grid--vertical-center grid--no-wrap@s u-mt-m u-mb-m">
                 <div class="grid__col">
                     <button type="button" class="btn btn-group__btn" onclick="location.href='{{ pageInfo.rootPath }}/version-8/signed-in/account/01-change-account-details/04-confirmation.html';">
-                        <span class="btn__inner">Send</span>
+                        <span class="btn__inner">Send verification email</span>
                     </button>
 
                 </div>
