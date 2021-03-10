@@ -45,18 +45,20 @@ layout: user-self-serve/views/version-8/_master-survey
                 <div class="panel__body">
                     <ol class="list ">
                         <li class="list__item ">
-                            <a href="#error" class="list__link js-inpagelink">You've reached the maximum amount of emails you can enroll on this survey</a>
+                            <a href="#error" class="list__link js-inpagelink">You have reached the maximum amount of emails you can enroll on one or more surveys.</a>
                         </li>
                     </ol>
                 </div>
             </div>
             <h1 class="u-mt-s">Select surveys to share</h1>
 
+<!--
             <p class="field u-mt-s">
                 <button type="submit" class="btn btn--secondary btn--small">
                     <span class="btn__inner">Select all surveys</span>
                 </button>
             </p>
+-->
 
             {{
                 onsCheckboxes({
@@ -84,8 +86,8 @@ layout: user-self-serve/views/version-8/_master-survey
             <div id="error" class="panel panel--error panel--simple js-error-panel">
                 <div class="panel__body">
                     <p class="panel__error">
-                        <strong>You've reached the maximum amount of emails you can enroll on the Business Register and Employment Survey</strong>
-                        <p>This means you will be unable to share the Business Register and Employment Survey with any more colleagues. Deselect the survey to continue or call 0300 1234 931 to discuss your options.</p>
+                        <strong>You have reached the maximum amount of emails you can enroll on one or more surveys.</strong>
+                        <p>Deselect the survey/s to continue or call 0300 1234 931 to discuss your options.</p>
                     </p>
                     {{
                 onsCheckboxes({
