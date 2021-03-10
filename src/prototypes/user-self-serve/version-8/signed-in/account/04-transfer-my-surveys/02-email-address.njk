@@ -42,7 +42,6 @@ layout: user-self-serve/views/version-8/_master-survey
         </div>
         <div class="grid__col col-8@m u-pt-no">
             <h1>Enter recipient's email address</h1>
-            <p>This is the person who will be able to respond to your surveys in your absence.</p>
             
             {% from "components/panel/_macro.njk" import onsPanel %}
             {{
@@ -58,6 +57,7 @@ layout: user-self-serve/views/version-8/_master-survey
                     "id": "text",
                     "label": {
                         "text": "Recipient's email address"
+                        "description": "This is the person who will be able to respond to your surveys in your absence."
                     }
                 }) 
             }}
