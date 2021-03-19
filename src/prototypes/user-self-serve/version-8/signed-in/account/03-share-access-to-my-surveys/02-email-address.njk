@@ -42,7 +42,7 @@ layout: user-self-serve/views/version-8/_master-survey
         </div>
         <div class="grid__col col-8@m u-pt-no">
             <h1>Enter recipient's email address</h1>
-            
+
             {% from "components/panel/_macro.njk" import onsPanel %}
             {{
                 onsPanel({
@@ -62,13 +62,12 @@ layout: user-self-serve/views/version-8/_master-survey
             }}
             </p>
 
-
             <div class="grid grid--flex grid--gutterless grid--vertical-center grid--no-wrap@s u-mt-m u-mb-m">
-        <div class="grid__col">
-          <button type="button" class="btn btn-group__btn" onclick="location.href='{{ pageInfo.rootPath }}/version-8/signed-in/account/03-share-access-to-my-surveys/03-send-enrolment-codes.html';">
-                    <span class="btn__inner">Continue</span>
-                </button>
-                
+                <div class="grid__col">
+                    <button type="button" class="btn btn-group__btn" onclick="location.href='{{ pageInfo.rootPath }}/version-8/signed-in/account/03-share-access-to-my-surveys/03-send-enrolment-codes.html';">
+                        <span class="btn__inner">Continue</span>
+                    </button>
+
                 </div>
                 <div class="grid__col u-ml-m">
                     <a href="/prototypes/user-self-serve/version-8/signed-in/account/index.html">Cancel</a>
