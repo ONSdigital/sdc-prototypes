@@ -17,95 +17,87 @@ layout: user-self-serve/views/version-8/_master-internal
         <div class="grid__col col-8@m">
             <h1>Change message survey or assign a category</h1>
             <form action="{{ pageInfo.parentPath }}/20-send-message-updated.html">
-                <input type="hidden" name="csrf_token" value="">
-                <div class="field">
-                    <label class="label  " for="survey-list">Select a survey</label>
-                    <select id="survey-list" name="select-survey" class="input input--select ">
-                        <option value="" selected="" disabled="">Select a survey</option>
-                        <option value="123adamtest" "id"="123adamtest">123adamtest</option>
-                        <option value="ABS202sdc009" "id"="ABS202sdc009">ABS202sdc009</option>
-                        <option value="AITIS" "id"="AITIS">AITIS</option>
-                        <option value="ASHE" "id"="ASHE">ASHE</option>
-                        <option value="Ada" "id"="Ada">Ada</option>
-                        <option value="BICS" "id"="BICS">BICS</option>
-                        <option value="BRES" "id"="BRES">BRES</option>
-                        <option value="Blocks" "id"="Blocks">Blocks</option>
-                        <option value="Bricks" "id"="Bricks">Bricks</option>
-                        <option value="CAT" "id"="CAT">CAT</option>
-                        <option value="EPE" "id"="EPE">EPE</option>
-                        <option value="Ecommerce" "id"="Ecommerce">Ecommerce</option>
-                        <option value="FDI" "id"="FDI">FDI</option>
-                        <option value="FSPS" "id"="FSPS">FSPS</option>
-                        <option value="GPT" "id"="GPT">GPT</option>
-                        <option value="GovERD" "id"="GovERD">GovERD</option>
-                        <option value="LCREE" "id"="LCREE">LCREE</option>
-                        <option value="MBS" "id"="MBS">MBS</option>
-                        <option value="MES" "id"="MES">MES</option>
-                        <option value="MTS" "id"="MTS">MTS</option>
-                        <option value="MWSS" "id"="MWSS">MWSS</option>
-                        <option value="NBS" "id"="NBS">NBS</option>
-                        <option value="OFATS" "id"="OFATS">OFATS</option>
-                        <option value="PCS" "id"="PCS">PCS</option>
-                        <option value="QBS" "id"="QBS">QBS</option>
-                        <option value="QCAS" "id"="QCAS">QCAS</option>
-                        <option value="QITIS" "id"="QITIS">QITIS</option>
-                        <option value="QPSESCS" "id"="QPSESCS">QPSESCS</option>
-                        <option value="QPSESLA" "id"="QPSESLA">QPSESLA</option>
-                        <option value="QPSESPB" "id"="QPSESPB">QPSESPB</option>
-                        <option value="QSS" "id"="QSS">QSS</option>
-                        <option value="RSI" "id"="RSI">RSI</option>
-                        <option value="Sand&amp;Gravel" "id"="Sand&amp;Gravel">Sand &amp; Gravel</option>
-                        <option value="TBS" "id"="TBS">TBS</option>
-                        <option value="TEST" "id"="TEST">TEST</option>
-                        <option value="TEST1234" "id"="TEST1234">TEST1234</option>
-                        <option value="TESTY" "id"="TESTY">TESTY</option>
-                        <option value="TNS" "id"="TNS">TNS</option>
-                        <option value="TST" "id"="TST">TST</option>
-                        <option value="Test" "id"="Test">Test</option>
-                        <option value="Testttttttttttt1111" "id"="Testttttttttttt1111">Testttttttttttt1111</option>
-                        <option value="Tst" "id"="Tst">Tst</option>
-                        <option value="UKIS" "id"="UKIS">UKIS</option>
-                        <option value="Vacancies" "id"="Vacancies">Vacancies</option>
-                        <option value="W<b>BT</b>" "id"="W<b>BT</b>">WBT</option>
-                        <option value="adamtest" "id"="adamtest">adamtest</option>
-                        <option value="census" "id"="census">census</option>
-                        <option value="tessst" "id"="tessst">tessst</option>
-                        <option value="test9999" "id"="test9999">test9999</option>
-                        <option value="tsssssst" "id"="tsssssst">tsssssst</option>
-                        <option value="tsst" "id"="tsst">tsst</option>
-                        <option value="tst" "id"="tst">tst</option>
-                    </select>
-                </div>
+            
+            {{
+                onsRadios({
+                    "legend": "Choose an option",
+                    "name": "message",
+                    "radios": [
 
-                <span class="radios__label u-mt-s u-fs-r--b" aria-hidden="true">Or </span>
-
-                {{
-                    onsRadios({
-                        "legend": "Select a category",
-                        "name": "food",
-                        "radios": [
-                            {
-                                "id": "technical",
-                                "label": {
-                                    "text": "Technical issue"
-                                },
-                                "value": "technical"
+                        {
+                            "id": "survey",
+                            "label": {
+                                "text": "Survey"
                             },
-                            {
-                                "id": "account",
+                            "value": "survey",
+                            "other": {
+                                "otherType": "select",
+                                "id": "choose-survey",
+                                "name": "choose-survey",
                                 "label": {
-                                    "text": "Account query"
+                                    "text": "Please specify the survey"
                                 },
-                                "value": "account"
+                                "options": [
+                                    {
+                                        "value": "",
+                                        "text": "Select survey",
+                                        "disabled": true,
+                                        "selected": true
+                                    },
+                                    { "value": "ASHE", "text": "ASHE" },
+                                    { "value": "Ada", "text": "Ada" },
+                                    { "value": "BRES", "text": "BRES" },
+                                    { "value": "Blocks", "text": "Blocks" },
+                                    { "value": "Bricks", "text": "Bricks" },
+                                    { "value": "CAT", "text": "CAT" },
+                                    { "value": "COVID", "text": "COVID" },
+                                    { "value": "EPE", "text": "EPE" },
+                                    { "value": "Ecommerce", "text": "Ecommerce" },
+                                    { "value": "FDI", "text": "FDI" },
+                                    { "value": "FSPS", "text": "FSPS" },
+                                    { "value": "GovERD", "text": "GovERD" },
+                                    { "value": "MBS", "text": "MBS" },
+                                    { "value": "MES", "text": "MES" },
+                                    { "value": "MTS", "text": "MTS" },
+                                    { "value": "MWSS", "text": "MWSS" },
+                                    { "value": "NBS", "text": "NBS" },
+                                    { "value": "OFATS", "text": "OFATS" },
+                                    { "value": "PCS", "text": "PCS" },
+                                    { "value": "QBS", "text": "QBS" },
+                                    { "value": "QCAS", "text": "QCAS" },
+                                    { "value": "QITIS", "text": "QITIS" },
+                                    { "value": "QPSESCS", "text": "QPSESCS" },
+                                    { "value": "QPSESLA", "text": "QPSESLA" },
+                                    { "value": "QPSESPB", "text": "QPSESPB" },
+                                    { "value": "QSS", "text": "QSS" },
+                                    { "value": "RSI", "text": "RSI" },
+                                    { "value": "Sand &amp; Gravel", "text": "Sand &amp; Gravel" },
+                                    { "value": "UKIS", "text": "UKIS" },
+                                    { "value": "Vacancies", "text": "Vacancies" }
+                                ]
                             }
-                        ]
-                    })
-                }}
-
+                        },
+                        {
+                            "id": "account",
+                            "label": {
+                                "text": "Account query"
+                            },
+                            "value": "account"
+                        },
+                        {
+                            "id": "technical",
+                            "label": {
+                                "text": "Technical issue"
+                            },
+                            "value": "technical"
+                        }
+                    ]
+                })
+            }}
                 <div class="grid grid--flex grid--gutterless grid--vertical-center grid--no-wrap@s u-mt-m u-mb-m">
                     <div class="grid__col">
                         <button type="submit" class="btn btn-group__btn">
-                            <span class="btn__inner">Submit</span>
+                            <span class="btn__inner">Continue</span>
                         </button>
                     </div>
                     <div class="grid__col u-ml-m">

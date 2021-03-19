@@ -1,8 +1,8 @@
 ---
 group: Frontstage
-title: User account creation
-version: 20.0.3
-layout: user-account-creation/views/version-4/_master-internal
+title: User self serve
+version: 32.0.1
+layout: user-self-serve/views/version-8/_master-internal
 ---
 
 {% from "components/button/_macro.njk" import onsButton %}
@@ -20,11 +20,11 @@ layout: user-account-creation/views/version-4/_master-internal
                     "itemsList": [
                         {
                             "url": '/prototypes/user-account-creation/version-4/00-surveys-list.html',
-                            "text": 'Messages'
+                            "text": 'Home'
                         },
                         {
                             "url": '/prototypes/user-account-creation/version-4/01-message-categories.html',
-                            "text": 'Help',
+                            "text": 'Messages',
                             "current": true
                         }
                     ]
@@ -33,40 +33,34 @@ layout: user-account-creation/views/version-4/_master-internal
         </div>
         <div class="grid__col col-8@m u-pt-no">
 
-            <h1>Filter messages by survey</h1>
+            <h1>Choose which messages to show</h1>
+            
             {{
                 onsRadios({
-                    "legend": "Select your favourite toppings",
+                    "legend": "Choose an option",
                     "name": "food-other",
                     "radios": [
+
                         {
-                            "id": "account",
+                            "id": "surveys",
                             "label": {
-                                "text": "Account change requests"
+                                "text": "Surveys"
                             },
-                            "value": "account"
-                        },
-                        {
-                            "id": "technical",
-                            "label": {
-                                "text": "technical issues"
-                            },
-                            "value": "technical"
-                        },
-                        {
-                            "id": "pepperoni-other",
-                            "label": {
-                                "text": "Pepperoni"
-                            },
-                            "value": "pepperoni",
+                            "value": "surveys",
                             "other": {
                                 "otherType": "select",
-                                "id": "pepperoni-heat-level",
-                                "name": "pepperoni-heat-level",
+                                "id": "choose-survey",
+                                "name": "choose-survey",
                                 "label": {
-                                    "text": "Please specify heat level"
+                                    "text": "Please specify the survey"
                                 },
                                 "options": [
+                                    {
+                                        "value": "",
+                                        "text": "Select survey",
+                                        "disabled": true,
+                                        "selected": true
+                                    },
                                     { "value": "ASHE", "text": "ASHE" },
                                     { "value": "Ada", "text": "Ada" },
                                     { "value": "BRES", "text": "BRES" },
@@ -99,11 +93,36 @@ layout: user-account-creation/views/version-4/_master-internal
                                     { "value": "Vacancies", "text": "Vacancies" }
                                 ]
                             }
+                        },
+                        {
+                            "id": "account",
+                            "label": {
+                                "text": "Account queries"
+                            },
+                            "value": "account"
+                        },
+                        {
+                            "id": "technical",
+                            "label": {
+                                "text": "Technical issues"
+                            },
+                            "value": "technical"
                         }
                     ]
                 })
             }}
 
+
+            <div class="grid grid--flex grid--gutterless grid--vertical-center grid--no-wrap@s u-mt-m u-mb-m">
+                <div class="grid__col">
+                    <button type="button" class="btn btn-group__btn" onclick="location.href='/prototypes/user-self-serve/version-8/00-internal/20-secure-messages.html';">
+                        <span class="btn__inner">Continue</span>
+                    </button>
+                </div>
+                <div class="grid__col u-ml-m">
+                    <a href="/prototypes/user-self-serve">Cancel</a>
+                </div>
+            </div>
         </div>
     </div>
 
