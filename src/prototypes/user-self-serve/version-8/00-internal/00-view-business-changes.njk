@@ -1,0 +1,110 @@
+---
+group: Frontstage
+title: User account creation
+version: 20.0.3
+layout: user-account-creation/views/version-4/_master-internal
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/metadata/_macro.njk" import onsMetadata %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+
+{% block main %}
+
+    <div class="grid">
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/prototypes/user-account-creation/version-4/00-surveys-list.html',
+                            "text": 'Messages'
+                        },
+                        {
+                            "url": '/prototypes/user-account-creation/version-4/01-message-categories.html',
+                            "text": 'Help',
+                            "current": true
+                        }
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+
+            <h1>Filter messages by survey</h1>
+            {{
+                onsRadios({
+                    "legend": "Select your favourite toppings",
+                    "name": "food-other",
+                    "radios": [
+                        {
+                            "id": "account",
+                            "label": {
+                                "text": "Account change requests"
+                            },
+                            "value": "account"
+                        },
+                        {
+                            "id": "technical",
+                            "label": {
+                                "text": "technical issues"
+                            },
+                            "value": "technical"
+                        },
+                        {
+                            "id": "pepperoni-other",
+                            "label": {
+                                "text": "Pepperoni"
+                            },
+                            "value": "pepperoni",
+                            "other": {
+                                "otherType": "select",
+                                "id": "pepperoni-heat-level",
+                                "name": "pepperoni-heat-level",
+                                "label": {
+                                    "text": "Please specify heat level"
+                                },
+                                "options": [
+                                    { "value": "ASHE", "text": "ASHE" },
+                                    { "value": "Ada", "text": "Ada" },
+                                    { "value": "BRES", "text": "BRES" },
+                                    { "value": "Blocks", "text": "Blocks" },
+                                    { "value": "Bricks", "text": "Bricks" },
+                                    { "value": "CAT", "text": "CAT" },
+                                    { "value": "COVID", "text": "COVID" },
+                                    { "value": "EPE", "text": "EPE" },
+                                    { "value": "Ecommerce", "text": "Ecommerce" },
+                                    { "value": "FDI", "text": "FDI" },
+                                    { "value": "FSPS", "text": "FSPS" },
+                                    { "value": "GovERD", "text": "GovERD" },
+                                    { "value": "MBS", "text": "MBS" },
+                                    { "value": "MES", "text": "MES" },
+                                    { "value": "MTS", "text": "MTS" },
+                                    { "value": "MWSS", "text": "MWSS" },
+                                    { "value": "NBS", "text": "NBS" },
+                                    { "value": "OFATS", "text": "OFATS" },
+                                    { "value": "PCS", "text": "PCS" },
+                                    { "value": "QBS", "text": "QBS" },
+                                    { "value": "QCAS", "text": "QCAS" },
+                                    { "value": "QITIS", "text": "QITIS" },
+                                    { "value": "QPSESCS", "text": "QPSESCS" },
+                                    { "value": "QPSESLA", "text": "QPSESLA" },
+                                    { "value": "QPSESPB", "text": "QPSESPB" },
+                                    { "value": "QSS", "text": "QSS" },
+                                    { "value": "RSI", "text": "RSI" },
+                                    { "value": "Sand &amp; Gravel", "text": "Sand &amp; Gravel" },
+                                    { "value": "UKIS", "text": "UKIS" },
+                                    { "value": "Vacancies", "text": "Vacancies" }
+                                ]
+                            }
+                        }
+                    ]
+                })
+            }}
+
+        </div>
+    </div>
+
+{% endblock %}

@@ -47,18 +47,56 @@ layout: user-self-serve/views/version-8/_master-survey
                         <li class="list__item ">
                             <a href="#error" class="list__link js-inpagelink">You have reached the maximum amount of emails you can enroll on one or more surveys.</a>
                         </li>
+                        <li class="list__item ">
+                            <a href="#error" class="list__link js-inpagelink">You have reached the maximum amount of emails you can enroll on one or more surveys.</a>
+                        </li>
                     </ol>
                 </div>
             </div>
             <h1 class="u-mt-s">Select surveys to share</h1>
 
-<!--
+            <!--
             <p class="field u-mt-s">
                 <button type="submit" class="btn btn--secondary btn--small">
                     <span class="btn__inner">Select all surveys</span>
                 </button>
             </p>
 -->
+
+            <div id="error" class="panel panel--error panel--simple js-error-panel">
+                <div class="panel__body">
+                    <p class="panel__error">
+                        <strong>You have reached the maximum amount of emails you can enroll on one or more surveys.<br><br>
+                        Deselect the survey/s to continue or call 0300 1234 931 to discuss your options.</strong>
+                    </p>
+                    {{
+                        onsCheckboxes({
+                            "legend": "ACME Logistics",
+                            "checkboxesLabel": "Select all that apply",
+                            "name": "ACME Consumer Products",
+                            "checkboxes": [
+                                {
+                                    "id": "Quarterly Business Survey",
+                                    "checked": "checked",
+                                    "label": {
+                                        "text": "Quarterly Business Survey"
+                                    },
+                                    "value": "Quarterly Business Survey"
+                                },
+                                {
+                                    "id": "Monthly Business Survey",
+                                    "checked": "checked",
+                                    "classes": "input--error",
+                                    "label": {
+                                        "text": "Monthly Business Survey"
+                                    },
+                                    "value": "Monthly Business Survey"
+                                }
+                            ]
+                        })
+                    }}
+                </div>
+            </div>
 
             {{
                 onsCheckboxes({
@@ -68,6 +106,7 @@ layout: user-self-serve/views/version-8/_master-survey
                     "checkboxes": [
                         {
                             "id": "Quarterly Business Survey",
+                            "checked": "checked",
                             "label": {
                                 "text": "Quarterly Business Survey"
                             },
@@ -75,6 +114,7 @@ layout: user-self-serve/views/version-8/_master-survey
                         },
                         {
                             "id": "Monthly Business Survey",
+                            "checked": "checked",
                             "label": {
                                 "text": "Monthly Business Survey"
                             },
@@ -83,6 +123,7 @@ layout: user-self-serve/views/version-8/_master-survey
                     ]
                 })
             }}
+
             <div id="error" class="panel panel--error panel--simple js-error-panel">
                 <div class="panel__body">
                     <p class="panel__error">
@@ -90,69 +131,69 @@ layout: user-self-serve/views/version-8/_master-survey
                         Deselect the survey/s to continue or call 0300 1234 931 to discuss your options.</strong>
                     </p>
                     {{
-                onsCheckboxes({
-                    "legend": "ACME Group Ltd",
-                    "checkboxesLabel": "Select all that apply",
-                    "name": "ACME Group Ltd",
-                    "checkboxes": [
-                        {
-                            "id": "BRSS",
-                            "classes": "input--error",
-                            "checked": "checked",
-                            "label": {
-                                "text": "Business Register and Employment Survey"
-                            },
-                            "value": "BRSS"
-                        },
-                        {
-                            "id": "MBS",
-                            "checked": "checked",
-                            "label": {
-                                "text": "Monthly Business Survey"
-                            },
-                            "value": "MBS"
-                        },
-                        {
-                            "id": "QBS",
-                            "checked": "checked",
-                            "label": {
-                                "text": "Quarterly Business Survey"
-                            },
-                            "value": "QBS"
-                        },
-                        {
-                            "id": "MWSS",
-                            "checked": "checked",
-                            "label": {
-                                "text": "Monthly Wages and Salary Survey"
-                            },
-                            "value": "MWSS"
-                        },
-                        {
-                            "id": "QADCA",
-                            "checked": "checked",
-                            "label": {
-                                "text": "Quarterly Acquisitions and Disposals of Capital Assets"
-                            },
-                            "value": "QADCA"
-                        }
-                    ]
-                })
-            }}
+                        onsCheckboxes({
+                            "legend": "ACME Group Ltd",
+                            "checkboxesLabel": "Select all that apply",
+                            "name": "ACME Group Ltd",
+                            "checkboxes": [
+                                {
+                                    "id": "BRSS",
+                                    "classes": "input--error",
+                                    "checked": "checked",
+                                    "label": {
+                                        "text": "Business Register and Employment Survey"
+                                    },
+                                    "value": "BRSS"
+                                },
+                                {
+                                    "id": "MBS",
+                                    "checked": "checked",
+                                    "label": {
+                                        "text": "Monthly Business Survey"
+                                    },
+                                    "value": "MBS"
+                                },
+                                {
+                                    "id": "QBS",
+                                    "checked": "checked",
+                                    "label": {
+                                        "text": "Quarterly Business Survey"
+                                    },
+                                    "value": "QBS"
+                                },
+                                {
+                                    "id": "MWSS",
+                                    "checked": "checked",
+                                    "label": {
+                                        "text": "Monthly Wages and Salary Survey"
+                                    },
+                                    "value": "MWSS"
+                                },
+                                {
+                                    "id": "QADCA",
+                                    "checked": "checked",
+                                    "label": {
+                                        "text": "Quarterly Acquisitions and Disposals of Capital Assets"
+                                    },
+                                    "value": "QADCA"
+                                }
+                            ]
+                        })
+                    }}
                 </div>
             </div>
             <p class="field u-mt-l">
                 <button type="submit" class="btn btn--disabled" disabled="true" onclick="location.href='{{ pageInfo.rootPath }}/version-8/signed-in/account/03-share-access-to-my-surveys/02-email-address.html';">
                     <span class="btn__inner">Continue</span>
                 </button>
-                
-                </div>
-                <div class="grid__col u-ml-m">
-                    <a href="/prototypes/user-self-serve/version-8/signed-in/account/03-share-access-to-my-surveys/index.html">Cancel</a>
-                </div>
-            </div>
 
+            </div>
+            <div class="grid__col u-ml-m">
+                <a href="/prototypes/user-self-serve/version-8/signed-in/account/03-share-access-to-my-surveys/index.html">Cancel</a>
+            </div>
         </div>
+
     </div>
+</div>
 
 {% endblock %}
