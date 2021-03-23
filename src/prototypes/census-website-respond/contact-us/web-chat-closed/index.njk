@@ -1,0 +1,76 @@
+---
+title: Web chat closed
+group: Census
+version: 32.0.1
+layout: census-website-respond/views/_rh-master
+---
+
+{% set pageId = 'contact' %}
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '#0',
+                            "text": 'Back'
+                        }
+                    ]
+                })
+            }}
+
+            <div class="grid">
+
+                <div class="grid__col col-7@m">
+
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <section id="section-content" class="page__body">
+
+                            <h1 class="u-mb-l u-fs-xxl">Web chat is closed</h1>
+
+                            <p>Our contact centre is now closed.</p>
+
+                            <p>You can still <a href="">send us a message using our web form</a>. We will respond to your message by email within 2 working days.</p>
+
+                            <h2>Web chat opening times</h2>
+
+                            <p>We will have advisers available to help you at the following times:</p>
+
+                            {{
+                                onsList({
+                                    "classes": 'u-mb-m',
+                                    "itemsList": [
+                                        {
+                                            "text": 'Monday to Friday, 8am to 8pm'
+                                        },
+                                        {
+                                            "text": 'Saturday, 8am to 1pm'
+                                        },
+                                        {
+                                            "text": 'Sunday, closed'
+                                        },
+                                        {
+                                            "text": 'Census weekend (20 – 21 March), 8am to 8pm'
+                                        }
+                                    ]
+                                })
+                            }}
+
+                        </section>
+                    </main>
+                </div>
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}

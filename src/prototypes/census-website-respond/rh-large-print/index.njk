@@ -1,0 +1,131 @@
+---
+title: RH large print
+group: Census
+version: 32.0.1
+layout: census-website-respond/views/_rh-master
+---
+
+{% set form =  {
+    "method": 'GET',
+    "attributes": {
+        "action": pageInfo.rootPath + '/web-form/thank-you'
+    }
+} %}
+
+{% block main %}
+
+    <div class="page__container container">
+
+        {{ 
+            onsBreadcrumb({
+                "ariaLabel": 'Breadcrumb',
+                "itemsList": [
+                    {
+                        "url": pageInfo.rootPath + '/',
+                        "text": 'Back'
+                    }
+                ]
+            }) 
+        }}
+
+        <div class="grid">
+
+            <div class="grid__col col-12@m">
+
+                <main class="page__main" id="main-content" role="main">
+
+                    <div class="col-8@m u-mb-l">
+
+                        {% call onsQuestion({
+                                "title": "Do you want to send a household paper questionnaire to this address?"
+                            }) %}
+
+                            <p>Joe Bloggs
+                            <br>2 Heather Court
+                            <br>Quakers Yard
+                            <br>Treharris
+                            <br>CF46 5RP</p>
+
+                            <a href="">Change name</a>
+
+                            {{
+                                onsRadios({
+                                    "classes": "u-mt-m",
+                                    "legend": "Do you want to send a household paper questionnaire to this address?",
+                                    "legendClasses": "u-vh",
+                                    "name": "confirm",
+                                    "radios": [
+                                        {
+                                            "id": "yes",
+                                            "label": {
+                                                "text": "Yes, send the questionnaire by post"
+                                            },
+                                            "value": "yes"
+                                        },
+                                        {
+                                            "id": "no",
+                                            "label": {
+                                                "text": "No, cancel and return"
+                                            },
+                                            "value": "no"
+                                        }
+                                    ]
+                                })
+                            }}
+
+                            {%
+                                call onsCollapsible({
+                                    "id": "collapsible",
+                                    "classes": "u-mb-m",
+                                    "title": "Need a large-print questionnaire?",
+                                    "titleTag": "h2",
+                                    "button": {
+                                        "close": "Hide this",
+                                        "contextSuffix": "content",
+                                        "attributes": {
+                                            "aria-hidden": "true"
+                                        }
+                                    },
+                                    "saveState": "true"
+                                })
+                            %}
+
+                                <p>If you are visually impaired, confirm that you need a paper census questionnaire in a larger font.</p>
+
+                                {{
+                                    onsCheckboxes({
+                                        "dontWrap": true,
+                                        "checkboxes": [
+                                            {
+                                                "classes": "u-mb-m",
+                                                "id": "large-print",
+                                                "label": {
+                                                    "text": "I am visually impaired and need a large-print questionnaire"
+                                                },
+                                                "value": "large-print"
+                                            }
+                                        ]
+                                    })
+                                }}
+                            {% endcall %}
+
+                        {% endcall %}
+
+                        {{
+                            onsButton({
+                                "text": 'Continue',
+                                "classes": 'u-mb-m u-mt-s'
+                            })
+                        }}
+
+                    </div>
+
+                </main>
+
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock %}
