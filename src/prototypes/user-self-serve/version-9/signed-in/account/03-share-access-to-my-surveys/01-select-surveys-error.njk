@@ -71,9 +71,35 @@ layout: user-self-serve/views/version-9/_master-survey
                     </p>
                     {{
                         onsCheckboxes({
-                            "legend": "ACME Logistics",
+                            "legend": "ACME Consumer Products",
                             "checkboxesLabel": "Select all that apply",
                             "name": "ACME Consumer Products",
+                            "checkboxes": [
+                                {
+                                    "id": "Quarterly Business Survey",
+                                    "checked": "checked",
+                                    "label": {
+                                        "text": "Quarterly Business Survey"
+                                    },
+                                    "value": "Quarterly Business Survey"
+                                },
+                                {
+                                    "id": "Monthly Business Survey",
+                                    "checked": "checked",
+                                    "classes": "input--error",
+                                    "label": {
+                                        "text": "Monthly Business Survey"
+                                    },
+                                    "value": "Monthly Business Survey"
+                                }
+                            ]
+                        })
+                    }}
+                    {{
+                        onsCheckboxes({
+                            "legend": "ACME Group Ltd",
+                            "checkboxesLabel": "Select all that apply",
+                            "name": "ACME Group Ltd",
                             "checkboxes": [
                                 {
                                     "id": "Quarterly Business Survey",
