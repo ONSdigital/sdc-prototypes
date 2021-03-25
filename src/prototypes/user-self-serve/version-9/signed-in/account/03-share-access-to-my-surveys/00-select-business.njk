@@ -7,7 +7,7 @@ layout: user-self-serve/views/version-9/_master-survey
 
 {% from "components/input/_macro.njk" import onsInput %}
 {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
-{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
 
 {% block main %}
 
@@ -36,10 +36,10 @@ layout: user-self-serve/views/version-9/_master-survey
         <div class="grid__col col-8@m u-pt-no">
             <h1>Which of your business’s surveys do you want to share?</h1>
             {{
-                onsRadios({
-                    "legend": "Choose a business",
+                onsCheckboxes({
+                    "legend": "Select all businesses that apply",
                     "name": "food",
-                    "radios": [
+                    "checkboxes": [
                         {
                             "id": "1",
                             "label": {
