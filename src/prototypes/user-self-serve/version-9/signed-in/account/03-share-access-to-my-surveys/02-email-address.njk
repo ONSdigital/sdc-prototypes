@@ -41,12 +41,12 @@ layout: user-self-serve/views/version-9/_master-survey
             }}
         </div>
         <div class="grid__col col-8@m u-pt-no">
-            <h1>Enter recipient's email address</h1>
-
+            <h1>Enter recipient’s email address</h1>
+            <p>We need the email address of the person who will be responding to your surveys.</p>
             {% from "components/panel/_macro.njk" import onsPanel %}
             {{
                 onsPanel({
-                    "body": 'Make sure you have permission from the recipient to provide their email address to us.'
+                    "body": 'Make sure you have their permission to give us their email address.'
                 })
             }}
 
@@ -55,8 +55,7 @@ layout: user-self-serve/views/version-9/_master-survey
                 onsInput({
                     "id": "text",
                     "label": {
-                        "text": "Recipient's email address",
-                        "description": "This is the person who will be able to respond to your surveys."
+                        "text": "Enter email address"
                     }
                 }) 
             }}
