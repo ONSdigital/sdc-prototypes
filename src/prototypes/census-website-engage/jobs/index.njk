@@ -1,0 +1,85 @@
+---
+title: Working on the census
+group: Census
+version: 31.2.0
+layout: census-website-engage/views/_master
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": pageInfo.rootPath + '/home',
+                            "text": 'Home'
+                        }
+                    ]
+                })
+            }}
+
+            <div class="grid">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-l u-fs-xxl">Working on the census</h1>
+
+                        <div class="page__body">
+                        
+                            <h2>Applying for jobs</h2>
+                            
+                            <p>If you’re a people person, have great customer service skills and want to be part of something that affects all of us, then <a href="#">apply for a job with the census</a>.</p>
+                            
+                            <p>For Census 2021, we’ll be hiring at least 30,000 field staff across England and Wales. As it gets closer, we’ll be advertising the opportunities online.</p>
+                            
+                            <h2>What the field team do</h2>
+                            
+                            <p>It takes a big team to ensure the census runs smoothly. Our field team is vital to our success.</p>
+                            
+                            <p>As part of our field team, you would be the face of the census – visiting people who’ve not yet responded, offering help and encouraging people to take part. It’s an essential part of making sure we get the responses we need to make the census the best it can be.</p>
+                            
+                        </div>
+
+                    </main>
+
+                </div>
+
+                <div class="grid__col col-4@m push-1@m u-mt-m">
+
+                    {{-
+                        onsRelatedLinks({
+                            "id": 'related-links',
+                            "title": 'Related content',
+                            "itemsList": [
+                                {
+                                    "url": pageInfo.rootPath + '/about-the-census',
+                                    "text": 'About the census'
+                                },
+                                {
+                                    "url": '#0',
+                                    "text": 'About Census 2021'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/contact-us',
+                                    "text": 'Contact us'
+                                }
+                            ]
+                        })
+                    }}
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}

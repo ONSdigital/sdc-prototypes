@@ -1,0 +1,257 @@
+---
+title: Contact us
+group: Census
+version: 32.2.4
+layout: census-website-respond/views/_master
+---
+
+{% set pageId = 'contact' %}
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": 'https://census-website-respond.netlify.app/end-to-end/home/',
+                            "text": 'Home'
+                        }
+                    ]
+                })
+            }}
+
+            <div class="grid">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-l u-fs-xxl">Contact us</h1>
+
+                            <div class="page__body">
+
+                            <p>If you have lost or not received an access code, or you want to fill out a paper census, you can <a href="{{pageInfo.rootPath}}/help/get-an-access-code-or-paper-census/">request an access code or paper census</a>.</p>
+
+                           <!-- 
+                           {% call onsCollapsible({
+                                "id": 'collapsible-1',
+                                "title": 'Need to fill out a paper census?',
+                                "button": {
+                                    "close": 'Hide this'
+                                }
+                            }) %} 
+
+                            <p>You can <a href="">request a paper census questionnaire</a> to be sent in the post, if you need to complete the census on paper.</p>
+
+                            {% endcall %}
+                            -->
+
+                            <h2>Telephone</h2>
+
+                            <p>We will have advisers available to help you at the following times:</p>
+
+                            {{
+                                onsList({
+                                    "classes": 'list--bare',
+                                    "itemsList": [
+                                        {
+                                            "text": 'Monday to Friday, 8am to 8pm'
+                                        },
+                                        {
+                                            "text": 'Saturday, 8am to 1pm'
+                                        },
+                                        {
+                                            "text": 'Sunday, closed'
+                                        },
+                                        {
+                                            "text": 'Census weekend (20 – 21 March), 8am to 8pm'
+                                        }
+                                    ]
+                                })
+                            }}
+
+                            <h3>England</h3>
+                            <p>Telephone free: 0800 141 2021</p>
+
+                            <h3>Wales</h3>
+                            <p>Telephone free: 0800 169 2021 <span>(available in English or Welsh)</span></p>
+
+                            <h3>Other languages</h3>
+                            <p>If you need to speak to us in another language, call our free language helpline on 0800 587 2021</p>
+
+                            <h3>Text relay</h3>
+                            <p>Relay UK users dial 18001 followed by the phone number you need</p>
+
+                            <h2>Web chat</h2>
+                            <p>We will have advisers available to help you at the following times:</p>
+
+                            {{
+                                onsList({
+                                    "classes": 'list--bare u-mb-m',
+                                    "itemsList": [
+                                        {
+                                            "text": 'Monday to Friday, 8am to 8pm'
+                                        },
+                                        {
+                                            "text": 'Saturday, 8am to 1pm'
+                                        },
+                                        {
+                                            "text": 'Sunday, closed'
+                                        },
+                                        {
+                                            "text": 'Census weekend (20 – 21 March), 8am to 8pm'
+                                        }
+                                    ]
+                                })
+                            }}
+
+                            {{
+                                onsButton({
+                                    "type": 'button',
+                                    "classes": 'js-popup',
+                                    "text": 'Open web chat',
+                                    "url": 'https://whitelodge.census-gcp.onsdigital.uk/en/web-chat/',
+                                    "icon": {
+                                        "iconType": 'external-link',
+                                        "iconPosition": 'after'
+                                    }
+                                })
+                            }}
+
+                            <h2>Web form</h2>
+                            <p>You can <a href="https://whitelodge.census-gcp.onsdigital.uk/en/web-form/">send us a message using our web form</a>. We will respond to your message by email within 2 working days.</p>
+
+                            <h2>Text message (SMS)</h2>
+
+                            <p>We will have advisers available to help you at the following times:</p>
+
+                            {{
+                                onsList({
+                                    "classes": 'list--bare',
+                                    "itemsList": [
+                                        {
+                                            "text": 'Monday to Friday, 8am to 8pm'
+                                        },
+                                        {
+                                            "text": 'Saturday, 8am to 1pm'
+                                        },
+                                        {
+                                            "text": 'Sunday, closed'
+                                        },
+                                        {
+                                            "text": 'Census weekend (20 – 21 March), 8am to 8pm'
+                                        }
+                                    ]
+                                })
+                            }}
+
+                            <p>Text: 86677</p>
+
+                            <h2>Social media</h2>
+
+                            {{
+                                onsList({
+                                    "classes": 'list--bare list--inline list--icons',
+                                    "itemsList": [
+                                        {
+                                            "url": 'https://www.twitter.com/census2021help',
+                                            "text": 'Twitter',
+                                            "prefixIcon": 'twitter',
+                                            "iconSize": 'xxl',
+                                            "rel": 'noreferrer external'
+                                        },
+                                        {
+                                            "url": 'https://www.facebook.com/census2021',
+                                            "text": 'Facebook',
+                                            "prefixIcon": 'facebook',
+                                            "iconSize": 'xxl',
+                                            "rel": 'noreferrer external'
+                                        },
+                                        {
+                                            "url": 'https://www.instagram.com/census2021',
+                                            "text": 'Instagram',
+                                            "prefixIcon": 'instagram',
+                                            "iconSize": 'xxl',
+                                            "rel": 'noreferrer external'
+                                        }
+                                    ]
+                                })
+                            }}
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+                <div class="grid__col col-4@m push-1@m u-mt-l">
+
+                    {{-
+                        onsRelatedLinks({
+                            "id": 'related-links',
+                            "title": 'Related content',
+                            "itemsList": [
+                                {
+                                    "url": pageInfo.rootPath + '/your-data-and-security/how-we-will-contact-or-visit-you',
+                                    "text": 'How we will contact or visit you'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/media-enquiries',
+                                    "text": 'Media enquiries'
+                                }
+                            ]
+                        })
+                    }}
+
+                    <div class="u-pt-m u-pb-s u-bt">
+                        
+                        <h2 class="u-fs-r--b u-mb-xs">Help with the census</h2>
+
+                        {{
+                                onsList({
+                                    "classes": 'list--bare',
+                                    "itemsList": [
+                                        {
+                                            "url": pageInfo.rootPath + '/help/get-an-access-code-or-paper-census/',
+                                            "text": 'Get an access code or paper census'
+                                        },
+                                        {
+                                            "url": pageInfo.rootPath + '/help/languages-and-accessibility/',
+                                            "text": 'Languages and accessibility'
+                                        },
+                                        {
+                                            "url": pageInfo.rootPath + '/help/find-a-census-support-centre/',
+                                            "text": 'Find a census support centre'
+                                        },
+                                        {
+                                            "url": pageInfo.rootPath + '/help/getting-started/im-moving-house',
+                                            "text": 'I’m moving house'
+                                        },
+                                        {
+                                            "url": pageInfo.rootPath + '/help/getting-started/what-if-im-away-or-abroad-on-census-day',
+                                            "text": 'What if I‘m away or abroad on Census Day?'
+                                        },
+                                        {
+                                            "url": pageInfo.rootPath + '/help/',
+                                            "text": 'More help'
+                                        }
+                                    ]
+                                })
+                            }}
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}

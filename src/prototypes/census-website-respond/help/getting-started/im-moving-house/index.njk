@@ -1,0 +1,107 @@
+---
+title: I’m moving house
+group: Census
+version: 32.2.4
+layout: census-website-respond/views/_master
+---
+
+{% set pageId = 'help' %}
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{- onsBreadcrumb({
+                "ariaLabel": 'Breadcrumb',
+                "itemsList": [
+                    {
+                        "url": 'https://census-website-respond.netlify.app/end-to-end/home/',
+                        "text": 'Home'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help',
+                        "text": 'Help with the census'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help/getting-started',
+                        "text": 'Getting started'
+                    }
+                ]
+            }) }}
+
+            <div class="grid">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-l u-fs-xxl">I’m moving house</h1>
+
+                        <div class="page__body">
+
+                            <h2>Moving out</h2>
+
+                            <p>Fill in the form online or on paper if:</p>
+
+                            {{
+                                onsList({
+                                    "itemsList": [
+                                        {
+                                            "text": "you’re staying at that address on the night of Sunday 21 March 2021, or"
+                                        },
+                                        {
+                                            "text": "you move out before this date but are still responsible for the bills at the empty property - you can complete it before you go or take it with you"
+                                        },
+                                        {
+                                            "text": "non-UK resident and live or plan to live at this location for three months or more and have no other permanent UK address"
+                                        }
+                                    ]
+                                })
+                            }}
+
+                            <p>If you move out before Sunday 21 March 2021, and you are no longer responsible for the bills at the property, leave the census letter or form for the new occupant.<br></p>
+
+                            <h2>Moving in</h2>
+
+                            <p>If you move in on or before Sunday 21 March 2021, you must fill in a census form at your new address. Please <a href="{{pageInfo.rootPath}}/help/get-an-access-code-or-paper-census">request a code or paper form</a> if you need one.</p>
+
+                            <p>If you move in after Sunday 21 March 2021, and there is a census form at the address, please answer the questions about the property.</p>
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+                <div class="grid__col col-4@m push-1@m u-mt-m">
+
+                    {{- onsRelatedLinks({
+                        "id": 'related-links',
+                        "title": 'Related content',
+                        "itemsList": [
+                            {
+                                "url": pageInfo.rootPath + '/help/get-an-access-code-or-paper-census/',
+                                "text": 'Get an access code or paper census'
+                            },
+                            {
+                                "url": pageInfo.rootPath + '/help/find-a-census-support-centre',
+                                "text": 'Find a census support centre'
+                            },
+                            {
+                                "url": pageInfo.rootPath + '/help/contact-us',
+                                "text": 'Contact us'
+                            }
+                        ]
+                    }) }}
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}

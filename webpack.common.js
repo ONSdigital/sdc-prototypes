@@ -217,6 +217,12 @@ export default function(mode) {
             glob: '**/img/**/*',
             dot: true
           }
+        },
+        {
+          from: {
+            glob: '**/documents/**/*',
+            dot: true
+          }
         }
       ]),
 

@@ -1,0 +1,90 @@
+---
+title: Campaign Website (engage phase)
+group: Census 2021
+version: 31.2.0
+layout: census-website-engage/views/_rh-master
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+        
+            <div class="grid">
+
+                <div class="grid__col col-8@m">
+                
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-fs-xxl u-mt-l">Prototypes</h1>
+
+                        <p>A collection of prototypes in preparation for Census 2021.</p>
+
+                        <h2 class="u-fs-l u-mt-l">England and Wales</h2>
+
+                        {{
+                            onsList({
+                                "classes": 'list--bare',
+                                "itemsList": [
+                                    {
+                                        "url": pageInfo.rootPath + '/get-involved/downloadable-resources',
+                                        "text": 'Downloadable resources'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/news',
+                                        "text": 'News'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/web-form',
+                                        "text": 'Web form'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/web-chat',
+                                        "text": 'Web chat'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/home',
+                                        "text": 'Home (engagement phase)'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/home-minimal',
+                                        "text": 'Home (minimal)'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/hero',
+                                        "text": 'Hero banners'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/get-involved/local-authorities/important-dates-for-local-authorities',
+                                        "text": 'Important dates for local authorities'
+                                    }
+                                ]
+                            })
+                        }}
+
+                        <h2 class="u-fs-l u-mt-l">Northern Ireland</h2>
+
+                        {{
+                            onsList({
+                                "classes": 'list--bare',
+                                "itemsList": [
+                                    {
+                                        "url": pageInfo.rootPath + '/ni/home',
+                                        "text": 'Home (engagement phase)'
+                                    }
+                                ]
+                            })
+                        }}
+
+                    </main>
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}

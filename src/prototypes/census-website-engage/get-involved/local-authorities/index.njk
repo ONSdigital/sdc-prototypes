@@ -1,0 +1,136 @@
+---
+title: Local authorities
+group: Census
+version: 31.2.0
+layout: census-website-engage/views/_master
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": pageInfo.rootPath + '/home',
+                            "text": 'Home'
+                        }
+                    ]
+                })
+            }}
+
+            <div class="grid">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-l">
+                            <span class="u-fs-m u-db u-mb-xs u-lighter">Local authorities</span>
+                            <span class="u-vh">: </span>
+                            <span class="u-fs-xxl u-db">Overview</span>
+                        </h1>
+
+                        {{-
+                            onsTableOfContents({
+                                "title": 'Contents',
+                                "ariaLabel": 'Pages in this guide',
+                                "itemsList": [
+                                    {
+                                        "url": pageInfo.rootPath + '/get-involved/local-authorities',
+                                        "text": 'Overview',
+                                        "current": true
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/get-involved/local-authorities/how-you-can-work-with-us',
+                                        "text": 'How you can work with us'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/get-involved/local-authorities/what-you-can-do-to-help',
+                                        "text": 'What you can do to help'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/get-involved/local-authorities/important-dates-for-local-authorities',
+                                        "text": 'Important dates for local authorities'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/get-involved/local-authorities/materials-to-help-promote-the-census',
+                                        "text": 'Materials to help promote the census'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/get-involved/local-authorities/who-you-can-contact-for-help',
+                                        "text": 'Who you can contact for help'
+                                    }
+                                ]
+                            })
+                        }}
+
+                        <div class="page__body">
+
+                            <h2>Help the census succeed in your area</h2>
+                            
+                            <p>Just as census statistics may well be vital to you, your support is vital to us. We need your help to raise awareness of the census in your area and encourage people to fill in their census questionnaires.</p>
+
+                            <p>By working together, we can make sure Census 2021 gets a great response and represents everyone.</p>
+
+                            <div class="u-mt-xl">
+                                {{-
+                                    onsContentPagination({
+                                        "contentPaginationItems": [
+                                        {
+                                            "rel": 'next',
+                                            "text": 'Next',
+                                            "url": pageInfo.rootPath + '/get-involved/local-authorities/how-you-can-work-with-us',
+                                            "label": 'How you can work with us'
+                                        }
+                                        ]
+                                    })
+                                }}
+                            </div>
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+                <div class="grid__col col-4@m push-1@m u-mt-m">
+
+                    {{-
+                        onsRelatedLinks({
+                            "id": 'related-links',
+                            "title": 'Related content',
+                            "itemsList": [
+                                {
+                                    "url": pageInfo.rootPath + '/get-involved/community-groups',
+                                    "text": 'Community groups'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/get-involved/communications-partners',
+                                    "text": 'Communications partners'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/get-involved/downloadable-resources',
+                                    "text": 'Downloadable resources'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/contact-us',
+                                    "text": 'Contact us'
+                                }
+                            ]
+                        })
+                    }}
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}

@@ -1,0 +1,136 @@
+---
+title: Get an access code or paper census
+group: Census
+version: 32.2.4
+layout: census-website-respond/views/_master
+---
+
+{% set pageId = 'help' %}
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{ onsBreadcrumb({
+                "ariaLabel": 'Breadcrumb',
+                "itemsList": [
+                    {
+                        "url": 'https://census-website-respond.netlify.app/end-to-end/home',
+                        "text": 'Home'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help',
+                        "text": 'Help with the census'
+                    }
+                ]
+            }) }}
+
+            <div class="grid">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-l u-fs-xxl">Get an access code or paper census</h1>
+
+                        <div class="page__body">
+
+                            <p>To start your census online, you will need your access code printed on the letter we sent you.</p>
+                            <p><a href="https://census-website-respond.netlify.app/end-to-end/where-to-find-your-access-code">Where to find your access code</a></p>
+
+                            <!--
+                            <img width="400" class="census-letter-thumb u-mb-m u-mt-s" src="{{pageInfo.rootPath}}/img/census-letter.svg" alt="Census 2021 letter example showing location of access code">
+
+                            {% call onsPanel({
+                                "type": 'warn',
+                                "classes": 'u-mb-m'
+                            }) %}
+
+                                Keep this code safe. You will need to enter it every time you access your census.
+
+                            {% endcall %}
+                            -->
+
+                            <h2>If you don’t have an access code</h2>
+
+                            <p>You can <a href="https://census-website-respond.netlify.app/end-to-end/uac-request-address/?previous=website-get-a-code">request a new access code</a> to start a new census if you have lost or not received an access code. This can be sent to you by text or post.</p>
+
+                            <p>A new access code will start a new census, and you will lose any answers entered using a previous access code.</p>
+
+                            {%
+                                call onsCollapsible({
+                                    "classes": 'u-mt-m',
+                                    "id": 'collapsible-0',
+                                    "title": 'Need to answer separately from your household?',
+                                    "titleTag": 'h3',
+                                    "button": {
+                                        "close": 'Hide this',
+                                        "contextSuffix": 'content',
+                                        "attributes": {
+                                            "aria-hidden": 'true'
+                                        }
+                                    }
+                                })
+                            %}
+
+                                <p>If you need to answer separately from the people you live with, you can <a href="{{pageInfo.rootPath}}/your-data-and-security/answering-separately-from-your-household">complete your own census</a>.</p>
+
+                                {% call onsPanel({
+                                    "type": 'warn',
+                                    "classes": 'u-mb-m'
+                                }) %}
+
+                                    Someone in your household must still complete a census using a household access code
+
+                                {% endcall %}
+
+                            {% endcall %}
+
+                            <h2>If you want to fill out a paper census</h2>
+
+                            <p>You can <a href="https://census-website-respond.netlify.app/end-to-end/uac-request-address/?previous=website-get-a-code&current-journey=new-hh-paper">request a paper census questionnaire</a> to be sent in the post.</p>
+
+                            <h3>Continuation questionnaire</h2>
+
+                            <p>If you already have a paper questionnaire and there are more than 5 people in your household, you will need to <a href="https://census-website-respond.netlify.app/end-to-end/uac-request-address/?previous=website-get-a-code&current-journey=continuation-form">request a continuation questionnaire</a>.</p>
+                        
+                        </div>
+
+                    </main>
+
+                </div>
+
+                <div class="grid__col col-4@m push-1@m u-mt-m">
+
+                    {{-
+                        onsRelatedLinks({
+                            "id": 'related-links',
+                            "title": 'Related content',
+                            "itemsList": [
+                                {
+                                    "url": 'https://census-website-respond.netlify.app/end-to-end/where-to-find-your-access-code/',
+                                    "text": 'Where to find your access code'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/your-data-and-security/how-we-will-contact-or-visit-you',
+                                    "text": 'How we will contact or visit you'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/contact-us',
+                                    "text": 'Contact us'
+                                }
+                            ]
+                        })
+                    }}
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}

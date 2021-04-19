@@ -1,0 +1,130 @@
+---
+title: Why your help is vital
+group: Census
+version: 31.2.0
+layout: census-website-engage/views/_nisra-master
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": pageInfo.rootPath + '/ni/home',
+                            "text": 'Home'
+                        }
+                    ]
+                })
+            }}
+
+            <div class="grid">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-l">
+                            <span class="u-fs-m u-db u-mb-xs u-lighter">Community groups</span>
+                            <span class="u-vh">: </span>
+                            <span class="u-fs-xxl u-db">Why your help is vital</span>
+                        </h1>
+
+                        {{-
+                            onsTableOfContents({
+                                "title": 'Contents',
+                                "ariaLabel": 'Pages in this guide',
+                                "itemsList": [
+                                    {
+                                        "url": pageInfo.rootPath + '/ni/community-groups/',
+                                        "text": 'Why your help is vital',
+                                        "current": true
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/ni/community-groups/spread-the-word-before-the-census',
+                                        "text": 'Spread the word before the census'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/ni/community-groups/what-you-can-do-around-census-day',
+                                        "text": 'What you can do around Census Day'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/ni/community-groups/census-completion-activities',
+                                        "text": 'Census completion activities'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/ni/community-groups/who-to-contact-for-help',
+                                        "text": 'Who to contact for help'
+                                    }
+                                ]
+                            })
+                        }}
+
+                        <div class="page__body">
+                            
+                            <p>There are many ways you can help and encourage your community to take part in Census 2021. As someone involved in your community, you’ll know exactly what help and encouragement people need. You understand your local area and the people around you better than anyone.</p>
+
+                            <p>Taking part in the census is so important, as it gathers essential information that’s used for things that affect your community.</p>
+
+                            <p>Public bodies use census information to help plan and fund services like housing, education and healthcare. Charities and businesses also use it to inform their work.</p>
+
+                            <p>With your help, we’ll ensure everyone can take part in the census and be counted.</p>
+
+                            <div class="u-mt-xl">
+                                {{-
+                                    onsContentPagination({
+                                        "contentPaginationItems": [
+                                        {
+                                            "rel": 'next',
+                                            "text": 'Next',
+                                            "url": pageInfo.rootPath + '/ni/community-groups/spread-the-word-before-the-census',
+                                            "label": 'Spread the word before the census'
+                                        }
+                                        ]
+                                    })
+                                }}
+                            </div>
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+                <div class="grid__col col-4@m push-1@m u-mt-m">
+
+                    {{-
+                        onsRelatedLinks({
+                            "id": 'related-links',
+                            "title": 'Related content',
+                            "itemsList": [
+                                {
+                                    "url": pageInfo.rootPath + '/ni/local-authorities',
+                                    "text": 'Local authorities'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/ni/downloadable-resources',
+                                    "text": 'Downloadable resources'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/ni/contact-us',
+                                    "text": 'Contact us'
+                                }
+                            ]
+                        })
+                    }}
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}

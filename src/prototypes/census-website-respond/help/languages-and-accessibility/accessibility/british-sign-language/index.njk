@@ -1,0 +1,366 @@
+---
+title: Accessible videos
+group: Census
+version: 32.2.4
+layout: census-website-respond/views/_master
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{ onsBreadcrumb({
+                "ariaLabel": 'Breadcrumb',
+                "itemsList": [
+                    {
+                        "url": 'https://census-website-respond.netlify.app/end-to-end/home',
+                        "text": 'Home'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help',
+                        "text": 'Help with the census'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help/languages-and-accessibility',
+                        "text": 'Languages and accessibility'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help/languages-and-accessibility/accessibility',
+                        "text": 'Accessibility'
+                    }
+                ]
+            }) }}
+
+            <div class="grid">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-l u-fs-xxl">Accessible videos with BSL</h1>
+
+                        <div class="page__body">
+
+                            <p>Use these videos alongside the census questionnaire to help you answer the questions.</p>
+
+                            <p>All videos include:</p>
+
+                            {{ onsList({
+                                "itemsList": [
+                                    {
+                                        "text": 'British Sign Language (BSL) translations​'
+                                    },
+                                    {
+                                        "text": 'subtitles in English'
+                                    },
+                                    {
+                                        "text": 'audio in English'
+                                    }
+                                ]
+                            }) }}
+
+                            <h2>Census information videos</h2>
+
+                            <p>These videos translate the information we sent you in the post.</p>
+
+                            {%
+                                call onsCollapsible({
+                                    "classes": 'u-mt-m',
+                                    "id": 'collapsible-0',
+                                    "title": 'What you need to know',
+                                    "titleTag": 'h3',
+                                    "button": {
+                                        "close": 'Hide this',
+                                        "contextSuffix": 'content',
+                                        "attributes": {
+                                            "aria-hidden": 'true'
+                                        }
+                                    },
+                                    "saveState": true
+                                })
+                            %}
+
+                            {{ onsList({
+                                "classes": 'list--bare list--spacious',
+                                "itemsList": [
+                                    {
+                                        "url": pageInfo.rootPath + '/help/languages-and-accessibility/accessibility/british-sign-language/whats-in-the-census-information-leaflet',
+                                        "text": 'What’s in the census information leaflet'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/languages-and-accessibility/accessibility/british-sign-language/whats-in-the-letter-we-sent-you',
+                                        "text": 'What’s in the letter we sent you'
+                                    },
+                                    {
+                                        "text": 'Privacy information​'
+                                    },
+                                    {
+                                        "text": 'What to do when you’ve finished your census​'
+                                    }
+                                ]
+                            }) }}
+
+                            {% endcall %}
+
+                            <h2>Census question videos</h2>
+
+                            <p>Select a question topic to find a translation of the census questions and answer options.</p>
+
+                            {%
+                                call onsCollapsible({
+                                    "classes": 'u-mt-m',
+                                    "id": 'collapsible-1',
+                                    "title": 'People who live here',
+                                    "titleTag": 'h3',
+                                    "button": {
+                                        "close": 'Hide this',
+                                        "contextSuffix": 'content',
+                                        "attributes": {
+                                            "aria-hidden": 'true'
+                                        }
+                                    },
+                                    "saveState": true
+                                })
+                            %}
+
+                            {{ onsList({
+                                "classes": 'list--bare list--spacious',
+                                "itemsList": [
+                                    {
+                                        "text": 'People who live in this household​'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/languages-and-accessibility/accessibility/british-sign-language/do-you-usually-live-at-this-address',
+                                        "text": 'Do you usually live at this address?​'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/languages-and-accessibility/accessibility/british-sign-language/what-is-your-name',
+                                        "text": 'What is your name?'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/languages-and-accessibility/accessibility/british-sign-language/do-any-of-the-following-people-also-live-at-this-address',
+                                        "text": 'Do any of the following people also live at this address on Sunday 21 March 2021?​'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/languages-and-accessibility/accessibility/british-sign-language/who-else-lives-at-this-address',
+                                        "text": 'Who else lives at this address?'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/languages-and-accessibility/accessibility/british-sign-language/does-anyone-else-live-at-this-address',
+                                        "text": 'Does anyone else live at this address?'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/languages-and-accessibility/accessibility/british-sign-language/do-any-of-the-following-people-live-at-this-address',
+                                        "text": 'Do any of the following people live at this address on Sunday 21 March 2021?​'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/languages-and-accessibility/accessibility/british-sign-language/do-you-need-to-add-anyone',
+                                        "text": 'Do you need to add anyone?'
+                                    }
+                                ]
+                            }) }}
+
+                            {% endcall %}
+
+
+                            {%
+                                call onsCollapsible({
+                                    "id": 'collapsible-2',
+                                    "title": 'Visitors​',
+                                    "titleTag": 'h3',
+                                    "button": {
+                                        "close": 'Hide this',
+                                        "contextSuffix": 'content',
+                                        "attributes": {
+                                            "aria-hidden": 'true'
+                                        }
+                                    },
+                                    "saveState": true
+                                })
+                            %}
+
+                                <p>Content TBC.</p>
+
+                            {% endcall %}
+
+
+                            {%
+                                call onsCollapsible({
+                                    "id": 'collapsible-3',
+                                    "title": 'Household relationships',
+                                    "titleTag": 'h3',
+                                    "button": {
+                                        "close": 'Hide this',
+                                        "contextSuffix": 'content',
+                                        "attributes": {
+                                            "aria-hidden": 'true'
+                                        }
+                                    },
+                                    "saveState": true
+                                })
+                            %}
+
+                                <p>Content TBC.</p>
+
+                            {% endcall %}
+
+
+                            {%
+                                call onsCollapsible({
+                                    "id": 'collapsible-4',
+                                    "title": 'Household and accommodation',
+                                    "titleTag": 'h3',
+                                    "button": {
+                                        "close": 'Hide this',
+                                        "contextSuffix": 'content',
+                                        "attributes": {
+                                            "aria-hidden": 'true'
+                                        }
+                                    },
+                                    "saveState": true
+                                })
+                            %}
+
+                                <p>Content TBC.</p>
+
+                            {% endcall %}
+
+
+                            {%
+                                call onsCollapsible({
+                                    "id": 'collapsible-5',
+                                    "title": 'Personal details',
+                                    "titleTag": 'h3',
+                                    "button": {
+                                        "close": 'Hide this',
+                                        "contextSuffix": 'content',
+                                        "attributes": {
+                                            "aria-hidden": 'true'
+                                        }
+                                    },
+                                    "saveState": true
+                                })
+                            %}
+
+                                {{ onsList({
+                                    "classes": 'list--bare list--spacious',
+                                    "itemsList": [
+                                        {
+                                            "url": pageInfo.rootPath + '/help/languages-and-accessibility/accessibility/british-sign-language/during-term-time-where-do-you-usually-live',
+                                            "text": 'During term time, where do you usually live?'
+                                        }
+                                    ]
+                                }) }}
+
+                            {% endcall %}
+
+
+                            {%
+                                call onsCollapsible({
+                                    "id": 'collapsible-6',
+                                    "title": 'Health',
+                                    "titleTag": 'h3',
+                                    "button": {
+                                        "close": 'Hide this',
+                                        "contextSuffix": 'content',
+                                        "attributes": {
+                                            "aria-hidden": 'true'
+                                        }
+                                    },
+                                    "saveState": true
+                                })
+                            %}
+
+                                <p>Content TBC.</p>
+
+                            {% endcall %}
+
+
+                            {%
+                                call onsCollapsible({
+                                    "id": 'collapsible-7',
+                                    "title": 'Qualifications',
+                                    "titleTag": 'h3',
+                                    "button": {
+                                        "close": 'Hide this',
+                                        "contextSuffix": 'content',
+                                        "attributes": {
+                                            "aria-hidden": 'true'
+                                        }
+                                    },
+                                    "saveState": true
+                                })
+                            %}
+
+                                {{ onsList({
+                                    "classes": 'list--bare list--spacious',
+                                    "itemsList": [
+                                        {
+                                            "url": pageInfo.rootPath + '/help/languages-and-accessibility/accessibility/british-sign-language/have-you-achieved-a-gcse-or-equivalent-qualification',
+                                            "text": 'Have you achieved a GCSE or equivalent qualification?'
+                                        }
+                                    ]
+                                }) }}
+
+                            {% endcall %}
+
+
+                            {%
+                                call onsCollapsible({
+                                    "id": 'collapsible-8',
+                                    "title": 'Employment',
+                                    "titleTag": 'h3',
+                                    "button": {
+                                        "close": 'Hide this',
+                                        "contextSuffix": 'content',
+                                        "attributes": {
+                                            "aria-hidden": 'true'
+                                        }
+                                    },
+                                    "saveState": true
+                                })
+                            %}
+
+                                <p>Content TBC.</p>
+
+                            {% endcall %}
+
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+                <div class="grid__col col-4@m push-1@m u-mt-m">
+
+                    {{ onsRelatedLinks({
+                        "id": 'related-links',
+                        "title": 'Related content',
+                        "itemsList": [                
+                            {
+                                "url": pageInfo.rootPath + '/help/find-a-census-support-centre',
+                                "text": 'Find a census support centre'
+                            },
+                            {
+                                "url": 'https://census-website-respond.netlify.app/end-to-end/languages',
+                                "text": 'Languages'
+                            },
+                            {
+                                "url": pageInfo.rootPath + '/contact-us',
+                                "text": 'Contact us'
+                            }
+                        ]
+                    }) }}
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}

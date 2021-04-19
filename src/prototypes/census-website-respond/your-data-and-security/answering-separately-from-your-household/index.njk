@@ -1,0 +1,172 @@
+---
+title: Answering separately from your household
+group: Census
+version: 32.2.4
+layout: census-website-respond/views/_master
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{ onsBreadcrumb({
+                "ariaLabel": 'Breadcrumb',
+                "itemsList": [
+                    {
+                        "url": 'https://census-website-respond.netlify.app/end-to-end/home',
+                        "text": 'Home'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/your-data-and-security',
+                        "text": 'Your data and security'
+                    }
+                ]
+            }) }}
+
+            <div class="grid">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-l">
+                            <span class="u-fs-m u-db u-mb-xs u-lighter">Your data and security</span>
+                            <span class="u-vh">: </span>
+                            <span class="u-fs-xxl u-db">Answering separately from your household</span>
+                        </h1>
+
+                        {{ onsTableOfContents({
+                            "title": 'Contents',
+                            "ariaLabel": 'Pages in this guide',
+                            "itemsList": [
+                                {
+                                    "url": pageInfo.rootPath + '/your-data-and-security',
+                                    "text": 'Overview'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/your-data-and-security/what-we-do-with-your-information',
+                                    "text": 'What we do with your information'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/your-data-and-security/answering-separately-from-your-household',
+                                    "text": 'Answering separately from your household',
+                                    "current": true
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/your-data-and-security/how-we-will-contact-or-visit-you',
+                                    "text": 'How we will contact or visit you'
+                                }
+                            ]
+                        }) }}
+
+                        <div class="page__body">
+
+                            <p>The census asks questions about your household accommodation and the people who live there.</p>
+                            
+                            <p>If you need to answer your individual questions separately from the people you live with, you can <a href="https://census-website-respond.netlify.app/end-to-end/ir-uac-request-launcher/?previous=website-answering-separately&current-journey=new-ir-uac">request an individual access code</a> to start a separate census, so they can’t see your answers.</p>
+
+                            {% call onsPanel({
+                                    "type": 'warn',
+                                    "classes": 'u-mb-m'
+                                }) %}
+
+                                Someone in your household must still complete a census using a household access code
+
+                            {% endcall %}
+
+                            <p>Your individual answers will take priority over any information submitted about you in the household census.</p>
+
+                            {% call onsPanel({
+                                    "classes": 'u-mb-m u-mt-m'
+                                }) %}
+
+                                No one in your household will be told that you have requested an individual access code
+
+                            {% endcall %}
+
+                            <p>You can choose to receive your individual access code:</p>
+
+                            {{
+                                onsList({
+                                    "itemsList": [
+                                        {
+                                            "text": "by text message"
+                                        },
+                                        {
+                                            "text": "by post"
+                                        }
+                                    ]
+                                })
+                            }}
+
+                            <h2>Access code by text message</h2>
+                            <p>We will need your mobile number. This will not be stored and only used once to send the access code. The text will be sent from <strong>Census2021</strong>.</p>
+
+                            <h2>Access code by post</h2>
+                            <p>A letter with your individual access code will arrive in an unbranded envelope. The letter can be addressed to you, but we can only send access codes to the registered household address.</p>
+
+                            <h2>If you want to fill out a paper census</h2>
+
+                            <p>You can <a href="https://census-website-respond.netlify.app/end-to-end/uac-request-address/?previous=website-get-a-code&current-journey=new-hh-paper">request an individual paper questionnaire</a> to be sent in the post.</p>
+                        
+                            <div class="u-mt-xl">
+                                {{ onsContentPagination({
+                                    "contentPaginationItems": [
+                                        {
+                                            "rel": 'prev',
+                                            "text": 'Previous',
+                                            "url": pageInfo.rootPath + '/your-data-and-security/what-we-do-with-your-information',
+                                            "label": 'What we do with your information'
+                                        },
+                                        {
+                                            "rel": 'next',
+                                            "text": 'Next',
+                                            "url": pageInfo.rootPath + '/your-data-and-security/how-we-will-contact-or-visit-you',
+                                            "label": 'How we will contact or visit you'
+                                        }
+                                    ]
+                                }) }}
+                            </div>
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+                <div class="grid__col col-4@m push-1@m u-mt-m">
+
+                    {{ onsRelatedLinks({
+                        "id": 'related-links',
+                        "title": 'Related content',
+                        "itemsList": [
+                            {
+                                "url": pageInfo.rootPath + '/about-the-census',
+                                "text": 'About the census'
+                            },
+                            {
+                                "url": pageInfo.rootPath + '/about-the-census/2019-rehearsal',
+                                "text": '2019 Rehearsal'
+                            },
+                            {
+                                "url": pageInfo.rootPath + '/about-the-census/why-you-should-take-part-in-the-census',
+                                "text": 'Why you should take part in the census'
+                            },
+                            {
+                                "url": pageInfo.rootPath + '/contact-us',
+                                "text": 'Contact us'
+                            }
+                        ]
+                    }) }}
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}

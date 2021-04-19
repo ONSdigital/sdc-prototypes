@@ -1,0 +1,123 @@
+---
+title: Contact us
+group: Census
+version: 32.2.4
+layout: census-website-respond/views/_master
+---
+
+{% set pageId = 'contact' %}
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": 'https://census-website-respond.netlify.app/end-to-end/home/',
+                            "text": 'Home'
+                        }
+                    ]
+                })
+            }}
+
+            <div class="grid">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-l u-fs-xxl">Contact us</h1>
+
+                            <div class="page__body">
+
+                            <h2>Telephone</h2>
+
+                            <p>We will have advisers available to help you at the following times:</p>
+
+                            {{
+                                onsList({
+                                    "classes": 'list--bare',
+                                    "itemsList": [
+                                        {
+                                            "text": 'Monday to Friday, 9am to 5pm'
+                                        },
+                                        {
+                                            "text": 'Saturday and Sunday, closed'
+                                        }
+                                    ]
+                                })
+                            }}
+
+                            <p>Telephone: 01329 444 972</p>
+                            <p>Local call charges apply</p>
+
+                            <h2>Email</h2>
+
+                            <p><a href="mailto:census.customerservices@ons.gov.uk">census.customerservices@ons.gov.uk</a></p>
+
+                            <h2>Social media</h2>
+
+                            {{
+                            onsList({
+                                "classes": 'list--bare list--inline list--icons',
+                                "itemsList": [
+                                    {
+                                        "url": 'https://www.twitter.com/census2021help',
+                                        "text": 'Twitter',
+                                        "prefixIcon": 'twitter',
+                                        "iconSize": 'xxl',
+                                        "rel": 'noreferrer external'
+                                    },
+                                    {
+                                        "url": 'https://www.facebook.com/census2021',
+                                        "text": 'Facebook',
+                                        "prefixIcon": 'facebook',
+                                        "iconSize": 'xxl',
+                                        "rel": 'noreferrer external'
+                                    },
+                                    {
+                                        "url": 'https://www.instagram.com/census2021',
+                                        "text": 'Instagram',
+                                        "prefixIcon": 'instagram',
+                                        "iconSize": 'xxl',
+                                        "rel": 'noreferrer external'
+                                    }
+                                ]
+                            })
+                        }}
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+                <div class="grid__col col-4@m push-1@m u-mt-xl">
+
+                    {{-
+                        onsRelatedLinks({
+                            "id": 'related-links',
+                            "title": 'Related content',
+                            "itemsList": [
+                                {
+                                    "url": pageInfo.rootPath + '/media-enquiries/',
+                                    "text": 'Media enquiries'
+                                }
+                            ]
+                        })
+                    }}
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}

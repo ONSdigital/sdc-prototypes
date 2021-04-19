@@ -1,0 +1,173 @@
+---
+title: Get prepared for Census 2021
+group: Census
+version: 31.2.0
+layout: census-website-engage/views/_master
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <!-- Hero -->
+        {{
+            onsHero({
+                "censusTheme": true,
+                "censusThemeDark": true,
+                "title": 'Get prepared for Census 2021',
+                "subtitle": 'Census Day will be Sunday 21 March 2021.',
+                "image": {
+                    "smallSrc": pageInfo.rootPath + '/img/small/woman-in-purple-dress-shirt.jpg',
+                    "largeSrc": pageInfo.rootPath + '/img/large/woman-in-purple-dress-shirt.jpg',
+                    "alt": 'Woman in purple dress shirt using laptop'
+                }
+            })
+        }}
+
+        <!-- Page contents -->
+        <div class="page__container container">
+
+            <!-- CTAs -->
+            <section class="u-pt-l u-mb-s u-bb u-pb-m">
+
+                <div class="grid grid--column@xs@s">
+
+                    <div class="grid__col col-4@m">
+                        {{-
+                            onsCard({
+                                "ariaBy": 'Section highlight',
+                                "id": 'title1',
+                                "textId": 'text1',
+                                "title": 'About the census',
+                                "url": pageInfo.rootPath + '/about-the-census',
+                                "text": 'The census is a survey that gives us information about all the households in England and Wales.'
+                            })
+                        }}
+                    </div>
+
+                    <div class="grid__col col-4@m">
+                        {{-
+                            onsCard({
+                                "ariaBy": 'Section highlight',
+                                "id": 'title2',
+                                "textId": 'text2',
+                                "title": 'Working on the census',
+                                "url": pageInfo.rootPath + '/jobs',
+                                "text": 'For Census 2021, we’ll be hiring at least 30,000 field staff across England and Wales.'
+                            })
+                        }}
+                    </div>
+
+                    <div class="grid__col col-4@m">
+                        {{-
+                            onsCard({
+                                "ariaBy": 'Section highlight',
+                                "id": 'title3',
+                                "textId": 'text3',
+                                "title": 'Your data and security',
+                                "url": pageInfo.rootPath + '/your-data-and-security',
+                                "text": 'How we keep your data safe and what happens to your personal information.'
+                            })
+                        }}
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- Case studies -->
+            <section class="u-pt-m u-bb u-pb-s">
+
+                <h2 class="u-fs-xl u-mb-l">Help organisations plan for the future</h2>
+
+                <div class="grid grid--column@xs@s u-mb-l">
+                    
+                    <div class="grid__col col-4@m">
+                        <div class="u-pr-m@m u-mb-l@xs@m">
+                            <h3>Census information can help to make a difference</h3>
+                            <p>Businesses use it to decide where to set up and charities use it to help get the funding they need.</p>
+                            <p class="u-mb-no"><a href="#0">Read some of our case studies</a></p>
+                        </div>
+                    </div>
+
+                    <div class="grid__col col-6@s@m col-4@m">
+                        
+                        <div class="card" role="navigation">
+                            <a href="#0" tabindex="-1" aria-hidden="true"><img class="card__image u-mb-s" height="200" width="303" srcset="{{ pageInfo.rootPath }}/img/mental-health-foundation.png 1x, {{ pageInfo.rootPath }}/img/mental-health-foundation@2x.png 2x" src="{{ pageInfo.rootPath }}/img/mental-health-foundation.png" loading="lazy" alt="Mental Health Foundation"></a>
+                            <h3 class="u-fs-m" id="title2"><a href="#0">Healthier communities</a></h3>
+                            <p class="u-mb-no">How census data helped the Mental Health Foundation help and support those more at risk of mental ill health.</p>
+                        </div>
+
+                    </div>
+
+                    <div class="grid__col col-6@s@m col-4@m">
+                        
+                        <div class="card" role="navigation">
+                            <a href="#0" tabindex="-1" aria-hidden="true"><img class="card__image u-mb-s" height="200" width="303" srcset="{{ pageInfo.rootPath }}/img/london-fire-brigade.png 1x, {{ pageInfo.rootPath }}/img/london-fire-brigade@2x.png 2x" src="{{ pageInfo.rootPath }}/img/london-fire-brigade.png" loading="lazy" alt="London Fire Brigade"></a>
+                            <h3 class="u-fs-m"><a href="#0">Fire-fighting with facts</a></h3>
+                            <p class="u-mb-no">The London Fire Brigade used census data to identify and prevent fires in high risk areas.</p>
+                        </div>
+
+                    </div>
+                    
+                </div>
+
+            </section>
+
+            <!-- Contact and social links -->
+            <section class="u-mb-l u-pt-m">
+
+                <div class="grid grid--column@xs@s">
+
+                    <div class="grid__col col-6@m">
+                    
+                        <h3>Get in touch</h3>
+
+                        <p class="u-m-no">If you have any questions, <a href="{{ pageInfo.rootPath }}/contact-us">get in touch</a></p>
+
+                    </div>
+
+                    <div class="grid__col col-6@m">
+                        
+                        <h3>Follow us</h3>
+                    
+                        {{
+                            onsList({
+                                "classes": 'list--bare list--inline list--icons',
+                                "itemsList": [
+                                    {
+                                        "url": 'https://www.twitter.com/census2021',
+                                        "text": 'Twitter',
+                                        "prefixIcon": 'twitter',
+                                        "iconSize": 'xxl',
+                                        "rel": 'noreferrer external'
+                                    },
+                                    {
+                                        "url": 'https://www.facebook.com/census2021',
+                                        "text": 'Facebook',
+                                        "prefixIcon": 'facebook',
+                                        "iconSize": 'xxl',
+                                        "rel": 'noreferrer external'
+                                    },
+                                    {
+                                        "url": 'https://www.instagram.com/census2021',
+                                        "text": 'Instagram',
+                                        "prefixIcon": 'instagram',
+                                        "iconSize": 'xxl',
+                                        "rel": 'noreferrer external'
+                                    }
+                                ]
+                            })
+                        }}
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}

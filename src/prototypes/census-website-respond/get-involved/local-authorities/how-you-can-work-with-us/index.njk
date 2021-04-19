@@ -1,0 +1,146 @@
+---
+title: How you can work with us
+group: Census
+version: 32.2.4
+layout: census-website-respond/views/_master
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": 'https://census-website-respond.netlify.app/end-to-end/home/',
+                            "text": 'Home'
+                        },
+                        {
+                            "url": pageInfo.rootPath + '/get-involved/local-authorities',
+                            "text": 'Local authorities'
+                        }
+                    ]
+                })
+            }}
+
+            <div class="grid">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-l">
+                            <span class="u-fs-m u-db u-mb-xs u-lighter">Local authorities</span>
+                            <span class="u-vh">: </span>
+                            <span class="u-fs-xxl u-db">How you can work with us</span>
+                        </h1>
+
+                        {{-
+                            onsTableOfContents({
+                                "title": 'Contents',
+                                "ariaLabel": 'Pages in this guide',
+                                "itemsList": [
+                                    {
+                                        "url": pageInfo.rootPath + '/get-involved/local-authorities',
+                                        "text": 'Overview'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/get-involved/local-authorities/how-you-can-work-with-us',
+                                        "text": 'How you can work with us',
+                                        "current": true
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/get-involved/local-authorities/what-you-can-do-to-help',
+                                        "text": 'What you can do to help'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/get-involved/local-authorities/important-dates-for-local-authorities',
+                                        "text": 'Important dates for local authorities'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/get-involved/local-authorities/materials-to-help-promote-the-census',
+                                        "text": 'Materials to help promote the census'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/get-involved/local-authorities/who-you-can-contact-for-help',
+                                        "text": 'Who you can contact for help'
+                                    }
+                                ]
+                            })
+                        }}
+
+                        <div class="page__body">
+
+                            <p>We’ve planned how to best work together with local authorities based on successes from the 2011 Census and the 2019 Rehearsal.</p>
+
+                            <p>There are lots of different ways that your local authority can help with the census. This includes providing local insight in the lead-up to the census and practical support to help people fill in their forms during the census. You can also use census statistics afterwards to inform your decisions.</p>
+
+                            <p>You can read much more about these activities in your <a href="{{pageInfo.rootPath}}/documents/Local_Authority_Guide.pdf" target="_blank">Local Authority Partnership Guide</a>.</p>
+
+                            <div class="u-mt-xl">
+                                {{-
+                                    onsContentPagination({
+                                        "contentPaginationItems": [
+                                            {
+                                                "rel": 'prev',
+                                                "text": 'Previous',
+                                                "url": pageInfo.rootPath + '/get-involved/local-authorities',
+                                                "label": 'Overview'
+                                            },
+                                            {
+                                                "rel": 'next',
+                                                "text": 'Next',
+                                                "url": pageInfo.rootPath + '/get-involved/local-authorities/what-you-can-do-to-help',
+                                                "label": 'What you can do to help'
+                                            }
+                                        ]
+                                    })
+                                }}
+                            </div>
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+                <div class="grid__col col-4@m push-1@m u-mt-m">
+
+                    {{-
+                        onsRelatedLinks({
+                            "id": 'related-links',
+                            "title": 'Related content',
+                            "itemsList": [
+                                {
+                                    "url": pageInfo.rootPath + '/get-involved/community-groups',
+                                    "text": 'Community groups'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/get-involved/communications-partners',
+                                    "text": 'Communications partners'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/get-involved/downloadable-resources',
+                                    "text": 'Downloadable resources'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/contact-us',
+                                    "text": 'Contact us'
+                                }
+                            ]
+                        })
+                    }}
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}

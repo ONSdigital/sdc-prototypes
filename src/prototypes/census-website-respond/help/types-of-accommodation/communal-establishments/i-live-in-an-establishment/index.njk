@@ -1,0 +1,237 @@
+---
+title: I live in an establishment
+group: Census
+version: 32.2.4
+layout: census-website-respond/views/_master
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{ onsBreadcrumb({
+                "ariaLabel": 'Breadcrumb',
+                "itemsList": [
+                    {
+                        "url": 'https://census-website-respond.netlify.app/end-to-end/home',
+                        "text": 'Home'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help',
+                        "text": 'Help with the census'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help/types-of-accommodation',
+                        "text": 'Types of household or accommodation'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help/types-of-accommodation/communal-establishments',
+                        "text": 'Care homes, student halls and other establishments'
+                    }
+                ]
+            }) }}
+
+            <div class="grid">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-l">
+                            <span class="u-fs-m u-db u-mb-xs u-lighter">Care homes, student halls and other establishments</span>
+                            <span class="u-vh">: </span>
+                            <span class="u-fs-xxl u-db">I live in an establishment</span>
+                        </h1>
+
+                        {{-
+                            onsTableOfContents({
+                                "title": 'Contents',
+                                "ariaLabel": 'Pages in this guide',
+                                "itemsList": [
+                                    {
+                                        "url": pageInfo.rootPath + '/help/types-of-accommodation/communal-establishments',
+                                        "text": 'Overview'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/types-of-accommodation/communal-establishments/i-live-in-an-establishment',
+                                        "text": 'I live in an establishment',
+                                        "current": true
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/types-of-accommodation/communal-establishments/i-manage-an-establishment',
+                                        "text": 'I manage an establishment'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/types-of-accommodation/communal-establishments/establishments-that-are-treated-as-households',
+                                        "text": 'Establishments that are treated as households'
+                                    }
+                                ]
+                            })
+                        }}
+
+                        <div class="page__body">
+                            <p>This advice is for residents of managed residential accommodation.</p>
+
+                            <h2>What type of establishment do you live in?</h2>
+
+                            {{
+                                onsList({
+                                    "itemsList": [
+                                        {
+                                            "text": "Student accommodation",
+                                            "url": pageInfo.rootPath + "/help/types-of-accommodation/students"
+                                        },
+                                        {
+                                            "text": "Care home, hospital or hospice",
+                                            "url": pageInfo.rootPath + "/help/types-of-accommodation/communal-establishments/i-live-in-an-establishment/i-live-or-stay-in-a-care-home-hospital-or-hospice"
+                                        },
+                                        {
+                                            "text": "Hotel, guest house, bed and breakfast (B&B) or hostel",
+                                            "url": "#"
+                                        },
+                                        {
+                                            "text": "Boarding school or children's home",
+                                            "url": pageInfo.rootPath + "/help/types-of-accommodation/communal-establishments/i-live-in-an-establishment/i-live-or-stay-in-a-childrens-home-or-boarding-school/"
+                                        },
+                                        {
+                                            "text": "Staff accommodation, religious establishment or commune",
+                                            "url": pageInfo.rootPath + "/help/types-of-accommodation/communal-establishments/i-live-in-an-establishment/i-live-or-stay-in-staff-accommodation-a-religious-establishment-or-commune/"
+                                        },
+                                        {
+                                            "text": "Prison, secure unit or young offender institution",
+                                            "url": "#"
+                                        },
+                                        {
+                                            "text": "UK military base",
+                                            "url": "#"
+                                        },
+                                        {
+                                            "text": "Nurses' accommodation",
+                                            "url": "#"
+                                        }
+                                    ]
+                                })
+                            }}
+
+                            <h2>Do I have to fill in a census form here?</h2>
+
+                            <p>You should fill in an individual questionnaire here if you’re a:</p>
+
+                            {{
+                                onsList({
+                                    "itemsList": [
+                                        {
+                                            "text": "UK resident who lives or plans to stay at the establishment for six months or more"
+                                        },
+                                        {
+                                            "text": "UK resident staying in the establishment overnight on Sunday 21 March 2021 and you have no usual residence elsewhere"
+                                        },
+                                        {
+                                            "text": "non-UK resident who lives or plans to stay in the UK for over three months and you have no other permanent UK address"
+                                        }
+                                    ]
+                                })
+                            }}
+
+                            <p>If you’re staying in the establishment overnight on Sunday 21 March 2021 and none of these apply, you’re considered to be a visitor. The census counts visitors to establishments but asks no questions about them.</p>
+
+                            {%
+                                call onsCollapsible({
+                                    "classes": 'u-mt-m',
+                                    "id": 'collapsible-0',
+                                    "title": 'What is a visitor?',
+                                    "button": {
+                                        "close": 'Hide this',
+                                        "contextSuffix": 'content',
+                                        "attributes": {
+                                            "aria-hidden": 'true'
+                                        }
+                                    }
+                                })
+                            %}
+
+                                <p>A visitor is a person staying overnight at an address on 21 March 2021 where they do not usually live.</p>
+
+                                <p>A person should be counted as a visitor if:</p>
+
+                                {{
+                                    onsList({
+                                        "itemsList": [
+                                            {
+                                                "text": "they’re from outside the UK and have stayed, or intend to stay, in the UK for less than three months, or
+"
+                                            },
+                                            {
+                                                "text": "they’re staying overnight on 21 March 2021 at a communal establishment but they live elsewhere in the UK"
+                                            }
+                                        ]
+                                    })
+                                }}
+
+                            {% endcall %}
+
+                            <div class="u-mt-xl">
+                                {{-
+                                    onsContentPagination({
+                                        "contentPaginationItems": [
+                                            {
+                                                "rel": 'prev',
+                                                "text": 'Previous',
+                                                "url": pageInfo.rootPath + '/help/types-of-accommodation/communal-establishments',
+                                                "label": 'Overview'
+                                            }
+                                        ]
+                                    })
+                                }}
+                                {{-
+                                    onsContentPagination({
+                                        "contentPaginationItems": [
+                                            {
+                                                "rel": 'next',
+                                                "text": 'Next',
+                                                "url": pageInfo.rootPath + '/help/types-of-accommodation/communal-establishments/i-manage-an-establishment',
+                                                "label": 'I manage an establishment'
+                                            }
+                                        ]
+                                    })
+                                }}
+                            </div>
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+                <div class="grid__col col-4@m push-1@m u-mt-m">
+
+                    {{ onsRelatedLinks({
+                        "id": 'related-links',
+                        "title": 'Related content',
+                        "itemsList": [
+                            {
+                                "url": pageInfo.rootPath + '/help/find-a-census-support-centre',
+                                "text": 'Find a census support centre'
+                            },
+                            {
+                                "url": 'https://census-website-respond.netlify.app/end-to-end/languages',
+                                "text": 'Languages'
+                            },
+                            {
+                                "url": pageInfo.rootPath + '/contact-us',
+                                "text": 'Contact us'
+                            }
+                        ]
+                    }) }}
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}

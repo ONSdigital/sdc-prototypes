@@ -1,0 +1,83 @@
+---
+title: What if I’m away or abroad on Census Day?
+group: Census
+version: 32.2.4
+layout: census-website-respond/views/_master
+---
+
+{% set pageId = 'help' %}
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{- onsBreadcrumb({
+                "ariaLabel": 'Breadcrumb',
+                "itemsList": [
+                    {
+                        "url": 'https://census-website-respond.netlify.app/end-to-end/home/',
+                        "text": 'Home'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/about-the-census',
+                        "text": 'About the census'
+                    }
+                ]
+            }) }}
+
+            <div class="grid">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-l u-fs-xxl">What if I’m away or abroad on Census Day?</h1>
+
+                        <div class="page__body">
+
+                            <p>Census Day is Sunday 21 March 2021.</p>
+
+                            <p>If there's someone staying or living in your home and they're filling in the household form, they should include you there.</p>
+
+                            <p>If there's no one at home, please fill it in as soon as you get back. You can also use your access code to complete online while you're away.</p>
+
+                            <p>If you’re away from the UK on this date, for less than 12 months, you should still be counted in the census.</p>
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+                <div class="grid__col col-4@m push-1@m u-mt-m">
+
+                    {{- onsRelatedLinks({
+                        "id": 'related-links',
+                        "title": 'Related content',
+                        "itemsList": [
+                            {
+                                "url": pageInfo.rootPath + '/help/get-an-access-code-or-paper-census/',
+                                "text": 'Get an access code or paper census'
+                            },
+                            {
+                                "url": pageInfo.rootPath + '/help/find-a-census-support-centre',
+                                "text": 'Find a census support centre'
+                            },
+                            {
+                                "url": pageInfo.rootPath + '/help/contact-us',
+                                "text": 'Contact us'
+                            }
+                        ]
+                    }) }}
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}

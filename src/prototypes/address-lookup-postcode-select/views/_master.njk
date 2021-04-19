@@ -1,0 +1,196 @@
+{% extends "page-templates/_template.njk" %}
+
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+{% from "components/select/_macro.njk" import onsSelect %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/search/_macro.njk" import onsSearch %}
+{% from "components/collapsible/_macro.njk" import onsCollapsible %}
+{% from "components/lists/_macro.njk" import onsList %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+{% from "components/checkboxes/_checkbox-macro.njk" import onsCheckbox %}
+{% from "components/select/_macro.njk" import onsSelect %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ pageInfo.rootPath }}/styles.css" />
+{% endblock %}
+
+{% set designSystemVersion = "31.4.0" %}
+{% set cdnURL = "https://cdn.ons.gov.uk/sdc/design-system/" + designSystemVersion %}
+
+{% set pageConfig =  { 
+    "theme": 'census',
+    "header": {
+        "logoHref": pageInfo.rootPath,
+        "titleLogo": 'census-logo-en',
+        "titleLogoHref": 'https://census-website-respond.netlify.app/end-to-end/home/',
+        "titleLogoAlt": 'Census 2021'
+    },
+    "title": pageInfo.title + ' - Census 2021',
+    "cdn": {
+        "version": designSystemVersion
+    },
+    "language": {
+        "languages": [
+            {
+                "url": '#',
+                "ISOCode": 'en',
+                "text": 'English',
+                "buttonAriaLabel": 'Language selector. Current language: English',
+                "chooseLanguage": 'Choose language',
+                "current": true
+            },
+            {
+                "url": '#',
+                "ISOCode": 'cy',
+                "text": 'Cymraeg',
+                "buttonAriaLabel": 'Dewisydd iaith. Iaith gyfredol: Cymraeg',
+                "chooseLanguage": 'Dewiswch iaith',
+                "current": false
+            }
+        ]
+    },
+    "breadcrumbs": {
+        "ariaLabel": 'Breadcrumb',
+        "classes": "test",
+        "itemsList": [
+            {
+                "url": '',
+                "id": 'back',
+                "text": 'Back',
+                "attributes": {
+                    "class": 'js-previous',
+                    "data-attribute": 'test'
+                }
+            }
+        ]
+    },
+    "footer": {
+        "crest": true,
+        "cols": [
+            {
+                "title": 'Help with the census',
+                "itemsList": [
+                    {
+                        "text": 'Contact us',
+                        "url": pageInfo.rootPath + '/contact-us'
+                    },
+                    {
+                        "text": 'Languages',
+                        "url": 'https://census-website-respond.netlify.app/end-to-end/languages'
+                    },
+                    {
+                        "text": 'Accessibility',
+                        "url": pageInfo.rootPath + '/help/languages-and-accessibility/accessibility'
+                    }
+                ]
+            },
+            {
+                "title": 'Get involved',
+                "itemsList": [
+                    {
+                        "text": 'Local authorities',
+                        "url": pageInfo.rootPath + '/get-involved/local-authorities'
+                    },
+                    {
+                        "text": 'Community groups',
+                        "url": pageInfo.rootPath + '/get-involved/community-groups'
+                    },
+                    {
+                        "text": 'School campaigns',
+                        "url": '#0'
+                    },
+                    {
+                        "text": 'Media enquiries',
+                        "url": pageInfo.rootPath + '/media-enquiries'
+                    },
+                    {
+                        "text": 'Jobs',
+                        "url": pageInfo.rootPath + '/jobs'
+                    }
+                ]
+            },
+            {
+                "title": 'About the census',
+                "itemsList": [
+                    {
+                        "text": 'What is the census',
+                        "url": pageInfo.rootPath + '/about-the-census'
+                    },
+                    {
+                        "text": 'Why you should take part',
+                        "url": pageInfo.rootPath + '/about-the-census/why-you-should-take-part-in-the-census'
+                    },
+                    {
+                        "text": 'Census stories',
+                        "url": '#0'
+                    },
+                    {
+                        "text": 'News',
+                        "url": pageInfo.rootPath + '/news'
+                    }
+                ]
+            }
+        ],
+        "legal": [
+            {
+                "itemsList": [
+                    {
+                        "text": 'Cookies',
+                        "url": pageInfo.rootPath + '/cookies'
+                    },
+                    {
+                        "text": 'Accessibility statement',
+                        "url": pageInfo.rootPath + '/accessibility-statement'
+                    },
+                    {
+                        "text": 'Privacy and data protection',
+                        "url": pageInfo.rootPath + '/privacy-and-data-protection'
+                    },
+                    {
+                        "text": 'Terms and conditions',
+                        "url": pageInfo.rootPath + '/terms-and-conditions'
+                    }
+                ]
+            }
+        ]
+    }
+} %}
+
+{% block pageContent %}
+
+    <div class="page__container container">
+
+        {% block preMain %}
+
+            {{
+                onsBreadcrumb({
+                    "classes": "test",
+                    "itemsList": [
+                        {
+                            "url": '',
+                            "id": 'back',
+                            "text": 'Back',
+                            "attributes": {
+                                "class": 'js-previous',
+                                "data-attribute": 'test'
+                            }
+                        }
+                    ]
+                })
+            }}
+
+        {% endblock %}
+
+        {% block main %}{% endblock %}
+
+    </div>
+
+{% endblock %}
+
+{% block bodyEnd %}
+    <script src="{{pageInfo.rootPath}}/index.js"></script>
+{% endblock %}

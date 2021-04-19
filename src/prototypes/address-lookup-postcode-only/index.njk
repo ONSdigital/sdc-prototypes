@@ -1,0 +1,142 @@
+---
+title: Postcode lookup
+group: Address Lookup
+version: 31.4.0
+layout: address-lookup-postcode-only/views/_master
+---
+{% block preMain %}
+
+    {{
+        onsBreadcrumb({
+            "ariaLabel": 'back',
+            "id": 'back',
+            "itemsList": [
+                {
+                    "url": pageInfo.rootPath + '/',
+                    "id": 'back-link',
+                    "classes": 'js-previous',
+                    "text": 'Back'
+                }
+            ]
+        })
+    }}
+
+{% endblock %}
+{% block main %}
+    <div class="grid">
+
+        <div class="grid__col col-8@m">
+
+            <main class="page__main" id="main-content" role="main">
+
+                <form action="{{ pageInfo.rootPath }}/select-address/">
+
+                    {% call onsQuestion({
+                        "title": "What is your postcode?",
+                        "description": "<p>To request an access code, we need your usual address</p>"
+                    }) %}
+
+                        {%- call onsCollapsible({
+                                'id': 'collapsible',
+                                'title': "If you have more than one address",
+                                'titleTag': 'h2',
+                                'classes': 'u-mt-m',
+                                'button': {
+                                    'close': 'Hide this',
+                                    'contextSuffix': 'content'
+                                }
+                            })
+                        -%}
+
+                            <p>Include yourself at the home address where you generally spend most of your time. If you split your time equally then use the home address where you are staying overnight on Sunday 21 March 2021.</p>
+                            <p><strong>Students</strong>, include yourself at both your term-time and out of term-time addresses.</p>
+                            <p><strong>People with a second address for work</strong>, include yourself at your home address.</p>
+                            <p><strong>Armed forces members</strong>, include yourself at your home address if you have one.</p>
+
+                        {%- endcall -%}
+
+                        {{
+                            onsInput({
+                                'id': 'postcode',
+                                'type': 'text',
+                                'autocomplete': 'postal-code',
+                                'classes': 'input--w-6',
+                                'label': {
+                                    'text': "UK postcode"
+                                },
+                                'name': 'postcode'
+                            })
+                        }}
+
+                        {{
+                            onsButton({
+                                'id': 'js-submit',
+                                'text': 'Find address',
+                                'classes': 'u-mt-l',
+                                'submitType': 'loader'
+                            })
+                        }}
+
+                    {% endcall %}
+
+                </form>
+
+                {%- call onsCollapsible({
+                        'id': 'collapsible',
+                        'title': "I don’t live at a fixed address",
+                        'titleTag': 'h2',
+                        'classes': 'u-mt-m',
+                        'button': {
+                            'close': 'Hide this',
+                            'contextSuffix': 'content'
+                        }
+                    })
+                -%}
+
+                    <p>If you live somewhere that is mobile, such as a canal boat or motorhome, <a href="#">contact us to request an access code</a>.</p>
+
+                {%- endcall -%}
+
+                {{
+                    onsPanel({
+                        "classes": "u-mt-xl",
+                        "body": '<h2 class="u-fs-m">Prototype instructions</h2>
+                                <p>This prototype uses dummy data. Enter the following postcodes to test the different scenarios:</p>
+                                <ul>
+                                    <li><strong>AA1 1AA</strong> &#8804; 30 addresses</li>
+                                    <li><strong>BB2 2BB</strong> &#62; 30 addresses</li>
+                                    <li><strong>CC3 3CC</strong> &#61; 0 addresses</li>
+                                </ul>'
+                    })
+                }}
+
+            </main>
+
+        </div>
+
+    </div>
+
+<script>
+    sessionStorage.clear();
+
+    document.querySelector('form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const inputVal = document.querySelector('input').value;
+        const inputName = document.querySelector('input').name;
+
+        if (inputVal === 'AA1 1AA') {
+            window.location.href = '{{pageInfo.rootPath}}/select-address/';
+        }
+        else if (inputVal === 'BB2 2BB') {
+            window.location.href = '{{pageInfo.rootPath}}/enter-property-number/';
+        }
+        else {
+            window.location.href = '{{pageInfo.rootPath}}/no-address/';
+        }
+
+        sessionStorage.setItem(inputName, inputVal);
+        return true;
+    });
+</script>
+
+{% endblock %}

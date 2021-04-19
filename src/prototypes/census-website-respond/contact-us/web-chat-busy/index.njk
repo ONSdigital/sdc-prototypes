@@ -1,0 +1,51 @@
+---
+title: Web chat temporarily unavailable
+group: Census
+version: 32.2.4
+layout: census-website-respond/views/_rh-master
+---
+
+{% set pageId = 'contact' %}
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '#0',
+                            "text": 'Back'
+                        }
+                    ]
+                })
+            }}
+
+            <div class="grid">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <section id="section-content" class="page__body">
+
+                            <h1 class="u-mb-l u-fs-xxl">Web chat is temporarily unavailable</h1>
+
+                            <p>Sorry, all our advisers are busy at the moment.</p>
+
+                            <p>You can still <a href="">send us a message using our web form</a>. We will respond to your message by email within 2 working days.</p>
+
+                        </section>
+                    </main>
+                </div>
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}

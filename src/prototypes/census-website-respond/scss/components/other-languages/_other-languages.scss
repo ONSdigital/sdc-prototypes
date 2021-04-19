@@ -1,0 +1,36 @@
+/* --------------------------------
+List
+-------------------------------- */
+
+// Prevents extra space due to inline-block
+.header__top {
+  .grid__col {
+    align-items: center;
+    display: flex;
+  }
+}
+
+.other-languages {
+  border-left: 1px solid $color-grey-2;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  margin-left: 1rem;
+  padding-left: 1rem;
+
+  &__item {
+    display: block;
+    margin-bottom: 0;
+
+    &:not(:first-child) {
+      border-left: 1px solid $color-grey-2;
+      margin-left: 1rem;
+      padding-left: 1rem;
+    }
+  }
+
+  &__link {
+    align-items: center;
+    display: flex;
+  }
+}

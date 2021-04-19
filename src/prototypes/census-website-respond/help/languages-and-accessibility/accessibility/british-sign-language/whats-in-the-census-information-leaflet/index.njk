@@ -1,0 +1,110 @@
+---
+title: What’s in the census information leaflet
+group: Census
+version: 32.2.4
+layout: census-website-respond/views/_master
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{ onsBreadcrumb({
+                "ariaLabel": 'Back',
+                "itemsList": [
+                    {
+                        "url": pageInfo.rootPath + '/help/languages-and-accessibility/accessibility/british-sign-language/#collapsible-0',
+                        "id": 'back',
+                        "text": 'Back'
+                    }
+                ]
+            }) }}
+
+            <div class="grid">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-l">
+                            <span class="u-fs-m u-db u-mb-xs u-lighter">What you need to know</span>
+                            <span class="u-vh">: </span>
+                            <span class="u-fs-xxl u-db">What’s in the census information leaflet​</span>
+                        </h1>
+
+                        {{
+                            onsVideo({
+                                "youtubeUrl": 'https://www.youtube.com/embed/PL7S56kkab4'
+                            })
+                        }}
+
+                        <div class="u-mt-l">
+                            <p><a href="{{pageInfo.rootPath}}/help/languages-and-accessibility/accessibility/british-sign-language/#collapsible-0">Return to What you need to know</a></p>
+                        </div>
+
+                    </main>
+
+                </div>
+
+                <div class="grid__col col-4@m push-1@m u-mt-m">
+
+                    <div class="u-bb">
+
+                        {{ onsRelatedLinks({
+                            "id": 'related-links',
+                            "title": 'Related content',
+                            "itemsList": [                
+                                {
+                                    "url": pageInfo.rootPath + '/help/find-a-census-support-centre',
+                                    "text": 'Find a census support centre'
+                                },
+                                {
+                                    "url": 'https://census-website-respond.netlify.app/end-to-end/languages',
+                                    "text": 'Languages'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/contact-us',
+                                    "text": 'Contact us'
+                                }
+                            ]
+                        }) }}
+
+                    </div>
+
+                    <div class="u-pt-m u-pb-m">
+
+                        <h2 class="u-fs-r--b u-mb-xs">Share this post</h2>
+
+                        {{ onsList({
+                            "classes": 'list--bare list--icons',
+                            "itemsList": [
+                                {
+                                    "url": '#0',
+                                    "text": 'Twitter',
+                                    "prefixIcon": 'twitter',
+                                    "iconSize": 'xxl',
+                                    "rel": 'noreferrer external'
+                                },
+                                {
+                                    "url": '#0',
+                                    "text": 'Facebook',
+                                    "prefixIcon": 'facebook',
+                                    "iconSize": 'xxl',
+                                    "rel": 'noreferrer external'
+                                }
+                            ]
+                        }) }}
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}
