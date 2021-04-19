@@ -1,0 +1,240 @@
+---
+title: The census is here
+group: Census 2021
+version: 32.2.4
+layout: census-website-respond/views/_master
+---
+
+{% block pageContent %}
+
+    {% block main %}
+
+        {{
+            onsHero({
+                censusTheme: true,
+                title: 'The census is here',
+                subtitle: 'Census Day was Sunday 21 March, but it’s not too late to take part',
+                text: 'To start your census online, you will need your 16‑character access code',
+                button: {
+                    url: '#0',
+                    text: 'Start census'
+                },
+                collapsible: {
+                    classes: 'u-mt-s',
+                    id: 'collapsible',
+                    title: 'Don’t have a code?',
+                    titleTag: 'h2',
+                    content: '<p>Find out <a href="#0">where to find your access code</a>, or <a href="#0">request a new code</a> to start a new census.</p>',
+                    closeButtonText: 'Hide this',
+                    closeButtonContextSuffix: 'content'
+                },
+                image: {
+                    smallSrc: pageInfo.rootPath + '/img/small/woman-in-purple-dress-shirt.jpg',
+                    largeSrc: pageInfo.rootPath + '/img/large/woman-in-purple-dress-shirt.jpg'
+                },
+                suffixText: 'If you live in Northern&nbsp;Ireland, visit the <a href="#0">Northern&nbsp;Ireland census website</a> to take part'
+            })
+        }}
+
+        {% from "components/panel/_macro.njk" import onsPanel %}
+        {% call onsPanel({
+                "type": 'warn-branded'
+            })
+        %}
+            <p class="u-mb-no">You must complete the census by law or you could be fined up to £1,000</p>
+            <p class="u-fs-r">Some questions are labelled as voluntary. It is not an offence if you do not answer these.</p>
+        {% endcall %}
+
+        <!-- Page contents -->
+        <div class="page__container container">
+
+            <!-- CTAs -->
+            <section class="u-pt-l u-pb-s u-pb-m@m">
+
+                <div class="grid grid--column@xs@s">
+
+                    <div class="grid__col col-4@m">
+                        {{-
+                            onsCard({
+                                "ariaBy": 'Section highlight',
+                                "id": 'title1',
+                                "textId": 'text1',
+                                "title": 'About the census',
+                                "url": pageInfo.rootPath + '/about-the-census',
+                                "text": 'The census is a survey about all the households in England and Wales. Census Day was Sunday 21 March.'
+                            })
+                        }}
+                    </div>
+
+                    <div class="grid__col col-4@m">
+                        {{-
+                            onsCard({
+                                "ariaBy": 'Section highlight',
+                                "id": 'title2',
+                                "textId": 'text2',
+                                "title": 'Why you should take part',
+                                "url": pageInfo.rootPath + '/jobs',
+                                "text": 'Everyone must complete the census and provide accurate information. It helps decide how services are funded in your area.'
+                            })
+                        }}
+                    </div>
+
+                    <div class="grid__col col-4@m">
+                        {{-
+                            onsCard({
+                                "ariaBy": 'Section highlight',
+                                "id": 'title3',
+                                "textId": 'text3',
+                                "title": 'Your data and security',
+                                "url": pageInfo.rootPath + '/your-data-and-security',
+                                "text": 'What we do with your personal information, how we keep it safe, and how we will contact or visit you.'
+                            })
+                        }}
+                    </div>
+
+                </div>
+
+            </section>
+        </div>
+
+        <div>
+            <section>
+                {% from "components/promo-banner/_macro.njk" import onsPromoBanner %}
+                {% call
+                    onsPromoBanner({
+                        "darkTheme": true
+                    })
+                %}
+                <h3 class="u-fs-xl">Students should complete the census for their university address</h3>
+                <p>Wherever you’re currently staying, from halls to your old bedroom at home, you should fill in a census for your university address.</p>
+                <p>It only takes 10 minutes per person, and the information you give in the census makes sure your student community gets the services it needs. This includes things like university campus bus links and bike lanes, jobs and training.</p>
+                <p><a href="#0">Find out more about what you need to do</a></p>
+                {% endcall %}
+            </section>
+        </div>
+
+        <div class="page__container container u-mt-l">
+            <section>
+                <h2 class="u-fs-xl u-mb-l">Help with the census</h2>
+
+                <div class="grid grid--column@xxs@s u-mb-xl">
+                    <div class="grid__col col-7@m u-pr-l@m">
+                        <h3>If you don’t have an access code</h3>
+
+                        <p>You can <a href="https://census.gov.uk/en/request/access-code/enter-address/">request a new access code</a> to start a new census if you have lost or not received an access code.</p>
+
+                        <div id="details" class="collapsible js-collapsible u-mb-m collapsible--initialised" data-btn-close="Hide this" role="group">
+                            <div class="collapsible__heading js-collapsible-heading" role="link" aria-controls="details" tabindex="0" aria-expanded="false" data-ga-action="Close panel">
+                                <div class="collapsible__controls">
+                                    <div class="collapsible__title">Need to answer separately from your household?</div><span class="collapsible__icon"><svg class="svg-icon" viewBox="0 0 7.5 12.85" xmlns="http://www.w3.org/2000/svg" focusable="false"><path d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z" transform="translate(-5.02 -1.59)"></path></svg></span>
+                                </div>
+                            </div>
+                            <div id="details-content" class="collapsible__content js-collapsible-content" aria-hidden="true">
+                                <p>If you need to answer separately from the people you live with, you can <a href="https://census.gov.uk/en/request/access-code/individual/">request an individual access code</a> to start a separate census.</p>
+
+                                <div class="panel panel--warn panel--no-title"><span class="panel__icon" aria-hidden="true">!</span> <span class="u-vh">Warning:</span>
+                                    <div class="panel__body"><p class="u-mb-no">Someone in your household must still complete a census using a household access code</p>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn--small js-collapsible-button btn--secondary" aria-controls="details" data-ga-action="Close panel"><span class="btn__inner js-collapsible-button-inner">Hide this</span> <span class="btn__context u-vh">Need to answer separately from your household? undefined</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <h3 class="u-mt-l">If you want to fill out a paper census</h3>
+
+                        <p>You can <a href="https://census.gov.uk/en/request/paper-questionnaire/enter-address/">request a paper census questionnaire</a> to be sent in the post.</p>
+
+                        <h4>Continuation questionnaire</h4>
+
+                        <p>If you already have a household paper questionnaire and there are more than 5 people in your household, you will need to <a href="https://census.gov.uk/en/request/continuation-questionnaire/enter-address/">request a continuation questionnaire</a>.</p>
+                    </div>
+                    <div class="grid__col col-5@m u-bl@m u-pl-m@m">
+                        <div class="u-bt@xxs@m u-mt-m@xxs@m u-pt-m@xxs@m">
+                            <h3 class="u-mb-s">Support and guidance</h3>
+
+                            <ul class="list list--bare">
+                                <li class="list__item u-mb-s"><a class="u-fs-r--b" href="/help/languages-and-accessibility/languages">Languages</a><br><p class="u-mt-xs">Guidance about the census translated into other languages</p>
+                                </li>
+                                <li class="list__item u-mb-s"><a class="u-fs-r--b" href="/help/languages-and-accessibility/accessibility">Accessible formats and guidance</a><br><p class="u-mt-xs">Guidance in large print, easy read, Braille, and videos with BSL, audio and subtitles</p>
+                                </li>
+                                <li class="list__item u-mb-s"><a class="u-fs-r--b" href="/help/types-of-household-or-accommodation">Types of household or accommodation</a><br><p class="u-mt-xs">Guidance to complete the census for different households, including students, boats and second homes</p>
+                                </li>
+                                <li class="list__item u-mb-s"><a class="u-fs-r--b" href="/help/find-a-census-support-centre">Find a census support centre</a><br><p class="u-mt-xs">Get help to complete your online census at one of our support centres</p>
+                                </li>
+                            </ul>
+                            <p class="u-mb-no"><a href="/help">More support and guidance</a></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="page__container container"><hr class="u-mt-no"></div>
+        <div class="page__container container">
+            <!-- Contact and social links -->
+            <section class="u-mb-l u-pt-m">
+
+                <div class="grid grid--column@xs@s">
+
+                    <div class="grid__col col-5@m">
+
+                        <h2>Get in touch</h2>
+
+                        <p>If you need further help with your census, <a href="{{ pageInfo.rootPath }}/contact-us">contact us</a></p>
+
+                    </div>
+
+                    <div class="grid__col col-7@m u-pl-m@m">
+                        
+                        <h2>Follow us</h2>
+
+                        {{
+                            onsList({
+                                "classes": 'list--bare list--inline list--icons',
+                                "itemsList": [
+                                    {
+                                        "url": 'https://www.twitter.com/census2021',
+                                        "text": 'Twitter',
+                                        "prefixIcon": 'twitter',
+                                        "iconSize": 'xxl',
+                                        "rel": 'noreferrer external'
+                                    },
+                                    {
+                                        "url": 'https://www.facebook.com/census2021',
+                                        "text": 'Facebook',
+                                        "prefixIcon": 'facebook',
+                                        "iconSize": 'xxl',
+                                        "rel": 'noreferrer external'
+                                    },
+                                    {
+                                        "url": 'https://www.instagram.com/census2021',
+                                        "text": 'Instagram',
+                                        "prefixIcon": 'instagram',
+                                        "iconSize": 'xxl',
+                                        "rel": 'noreferrer external'
+                                    },
+                                    {
+                                        "url": 'https://www.linkedin.com/showcase/census2021',
+                                        "text": 'LinkedIn',
+                                        "prefixIcon": 'linkedin',
+                                        "iconSize": 'xxl',
+                                        "rel": 'noreferrer external'
+                                    }
+                                ]
+                            })
+                        }}
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+    
+    {% endblock %}
+
+
+{% endblock %}
