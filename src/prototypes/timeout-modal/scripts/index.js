@@ -12,11 +12,11 @@ class TimeoutWarning {
     this.countdown = context.querySelector('.js-timer');
     this.accessibleCountdown = context.querySelector('.js-timer-acc');
 
-    this.idleMinutesBeforeTimeOut = context.getAttribute('data-server-timeout-time')
+    this.idleMinutesBeforeTimeOutShows = context.getAttribute('data-server-timeout-time')
       ? context.getAttribute('data-server-timeout-time')
-      : 0.1;
+      : 1;
     this.timeOutRedirectUrl = context.getAttribute('data-redirect-url');
-    this.minutesTimeOutModalVisible = context.getAttribute('data-show-modal') ? context.getAttribute('show-modal') : 0.5;
+    this.minutesTimeOutModalVisible = context.getAttribute('data-show-modal') ? context.getAttribute('data-show-modal') : 0.5;
     this.timeUserLastInteractedWithPage = '';
 
     this.initialise();
@@ -35,7 +35,7 @@ class TimeoutWarning {
 
     this.continueButton.addEventListener('click', this.closeDialog.bind(this));
     this.context.addEventListener('keydown', this.escClose.bind(this));
-    window.addEventListener('focus', this.checkIfShouldHaveTimedOut.bind(this));
+    window.addEventListener('focus', this.checkStatusOfTimeout.bind(this));
   }
 
   dialogSupported() {
@@ -54,7 +54,7 @@ class TimeoutWarning {
 
   countIdleTime() {
     let idleTime;
-    const milliSecondsBeforeTimeOut = this.idleMinutesBeforeTimeOut * 60000;
+    const milliSecondsBeforeTimeOut = this.idleMinutesBeforeTimeOutShows * 60000;
 
     window.onload = resetIdleTime.bind(this);
     window.onmousemove = resetIdleTime.bind(this);
@@ -144,13 +144,6 @@ class TimeoutWarning {
       }
 
       if (timerExpired) {
-        // TO DO - client/server interaction
-        // GET last interactive time from server before timing out user
-        // to ensure that user hasn’t interacted with site in another tab
-
-        countdown.innerHTML = '<span class="u-fw-b">You are being redirected.</span>';
-        accessibleCountdown.innerHTML = 'You are being redirected';
-
         setTimeout(module.redirect.bind(module), 0);
       } else {
         seconds--;
@@ -172,12 +165,6 @@ class TimeoutWarning {
           accessibleCountdown.innerHTML = atText;
         }
 
-        // TO DO - client/server interaction
-        // GET last interactive time from server while the warning is being displayed.
-        // If user interacts with site in second tab, warning should be dismissed.
-        // Compare what server returned to what is stored in client
-        // If needed, call this.closeDialog()
-
         timers.push(setTimeout(runTimer, 1000));
       }
     })();
@@ -192,13 +179,11 @@ class TimeoutWarning {
     }
   }
 
-  setFocusOnLastFocusedEl = function() {
+  setFocusOnLastFocusedEl() {
     if (this.lastFocusedEl) {
-      window.setTimeout(function() {
-        this.lastFocusedEl.focus();
-      }, 0);
+      this.lastFocusedEl.focus();
     }
-  };
+  }
 
   makePageContentInert() {
     if (document.querySelector('.page')) {
@@ -251,20 +236,16 @@ class TimeoutWarning {
     }
   };
 
-  checkIfShouldHaveTimedOut() {
+  checkStatusOfTimeout() {
     if (window.localStorage) {
       // TO DO - client/server interaction
       // GET last interactive time from server before timing out user
-      // to ensure that user hasn’t interacted with site in another tab
 
       let timeUserLastInteractedWithPage = new Date(window.localStorage.getItem('timeUserLastInteractedWithPage'));
+      let seconds = Math.abs((timeUserLastInteractedWithPage - new Date()) / 1000);
 
-      const seconds = Math.abs((timeUserLastInteractedWithPage - new Date()) / 1000);
-
-      // TO DO: use both idlemin and timemodalvisible
-      if (seconds > this.idleMinutesBeforeTimeOut * 60) {
-        // if (seconds > 60) {
-        this.redirect.bind(this);
+      if (seconds > this.idleMinutesBeforeTimeOutShows * 60 + this.minutesTimeOutModalVisible * 60) {
+        this.redirect();
       }
     }
   }
