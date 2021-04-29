@@ -7,16 +7,16 @@ class TimeoutWarning {
     this.continueButton = context.querySelector('.js-continue-btn');
     this.overLayClass = 'timeout-warning-overlay';
     this.fallBackElement = document.querySelector('.timeout-warning-fallback');
-
+    this.dialogWasAlreadyOpen = false;
     this.timers = [];
     this.countdown = context.querySelector('.js-timer');
     this.accessibleCountdown = context.querySelector('.js-timer-acc');
 
-    this.idleMinutesBeforeTimeOutShows = context.getAttribute('data-server-timeout-time')
+    this.idleMinutesBeforeTimeOut = context.getAttribute('data-server-timeout-time')
       ? context.getAttribute('data-server-timeout-time')
       : 0.2;
-    this.timeOutRedirectUrl = context.getAttribute('data-redirect-url');
     this.minutesTimeOutModalVisible = context.getAttribute('data-show-modal') ? context.getAttribute('data-show-modal') : 0.1;
+    this.timeOutRedirectUrl = context.getAttribute('data-redirect-url');
     this.timeUserLastInteractedWithPage = '';
 
     this.initialise();
@@ -35,7 +35,7 @@ class TimeoutWarning {
 
     this.continueButton.addEventListener('click', this.closeDialog.bind(this));
     this.context.addEventListener('keydown', this.escClose.bind(this));
-    window.addEventListener('focus', this.checkStatusOfTimeout.bind(this));
+    window.addEventListener('visibilitychange', this.shouldItTimeout.bind(this));
   }
 
   dialogSupported() {
@@ -54,7 +54,7 @@ class TimeoutWarning {
 
   countIdleTime() {
     let idleTime;
-    const milliSecondsBeforeTimeOut = this.idleMinutesBeforeTimeOutShows * 60000;
+    const milliSecondsBeforeTimeOut = this.idleMinutesBeforeTimeOut * 60000 - this.minutesTimeOutModalVisible * 60000;
     window.onfocus = resetIdleTime.bind(this);
     window.onload = resetIdleTime.bind(this);
     window.onmousemove = resetIdleTime.bind(this);
@@ -147,7 +147,7 @@ class TimeoutWarning {
       }
 
       if (timerExpired) {
-        module.checkStatusOfTimeout();
+        module.shouldItTimeout();
       } else {
         seconds--;
 
@@ -207,6 +207,10 @@ class TimeoutWarning {
   }
 
   closeDialog() {
+    // TO DO: Client/server interaction
+    // setLastActiveTimeOnServer();
+
+    // window.localStorage.setItem('timeUserLastInteractedWithPage', new Date());
     if (this.isDialogOpen()) {
       document.querySelector('body').classList.remove(this.overLayClass);
       this.context.close();
@@ -239,22 +243,27 @@ class TimeoutWarning {
     }
   };
 
-  checkStatusOfTimeout() {
+  shouldItTimeout() {
     // TO DO - client/server interaction
     // GET last interactive time from server before timing out user
-
     if (window.localStorage) {
       let timeUserLastInteractedWithPage = new Date(window.localStorage.getItem('timeUserLastInteractedWithPage'));
-      let seconds = Math.abs((timeUserLastInteractedWithPage - new Date()) / 1000);
-
-      if (seconds > this.idleMinutesBeforeTimeOutShows * 60 + this.minutesTimeOutModalVisible * 60) {
-        this.redirect();
-      } else if (seconds < this.minutesTimeOutModalVisible * 60) {
+      let secondsSinceLastInteraction = Math.abs((timeUserLastInteractedWithPage - new Date()) / 1000);
+      let secondsOfIdleTime = this.idleMinutesBeforeTimeOut * 60;
+      console.log(this.checkPageVisibility());
+      if (secondsSinceLastInteraction > secondsOfIdleTime) {
+        // this.redirect();
+      } else if (this.checkPageVisibility() === false && !this.isDialogOpen()) {
         this.closeDialog();
-        // TO DO: Client/server interaction
-        // setLastActiveTimeOnServer();
-        window.localStorage.setItem('timeUserLastInteractedWithPage', new Date());
       }
+    }
+  }
+
+  checkPageVisibility() {
+    if (document.visibilityState === 'hidden') {
+      return false;
+    } else {
+      return true;
     }
   }
 
