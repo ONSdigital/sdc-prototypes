@@ -14,9 +14,9 @@ class TimeoutWarning {
 
     this.idleMinutesBeforeTimeOutShows = context.getAttribute('data-server-timeout-time')
       ? context.getAttribute('data-server-timeout-time')
-      : 1;
+      : 0.2;
     this.timeOutRedirectUrl = context.getAttribute('data-redirect-url');
-    this.minutesTimeOutModalVisible = context.getAttribute('data-show-modal') ? context.getAttribute('data-show-modal') : 0.5;
+    this.minutesTimeOutModalVisible = context.getAttribute('data-show-modal') ? context.getAttribute('data-show-modal') : 0.1;
     this.timeUserLastInteractedWithPage = '';
 
     this.initialise();
@@ -55,7 +55,7 @@ class TimeoutWarning {
   countIdleTime() {
     let idleTime;
     const milliSecondsBeforeTimeOut = this.idleMinutesBeforeTimeOutShows * 60000;
-
+    window.onfocus = resetIdleTime.bind(this);
     window.onload = resetIdleTime.bind(this);
     window.onmousemove = resetIdleTime.bind(this);
     window.onmousedown = resetIdleTime.bind(this);
@@ -69,9 +69,12 @@ class TimeoutWarning {
 
       idleTime = setTimeout(this.openDialog.bind(this), milliSecondsBeforeTimeOut);
 
+      // TO DO: Client/server interaction
       // setLastActiveTimeOnServer();
       if (window.localStorage) {
-        window.localStorage.setItem('timeUserLastInteractedWithPage', new Date());
+        if (!this.isDialogOpen()) {
+          window.localStorage.setItem('timeUserLastInteractedWithPage', new Date());
+        }
       }
     }
   }
@@ -89,7 +92,7 @@ class TimeoutWarning {
         window.history.pushState('', '');
       }
 
-      this.disableBackButtonWhenOpen();
+      // this.disableBackButtonWhenOpen();
     }
   }
 
@@ -144,7 +147,7 @@ class TimeoutWarning {
       }
 
       if (timerExpired) {
-        setTimeout(module.redirect.bind(module), 0);
+        module.checkStatusOfTimeout();
       } else {
         seconds--;
 
@@ -237,15 +240,20 @@ class TimeoutWarning {
   };
 
   checkStatusOfTimeout() {
-    if (window.localStorage) {
-      // TO DO - client/server interaction
-      // GET last interactive time from server before timing out user
+    // TO DO - client/server interaction
+    // GET last interactive time from server before timing out user
 
+    if (window.localStorage) {
       let timeUserLastInteractedWithPage = new Date(window.localStorage.getItem('timeUserLastInteractedWithPage'));
       let seconds = Math.abs((timeUserLastInteractedWithPage - new Date()) / 1000);
 
       if (seconds > this.idleMinutesBeforeTimeOutShows * 60 + this.minutesTimeOutModalVisible * 60) {
         this.redirect();
+      } else if (seconds < this.minutesTimeOutModalVisible * 60) {
+        this.closeDialog();
+        // TO DO: Client/server interaction
+        // setLastActiveTimeOnServer();
+        window.localStorage.setItem('timeUserLastInteractedWithPage', new Date());
       }
     }
   }
