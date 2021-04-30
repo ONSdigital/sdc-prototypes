@@ -7,7 +7,6 @@ class TimeoutWarning {
     this.continueButton = context.querySelector('.js-continue-btn');
     this.overLayClass = 'timeout-warning-overlay';
     this.fallBackElement = document.querySelector('.timeout-warning-fallback');
-    this.dialogWasAlreadyOpen = false;
     this.timers = [];
     this.countdown = context.querySelector('.js-timer');
     this.accessibleCountdown = context.querySelector('.js-timer-acc');
@@ -35,7 +34,7 @@ class TimeoutWarning {
 
     this.continueButton.addEventListener('click', this.closeDialog.bind(this));
     this.context.addEventListener('keydown', this.escClose.bind(this));
-    window.addEventListener('visibilitychange', this.shouldItTimeout.bind(this));
+    window.addEventListener('focus', this.checkTimeoutStatus.bind(this));
   }
 
   dialogSupported() {
@@ -53,29 +52,27 @@ class TimeoutWarning {
   }
 
   countIdleTime() {
+    window.onload = this.resetIdleTime.bind(this);
+    window.onmousemove = this.resetIdleTime.bind(this);
+    window.onmousedown = this.resetIdleTime.bind(this);
+    window.onclick = this.resetIdleTime.bind(this);
+    window.onscroll = this.resetIdleTime.bind(this);
+    window.onkeypress = this.resetIdleTime.bind(this);
+    window.onkeyup = this.resetIdleTime.bind(this);
+  }
+
+  resetIdleTime() {
     let idleTime;
-    const milliSecondsBeforeTimeOut = this.idleMinutesBeforeTimeOut * 60000 - this.minutesTimeOutModalVisible * 60000;
-    window.onfocus = resetIdleTime.bind(this);
-    window.onload = resetIdleTime.bind(this);
-    window.onmousemove = resetIdleTime.bind(this);
-    window.onmousedown = resetIdleTime.bind(this);
-    window.onclick = resetIdleTime.bind(this);
-    window.onscroll = resetIdleTime.bind(this);
-    window.onkeypress = resetIdleTime.bind(this);
-    window.onkeyup = resetIdleTime.bind(this);
+    const milliSecondsBeforeTimeOut = this.idleMinutesBeforeTimeOut * 60000;
 
-    function resetIdleTime() {
-      clearTimeout(idleTime);
+    clearTimeout(idleTime);
 
-      idleTime = setTimeout(this.openDialog.bind(this), milliSecondsBeforeTimeOut);
+    idleTime = setTimeout(this.openDialog.bind(this), milliSecondsBeforeTimeOut);
 
-      // TO DO: Client/server interaction
-      // setLastActiveTimeOnServer();
-      if (window.localStorage) {
-        if (!this.isDialogOpen()) {
-          window.localStorage.setItem('timeUserLastInteractedWithPage', new Date());
-        }
-      }
+    // TO DO: Client/server interaction
+    // setLastActiveTimeOnServer();
+    if (window.localStorage) {
+      window.localStorage.setItem('timeUserLastInteractedWithPage', new Date());
     }
   }
 
@@ -147,7 +144,7 @@ class TimeoutWarning {
       }
 
       if (timerExpired) {
-        module.shouldItTimeout();
+        module.redirect();
       } else {
         seconds--;
 
@@ -210,13 +207,11 @@ class TimeoutWarning {
     // TO DO: Client/server interaction
     // setLastActiveTimeOnServer();
 
-    // window.localStorage.setItem('timeUserLastInteractedWithPage', new Date());
     if (this.isDialogOpen()) {
       document.querySelector('body').classList.remove(this.overLayClass);
       this.context.close();
       this.setFocusOnLastFocusedEl();
       this.removeInertFromPageContent();
-
       this.clearTimers();
     }
   }
@@ -243,27 +238,20 @@ class TimeoutWarning {
     }
   };
 
-  shouldItTimeout() {
+  checkTimeoutStatus() {
     // TO DO - client/server interaction
     // GET last interactive time from server before timing out user
     if (window.localStorage) {
       let timeUserLastInteractedWithPage = new Date(window.localStorage.getItem('timeUserLastInteractedWithPage'));
       let secondsSinceLastInteraction = Math.abs((timeUserLastInteractedWithPage - new Date()) / 1000);
       let secondsOfIdleTime = this.idleMinutesBeforeTimeOut * 60;
-      console.log(this.checkPageVisibility());
+      let secondsTimeoutIsVisible = this.minutesTimeOutModalVisible * 60;
+
       if (secondsSinceLastInteraction > secondsOfIdleTime) {
-        // this.redirect();
-      } else if (this.checkPageVisibility() === false && !this.isDialogOpen()) {
+        this.redirect();
+      } else if (secondsSinceLastInteraction < secondsOfIdleTime - secondsTimeoutIsVisible) {
         this.closeDialog();
       }
-    }
-  }
-
-  checkPageVisibility() {
-    if (document.visibilityState === 'hidden') {
-      return false;
-    } else {
-      return true;
     }
   }
 
@@ -280,7 +268,7 @@ class TimeoutWarning {
     //     }
     //   }
     //
-    //   xhttp.open('POST', 'update-time-user-interacted-with-page.rb', true);
+    //   xhttp.open('POST', 'somewhere', true);
     //   xhttp.send();
   }
 
