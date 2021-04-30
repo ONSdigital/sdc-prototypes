@@ -77,7 +77,7 @@ class TimeoutWarning {
   }
 
   openDialog() {
-    const shouldDialogOpen = this.getLastInteractiveTimeInSeconds() > this.idleMinutesBeforeTimeOut * 60;
+    const shouldDialogOpen = this.getLastInteractiveTimeInSeconds() >= this.idleMinutesBeforeTimeOut * 60;
     if (shouldDialogOpen) {
       document.querySelector('body').classList.add(this.overLayClass);
       this.saveLastFocusedEl();
@@ -107,8 +107,6 @@ class TimeoutWarning {
     let seconds = 60 * minutes;
     let timerRunOnce = false;
     let timers = this.timers;
-    let secondsLapsed = 0;
-
     countdown.innerHTML = minutes + ' minute' + (minutes > 1 ? 's' : '');
 
     (function runTimer() {
@@ -151,27 +149,20 @@ class TimeoutWarning {
         module.redirect();
       } else {
         seconds--;
-        secondsLapsed++;
+        countdown.innerHTML = text;
 
-        if (module.getLastInteractiveTimeInSeconds() < secondsLapsed) {
-          module.closeDialog();
-          module.resetIdleTime();
-        } else {
-          countdown.innerHTML = text;
-
-          if (minutesLeft < 1 && secondsLeft < 20) {
-            accessibleCountdown.setAttribute('aria-live', 'assertive');
-          }
-
-          if (!timerRunOnce) {
-            accessibleCountdown.innerHTML = atText;
-            timerRunOnce = true;
-          } else if (secondsLeft % 15 === 0) {
-            accessibleCountdown.innerHTML = atText;
-          }
-
-          timers.push(setTimeout(runTimer, 1000));
+        if (minutesLeft < 1 && secondsLeft < 20) {
+          accessibleCountdown.setAttribute('aria-live', 'assertive');
         }
+
+        if (!timerRunOnce) {
+          accessibleCountdown.innerHTML = atText;
+          timerRunOnce = true;
+        } else if (secondsLeft % 15 === 0) {
+          accessibleCountdown.innerHTML = atText;
+        }
+
+        timers.push(setTimeout(runTimer, 1000));
       }
     })();
   }
@@ -249,6 +240,7 @@ class TimeoutWarning {
     // GET last interactive time from server before timing out user
     if (window.localStorage) {
       let secondsOfIdleTime = this.idleMinutesBeforeTimeOut * 60 + this.minutesTimeOutDialogVisible * 60;
+
       if (this.getLastInteractiveTimeInSeconds() > secondsOfIdleTime) {
         this.redirect();
       } else {
