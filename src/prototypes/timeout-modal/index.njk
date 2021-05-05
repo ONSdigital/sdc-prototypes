@@ -1,5 +1,5 @@
 ---
-title: modal v1
+title: Timeout modal v1
 group: Session timeout
 version: 32.2.4
 layout: timeout-modal/views/_question
@@ -9,6 +9,8 @@ layout: timeout-modal/views/_question
 {% from "components/input/_macro.njk" import onsInput %}
 {% from "components/radios/_macro.njk" import onsRadios %}
 {% from "components/panel/_macro.njk" import onsPanel %}
+{% from "timeout-modal/components/timeout-modal/_macro.njk" import onsTimeOutModal %}
+
     {% block main %}
         {% call onsQuestion({
             "title": "What is your sex?"
@@ -47,27 +49,16 @@ layout: timeout-modal/views/_question
     {% endblock %}
 
     {% block bodyEnd %}
-        <dialog class="timeout-warning js-timeout-warning"
-            id="dialog"
-            data-server-timeout-time="{{ params.serverTimeoutTime }}"
-            data-server-update-url="{{ params.serverUpdateUrl }}"
-            data-show-modal="{{ params.showModal }}"
-            data-redirect-url="{{ params.redirectUrl }}"
-            role="dialog"
-            aria-labelledby="timeout-warning-title"
-            aria-describedby="timeout-time-remaining">
-            <h1 id="timeout-warning-title" class="timeout-warning__title">
-                You will be signed out soon
-            </h1>
-            <div class="timeout-warning__body">
-                <p>You've been inactive for a while.<p>
-                <p class="timeout-warning__timer js-timer" aria-hidden="true" aria-relevant="additions"></p>
-                <p class="timeout-warning__timer-acc js-timer-acc u-vh" role="status" id="timeout-time-remaining"></p>
-            </div>
-            {{ onsButton({
-                "text": "Continue survey",
-                "classes": "js-continue-btn"
-            }) }}
-        </dialog>
+
+        {{ onsTimeOutModal({
+            "serverTimeoutTime": 0.4,
+            "displayModalSeconds": 20,
+            "redirectUrl": "/prototypes/timeout-modal/time-out.html",
+            "title": "You will be signed out soon",
+            "textFirstLine": "It appears you have been inactive for a while.",
+            "textSecondLine": "To protect your information, your progress will be saved and you will be signed out in",
+            "btnText": "Continue survey"
+        }) }}
+
         <script src="{{ pageInfo.rootPath }}/scripts/index.js"></script>
     {% endblock %}

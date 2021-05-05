@@ -1,0 +1,15 @@
+---
+version: 32.2.4
+layout: timeout-modal/views/_question
+---
+{% block main %}
+    <h1>Sorry, you need to sign in again</h1>
+    <p>This is because you’ve either:</p>
+    <ul class="list">
+        <li class="list__item ">
+        been inactive for 45 minutes and your session has timed out to protect your information</li>
+        <li class="list__item ">
+        followed a link to the middle of a survey</li>
+    </ul>
+    <p>You need to <a href="#0">sign back in</a> to continue your survey.</p>
+{% endblock %}

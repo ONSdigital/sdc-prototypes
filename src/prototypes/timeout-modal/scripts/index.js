@@ -1,5 +1,3 @@
-import domReady from 'helpers/domready';
-
 class TimeoutWarning {
   constructor(context) {
     this.context = context;
@@ -11,14 +9,14 @@ class TimeoutWarning {
     this.countdown = context.querySelector('.js-timer');
     this.accessibleCountdown = context.querySelector('.js-timer-acc');
 
-    this.idleMinutesBeforeTimeOut = context.getAttribute('data-server-timeout-time')
-      ? context.getAttribute('data-server-timeout-time')
-      : 0.3;
-    this.minutesTimeOutDialogVisible = context.getAttribute('data-show-Dialog') ? context.getAttribute('data-show-Dialog') : 0.2;
+    this.idleMinutesBeforeTimeOut = context.getAttribute('data-timeout-time') ? context.getAttribute('data-timeout-time') : 1;
+    this.secondsTimeOutDialogVisible = context.getAttribute('data-show-modal') ? context.getAttribute('data-show-modal') : 20;
     this.timeOutRedirectUrl = context.getAttribute('data-redirect-url');
+    this.text = context.getAttribute('data-text');
     this.timeUserLastInteractedWithPage = '';
     this.idleTime = null;
     this.milliSecondsBeforeTimeOut = this.idleMinutesBeforeTimeOut * 60000;
+    this.milliSecondsTimeOutDialogVisible = this.secondsTimeOutDialogVisible * 1000;
 
     this.initialise();
   }
@@ -65,8 +63,7 @@ class TimeoutWarning {
 
   resetIdleTime() {
     clearTimeout(this.idleTime);
-    this.idleTime = setTimeout(this.openDialog.bind(this), this.milliSecondsBeforeTimeOut);
-
+    this.idleTime = setTimeout(this.openDialog.bind(this), this.milliSecondsBeforeTimeOut - this.milliSecondsTimeOutDialogVisible);
     // TO DO: Client/server interaction
     // setLastActiveTimeOnServer();
     if (window.localStorage) {
@@ -77,8 +74,9 @@ class TimeoutWarning {
   }
 
   openDialog() {
-    const shouldDialogOpen = this.getLastInteractiveTimeInSeconds() >= this.idleMinutesBeforeTimeOut * 60;
-    if (shouldDialogOpen) {
+    const shouldDialogOpen =
+      this.getLastInteractiveTimeInSeconds() >= this.idleMinutesBeforeTimeOut * 60 - this.secondsTimeOutDialogVisible;
+    if (shouldDialogOpen && !this.isDialogOpen()) {
       document.querySelector('body').classList.add(this.overLayClass);
       this.saveLastFocusedEl();
       this.makePageContentInert();
@@ -102,12 +100,12 @@ class TimeoutWarning {
     const module = this;
     const countdown = this.countdown;
     const accessibleCountdown = this.accessibleCountdown;
-    const minutes = this.minutesTimeOutDialogVisible;
+    const minutes = this.secondsTimeOutDialogVisible / 60;
 
-    let seconds = 60 * minutes;
+    let seconds = this.secondsTimeOutDialogVisible;
     let timerRunOnce = false;
     let timers = this.timers;
-    countdown.innerHTML = minutes + ' minute' + (minutes > 1 ? 's' : '');
+    countdown.innerHTML = minutes >= 1 ? minutes + ' minute' + (minutes > 1 ? 's ' : ' ') : seconds + ' second' + (seconds > 1 ? 's' : '');
 
     (function runTimer() {
       const minutesLeft = parseInt(seconds / 60, 10);
@@ -130,12 +128,8 @@ class TimeoutWarning {
       const atMinutesText = minutesLeft > 0 ? atMinutesNumberAsText + ' minute' + (minutesLeft > 1 ? 's' : '') + '' : '';
       const atSecondsText = secondsLeft >= 1 ? ' ' + atSecondsNumberAsText + ' second' + (secondsLeft > 1 ? 's' : '') + '' : '';
 
-      let text =
-        'To protect your data, your progress will be saved and you will be signed out in <span class="u-fw-b">' +
-        minutesText +
-        secondsText +
-        '</span>.';
-      let atText = 'To protect your data, your progress will be saved and you will be signed out in ' + atMinutesText;
+      let text = module.text + ' <span class="u-fw-b">' + minutesText + secondsText + '</span>.';
+      let atText = module.text + ' ' + atMinutesText;
       if (atSecondsText) {
         if (minutesLeft > 0) {
           atText += ' and';
@@ -239,12 +233,10 @@ class TimeoutWarning {
     // TO DO - client/server interaction
     // GET last interactive time from server before timing out user
     if (window.localStorage) {
-      let secondsOfIdleTime = this.idleMinutesBeforeTimeOut * 60 + this.minutesTimeOutDialogVisible * 60;
+      let secondsOfIdleTime = this.idleMinutesBeforeTimeOut * 60;
 
       if (this.getLastInteractiveTimeInSeconds() > secondsOfIdleTime) {
         this.redirect();
-      } else {
-        window.localStorage.setItem('timeUserLastInteractedWithPage', new Date());
       }
     }
   }
@@ -403,4 +395,4 @@ class TimeoutWarning {
 
 const timeoutMod = document.querySelector('.js-timeout-warning');
 
-domReady(new TimeoutWarning(timeoutMod));
+new TimeoutWarning(timeoutMod);
