@@ -34,7 +34,7 @@ class TimeoutWarning {
 
     this.continueButton.addEventListener('click', this.closeDialog.bind(this));
     this.context.addEventListener('keydown', this.escClose.bind(this));
-    window.addEventListener('focus', this.checkIfShouldHaveTimedOut.bind(this));
+    window.addEventListener('focus', this.checkIfShouldHaveTimedOutOrClosed.bind(this));
   }
 
   dialogSupported() {
@@ -90,7 +90,6 @@ class TimeoutWarning {
 
       // this.disableBackButtonWhenOpen();
     } else {
-      this.closeDialog();
       this.resetIdleTime();
     }
   }
@@ -112,7 +111,7 @@ class TimeoutWarning {
       const secondsLeft = parseInt(seconds % 60, 10);
       const timerExpired = minutesLeft < 1 && secondsLeft < 1;
 
-      const minutesText = minutesLeft > 0 ? minutesLeft + ' minute' + (minutesLeft > 1 ? 's' : '') : '';
+      const minutesText = minutesLeft > 0 ? minutesLeft + ' minute' + (minutesLeft > 1 ? 's ' : ' ') : '';
       const secondsText = secondsLeft >= 1 ? secondsLeft + ' second' + (secondsLeft > 1 ? 's' : '') : '';
       let atMinutesNumberAsText = '';
       let atSecondsNumberAsText = '';
@@ -229,7 +228,9 @@ class TimeoutWarning {
     }
   };
 
-  checkIfShouldHaveTimedOut() {
+  checkIfShouldHaveTimedOutOrClosed() {
+    const shouldDialogClose =
+      this.getLastInteractiveTimeInSeconds() < this.idleMinutesBeforeTimeOut * 60 - this.secondsTimeOutDialogVisible;
     // TO DO - client/server interaction
     // GET last interactive time from server before timing out user
     if (window.localStorage) {
@@ -237,6 +238,9 @@ class TimeoutWarning {
 
       if (this.getLastInteractiveTimeInSeconds() > secondsOfIdleTime) {
         this.redirect();
+      } else if (shouldDialogClose) {
+        this.closeDialog();
+        this.resetIdleTime();
       }
     }
   }
