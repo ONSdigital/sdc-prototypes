@@ -1,0 +1,47 @@
+---
+group: Frontstage
+title: User self serve
+version: 32.0.1
+layout: user-self-serve/views/version-9/_master-survey-signed-out
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+{% from "components/metadata/_macro.njk" import onsMetadata %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+
+{% block main %}
+
+    <div class="grid">
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/prototypes/user-self-serve/version-9/index.html',
+                            "text": 'Sign in'
+                        },
+                        {
+                            "url": '/prototypes/user-self-serve/version-9/signed-out/help/index.html',
+                            "text": 'Help'
+                        },
+                        {
+                            "url": '/prototypes/user-self-serve/version-9/signed-out/option-5/option-1/option-list.html',
+                            "text": 'Help with my password'
+                        }
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+            <h1>I cannot reset my password using the link</h1>
+            <p>Password reset links expire 72 hours after you request a reset.</p>
+            <p>If 72 hours have passed since you reset, you should reset your password again.</p>
+            <p>Once you have reset your password, allow 15 minutes for the change to take place.</p>
+            <p>If you need more help, please <a href="/prototypes/user-self-serve/version-9/signed-out/20-contact-us.html">contact us</a>.</p>
+        </div>
+    </div>
+
+{% endblock %}
