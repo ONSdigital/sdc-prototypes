@@ -1,0 +1,124 @@
+---
+group: Frontstage
+title: User self serve
+version: 32.0.1
+layout: user-self-serve/views/version-9/_master-survey
+---
+
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+
+{% block main %}
+
+    <div class="grid">
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/prototypes/user-self-serve/version-9/signed-in/00-surveys-list.html',
+                            "text": 'Surveys'
+                        },
+                        {
+                            "url": '/prototypes/user-self-serve/version-9/signed-in/account/index.html',
+                            "text": 'Account'
+                        } 
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col u-pt-no">
+            <div class="summary">
+                <div class="summary__group">
+                    <h2 class="summary__group-title">Turnover</h2>
+                    <table class="summary__items">
+                        <thead class="u-vh">
+                            <tr>
+                                <th>Question</th>
+                                <th>Answer given</th>
+                                <th>Change answer</th>
+                            </tr>
+                        </thead>
+                        <tbody class="summary__item">
+                            <tr class="summary__row summary__row--has-values">
+                                <td class="summary__item-title">
+                                    <div class="summary__item--text">BDW TRADING LTD</div>
+                                </td>
+                                <td class="summary__values">
+                                    1 January 2015 to 2 February 2017
+                                </td>
+                                <td class="summary__actions">
+                                    <a href="#" class="summary__button" aria-label="Change answer">Change</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tbody class="summary__item">
+                            <tr class="summary__row summary__row--has-values">
+                                <td class="summary__item-title">
+                                    <div class="summary__item--text">BDW TRADING LTD</div>
+                                </td>
+                                <td class="summary__values">
+                                    £180,440
+                                </td>
+                                <td class="summary__actions">
+                                    <a href="#" class="summary__button" aria-label="Change answer">Change</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tbody class="summary__item">
+                            <tr class="summary__row summary__row--has-values">
+                                <td class="summary__item-title">
+                                    <div class="summary__item--text">BDW TRADING LTD</div>
+                                </td>
+                                <td class="summary__values">
+                                    <ul class="u-mb-no">
+                                        <li>
+                                            Change in level of business activity
+                                        </li>
+                                        <li>
+                                            Special/calendar events
+                                            <ul class="u-mb-no">
+                                                <li>Some other value</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td class="summary__actions">
+                                    <a href="#" class="summary__button" aria-label="Change answer">Change</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tbody class="summary__item">
+                            <tr class="summary__row summary__row--has-values">
+                                <td class="summary__item-title">
+                                    <div class="summary__item--text">BDW TRADING LTD</div>
+                                </td>
+                                <td class="summary__values">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                </td>
+                                <td class="summary__actions">
+                                    <a href="#" class="summary__button" aria-label="Change answer">Change</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="grid grid--flex grid--gutterless grid--vertical-center grid--no-wrap@s u-mt-m u-mb-m">
+                <div class="grid__col">
+                    <button type="button" class="btn btn-group__btn" onclick="location.href='{{ pageInfo.rootPath }}/version-9/signed-in/account/05-change-business-details/01-send-message.html';">
+                        <span class="btn__inner">Continue</span>
+                    </button>
+
+                </div>
+                <div class="grid__col u-ml-m">
+                    <a href="/prototypes/user-self-serve/version-9/signed-in/account/index.html">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

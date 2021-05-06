@@ -30,84 +30,29 @@ layout: user-self-serve/views/version-9/_master-survey
             }}
         </div>
         <div class="grid__col col-8@m u-pt-no">
-            <h1>Which surveys are affected by the change of business details?</h1>
-            <p class="field">
-            {{ 
-                onsCheckboxes({
-                    "legend": "ACME Consumer Products",
-                    "checkboxesLabel": "Select all that apply",
-                    "name": "food",
-                    "checkboxes": [
-                        {
-                            "id": "MBS",
-                            "label": {
-                                "text": "Monthly Business Survey"
-                            },
-                            "value": "mbs"
-                        },
-                        {
-                            "id": "QBS",
-                            "label": {
-                                "text": "Quarterly Business Survey"
-                            },
-                            "value": "QBS"
-                        }
-                    ]
-                }) 
+            <h1>Change business details</h1>
+
+            {% from "components/panel/_macro.njk" import onsPanel %}
+            {{
+                onsPanel({
+                    "body": '<p>Changes to business addresses are not immediate. If you were expecting a letter from us, and believe you have missed this, please <a href="/prototypes/user-self-serve/version-9/signed-in/account/04-transfer-my-surveys/index.html">contact us</a>.'
+                })
             }}
-            </p>
-            <p class="field">
-            {{ 
-                onsCheckboxes({
-                    "legend": "ACME Group Ltd",
-                    "checkboxesLabel": "Select all that apply",
-                    "name": "food",
-                    "checkboxes": [
-                        {
-                            "id": "MRES",
-                            "label": {
-                                "text": "Business Register and Employment Survey"
-                            },
-                            "value": "mres"
-                        },
-                        {
-                            "id": "MBSb",
-                            "label": {
-                                "text": "Monthly Business Survey"
-                            },
-                            "value": "mbsb"
-                        },
-                        {
-                            "id": "MWSS",
-                            "label": {
-                                "text": "Monthly Wages and Salary Survey"
-                            },
-                            "value": "mwss"
-                        },
-                        {
-                            "id": "QADCA",
-                            "label": {
-                                "text": "Quarterly Acquisitions and Disposals of Capital Assets"
-                            },
-                            "value": "qadca"
-                        },
-                        {
-                            "id": "QBSb",
-                            "label": {
-                                "text": "Quarterly Business Survey"
-                            },
-                            "value": "QBSb"
-                        }
-                    ]
-                }) 
-            }}
-            </p>
+
+            <h2 class="u-fs-m u-mt-l">What will happen</h2>
+            <ul>
+                <li>Select which bussiness’s details you want to change.</li>
+                <li>Select the surveys that are affected by the change.</li>
+                <li>We will show you the current address we hold for the businesses selected</li>
+                <li>We will update our internal records for all future survey selections (any currently live surveys, or past surveys cannot be updated)</li>
+                <li>Changes to any business address may take up to 7 days to process, and may show incorrectly to any colleagues during this window of time.</li>
+            </ul>
+
             <div class="grid grid--flex grid--gutterless grid--vertical-center grid--no-wrap@s u-mt-m u-mb-m">
-        <div class="grid__col">
-          <button type="button" class="btn btn-group__btn" onclick="location.href='{{ pageInfo.rootPath }}/version-9/signed-in/account/05-change-business-details/01-send-message.html';">
-                    <span class="btn__inner">Continue</span>
-                </button>
-                
+                <div class="grid__col">
+                    <button type="button" class="btn btn-group__btn" onclick="location.href='{{ pageInfo.rootPath }}/version-9/signed-in/account/05-change-business-details/01-summary.html';">
+                        <span class="btn__inner">Continue</span>
+                    </button>
                 </div>
                 <div class="grid__col u-ml-m">
                     <a href="/prototypes/user-self-serve/version-9/signed-in/account/index.html">Cancel</a>
@@ -115,5 +60,6 @@ layout: user-self-serve/views/version-9/_master-survey
             </div>
         </div>
     </div>
+</div>
 
 {% endblock %}
