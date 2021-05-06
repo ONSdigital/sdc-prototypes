@@ -1,13 +1,18 @@
 .timeout-warning {
   // To do: allow this to be customised
   max-width: 500px;
-
-  padding: 2rem;
+  width: auto;
   margin-left: 2rem;
   margin-right: 2rem;
+  padding: 2rem;
   border: none;
   border-radius: 0.4rem;
   box-shadow: 0 0px 7px 0px #000;
+  @media screen and (min-width: 600px) {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   &[open] {
     display: block;
