@@ -1,0 +1,27 @@
+{% from "components/button/_macro.njk" import onsButton %}
+{% macro onsTimeOutModal(params) %}
+    <dialog class="timeout-warning js-timeout-warning"
+        id="dialog"
+        data-timeout-time="{{ params.serverTimeoutTime }}"
+        data-server-get-url="{{ params.serverUpdateUrl }}"
+        data-server-set-url="{{ params.serverUpdateUrl }}"
+        data-show-modal="{{ params.displayModalSeconds }}"
+        data-redirect-url="{{ params.redirectUrl }}"
+        data-text="{{ params.textSecondLine }}"
+        role="dialog"
+        aria-labelledby="timeout-warning-title"
+        aria-describedby="timeout-time-remaining">
+        <h1 id="timeout-warning-title" class="timeout-warning__title">
+            {{ params.title }}
+        </h1>
+        <div class="timeout-warning__body">
+            <p>{{ params.textFirstLine }}</p>
+            <p class="timeout-warning__timer js-timer" aria-hidden="true" aria-relevant="additions"></p>
+            <p class="timeout-warning__timer-acc js-timer-acc u-vh" role="status" id="timeout-time-remaining"></p>
+        </div>
+        {{ onsButton({
+            "text": params.btnText,
+            "classes": "js-continue-btn"
+        }) }}
+    </dialog>
+{% endmacro %}

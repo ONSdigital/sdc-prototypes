@@ -1,0 +1,48 @@
+.timeout-warning {
+  // To do: allow this to be customised
+  max-width: 500px;
+  width: auto;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  padding: 2rem;
+  border: none;
+  border-radius: 0.4rem;
+  box-shadow: 0 0px 7px 0px #000;
+  @media screen and (min-width: 600px) {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &[open] {
+    display: block;
+
+    $backdrop-colour: rgba(0, 0, 0, 0.8);
+
+    // Backdrop styles for browsers with native support
+    & + .backdrop {
+      background: $backdrop-colour;
+    }
+
+    // Backdrop styles for browsers using
+    // Keep these two backdrop styles separate - Safari didn't
+    // work when combined
+    &::backdrop {
+      background: $backdrop-colour;
+      backdrop-filter: blur(3px);
+    }
+  }
+}
+
+// Stop background scrolling while dialog open.
+.timeout-warning-overlay {
+  overflow: hidden;
+}
+
+.js-enabled .timeout-warning-fallback {
+  display: none;
+}
+
+//   .tabular-numbers {
+//     font-family: $govuk-font-family-tabular;
+//   }
