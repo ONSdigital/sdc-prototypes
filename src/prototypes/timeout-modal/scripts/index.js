@@ -18,7 +18,6 @@ class TimeoutWarning {
     this.secondsOfIdleTime = this.idleMinutesBeforeTimeOut * 60;
     this.milliSecondsBeforeTimeOut = this.idleMinutesBeforeTimeOut * 60000;
     this.milliSecondsTimeOutDialogVisible = this.secondsTimeOutDialogVisible * 1000;
-    this.convertToSeconds;
 
     this.initialise();
   }
@@ -73,8 +72,7 @@ class TimeoutWarning {
   }
 
   openDialog() {
-    const shouldDialogOpen =
-      this.getLastInteractiveTime(this.convertToSeconds) >= this.idleMinutesBeforeTimeOut * 60 - this.secondsTimeOutDialogVisible;
+    const shouldDialogOpen = this.getLastInteractiveTime(true) >= this.idleMinutesBeforeTimeOut * 60 - this.secondsTimeOutDialogVisible;
     if (shouldDialogOpen && !this.isDialogOpen()) {
       document.querySelector('body').classList.add(this.overLayClass);
       this.saveLastFocusedEl();
@@ -227,9 +225,9 @@ class TimeoutWarning {
   };
 
   shouldModuleCloseOrRedirect() {
-    const shouldDialogClose =
-      this.getLastInteractiveTime(this.convertToSeconds) < this.idleMinutesBeforeTimeOut * 60 - this.secondsTimeOutDialogVisible;
-    const shouldRedirect = this.getLastInteractiveTime(this.convertToSeconds) > this.secondsOfIdleTime;
+    const shouldDialogClose = this.getLastInteractiveTime(true) < this.idleMinutesBeforeTimeOut * 60 - this.secondsTimeOutDialogVisible;
+    const shouldRedirect = this.getLastInteractiveTime(true) > this.secondsOfIdleTime;
+
     if (shouldRedirect) {
       this.redirect();
     } else if (shouldDialogClose) {
@@ -241,7 +239,7 @@ class TimeoutWarning {
   getLastInteractiveTime(convertToSeconds) {
     let timeUserLastInteractedWithPage = new Date(window.localStorage.getItem('timeUserLastInteractedWithPage'));
     let time = timeUserLastInteractedWithPage;
-    if (convertToSeconds === true) {
+    if (convertToSeconds) {
       time = Math.abs((timeUserLastInteractedWithPage - new Date()) / 1000);
     }
     return time;
