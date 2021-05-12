@@ -147,3 +147,12 @@ dd {
     max-width: 100%;
   }
 }
+
+/* SUMMARY */
+@media (min-width: 500px) {
+  .summary__row--has-values .summary__item-title,
+  .summary__row--has-values .summary__values {
+    width: 33%;
+    font-weight: 400 !important;
+  }
+}
