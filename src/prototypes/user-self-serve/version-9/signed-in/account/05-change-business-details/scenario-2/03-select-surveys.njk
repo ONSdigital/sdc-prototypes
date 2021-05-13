@@ -7,7 +7,7 @@ layout: user-self-serve/views/version-9/_master-survey
 
 {% from "components/input/_macro.njk" import onsInput %}
 {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
-{% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
+            {% from "components/radios/_macro.njk" import onsRadios %}
 
 {% block main %}
 
@@ -30,40 +30,47 @@ layout: user-self-serve/views/version-9/_master-survey
             }}
         </div>
         <div class="grid__col col-8@m u-pt-no">
-            <h1>Which surveys are affected by the change of business’s details?</h1>
+            <h1>Registered addresses</h1>
             {{
-                onsCheckboxes({
-                    "legend": "BOW TRADING LTD",
-                    "checkboxesLabel": "Select all that apply",
-                    "name": "BOW TRADING LTD",
-                    "checkboxes": [
+                onsRadios({
+                    "legend": "Choose an address",
+                    "name": "food",
+                    "radios": [
                         {
-                            "id": "Quarterly Acquisitions and Disposal of Capital Assets Survey",
+                            "id": "address-1",
                             "label": {
-                                "text": "Quarterly Acquisitions and Disposal of Capital Assets Survey"
+                                "text": "BARRATT HOUSE<br>
+                                        CARTWRIGHT WAY<br>
+                                        FOREST BUSINESS PARK<br>
+                                        BARDON HILL<br>
+                                        COALVILLE LEICS<br>
+                                        LE67 1UF"
                             },
-                            "value": "Quarterly Acquisitions and Disposal of Capital Assets Survey"
+                            "value": "address-1"
                         },
                         {
-                            "id": "Quarterly Stocks Survey",
+                            "id": "address-2",
                             "label": {
-                                "text": "Quarterly Stocks Survey"
+                                "text": "BARRATT HOUSE<br>                 
+                                    WALNUT TREE CLOSE<br>             
+                                    GUILDFORD<br>                     
+                                    SURREY<br>
+                                    GU1 4SW"
                             },
-                            "value": "Quarterly Stocks Survey"
+                            "value": "address-2"
                         }
                     ]
                 })
             }}
-
             <div class="grid grid--flex grid--gutterless grid--vertical-center grid--no-wrap@s u-mt-m u-mb-m">
                 <div class="grid__col">
-                    <button type="button" class="btn btn-group__btn" onclick="location.href='{{ pageInfo.rootPath }}/version-9/signed-in/account/05-change-business-details/scenario-2/03-change-business-details.html';">
+                    <button type="button" class="btn btn-group__btn" onclick="location.href='{{ pageInfo.rootPath }}/version-9/signed-in/account/05-change-business-details/scenario-2/04-change-business-details.html#business-address';">
                         <span class="btn__inner">Continue</span>
                     </button>
 
                 </div>
                 <div class="grid__col u-ml-m">
-                    <a href="/prototypes/user-self-serve/version-9/signed-in/account/05-change-business-details/scenario-2/01-summary.html">Cancel</a>
+                    <a href="/prototypes/user-self-serve/version-9/signed-in/account/05-change-business-details/scenario-2/02-change-business-details.html">Cancel</a>
                 </div>
             </div>
 

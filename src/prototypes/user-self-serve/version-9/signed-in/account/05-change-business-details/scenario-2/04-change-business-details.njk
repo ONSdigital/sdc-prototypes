@@ -37,15 +37,25 @@ layout: user-self-serve/views/version-9/_master-survey
                     text: '<p>Quarterly Acquisitions and Disposal of Capital Assets Survey</p>'
                 })
             }}
-            <h2 class="u-mt-l">Current business details</h2>
-            <p>BOW TRADING LTD<br>
-            Trading as BOW TRADING LTD<br>
-            BARRATT HOUSE<br>
-            CARTWRIGHT WAY<br>
-            FOREST BUSINESS PARK<br>
-            BARDON HILL<br>
-            COALVILLE LEICS<br>LE67 1UF</p>
-            <h2 class="u-mt-l">Enter new business details</h2>
+
+<!--
+            {% from "components/collapsible/_macro.njk" import onsCollapsible %}
+            {{
+                onsCollapsible({
+                    "id": "collapsible",
+                    "title": "Show current business details",
+                    "titleTag": "h2",
+                    "content": "<p>BOW TRADING LTD<br>Trading as BOW TRADING LTD<br>BARRATT HOUSE<br>CARTWRIGHT WAY<br>FOREST BUSINESS PARK<br>BARDON HILL<br>COALVILLE LEICS<br>LE67 1UF</p>",
+                    "button": {
+                        "close": "Hide this",
+                        "contextSuffix": "content",
+                        "attributes": {
+                            "aria-hidden": "true"
+                        }
+                    }
+                })
+            }}
+-->
             <p class="field">
                 {{
                     onsInput({
@@ -65,9 +75,13 @@ layout: user-self-serve/views/version-9/_master-survey
                         }
                     })
                 }}
+                                    
+                <h2 id="business-address" class="u-mt-l">Business address</h2>
+                <p><a href="03-select-surveys.html">Choose an address I have already registered</a></p>
                 {{
                     onsInput({
                         "id": "address-1",
+                        "value": "BARRATT HOUSE",
                         "label": {
                             "text": "Address line 1"
                         }
@@ -76,6 +90,7 @@ layout: user-self-serve/views/version-9/_master-survey
                 {{
                     onsInput({
                         "id": "address-2",
+                        "value": "CARTWRIGHT WAY",
                         "label": {
                             "text": "Address line 2"
                         }
@@ -84,6 +99,7 @@ layout: user-self-serve/views/version-9/_master-survey
                 {{
                     onsInput({
                         "id": "address-3",
+                        "value": "FOREST BUSINESS PARK",
                         "label": {
                             "text": "Address line 3"
                         }
@@ -92,6 +108,7 @@ layout: user-self-serve/views/version-9/_master-survey
                 {{
                     onsInput({
                         "id": "address-4",
+                        "value": "BARDON HILL",
                         "label": {
                             "text": "Address line 4 (optional)"
                         }
@@ -100,6 +117,7 @@ layout: user-self-serve/views/version-9/_master-survey
                 {{
                     onsInput({
                         "id": "address-5",
+                        "value": "COALVILLE LEICS",
                         "label": {
                             "text": "Address line 5 (optional)"
                         }
@@ -108,17 +126,10 @@ layout: user-self-serve/views/version-9/_master-survey
                 {{
                     onsInput({
                         "id": "postcode",
+                        "value": "LE67 1UF",
                         "classes": "input--w-8",
                         "label": {
                             "text": "Postcode"
-                        }
-                    })
-                }}
-                {{
-                    onsInput({
-                        "id": "fax-number",
-                        "label": {
-                            "text": "Fax number"
                         }
                     })
                 }}
@@ -126,12 +137,12 @@ layout: user-self-serve/views/version-9/_master-survey
 
             <div class="grid grid--flex grid--gutterless grid--vertical-center grid--no-wrap@s u-mt-m u-mb-m">
                 <div class="grid__col">
-                    <button type="button" class="btn btn-group__btn" onclick="location.href='{{ pageInfo.rootPath }}/version-9/signed-in/account/05-change-business-details/scenario-1/04-summary.html';">
+                    <button type="button" class="btn btn-group__btn" onclick="location.href='{{ pageInfo.rootPath }}/version-9/signed-in/account/05-change-business-details/scenario-2/05-summary.html';">
                         <span class="btn__inner">Save and return</span>
                     </button>
                 </div>
                 <div class="grid__col u-ml-m">
-                    <a href="/prototypes/user-self-serve/version-9/signed-in/account/05-change-business-details/scenario-1/02-select-surveys.html">Cancel</a>
+                    <a href="/prototypes/user-self-serve/version-9/signed-in/account/05-change-business-details/scenario-2/01-summary.html">Cancel</a>
                 </div>
             </div>
         </div>
