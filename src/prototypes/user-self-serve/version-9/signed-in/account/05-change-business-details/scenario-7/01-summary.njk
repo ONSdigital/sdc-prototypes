@@ -82,10 +82,9 @@ layout: user-self-serve/views/version-9/_master-survey
             </div>
             <div class="grid grid--flex grid--gutterless grid--vertical-center grid--no-wrap@s u-mt-m u-mb-m">
                 <div class="grid__col">
-                <button type="button" class="btn btn-group__btn" onclick="location.href='{{ pageInfo.rootPath }}/version-9/signed-in/account/index.html';">
-                        <span class="btn__inner">Save and exit</span>
-                    </button>
-
+                <button type="button" class="btn btn-group__btn btn--disabled" disabled="true" onclick="location.href='{{ pageInfo.rootPath }}/version-9/signed-in/account/index.html';">
+                    <span class="btn__inner">Send changes</span>
+                </button>
                 </div>
                 <div class="grid__col u-ml-m">
                     <a href="/prototypes/user-self-serve/version-9/signed-in/account/index.html">Cancel</a>

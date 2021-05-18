@@ -31,15 +31,18 @@ layout: user-self-serve/views/version-9/_master-survey
             }}
         </div>
         <div class="grid__col col-12@m u-pt-no">
+            {{
+                onsPanel({
+                    "type": 'success',
+                    "id": 'success-id',
+                    "icon": 'check',
+                    "classes":"u-mb-m",
+                    "body": '<p>You have changed your business details. Changes need to be <a href="#approve">sent to us</a> for approval.</p>'
+                })
+            }}
             <div class="summary">
                 <div class="summary__group">
                     <h2 class="summary__group-title u-fs-xl">Your business details</h2>
-                    {{
-                        onsPanel({
-                            "classes":"u-mb-m",
-                            "body": '<p>Changes to business details will not apply to surveys in progress and can take up to 7 days to process.</p>'
-                        })
-                    }}
                     <table class="summary__items">
                         <thead>
                             <tr class="u-ta-left">
@@ -84,9 +87,8 @@ layout: user-self-serve/views/version-9/_master-survey
             <div class="grid grid--flex grid--gutterless grid--vertical-center grid--no-wrap@s u-mt-m u-mb-m">
                 <div class="grid__col">
                     <button type="button" class="btn btn-group__btn" onclick="location.href='{{ pageInfo.rootPath }}/version-9/signed-in/account/05-change-business-details/account-index-done.html';">
-                        <span class="btn__inner">Save and exit</span>
+                        <span class="btn__inner">Send changes</span>
                     </button>
-
                 </div>
                 <div class="grid__col u-ml-m">
                     <a href="/prototypes/user-self-serve/version-9/signed-in/account/index.html">Cancel</a>

@@ -7,9 +7,9 @@ layout: user-self-serve/views/version-9/_master-survey
 
 {% from "components/input/_macro.njk" import onsInput %}
 {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
-{% from "components/textarea/_macro.njk" import onsTextarea %}
 {% from "components/input/_macro.njk" import onsInput %}
 {% from "components/text-indent/_macro.njk" import onsTextIndent %}
+{% from "components/panel/_macro.njk" import onsPanel %}
 
 {% block main %}
 
@@ -31,6 +31,15 @@ layout: user-self-serve/views/version-9/_master-survey
                 }) 
             }}
             <h1>Change business details for BOW TRADING LTD</h1>
+
+            {{
+                onsPanel({
+                    "classes":"u-mb-m",
+                    "body": '<p>Changes to business details may take up to 7 days to process and will not affect current surveys or surveys that you have completed.</p>
+                    <p>If you were expecting a letter from us, and believe you have missed this, please <a href="/prototypes/user-self-serve/version-9/signed-in/account/04-transfer-my-surveys/index.html">contact us</a>.</p>'
+                })
+            }}
+
             <p>The changes will affect the following surveys:</p>
             {{
                 onsTextIndent({
@@ -138,7 +147,7 @@ layout: user-self-serve/views/version-9/_master-survey
             <div class="grid grid--flex grid--gutterless grid--vertical-center grid--no-wrap@s u-mt-m u-mb-m">
                 <div class="grid__col">
                     <button type="button" class="btn btn-group__btn" onclick="location.href='{{ pageInfo.rootPath }}/version-9/signed-in/account/05-change-business-details/scenario-2/05-summary.html';">
-                        <span class="btn__inner">Save and return</span>
+                        <span class="btn__inner">Continue</span>
                     </button>
                 </div>
                 <div class="grid__col u-ml-m">
