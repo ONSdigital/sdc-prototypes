@@ -30,21 +30,16 @@ layout: user-self-serve/views/version-9/_master-survey
                 }) 
             }}
         </div>
-
         <div class="grid__col col-12@m u-pt-no">
-            {{
-                onsPanel({
-                    "type": 'success',
-                    "id": 'success-id',
-                    "icon": 'check',
-                    "classes":"u-mb-m",
-                    "body": '<p>You have changed your business details. Changes need to be <a href="#approve">sent to us</a> for approval.</p>'
-                })
-            }}
             <div class="summary">
                 <div class="summary__group">
                     <h2 class="summary__group-title u-fs-xl">Your business details</h2>
-
+                    {{
+                        onsPanel({
+                            "classes":"u-mb-m",
+                            "body": '<p>You have changed your business details. Before they can be confirmed, changes need to be <a href="#approve">sent to us</a> for approval.</p>'
+                        })
+                    }}
                     <table class="summary__items">
                         <thead>
                             <tr class="u-ta-left">
@@ -73,7 +68,7 @@ layout: user-self-serve/views/version-9/_master-survey
                                 </td>
                                 <td class="summary__values u-fw-n">  
                                     <ul class="list list--bare">
-                                        <li class="list__item ">Quarterly Stocks Survey</li>  
+                                        <li class="list__item ">Annual Survey of Hours and Earnings</li>
                                     </ul>  
                                 </td>
                                 <td class="summary__actions">
@@ -87,19 +82,102 @@ layout: user-self-serve/views/version-9/_master-survey
                                     <div class="summary__item--text">
                                         BOW TRADING LTD <br>
                                         <span class="u-fs-s">Trading as: BOW TRADING LTD<br>
-                                        RU ref: 50000041799</span>
+                                        RU ref: 50000041929</span>
                                     </div>
                                 </td>
                                 <td class="summary__values u-fw-n">
-                                    BARRATT HOUSE<br>                 
-                                    WALNUT TREE CLOSE<br>             
-                                    GUILDFORD<br>                     
-                                    SURREY<br>
-                                    GU1 4SW
+                                    7 BUCHANAN GATE<br>               
+                                    CUMBERNAULD ROAD<br>              
+                                    STEPPS <br>                       
+                                    GLASGOW <br>                      
+                                    G33 6FB<br>
                                 </td>
                                 <td class="summary__values u-fw-n">  
                                     <ul class="list list--bare">
                                         <li class="list__item ">Quarterly Acquisitions and Disposal of Capital Assets Survey</li>
+                                        <li class="list__item ">Quarterly Stocks Survey</li>
+                                    </ul>  
+                                </td>
+                                <td class="summary__actions">
+                                    <a href="02-select-surveys.html" class="summary__button" aria-label="Change answer">Change</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tbody class="summary__item">
+                            <tr class="summary__row summary__row--has-values">
+                                <td class="summary__item-title">
+                                    <div class="summary__item--text">
+                                        BOW TRADING LTD <br>
+                                        <span class="u-fs-s">Trading as: BOW TRADING LTD<br>
+                                        RU ref: 50000043304</span>
+                                    </div>
+                                </td>
+                                <td class="summary__values u-fw-n">
+                                        6 ALPHA COURT<br>
+                                        MONKS CROSS DRIVE<br>
+                                        HUNTINGDON<br>
+                                        YORK<br>
+                                        YO32 9WN
+                                </td>
+                                <td class="summary__values u-fw-n">  
+                                    <ul class="list list--bare">
+                                        <li class="list__item ">E-commerce Survey</li>
+                                        <li class="list__item ">UK Innovation Survey</li>
+                                    </ul>  
+                                </td>
+                                <td class="summary__actions">
+                                    <a href="02-select-surveys.html" class="summary__button" aria-label="Change answer">Change</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tbody class="summary__item">
+                            <tr class="summary__row summary__row--has-values">
+                                <td class="summary__item-title">
+                                    <div class="summary__item--text">
+                                        BOW TRADING LTD <br>
+                                        <span class="u-fs-s">Trading as: BOW TRADING LTD<br>
+                                        RU ref: 50000043460</span>
+                                    </div>
+                                </td>
+                                <td class="summary__values u-fw-n">
+                                    BARRATT HOUSE<br>
+                                    SANDY WAY<br>
+                                    GRANGE PARK<br>
+                                    NORTHAMPTON<br>
+                                    NN4 5EJ
+                                </td>
+                                <td class="summary__values u-fw-n">  
+                                    <ul class="list list--bare">
+                                        <li class="list__item ">Quarterly Acquisitions and Disposal of Capital Assets Survey</li>
+                                        <li class="list__item ">Quarterly Stocks Survey</li>
+                                    </ul>  
+                                </td>
+                                <td class="summary__actions">
+                                    <a href="02-select-surveys.html" class="summary__button" aria-label="Change answer">Change</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tbody class="summary__item">
+                            <tr class="summary__row summary__row--has-values">
+                                <td class="summary__item-title">
+                                    <div class="summary__item--text">
+                                        BOW TRADING LTD <br>
+                                        <span class="u-fs-s">Trading as: BOW TRADING LTD<br>
+                                        RU ref: 50000058661</span>
+                                    </div>
+                                </td>
+                                <td class="summary__values u-fw-n">
+                                    WEALD HOUSE<br>
+                                    88 MAIN ROAD<br>
+                                    SUNDRIDGE<br>
+                                    SEVENOAKS<br>
+                                    KENT<br>
+                                    TN14 6ER
+                                </td>
+                                <td class="summary__values u-fw-n">  
+                                    <ul class="list list--bare">
+                                        <li class="list__item ">Monthly Wages and Salaries Survey</li>
+                                        <li class="list__item ">UK Innovation Survey</li>
                                     </ul>  
                                 </td>
                                 <td class="summary__actions">
@@ -110,10 +188,9 @@ layout: user-self-serve/views/version-9/_master-survey
                     </table>
                 </div>
             </div>
-        
             <div class="grid grid--flex grid--gutterless grid--vertical-center grid--no-wrap@s u-mt-m u-mb-m">
                 <div class="grid__col">
-                    <button type="button" class="btn btn-group__btn" onclick="location.href='{{ pageInfo.rootPath }}/version-9/signed-in/account/05-change-business-details/account-index-done.html';">
+                    <button type="button" class="btn btn-group__btn btn--disabled" disabled="true" onclick="location.href='{{ pageInfo.rootPath }}/version-9/signed-in/account/index.html';">
                         <span class="btn__inner">Send changes</span>
                     </button>
                 </div>
