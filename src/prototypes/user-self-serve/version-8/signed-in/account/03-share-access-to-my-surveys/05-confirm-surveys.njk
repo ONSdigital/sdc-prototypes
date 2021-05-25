@@ -34,7 +34,7 @@ layout: user-self-serve/views/version-8/_master-survey
         </div>
         <div class="grid__col col-8@m u-pt-no">
             <h1 class="u-fs-xl">Confirm survey access</h1>
-            <p>Your colleague ((originator_email_address)) wants to share access to the following surveys with you. You need to check the details are correct and then confirm access.</p>
+            <p>Your colleague ((originator_email_address)) wants to share access to the following surveys with you. You need to check the details are correct and confirm access.</p>
             
             <div class="u-mt-l u-mb-l">
                 <h2 class="u-fs-m u-mb-xs">ACME Consumer Products</h2>
@@ -63,7 +63,7 @@ layout: user-self-serve/views/version-8/_master-survey
 
             <div class="grid grid--flex grid--gutterless grid--vertical-center grid--no-wrap@s u-mt-m u-mb-m">
                 <div class="grid__col">
-                    <button type="button" class="btn btn-group__btn">
+                    <button type="button" class="btn btn-group__btn" onclick="location.href='{{ pageInfo.rootPath }}/version-8/signed-in/account/03-share-access-to-my-surveys/06-shared-surveys-complete.html';">
                         <span class="btn__inner">Confirm access</span>
                     </button>
                 </div>
