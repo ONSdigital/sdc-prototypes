@@ -9,23 +9,11 @@ layout: user-self-serve/views/version-9/_master-internal
 {% block main %}
 
     <div class="grid grid--flex grid--between">
-        <div class="grid__col col-9@m">
-            {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
-            {{ 
-          onsBreadcrumb({
-              "ariaLabel": 'Breadcrumb',
-              "itemsList": [
-                  {
-                      "url": '/',
-                      "text": 'Home'
-                  }
-              ]
-          }) 
-      }}
+        <div class="grid__col col-7@m">
             <h1 class="u-dib">Technical messages</h1> <p class="u-dib"><a href="/prototypes/user-self-serve/version-9/00-internal/10-filter-messages.html">Change inbox</a></p>
         </div>
 
-        <div class="grid__col col-3@m">
+        <div class="grid__col col-5@m">
            {% from "components/input/_macro.njk" import onsInput %}
             {{
                 onsInput({
