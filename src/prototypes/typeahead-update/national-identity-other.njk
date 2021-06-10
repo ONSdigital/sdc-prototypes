@@ -1,0 +1,52 @@
+---
+version: 14.4.4
+layout: typeahead-update/views/_master
+---
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "typeahead-update/components/input/_macro.njk" import onsInput %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+
+{% block main %}
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/national-identity.html">Previous</a><br>
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/national-identity-other-cy.html">Welsh NI test</a>
+    <form action="{{ pageInfo.parentPath }}/ethnic-group.html?previous={{ pageInfo.path }}.html">
+        <h1 class="u-mt-s js-ni-title" data-ni-answers="{{ pageInfo.parentPath }}/national-identity.html">You selected "Other". How would you describe your {x} national identity?</h1>
+        {{ 
+            onsPanel({
+                body: "<p class='js-ni-panel'>Include all {x} national identities. If you have more than one, enter them all separated by commas.</p>"
+            }) 
+        }}
+        <br>
+        {{
+            onsInput({
+                "id": "passport-other",
+                "dontWrap": true,
+                "label": {
+                    "text": "National identity",
+                    "description": "Enter your own answer or select from suggestions"
+                },
+                "typeahead":{
+                    "instructions": "Use up and down keys to navigate suggestions once you\'ve typed more than two characters. Use the enter key to select a suggestion. Touch device users, explore by touch or with swipe gestures.",
+                    "content": {
+                        "aria_you_have_selected": "You have selected",
+                        "aria_found_by_alternative_name": "found by alternative name",
+                        "aria_min_chars": "Type in 2 or more characters for suggestions.",
+                        "aria_one_result": "There is one suggestion available.",
+                        "aria_n_results": "There are {n} suggestions available.",
+                        "aria_limited_results": "Results have been limited to 10 suggestions. Type more characters to refine your search.",
+                        "more_results": "Continue typing to refine suggestions",
+                        "results_title": "Suggestions"
+                    },
+                    "autocomplete": "off",
+                    "typeaheadData": "https://gist.githubusercontent.com/rmccar/045965173d8ce59f4e78e7de42d33dbc/raw/bb8a41e57cecde85ecba371d5c39e5cee91bc8ae/National_Identity_FEL.json"
+                }
+            })
+        }}
+        {{
+           onsButton({
+                "text": "Save and continue",
+                "classes": "u-mt-l"
+            })
+        }}
+    </form>
+{% endblock %}

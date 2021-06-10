@@ -1,0 +1,46 @@
+---
+version: 14.4.4
+layout: typeahead-update/views/_master
+---
+{% from "components/details/_macro.njk" import onsDetails%}
+{% from "components/radios/_macro.njk" import onsRadios%}
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% block main %}
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/student-address-check.html">Previous</a>
+    <form action="{{ pageInfo.parentPath }}/student-check.html?previous={{ pageInfo.path }}.html">
+        <fieldset class="u-mt-s">
+            <legend><h1>Is this an address in the UK?</h1></legend>
+
+            {{ onsRadios({
+                "id": "address-check",
+                "name": "address-check",
+                "classes": "u-mt-s",
+                "radios": [
+                    {
+                        "id": "yes-uk",
+                        "label": {
+                            "text": "Yes"
+                        },
+                        "attributes": {
+                            "data-action-url": pageInfo.parentPath + "/student-term-address.html"
+                        }
+                    },
+                    {
+                        "id": "no",
+                        "label": {
+                            "text": "No"
+                        },
+                        "attributes": {
+                            "data-action-url": pageInfo.parentPath + "/student-address-country.html"
+                        }
+                    }
+                ]
+            }) }}
+        </fieldset>
+        {{ onsButton({
+            "text": "Save and continue",
+            "classes": "u-mt-l"
+        }) }}
+    </form>
+{% endblock %}

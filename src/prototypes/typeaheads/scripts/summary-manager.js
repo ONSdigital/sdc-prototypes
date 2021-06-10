@@ -32,6 +32,7 @@ export default class SummaryManager {
     const questions = [firstQuestion];
   
     for (let i = 0; i < remainingUnsortedQuestions; i++) {
+      console.log(questions);
       const lastQuestionKey = questions[questions.length - 1].key;
 
       const nextQuestion = unsortedQuestions.find(question => question.previousURL === lastQuestionKey);

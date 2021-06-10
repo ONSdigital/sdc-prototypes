@@ -1,0 +1,74 @@
+---
+version: 14.4.4
+layout: typeahead-update/views/_master
+---
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+
+{% block main %}
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/main-language.html">Previous</a>
+    <form action="{{ pageInfo.parentPath }}/summary.html?previous={{ pageInfo.path }}.html">
+        <h1 class="u-mt-s">What passports do you hold?</h1>
+        {% call onsPanel({ 
+        }) %}
+            <p class="u-mb-no"><strong>Include</strong></p>
+            <ul>
+                <li>current passports and any other travel documents, such as ID cards, that show citizenship of a particular country or countries</li>
+                <li>passports and travel documents that have expired, if you are entitled to renew them</li>
+            </ul>
+
+         {% endcall %}
+         {{
+            onsCheckboxes({
+                "legend": "Select all that apply",
+                "name": "passport",
+                "checkboxes": [
+                    {
+                        "id": "united-kingdom",
+                        "label": {
+                            "text": "United Kingdom"
+                        },
+                        "name": "united-kingdom"
+                    },
+                    {
+                        "id": "ireland",
+                        "label": {
+                            "text": "Ireland"
+                        },
+                        "name": "ireland"
+                    },
+                    {
+                        "id": "other",
+                        "label": {
+                            "text": "Other",
+                            "description": "You can enter these passports on the next question"
+                        },
+                        "name": "other",
+                        "attributes": {
+                            "data-action-url": pageInfo.parentPath + "/passport-other.html"
+                        }
+                    }
+                ],
+                "mutuallyExclusive": {
+                    "or": 'Or',
+                    "deselectMessage": 'Selecting this will uncheck all other checkboxes',
+                    "deselectAdjective": 'deselected',
+                    "checkbox": {
+                        "id": "none",
+                        "label": {
+                            "text": "None"
+                        },
+                        "name": "none"
+                    }
+                }
+            }) 
+        }}
+        {{
+           onsButton({
+                "text": "Save and continue",
+                "classes": "u-mt-l"
+            })
+        }}
+    </form>
+{% endblock %}

@@ -1,0 +1,28 @@
+---
+version: 14.4.4
+layout: typeahead-update/views/_master
+---
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "typeahead-update/components/input/_macro.njk" import onsInput %}
+
+{% block main %}
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/employment-status.html">Previous</a>
+    <form action="{{ pageInfo.parentPath }}/job-description.html">
+        <h1 class="u-mt-s">In your main job, what is your job title?</h1>
+        {{
+            onsInput({
+                "id": "job-title",
+                "dontWrap": true,
+                "label": {
+                    "text": "Job title"
+                }
+            })
+        }}
+        {{
+           onsButton({
+                "text": "Save and continue",
+                "classes": "u-mt-l"
+            })
+        }}
+    </form>
+{% endblock %}

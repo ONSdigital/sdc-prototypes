@@ -7,7 +7,6 @@ function studentAddressCheck() {
   if (destination) {
     const key = destination.getAttribute('data-census-address');
     const address = JSON.parse(sessionStorage.getItem(key));
-    console.log(address);
     const params = {
       id: 'student-address-check',
       name: 'student-address-check',
@@ -15,7 +14,7 @@ function studentAddressCheck() {
         {
           id: 'home',
           label: {
-            text: addressToDisplay(address.inputs)
+            text: addressToDisplay(address.inputs) !== '' ? addressToDisplay(address.inputs) : 'Census letter address'
           },
           value: key
         }

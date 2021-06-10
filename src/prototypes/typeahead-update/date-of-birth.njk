@@ -1,0 +1,61 @@
+---
+version: 14.4.4
+layout: typeahead-update/views/_master
+---
+{% from "components/date-input/_macro.njk" import onsDateInput %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/question/_macro.njk" import onsQuestion %}
+
+{% block main %}
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/name.html">Previous</a>
+    <form action="{{ pageInfo.parentPath }}/address-check.html?previous={{ pageInfo.path }}.html">
+        {% call onsQuestion({
+            "title": "What is your date of birth?",
+            "description": "For example, 31 3 1980"
+        }) %}
+
+        {{
+            onsDateInput({
+                "id": "dob",
+                "questionMode": true,
+                "legend": "What is your date of birth?",
+                "legendClasses": "u-vh",
+                "classes": "u-mt-s",
+                "day": {
+                    "label": {
+                        "text": "Day"
+                    },
+                    "name": "dob-day",
+                    "attributes": {
+                        "autocomplete": "bday-day"
+                    }
+                },
+                "month": {
+                    "label": {
+                        "text": "Month"
+                    },
+                    "name": "dob-month",
+                    "attributes": {
+                        "autocomplete": "bday-month"
+                    }
+                },
+                "year": {
+                    "label": {
+                        "text": "Year"
+                    },
+                    "attributes": {
+                        "autocomplete": "bday-year",
+                        "maxlength": "4"
+                    }
+                }
+            })
+        }}
+        {% endcall %}
+        {{
+            onsButton({
+                "text": "Save and continue",
+                "classes": "u-mt-l"
+            })
+        }}
+    </form>
+{% endblock %}

@@ -1,0 +1,45 @@
+---
+version: 14.4.4
+layout: typeahead-update/views/_master
+---
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "typeahead-update/components/input/_macro.njk" import onsInput %}
+
+{% block main %}
+    <a class="previous-link js-previous" href="{{ pageInfo.rootPath }}/ethnic-group-black.html">Previous</a>
+    <form action="{{ pageInfo.parentPath }}/religion.html?previous={{ pageInfo.path }}.html">
+        <h1 class="u-mt-s">You selected "African". How would you describe your African ethnic group or background?</h1>
+        {{
+            onsInput({
+                "id": "ethnic-group-black-african",
+                "dontWrap": true,
+                "label": {
+                    "text": "African ethnic group or background",
+                    "description": "Enter your own answer or select from suggestions"
+                    
+                },
+                "typeahead":{
+                    "instructions": "Use up and down keys to navigate suggestions once you\'ve typed more than two characters. Use the enter key to select a suggestion. Touch device users, explore by touch or with swipe gestures.",
+                    "content": {
+                        "aria_you_have_selected": "You have selected",
+                        "aria_found_by_alternative_name": "found by alternative name",
+                        "aria_min_chars": "Type in 2 or more characters for suggestions.",
+                        "aria_one_result": "There is one suggestion available.",
+                        "aria_n_results": "There are {n} suggestions available.",
+                        "aria_limited_results": "Results have been limited to 10 suggestions. Type more characters to refine your search.",
+                        "more_results": "Continue typing to refine suggestions",
+                        "results_title": "Suggestions"
+                    },
+                    "autocomplete": "off",
+                    "typeaheadData": "https://gist.githubusercontent.com/rmccar/48a3e79f209e65a7cdbc1aee7abff926/raw/f436205b37e1eb2d548de3081f02d4b89aa5bb10/Ethnic_Group_FEL.json"
+                }
+            })
+        }}
+        {{
+           onsButton({
+                "text": "Save and continue",
+                "classes": "u-mt-l"
+            })
+        }}
+    </form>
+{% endblock %}
