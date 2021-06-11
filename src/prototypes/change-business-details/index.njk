@@ -1,0 +1,249 @@
+---
+group: Frontstage
+title: Change business details
+version: 32.0.1
+layout: change-business-details/views/_index
+---
+
+
+{% block main %}
+    {% from "components/button/_macro.njk" import onsButton %}
+    <h1>User self serve</h1>
+    <p>Respondents can:</p>
+    <ul class="list ">
+        <li class="list__item ">update their account details</li>
+        <li class="list__item ">find survey information</li>
+        <li class="list__item ">share or transfer surveys.</li>
+    </ul>
+    <div class="grid">
+        <div class="grid__col col-12@m">
+            <h2>Current version</h2>
+            {{ 
+                onsButton({
+                    "type": 'button',
+                    "text": 'Version 9',
+                    "classes": 'u-mb-l',
+                    "url": "/prototypes/user-self-serve/version-9/index.html"
+                }) 
+            }}
+
+            <p>Updated transfer surveys</p>
+            <ul class="list ">
+                <li class="list__item "><a href="/prototypes/user-self-serve/version-9/signed-in/account/04-transfer-my-surveys/index.html">Start</a></li>
+                <li class="list__item "><a href="/prototypes/user-self-serve/version-9/signed-in/account/04-transfer-my-surveys/05-confirm-surveys.html">Confirm surveys</a></li>
+                <li class="list__item "><a href="/prototypes/user-self-serve/version-9/signed-in/account/04-transfer-my-surveys/06-transfered-surveys-complete.html">Survey transfer complete</a></li>
+                <li class="list__item "><a href="/prototypes/user-self-serve/version-9/signed-in/account/04-transfer-my-surveys/07-transfered-surveys-denied.html">Survey transfer denied</a></li>
+            </ul>
+
+            <ul class="list ">
+                <li class="list__item ">Reverted to <a href="/prototypes/user-self-serve/version-9/signed-in/account/03-share-access-to-my-surveys/00-select-business.html">select multiple business</a> when sharing</li>
+                <li class="list__item ">Updated <a href="/prototypes/user-self-serve/version-9/signed-out/help/index.html">signed out help</a> content</li>
+            </ul>
+
+            <p>Added Change business details</p>
+            <ul class="list ">
+                    <li class="list__item ">Single business owner <a href="/prototypes/user-self-serve/version-9/signed-in/account/05-change-business-details/scenario-1/01-summary.html">change the address for one survey</a></li>
+                    <li class="list__item ">Single business owner <a href="/prototypes/user-self-serve/version-9/signed-in/account/05-change-business-details/scenario-2/01-summary.html">change the addresses for multiple surveys to the same address</a></li>
+                    <!-- <li class="list__item ">Single business owner <a href="/prototypes/user-self-serve/version-9/signed-in/account/05-change-business-details/scenario-3/01-summary.html">change the addresses for multiple surveys to different addresses</a></li> -->
+                    <!-- <li class="list__item ">Single business owner <a href="/prototypes/user-self-serve/version-9/signed-in/account/05-change-business-details/scenario-4/01-summary.html">notify you of winding down of a single business</a></li> -->
+                    <!-- <li class="list__item ">Multiple businesses owner <a href="/prototypes/user-self-serve/version-9/signed-in/account/05-change-business-details/scenario-5/01-summary.html">change the address for one survey</a></li> -->
+                    <!-- <li class="list__item ">Multiple businesses owner <a href="/prototypes/user-self-serve/version-9/signed-in/account/05-change-business-details/scenario-6/01-summary.html">change the addresses for multiple surveys to the same address</a></li> -->
+                    <li class="list__item ">Multiple businesses owner <a href="/prototypes/user-self-serve/version-9/signed-in/account/05-change-business-details/scenario-7/01-summary.html">change the addresses for multiple surveys to different addresses</a></li>
+                    <!-- <li class="list__item ">Multiple businesses owner <a href="/prototypes/user-self-serve/version-9/signed-in/account/05-change-business-details/scenario-8/01-summary.html">notify you of winding down of a single business</a></li> -->
+            </ul>
+            
+            <h3>Internal</h3>
+            <ul class="list ">
+                <li class="list__item ">Updated labels of <a href="/prototypes/user-self-serve/version-9/00-internal/unassigned/00-send-message.html">assigning category to unassigned messages</a>, <a href="/prototypes/user-self-serve/version-9/00-internal/assigned/00-send-message.html">assigning category to assigned messages</a> and <a href="/prototypes/user-self-serve/version-9/00-internal/10-filter-messages.html">choosing which messages to show</a></li>
+                <li class="list__item ">Added ability to resend email in <a href="/prototypes/user-self-serve/version-9/00-internal/respondent/index.html">respondent screen</a> </li>
+            </ul>
+
+            <hr class="u-mb-l">
+            <h2>Version history</h2>
+
+            <section class="u-mb-l">
+                {{ 
+                onsButton({
+                    "type": 'button',
+                    "text": 'Version 8',
+                    "classes": 'btn--secondary btn--small u-mb-s',
+                    "url": "/prototypes/user-self-serve/version-8/index.html"
+                }) 
+            }}
+                <ul class="list ">
+                    <li class="list__item ">Upgraded design system to 32.0.1</li>
+                    <li class="list__item ">Added New survey list page which uses cards
+                    <a href="/prototypes/user-self-serve/version-8/signed-in/00-surveys-list-card.html">Version 1</a> | 
+                    <a href="/prototypes/user-self-serve/version-8/signed-in/00-surveys-list-cardv2.html">Version 2</a> | 
+                    <a href="/prototypes/user-self-serve/version-8/signed-in/00-surveys-list-cardv3.html">Version 3</a> | 
+                    <a href="/prototypes/user-self-serve/version-8/signed-in/00-surveys-list-cardv4.html">Version 4</a>
+                    </li>
+                    <li class="list__item ">Added <a href="/prototypes/user-self-serve/version-8/signed-in/account/02-change-password/01-change-password.html">Change your password</a> and <a href="/prototypes/user-self-serve/version-8/signed-in/account/02-change-password/02-change-password-confirm.html">Change your password confirmation</a>
+                    </li>
+                    <li class="list__item ">Added <a href="/prototypes/user-self-serve/version-8/signed-out/help/index.html">signed out version</a>
+                        <ul class="list ">
+                            <li class="list__item ">Refactored code (new URLS)</li>
+                            <li class="list__item ">Removed survey specific help</li>
+                            <li class="list__item ">Added "Problems with password"</li>
+                        </ul>
+                    </li>
+                    <li class="list__item ">Changed Share surveys from multi business change to single business</li>
+                    <li class="list__item ">Added <a href="/prototypes/user-self-serve/version-8/signed-in/account/01-change-account-details/01-change-contact-details-no-email.html">change account details apart from email address</a>
+                    </li>
+                    <li class="list__item ">Added <a href="/prototypes/user-self-serve/version-8/signed-in/30-verification-link-expired.html">Verification link has expired page</a>
+                    </li>
+                    <li class="list__item ">Added <a href="/prototypes/user-self-serve/version-8/signed-in/account/03-share-access-to-my-surveys/06-shared-surveys-complete.html">shared survey recipient confirmation</a>
+                    </li>
+                    <li class="list__item ">Added <a href="/prototypes/user-self-serve/version-8/signed-in/account/03-share-access-to-my-surveys/01-select-surveys-error.html">Select surveys error screen</a>
+                    </li>
+                </ul>
+                <h3>Internal</h3>
+                <ul class="list ">
+                    <li class="list__item ">Added <a href="/prototypes/user-self-serve/version-8/00-internal/unassigned/00-send-message.html">ability for ROps to assign category to unassigned messages</a>
+                    </li>
+                    <li class="list__item ">Added <a href="/prototypes/user-self-serve/version-8/00-internal/assigned/00-send-message.html">ability for ROps to assign category to assigned messages</a>
+                    </li>
+                    <li class="list__item ">Added <a href="/prototypes/user-self-serve/version-8/00-internal/10-filter-messages.html">Choose which messages to show</a>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="u-mb-l">
+                {{ 
+                    onsButton({
+                        "type": 'button',
+                        "text": 'Version 7',
+                        "classes": 'btn--secondary btn--small u-mb-s',
+                        "url": "/prototypes/user-self-serve/version-7/00-surveys-list.html"
+                    }) 
+                }}
+                <p>Includes <a href="https://docs.google.com/document/d/1r5IqesSBjWYU_GWMnA7L9iDFK0dOC6HA9RxHCtk2NRM/edit#">recommendations from Treejack survey</a> (Dec 20 / Jan 21)</p>
+                <ul class="list ">
+                    <li class="list__item ">Upgraded Design System to v30.0.0</li>
+                    <li class="list__item ">Removed 'current' breadcrumb</li>
+                    <li class="list__item ">Added link to transfer surveys from <a href="/prototypes/user-self-serve/version-7/account/04-transfer-my-surveys/index.html">share access</a>
+                    </li>
+                </ul>
+            </section>
+            <section class="u-mb-l">
+                {{ 
+                        onsButton({
+                            "type": 'button',
+                            "text": 'Version 6',
+                            "classes": 'btn--secondary btn--small u-mb-s',
+                            "url": "/prototypes/user-self-serve/version-6/00-surveys-list.html"
+                        }) 
+                    }}
+                <p>Includes additional content updates (FAQs in BDOD and SPC)</p>
+            </section>
+
+            <section class="u-mb-l">
+                {{ 
+                        onsButton({
+                            "type": 'button',
+                            "text": 'Version 5',
+                            "classes": 'btn--secondary btn--small u-mb-s',
+                            "url": "/prototypes/user-self-serve/version-5/00-surveys-list.html"
+                        }) 
+                    }}
+                <p>Includes recommendations from user testing 8/9th September 2020</p>
+                <ul class="list ">
+                    <li class="list__item ">Redesigned transfer surveys
+                    <ul class="list ">
+                            <li class="list__item ">Limited to one email address</li>
+                            <li class="list__item ">Added intro screen "What will happen"</li>
+                            <li class="list__item ">Removed delete acccount option</li>
+                            <li class="list__item ">Added <a href="/prototypes/user-self-serve/version-5/account/04-transfer-my-surveys-1/index.html">Transferring one survey for one businesses</a>
+                            </li>
+                            <li class="list__item ">Added <a href="/prototypes/user-self-serve/version-5/account/04-transfer-my-surveys-2/index.html">Transferring multiple surveys for one businesses</a>
+                            </li>
+                            <li class="list__item ">Added <a href="/prototypes/user-self-serve/version-5/account/04-transfer-my-surveys-3/index.html">Transferring multiple surveys for multiple businesses</a>
+                            </li>
+                            <li class="list__item ">Added <a href="/prototypes/user-self-serve/version-5/account/04-transfer-my-surveys-4/index.html">Transferring multiple surveys for large amount of businesses</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="list__item ">Redesigned <a href="/prototypes/user-self-serve/version-5/account/03-share-access-to-my-surveys/index.html">share access to surveys</a>
+                        <ul class="list ">
+                            <li class="list__item ">Limited to one email address</li>
+                            <li class="list__item ">Added intro screen "What will happen"</li>
+                        </ul>
+                    </li>
+                    <li class="list__item ">Added "My password details have changed" to <a href="/prototypes/user-self-serve/version-5/40-category/00-category-list.html">Account details</a> in Help</li>
+                    <li class="list__item ">Added link to tranfer surveys to <a href="/prototypes/user-self-serve/version-5/account/01-change-contact-details/02-change-email-address.html">email confirmation screen</a>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="u-mb-l">
+                {{ 
+                        onsButton({
+                            "type": 'button',
+                            "text": 'Version 4',
+                            "classes": 'btn--secondary btn--small u-mb-s',
+                            "url": "/prototypes/user-self-serve/version-4/00-surveys-list.html"
+                        }) 
+                    }}
+                <p>Merged updated <a href="/prototypes/user-account-creation/index.html">User account creation</a>
+                </p>
+            </section>
+
+            <section class="u-mb-l">
+                {{ 
+                        onsButton({
+                            "type": 'button',
+                            "text": 'Version 3',
+                            "classes": 'btn--secondary btn--small u-mb-s',
+                            "url": "/prototypes/user-self-serve/version-3/00-surveys-list.html"
+                        }) 
+                    }}
+                <p>Updated design system (to 20.0.3)</p>
+                <p>Merged updated <a href="/prototypes/user-account-creation/index.html">User account creation</a>
+                </p>
+                <ul>
+                    <li class="list__item ">Routing content and conupdates</li>
+                    <li class="list__item ">Added <a href="{{ pageInfo.rootPath }}/version-3/00-internal/10-secure-messages.html">Internal secure messages</a>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="u-mb-l">
+                {{ 
+                        onsButton({
+                            "type": 'button',
+                            "text": 'Version 2',
+                            "classes": 'btn--secondary btn--small u-mb-s',
+                            "url": "/prototypes/user-self-serve/version-2/00-surveys-list.html"
+                        }) 
+                    }}
+                <p>Includes recommendations from user testing 18th June 2020</p>
+                <ul>
+                    <li class="list__item ">Removed help link from survey list</li>
+                    <li class="list__item ">Simplified survey list screen</li>
+                    <li class="list__item ">Added 'Help' and 'My account' to header</li>
+                    <li class="list__item ">Removed hidden sidenav from surveys list</li>
+                    <li class="list__item ">Added 'Surveys' to main nav</li>
+                    <li class="list__item ">Moved 'history' and 'To do' from main nav to sub nav in 'Surveys'</li>
+                </ul>
+            </section>
+
+            <section class="u-mb-l">
+                {{ 
+                        onsButton({
+                            "type": 'button',
+                            "text": 'Version 1',
+                            "classes": 'btn--secondary btn--small u-mb-s',
+                            "url": "/prototypes/user-self-serve/version-1/00-surveys-list.html"
+                        }) 
+                    }}
+                <ul>
+                    <li class="list__item ">Combines secure messages categorisation with <a href="/prototypes/user-generated-account/">User account creation.</a>
+                    </li>
+                    <li class="list__item ">In this prototype, when respondents <a href="{{ pageInfo.rootPath }}/version-1/01-message-categories.html">ask for help</a> we attempt to solve a respondent's query before they send a message.</li>
+                    <li class="list__item ">The most common issues are <a href="{{ pageInfo.rootPath }}/version-1/manage-surveys/20-my-account.html">managing access to surveys</a> and <a href="{{ pageInfo.rootPath }}/version-1/20-category/00-category-list.html">information about a survey</a>. This prototype attempts to allow respondents to solve these issues without using a secure message.</li>
+                    <li class="list__item ">When <a href="{{ pageInfo.rootPath }}/version-1/00-internal/00-send-message.html">internal users send a message</a>, they are prompted to categorise the message.</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+{% endblock %}
