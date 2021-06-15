@@ -29,79 +29,24 @@ layout: change-business-details/views/version-1/_master-survey
                 }) 
             }}
         </div>
-        <div class="grid__col col-12@m u-pt-no">
-            <h1>Why do you need to change your business details?</h1>
-            <form action="{{ pageInfo.parentPath }}/02-choice-error.html">
-                <p class="field">
-                    <fieldset class="fieldset">
-                        <legend class="fieldset__legend">Choose an option</legend>
-                        <div class="radios__items">
-                            <p class="radios__item">
-                                <span class="radio">
-                                    <input
-                                        type="radio"
-                                        id="change-contact-details"
-                                        data-action-url="/prototypes/change-business-details/version-1/signed-in/account/05-change-business-details/scenario-1/03-change-business-details.html"
-                                        class="radio__input js-radio"
-                                        value="question-one"
-                                        name="message-query">
-                                    <label class="radio__label" for="change-contact-details">My business details are incorrect</label>
-                                </span>
-                            </p>
-                            <br>
-                            <p class="radios__item">
-                                <span class="radio">
-                                    <input
-                                        type="radio"
-                                        id="change-business-details"
-                                        data-action-url="/prototypes/change-business-details/version-1/signed-in/account/05-change-business-details/scenario-1/option-1/index.html"
-                                        class="radio__input js-radio"
-                                        value="question-two"
-                                        name="message-query">
-                                    <label class="radio__label" for="change-business-details">My business is winding down or liquidating</label>
-                                </span>
-                            </p>
-                            <br>
-                            <p class="radios__item">
-                                <span class="radio">
-                                    <input
-                                        type="radio"
-                                        id="access-to-my-surveys"
-                                        data-action-url="/prototypes/change-business-details/version-1/signed-in/account/05-change-business-details/scenario-1/option-2/index.html"
-                                        class="radio__input js-radio"
-                                        value="question-three"
-                                        name="message-query">
-                                    <label class="radio__label" for="access-to-my-surveys">My business is dormant</label>
-                                </span>
-                            </p>
-                            <br>
-                            <p class="radios__item">
-                                <span class="radio">
-                                    <input
-                                        type="radio"
-                                        id="transfer-my-surveys"
-                                        data-action-url="/prototypes/change-business-details/version-1/signed-in/account/05-change-business-details/scenario-1/option-3/index.html"
-                                        class="radio__input js-radio"
-                                        value="question-four"
-                                        name="message-query">
-                                    <label class="radio__label" for="transfer-my-surveys">My business is subject to a takeover</label>
-                                </span>
-                            </p>
-                        </div>
-                    </fieldset>
-                </p>
-                <div class="grid grid--flex grid--gutterless grid--vertical-center grid--no-wrap@s u-mt-m u-mb-m">
-                    <div class="grid__col">
-                        <button type="submit" class="btn btn-group__btn">
-                            <span class="btn__inner">Continue</span>
-                        </button>
-
-                    </div>
-                    <div class="grid__col u-ml-m">
-                        <a href="/prototypes/change-business-details/version-1/signed-in/00-surveys-list.html">Cancel</a>
-                    </div>
+        <div class="grid__col col-8@m u-pt-no">
+            <h1>Information about changing your business details</h1>
+            <p>Before you change your business details please be aware of the following</p>
+            <ul>
+                <li>Changes to business details may take up to 7 days to process and will not affect current surveys or surveys that you have completed.</li>
+                <li>If you were expecting a letter from us, and believe you have missed this, please <a href="/prototypes/change-business-details/version-1/signed-in/account/05-change-business-details/scenario-1/10-send-message.html">contact us</a>.</li>
+                <li>If your business is winding down or liquidating, dormant or subject to a takeover you should <a href="/prototypes/change-business-details/version-1/signed-in/account/05-change-business-details/scenario-1/10-send-message.html">contact us</a>.</li>
+            </ul>
+            <div class="grid grid--flex grid--gutterless grid--vertical-center grid--no-wrap@s u-mt-m u-mb-m">
+                <div class="grid__col">
+                    <button type="button" class="btn btn-group__btn" onclick="location.href='{{ pageInfo.rootPath }}/version-1/signed-in/account/05-change-business-details/scenario-1/03-change-business-details.html';">
+                        <span class="btn__inner">Continue</span>
+                    </button>
                 </div>
-            </form>
+                <div class="grid__col u-ml-m">
+                    <a href="/prototypes/change-business-details/version-1/signed-in/00-surveys-list.html">Cancel</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
