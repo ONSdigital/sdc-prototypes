@@ -4,7 +4,7 @@ group: Social surveys
 version: 33.0.0
 layout: rh-social/views/_master
 ---
-{% set action = "https://test-launcher.gcp.dev.eq.ons.digital/quick-launch?url=http://10.80.136.136/schemas/census/individual_gb_eng&language_code=en" %}
+{% set action = pageInfo.rootPath + "/confirm-address/index.html" %}
 {% set requestNewCodeLink = "address.html?no-js=false" %}
 
 {% block preMain %}

@@ -1,0 +1,69 @@
+---
+version: 33.0.0
+layout: rh-social/views/_master
+---
+{% block main %}
+
+    <div class="page__container container">
+
+        <div class="grid">
+
+            <div class="grid__col col-8@m">
+
+                <main class="page__main" id="main-content" role="main">
+
+                    {% call onsQuestion({
+                        "legendIsPageTitle": true,
+                        "title": "Is this the correct address?"
+                    }) %}
+
+                        {{
+                            onsAddressOutput({
+                                "classes": 'u-mb-m',
+                                "line1": '68 Abingdon Road',
+                                "line2": 'Goathill',
+                                "town": 'Barry',
+                                "postcode": 'AB12 6UH'
+                            })
+                        }}
+
+                        {{
+                            onsRadios({
+                                "dontWrap": true,
+                                "name": "confirm",
+                                "radios": [
+                                    {
+                                        "id": "bacon",
+                                        "label": {
+                                            "text": "Yes, this is the correct address"
+                                        },
+                                        "value": "bacon"
+                                    },
+                                    {
+                                        "id": "olives",
+                                        "label": {
+                                            "text": "No, this is not the correct address"
+                                        },
+                                        "value": "olives"
+                                    }
+                                ]
+                            })
+                        }}
+
+                        {{
+                            onsButton({
+                                "text": "Continue",
+                                "classes": 'u-mt-l'
+                            })
+                        }}
+
+                    {% endcall %}
+                </main>
+
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock %}

@@ -13,6 +13,7 @@
 {% from "components/text-indent/_macro.njk" import onsTextIndent %}
 {% from "components/question/_macro.njk" import onsQuestion %}
 {% from "components/uac/_macro.njk" import onsUACInput %}
+{% from "components/address-output/_macro.njk" import onsAddressOutput %}
 
 {% block head %}
     <link rel="stylesheet" href="{{pageInfo.rootPath}}/main.css">
@@ -65,6 +66,13 @@
                 ]
             }
         ]
+    }
+} %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action": action
     }
 } %}
 
