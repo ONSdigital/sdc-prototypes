@@ -1,0 +1,73 @@
+---
+title: Respondent Home
+group: Social surveys
+version: 33.0.0
+layout: rh-social/views/_master
+---
+{% set action = "https://test-launcher.gcp.dev.eq.ons.digital/quick-launch?url=http://10.80.136.136/schemas/census/individual_gb_eng&language_code=en" %}
+{% set requestNewCodeLink = "address.html?no-js=false" %}
+
+{% block preMain %}
+
+    <div class="container">
+
+        {{
+            onsBreadcrumb({
+                "ariaLabel": 'Breadcrumb',
+                "itemsList": [
+                    {
+                        "url": '/',
+                        "text": 'Our surveys'
+                    }
+                ]
+            })
+        }}
+
+    </div>
+
+{% endblock %}
+
+{% block main %}
+
+    <div class="page__container container">
+
+        <div class="grid">
+
+            <div class="grid__col col-8@m">
+
+                <main class="page__main" id="main-content" role="main">
+
+                    <h1 class="u-fs-xxl">Start survey</h1>
+
+                    {{
+                        onsUACInput({
+                            "id": "uac",
+                            "name": "uac",
+                            "postTextboxLinkText": "Where to find your access code",
+                            "postTextboxLinkUrl": "#",
+                            "label": {
+                                "text": "Enter your 16-character access code",
+                                "description": "Keep this code safe. You will need to enter it every time you access your survey"
+                            },
+                            "securityMessage": "Your personal information is protected by law and will be kept confidential."
+                        })
+                    }}
+                    {{
+                        onsButton({
+                            "text": "Access survey",
+                            "classes": "u-mb-xl"
+                        })
+                    }}
+
+                    <h2>If you don't have an access code</h2>
+
+                    <p>You can <a href="#">request a new code</a> to start a new survey if you have lost or not received an access code. This can be sent to you by text or post.</p>
+                </main>
+
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock %}
