@@ -24,22 +24,23 @@
 
 {% set pageConfig =  {
     "header": {
-        "titleLogoHref": pageInfo.rootPath + '/',
         "title": pageInfo.title,
-        "logoAlt": 'Office for National Statistics logo',
-        "logoHref": 'https://www.ons.gov.uk/'
+        "logoAlt": 'Office for National Statistics logo'
     },
     "footer": {
+        "newTabWarning": 'The following links open in a new tab',
         "rows": [
             {
                 "itemsList": [
                     {
-                        "text": 'About ONS surveys',
-                        "url": '#0'
+                        "text": 'About this survey',
+                        "url": '#0',
+                        "target": '_blank'
                     },
                     {
                         "text": 'Contact us',
-                        "url": '#0'
+                        "url": '#0',
+                        "target": '_blank'
                     }
                 ]
             }
@@ -49,19 +50,23 @@
                 "itemsList": [
                     {
                         "text": 'Cookies',
-                        "url": '#0'
+                        "url": '#0',
+                        "target": '_blank'
                     },
                     {
                         "text": 'Accessibility statement',
-                        "url": '#0'
+                        "url": '#0',
+                        "target": '_blank'
                     },
                     {
                         "text": 'Privacy and data protection',
-                        "url": '#0'
+                        "url": '#0',
+                        "target": '_blank'
                     },
                     {
                         "text": 'Terms and conditions',
-                        "url": '#0'
+                        "url": '#0',
+                        "target": '_blank'
                     }
                 ]
             }
