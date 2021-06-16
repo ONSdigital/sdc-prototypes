@@ -13,9 +13,11 @@ layout: rh-social/views/_rh-master
 
                 <main class="page__main" id="main-content" role="main">
 
+                    <form action="#">
+
                     {% call onsQuestion({
                         "legendIsPageTitle": true,
-                        "title": "Is this the correct address?"
+                        "title": 'Is this the correct address?'
                     }) %}
 
                         {{
@@ -31,21 +33,27 @@ layout: rh-social/views/_rh-master
                         {{
                             onsRadios({
                                 "dontWrap": true,
-                                "name": "confirm",
+                                "name": 'confirm',
                                 "radios": [
                                     {
-                                        "id": "bacon",
+                                        "id": 'yes',
                                         "label": {
-                                            "text": "Yes, this is the correct address"
+                                            "text": 'Yes, this is the correct address'
                                         },
-                                        "value": "bacon"
+                                        "value": 'yes',
+                                        "attributes": {
+                                            "data-action-url": pageInfo.rootPath + '/questionnaire/index.html'
+                                        }
                                     },
                                     {
-                                        "id": "olives",
+                                        "id": 'no',
                                         "label": {
-                                            "text": "No, this is not the correct address"
+                                            "text": 'No, this is not the correct address'
                                         },
-                                        "value": "olives"
+                                        "value": 'no',
+                                        "attributes": {
+                                            "data-action-url": pageInfo.rootPath + '/incorrect-address/index.html'
+                                        }
                                     }
                                 ]
                             })
@@ -53,12 +61,15 @@ layout: rh-social/views/_rh-master
 
                         {{
                             onsButton({
-                                "text": "Continue",
+                                "text": 'Continue',
                                 "classes": 'u-mt-l'
                             })
                         }}
 
                     {% endcall %}
+
+                    </form>
+
                 </main>
 
             </div>

@@ -1,11 +1,10 @@
 ---
-title: ONS surveys
+title: Respondent Home v1
 group: Social surveys
 version: 33.0.0
 layout: rh-social/views/_master
 ---
 {% set action = pageInfo.rootPath + "/confirm-address/index.html" %}
-{% set requestNewCodeLink = "address.html?no-js=false" %}
 
 {% block preMain %}
 
@@ -59,7 +58,7 @@ layout: rh-social/views/_master
                         })
                     }}
 
-                    <h2>If you don't have an access code</h2>
+                    <h2>If you don’t have an access code</h2>
 
                     <p>You can <a href="#">request a new access code</a> to start a new survey if you have lost or not received an access code. This can be sent to you by text or post.</p>
                 </main>
@@ -69,5 +68,7 @@ layout: rh-social/views/_master
         </div>
 
     </div>
+
+<script>window.sessionStorage.clear()</script>
 
 {% endblock %}
