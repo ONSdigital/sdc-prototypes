@@ -1,0 +1,90 @@
+{% extends "page-templates/_template.njk" %}
+
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+{% from "components/select/_macro.njk" import onsSelect %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/collapsible/_macro.njk" import onsCollapsible %}
+{% from "components/lists/_macro.njk" import onsList %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+{% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
+{% from "components/text-indent/_macro.njk" import onsTextIndent %}
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/uac/_macro.njk" import onsUACInput %}
+{% from "components/address-output/_macro.njk" import onsAddressOutput %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{pageInfo.rootPath}}/main.css">
+{% endblock %}
+
+{% set designSystemVersion = "33.0.0" %}
+{% set cdnURL = "https://cdn.ons.gov.uk/sdc/design-system/" + designSystemVersion %}
+
+{% set pageConfig =  {
+    "header": {
+        "title": pageInfo.title,
+        "logoAlt": 'Office for National Statistics logo'
+    },
+    "signoutButton": {
+        "text": "Exit",
+        "buttonStyle": "exit",
+        "url": pageInfo.rootPath + '/'
+
+    },
+    "footer": {
+        "newTabWarning": 'The following links open in a new tab',
+        "rows": [
+            {
+                "itemsList": [
+                    {
+                        "text": 'About this study',
+                        "url": '#0',
+                        "target": '_blank'
+                    },
+                    {
+                        "text": 'Contact us',
+                        "url": '#0',
+                        "target": '_blank'
+                    }
+                ]
+            }
+        ],
+        "legal": [
+            {
+                "itemsList": [
+                    {
+                        "text": 'Cookies',
+                        "url": '#0',
+                        "target": '_blank'
+                    },
+                    {
+                        "text": 'Accessibility statement',
+                        "url": '#0',
+                        "target": '_blank'
+                    },
+                    {
+                        "text": 'Privacy and data protection',
+                        "url": '#0',
+                        "target": '_blank'
+                    },
+                    {
+                        "text": 'Terms and conditions',
+                        "url": '#0',
+                        "target": '_blank'
+                    }
+                ]
+            }
+        ]
+    }
+} %}
+
+{% block pageContent %}
+    {% block preMain %}{% endblock %}
+    {% block main %}{% endblock %}
+{% endblock %}
+
+{% block bodyEnd %}
+    <script src="{{pageInfo.rootPath}}/index.js"></script>
+{% endblock %}

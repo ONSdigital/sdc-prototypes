@@ -1,0 +1,81 @@
+---
+title: Study title
+version: 33.0.0
+layout: rh-social/views/_rh-master
+---
+{% block main %}
+
+    <div class="page__container container">
+
+        <div class="grid">
+
+            <div class="grid__col col-8@m">
+
+                <main class="page__main" id="main-content" role="main">
+
+                    <form action="#">
+
+                    {% call onsQuestion({
+                        "legendIsPageTitle": true,
+                        "title": 'Is this the correct address?'
+                    }) %}
+
+                        {{
+                            onsAddressOutput({
+                                "classes": 'u-mb-m',
+                                "line1": '68 Abingdon Road',
+                                "line2": 'Goathill',
+                                "town": 'Barry',
+                                "postcode": 'AB12 6UH'
+                            })
+                        }}
+
+                        {{
+                            onsRadios({
+                                "dontWrap": true,
+                                "name": 'confirm',
+                                "radios": [
+                                    {
+                                        "id": 'yes',
+                                        "label": {
+                                            "text": 'Yes, this is the correct address'
+                                        },
+                                        "value": 'yes',
+                                        "attributes": {
+                                            "data-action-url": pageInfo.rootPath + '/questionnaire/index.html'
+                                        }
+                                    },
+                                    {
+                                        "id": 'no',
+                                        "label": {
+                                            "text": 'No, this is not the correct address'
+                                        },
+                                        "value": 'no',
+                                        "attributes": {
+                                            "data-action-url": pageInfo.rootPath + '/incorrect-address/index.html'
+                                        }
+                                    }
+                                ]
+                            })
+                        }}
+
+                        {{
+                            onsButton({
+                                "text": 'Continue',
+                                "classes": 'u-mt-l'
+                            })
+                        }}
+
+                    {% endcall %}
+
+                    </form>
+
+                </main>
+
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock %}
