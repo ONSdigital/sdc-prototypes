@@ -8,6 +8,7 @@ layout: change-business-details/views/version-1/_master-survey
 {% from "components/input/_macro.njk" import onsInput %}
 {% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
 {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+{% from "components/panel/_macro.njk" import onsPanel %}
 
 {% block main %}
 
@@ -30,13 +31,13 @@ layout: change-business-details/views/version-1/_master-survey
             }}
         </div>
         <div class="grid__col col-8@m u-pt-no">
-            <h1>Change your business details</h1>
-            <p>Before you change your business details please be aware of the following:</p>
+            <h1>What will happen</h1>          
             <ul>
-                <li>Changes to business details may take up to 7 days to process and will not affect current surveys or surveys that you have completed.</li>
-                <li>If you were expecting a letter from us, and believe you have missed this, please <a href="/prototypes/change-business-details/version-1/signed-in/account/05-change-business-details/scenario-1/10-send-message.html">contact us</a>.</li>
-                <li>If your business is winding down or liquidating, dormant or subject to a takeover you should <a href="/prototypes/change-business-details/version-1/signed-in/account/05-change-business-details/scenario-1/10-send-message.html">contact us</a>.</li>
+                <li>You will update your business details and send us the changes</li>
+                <li>We will confirm the changes</li>
+                <li>Changes may take up to 7 days to be approved and will not affect current surveys or surveys that you have completed.</li>
             </ul>
+            <p>If you were expecting a letter from us, and believe you have missed this, please <a href="/prototypes/change-business-details/version-1/signed-in/account/05-change-business-details/scenario-1/10-send-message.html">contact us</a>.</p>
             <div class="grid grid--flex grid--gutterless grid--vertical-center grid--no-wrap@s u-mt-m u-mb-m">
                 <div class="grid__col">
                     <button type="button" class="btn btn-group__btn" onclick="location.href='{{ pageInfo.rootPath }}/version-1/signed-in/account/05-change-business-details/scenario-1/03-change-business-details.html';">
