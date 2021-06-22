@@ -1,0 +1,69 @@
+---
+group: Frontstage
+title: User self serve
+version: 32.0.1
+layout: user-self-serve/views/version-9/_master-internal-respondent
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/metadata/_macro.njk" import onsMetadata %}
+
+{% block main %}
+    <div class="grid">
+        <div class="grid__col col-8@m">
+        <p><a href="index.html">Back to respondent</a></p>
+            <section>
+            <p class="field">
+
+                <!--
+                <h1 class="u-mt-l">Shared surveys details</h1>
+
+                <p class="u-mt-l"><strong>Gareth Poole</strong> shared the following surveys with <strong>jane.doe@example.com</strong> on <strong>2nd June, 2021</strong> at <strong>10:40</strong></p>
+                -->
+                <h1 class="u-mt-l u-fs-m">Gareth Poole <span class="u-fw-n">shared the following surveys with</span> jane.doe@example.com <span class="u-fw-n">on</span> 2nd June, 2021 <span class="u-fw-n">at</span> 10:40</h1>
+                
+
+                <h2 class="u-fs-m u-mt-m">Sparks and Menser <span class="u-fw-n">(trading as Sparks and Menser)</span></h2>
+                <div class="text-indent">
+                    <ul class="list list--bare">
+                        <li>Monthly business survey</li>
+                        <li>Quarterly Acquisitions and Disposal of Capital Assets Survey</li>
+                        <li>Business Register and Employment Survey</li>
+                    </ul>
+                </div> 
+                <h2 class="u-fs-m u-mt-m">Dabanhams Limited <span class="u-fw-n">(trading as Dabanhams Limited)</span></h2>
+                <div class="text-indent">
+                    <ul class="list list--bare">
+                        <li>Monthly business survey</li>
+                        <li>Quarterly Acquisitions and Disposal of Capital Assets Survey</li>
+                        <li>Business Register and Employment Survey</li>
+                    </ul>
+                </div>
+            </p>
+            <p class="u-mt-l">This share request will expire on <strong>5th June, 2021</strong> at <strong>10:39</strong></p>
+
+            <p class="field u-mt-l">
+                <div class="btn-group">
+                    {{ 
+                        onsButton({
+                            "type": 'button',
+                            "text": 'Resend email',
+                            "classes": 'btn--secondary btn-group__btn',
+                            "url": "/prototypes/user-self-serve/version-9/signed-in/10-message-sent.html"
+                        }) 
+                    }}
+                    {{ 
+                        onsButton({
+                            "type": 'button',
+                            "text": 'Delete share request',
+                            "classes": 'btn--secondary btn-group__btn',
+                            "url": "/prototypes/user-self-serve/version-9/signed-in/00-surveys-list.html"
+                        }) 
+                    }}
+                </div>
+            </p>
+
+            </section>
+        </div>
+    </div>
+{% endblock %}
