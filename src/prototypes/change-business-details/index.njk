@@ -2,28 +2,21 @@
 group: Frontstage
 title: Change business details
 version: 17.0.0
-layout: change-business-details/views/_index
+layout: change-business-details/scenario-1/views/_index
 ---
 
 
 {% block main %}
     {% from "components/button/_macro.njk" import onsButton %}
-    <h1>Change business details</h1>
+    <h1>Change business details research prototype</h1>
     <div class="grid">
         <div class="grid__col col-12@m">
-            <h2>Current version</h2>
-            {{ 
-                onsButton({
-                    "type": 'button',
-                    "text": 'Version 1',
-                    "classes": 'u-mb-l',
-                    "url": "/prototypes/change-business-details/version-1/index.html"
-                }) 
-            }}
-            <h3>Scenarios</h3>
+            <h1>Scenarios</h1>
             <ul>
-                <li><a href="/prototypes/change-business-details/version-1/signed-in/account/05-change-business-details/scenario-1/01-summary.html">Scenario 1</a> One business, one survey. Simple change of business address.</li>
-                <li><a href="/prototypes/change-business-details/version-1/signed-in/account/05-change-business-details/scenario-2/01-summary.html">Scenario 2</a> One business, two survey. Wants to change the address of one business.</li>
+                <li><a href="/prototypes/change-business-details/scenario-1/signed-in/account/05-change-business-details/01-summary.html">Scenario 1</a> User makes change themselves.</li>
+                <li><a href="/prototypes/change-business-details/scenario-1/signed-in/account/05-change-business-details/01-summary.html">Scenario 2</a> User changes address for one survey only.</li>
+                <li><a href="/prototypes/change-business-details/scenario-1/signed-in/account/05-change-business-details/01-summary.html">Scenario 3</a> A colleague has already requested a change, but it hasn’t gone through yet.</li>
+                <li><a href="/prototypes/change-business-details/scenario-1/signed-in/account/05-change-business-details/01-summary.html">Scenario 4</a> Need to inform the business is winding down.</li>
             </ul>
         </div>
     </div>

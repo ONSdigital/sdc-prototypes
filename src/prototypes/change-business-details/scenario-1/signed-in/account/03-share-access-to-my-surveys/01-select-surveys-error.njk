@@ -1,0 +1,224 @@
+---
+group: Frontstage
+title: Change business details
+version: 32.0.1
+layout: change-business-details/scenario-1/views/_master-survey
+---
+
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+{% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
+
+{% block main %}
+
+    <div class="grid">
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/prototypes/change-business-details/scenario-1/signed-in/00-surveys-list.html',
+                            "text": 'Surveys'
+                        },
+                        {
+                            "url": '/prototypes/change-business-details/scenario-1/signed-in/account/index.html',
+                            "text": 'Account'
+                        },
+                        {
+                            "url": '/prototypes/change-business-details/scenario-1/signed-in/account/03-share-access-to-my-surveys/index.html',
+                            "text": 'Transfer surveys'
+                        },
+                        {
+                            "url": '/prototypes/change-business-details/scenario-1/signed-in/account/03-share-access-to-my-surveys/00-select-business.html',
+                            "text": 'Select business'
+                        }
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+            <div class="panel panel--error js-error-panel">
+                <div class="panel__header">
+                    <h1 data-qa="error-header" class="panel__title u-fs-r--b">There is a problem with this page</h1>
+                </div>
+                <div class="panel__body">
+                    <ol class="list ">
+                        <li class="list__item ">
+                            <a href="#error" class="list__link js-inpagelink">You have reached the maximum amount of emails you can enroll on one or more surveys.</a>
+                        </li>
+                        <li class="list__item ">
+                            <a href="#error" class="list__link js-inpagelink">You have reached the maximum amount of emails you can enroll on one or more surveys.</a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <h1 class="u-mt-s">Select surveys to share</h1>
+
+            <!--
+            <p class="field u-mt-s">
+                <button type="submit" class="btn btn--secondary btn--small">
+                    <span class="btn__inner">Select all surveys</span>
+                </button>
+            </p>
+-->
+
+            <div id="error" class="panel panel--error panel--simple js-error-panel">
+                <div class="panel__body">
+                    <p class="panel__error">
+                        <strong>You have reached the maximum amount of emails you can enroll on one or more surveys.<br><br>
+                        Deselect the survey/s to continue or call 0300 1234 931 to discuss your options.</strong>
+                    </p>
+                    {{
+                        onsCheckboxes({
+                            "legend": "ACME Consumer Products",
+                            "checkboxesLabel": "Select all that apply",
+                            "name": "ACME Consumer Products",
+                            "checkboxes": [
+                                {
+                                    "id": "Quarterly Business Survey",
+                                    "checked": "checked",
+                                    "label": {
+                                        "text": "Quarterly Business Survey"
+                                    },
+                                    "value": "Quarterly Business Survey"
+                                },
+                                {
+                                    "id": "Monthly Business Survey",
+                                    "checked": "checked",
+                                    "classes": "input--error",
+                                    "label": {
+                                        "text": "Monthly Business Survey"
+                                    },
+                                    "value": "Monthly Business Survey"
+                                }
+                            ]
+                        })
+                    }}
+                    {{
+                        onsCheckboxes({
+                            "legend": "ACME Group Ltd",
+                            "checkboxesLabel": "Select all that apply",
+                            "name": "ACME Group Ltd",
+                            "checkboxes": [
+                                {
+                                    "id": "Quarterly Business Survey b",
+                                    "checked": "checked",
+                                    "label": {
+                                        "text": "Quarterly Business Survey"
+                                    },
+                                    "value": "Quarterly Business Survey b"
+                                },
+                                {
+                                    "id": "Monthly Business Survey b",
+                                    "checked": "checked",
+                                    "label": {
+                                        "text": "Monthly Business Survey"
+                                    },
+                                    "value": "Monthly Business Survey b"
+                                }
+                            ]
+                        })
+                    }}
+                </div>
+            </div>
+
+            {{
+                onsCheckboxes({
+                    "legend": "ACME Consumer Products",
+                    "checkboxesLabel": "Select all that apply",
+                    "name": "ACME Consumer Products",
+                    "checkboxes": [
+                        {
+                            "id": "Quarterly Business Survey",
+                            "checked": "checked",
+                            "label": {
+                                "text": "Quarterly Business Survey"
+                            },
+                            "value": "Quarterly Business Survey"
+                        },
+                        {
+                            "id": "Monthly Business Survey",
+                            "checked": "checked",
+                            "label": {
+                                "text": "Monthly Business Survey"
+                            },
+                            "value": "Monthly Business Survey"
+                        }
+                    ]
+                })
+            }}
+
+            <div id="error" class="panel panel--error panel--simple js-error-panel">
+                <div class="panel__body">
+                    <p class="panel__error">
+                        <strong>You have reached the maximum amount of emails you can enroll on one or more surveys.<br><br>
+                        Deselect the survey/s to continue or call 0300 1234 931 to discuss your options.</strong>
+                    </p>
+                    {{
+                        onsCheckboxes({
+                            "legend": "ACME Group Ltd",
+                            "checkboxesLabel": "Select all that apply",
+                            "name": "ACME Group Ltd",
+                            "checkboxes": [
+                                {
+                                    "id": "BRSS",
+                                    "classes": "input--error",
+                                    "checked": "checked",
+                                    "label": {
+                                        "text": "Business Register and Employment Survey"
+                                    },
+                                    "value": "BRSS"
+                                },
+                                {
+                                    "id": "MBS",
+                                    "checked": "checked",
+                                    "label": {
+                                        "text": "Monthly Business Survey"
+                                    },
+                                    "value": "MBS"
+                                },
+                                {
+                                    "id": "QBS",
+                                    "checked": "checked",
+                                    "label": {
+                                        "text": "Quarterly Business Survey"
+                                    },
+                                    "value": "QBS"
+                                },
+                                {
+                                    "id": "MWSS",
+                                    "checked": "checked",
+                                    "label": {
+                                        "text": "Monthly Wages and Salary Survey"
+                                    },
+                                    "value": "MWSS"
+                                },
+                                {
+                                    "id": "QADCA",
+                                    "checked": "checked",
+                                    "label": {
+                                        "text": "Quarterly Acquisitions and Disposals of Capital Assets"
+                                    },
+                                    "value": "QADCA"
+                                }
+                            ]
+                        })
+                    }}
+                </div>
+            </div>
+            <div class="grid grid--flex grid--gutterless grid--vertical-center grid--no-wrap@s u-mt-m u-mb-m">
+                <div class="grid__col">
+                    <button type="submit" class="btn btn--disabled" disabled="true" onclick="location.href='{{ pageInfo.rootPath }}/scenario-1/signed-in/account/03-share-access-to-my-surveys/02-email-address.html';">
+                        <span class="btn__inner">Continue</span>
+                    </button>
+                </div>
+                <div class="grid__col u-ml-m">
+                    <a href="/prototypes/change-business-details/scenario-1/signed-in/account/03-share-access-to-my-surveys/index.html">Cancel</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}
