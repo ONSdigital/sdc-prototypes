@@ -18,20 +18,20 @@ layout: change-business-details/scenario-2/views/_master-survey
             <div class="summary">
                 <div class="summary__group">
                     <h2 class="summary__group-title u-fs-xl">Your business details</h2>
-                    {{
-                        onsPanel({
-                            "classes":"u-mb-m",
-                            "body": '<p>You have changed your business details. Before they can be confirmed, you need to send us the changes for approval.</p>'
-                        })
-                    }}
-                    <div class="grid grid--flex grid--gutterless grid--vertical-center grid--no-wrap@s u-mt-m u-mb-m">
-                        <div class="grid__col">
-                            <button id="approve" type="button" class="btn btn-group__btn" onclick="location.href='{{ pageInfo.rootPath }}/scenario-1/signed-in/account/05-change-business-details/account-index-done.html';">
-                                <span class="btn__inner">Send changes</span>
-                            </button>
-                        </div>
-                        <div class="grid__col u-ml-m">
-                            <a href="/prototypes/change-business-details/scenario-1/signed-in/account/index.html">Cancel</a>
+                    <div class="panel panel--info panel--no-title u-mb-m">
+                        <span class="u-vh">Important information: </span>
+                        <div class="panel__body">
+                            <p>You have changed your business details. You need to send us the changes for approval before we can confirm them.</p>
+                            <div class="grid grid--flex grid--gutterless grid--vertical-center grid--no-wrap@s u-mt-m">
+                                <div class="grid__col">
+                                    <button id="approve" type="button" class="btn btn-group__btn" onclick="location.href='{{ pageInfo.rootPath }}/scenario-2/signed-in/account/05-change-business-details/account-index-done.html';">
+                                        <span class="btn__inner">Send changes</span>
+                                    </button>
+                                </div>
+                                <div class="grid__col u-ml-m">
+                                    <a href="/prototypes/change-business-details/scenario-2/signed-in/account/index.html">Cancel</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <table class="summary__items">

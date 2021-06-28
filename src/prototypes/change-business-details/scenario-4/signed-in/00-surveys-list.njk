@@ -1,0 +1,329 @@
+---
+group: Frontstage
+title: Change business details
+version: 32.0.1
+layout: change-business-details/scenario-4/views/_master-surveys-list
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
+
+{% block main %}
+
+    <div class="grid">
+        <div class="grid__col col-12@m">
+
+            <section role="region" class="tabs">
+                <h2 class="tabs__title">Tabs</h2>
+                <ul class="tabs__list">
+                    <li id="tabId1Item" class="tab__list-item">
+                        <a href="#tabId1" class="tab" data-ga="click" data-ga-category="tabs" data-ga-action="Show: UKIS" data-ga-label="Show: UKIS">To do</a>
+                    </li>
+                    <li id="tabId2Item" class="tab__list-item">
+                        <a href="#tabId2" class="tab" data-ga="click" data-ga-category="tabs" data-ga-action="Show: Vacancy survey" data-ga-label="Show: Vacancy survey">History</a>
+                    </li>
+                    <li id="tabId3Item" class="tab__list-item">
+                        <a href="#tabId3" class="tab" data-ga="click" data-ga-category="tabs" data-ga-action="Show: QBS" data-ga-label="Show: QBS">Messages</a>
+                    </li>
+                </ul>
+
+                <section id="tabId1" class="tabs__panel">
+                    <p class='u-fs-r u-mt-s u-mb-l'>
+                        Need to add a new survey? Use your enrolment code to <a href="#">add a new survey to your account</a>.
+                    </p>
+                    <section class="u-bb " id="access_survey_button_1">
+                        <h1 class="u-mb-xs u-fs-m u-mt-s">
+                            <a href="{{ pageInfo.rootPath }}/scenario-4/signed-in/50-survey-start.html" aria-label="Access the Business Register and Employment Survey">Business Register and Employment Survey</a>
+                        </h1>
+                        <h2 class="u-mb-xs u-mt-no u-fs-r u-fw-b"> <span>Period covered:</span> December 2019</h2>
+                        <dl class="grid">
+                            <div class="grid__col col-5@m u-pt-no u-pb-xs">
+                                <dt style="float: left; clear: left;" class="u-ml-no u-mb-xs u-pr-xs u-fs-s">Business: </dt>
+                                <dd class="u-ml-no u-mb-xs u-fs-s">ACME Group Ltd</dd>
+                                <dt style="float: left; clear: left;" class="u-ml-no u-mb-xs u-pr-xs u-fs-s">RU ref: </dt>
+                                <dd class="u-ml-no u-mb-xs u-fs-s">49900000001</dd>
+                            </div>
+                            <div class="grid__col col-4@m u-pt-no u-pb-xs">
+
+                                <dt class="u-fs-r u-ml-no u-mb-xs" style="line-height:1.2">
+                                    <strong>Due in 2 months</strong>
+                                </dt>
+
+                                <dt style="float: left; clear: left;" class="u-ml-no u-mb-xs u-pr-xs u-fs-s">Submit by: </dt>
+                                <dd class="u-ml-no u-mb-xs u-fs-s">18th April 2021</dd>
+                            </div>
+                            <div class="grid__col col-3@m u-pt-no u-pb-xs">
+                                <dt style="float: left; clear: left;" class="u-vh">Status: </dt>
+                                <dd class="u-fs-r u-ml-no u-mb-xs" style="line-height:1">
+                                    <span class="status status--info">Not started</span>
+                                </dd>
+                                <dt style="float: left; clear: left;" class="u-vh">Help: </dt>
+                                <dd class="u-ml-no u-mb-s">
+                                    <a id="create-message-link-1" href="{{ pageInfo.rootPath }}/scenario-4/signed-in/help/index.html" aria-label="Get help with the Quarterly Business Survey">Get help with this survey <span class="u-vh"> about Quarterly Business Survey</span></a>
+                                </dd>
+                            </div>
+                        </dl>
+                    </section>
+                    <section class="u-bb " id="access_survey_button_1">
+                        <h1 class="u-mb-xs u-fs-m u-mt-s">
+                            <a href="{{ pageInfo.rootPath }}/scenario-4/signed-in/50-survey-start.html" aria-label="Access the Quarterly Acquisitions and Disposals of Capital Assets survey">Quarterly Acquisitions and Disposals of Capital Assets</a>
+                        </h1>
+                        <h2 class="u-mb-xs u-mt-no u-fs-r u-fw-b"> <span>Period covered:</span> December 2019</h2>
+                        <dl class="grid">
+                            <div class="grid__col col-5@m u-pt-no u-pb-xs">
+                                <dt style="float: left; clear: left;" class="u-ml-no u-mb-xs u-pr-xs u-fs-s">Business: </dt>
+                                <dd class="u-ml-no u-mb-xs u-fs-s">ACME Group Ltd</dd>
+                                <dt style="float: left; clear: left;" class="u-ml-no u-mb-xs u-pr-xs u-fs-s">RU ref: </dt>
+                                <dd class="u-ml-no u-mb-xs u-fs-s">49900000001</dd>
+                            </div>
+                            <div class="grid__col col-4@m u-pt-no u-pb-xs">
+
+                                <dt class="u-fs-r u-ml-no u-mb-xs" style="line-height:1.2">
+                                    <strong>Due in 5 days</strong>
+                                </dt>
+
+                                <dt style="float: left; clear: left;" class="u-ml-no u-mb-xs u-pr-xs u-fs-s">Submit by: </dt>
+                                <dd class="u-ml-no u-mb-xs u-fs-s">8th Feb 2021</dd>
+                            </div>
+                            <div class="grid__col col-3@m u-pt-no u-pb-xs">
+                                <dt style="float: left; clear: left;" class="u-vh">Status: </dt>
+                                <dd class="u-fs-r u-ml-no u-mb-xs" style="line-height:1">
+                                    <span class="status status--info">Not started</span>
+                                </dd>
+                                <dt style="float: left; clear: left;" class="u-vh">Help: </dt>
+                                <dd class="u-ml-no u-mb-s">
+                                    <a id="create-message-link-1" href="{{ pageInfo.rootPath }}/scenario-4/signed-in/help/index.html" aria-label="Get help with the Quarterly Business Survey">Get help with this survey <span class="u-vh"> about Quarterly Business Survey</span></a>
+                                </dd>
+                            </div>
+                        </dl>
+                    </section>
+                    <section class="u-bb " id="access_survey_button_1">
+                        <h1 class="u-mb-xs u-fs-m u-mt-s">
+                            <a href="{{ pageInfo.rootPath }}/scenario-4/signed-in/50-survey-start.html" aria-label="Access the Quarterly Business Survey">Quarterly Business Survey</a>
+                        </h1>
+                        <h2 class="u-mb-xs u-mt-no u-fs-r u-fw-b"> <span>Period covered:</span> December 2019</h2>
+                        <dl class="grid">
+                            <div class="grid__col col-5@m u-pt-no u-pb-xs">
+                                <dt style="float: left; clear: left;" class="u-ml-no u-mb-xs u-pr-xs u-fs-s">Business: </dt>
+                                <dd class="u-ml-no u-mb-xs u-fs-s">ACME Group Ltd</dd>
+                                <dt style="float: left; clear: left;" class="u-ml-no u-mb-xs u-pr-xs u-fs-s">RU ref: </dt>
+                                <dd class="u-ml-no u-mb-xs u-fs-s">49900000001</dd>
+                            </div>
+                            <div class="grid__col col-4@m u-pt-no u-pb-xs">
+
+                                <dt class="u-fs-r u-ml-no u-mb-xs" style="line-height:1.2">
+                                    <strong>Due tomorrow</strong>
+                                </dt>
+
+                                <dt style="float: left; clear: left;" class="u-ml-no u-mb-xs u-pr-xs u-fs-s">Submit by: </dt>
+                                <dd class="u-ml-no u-mb-xs u-fs-s">2nd Feb 2021</dd>
+                            </div>
+                            <div class="grid__col col-3@m u-pt-no u-pb-xs">
+                                <dt style="float: left; clear: left;" class="u-vh">Status: </dt>
+                                <dd class="u-fs-r u-ml-no u-mb-xs" style="line-height:1">
+                                    <span class="status status--success">In progress</span>
+                                </dd>
+                                <dt style="float: left; clear: left;" class="u-vh">Help: </dt>
+                                <dd class="u-ml-no u-mb-s">
+                                    <a id="create-message-link-1" href="{{ pageInfo.rootPath }}/scenario-4/signed-in/help/index.html" aria-label="Get help with the Quarterly Business Survey">Get help with this survey <span class="u-vh"> about Quarterly Business Survey</span></a>
+                                </dd>
+                            </div>
+                        </dl>
+                    </section>
+                    <section class="u-bb " id="access_survey_button_1">
+                        <h1 class="u-mb-xs u-fs-m u-mt-s">
+                            <a href="{{ pageInfo.rootPath }}/scenario-4/signed-in/50-survey-start.html" aria-label="Access the Monthly Wages and Salary Survey">Monthly Wages and Salary Survey</a>
+                        </h1>
+                        <h2 class="u-mb-xs u-mt-no u-fs-r u-fw-b"> <span>Period covered:</span> December 2019</h2>
+                        <dl class="grid">
+                            <div class="grid__col col-5@m u-pt-no u-pb-xs">
+                                <dt style="float: left; clear: left;" class="u-ml-no u-mb-xs u-pr-xs u-fs-s">Business: </dt>
+                                <dd class="u-ml-no u-mb-xs u-fs-s">ACME Group Ltd</dd>
+                                <dt style="float: left; clear: left;" class="u-ml-no u-mb-xs u-pr-xs u-fs-s">RU ref: </dt>
+                                <dd class="u-ml-no u-mb-xs u-fs-s">49900000001</dd>
+                            </div>
+                            <div class="grid__col col-4@m u-pt-no u-pb-xs">
+
+                                <dt class="u-fs-r u-ml-no u-mb-xs" style="line-height:1.2">
+                                    <strong>Due today</strong>
+                                </dt>
+
+                                <dt style="float: left; clear: left;" class="u-ml-no u-mb-xs u-pr-xs u-fs-s">Submit by: </dt>
+                                <dd class="u-ml-no u-mb-xs u-fs-s">1st Feb 2021</dd>
+                            </div>
+                            <div class="grid__col col-3@m u-pt-no u-pb-xs">
+                                <dt style="float: left; clear: left;" class="u-vh">Status: </dt>
+                                <dd class="u-fs-r u-ml-no u-mb-xs" style="line-height:1">
+                                    <span class="status status--info">Not started</span>
+                                </dd>
+                                <dt style="float: left; clear: left;" class="u-vh">Help: </dt>
+                                <dd class="u-ml-no u-mb-s">
+                                    <a id="create-message-link-1" href="{{ pageInfo.rootPath }}/scenario-4/signed-in/help/index.html" aria-label="Get help with the Quarterly Business Survey">Get help with this survey <span class="u-vh"> about Quarterly Business Survey</span></a>
+                                </dd>
+                            </div>
+                        </dl>
+                    </section>
+                    <section class="u-bb " id="access_survey_button_1">
+                        <h1 class="u-mb-xs u-fs-m u-mt-s">
+                            <a href="{{ pageInfo.rootPath }}/scenario-4/signed-in/50-survey-start.html" aria-label="Access the Monthly Business Survey">Monthly Business Survey</a>
+                        </h1>
+                        <h2 class="u-mb-xs u-mt-no u-fs-r u-fw-b"> <span>Period covered:</span> December 2019</h2>
+                        <dl class="grid">
+                            <div class="grid__col col-5@m u-pt-no u-pb-xs">
+                                <dt style="float: left; clear: left;" class="u-ml-no u-mb-xs u-pr-xs u-fs-s">Business: </dt>
+                                <dd class="u-ml-no u-mb-xs u-fs-s">ACME Group Ltd</dd>
+                                <dt style="float: left; clear: left;" class="u-ml-no u-mb-xs u-pr-xs u-fs-s">RU ref: </dt>
+                                <dd class="u-ml-no u-mb-xs u-fs-s">49900000001</dd>
+                            </div>
+                            <div class="grid__col col-4@m u-pt-no u-pb-xs">
+
+                                <dt class="u-fs-r u-ml-no u-mb-xs" style="line-height:1.2">
+                                    <strong></strong>
+                                </dt>
+
+                                <dt style="float: left; clear: left;" class="u-ml-no u-mb-xs u-pr-xs u-fs-s">Submit by: </dt>
+                                <dd class="u-ml-no u-mb-xs u-fs-s">29th Jan 2021</dd>
+                            </div>
+                            <div class="grid__col col-3@m u-pt-no u-pb-xs">
+                                <dt style="float: left; clear: left;" class="u-vh">Status: </dt>
+                                <dd class="u-fs-r u-ml-no u-mb-xs" style="line-height:1">
+                                    <span class="status status--info">Not started</span>
+                                </dd>
+                                <dt style="float: left; clear: left;" class="u-vh">Help: </dt>
+                                <dd class="u-ml-no u-mb-s">
+                                    <a id="create-message-link-1" href="{{ pageInfo.rootPath }}/scenario-4/signed-in/help/index.html" aria-label="Get help with the Quarterly Business Survey">Get help with this survey <span class="u-vh"> about Quarterly Business Survey</span></a>
+                                </dd>
+                            </div>
+                        </dl>
+                    </section>
+
+                    <p class='u-fs-r u-mt-l'>
+                        <a href="#">Survey not listed?</a>
+                    </p>
+                </section>
+                <section id="tabId2" class="tabs__panel">
+                    <section class="survey u-bb">
+                        <h1 class="u-mb-xs u-fs-m u-mt-s u-mb-s">Monthly Wages and Salary Survey</h1>
+                        <dl class="grid">
+                            <div class="grid__col col-5@m u-pt-no u-pb-xs">
+                                <dt class="u-ml-no u-mb-xs u-pr-xs u-fw-b">Period covered</dt>
+                                <dd class="u-ml-no u-mb-xs u-fw-b" style="line-height:1.2">November 2020</dd>
+                                <dt class="u-ml-no u-mb-xs u-pr-xs u-fs-s add-colon">Business</dt>
+                                <dd class="u-ml-no u-mb-xs u-fs-s">ACME Consumer Products</dd>
+                                <dt class="u-ml-no u-mb-xs u-pr-xs u-fs-s add-colon">RU ref</dt>
+                                <dd class="u-ml-no u-mb-xs u-fs-s">10000678476</dd>
+                            </div>
+                            <div class="grid__col col-4@m u-pt-no u-pb-xs">
+                                <dt class="u-ml-no u-mb-xs u-pr-xs u-fs-s add-colon">Submit by</dt>
+                                <dd class="u-ml-no u-mb-xs u-fs-s">6th Jan 2021, 23:59</dd>
+                            </div>
+                            <div class="grid__col col-3@m u-pt-no u-pb-xs">
+                                <dt class="u-vh">Status</dt>
+                                <dd class="u-fs-r u-ml-no u-mb-xs">
+                                    <span class="status status--dead">Complete</span></dd>
+                                <dt class="u-vh">Help</dt>
+                                <dd class="u-ml-no u-mb-m">
+                                    <a href="{{ pageInfo.rootPath }}/scenario-4/signed-in/help/index.html" aria-label="Get help with the Monthly Wages and Salary Survey">Get help with this survey</a>
+                                </dd>
+                            </div>
+                        </dl>
+                    </section>
+                    <section class="survey u-bb">
+                        <h1 class="u-mb-xs u-fs-m u-mt-s u-mb-s">Monthly Wages and Salary Survey</h1>
+                        <dl class="grid">
+                            <div class="grid__col col-5@m u-pt-no u-pb-xs">
+                                <dt class="u-ml-no u-mb-xs u-pr-xs u-fw-b">Period covered</dt>
+                                <dd class="u-ml-no u-mb-xs u-fw-b" style="line-height:1.2">October 2020</dd>
+                                <dt class="u-ml-no u-mb-xs u-pr-xs u-fs-s add-colon">Business</dt>
+                                <dd class="u-ml-no u-mb-xs u-fs-s">ACME Consumer Products</dd>
+                                <dt class="u-ml-no u-mb-xs u-pr-xs u-fs-s add-colon">RU ref</dt>
+                                <dd class="u-ml-no u-mb-xs u-fs-s">10000678476</dd>
+                            </div>
+                            <div class="grid__col col-4@m u-pt-no u-pb-xs">
+                                <dt class="u-ml-no u-mb-xs u-pr-xs u-fs-s add-colon">Submit by</dt>
+                                <dd class="u-ml-no u-mb-xs u-fs-s">6th Jan 2021, 23:59</dd>
+                            </div>
+                            <div class="grid__col col-3@m u-pt-no u-pb-xs">
+                                <dt class="u-vh">Status</dt>
+                                <dd class="u-fs-r u-ml-no u-mb-xs">
+                                    <span class="status status--dead">Completed by phone</span></dd>
+                                <dt class="u-vh">Help</dt>
+                                <dd class="u-ml-no u-mb-m">
+                                    <a href="{{ pageInfo.rootPath }}/scenario-4/signed-in/help/index.html" aria-label="Get help with the Monthly Wages and Salary Survey">Get help with this survey</a>
+                                </dd>
+                            </div>
+                        </dl>
+                    </section>
+                    <section class="survey u-bb">
+                        <h1 class="u-mb-xs u-fs-m u-mt-s u-mb-s">Monthly Wages and Salary Survey</h1>
+                        <dl class="grid">
+                            <div class="grid__col col-5@m u-pt-no u-pb-xs">
+                                <dt class="u-ml-no u-mb-xs u-pr-xs u-fw-b">Period covered</dt>
+                                <dd class="u-ml-no u-mb-xs u-fw-b" style="line-height:1.2">September 2020</dd>
+                                <dt class="u-ml-no u-mb-xs u-pr-xs u-fs-s add-colon">Business</dt>
+                                <dd class="u-ml-no u-mb-xs u-fs-s">ACME Consumer Products</dd>
+                                <dt class="u-ml-no u-mb-xs u-pr-xs u-fs-s add-colon">RU ref</dt>
+                                <dd class="u-ml-no u-mb-xs u-fs-s">10000678476</dd>
+                            </div>
+                            <div class="grid__col col-4@m u-pt-no u-pb-xs">
+                                <dt class="u-ml-no u-mb-xs u-pr-xs u-fs-s add-colon">Submit by</dt>
+                                <dd class="u-ml-no u-mb-xs u-fs-s">6th Jan 2021, 23:59</dd>
+                            </div>
+                            <div class="grid__col col-3@m u-pt-no u-pb-xs">
+                                <dt class="u-vh">Status</dt>
+                                <dd class="u-fs-r u-ml-no u-mb-xs">
+                                    <span class="status status--dead">No longer required</span></dd>
+                                <dt class="u-vh">Help</dt>
+                                <dd class="u-ml-no u-mb-m">
+                                    <a href="{{ pageInfo.rootPath }}/scenario-4/signed-in/help/index.html" aria-label="Get help with the Monthly Wages and Salary Survey">Get help with this survey</a>
+                                </dd>
+                            </div>
+                        </dl>
+                    </section>
+                </section>
+                <section id="tabId3" class="tabs__panel">[Nothing here]</section>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        function openNav() {
+            document
+                .getElementById("mySidenav")
+                .style
+                .width = "20%";
+            document
+                .getElementById("main")
+                .style
+                .marginLeft = "20%";
+            document
+                .getElementById("openNavBtn")
+                .style
+                .display = "none";
+            document
+                .getElementById("closeNavBtn")
+                .style
+                .display = "block";
+        }
+
+        function closeNav() {
+            document
+                .getElementById("mySidenav")
+                .style
+                .width = "0";
+            document
+                .getElementById("main")
+                .style
+                .marginLeft = "0";
+            document
+                .getElementById("closeNavBtn")
+                .style
+                .display = "none";
+            document
+                .getElementById("openNavBtn")
+                .style
+                .display = "block";
+        }
+    </script>
+
+{% endblock %}
