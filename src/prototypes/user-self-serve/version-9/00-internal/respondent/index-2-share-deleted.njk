@@ -9,6 +9,17 @@ layout: user-self-serve/views/version-9/_master-internal-respondent
 {% block main %}
     <div class="grid">
         <div class="grid__col col-12@m">
+        {% from "components/panel/_macro.njk" import onsPanel %}
+        {{
+            onsPanel({
+                "type": 'success',
+                "id": 'success-id',
+                "icon": 'check',
+                "classes": 'u-mb-m',
+                "body": 'You have successfully deleted the share request.'
+            })
+        }}
+
             <section>
                 <h1 id="respondent-name">Garethh Poolee</h1>
                 <div class="grid grid--gutterless">
@@ -105,15 +116,6 @@ layout: user-self-serve/views/version-9/_master-internal-respondent
                     </thead>
                     <tbody class="table__body">
                         <tr class="table__row">
-                            <td class="table__cell" data-th="Shared to">jeremy.gillies@ext.ons.gov.uk</td>
-                            <td class="table__cell" data-th="Shared surveys">
-                                <strong>Sparks and Menser:</strong> MBS
-                            </td>
-                            <td class="table__cell" data-th="Time">28th May  2021 at 14:40</td>
-                            <td class="table__cell" data-th="Status">Email sent <a href="#">Resend email</a></td>
-                            <td class="table__cell" data-th="Action"><a href="/prototypes/user-self-serve/version-9/00-internal/respondent/delete-share.html">Delete</a></td>
-                        </tr>
-                        <tr class="table__row">
                             <td class="table__cell" data-th="Shared to">gareth.poole@ons.gov.uk</td>
                             <td class="table__cell" data-th="Shared surveys">
                                 <strong>ADSA:</strong> MBS, QCAS, BRES<br>
@@ -121,7 +123,7 @@ layout: user-self-serve/views/version-9/_master-internal-respondent
                             </td>
                             <td class="table__cell" data-th="Time">28th May  2021 at 13:21</td>
                             <td class="table__cell" data-th="Status">Email sent <a href="#">Resend email</a></td>
-                            <td class="table__cell" data-th="Action"><a href="/prototypes/user-self-serve/version-9/00-internal/respondent/delete-share.html">Delete</a></td>
+                            <td class="table__cell" data-th="Action"><a href="#">Delete</a></td>
                         </tr>
                     </tbody>
                 </table>
@@ -156,7 +158,7 @@ layout: user-self-serve/views/version-9/_master-internal-respondent
                             </td>
                             <td class="table__cell" data-th="Time">2nd June, 2021 at 10:40</td>
                             <td class="table__cell" data-th="Status">Email sent <a href="#">Resend email</a></td>
-                            <td class="table__cell" data-th="Action"><a href="/prototypes/user-self-serve/version-9/00-internal/respondent/delete-transfer.html">Delete</a></td>
+                            <td class="table__cell" data-th="Action"><a href="#">Delete</a></td>
                         </tr>
                     </tbody>
                 </table>

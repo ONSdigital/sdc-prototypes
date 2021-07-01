@@ -1,0 +1,36 @@
+---
+group: Frontstage
+title: User self serve
+version: 32.0.1
+layout: user-self-serve/views/version-9/_master-internal-respondent
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/metadata/_macro.njk" import onsMetadata %}
+
+{% block main %}
+    <div class="grid">
+        <div class="grid__col col-8@m">
+            <section>
+                <h1 class="u-mt-l u-fs-m">Delete sharing request for gareth.poole@ons.gov.uk?</h1>
+                <p>The request made to share the surveys will be cancelled, and the email sent to the recipient will no longer be valid.</p>
+                <p>Once the option to delete is confirmed, it is unrecoverable.</p>
+                <p>New requests to share or transfer to the email will be available immediately.</p>
+
+            <p class="field u-mt-l">
+                <div class="grid grid--flex grid--gutterless grid--vertical-center grid--no-wrap@s u-mt-m u-mb-m">
+                    <div class="grid__col">
+                        <button type="button" class="btn btn-group__btn" onclick="location.href='{{ pageInfo.rootPath }}/version-9/00-internal/respondent/index-2-share-deleted.html';">
+                            <span class="btn__inner">Delete share request</span>
+                        </button>
+
+                    </div>
+                    <div class="grid__col u-ml-m">
+                        <a href="/prototypes/user-self-serve/version-9/00-internal/respondent/index-2.html">Cancel</a>
+                    </div>
+                </div>
+            </p>
+            </section>
+        </div>
+    </div>
+{% endblock %}
