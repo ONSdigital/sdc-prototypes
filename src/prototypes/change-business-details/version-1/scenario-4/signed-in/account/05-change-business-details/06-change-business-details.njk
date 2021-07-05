@@ -1,0 +1,126 @@
+---
+group: Frontstage
+title: Change business details
+version: 32.0.1
+layout: change-business-details/scenario-4/views/_master-survey
+---
+
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/text-indent/_macro.njk" import onsTextIndent %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+
+{% block main %}
+
+    <div class="grid">
+        <div class="grid__col col-12@m u-pt-no u-pb-no">
+
+            <h1>Change business details for BOW TRADING LTD</h1>
+            
+            {{
+                onsPanel({
+                    "classes":"u-mb-m",
+                    "body": '<p>If the business is winding down or liquidating, dormant or subject to a takeover you should <a href="/prototypes/change-business-details/scenario-4/signed-in/account/05-change-business-details/change-business-status/index.html">change the business’s operational status</a>.</p>'
+                })
+            }}
+
+            <p>The changes will affect the following surveys:</p>
+            {{
+                onsTextIndent({
+                    text: '<p>Quarterly Acquisitions and Disposal of Capital Assets Survey</p>'
+                })
+            }}
+
+            <p class="field">
+                {{
+                    onsInput({
+                        "id": "text",
+                        "value": "BOW TRADING LTD",
+                        "label": {
+                            "text": "Business name"
+                        }
+                    })
+                }}
+                {{
+                    onsInput({
+                        "id": "text",
+                        "value": "BOW TRADING LTD",
+                        "label": {
+                            "text": "Trading name"
+                        }
+                    })
+                }}
+                                    
+                <h2 id="business-address" class="u-mt-l">Business address</h2>
+                <p><a href="select-address.html">Choose an address I have already registered</a></p>
+                    {{
+                        onsInput({
+                            "id": "address-1",
+                            "value": "BARRATT HOUSE",
+                            "label": {
+                                "text": "Address line 1"
+                            }
+                        })
+                    }}
+                    {{
+                        onsInput({
+                            "id": "address-2",
+                            "value": "WALNUT TREE CLOSE",
+                            "label": {
+                                "text": "Address line 2"
+                            }
+                        })
+                    }}
+                    {{
+                        onsInput({
+                            "id": "address-3",
+                            "value": "GUILDFORD",
+                            "label": {
+                                "text": "Address line 3"
+                            }
+                        })
+                    }}
+                    {{
+                        onsInput({
+                            "id": "address-4",
+                            "value": "SURREY",
+                            "label": {
+                                "text": "Address line 4 (optional)"
+                            }
+                        })
+                    }}
+                    {{
+                        onsInput({
+                            "id": "address-5",
+                            "value": "",
+                            "label": {
+                                "text": "Address line 5 (optional)"
+                            }
+                        })
+                    }}
+                    {{
+                        onsInput({
+                            "id": "postcode",
+                            "value": "GU1 4SW",
+                            "label": {
+                                "text": "Postcode"
+                            }
+                        })
+                    }}
+            </p>
+
+            <div class="grid grid--flex grid--gutterless grid--vertical-center grid--no-wrap@s u-mt-m u-mb-m">
+                <div class="grid__col">
+                    <button type="button" class="btn btn-group__btn" onclick="location.href='{{ pageInfo.rootPath }}/scenario-4/signed-in/account/05-change-business-details/07-summary.html';">
+                        <span class="btn__inner">Continue</span>
+                    </button>
+                </div>
+                <div class="grid__col u-ml-m">
+                    <a href="/prototypes/change-business-details/scenario-4/signed-in/account/05-change-business-details/03-select-surveys.html">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

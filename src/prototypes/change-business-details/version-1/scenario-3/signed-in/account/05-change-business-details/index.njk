@@ -1,0 +1,64 @@
+---
+group: Frontstage
+title: Change business details
+version: 32.0.1
+layout: change-business-details/scenario-3/views/_master-survey
+---
+
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+
+{% block main %}
+
+    <div class="grid">
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/prototypes/change-business-details/scenario-3/signed-in/00-surveys-list.html',
+                            "text": 'Surveys'
+                        },
+                        {
+                            "url": '/prototypes/change-business-details/scenario-3/signed-in/account/index.html',
+                            "text": 'Account'
+                        } 
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+            <h1>Change business details</h1>
+
+            {% from "components/panel/_macro.njk" import onsPanel %}
+            {{
+                onsPanel({
+                    "body": '<p>Changes to business addresses are not immediate. If you were expecting a letter from us, and believe you have missed this, please <a href="/prototypes/change-business-details/scenario-3/signed-in/account/04-transfer-my-surveys/index.html">contact us</a>.'
+                })
+            }}
+
+            <h2 class="u-fs-m u-mt-l">What will happen</h2>
+            <ul>
+                <li>Select which business’s details you want to change.</li>
+                <li>Select the surveys that are affected by the change.</li>
+                <li>We will update our internal records for all future survey selections (any currently live surveys, or past surveys cannot be updated)</li>
+                <li>Changes to any business address may take up to 7 days to process, and may show incorrectly to any colleagues during this window of time.</li>
+            </ul>
+
+            <div class="grid grid--flex grid--gutterless grid--vertical-center grid--no-wrap@s u-mt-m u-mb-m">
+                <div class="grid__col">
+                    <button type="button" class="btn btn-group__btn" onclick="location.href='{{ pageInfo.rootPath }}/scenario-3/signed-in/account/05-change-business-details/01-summary.html';">
+                        <span class="btn__inner">Continue</span>
+                    </button>
+                </div>
+                <div class="grid__col u-ml-m">
+                    <a href="/prototypes/change-business-details/scenario-3/signed-in/account/index.html">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
