@@ -2,7 +2,7 @@
 group: Frontstage
 title: Change business details
 version: 32.0.1
-layout: change-business-details/scenario-3/views/_master-survey
+layout: change-business-details/version-1/scenario-3/views/_master-survey
 ---
 
 {% from "components/input/_macro.njk" import onsInput %}
@@ -17,11 +17,11 @@ layout: change-business-details/scenario-3/views/_master-survey
                     "ariaLabel": 'Breadcrumb',
                     "itemsList": [
                         {
-                            "url": '/prototypes/change-business-details/scenario-3/signed-in/00-surveys-list.html',
+                            "url": '/prototypes/change-business-details/version-1/scenario-3/signed-in/00-surveys-list.html',
                             "text": 'Surveys'
                         },
                         {
-                            "url": '/prototypes/change-business-details/scenario-3/signed-in/account/index.html',
+                            "url": '/prototypes/change-business-details/version-1/scenario-3/signed-in/account/index.html',
                             "text": 'Account'
                         } 
                     ]
@@ -34,7 +34,7 @@ layout: change-business-details/scenario-3/views/_master-survey
             {% from "components/panel/_macro.njk" import onsPanel %}
             {{
                 onsPanel({
-                    "body": '<p>If you no longer want access to the surveys once you share them, you should <a href="/prototypes/change-business-details/scenario-3/signed-in/account/04-transfer-my-surveys/index.html">transfer your surveys</a>.'
+                    "body": '<p>If you no longer want access to the surveys once you share them, you should <a href="/prototypes/change-business-details/version-1/scenario-3/signed-in/account/04-transfer-my-surveys/index.html">transfer your surveys</a>.'
                 })
             }}
 
@@ -48,12 +48,12 @@ layout: change-business-details/scenario-3/views/_master-survey
 
             <div class="grid grid--flex grid--gutterless grid--vertical-center grid--no-wrap@s u-mt-m u-mb-m">
                 <div class="grid__col">
-                    <button type="button" class="btn btn-group__btn" onclick="location.href='{{ pageInfo.rootPath }}/scenario-3/signed-in/account/03-share-access-to-my-surveys/00-select-business.html';">
+                    <button type="button" class="btn btn-group__btn" onclick="location.href='{{ pageInfo.rootPath }}/version-1/scenario-3/signed-in/account/03-share-access-to-my-surveys/00-select-business.html';">
                         <span class="btn__inner">Continue</span>
                     </button>
                 </div>
                 <div class="grid__col u-ml-m">
-                    <a href="/prototypes/change-business-details/scenario-3/signed-in/account/index.html">Cancel</a>
+                    <a href="/prototypes/change-business-details/version-1/scenario-3/signed-in/account/index.html">Cancel</a>
                 </div>
             </div>
         </div>

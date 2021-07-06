@@ -2,7 +2,7 @@
 group: Frontstage
 title: Change business details
 version: 32.0.1
-layout: change-business-details/scenario-1/views/_master-survey
+layout: change-business-details/version-1/scenario-1/views/_master-survey
 ---
 
 {% from "components/input/_macro.njk" import onsInput %}
@@ -24,12 +24,12 @@ layout: change-business-details/scenario-1/views/_master-survey
                             <p>You have changed your business details. You need to send us the changes for approval before we can confirm them.</p>
                             <div class="grid grid--flex grid--gutterless grid--vertical-center grid--no-wrap@s u-mt-m">
                                 <div class="grid__col">
-                                    <button id="approve" type="button" class="btn btn-group__btn" onclick="location.href='{{ pageInfo.rootPath }}/scenario-1/signed-in/account/05-change-business-details/account-index-done.html';">
+                                    <button id="approve" type="button" class="btn btn-group__btn" onclick="location.href='{{ pageInfo.rootPath }}/version-1/scenario-1/signed-in/account/05-change-business-details/account-index-done.html';">
                                         <span class="btn__inner">Send changes</span>
                                     </button>
                                 </div>
                                 <div class="grid__col u-ml-m">
-                                    <a href="/prototypes/change-business-details/scenario-1/signed-in/account/index.html">Cancel</a>
+                                    <a href="/prototypes/change-business-details/version-1/scenario-1/signed-in/account/index.html">Cancel</a>
                                 </div>
                             </div>
                         </div>
@@ -65,7 +65,7 @@ layout: change-business-details/scenario-1/views/_master-survey
                                     </ul>
                                 </td>
                                 <td class="summary__actions">
-                                    <a href="/prototypes/change-business-details/scenario-1/signed-in/account/05-change-business-details/02-choice.html" class="summary__button" aria-label="Change answer">Change</a>
+                                    <a href="/prototypes/change-business-details/version-1/scenario-1/signed-in/account/05-change-business-details/02-choice.html" class="summary__button" aria-label="Change answer">Change</a>
                                 </td>
                             </tr>
                         </tbody>

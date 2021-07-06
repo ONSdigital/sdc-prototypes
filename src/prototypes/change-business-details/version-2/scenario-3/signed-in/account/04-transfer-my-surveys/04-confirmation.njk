@@ -1,0 +1,65 @@
+---
+group: Frontstage
+title: Change business details
+version: 32.0.1
+layout: change-business-details/version-2/scenario-3/views/_master-survey
+---
+
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+
+{% block main %}
+
+    <div class="grid">
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
+        {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/prototypes/change-business-details/version-2/scenario-3/signed-in/00-surveys-list.html',
+                            "text": 'Surveys'
+                        },
+                        {
+                            "url": '/prototypes/change-business-details/version-2/scenario-3/signed-in/account/index.html',
+                            "text": 'Account'
+                        },
+                        {
+                            "url": '/prototypes/change-business-details/version-2/scenario-3/signed-in/account/04-transfer-my-surveys/index.html',
+                            "text": 'Transfer surveys'
+                        },
+                        {
+                            "url": '/prototypes/change-business-details/version-2/scenario-3/signed-in/account/04-transfer-my-surveys/00-select-business.html',
+                            "text": 'Select business'
+                        },
+                        {
+                            "url": '/prototypes/change-business-details/version-2/scenario-3/signed-in/account/04-transfer-my-surveys/01-select-surveys.html',
+                            "text": 'Select surveys'
+                        },
+                        {
+                            "url": '/prototypes/change-business-details/version-2/scenario-3/signed-in/account/04-transfer-my-surveys/02-email-address.html',
+                            "text": 'Enter email address'
+                        },
+                        {
+                            "url": '/prototypes/change-business-details/version-2/scenario-3/signed-in/account/04-transfer-my-surveys/03-send-enrolment-codes.html',
+                            "text": 'Send instructions'
+                        } 
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+            <h1>Almost done</h1>
+            <p>We have sent an email to the new person who will be responding to ONS surveys..</p>
+            <p>They need to follow the link in the email to confirm their email address and finish setting up their account.</p>
+            <p>Email not arrived? It may be in their junk folder.</p>
+            <p>If it does not arrive in the next 15 minutes, please call 0300 1234 931.</p>
+            <p class="field u-mt-l">
+                <button type="button" class="btn btn-group__btn" onclick="location.href='{{ pageInfo.rootPath }}/scenario-3/signed-in/00-surveys-list.html';">
+                    <span class="btn__inner">Back to surveys</span>
+                </button>
+            </p>
+        </div>
+    </div>
+
+{% endblock %}

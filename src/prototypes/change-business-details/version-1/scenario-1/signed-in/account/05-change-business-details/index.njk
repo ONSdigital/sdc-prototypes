@@ -2,7 +2,7 @@
 group: Frontstage
 title: Change business details
 version: 32.0.1
-layout: change-business-details/scenario-1/views/_master-survey
+layout: change-business-details/version-1/scenario-1/views/_master-survey
 ---
 
 {% from "components/input/_macro.njk" import onsInput %}
@@ -18,11 +18,11 @@ layout: change-business-details/scenario-1/views/_master-survey
                     "ariaLabel": 'Breadcrumb',
                     "itemsList": [
                         {
-                            "url": '/prototypes/change-business-details/scenario-1/signed-in/00-surveys-list.html',
+                            "url": '/prototypes/change-business-details/version-1/scenario-1/signed-in/00-surveys-list.html',
                             "text": 'Surveys'
                         },
                         {
-                            "url": '/prototypes/change-business-details/scenario-1/signed-in/account/index.html',
+                            "url": '/prototypes/change-business-details/version-1/scenario-1/signed-in/account/index.html',
                             "text": 'Account'
                         } 
                     ]
@@ -35,7 +35,7 @@ layout: change-business-details/scenario-1/views/_master-survey
             {% from "components/panel/_macro.njk" import onsPanel %}
             {{
                 onsPanel({
-                    "body": '<p>Changes to business addresses are not immediate. If you were expecting a letter from us, and believe you have missed this, please <a href="/prototypes/change-business-details/scenario-1/signed-in/account/04-transfer-my-surveys/index.html">contact us</a>.'
+                    "body": '<p>Changes to business addresses are not immediate. If you were expecting a letter from us, and believe you have missed this, please <a href="/prototypes/change-business-details/version-1/scenario-1/signed-in/account/04-transfer-my-surveys/index.html">contact us</a>.'
                 })
             }}
 
@@ -49,12 +49,12 @@ layout: change-business-details/scenario-1/views/_master-survey
 
             <div class="grid grid--flex grid--gutterless grid--vertical-center grid--no-wrap@s u-mt-m u-mb-m">
                 <div class="grid__col">
-                    <button type="button" class="btn btn-group__btn" onclick="location.href='{{ pageInfo.rootPath }}/scenario-1/signed-in/account/05-change-business-details/01-summary.html';">
+                    <button type="button" class="btn btn-group__btn" onclick="location.href='{{ pageInfo.rootPath }}/version-1/scenario-1/signed-in/account/05-change-business-details/01-summary.html';">
                         <span class="btn__inner">Continue</span>
                     </button>
                 </div>
                 <div class="grid__col u-ml-m">
-                    <a href="/prototypes/change-business-details/scenario-1/signed-in/account/index.html">Cancel</a>
+                    <a href="/prototypes/change-business-details/version-1/scenario-1/signed-in/account/index.html">Cancel</a>
                 </div>
             </div>
         </div>

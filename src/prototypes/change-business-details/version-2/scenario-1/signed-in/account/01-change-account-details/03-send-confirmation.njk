@@ -1,0 +1,56 @@
+---
+group: Frontstage
+title: Change business details
+version: 32.0.1
+layout: change-business-details/version-2/scenario-1/views/_master-survey
+---
+
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+
+{% block main %}
+
+    <div class="grid">
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/prototypes/change-business-details/version-2/scenario-1/signed-in/00-surveys-list.html',
+                            "text": 'Surveys'
+                        },
+                        {
+                            "url": '/prototypes/change-business-details/version-2/scenario-1/signed-in/account/index.html',
+                            "text": 'Account'
+                        },
+                        {
+                            "url": '/prototypes/change-business-details/version-2/scenario-1/signed-in/account/01-change-account-details/01-change-contact-details.html',
+                            "text": 'Change your contact details'
+                        },
+                        {
+                            "url": '/prototypes/change-business-details/version-2/scenario-1/signed-in/account/01-change-account-details/02-change-email-address.html',
+                            "text": 'Change email address'
+                        }
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+            <h1>Send confirmation email</h1>
+            <p>We will send confirmation <b>jane.doe@acme.com</b>.</p>
+
+            <div class="grid grid--flex grid--gutterless grid--vertical-center grid--no-wrap@s u-mt-m u-mb-m">
+                <div class="grid__col">
+                    <button type="button" class="btn btn-group__btn" onclick="location.href='{{ pageInfo.rootPath }}/scenario-1/signed-in/account/01-change-account-details/04-confirmation.html';">
+                        <span class="btn__inner">Send</span>
+                    </button>
+                </div>
+                <div class="grid__col u-ml-m">
+                    <a href="/prototypes/change-business-details/version-2/scenario-1/signed-in/account/01-change-account-details/01-change-contact-details.html">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,46 @@
+---
+group: Frontstage
+title: Change business details
+version: 32.0.1
+layout: change-business-details/version-2/scenario-2/views/_master-survey
+---
+
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+
+{% block main %}
+
+    <div class="grid">
+
+        <div class="grid__col col-8@m u-pt-no">
+            {{
+                onsPanel({
+                    "classes":"u-mb-m",
+                    "body": '<p>If the business is winding down or liquidating, dormant or subject to a takeover you should <a href="/prototypes/change-business-details/version-2/scenario-2/signed-in/account/05-change-business-details/change-business-status/index.html">change the business’s operational status</a>.</p>'
+                })
+            }}
+
+            <h1>What will happen</h1>          
+            <ul>
+                <li>You will update your business details and send us the changes</li>
+                <li>We will confirm the changes</li>
+                <li>Changes may take up to 7 days to be approved and will not affect current surveys or surveys that you have completed.</li>
+            </ul>
+            <p>If you were expecting a letter from us, and believe you have missed this, please <a href="/prototypes/change-business-details/signed-in/account/05-change-business-details/10-send-message.html">contact us</a>.</p>
+            <div class="grid grid--flex grid--gutterless grid--vertical-center grid--no-wrap@s u-mt-m u-mb-m">
+                <div class="grid__col">
+                    <button type="button" class="btn btn-group__btn" onclick="location.href='{{ pageInfo.rootPath }}/scenario-2/signed-in/account/05-change-business-details/03-select-surveys.html';">
+                        <span class="btn__inner">Continue</span>
+                    </button>
+                </div>
+                <div class="grid__col u-ml-m">
+                    <a href="/prototypes/change-business-details/version-2/scenario-2/signed-in/00-surveys-list.html">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
