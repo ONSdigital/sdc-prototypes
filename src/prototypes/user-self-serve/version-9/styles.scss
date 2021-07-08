@@ -3,7 +3,7 @@
 }
 
 /* Remove image from link button */
-.btn--link svg {
+.btn--link-no-icon svg {
   background-image: none;
   display: none;
 }
@@ -150,14 +150,5 @@ dd {
 @media only screen and (min-width: 740px) {
   .col-2\@m {
     max-width: 100%;
-  }
-}
-
-/* SUMMARY */
-@media (min-width: 500px) {
-  .summary__row--has-values .summary__item-title,
-  .summary__row--has-values .summary__values {
-    width: 33%;
-    font-weight: 400 !important;
   }
 }

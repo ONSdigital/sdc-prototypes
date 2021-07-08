@@ -4,7 +4,6 @@ title: User self serve
 version: 32.0.1
 layout: user-self-serve/views/version-9/_master-survey-signed-out
 ---
-
 {% from "components/button/_macro.njk" import onsButton %}
 {% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
 
@@ -40,7 +39,7 @@ layout: user-self-serve/views/version-9/_master-survey-signed-out
                     onsButton({
                         "type": 'button',
                         "text": 'Sign in',
-                        "classes": 'u-mt-l js-timer js-submit-btn',
+                        "classes": 'u-mt-l js-timer js-submit-btn btn--link-no-icon',
                         "url": "/prototypes/user-self-serve/version-9/signed-in/00-surveys-list.html"
                     }) 
                 }}

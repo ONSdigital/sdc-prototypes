@@ -1,14 +1,23 @@
 {% extends "page-templates/_template.njk" %}
 
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/header/_macro.njk" import onsHeader %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+{% from "components/summary/_macro.njk" import onsSummary %}
+
+
 {% block head %}
     <link rel="stylesheet" href="{{ pageInfo.rootPath }}/version-9/styles.css"/>
 {% endblock %}
 
-{% set pageConfig = { 
+{% set pageConfig = {
     'cdn': {
         'version': '32.0.1'
     },
-    "title": "ONS Business surveys",
+    "title": pageInfo.title,
     "header": {
         "logoAlt": "ONS",
         "logoHref": "/prototypes/user-self-serve/version-9/index.html"
@@ -33,7 +42,15 @@
         ]} 
 } %}
 
-
+{% block preHeader %}
+{% from "components/phase-banner/_macro.njk" import onsPhaseBanner %}
+{{
+    onsPhaseBanner({
+        "badge": "BETA",
+        "html": 'This is a new service – your <a href="#0">feedback</a> will help us improve it.'
+    })
+}}
+{% endblock %}
 {% block pageContent %}
     {% block preMain %}{% endblock %}
     <div class="page__container container">
@@ -44,7 +61,7 @@
 {% endblock %}
 
 {% block footer %}
-    {% from "components/footer/_macro.njk" import onsFooter %}
+{% from "components/footer/_macro.njk" import onsFooter %}
 {{
     onsFooter({
         "cols": [
