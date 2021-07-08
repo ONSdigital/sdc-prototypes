@@ -97,8 +97,8 @@ layout: nudge-emails/views/_master
               </tr>
               <tr class="table__row">
                 <td class="table__cell tbl-ce-label">
-                        Second reminder
-                      </td>
+                  Second reminder
+                </td>
                 <td class="table__cell tbl-ce-value ce-event-date" name="second-reminder-date"></td>
                 <td class="table__cell tbl-ce-status tbl-ce-action">
                   <button type="button" class="btn btn--secondary btn--small">
@@ -108,37 +108,11 @@ layout: nudge-emails/views/_master
               </tr>
               <tr class="table__row">
                 <td class="table__cell tbl-ce-label">
-                        Nudge email
-                      </td>
-                <td class="table__cell tbl-ce-value ce-event-date" name="first-nudge-email">
-                        Tuesday <em>28 Jan 2020</em> 07:00
-                      </td>
-                <td class="table__cell tbl-ce-status tbl-ce-action">
-                  <button type="button" class="btn btn--secondary btn--small">
-                    <span class="btn__inner">Edit</span>
-                  </button>
+                  Exercise end
                 </td>
-              </tr>
-              <tr class="table__row">
-                <td class="table__cell tbl-ce-label">
-                        Nudge email
-                      </td>
-                <td class="table__cell tbl-ce-value ce-event-date" name="first-nudge-email">
-                        Tuesday <em>18 Feb 2020</em> 07:00
-                      </td>
-                <td class="table__cell tbl-ce-status tbl-ce-action">
-                  <button type="button" class="btn btn--secondary btn--small">
-                    <span class="btn__inner">Edit</span>
-                  </button>
-                </td>
-              </tr>
-              <tr class="table__row">
-                <td class="table__cell tbl-ce-label">
-                        Exercise end
-                      </td>
                 <td class="table__cell tbl-ce-value ce-event-date" name="exercise-end-date">
-                        Monday <em>28 Feb 2022</em> 00:00
-                      </td>
+                  Monday <em>28 Feb 2022</em> 00:00
+                </td>
                 <td class="table__cell tbl-ce-status tbl-ce-action">
                   <button type="button" class="btn btn--secondary btn--small">
                     <span class="btn__inner">Edit</span>
@@ -148,11 +122,43 @@ layout: nudge-emails/views/_master
             </tbody>
           </table>
 
-          <form class="field" action="">
-            <button type="submit" class="btn btn--secondary btn--small">
-              <span class="btn__inner">Schedule nudge email</span>
+          <h2 class="u-fs-r--b u-pt-m">Nudge emails</h2>
+          <table class="table table--dense table--nudge" summary="Dates for this collection exercise">
+            <thead class="table__head u-vh">
+              <tr class="table__row">
+                <th scope="col" class="table__header tbl-ce-label">
+                    Event
+                </th>
+                <th scope="col" class="table__header tbl-ce-value">
+                    Date
+                </th>
+                <th scope="col" class="table__header tbl-ce-status">
+                    Status
+                </th>
+              </tr>
+            </thead>
+            <tbody class="table__body">
+              <tr class="table__row">
+                <td class="table__cell tbl-ce-label">
+                  First nudge email
+                </td>
+                <td class="table__cell tbl-ce-value ce-event-date" name="first-nudge-email">
+                  Tuesday <em>28 Jan 2020</em> 07:00
+                </td>
+                <td class="table__cell tbl-ce-status tbl-ce-action">
+                  <button type="button" class="btn btn--secondary btn--small">
+                    <span class="btn__inner">Edit</span>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p class="field">
+            <button type="submit" class="btn btn--secondary btn--small btn--nudge" onclick="location.href='{{ pageInfo.rootPath }}/version-three/add-second-nudge-email.html';">
+              <span class="btn__inner">Schedule a nudge email</span>
             </button>
-          </form>
+          </p>
         </section>
         <section id="section-sample" class="ce-section">
           <form id="form-load-sample" method="post" action="" class="form" enctype="multipart/form-data">
