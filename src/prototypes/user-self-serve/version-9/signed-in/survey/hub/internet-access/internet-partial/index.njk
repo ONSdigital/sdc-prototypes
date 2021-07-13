@@ -1,0 +1,92 @@
+---
+group: Frontstage
+title: Monthly Wages and Salaries Survey
+version: 35.0.3
+layout: user-self-serve/views/version-9/_master-survey
+---
+{% block main %}
+
+    <div class="grid">
+        <div class="grid__col col-8@m">
+            <h1>Choose another section to complete</h1>
+            {{ onsSummary({
+                "hub": true,
+                "summaries": [
+                    {
+                        "groups": [
+                            {
+                                "rows": [
+                                    {
+                                        "rowTitle": "Use of computers",
+                                        "rowItems": [
+                                            {
+                                                "icon": "check",
+                                                "valueList": [
+                                                    {
+                                                        "text": "Completed"
+                                                    }
+                                                ],
+                                                "actions": [
+                                                    {
+                                                        "text": "View answers",
+                                                        "ariaLabel": "View Use of computers answers",
+                                                        "url": pageInfo.parentPath + '/use-of-computers' + '/summary' + '/index.html'
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "rowTitle": "ICT specialists and skills",
+                                        "rowItems": [
+                                            {
+                                                "valueList": [
+                                                    {
+                                                        "text": "Partially completed"
+                                                    }
+                                                ],
+                                                "actions": [
+                                                    {
+                                                        "text": "Continue with section",
+                                                        "ariaLabel": "Continue with ICT specialists and skills section",
+                                                        "url": pageInfo.parentPath + '/ict-specialists-and-skills/' + 'index.html'
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "rowTitle": "Access and use of the internet",
+                                        "rowItems": [
+                                            {
+                                                "valueList": [
+                                                    {
+                                                        "text": "Not started"
+                                                    }
+                                                ],
+                                                "actions": [
+                                                    {
+                                                        "text": "Start section",
+                                                        "ariaLabel": "Start access and use of the internet section",
+                                                        "url": "#0"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }) }}
+            {{
+                onsButton({
+                    "text": 'Continue',
+                    "classes": 'u-mb-m u-mt-l btn--link-no-icon',
+                    "url": pageInfo.parentPath + '/ict-specialists-and-skills/' + 'index.html'
+                })
+            }}
+        </div>
+    </div>
+{% endblock %}

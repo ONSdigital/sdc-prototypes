@@ -1,0 +1,46 @@
+---
+group: Frontstage
+title: Monthly Wages and Salaries Survey
+version: 35.0.3
+layout: user-self-serve/views/version-9/_master-survey
+---
+{% from "components/feedback/_macro.njk" import onsFeedback %}
+
+{% block main %}
+
+    <div class="grid">
+        <div class="grid__col col-8@m">
+            {% call onsPanel({
+                    "type": 'success',
+                    "id": 'success-id',
+                    "icon": 'check',
+                    "iconSize": 'xl'
+                }) %}
+                <h1>Thank you for completing the Monthly Wages and Salaries Survey</h1>
+                <p>Your answers have been submitted for ACME Consumer Products.</p>
+                <p>Response reference: <strong>226B - AD12 - 13F4 - 4OC5</strong></p>
+            {% endcall %}
+            <p class="u-mt-m">Your response will help inform decision-makers how best to support the UK population and economy at this challenging time.</p>
+            <p><a href="#0">Learn more about how we use this data</a></p>
+            <hr>
+            <h2 class="u-mt-m">Get a copy of your answers</h2>
+            <p>You can <a href="#0">save or print your answers</a> to keep as a record of your response to this survey.
+            {% call onsPanel({
+                    "type": 'warn',
+                    "id": 'warn-id'
+                }) %}
+                <p>Your answers will only be available to view for 15 minutes to keep them secure</p>
+            {% endcall %}
+            {{
+                onsFeedback({
+                    "id": "feedback",
+                    "classes": "u-mt-l",
+                    "heading": "What do you think about this service?",
+                    "content": "Your comments will help us make improvements",
+                    "url": "#0",
+                    "linkText": "Give Feedback"
+                })
+            }}
+        </div>
+    </div>
+{% endblock %}

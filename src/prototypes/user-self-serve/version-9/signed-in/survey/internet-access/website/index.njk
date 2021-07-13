@@ -1,0 +1,72 @@
+---
+group: Frontstage
+title: E-commerce Survey
+version: 35.0.3
+layout: user-self-serve/views/version-9/_master-survey
+---
+
+{% block preMain %}
+<div class="container">
+    {{
+        onsBreadcrumb({
+            "ariaLabel": 'Previous',
+            "itemsList": [
+                {
+                    "classes": 'js-previous',
+                    "url": pageInfo.parentPath,
+                    "id": 'previous',
+                    "text": 'Previous'
+                }
+            ]
+        })
+    }}
+</div>
+{% endblock %}
+{% block main %}
+    <div class="grid">
+        <div id="main" class="grid__col col-8@m u-pt-no u-pb-no">
+            <form action="{{ pageInfo.rootPath }}/version-9/signed-in/survey/hub/internet-access/internet-complete/index.html">
+
+            {% call onsQuestion({
+                "legendIsQuestionTitle": true,
+                "classes": 'u-mt-no',
+                "title": 'Does <em class="highlight">ACME Consumer Products</em> have a website, either its own or third party?'
+            }) %}
+                {% call onsPanel({
+                    "classes": 'u-mb-m'
+                }) %}
+                    <p><strong>Exclude</strong> any online directory listings</p>
+                {% endcall %}
+                {{
+                    onsRadios({
+                        "name": "website",
+                        "dontWrap": true,
+                        "radios": [
+                            {
+                                "id": "yes",
+                                "label": {
+                                    "text": "Yes"
+                                },
+                                "value": "yes"
+                            },
+                            {
+                                "id": "no",
+                                "label": {
+                                    "text": "No"
+                                },
+                                "value": "no"
+                            }
+                        ]
+                    })
+                }}
+            {% endcall %}
+            {{ onsButton({
+                "text": "Save and continue",
+                "classes": "u-mt-xl"
+            }) }}
+            </form>
+            <p class="u-mt-xl"><a href="{{ pageInfo.rootPath }}/version-9/signed-in/survey/hub/internet-access/internet-partial/index.html">Choose another section and return to this later</a></p>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,93 @@
+---
+group: Frontstage
+title: Monthly Wages and Salaries Survey
+version: 35.0.3
+layout: user-self-serve/views/version-9/_master-survey
+---
+{% block main %}
+
+    <div class="grid">
+        <div class="grid__col col-8@m">
+            <h1>Choose another section to complete</h1>
+            {{ onsSummary({
+                "hub": true,
+                "summaries": [
+                    {
+                        "groups": [
+                            {
+                                "rows": [
+                                    {
+                                        "rowTitle": "Use of computers",
+                                        "rowItems": [
+                                            {
+                                                "icon": "check",
+                                                "valueList": [
+                                                    {
+                                                        "text": "Completed"
+                                                    }
+                                                ],
+                                                "actions": [
+                                                    {
+                                                        "text": "View answers",
+                                                        "ariaLabel": "View Use of computers answers",
+                                                        "url": pageInfo.parentPath + '/use-of-computers' + '/summary' + '/index.html'
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "rowTitle": "ICT specialists and skills",
+                                        "rowItems": [
+                                            {
+                                                "icon": "check",
+                                                "valueList": [
+                                                    {
+                                                        "text": "Completed"
+                                                    }
+                                                ],
+                                                "actions": [
+                                                    {
+                                                        "text": "View answers",
+                                                        "ariaLabel": "View ICT specialists and skills answers",
+                                                        "url": pageInfo.parentPath + '/ict-specialists-and-skills/' + '/summary' + '/index.html'
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "rowTitle": "Access and use of the internet",
+                                        "rowItems": [
+                                            {
+                                                "valueList": [
+                                                    {
+                                                        "text": "Not started"
+                                                    }
+                                                ],
+                                                "actions": [
+                                                    {
+                                                        "text": "Start section",
+                                                        "ariaLabel": "Start access and use of the internet section",
+                                                        "url": pageInfo.parentPath + '/internet-access/' + 'index.html'
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }) }}
+            {{
+                onsButton({
+                    "text": 'Continue',
+                    "classes": 'u-mb-m u-mt-l btn--link-no-icon',
+                    "url": pageInfo.rootPath + '/version-9/signed-in/survey/' + 'internet-access/' + 'index.html'
+                })
+            }}
+        </div>
+    </div>
+{% endblock %}

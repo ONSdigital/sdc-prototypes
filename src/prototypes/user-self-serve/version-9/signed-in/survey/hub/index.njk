@@ -1,7 +1,7 @@
 ---
 group: Frontstage
 title: Monthly Wages and Salaries Survey
-version: 32.0.1
+version: 35.0.3
 layout: user-self-serve/views/version-9/_master-survey
 ---
 {% block main %}
@@ -17,7 +17,7 @@ layout: user-self-serve/views/version-9/_master-survey
                             {
                                 "rows": [
                                     {
-                                        "rowTitle": "Pay pattern",
+                                        "rowTitle": "Use of computers",
                                         "rowItems": [
                                             {
                                                 "icon": "check",
@@ -29,15 +29,15 @@ layout: user-self-serve/views/version-9/_master-survey
                                                 "actions": [
                                                     {
                                                         "text": "View answers",
-                                                        "ariaLabel": "View Pay pattern answers",
-                                                        "url": pageInfo.parentPath + '/pay-pattern' + '/summary' + '/index.html'
+                                                        "ariaLabel": "View Use of computers answers",
+                                                        "url": pageInfo.parentPath + '/use-of-computers' + '/summary' + '/index.html'
                                                     }
                                                 ]
                                             }
                                         ]
                                     },
                                     {
-                                        "rowTitle": "Weekly pay",
+                                        "rowTitle": "ICT specialists and skills",
                                         "rowItems": [
                                             {
                                                 "valueList": [
@@ -48,15 +48,15 @@ layout: user-self-serve/views/version-9/_master-survey
                                                 "actions": [
                                                     {
                                                         "text": "Start section",
-                                                        "ariaLabel": "Start Weekly pay section",
-                                                        "url": "#0"
+                                                        "ariaLabel": "Start ICT specialists and skills section",
+                                                        "url": pageInfo.parentPath + '/ict-specialists-and-skills/' + 'index.html'
                                                     }
                                                 ]
                                             }
                                         ]
                                     },
                                     {
-                                        "rowTitle": "Fortnightly pay",
+                                        "rowTitle": "Access and use of the internet",
                                         "rowItems": [
                                             {
                                                 "valueList": [
@@ -67,83 +67,7 @@ layout: user-self-serve/views/version-9/_master-survey
                                                 "actions": [
                                                     {
                                                         "text": "Start section",
-                                                        "ariaLabel": "Start Fortnightly pay section",
-                                                        "url": "#0"
-                                                    }
-                                                ]
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "rowTitle": "Calendar monthly pay",
-                                        "rowItems": [
-                                            {
-                                                "valueList": [
-                                                    {
-                                                        "text": "Not started"
-                                                    }
-                                                ],
-                                                "actions": [
-                                                    {
-                                                        "text": "Start section",
-                                                        "ariaLabel": "Start Calendar monthly pay section",
-                                                        "url": "#0"
-                                                    }
-                                                ]
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "rowTitle": "Four weekly pay",
-                                        "rowItems": [
-                                            {
-                                                "valueList": [
-                                                    {
-                                                        "text": "Not started"
-                                                    }
-                                                ],
-                                                "actions": [
-                                                    {
-                                                        "text": "Start section",
-                                                        "ariaLabel": "Start Four weekly pay section",
-                                                        "url": "#0"
-                                                    }
-                                                ]
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "rowTitle": "Five weekly pay",
-                                        "rowItems": [
-                                            {
-                                                "valueList": [
-                                                    {
-                                                        "text": "Not started"
-                                                    }
-                                                ],
-                                                "actions": [
-                                                    {
-                                                        "text": "Start section",
-                                                        "ariaLabel": "Start Five weekly pay section",
-                                                        "url": "#0"
-                                                    }
-                                                ]
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "rowTitle": "General comments",
-                                        "rowItems": [
-                                            {
-                                                "valueList": [
-                                                    {
-                                                        "text": "Not started"
-                                                    }
-                                                ],
-                                                "actions": [
-                                                    {
-                                                        "text": "Start section",
-                                                        "ariaLabel": "Start General comments section",
+                                                        "ariaLabel": "Start access and use of the internet section",
                                                         "url": "#0"
                                                     }
                                                 ]
@@ -160,7 +84,7 @@ layout: user-self-serve/views/version-9/_master-survey
                 onsButton({
                     "text": 'Continue',
                     "classes": 'u-mb-m u-mt-l btn--link-no-icon',
-                    "url": pageInfo.parentPath + '/pay-pattern/' + 'index.html'
+                    "url": pageInfo.parentPath + '/ict-specialists-and-skills/' + 'index.html'
                 })
             }}
         </div>

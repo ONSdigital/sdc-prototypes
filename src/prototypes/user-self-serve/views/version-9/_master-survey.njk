@@ -7,7 +7,10 @@
 {% from "components/radios/_macro.njk" import onsRadios %}
 {% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
 {% from "components/summary/_macro.njk" import onsSummary %}
-
+{% from "components/panel/_macro.njk" import onsPanel %}
+{% from "components/lists/_macro.njk" import onsList %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/collapsible/_macro.njk" import onsCollapsible %}
 
 {% block head %}
     <link rel="stylesheet" href="{{ pageInfo.rootPath }}/version-9/styles.css"/>
@@ -15,7 +18,7 @@
 
 {% set pageConfig = {
     'cdn': {
-        'version': '32.0.1'
+        'version': '35.0.3'
     },
     "title": pageInfo.title,
     "header": {

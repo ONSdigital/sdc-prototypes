@@ -1,7 +1,7 @@
 ---
 group: Frontstage
 title: E-commerce survey
-version: 32.0.1
+version: 35.0.3
 layout: user-self-serve/views/version-9/_master-survey
 ---
 
@@ -13,8 +13,8 @@ layout: user-self-serve/views/version-9/_master-survey
 {% block main %}
 
     <div class="grid">
-        <div class="grid__col col-7@m">
-            <h2 class="u-fs-l">You are completing this for <span>ACME Consumer Products</span></h2>
+        <div class="grid__col col-8@m">
+            <h1 class="u-fs-xl">You are completing this for <span>ACME Consumer Products</span></h1>
             <p class="u-fs-r" data-qa="details-changed-title">
                     If the company details or structure have changed contact us on <a href="tel:03001234931">0300 1234 931</a> or email <a href="mailto:surveys@ons.gov.uk?subject=Change%20of%20details%20reference%2011110000001H"  aria-describedby="details-changed-title">surveys@ons.gov.uk</a>
             </p>
@@ -31,7 +31,7 @@ layout: user-self-serve/views/version-9/_master-survey
                 onsButton({
                     "type": 'button',
                     "text": 'Start survey',
-                    "url": pageInfo.parentPath + '/survey/' + 'pay-pattern/' + 'index.html'
+                    "url": pageInfo.parentPath + '/survey/' + 'use-of-computers/' + 'index.html'
                 }) 
             }}
             <h3 class="u-fs-m u-mt-l">Information you need</h3>

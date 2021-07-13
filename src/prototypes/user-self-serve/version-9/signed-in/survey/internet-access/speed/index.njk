@@ -1,0 +1,81 @@
+---
+group: Frontstage
+title: E-commerce Survey
+version: 35.0.3
+layout: user-self-serve/views/version-9/_master-survey
+---
+
+{% block preMain %}
+<div class="container">
+    {{
+        onsBreadcrumb({
+            "ariaLabel": 'Previous',
+            "itemsList": [
+                {
+                    "classes": 'js-previous',
+                    "url": pageInfo.parentPath,
+                    "id": 'previous',
+                    "text": 'Previous'
+                }
+            ]
+        })
+    }}
+</div>
+{% endblock %}
+{% block main %}
+    <div class="grid">
+        <div id="main" class="grid__col col-8@m u-pt-no u-pb-no">
+            <form action="{{ pageInfo.rootPath }}/version-9/signed-in/survey/hub/internet-access/internet-complete/index.html">
+
+            {% call onsQuestion({
+                "legendIsQuestionTitle": true,
+                "classes": 'u-mt-no',
+                "title": 'What is the maximum contracted download speed of the fastest fixed internet connection of the business?'
+            }) %}
+                {{
+                    onsRadios({
+                        "name": "internet-speed",
+                        "dontWrap": true,
+                        "radios": [
+                            {
+                                "id": "less-than-2Mbps",
+                                "label": {
+                                    "text": "Less than 2Mbps"
+                                },
+                                "value": "less-than-2Mbps"
+                            },
+                            {
+                                "id": "2-to-10Mbps",
+                                "label": {
+                                    "text": "2Mbps or more, but less than 10Mbps"
+                                },
+                                "value": "2-to-10Mbps"
+                            },
+                            {
+                                "id": "10-to-30Mbps",
+                                "label": {
+                                    "text": "10Mbps or more, but less than 30Mbps"
+                                },
+                                "value": "10-to-30Mbps"
+                            },
+                            {
+                                "id": "30Mbps-or-more",
+                                "label": {
+                                    "text": "30Mbps or more"
+                                },
+                                "value": "30Mbps-or-more"
+                            }
+                        ]
+                    })
+                }}
+            {% endcall %}
+            {{ onsButton({
+                "text": "Save and continue",
+                "classes": "u-mt-xl"
+            }) }}
+            </form>
+            <p class="u-mt-xl"><a href="{{ pageInfo.rootPath }}/version-9/signed-in/survey/hub/internet-access/internet-partial/index.html">Choose another section and return to this later</a></p>
+        </div>
+    </div>
+
+{% endblock %}

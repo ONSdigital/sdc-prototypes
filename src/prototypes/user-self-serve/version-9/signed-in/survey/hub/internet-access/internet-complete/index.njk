@@ -1,0 +1,101 @@
+---
+group: Frontstage
+title: Monthly Wages and Salaries Survey
+version: 35.0.3
+layout: user-self-serve/views/version-9/_master-survey
+---
+{% block main %}
+
+    <div class="grid">
+        <div class="grid__col col-8@m">
+            <h1>Choose another section to complete</h1>
+            {% call onsPanel({
+                    "classes": 'u-mb-m',
+                    "type": 'warn'
+            }) %}
+                <p>You must submit this survey to complete it</p>
+            {% endcall %}
+            {{ onsSummary({
+                "hub": true,
+                "summaries": [
+                    {
+                        "groups": [
+                            {
+                                "rows": [
+                                    {
+                                        "rowTitle": "Use of computers",
+                                        "rowItems": [
+                                            {
+                                                "icon": "check",
+                                                "valueList": [
+                                                    {
+                                                        "text": "Completed"
+                                                    }
+                                                ],
+                                                "actions": [
+                                                    {
+                                                        "text": "View answers",
+                                                        "ariaLabel": "View Use of computers answers",
+                                                        "url": pageInfo.parentPath + '/use-of-computers' + '/summary' + '/index.html'
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "rowTitle": "ICT specialists and skills",
+                                        "rowItems": [
+                                            {
+                                                "icon": "check",
+                                                "valueList": [
+                                                    {
+                                                        "text": "Completed"
+                                                    }
+                                                ],
+                                                "actions": [
+                                                    {
+                                                        "text": "View answers",
+                                                        "ariaLabel": "View ICT specialists and skills answers",
+                                                        "url": pageInfo.parentPath + '/ict-specialists-and-skills/' + '/summary' + '/index.html'
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "rowTitle": "Access and use of the internet",
+                                        "rowItems": [
+                                            {
+                                                "icon": "check",
+                                                "valueList": [
+                                                    {
+                                                        "text": "Completed"
+                                                    }
+                                                ],
+                                                "actions": [
+                                                    {
+                                                        "text": "View answers",
+                                                        "ariaLabel": "View access and use of the internet answers",
+                                                        "url": pageInfo.rootPath + '/version-9/signed-in/survey/' + 'internet-access/' + '/summary' + 'index.html'
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }) }}
+            <p class="u-mt-l">You will have the opportunity to save or print a copy of your answers after submitting this survey</p>
+            {{
+                onsButton({
+                    "text": 'Submit survey',
+                    "classes": 'u-mb-m btn--link-no-icon',
+                    "url": pageInfo.rootPath + '/version-9/signed-in/survey/complete/' + 'index.html'
+                })
+            }}
+        </div>
+    </div>
+{% endblock %}
