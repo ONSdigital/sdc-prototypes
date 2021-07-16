@@ -12,7 +12,7 @@ layout: user-self-serve/views/version-9/_master-survey
             "ariaLabel": 'Back',
             "itemsList": [
                 {
-                    "classes": 'js-previous',
+                    "linkClasses": 'js-previous',
                     "url":  pageInfo.rootPath + '/version-9/signed-in/survey/hub/index.html',
                     "id": "back",
                     "text": 'Back'
@@ -23,6 +23,8 @@ layout: user-self-serve/views/version-9/_master-survey
 </div>
 {% endblock %}
 {% block main %}
+<form class="js-question-no-summary"></form>
+
     <div class="grid">
         <div id="main" class="grid__col col-8@m u-pt-no u-pb-no">
             <h1>ICT specialists and skills</h1>
@@ -32,7 +34,6 @@ layout: user-self-serve/views/version-9/_master-survey
                 "classes": "u-mt-xl",
                 "url": 'employ-specialists/index.html'
             }) }}
-            </form>
         </div>
     </div>
 

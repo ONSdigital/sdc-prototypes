@@ -5,10 +5,11 @@ version: 35.0.3
 layout: user-self-serve/views/version-9/_master-survey
 ---
 {% block main %}
+<form class="js-question-no-summary"></form>
 
     <div class="grid">
         <div class="grid__col col-8@m">
-            <h1>Choose another section to complete</h1>
+            <h1>Submit survey</h1>
             {% call onsPanel({
                     "classes": 'u-mb-m',
                     "type": 'warn'

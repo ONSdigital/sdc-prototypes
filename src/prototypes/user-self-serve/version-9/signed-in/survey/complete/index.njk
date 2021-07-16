@@ -7,6 +7,7 @@ layout: user-self-serve/views/version-9/_master-survey
 {% from "components/feedback/_macro.njk" import onsFeedback %}
 
 {% block main %}
+<form class="js-question-no-summary"></form>
 
     <div class="grid">
         <div class="grid__col col-8@m">
@@ -24,12 +25,12 @@ layout: user-self-serve/views/version-9/_master-survey
             <p><a href="#0">Learn more about how we use this data</a></p>
             <hr>
             <h2 class="u-mt-m">Get a copy of your answers</h2>
-            <p>You can <a href="#0">save or print your answers</a> to keep as a record of your response to this survey.
+            <p>You can <a href="save-answers/index.html">save or print your answers</a> for your records.
             {% call onsPanel({
                     "type": 'warn',
                     "id": 'warn-id'
                 }) %}
-                <p>Your answers will only be available to view for 15 minutes to keep them secure</p>
+                <p class="js-timeout-warning">For security, your answers will only be available to view for another <span class="countdown-minutes"></span> minutes <span class="countdown-seconds"></span> seconds</p>
             {% endcall %}
             {{
                 onsFeedback({
@@ -43,4 +44,24 @@ layout: user-self-serve/views/version-9/_master-survey
             }}
         </div>
     </div>
+
+    <script>
+        var initialTimer = "15:01";
+        var interval = setInterval(function() {
+        var timer = initialTimer.split(':');
+        var minutes = parseInt(timer[0], 10);
+        var seconds = parseInt(timer[1], 10);
+
+        --seconds;
+        minutes = (seconds < 0) ? --minutes : minutes;
+        if (minutes < 0) clearInterval(interval);
+        seconds = (seconds < 0) ? 59 : seconds;
+        seconds = (seconds < 10) ? '0' + seconds : seconds;
+
+        $('.countdown-minutes').html(minutes);
+        $('.countdown-seconds').html(seconds);
+
+        initialTimer = minutes + ':' + seconds;
+        }, 1000);
+    </script>
 {% endblock %}

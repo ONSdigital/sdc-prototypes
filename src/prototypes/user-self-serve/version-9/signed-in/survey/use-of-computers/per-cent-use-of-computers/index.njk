@@ -12,6 +12,7 @@ layout: user-self-serve/views/version-9/_master-survey
             "ariaLabel": 'Previous',
             "itemsList": [
                 {
+                    "linkClasses": 'js-previous',
                     "url": pageInfo.parentPath,
                     "id": "previous",
                     "text": 'Previous'
@@ -75,20 +76,6 @@ layout: user-self-serve/views/version-9/_master-survey
         </div>
     </div>
 <script>
-    var sectionComplete = sessionStorage.getItem('sectionCompleteCounter');
-    var previousPage = searchParams.get('previous');
-    var currentPage = 'complete--confirmation-sent';
 
-    if (confirmationCounter) { 
-        var confirmationCounter = parseInt(confirmationCounter) + 1;
-        sessionStorage.setItem('confirmationCounter', confirmationCounter);
-    } else { 
-        var confirmationCounter = 1;
-        sessionStorage.setItem('confirmationCounter', confirmationCounter);
-    }
-    if (confirmationCounter > 9) { 
-        $('.js-resend-confirmation').hide();
-        $('.js-max-sent').show();
-    }
 </script>
 {% endblock %}

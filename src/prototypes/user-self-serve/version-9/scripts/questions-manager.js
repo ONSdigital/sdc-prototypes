@@ -14,7 +14,7 @@ class QuestionManager {
       this.url = this.url.slice(0, lastCharIndex);
     }
 
-    this.title = [...document.getElementsByTagName('H1')].find(h1 => !h1.classList.contains('header__title')).innerText;
+    this.title = [...document.getElementsByTagName('H1')].find(h1 => !h1.classList.contains('')).innerText;
     this.inputs = [
       ...document.getElementsByTagName('INPUT'),
       ...document.getElementsByTagName('TEXTAREA'),
@@ -25,7 +25,7 @@ class QuestionManager {
     this.hideFromSummary = this.form.classList.contains('js-question-no-summary');
     this.actionChangingInputs = [...this.form.querySelectorAll('input[data-action-url]')];
 
-    const legend = document.querySelector('.field__legend');
+    const legend = document.querySelector('.fieldset__legend-title ');
 
     if (legend) {
       this.legend = legend.innerText;
@@ -105,7 +105,7 @@ class QuestionManager {
             const id = input.id;
             const labelElement = document.querySelector(`label[for="${id}"]`);
 
-            let label, isTypeahead;
+            let label;
 
             if (labelElement) {
               label = [...labelElement.childNodes].filter(node => node.nodeType === 3 && node.textContent.trim())[0].textContent.trim();
@@ -135,8 +135,6 @@ class QuestionManager {
               }
               default: {
                 value = input.value;
-
-                isTypeahead = input.classList.contains('js-typeahead-input');
               }
             }
 
@@ -144,8 +142,7 @@ class QuestionManager {
               id: input.id,
               value,
               checked,
-              label,
-              isTypeahead
+              label
             });
           });
 
