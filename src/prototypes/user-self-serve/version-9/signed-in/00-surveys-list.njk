@@ -32,7 +32,7 @@ layout: user-self-serve/views/version-9/_master-surveys-list
                     </p>
                     <section class="u-bb " id="access_survey_button_1">
                         <h1 class="u-mb-xs u-fs-m u-mt-s">
-                            <a href="{{ pageInfo.rootPath }}/version-9/signed-in/50-survey-start.html" aria-label="Access the E-commerce survey">E-commerce survey</a>
+                            <a id="js-survey-cta" href="{{ pageInfo.rootPath }}/version-9/signed-in/50-survey-start.html" aria-label="Access the E-commerce survey">E-commerce survey</a>
                         </h1>
                         <h2 class="u-mb-xs u-mt-no u-fs-r u-fw-b"> <span>Period covered:</span> April 2021</h2>
                         <dl class="grid">
@@ -54,7 +54,7 @@ layout: user-self-serve/views/version-9/_master-surveys-list
                             <div class="grid__col col-3@m u-pt-no u-pb-xs">
                                 <dt style="float: left; clear: left;" class="u-vh">Status: </dt>
                                 <dd class="u-fs-r u-ml-no u-mb-xs" style="line-height:1">
-                                    <span class="status status--info">Not started</span>
+                                    <span id="js-survey-status" class="status status--info">Not started</span>
                                 </dd>
                                 <dt style="float: left; clear: left;" class="u-vh">Help: </dt>
                                 <dd class="u-ml-no u-mb-s">
@@ -286,6 +286,22 @@ layout: user-self-serve/views/version-9/_master-surveys-list
     </div>
 
     <script>
+        function continueSurvey() {
+            if (sessionStorage.length) {
+                var surveyStatus = document.getElementById('js-survey-status');
+                var surveyCta = document.getElementById('js-survey-cta');
+                var surveySectionBookmark = sessionStorage.getItem('sectionBookmark');
+                
+                surveyStatus.innerHTML = 'In progress';
+                surveyStatus.classList.replace('status--info', 'status--success');
+
+                surveyCta.onclick = function continueSurvey() {
+                    surveyCta.href = surveySectionBookmark;
+                }
+
+            }
+        }
+
         function openNav() {
             document
                 .getElementById("mySidenav")
@@ -323,6 +339,8 @@ layout: user-self-serve/views/version-9/_master-surveys-list
                 .style
                 .display = "block";
         }
+
+        continueSurvey();
     </script>
 
 {% endblock %}
