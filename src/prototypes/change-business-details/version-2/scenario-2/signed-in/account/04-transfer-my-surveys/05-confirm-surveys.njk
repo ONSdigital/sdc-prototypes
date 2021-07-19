@@ -1,0 +1,70 @@
+---
+group: Frontstage
+title: Change business details
+version: 32.0.1
+layout: change-business-details/views/version-2/scenario-2/_master-survey
+---
+
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+{% from "components/button/_macro.njk" import onsButton %}
+
+
+{% block main %}
+
+    <div class="grid">
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/prototypes/change-business-details/version-2/scenario-2/signed-in/00-surveys-list.html',
+                            "text": 'Surveys'
+                        },
+                        {
+                            "url": '/prototypes/change-business-details/version-2/scenario-2/signed-in/account/index.html',
+                            "text": 'Account'
+                        } 
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+            <h1>Confirm survey access</h1>
+
+            <p>Your colleague ((originator_email_address)) wants to transfer access for the following surveys to you.</p>
+
+            <p>You need to check the details are correct and confirm access.</p>
+            
+
+            <h2 class="u-fs-m">ACME Consumer Products</h2>
+            <div class="text-indent">
+                <ul class="list list--bare">
+                    <li>Quarterly Business Survey</li>
+                    <li>Monthly Business Survey</li>
+                </ul>
+            </div> 
+            <h2 class="u-fs-m">ACME Group Ltd</h2>
+            <div class="text-indent">
+                <ul class="list list--bare">
+                    <li>Business Register and Employment Survey</li>
+                </ul>
+            </div>
+
+          <p>If there is an error please refer to the colleague who shared access.</p>
+
+          <p>If you ignore this request the invitation will expire after 72 hours.</p>
+
+
+                <div class="grid grid--flex grid--gutterless grid--vertical-center grid--no-wrap@s u-mt-m u-mb-m">
+                    <div class="grid__col">
+                        <button type="button" class="btn btn-group__btn">
+                            <span class="btn__inner">Confirm access</span>
+                        </button>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+{% endblock %}

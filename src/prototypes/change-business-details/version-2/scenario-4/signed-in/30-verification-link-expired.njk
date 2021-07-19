@@ -1,0 +1,23 @@
+---
+group: Frontstage
+title: Change business details
+version: 32.0.1
+layout: change-business-details/views/version-2/scenario-4/_master-survey-signed-out
+---
+
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+
+{% block main %}
+
+    <div class="grid">
+
+        <div class="grid__col col-8@m u-pt-no">
+            <h1 class="u-fs-xl">Your verification link has expired</h1>
+            <p>You can <a href="#">request another verification email</a>.</p>
+            <p>You will need to sign in to your account.</p>
+            <p>If you need further help you can call us on <a href="tel:03001234931">0300 1234 931</a>.</p>
+        </div>
+
+    {% endblock %}

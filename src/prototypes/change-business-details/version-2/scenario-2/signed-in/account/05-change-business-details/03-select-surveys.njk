@@ -1,0 +1,59 @@
+---
+group: Frontstage
+title: Change business details
+version: 32.0.1
+layout: change-business-details/views/version-2/scenario-2/_master-survey
+---
+
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
+
+{% block main %}
+
+    <div class="grid">
+
+
+        <div class="grid__col col-8@m u-pt-no">
+            <h1>Which surveys are affected by the change of business’s details?</h1>
+            {{
+                onsCheckboxes({
+                    "legend": "ACME TRADING LTD",
+                    "checkboxesLabel": "Select all that apply",
+                    "name": "ACME TRADING LTD",
+                    "checkboxes": [
+                        {
+                            "id": "Quarterly Acquisitions and Disposal of Capital Assets Survey",
+                            "label": {
+                                "text": "Quarterly Acquisitions and Disposal of Capital Assets Survey"
+                            },
+                            "value": "Quarterly Acquisitions and Disposal of Capital Assets Survey"
+                        },
+                        {
+                            "id": "Quarterly Stocks Survey",
+                            "label": {
+                                "text": "Quarterly Stocks Survey"
+                            },
+                            "value": "Quarterly Stocks Survey"
+                        }
+                    ]
+                })
+            }}
+
+            <div class="grid grid--flex grid--gutterless grid--vertical-center grid--no-wrap@s u-mt-m u-mb-m">
+                <div class="grid__col">
+                    <button type="button" class="btn btn-group__btn" onclick="location.href='{{ pageInfo.rootPath }}/version-2/scenario-2/signed-in/account/05-change-business-details/04-change-business-details.html';">
+                        <span class="btn__inner">Continue</span>
+                    </button>
+
+                </div>
+                <div class="grid__col u-ml-m">
+                    <a href="/prototypes/change-business-details/version-2/scenario-2/signed-in/account/05-change-business-details/02-choice.html">Cancel</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

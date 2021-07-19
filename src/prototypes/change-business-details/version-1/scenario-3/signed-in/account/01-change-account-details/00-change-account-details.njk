@@ -1,0 +1,135 @@
+---
+group: Frontstage
+title: User account creation
+version: 32.0.1
+layout: change-business-details/views/version-1/scenario-3/_master-survey
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+
+{% block main %}
+    <div class="grid">
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/prototypes/change-business-details/version-1/scenario-3/signed-in/00-surveys-list.html',
+                            "text": 'Surveys'
+                        },
+                        {
+                            "url": '/prototypes/change-business-details/version-1/scenario-3/signed-in/help/index.html',
+                            "text": 'Help'
+                        }
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+            <h1>Change your contact details</h1>
+            <form action="/prototypes/change-business-details/version-1/scenario-3/signed-in/index.html">
+                <p class="field">
+                    <fieldset class="fieldset">
+                        <legend class="fieldset__legend">Choose an option</legend>
+                        <div class="radios__items">
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                        type="radio"
+                                        id="answering-a-survey-question"
+                                        data-action-url="/prototypes/change-business-details/version-1/scenario-3/signed-in/account/01-change-account-details/01-change-contact-details.html"
+                                        class="radio__input js-radio"
+                                        value="question-one"
+                                        name="message-query">
+                                    <label class="radio__label" for="answering-a-survey-question">Change contact details</label>
+                                </span>
+                            </p>
+                            <br>
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                        type="radio"
+                                        id="information-about-the-survey"
+                                        data-action-url="/prototypes/change-business-details/version-1/scenario-3/signed-in/account/05-change-business-details/index.html"
+                                        class="radio__input js-radio"
+                                        value="question-two"
+                                        name="message-query">
+                                    <label class="radio__label" for="information-about-the-survey">Change business details</label>
+                                </span>
+                            </p>
+                            <br>
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                        type="radio"
+                                        id="access-to-my-surveys"
+                                        data-action-url="/prototypes/change-business-details/version-1/scenario-3/signed-in/account/02-change-password/01-change-password.html"
+                                        class="radio__input js-radio"
+                                        value="question-one"
+                                        name="message-query">
+                                    <label class="radio__label" for="access-to-my-surveys">Change password</label>
+                                </span>
+                            </p>
+                            <br>
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                        type="radio"
+                                        id="other-checkbox"
+                                        data-action-url="/prototypes/change-business-details/version-1/scenario-3/signed-in/account/07-something-else/index.html"
+                                        class="radio__input js-radio "
+                                        value="other" 
+                                        name="message-query"
+                                        aria-controls="other-checkbox-other-wrap" aria-haspopup="true">
+                                        <label class="radio__label" for="other-checkbox">
+                                            Something else
+                                        </label>
+                                    </span>
+                                </span>
+                            </p>
+                        </div>
+                    </fieldset>
+                </p>
+                <p class="field u-mt-l">
+                    <div class="btn-group">
+                        <button type="submit" class="btn">
+                            <span class="btn__inner">Continue</span>
+                        </button>
+                        {{ 
+                            onsButton({
+                                "type": 'button',
+                                "text": 'Cancel',
+                                "classes": 'btn--secondary btn-group__btn',
+                                "url": "/prototypes/change-business-details/version-1/scenario-3/signed-in/account/index.html"
+                            }) 
+                        }}
+                    </div>
+                </p>
+            </form>
+        </div>
+    </div>
+    <script>
+        var submit = document.getElementById('btnFormSubmit');
+        submit.addEventListener('click', submitForm);
+
+        function submitForm(event) {
+            event.preventDefault();
+            event.stopPropagation();
+
+            var href = '',
+                inputs = this
+                    .parentNode
+                    .getElementsByTagName('input')
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].getAttribute('name') == 'button' && inputs[i].checked) {
+                    href = inputs[i].getAttribute('data-href');
+                    window.location = href;
+                }
+            }
+        }
+    </script>
+
+{% endblock %}

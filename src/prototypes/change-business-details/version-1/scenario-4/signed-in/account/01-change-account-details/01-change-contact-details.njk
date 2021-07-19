@@ -1,0 +1,113 @@
+---
+group: Frontstage
+title: Change business details
+version: 32.0.1
+layout: change-business-details/views/version-1/scenario-4/_master-survey
+---
+
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+
+{% block main %}
+
+    <div class="grid">
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/prototypes/change-business-details/version-1/scenario-4/signed-in/00-surveys-list.html',
+                            "text": 'Surveys'
+                        },
+                        {
+                            "url": '/prototypes/change-business-details/version-1/scenario-4/signed-in/account/index.html',
+                            "text": 'Account'
+                        }
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+            <h1>Change your contact details</h1>
+            <!--
+            <p>You will need to:</p>
+            <ol>
+                <li>Provide the email address</li>
+                <li>Send the enrolment code</li>
+            </ol>
+            -->
+
+            <!-- <p>To whom would you like to transfer your surveys?</p> -->
+
+            <div class="field">
+                <p>
+                    {{ 
+                        onsInput({
+                            "id": "firstname",
+                            "value": "Jane",
+                            "label": {
+                                "text": "First name"
+                            }
+                        }) 
+                    }}
+                </p>
+            </div>
+
+            <div class="field">
+                <p>
+                    {{ 
+                        onsInput({
+                            "id": "lastname",
+                            "value": "Doe",
+                            "label": {
+                                "text": "Last name"
+                            }
+                        }) 
+                    }}
+                </p>
+            </div>
+
+            <div class="field">
+                <p>
+                    {{ 
+                        onsInput({
+                            "id": "emailaddress",
+                            "value": "jane.doe@acme.com",
+                            "label": {
+                                "text": "Email address"
+                            }
+                        }) 
+                    }}
+                </p>
+            </div>
+
+            <div class="field">
+                <p>
+                    {{ 
+                        onsInput({
+                            "id": "phonenumber",
+                            "value": "07789123456",
+                            "classes": "input--w-8",
+                            "label": {
+                                "text": "Phone number"
+                            }
+                        }) 
+                    }}
+                </p>
+            </div>
+
+            <div class="grid grid--flex grid--gutterless grid--vertical-center grid--no-wrap@s u-mt-m u-mb-m">
+                <div class="grid__col">
+                    <button type="button" class="btn btn-group__btn" onclick="location.href='{{ pageInfo.rootPath }}/version-1/scenario-4/signed-in/account/01-change-account-details/02-change-email-address.html';">
+                        <span class="btn__inner">Save</span>
+                    </button>
+                </div>
+                <div class="grid__col u-ml-m">
+                    <a href="/prototypes/change-business-details/version-1/scenario-4/signed-in/account/index.html">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
