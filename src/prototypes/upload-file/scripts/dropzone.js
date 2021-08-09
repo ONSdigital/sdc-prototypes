@@ -1,3 +1,5 @@
+'use strict';
+
 function _typeof(obj) {
   '@babel/helpers - typeof';
   if (typeof Symbol === 'function' && typeof Symbol.iterator === 'symbol') {
@@ -22,13 +24,15 @@ function _possibleConstructorReturn(self, call) {
 function _getPrototypeOf(o) {
   _getPrototypeOf = Object.setPrototypeOf
     ? Object.getPrototypeOf
-    : function _getPrototypeOf(o) {return o.__proto__ || Object.getPrototypeOf(o);};
+    : function _getPrototypeOf(o) {
+        return o.__proto__ || Object.getPrototypeOf(o);
+      };
   return _getPrototypeOf(o);
 }
 
 function _assertThisInitialized(self) {
   if (self === void 0) {
-    throw new ReferenceError('this hasn’t been initialised - super() hasn’t been called');
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
   }
   return self;
 }
