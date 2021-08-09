@@ -1,0 +1,147 @@
+---
+group: RAS/RM - Frontstage
+title: SM Attachments
+version: 17.0.0
+layout: SM-attachments/views/_master-ext-messages
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+{% from "components/upload/_macro.njk" import onsUpload %}
+
+{% block main %}
+    <script src="fine-uploader/fine-uploader.min.js"></script>
+    <div class="grid">
+        <div class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/prototypes/SM-attachments/00-surveys-list.html',
+                            "text": 'Surveys'
+                        },
+                        {
+                            "url": '/prototypes/SM-attachments/01-message-categories.html',
+                            "text": 'Help'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'Send a message',
+                            "current": true
+                        }
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+            <h1>Send a message</h1>
+            <p>Send us a message with a description of your issue and we'll get back to you.</p>
+        </div>
+
+        <div class="grid__col col-6@m">
+            <p class="field">
+                {{
+                onsTextarea({
+                    "id": "textarea",
+                    "name": "feedback",
+                    "label": {
+                        "text": "Create message"
+                    }
+                })
+            }}
+            </p>
+            
+            <p class="field">
+            {{
+                onsUpload({
+                    "id": "file",
+                    "accept": ".xls,.xlsx,.pdf",
+                    "label": {
+                        "description": "File types accepted are .xls and .xlsx",
+                        "text": "Add attachment"
+                    }
+                })
+            }}
+            </p>
+
+            <p class="field u-mt-l">
+                <div class="btn-group">
+                    {{ 
+                        onsButton({
+                            "type": 'button',
+                            "text": 'Send message',
+                            "classes": 'btn-group__btn',
+                            "url": "/prototypes/SM-attachments/10-message-sent.html"
+                        }) 
+                    }}
+                    {{ 
+                        onsButton({
+                            "type": 'button',
+                            "text": 'Cancel',
+                            "classes": 'btn--secondary btn-group__btn',
+                            "url": "/prototypes/SM-attachments/00-surveys-list.html"
+                        }) 
+                    }}
+                </div>
+            </p>
+        </div>
+    </div>
+
+    <script>
+
+        Dropzone.options.fileUpload = {
+            url: "https://api.cloudinary.com/v1_1/dlha38s4m/image/upload", // Set the url
+            parallelUploads: 6,
+            previewsContainer: "#previews", // Define the container to display the previews
+            previewTemplate: document
+                .getElementById('preview-template')
+                .innerHTML,
+            dictDefaultMessage: "Or drag and drop files here.",
+            clickable: ".fileinput-button" // Define the element that should be used as click trigger to select files.
+        };
+        Dropzone.on('sending', function (file, xhr, formData) {
+            alert("you added a file");
+        });
+        Dropzone.on('sending', function (file, xhr, formData) {
+            console.log("Adding api key " + 737368216118754);
+            formData.append('api_key', 737368216118754);
+            formData.append('timestamp', Date.now() / 1000 | 0);
+            formData.append('upload_preset', 'v1elzsec');
+        });
+        Dropzone.on('success', function (file, response) {
+            console.log('Success! uploading file to Cloudinary. public id - ' + response.public_id);
+        });
+        Dropzone.on("addedfile", function (file) {
+            // Show the status bar when files are dragged over dropzone
+            document
+                .querySelector(".statusbar")
+                .style
+                .display = "block";
+        });
+        Dropzone.on("reset", function (file) {
+            // Hide the status bar when dropzone is reset
+            document
+                .querySelector(".statusbar")
+                .style
+                .display = "none";
+        });
+        Dropzone.on("addedfile", function (file) {
+            // Show the status bar when files is dragged over dropzone
+            document
+                .querySelector(".correct-errors")
+                .style
+                .display = "block";
+        });
+        Dropzone.on("reset", function (file) {
+            // Hide the status bar when dropzone is reset
+            document
+                .querySelector(".correct-errors")
+                .style
+                .display = "none";
+        });
+    </script>
+
+{% endblock %}

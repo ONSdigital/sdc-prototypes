@@ -1,0 +1,163 @@
+---
+group: RAS/RM - ROps
+title: Alert banner management
+version: 17.0.0
+layout: alert-banner-management/views/version-2/_master
+---
+
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% block main %}
+
+    <div class="grid">
+        <div class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '',
+                            "text": 'Surveys'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'Create an alert',
+                            "current": true
+                        }
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+            <h1>Manage alert templates</h1>
+            <form action="{{ pageInfo.parentPath }}/index.html">
+                <p class="field">
+                {{ 
+                    onsButton({
+                        "type": 'button',
+                        "text": 'Create a new template',
+                        "classes": 'btn--secondary btn--small',
+                        "url": "/prototypes/alert-banner-management/version-2/survey-list.html"
+                    }) 
+                }}
+                </p>
+                <fieldset class="fieldset">
+                    <legend class="fieldset__legend">Choose a template to edit</legend>
+                    <div class="radios__items">
+                        <p class="radios__item">
+                            <span class="radio">
+                                <input
+                                    type="radio"
+                                    id="outage"
+                                    class="radio__input js-radio"
+                                    data-action-url="/prototypes/alert-banner-management/version-2/03-edit-alert-template.html"
+                                    value="outage"
+                                    name="food">
+                                <label class="radio__label  " for="outage" id="outage-label">Unexpected outage</label>
+                            </span>
+                        </p>
+                        <br>
+                        <p class="radios__item">
+                            <span class="radio">
+                                <input 
+                                    type="radio"
+                                    id="SDX"
+                                    class="radio__input js-radio"
+                                    data-action-url="/prototypes/alert-banner-management/version-2/03-edit-alert-template.html"
+                                    value="SDX"
+                                    name="food">
+                                <label class="radio__label" for="SDX" id="SDX-label">SDX is not working</label>
+                            </span>
+                        </p>
+                        <br>
+                        <p class="radios__item">
+                            <span class="radio">
+                                <input 
+                                    type="radio"
+                                    id="system-performance"
+                                    class="radio__input js-radio"
+                                    data-action-url="/prototypes/alert-banner-management/version-2/03-edit-alert-template.html"
+                                    value="system-performance"
+                                    name="food">
+                                <label class="radio__label" for="system-performance" id="system-performance-label">System performance issues</label>
+                            </span>
+                        </p>
+                        <br>
+                        <p class="radios__item">
+                            <span class="radio">
+                                <input 
+                                    type="radio"
+                                    id="vacancies"
+                                    class="radio__input js-radio"
+                                    data-action-url="/prototypes/alert-banner-management/version-2/03-edit-alert-template.html"
+                                    value="vacancies"
+                                    name="food">
+                                <label class="radio__label" for="vacancies" id="vacancies-label">Vacancies survey</label>
+                            </span>
+                        </p>
+                    </div>
+                </fieldset>
+
+
+                <p class="field">
+                    <button type="submit" class="btn">
+                        <span class="btn__inner">Continue</span>
+                    </button>
+                    {{ 
+                        onsButton({
+                            "type": 'button',
+                            "text": 'Cancel',
+                            "classes": 'btn--secondary btn-group__btn',
+                            "url": "/prototypes/alert-banner-management/version-2/01-manage-alert-templates.html"
+                        }) 
+                    }}
+                </p>
+
+                <p class="field">
+                {{ 
+                    onsButton({
+                        "type": 'button',
+                        "text": 'Return to create alert',
+                        "classes": 'btn--secondary btn--small',
+                        "url": "/prototypes/alert-banner-management/version-2/01-manage-alert-templates.html"
+                    }) 
+                }}
+                </p>
+            </form>
+        </div>
+    </div>
+    <script>
+        template0 = "";
+        template1 = "We are currently experiencing technical difficulties. Our engineers are investigating and hope to have the service back up shortly.Thank you for your patience.";
+        template2 = "We are carrying out essential maintenance to the service. Please continue to use the system and submit data as normal. It will only affect your response status which may not display as completed until the maintenance has been completed.";
+        template3 = "We are carrying out essential maintenance to the service. During this time there may be an impact on system performance. Please continue to use the system and submit data as normal. If you experience any issues, please try again after the maintenance is completed.";
+        template4 = "The Quarterly Vacancy Survey is unavailable until Tuesday 7 July 2020, as we are currently experiencing some technical difficulties.";
+
+        function setTemplate(t) {
+            var otionValue = t.value;
+            if (otionValue == "0") {
+                document
+                    .getElementById('templatemessage')
+                    .innerHTML = template0;
+            } else if (otionValue == "1") 
+                document
+                    .getElementById('templatemessage')
+                    .innerHTML = template1;
+            else if (otionValue == "2") 
+                document
+                    .getElementById('templatemessage')
+                    .innerHTML = template2;
+            else if (otionValue == "3") 
+                document
+                    .getElementById('templatemessage')
+                    .innerHTML = template3;
+            else if (otionValue == "4") 
+                document
+                    .getElementById('templatemessage')
+                    .innerHTML = template4;
+            };
+    </script>
+{% endblock %}

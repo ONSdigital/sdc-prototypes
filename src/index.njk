@@ -1,10 +1,10 @@
 ---
-version: 0.5.0
+version: 35.0.3
 ---
 {% from "components/lists/_macro.njk" import onsList %}
 
-{% set page = { 
-    "title": "ONS Prototypes",
+{% set pageConfig = { 
+    "title": "SDC Prototypes",
     "footer": {
         "OGLLink": {
             "pre": 'All content is available under the',
@@ -14,20 +14,20 @@ version: 0.5.0
         }
     }
 } %}
-{% block content %}
-{% set groups = helpers.navigationHelper({ 
-    "pages": pageInfo.siteMap[0].children,
-    "ignorePaths": ["/"]
-}) %}
-{% for group in groups %}
-    <section>
-        <h1 class="u-fs-m">{{ group.title }}</h1>
-        {{ 
-            onsList({
-                "classes": "list--bare",
-                "items": group.items
-            })
-        }}
-    </section>
-{% endfor %}
+{% block main %}
+    {% set groups = helpers.navigationHelper({ 
+        "pages": pageInfo.siteMap[0].children,
+        "ignorePaths": ["/"]
+    }) %}
+    {% for group in groups %}
+        <section>
+            <h1 class="u-fs-m u-mt-l">{{ group.title }}</h1>
+            {{ 
+                onsList({
+                    "classes": "list--bare",
+                    "itemsList": group.items
+                })
+            }}
+        </section>
+    {% endfor %}
 {% endblock %}

@@ -1,0 +1,42 @@
+---
+group: RAS/RM - Frontstage
+title: User account creation
+version: 35.0.3
+layout: user-self-serve/views/version-9/_master-survey
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+{% from "components/metadata/_macro.njk" import onsMetadata %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+
+{% block main %}
+
+    <div class="grid">
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/prototypes/user-self-serve/version-9/index.html',
+                            "text": 'Sign in'
+                        },
+                        {
+                            "url": '/prototypes/user-self-serve/version-9/signed-out/help/index.html',
+                            "text": 'Help'
+                        }
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+            <h1>Further help</h1>
+            <p>You can find help for common issues if you  <a href="/prototypes/user-self-serve/version-9/index.html">sign in to your account</a>.</p>
+            <p>If you are having problems signing in, please <a href="/prototypes/user-self-serve/version-9/signed-out/20-contact-us.html">contact us</a>.</p>
+        </div>
+    </div>
+
+{% endblock %}

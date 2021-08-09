@@ -1,0 +1,109 @@
+---
+group: RAS/RM - Frontstage
+title: User account creation
+version: 20.0.3
+layout: user-account-creation/views/version-4/_master-internal
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/metadata/_macro.njk" import onsMetadata %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+
+{% block main %}
+
+    <div class="grid">
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/prototypes/user-account-creation/version-4/00-surveys-list.html',
+                            "text": 'Messages'
+                        },
+                        {
+                            "url": '/prototypes/user-account-creation/version-4/01-message-categories.html',
+                            "text": 'Help',
+                            "current": true
+                        }
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+
+            <h1>Filter messages by survey</h1>
+
+                <input type="hidden" name="csrf_token" value="">
+                <div class="field">
+                    <label class="label" for="survey-list">Select a survey to display messages for your team</label>
+                    <select id="survey-list" name="select-survey" class="input input--select ">
+                        <option value="" selected="" disabled="">Select a survey</option>
+                        <option value="123adamtest" "id"="123adamtest">123adamtest</option>
+                        <option value="ABS202sdc009" "id"="ABS202sdc009">ABS202sdc009</option>
+                        <option value="ASHE" "id"="ASHE">ASHE</option>
+                        <option value="Ada" "id"="Ada">Ada</option>
+                        <option value="BRES" "id"="BRES">BRES</option>
+                        <option value="Blocks" "id"="Blocks">Blocks</option>
+                        <option value="Bricks" "id"="Bricks">Bricks</option>
+                        <option value="CAT" "id"="CAT">CAT</option>
+                        <option value="COVID" "id"="COVID">COVID</option>
+                        <option value="EPE" "id"="EPE">EPE</option>
+                        <option value="Ecommerce" "id"="Ecommerce">Ecommerce</option>
+                        <option value="FDI" "id"="FDI">FDI</option>
+                        <option value="FSPS" "id"="FSPS">FSPS</option>
+                        <option value="GovERD" "id"="GovERD">GovERD</option>
+                        <option value="MBS" "id"="MBS">MBS</option>
+                        <option value="MES" "id"="MES">MES</option>
+                        <option value="MTS" "id"="MTS">MTS</option>
+                        <option value="MWSS" "id"="MWSS">MWSS</option>
+                        <option value="NBS" "id"="NBS">NBS</option>
+                        <option value="OFATS" "id"="OFATS">OFATS</option>
+                        <option value="PCS" "id"="PCS">PCS</option>
+                        <option value="QBS" "id"="QBS">QBS</option>
+                        <option value="QCAS" "id"="QCAS">QCAS</option>
+                        <option value="QITIS" "id"="QITIS">QITIS</option>
+                        <option value="QPSESCS" "id"="QPSESCS">QPSESCS</option>
+                        <option value="QPSESLA" "id"="QPSESLA">QPSESLA</option>
+                        <option value="QPSESPB" "id"="QPSESPB">QPSESPB</option>
+                        <option value="QSS" "id"="QSS">QSS</option>
+                        <option value="RSI" "id"="RSI">RSI</option>
+                        <option value="Sand&amp;Gravel" "id"="Sand&amp;Gravel">Sand &amp; Gravel</option>
+                        <option value="TBS" "id"="TBS">TBS</option>
+                        <option value="TEST" "id"="TEST">TEST</option>
+                        <option value="TEST123" "id"="TEST123">TEST123</option>
+                        <option value="TESTY" "id"="TESTY">TESTY</option>
+                        <option value="TST" "id"="TST">TST</option>
+                        <option value="Test" "id"="Test">Test</option>
+                        <option value="Testttttttttttt1111" "id"="Testttttttttttt1111">Testttttttttttt1111</option>
+                        <option value="Tst" "id"="Tst">Tst</option>
+                        <option value="UKIS" "id"="UKIS">UKIS</option>
+                        <option value="Vacancies" "id"="Vacancies">Vacancies</option>
+                        <option value="W<b>BT</b>" "id"="W<b>BT</b>">WBT</option>
+                        <option value="adamtest" "id"="adamtest">adamtest</option>
+                        <option value="census" "id"="census">census</option>
+                        <option value="tessst" "id"="tessst">tessst</option>
+                        <option value="test9999" "id"="test9999">test9999</option>
+                        <option value="tsssssst" "id"="tsssssst">tsssssst</option>
+                        <option value="tsst" "id"="tsst">tsst</option>
+                        <option value="tst" "id"="tst">tst</option>
+                    </select>
+                </div>
+                <p class="field">
+                    <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-4/00-internal/10-secure-messages.html';">
+                        <span class="btn__inner">Continue</span>
+                    </button>
+                </p>
+                <p class="field">
+                    Or
+                </p>
+
+                <p class="field">
+                    <button type="submit" class="btn btn--secondary btn--small" onclick="location.href='{{ pageInfo.rootPath }}/version-4/00-internal/10-secure-messages.html';">
+                        <span class="btn__inner">Filter by account change requests</span>
+                    </button>
+                </p>
+        </div>
+    </div>
+
+{% endblock %}

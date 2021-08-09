@@ -1,0 +1,80 @@
+---
+group: RAS/RM - Frontstage
+title: Change business details
+version: 32.0.1
+layout: change-business-details/views/version-2/scenario-2/_master-survey
+---
+
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+{% from "components/metadata/_macro.njk" import onsMetadata %}
+
+{% block main %}
+
+    <div class="grid">
+        <div class="grid__col col-12@m u-pt-no">
+            <h1>Send changes</h1>
+            <p>Please confirm the new address and send it to us to review</p>
+
+            {{
+                onsMetadata({
+                    "metadataLabel": "This is an example of the metadata component",
+                    "termCol": "2",
+                    "descriptionCol": "10",
+                    "itemsList": [
+                        {
+                            "term": "Business name:",
+                            "descriptions": [
+                                {
+                                    "description": "ACME TRADING LTD"
+                                }
+                            ]
+                        },
+                        {
+                            "term": "Trading as:",
+                            "descriptions": [
+                                {
+                                    "description": "ACME TRADING LTD"
+                                }
+                            ]
+                        },
+                        {
+                            "term": "Surveys:",
+                            "descriptions": [
+                                {
+                                    "description": "Quarterly Acquisitions and Disposal of Capital Assets Survey"
+                                }
+                            ]
+                        },         
+                        {
+                            "term": "Address:",
+                            "descriptions": [
+                                {
+                                    "description": "INDUSTRY HOUSE"
+                                },
+                                {
+                                    "description": "WALNUT TREE CLOSE "
+                                },
+                                {
+                                    "description": "GUILDFORD"
+                                },
+                                {
+                                    "description": "SURREY"
+                                },
+                                {
+                                    "description": "GU1 4SW"
+                                }
+                            ]
+                        }
+                    ]
+                })
+            }}
+            <p class="field u-mt-l">
+                    <button type="button" class="btn btn-group__btn" onclick="location.href='{{ pageInfo.rootPath }}/version-2/scenario-2/signed-in/account/05-change-business-details/08-summary.html';">
+                    <span class="btn__inner">Send change request</span>
+                </button>
+            </p>
+        </div>
+    </div>
+
+{% endblock %}

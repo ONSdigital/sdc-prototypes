@@ -1,0 +1,72 @@
+{% extends "page-templates/_template.njk" %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ pageInfo.rootPath }}//version-1/styles.css" />
+{% endblock %}
+
+{% set pageConfig = { 
+    "cdn": "17.0.0",
+    "title": "Survey data collection",
+    "wide": true,
+    "header": {
+      "logoAlt": "ONS",
+      "logoHref": "/",
+      "classes": "header--internal header--thin",
+      "logo": "ons-logo-white"
+    },
+    "navigation": {
+        "classes": "nav--inline nav--light nav--header nav--h-m js-main-nav",
+        "id": "main-nav",
+        "ariaLabel": "Main menu",
+        "ariraListLabel": "Navigation menu",
+        "currentPath": "/surveys",
+        "itemsList": [
+            {
+                "title": "Home",
+                "url": "#"
+            },
+            {
+                "title": "Surveys",
+                "classes": "header-nav__item--active",
+                "url": "#"
+            },
+            {
+                "title": "Reporting units",
+                "url": "#"
+            },
+            {
+                "title": "Respondents",
+                "url": "#"
+            },
+            {
+                "title": "Messages",
+                "url": "#"
+            }
+        ]
+    },
+    "footer": {
+        "OGLLink": {
+            "pre": 'All content is available under the',
+            "link": 'Open Government Licence v3.0',
+            "url": 'https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/',
+            "post": ', except where otherwise stated'
+        }
+    }
+} %}
+
+
+{% block pageContent %}
+    {% block preMain %}{% endblock %}
+    <div class="page__container container container--wide">
+      <main id="main-content" class="page__main {{ pageClasses }}">
+          {% block main %}{% endblock %}
+      </main>
+    </div>
+{% endblock %}
+
+
+
+{% block bodyEnd %}
+  <script src="{{ pageInfo.rootPath }}/scripts/index.js"></script>
+
+{% endblock %}

@@ -1,0 +1,77 @@
+---
+group: RAS/RM - Frontstage
+title: User self serve
+version: 32.0.1
+layout: user-self-serve/views/version-8/_master-survey
+---
+
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+{% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
+
+{% block main %}
+
+    <div class="grid">
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/prototypes/user-self-serve/version-8/signed-in/00-surveys-list.html',
+                            "text": 'Surveys'
+                        },
+                        {
+                            "url": '/prototypes/user-self-serve/version-8/signed-in/account/index.html',
+                            "text": 'Account'
+                        },
+                        {
+                            "url": '/prototypes/user-self-serve/version-8/signed-in/account/04-transfer-my-surveys/index.html',
+                            "text": 'Transfer surveys'
+                        } 
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+            <h1>Which business’s surveys do you want to transfer?</h1>
+
+            {{
+                onsCheckboxes({
+                    "legend": "Select all businessesthat apply",
+                    "checkboxesLabel": "",
+                    "name": "ACME Group Ltd",
+                    "checkboxes": [
+                        {
+                            "id": "1",
+                            "label": {
+                                "text": "ACME Consumer Products"
+                            },
+                            "value": "1"
+                        },
+                        {
+                            "id": "2",
+                            "label": {
+                                "text": "ACME Group Ltd"
+                            },
+                            "value": "2"
+                        }
+                    ]
+                })
+            }}
+            <div class="grid grid--flex grid--gutterless grid--vertical-center grid--no-wrap@s u-mt-m u-mb-m">
+        <div class="grid__col">
+          <button type="button" class="btn btn-group__btn" onclick="location.href='{{ pageInfo.rootPath }}/version-8/signed-in/account/04-transfer-my-surveys/01-select-surveys.html';">
+                    <span class="btn__inner">Continue</span>
+                </button>
+                
+                </div>
+                <div class="grid__col u-ml-m">
+                    <a href="/prototypes/user-self-serve/version-8/signed-in/account/04-transfer-my-surveys/index.html">Cancel</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,355 @@
+---
+group: RAS/RM - ROps
+title: Overview
+version: 14.2.1
+layout: overview/views/_master
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/input/_macro.njk" import onsInput %}
+
+{% block main %}
+
+  <h1 name="page-surveys-title">Choose a survey</h1>
+  <div class="grid overview">
+    <div class="grid__col col-8@m">
+      <table id="tbl-surveys" class="table table--responsive">
+        <thead class="table__head">
+          <tr class="table__row">
+            <th scope="col" class="table__header">ID</th>
+            <th scope="col" class="table__header">Title</th>
+            <th scope="col" class="table__header">Abbreviation</th>
+            <th scope="col" class="table__header"></th>
+          </tr>
+        </thead>
+        <tbody class="table__body">
+          <tr class="table__row">
+            <td class="table__cell" name="tbl-surveys-id" data-th="ID">009</td>
+            <td class="table__cell" name="tbl-surveys-title" data-th="Title">
+              Monthly Business Survey
+            </td>
+            <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">MBS</td>
+            <td class="table__cell" name="tbl-surveys-select" data-th="select">
+              <button type="button" class="btn btn--secondary btn--small">
+                <span class="btn__inner">Select</span>
+              </button>
+            </td>
+          </tr>
+          <tr class="table__row">
+            <td class="table__cell" name="tbl-surveys-id" data-th="ID">017</td>
+            <td class="table__cell" name="tbl-surveys-title" data-th="Title">
+              Quarterly Stocks Survey
+            </td>
+            <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">QSS</td>
+            <td class="table__cell" name="tbl-surveys-select" data-th="select">
+              <button type="button" class="btn btn--secondary btn--small">
+                <span class="btn__inner">Select</span>
+              </button>
+            </td>
+          </tr>
+          <tr class="table__row">
+            <td class="table__cell" name="tbl-surveys-id" data-th="ID">019</td>
+            <td class="table__cell" name="tbl-surveys-title" data-th="Title">
+              Quarterly Acquisitions and Disposal of Capital Assets Survey
+            </td>
+            <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">QCAS</td>
+            <td class="table__cell" name="tbl-surveys-select" data-th="select">
+              <button type="button" class="btn btn--secondary btn--small">
+                <span class="btn__inner">Select</span>
+              </button>
+            </td>
+          </tr>
+          <tr class="table__row">
+            <td class="table__cell" name="tbl-surveys-id" data-th="ID">023</td>
+            <td class="table__cell" name="tbl-surveys-title" data-th="Title">
+              Monthly Business Survey - Retail Sales Index
+            </td>
+            <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">RSI</td>
+            <td class="table__cell" name="tbl-surveys-select" data-th="select">
+              <button type="button" class="btn btn--secondary btn--small">
+                <span class="btn__inner">Select</span>
+              </button>
+            </td>
+          </tr>
+          <tr class="table__row">
+            <td class="table__cell" name="tbl-surveys-id" data-th="ID">062</td>
+            <td class="table__cell" name="tbl-surveys-title" data-th="Title">
+              Annual Inward Foreign Direct Investment Survey
+            </td>
+            <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">AIFDI</td>
+            <td class="table__cell" name="tbl-surveys-select" data-th="select">
+              <button type="button" class="btn btn--secondary btn--small">
+                <span class="btn__inner">Select</span>
+              </button>
+            </td>
+          </tr>
+          <tr class="table__row">
+            <td class="table__cell" name="tbl-surveys-id" data-th="ID">063</td>
+            <td class="table__cell" name="tbl-surveys-title" data-th="Title">
+              Annual Outward Foreign Direct Investment Survey
+            </td>
+            <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">AOFDI</td>
+            <td class="table__cell" name="tbl-surveys-select" data-th="select">
+              <button type="button" class="btn btn--secondary btn--small">
+                <span class="btn__inner">Select</span>
+              </button>
+            </td>
+          </tr>
+          <tr class="table__row">
+            <td class="table__cell" name="tbl-surveys-id" data-th="ID">064</td>
+            <td class="table__cell" name="tbl-surveys-title" data-th="Title">
+              Quarterly Inward Foreign Direct Investment Survey
+            </td>
+            <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">QIFDI</td>
+            <td class="table__cell" name="tbl-surveys-select" data-th="select">
+              <button type="button" class="btn btn--secondary btn--small">
+                <span class="btn__inner">Select</span>
+              </button>
+            </td>
+          </tr>
+          <tr class="table__row">
+            <td class="table__cell" name="tbl-surveys-id" data-th="ID">065</td>
+            <td class="table__cell" name="tbl-surveys-title" data-th="Title">
+              Quarterly Outward Foreign Direct Investment Survey
+            </td>
+            <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">QOFDI</td>
+            <td class="table__cell" name="tbl-surveys-select" data-th="select">
+              <button type="button" class="btn btn--secondary btn--small">
+                <span class="btn__inner">Select</span>
+              </button>
+            </td>
+          </tr>
+          <tr class="table__row">
+            <td class="table__cell" name="tbl-surveys-id" data-th="ID">066</td>
+            <td class="table__cell" name="tbl-surveys-title" data-th="Title">
+              Quarterly Survey of Building Materials Sand and Gravel
+            </td>
+            <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">Sand &amp; Gravel</td>
+            <td class="table__cell" name="tbl-surveys-select" data-th="select">
+              <button type="button" class="btn btn--secondary btn--small">
+                <span class="btn__inner">Select</span>
+              </button>
+            </td>
+          </tr>
+          <tr class="table__row">
+            <td class="table__cell" name="tbl-surveys-id" data-th="ID">073</td>
+            <td class="table__cell" name="tbl-surveys-title" data-th="Title">
+              Monthly Survey of Building Materials Concrete Building Blocks
+            </td>
+            <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">Blocks</td>
+            <td class="table__cell" name="tbl-surveys-select" data-th="select">
+              <button type="button" class="btn btn--secondary btn--small">
+                <span class="btn__inner">Select</span>
+              </button>
+            </td>
+          </tr>
+          <tr class="table__row">
+            <td class="table__cell" name="tbl-surveys-id" data-th="ID">074</td>
+            <td class="table__cell" name="tbl-surveys-title" data-th="Title">
+              Monthly Survey of Building Materials Bricks
+            </td>
+            <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">Bricks</td>
+            <td class="table__cell" name="tbl-surveys-select" data-th="select">
+              <button type="button" class="btn btn--secondary btn--small">
+                <span class="btn__inner">Select</span>
+              </button>
+            </td>
+          </tr>
+          <tr class="table__row">
+            <td class="table__cell" name="tbl-surveys-id" data-th="ID">093</td>
+            <td class="table__cell" name="tbl-surveys-title" data-th="Title">
+              Financial Survey of Pension Schemes
+            </td>
+            <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">FSPS</td>
+            <td class="table__cell" name="tbl-surveys-select" data-th="select">
+              <button type="button" class="btn btn--secondary btn--small">
+                <span class="btn__inner">Select</span>
+              </button>
+            </td>
+          </tr>
+          <tr class="table__row">
+            <td class="table__cell" name="tbl-surveys-id" data-th="ID">134</td>
+            <td class="table__cell" name="tbl-surveys-title" data-th="Title">
+              Monthly Wages and Salaries Survey
+            </td>
+            <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">MWSS</td>
+            <td class="table__cell" name="tbl-surveys-select" data-th="select">
+              <button type="button" class="btn btn--secondary btn--small">
+                <span class="btn__inner">Select</span>
+              </button>
+            </td>
+          </tr>
+          <tr class="table__row">
+            <td class="table__cell" name="tbl-surveys-id" data-th="ID">137</td>
+            <td class="table__cell" name="tbl-surveys-title" data-th="Title">
+              Public Corporations Survey
+            </td>
+            <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">PCS</td>
+            <td class="table__cell" name="tbl-surveys-select" data-th="select">
+              <button type="button" class="btn btn--secondary btn--small">
+                <span class="btn__inner">Select</span>
+              </button>
+            </td>
+          </tr>
+          <tr class="table__row">
+            <td class="table__cell" name="tbl-surveys-id" data-th="ID">139</td>
+            <td class="table__cell" name="tbl-surveys-title" data-th="Title">
+              Quarterly Business Survey
+            </td>
+            <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">QBS</td>
+            <td class="table__cell" name="tbl-surveys-select" data-th="select">
+              <button type="button" class="btn btn--secondary btn--small">
+                <span class="btn__inner">Select</span>
+              </button>
+            </td>
+          </tr>
+          <tr class="table__row">
+            <td class="table__cell" name="tbl-surveys-id" data-th="ID">141</td>
+            <td class="table__cell" name="tbl-surveys-title" data-th="Title">
+              Annual Survey of Hours and Earnings
+            </td>
+            <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">ASHE</td>
+            <td class="table__cell" name="tbl-surveys-select" data-th="select">
+              <button type="button" class="btn btn--secondary btn--small">
+                <span class="btn__inner">Select</span>
+              </button>
+            </td>
+          </tr>
+          <tr class="table__row">
+            <td class="table__cell" name="tbl-surveys-id" data-th="ID">144</td>
+            <td class="table__cell" name="tbl-surveys-title" data-th="Title">
+              Innovation Survey
+            </td>
+            <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">UKIS</td>
+            <td class="table__cell" name="tbl-surveys-select" data-th="select">
+              <button type="button" class="btn btn--secondary btn--small">
+                <span class="btn__inner">Select</span>
+              </button>
+            </td>
+          </tr>
+          <tr class="table__row">
+            <td class="table__cell" name="tbl-surveys-id" data-th="ID">160</td>
+            <td class="table__cell" name="tbl-surveys-title" data-th="Title">
+              Quarterly Public Sector Employment Survey - Local Authorities
+            </td>
+            <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">QPSESLA</td>
+            <td class="table__cell" name="tbl-surveys-select" data-th="select">
+              <button type="button" class="btn btn--secondary btn--small">
+                <span class="btn__inner">Select</span>
+              </button>
+            </td>
+          </tr>
+          <tr class="table__row">
+            <td class="table__cell" name="tbl-surveys-id" data-th="ID">165</td>
+            <td class="table__cell" name="tbl-surveys-title" data-th="Title">
+              Quarterly Public Sector Employment Survey - Public Bodies
+            </td>
+            <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">QPSESPB</td>
+            <td class="table__cell" name="tbl-surveys-select" data-th="select">
+              <button type="button" class="btn btn--secondary btn--small">
+                <span class="btn__inner">Select</span>
+              </button>
+            </td>
+          </tr>
+          <tr class="table__row">
+            <td class="table__cell" name="tbl-surveys-id" data-th="ID">169</td>
+            <td class="table__cell" name="tbl-surveys-title" data-th="Title">
+              Quarterly Public Sector Employment Survey - Civil Service
+            </td>
+            <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">QPSESCS</td>
+            <td class="table__cell" name="tbl-surveys-select" data-th="select">
+              <button type="button" class="btn btn--secondary btn--small">
+                <span class="btn__inner">Select</span>
+              </button>
+            </td>
+          </tr>
+          <tr class="table__row">
+            <td class="table__cell" name="tbl-surveys-id" data-th="ID">187</td>
+            <td class="table__cell" name="tbl-surveys-title" data-th="Title">
+              E-commerce Survey
+            </td>
+            <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">Ecommerce</td>
+            <td class="table__cell" name="tbl-surveys-select" data-th="select">
+              <button type="button" class="btn btn--secondary btn--small">
+                <span class="btn__inner">Select</span>
+              </button>
+            </td>
+          </tr>
+          <tr class="table__row">
+            <td class="table__cell" name="tbl-surveys-id" data-th="ID">199</td>
+            <td class="table__cell" name="tbl-surveys-title" data-th="Title">
+              National Balance Sheet
+            </td>
+            <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">NBS</td>
+            <td class="table__cell" name="tbl-surveys-select" data-th="select">
+              <button type="button" class="btn btn--secondary btn--small">
+                <span class="btn__inner">Select</span>
+              </button>
+            </td>
+          </tr>
+          <tr class="table__row">
+            <td class="table__cell" name="tbl-surveys-id" data-th="ID">221</td>
+            <td class="table__cell" name="tbl-surveys-title" data-th="Title">
+              Business Register and Employment Survey
+            </td>
+            <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">BRES</td>
+            <td class="table__cell" name="tbl-surveys-select" data-th="select">
+              <button type="button" class="btn btn--secondary btn--small">
+                <span class="btn__inner">Select</span>
+              </button>
+            </td>
+          </tr>
+          <tr class="table__row">
+            <td class="table__cell" name="tbl-surveys-id" data-th="ID">225</td>
+            <td class="table__cell" name="tbl-surveys-title" data-th="Title">
+              Outward Foreign Affiliates Statistics Survey
+            </td>
+            <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">OFATS</td>
+            <td class="table__cell" name="tbl-surveys-select" data-th="select">
+              <button type="button" class="btn btn--secondary btn--small">
+                <span class="btn__inner">Select</span>
+              </button>
+            </td>
+          </tr>
+          <tr class="table__row">
+            <td class="table__cell" name="tbl-surveys-id" data-th="ID">281</td>
+            <td class="table__cell" name="tbl-surveys-title" data-th="Title">
+              Monthly Turnover Survey
+            </td>
+            <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">MTS</td>
+            <td class="table__cell" name="tbl-surveys-select" data-th="select">
+              <button type="button" class="btn btn--secondary btn--small">
+                <span class="btn__inner">Select</span>
+              </button>
+            </td>
+          </tr>
+          <tr class="table__row">
+            <td class="table__cell" name="tbl-surveys-id" data-th="ID">500</td>
+            <td class="table__cell" name="tbl-surveys-title" data-th="Title">
+              Government Research and Development Survey
+            </td>
+            <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">GovERD</td>
+            <td class="table__cell" name="tbl-surveys-select" data-th="select">
+              <button type="button" class="btn btn--secondary btn--small">
+                <span class="btn__inner">Select</span>
+              </button>
+            </td>
+          </tr>
+          <tr class="table__row">
+            <td class="table__cell" name="tbl-surveys-id" data-th="ID">888</td>
+            <td class="table__cell" name="tbl-surveys-title" data-th="Title">
+              Test Survey
+            </td>
+            <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">TST</td>
+            <td class="table__cell" name="tbl-surveys-select" data-th="select">
+              <button type="button" class="btn btn--secondary btn--small">
+                <span class="btn__inner">Select</span>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+{% endblock %}

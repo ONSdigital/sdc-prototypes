@@ -1,0 +1,107 @@
+{% extends "page-templates/_template.njk" %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ pageInfo.rootPath }}/version-5/styles.css"/>
+{% endblock %}
+
+{% set pageConfig = { 
+    'cdn': {
+        'version': '20.0.3'
+    },
+    "title": "Survey data collection",
+    "header": {
+        "logoAlt": "ONS",
+        "logoHref": "/prototypes/sm-categorisation/version-5/00-surveys-list.html"
+    },
+    "serviceLinks": {
+        "classes": "header-service-nav--internal u-mr-s",
+        "ariaLabel": "Site services menu",
+        "ariaListLabel": "Navigation menu",
+        "itemsList": [
+            {
+                "text": "Help",
+                "url": "/prototypes/user-self-serve/version-5/01-message-categories.html"
+            },
+            {
+                "text": "Account",
+                "url": "/prototypes/user-self-serve/version-5/30-my-account.html"
+            },
+            {
+                "text": "Sign out",
+                "url": "#"
+            }
+        ]} 
+} %}
+
+
+{% block pageContent %}
+    {% block preMain %}{% endblock %}
+    <div class="page__container container">
+        <main id="main-content" class="page__main {{ pageClasses }}">
+            {% block main %}{% endblock %}
+        </main>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {% from "components/footer/_macro.njk" import onsFooter %}
+    {{ 
+    onsFooter({
+        "OGLLink": {
+            "pre": "All content is available under the",
+            "link": "Open Government Licence v3.0",
+            "url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+            "post": ", except where otherwise stated"
+        },
+        "cols": [
+            {
+                "title": 'Legal information',
+                "itemsList": [
+                    {
+                        "text": 'Cookies and privacy',
+                        "url": '#'
+                    }
+                ]
+            },
+            {
+                "title": 'About ONS',
+                "itemsList": [
+                    {
+                        "text": 'What we do',
+                        "url": '#'
+                    },
+                    {
+                        "text": 'Contact us',
+                        "url": '/prototypes/user-self-serve/version-5/02-contact-us.html'
+                    },
+                    {
+                        "text": 'Accessibility',
+                        "url": '#'
+                    }
+                ]
+            },
+            {
+                "title": 'Statistics',
+                "itemsList": [
+                    {
+                        "text": 'UK Statistics Authority',
+                        "url": '#'
+                    },
+                    {
+                        "text": 'Release calendar',
+                        "url": '#'
+                    },
+                    {
+                        "text": 'News',
+                        "url": '#'
+                    }
+                ]
+            }
+        ]
+    }) 
+}}
+{% endblock %}
+
+{% block bodyEnd %}
+    <script src="{{ pageInfo.rootPath }}/version-5/scripts/index.js"></script>
+{% endblock %}

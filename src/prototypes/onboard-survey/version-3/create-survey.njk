@@ -1,0 +1,138 @@
+---
+group: RAS/RM - ROps
+title: Overview
+version: 17.0.0
+layout: onboard-survey/views/_master
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+
+{% block main %}
+
+    <h1 name="page-surveys-title">Create new survey</h1>
+    <div class="grid overview">
+        <div class="grid__col col-12@m">
+            <form>
+                <p class="field">
+                    {{ 
+                        onsInput({
+                            "id": "name",
+                            "label": {
+                                "text": "Survey name",
+                                "description": "For example: Monthly Business Survey"
+                            }
+                        }) 
+                    }}
+                </p>
+                <p class="field">
+                    {{ 
+                        onsInput({
+                            "id": "id",
+                            "classes":"input--w-5",
+                            "label": {
+                                "text": "Survey ID",
+                                "description": "For example: 001"
+                            }
+                        }) 
+                    }}
+                </p>
+                <p class="field">
+                    {{ 
+                        onsInput({
+                            "id": "text",
+                            "classes":"input--w-5",
+                            "label": {
+                                "text": "Abbreviation",
+                                "description": "For example: MBS"
+                            }
+                        }) 
+                    }}
+                </p>
+                <p class="field">
+                    {{
+                    onsRadios({
+                        "legend": "Select the legal basis",
+                        "name": "legal",
+                        "radios": [
+                            {
+                                "id": "goverd",
+                                "label": {
+                                    "text": "GovERD"
+                                },
+                                "value": "goverd"
+                            },
+                            {
+                                "id": "sta1947",
+                                "label": {
+                                    "text": "Statistics of Trade Act 1947"
+                                },
+                                "value": "sta1947"
+                            },{
+                                "id": "sta1947beis",
+                                "label": {
+                                    "text": "Statistics of Trade Act 1947 - BEIS"
+                                },
+                                "value": "sta1947beis"
+                            },
+                            {
+                                "id": "volnotstated",
+                                "label": {
+                                    "text": "Voluntary Not Stated"
+                                },
+                                "value": "volnotstated"
+                            },
+                            {
+                                "id": "volbeis",
+                                "label": {
+                                    "text": "Voluntary - BEIS"
+                                },
+                                "value": "volbeis"
+                            }
+                        ]
+                    })
+                }}
+                </p>
+                <p class="field">
+                {{
+                    onsRadios({
+                        "legend": "Select the survey mode",
+                        "name": "legal",
+                        "radios": [
+                            {
+                                "id": "eq",
+                                "label": {
+                                    "text": "Electronic Questionnaire (eQ)"
+                                },
+                                "value": "eq",
+                                "attributes": {
+                                    "data-action-url": "/prototypes/onboard-survey/version-3/eQ/new-survey-list.html"
+                                }
+                            },
+                            {
+                                "id": "seft",
+                                "label": {
+                                    "text": "Secure Electronic File Transfer (SEFT)"
+                                },
+                                "value": "seft",
+                                "attributes": {
+                                    "data-action-url": "/prototypes/onboard-survey/version-3/SEFT/new-survey-list.html"
+                                }
+                            }          
+                        ]
+                    })
+                }}
+                </p>
+                <p class="field">
+                    {{ 
+                            onsButton({
+                                "text": 'Save and continue'
+                            }) 
+                        }}
+                </p>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

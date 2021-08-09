@@ -1,0 +1,177 @@
+---
+group: Components
+title: Password hint
+version: 30.0.0
+layout: password-hint/views/_master
+---
+
+{% from "components/panel/_macro.njk" import onsPanel %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/password/_macro.njk" import onsPassword %}
+
+{% block main %}
+    <div class="grid">
+        <div class="grid__col col-8@m">
+            <h2>Create a password</h2>
+            <div class="field js-password">
+                <div id="message">
+                    <p>Your new password must have:</p>
+                    <dl>
+                        <dt id="length">at least 8 characters
+                            <span class="list__prefix" aria-hidden="true">
+                                <svg class="svg-icon criteria-false" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+                                    <path d='m2.21052632 0 4.7894737 4.7894737 4.78947368-4.7894737 2.2105263 2.21052632-4.7902105 4.79021055 4.7902105 4.78873683-2.2105263 2.2105263-4.79021052-4.78873681-4.78873686 4.78873681-2.21052632-2.2105263 4.7894737-4.78947368-4.7894737-4.7894737z' fill='#d0021b' fill-rule='evenodd'/>
+                                </svg>
+                                <svg class="svg-icon criteria-true" viewBox="0 0 20 16" xmlns="http://www.w3.org/2000/svg">
+                                    <path d='m8.5 13.9-2 2.1-6.5-6.7 2.1-2.2 4.4 4.5 11.4-11.6 2.1 2.2z' fill='#0f8243' fill-rule='evenodd'/>
+                                </svg>
+                            </span>
+                        </dt>
+                        <dd class="u-vh"><span id="psw-length-status">Criteria not met</span></dd>
+
+                        <dt id="uppercase">at least 1 uppercase letter
+                            <span class="list__prefix" aria-hidden="true">
+                                <svg class="svg-icon criteria-false" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+                                    <path d='m2.21052632 0 4.7894737 4.7894737 4.78947368-4.7894737 2.2105263 2.21052632-4.7902105 4.79021055 4.7902105 4.78873683-2.2105263 2.2105263-4.79021052-4.78873681-4.78873686 4.78873681-2.21052632-2.2105263 4.7894737-4.78947368-4.7894737-4.7894737z' fill='#d0021b' fill-rule='evenodd'/>
+                                </svg>
+                                <svg class="svg-icon criteria-true" viewBox="0 0 20 16" xmlns="http://www.w3.org/2000/svg">
+                                    <path d='m8.5 13.9-2 2.1-6.5-6.7 2.1-2.2 4.4 4.5 11.4-11.6 2.1 2.2z' fill='#0f8243' fill-rule='evenodd'/>
+                                </svg>
+                            </span>
+                        </dt>
+                        <dd class="u-vh"><span id="psw-uppercase-status">Criteria not met</span></dd>
+
+                        <dt id="number">at least 1 number
+                            <span class="list__prefix" aria-hidden="true">
+                                <svg class="svg-icon criteria-false" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+                                    <path d='m2.21052632 0 4.7894737 4.7894737 4.78947368-4.7894737 2.2105263 2.21052632-4.7902105 4.79021055 4.7902105 4.78873683-2.2105263 2.2105263-4.79021052-4.78873681-4.78873686 4.78873681-2.21052632-2.2105263 4.7894737-4.78947368-4.7894737-4.7894737z' fill='#d0021b' fill-rule='evenodd'/>
+                                </svg>
+                                <svg class="svg-icon criteria-true" viewBox="0 0 20 16" xmlns="http://www.w3.org/2000/svg">
+                                    <path d='m8.5 13.9-2 2.1-6.5-6.7 2.1-2.2 4.4 4.5 11.4-11.6 2.1 2.2z' fill='#0f8243' fill-rule='evenodd'/>
+                                </svg>
+                            </span>
+                        </dt>
+                        <dd class="u-vh"><span id="psw-number-status">Criteria not met</span></dd>
+
+                        <dt id="symbol">at least 1 symbol (for example: @ &amp; &pound; %)
+                            <span class="list__prefix" aria-hidden="true">
+                                <svg class="svg-icon criteria-false" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+                                    <path d='m2.21052632 0 4.7894737 4.7894737 4.78947368-4.7894737 2.2105263 2.21052632-4.7902105 4.79021055 4.7902105 4.78873683-2.2105263 2.2105263-4.79021052-4.78873681-4.78873686 4.78873681-2.21052632-2.2105263 4.7894737-4.78947368-4.7894737-4.7894737z' fill='#d0021b' fill-rule='evenodd'/>
+                                </svg>
+                                <svg class="svg-icon criteria-true" viewBox="0 0 20 16" xmlns="http://www.w3.org/2000/svg">
+                                    <path d='m8.5 13.9-2 2.1-6.5-6.7 2.1-2.2 4.4 4.5 11.4-11.6 2.1 2.2z' fill='#0f8243' fill-rule='evenodd'/>
+                                </svg>
+                            </span>
+                        </dt>
+                        <dd class="u-vh"><span id="psw-symbol-status">Criteria not met</span></dd>
+                    </dl>
+                </div>
+                <label class="label" for="psw">New password</label>
+                    <span class="checkbox js-password-toggle-wrap checkbox--toggle u-d-no">
+                        <input type="checkbox" onclick="showPassword()" id="password-toggle" class="checkbox__input js-checkbox js-password-toggle" value="" name="show-password">
+                        <label class="checkbox__label  " for="password-toggle" id="password-toggle-label">Show password</label>
+                    </span>
+                <input name="psw" type="password" id="psw" class="input input--text input-type__input u-mt-xs js-password-input"/>
+
+                <!--
+                
+                <div aria-live="polite" class="aria-summary u-mt-s">
+                    <p>Your password still requires: <span class="">at least 8 characters <span class="">at least 1 uppercase letter</span> <span class="">at least 1 number</span> <span class="">at least 1 symbol (for example: @ &amp; &pound; %)</span></p>
+                </div>
+                
+                -->
+
+                <div class="field js-password u-mt-m">
+                    <label class="label  " for="password">Re-type your new password</label>
+                    <input type="password" id="password" class="input input--text input-type__input u-mt-xs js-password-input"/>
+                </div>
+            </div>
+
+            <p class="field">
+                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-8/signed-in/account/02-change-password/02-change-password-confirm.html';">
+                    <span class="btn__inner">Submit</span>
+                </button>
+            </p>
+        </div>
+    </div>
+    <script>
+        var myInput = document.getElementById("psw");
+        var symbol = document.getElementById("symbol");
+        var uppercase = document.getElementById("uppercase");
+        var number = document.getElementById("number");
+        var length = document.getElementById("length");
+
+        var symbolStatus = document.getElementById("psw-symbol-status");
+        var uppercaseStatus = document.getElementById("psw-uppercase-status");
+        var numberStatus = document.getElementById("psw-number-status");
+        var lengthStatus = document.getElementById("psw-length-status");
+
+
+
+    // When the user starts to type something inside the password field
+    myInput.onkeyup = function() {
+        
+        // Validate length
+        if (myInput.value.length >= 8) {
+            lengthStatus.innerHTML = "Criteria met";
+            length.classList.remove("invalid");
+            length.classList.add("valid");
+
+        } else {
+            lengthStatus.innerHTML = "Criteria not met";
+            length.classList.remove("valid");
+            length.classList.add("invalid");
+        }
+
+        // Validate uppercase letters
+        var upperCaseLetters = /[A-Z]/g;
+        if (myInput.value.match(upperCaseLetters)) {
+            uppercaseStatus.innerHTML = "Criteria met";
+            uppercase.classList.remove("invalid");
+            uppercase.classList.add("valid");
+        } else {
+            uppercaseStatus.innerHTML = "Criteria not met";
+            uppercase.classList.remove("valid");
+            uppercase.classList.add("invalid");
+        }
+
+        // Validate symbols
+        var symbols = /[-!@£$%^&*()_+|~=`{}\[\]:";'<>?,.\/]/g;
+        if (myInput.value.match(symbols)) {
+            symbolStatus.innerHTML = "Criteria met";
+            symbol.classList.remove("invalid");
+            symbol.classList.add("valid");
+        } else {
+            symbolStatus.innerHTML = "Criteria not met";
+            symbol.classList.remove("valid");
+            symbol.classList.add("invalid");
+        }
+
+        // Validate numbers
+        var numbers = /[0-9]/g;
+        if (myInput.value.match(numbers)) {
+            numberStatus.innerHTML = "Criteria met";
+            number.classList.remove("invalid");
+            number.classList.add("valid");
+        } else {
+            numberStatus.innerHTML = "Criteria not met";
+            number.classList.remove("valid");
+            number.classList.add("invalid");
+        }
+    }
+    </script>
+
+    <script>
+    function showPassword() {
+        var x = document.getElementById("psw");
+        if (x.type === "password") {
+        x.type = "text";
+        } else {
+        x.type = "password";
+        }
+    }
+    </script>
+
+
+{% endblock %}

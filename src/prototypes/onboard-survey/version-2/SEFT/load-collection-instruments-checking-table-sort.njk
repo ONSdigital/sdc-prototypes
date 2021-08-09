@@ -1,0 +1,371 @@
+---
+group: RAS/RM - ROps
+title: Overview
+version: 17.0.0
+layout: onboard-survey/views/_master
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+{% from "components/input/_macro.njk" import onsInput %}
+
+{% block main %}
+
+    <h1 name="page-surveys-title">Load collection instruments for 001 NEW</h1>
+    <div class="grid overview">
+        <div class="grid__col col-6@m">
+            <p class="field">
+                <label class="label u-fs-m" for="file">Upload SEFT files
+                        <br>
+                    <span class="label__description">File types accepted are .csv, .xls and .xlsx</span>
+                </label>
+                <input type="file" id="file" class="input input--text input-type__input  input--upload input--w-20" accept=".xls,.xlsx"/>
+            </p>
+            <!--<p class="field">
+                <form action="" method="get">
+                    {{ 
+                    onsButton({
+                        "text": 'Add',
+                        "url": 'load-collection-instruments-added.html',
+                        "classes": 'btn--secondary btn--small'
+                    }) 
+                }}
+                </form>
+            </p>-->
+            <!--
+        </div>
+        <div class="grid__col col-4@m push-1@m">
+        -->
+            <h2 class="u-fs-m u-mt-l u-mb-no">Collection instruments</h3>
+    {% from "components/table/_macro.njk" import onsTable %}
+    {{
+        onsTable({
+            "sortable": true,
+            "table_class": " table--sortable",
+            "sort_by": "Sort by",
+            "aria_asc": "ascending",
+            "aria_desc": "descending",
+            "classes": "u-fs-m u-mt-l u-mb-no",
+            "ths": [
+                    {
+                        "value": "File name",
+                        "aria_sort": "none"
+                    },
+                    {
+                        "value": "Status",
+                        "aria_sort": "none"
+                    },
+                    {
+                        "value": "Action",
+                        "aria_sort": "none"
+                    }
+                ],
+                "trs": [
+                    {
+                        "tds": [
+                            {
+                                "value": "001-0873.xlsx"
+                            },
+                            {
+                                "value": "<span class='status status--success'>Ready</span>"
+                            },
+                            {
+                                "value": "RSI"
+                            }
+                        ]
+                    },
+                    {
+                        "tds": [
+                            {
+                                "value": "001-0867.xlsx"
+                            },
+                            {
+                                "value": "<span class='status status--success'>Ready</span>"
+                            },
+                            {
+                                "value": "AIFDI"
+                            }
+                        ]
+                    },
+                    {
+                        "tds": [
+                            {
+                                "value": "001-0255.xlsx"
+                            },
+                            {
+                                "value": "<img src='/prototypes/onboard-survey/img/loading.gif' width='24' height='24'> Checking"
+                            },
+                            {
+                                "value": "BRES"
+                            }
+                        ]
+                    },
+                    {
+                        "tds": [
+                            {
+                                "value": "001-0243.xlsx"
+                            },
+                            {
+                                "value": "<img src='/prototypes/onboard-survey/img/loading.gif' width='24' height='24'> Checking"
+                            },
+                            {
+                                "value": "QBMS"
+                            }
+                        ]
+                    },
+                    {
+                        "tds": [
+                            {
+                                "value": "001-0251.xlsx"
+                            },
+                            {
+                                "value": "<img src='/prototypes/onboard-survey/img/loading.gif' width='24' height='24'> Checking"
+                            },
+                            {
+                                "value": "MSBB"
+                            }
+                        ]
+                    },
+                    {
+                        "tds": [
+                            {
+                                "value": "001-0867.xlsx"
+                            },
+                            {
+                                "value": "<img src='/prototypes/onboard-survey/img/loading.gif' width='24' height='24'> Checking"
+                            },
+                            {
+                                "value": "RSI"
+                            }
+                        ]
+                    },
+                    {
+                        "tds": [
+                            {
+                                "value": "001-0255.xlsx"
+                            },
+                            {
+                                "value": "<img src='/prototypes/onboard-survey/img/loading.gif' width='24' height='24'> Checking"
+                            },
+                            {
+                                "value": "AIFDI"
+                            }
+                        ]
+                    },
+                    {
+                        "tds": [
+                            {
+                                "value": "001-0243.xlsx"
+                            },
+                            {
+                                "value": "<img src='/prototypes/onboard-survey/img/loading.gif' width='24' height='24'> Checking"
+                            },
+                            {
+                                "value": "BRES"
+                            }
+                        ]
+                    },
+                    {
+                        "tds": [
+                            {
+                                "value": "001-0251.xlsx"
+                            },
+                            {
+                                "value": "<img src='/prototypes/onboard-survey/img/loading.gif' width='24' height='24'> Checking"
+                            },
+                            {
+                                "value": "QBMS"
+                            }
+                        ]
+                    },
+                    {
+                        "tds": [
+                            {
+                                "value": "001-0250.xlsx"
+                            },
+                            {
+                                "value": "<img src='/prototypes/onboard-survey/img/loading.gif' width='24' height='24'> Checking"
+                            },
+                            {
+                                "value": "MSBB"
+                            }
+                        ]
+                    }
+                ]
+        })
+    }}
+            <table class="table  table--sortable" data-aria-sort="Sort by" data-aria-asc="ascending" data-aria-desc="descending">
+                <thead class="table__head">
+                    <tr class="table__row">
+                        <th scope="col" class="table__header">File name</th>
+                        <th scope="col" class="table__header">Status</th>
+                        <th scope="col" class="table__header"></th>
+                    </tr>
+                </thead>
+                <tbody class="table__body">
+                    <tr class="table__row">
+                        <td class="table__cell " name="tbl-ci-id" data-th="ID"></td>
+                        <td class="table__cell" data-th="status"></td>
+                        <td class="table__cell u-ta-right">
+                            <form action="manage-collection-instruments.html" method="get">
+                                <button type="submit" class="btn btn--secondary btn--small" id="edit-survey-details-009">
+                                    <span class="btn__inner">Remove</span></button>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell " name="tbl-ci-id" data-th="ID"></td>
+                        <td class="table__cell" data-th="status"><span class="status status--success">Ready</span></td>
+                        <td class="table__cell u-ta-right">
+                            <form action="manage-collection-instruments.html" method="get">
+                                <button type="submit" class="btn btn--secondary btn--small" id="edit-survey-details-009">
+                                    <span class="btn__inner">Remove</span></button>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell " name="tbl-ci-id" data-th="ID"></td>
+                        <td class="table__cell" data-th="status"><img src="/prototypes/onboard-survey/img/loading.gif" width="24" height="24"> Checking</td>
+                        <td class="table__cell u-ta-right">
+                            <form action="manage-collection-instruments.html" method="get">
+                                <button type="submit" class="btn btn--secondary btn--small" id="edit-survey-details-009">
+                                    <span class="btn__inner">Remove</span></button>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell " name="tbl-ci-id" data-th="ID"></td>
+                        <td class="table__cell" data-th="status"><img src="/prototypes/onboard-survey/img/loading.gif" width="24" height="24"> Checking</td>
+                        <td class="table__cell u-ta-right">
+                            <form action="manage-collection-instruments.html" method="get">
+                                <button type="submit" class="btn btn--secondary btn--small" id="edit-survey-details-009">
+                                    <span class="btn__inner">Remove</span></button>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell " name="tbl-ci-id" data-th="ID"></td>
+                        <td class="table__cell" data-th="status"><img src="/prototypes/onboard-survey/img/loading.gif" width="24" height="24"> Checking</td>
+                        <td class="table__cell u-ta-right">
+                            <form action="manage-collection-instruments.html" method="get">
+                                <button type="submit" class="btn btn--secondary btn--small" id="edit-survey-details-009">
+                                    <span class="btn__inner">Remove</span></button>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell " name="tbl-ci-id" data-th="ID"></td>
+                        <td class="table__cell" data-th="status"><img src="/prototypes/onboard-survey/img/loading.gif" width="24" height="24"> Checking</td>
+                        <td class="table__cell u-ta-right">
+                            <form action="manage-collection-instruments.html" method="get">
+                                <button type="submit" class="btn btn--secondary btn--small" id="edit-survey-details-009">
+                                    <span class="btn__inner">Remove</span></button>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell " name="tbl-ci-id" data-th="ID"></td>
+                        <td class="table__cell" data-th="status"><img src="/prototypes/onboard-survey/img/loading.gif" width="24" height="24"> Checking</td>
+                        <td class="table__cell u-ta-right">
+                            <form action="manage-collection-instruments.html" method="get">
+                                <button type="submit" class="btn btn--secondary btn--small" id="edit-survey-details-009">
+                                    <span class="btn__inner">Remove</span></button>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell " name="tbl-ci-id" data-th="ID"></td>
+                        <td class="table__cell" data-th="status"><img src="/prototypes/onboard-survey/img/loading.gif" width="24" height="24"> Checking</td>
+                        <td class="table__cell u-ta-right">
+                            <form action="manage-collection-instruments.html" method="get">
+                                <button type="submit" class="btn btn--secondary btn--small" id="edit-survey-details-009">
+                                    <span class="btn__inner">Remove</span></button>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell " name="tbl-ci-id" data-th="ID"></td>
+                        <td class="table__cell" data-th="status"><img src="/prototypes/onboard-survey/img/loading.gif" width="24" height="24"> Checking</td>
+                        <td class="table__cell u-ta-right">
+                            <form action="manage-collection-instruments.html" method="get">
+                                <button type="submit" class="btn btn--secondary btn--small" id="edit-survey-details-009">
+                                    <span class="btn__inner">Remove</span></button>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell " name="tbl-ci-id" data-th="ID"></td>
+                        <td class="table__cell" data-th="status"><img src="/prototypes/onboard-survey/img/loading.gif" width="24" height="24"> Checking</td>
+                        <td class="table__cell u-ta-right">
+                            <form action="manage-collection-instruments.html" method="get">
+                                <button type="submit" class="btn btn--secondary btn--small" id="edit-survey-details-009">
+                                    <span class="btn__inner">Remove</span></button>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+    <p class="field">
+        {% from "components/pagination/_macro.njk" import onsPagination %}
+        {{
+                onsPagination({
+                    "previous": "Previous",
+                    "next": "Next",
+                    "hideRangeIndicator": true,
+                    "pages": [
+                        { "url": "#", "current": true },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false },
+                        { "url": "#", "current": false }                    ]
+                    })
+                }}
+            </p>
+            <p class="field u-mt-l">
+                {{ 
+                    onsButton({
+                        "text": 'Done',
+                        "url": 'create-collection-exercise-added.html'
+                    }) 
+                }}
+            </p>
+        </div>
+    </div>
+
+{% endblock %}

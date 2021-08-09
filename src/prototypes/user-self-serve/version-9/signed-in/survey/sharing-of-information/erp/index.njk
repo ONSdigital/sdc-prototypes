@@ -1,0 +1,115 @@
+---
+group: RAS/RM - Frontstage
+title: E-commerce Survey
+version: 35.0.3
+layout: user-self-serve/views/version-9/_master-survey-question
+---
+
+{% block preMain %}
+<div class="container">
+    {{
+        onsBreadcrumb({
+            "ariaLabel": 'Previous',
+            "itemsList": [
+                {
+                    "linkClasses": 'js-previous',
+                    "url": pageInfo.parentPath + '/index.html',
+                    "id": 'previous',
+                    "text": 'Previous'
+                }
+            ]
+        })
+    }}
+</div>
+{% endblock %}
+{% block main %}
+    <div class="grid">
+        <div id="main" class="grid__col col-8@m u-pt-no u-pb-no">
+            <form action="{{ pageInfo.rootPath }}/version-9/signed-in/survey/hub/index.html">
+
+            {% call onsQuestion({
+                "legendIsQuestionTitle": true,
+                "classes": 'u-mt-no',
+                "title": 'Does <em class="highlight">ACME Consumer Products</em> use an Enterprise Resource Planning (ERP) software package?'
+            }) %}
+                {{
+                    onsCollapsible({
+                        "id": "collapsible",
+                        "title": "What we mean by “ERP (Business Resource Planning)”",
+                        "titleTag": "h2",
+                        "content": "<p>This is one or a set of software applications that integrate information and processes across several functions within the business, e.g. planning, procurement, sales, marketing, customer relations, finance, or human resources.</p>",
+                        "button": {
+                            "close": "Hide this",
+                            "contextSuffix": "content",
+                            "attributes": {
+                                "aria-hidden": "true"
+                            }
+                        }
+                    })
+                }}
+                {{
+                    onsRadios({
+                        "name": "website",
+                        "dontWrap": true,
+                        "radios": [
+                            {
+                                "id": "yes",
+                                "label": {
+                                    "text": "Yes"
+                                },
+                                "value": "yes"
+                            },
+                            {
+                                "id": "no",
+                                "label": {
+                                    "text": "No"
+                                },
+                                "value": "no"
+                            }
+                        ]
+                    })
+                }}
+            {% endcall %}
+            {{ onsButton({
+                "id": "js-continue",
+                "text": "Save and continue",
+                "classes": "u-mt-xl"
+            }) }}
+            </form>
+            <p class="u-mt-xl"><a href="{{ pageInfo.rootPath }}/version-9/signed-in/survey/hub/index.html" id="js-return-later">Choose another section and return to this later</a></p>
+        </div>
+    </div>
+    <script>
+        var returnLaterLink = document.getElementById('js-return-later');
+        var continueButton = document.getElementById('js-continue');
+
+        returnLaterLink.onclick = function setSectionStatus() {
+            var newSectionStatus = new Object();
+
+            newSectionStatus.bookmark = window.location.pathname;
+            newSectionStatus.status = "started";
+
+            if(sessionStorage.sectionFour) {
+                sessionStorage.removeItem('sectionFour');
+                sectionFour = JSON.parse(sessionStorage.getItem('sectionFour'));
+            } else {
+                sectionFour = [];
+            }
+            var sectionFour = newSectionStatus;
+
+            sessionStorage.setItem('sectionFour', JSON.stringify(sectionFour));
+        }
+
+        continueButton.onclick = function sectionComplete() {
+
+            var newSectionStatus = new Object();
+
+            newSectionStatus.bookmark = '';
+            newSectionStatus.status = "complete";
+
+            var sectionFour = newSectionStatus;
+
+            sessionStorage.setItem('sectionFour', JSON.stringify(sectionFour));
+        }
+    </script>
+{% endblock %}
