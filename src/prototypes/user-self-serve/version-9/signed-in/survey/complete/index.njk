@@ -88,29 +88,19 @@ layout: user-self-serve/views/version-9/_master-survey
     </div>
 
     <script>
-        var warning = document.querySelector('js-timeout-warning');
-        var initialTimer = "0:03";
+        var initialTimer = "45:01";
         var interval = setInterval(function() {
-            var timer = initialTimer.split(':');
-            var minutes = parseInt(timer[0], 10);
-            var seconds = parseInt(timer[1], 10);
-
+        var timer = initialTimer.split(':');
+        var minutes = parseInt(timer[0], 10);
+        var seconds = parseInt(timer[1], 10);
         --seconds;
         minutes = (seconds < 0) ? --minutes : minutes;
         if (minutes < 0) clearInterval(interval);
         seconds = (seconds < 0) ? 59 : seconds;
         seconds = (seconds < 10) ? '0' + seconds : seconds;
-
         $('.countdown-minutes').html(minutes);
         $('.countdown-seconds').html(seconds);
-
-        if (seconds = 0) {
-            warning.classList.add('u-d-no');
-        }
-
         initialTimer = minutes + ':' + seconds;
         }, 1000);
-
-
     </script>
 {% endblock %}
