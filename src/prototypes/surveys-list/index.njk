@@ -1,0 +1,39 @@
+---
+group: RAS/RM - Frontstage
+title: Surveys list
+version: 14.4.0
+layout: surveys-list/views/_index
+---
+
+{% block main %}
+    {% from "components/button/_macro.njk" import onsButton %}
+    <h1>User account creation</h1>
+
+    <div class="grid">
+        <div class="grid__col col-6@m">
+            <ul>
+                <li>
+                    <a href="/prototypes/surveys-list/10-surveys-list.html">Surveys list</a>
+                </li>
+                <!-- <li>
+                    <a href="/prototypes/nudge-emails/version-three/add-nudge-email.html">Schedule nudge email</a>
+                </li>
+                <li>
+                    <a href="/prototypes/nudge-emails/version-three/add-nudge-email-error.html">Add nudge email error</a> A user schedules a nudge email after the return by date 
+                </li>
+                <li>
+                    <a href="/prototypes/nudge-emails/version-three/saved-nudge-email.html">Saved nudge email</a>
+                </li>
+                <li>
+                    <a href="/prototypes/nudge-emails/version-three/add-second-nudge-email.html">Add second nudge email</a>
+                </li>
+                <li>
+                    <a href="/prototypes/nudge-emails/version-three/saved-second-nudge-email.html">Saved second nudge email</a>
+                </li>
+                <li>
+                    <a href="/prototypes/nudge-emails/version-three/saved-return-by-date-error.html">Saved return by date error</a> A user edits the return by date. Nudge emails outside the required date limits have been removed
+                </li> -->
+            </ul>
+        </div>
+    </div>
+{% endblock %}

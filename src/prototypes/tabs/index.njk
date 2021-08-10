@@ -1,0 +1,20 @@
+---
+group: Components
+title: Tabs
+version: 32.0.1
+layout: tabs/views/_no-header-nav
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
+
+{% block main %}
+
+    <div class="grid">
+        <div class="grid__col col-12@m">
+            <p><a href="/prototypes/tabs/header-nav.html">Tabs with header nav</a></p>
+            <p><a href="/prototypes/tabs/no-header-nav.html">Tabs without header nav</a></p>
+        </div>
+    </div>
+
+{% endblock %}

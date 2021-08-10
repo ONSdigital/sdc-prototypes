@@ -1,0 +1,38 @@
+---
+group: RAS/RM - ROps
+title: Reporting unit
+version: 20.0.3
+layout: reporting-unit/views/_index
+---
+
+{% block main %}
+    {% from "components/button/_macro.njk" import onsButton %}
+    <h1>Reporting unit</h1>
+    <p>Redesign of reporting unit index screen</p>
+
+    <div class="grid">
+        <div class="grid__col col-8@m">
+            <h2>Version 5</h2>
+            {{ 
+                onsButton({
+                    "type": 'button',
+                    "text": 'Start',
+                    "classes": 'btn--small u-mb-s',
+                    "url": "/prototypes/reporting-unit/current.html"
+                }) 
+            }}
+            <p>Includes the following</p>
+            <ul class="list ">
+                <li class="list__item "><a href="/prototypes/reporting-unit/current.html">Accordion</a></li>
+                <li class="list__item "><a href="/prototypes/reporting-unit/proposed.html">Interim proposal</a></li>
+                <li class="list__item">Hub and spoke</li>
+                <ul class="list ">
+                    <li class="list__item "><a href="/prototypes/reporting-unit/hub-and-spoke/one-page/index.html">Survey list and respondents on one page</a></li>
+                    <li class="list__item "><a href="/prototypes/reporting-unit/hub-and-spoke/tab/index.html">Survey list and respondents tabs</a></li>
+                </ul>
+                <li class="list__item "><a href="/prototypes/reporting-unit/search.html">Reporting unit search (dual search field)</a></li>
+                <li class="list__item "><a href="/prototypes/reporting-unit/hub-and-spoke/tab/tab-loading.html">Loading indicator</a></li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

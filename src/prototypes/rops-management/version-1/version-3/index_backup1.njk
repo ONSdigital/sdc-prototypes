@@ -1,0 +1,416 @@
+---
+group: RAS/RM - Census ROps
+title: ROps case management
+version: 17.0.0
+layout: rops-management/views/_master
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/metadata/_macro.njk" import onsMetadata %}
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+
+{% block main %}
+
+    {% from "prototypes/rops-management/data/Census_Cases_table.dta" import cases %}
+
+    <ul class="list list--bare">
+        {% for case in cases %}
+            {% if case.id.length > 0 %}
+                <li>{{ case.id }}</li>
+            {% endif %}
+
+            {% if case.event_channel.length > 0 %}
+                <li>{{ case.event_channel }}</li>
+            {% endif %}
+
+            {% if case.event_date.length > 0 %}
+                <li>{{ case.event_date }}</li>
+            {% endif %}
+
+            {% if case.event_type.length > 0 %}
+                <li>{{ case.event_type }}</li>
+            {% endif %}
+
+            {% if case.event_description.length > 0 %}
+                <li>{{ case.event_description }}</li>
+            {% endif %}
+
+            {% if case.oa.length > 0 %}
+                <li>{{ case.oa }}</li>
+            {% endif %}
+
+            {% if case.lad.length > 0 %}
+                <li>{{ case.lad }}</li>
+            {% endif %}
+
+            {% if case.arid.length > 0 %}
+                <li>{{ case.arid }}</li>
+            {% endif %}
+
+            {% if case.lsoa.length > 0 %}
+                <li>{{ case.lsoa }}</li>
+            {% endif %}
+
+            {% if case.msoa.length > 0 %}
+                <li>{{ case.msoa }}</li>
+            {% endif %}
+
+            {% if case.uprn.length > 0 %}
+                <li>{{ case.uprn }}</li>
+            {% endif %}
+
+            {% if case.region.length > 0 %}
+                <li>{{ case.region }}</li>
+            {% endif %}
+
+            {% if case.abpCode.length > 0 %}
+                <li>{{ case.abpCode }}</li>
+            {% endif %}
+
+            {% if case.latitude.length > 0 %}
+                <li>{{ case.latitude }}</li>
+            {% endif %}
+
+            {% if case.postcode.length > 0 %}
+                <li>{{ case.postcode }}</li>
+            {% endif %}
+
+            {% if case.townName.length > 0 %}
+                <li>{{ case.townName }}</li>
+            {% endif %}
+
+            {% if case.estabArid.length > 0 %}
+                <li>{{ case.estabArid }}</li>
+            {% endif %}
+
+            {% if case.estabType.length > 0 %}
+                <li>{{ case.estabType }}</li>
+            {% endif %}
+
+            {% if case.longitude.length > 0 %}
+                <li>{{ case.longitude }}</li>
+            {% endif %}
+
+            {% if case.htcDigital.length > 0 %}
+                <li>{{ case.htcDigital }}</li>
+            {% endif %}
+
+            {% if case.addressType.length > 0 %}
+                <li>{{ case.addressType }}</li>
+            {% endif %}
+
+            {% if case.actionPlanId.length > 0 %}
+                <li>{{ case.actionPlanId }}</li>
+            {% endif %}
+
+            {% if case.addressLevel.length > 0 %}
+                <li>{{ case.addressLevel }}</li>
+            {% endif %}
+
+            {% if case.addressLine1.length > 0 %}
+                <li>{{ case.addressLine1 }}</li>
+            {% endif %}
+
+            {% if case.addressLine2.length > 0 %}
+                <li>{{ case.addressLine2 }}</li>
+            {% endif %}
+
+            {% if case.addressLine3.length > 0 %}
+                <li>{{ case.addressLine3 }}</li>
+            {% endif %}
+
+            {% if case.treatmentCode.length > 0 %}
+                <li>{{ case.treatmentCode }}</li>
+            {% endif %}
+
+            {% if case.fieldOfficerId.length > 0 %}
+                <li>{{ case.fieldOfficerId }}</li>
+            {% endif %}
+
+            {% if case.htcWillingness.length > 0 %}
+                <li>{{ case.htcWillingness }}</li>
+            {% endif %}
+
+            {% if case.organisationName.length > 0 %}
+                <li>{{ case.organisationName }}</li>
+            {% endif %}
+
+            {% if case.ceExpectedCapacity.length > 0 %}
+                <li>{{ case.ceExpectedCapacity }}</li>
+            {% endif %}
+
+            {% if case.fieldCoordinatorId.length > 0 %}
+                <li>{{ case.fieldCoordinatorId }}</li>
+            {% endif %}
+
+            {% if case.collectionExerciseId.length > 0 %}
+                <li>{{ case.collectionExerciseId }}</li>
+            {% endif %}
+
+            {% if case.event_source.length > 0 %}
+                <li>{{ case.event_source }}</li>
+            {% endif %}
+
+            {% if case.event_transaction_id.length > 0 %}
+                <li>{{ case.event_transaction_id }}</li>
+            {% endif %}
+
+            {% if case.rm_event_processed.length > 0 %}
+                <li>{{ case.rm_event_processed }}</li>
+            {% endif %}
+
+            {% if case.uac_qid_link_id.length > 0 %}
+                <li>{{ case.uac_qid_link_id }}</li>
+            {% endif %}
+
+            {% if case.caze_case_id.length > 0 %}
+                <li>{{ case.caze_case_id }}</li>
+            {% endif %}
+
+            {% if case.message_timestamp.length > 0 %}
+                <li>{{ case.message_timestamp }}</li>
+            {% endif %}
+        {% else %}
+            hello
+      {% endfor %}
+    </ul>
+
+    <div class="grid">
+        <div class="grid__col col-12@m">
+            <h1>Case details</h1>
+            <table id="case-details" border="2">
+                <thead>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email Address</th>
+                    <th>City</th>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <h2>Event history</h2>
+
+            <div class="timeline">
+                <ul class="list list--bare">
+                    <li class="list__item u-mb-m">
+                        <h3 class="u-fs-r u-fw-b u-mb-no">Create case sample received</h3>
+                        <p class="u-mb-no">Response management</p>
+                        <p class="u-mb-no time">24 February 2020 at 11.28am</p>
+                        <div id="collapsible-with-save" class="collapsible js-collapsible" open data-btn-close="Hide this" data-save-state="true">
+                            <div class="collapsible__heading js-collapsible-heading">
+                                <div class="collapsible__controls">
+                                    <div class="collapsible__title u-fs-r--b">Details</div>
+                                </div>
+                            </div>
+                            <div id="collapsible-with-save-content" class="collapsible__content js-collapsible-content">
+                                Stuff
+                                <button type="button" class="btn btn--small js-collapsible-button u-d-no btn--secondary">
+                                    <span class="btn__inner js-collapsible-button-inner">Hide this</span>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list__item u-mb-m">
+                        <h3 class="u-fs-r u-fw-b u-mb-no">Create case sample received</h3>
+                        <p class="u-mb-no">Response management</p>
+                        <p class="u-mb-no time">24 February 2020 at 11.28am</p>
+                        <div id="collapsible-with-save" class="collapsible js-collapsible" open data-btn-close="Hide this" data-save-state="true">
+                            <div class="collapsible__heading js-collapsible-heading">
+                                <div class="collapsible__controls">
+                                    <div class="collapsible__title u-fs-r--b">Details</div>
+                                </div>
+                            </div>
+                            <div id="collapsible-with-save-content" class="collapsible__content js-collapsible-content">
+                                Stuff
+                                <button type="button" class="btn btn--small js-collapsible-button u-d-no btn--secondary">
+                                    <span class="btn__inner js-collapsible-button-inner">Hide this</span>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list__item u-mb-m">
+                        <h3 class="u-fs-r u-fw-b u-mb-no">Refusal received for individual on Estab</h3>
+                        <p class="u-mb-no">Contact centre</p>
+                        <p class="u-mb-no time">25 February 2020 at 9.13am</p>
+                        <div id="collapsible-with-save" class="collapsible js-collapsible" open data-btn-close="Hide this" data-save-state="true">
+                            <div class="collapsible__heading js-collapsible-heading">
+                                <div class="collapsible__controls">
+                                    <div class="collapsible__title u-fs-r--b">Details</div>
+                                </div>
+                            </div>
+                            <div id="collapsible-with-save-content" class="collapsible__content js-collapsible-content">
+                                Stuff
+                                <button type="button" class="btn btn--small js-collapsible-button u-d-no btn--secondary">
+                                    <span class="btn__inner js-collapsible-button-inner">Hide this</span>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list__item u-mb-m">
+                        <h3 class="u-fs-r u-fw-b u-mb-no">Refusal received</h3>
+                        <p class="u-mb-no">Field management</p>
+                        <p class="u-mb-no time">25 February 2020 at 9.27am</p>
+                        <div id="collapsible-with-save" class="collapsible js-collapsible" open data-btn-close="Hide this" data-save-state="true">
+                            <div class="collapsible__heading js-collapsible-heading">
+                                <div class="collapsible__controls">
+                                    <div class="collapsible__title u-fs-r--b">Details</div>
+                                </div>
+                            </div>
+                            <div id="collapsible-with-save-content" class="collapsible__content js-collapsible-content">
+                                Stuff
+                                <button type="button" class="btn btn--small js-collapsible-button u-d-no btn--secondary">
+                                    <span class="btn__inner js-collapsible-button-inner">Hide this</span>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list__item u-mb-m">
+                        <h3 class="u-fs-r u-fw-b u-mb-no">Respondent authenticated</h3>
+                        <p class="u-mb-no">Respondent's home</p>
+                        <p class="u-mb-no time">25 February 2020 at 11.33am</p>
+                        <div id="collapsible-with-save" class="collapsible js-collapsible" open data-btn-close="Hide this" data-save-state="true">
+                            <div class="collapsible__heading js-collapsible-heading">
+                                <div class="collapsible__controls">
+                                    <div class="collapsible__title u-fs-r--b">Details</div>
+                                </div>
+                            </div>
+                            <div id="collapsible-with-save-content" class="collapsible__content js-collapsible-content">
+                                Stuff
+                                <button type="button" class="btn btn--small js-collapsible-button u-d-no btn--secondary">
+                                    <span class="btn__inner js-collapsible-button-inner">Hide this</span>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list__item u-mb-m">
+                        <h3 class="u-fs-r u-fw-b u-mb-no">Survey launched</h3>
+                        <p class="u-mb-no">Respondent's home</p>
+                        <p class="u-mb-no time">25 February 2020 at 11.33am</p>
+                        <div id="collapsible-with-save" class="collapsible js-collapsible" open data-btn-close="Hide this" data-save-state="true">
+                            <div class="collapsible__heading js-collapsible-heading">
+                                <div class="collapsible__controls">
+                                    <div class="collapsible__title u-fs-r--b">Details</div>
+                                </div>
+                            </div>
+                            <div id="collapsible-with-save-content" class="collapsible__content js-collapsible-content">
+                                Stuff
+                                <button type="button" class="btn btn--small js-collapsible-button u-d-no btn--secondary">
+                                    <span class="btn__inner js-collapsible-button-inner">Hide this</span>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list__item u-mb-m">
+                        <h3 class="u-fs-r u-fw-b u-mb-no">Respondent authenticated</h3>
+                        <p class="u-mb-no">Respondent's home</p>
+                        <p class="u-mb-no time">3rd March 2020 at 12.01pm</p>
+                        <div id="collapsible-with-save" class="collapsible js-collapsible" open data-btn-close="Hide this" data-save-state="true">
+                            <div class="collapsible__heading js-collapsible-heading">
+                                <div class="collapsible__controls">
+                                    <div class="collapsible__title u-fs-r--b">Details</div>
+                                </div>
+                            </div>
+                            <div id="collapsible-with-save-content" class="collapsible__content js-collapsible-content">
+                                Stuff
+                                <button type="button" class="btn btn--small js-collapsible-button u-d-no btn--secondary">
+                                    <span class="btn__inner js-collapsible-button-inner">Hide this</span>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list__item u-mb-m">
+                        <h3 class="u-fs-r u-fw-b u-mb-no">Survey launched</h3>
+                        <p class="u-mb-no">Respondent's home</p>
+                        <p class="u-mb-no time">3rd March 2020 at 12.01pm</p>
+                        <div id="collapsible-with-save" class="collapsible js-collapsible" open data-btn-close="Hide this" data-save-state="true">
+                            <div class="collapsible__heading js-collapsible-heading">
+                                <div class="collapsible__controls">
+                                    <div class="collapsible__title u-fs-r--b">Details</div>
+                                </div>
+                            </div>
+                            <div id="collapsible-with-save-content" class="collapsible__content js-collapsible-content">
+                                Stuff
+                                <button type="button" class="btn btn--small js-collapsible-button u-d-no btn--secondary">
+                                    <span class="btn__inner js-collapsible-button-inner">Hide this</span>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list__item u-mb-m">
+                        <h3 class="u-fs-r u-fw-b u-mb-no">Respondent authenticated</h3>
+                        <p class="u-mb-no">Respondent's home</p>
+                        <p class="u-mb-no time">3rd March 2020 at 13.12pm</p>
+                        <div id="collapsible-with-save" class="collapsible js-collapsible" open data-btn-close="Hide this" data-save-state="true">
+                            <div class="collapsible__heading js-collapsible-heading">
+                                <div class="collapsible__controls">
+                                    <div class="collapsible__title u-fs-r--b">Details</div>
+                                </div>
+                            </div>
+                            <div id="collapsible-with-save-content" class="collapsible__content js-collapsible-content">
+                                Stuff
+                                <button type="button" class="btn btn--small js-collapsible-button u-d-no btn--secondary">
+                                    <span class="btn__inner js-collapsible-button-inner">Hide this</span>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list__item u-mb-m">
+                        <h3 class="u-fs-r u-fw-b u-mb-no">Respondent authenticated</h3>
+                        <p class="u-mb-no">Respondent's home</p>
+                        <p class="u-mb-no time">3rd March 2020 at 14.52pm</p>
+                        <div id="collapsible-with-save" class="collapsible js-collapsible" open data-btn-close="Hide this" data-save-state="true">
+                            <div class="collapsible__heading js-collapsible-heading">
+                                <div class="collapsible__controls">
+                                    <div class="collapsible__title u-fs-r--b">Details</div>
+                                </div>
+                            </div>
+                            <div id="collapsible-with-save-content" class="collapsible__content js-collapsible-content">
+                                Stuff
+                                <button type="button" class="btn btn--small js-collapsible-button u-d-no btn--secondary">
+                                    <span class="btn__inner js-collapsible-button-inner">Hide this</span>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list__item u-mb-m">
+                        <h3 class="u-fs-r u-fw-b u-mb-no">Survey launched</h3>
+                        <p class="u-mb-no">Respondent's home</p>
+                        <p class="u-mb-no time">3rd March 2020 at 14.53pm</p>
+                        <div id="collapsible-with-save" class="collapsible js-collapsible" open data-btn-close="Hide this" data-save-state="true">
+                            <div class="collapsible__heading js-collapsible-heading">
+                                <div class="collapsible__controls">
+                                    <div class="collapsible__title u-fs-r--b">Details</div>
+                                </div>
+                            </div>
+                            <div id="collapsible-with-save-content" class="collapsible__content js-collapsible-content">
+                                Stuff
+                                <button type="button" class="btn btn--small js-collapsible-button u-d-no btn--secondary">
+                                    <span class="btn__inner js-collapsible-button-inner">Hide this</span>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list__item u-mb-m">
+                        <h3 class="u-fs-r u-fw-b u-mb-no">QID Receipted</h3>
+                        <p class="u-mb-no">Respondent's home</p>
+                        <p class="u-mb-no time">3rd March 2020 at 14.53pm</p>
+                        <div id="collapsible-with-save" class="collapsible js-collapsible" open data-btn-close="Hide this" data-save-state="true">
+                            <div class="collapsible__heading js-collapsible-heading">
+                                <div class="collapsible__controls">
+                                    <div class="collapsible__title u-fs-r--b">Details</div>
+                                </div>
+                            </div>
+                            <div id="collapsible-with-save-content" class="collapsible__content js-collapsible-content">
+                                Stuff
+                                <button type="button" class="btn btn--small js-collapsible-button u-d-no btn--secondary">
+                                    <span class="btn__inner js-collapsible-button-inner">Hide this</span>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

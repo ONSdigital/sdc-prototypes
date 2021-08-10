@@ -1,0 +1,22 @@
+---
+group: RAS/RM - ROps
+title: SDC dashboard
+version: 20.0.3
+layout: SDC-dashboard/views/_index
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/input/_macro.njk" import onsInput %}
+
+{% block main %}
+    <h1>SDC Dashboard</h1>
+    <p>Survey data</p>
+    <ul class="list ">
+        <li class="list__item "><a href="/prototypes/SDC-dashboard/survey-list.html">Survey list</a></li>
+        <li class="list__item "><a href="/prototypes/SDC-dashboard/survey.html">Survey data</a></li>
+    </ul>
+    <div class="grid">
+        <div class="grid__col col-8@m">
+        </div>
+      </div>
+{% endblock %}

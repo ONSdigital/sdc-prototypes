@@ -1,0 +1,45 @@
+/* Remove image from link button */
+.btn--link:not(.btn--secondary) .btn__inner:after,
+.btn--link:not(.btn--secondary):active .btn__inner:after,
+.btn--link:not(.btn--secondary):hover:focus .btn__inner:after,
+.btn--link.btn--secondary .btn__inner:after,
+.btn--link:focus.btn--secondary .btn__inner:after,
+.btn--link.btn--small.btn--secondary .btn__inner:after,
+.btn--link:focus.btn--small.btn--secondary .btn__inner:after {
+  background-image: none;
+  display: none;
+}
+
+.grid {
+  position: relative;
+}
+
+.breadcrumb {
+  padding-top: 0;
+}
+
+.progress {
+  display: flex;
+  justify-content: flex-end;
+  text-align: right;
+  .completed-percentage {
+    padding-right: 3px;
+  }
+  .graph {
+    width: 100px;
+    margin-top: 2px;
+    text-align: left;
+    span {
+      height: 24px;
+    }
+    .completed {
+      background-color: #0f8243;
+    }
+    .in-progress {
+      background-color: #ff600a;
+    }
+    .not-started {
+      background-color: #d0d0d0;
+    }
+  }
+}

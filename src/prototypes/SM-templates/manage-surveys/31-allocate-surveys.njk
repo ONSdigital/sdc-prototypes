@@ -1,0 +1,98 @@
+---
+group: RAS/RM - Frontstage
+title: SM Templates
+version: 14.4.0
+layout: user-self-serve/views/version-1/_master
+---
+
+{% from "components/input/_macro.njk" import onsInput %}
+            {% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
+
+{% block main %}
+
+    <div class="grid">
+        <div class="grid__col col-8@m">
+            <h1>Which surveys do you want to allocate to jane.doe@vcp.com?</h1>
+            <p class="field">
+            {{ 
+                onsCheckboxes({
+                    "legend": "ACME Consumer Products",
+                    "checkboxesLabel": "Select all that apply",
+                    "name": "food",
+                    "checkboxes": [
+                        {
+                            "id": "MBS",
+                            "label": {
+                                "text": "Monthly Business Survey"
+                            },
+                            "value": "mbs"
+                        },
+                        {
+                            "id": "QBS",
+                            "label": {
+                                "text": "Quarterly Business Survey"
+                            },
+                            "value": "QBS"
+                        }
+                    ]
+                }) 
+            }}
+            </p>
+            <p class="field">
+            {{ 
+                onsCheckboxes({
+                    "legend": "ACME Group Ltd",
+                    "checkboxesLabel": "Select all that apply",
+                    "name": "food",
+                    "checkboxes": [
+                        {
+                            "id": "MRES",
+                            "label": {
+                                "text": "Business Register and Employment Survey"
+                            },
+                            "value": "mres"
+                        },
+                        {
+                            "id": "MBSb",
+                            "label": {
+                                "text": "Monthly Business Survey"
+                            },
+                            "value": "mbsb"
+                        },
+                        {
+                            "id": "MWSS",
+                            "label": {
+                                "text": "Monthly Wages and Salary Survey"
+                            },
+                            "value": "mwss"
+                        },
+                        {
+                            "id": "QADCA",
+                            "label": {
+                                "text": "Quarterly Acquisitions and Disposals of Capital Assets"
+                            },
+                            "value": "qadca"
+                        },
+                        {
+                            "id": "QBSb",
+                            "label": {
+                                "text": "Quarterly Business Survey"
+                            },
+                            "value": "QBSb"
+                        }
+                    ]
+                }) 
+            }}
+            </p>
+            <p class="field">
+                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/manage-surveys/32-send-enrolment-codes.html';">
+                    <span class="btn__inner">Continue</span>
+                </button>
+            </p>
+            <p class="field">
+                <a href="{{ pageInfo.rootPath }}/manage-surveys/20-my-account.html">Cancel</a>
+            </p>
+        </div>
+    </div>
+
+{% endblock %}

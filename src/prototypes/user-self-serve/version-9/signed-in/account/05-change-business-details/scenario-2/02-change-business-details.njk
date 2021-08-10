@@ -1,0 +1,141 @@
+---
+group: RAS/RM - Frontstage
+title: User self serve
+version: 35.0.3
+layout: user-self-serve/views/version-9/_master-surveys-account
+---
+
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/text-indent/_macro.njk" import onsTextIndent %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+
+{% block main %}
+
+    <div class="grid">
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/prototypes/user-self-serve/version-9/signed-in/00-surveys-list.html',
+                            "text": 'Surveys'
+                        },
+                        {
+                            "url": '/prototypes/user-self-serve/version-9/signed-in/account/index.html',
+                            "text": 'Account'
+                        }
+                    ]
+                }) 
+            }}
+            <h1>Change business details for BOW TRADING LTD</h1>
+
+            {{
+                onsPanel({
+                    "classes":"u-mb-m",
+                    "body": '<p>Changes to business details may take up to 7 days to process and will not affect current surveys or surveys that you have completed.</p>
+                    <p>If you were expecting a letter from us, and believe you have missed this, please <a href="/prototypes/user-self-serve/version-9/signed-in/account/04-transfer-my-surveys/index.html">contact us</a>.</p>'
+                })
+            }}
+
+            <p>The changes will affect the following surveys:</p>
+            {{
+                onsTextIndent({
+                    text: '<p>Quarterly Acquisitions and Disposal of Capital Assets Survey</p>'
+                })
+            }}
+
+            <p class="field">
+                {{
+                    onsInput({
+                        "id": "text",
+                        "value": "BOW TRADING LTD",
+                        "label": {
+                            "text": "Business name"
+                        }
+                    })
+                }}
+                {{
+                    onsInput({
+                        "id": "text",
+                        "value": "BOW TRADING LTD",
+                        "label": {
+                            "text": "Trading name"
+                        }
+                    })
+                }}
+                                    
+                <h2 id="business-address" class="u-mt-l">Business address</h2>
+                <p><a href="03-select-surveys.html">Choose an address I have already registered</a></p>
+                    {{
+                        onsInput({
+                            "id": "address-1",
+                            "value": "BARRATT HOUSE",
+                            "label": {
+                                "text": "Address line 1"
+                            }
+                        })
+                    }}
+                    {{
+                        onsInput({
+                            "id": "address-2",
+                            "value": "CARTWRIGHT WAY",
+                            "label": {
+                                "text": "Address line 2"
+                            }
+                        })
+                    }}
+                    {{
+                        onsInput({
+                            "id": "address-3",
+                            "value": "FOREST BUSINESS PARK",
+                            "label": {
+                                "text": "Address line 3"
+                            }
+                        })
+                    }}
+                    {{
+                        onsInput({
+                            "id": "address-4",
+                            "value": "BARDON HILL",
+                            "label": {
+                                "text": "Address line 4 (optional)"
+                            }
+                        })
+                    }}
+                    {{
+                        onsInput({
+                            "id": "address-5",
+                            "value": "COALVILLE LEICS",
+                            "label": {
+                                "text": "Address line 5 (optional)"
+                            }
+                        })
+                    }}
+                    {{
+                        onsInput({
+                            "id": "postcode",
+                            "value": "LE67 1UF",
+                            "label": {
+                                "text": "Postcode"
+                            }
+                        })
+                    }}
+            </p>
+
+            <div class="grid grid--flex grid--gutterless grid--vertical-center grid--no-wrap@s u-mt-m u-mb-m">
+                <div class="grid__col">
+                    <button type="button" class="btn btn-group__btn" onclick="location.href='{{ pageInfo.rootPath }}/version-9/signed-in/account/05-change-business-details/scenario-2/05-summary.html';">
+                        <span class="btn__inner">Continue</span>
+                    </button>
+                </div>
+                <div class="grid__col u-ml-m">
+                    <a href="/prototypes/user-self-serve/version-9/signed-in/account/05-change-business-details/scenario-2/01-summary.html">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

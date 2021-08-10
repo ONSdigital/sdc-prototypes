@@ -1,0 +1,60 @@
+---
+group: Components
+title: Upload file
+version: 14.4.0
+layout: upload-file/views/_index
+---
+
+{% block main %}
+
+{% from "components/upload/_macro.njk" import onsUpload %}
+
+<h1>Upload component styling</h1>
+<h2>Current</h2>
+<div class="current">
+    {{
+        onsUpload({
+            "id": "file",
+            "accept": ".xls,.xlsx,.pdf",
+            "label": {
+                "description": "File types accepted are .xls and .xlsx",
+                "text": "Upload a file"
+            }
+        })
+    }}
+</div>
+<br style="height:100px">
+<h2>Proposed</h2>
+<div class="new">
+    {{
+        onsUpload({
+            "id": "file",
+            "accept": ".xls,.xlsx,.pdf",
+            "label": {
+                "description": "File types accepted are .xls and .xlsx",
+                "text": "Upload a file"
+            }
+        })
+    }}
+</div>
+<code><pre>
+// Overrides
+
+.input--upload {
+    border: 1px solid #222;
+}
+
+.input--upload::-webkit-file-upload-button {
+    background: #d0d0d0;
+    border-right: 1px solid #222;
+    color: #222;
+    font-size: 1rem;
+}
+.input--upload:hover::-webkit-file-upload-button {
+    border-right-color: #222;
+}
+
+</pre>
+</code>
+
+{% endblock %}

@@ -1,0 +1,49 @@
+---
+group: RAS/RM - Frontstage
+title: Change business details
+version: 32.0.1
+layout: change-business-details/views/version-2/scenario-4/_master-survey
+---
+
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+
+{% block main %}
+
+    <div class="grid">
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/prototypes/change-business-details/version-2/scenario-4/signed-in/00-surveys-list.html',
+                            "text": 'Surveys'
+                        },
+                        {
+                            "url": '/prototypes/change-business-details/version-2/scenario-4/signed-in/account/index.html',
+                            "text": 'Account'
+                        },
+                        {
+                            "url": '/prototypes/change-business-details/version-2/scenario-4/signed-in/account/02-change-password/01-change-password.html',
+                            "text": 'Change password'
+                        }
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+            <h1>Password change request sent</h1>
+            <p>You will receive an email with instructions to change your password
+            <p>Email not arrived? It might be in your spam folder.</p>
+            <p>If it doesn’t arrive in the next 15 minutes, please call 0300 1234 931</p>
+        
+            <p class="field u-mt-l">
+                <button type="button" class="btn btn-group__btn" onclick="location.href='{{ pageInfo.rootPath }}/version-2/scenario-4/signed-in/00-surveys-list.html';">
+                    <span class="btn__inner">Back to surveys</span>
+                </button>
+            </p>
+        </div>
+    </div>
+
+{% endblock %}

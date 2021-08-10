@@ -1,0 +1,27 @@
+---
+group: RAS/RM - Frontstage
+title: SM Templates
+version: 14.4.0
+layout: user-self-serve/views/version-1/_master
+---
+
+{% from "components/input/_macro.njk" import onsInput %}
+
+{% block main %}
+
+    <div class="grid">
+        <div class="grid__col col-8@m">
+            <h1>Almost done</h1>
+            <p>We’ve sent you an email</p>
+            <p>Once you've received it, you'll need to follow the link in the email to confirm your email address and finish setting up your account</p>
+            <p>Email not arrived? It might be in your spam folder.</p>
+            <p>If it doesn’t arrive in the next 15 minutes, please call 0300 1234 931</p>
+            <p class="field">
+                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/00-surveys-list.html';">
+                    <span class="btn__inner">Back to surveys</span>
+                </button>
+            </p>
+        </div>
+    </div>
+
+{% endblock %}

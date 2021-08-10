@@ -1,0 +1,69 @@
+---
+group: RAS/RM - ROps
+title: SDC dashboard
+version: 20.0.3
+layout: SDC-dashboard/views/_master
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "prototypes/SDC-dashboard/data/mbs.dta" import surveystats %}
+
+{% block main %}
+  <div class="grid">
+    <div class="grid__col col-12@m">
+      <h1 name="page-surveys-title">Choose survey</h1>
+      <table id="tbl-surveys" class="table table--responsive">
+        <thead class="table__head">
+          <tr class="table__row">
+            <th scope="col" class="table__header">ID</th>
+            <th scope="col" class="table__header">Abbreviation</th>
+            <th scope="col" class="table__header">Title</th>
+            <th scope="col" class="table__header">Current period</th>
+            <th scope="col" class="table__header u-ta-right">Progress</th>
+            <th scope="col" class="table__header">
+              <span class="u-vh">Action</th>
+            </tr>
+          </thead>
+          <tbody class="table__body">
+            {% for survey in surveystats %}
+              <tr class="table__row">
+                <td class="table__cell" name="tbl-surveys-id" data-th="ID">009</td>
+                <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Abbreviation">{{ survey.abbreviation }}</td>
+                <td class="table__cell" name="tbl-surveys-title" data-th="Title">{{ survey.surveyTitle }}</td>
+                <td class="table__cell" name="tbl-surveys-abbreviation" data-th="Period">{{ survey.period }}</td>
+                <td class="table__cell u-ta-right" name="tbl-surveys-progress" data-th="Progress">
+
+                  {% if survey.completedPercentage.length > 0 %}
+
+                    <div class="progress">
+                      <div class="completed-percentage">
+                        {{ survey.completedPercentage }}
+                      </div>
+                      <div class="graph">
+                        <span class="completed u-dib" style="width:calc({{ survey.completed }}/{{ survey.sampleSize }}*100px)"><span class="u-vh">Completed: </span></span><span class="in-progress u-dib" style="width:calc({{ survey.inProgress }}/{{ survey.sampleSize }}*100px)"><span class="u-vh">In progress: </span></span><span class="not-started u-dib" style="width:calc({{ survey.notStarted }}/{{ survey.sampleSize }}*100px)"><span class="u-vh">Not started: </span></span>
+                      </div>
+                    </div>
+
+                  {% else %}
+                    No data yet
+                  {% endif %}
+                </td>
+                <td class="table__cell" name="tbl-surveys-choose" data-th="Choose">
+                  {{ 
+                      onsButton({
+                          "type": 'button',
+                          "text": 'Choose',
+                          "classes": 'btn--secondary btn--small',
+                          "url": "survey.html"
+                      }) 
+                  }}
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  {% endblock %}

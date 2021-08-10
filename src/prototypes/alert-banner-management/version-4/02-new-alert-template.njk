@@ -1,0 +1,92 @@
+---
+group: RAS/RM - ROps
+version: 20.0.3
+title: Alert banner management
+layout: alert-banner-management/views/version-4/_master
+---
+
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/input/_macro.njk" import onsInput %}
+
+{% block main %}
+
+    <div class="grid">
+        <div class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '',
+                            "text": 'Surveys'
+                        },
+                        {
+                            "url": '/prototypes/alert-banner-management/version-4/00-create-alert.html',
+                            "text": 'Create an alert'
+                        },
+                        {
+                            "url": '/prototypes/alert-banner-management/version-4/01-manage-alert-templates.html',
+                            "text": 'Manage alert templates'
+                        },
+                        {
+                            "url": '',
+                            "text": 'Create message template',
+                            "current": true
+                        }
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+            <h1>Create message template</h1>
+            <fieldset>
+                {{
+                    onsInput({
+                        "id": "text",
+                        "label": {
+                            "text": "Message template title"
+                        }
+                    })
+                }}
+                <p class="field">
+                    {{
+                        onsTextarea({
+                            "id": "templatemessage",
+                            "name": "templatemessage",
+                            "classes": "input--w-30",
+                            "label": {
+                                "text": "Message"
+                            },
+                            "maxlength": 400,
+                            "charCountSingular": "You have {x} character remaining",
+                            "charCountPlural": "You have {x} characters remaining"
+                        })
+                    }}
+                </p>
+            </fieldset>
+
+            <p class="field">
+                {{ 
+                    onsButton({
+                        "type": 'button',
+                        "text": 'Done',
+                        "url": "/prototypes/alert-banner-management/version-4/01-manage-alert-templates-new.html"
+                    }) 
+                }}
+                {{ 
+                    onsButton({
+                        "type": 'button',
+                        "text": 'Cancel',
+                        "classes": 'btn--secondary btn-group__btn',
+                        "url": "/prototypes/alert-banner-management/version-4/01-manage-alert-templates.html"
+                    }) 
+                }}
+            </p>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

@@ -4,8 +4,16 @@
     <link rel="stylesheet" href="{{ pageInfo.rootPath }}/styles.css" />
 {% endblock %}
 
-{% set page = { 
-    "title": "Survey Data Collection",
+{% set pageConfig = { 
+    "cdn": "14.4.0",
+    "title": "Survey data collection",
+    "wide": true,
+    "header": {
+      "logoAlt": "ONS",
+      "logoHref": "/",
+      "classes": "header--internal header--thin",
+      "logo": "ons-logo-white"
+    },
     "footer": {
         "OGLLink": {
             "pre": 'All content is available under the',
@@ -16,33 +24,6 @@
     }
 } %}
 
-{% block header %}
-<header class="header header--internal header--thin">
-  <div class="header__top" role="banner">
-    <div class="container container--wide">
-      <div class="header__grid-top grid grid--gutterless grid--flex grid--between grid--vertical-center grid--no-wrap">
-        <div class="grid__col col-auto">
-          <img class="header__logo" src="/img/ons-logo-white.svg" alt="Office for National Statistics logo">
-        </div>
-        <div class="header__links grid__col col-auto">
-          <div class="grid__col col-auto u-d-no@xs@m">
-            <nav class="header-service-nav header-service-nav--internal" aria-label="Site services menu">
-              <ul class="header-service-nav__list" aria-label="Navigation menu">
-                <li class="header-service-nav__item">
-                  <a href="" class="header-service-nav__link"></a>
-                </li>
-                <li class="header-service-nav__item">
-                  <a href="" class="header-service-nav__link"></a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</header>
-{% endblock %}
 
 
 {% block pageContent %}

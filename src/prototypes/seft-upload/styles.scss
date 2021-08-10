@@ -1,0 +1,58 @@
+.ce-section {
+  h2 {
+    border-bottom: 2px solid #222222;
+  }
+  label {
+    border-bottom: 2px solid #222222;
+  }
+  .label__description {
+    margin-bottom: 0.4rem;
+  }
+  .table-dates,
+  .table-refinfo {
+    .table__cell,
+    .table__header {
+      vertical-align: middle;
+    }
+  }
+}
+
+// Upload file
+.input--upload {
+  border: 1px solid #222;
+}
+
+.input--upload::-webkit-file-upload-button {
+  background: #d0d0d0;
+  border-right: 1px solid #222;
+  color: #222;
+  font-size: 1rem;
+}
+.input--upload:hover::-webkit-file-upload-button {
+  border-right-color: #222;
+}
+
+/* Spoke styles for hub and spoke patterns and modals */
+.spoke {
+  margin: 0;
+  background-color: #999;
+  &__header {
+    background-color: #eeecec;
+  }
+  &__header-title {
+    margin: 0;
+    padding: 1.5rem 2rem 0.5rem 2rem;
+  }
+  &__body {
+    margin: 0 0 2rem 0;
+    padding: 2rem 2rem 2rem 2rem;
+    background-color: white;
+  }
+}
+.secondary-info {
+  color: #595959;
+  font-weight: 400;
+}
+.current-value::before {
+  content: '-';
+}

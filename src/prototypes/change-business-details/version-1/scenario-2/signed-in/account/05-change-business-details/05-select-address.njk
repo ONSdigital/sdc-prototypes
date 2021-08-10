@@ -1,0 +1,62 @@
+---
+group: RAS/RM - Frontstage
+title: User self serve
+version: 32.0.1
+layout: user-self-serve/views/version-9/_master-survey
+---
+
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+            {% from "components/radios/_macro.njk" import onsRadios %}
+
+{% block main %}
+
+    <div class="grid">
+        <div class="grid__col col-8@m u-pt-no">
+            <h1>Registered addresses</h1>
+            {{
+                onsRadios({
+                    "legend": "Choose an address",
+                    "name": "food",
+                    "radios": [
+                        {
+                            "id": "address-1",
+                            "label": {
+                                "text": "BARRATT HOUSE<br>
+                                        CARTWRIGHT WAY<br>
+                                        FOREST BUSINESS PARK<br>
+                                        BARDON HILL<br>
+                                        COALVILLE LEICS<br>
+                                        LE67 1UF"
+                            },
+                            "value": "address-1"
+                        },
+                        {
+                            "id": "address-2",
+                            "label": {
+                                "text": "INDUSTRY HOUSE<br>                 
+                                    WALNUT TREE CLOSE<br>             
+                                    GUILDFORD<br>                     
+                                    SURREY<br>
+                                    GU1 4SW"
+                            },
+                            "value": "address-2"
+                        }
+                    ]
+                })
+            }}
+            <div class="grid grid--flex grid--gutterless grid--vertical-center grid--no-wrap@s u-mt-m u-mb-m">
+                <div class="grid__col">
+                    <button type="button" class="btn btn-group__btn" onclick="location.href='{{ pageInfo.rootPath }}/version-1/scenario-2/signed-in/account/05-change-business-details/06-change-business-details.html#business-address';">
+                        <span class="btn__inner">Continue</span>
+                    </button>
+                </div>
+                <div class="grid__col u-ml-m">
+                    <a href="/prototypes/change-business-details/version-1/scenario-2/signed-in/account/05-change-business-details/04-change-business-details.html">Cancel</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

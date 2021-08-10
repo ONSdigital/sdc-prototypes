@@ -1,0 +1,140 @@
+---
+group: RAS/RM - ROps
+title: Reporting unit
+version: 20.0.3
+layout: reporting-unit/views/_master-internal
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
+{% from "components/metadata/_macro.njk" import onsMetadata %}
+
+{% block main %}
+
+    <div class="grid">
+
+        <div id="main" class="grid__col col-10@m">
+            {{
+                onsButton({
+                    "type": 'button',
+                    "text": 'Back to surveys',
+                    "classes": 'btn--secondary btn--small',
+                    "url": "/prototypes/reporting-unit/hub-and-spoke/tab/index.html"
+                })
+            }}
+            <h1 id="RU_NAME" class="u-fs-m u-mt-m u-mb-no">SARGOS LTD</h1>
+            <h2 id="SURVEY_NAME" class="u-fs-xxl u-mt-no">017 QSS</h2>
+        </div>
+        <div class="grid__col col-12@m">
+            <section>
+
+                <div class="data-panel-body">
+                    <div class="ru-survey-ces">
+                        <h4 class="u-fs-m">Collection exercises</h4>
+                        <table name="tbl-ce-for-survey" class="table table--dense" summary="Collection exercises for QSS for 50000060765">
+                            <thead class="table__head u-vhx">
+                                <tr class="table__row">
+                                    <th scope="col" class="table__header"> Period </th>
+                                    <th scope="col" class="table__header"> Reporting unit name </th>
+                                    <th scope="col" class="table__header"> Trading as </th>
+                                    <th scope="col" class="table__header"> Region </th>
+                                    <th scope="col" class="table__header"> Status </th>
+                                </tr>
+                            </thead>
+                            <tbody class="table__body">
+                                <tr class="table__row">
+                                    <td name="tbl-ce-period" class="table__cell"> 201909 </td>
+                                    <td name="tbl-ce-company-name" class="table__cell"> ARGOS LTD </td>
+                                    <td name="tbl-ce-company-name" class="table__cell"> ACTIVITY IN ENGLAND SCOTLAND &amp; WALES &#160; </td>
+                                    <td name="tbl-ce-company-region" class="table__cell"> GB </td>
+                                    <td name="tbl-ce-status" class="table__cell"> In progress&nbsp;<a href="/case/50000060765/response-status?survey=QSS&amp;period=201909">Change</a>
+                                    </td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td name="tbl-ce-period" class="table__cell"> 1909 </td>
+                                    <td name="tbl-ce-company-name" class="table__cell"> ARGOS LTD </td>
+                                    <td name="tbl-ce-company-name" class="table__cell"> ACTIVITY IN ENGLAND SCOTLAND &amp; WALES &#160; </td>
+                                    <td name="tbl-ce-company-region" class="table__cell"> GB </td>
+                                    <td name="tbl-ce-status" class="table__cell"> Not started&nbsp;<a href="/case/50000060765/response-status?survey=QSS&amp;period=1909">Change</a>
+                                    </td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td name="tbl-ce-period" class="table__cell"> 1906 </td>
+                                    <td name="tbl-ce-company-name" class="table__cell"> ARGOS LTD </td>
+                                    <td name="tbl-ce-company-name" class="table__cell"> ACTIVITY IN ENGLAND SCOTLAND &amp; WALES &#160; </td>
+                                    <td name="tbl-ce-company-region" class="table__cell"> GB </td>
+                                    <td name="tbl-ce-status" class="table__cell"> Not started&nbsp;<a href="/case/50000060765/response-status?survey=QSS&amp;period=1906">Change</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="ru-survey-respondents u-pt-s">
+                        <h4 class="u-fs-m">Respondents</h4>
+                        <div class="ru-survey-enrolment-code u-pb-s" name="enrolment-code">
+                            <div id="unused-enrolment-code"> Unused enrolment code: <code class="u-fs-r u-ml-s" id="unused-enrolment-code-QSS">x774tp2f9j5f</code>
+                            </div>
+                        </div>
+                        <table name="tbl-respondents-for-survey" class="table table--dense tbl-ru-survey-respondents" summary="Respondents for QSS for 50000060765">
+                            <thead class="table__head">
+                                <tr class="table__row">
+                                    <th scope="col" class="table__header"> Contact details </th>
+                                    <th scope="col" class="table__header"> Account status </th>
+                                    <th scope="col" class="table__header"> Enrolment status </th>
+                                    <th scope="col" class="table__header"> Messages </th>
+                                </tr>
+                            </thead>
+                            <tbody class="table__body">
+                                <tr class="table__row">
+                                    <td name="tbl-respondent-details" class="table__cell">
+                                        <dl class="metadata metadata__list grid grid--gutterless u-cf u-mb-l" title="" aria-label="">
+                                            <dt class="metadata__term grid__col col-4@m u-fs-s u-fw-b">Name:</dt>
+                                            <dd class="metadata__value grid__col col-8@m u-fs-s">Maya Powell</dd>
+                                            <dt class="metadata__term grid__col col-4@m u-fs-s u-fw-b">Email:</dt>
+                                            <dd class="metadata__value grid__col col-8@m u-fs-s">mandy.carney@email.com</dd>
+                                            <dt class="metadata__term grid__col col-4@m u-fs-s u-fw-b">Tel:</dt>
+                                            <dd class="metadata__value grid__col col-8@m u-fs-s">07799 777 000</dd>
+                                            <div>
+                                                <form action="/reporting-units/50000060765/edit-contact-details/d64c90fd-9806-46e2-aec1-ea5e3ceffca1" method="get">
+                                                    <input type="hidden" name="csrf_token" value="ImMxYWI5NGNiNDczN2E4Njg3YjkzYTQyODNiODYwZjZkYTAwYzdmN2Mi.X5GX3A.uouNyRFb7Evq5RnmToWMjiK6Ac4"/>
+                                                    <a href=# id="edit-contact-details-btn-RSI-1"> Edit contact details </a>
+                                                </form>
+                                            </div>
+                                        </dl>
+                                    </td>
+                                    <td name="tbl-respondent-status" class="table__cell">
+                                        <div id="account-status"> Active </div>
+                                        <div></div>
+                                    </td>
+                                    <td name="tbl-enrolment-status" class="table__cell">
+                                        <div id="enrolment-status"> Enabled </div>
+                                        <div>
+                                            <a href="/reporting-units/50000060765/change-enrolment-status?ru_name=ARGOS+LTD&amp;survey_id=75b19ea0-69a4-4c58-8d7f-4458c8f43f5c&amp;survey_name=RSI&amp;respondent_id=d64c90fd-9806-46e2-aec1-ea5e3ceffca1&amp;respondent_first_name=John&amp;respondent_last_name=Payne&amp;business_id=9656f12a-4d43-46f0-8ab4-f834cc50f25a&amp;trading_as=ACTIVITY+IN+ENGLAND+SCOTLAND+%26+WALES&amp;change_flag=DISABLED&amp;tab=reporting_units" id="change-enrolment-status">Disable</a>
+                                        </div>
+                                    </td>
+                                    <td class="table__cell">
+                                        <form action="/messages/create-message" method="post" id="create-message-view">
+                                            <button type="submit" class="btn btn btn--small btn--secondary" id="create-message-button-1" value="create-message-view" name="create-message" >
+                                                <span class="btn__inner">Create message</span>
+                                            </button>
+                                            <input type="hidden" name="ru_ref" value="50000060765">
+                                            <input type="hidden" name="business_id" value="9656f12a-4d43-46f0-8ab4-f834cc50f25a">
+                                            <input type="hidden" name="business" value="ARGOS LTD">
+                                            <input type="hidden" name="survey" value="RSI">
+                                            <input type="hidden" name="survey_id" value="75b19ea0-69a4-4c58-8d7f-4458c8f43f5c">
+                                            <input type="hidden" name="msg_to_name" value="Mason Hewitt">
+                                            <input type="hidden" name="msg_to" value="d64c90fd-9806-46e2-aec1-ea5e3ceffca1">
+                                            <input type="hidden" name="csrf_token" value="ImMxYWI5NGNiNDczN2E4Njg3YjkzYTQyODNiODYwZjZkYTAwYzdmN2Mi.X5GX3A.uouNyRFb7Evq5RnmToWMjiK6Ac4"/>
+                                        </form>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </div>
+
+{% endblock %}

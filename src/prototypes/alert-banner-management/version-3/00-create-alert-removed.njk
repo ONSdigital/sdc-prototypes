@@ -1,0 +1,136 @@
+---
+group: RAS/RM - ROps
+version: 20.0.3
+title: Alert banner management
+layout: alert-banner-management/views/version-3/_master
+---
+
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% block main %}
+
+    <div class="grid">
+        <div class="grid__col col-12@m u-pt-no u-pb-no">
+            <div class="panel panel--success panel--simple u-mb-l">
+                <div class="panel__body">
+                    <p>The alert has been removed</p>
+                </div>
+            </div>
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/prototypes/alert-banner-management/version-3/survey-list.html',
+                            "text": 'Surveys'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'Create an alert',
+                            "current": true
+                        }
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+            <h1>Create a new alert</h1>
+            <form action="{{ pageInfo.parentPath }}/index.html">
+                <fieldset name="Group1">
+                    <legend>
+                    </legend>
+                    <div class="field u-mb-s">
+                        <label class="label " for="select">Message template (optional)</label>
+                        <select name="template" onChange="setTemplate(this);" class="input input--select ">
+                            <option value="0" selected disabled>
+                                Select an option
+                            </option>
+                            <option value="1">
+                                Unexpected outage
+                            </option>
+                            <option value="2">
+                                SDX is not working
+                            </option>
+                            <option value="3">
+                                System performance issues
+                            </option>
+                            <option value="4">
+                                Vacancies survey
+                            </option>
+                        </select>
+                    </div>
+                    <p class="field u-mt-no">
+                        <a href="{{ pageInfo.parentPath }}/01-manage-alert-templates.html">Manage message templates</a>      
+                    </p>
+                    <p class="field">
+                        {{
+                        onsTextarea({
+                            "id": "templatemessage",
+                            "name": "templatemessage",
+                            "classes": "input--w-30",
+                            "label": {
+                                "text": "Message"
+                            },
+                            "maxlength": 400,
+                            "charCountSingular": "You have {x} character remaining",
+                            "charCountPlural": "You have {x} characters remaining"
+                        })
+                    }}
+                    </p>
+                </fieldset>
+            </form>
+
+                <p class="field">
+                    {{ 
+                        onsButton({
+                            "type": 'button',
+                            "text": 'Continue',
+                            "url": "/prototypes/alert-banner-management/version-3/01-publish-alert.html"
+                        }) 
+                    }}
+                    {{ 
+                        onsButton({
+                            "type": 'button',
+                            "text": 'Cancel',
+                            "classes": 'btn--secondary btn-group__btn',
+                            "url": "/prototypes/alert-banner-management/version-3/survey-list.html"
+                        }) 
+                    }}
+                </p>
+        </div>
+    </div>
+    <script>
+        template0 = "";
+        template1 = "We are currently experiencing technical difficulties. Our engineers are investigating and hope to have the service back up shortly.Thank you for your patience.";
+        template2 = "We are carrying out essential maintenance to the service. Please continue to use the system and submit data as normal. It will only affect your response status which may not display as completed until the maintenance has been completed.";
+        template3 = "We are carrying out essential maintenance to the service. During this time there may be an impact on system performance. Please continue to use the system and submit data as normal. If you experience any issues, please try again after the maintenance is completed.";
+        template4 = "The Quarterly Vacancy Survey is unavailable until Tuesday 7 July 2020, as we are currently experiencing some technical difficulties.";
+
+        function setTemplate(t) {
+            var otionValue = t.value;
+            if (otionValue == "0") {
+                document
+                    .getElementById('templatemessage')
+                    .innerHTML = template0;
+            } else if (otionValue == "1") 
+                document
+                    .getElementById('templatemessage')
+                    .innerHTML = template1;
+            else if (otionValue == "2") 
+                document
+                    .getElementById('templatemessage')
+                    .innerHTML = template2;
+            else if (otionValue == "3") 
+                document
+                    .getElementById('templatemessage')
+                    .innerHTML = template3;
+            else if (otionValue == "4") 
+                document
+                    .getElementById('templatemessage')
+                    .innerHTML = template4;
+            };
+    </script>
+{% endblock %}

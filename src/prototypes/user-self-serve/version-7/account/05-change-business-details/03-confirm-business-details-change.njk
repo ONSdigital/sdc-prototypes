@@ -1,0 +1,62 @@
+---
+group: RAS/RM - Frontstage
+title: User account creation
+version: 30.0.0
+layout: user-self-serve/views/version-7/_master-survey
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/text-indent/_macro.njk" import onsTextIndent %}
+{% from "components/metadata/_macro.njk" import onsMetadata %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+
+{% block main %}
+    <div class="grid">
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/prototypes/user-self-serve/version-7/00-surveys-list.html',
+                            "text": 'Surveys'
+                        },
+                        {
+                            "url": '/prototypes/user-self-serve/version-7/30-my-account.html',
+                            "text": 'Account'
+                        }
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+            <h1>Confirm new business details</h1>
+            <h2 class="u-fs-r u-fw-b u-mb-no u-mt-l">Business name</h2>
+            <p>MBI UNITED KINGDOM LTD</p>
+            <h2 class="u-fs-r u-fw-b u-mb-no">Business address</h2>
+            <p>MAILPOINT A1F<br>PO BOX 41<br>NORTH HARBOUR<br>PORTSMOUTH</p>
+            <h2 class="u-fs-r u-fw-b u-mb-no">Postcode</h2>
+            <p>PO6 3AU</p>
+            <h2 class="u-fs-r u-fw-b u-mb-no">Phone number</h2>
+            <p>0103 038 9579</p>
+            <h2 class="u-fs-r u-fw-b u-mb-no">Fax number</h2>
+            <p>0103 038 9580</p>
+            <p>The new address will affect correspondence relating to:
+            <div class="text-indent">
+                <ul class="list list--bare">
+                    <li class="list__item">Monthly Business Survey</li>
+                    <li class="list__item">Annual Survey of Hours and Earnings</li>
+                </ul>
+            </div>
+            <p class="field u-mt-l">
+                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-7/00-surveys-list-new.html';">
+                    <span class="btn__inner">Confirm</span>
+                </button>
+                <button type="submit" class="btn btn--secondary" onclick="location.href='{{ pageInfo.rootPath }}/version-7/account/05-change-business-details/02-change-business-details.html';">
+                    <span class="btn__inner">Cancel</span>
+                </button>
+            </p>
+        </div>
+    </div>
+
+{% endblock %}

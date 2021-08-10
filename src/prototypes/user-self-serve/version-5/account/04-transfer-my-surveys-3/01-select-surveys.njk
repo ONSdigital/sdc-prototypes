@@ -1,0 +1,164 @@
+---
+group: RAS/RM - Frontstage
+title: User account creation
+version: 20.0.3
+layout: user-self-serve/views/version-5/_master-survey
+---
+
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+{% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
+
+{% block main %}
+
+    <div class="grid">
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/prototypes/user-self-serve/version-5/00-surveys-list.html',
+                            "text": 'Surveys'
+                        },
+                        {
+                            "url": '/prototypes/user-self-serve/version-5/30-my-account.html',
+                            "text": 'Account'
+                        },
+                        {
+                            "url": '/prototypes/user-self-serve/version-5/account/04-transfer-my-surveys-3/index.html',
+                            "text": 'Transfer surveys'
+                        },
+                        {
+                            "url": '/prototypes/user-self-serve/version-5/account/04-transfer-my-surveys-3/00-select-business.html',
+                            "text": 'Select business'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'Select surveys',
+                            "current": true
+                        }
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+            <h1>Select surveys to transfer</h1>
+
+            <p class="field u-mt-l">
+                <button type="submit" class="btn btn--secondary btn--small">
+                    <span class="btn__inner">Select all surveys</span>
+                </button>
+            </p>
+
+            {{
+                onsCheckboxes({
+                    "legend": "SATURN HOTELS LTD",
+                    "checkboxesLabel": "",
+                    "name": "SATURN HOTELS LTD",
+                    "checkboxes": [
+                        {
+                            "id": "QCAS",
+                            "label": {
+                                "text": "Quarterly Acquisitions and Disposal of Capital Assets Survey"
+                            },
+                            "value": "QCAS"
+                        }
+                    ]
+                })
+            }}
+
+            {{
+                onsCheckboxes({
+                    "legend": "SATURN HOTELS (WARWICK) LTD",
+                    "checkboxesLabel": "",
+                    "name": "SATURN HOTELS (WARWICK) LTD",
+                    "checkboxes": [
+                        {
+                            "id": "Ecommerce",
+                            "label": {
+                                "text": "E-commerce Survey"
+                            },
+                            "value": "Ecommerce"
+                        },
+                        {
+                            "id": "MBS1",
+                            "label": {
+                                "text": "Monthly Business Survey"
+                            },
+                            "value": "MBS1"
+                        }
+                    ]
+                })
+            }}
+
+            {{
+                onsCheckboxes({
+                    "legend": "SATURN HOTELS (BEDFORD) LIMITED",
+                    "checkboxesLabel": "",
+                    "name": "SATURN HOTELS (BEDFORD) LIMITED",
+                    "checkboxes": [
+                        {
+                            "id": "MBS2",
+                            "label": {
+                                "text": "Monthly Business Survey"
+                            },
+                            "value": "MBS2"
+                        }
+                    ]
+                })
+            }}
+
+            {{
+                onsCheckboxes({
+                    "legend": "SATURN HOTELS (GROUP 1) LIMITED",
+                    "checkboxesLabel": "",
+                    "name": "SATURN HOTELS (GROUP 1) LIMITED",
+                    "checkboxes": [
+                        {
+                            "id": "MBS3",
+                            "label": {
+                                "text": "Monthly Business Survey"
+                            },
+                            "value": "MBS3"
+                        },
+                        {
+                            "id": "UKIS1",
+                            "label": {
+                                "text": "UK Innovation Survey"
+                            },
+                            "value": "UKIS1"
+                        }
+                    ]
+                })
+            }}
+
+            {{
+                onsCheckboxes({
+                    "legend": "SATURN HOTELS (LIVERPOOL) LIMITED",
+                    "checkboxesLabel": "",
+                    "name": "SATURN HOTELS (LIVERPOOL) LIMITED",
+                    "checkboxes": [
+                        {
+                            "id": "UKIS2",
+                            "label": {
+                                "text": "UK Innovation Survey"
+                            },
+                            "value": "UKIS2"
+                        }
+                    ]
+                })
+            }}
+            <p class="field u-mt-l">
+                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-5/account/04-transfer-my-surveys-3/02-email-address.html';">
+                    <span class="btn__inner">Continue</span>
+                </button>
+                <button type="submit" class="btn btn--secondary" onclick="location.href='{{ pageInfo.rootPath }}/version-5/account/04-transfer-my-surveys-3/index.html';">
+                    <span class="btn__inner">Cancel</span>
+                </button>
+            </p>
+
+        </div>
+    </div>
+
+{% endblock %}

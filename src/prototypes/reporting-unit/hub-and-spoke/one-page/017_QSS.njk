@@ -1,0 +1,199 @@
+---
+group: RAS/RM - ROps
+title: Reporting unit
+version: 20.0.3
+layout: reporting-unit/views/_master-internal
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
+{% from "components/metadata/_macro.njk" import onsMetadata %}
+
+{% block main %}
+
+    <div class="grid">
+
+        <div id="main" class="grid__col col-10@m">
+            {{
+                onsButton({
+                    "type": 'button',
+                    "text": 'Back to surveys',
+                    "classes": 'btn--secondary btn--small',
+                    "url": "/prototypes/reporting-unit/hub-and-spoke/one-page/index.html"
+                })
+            }}
+            <h1 id="RU_NAME" class="u-fs-m u-mt-m u-mb-no">SPARKS & MERCER PLC</h1>
+            <h2 id="SURVEY_NAME" class="u-fs-xxl u-mt-no">017 QSS</h2>
+        </div>
+        <div class="grid__col col-12@m">
+            <section>
+                <div class="data-panel-body" style="display: block;">
+                    <div class="ru-survey-ces">
+                        <h4 class="u-fs-m">Collection exercises</h4>
+                        <table name="tbl-ce-for-survey" class="table table--dense" summary="Collection exercises for QSS for 50000001703">
+                            <thead class="table__head u-vhx">
+                                <tr class="table__row">
+                                    <th scope="col" class="table__header">  Period</th>
+                                    <th scope="col" class="table__header">  Reporting unit name</th>
+                                    <th scope="col" class="table__header">  Trading as</th>
+                                    <th scope="col" class="table__header">  Region</th>
+                                    <th scope="col" class="table__header">  Status</th>
+                                </tr>
+                            </thead>
+                            <tbody class="table__body">
+                                <tr class="table__row">
+                                    <td name="tbl-ce-period" class="table__cell">  2009</td>
+                                    <td name="tbl-ce-company-name" class="table__cell">SPARKS & MERCER PLC</td>
+                                    <td name="tbl-ce-company-name" class="table__cell">ALL ACTIVITY IN ENGLAND SCOTLAND AND WALES</td>
+                                    <td name="tbl-ce-company-region" class="table__cell">GB</td>
+                                    <td name="tbl-ce-status" class="table__cell">Completed  <a href="/case/50000001703/response-status?survey=QSS&amp;period=2009">View</a>
+                                    </td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td name="tbl-ce-period" class="table__cell">  2006</td>
+                                    <td name="tbl-ce-company-name" class="table__cell">SPARKS & MERCER PLC</td>
+                                    <td name="tbl-ce-company-name" class="table__cell">ALL ACTIVITY IN ENGLAND SCOTLAND AND WALES</td>
+                                    <td name="tbl-ce-company-region" class="table__cell">GB</td>
+                                    <td name="tbl-ce-status" class="table__cell">Completed  <a href="/case/50000001703/response-status?survey=QSS&amp;period=2006">View</a>
+                                    </td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td name="tbl-ce-period" class="table__cell">  2003</td>
+                                    <td name="tbl-ce-company-name" class="table__cell">SPARKS & MERCER PLC</td>
+                                    <td name="tbl-ce-company-name" class="table__cell">ALL ACTIVITY IN ENGLAND SCOTLAND AND WALES</td>
+                                    <td name="tbl-ce-company-region" class="table__cell">GB</td>
+                                    <td name="tbl-ce-status" class="table__cell">Completed  <a href="/case/50000001703/response-status?survey=QSS&amp;period=2003">View</a>
+                                    </td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td name="tbl-ce-period" class="table__cell">  1912</td>
+                                    <td name="tbl-ce-company-name" class="table__cell">SPARKS & MERCER PLC</td>
+                                    <td name="tbl-ce-company-name" class="table__cell">ALL ACTIVITY IN ENGLAND SCOTLAND AND WALES</td>
+                                    <td name="tbl-ce-company-region" class="table__cell">GB</td>
+                                    <td name="tbl-ce-status" class="table__cell">Completed  <a href="/case/50000001703/response-status?survey=QSS&amp;period=1912">View</a>
+                                    </td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td name="tbl-ce-period" class="table__cell">  1909</td>
+                                    <td name="tbl-ce-company-name" class="table__cell">SPARKS & MERCER PLC</td>
+                                    <td name="tbl-ce-company-name" class="table__cell">ALL ACTIVITY IN ENGLAND SCOTLAND AND WALES</td>
+                                    <td name="tbl-ce-company-region" class="table__cell">GB</td>
+                                    <td name="tbl-ce-status" class="table__cell">Completed  <a href="/case/50000001703/response-status?survey=QSS&amp;period=1909">View</a>
+                                    </td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td name="tbl-ce-period" class="table__cell">  1906</td>
+                                    <td name="tbl-ce-company-name" class="table__cell">SPARKS & MERCER PLC</td>
+                                    <td name="tbl-ce-company-name" class="table__cell">ALL ACTIVITY IN ENGLAND SCOTLAND AND WALES</td>
+                                    <td name="tbl-ce-company-region" class="table__cell">GB</td>
+                                    <td name="tbl-ce-status" class="table__cell">Completed  <a href="/case/50000001703/response-status?survey=QSS&amp;period=1906">View</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="ru-survey-respondents u-pt-s">
+                        <h4 class="u-fs-m">Respondents</h4>
+                        <div class="ru-survey-enrolment-code u-pb-s" name="enrolment-code">
+                            <a href="/reporting-units/50000001703/new_enrolment_code?case_id=9163b860-4e3f-4e96-a773-dd228af7cfcd&amp;collection_exercise_id=93516dcb-67a1-4236-b7aa-876418ba9da7&amp;ru_name=MARKS+%26+SPENCER+PLC+INCL+PER+UNA+GROUP+LTDM%26S+SIMPLY+FOODS+M%26S+SCM+LTD+AND+M%26S+GROUP+PLC&amp;trading_as=ALL+ACTIVITY+IN+ENGLAND+SCOTLAND+AND+WALES&amp;survey_ref=017&amp;survey_name=QSS" id="generate-new-code-QSS">Generate new enrolment code</a>
+                        </div>
+                        <table name="tbl-respondents-for-survey" class="table table--dense tbl-ru-survey-respondents" summary="Respondents for QSS for 50000001703">
+                            <thead class="table__head">
+                                <tr class="table__row">
+                                    <th scope="col" class="table__header">Contact details</th>
+                                    <th scope="col" class="table__header">Account status</th>
+                                    <th scope="col" class="table__header">Enrolment status</th>
+                                    <th scope="col" class="table__header">Messages</th>
+                                </tr>
+                            </thead>
+                            <tbody class="table__body">
+                                <tr class="table__row">
+                                    <td name="tbl-respondent-details" class="table__cell">
+                                        <dl class="metadata metadata__list grid grid--gutterless u-cf u-mb-xs" title="" aria-label="">
+                                            <dt class="metadata__term grid__col col-4@m u-fs-s u-fw-b">Name:</dt>
+                                            <dd class="metadata__value grid__col col-8@m u-fs-s">Aidan Norton</dd>
+                                            <dt class="metadata__term grid__col col-4@m u-fs-s u-fw-b">Email:</dt>
+                                            <dd class="metadata__value grid__col col-8@m u-fs-s">aidan.norton@sparks-and-mercer.com</dd>
+                                            <dt class="metadata__term grid__col col-4@m u-fs-s u-fw-b">Tel:</dt>
+                                            <dd class="metadata__value grid__col col-8@m u-fs-s">0203 4356 7890</dd>
+                                        </dl>
+                                        <div><a href="#" id="edit-contact-details-btn-QSS-1"> Edit contact details </a></div>
+                                    </td>
+                                    <td name="tbl-respondent-status" class="table__cell">
+                                        <div id="account-status">      Active  </div>
+                                        <div></div>
+                                    </td>
+                                    <td name="tbl-enrolment-status" class="table__cell">
+                                        <div id="enrolment-status">  Enabled</div>
+                                        <div>
+                                            <a href="/reporting-units/50000001703/change-enrolment-status?ru_name=MARKS+%26+SPENCER+PLC+INCL+PER+UNA+GROUP+LTDM%26S+SIMPLY+FOODS+M%26S+SCM+LTD+AND+M%26S+GROUP+PLC&amp;survey_id=700175aa-1831-4985-b4ff-c4a5a979944e&amp;survey_name=QSS&amp;respondent_id=27aabfe7-de56-4a3a-9562-978d8a327179&amp;respondent_first_name=Daniel&amp;respondent_last_name=Roxbury&amp;business_id=8d9373e2-dc04-40e7-aac4-16138630c5f5&amp;trading_as=ALL+ACTIVITY+IN+ENGLAND+SCOTLAND+AND+WALES&amp;change_flag=DISABLED&amp;tab=reporting_units" id="change-enrolment-status">Disable</a>
+                                        </div>
+                                    </td>
+                                    <td class="table__cell">
+                                        <form action="/messages/create-message" method="post" id="create-message-view">
+                                            <button type="submit" class="btn btn btn--small btn--secondary" id="create-message-button-1" value="create-message-view" name="create-message">
+                                                <span class="btn__inner">Create message</span>
+                                            </button>
+                                            <input type="hidden" name="ru_ref" value="50000001703">
+                                            <input type="hidden" name="business_id" value="8d9373e2-dc04-40e7-aac4-16138630c5f5">
+                                            <input type="hidden" name="business" value="MARKS &amp; SPENCER PLC INCL PER UNA GROUP LTDM&amp;S SIMPLY FOODS M&amp;S SCM LTD AND M&amp;S GROUP PLC">
+                                            <input type="hidden" name="survey" value="QSS">
+                                            <input type="hidden" name="survey_id" value="700175aa-1831-4985-b4ff-c4a5a979944e">
+                                            <input type="hidden" name="msg_to_name" value="Daniel Roxbury">
+                                            <input type="hidden" name="msg_to" value="27aabfe7-de56-4a3a-9562-978d8a327179">
+                                            <input type="hidden" name="csrf_token" value="">
+                                        </form>
+                                    </td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td name="tbl-respondent-details" class="table__cell">
+                                        <dl class="metadata metadata__list grid grid--gutterless u-cf u-mb-xs" title="" aria-label="">
+                                            <dt class="metadata__term grid__col col-4@m u-fs-s u-fw-b">Name:</dt>
+                                            <dd class="metadata__value grid__col col-8@m u-fs-s">Christopher Holloway</dd>
+                                            <dt class="metadata__term grid__col col-4@m u-fs-s u-fw-b">Email:</dt>
+                                            <dd class="metadata__value grid__col col-8@m u-fs-s">christopher.holloway@sparks-and-mercer.com</dd>
+                                            <dt class="metadata__term grid__col col-4@m u-fs-s u-fw-b">Tel:</dt>
+                                            <dd class="metadata__value grid__col col-8@m u-fs-s">03320 123 456</dd>
+                                        </dl>
+                                        <div>
+                                            <form action="" method="get">
+                                                <a href="#" id="edit-contact-details-btn-QSS-2"> Edit contact details </a>
+                                            </form>
+                                        </div>
+                                    </td>
+                                    <td name="tbl-respondent-status" class="table__cell">
+                                        <div id="account-status">      Active  </div>
+                                        <div></div>
+                                    </td>
+                                    <td name="tbl-enrolment-status" class="table__cell">
+                                        <div id="enrolment-status">  Enabled</div>
+                                        <div>
+                                            <a href="/reporting-units/50000001703/change-enrolment-status?ru_name=MARKS+%26+SPENCER+PLC+INCL+PER+UNA+GROUP+LTDM%26S+SIMPLY+FOODS+M%26S+SCM+LTD+AND+M%26S+GROUP+PLC&amp;survey_id=700175aa-1831-4985-b4ff-c4a5a979944e&amp;survey_name=QSS&amp;respondent_id=0badddf2-37d8-4487-856d-43bb43f0c618&amp;respondent_first_name=Martyn&amp;respondent_last_name=Pollitt&amp;business_id=8d9373e2-dc04-40e7-aac4-16138630c5f5&amp;trading_as=ALL+ACTIVITY+IN+ENGLAND+SCOTLAND+AND+WALES&amp;change_flag=DISABLED&amp;tab=reporting_units" id="change-enrolment-status">Disable</a>
+                                        </div>
+                                    </td>
+                                    <td class="table__cell">
+                                        <form action="/messages/create-message" method="post" id="create-message-view">
+                                            <button type="submit" class="btn btn btn--small btn--secondary" id="create-message-button-2" value="create-message-view" name="create-message">
+                                                <span class="btn__inner">Create message</span>
+                                            </button>
+                                            <input type="hidden" name="ru_ref" value="50000001703">
+                                            <input type="hidden" name="business_id" value="8d9373e2-dc04-40e7-aac4-16138630c5f5">
+                                            <input type="hidden" name="business" value="MARKS &amp; SPENCER PLC INCL PER UNA GROUP LTDM&amp;S SIMPLY FOODS M&amp;S SCM LTD AND M&amp;S GROUP PLC">
+                                            <input type="hidden" name="survey" value="QSS">
+                                            <input type="hidden" name="survey_id" value="700175aa-1831-4985-b4ff-c4a5a979944e">
+                                            <input type="hidden" name="msg_to_name" value="Martyn Pollitt">
+                                            <input type="hidden" name="msg_to" value="0badddf2-37d8-4487-856d-43bb43f0c618">
+                                            <input type="hidden" name="csrf_token" value="IjJkNTYzYTRjNWM5OTI4MDc1ZGQxNmI4YzU3M2FlNGVhZjFmNjA3N2Mi.X5g2hw.GN6XZO4hO9fjbsnVkzzzhDR0XQU">
+                                        </form>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </div>
+
+{% endblock %}

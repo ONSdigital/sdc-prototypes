@@ -1,0 +1,71 @@
+---
+group: RAS/RM - Frontstage
+title: User account creation
+version: 20.0.3
+layout: user-self-serve/views/version-5/_master-survey
+---
+
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+{% from "components/lists/_macro.njk" import onsList %}
+
+{% block main %}
+
+    <div class="grid">
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/prototypes/user-self-serve/version-5/00-surveys-list.html',
+                            "text": 'Surveys'
+                        },
+                        {
+                            "url": '/prototypes/user-self-serve/version-5/30-my-account.html',
+                            "text": 'Account'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'Change business details',
+                            "current": true
+                        }
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+            <h1>Change business details</h1>
+            <p class="field">
+                Use this service to change your business name, address, telephone and fax number or industry. Any changes to business details will not be applied to any surveys currently in progress
+            </p>
+
+            <h2 class="u-mt-m">What happens?</h2>
+            {{
+                onsList({
+                    "itemsList": [
+                        {
+                            "text": 'Select which business details you want to change'
+                        },
+                        {
+                            "text": 'Confirm which surveys will be affected'
+                        },
+                        {
+                            "text": 'We’ll notify you when we have confirmed the new details'
+                        }
+                    ]
+                })
+            }}
+
+            <p class="field u-mt-l">
+                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-5/account/05-change-business-details/01-select-business.html';">
+                    <span class="btn__inner">Continue</span>
+                </button>
+                <button type="submit" class="btn btn--secondary" onclick="location.href='{{ pageInfo.rootPath }}/version-5/30-my-account.html';">
+                    <span class="btn__inner">Cancel</span>
+                </button>
+            </p>
+        </div>
+    </div>
+
+{% endblock %}

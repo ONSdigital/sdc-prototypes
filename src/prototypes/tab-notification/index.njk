@@ -1,0 +1,103 @@
+---
+group: Components
+title: Tab notification
+version: 14.4.0
+layout: tab-notification/views/_index
+---
+
+{% block main %}
+
+    {% from "components/upload/_macro.njk" import onsUpload %}
+
+    <h1>Tab notification</h1>
+    <div class="container navigation-tabs">
+        <ul class="navigation-tabs-component" style="list-style-type:none">
+            <li class="navigation-tabs__item navigation-tabs__item--primary
+                  navigation-tabs__item--active ">
+                <a id="SURVEY_TODO_TAB" href="/surveys/todo" class="navigation-tabs__tab
+                     navigation-tabs__tab--active ">To do</a>
+            </li>
+            <li class="navigation-tabs__item navigation-tabs__item--primary
+                  ">
+                <a id="SURVEY_HISTORY_TAB" href="/surveys/history" class="navigation-tabs__tab
+                    ">History</a>
+            </li>
+            <li class="navigation-tabs__item navigation-tabs__item--primary
+                 ">
+                <a id="SURVEY_MESSAGES_TAB" href="/secure-message/threads" class="navigation-tabs__tab
+                    ">Messages <span class="notification-badge">32</span></a>
+            </li>
+        </ul>
+    </div>
+    <code>
+        <pre>
+ .navigation-tabs {
+  margin-bottom: 27px;
+  margin-bottom: 1.5rem;
+  padding: 0;
+  list-style-type: none;
+  border-bottom: 1px solid #555;
+} </pre>
+<span style="display:inline-block;background:#ffff00">
+.navigation-tabs .notification-badge {<br>
+&nbsp;&nbsp;display: inline-block;<br>
+&nbsp;&nbsp;min-width: 28px;<br>
+&nbsp;&nbsp;padding: 0px 4px 0 3px;<br>
+&nbsp;&nbsp;margin-left: 2px;<br>
+&nbsp;&nbsp;border-radius: 16px;<br>
+&nbsp;&nbsp;color: #fff;<br>
+&nbsp;&nbsp;background: #4263c2;<br>
+&nbsp;&nbsp;font-weight: 600;<br>
+&nbsp;&nbsp;text-align: center;<br>
+&nbsp;&nbsp;white-space: nowrap;<br>
+}
+</span>
+ <pre>
+.navigation-tabs:after {
+  content: '.';
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+.navigation-tabs-component {
+  padding: 0;
+  margin: 0;
+}
+.navigation-tabs .navigation-tabs__item {
+  margin-bottom: 0;
+  margin-left: 10px;
+  padding: 9px 18px 0;
+  padding: 0.5rem 1rem -0.506rem;
+  border: 1px solid transparent;
+  border-radius: 0.3rem;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom: none;
+}
+.navigation-tabs .navigation-tabs__item .navigation-tabs__tab {
+  margin-bottom: 0;
+  display: block;
+}
+.navigation-tabs .navigation-tabs__item.navigation-tabs__item--primary {
+  float: left;
+}
+.navigation-tabs .navigation-tabs__item.navigation-tabs__item--secondary {
+  float: right;
+}
+.navigation-tabs .navigation-tabs__item.navigation-tabs__item--active {
+  margin-bottom: -1px;
+  padding-bottom: 8px;
+  border-color: #555;
+  border-bottom: 1px solid #fff;
+}
+.no-js .hide-if-no-js {
+  display: none;
+}
+       
+        
+        </pre>
+    </code>
+
+{% endblock %}

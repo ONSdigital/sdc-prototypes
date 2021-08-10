@@ -1,0 +1,93 @@
+---
+group: RAS/RM - Frontstage
+title: SM Attachments
+version: 17.0.0
+layout: SM-attachments/views/_master-ext-messages
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+{% from "components/upload/_macro.njk" import onsUpload %}
+
+{% block main %}
+    <script src="fine-uploader/fine-uploader.min.js"></script>
+    <div class="grid">
+        <div class="grid__col col-8@m u-pt-no">
+            <section role="region" aria-label="Conversation: BRES 2017 clarification required for Bolts &amp; Ratchets Ltd">
+                <h1 class="u-fs-l">
+                    <span class="u-vh">Subject: </span>BRES 2017 clarification required for Bolts &amp; Ratchets Ltd</h1>
+                <dl class="metadata metadata__list grid grid--gutterless u-cf u-mb-l" title="Information about the survey and respondant" aria-label="Information about the survey and respondant">
+                    <dt class="metadata__term grid__col col-3@m">Survey:</dt>
+                    <dd class="metadata__value grid__col col-9@m">Bricks &amp; Blocks</dd>
+                    <dt class="metadata__term grid__col col-3@m">RU Ref:</dt>
+                    <dd class="metadata__value grid__col col-9@m">49900000118</dd>
+                    <dt class="metadata__term grid__col col-3@m">Business:</dt>
+                    <dd class="metadata__value grid__col col-9@m">Bolts &amp; Ratchets Ltd.</dd>
+                </dl>
+                <div class="message message--sent">
+                    <div class="message__head">
+                        <dl class="message__metadata">
+                            <dt class="message__term u-fw-b">From:</dt>
+                            <dd class="message__value u-fw-b">ONS surveys</dd>
+                            <br>
+                            <dt class="message__term u-fs-s">Sent:</dt>
+                            <dd class="message__value u-fs-s">Today at 12:56</dd>
+                        </dl>
+                    </div>
+                    <div class="message__body">
+                        <p>Dear Jacky<br><br>Thanks for returning the BRES 2017 spreadsheet for Bolts &amp; Ratchets. I wonder if I could clarify employee figures for two of the sites, as they’re very different to last year’s figures.
+                  The sites are:<br>Macclesfield<br>
+                  2015: 45 - 2017: 1<br>and Skipton<br>
+                  2015: 11 - 2017: 183<br>Are these figures correct?<br>
+                            <br>
+                  Many thanks<br>
+                  David Cleere<br>
+                  BRES Survey Team</p>
+                    </div>
+                </div>
+                <p class="field">
+                    <label class="label" for="reply">Reply</label>
+                    <textarea id="reply" class="input input--textarea  " name="reply" rows="8"></textarea>
+                </p>
+            </section>
+
+            <p class="field">
+                {{
+                onsUpload({
+                    "id": "file",
+                    "accept": ".xls,.xlsx,.pdf",
+                    "label": {
+                        "description": "File types accepted are .xls and .xlsx",
+                        "text": "Add attachment"
+                    }
+                })
+            }}
+            </p>
+
+            <p class="field u-mt-l">
+                <div class="btn-group">
+                    {{ 
+                        onsButton({
+                            "type": 'button',
+                            "text": 'Send message',
+                            "classes": 'btn-group__btn',
+                            "url": "/prototypes/SM-attachments/10-message-sent.html"
+                        }) 
+                    }}
+                    {{ 
+                        onsButton({
+                            "type": 'button',
+                            "text": 'Cancel',
+                            "classes": 'btn--secondary btn-group__btn',
+                            "url": "/prototypes/SM-attachments/00-surveys-list.html"
+                        }) 
+                    }}
+                </div>
+            </p>
+        </div>
+    </div>
+
+
+{% endblock %}

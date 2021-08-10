@@ -1,0 +1,69 @@
+---
+group: RAS/RM - Frontstage
+title: User account creation
+version: 20.0.3
+layout: user-account-creation/views/version-4/_master
+---
+
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+{% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
+
+{% block main %}
+
+    <div class="grid">
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/prototypes/user-account-creation/version-4/00-surveys-list.html',
+                            "text": 'Surveys'
+                        },
+                        {
+                            "url": '/prototypes/user-account-creation/version-4/30-my-account.html',
+                            "text": 'Account'
+                        },
+                        {
+                            "url": '/prototypes/user-account-creation/version-4/account/04-transfer-my-surveys-1/index.html',
+                            "text": 'Transfer surveys'
+                        },
+                        {
+                            "url": '/prototypes/user-account-creation/version-4/account/04-transfer-my-surveys-1/01-select-surveys.html',
+                            "text": 'Select surveys to transfer'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'Send instructions',
+                            "current": true
+                        }
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+            <h1>Send instructions</h1>
+
+            <p>We will send an email to <b>joe.bloggs@acme.com</b> with instructions to access the following surveys:</p>
+            <h2 class="u-fs-m">HEGGLES & STRUDRICK LIMITED</h2>
+            <div class="text-indent">
+                <ul class="list list--bare">
+                    <li>Annual Inward Foreign Direct Investment Survey</li>
+                </ul>
+            </div> 
+            <div class="grid grid--flex grid--gutterless grid--vertical-center grid--no-wrap@s u-mt-m u-mb-m">
+        <div class="grid__col">
+          <button type="button" class="btn btn-group__btn" onclick="location.href='{{ pageInfo.rootPath }}/version-4/account/04-transfer-my-surveys-1/04-confirmation.html';">
+                    <span class="btn__inner">Send</span>
+                </button>
+                
+                </div>
+                <div class="grid__col u-ml-m">
+                    <a href="/prototypes/user-account-creation/version-4/account/04-transfer-my-surveys/02-email-address.html">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

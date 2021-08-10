@@ -1,0 +1,247 @@
+---
+group: RAS/RM - ROps
+title: SEFT Uploads
+version: 14.4.0
+layout: seft-upload/views/_master
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/upload/_macro.njk" import onsUpload %}
+{% from "components/metadata/_macro.njk" import onsMetadata %}
+
+{% block main %}
+
+    <div class="grid">
+        <div class="grid__col col-8@m">
+            <div class="panel panel--error u-mb-l">
+                <div class="panel__header">
+                    <div class="panel__title u-fs-r--b">This page has an error</div>
+                </div>
+                <div class="panel__body">
+                    <p>This <strong>must be corrected</strong> to continue.</p>
+                    <ul class="list list--bare">
+                        <li class="list__item ">
+                            1) <a href="#container-test-number" class="list__link js-inpagelink">A file with the name 11110000001.xlsx has already been uploaded. </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid__col col-12@m">
+            <div class="pl-grid-col">
+                <h1 name="page-ce-title">MBS 1912</h1>
+                {{ 
+            onsMetadata({
+                "metadataLabel": "",
+                "termCol": "2",
+                "descriptionCol": "10",
+                "itemsList": [
+                    {
+                        "term": "Status:",
+                        "descriptions": [ 
+                            {
+                                "description": "Scheduled"
+                            }
+                        ]
+                    }                                                    
+                ]
+            }) 
+        }}
+            </div>
+        </div>
+
+        <div class="grid__col col-6@m">
+            <div class="pl-grid-col">
+                <section class="ce-section ce-events">
+                    <h2 class="u-fs-r--b u-pt-m u-mb-no">Dates</h2>
+                    <table class="table table--dense table-dates" summary="Dates for this collection exercise">
+                        <thead class="table__head u-vh">
+                            <tr class="table__row">
+                                <th scope="col" class="table__header tbl-ce-label">Event</th>
+                                <th scope="col" class="table__header tbl-ce-value">Date</th>
+                                <th scope="col" class="table__header tbl-ce-status">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table__body">
+                            <tr class="table__row">
+                                <td class="table__cell tbl-ce-label">MPS (Main print selection)</td>
+                                <td class="table__cell tbl-ce-value ce-event-date" name="mps-date">Thursday <em>12 Dec 2019</em> 00:00</td>
+                                <td class="table__cell tbl-ce-status tbl-ce-action">
+                                    <button type="button" class="btn btn--secondary btn--small">
+                                        <span class="btn__inner">Edit</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="table__row">
+                                <td class="table__cell tbl-ce-label">Go live</td>
+                                <td class="table__cell tbl-ce-value ce-event-date" name="go-live-date">Friday <em>13 Dec 2019</em> 00:00</td>
+                                <td class="table__cell tbl-ce-status tbl-ce-action">
+                                    <button type="button" class="btn btn--secondary btn--small">
+                                        <span class="btn__inner">Edit</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="table__row">
+                                <td class="table__cell tbl-ce-label">Return by</td>
+                                <td class="table__cell tbl-ce-value ce-event-date" name="return-by-date">Tuesday <em>07 Jan 2020</em> 00:00</td>
+                                <td class="table__cell tbl-ce-status tbl-ce-action">
+                                    <button type="button" class="btn btn--secondary btn--small">
+                                        <span class="btn__inner">Edit</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="table__row">
+                                <td class="table__cell tbl-ce-label">First reminder</td>
+                                <td class="table__cell tbl-ce-value ce-event-date" name="first-reminder-date">Wednesday <em>08 Jan 2020</em> 00:00</td>
+                                <td class="table__cell tbl-ce-status tbl-ce-action">
+                                    <button type="button" class="btn btn--secondary btn--small">
+                                        <span class="btn__inner">Edit</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="table__row">
+                                <td class="table__cell tbl-ce-label">Second reminder</td>
+                                <td class="table__cell tbl-ce-value ce-event-date" name="second-reminder-date"></td>
+                                <td class="table__cell tbl-ce-status tbl-ce-action">
+                                    <button type="button" class="btn btn--secondary btn--small">
+                                        <span class="btn__inner">Add</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="table__row">
+                                <td class="table__cell tbl-ce-label">Exercise end</td>
+                                <td class="table__cell tbl-ce-value ce-event-date" name="exercise-end-date">Monday <em>28 Feb 2022</em> 00:00</td>
+                                <td class="table__cell tbl-ce-status tbl-ce-action">
+                                    <button type="button" class="btn btn--secondary btn--small">
+                                        <span class="btn__inner">Edit</span>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="field">
+                        <button type="submit" class="btn btn--secondary btn--small btn--nudge" onclick="location.href='{{ pageInfo.rootPath }}/version-three/add-nudge-email.html';">
+                            <span class="btn__inner">Schedule a nudge email</span>
+                        </button>
+                    </p>
+                </section>
+                <section id="section-sample" class="ce-section u-mt-xl">
+                    <form id="form-load-sample" method="post" action="" class="form" enctype="multipart/form-data">
+                        <p class="field">
+                            <p class="field">
+                                <label class="label u-mb-s" for="file">Upload a sample</label>
+
+                                <span class="label__description">Choose a sample file to check details before loading</span>
+
+                                <input type="file" id="file" class="input input--text input-type__input input--upload" accept=".xls,.xlsx,.pdf"/>
+                            </p>
+                        </p>
+                        <button type="submit" class="btn btn--small btn--disabled" id="btn-check-sample-contents" disabled="true">
+                            <span class="btn__inner">Check sample contents</span>
+                        </button>
+
+                    </form>
+                </section>
+                <section class="ce-section collection-instruments u-pt-m">
+                            <p class="field">
+                                <p class="field">
+                                    <label class="label u-fs-r--b  u-mb-no" for="file">Collection instruments</label>
+                                    <table class="table table--dense" summary="Dates for this collection exercise">
+                                        <thead class="table__head u-vh">
+                                            <tr class="table__row">
+                                                <th scope="col" class="table__header tbl-ce-label">File name</th>
+                                                <th scope="col" class="table__header tbl-ce-value">Remove</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="table__body">
+                                            <tr class="table__row">
+                                                <td class="table__cell tbl-ce-label">11110000001.xlsx</td>
+                                                <td class="table__cell tbl-ce-status tbl-ce-action u-ta-right">
+                                                    <a href="#">Remove</a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                    <div class="panel panel--error panel--simple">
+                        <div class="panel__body">
+                            <p class="panel__error">
+                                <strong>A file with the name 11110000001.xlsx has already been uploaded. Choose another file.</strong>
+                            </p>
+                                    <span class="label__description">Must be XLSX</span>
+                                    <input type="file" id="file" class="input input--text input-type__input input--upload" accept=".xls,.xlsx,.pdf"/>
+                                </p>
+                            </p>
+                            <button type="button" class="btn btn--small" onclick="location.href='duplicate-error.html';">
+                                <span class="btn__inner">Add collection instrument</span>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div class="grid__col col-5@m push-1@m">
+            <div class="pl-grid-col">
+                <section class="ce-section ce-details">
+                    <h2 class="u-fs-r--b u-pt-m  u-mb-no">Reference information for this collection exercise</h2>
+                    <table class="table table--dense table-refinfo" id="tbl-ce-details" summary="Collection exercise details">
+                        <tbody class="table__body">
+                            <tr class="table__row">
+                                <td class="table__cell tbl-ce-">Period</td>
+                                <td class="table__cell tbl-ce-" name="period">1912</td>
+                                <td class="table__cell tbl-ce-status tbl-ce-action">
+                                    <button type="button" class="btn btn--secondary btn--small">
+                                        <span class="btn__inner">Edit</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="table__row">
+                                <td class="table__cell tbl-ce-">Shown to respondent as</td>
+                                <td class="table__cell tbl-ce-" name="user-description" colspan="2">December 2019</td>
+                            </tr>
+                            <tr class="table__row">
+                                <td class="table__cell tbl-ce-label">Survey ID and Abbreviation</td>
+                                <td class="table__cell tbl-ce-value" name="survey-info">009 MBS</td>
+                                <td class="table__cell tbl-ce-"></td>
+                            </tr>
+                            <tr class="table__row">
+                                <td class="table__cell tbl-ce-">Survey title</td>
+                                <td class="table__cell tbl-ce-" name="survey-title">Monthly Business Survey</td>
+                                <td class="table__cell tbl-ce-"></td>
+                            </tr>
+                            <tr class="table__row">
+                                <td class="table__cell tbl-ce-label">Reference period start date</td>
+                                <td class="table__cell tbl-ce-value ce-event-date" name="period-start-date">Sunday 01 Dec 2019</td>
+                                <td class="table__cell tbl-ce-status tbl-ce-action">
+                                    <button type="button" class="btn btn--secondary btn--small">
+                                        <span class="btn__inner">Edit</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="table__row">
+                                <td class="table__cell tbl-ce-label">Reference period end date</td>
+                                <td class="table__cell tbl-ce-value ce-event-date" name="period-end-date">Tuesday 31 Dec 2019</td>
+                                <td class="table__cell tbl-ce-status tbl-ce-action">
+                                    <button type="button" class="btn btn--secondary btn--small">
+                                        <span class="btn__inner">Edit</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="table__row">
+                                <td class="table__cell tbl-ce-label">Employment date</td>
+                                <td class="table__cell tbl-ce-value ce-event-date" name="employment-date">Saturday 14 Dec 2019</td>
+                                <td class="table__cell tbl-ce-status tbl-ce-action">
+                                    <button type="button" class="btn btn--secondary btn--small">
+                                        <span class="btn__inner">Edit</span>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
