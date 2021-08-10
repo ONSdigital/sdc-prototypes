@@ -1,0 +1,90 @@
+---
+group: RAS/RM - Frontstage
+title: E-commerce Survey
+version: 35.0.3
+layout: user-self-serve/views/version-9/_master-survey-question
+---
+{% block main %}
+    <div class="grid">
+        <div id="main" class="grid__col col-8@m u-pt-no u-pb-no">
+            <form action="{{ pageInfo.rootPath }}/version-9/signed-in/survey/use-of-computers/per-cent-use-of-computers/index.html">
+
+            {% call onsQuestion({
+                "legendIsQuestionTitle": true,
+                "classes": 'u-mt-no',
+                "title": 'Does <em class="highlight">ACME Consumer Products</em> use computers?'
+            }) %}
+                {% call onsPanel({
+                    "classes": 'u-mb-m'
+                }) %}
+                    <h2 class="u-fs-r--b">Include</h2>
+                    {{ onsList({
+                        "itemsList": [
+                            {
+                                "text": 'personal computers'
+                            },
+                            {
+                                "text": 'portable computers such as laptops, netbooks and tablets'
+                            },
+                            {
+                                "text": 'other portable devices such as smartphones and Personal Digital Assistants (PDAs)'
+                            }
+                        ]
+                    }) }}
+                    <h2 class="u-fs-r--b">Exclude</h2>
+                    <ul>
+                        <li>terminals and computers solely used for Electronic Point of Sale (EPOS) and computer controlled machinery</li>
+                    </ul>
+                {% endcall %}
+                {{
+                    onsRadios({
+                        "name": "use-of-computers",
+                        "dontWrap": true,
+                        "radios": [
+                            {
+                                "id": "yes",
+                                "label": {
+                                    "text": "Yes"
+                                },
+                                "value": "yes"
+                            },
+                            {
+                                "id": "no",
+                                "label": {
+                                    "text": "No"
+                                },
+                                "value": "no"
+                            }
+                        ]
+                    })
+                }}
+            {% endcall %}
+            {{ onsButton({
+                "id": "js-continue",
+                "text": "Save and continue",
+                "classes": "u-mt-xl"
+            }) }}
+            </form>
+        </div>
+    </div>
+    <script>
+        function setSectionStatus() {
+            var newSectionStatus = new Object();
+
+            newSectionStatus.bookmark = window.location.pathname;
+            newSectionStatus.status = "started";
+
+            if(sessionStorage.sectionOne) {
+                sessionStorage.removeItem('sectionOne');
+                sectionOne = JSON.parse(sessionStorage.getItem('sectionOne'));
+            } else {
+                sectionOne = [];
+            }
+            var sectionOne = newSectionStatus;
+
+            sessionStorage.setItem('sectionOne', JSON.stringify(sectionOne));
+        }
+
+        setSectionStatus();
+    </script>
+{% endblock %}

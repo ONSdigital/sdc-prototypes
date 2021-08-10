@@ -1,0 +1,277 @@
+---
+group: RAS/RM - ROps
+title: Reporting unit
+version: 20.0.3
+layout: reporting-unit/views/_master-internal
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
+{% from "components/metadata/_macro.njk" import onsMetadata %}
+
+{% block main %}
+
+    <div class="grid">
+
+        <div id="main" class="grid__col col-10@m">
+            <h1 id="RU_NAME" class="u-fs-xl">SPARKS & MERCER PLC</h1>
+            {{
+                onsMetadata({
+                    "metadataLabel": "",
+                    "termCol": "2",
+                    "descriptionCol": "10",
+                    "itemsList": [
+                        {
+                            "term": "Reference:",
+                            "descriptions": [
+                                {
+                                    "description": "50000001703"
+                                }
+                            ]
+                        },
+                        {
+                            "term": "Trading as:",
+                            "descriptions": [
+                                {
+                                    "description": "ALL ACTIVITY IN ENGLAND SCOTLAND AND WALES"
+                                }
+                            ]
+                        }
+                    ]
+                })
+            }}
+        </div>
+        <div class="grid__col col-12@m">
+
+            <section role="region" class="tabs">
+                <h2 class="tabs__title">Tabs</h2>
+                <ul class="tabs__list">
+                    <li id="tabId1Item" class="tab__list-item">
+                        <a href="#tabId1" class="tab" data-ga="click" data-ga-category="tabs" data-ga-action="Show: UKIS" data-ga-label="Show: UKIS">Surveys</a>
+                    </li>
+                    <li id="tabId2Item" class="tab__list-item">
+                        <a href="#tabId2" class="tab" data-ga="click" data-ga-category="tabs" data-ga-action="Show: Vacancy survey" data-ga-label="Show: Vacancy survey">Respondents</a>
+                    </li>
+                </ul>
+                <section id="tabId1" class="tabs__panel">
+                    <div class="grid__col col-8@m u-pl-no">
+                        <table id="basic-table" class="table">
+                            <thead class="table__head">
+                                <tr class="table__row">
+                                    <th scope="col" class="table__header ">
+                                        <span>Survey</span>
+                                    </th>
+                                    <th scope="col" class="table__header ">
+                                        <span>Current period</span>
+                                    </th>
+                                    <th scope="col" class="table__header ">
+                                        <span>Status</span>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="table__body">
+                                <tr class="table__row">
+                                    <td class="table__cell " name="cell-name">
+                                        <a href="017_QSS.html">017 QSS</a>
+                                    </td>
+                                    <td class="table__cell ">
+                                        2009
+                                    </td>
+                                    <td class="table__cell ">
+                                        <span class="status status--success">Completed</span>
+                                    </td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td class="table__cell " name="cell-name">
+                                        <a href="#">019 QCAS</a>
+                                    </td>
+                                    <td class="table__cell ">
+                                        2009
+                                    </td>
+                                    <td class="table__cell ">
+                                        <span class="status status--success">Completed</span>
+                                    </td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td class="table__cell " name="cell-name">
+                                        <a href="#">023 RSI</a>
+                                    </td>
+                                    <td class="table__cell ">
+                                        2010
+                                    </td>
+                                    <td class="table__cell ">
+                                        <span class="status status--dead">Not started</span>
+                                    </td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td class="table__cell " name="cell-name">
+                                        <a href="#">134 MWSS</a>
+                                    </td>
+                                    <td class="table__cell ">
+                                        202010
+                                    </td>
+                                    <td class="table__cell ">
+                                        <span class="status status--success">Completed</span>
+                                    </td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td class="table__cell " name="cell-name">
+                                        <a href="#">139 QBS</a>
+                                    </td>
+                                    <td class="table__cell ">
+                                        2009
+                                    </td>
+                                    <td class="table__cell ">
+                                        <span class="status status--success">Completed</span>
+                                    </td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td class="table__cell " name="cell-name">
+                                        <a href="#">144 UKIS</a>
+                                    </td>
+                                    <td class="table__cell ">
+                                        201812
+                                    </td>
+                                    <td class="table__cell ">
+                                        <span class="status status--success">Completed</span>
+                                    </td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td class="table__cell " name="cell-name">
+                                        <a href="#">185 VACS5</a>
+                                    </td>
+                                    <td class="table__cell ">
+                                        2010
+                                    </td>
+                                    <td class="table__cell ">
+                                        <span class="status status--pending">In progress</span>
+                                    </td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td class="table__cell " name="cell-name">
+                                        <a href="#">187 Ecommerce</a>
+                                    </td>
+                                    <td class="table__cell ">
+                                        2019
+                                    </td>
+                                    <td class="table__cell ">
+                                        <span class="status status--success">Completed</span>
+                                    </td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td class="table__cell " name="cell-name">
+                                        <a href="#">221 BRES</a>
+                                    </td>
+                                    <td class="table__cell ">
+                                        202012
+                                    </td>
+                                    <td class="table__cell ">
+                                        <span class="status status--success">Completed</span>
+                                    </td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td class="table__cell " name="cell-name">
+                                        <a href="#">888 TST</a>
+                                    </td>
+                                    <td class="table__cell ">
+                                        202106
+                                    </td>
+                                    <td class="table__cell ">
+                                        <span class="status status--dead">Not started</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <section id="tabId2" class="tabs__panel">
+                    <div class="grid__col col-10@m u-pl-no">
+
+                        <h2>Aidan Norton</h2>
+                        <table id="basic-table" class="table ">
+                            <thead class="table__head">
+                                <tr class="table__row">
+                                    <th scope="col" class="table__header ">
+                                        <span>Surveys</span>
+                                    </th>
+                                    <th scope="col" class="table__header ">
+                                        <span>Enrolment status</span>
+                                    </th>
+                                    <th scope="col" class="table__header ">
+                                        <span></span>
+                                    </th>
+                                    <th scope="col" class="table__header ">
+                                        <span>Respondent</span>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="table__body">
+                                <tr class="table__row">
+                                    <td class="table__cell ">017 QSS</td>
+                                    <td class="table__cell ">Enabled</td>
+                                    <td class="table__cell "></td>
+                                    <td class="table__cell "></td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td class="table__cell ">019 QCAS</td>
+                                    <td class="table__cell ">Enabled</td>
+                                    <td class="table__cell "></td>
+                                    <td class="table__cell "></td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td class="table__cell ">023 RSI</td>
+                                    <td class="table__cell ">Enabled</td>
+                                    <td class="table__cell "></td>
+                                    <td class="table__cell "></td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td class="table__cell ">134 MWSS</td>
+                                    <td class="table__cell ">Enabled</td>
+                                    <td class="table__cell "></td>
+                                    <td class="table__cell "></td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td class="table__cell ">139 QBS</td>
+                                    <td class="table__cell ">Enabled</td>
+                                    <td class="table__cell "></td>
+                                    <td class="table__cell "></td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td class="table__cell ">144 UKIS</td>
+                                    <td class="table__cell ">Enabled</td>
+                                    <td class="table__cell "></td>
+                                    <td class="table__cell "></td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td class="table__cell ">185 VACS5</td>
+                                    <td class="table__cell ">Enabled</td>
+                                    <td class="table__cell "></td>
+                                    <td class="table__cell "></td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td class="table__cell ">187 Ecommerce</td>
+                                    <td class="table__cell ">Enabled</td>
+                                    <td class="table__cell "></td>
+                                    <td class="table__cell "></td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td class="table__cell ">221 BRES</td>
+                                    <td class="table__cell ">Enabled</td>
+                                    <td class="table__cell "></td>
+                                    <td class="table__cell "></td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td class="table__cell ">283 COVID</td>
+                                    <td class="table__cell ">Enabled</td>
+                                    <td class="table__cell "></td>
+                                    <td class="table__cell "></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </section>
+        </div>
+    </div>
+
+{% endblock %}

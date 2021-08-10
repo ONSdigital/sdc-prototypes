@@ -1,0 +1,43 @@
+---
+group: Components
+title: Tabs
+version: 32.0.1
+layout: tabs/views/_no-header-nav
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
+
+{% block main %}
+
+    <style>
+        dt {
+            float: left;
+            clear: left;
+        }
+    </style>
+    <div class="grid">
+        <div class="grid__col col-12@m">
+
+            <section role="region" class="tabs">
+                <h2 class="tabs__title">Tabs</h2>
+                <ul class="tabs__list">
+                    <li id="tabId1Item" class="tab__list-item">
+                        <a href="#tabId1" class="tab" data-ga="click" data-ga-category="tabs" data-ga-action="Show: UKIS" data-ga-label="Show: UKIS">To do</a>
+                    </li>
+                    <li id="tabId2Item" class="tab__list-item">
+                        <a href="#tabId2" class="tab" data-ga="click" data-ga-category="tabs" data-ga-action="Show: Vacancy survey" data-ga-label="Show: Vacancy survey">History</a>
+                    </li>
+                    <li id="tabId3Item" class="tab__list-item">
+                        <a href="#tabId3" class="tab" data-ga="click" data-ga-category="tabs" data-ga-action="Show: QBS" data-ga-label="Show: QBS">Messages</a>
+                    </li>
+                </ul>
+                <section id="tabId1" class="tabs__panel"></section>
+                <section id="tabId2" class="tabs__panel"></section>
+                <section id="tabId3" class="tabs__panel"></section>
+            </section>
+        </div>
+    </div>
+
+
+{% endblock %}

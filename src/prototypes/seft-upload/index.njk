@@ -1,0 +1,39 @@
+---
+group: RAS/RM - ROps
+title: SEFT Uploads
+version: 14.4.0
+layout: seft-upload/views/_index
+---
+
+{% block main %}
+    {% from "components/button/_macro.njk" import onsButton %}
+    <h1>SEFT Upload</h1>
+
+    <div class="grid">
+        <div class="grid__col col-8@m">
+            <h2>Issues</h2>
+            <ol>
+                <li>
+                    (K) When uploading a duplicate CI, the UI shows the file twice (5) UX NEEDED {1}<br>
+                <a href="https://trello.com/c/HEsVOIUV/1402-k-when-uploading-a-duplicate-ci-the-ui-shows-the-file-twice-5-ux-needed-1">Trello card</a> | <a href="/prototypes/seft-upload/upload-duplicates/index.html">Start</a>
+                </li>
+                <li>
+                    (K) Unable to load multiple CIs in the UI (8) {3}<br>
+                <a href="https://trello.com/c/LVLDkr5p/1401-k-unable-to-load-multiple-cis-in-the-ui-8-3">Trello card</a>
+                </li>
+                <li>
+                    (K) Response ops UI displays CI have loaded before they actually have (8)<br>
+                <a href="https://trello.com/c/fu73l2dG/1396-k-response-ops-ui-displays-ci-have-loaded-before-they-actually-have-8">Trello card</a>
+                </li>
+                <li>
+                    (K) Response ops error messages not clear {2}<br>
+                <a href="https://trello.com/c/meNTS1gm/1399-k-response-ops-error-messages-not-clear-2">Trello card</a>
+                </li>
+                <li>
+                    RITM0316258 -Change response status from 'Completed' to 'Not Started' - 03/02/20<br>
+                <a href="https://trello.com/c/2RJtIdif/1602-ritm0316258-change-response-status-from-completed-to-not-started-03-02-20">Trello card</a> | <a href="/prototypes/seft-upload/change-response-status/index.html">Start</a>
+                </li>
+            </ol>
+        </div>
+    </div>
+{% endblock %}

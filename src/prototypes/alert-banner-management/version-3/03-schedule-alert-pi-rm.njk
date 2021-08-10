@@ -1,0 +1,74 @@
+---
+group: RAS/RM - ROps
+version: 20.0.3
+title: Alert banner management
+layout: alert-banner-management/views/version-3/_master
+---
+
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% block main %}
+
+    <div class="grid">
+        <div class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/prototypes/alert-banner-management/version-3/survey-list.html',
+                            "text": 'Surveys'
+                        },
+                        {
+                            "url": '/prototypes/alert-banner-management/version-3/00-create-alert.html',
+                            "text": 'Create an alert'
+                        },
+                        {
+                            "url": '/prototypes/alert-banner-management/version-3/01-publish-alert.html',
+                            "text": 'Publish date and time'
+                        },
+                        {
+                            "url": '/prototypes/alert-banner-management/version-3/02-remove-alert.html',
+                            "text": 'Removal date and time'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'Schedule alert',
+                            "current": true
+                        }
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+            <h1>Publish alert</h1>
+            <p>The following alert will be published immediately:</p>
+            <div class="panel panel--info panel--simple">
+                <div class="panel__body">
+                    <p>The Quarterly Vacancy Survey is unavailable until Tuesday 7 July 2020, as we are currently experiencing some technical difficulties.</p>
+                </div>
+            </div>
+            <p class="field u-mt-l">
+                {{ 
+                    onsButton({
+                        "type": 'button',
+                        "text": 'Publish',
+                        "url": "/prototypes/alert-banner-management/version-3/survey-list-published.html"
+                    }) 
+                }}
+                {{ 
+                    onsButton({
+                        "type": 'button',
+                        "text": 'Cancel',
+                        "classes": 'btn--secondary btn-group__btn',
+                        "url": "/prototypes/alert-banner-management/version-3/00-create-alert.html"
+                    }) 
+                }}
+            </p>
+        </div>
+    </div>
+
+{% endblock %}

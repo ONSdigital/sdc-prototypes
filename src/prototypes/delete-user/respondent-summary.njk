@@ -1,0 +1,116 @@
+---
+group: RAS/RM - ROps
+title: Delete user
+version: 17.0.0
+layout: delete-user/views/_master
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+
+{% block main %}
+    <div class="grid">
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/',
+                            "text": 'Home'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'Respondents'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'jeremy.gillies@ext.ons.gov.uk',
+                            "current": true
+                        }
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-12@m u-pt-no">
+            <h1>Jeremy Gillies</h1> 
+            <dl class="metadata metadata__list grid grid--gutterless u-cf u-mb-l" title="" aria-label="">
+                <dt class="metadata__term grid__col col-2@m">Email:</dt>
+                <dd class="metadata__value grid__col col-10@m">jeremy.gillies@ext.ons.gov.uk</dd>
+                <dt class="metadata__term grid__col col-2@m">Tel:</dt>
+                <dd class="metadata__value grid__col col-10@m">07789206285</dd>
+                <dd class="metadata__value grid__col col-10@m"><a href="/">Edit contact details</a></dd>
+                <dt class="metadata__term grid__col col-2@m">Account:</dt>
+                <dd class="metadata__value grid__col col-10@m">Active</dd>
+                <dd class="metadata__value grid__col col-10@m"><a href="{{ pageInfo.rootPath }}/delete-user.html">Delete respondent</a></dd>
+            </dl>
+            <h2>Enrolments</h2> 
+            {% from "components/table/_macro.njk" import onsTable %}
+{{
+    onsTable({
+        "table_class": "table--dense table--row-hover",
+        "caption": "",
+        "ths": [
+            {
+                "value": "RU Reference"
+            },
+            {
+                "value": "Reporting unit name"
+            },
+            {
+                "value": "Trading as"
+            },
+            {
+                "value": "Survey"
+            },
+            {
+                "value": "Enrolment status"
+            }
+        ],
+        "trs": [
+            {
+                "tds": [
+                    {
+                        "value": "11110000099"
+                    },
+                    {
+                        "value": "Office of National Statistics"
+                    },
+                    {
+                        "value": ""
+                    },
+                    {
+                        "value": "009 MBS"
+                    },
+                    {
+                        "value": "Enabled Disable"
+                    }
+                ]
+            },
+            {
+                "tds": [
+                    {
+                    "value": "11110000097"
+                    },
+                    {
+                    "value": "Office of National Statistics"
+                    },
+                    {
+                    "value": ""
+                    },
+                    {
+                    "value": "139 QBS"
+                    },
+                    {
+                        "value": "Enabled Disable"
+                    }
+                ]
+            }
+        ]
+    })
+}}
+        </div>
+    </div>
+
+{% endblock %}

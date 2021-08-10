@@ -1,0 +1,56 @@
+---
+group: RAS/RM - ROps
+title: Overview
+version: 17.0.0
+layout: onboard-survey/views/_master
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+{% from "components/input/_macro.njk" import onsInput %}
+
+{% block main %}
+
+    <h1 name="page-surveys-title">Load collection instruments for 001 NEW</h1>
+    <div class="grid overview">
+        <div class="grid__col col-6@m">
+            {{
+                onsInput({
+                    "id": "textarea",
+                    "name": "formtype",
+                    "classes": "input--w-4",
+                    "label": {
+                        "text": "Add form type",
+                        "description": "For example: 0101",
+                        "classes": "u-fs-m"
+                    }
+                })
+            }}
+            <p class="field">
+                <form action="" method="get">
+                    {{ 
+                    onsButton({
+                        "text": 'Upload',
+                        "url": 'load-collection-instruments-added.html',
+                        "classes": 'btn--secondary btn--small'
+                    }) 
+                }}
+                </form>
+            </p>
+            <!--
+        </div>
+        <div class="grid__col col-4@m push-1@m">
+        -->
+            <p class="field u-mt-l">
+                {{ 
+                    onsButton({
+                        "text": 'Done',
+                        "url": 'survey.html',
+                        "classes": 'btn--disabled'
+                    }) 
+                }}
+            </p>
+        </div>
+    </div>
+
+{% endblock %}

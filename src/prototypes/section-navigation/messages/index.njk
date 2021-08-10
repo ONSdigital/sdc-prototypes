@@ -1,0 +1,138 @@
+---
+group: RAS/RM - ROps
+title: Section navigation
+version: 14.4.0
+layout: section-navigation/views/_master-messages
+---
+
+{% block main %}
+    {% from "components/button/_macro.njk" import onsButton %}
+    {% from "components/input/_macro.njk" import onsInput %}
+    <h1>Secure messages</h1>
+      <nav class="section-nav" id="" aria-label="Section menu">
+        <ul class="section-nav__list" aria-label="">
+          <li class="section-nav__item">
+            <a href="" class="section-nav__link">My Messages</a>
+          </li>
+          <li class="section-nav__item section-nav__item--active">
+            <a href="" class="section-nav__link">Open</a>
+          </li>
+          <li class="section-nav__item">
+            <a href="" class="section-nav__link">Closed</a>
+          </li>
+          <li class="section-nav__item">
+            <a href="" class="section-nav__link">Initial</a>
+          </li>
+        </ul>
+      </nav>
+
+      <table class="table secure-messages">
+        <caption class="table__caption">Secure messages</caption>
+        <thead class="table__head">
+          <tr class="table__row">
+            <th scope="col" class="table__header ru-ref number">RU Ref</th>
+            <th scope="col" class="table__header business-name">Business name</th>
+            <th scope="col" class="table__header subject">Subject</th>
+            <th scope="col" class="table__header from">From</th>
+            <th scope="col" class="table__header to">To</th>
+            <th scope="col" class="table__header date-and-time u-ta-right">Date and time</th>
+          </tr>
+        </thead>
+        <tbody class="table__body">
+          <tr class="table__row new">
+            <td class="table__cell ru-ref number" scope="row">
+              <span class="circle"></span>11110000243</td>
+            <td class="table__cell">Ghost Aerosystems (E...</td>
+            <td class="table__cell message-list__subject">
+              <a href="/messages/view.html">RW - Q3 Inward Foreign Direct Investment Survey - GHOST AEROSYSTEMS (EUROPE)</a>
+            </td>
+            <td class="table__cell">Jack F</td>
+            <td class="table__cell">Dave C</td>
+            <td class="table__cell date-time">Yesterday at 14:51</td>
+          </tr>
+          <tr class="table__row new">
+            <td class="table__cell ru-ref number" scope="row">
+              <span class="circle"></span>11110001433</td>
+            <td class="table__cell">Acme Studios Ltd</td>
+            <td class="table__cell message-list__subject">
+              <a href="/messages/view.html">11110001433 FDI Extension Request</a>
+            </td>
+            <td class="table__cell">Louise G</td>
+            <td class="table__cell">Dave C</td>
+            <td class="table__cell date-time">20 Jan 2018 12:49</td>
+          </tr>
+          <tr class="table__row">
+            <td class="table__cell ru-ref number" scope="row">11110000239</td>
+            <td class="table__cell">Central Perk Ltd</td>
+            <td class="table__cell message-list__subject">
+              <a href="/messages/view.html">11110000239 - FAO Lisa</a>
+            </td>
+            <td class="table__cell">Dave C</td>
+            <td class="table__cell">Nic R</td>
+            <td class="table__cell date-time">11 Jan 2018 12:02</td>
+          </tr>
+          <tr class="table__row">
+            <td class="table__cell ru-ref number" scope="row">11110020831</td>
+            <td class="table__cell">Impax Value Manageme...</td>
+            <td class="table__cell message-list__subject">
+              <a href="/messages/view.html">RW - Q3 Outward Foreign Direct Investment Survey - IMPAX VALUE MANAGEMENT GROUP</a>
+            </td>
+            <td class="table__cell">Dave C</td>
+            <td class="table__cell">Rhodri W</td>
+            <td class="table__cell date-time">29 Dec 2017 11:42</td>
+          </tr>
+          <tr class="table__row">
+            <td class="table__cell ru-ref number" scope="row">11110000239</td>
+            <td class="table__cell">Central Perk Ltd</td>
+            <td class="table__cell message-list__subject">
+              <a href="/messages/view.html">11110000239 - FAO Lisa</a>
+            </td>
+            <td class="table__cell">Dave C</td>
+            <td class="table__cell">Nic R</td>
+            <td class="table__cell date-time">11 Jan 2018 12:02</td>
+          </tr>
+          <tr class="table__row">
+            <td class="table__cell ru-ref number" class="message-list__item--unread" scope="row">
+              <span class="circle"></span>11110020831</td>
+            <td class="table__cell">Impax Value Manageme...</td>
+            <td class="table__cell message-list__subject">
+              <a href="/messages/view.html">RW - Q3 Outward Foreign Direct Investment Survey - IMPAX VALUE MANAGEMENT GROUP</a>
+            </td>
+            <td class="table__cell">Rhodri W</td>
+            <td class="table__cell">Dave C</td>
+            <td class="table__cell date-time">29 Dec 2017 11:42</td>
+          </tr>
+          <tr class="table__row">
+            <td class="table__cell ru-ref number" scope="row">11110000239</td>
+            <td class="table__cell">Central Perk Ltd</td>
+            <td class="table__cell message-list__subject">
+              <a href="/messages/view.html">11110000239 - FAO Lisa</a>
+            </td>
+            <td class="table__cell">Dave C</td>
+            <td class="table__cell">Nic R</td>
+            <td class="table__cell date-time">11 Jan 2018 12:02</td>
+          </tr>
+          <tr class="table__row">
+            <td class="table__cell ru-ref number" scope="row">11110020831</td>
+            <td class="table__cell">Impax Value Manageme...</td>
+            <td class="table__cell message-list__subject">
+              <a href="/messages/view.html">RW - Q3 Outward Foreign Direct Investment Survey - IMPAX VALUE MANAGEMENT GROUP</a>
+            </td>
+            <td class="table__cell">Rhodri W</td>
+            <td class="table__cell">Dave C</td>
+            <td class="table__cell date-time">29 Dec 2017 11:42</td>
+          </tr>
+          <tr class="table__row">
+            <td class="table__cell ru-ref number" scope="row">11110000239</td>
+            <td class="table__cell">Central Perk Ltd</td>
+            <td class="table__cell message-list__subject">
+              <a href="/messages/view.html">11110000239 - FAO Lisa</a>
+            </td>
+            <td class="table__cell">Dave C</td>
+            <td class="table__cell">Nic R</td>
+            <td class="table__cell date-time">11 Jan 2018 12:02</td>
+          </tr>
+        </tbody>
+      </table>
+
+{% endblock %}

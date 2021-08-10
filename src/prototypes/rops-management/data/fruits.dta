@@ -1,0 +1,35 @@
+{% set fruits =
+[
+ {
+   "ID": 1,
+   "Fruit": "Apple",
+   "Description": "An edible fruit produced by an apple tree. It's usually round and green.",
+   "Price": "55p"
+ },
+ {
+   "ID": 2,
+   "Fruit": "Banana",
+   "Description": "Long bendy yellow fruit from a herb not a tree. Creamy white flesh.",
+   "Price": "85p"
+ },
+ {
+   "ID": 3,
+   "Fruit": "Orange",
+   "Description": "Round orange bumpy skin surrounds a fruit with segmented parts and a sharp sweet taste",
+   "Price": "30p"
+ },
+ {
+   "ID": 4,
+   "Fruit": "Pear",
+   "Description": "Oval elongated green or yellow fruit.",
+   "Price": "90p"
+ },
+ {
+   "ID": 5,
+   "Fruit": "Grape",
+   "Description": "Purple or green small round fruits in a bunch.",
+   "Price": "3p"
+ }
+]
+
+%}

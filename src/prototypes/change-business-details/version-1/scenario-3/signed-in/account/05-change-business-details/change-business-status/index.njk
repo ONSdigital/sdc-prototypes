@@ -1,0 +1,91 @@
+---
+group: RAS/RM - Frontstage
+title: Change business details
+version: 32.0.1
+layout: change-business-details/views/version-1/scenario-3/_master-survey
+---
+
+{% from "components/metadata/_macro.njk" import onsMetadata %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+
+{% block main %}
+    <div class="grid">
+        <div class="grid__col col-12@m u-pt-no u-pb-no">
+            <h1>What is the operational status of ACME TRADING LTD?</h1>
+            <!-- <div class="text-indent">
+            <h2 class="u-fs-m u-mb-no">ACME TRADING LTD</h2>
+            <p>Trading as ACME TRADING LTD</p>
+             <p>BARRATT HOUSE<br>
+                CARTWRIGHT WAY<br>
+                FOREST BUSINESS PARK<br>
+                BARDON HILL<br>
+                COALVILLE LEICS<br>
+                LE67 1UF
+            </p>
+            </div> -->
+
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+            <form action="{{ pageInfo.parentPath }}/account/index.html">
+                <p class="field">
+                    <fieldset class="fieldset">
+                        <legend class="fieldset__legend">Choose an option</legend>
+                        <div class="radios__items">
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                        type="radio"
+                                        id="change-contact-details"
+                                        data-action-url="/prototypes/change-business-details/version-1/scenario-3/signed-in/account/05-change-business-details/change-business-status/business-is-winding-down-or-liquidating.html"
+                                        class="radio__input js-radio"
+                                        value="question-one"
+                                        name="message-query">
+                                    <label class="radio__label" for="change-contact-details">This business is winding down or liquidating</label>
+                                </span>
+                            </p>
+                            <br>
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                        type="radio"
+                                        id="change-business-details"
+                                        data-action-url="/prototypes/change-business-details/version-1/scenario-3/signed-in/account/05-change-business-details/change-business-status/business-is-dormant.html"
+                                        class="radio__input js-radio"
+                                        value="question-two"
+                                        name="message-query">
+                                    <label class="radio__label" for="change-business-details">This business is dormant</label>
+                                </span>
+                            </p>
+                            <br>
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                        type="radio"
+                                        id="access-to-my-surveys"
+                                        data-action-url="/prototypes/change-business-details/version-1/scenario-3/signed-in/account/05-change-business-details/change-business-status/business-is-subject-to-a-takeover.html"
+                                        class="radio__input js-radio"
+                                        value="question-three"
+                                        name="message-query">
+                                    <label class="radio__label" for="access-to-my-surveys">This business is subject to a takeover</label>
+                                </span>
+                            </p>
+                        </div>
+                    </fieldset>
+                </p>
+                <div class="grid grid--flex grid--gutterless grid--vertical-center grid--no-wrap@s u-mt-m u-mb-m">
+                    <div class="grid__col">
+                        <button type="submit" class="btn btn-group__btn">
+                            <span class="btn__inner">Continue</span>
+                        </button>
+
+                    </div>
+                    <div class="grid__col u-ml-m">
+                        <a href="/prototypes/change-business-details/version-1/scenario-3/signed-in/account/05-change-business-details/03-change-business-details.html">Cancel</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

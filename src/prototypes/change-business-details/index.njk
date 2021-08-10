@@ -1,0 +1,166 @@
+---
+group: RAS/RM - Frontstage
+title: Change business details
+version: 17.0.0
+layout: change-business-details/views/version-1/scenario-1/_index
+---
+
+
+{% block main %}
+    {% from "components/button/_macro.njk" import onsButton %}
+    <div class="grid">
+        <div class="grid__col col-12@m">
+
+            <button type="submit" class="btn u-mb-l" onclick="location.href='/prototypes/change-business-details/research-index.html';">
+                <span class="btn__inner">Research index</span>
+            </button>
+
+            <h1>Version 1</h1>
+            <h2>Assumes SDC holds the <i>before</i> and <i>after</i> business information changes.</h2>
+            
+            <p>It has the ability to show the respondent:</p>
+            <ul>
+                <li>the current address</li>
+                <li>the option to use an address already used</li>
+                <li>the requested (new) address change</li>
+                <li>that a change is in progress</li>
+                <li>that a change has been made</li>
+                <li>that a change has been approved</li>
+            </ul>
+
+            <table id="basic-table" class="table ">
+                <caption class="table__caption u-fs-l u-mt-m">Scenarios</caption>
+                <thead class="table__head">
+                    <tr class="table__row">
+                        <th scope="col" class="table__header " style="width:15%">
+                            <span>Title</span>
+                        </th>
+                        <th scope="col" class="table__header ">
+                            <span>Description</span>
+                        </th>
+                        <th scope="col" class="table__header ">
+                            <span>Action</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="table__body">
+                    <tr class="table__row">
+                        <td class="table__cell " name="cell-name">
+                            Senario 1
+                        </td>
+                        <td class="table__cell ">
+                            [user makes change themselves]: They are told letters and correspondence has been going to the wrong location. They want to make sure it goes to the right one…
+                        </td>
+                        <td class="table__cell ">
+                            <a href="/prototypes/change-business-details/version-1/scenario-1/index.html">Start</a>
+                        </td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell ">
+                            Senario 2
+                        </td>
+                        <td class="table__cell ">
+                            [user changes address for one survey only]: Their company merged with another recently. They are told there should be one address for the first survey going to the accountant, and another for the second going to HR, but they are both currently going to the same address…
+                        </td>
+                        <td class="table__cell ">
+                            <a href="/prototypes/change-business-details/version-1/scenario-2/index.html">Start</a>
+                        </td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell ">
+                            Senario 3
+                        </td>
+                        <td class="table__cell ">
+                            [a colleague has already requested a change, but it hasn’t gone through yet]: Similar to Scenario 1 they are told letters and correspondence has been going to the wrong location. They want to make sure it goes to the right one…
+                        </td>
+                        <td class="table__cell ">
+                            <a href="/prototypes/change-business-details/version-1/scenario-3/index.html">Start</a>
+                        </td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell ">
+                            Senario 4
+                        </td>
+                        <td class="table__cell ">
+                            [need to inform the business is winding down]: The business they work for has struggled during the pandemic and will cease to trade. They have been asked to make sure the ONS is notified of this, as they currently fill out business surveys on a regular basis…
+                        </td>
+                        <td class="table__cell ">
+                            <a href="/prototypes/change-business-details/version-1/scenario-4/index.html">Start</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h1 class="u-mt-l">Version 2</h1>
+            <h2>Assumes SDC cannot retrieve any business information back from IDBR.</h2>
+        
+            <p>It only has the ability to show the respondent:</p>
+            <ul>
+                <li>the current address</li>
+                <li>that a change has been made</li>
+            </ul>
+
+            <table id="basic-table" class="table ">
+                <caption class="table__caption">Scenarios</caption>
+                <thead class="table__head">
+                    <tr class="table__row">
+                        <th scope="col" class="table__header " style="width:15%">
+                            <span>Title</span>
+                        </th>
+                        <th scope="col" class="table__header ">
+                            <span>Description</span>
+                        </th>
+                        <th scope="col" class="table__header ">
+                            <span>Action</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="table__body">
+                    <tr class="table__row">
+                        <td class="table__cell " name="cell-name">
+                            Senario 1
+                        </td>
+                        <td class="table__cell ">
+                            [user makes change themselves]: They are told letters and correspondence has been going to the wrong location. They want to make sure it goes to the right one…
+                        </td>
+                        <td class="table__cell ">
+                            <a href="/prototypes/change-business-details/version-2/scenario-1/index.html">Start</a>
+                        </td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell ">
+                            Senario 2
+                        </td>
+                        <td class="table__cell ">
+                            [user changes address for one survey only]: Their company merged with another recently. They are told there should be one address for the first survey going to the accountant, and another for the second going to HR, but they are both currently going to the same address…
+                        </td>
+                        <td class="table__cell ">
+                            <a href="/prototypes/change-business-details/version-2/scenario-2/index.html">Start</a>
+                        </td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell ">
+                            Senario 3
+                        </td>
+                        <td class="table__cell ">
+                            [a colleague has already requested a change, but it hasn’t gone through yet]: Similar to Scenario 1 they are told letters and correspondence has been going to the wrong location. They want to make sure it goes to the right one…
+                        </td>
+                        <td class="table__cell ">
+                            <a href="/prototypes/change-business-details/version-2/scenario-3/index.html">Start</a>
+                        </td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell ">
+                            Senario 4
+                        </td>
+                        <td class="table__cell ">
+                            [need to inform the business is winding down]: The business they work for has struggled during the pandemic and will cease to trade. They have been asked to make sure the ONS is notified of this, as they currently fill out business surveys on a regular basis…
+                        </td>
+                        <td class="table__cell ">
+                            <a href="/prototypes/change-business-details/version-2/scenario-4/index.html">Start</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

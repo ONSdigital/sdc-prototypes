@@ -1,0 +1,66 @@
+---
+group: RAS/RM - Frontstage
+title: Change business details
+version: 32.0.1
+layout: change-business-details/views/version-1/scenario-4/_master-survey
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+{% from "components/metadata/_macro.njk" import onsMetadata %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+
+{% block main %}
+
+    <div class="grid">
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/prototypes/change-business-details/version-1/scenario-4/signed-in/00-surveys-list.html',
+                            "text": 'Surveys'
+                        },
+                        {
+                            "url": '/prototypes/change-business-details/version-1/scenario-4/signed-in/help/index.html',
+                            "text": 'Help'
+                        },
+                        {
+                            "url": '/prototypes/change-business-details/version-1/scenario-4/signed-in/help/option-5/option-1/option-list.html',
+                            "text": 'I am having problems resetting my password'
+                        }
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+            <h1>My new password isn't being accepted</h1>
+            <p>Our password policies cannot accept certain characters such as the "at" symbol "@".</p>
+            <p>If you copied and pasted the password, we'd recommend typing this into the password box. It will prevent you pasting any hidden or special characters.</p>
+            <h2>Did this answer your question?</h2>
+            <p class="field">
+                <div class="btn-group">
+                {{ 
+                    onsButton({
+                        "type": 'button',
+                        "text": 'Yes',
+                        "classes": 'btn-group__btn',
+                        "url": "/prototypes/change-business-details/version-1/scenario-4/signed-in/00-surveys-list.html"
+                    }) 
+                }}
+                {{ 
+                    onsButton({
+                        "type": 'button',
+                        "text": 'No',
+                        "classes": 'btn--secondary btn-group__btn',
+                        "url": "send-message.html"
+                    }) 
+                }}
+                </div>
+            </p>
+        </div>
+    </div>
+
+{% endblock %}

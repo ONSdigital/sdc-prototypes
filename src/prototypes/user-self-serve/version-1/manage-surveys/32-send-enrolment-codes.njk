@@ -1,0 +1,68 @@
+---
+group: RAS/RM - Frontstage
+title: SM Templates
+version: 17.0.0
+layout: user-self-serve/views/version-1/_master
+---
+
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+
+{% block main %}
+
+    <div class="grid">
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/prototypes/user-self-serve/version-1/00-surveys-list.html',
+                            "text": 'Surveys'
+                        },
+                        {
+                            "url": '/prototypes/user-self-serve/version-1/01-message-categories.html',
+                            "text": 'Help'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'Manage access to surveys'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'Share access',
+                            "current": true
+                        }
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+            <h1>Send enrolment codes</h1>
+
+            <p><b>jane.doe@acme.com</b> will be enrolled onto the following surveys:</p>
+            <h2 class="u-fs-m">ACME Consumer Products</h2>
+            <div class="text-indent">
+                <ul class="list list--bare">
+                    <li>Quarterly Business Survey</li>
+                    <li>Monthly Business Survey</li>
+                </ul>
+            </div> 
+            <h2 class="u-fs-m">ACME Group Ltd</h2>
+            <div class="text-indent">
+                <ul class="list list--bare">
+                    <li>Business Register and Employment Survey</li>
+                </ul>
+            </div>
+            <p class="field">
+                <button type="submit" class="btn" onclick="location.href='{{ pageInfo.rootPath }}/version-1/manage-surveys/33-confirmation.html';">
+                    <span class="btn__inner">Send</span>
+                </button>
+            </p>
+            <p class="field">
+                <a href="{{ pageInfo.rootPath }}/version-1/manage-surveys/20-my-account.html">Cancel</a>
+            </p>
+        </div>
+    </div>
+
+{% endblock %}

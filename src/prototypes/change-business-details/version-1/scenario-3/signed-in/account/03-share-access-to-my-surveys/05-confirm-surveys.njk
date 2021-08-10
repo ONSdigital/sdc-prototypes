@@ -1,0 +1,102 @@
+---
+group: RAS/RM - Frontstage
+title: Change business details
+version: 32.0.1
+layout: change-business-details/views/version-1/scenario-3/_master-survey
+---
+
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+{% from "components/button/_macro.njk" import onsButton %}
+
+
+{% block main %}
+
+    <div class="grid">
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/prototypes/change-business-details/version-1/scenario-3/signed-in/00-surveys-list.html',
+                            "text": 'Surveys'
+                        },
+                        {
+                            "url": '/prototypes/change-business-details/version-1/scenario-3/signed-in/account/index.html',
+                            "text": 'Account'
+                        } 
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+            <h1>Confirm survey access</h1>
+
+            <p>[Someone] has requested to share access to the following surveys with you.</p>
+            
+
+            <h2 class="u-fs-m">ACME Consumer Products</h2>
+            <div class="text-indent">
+                <ul class="list list--bare">
+                    <li>Quarterly Business Survey</li>
+                    <li>Monthly Business Survey</li>
+                </ul>
+            </div> 
+            <h2 class="u-fs-m">ACME Group Ltd</h2>
+            <div class="text-indent">
+                <ul class="list list--bare">
+                    <li>Business Register and Employment Survey</li>
+                </ul>
+            </div>
+
+            <form action="{{ pageInfo.parentPath }}/account/index.html">
+                <p class="field">
+                    <fieldset class="fieldset">
+                        <legend class="fieldset__legend">Do you want access to these surveys?</legend>
+                        <p class="radios__label">If you choose 'Yes' you will be able to complete and return them on behalf of [your business]:</p>
+                        <div class="radios__items">
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                        type="radio"
+                                        id="yes"
+                                        data-action-url="/prototypes/change-business-details/version-1/scenario-3/signed-in/account/03-share-access-to-my-surveys/06-shared-surveys-complete.html"
+                                        class="radio__input js-radio"
+                                        value="yes"
+                                        name="confirm">
+                                    <label class="radio__label" for="yes">Yes</label>
+                                </span>
+                            </p>
+                            <br>
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                        type="radio"
+                                        id="no"
+                                        data-action-url="/prototypes/change-business-details/version-1/scenario-3/signed-in/account/03-share-access-to-my-surveys/07-shared-surveys-denied.html"
+                                        class="radio__input js-radio"
+                                        value="no"
+                                        name="confirm">
+                                    <label class="radio__label" for="no">No</label>
+                                </span>
+                            </p>
+                        </div>
+                    </fieldset>
+                </p>
+
+                <div class="grid grid--flex grid--gutterless grid--vertical-center grid--no-wrap@s u-mt-m u-mb-m">
+                    <div class="grid__col">
+                        <button type="button" class="btn btn-group__btn">
+                            <span class="btn__inner">Continue</span>
+                        </button>
+                    </div>
+                    <div class="grid__col u-ml-m">
+                        <a href="/prototypes/change-business-details/version-1/scenario-3/signed-in/00-surveys-list.html">Cancel</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

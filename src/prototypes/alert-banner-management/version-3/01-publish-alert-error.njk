@@ -1,0 +1,136 @@
+---
+group: RAS/RM - ROps
+version: 20.0.3
+title: Alert banner management
+layout: alert-banner-management/views/version-3/_master
+---
+
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% block main %}
+
+    <div class="grid">
+        <div class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/prototypes/alert-banner-management/version-3/survey-list.html',
+                            "text": 'Surveys'
+                        },
+                        {
+                            "url": '/prototypes/alert-banner-management/version-3/00-create-alert.html',
+                            "text": 'Create an alert'
+                        },
+                        {
+                            "url": '/',
+                            "text": 'Publish date and time',
+                            "current": true
+                        }
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+            <div class="panel panel--error js-error-panel">
+                <div class="panel__header">
+                    <div data-qa="error-header" class="panel__title u-fs-r--b">There is a problems with your answer</div>
+                </div>
+                <div class="panel__body">
+                   <a href="#container-test-number" class="list__link js-inpagelink">Publish time cannot be in the past</a>
+                </div>
+            </div>
+            <h1 class="u-mt-l">When should the alert be published?</h1>
+            <form action="{{ pageInfo.parentPath }}/index.html">
+                <div class="panel panel--error panel--simple js-error-panel">
+                    <div class="panel__body">
+                        <p class="panel__error">
+                            <strong>Publish time cannot be in the past</strong>
+                        </p>
+                        <div class="field">
+                            <fieldset class="fieldset u-mb-l">
+                                <legend class="fieldset__legend">Choose an option</legend>
+                                <div class="radios__items">
+                                    <p class="radios__item">
+                                        <span class="radio">
+                                            <input
+                                                type="radio"
+                                                id="immediately"
+                                                class="radio__input js-radio"
+                                                value="immediately"
+                                                data-action-url="/prototypes/alert-banner-management/version-3/02-remove-alert-publish-immediately.html"
+                                                name="publish-alert">
+                                            <label class="radio__label  " for="immediately" id="immediately-label">Immediately</label>
+                                        </span>
+                                    </p>
+                                    <br>
+                                    <div class="radios__item">
+                                        <span class="radio">
+                                            <input
+                                                type="radio"
+                                                id="other-publish"
+                                                class="radio__input js-radio"
+                                                checked="true" 
+                                                value="other"
+                                                name="publish-alert"
+                                                data-action-url="/prototypes/alert-banner-management/version-3/02-remove-alert-publish-specific-time.html"
+                                                aria-controls="other-publish-other-wrap"
+                                                aria-haspopup="true">
+                                            <label class="radio__label  label--with-description u-pb-xs" aria-describedby="other-publish-label-description-hint" for="other-publish" id="other-publish-label">At a certain time</label>
+                                            <span class="radio__other" id="other-publish-other-wrap">
+                                                <label class="label u-fs-s--b " for="other-textbox" id="other-textbox-label">Please specify date and time</label>
+                                                <div class="field-group">
+                                                    <div class="field u-mb-s">
+                                                        <label class="label  " for="date-day">Day</label>
+                                                        <input type="text" id="date-day" class="input input--text input-type__input   input--w-2 input--error" name="day" min="1" max="31" maxlength="2" pattern="[0-9]*" inputmode="numeric" autocomplete="alert-day" value="27"/>
+                                                    </div>
+                                                    <div class="field u-mb-s">
+                                                        <label class="label  " for="date-month">Month</label>
+                                                        <input type="text" id="date-month" class="input input--text input-type__input   input--w-2 input--error" name="month" min="1" max="12" maxlength="2" pattern="[0-9]*" inputmode="numeric" autocomplete="alert-month" value="08"/>
+                                                    </div>
+                                                    <div class="field u-mb-s">
+                                                        <label class="label  " for="date-year">Year</label>
+                                                        <input type="text" id="date-year" class="input input--text input-type__input   input--w-4 input--error" name="year" min="1000" max="3000" maxlength="4" pattern="[0-9]*" inputmode="numeric" autocomplete="alert-year" value="2020"/>
+                                                    </div>
+                                                    <div class="field u-mb-s">
+                                                        <p class="u-mt-l">at</p>
+                                                    </div>
+                                                    <div class="field u-mb-s">
+                                                        <label class="label  " for="date-year">Hrs</label>
+                                                        <input type="text" id="time-year" class="input input--text input-type__input   input--w-2 input--error" name="hour" min="1000" max="3000" maxlength="4" pattern="[0-9]*" inputmode="numeric" autocomplete="alert-hour" value="10"/>
+                                                    </div>
+                                                    <div class="field u-mb-s">
+                                                        <label class="label  " for="date-year">Mins</label>
+                                                        <input type="text" id="time-year" class="input input--text input-type__input   input--w-2 input--error" name="minute" min="1000" max="3000" maxlength="4" pattern="[0-9]*" inputmode="numeric" autocomplete="alert-minute" value="37"/>
+                                                    </div>
+                                                </div>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <p class="field">
+                    <button type="submit" class="btn">
+                        <span class="btn__inner">Continue</span>
+                    </button>
+                    {{ 
+                        onsButton({
+                            "type": 'button',
+                            "text": 'Cancel',
+                            "classes": 'btn--secondary btn-group__btn',
+                            "url": "/prototypes/alert-banner-management/version-3/00-create-alert.html"
+                        }) 
+                    }}
+                </p>
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,171 @@
+---
+group: RAS/RM - Frontstage
+title: User account creation
+version: 32.0.1
+layout: user-self-serve/views/version-8/_master-survey
+---
+
+{% from "components/metadata/_macro.njk" import onsMetadata %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+
+{% block main %}
+    <div class="grid">
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/prototypes/user-self-serve/version-8/signed-in/00-surveys-list.html',
+                            "text": 'Surveys'
+                        }
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+            <h1>Account details</h1>
+
+            {{
+                onsMetadata({
+                    "metadataLabel": "",
+                    "termCol": "4",
+                    "classes": "u-mb-no",
+                    "descriptionCol": "8",
+                    "itemsList": [
+                        {
+                            "term": "Name:",
+                            "descriptions": [
+                                {
+                                    "description": "Jane Doe"
+                                }
+                            ]
+                        },
+                        {
+                            "term": "Email address:",
+                            "descriptions": [
+                                {
+                                    "description": "jane.doe@acme.com"
+                                }
+                            ]
+                        },
+                        {
+                            "term": "Phone number:",
+                            "descriptions": [
+                                {
+                                    "description": "07789 123 456"
+                                }
+                            ]
+                        }
+                    ]
+                })
+            }}
+
+            <hr class="u-mb-l">
+
+            <h1>Help with your account</h1>
+            <form action="{{ pageInfo.parentPath }}/account/index.html">
+                <p class="field">
+                    <fieldset class="fieldset">
+                        <legend class="fieldset__legend">Choose an option</legend>
+                        <div class="radios__items">
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                        type="radio"
+                                        id="change-contact-details"
+                                        data-action-url="/prototypes/user-self-serve/version-8/signed-in/account/01-change-account-details/01-change-contact-details.html"
+                                        class="radio__input js-radio"
+                                        value="question-one"
+                                        name="message-query">
+                                    <label class="radio__label" for="change-contact-details">Change my contact details</label>
+                                </span>
+                            </p>
+                            <br>
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                        type="radio"
+                                        id="change-business-details"
+                                        data-action-url="/prototypes/user-self-serve/version-8/signed-in/account/05-change-business-details/index.html"
+                                        class="radio__input js-radio"
+                                        value="question-two"
+                                        name="message-query">
+                                    <label class="radio__label" for="change-business-details">Change business details</label>
+                                </span>
+                            </p>
+                            <br>
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                        type="radio"
+                                        id="access-to-my-surveys"
+                                        data-action-url="{{ pageInfo.parentPath }}/account/03-share-access-to-my-surveys/index.html"
+                                        class="radio__input js-radio"
+                                        value="question-three"
+                                        name="message-query">
+                                    <label class="radio__label" for="access-to-my-surveys">Share access to my surveys</label>
+                                </span>
+                            </p>
+                            <br>
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                        type="radio"
+                                        id="transfer-my-surveys"
+                                        data-action-url="{{ pageInfo.parentPath }}/account/04-transfer-my-surveys/index.html"
+                                        class="radio__input js-radio"
+                                        value="question-four"
+                                        name="message-query">
+                                    <label class="radio__label" for="transfer-my-surveys">I am no longer required to complete any surveys</label>
+                                </span>
+                            </p>
+                            <br>
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                    type="radio"
+                                    id="option-5"
+                                    data-action-url="/prototypes/user-self-serve/version-8/signed-in/account/02-change-password/01-change-password.html"
+                                    class="radio__input js-radio"
+                                    value="question--five"
+                                    name="message-query">
+                                    <label class="radio__label" for="option-5">Change password</label>
+                                </span>
+                            </p>
+                            <br>
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                        type="radio"
+                                        id="other-checkbox"
+                                        data-action-url="{{ pageInfo.parentPath }}/account/07-something-else/index.html"
+                                        class="radio__input js-radio "
+                                        value="other" 
+                                        name="message-query"
+                                        aria-controls="other-checkbox-other-wrap" aria-haspopup="true">
+                                    <label class="radio__label" for="other-checkbox">
+                                        Something else
+                                    </label>
+                                </span>
+                            </p>
+                        </div>
+                    </fieldset>
+                </p>
+                <div class="grid grid--flex grid--gutterless grid--vertical-center grid--no-wrap@s u-mt-m u-mb-m">
+                    <div class="grid__col">
+                        <button type="submit" class="btn btn-group__btn">
+                            <span class="btn__inner">Continue</span>
+                        </button>
+
+                    </div>
+                    <div class="grid__col u-ml-m">
+                        <a href="/prototypes/user-self-serve/version-8/signed-in/00-surveys-list.html">Cancel</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

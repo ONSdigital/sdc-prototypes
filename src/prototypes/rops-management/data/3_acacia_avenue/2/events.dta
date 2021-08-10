@@ -1,0 +1,236 @@
+{% set cases =
+[
+  {
+    "id":"20235418-4ef0-43dd-8ea6-073700be5d37",
+    "event_channel":"RM",
+    "event_date":"2020-06-23",
+    "event_time":"13:53:38",
+    "event_description":"Create case sample received",
+    "event_payload":{
+      "oa": "E82120239",
+      "lad": "E57938951",
+      "lsoa": "E32183510",
+      "msoa": "E95251682",
+      "uprn": "14506056110",
+      "region": "E98042611",
+      "abpCode": "RD02",
+      "latitude": "11.2106",
+      "postcode": "GO7 3BR",
+      "townName": "Electable City",
+      "estabType": "Household",
+      "estabUprn": "18691652575",
+      "longitude": "168.9209",
+      "htcDigital": "3",
+      "printBatch": "80",
+      "addressType": "HH",
+      "actionPlanId": "2b5eab2d-e1d7-4cd3-a3a4-cf7de8570d96",
+      "addressLevel": "U",
+      "addressLine1": "949 Cringing Scallion Lane",
+      "addressLine2": "",
+      "addressLine3": "",
+      "treatmentCode": "HH_LF2R2E",
+      "fieldOfficerId": "",
+      "htcWillingness": "2",
+      "organisationName": "",
+      "ceExpectedCapacity": "0",
+      "fieldCoordinatorId": "",
+      "secureEstablishment": "0",
+      "collectionExerciseId": "2b5eab2d-e1d7-4cd3-a3a4-cf7de8570d96"
+    },
+    "event_source":"CASE_SERVICE",
+    "event_transaction_id":"9646d0f4-df3b-41cb-9bef-f196fe5f931c",
+    "event_type":"SAMPLE_LOADED",
+    "message_timestamp":"2020-06-23 13:53:37.741+00",
+    "rm_event_processed":"2020-06-23 13:53:38.341815+00",
+    "caze_case_id":"b4d62630-0bad-4195-afbf-41c27c9aabde",
+    "uac_qid_link_id":"NULL"
+  },
+  {
+    "id":"e150b4d0-d7b3-4ef7-b880-edbce4a9ebe6",
+    "event_channel":"CC",
+    "event_date":"2020-06-24",
+    "event_time":"08:07:59",
+    "event_description":"Fulfilment Request Received",
+    "event_payload":{
+      "caseId": "b4d62630-0bad-4195-afbf-41c27c9aabde",
+      "contact": "null",
+      "uacQidCreated": "null",
+      "fulfilmentCode": "UACHHT1"
+    },
+    "event_source":"CONTACT_CENTRE_API",
+    "event_transaction_id":"629751c6-bf0f-4071-a8f2-bf1c37cf8f80",
+    "event_type":"FULFILMENT_REQUESTED",
+    "message_timestamp":"2020-06-24 08:07:59.319+00",
+    "rm_event_processed":"2020-06-24 08:07:59.329688+00",
+    "caze_case_id":"b4d62630-0bad-4195-afbf-41c27c9aabde",
+    "uac_qid_link_id":"NULL"
+  },
+  {
+    "id":"31d06f1c-b7fd-40de-a665-b107f4d86cb1",
+    "event_channel":"NULL",
+    "event_date":"2020-06-24",
+    "event_time":"08:08:01",
+    "event_description":"RM UAC QID pair created",
+    "event_payload":{
+      "uacQidCreated":{
+        "qid": "0130000024826942",
+        "uac": "JPJC5H2N9H5GQBFB",
+        "caseId": "b4d62630-0bad-4195-afbf-41c27c9aabde"
+      }
+    },
+    "event_source":"NULL",
+    "event_transaction_id":"3ec6b688-a91a-4b94-b225-b560f1a5101c",
+    "event_type":"RM_UAC_CREATED",
+    "message_timestamp":"2020-06-24 08:08:01.091+00",
+    "rm_event_processed":"2020-06-24 08:08:01.095729+00",
+    "caze_case_id":"NULL",
+    "uac_qid_link_id":"b21c4399-fe7f-4550-8f3c-8641f1337da9"
+  },
+  {
+    "id":"3a989ae2-089a-498a-9058-beb77d40c25e",
+    "event_channel":"CC",
+    "event_date":"2020-06-24",
+    "event_time":"08:09:03",
+    "event_description":"Fulfilment Request Received",
+    "event_payload":{
+      "caseId": "b4d62630-0bad-4195-afbf-41c27c9aabde",
+      "contact": "null",
+      "uacQidCreated": "null",
+      "fulfilmentCode": "P_OR_H1"
+    },
+    "event_source":"CONTACT_CENTRE_API",
+    "event_transaction_id":"206f390b-95f0-47af-b511-d0a2295176d9",
+    "event_type":"FULFILMENT_REQUESTED",
+    "message_timestamp":"2020-06-24 08:09:03.518+00",
+    "rm_event_processed":"2020-06-24 08:09:03.522724+00",
+    "caze_case_id":"b4d62630-0bad-4195-afbf-41c27c9aabde",
+    "uac_qid_link_id":"NULL"
+  },
+  {
+    "id":"265b9c90-fabd-43b6-98fe-db6da078cc7a",
+    "event_channel":"CC",
+    "event_date":"2020-06-24",
+    "event_time":"08:09:40",
+    "event_description":"Fulfilment Request Received",
+    "event_payload":{
+      "caseId": "b4d62630-0bad-4195-afbf-41c27c9aabde",
+      "contact": "null",
+      "uacQidCreated": "null",
+      "fulfilmentCode": "P_OR_H1"
+    },
+    "event_source":"CONTACT_CENTRE_API",
+    "event_transaction_id":"dca743b2-938c-4a8e-9b9c-ec4a39834836",
+    "event_type":"FULFILMENT_REQUESTED",
+    "message_timestamp":"2020-06-24 08:09:40.868+00",
+    "rm_event_processed":"2020-06-24 08:09:40.870298+00",
+    "caze_case_id":"b4d62630-0bad-4195-afbf-41c27c9aabde",
+    "uac_qid_link_id":"NULL"
+  },
+  {
+    "id":"256b22d2-5bd7-4f7d-8a67-f3d52da1fe0e",
+    "event_channel":"NULL",
+    "event_date":"2020-06-24",
+    "event_time":"08:10:01",
+    "event_description":"RM UAC QID pair created",
+    "event_payload":{
+      "uacQidCreated": {
+        "qid": "0130000024926947",
+        "uac": "BHHVTZ62MJBZ2H73",
+        "caseId": "b4d62630-0bad-4195-afbf-41c27c9aabde"
+      }
+    },
+    "event_source":"NULL",
+    "event_transaction_id":"75a69a4b-dc30-4465-91dc-28b86de671ab",
+    "event_type":"RM_UAC_CREATED",
+    "message_timestamp":"2020-06-24 08:10:01.267+00",
+    "rm_event_processed":"2020-06-24 08:10:01.295065+00",
+    "caze_case_id":"NULL",
+    "uac_qid_link_id":"44f37504-0df9-4659-ba68-1018e8724f30"
+  },
+  {
+    "id":"9c5118b7-7376-4e53-aa39-0ea63fd12755",
+    "event_channel":"RM",
+    "event_date":"2020-06-24",
+    "event_time":"08:10:01",
+    "event_description":"Case sent to printer with pack code P_OR_H1",
+    "event_payload":{
+      "printCaseSelected": {
+        "batchId": "7c3c6f83-07a6-4ac3-b3d7-83202968b76c",
+        "caseRef": "5164890518",
+        "packCode": "P_OR_H1",
+        "actionRuleId": "null"
+      }
+    },
+    "event_source":"ACTION_WORKER",
+    "event_transaction_id":"5c10c0ec-30b1-4e77-bc01-8c33baa1e193",
+    "event_type":"PRINT_CASE_SELECTED",
+    "message_timestamp":"2020-06-24 08:10:01.27+00",
+    "rm_event_processed":"2020-06-24 08:10:01.322423+00",
+    "caze_case_id":"b4d62630-0bad-4195-afbf-41c27c9aabde",
+    "uac_qid_link_id":"NULL"
+  },
+  {
+    "id":"df407321-4796-4f73-a360-7cf6cf56fbee",
+    "event_channel":"RM",
+    "event_date":"2020-06-24",
+    "event_time":"08:10:01",
+    "event_description":"Case sent to printer with pack code P_OR_H1",
+    "event_payload":{
+      "printCaseSelected":{
+        "batchId": "7c3c6f83-07a6-4ac3-b3d7-83202968b76c",
+        "caseRef": "5164890518",
+        "packCode": "P_OR_H1",
+        "actionRuleId": "null"
+      }
+    },
+    "event_source":"ACTION_WORKER",
+    "event_transaction_id":"4753508e-8fd2-4f6c-9dcc-835f3bcf7f59",
+    "event_type":"PRINT_CASE_SELECTED",
+    "message_timestamp":"2020-06-24 08:10:01.267+00",
+    "rm_event_processed":"2020-06-24 08:10:01.322423+00",
+    "caze_case_id":"b4d62630-0bad-4195-afbf-41c27c9aabde",
+    "uac_qid_link_id":"NULL"
+  },
+  {
+    "id":"fad7efab-f73e-4f5b-8a2b-41f29f0b2e6d",
+    "event_channel":"NULL",
+    "event_date":"2020-06-24",
+    "event_time":"08:10:01",
+    "event_description":"RM UAC QID pair created",
+    "event_payload":{
+      "uacQidCreated": {
+        "qid": "0130000024927023",
+        "uac": "T57NJ6KD52CVZCT2",
+        "caseId": "b4d62630-0bad-4195-afbf-41c27c9aabde"
+      }
+    },
+    "event_source":"NULL",
+    "event_transaction_id":"a3cb4a67-17a5-4007-ba97-2536230fe798",
+    "event_type":"RM_UAC_CREATED",
+    "message_timestamp":"2020-06-24 08:10:01.294+00",
+    "rm_event_processed":"2020-06-24 08:10:01.325689+00",
+    "caze_case_id":"NULL",
+    "uac_qid_link_id":"af29a447-55f7-4a25-a71e-59c282362bdc"
+  }
+]
+%}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

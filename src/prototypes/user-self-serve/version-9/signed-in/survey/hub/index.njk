@@ -1,0 +1,450 @@
+---
+group: RAS/RM - Frontstage
+title: E-commerce Survey
+version: 35.0.3
+layout: user-self-serve/views/version-9/_master-survey-hub
+---
+{% block main %}
+<form class="js-question-no-summary"></form>
+    <div class="grid">
+        <div class="grid__col col-8@m">
+            <h1>Choose another section to complete</h1>
+            {% call onsPanel({
+                "classes": 'js-warning u-d-no',
+                "type": 'warn'
+                })
+            %}
+                You must submit this survey to complete it
+            {% endcall %}
+            {{ onsSummary({
+                "hub": true,
+                "summaries": [
+                    {
+                        "groups": [
+                            {
+                                "rows": [
+                                    {
+
+                                        "rowTitle": "Use of computers",
+                                        "rowItems": [
+                                            {
+                                                "rowTitleAttributes": {
+                                                    "id": "section-one-row-title"
+                                                },
+                                                "attributes": {
+                                                    "id": "section-one-row-status"
+                                                },
+                                                "icon": "check",
+                                                "valueList": [
+                                                    {
+                                                        "text": "Not started"
+                                                    }
+                                                ],
+                                                "actions": [
+                                                    {
+                                                        "attributes": {
+                                                            "id": "section-one-row-action"
+                                                        },
+                                                        "text": "Start section",
+                                                        "ariaLabel": "Start Use of computers section",
+                                                        "url": pageInfo.parentPath + '/use-of-computers' + '/index.html'
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "rowTitle": "ICT specialists and skills",
+                                        "rowItems": [
+                                            {
+                                                "rowTitleAttributes": {
+                                                    "id": "section-two-row-title"
+                                                },
+                                                "attributes": {
+                                                    "id": "section-two-row-status"
+                                                },
+                                                "icon": "check",
+                                                "valueList": [
+                                                    {
+                                                        "text": "Not started"
+                                                    }
+                                                ],
+                                                "actions": [
+                                                    {
+                                                        "attributes": {
+                                                            "id": "section-two-row-action"
+                                                        },
+                                                        "text": "Start section",
+                                                        "ariaLabel": "Start ICT specialists and skills section",
+                                                        "url": pageInfo.parentPath + '/ict-specialists-and-skills/' + 'index.html'
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "rowTitle": "Access and use of the internet",
+                                        "rowItems": [
+                                            {
+                                                "rowTitleAttributes": {
+                                                    "id": "section-three-row-title"
+                                                },
+                                                "attributes": {
+                                                    "id": "section-three-row-status"
+                                                },
+                                                "icon": "check",
+                                                "valueList": [
+                                                    {
+                                                        "text": "Not started"
+                                                    }
+                                                ],
+                                                "actions": [
+                                                    {
+                                                        "attributes": {
+                                                            "id": "section-three-row-action"
+                                                        },
+                                                        "text": "Start section",
+                                                        "ariaLabel": "Start Access and use of the internet section",
+                                                        "url": pageInfo.parentPath + '/internet-access/' + 'index.html'
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "rowTitle": "Sharing of information electronically within the business",
+                                        "rowItems": [
+                                            {
+                                                "rowTitleAttributes": {
+                                                    "id": "section-four-row-title"
+                                                },
+                                                "attributes": {
+                                                    "id": "section-four-row-status"
+                                                },
+                                                "icon": "check",
+                                                "valueList": [
+                                                    {
+                                                        "text": "Not started"
+                                                    }
+                                                ],
+                                                "actions": [
+                                                    {
+                                                        "attributes": {
+                                                            "id": "section-four-row-action"
+                                                        },
+                                                        "text": "Start section",
+                                                        "ariaLabel": "Start Sharing of information electronically within the business section",
+                                                        "url": pageInfo.parentPath + '/sharing-of-information/' + 'index.html'
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "rowTitle": "ICT security",
+                                        "rowItems": [
+                                            {
+                                                "rowTitleAttributes": {
+                                                    "id": "section-five-row-title"
+                                                },
+                                                "attributes": {
+                                                    "id": "section-five-row-status"
+                                                },
+                                                "icon": "check",
+                                                "valueList": [
+                                                    {
+                                                        "text": "Not started"
+                                                    }
+                                                ],
+                                                "actions": [
+                                                    {
+                                                        "attributes": {
+                                                            "id": "section-five-row-action"
+                                                        },
+                                                        "text": "Start section",
+                                                        "ariaLabel": "Start ICT security section",
+                                                        "url": pageInfo.parentPath + '/ict-security/' + 'index.html'
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "rowTitle": "E-commerce",
+                                        "rowItems": [
+                                            {
+                                                "rowTitleAttributes": {
+                                                    "id": "section-six-row-title"
+                                                },
+                                                "attributes": {
+                                                    "id": "section-six-row-status"
+                                                },
+                                                "icon": "check",
+                                                "valueList": [
+                                                    {
+                                                        "text": "Not started"
+                                                    }
+                                                ],
+                                                "actions": [
+                                                    {
+                                                        "attributes": {
+                                                            "id": "section-six-row-action"
+                                                        },
+                                                        "text": "Start section",
+                                                        "ariaLabel": "Start E-commerce section",
+                                                        "url": pageInfo.parentPath + '/e-commerce/' + 'index.html'
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }) }}
+            <p class="js-declaration u-mt-l u-d-no">You will have the opportunity to save or print a copy of your answers after submitting this survey</p>
+            {{
+                onsButton({
+                    "id": 'js-continue',
+                    "text": 'Continue',
+                    "classes": 'u-mb-m u-mt-l btn--link-no-icon',
+                    "url": pageInfo.parentPath + '/ict-specialists-and-skills/' + 'index.html'
+                })
+            }}
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="{{ pageInfo.rootPath }}/version-9/scripts/index.js"></script>
+    <script>
+        var continueButton = document.getElementById('js-continue');
+        var questionTitle = document.getElementsByTagName('h1')[0];
+        var submitPanel = document.querySelector('.js-warning');
+        var declarationText = document.querySelector('.js-declaration');
+
+        var sectionOneStorage = sessionStorage.getItem('sectionOne');
+        var sectionOneObject = JSON.parse(sectionOneStorage);
+        var sectionOneTitle = document.getElementById('section-one-row-title');
+        var sectionOneStatus = document.getElementById('section-one-row-status');
+        var sectionOneAction = document.getElementById('section-one-row-action');
+
+        var sectionTwoStorage = sessionStorage.getItem('sectionTwo');
+        var sectionTwoObject = JSON.parse(sectionTwoStorage);
+        var sectionTwoTitle = document.getElementById('section-two-row-title');
+        var sectionTwoStatus = document.getElementById('section-two-row-status');
+        var sectionTwoAction = document.getElementById('section-two-row-action');
+
+        var sectionThreeStorage = sessionStorage.getItem('sectionThree');
+        var sectionThreeObject = JSON.parse(sectionThreeStorage);
+        var sectionThreeTitle = document.getElementById('section-three-row-title');
+        var sectionThreeStatus = document.getElementById('section-three-row-status');
+        var sectionThreeAction = document.getElementById('section-three-row-action');
+
+        var sectionFourStorage = sessionStorage.getItem('sectionFour');
+        var sectionFourObject = JSON.parse(sectionFourStorage);
+        var sectionFourTitle = document.getElementById('section-four-row-title');
+        var sectionFourStatus = document.getElementById('section-four-row-status');
+        var sectionFourAction = document.getElementById('section-four-row-action');
+
+        var sectionFiveStorage = sessionStorage.getItem('sectionFive');
+        var sectionFiveObject = JSON.parse(sectionFiveStorage);
+        var sectionFiveTitle = document.getElementById('section-five-row-title');
+        var sectionFiveStatus = document.getElementById('section-five-row-status');
+        var sectionFiveAction = document.getElementById('section-five-row-action');
+
+        var sectionSixStorage = sessionStorage.getItem('sectionSix');
+        var sectionSixObject = JSON.parse(sectionSixStorage);
+        var sectionSixTitle = document.getElementById('section-six-row-title');
+        var sectionSixStatus = document.getElementById('section-six-row-status');
+        var sectionSixAction = document.getElementById('section-six-row-action');
+
+
+        function updateSectionStatus() {
+            // Section 1 - Use of computers
+            if(sectionOneStorage){
+                if(sectionOneObject.status === 'complete') {
+                    sectionOneStatus.innerHTML = 'Completed';
+                    sectionOneAction.innerHTML = 'View answers';
+                    sectionOneAction.setAttribute('href', '#0');
+                }
+                if(sectionOneObject.status === 'started') {
+                    sectionOneStatus.innerHTML = 'Partially completed';
+                    sectionOneAction.innerHTML = 'Continue with section';
+                    sectionOneAction.setAttribute('href', sectionOneObject.bookmark + "?continue=true");
+                }
+            }
+
+            if(!sectionOneStorage || sectionOneObject.status === 'started'){
+                sectionOneTitle.firstElementChild.classList.add('u-d-no');
+                sectionOneTitle.children[1].classList.add('u-pl-no');
+            }
+
+            // Section 2 - ICT specialists and skills
+            if(sectionTwoStorage){
+                if(sectionTwoObject.status === 'complete') {
+                    sectionTwoStatus.innerHTML = 'Completed';
+                    sectionTwoAction.innerHTML = 'View answers';
+                    sectionTwoAction.setAttribute('href', '#0');
+                }
+                if(sectionTwoObject.status === 'started') {
+                    sectionTwoStatus.innerHTML = 'Partially completed';
+                    sectionTwoAction.innerHTML = 'Continue with section';
+                    sectionTwoAction.setAttribute('href', sectionTwoObject.bookmark + "?continue=true");
+                }
+            }
+            
+            if(!sectionTwoStorage || sectionTwoObject.status === 'started'){
+                sectionTwoTitle.firstElementChild.classList.add('u-d-no');
+                sectionTwoTitle.children[1].classList.add('u-pl-no');
+            }
+
+            // Section 3 - Access and use of internet
+            if(sectionThreeStorage){
+                if(sectionThreeObject.status === 'complete') {
+                    sectionThreeStatus.innerHTML = 'Completed';
+                    sectionThreeAction.innerHTML = 'View answers';
+                    sectionThreeAction.setAttribute('href', '#0');
+
+                }
+                if(sectionThreeObject.status === 'started') {
+                    sectionThreeStatus.innerHTML = 'Partially completed';
+                    sectionThreeAction.innerHTML = 'Continue with section';
+                    sectionThreeAction.setAttribute('href', sectionThreeObject.bookmark + "?continue=true");
+                }
+            }
+            
+            if(!sectionThreeStorage || sectionThreeObject.status === 'started'){
+                sectionThreeTitle.firstElementChild.classList.add('u-d-no');
+                sectionThreeTitle.children[1].classList.add('u-pl-no');
+            }
+
+            // Section 4 - Sharing of information electronically within the business
+            if(sectionFourStorage){
+                if(sectionFourObject.status === 'complete') {
+                    sectionFourStatus.innerHTML = 'Completed';
+                    sectionFourAction.innerHTML = 'View answers';
+                    sectionFourAction.setAttribute('href', '#0');
+
+                }
+                if(sectionFourObject.status === 'started') {
+                    sectionFourStatus.innerHTML = 'Partially completed';
+                    sectionFourAction.innerHTML = 'Continue with section';
+                    sectionFourAction.setAttribute('href', sectionFourObject.bookmark + "?continue=true");
+                }
+            }
+            
+            if(!sectionFourStorage || sectionFourObject.status === 'started'){
+                sectionFourTitle.firstElementChild.classList.add('u-d-no');
+                sectionFourTitle.children[1].classList.add('u-pl-no');
+            } 
+
+            // Section 5 - ICT security
+            if(sectionFiveStorage){
+                if(sectionFiveObject.status === 'complete') {
+                    sectionFiveStatus.innerHTML = 'Completed';
+                    sectionFiveAction.innerHTML = 'View answers';
+                    sectionFiveAction.setAttribute('href', '#0');
+
+                }
+                if(sectionFiveObject.status === 'started') {
+                    sectionFiveStatus.innerHTML = 'Partially completed';
+                    sectionFiveAction.innerHTML = 'Continue with section';
+                    sectionFiveAction.setAttribute('href', sectionFiveObject.bookmark) + "?continue=true";
+                }
+            }
+            
+            if(!sectionFiveStorage || sectionFiveObject.status === 'started'){
+                sectionFiveTitle.firstElementChild.classList.add('u-d-no');
+                sectionFiveTitle.children[1].classList.add('u-pl-no');
+            }
+
+            // Section 6 - E-commerce
+            if(sectionSixStorage){
+                if(sectionSixObject.status === 'complete') {
+                    sectionSixStatus.innerHTML = 'Completed';
+                    sectionSixAction.innerHTML = 'View answers';
+                    sectionSixAction.setAttribute('href', '#0');
+
+                }
+                if(sectionSixObject.status === 'started') {
+                    sectionSixStatus.innerHTML = 'Partially completed';
+                    sectionSixAction.innerHTML = 'Continue with section';
+                    sectionSixAction.setAttribute('href', sectionSixObject.bookmark + "?continue=true");
+                }
+            }
+            
+            if(!sectionSixStorage || sectionSixObject.status === 'started'){
+                sectionSixTitle.firstElementChild.classList.add('u-d-no');
+                sectionSixTitle.children[1].classList.add('u-pl-no');
+            }
+        }
+
+        function updateContinueButtonRef() {
+            if(!sectionOneStorage || (sectionOneStorage && sectionOneObject.status != 'complete')) {
+                if(sectionOneStorage && sectionOneObject.status === 'started') {
+                    continueButton.setAttribute('href', sectionOneObject.bookmark + "?continue=true");
+                } else {
+                    continueButton.setAttribute('href', '{{ pageInfo.parentPath }}/use-of-computers/index.html');
+                }
+            } else if(!sectionTwoStorage || (sectionTwoStorage && sectionTwoObject.status != 'complete')) {
+                if(sectionTwoStorage && sectionTwoObject.status === 'started') {
+                    continueButton.setAttribute('href', sectionTwoObject.bookmark + "?continue=true");
+                } else {
+                    continueButton.setAttribute('href', '{{ pageInfo.parentPath }}/ict-specialists-and-skills/index.html');
+                }
+            } else if(!sectionThreeStorage || (sectionThreeStorage && sectionThreeObject.status != 'complete')) {
+                if(sectionThreeStorage && sectionThreeObject.status === 'started') {
+                    continueButton.setAttribute('href', sectionThreeObject.bookmark + "?continue=true");
+                } else {
+                    continueButton.setAttribute('href', '{{ pageInfo.parentPath }}/internet-access/index.html');
+                }
+            } else if(!sectionFourStorage || (sectionFourStorage && sectionFourObject.status != 'complete')) {
+                if(sectionFourStorage && sectionFourObject.status === 'started') {
+                    continueButton.setAttribute('href', sectionFourObject.bookmark + "?continue=true");
+                } else {
+                    continueButton.setAttribute('href', '{{ pageInfo.parentPath }}/sharing-of-information/index.html');
+                }
+            } else if(!sectionFiveStorage || (sectionFiveStorage && sectionFiveObject.status != 'complete')) {
+                if(sectionFiveStorage && sectionFiveObject.status === 'started') {
+                    continueButton.setAttribute('href', sectionFiveObject.bookmark + "?continue=true");
+                } else {
+                    continueButton.setAttribute('href', '{{ pageInfo.parentPath }}/ict-security/index.html');
+                }
+            } else if(!sectionSixStorage || (sectionSixStorage && sectionSixObject.status != 'complete')) {
+                if(sectionSixStorage && sectionSixObject.status === 'started') {
+                    continueButton.setAttribute('href', sectionSixObject.bookmark + "?continue=true");
+                } else {
+                    continueButton.setAttribute('href', '{{ pageInfo.parentPath }}/e-commerce/index.html');
+                }
+            } else {
+            }
+        }
+
+        function submitReady() {
+            if(sectionOneStorage && sectionTwoStorage && sectionThreeStorage && sectionFourStorage && sectionFiveStorage && sectionSixStorage){
+                if(sectionOneObject.status === 'complete'
+                 && sectionTwoObject.status === 'complete'
+                  && sectionThreeObject.status === 'complete'
+                   && sectionFourObject.status === 'complete'
+                    && sectionFiveObject.status === 'complete'
+                     && sectionSixObject.status === 'complete') {
+                        questionTitle.innerHTML = 'Submit survey';
+                        submitPanel.classList.remove('u-d-no');
+                        continueButton.children[0].innerHTML = 'Submit survey';
+                        continueButton.classList.remove('u-mt-l');
+                        continueButton.setAttribute('href', '{{ pageInfo.parentPath }}/complete/index.html');
+                        declarationText.classList.remove('u-d-no');
+
+                        continueButton.onclick = function submitComplete() {
+                            sessionStorage.setItem('surveyComplete', 'true');
+                        }
+                }
+            }
+        }
+
+        updateSectionStatus();
+        updateContinueButtonRef();
+        submitReady();
+    </script>
+{% endblock %}
