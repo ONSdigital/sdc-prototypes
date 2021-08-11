@@ -1,0 +1,39 @@
+---
+title: Census support - Generate an access code
+group: Census
+version: 24.0.3
+layout: census-support/views/_master
+---
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+{% from "components/lists/_macro.njk" import onsList %}
+
+{% block main %}
+    <h1 class="u-mt-l">Get a new access code or link a paper questionnaire</h1>
+    <p>A Census Engagement Manager or Community Advisor can use this service to help a respondent to:</p>
+    {{
+        onsList({
+            "classes": "u-mb-no",
+            "itemsList": [
+                {
+                    "text": "get a new online access code"
+                },
+                {
+                    "text": "link a paper questionnaire to an address"
+                }
+            ]
+        })
+    }}
+    {{ onsButton({
+        "text": "Start now",
+        "url": pageInfo.rootPath + "/what-is-your-address.html",
+        "classes": "u-mt-xl"
+    }) }}
+
+    <script>
+        sessionStorage.clear();
+    </script>
+
+{% endblock %}
