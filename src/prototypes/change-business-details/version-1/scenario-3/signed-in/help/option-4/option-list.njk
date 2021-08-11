@@ -1,0 +1,144 @@
+---
+group: RAS/RM - Frontstage
+title: Change business details
+version: 32.0.1
+layout: change-business-details/views/version-1/scenario-3/_master-survey
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+
+{% block main %}
+    <div class="grid">
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/prototypes/change-business-details/version-1/scenario-3/signed-in/00-surveys-list.html',
+                            "text": 'Surveys'
+                        },
+                        {
+                            "url": '/prototypes/change-business-details/version-1/scenario-3/signed-in/help/index.html',
+                            "text": 'Help'
+                        }
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+            <h1>Changes to your account</h1>
+            
+            <form action="{{ pageInfo.parentPath }}/account/index.html">
+                <p class="field">
+                    <fieldset class="fieldset">
+                        <legend class="fieldset__legend">Choose an option</legend>
+                        <div class="radios__items">
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                        type="radio"
+                                        id="change-account-details"
+                                        data-action-url="/prototypes/change-business-details/version-1/scenario-3/signed-in/account/index.html"
+                                        class="radio__input js-radio"
+                                        value="question-one"
+                                        name="message-query">
+                                    <label class="radio__label" for="change-account-details">Change account details</label>
+                                </span>
+                            </p>
+                            <br>
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                        type="radio"
+                                        id="access-to-my-surveys"
+                                        data-action-url="/prototypes/change-business-details/version-1/scenario-3/signed-in/account/03-share-access-to-my-surveys/index.html"
+                                        class="radio__input js-radio"
+                                        value="question-two"
+                                        name="message-query">
+                                    <label class="radio__label" for="access-to-my-surveys">Share access to my surveys</label>
+                                </span>
+                            </p>
+                            <br>
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                        type="radio"
+                                        id="transfer-my-surveys"
+                                        data-action-url="/prototypes/change-business-details/version-1/scenario-3/signed-in/account/04-transfer-my-surveys/index.html"
+                                        class="radio__input js-radio"
+                                        value="question-two"
+                                        name="message-query">
+                                    <label class="radio__label" for="transfer-my-surveys">I am no longer required to complete any surveys</label>
+                                </span>
+                            </p>
+                            <br>
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                        type="radio"
+                                        id="two-accounts"
+                                        data-action-url="/prototypes/change-business-details/version-1/scenario-3/signed-in/help/option-4/option-1/index.html"
+                                        class="radio__input js-radio"
+                                        value="question-three"
+                                        name="message-query">
+                                    <label class="radio__label" for="two-accounts">I have two accounts in error</label>
+                                </span>
+                            </p>
+                            <br>
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                        type="radio"
+                                        id="other-checkbox"
+                                        data-action-url="{{ pageInfo.parentPath }}/option-2/index.html"
+                                        class="radio__input js-radio "
+                                        value="other" 
+                                        name="message-query"
+                                        aria-controls="other-checkbox-other-wrap" aria-haspopup="true">
+                                    <label class="radio__label" for="other-checkbox">
+                                        Something else
+                                    </label>
+                                </span>
+                            </p>
+                        </div>
+                    </fieldset>
+                </p>
+
+                <div class="grid grid--flex grid--gutterless grid--vertical-center grid--no-wrap@s u-mt-m u-mb-m">
+                    <div class="grid__col">
+                        <button type="submit" class="btn btn-group__btn">
+                            <span class="btn__inner">Continue</span>
+                        </button>
+                    </div>
+                    <div class="grid__col u-ml-m">
+                        <a href="/prototypes/change-business-details/version-1/scenario-3/signed-in/help/index.html">Cancel</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        var submit = document.getElementById('btnFormSubmit');
+        submit.addEventListener('click', submitForm);
+
+        function submitForm(event) {
+            event.preventDefault();
+            event.stopPropagation();
+
+            var href = '',
+                inputs = this
+                    .parentNode
+                    .getElementsByTagName('input')
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].getAttribute('name') == 'button' && inputs[i].checked) {
+                    href = inputs[i].getAttribute('data-href');
+                    window.location = href;
+                }
+            }
+        }
+    </script>
+
+{% endblock %}

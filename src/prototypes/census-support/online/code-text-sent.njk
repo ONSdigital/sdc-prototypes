@@ -1,0 +1,29 @@
+---
+version: 24.0.3
+layout: census-support/views/_master
+---
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/fieldset/_macro.njk" import onsFieldset %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "census-support/components/input/_macro.njk" import onsInput %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+
+{% block preMain %}
+    <div class="u-mt-s">
+        <a class="back-link" href="{{ pageInfo.rootPath }}/index.html">Back to start</a>
+    </div>
+{% endblock %}
+{% block main %}
+    {% call onsPanel({ 
+        "type": "success",
+        "icon": "check",
+        "classes": "u-mb-l"
+    }) %}
+        <h1 class="u-mb-xs">We have sent a text to 01234567890</h1>
+        <p>The text message with a new household access code should arrive soon for you to start your census</p>
+    {% endcall %}
+
+    <h2 class="u-fs-m u-mb-xs">Didn’t receive a text?</h2>
+    <p class="u-mb-no">It can take a few minutes for the text to arrive. If it doesn’t arrive, you can <a href="{{ pageInfo.parentPath }}/what-is-your-mobile-phone-number.html">get another access code</a>.</p>
+
+{% endblock %}

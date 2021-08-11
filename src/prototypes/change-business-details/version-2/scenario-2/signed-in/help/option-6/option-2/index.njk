@@ -1,0 +1,83 @@
+---
+group: RAS/RM - Frontstage
+title: Change business details
+version: 32.0.1
+layout: change-business-details/views/version-2/scenario-2/_master-survey
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+
+{% block main %}
+
+    <div class="grid">
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/prototypes/change-business-details/version-2/scenario-2/signed-in/00-surveys-list.html',
+                            "text": 'Surveys'
+                        },
+                        {
+                            "url": '/prototypes/change-business-details/version-2/scenario-2/signed-in/help/index.html',
+                            "text": 'Help'
+                        },
+                        {
+                            "url": '/prototypes/change-business-details/version-2/scenario-2/signed-in/help/option-6/option-1/option-list.html',
+                            "text": 'Something else'
+                        }
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+            <h1>Send a message</h1>
+            <p>Send us a message with a description of your issue and we will get back to you.</p>
+            {% from "components/metadata/_macro.njk" import onsMetadata %}
+            {{
+                onsMetadata({
+                    "metadataLabel": "Message subject",
+                    "termCol": "2",
+                    "descriptionCol": "10",
+                    "itemsList": [
+                        {
+                            "term": "Subject:",
+                            "descriptions": [
+                                {
+                                    "description": "Help"
+                                }
+                            ]
+                        }
+                    ]
+                })
+            }}
+        </div>
+        <div class="grid__col col-6@m">
+                {{
+                onsTextarea({
+                    "id": "textarea",
+                    "name": "feedback",
+                    "label": {
+                        "text": "Enter message"
+                    }
+                })
+            }}
+
+            <div class="grid grid--flex grid--gutterless grid--vertical-center grid--no-wrap@s u-mt-m u-mb-m">
+                <div class="grid__col">
+                    <button type="button" class="btn btn-group__btn" onclick="location.href='{{ pageInfo.rootPath }}/version-2/scenario-2/signed-in/10-message-sent.html';">
+                        <span class="btn__inner">Send message</span>
+                    </button>
+                </div>
+                <div class="grid__col u-ml-m">
+                    <a href="/prototypes/change-business-details/version-2/scenario-2/signed-in/help/index.html">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,105 @@
+---
+group: RAS/RM - Frontstage
+title: Change business details
+version: 32.0.1
+layout: change-business-details/views/version-1/scenario-3/_master-survey
+---
+
+{% from "components/metadata/_macro.njk" import onsMetadata %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/date-input/_macro.njk" import onsDateInput %}
+
+
+{% block main %}
+    <div class="grid">
+        <div class="grid__col col-8@m u-pt-no">
+            <h1>The business is subject to a takeover</h1>
+            <p>Send us a secure message with answers the following questions and we will get back to you.</p>
+        </div>
+        <div class="grid__col col-6@m">
+            {{
+                onsInput({
+                    "id": "text",
+                    "label": {
+                        "text": "Company name of the aquirer"
+                    }
+                })
+            }}
+
+            {{
+                onsInput({
+                    "id": "text",
+                    "classes": "input--w-8",
+                    "label": {
+                        "text": "Company number of the aquirer"
+                    }
+                })
+            }}
+
+            {{
+                onsDateInput({
+                    "id": "date",
+                    "legend": "Date of takeover",
+                    "description": "For example, 31 3 2021",
+                    "day": {
+                        "label": {
+                            "text": "Day"
+                        },
+                        "name": "day",
+                        "attributes": {
+                            "autocomplete": "bday-day"
+                        }
+                    },
+                    "month": {
+                        "label": {
+                            "text": "Month"
+                        },
+                        "name": "month",
+                        "attributes": {
+                            "autocomplete": "bday-month"
+                        }
+                    },
+                    "year": {
+                        "label": {
+                            "text": "Year"
+                        },
+                        "name": "year",
+                        "attributes": {
+                            "autocomplete": "bday-year"
+                        }
+                    }
+                })
+            }}
+            <!--
+                {{
+                    onsTextarea({
+                        "id": "textarea",
+                        "name": "feedback",
+                        "label": {
+                            "text": "Enter additional information (optional)"
+                        }
+                    })
+                }}
+                -->
+                <div class="grid grid--flex grid--gutterless grid--vertical-center grid--no-wrap@s u-mt-m u-mb-m">
+                    <div class="grid__col">
+                    {{ 
+                        onsButton({
+                            "type": 'button',
+                            "text": 'Send message',
+                            "classes": 'btn-group__btn',
+                            "url": "/prototypes/change-business-details/version-1/scenario-3/signed-in/account/05-change-business-details/account-index-done.html"
+                        }) 
+                    }}
+                    </div>
+                    <div class="grid__col u-ml-m">
+                        <a href="/prototypes/change-business-details/version-1/scenario-3/signed-in/account/05-change-business-details/change-business-status/index.html">Cancel</a>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+{% endblock %}
