@@ -1,0 +1,156 @@
+---
+group: RAS/RM - Frontstage
+title: Change business details
+version: 32.0.1
+layout: change-business-details/views/version-2/scenario-1/_master-survey
+---
+
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+{% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
+
+{% block main %}
+
+    <div class="grid">
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/prototypes/change-business-details/version-2/scenario-1/signed-in/00-surveys-list.html',
+                            "text": 'Surveys'
+                        },
+                        {
+                            "url": '/prototypes/change-business-details/version-2/scenario-1/signed-in/account/index.html',
+                            "text": 'Account'
+                        },
+                        {
+                            "url": '/prototypes/change-business-details/version-2/scenario-1/signed-in/account/04-transfer-my-surveys/index.html',
+                            "text": 'Transfer surveys'
+                        },
+                        {
+                            "url": '/prototypes/change-business-details/version-2/scenario-1/signed-in/account/04-transfer-my-surveys/00-select-business.html',
+                            "text": 'Select business'
+                        } 
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+            <div class="panel panel--error js-error-panel">
+                <div class="panel__header">
+                    <h1 data-qa="error-header" class="panel__title u-fs-r--b">There is a problem</h1>
+                </div>
+                <div class="panel__body">
+                    <ol class="list ">
+                        <li class="list__item ">
+                            <a href="#error" class="list__link js-inpagelink">You've reached the maximum amount of emails you can enroll on this survey</a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <h1 class="u-mt-s">Select surveys to transfer</h1>
+
+            <p class="field u-mt-s">
+                <button type="submit" class="btn btn--secondary btn--small">
+                    <span class="btn__inner">Select all surveys</span>
+                </button>
+            </p>
+
+            {{
+                onsCheckboxes({
+                    "legend": "ACME Consumer Products",
+                    "checkboxesLabel": "Select all that apply",
+                    "name": "ACME Consumer Products",
+                    "checkboxes": [
+                        {
+                            "id": "Quarterly Business Survey",
+                            "label": {
+                                "text": "Quarterly Business Survey"
+                            },
+                            "value": "Quarterly Business Survey"
+                        },
+                        {
+                            "id": "Monthly Business Survey",
+                            "label": {
+                                "text": "Monthly Business Survey"
+                            },
+                            "value": "Monthly Business Survey"
+                        }
+                    ]
+                })
+            }}
+            <div id="error" class="panel panel--error panel--simple js-error-panel">
+                <div class="panel__body">
+                    <p class="panel__error">
+                        <strong>You've reached the maximum amount of emails you can enroll on the Business Register and Employment Survey</strong>
+                        <p>This means you will be unable to transfer the Business Register and Employment Survey to any more colleagues. Deselect the survey to continue or call 0300 1234 931 to discuss your options.</p>
+                    </p>
+                    {{
+                onsCheckboxes({
+                    "legend": "ACME Group Ltd",
+                    "checkboxesLabel": "Select all that apply",
+                    "name": "ACME Group Ltd",
+                    "checkboxes": [
+                        {
+                            "id": "BRSS",
+                            "classes": "input--error",
+                            "checked": "checked",
+                            "label": {
+                                "text": "Business Register and Employment Survey"
+                            },
+                            "value": "BRSS"
+                        },
+                        {
+                            "id": "MBS",
+                            "checked": "checked",
+                            "label": {
+                                "text": "Monthly Business Survey"
+                            },
+                            "value": "MBS"
+                        },
+                        {
+                            "id": "QBS",
+                            "checked": "checked",
+                            "label": {
+                                "text": "Quarterly Business Survey"
+                            },
+                            "value": "QBS"
+                        },
+                        {
+                            "id": "MWSS",
+                            "checked": "checked",
+                            "label": {
+                                "text": "Monthly Wages and Salary Survey"
+                            },
+                            "value": "MWSS"
+                        },
+                        {
+                            "id": "QADCA",
+                            "checked": "checked",
+                            "label": {
+                                "text": "Quarterly Acquisitions and Disposals of Capital Assets"
+                            },
+                            "value": "QADCA"
+                        }
+                    ]
+                })
+            }}
+                </div>
+            </div>
+            <p class="field u-mt-l">
+                <button type="submit" class="btn btn--disabled" disabled="true" onclick="location.href='{{ pageInfo.rootPath }}/version-2/scenario-1/signed-in/account/04-transfer-my-surveys/02-email-address.html';">
+                    <span class="btn__inner">Continue</span>
+                </button>
+                
+                </div>
+                <div class="grid__col u-ml-m">
+                    <a href="/prototypes/change-business-details/version-2/scenario-1/signed-in/account/04-transfer-my-surveys/index.html">Cancel</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}
