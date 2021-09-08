@@ -1,0 +1,100 @@
+---
+title: Braille
+group: Census
+version: 32.2.4
+layout: census-website-respond/views/_master
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{ onsBreadcrumb({
+                "ariaLabel": 'Breadcrumb',
+                "itemsList": [
+                    {
+                        "url": 'https://census-website-respond.netlify.app/end-to-end/home',
+                        "text": 'Home'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help',
+                        "text": 'Help with the census'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help/languages-and-accessibility',
+                        "text": 'Languages and accessibility'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help/languages-and-accessibility/accessibility',
+                        "text": 'Accessibility'
+                    }
+                ]
+            }) }}
+
+            <div class="grid">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-l u-fs-xxl">Braille</h1>
+
+                        <p>A Braille guidance booklet is available in English and Welsh.</p>
+
+                        <p>The booklet provides Braille translations of information about the census, including:</p>
+
+                        {{ onsList({
+                            "itemsList": [
+                                {
+                                    "text": 'what the census is and why you should take part​'
+                                },
+                                {
+                                    "text": 'how to take part online or on paper'
+                                },
+                                {
+                                    "text": 'privacy and data protection information​'
+                                },
+                                {
+                                    "text": 'how to get help​'
+                                }
+                            ]
+                        }) }}
+
+                        <p><a href="{{pageInfo.rootPath}}/contact-us">Contact us</a> to request a Braille guidance booklet.</p>
+
+                    </main>
+
+                </div>
+
+                <div class="grid__col col-4@m push-1@m u-mt-m">
+
+                    {{ onsRelatedLinks({
+                        "id": 'related-links',
+                        "title": 'Related content',
+                        "itemsList": [                
+                            {
+                                "url": pageInfo.rootPath + '/help/find-a-census-support-centre',
+                                "text": 'Find a census support centre'
+                            },
+                            {
+                                "url": 'https://census-website-respond.netlify.app/end-to-end/languages',
+                                "text": 'Languages'
+                            },
+                            {
+                                "url": pageInfo.rootPath + '/contact-us',
+                                "text": 'Contact us'
+                            }
+                        ]
+                    }) }}
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}

@@ -1,0 +1,126 @@
+---
+title: Select your address
+version: 31.4.0
+layout: address-lookup-postcode-select/views/_master
+---
+{% block preMain %}
+
+    {{
+        onsBreadcrumb({
+            "ariaLabel": 'back',
+            "id": 'back',
+            "itemsList": [
+                {
+                    "url": pageInfo.rootPath + '/',
+                    "id": 'back-link',
+                    "classes": 'js-previous',
+                    "text": 'Back'
+                }
+            ]
+        })
+    }}
+
+{% endblock %}
+{% block main %}
+
+    <div class="grid">
+
+        <div class="grid__col col-8@m">
+
+            <main class="page__main" id="main-content" role="main">
+
+                <form action="{{ pageInfo.rootPath }}/confirm-address">
+
+                {% call onsQuestion({
+                    "title": "Select your address",
+                    "description": '<p>150 addresses found for postcode <span class="js-piping"><strong>AA1 1AA</strong></span></p>'
+                }) %}
+                    {{
+                        onsSelect({
+                            "id": "select",
+                            "name": "select",
+                            "label": {
+                                "classes": "u-vh",
+                                "text": "Select and address"
+                            },
+                            "classes": "input--block",
+                            "options": [
+                                {
+                                    "value": "",
+                                    "text": "Select an address",
+                                    "disabled": true,
+                                    "selected": true
+                                },
+                                {
+                                    "value": "1",
+                                    "text": '1 Example Street, Exampletown, AA1 1AA'
+                                },
+                                {
+                                    "value": "2",
+                                    "text": '2 Example Street, Exampletown, AA1 1AA'
+                                },
+                                {
+                                    "value": "3",
+                                    "text": '3 Example Street, Exampletown, AA1 1AA'
+                                },
+                                {
+                                    "value": "4",
+                                    "text": '4 Example Street, Exampletown, AA1 1AA'
+                                },
+                                {
+                                    "value": "5",
+                                    "text": '5 Example Street, Exampletown, AA1 1AA'
+                                }
+                            ]
+                        })
+                    }}
+
+                    <p class="u-mt-s"><a href="{{ pageInfo.rootPath }}/register-address">I can’t find my address</a></p>
+
+                {% endcall %}
+
+                    {{
+                        onsButton({
+                            'id': 'js-submit',
+                            'text': 'Continue',
+                            'classes': 'u-mt-l',
+                            'submitType': 'loader'
+                        })
+                    }}
+
+                </form>
+
+            </main>
+
+        </div>
+
+    </div>
+
+<script>
+    const postCode = sessionStorage.getItem('postcode');
+    const displayPostCode = postCode.replace(/.{3}$/,' $&').toUpperCase();
+    const pipingDestinations = Array.from(document.querySelectorAll('.js-piping'));
+
+    pipingDestinations.forEach(function(pipingDestination) {
+        if (postCode) {
+            pipingDestination.innerHTML = pipingDestination.innerHTML.replace('AA1 1AA', displayPostCode);
+        }
+    });
+
+    document.querySelector('form').addEventListener('submit', () => {
+
+        const answer = document.querySelectorAll('input');
+        const inputName = document.querySelector('input').name;
+
+        for (i = 0; i < answer.length; i++) {
+            if (answer.checked) {
+                const inputVal = answer.value;
+            }
+        }
+
+        sessionStorage.setItem(inputName, inputVal);
+        return true;
+    });
+</script>
+
+{% endblock %}

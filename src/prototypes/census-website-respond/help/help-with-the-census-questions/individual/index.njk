@@ -1,0 +1,158 @@
+---
+title: Help with the Individual Questionnaire
+group: Census
+version: 32.2.4
+layout: census-website-respond/views/_master
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{ onsBreadcrumb({
+                "ariaLabel": 'Breadcrumb',
+                "itemsList": [
+                    {
+                        "url": 'https://census-website-respond.netlify.app/end-to-end/home',
+                        "text": 'Home'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help',
+                        "text": 'Help with the census'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help/help-with-the-census-questions',
+                        "text": 'Help with the census questions'
+                    }
+                ]
+            }) }}
+
+            <div class="grid">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-l u-fs-xxl">Help with the Individual Questionnaire</h1>
+
+                        <div class="page__body">
+                            <main id="main-content" class="page__main">
+
+                                <h1 class="u-fs-xxl">Help with the Individual Questionnaire</h1>
+
+                                    <p>The Individual Questionnaire is a form that asks questions about one person only.</p>
+
+                                    <p>If you live in a private household, please make sure your name and relationship to other members of the household are recorded on the Household Questionnaire.</p>
+
+                                    <h2>A1. What type of accommodation is this?</h2>
+
+                                    <h3>A communal establishment</h3>
+
+                                    <p>Choose “A communal establishment” if you’re living in:</p>
+
+                                    {{
+                                        onsList({
+                                            "itemsList": [
+                                                {
+                                                    "text": 'any managed or supervised accommodation, or'
+                                                },
+                                                {
+                                                    "text": 'shared accommodation provided just for staff, even if it includes self-contained flats'
+                                                }
+                                            ]
+                                        })
+                                    }}
+
+                                    <p>Examples of communal establishments include student halls of residence, boarding schools, armed forces bases, hospitals, care homes and prisons.</p>
+
+                                    <h3>A private or family household</h3>
+
+                                    <p>A household is either:</p>
+
+                                    {{
+                                        onsList({
+                                            "itemsList": [
+                                                {
+                                                    "text": 'one person living alone, or'
+                                                },
+                                                {
+                                                    "text": 'a group of people (who don’t have to be related) living at the same address who share cooking facilities and share a living room or sitting room or dining area'
+                                                }
+                                            ]
+                                        })
+                                    }}
+
+                                    <p>Choose “A private or family household” if you’re living in an independent household, that’s in a totally separate building, in the grounds of a communal establishment.</p>
+
+                                    <h2>A2. What is your position in this establishment?</h2>
+
+                                    <p>Choose one option from the list provided.</p>
+
+                                    {% call onsPanel() %}
+
+                                        <p>If you’re helping someone to fill in this form, please make sure you answer this question about them and not about yourself.</p>
+
+                                    {% endcall %}
+
+                                    <h3>Students</h3>
+
+                                    <p>Students in a hall of residence should tick “Resident”.</p>
+
+                                    <p>You should also be included on the Household Questionnaire at your home address.</p>
+
+                                    <h3>Military personnel based in the UK</h3>
+
+                                    <p>If your usual UK address is the military establishment where you work, and you have no other UK address choose “Resident”.</p>
+
+                                    <h2>For help with the rest of the questions, you can choose either:</h2>
+
+                                    {{
+                                        onsList({
+                                            "itemsList": [
+                                                {
+                                                    "url": 'https://craft-respond.census-gcp.onsdigital.uk/help/how-to-answer-questions/online-questions-help',
+                                                    "text": 'Online questions help'
+                                                },
+                                                {
+                                                    "url": 'https://craft-respond.census-gcp.onsdigital.uk/help/how-to-answer-questions/paper-questions-help-1',
+                                                    "text": 'Paper questions help'
+                                                }
+                                            ]
+                                        })
+                                    }}
+
+                                </main>
+                        </div>
+
+                    </main>
+
+                </div>
+
+                <div class="grid__col col-4@m push-1@m u-mt-m">
+
+                    {{ onsRelatedLinks({
+                        "id": 'related-links',
+                        "title": 'Related content',
+                        "itemsList": [
+                            {
+                                "url": pageInfo.rootPath + '/help/help-with-the-census-questions/online',
+                                "text": 'Online questions help'
+                            },
+                            {
+                                "url": pageInfo.rootPath + '/contact-us',
+                                "text": 'Contact us'
+                            }
+                        ]
+                    }) }}
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}

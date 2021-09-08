@@ -1,0 +1,77 @@
+---
+title: Media enquiries
+group: Census
+version: 31.2.0
+layout: census-website-engage/views/_nisra-master
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": pageInfo.rootPath + '/ni/home',
+                            "text": 'Home'
+                        },
+                        {
+                            "url": pageInfo.rootPath + '/ni/media-and-campaigns',
+                            "text": 'Media and campaigns'
+                        }
+                    ]
+                })
+            }}
+
+            <div class="grid">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-l u-fs-xxl">Media enquiries</h1>
+
+                            <div class="page__body">
+                            
+                            <p>If you’re a journalist and would like to talk to someone about the census in Northern Ireland, please contact the Department of Finance press office on 028 9081 6895 or 028 9081 6724.</p>
+
+                            <p>Email at <a href="mailto:dof.pressoffice@finance-ni.gov.uk">dof.pressoffice@finance-ni.gov.uk</a></p>
+
+                            <p>Emergency out of hours (limited service): 07623 974 383</p>
+
+                            <p>You can also find more information, including all our latest press releases and media coverage.</p>
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+                <div class="grid__col col-4@m push-1@m u-mt-m">
+
+                    {{-
+                        onsRelatedLinks({
+                            "id": 'related-links',
+                            "title": 'Related content',
+                            "itemsList": [
+                                {
+                                    "url": pageInfo.rootPath + '/ni/contact-us',
+                                    "text": 'Contact us'
+                                }
+                            ]
+                        })
+                    }}
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}

@@ -1,0 +1,166 @@
+---
+title: Properties with squatters
+group: Census
+version: 32.2.4
+layout: census-website-respond/views/_master
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{ onsBreadcrumb({
+                "ariaLabel": 'Breadcrumb',
+                "itemsList": [
+                    {
+                        "url": 'https://census-website-respond.netlify.app/end-to-end/home',
+                        "text": 'Home'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help',
+                        "text": 'Help with the census'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help/types-of-accommodation',
+                        "text": 'Types of household or accommodation'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help/types-of-accommodation/second-homes-and-properties',
+                        "text": 'Second homes, holiday lets and empty properties'
+                    }
+                ]
+            }) }}
+
+            <div class="grid">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-l">
+                            <span class="u-fs-m u-db u-mb-xs u-lighter">Second homes, holiday lets and empty properties</span>
+                            <span class="u-vh">: </span>
+                            <span class="u-fs-xxl u-db">Properties with squatters</span>
+                        </h1>
+
+                        {{-
+                            onsTableOfContents({
+                                "title": 'Contents',
+                                "ariaLabel": 'Pages in this guide',
+                                "itemsList": [
+                                    {
+                                        "url": pageInfo.rootPath + '/help/types-of-accommodation/second-homes-and-properties',
+                                        "text": 'Overview'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/types-of-accommodation/second-homes-and-properties/i-have-a-second-property',
+                                        "text": 'I have a second property'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/types-of-accommodation/second-homes-and-properties/empty-properties',
+                                        "text": 'Empty properties'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/types-of-accommodation/second-homes-and-properties/im-in-rented-holiday-accommodation',
+                                        "text": 'I’m in rented holiday accommodation'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/types-of-accommodation/second-homes-and-properties/im-staying-in-a-non-residential-property',
+                                        "text": 'I’m staying in a non-residential property'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/types-of-accommodation/second-homes-and-properties/this-property-is-sublet-but-the-landlord-doesnt-know',
+                                        "text": 'This property is sublet, but the landlord doesn’t know'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/types-of-accommodation/second-homes-and-properties/properties-with-squatters',
+                                        "text": 'Properties with squatters',
+                                        "current": true
+                                    }
+                                ]
+                            })
+                        }}
+
+                        <div class="page__body">
+
+                            <p>If someone is living in a property, they must be counted in the census. Taking part in the census helps give local services the information they need to support you and your community.</p>
+
+                            <p>The owner or the squatter can complete the census for the property. Whether or not you open the letter, someone must fill in a census form for this property. Not completing the census risks prosecution, a criminal record and a fine of up to £1,000.</p>
+
+                            <h2>I’m the owner</h2>
+
+                            <p>When you receive the census letter, complete the form for the address.</p>
+
+                            <p>If you can’t get the post from the property, you can complete the census online by <a href="/help/get-an-access-code-or-paper-census">requesting an access code</a> to be sent to you by text.</p>
+
+                            <p>If you don’t know who’s living there, you still need to answer a few of the questions.</p>
+
+                            <h3>I’m filling in an online form</h3>
+
+                            <p>Answer the questions about the accommodation. Also answer the questions about who lives here, using “Person 1” and “Person 2” for the names.</p>
+
+                            <p>When completing the online form you will have the opportunity to order individual forms for those living in the property. The forms will be sent to the property by post.</p>
+
+                            <h3>I’m filling in a paper form</h3>
+
+                            <p>Answer questions H7 to H13 about the accommodation only.</p>
+
+                            <h2>I’m squatting</h2>
+
+                            <p>If you’re living or staying here, you should complete the census. Your answers are protected by law and are kept confidential.</p>
+
+                            <p>If we don’t receive a completed census for this address, a census officer will call at your door. To make sure this doesn’t happen, return or submit your completed census form as soon as you can.</p>
+
+                            <div class="u-mt-xl">
+                                {{ onsContentPagination({
+                                    "contentPaginationItems": [
+                                        {
+                                            "rel": 'prev',
+                                            "text": 'Previous',
+                                            "url": pageInfo.rootPath + '/help/types-of-accommodation/second-homes-and-properties/this-property-is-sublet-but-the-landlord-doesnt-know',
+                                            "label": 'This property is sublet, but the landlord doesn’t know'
+                                        }
+                                        ]
+                                    })
+                                }}
+                            </div>
+
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+                <div class="grid__col col-4@m push-1@m u-mt-m">
+
+                    {{ onsRelatedLinks({
+                        "id": 'related-links',
+                        "title": 'Related content',
+                        "itemsList": [
+                            {
+                                "url": pageInfo.rootPath + '/help/find-a-census-support-centre',
+                                "text": 'Find a census support centre'
+                            },
+                            {
+                                "url": 'https://census-website-respond.netlify.app/end-to-end/languages',
+                                "text": 'Languages'
+                            },
+                            {
+                                "url": pageInfo.rootPath + '/contact-us',
+                                "text": 'Contact us'
+                            }
+                        ]
+                    }) }}
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}

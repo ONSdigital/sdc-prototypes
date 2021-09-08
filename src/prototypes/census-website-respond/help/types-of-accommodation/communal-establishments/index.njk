@@ -1,0 +1,154 @@
+---
+title: Care homes, student halls and other establishments
+group: Census
+version: 32.2.4
+layout: census-website-respond/views/_master
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{ onsBreadcrumb({
+                "ariaLabel": 'Breadcrumb',
+                "itemsList": [
+                    {
+                        "url": 'https://census-website-respond.netlify.app/end-to-end/home',
+                        "text": 'Home'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help',
+                        "text": 'Help with the census'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help/types-of-accommodation',
+                        "text": 'Types of household or accommodation'
+                    }
+                ]
+            }) }}
+
+            <div class="grid">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-fs-xxl u-mb-l">
+                            Care homes, student halls and other establishments
+                            <span class="u-vh">: Overview</span>
+                        </h1>
+
+                        {{-
+                            onsTableOfContents({
+                                "title": 'Contents',
+                                "ariaLabel": 'Pages in this guide',
+                                "itemsList": [
+                                    {
+                                        "url": pageInfo.rootPath + '/help/types-of-accommodation/communal-establishments',
+                                        "text": 'Overview',
+                                        "current": true
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/types-of-accommodation/communal-establishments/i-live-in-an-establishment',
+                                        "text": 'I live in an establishment'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/types-of-accommodation/communal-establishments/i-manage-an-establishment',
+                                        "text": 'I manage an establishment'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/types-of-accommodation/communal-establishments/establishments-that-are-treated-as-households',
+                                        "text": 'Establishments that are treated as households'
+                                    }
+                                ]
+                            })
+                        }}
+
+                        <div class="page__body">
+                            <p>A communal establishment is a place providing managed residential accommodation. "Managed" here means full-time or part-time supervision of the accommodation.</p>
+
+                            <p>Examples of communal establishments include:</p>
+
+                            {{
+                                onsList({
+                                    "itemsList": [
+                                        {
+                                            "text": "university halls of residence and boarding schools"
+                                        },
+                                        {
+                                            "text": "care homes, hospitals, hospices and maternity units"
+                                        },
+                                        {
+                                            "text": "hotels, guest houses, hostels and B&Bs, all with residential accommodation for seven or more guests"
+                                        },
+                                        {
+                                            "text": "prisons and other secure facilities"
+                                        },
+                                        {
+                                            "text": "Single Living Accommodation (SLA) in military bases"
+                                        },
+                                        {
+                                            "text": "staff accommodation"
+                                        },
+                                        {
+                                            "text": "religious establishments"
+                                        }
+                                    ]
+                                })
+                            }}
+
+                            <p>Communal establishments don’t include sheltered accommodation, serviced apartments, nurses’ accommodation and houses rented to students by private landlords. These are considered to be households.</p>
+
+                            <div class="u-mt-xl">
+                                {{-
+                                    onsContentPagination({
+                                        "contentPaginationItems": [
+                                            {
+                                                "rel": 'next',
+                                                "text": 'Next',
+                                                "url": pageInfo.rootPath + '/help/types-of-accommodation/communal-establishments/i-live-in-an-establishment',
+                                                "label": 'I live in an establishment'
+                                            }
+                                        ]
+                                    })
+                                }}
+                            </div>
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+                <div class="grid__col col-4@m push-1@m u-mt-m">
+
+                    {{ onsRelatedLinks({
+                        "id": 'related-links',
+                        "title": 'Related content',
+                        "itemsList": [
+                            {
+                                "url": pageInfo.rootPath + '/help/find-a-census-support-centre',
+                                "text": 'Find a census support centre'
+                            },
+                            {
+                                "url": 'https://census-website-respond.netlify.app/end-to-end/languages',
+                                "text": 'Languages'
+                            },
+                            {
+                                "url": pageInfo.rootPath + '/contact-us',
+                                "text": 'Contact us'
+                            }
+                        ]
+                    }) }}
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}

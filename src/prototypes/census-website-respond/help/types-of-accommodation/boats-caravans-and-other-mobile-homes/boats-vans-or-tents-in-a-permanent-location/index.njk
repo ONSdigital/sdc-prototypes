@@ -1,0 +1,217 @@
+---
+title: Boats, vans or tents in a permanent location
+group: Census
+version: 32.2.4
+layout: census-website-respond/views/_master
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{ onsBreadcrumb({
+                "ariaLabel": 'Breadcrumb',
+                "itemsList": [
+                    {
+                        "url": 'https://census-website-respond.netlify.app/end-to-end/home',
+                        "text": 'Home'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help',
+                        "text": 'Help with the census'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help/types-of-accommodation',
+                        "text": 'Types of household or accommodation'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help/types-of-accommodation/boats-caravans-and-other-mobile-homes/',
+                        "text": 'Boats, caravans and other mobile homes'
+                    }
+                ]
+            }) }}
+
+            <div class="grid">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-l">
+                            <span class="u-fs-m u-db u-mb-xs u-lighter">Boats, caravans and other mobile homes</span>
+                            <span class="u-vh">: </span>
+                            <span class="u-fs-xxl u-db">Boats, vans or tents in a permanent location</span>
+                        </h1>
+
+                        {{-
+                            onsTableOfContents({
+                                "title": 'Contents',
+                                "ariaLabel": 'Pages in this guide',
+                                "itemsList": [
+                                    {
+                                        "url": pageInfo.rootPath + '/help/types-of-accommodation/boats-caravans-and-other-mobile-homes',
+                                        "text": 'Overview'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/types-of-accommodation/boats-caravans-and-other-mobile-homes/boats-vans-or-tents-in-a-permanent-location',
+                                        "text": 'Boats, vans or tents in a permanent location',
+                                        "current": true
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/types-of-accommodation/boats-caravans-and-other-mobile-homes/boats-vans-or-other-mobile-households-not-in-a-permanent-location',
+                                        "text": 'Boats, vans or other mobile households not in a permanent location'
+                                    }
+                                ]
+                            })
+                        }}
+
+                        <div class="page__body">
+
+                            <p>You will receive a letter, either by hand from one of our census officers or in the post. The method depends on whether your standing or mooring is registered with Royal Mail or not.</p>
+
+                            <p>In Wales, you will have the option to fill in a form in either English or Welsh. Please only fill in one form.<br></p>
+
+                            {% call onsPanel() %}
+
+                                <h2>If registered with Royal Mail</h2>
+
+                                <p>We will send you a letter containing an access code to open your online census form.</p>
+
+                                <h2>If not registered with Royal Mail</h2>
+
+                                <p>If you live on a campsite or in a marina, a census officer will deliver your letter.</p>
+
+                                <p>If you live on a permanent mooring, pitch or other location, we aim for a census officer to deliver forms to every household they can find.</p>
+
+                                <p>However, if you haven't received a form by Sunday 21 March 2021, please <a href="/contact-us">contact us</a>.</p>
+
+                            {% endcall %}
+
+                            <h2>Do I have to fill in a census form here?</h2>
+
+                            <p>You should fill in a form here if you're a:</p>
+
+                            {{
+                                onsList({
+                                    "itemsList": [
+                                        {
+                                            "text": "UK resident and live or plan to live at this location for six months or more"
+                                        },
+                                        {
+                                            "text": "UK resident and have no usual residence elsewhere"
+                                        },
+                                        {
+                                            "text": "non-UK resident and live or plan to live at this location for three months or more and have no other permanent UK address"
+                                        }
+                                    ]
+                                })
+                            }}
+
+                            <h2>What do I do next?</h2>
+
+                            {{
+                                onsList({
+                                    "element": "ol",
+                                    "itemsList": [
+                                        {
+                                            "text": "Keep your questionnaire safe."
+                                        },
+                                        {
+                                            "text": "Complete the paper form or use the access code to fill in an online form."
+                                        },
+                                        {
+                                            "text": "Answer all the questions about your household."
+                                        },
+                                        {
+                                            "text": "Put the completed paper form in the envelope and seal it."
+                                        },
+                                        {
+                                            "text": "Post it or give it to the manager of your campsite or marina to post for you."
+                                        }
+                                    ]
+                                })
+                            }}
+
+                            {% call onsPanel() %}
+
+                                    <h2>What do I put as my address?</h2>
+
+                                    <p>If your accommodation has a registered address, please use it on your form.</p>
+
+                                    <p>If you're staying on the grounds of a premises, please use that address.</p>
+
+                                    <p>If your location has no registered address, please describe your whereabouts as best you can.</p>
+
+                            {% endcall %}
+
+                            <h2>I need help to complete the form</h2>
+
+                            <p>If you have difficulty filling in the form, try to get a family member or friend to help you.</p>
+
+                            <p>You can <a href="{{pageInfo.rootPath}}/help/get-an-access-code-or-paper-census">order a replacement code to be sent to you by text</a>. This will allow you to access your online census form.</p>
+
+                            <p>If there's no one to help, please <a href="{{pageInfo.rootPath}}/contact-us">contact us</a>.</p>
+
+                            <div class="u-mt-xl">
+                                {{ onsContentPagination({
+                                    "contentPaginationItems": [
+                                        {
+                                            "rel": 'prev',
+                                            "text": 'Previous',
+                                            "url": pageInfo.rootPath + '/help/types-of-accommodation/boats-caravans-and-other-mobile-homes',
+                                            "label": 'Overview'
+                                        }
+                                        ]
+                                    })
+                                }}
+                                {{-
+                                    onsContentPagination({
+                                        "contentPaginationItems": [
+                                        {
+                                            "rel": 'next',
+                                            "text": 'Next',
+                                            "url": pageInfo.rootPath + '/help/types-of-accommodation/boats-caravans-and-other-mobile-homes/boats-vans-or-other-mobile-households-not-in-a-permanent-location',
+                                            "label": 'Boats, vans or other mobile households not in a permanent location'
+                                        }
+                                        ]
+                                    })
+                                }}
+                            </div>
+                        </div>
+
+                    </main>
+
+                </div>
+
+                <div class="grid__col col-4@m push-1@m u-mt-m">
+
+                    {{ onsRelatedLinks({
+                        "id": 'related-links',
+                        "title": 'Related content',
+                        "itemsList": [
+                            {
+                                "url": pageInfo.rootPath + '/help/find-a-census-support-centre',
+                                "text": 'Find a census support centre'
+                            },
+                            {
+                                "url": 'https://census-website-respond.netlify.app/end-to-end/languages',
+                                "text": 'Languages'
+                            },
+                            {
+                                "url": pageInfo.rootPath + '/contact-us',
+                                "text": 'Contact us'
+                            }
+                        ]
+                    }) }}
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}

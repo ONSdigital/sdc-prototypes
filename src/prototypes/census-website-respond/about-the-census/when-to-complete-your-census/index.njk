@@ -1,0 +1,152 @@
+---
+title: About the Census Quality Survey
+group: Census
+version: 32.2.4
+layout: census-website-respond/views/_master
+---
+
+{% set pageId = 'about' %}
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": 'https://census-website-respond.netlify.app/end-to-end/home/',
+                            "text": 'Home'
+                        },
+                        {
+                            "url": pageInfo.rootPath + '/about-the-census',
+                            "text": 'About the census'
+                        }
+                    ]
+                })
+            }}
+
+            <div class="grid">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-l">
+                            <span class="u-fs-m u-db u-mb-xs u-lighter">About the census</span>
+                            <span class="u-vh">: </span>
+                            <span class="u-fs-xxl u-db">When to complete your census</span>
+                        </h1>
+
+                        {{-
+                            onsTableOfContents({
+                                "title": 'Contents',
+                                "ariaLabel": 'Pages in this guide',
+                                "itemsList": [
+                                    {
+                                        "url": pageInfo.rootPath + '/about-the-census',
+                                        "text": 'Overview'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/about-the-census/who-should-fill-in-a-census',
+                                        "text": 'Who should fill in a census'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/about-the-census/why-you-should-take-part-in-the-census',
+                                        "text": 'Why you should take part in the census'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/about-the-census/how-your-information-is-used',
+                                        "text": 'How your information is used'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/about-the-census/when-to-complete-your-census',
+                                        "text": 'When to complete your census',
+                                        "current": true
+                                    }
+                                ]
+                            })
+                        -}}
+
+                        <div class="page__body">
+                            
+                            <p>Please fill in the form on Sunday 21 March 2021, or as soon as you can afterwards. This is so we can count the whole population on the same day.</p>
+
+                            <h2>Can I fill it in early?</h2>
+
+                            <p>Yes, you can do it early, as long as you’re confident that the make-up of your household won’t change between when you fill it in and Census Day.</p>
+
+                            <p>If you have responded before Census Day and things have changed, please <a href="{{pageInfo.rootPath}}/contact-us">contact us</a>.</p>
+
+                            <p>Please make sure you answer about your household as you expect it to be on Census Day, Sunday 21 March 2021.</p>
+
+                            <p>To record overnight visitors, include who you expect to be visiting.</p>
+
+                            <h3>What if I’m away from home on census night?</h3>
+
+                            <p>If you’re away from home on Sunday 21 March 2021, you can fill in your household form before you go or as soon as you can afterwards. You can also use your access code to complete online while you're away.</p>
+
+                            <div class="u-mt-xl">
+                                {{-
+                                    onsContentPagination({
+                                        "contentPaginationItems": [
+                                            {
+                                                "rel": 'prev',
+                                                "text": 'Previous',
+                                                "url": pageInfo.rootPath + '/about-the-census/how-your-information-is-used',
+                                                "label": 'How your information is used'
+                                            }
+                                        ]
+                                    })
+                                }}
+                            </div>
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+                <div class="grid__col col-4@m push-1@m u-mt-m">
+
+                    {{-
+                        onsRelatedLinks({
+                            "id": 'related-links',
+                            "title": 'Related content',
+                            "itemsList": [
+                                {
+                                    "url": pageInfo.rootPath + '/your-data-and-security',
+                                    "text": 'Your data and security'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/help/getting-started/what-if-im-away-or-abroad-on-census-day',
+                                    "text": 'What if I’m away or abroad on Census Day?'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/about-the-census/help/getting-started/im-moving-house',
+                                    "text": 'I’m moving house'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/news',
+                                    "text": 'News'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/contact-us',
+                                    "text": 'Contact us'
+                                }
+                            ]
+                        })
+                    }}
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}

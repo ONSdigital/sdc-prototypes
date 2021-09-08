@@ -1,0 +1,123 @@
+---
+title: Accessible videos with audio in Welsh
+group: Census
+version: 32.2.4
+layout: census-website-respond/views/_master
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{ onsBreadcrumb({
+                "ariaLabel": 'Breadcrumb',
+                "itemsList": [
+                    {
+                        "url": 'https://census-website-respond.netlify.app/end-to-end/home',
+                        "text": 'Home'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help',
+                        "text": 'Help with the census'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help/languages-and-accessibility',
+                        "text": 'Languages and accessibility'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help/languages-and-accessibility/accessibility',
+                        "text": 'Accessibility'
+                    }
+                ]
+            }) }}
+
+            <div class="grid">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-l u-fs-xxl">Accessible videos with audio in Welsh</h1>
+
+                        <div class="page__body">
+
+                            <p>Use these Welsh videos alongside the census questionnaire to help you answer the questions. They also provide information about the census in Welsh.</p>
+
+                            {{
+                                onsList({
+                                    "classes": 'list--bare list--spacious',
+                                    "itemsList": [
+                                        {
+                                            "url": pageInfo.rootPath + '/help/languages-and-accessibility/accessibility/welsh-audio/people-who-live-here',
+                                            "text": 'People who live here'
+                                        },
+                                        {
+                                            "url": pageInfo.rootPath + '/help/languages-and-accessibility/accessibility/welsh-audio/visitors',
+                                            "text": 'Visitors'
+                                        },
+                                        {
+                                            "url": pageInfo.rootPath + '/help/languages-and-accessibility/accessibility/welsh-audio/household-relationships',
+                                            "text": 'Household relationships'
+                                        },
+                                        {
+                                            "url": pageInfo.rootPath + '/help/languages-and-accessibility/accessibility/welsh-audio/household-and-accommodation',
+                                            "text": 'Household and accommodation'
+                                        },
+                                        {
+                                            "url": pageInfo.rootPath + '/help/languages-and-accessibility/accessibility/welsh-audio/personal-details',
+                                            "text": 'Personal details'
+                                        },
+                                        {
+                                            "url": pageInfo.rootPath + '/help/languages-and-accessibility/accessibility/welsh-audio/health',
+                                            "text": 'Health'
+                                        },
+                                        {
+                                            "url": pageInfo.rootPath + '/help/languages-and-accessibility/accessibility/welsh-audio/qualifications',
+                                            "text": 'Qualifications'
+                                        },
+                                        {
+                                            "url": pageInfo.rootPath + '/help/languages-and-accessibility/accessibility/welsh-audio/employment',
+                                            "text": 'Employment'
+                                        }
+                                    ]
+                                })
+                            }}
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+                <div class="grid__col col-4@m push-1@m u-mt-m">
+
+                    {{ onsRelatedLinks({
+                        "id": 'related-links',
+                        "title": 'Related content',
+                        "itemsList": [                
+                            {
+                                "url": pageInfo.rootPath + '/help/find-a-census-support-centre',
+                                "text": 'Find a census support centre'
+                            },
+                            {
+                                "url": 'https://census-website-respond.netlify.app/end-to-end/languages',
+                                "text": 'Languages'
+                            },
+                            {
+                                "url": pageInfo.rootPath + '/contact-us',
+                                "text": 'Contact us'
+                            }
+                        ]
+                    }) }}
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}

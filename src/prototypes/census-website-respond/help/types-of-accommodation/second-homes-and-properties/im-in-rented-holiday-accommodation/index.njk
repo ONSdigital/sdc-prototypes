@@ -1,0 +1,156 @@
+---
+title: I’m in rented holiday accommodation
+group: Census
+version: 32.2.4
+layout: census-website-respond/views/_master
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{ onsBreadcrumb({
+                "ariaLabel": 'Breadcrumb',
+                "itemsList": [
+                    {
+                        "url": 'https://census-website-respond.netlify.app/end-to-end/home',
+                        "text": 'Home'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help',
+                        "text": 'Help with the census'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help/types-of-accommodation',
+                        "text": 'Types of household or accommodation'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help/types-of-accommodation/second-homes-and-properties',
+                        "text": 'Second homes, holiday lets and empty properties'
+                    }
+                ]
+            }) }}
+
+            <div class="grid">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-l">
+                            <span class="u-fs-m u-db u-mb-xs u-lighter">Second homes, holiday lets and empty properties</span>
+                            <span class="u-vh">: </span>
+                            <span class="u-fs-xxl u-db">I’m in rented holiday accommodation</span>
+                        </h1>
+
+                        {{-
+                            onsTableOfContents({
+                                "title": 'Contents',
+                                "ariaLabel": 'Pages in this guide',
+                                "itemsList": [
+                                    {
+                                        "url": pageInfo.rootPath + '/help/types-of-accommodation/second-homes-and-properties',
+                                        "text": 'Overview'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/types-of-accommodation/second-homes-and-properties/i-have-a-second-property',
+                                        "text": 'I have a second property'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/types-of-accommodation/second-homes-and-properties/empty-properties',
+                                        "text": 'Empty properties'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/types-of-accommodation/second-homes-and-properties/im-in-rented-holiday-accommodation',
+                                        "text": 'I’m in rented holiday accommodation',
+                                        "current": true
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/types-of-accommodation/second-homes-and-properties/im-staying-in-a-non-residential-property',
+                                        "text": 'I’m staying in a non-residential property'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/types-of-accommodation/second-homes-and-properties/this-property-is-sublet-but-the-landlord-doesnt-know',
+                                        "text": 'This property is sublet, but the landlord doesn’t know'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/types-of-accommodation/second-homes-and-properties/properties-with-squatters',
+                                        "text": 'Properties with squatters'
+                                    }
+                                ]
+                            })
+                        }}
+
+                        <div class="page__body">
+
+                            <p>If you’re staying in rented holiday accommodation on Sunday 21 March 2021, and you’re there for less than three months, you are not responsible for filling in the census form.</p>
+
+                            <p>The owner may ask you some questions so they can fill in the census form for the property.</p>
+
+                            <p>If you’re staying there for three months or more, please fill in the census form sent to that address.</p>
+
+                            <div class="u-mt-xl">
+                                {{ onsContentPagination({
+                                    "contentPaginationItems": [
+                                        {
+                                            "rel": 'prev',
+                                            "text": 'Previous',
+                                            "url": pageInfo.rootPath + '/help/types-of-accommodation/second-homes-and-properties/empty-properties',
+                                            "label": 'Empty properties'
+                                        }
+                                        ]
+                                    })
+                                }}
+                                {{-
+                                    onsContentPagination({
+                                        "contentPaginationItems": [
+                                        {
+                                            "rel": 'next',
+                                            "text": 'Next',
+                                            "url": pageInfo.rootPath + '/help/types-of-accommodation/second-homes-and-properties/im-staying-in-a-non-residential-property',
+                                            "label": 'I’m staying in a non-residential property'
+                                        }
+                                        ]
+                                    })
+                                }}
+                            </div>
+
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+                <div class="grid__col col-4@m push-1@m u-mt-m">
+
+                    {{ onsRelatedLinks({
+                        "id": 'related-links',
+                        "title": 'Related content',
+                        "itemsList": [
+                            {
+                                "url": pageInfo.rootPath + '/help/find-a-census-support-centre',
+                                "text": 'Find a census support centre'
+                            },
+                            {
+                                "url": 'https://census-website-respond.netlify.app/end-to-end/languages',
+                                "text": 'Languages'
+                            },
+                            {
+                                "url": pageInfo.rootPath + '/contact-us',
+                                "text": 'Contact us'
+                            }
+                        ]
+                    }) }}
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}

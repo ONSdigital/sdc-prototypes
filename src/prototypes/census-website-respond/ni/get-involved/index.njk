@@ -1,0 +1,119 @@
+---
+title: Get involved
+group: Census
+version: 32.2.4
+layout: census-website-respond/views/_nisra-master
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": 'https://census-website-respond.netlify.app/end-to-end/home/',
+                            "text": 'Home'
+                        }
+                    ]
+                })
+            }}
+
+            <div class="grid">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-fs-xxl u-mb-l">
+                            Get involved
+                            <span class="u-vh">: Overview</span>
+                        </h1>
+
+                        {{-
+                            onsTableOfContents({
+                                "title": 'Contents',
+                                "ariaLabel": 'Pages in this guide',
+                                "itemsList": [
+                                    {
+                                        "url": pageInfo.rootPath + '/ni/get-involved/overview',
+                                        "text": 'Overview',
+                                        "current": true
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/ni/get-involved/community-and-voluntary-groups',
+                                        "text": 'Community and voluntary groups'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/ni/get-involved/census-information-events',
+                                        "text": 'Census information events'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/ni/get-involved/census-completion-events',
+                                        "text": 'Census completion events'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/ni/get-involved/downloadable-resources',
+                                        "text": 'Downloadable resources'
+                                    }
+                                ]
+                            })
+                        }}
+
+                        <div class="page__body">
+                            
+                            <p>There are lots of ways that you can get involved with Census 2021.  Whether you are an individual, a group or organisation we would love to hear from you.</p>
+
+                            <p>By taking part and encouraging others to do the same, you’ll help make sure you and your community get the services you need.</p>
+
+                            <p>If you would like more information on how you can help email the <a href="mailto:census.engagement@nisra.gov.uk">Census Engagement Team</a> or follow us on <a href="https://www.facebook.com/NICensus2021" rel="external">Facebook</a> and <a href="https://www.twitter.com/NICensus2021" rel="external">Twitter</a>.</p>
+                            
+                            <div class="u-mt-xl">
+                                {{-
+                                    onsContentPagination({
+                                        "contentPaginationItems": [
+                                            {
+                                                "rel": 'next',
+                                                "text": 'Next',
+                                                "url": pageInfo.rootPath + '/ni/get-involved/community-and-voluntary-groups',
+                                                "label": 'Community and voluntary groups'
+                                            }
+                                        ]
+                                    })
+                                }}
+                            </div>
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+                <div class="grid__col col-4@m push-1@m u-mt-m">
+
+                    {{-
+                        onsRelatedLinks({
+                            "id": 'related-links',
+                            "title": 'Related content',
+                            "itemsList": [
+                                {
+                                    "url": pageInfo.rootPath + '/ni/contact-us',
+                                    "text": 'Contact us'
+                                }
+                            ]
+                        })
+                    }}
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}

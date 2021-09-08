@@ -1,0 +1,85 @@
+---
+title: Who lives here?
+group: Census
+version: 32.2.4
+layout: census-website-respond/views/_master
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{ onsBreadcrumb({
+                "ariaLabel": 'Breadcrumb',
+                "itemsList": [
+                    {
+                        "url": 'https://census-website-respond.netlify.app/end-to-end/home',
+                        "text": 'Home'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help',
+                        "text": 'Help with the census'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help/help-with-the-census-questions',
+                        "text": 'Help with the census questions'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help/help-with-the-census-questions/online',
+                        "text": 'Online questions help'
+                    }
+                ]
+            }) }}
+
+            <div class="grid">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-l u-fs-xxl">Who lives here?</h1>
+
+                        <div class="panel panel--branded panel--no-title u-mb-l"><div class="panel__body"><p>If you are completing the paper census questionnaire please use the <a href="/help/how-to-answer-questions/paper-questions-help-1/who-usually-lives-here">paper census guidance</a>.</p></div></div>
+
+                        <div class="page__body">
+
+                          <div id="details" class="collapsible js-collapsible u-mb-s collapsible--initialised" data-btn-close="Hide this" role="group"><div class="collapsible__heading js-collapsible-heading" role="link" aria-controls="details" tabindex="0" aria-expanded="false" data-ga-action="Close panel"><div class="collapsible__controls"><div class="collapsible__title">Why we ask this question</div><span class="collapsible__icon"><svg class="svg-icon" viewBox="0 0 7.5 12.85" xmlns="http://www.w3.org/2000/svg"><path d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z" transform="translate(-5.02 -1.59)"></path></svg></span></div></div><div id="details-content" class="collapsible__content js-collapsible-content" aria-hidden="true"><p>The information you give helps us work out the total number of people in your area and where they're living. This will help local and central government provide the right services for your community.</p><p>We ask people to tell us about empty houses and holiday homes so we can work out how many people are living in housing. This information will help your local authority understand how much housing they have and how much your community may need in the future.</p><p>The census first asked these questions in 1931.</p><button type="button" class="btn btn--small js-collapsible-button btn--secondary" aria-controls="details" data-ga-action="Close panel"><span class="btn__inner js-collapsible-button-inner">Hide this</span> <span class="btn__context u-vh">Why we ask this question undefined</span></button></div></div><p>Remember to include yourself, if this is your permanent or family home, and:</p><ul><li>anyone else who lives here and is here right now</li><li>anyone who lives here and is living away right now</li><li>anyone else staying here overnight on Sunday 21 March 2021 who doesn't have another UK address</li></ul><p>Select all options that apply to any members of the household. You can select more than one option for anyone fitting into more than one category.<br></p><div id="details" class="collapsible js-collapsible u-mb-m collapsible--initialised" data-btn-close="Hide this" role="group"><div class="collapsible__heading js-collapsible-heading" role="link" aria-controls="details" tabindex="0" aria-expanded="false" data-ga-action="Close panel"><div class="collapsible__controls"><div class="collapsible__title">What is a household?</div><span class="collapsible__icon"><svg class="svg-icon" viewBox="0 0 7.5 12.85" xmlns="http://www.w3.org/2000/svg"><path d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z" transform="translate(-5.02 -1.59)"></path></svg></span></div></div><div id="details-content" class="collapsible__content js-collapsible-content" aria-hidden="true"><p>A household is either:</p><ul><li>one person living alone, or</li><li>a group of people, who don't have to be related, living at the same address who share cooking facilities and share a living room or sitting room or dining area</li></ul><button type="button" class="btn btn--small js-collapsible-button btn--secondary" aria-controls="details" data-ga-action="Close panel"><span class="btn__inner js-collapsible-button-inner">Hide this</span> <span class="btn__context u-vh">What is a household? undefined</span></button></div></div><h2>What we mean by usually live</h2><p>The place you usually live is likely to be the address where you spend most of your time. For most people this will be your permanent or family home.</p>
+                          
+                          <p><a href="{{pageInfo.rootPath}}/help/help-with-the-census-questions/help-with-who-lives-here">Help with who lives here</a>
+                          
+                          </p><h2>People currently away</h2><p>Remember to include anyone who usually lives here but is temporarily away from home, for example:</p><ul><li>students, if this is either their term-time address or their permanent or home address</li><li>people who work away, if this is their permanent or home address</li><li>people staying, or expecting to stay, in an establishment such as a hospital, care home or hostel for less than six months</li><li>armed forces members, if this is their permanent or home address</li><li>people who are temporarily outside the UK for less than 12 months</li><li>babies born on or before Sunday 21 March 2021, even if they’re still in hospital</li></ul><p><a href="/help/help-with-the-census-questions/help-with-people-who-are-away">Help with people who are away</a></p><h2>Include anyone temporarily staying here who doesn't have a usual UK address</h2><p>This includes:</p><ul><li>people from the UK</li><li>people who usually live outside the UK who are in the UK for three months or more</li></ul><p>Include these people as members of your household.</p><h2>Household members with more than one address</h2><p>If a member of this household has more than one home address, include them at this address if they generally spend most of their time here.</p><p>If they spend most of their time at a different address, they should be included on the census form at that address.</p><p>If they spend equal time at both addresses, they should be included as living at the address they stay at overnight on Sunday 21 March 2021.</p><h2>Visitor information will be collected later</h2><p>Anyone else staying overnight on Sunday 21 March 2021 will be counted as a visitor. We'll ask some questions about them later on.</p><h2>How to decide which name to use</h2><h3>Use the name shown on official documents<br></h3><p>Examples include documents such as a passport or driving licence. Don’t worry if you don't know this information, just enter what you can. You'll need to enter a first name and last name.</p><h3>Middle names</h3><p>You can include middle names if you know what they are, or you can use initials if you prefer.</p><h3>Maiden or previous names</h3><p>You only need to enter current first and last names. You don’t need to enter any previous names such as a maiden name.</p><h3>Last name is your family name</h3><p>Please put your family name in the "Last name" box, even if you normally place your family name first.</p><p>If you're not sure, think about how your name appears on other official UK documents.</p><h3>Babies that haven’t been named yet<br></h3><p>Please enter “Baby” for their first name, then enter their last name (surname or family name).</p><h2>Household members who prefer to answer separately</h2><p>If any member of this household wants to answer separately, they'll need to complete an Individual Questionnaire. You'll be asked if you want to order one for them after completing the questions about household relationships. Remember to include these people in the questions about the household on this form.</p>
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+                <div class="grid__col col-4@m push-1@m u-mt-m">
+
+                    {{ onsRelatedLinks({
+                        "id": 'related-links',
+                        "title": 'Related content',
+                        "itemsList": [
+                            {
+                                "url": '#',
+                                "text": 'Your answers are confidential'
+                            },
+                            {
+                                "url": pageInfo.rootPath + '/contact-us',
+                                "text": 'Contact us'
+                            }
+                        ]
+                    }) }}
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}

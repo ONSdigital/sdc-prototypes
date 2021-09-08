@@ -1,0 +1,144 @@
+---
+title: Getting started
+group: Census
+version: 32.2.4
+layout: census-website-respond/views/_master
+---
+
+{% set pageId = 'help' %}
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{- onsBreadcrumb({
+                "ariaLabel": 'Breadcrumb',
+                "itemsList": [
+                    {
+                        "url": 'https://census-website-respond.netlify.app/end-to-end/home/',
+                        "text": 'Home'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help',
+                        "text": 'Help with the census'
+                    }
+                ]
+            }) }}
+
+            <div class="grid">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-fs-xxl u-mb-l">
+                            Getting started
+                            <span class="u-vh">: Overview</span>
+                        </h1>
+
+                        {{-
+                            onsTableOfContents({
+                                "title": 'Contents',
+                                "ariaLabel": 'Pages in this guide',
+                                "itemsList": [
+                                    {
+                                        "url": pageInfo.rootPath + '/help/getting-started',
+                                        "text": 'Overview',
+                                        "current": true
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/getting-started/completing-your-census-online',
+                                        "text": 'Completing your census online'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/getting-started/completing-your-census-on-paper',
+                                        "text": 'Completing your census on paper'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/getting-started/completing-the-census-for-someone-else',
+                                        "text": 'Completing the census for someone else'
+                                    }
+                                ]
+                            })
+                        }}
+
+                        <div class="page__body">
+
+                            <p>All households should complete the census on <strong>Sunday 21 March 2021</strong> or as soon as possible after. If you’ve responded before 21 March and things have changed, you can <a href="{{pageInfo.rootPath}}/contact-us">contact us</a> to let us know.</p>
+
+                            <p>The census should take around 10 minutes per person to fill in.</p>
+
+                            <p>You can choose to either:</p>
+
+                            {{
+                                onsList({
+                                    "classes": 'u-mb-l',
+                                    "itemsList": [
+                                        {
+                                            "text": "fill in your census online",
+                                            "url": pageInfo.rootPath + '/help/getting-started/completing-your-census-online'
+                                        },
+                                        {
+                                            "text": "fill in your census on paper",
+                                            "url": pageInfo.rootPath + '/help/getting-started/completing-your-census-on-paper'
+                                        }
+                                    ]
+                                })
+                            }}
+
+                            {% call onsPanel()
+                            %}
+
+                                <p>If you live in Wales, you can <a href="{{pageInfo.rootPath}}/help/getting-started/completing-the-census-in-welsh">complete the census in Welsh or English</a>.</p>
+
+                            {% endcall %}
+
+                            <div class="u-mt-xl">
+                                {{-
+                                    onsContentPagination({
+                                        "contentPaginationItems": [
+                                        {
+                                            "rel": 'next',
+                                            "text": 'Next',
+                                            "url": pageInfo.rootPath + '/help/getting-started/completing-your-census-online',
+                                            "label": 'Completing your census online'
+                                        }
+                                        ]
+                                    })
+                                }}
+                            </div>
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+                <div class="grid__col col-4@m push-1@m u-mt-m">
+
+                    {{- onsRelatedLinks({
+                        "id": 'related-links',
+                        "title": 'Related content',
+                        "itemsList": [
+                            {
+                                "url": pageInfo.rootPath + '/help/getting-started/im-moving-house',
+                                "text": 'I’m moving house'
+                            },
+                            {
+                                "url": pageInfo.rootPath + '/help/getting-started/what-if-im-away-or-abroad-on-census-day',
+                                "text": 'What if I’m away or abroad on Census Day?'
+                            }
+                        ]
+                    }) }}
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}

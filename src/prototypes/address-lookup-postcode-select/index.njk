@@ -1,0 +1,143 @@
+---
+title: Postcode select
+group: Address Lookup
+version: 31.4.0
+layout: address-lookup-postcode-select/views/_master
+---
+{% block preMain %}
+
+    {{
+        onsBreadcrumb({
+            "ariaLabel": 'back',
+            "id": 'back',
+            "itemsList": [
+                {
+                    "url": pageInfo.rootPath + '/',
+                    "id": 'back-link',
+                    "classes": 'js-previous',
+                    "text": 'Back'
+                }
+            ]
+        })
+    }}
+
+{% endblock %}
+{% block main %}
+    <div class="grid">
+
+        <div class="grid__col col-8@m">
+
+            <main class="page__main" id="main-content" role="main">
+
+                <form class="js-form" action="">
+
+                    {% call onsQuestion({
+                        "title": "What is your postcode?",
+                        "description": "<p>To request an access code, we need your address</p>"
+                    }) %}
+
+                        {{
+                            onsInput({
+                                'id': 'postcode',
+                                'type': 'text',
+                                'autocomplete': 'postal-code',
+                                'classes': 'input--w-6',
+                                'label': {
+                                    'text': "UK postcode"
+                                },
+                                'name': 'postcode'
+                            })
+                        }}
+
+                        {{
+                            onsButton({
+                                'id': 'js-submit',
+                                'text': 'Continue',
+                                'classes': 'u-mt-l',
+                                'submitType': 'loader'
+                            })
+                        }}
+
+                    {% endcall %}
+
+                </form>
+
+                {%- call onsCollapsible({
+                        'id': 'collapsible',
+                        'title': "I don’t live at a fixed address",
+                        'titleTag': 'h2',
+                        'classes': 'u-mt-m',
+                        'button': {
+                            'close': 'Hide this',
+                            'contextSuffix': 'content'
+                        }
+                    })
+                -%}
+
+                    <p>If you live somewhere that is mobile, such as a canal boat or motorhome, <a href="#">contact us to request an access code</a>.</p>
+
+                {%- endcall -%}
+
+                {{
+                    onsPanel({
+                        "classes": "u-mt-xl",
+                        "body": '<h2 class="u-fs-m">Prototype instructions</h2>
+                                <p>This prototype uses dummy data. Enter the following postcodes to test the different scenarios:</p>
+                                <ul>
+                                    <li><strong>AA1 1AA</strong> &#8804; 30 addresses</li>
+                                    <li><strong>BB2 2BB</strong> &#62; 30 addresses</li>
+                                    <li><strong>CC3 3CC</strong> &#61; 0 addresses</li>
+                                </ul>'
+                    })
+                }}
+
+            </main>
+
+        </div>
+
+    </div>
+
+<script>
+    sessionStorage.clear();
+
+    const questionForm = document.querySelector('.js-form');
+    const formSubmitButton = questionForm.querySelector('[type=Submit]');
+    const postcodeInput = document.querySelector('.input');
+    const inputVal = postcodeInput.value;
+    const inputName = document.querySelector('.input').name;
+
+    console.log('form= ' + questionForm);
+    console.log('formSubmitButton= ' + formSubmitButton.id);
+    console.log('postcodeInput= ' + postcodeInput);
+    console.log('postcodeInputValue= ' + postcodeInput.value);
+    console.log('inputName= ' + inputName);
+
+    postcodeInput.addEventListener('keyup', () => {
+
+        console.log(inputVal);
+
+    });
+
+    questionForm.addEventListener('submit', (e) => {
+
+        console.log(inputVal);
+        
+        if (inputVal === 'A') {
+            e.preventDefault();
+            window.location = '{{pageInfo.rootPath}}/select-address-radios/';
+        }
+        else if (inputVal === 'BB2 2BB') {
+            e.preventDefault();
+            window.location = '{{pageInfo.rootPath}}/select-address/';
+        }
+        else {
+            e.preventDefault();
+            window.location = '{{pageInfo.rootPath}}/no-address/';
+        }
+
+        sessionStorage.setItem(inputName, inputVal);
+
+    });
+</script>
+
+{% endblock %}

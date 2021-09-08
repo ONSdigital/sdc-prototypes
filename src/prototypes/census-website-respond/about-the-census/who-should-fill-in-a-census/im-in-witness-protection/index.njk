@@ -1,0 +1,71 @@
+---
+title: I'm in witness protection
+group: Census
+version: 32.2.4
+layout: census-website-respond/views/_master
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{ onsBreadcrumb({
+                "ariaLabel": 'Breadcrumb',
+                "itemsList": [
+                    {
+                        "url": 'https://census-website-respond.netlify.app/end-to-end/home',
+                        "text": 'Home'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/about-the-census',
+                        "text": 'About the census'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/about-the-census/who-should-fill-in-a-census',
+                        "text": 'Who should fill in a census'
+                    }
+                ]
+            }) }}
+
+            <div class="grid">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-l u-fs-xxl">I'm in witness protection</h1>
+
+                        <div class="page__body">
+
+                           <h2>Why are you contacting this address?</h2><p>The census has no record of sensitive addresses, so we treat all households the same.<br></p><h2>Do I need to complete the census?</h2><p>Yes, everyone should be counted in the census. If you're in witness protection, you can use any new name and details you have been given when you're filling out your form.</p><p>The information you give on your form will be treated confidentially. We do not publish any information that would allow you to be identified.<br></p><p>If we don't receive a completed form from this household, a census officer may call at your door to see if they can help. To make sure this doesn’t happen, you should return or submit the completed form as soon as possible.</p><p><a href="/privacy-and-data-protection">Find out more about security and confidentiality</a><br></p>
+                            
+                        </div>
+
+                    </main>
+
+                </div>
+
+                <div class="grid__col col-4@m push-1@m u-mt-m">
+
+                    {{ onsRelatedLinks({
+                        "id": 'related-links',
+                        "title": 'Related content',
+                        "itemsList": [
+                            {
+                                "url": pageInfo.rootPath + "/help/communal-establishments/i-manage-an-establishment/student-accommodation-managers",
+                                "text": 'Student accommodation managers'
+                            }
+                        ]
+                    }) }}
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}

@@ -1,0 +1,260 @@
+---
+title: News
+group: Census
+version: 31.2.0
+layout: census-website-engage/views/_master
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="container">
+
+            {{ onsBreadcrumb({
+                "ariaLabel": 'Breadcrumb',
+                "itemsList": [
+                    {
+                        "url": pageInfo.rootPath + '/home',
+                        "text": 'Home'
+                    }
+                ]
+            }) }}
+
+        </div>
+
+        <main class="page__main" id="main-content" role="main">
+
+            <div class="container">
+
+                <div class="col-8@m">
+                    <h1 class="u-mb-s u-mb-l@m u-fs-xxl">News</h1>                           
+                    <p>The latest news, press releases and statements from the census media relations team.</p>
+                </div>
+
+            </div>
+
+            {{ onsArticles({
+                "classes": 'u-mt-l u-mb-xl',
+                "articles": [
+                    {
+                        "featured": true,
+                        "image": {
+                            "smallSrc": pageInfo.rootPath + '/img/news/small/counter-cats-medium.png',
+                            "largeSrc": pageInfo.rootPath + '/img/news/large/counter-cats-medium.png',
+                            "alt": 'Census 2021 counter cats'
+                        },
+                        "url": pageInfo.rootPath + '/news/article/',
+                        "title": 'Primary and secondary school programmes launched to engage pupils in Census 2021',
+                        "date": {
+                            "short": '23 September 2020',
+                            "iso": '2020-09-23'
+                        },
+                        "category": {
+                            "title": 'Press releases',
+                            "url": pageInfo.rootPath + '/news/category/'
+                        },
+                        "excerpt": 'The next generation is set to learn all about the census and how it benefits their local area as part of two new, engaging educational programmes launching this term.'
+                    }
+                ]
+            }) }}
+
+            <div class="container">
+
+                <div class="grid grid--column@xs@s">
+
+                    <div class="grid__col col-8@m u-pr-m@m">
+
+                        <div class="u-mb-m">
+
+                            {{ onsArticles({
+                                "articles": [
+                                    {
+                                        "image": {
+                                            "smallSrc": pageInfo.rootPath + '/img/news/small/placeholder-news-small.png',
+                                            "largeSrc": pageInfo.rootPath + '/img/news/large/placeholder-news-small.png',
+                                            "alt": 'Census 2021 image placeholer'
+                                        },
+                                        "url": pageInfo.rootPath + '/news/article/',
+                                        "title": 'Find out what users told us about our plans for 2021 Census Outputs',
+                                        "date": {
+                                            "short": '20 May 2020',
+                                            "iso": '2020-05-20'
+                                        },
+                                        "category": {
+                                            "title": 'Press releases',
+                                            "url": pageInfo.rootPath + '/news/category/'
+                                        },
+                                        "excerpt": 'Earlier this year, we asked people who use census data what they thought of our plans for 2021 Census outputs.'
+                                    },
+                                    {
+                                        "image": {
+                                            "smallSrc": pageInfo.rootPath + '/img/news/small/placeholder-news-small.png',
+                                            "largeSrc": pageInfo.rootPath + '/img/news/large/placeholder-news-small.png',
+                                            "alt": 'Census 2021 image placeholer'
+                                        },
+                                        "url": pageInfo.rootPath + '/news/article/',
+                                        "title": 'Help us design the outputs',
+                                        "date": {
+                                            "short": '20 May 2020',
+                                            "iso": '2020-05-20'
+                                        },
+                                        "category": {
+                                            "title": 'Press releases',
+                                            "url": pageInfo.rootPath + '/news/category/'
+                                        },
+                                        "excerpt": 'A further update from Iain Bell on development work for the 2021 census.'
+                                    },
+                                    {
+                                        "image": {
+                                            "smallSrc": pageInfo.rootPath + '/img/news/small/placeholder-news-small.png',
+                                            "largeSrc": pageInfo.rootPath + '/img/news/large/placeholder-news-small.png',
+                                            "alt": 'Census 2021 image placeholer'
+                                        },
+                                        "url": pageInfo.rootPath + '/news/article/',
+                                        "title": 'The next steps towards the 2021 Census',
+                                        "date": {
+                                            "short": '20 May 2020',
+                                            "iso": '2020-05-20'
+                                        },
+                                        "category": {
+                                            "title": 'Press releases',
+                                            "url": pageInfo.rootPath + '/news/category/'
+                                        },
+                                        "excerpt": 'The Office for National Statistics (ONS) has appointed a census engagement manager to support Tower Hamlets residents help rehearse the census this October.'
+                                    },
+                                    {
+                                        "image": {
+                                            "smallSrc": pageInfo.rootPath + '/img/news/small/placeholder-news-small.png',
+                                            "largeSrc": pageInfo.rootPath + '/img/news/large/placeholder-news-small.png',
+                                            "alt": 'Census 2021 image placeholer'
+                                        },
+                                        "url": pageInfo.rootPath + '/news/article/',
+                                        "title": 'A new approach to counting rooms and bedrooms',
+                                        "date": {
+                                            "short": '20 May 2020',
+                                            "iso": '2020-05-20'
+                                        },
+                                        "category": {
+                                            "title": 'Press releases',
+                                            "url": pageInfo.rootPath + '/news/category/'
+                                        },
+                                        "excerpt": 'As part of preparations for the 2021 Census, Andy Teague explains how ONS will be estimating the number of rooms and bedrooms at an address.'
+                                    },
+                                    {
+                                        "image": {
+                                            "smallSrc": pageInfo.rootPath + '/img/news/small/placeholder-news-small.png',
+                                            "largeSrc": pageInfo.rootPath + '/img/news/large/placeholder-news-small.png',
+                                            "alt": 'Census 2021 image placeholer'
+                                        },
+                                        "url": pageInfo.rootPath + '/news/article/',
+                                        "title": 'Beyond 2021 – transforming the Census',
+                                        "date": {
+                                            "short": '20 May 2020',
+                                            "iso": '2020-05-20'
+                                        },
+                                        "category": {
+                                            "title": 'Press releases',
+                                            "url": pageInfo.rootPath + '/news/category/'
+                                        },
+                                        "excerpt": 'The 2021 Census will be the UK’s first predominantly online census.'
+                                    }
+                                ]
+                            }) }}
+
+                        </div>
+
+                        {{ onsPagination({
+                            "classes": 'u-pb-s u-pb-no@m u-pt-m@m',
+                            "previous": 'Previous',
+                            "next": 'Next',
+                            "hideRangeIndicator": true,
+                            "pages": [
+                                {
+                                    "url": '#0'
+                                },
+                                {
+                                    "url": '#0',
+                                    "current": true
+                                },
+                                {
+                                    "url": '#0'
+                                }
+                            ]
+                        }) }}
+                
+                    </div>
+
+                    <div class="grid__col col-4@m">
+
+                        <div class="related-links">
+
+                            <div class="u-pb-s u-bb">
+                                <h2 class="related-links__title u-fs-r--b u-mb-xs" id="related-links">Categories</h2>
+                                {{ onsList({
+                                    "classes": 'list--bare',
+                                    "itemsList": [
+                                        {
+                                            "url": pageInfo.rootPath + '/news/category/',
+                                            "text": 'Press releases',
+                                            "rel": 'category tag'
+                                        },
+                                        {
+                                            "url": pageInfo.rootPath + '/news/category/',
+                                            "text": 'Statements',
+                                            "rel": 'category tag'
+                                        }
+                                    ]
+                                }) }}
+                            </div>
+
+                            <div class="u-pt-m u-pb-s u-bb">
+                                <h2 class="u-fs-r--b u-mb-xs">Media enquiries</h2>
+                                <p>Telephone: 0845 604 1858 <br> Monday to Friday, 8:30am to 5:30pm</p>
+                                <p>Out of hours: 07867 906 553</p>
+                                <p>Email: <a href="mailto:media.relations@ons.gov.uk">media.relations@ons.gov.uk</a></p>
+                            </div>
+
+                            <div class="u-pt-m">
+                                <h2 class="u-fs-r--b u-mb-xs">Follow us</h2>
+                                {{ onsList({
+                                    "classes": 'list--bare list--icons',
+                                    "itemsList": [
+                                        {
+                                            "url": 'https://www.twitter.com/census2021',
+                                            "text": 'Twitter',
+                                            "prefixIcon": 'twitter',
+                                            "iconSize": 'xxl',
+                                            "rel": 'noreferrer external'
+                                        },
+                                        {
+                                            "url": 'https://www.facebook.com/census2021',
+                                            "text": 'Facebook',
+                                            "prefixIcon": 'facebook',
+                                            "iconSize": 'xxl',
+                                            "rel": 'noreferrer external'
+                                        },
+                                        {
+                                            "url": 'https://www.instagram.com/census2021',
+                                            "text": 'Instagram',
+                                            "prefixIcon": 'instagram',
+                                            "iconSize": 'xxl',
+                                            "rel": 'noreferrer external'
+                                        }
+                                    ]
+                                }) }}
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+    
+    {% endblock %}
+
+{% endblock %}

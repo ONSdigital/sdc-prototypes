@@ -1,0 +1,150 @@
+---
+title: Bosnian help and support
+group: Census
+version: 32.2.4
+layout: census-website-respond/views/_master
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{ onsBreadcrumb({
+                "ariaLabel": 'Breadcrumb',
+                "itemsList": [
+                    {
+                        "url": 'https://census-website-respond.netlify.app/end-to-end/home',
+                        "text": 'Home'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help',
+                        "text": 'Help with the census'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help/languages-and-accessibility',
+                        "text": 'Languages and accessibility'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help/languages-and-accessibility/languages',
+                        "text": 'Languages'
+                    }
+                ]
+            }) }}
+
+            <div class="grid">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-fs-xxl u-mb-l">
+                            Bosnian help and support
+                            <span class="u-vh">: Overview</span>
+                        </h1>
+
+                        {{ onsTableOfContents({
+                            "title": 'Contents',
+                            "ariaLabel": 'Pages in this guide',
+                            "itemsList": [
+                                {
+                                    "url": pageInfo.rootPath + '#0',
+                                    "text": 'Overview',
+                                    "current": true
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '#0',
+                                    "text": 'Completing your census online'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '#0',
+                                    "text": 'Completing your census on paper'
+                                }
+                            ]
+                        }) }}
+
+                        <div class="page__body">
+
+                            <h2>What is the census?</h2>
+
+                            <p>The census is a survey that happens every 10 years and gives us a picture of all the people and households in England and Wales. The next census takes place on Sunday 21 March 2021.</p>
+
+                            <p>The information collected from the census helps to plan and fund public services in local areas, including language services. For example, the NHS may need to provide translation and interpretation services in particular regions.</p>
+
+                            <p>The Office for National Statistics (ONS) plans and runs the census in England and Wales.</p>
+
+                            <h2>Who has to complete the census</h2>
+
+                            <p>The census asks questions about you and your household, and it’s important that everyone in England and Wales takes part.</p>
+
+                            {% call onsPanel({
+                                    "type": 'warn'
+                                })
+                            %}
+                                You must complete the census by law
+                            {% endcall %}
+
+                            <p>It is an offence to supply false information or to not complete the census, and you could be fined up to £1,000. Some questions are clearly labelled as voluntary. It is not an offence if you do not answer these.</p>
+
+                            {% call onsPanel({
+                                    type: 'bare',
+                                    icon: 'lock'
+                                })
+                            %}
+                                Your personal information is protected by law and will be kept confidential
+                            {% endcall %}
+
+                            <h3>Staying in the UK for less than three months</h3>
+
+                            <p>You are not responsible for filling in the census if you’re staying in the UK for less than three months. The owner of your accommodation may ask you some questions so that they can fill in the census about the people staying in the household.</p>
+
+                            <h2>When to complete your census</h2>
+
+                            <p>All households should complete the census on <strong>Sunday 21 March 2021</strong> or as soon as possible after. If you’ve responded before 21 March and things have changed, you can <a href="{{pageInfo.rootPath}}/contact-us">let us know</a>.</p>
+
+                            <p>Your circumstances may have changed during the coronavirus pandemic. Answer all questions based on your situation as it is now.</p>
+
+                            <h2>How to complete your census</h2>
+
+                            <p>You can choose to either:</p>
+
+                            {{ onsList({
+                                "itemsList": [
+                                    {
+                                        "text": 'fill in your census online',
+                                        "url": '#0'
+                                    },
+                                    {
+                                        "text": 'fill in your census on paper',
+                                        "url": '#0'
+                                    }
+                                ]
+                            }) }}
+
+                            <div class="u-mt-xl">
+                                {{ onsContentPagination({
+                                    "contentPaginationItems": [
+                                        {
+                                            "rel": 'next',
+                                            "text": 'Next',
+                                            "url": pageInfo.rootPath + '#0',
+                                            "label": 'Completing your census online'
+                                        }
+                                    ]
+                                }) }}
+                            </div>
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}

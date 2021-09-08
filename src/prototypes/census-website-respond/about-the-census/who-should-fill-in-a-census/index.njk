@@ -1,0 +1,236 @@
+---
+title: Who should fill in a census
+group: Census
+version: 32.2.4
+layout: census-website-respond/views/_master
+---
+
+{% set pageId = 'about' %}
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": 'https://census-website-respond.netlify.app/end-to-end/home/',
+                            "text": 'Home'
+                        },
+                        {
+                            "url": pageInfo.rootPath + '/about-the-census',
+                            "text": 'About the census'
+                        }
+                    ]
+                })
+            }}
+
+            <div class="grid">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-l">
+                            <span class="u-fs-m u-db u-mb-xs u-lighter">About the census</span>
+                            <span class="u-vh">: </span>
+                            <span class="u-fs-xxl u-db">Who should fill in a census</span>
+                        </h1>
+
+                        {{-
+                            onsTableOfContents({
+                                "title": 'Contents',
+                                "ariaLabel": 'Pages in this guide',
+                                "itemsList": [
+                                    {
+                                        "url": pageInfo.rootPath + '/about-the-census',
+                                        "text": 'Overview'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/about-the-census/who-should-fill-in-a-census',
+                                        "text": 'Who should fill in a census',
+                                        "current": true
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/about-the-census/why-you-should-take-part-in-the-census',
+                                        "text": 'Why you should take part in the census'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/about-the-census/about-the-census-coverage-survey',
+                                        "text": 'About the Census Coverage Survey'
+                                    }
+                                ]
+                            })
+                        -}}
+
+                        <div class="page__body">
+                            <p>Everyone in England and Wales must complete a census or be included on a census for the place where they're living or staying.</p>
+
+                            {% call onsPanel({
+                                    "type": 'warn'
+                                })
+                            %}
+                                You must complete the census by law
+                            {% endcall %}
+
+                            <p>Every householder at an address is responsible for completing a census questionnaire for their household.</p>
+
+                            {%
+                                call onsCollapsible({
+                                    "classes": 'u-mt-m u-mb-m',
+                                    "id": 'collapsible-0',
+                                    "title": 'What we mean by “householder” and “household”',
+                                    "button": {
+                                        "close": 'Hide this',
+                                        "contextSuffix": 'content',
+                                        "attributes": {
+                                            "aria-hidden": 'true'
+                                        }
+                                    }
+                                })
+                            %}
+
+                                <p>A <strong>householder</strong> is a person who usually lives at this address and, on their own or with someone else, owns or rents the accommodation, and/or pays the household bills and expenses.</p>
+
+                                <p>A <strong>household</strong> is one person living alone or a group of people, not necessarily related, living at the same address, who share cooking facilities <strong>and</strong> share a living room <strong>or</strong> sitting room <strong>or</strong> dining area.</p>
+
+                            {% endcall %}
+
+                            <p>You need to complete a census if you:</p>
+                                
+                            {{
+                                onsList({
+                                    "itemsList": [
+                                        {
+                                            "url": pageInfo.rootPath + "/help/types-of-accommodation/private-or-rented-accommodation",
+                                            "text": "live in private or rented accommodation"
+                                        },
+                                        {
+                                            "url": pageInfo.rootPath + "/help/types-of-accommodation/students",
+                                            "text": "are a student living away from home during term time"
+                                        },
+                                        {
+                                            "url": pageInfo.rootPath + "/help/types-of-accommodation/second-homes-and-properties",
+                                            "text": "have a second home or empty property"
+                                        },
+                                        {
+                                            "url": pageInfo.rootPath + "/help/types-of-accommodation/boats-caravans-and-other-mobile-homes",
+                                            "text": "live somewhere that is mobile, such as a canal boat or motorhome"
+                                        },
+                                        {
+                                            "url": pageInfo.rootPath + "/help/types-of-accommodation/communal-establishments",
+                                            "text": "live in a care home, armed forces base or similar establishment"
+                                        },
+                                        {
+                                            "url": pageInfo.rootPath + "/help/types-of-accommodation/no-fixed-address",
+                                            "text": "do not live at a fixed address"
+                                        },
+                                        {
+                                            "url": pageInfo.rootPath + "/about-the-census/who-should-fill-in-a-census/i-live-in-a-refuge",
+                                            "text": "live in a refuge"
+                                        },
+                                        {
+                                            "url": pageInfo.rootPath + "/about-the-census/who-should-fill-in-a-census/im-in-witness-protection/",
+                                            "text": "are in witness protection"
+                                        }
+                                    ]
+                                })
+                            }}
+
+                            <h2 class="u-fs-l">Staying in the UK for less than three months</h2>
+
+                            <p>You are not responsible for filling in the census if you are staying in the UK for less than three months. The owner of your accommodation will need to fill in the census about the household and the people staying there.</p>
+
+                            <div class="u-mt-xl">
+                                {{-
+                                    onsContentPagination({
+                                        "contentPaginationItems": [
+                                            {
+                                                "rel": 'prev',
+                                                "text": 'Previous',
+                                                "url": pageInfo.rootPath + '/about-the-census',
+                                                "label": 'Overview'
+                                            },
+                                            {
+                                                "rel": 'next',
+                                                "text": 'Next',
+                                                "url": pageInfo.rootPath + '/about-the-census/why-you-should-take-part-in-the-census',
+                                                "label": 'Why you should take part in the census'
+                                            }
+                                        ]
+                                    })
+                                }}
+                            </div>
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+                <div class="grid__col col-4@m push-1@m u-mt-m">
+
+                    {{-
+                        onsRelatedLinks({
+                            "id": 'related-links',
+                            "title": 'Related content',
+                            "itemsList": [
+                                {
+                                    "url": pageInfo.rootPath + '/your-data-and-security/what-we-do-with-your-information',
+                                    "text": 'What we do with your information'
+                                },
+                                {
+                                    "url": '#0',
+                                    "text": 'Census stories'
+                                },
+                                {
+                                    "url": pageInfo.rootPath + '/news',
+                                    "text": 'News'
+                                }
+                            ]
+                        })
+                    }}
+
+                    <div class="u-pt-m u-pb-s u-bt">
+                        
+                        <h2 class="u-fs-r--b u-mb-xs">Help with the census</h2>
+
+                        {{
+                            onsList({
+                                "classes": 'list--bare',
+                                "itemsList": [
+                                    {
+                                        "url": pageInfo.rootPath + '/help/getting-started/what-if-im-away-or-abroad-on-census-day',
+                                        "text": 'What if I’m away or abroad on Census Day?'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/about-the-census/help/getting-started/im-moving-house',
+                                        "text": 'I’m moving house'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/getting-started/completing-the-census-for-someone-else',
+                                        "text": 'Completing the census for someone else'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/',
+                                        "text": 'More help'
+                                    }
+                                ]
+                            })
+                        }}
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}

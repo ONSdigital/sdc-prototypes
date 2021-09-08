@@ -1,0 +1,95 @@
+---
+title: Get involved
+group: Census
+version: 31.2.0
+layout: census-website-engage/views/_master
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": pageInfo.rootPath + '/home',
+                            "text": 'Home'
+                        }
+                    ]
+                })
+            }}
+
+            <div class="grid">
+
+                <div class="grid__col col-12@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-l u-fs-xxl">Get involved</h1>
+
+                        <div class="col-8@m">
+                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla venenatis odio pellentesque, sodales neque nec, pretium lacus.</p>
+                        </div>
+
+                        <section class="u-pt-m">
+
+                            <div class="grid grid--column@xs@s">
+
+                                <div class="grid__col col-4@m">
+                                    {{-
+                                        onsCard({
+                                            "ariaBy": 'Section highlight',
+                                            "id": 'title1',
+                                            "textId": 'text1',
+                                            "title": 'Local authorities',
+                                            "url": pageInfo.rootPath + '/get-involved/local-authorities',
+                                            "text": 'If you work for a local authority, find out how you can help support the census in your area.'
+                                        })
+                                    }}
+                                </div>
+
+                                <div class="grid__col col-4@m">
+                                    {{-
+                                        onsCard({
+                                            "ariaBy": 'Section highlight',
+                                            "id": 'title2',
+                                            "textId": 'text2',
+                                            "title": 'Community groups',
+                                            "url": pageInfo.rootPath + '/get-involved/community-groups',
+                                            "text": 'If you’re a community group leader, find out how you can help support the census in your community.'
+                                        })
+                                    }}
+                                </div>
+
+                                <div class="grid__col col-4@m">
+                                    {{-
+                                        onsCard({
+                                            "ariaBy": 'Section highlight',
+                                            "id": 'title3',
+                                            "textId": 'text3',
+                                            "title": 'Downloadable resources',
+                                            "url": pageInfo.rootPath + '/get-involved/downloadable-resources',
+                                            "text": 'If you work for a local authority or you’re a community group leader, choose from our full range of downloadable resources.'
+                                        })
+                                    }}
+                                </div>
+                                
+                            </div>
+
+                        </section>
+
+                    </main>
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}

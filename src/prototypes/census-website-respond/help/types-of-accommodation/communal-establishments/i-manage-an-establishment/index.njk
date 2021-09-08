@@ -1,0 +1,186 @@
+---
+title: I manage an establishment
+group: Census
+version: 32.2.4
+layout: census-website-respond/views/_master
+---
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{ onsBreadcrumb({
+                "ariaLabel": 'Breadcrumb',
+                "itemsList": [
+                    {
+                        "url": 'https://census-website-respond.netlify.app/end-to-end/home',
+                        "text": 'Home'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help',
+                        "text": 'Help with the census'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help/types-of-accommodation',
+                        "text": 'Types of household or accommodation'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help/types-of-accommodation/communal-establishments',
+                        "text": 'Care homes, student halls and other establishments'
+                    }
+                ]
+            }) }}
+
+            <div class="grid">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-mb-l">
+                            <span class="u-fs-m u-db u-mb-xs u-lighter">Care homes, student halls and other establishments</span>
+                            <span class="u-vh">: </span>
+                            <span class="u-fs-xxl u-db">I manage an establishment</span>
+                        </h1>
+
+                        {{-
+                            onsTableOfContents({
+                                "title": 'Contents',
+                                "ariaLabel": 'Pages in this guide',
+                                "itemsList": [
+                                    {
+                                        "url": pageInfo.rootPath + '/help/types-of-accommodation/communal-establishments',
+                                        "text": 'Overview'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/types-of-accommodation/communal-establishments/i-live-in-an-establishment',
+                                        "text": 'I live in an establishment'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/types-of-accommodation/communal-establishments/i-manage-an-establishment',
+                                        "text": 'I manage an establishment',
+                                        "current": true
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/types-of-accommodation/communal-establishments/establishments-that-are-treated-as-households',
+                                        "text": 'Establishments that are treated as households'
+                                    }
+                                ]
+                            })
+                        }}
+
+                        <div class="page__body">
+                            <p>This guidance is for managers and supervisors of accommodation where residents live or stay.</p>
+
+                            <p>The communal establishment manager is the person who’s overseeing the establishment at the time of filling out the census form.</p>
+
+                            <p>If you manage a communal establishment, a census officer will deliver your census packs.</p>
+
+                            <p><a href="{{pageInfo.rootPath}}/help/types-of-accommodation/communal-establishments/i-manage-an-establishment/help-with-the-communal-establishment-questions/">Help with the questions on the CE manager form</a></p>
+
+                            <h2>What type of establishment do you manage?</h2>
+
+                            {{
+                                onsList({
+                                    "itemsList": [
+                                        {
+                                            "text": "Student accommodation",
+                                            "url": pageInfo.rootPath + "/help/communal-establishments/i-manage-an-establishment/student-accommodation-managers"
+                                        },
+                                        {
+                                            "text": "Care home, hospital or hospice",
+                                            "url": pageInfo.rootPath + "/help/types-of-accommodation/communal-establishments/i-manage-an-establishment/i-live-or-stay-in-a-care-home-hospital-or-hospice"
+                                        },
+                                        {
+                                            "text": "Hotel, guest house, bed and breakfast (B&B) or hostel managers",
+                                            "url": pageInfo.rootPath + "/help/types-of-accommodation/communal-establishments/i-manage-an-establishment/hotel-guest-house-bed-and-breakfast-b-b-or-hostel-managers/"
+                                        },
+                                        {
+                                            "text": "Boarding school or children's home",
+                                            "url": pageInfo.rootPath + "/help/types-of-accommodation/communal-establishments/i-manage-an-establishment/boarding-school-or-childrens-home-managers"
+                                        },
+                                        {
+                                            "text": "Staff accommodation, religious establishment or commune",
+                                            "url": pageInfo.rootPath + "/help/types-of-accommodation/communal-establishments/i-manage-an-establishment/staff-accommodation-religious-establishment-or-commune-managers"
+                                        },
+                                        {
+                                            "text": "Prison, secure unit or young offender institution",
+                                            "url": pageInfo.rootPath + "/help/types-of-accommodation/communal-establishments/i-manage-an-establishment/prison-secure-unit-or-young-offender-institution-managers"
+                                        },
+                                        {
+                                            "text": "Military base",
+                                            "url": pageInfo.rootPath + "/help/types-of-accommodation/communal-establishments/i-manage-an-establishment/military-base-commanding-officers"
+                                        }
+                                    ]
+                                })
+                            }}
+
+                            <h2>What happens if I don’t complete the CE form?</h2>
+
+                            <p>Census officers will be in contact with you if the CE form is not returned. Refusing to complete the census is a crime. If prosecuted, you may have to pay a fine of up to £1,000 plus court costs.</p>
+
+                            <div class="u-mt-xl">
+                                {{-
+                                    onsContentPagination({
+                                        "contentPaginationItems": [
+                                            {
+                                                "rel": 'prev',
+                                                "text": 'Previous',
+                                                "url": pageInfo.rootPath + '/help/types-of-accommodation/communal-establishments/i-live-in-an-establishment',
+                                                "label": 'I live in an establishment'
+                                            }
+                                        ]
+                                    })
+                                }}
+                                {{-
+                                    onsContentPagination({
+                                        "contentPaginationItems": [
+                                            {
+                                                "rel": 'next',
+                                                "text": 'Next',
+                                                "url": pageInfo.rootPath + '/help/types-of-accommodation/communal-establishments/establishments-that-are-treated-as-households',
+                                                "label": 'Establishments that are treated as households'
+                                            }
+                                        ]
+                                    })
+                                }}
+                            </div>
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+                <div class="grid__col col-4@m push-1@m u-mt-m">
+
+                    {{ onsRelatedLinks({
+                        "id": 'related-links',
+                        "title": 'Related content',
+                        "itemsList": [
+                            {
+                                "url": pageInfo.rootPath + '/help/find-a-census-support-centre',
+                                "text": 'Find a census support centre'
+                            },
+                            {
+                                "url": 'https://census-website-respond.netlify.app/end-to-end/languages',
+                                "text": 'Languages'
+                            },
+                            {
+                                "url": pageInfo.rootPath + '/contact-us',
+                                "text": 'Contact us'
+                            }
+                        ]
+                    }) }}
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}

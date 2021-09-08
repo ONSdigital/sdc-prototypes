@@ -1,0 +1,121 @@
+---
+version: 32.2.4
+layout: census-website-respond/views/_master
+---
+
+{% set pageId = 'help' %}
+
+{% block pageContent %}
+   
+    {% block main %}
+
+        <div class="page__container container">
+
+            {{- onsBreadcrumb({
+                "ariaLabel": 'Breadcrumb',
+                "itemsList": [
+                    {
+                        "url": 'https://census-website-respond.netlify.app/end-to-end/home/',
+                        "text": 'Home'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help',
+                        "text": 'Help with the census'
+                    },
+                    {
+                        "url": pageInfo.rootPath + '/help/getting-started',
+                        "text": 'Getting started'
+                    }
+                ]
+            }) }}
+
+            <div class="grid">
+
+                <div class="grid__col col-7@m">
+
+                    <main class="page__main" id="main-content" role="main">
+
+                        <h1 class="u-fs-xxl u-mb-l">
+                            Helping someone who lacks the capacity to answer for themselves
+                            <span class="u-vh">: Overview</span>
+                        </h1>
+
+                        {{-
+                            onsTableOfContents({
+                                "title": 'Contents',
+                                "ariaLabel": 'Pages in this guide',
+                                "itemsList": [
+                                    {
+                                        "url": pageInfo.rootPath + '/help/getting-started/helping-someone-who-lacks-the-capacity-to-answer-for-themselves',
+                                        "text": 'Overview',
+                                        "current": true
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/getting-started/helping-someone-who-lacks-the-capacity-to-answer-for-themselves/do-i-have-to-complete-the-census-for-this-person',
+                                        "text": 'Do I have to complete the census for this person?'
+                                    },
+                                    {
+                                        "url": pageInfo.rootPath + '/help/getting-started/helping-someone-who-lacks-the-capacity-to-answer-for-themselves/how-do-i-decide-how-to-answer',
+                                        "text": 'How do I decide how to answer?'
+                                    }
+                                ]
+                            })
+                        }}
+
+                        <div class="page__body">
+
+                            <p>This section lays out help for people thinking about completing the census for someone who can’t do it for themselves.</p>
+
+                            <p>This includes carers, friends and family, people with lasting power of attorney (LPA), and <a href="/help/communal-establishments/i-manage-an-establishment">managers and staff at communal establishments</a>.</p>
+
+                        </div>
+
+                        <div class="u-mt-xl">
+                            {{-
+                                onsContentPagination({
+                                    "contentPaginationItems": [
+                                    {
+                                        "rel": 'next',
+                                        "text": 'Next',
+                                        "url": pageInfo.rootPath + '/help/getting-started/helping-someone-who-lacks-the-capacity-to-answer-for-themselves/do-i-have-to-complete-the-census-for-this-person',
+                                        "label": 'Do I have to complete the census for this person?'
+                                    }
+                                    ]
+                                })
+                            }}
+                        </div>
+
+                    </main>
+
+                </div>
+
+                <div class="grid__col col-4@m push-1@m u-mt-m">
+
+                    {{- onsRelatedLinks({
+                        "id": 'related-links',
+                        "title": 'Related content',
+                        "itemsList": [
+                            {
+                                "url": pageInfo.rootPath + '/help/get-an-access-code-or-paper-census/',
+                                "text": 'Get an access code or paper census'
+                            },
+                            {
+                                "url": pageInfo.rootPath + '/help/find-a-census-support-centre',
+                                "text": 'Find a census support centre'
+                            },
+                            {
+                                "url": pageInfo.rootPath + '/help/contact-us',
+                                "text": 'Contact us'
+                            }
+                        ]
+                    }) }}
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    {% endblock %}
+
+{% endblock %}
