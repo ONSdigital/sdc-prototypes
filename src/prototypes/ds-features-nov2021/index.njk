@@ -1,0 +1,47 @@
+---
+group: Design system
+title: Features test - 22 Nov 2021
+version: 43.0.0
+layout: ds-features-nov2021/views/_master
+---
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/lists/_macro.njk" import onsList %}
+
+{% block main %}
+    <h1>Design System features test – Nov 2021</h1>
+    <p>This prototype tests the following features:</p>
+    {{
+        onsList({
+            "classes": 'ons-u-mb-l',
+            "itemsList": [
+                {
+                    "text": 'Access codes'
+                },
+                {
+                    "text": 'Accordions'
+                },
+                {
+                    "text": 'Dates'
+                },
+                {
+                    "text": 'Checkbox with revealed input'
+                },
+                {
+                    "text": 'Mutually exclusive'
+                },
+                {
+                    "text": 'Autosuggest'
+                },
+                {
+                    "text": 'Phone numbers'
+                }
+            ]
+        })
+    }}
+
+    {{ onsButton({
+        "text": 'Start prototype',
+        "url": pageInfo.rootPath + '/enter-access-code.html'
+        })
+    }}
+{% endblock %}
