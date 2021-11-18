@@ -1,0 +1,26 @@
+---
+group: Design system
+title: Features test - 22 Nov 2021
+version: 44.0.0
+layout: ds-features-nov2021/views/_master
+---
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+
+{% block main %}
+    <h1>Submit study</h1>
+    {% call onsPanel({
+            "type": "warn"
+        })
+    %}
+        You must submit this study to complete it
+    {% endcall %}
+
+    <div class="js-summary"></div>
+
+    {{ onsButton({
+        "text": 'Start prototype',
+        "url": pageInfo.rootPath + '/enter-access-code.html'
+        })
+    }}
+{% endblock %}

@@ -1,0 +1,69 @@
+---
+version: 44.0.0
+layout: ds-features-nov2021/views/_master
+---
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/fieldset/_macro.njk" import onsFieldset %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/date-input/_macro.njk" import onsDateInput %}
+
+{% set questionTitle = "What is your date of birth?" %}
+{% set prevPage = "name" %}
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/conditional-reveal.html"
+    }
+} %}
+
+{% block main %}
+    {% call onsQuestion({
+        "title": questionTitle,
+        "legendIsQuestionTitle": true,
+        "description": "For example, 31 3 1980"
+    }) %}
+
+        {{
+            onsDateInput({
+                "dontWrap": true,
+                "id": "date",
+                "legendOrLabel": questionTitle,
+                "day": {
+                    "label": {
+                        "text": "Day"
+                    },
+                    "name": "day",
+                    "attributes": {
+                        "autocomplete": "bday-day"
+                    }
+                },
+                "month": {
+                    "label": {
+                        "text": "Month"
+                    },
+                    "name": "month",
+                    "attributes": {
+                        "autocomplete": "bday-month"
+                    }
+                },
+                "year": {
+                    "label": {
+                        "text": "Year"
+                    },
+                    "name": "year",
+                    "attributes": {
+                        "autocomplete": "bday-year"
+                    }
+                }
+            })
+        }}
+
+    {% endcall %}
+
+    {{ onsButton({
+        "text": "Save and continue",
+        "classes": "ons-u-mt-xl"
+    }) }}
+
+{% endblock %}

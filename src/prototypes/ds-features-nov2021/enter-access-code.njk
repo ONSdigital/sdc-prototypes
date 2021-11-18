@@ -1,7 +1,5 @@
 ---
-group: Design system
-title: Features test - 22 Nov 2021
-version: 43.0.0
+version: 44.0.0
 layout: ds-features-nov2021/views/_master
 ---
 {% from "components/access-code/_macro.njk" import onsUACInput %}
@@ -101,8 +99,8 @@ layout: ds-features-nov2021/views/_master
         })
 
         submitBtn.addEventListener("click", function() {
-            if (uacInput.value === 'L0B5 T1D1 E4B0 I3G5') {
-                window.location = "test";
+            if (uacInput.value === '1') {
+                window.location = "name.html";
             }
             else {
                 errorSummary.classList.remove('ons-u-d-no');
