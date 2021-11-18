@@ -7,6 +7,15 @@ layout: ds-features-nov2021/views/_master
 {% from "components/button/_macro.njk" import onsButton %}
 {% from "components/panel/_macro.njk" import onsPanel %}
 
+{% set prevPage = "autosuggest-occupation" %}
+{% set backLink = "Back" %}
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/confirmation.html"
+    }
+} %}
+
 {% block main %}
     <h1>Submit study</h1>
     {% call onsPanel({
@@ -19,8 +28,7 @@ layout: ds-features-nov2021/views/_master
     <div class="js-summary"></div>
 
     {{ onsButton({
-        "text": 'Submit study',
-        "url": pageInfo.rootPath + '/confirmation.html'
+        "text": 'Submit study'
         })
     }}
 {% endblock %}
