@@ -8,6 +8,8 @@ layout: ds-features-nov2021/views/_master
 {% from "components/collapsible/_macro.njk" import onsCollapsible %}
 {% from "components/lists/_macro.njk" import onsList %}
 
+{% set backLink = "Back" %}
+{% set prevPage = "index" %}
 {% block main %}
     {% call onsPanel({
             "id": "js-error-summary",

@@ -9,11 +9,11 @@ layout: ds-features-nov2021/views/_master
 {% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
 
 {% set questionTitle = "What kind of savings and investments to you have?" %}
-{% set prevPage = "autosuggest" %}
+{% set prevPage = "autosuggest-countries" %}
 {% set form =  {
     "method": "GET",
     "attributes": {
-        "action":  pageInfo.rootPath + "autosuggest-occupation/.html"
+        "action":  pageInfo.rootPath + "/autosuggest-occupation.html"
     }
 } %}
 
