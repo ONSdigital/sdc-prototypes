@@ -114,30 +114,31 @@ class QuestionManager {
             if (abbrElement) {
               value = input.value + ' ' + label;
             } else {
-              value = input.value;
-            }
+              switch (input.type) {
+                case 'checkbox':
+                case 'radio': {
+                  const inputAction = input.getAttribute('data-action-url');
 
-            switch (input.type) {
-              case 'checkbox':
-              case 'radio': {
-                const inputAction = input.getAttribute('data-action-url');
+                  if (checked) {
+                    value = input.value || label;
 
-                if (checked) {
-                  value = input.value || label;
-
-                  if (inputAction) {
-                    originalAction = this.form.getAttribute('data-original-action') || this.form.getAttribute('action');
-                    action = inputAction;
-                    this.addAnswer(inputAction);
+                    if (inputAction) {
+                      originalAction = this.form.getAttribute('data-original-action') || this.form.getAttribute('action');
+                      action = inputAction;
+                      this.addAnswer(inputAction);
+                    } else {
+                      this.addAnswer(this.form.action);
+                    }
                   } else {
-                    this.addAnswer(this.form.action);
+                    if (inputAction && inputAction !== this.previousURL) {
+                      this.removeAnswer(inputAction);
+                    }
                   }
-                } else {
-                  if (inputAction && inputAction !== this.previousURL) {
-                    this.removeAnswer(inputAction);
-                  }
+                  break;
                 }
-                break;
+                default: {
+                  value = input.value;
+                }
               }
             }
 

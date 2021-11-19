@@ -87,7 +87,7 @@ export default class SummaryManager {
           }
         }
 
-        if (answers.length > 3 || question.inputs.find(input => input.value === true)) {
+        if (answers.length > 3 || question.inputs.find(input => input.checked === true)) {
           joinString = '<br>';
         } else {
           joinString = ' ';
