@@ -1,0 +1,84 @@
+---
+group: Design system
+title: Features test - 22 Nov 2021
+version: 44.0.0
+layout: ds-features-nov2021/views/_master
+---
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/accordion/_macro.njk" import onsAccordion %}
+
+{% block main %}
+    <h1>How your answers will help</h1>
+    <p>Your answers to this study will help influence policy in the following areas:</p>
+
+    {{
+        onsAccordion({
+            "id": "accordion",
+            "classes": 'ons-u-mb-l',
+            "itemsList": [
+                {
+                    "title": "Education",
+                    "titleTag": "h2",
+                    "content": "<p>Learning data, in conjunction with other dimensions of quality such as context, teaching and learning environment, and learner characteristics can reveal the factors that most affect learning outcomes. By revealing gaps in student achievement and service provision, data can be used to identify those groups that are being underserved and are underperforming. Once identified, such inequities can be addressed.</p>
+                    <p>Data can be used to hold the system accountable for the use of resources by showing whether increased public investment in education has resulted in measurable gains in student achievement. Although direct accountability for results rests mainly with the school, the enabling policy and practice environment is the responsibility of decision-makers at all administrative levels.</p>",
+                    "button": {
+                        "open": "Show",
+                        "close": "Hide"
+                    }
+                },
+                {
+                    "title": "Public transport",
+                    "titleTag": "h2",
+                    "content": "<p>The UK uses economic evidence as a key element in decision making on transport.
+                    Projects and policies are robustly analysed with the tools available and a lot of weight
+                    is attached by decision makers to the benefit cost ratio, a key aspect of value for
+                    money. But this comes with downsides. It does not always account well for uncertainty
+                    in travel demand and this evidence can reassure decision makers with false precision.
+                    </p><p>It also leaves poorly trained decision makers vulnerable to the biases that tend to
+                    emerge in cost benefit analysis, like poorly serving projects that reduce road capacity.
+                    Recent changes to the Green Book announced alongside the Spending Review may go
+                    some way to reducing this emphasis</p>",
+                    "button": {
+                        "open": "Show",
+                        "close": "Hide"
+                    }
+                },
+                {
+                    "title": "Health care and social services",
+                    "titleTag": "h2",
+                    "content": "<p>Understanding that health has value over and above its impact on our personal wellbeing – for example, because it helps to improve work productivity or wider prosperity – is clearly really important when making policy decisions.</p>
+                    <p>It’s not just about how much we should spend on health care, but it helps to inform what specific interventions we should be making to improve health, on the basis that more effective interventions will improve human capital (the skills, knowledge, capacity and capability of the population) and the outcomes for society and the economy that we’re interested in.</p>",
+                    "button": {
+                        "open": "Show",
+                        "close": "Hide"
+                    }
+                },
+                {
+                    "title": "Interest rates and mortgages",
+                    "titleTag": "h2",
+                    "content": "<p>How Bank Rate affects you partly depends on if you are borrowing or saving money.</p>
+                    <p>If rates fall and you have a loan or mortgage, your interest payments may get cheaper. And, if you have savings, you may be paid less interest. If interest rates fall, it's cheaper for households and businesses to increase the amount they borrow but it's less rewarding to save.</p>",
+                    "button": {
+                        "open": "Show",
+                        "close": "Hide"
+                    }
+                },
+                {
+                    "title": "Pensions and savings",
+                    "titleTag": "h2",
+                    "content": "<p>The data improvement plan should clearly set out the objectives you’re trying to achieve by having better data. If you have more than one objective, you should list them in order of priority.</p>",
+                    "button": {
+                        "open": "Show",
+                        "close": "Hide"
+                    }
+                }
+            ]
+        })
+    }}
+
+    {{ onsButton({
+        "text": 'Continue',
+        "url": pageInfo.rootPath + '/name.html'
+        })
+    }}
+{% endblock %}
