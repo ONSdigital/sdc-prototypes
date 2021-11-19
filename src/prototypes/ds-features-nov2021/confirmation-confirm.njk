@@ -8,12 +8,14 @@ layout: ds-features-nov2021/views/_master
 {% from "components/button/_macro.njk" import onsButton %}
 {% from "components/radios/_macro.njk" import onsRadios %}
 
-{% set questionTitle = "Do you have a passport?" %}
-{% set prevPage = "duration" %}
+{% set questionTitle = "Is this mobile number correct?" %}
+{% set prevPage = "confirmation" %}
+{% set backLink = "Back" %}
 {% set form =  {
     "method": "GET",
+    "classes": "js-question-no-summary",
     "attributes": {
-        "action":  pageInfo.rootPath + "/autosuggest-countries.html"
+        "action":  pageInfo.rootPath + "/confirmation-sent.html"
     }
 } %}
 
@@ -22,7 +24,7 @@ layout: ds-features-nov2021/views/_master
         "title": questionTitle,
         "legendIsQuestionTitle": true
     }) %}
-
+    <p class="js-mobile-number"></p>
     {{
         onsRadios({
             "name": "passport",
@@ -32,18 +34,18 @@ layout: ds-features-nov2021/views/_master
                     "id": "yes",
                     "classes": "ons-u-fl",
                     "label": {
-                        "text": "Yes"
+                        "text": "Yes, send the text"
                     },
                     "value": "yes"
                 },
                 {
                     "id": "no",
                     "label": {
-                        "text": "No"
+                        "text": "No, I need to change it"
                     },
                     "value": "no",
                     "attributes": {
-                        "data-action-url":  pageInfo.rootPath + "/mutually-exclusive.html"
+                        "data-action-url":  pageInfo.rootPath + "/confirmation-change.html"
                     }
                 }
             ]
@@ -53,8 +55,11 @@ layout: ds-features-nov2021/views/_master
     {% endcall %}
 
     {{ onsButton({
-        "text": "Save and continue",
+        "text": "Continue",
         "classes": "ons-u-mt-xl"
     }) }}
 
+    <script>
+        document.querySelector('.js-mobile-number').innerHTML = sessionStorage.getItem('phoneNumber');
+    </script>
 {% endblock %}

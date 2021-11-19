@@ -1,0 +1,72 @@
+---
+version: 44.0.0
+layout: ds-features-nov2021/views/_master
+---
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/fieldset/_macro.njk" import onsFieldset %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/input/_macro.njk" import onsInput %}
+
+{% set questionTitle = "What is your mobile number?" %}
+{% set prevPage = "confirmation-confirm" %}
+{% set backLink = "Back" %}
+{% set form =  {
+    "method": "GET",
+    "classes": "js-question-no-summary",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/confirmation-sent.html"
+    }
+} %}
+
+{% block main %}
+    {% call onsQuestion({
+        "title": questionTitle
+    }) %}
+    {{
+        onsInput({
+            "id": "telephone",
+            "classes": "ons-u-mb-m js-mobile-number",
+            "type": "tel",
+            "autocomplete": "off",
+            "width": "15",
+            "label": {
+                "text": "UK mobile number",
+                "description": "This will not be stored and only used once to send your confirmation"
+            }
+        })
+    }}
+    {% endcall %}
+
+    {{ onsButton({
+        "text": "Continue",
+        "classes": "ons-u-mt-xl"
+    }) }}
+
+    <script>
+        document.querySelector('.js-mobile-number').value = sessionStorage.getItem('phoneNumber');
+
+        function storeNumber() {
+            const submitBtn = document.querySelector('button[type="submit"]');
+
+            console.log(submitBtn);
+
+            document.addEventListener("keyup", function(e) {
+                if (e.keyCode === 13) {
+                    e.preventDefault();
+                    submitBtn.click();
+                }
+            })
+
+            submitBtn.addEventListener("click", function(e) {
+                let numberInput = document.getElementById('telephone').value;
+
+                e.preventDefault();
+                sessionStorage.setItem('phoneNumber', numberInput);
+                window.location = "confirmation-confirm.html";
+            });
+        }
+
+        storeNumber();
+    </script>
+{% endblock %}

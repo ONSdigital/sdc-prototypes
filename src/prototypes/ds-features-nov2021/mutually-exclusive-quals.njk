@@ -8,18 +8,19 @@ layout: ds-features-nov2021/views/_master
 {% from "components/button/_macro.njk" import onsButton %}
 {% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
 
-{% set questionTitle = "What kind of savings and investments to you have?" %}
-{% set prevPage = "autosuggest-countries" %}
+{% set questionTitle = "Have you achieved any qualifications?" %}
+{% set prevPage = "autosuggest-occupation" %}
 {% set form =  {
     "method": "GET",
     "attributes": {
-        "action":  pageInfo.rootPath + "/autosuggest-occupation.html"
+        "action":  pageInfo.rootPath + "/summary.html"
     }
 } %}
 
 {% block main %}
     {% call onsQuestion({
         "title": questionTitle,
+        "description": 'This could be equivalent qualifications achieved anywhere outside England and Wales',
         "legendIsQuestionTitle": true
     }) %}
 
@@ -30,39 +31,32 @@ layout: ds-features-nov2021/views/_master
         "name": "mutually-exclusive",
         "checkboxes": [
             {
-                "id": "bank-savings",
+                "id": "gcse",
                 "label": {
-                    "text": "Bank or building society savings account"
+                    "text": "GCSEs"
                 },
-                "value": "bank-savings"
+                "value": "gcse"
             },
             {
-                "id": "savings",
+                "id": "a-level",
                 "label": {
-                    "text": "National savings and investments, such as Premium bonds"
+                    "text": "A or AS levels"
                 },
-                "value": "savings"
+                "value": "a-level"
             },
             {
-                "id": "investments",
+                "id": "nvq",
                 "label": {
-                    "text": "Investments, including stocks and shares ISAs"
+                    "text": "NVQ or equivalent"
                 },
-                "value": "investments"
+                "value": "nvq"
             },
             {
-                "id": "shares",
+                "id": "degree",
                 "label": {
-                    "text": "Shares"
+                    "text": "Degree level or above"
                 },
-                "value": "shares"
-            },
-            {
-                "id": "bonds",
-                "label": {
-                    "text": "Income and capital bonds"
-                },
-                "value": "bonds"
+                "value": "degree"
             }
         ],
         "mutuallyExclusive": {
@@ -73,7 +67,7 @@ layout: ds-features-nov2021/views/_master
             "checkbox": {
                 "id": "none",
                 "label": {
-                    "text": "I have none of these"
+                    "text": "I have none of these qualifications"
                 },
                 "value": "none"
             }

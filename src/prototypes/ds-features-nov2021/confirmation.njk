@@ -10,81 +10,83 @@ layout: ds-features-nov2021/views/_master
 
 {% set form =  {
     "method": "GET",
+    "classes": "js-question-no-summary",
     "attributes": {
-        "action":  pageInfo.rootPath + "/confirmation-sent.html"
+        "action":  pageInfo.rootPath + "/confirmation-confirm.html",
+        "autocomplete": "off"
     }
 } %}
 
 {% block main %}
-            {% call onsPanel({
-                    "type": 'success',
-                    "id": 'success-id',
-                    "iconType": 'check',
-                    "iconSize": 'xl'
-                }) %}
-                <h1>Thank you for completing this study</h1>
-                <p>Your answers have been submitted.</p>
-                {{
-                    onsMetadata({
-                        "classes": "ons-u-mb-no",
-                        "termCol": "5",
-                        "descriptionCol": "7",
-                        "itemsList": [
+    {% call onsPanel({
+            "type": 'success',
+            "id": 'success-id',
+            "iconType": 'check',
+            "iconSize": 'xl'
+        }) %}
+        <h1>Thank you for completing this study</h1>
+        <p>Your answers have been submitted.</p>
+        {{
+            onsMetadata({
+                "classes": "ons-u-mb-no",
+                "termCol": "5",
+                "descriptionCol": "7",
+                "itemsList": [
+                    {
+                        "term": "Submitted on:",
+                        "descriptions": [
                             {
-                                "term": "Submitted on:",
-                                "descriptions": [
-                                    {
-                                        "description": "25 June 2021 at 15:49"
-                                    }
-                                ]
-                            },
-                            {
-                                "term": "Submission reference:",
-                                "descriptions": [
-                                    {
-                                        "description": "226B - AD12 - 13F4 - 4OC5"
-                                    }
-                                ]
+                                "description": "25 June 2021 at 15:49"
                             }
                         ]
-                    })
-                }}
-            {% endcall %}
-            <p class="ons-u-mt-m">Your response will help inform decision-makers how best to support the UK population and economy at this challenging time.</p>
-            <p><a href="#0">Learn more about how we use this data</a></p>
-            <hr>
-            <h2 class="ons-u-mt-m">Get confirmation text message</h2>
-            <p>If you would like to be sent confirmation that you have completed this study, enter your mobile number</p>
-
-            {{
-                onsInput({
-                    "id": "telephone",
-                    "classes": "ons-u-mb-m",
-                    "type": "tel",
-                    "autocomplete": "tel",
-                    "width": "15",
-                    "label": {
-                        "text": "UK mobile number",
-                        "description": "This will not be stored and only used once to send your confirmation"
+                    },
+                    {
+                        "term": "Submission reference:",
+                        "descriptions": [
+                            {
+                                "description": "226B - AD12 - 13F4 - 4OC5"
+                            }
+                        ]
                     }
-                })
-            }}
-            {{ onsButton({
-                "classes": "ons-u-mb-m",
-                "text": 'Send confirmation'
-                })
-            }}
+                ]
+            })
+        }}
+    {% endcall %}
+    <p class="ons-u-mt-m">Your response will help inform decision-makers how best to support the UK population and economy at this challenging time.</p>
+    <p><a href="#0">Learn more about how we use this data</a></p>
+    <hr>
+    <h2 class="ons-u-mt-m">Get confirmation text message</h2>
+    <p>If you would like to be sent confirmation that you have completed this study, enter your mobile number</p>
 
-            {{
-                onsFeedback({
-                    "id": "feedback",
-                    "classes": "ons-u-mt-l",
-                    "heading": "What do you think about this service?",
-                    "content": "Your comments will help us make improvements",
-                    "url": "#0",
-                    "linkText": "Give feedback"
-                })
-            }}
+    {{
+        onsInput({
+            "id": "telephone",
+            "classes": "ons-u-mb-m",
+            "type": "tel",
+            "autocomplete": "password",
+            "width": "15",
+            "label": {
+                "text": "UK mobile number",
+                "description": "This will not be stored and only used once to send your confirmation"
+            }
+        })
+    }}
+    {{ onsButton({
+        "classes": "ons-u-mb-m",
+        "text": 'Send confirmation'
+        })
+    }}
+
+    {{
+        onsFeedback({
+            "id": "feedback",
+            "classes": "ons-u-mt-l",
+            "heading": "What do you think about this service?",
+            "content": "Your comments will help us make improvements",
+            "url": "#0",
+            "linkText": "Give feedback"
+        })
+    }}
 
     <script>
         const addZero = i => {
@@ -118,9 +120,32 @@ layout: ds-features-nov2021/views/_master
         dateStamp.innerHTML = day + ' ' + name + ' at ' + hour + ':' + mins;
 
         function hideBreadcrumbs() {
-            const breadcrumbs = document.querySelector(".ons-breadcrumb");
+            const breadcrumbs = document.querySelector('.ons-breadcrumb');
             breadcrumbs.classList.add('ons-u-d-no');
         }
+
+        function storeNumber() {
+            const submitBtn = document.querySelector('button[type="submit"]');
+
+            console.log(submitBtn);
+
+            document.addEventListener("keyup", function(e) {
+                if (e.keyCode === 13) {
+                    e.preventDefault();
+                    submitBtn.click();
+                }
+            })
+
+            submitBtn.addEventListener("click", function(e) {
+                let numberInput = document.getElementById('telephone').value;
+
+                e.preventDefault();
+                sessionStorage.setItem('phoneNumber', numberInput);
+                window.location = "confirmation-confirm.html";
+            });
+        }
+
         hideBreadcrumbs();
+        storeNumber();
     </script>
 {% endblock %}
