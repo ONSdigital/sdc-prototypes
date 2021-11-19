@@ -7,7 +7,6 @@ class QuestionManager {
       .split('/')
       .filter(part => !part.includes('.html'))
       .join('/');
-
     const lastCharIndex = this.url.length - 1;
 
     if (this.url.charAt(lastCharIndex) === '/') {
@@ -30,7 +29,6 @@ class QuestionManager {
     if (legend) {
       this.legend = legend.innerText;
     }
-
     const previousLink = document.querySelector('.js-previous');
 
     if (previousLink) {
@@ -48,6 +46,7 @@ class QuestionManager {
   }
 
   setValues() {
+    console.log('HELLLLOOOO?');
     const savedQuestion = window.sessionStorage.getItem(this.url);
 
     if (savedQuestion) {
