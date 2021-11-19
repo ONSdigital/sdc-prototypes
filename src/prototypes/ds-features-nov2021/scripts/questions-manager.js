@@ -29,7 +29,7 @@ class QuestionManager {
     if (legend) {
       this.legend = legend.innerText;
     }
-    const previousLink = document.querySelector('.js-previous');
+    const previousLink = document.querySelector('.ons-js-previous');
 
     if (previousLink) {
       this.previousURL = previousLink.getAttribute('href');
@@ -46,7 +46,6 @@ class QuestionManager {
   }
 
   setValues() {
-    console.log('HELLLLOOOO?');
     const savedQuestion = window.sessionStorage.getItem(this.url);
 
     if (savedQuestion) {
@@ -103,11 +102,19 @@ class QuestionManager {
 
             const id = input.id;
             const labelElement = document.querySelector(`label[for="${id}"]`);
-
+            const abbrElement = input.nextElementSibling && input.nextElementSibling.nodeName === 'ABBR';
             let label;
 
             if (labelElement) {
               label = [...labelElement.childNodes].filter(node => node.nodeType === 3 && node.textContent.trim())[0].textContent.trim();
+            } else if (abbrElement) {
+              label = input.nextElementSibling.innerHTML;
+            }
+
+            if (abbrElement) {
+              value = input.value + ' ' + label;
+            } else {
+              value = input.value;
             }
 
             switch (input.type) {
@@ -131,9 +138,6 @@ class QuestionManager {
                   }
                 }
                 break;
-              }
-              default: {
-                value = input.value;
               }
             }
 

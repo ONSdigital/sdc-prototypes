@@ -9,7 +9,16 @@ export default class SummaryManager {
 
     this.config = {
       params: {
-        rows: []
+        summaries: [
+          {
+            groups: [
+              {
+                headers: ['Question', 'Answer given', 'Change answer'],
+                rows: []
+              }
+            ]
+          }
+        ]
       }
     };
 
@@ -20,7 +29,6 @@ export default class SummaryManager {
   setConfig() {
     // Filter out only session storage keys for this prototype
     const keys = Object.keys(sessionStorage).filter(key => key !== this.basePath && key.toLowerCase().includes(this.basePath));
-
     // Filter out questions with no answers and map questions
     const unsortedQuestions = keys
       .filter(key => {
@@ -34,7 +42,6 @@ export default class SummaryManager {
     const remainingUnsortedQuestions = unsortedQuestions.filter(question => question.previousURL).length;
 
     const questions = [firstQuestion];
-
     for (let i = 0; i < remainingUnsortedQuestions; i++) {
       const lastQuestionKey = questions[questions.length - 1].key;
 
@@ -44,13 +51,12 @@ export default class SummaryManager {
     }
 
     questions
-      // .filter(question => !question.hideFromSummary)
+      .filter(question => !question.hideFromSummary)
       .forEach(question => {
         let answers = question.inputs
           .filter(input => input.label && input.value)
           .map(input => (input.value === true ? input.label : input.value));
         let joinString;
-
         if (answers.length === 1) {
           const answer = answers[0];
 
@@ -96,10 +102,10 @@ export default class SummaryManager {
         }
 
         const row = {
-          title: question.title,
+          rowTitle: question.title,
           rowItems: [
             {
-              values: [value],
+              valueList: [value],
               actions: [
                 {
                   text: 'Change',
@@ -111,12 +117,11 @@ export default class SummaryManager {
           ]
         };
 
-        this.config.params.rows.push(row);
+        this.config.params.summaries[0].groups[0].rows.push(row);
       });
   }
 
   render() {
-    console.log(this.config);
     const html = this.template.render(this.config);
 
     this.placeholder.innerHTML = html;

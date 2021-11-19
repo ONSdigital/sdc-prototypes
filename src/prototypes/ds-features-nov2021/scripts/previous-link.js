@@ -15,7 +15,7 @@ domready(() => {
   }
 
   if (previousURL) {
-    const previousLinks = [...document.querySelectorAll('.js-previous')];
+    const previousLinks = [...document.querySelectorAll('.ons-js-previous')];
 
     previousLinks.forEach(link => {
       const originalPreviousURL = link.getAttribute('href');
