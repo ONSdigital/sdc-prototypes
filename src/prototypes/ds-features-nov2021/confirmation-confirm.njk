@@ -1,0 +1,65 @@
+---
+version: 44.0.0
+layout: ds-features-nov2021/views/_master
+---
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/fieldset/_macro.njk" import onsFieldset %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+
+{% set questionTitle = "Is this mobile number correct?" %}
+{% set prevPage = "confirmation" %}
+{% set backLink = "Back" %}
+{% set form =  {
+    "method": "GET",
+    "classes": "js-question-no-summary",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/confirmation-sent.html"
+    }
+} %}
+
+{% block main %}
+    {% call onsQuestion({
+        "title": questionTitle,
+        "legendIsQuestionTitle": true
+    }) %}
+    <p class="js-mobile-number"></p>
+    {{
+        onsRadios({
+            "name": "passport",
+            "dontWrap": true,
+            "radios": [
+                {
+                    "id": "yes",
+                    "classes": "ons-u-fl",
+                    "label": {
+                        "text": "Yes, send the text"
+                    },
+                    "value": "yes"
+                },
+                {
+                    "id": "no",
+                    "label": {
+                        "text": "No, I need to change it"
+                    },
+                    "value": "no",
+                    "attributes": {
+                        "data-action-url":  pageInfo.rootPath + "/confirmation-change.html"
+                    }
+                }
+            ]
+        })
+    }}
+
+    {% endcall %}
+
+    {{ onsButton({
+        "text": "Continue",
+        "classes": "ons-u-mt-xl"
+    }) }}
+
+    <script>
+        document.querySelector('.js-mobile-number').innerHTML = sessionStorage.getItem('phoneNumber');
+    </script>
+{% endblock %}

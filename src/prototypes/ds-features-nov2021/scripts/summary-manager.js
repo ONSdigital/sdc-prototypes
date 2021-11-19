@@ -44,7 +44,7 @@ export default class SummaryManager {
     }
 
     questions
-      // .filter(question => !question.hideFromSummary)
+      .filter(question => !question.hideFromSummary)
       .forEach(question => {
         let answers = question.inputs
           .filter(input => input.label && input.value)

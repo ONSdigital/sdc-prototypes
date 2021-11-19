@@ -1,0 +1,59 @@
+---
+version: 44.0.0
+layout: ds-features-nov2021/views/_master
+---
+{% from "components/feedback/_macro.njk" import onsFeedback %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+{% from "components/metadata/_macro.njk" import onsMetadata %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% set form =  {
+    "method": "GET",
+    "classes": "js-question-no-summary",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/confirmation-sent.html"
+    }
+} %}
+
+{% block main %}
+            {% call onsPanel({
+                    "type": 'success',
+                    "classes": 'ons-u-mb-m',
+                    "id": 'success-id',
+                    "iconType": 'check',
+                    "iconSize": 'xl'
+                }) %}
+                <h1>A confirmation text message has been sent to <span class="js-mobile-number"></span></h1>
+            {% endcall %}
+            {% call onsPanel({
+                    "type": 'bare',
+                    "classes": 'ons-u-mb-l',
+                    "iconType": 'lock'
+                }) %}
+                <p>The text will be sent from <strong>ONS</strong></p>
+            {% endcall %}
+            <h2 class="ons-u-fs-r--b">Didn’t receive a text?</h2>
+            <p>It can take a few minutes for the text to arrive. If it doesn’t arrive you can <a href="{{ pageInfo.rootPath }}/confirmation-change.html">send another confirmation text message</a>.</p>
+
+            {{
+                onsFeedback({
+                    "id": "feedback",
+                    "classes": "ons-u-mt-l",
+                    "heading": "What do you think about this service?",
+                    "content": "Your comments will help us make improvements",
+                    "url": "#0",
+                    "linkText": "Give feedback"
+                })
+            }}
+
+    <script>
+        document.querySelector('.js-mobile-number').innerHTML = sessionStorage.getItem('phoneNumber');
+
+        function hideBreadcrumbs() {
+            const breadcrumbs = document.querySelector(".ons-breadcrumb");
+            breadcrumbs.classList.add('ons-u-d-no');
+        }
+        hideBreadcrumbs();
+    </script>
+{% endblock %}

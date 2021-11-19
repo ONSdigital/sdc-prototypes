@@ -46,7 +46,6 @@ class QuestionManager {
   }
 
   setValues() {
-    console.log('HELLLLOOOO?');
     const savedQuestion = window.sessionStorage.getItem(this.url);
 
     if (savedQuestion) {
