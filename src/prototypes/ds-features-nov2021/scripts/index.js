@@ -1,3 +1,5 @@
+import 'helpers/domready';
+import 'helpers/previous-link';
 import './questions-manager';
 import './piping';
 import './previous-link';
