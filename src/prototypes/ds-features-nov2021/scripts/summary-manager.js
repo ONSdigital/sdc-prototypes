@@ -98,7 +98,7 @@ export default class SummaryManager {
         };
 
         if (!value.text) {
-          value.tex = 'No answer provided';
+          value.text = 'No answer provided';
         }
 
         const row = {

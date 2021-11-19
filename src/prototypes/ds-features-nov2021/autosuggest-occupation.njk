@@ -6,7 +6,7 @@ layout: ds-features-nov2021/views/_master
 {% from "components/fieldset/_macro.njk" import onsFieldset %}
 {% from "components/input/_macro.njk" import onsInput %}
 {% from "components/button/_macro.njk" import onsButton %}
-{% from "prototypes/ds-features-nov2021/components/autosuggest/_macro.njk" import onsAutosuggest %}
+{% from "components/autosuggest/_macro.njk" import onsAutosuggest %}
 
 {% set questionTitle = "What is your job title?" %}
 {% set prevPage = "mutually-exclusive" %}
@@ -33,7 +33,6 @@ layout: ds-features-nov2021/views/_master
             "autocomplete": "off",
             "instructions": "Use up and down keys to navigate suggestions once you\'ve typed more than two characters. Use the enter key to select a suggestion. Touch device users, explore by touch or with swipe gestures.",
             "ariaYouHaveSelected": "You have selected",
-            "minChars": "4",
             "ariaMinChars": "Enter 3 or more characters for suggestions.",
             "ariaResultsLabel": "Country suggestions",
             "ariaOneResult": "There is one suggestion available.",
