@@ -2,7 +2,7 @@ import abortableFetch from 'helpers/abortable-fetch';
 import { sanitiseAutosuggestText } from './autosuggest.helpers';
 import queryJson from './code.list.searcher';
 
-export const baseClass = 'js-autosuggest';
+export const baseClass = 'ons-js-autosuggest';
 
 export const classAutosuggestOption = 'ons-autosuggest-input__option';
 export const classAutosuggestOptionFocused = `${classAutosuggestOption}--focused`;

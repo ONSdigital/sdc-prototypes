@@ -13,7 +13,7 @@ layout: ds-features-nov2021/views/_master
 {% set form =  {
     "method": "GET",
     "attributes": {
-        "action":  "#"
+        "action":  pageInfo.rootPath + "/autosuggest-countries.html"
     }
 } %}
 
@@ -34,20 +34,14 @@ layout: ds-features-nov2021/views/_master
                     "label": {
                         "text": "Yes"
                     },
-                    "value": "yes",
-                    "attributes": {
-                        "data-action-url": pageInfo.rootPath + "/autosuggest-countries.html"
-                    }
+                    "value": "yes"
                 },
                 {
                     "id": "no",
                     "label": {
                         "text": "No"
                     },
-                    "value": "no",
-                    "attributes": {
-                        "data-action-url": pageInfo.rootPath + "/mutually-exclusive.html"
-                    }
+                    "value": "no"
                 }
             ]
         })
