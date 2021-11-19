@@ -21,7 +21,7 @@
         "ariaLabel": 'Breadcrumbs',
         "itemsList": [
             {
-                "classes": "ons-js-previous",
+                "linkClasses": "ons-js-previous" if prevPage != 'enter-access-code' else '',
                 "url": pageInfo.rootPath + "/" + prevPage + '.html',
                 "text": backLink | default ('Previous')
             }
