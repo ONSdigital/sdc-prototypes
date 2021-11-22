@@ -853,6 +853,16 @@
   resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-4.1.0.tgz#3d8c5c09642ee90bee5b6fc2d5b509b59b245491"
   integrity sha512-HtKHQsJ8hYwJHutFg2TaxkE3vblq01mlrA5IQtN+ywCsJJVb4+xb/K1T8+ZhLqVbVOgkJFxnYBEGc/lZmMS/kw==
 
+"@ons/design-system/43.0.0@npm:@ons/design-system@43.0.0":
+  version "43.0.0"
+  resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-43.0.0.tgz#ef35b062d44a0c0bc40006672ad4a895a4253b1d"
+  integrity sha512-f/9GTmNJKpeGCTYeEUCFwcaCi5dx7gL/eew56DG6uYCHOH4/FJm84Jxhlw3ivyET4mkHAQVwnxlbzRBaXrnroQ==
+
+"@ons/design-system/44.0.0@npm:@ons/design-system@44.0.0":
+  version "44.0.0"
+  resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-44.0.0.tgz#c8cceec5e9bde875ea4dd9b55889899b507ea001"
+  integrity sha512-acgUGRzdiHXvxba215dRg/EfgXWLcBW4O0GJDJNrPM5hS3wIz7cn1WtNLxr3xbYK9kgfB8DBkx0TymZbnIUS5w==
+
 "@ons/design-system/5.0.1@npm:@ons/design-system@5.0.1":
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-5.0.1.tgz#1ee1a88d951931ae95069a2e07a3bc177d6b6e80"

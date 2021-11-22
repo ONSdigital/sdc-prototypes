@@ -1,0 +1,50 @@
+---
+version: 44.0.0
+layout: ds-features-nov2021/views/_master
+---
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/fieldset/_macro.njk" import onsFieldset %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/duration/_macro.njk" import onsDuration %}
+
+{% set questionTitle = "How long have you lived in this property?" %}
+{% set prevPage = "conditional-reveal" %}
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/radios.html"
+    }
+} %}
+
+{% block main %}
+    {% call onsQuestion({
+        "title": questionTitle,
+        "legendIsQuestionTitle": true
+    }) %}
+
+        {{ onsDuration({
+            "id": "address-duration",
+            "dontWrap": true,
+            "field1": {
+                "legendOrLabel": "Years",
+                "id": "address-duration-years",
+                "name": "address-duration-years",
+                "suffix": "Years"
+            },
+            "field2": {
+                "legendOrLabel": "Months",
+                "id": "address-duration-months",
+                "name": "address-duration-months",
+                "suffix": "Months"
+            }
+        }) }}
+
+    {% endcall %}
+
+    {{ onsButton({
+        "text": "Save and continue",
+        "classes": "ons-u-mt-xl"
+    }) }}
+
+{% endblock %}

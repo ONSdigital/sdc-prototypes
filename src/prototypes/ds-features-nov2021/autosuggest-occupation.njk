@@ -1,0 +1,56 @@
+---
+version: 44.0.0
+layout: ds-features-nov2021/views/_master
+---
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/fieldset/_macro.njk" import onsFieldset %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/autosuggest/_macro.njk" import onsAutosuggest %}
+
+{% set questionTitle = "What is your job title?" %}
+{% set prevPage = "mutually-exclusive" %}
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/mutually-exclusive-quals.html"
+    }
+} %}
+
+{% block main %}
+    {% call onsQuestion({
+        "title": questionTitle,
+        "legendIsQuestionTitle": true
+    }) %}
+
+        {{ onsAutosuggest({
+            "id": "occupation",
+            "label": {
+                "text": "Job title",
+                "description": "Enter your own answer or select from suggestions",
+                "id": "occupation-label"
+            },
+            "autocomplete": "off",
+            "instructions": "Use up and down keys to navigate suggestions once you\'ve typed more than two characters. Use the enter key to select a suggestion. Touch device users, explore by touch or with swipe gestures.",
+            "ariaYouHaveSelected": "You have selected",
+            "ariaMinChars": "Enter 3 or more characters for suggestions.",
+            "ariaResultsLabel": "Country suggestions",
+            "ariaOneResult": "There is one suggestion available.",
+            "ariaNResults": "There are {n} suggestions available.",
+            "ariaLimitedResults": "Results have been limited to 10 suggestions. Type more characters to improve your search",
+            "moreResults": "Continue entering to improve suggestions",
+            "resultsTitle": "Suggestions",
+            "resultsTitleId": "occupation-suggestions",
+            "autosuggestData": "https://gist.githubusercontent.com/jrbarnes9/f0deee33259b889948c46afbb6ea788e/raw/ef02736e6a1f01116440b384187e30014c6b8584/occupations.json",
+            "noResults": "No suggestions found. You can enter your own answer",
+            "typeMore": "Continue entering to get suggestions"
+        }) }}
+
+    {% endcall %}
+
+    {{ onsButton({
+        "text": "Save and continue",
+        "classes": "ons-u-mt-xl"
+    }) }}
+
+{% endblock %}

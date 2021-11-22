@@ -1,0 +1,90 @@
+---
+version: 44.0.0
+layout: ds-features-nov2021/views/_master
+---
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/fieldset/_macro.njk" import onsFieldset %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+
+{% set questionTitle = "What type of property do you live in?" %}
+{% set prevPage = "date" %}
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/duration.html"
+    }
+} %}
+
+{% block main %}
+    {% call onsQuestion({
+        "title": questionTitle,
+        "legendIsQuestionTitle": true
+    }) %}
+
+    {{
+        onsRadios({
+            "name": "property-type",
+            "dontWrap": true,
+            "radios": [
+                {
+                    "id": "house",
+                    "label": {
+                        "text": "House or bungalow"
+                    },
+                    "value": "House or bungalow. Bedrooms: ",
+                    "other": {
+                        "id": "other-house",
+                        "name": "other-house",
+                        "type": "number",
+                        "width": "2",
+                        "label": {
+                            "text": "Enter number of bedrooms"
+                        }
+                    }
+                },
+                {
+                    "id": "flat",
+                    "label": {
+                        "text": "Flat, maisonette or apartment"
+                    },
+                    "value": "Flat, maisonette or apartment. Bedrooms: ",
+                    "other": {
+                        "id": "other-flat",
+                        "name": "other-flat",
+                        "type": "number",
+                        "width": "2",
+                        "label": {
+                            "text": "Enter number of bedrooms"
+                        }
+                    }
+                },
+                {
+                    "id": "mobile",
+                    "label": {
+                        "text": "Caravan or other mobile or temporary structure"
+                    },
+                    "value": "Caravan or other mobile or temporary structure. Bedrooms: ",
+                    "other": {
+                        "id": "other-mobile",
+                        "name": "other-mobile",
+                        "type": "number",
+                        "width": "2",
+                        "label": {
+                            "text": "Enter number of bedrooms"
+                        }
+                    }
+                }
+            ]
+        })
+    }}
+
+    {% endcall %}
+
+    {{ onsButton({
+        "text": "Save and continue",
+        "classes": "ons-u-mt-xl"
+    }) }}
+
+{% endblock %}

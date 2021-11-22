@@ -1,17 +1,17 @@
-const callbacks = [];
+let callbacks = [];
 
-export default function domready(callback) {
-  callbacks.push(callback);
+const onReady = () => {
+  callbacks.forEach(fn => fn.call());
+  callbacks = [];
+  window.onsDOMReady = true;
+};
+
+export default function ready(fn) {
+  if (document.readyState === 'loading') {
+    callbacks.push(fn);
+  } else {
+    fn.call();
+  }
 }
 
-function onReady() {
-  document.removeEventListener('onsDOMReady', onReady);
-  callbacks.forEach(callback => callback());
-}
-
-// Checks if ONS Design System has already run DOM ready and if not waits for it to fire a DOM ready event
-if (window.onsDOMReady) {
-  onReady();
-} else {
-  document.addEventListener('onsDOMReady', onReady);
-}
+document.addEventListener('DOMContentLoaded', onReady);

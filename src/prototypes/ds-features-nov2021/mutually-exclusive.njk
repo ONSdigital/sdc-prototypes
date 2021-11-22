@@ -1,0 +1,91 @@
+---
+version: 44.0.0
+layout: ds-features-nov2021/views/_master
+---
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/fieldset/_macro.njk" import onsFieldset %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
+
+{% set questionTitle = "What kind of savings and investments to you have?" %}
+{% set prevPage = "autosuggest-countries" %}
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/autosuggest-occupation.html"
+    }
+} %}
+
+{% block main %}
+    {% call onsQuestion({
+        "title": questionTitle,
+        "legendIsQuestionTitle": true
+    }) %}
+
+    {{ onsCheckboxes({
+        "id": "central-heating-answers",
+        "dontWrap": true,
+        "checkboxesLabel": "Select all that apply",
+        "name": "mutually-exclusive",
+        "checkboxes": [
+            {
+                "id": "bank-savings",
+                "label": {
+                    "text": "Bank or building society savings account"
+                },
+                "value": "Bank or building society savings account"
+            },
+            {
+                "id": "savings",
+                "label": {
+                    "text": "National savings and investments, such as Premium bonds"
+                },
+                "value": "National savings and investments, such as Premium bonds"
+            },
+            {
+                "id": "investments",
+                "label": {
+                    "text": "Investments, including stocks and shares ISAs"
+                },
+                "value": "Investments, including stocks and shares ISAs"
+            },
+            {
+                "id": "shares",
+                "label": {
+                    "text": "Shares"
+                },
+                "value": "Shares"
+            },
+            {
+                "id": "bonds",
+                "label": {
+                    "text": "Income and capital bonds"
+                },
+                "value": "Income and capital bonds"
+            }
+        ],
+        "mutuallyExclusive": {
+            "or": "Or",
+            "deselectMessage": "Selecting this will uncheck all other checkboxes",
+            "deselectGroupAdjective": "deselected",
+            "deselectCheckboxAdjective": "deselected",
+            "checkbox": {
+                "id": "none",
+                "label": {
+                    "text": "I have none of these"
+                },
+                "value": "I have none of these"
+            }
+        }
+    })
+    }}
+
+    {% endcall %}
+
+    {{ onsButton({
+        "text": "Save and continue",
+        "classes": "ons-u-mt-xl"
+    }) }}
+
+{% endblock %}

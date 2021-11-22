@@ -1,0 +1,151 @@
+---
+version: 44.0.0
+layout: ds-features-nov2021/views/_master
+---
+{% from "components/feedback/_macro.njk" import onsFeedback %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+{% from "components/metadata/_macro.njk" import onsMetadata %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% set form =  {
+    "method": "GET",
+    "classes": "js-question-no-summary",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/confirmation-confirm.html",
+        "autocomplete": "off"
+    }
+} %}
+
+{% block main %}
+    {% call onsPanel({
+            "type": 'success',
+            "id": 'success-id',
+            "iconType": 'check',
+            "iconSize": 'xl'
+        }) %}
+        <h1>Thank you for completing this study</h1>
+        <p>Your answers have been submitted.</p>
+        {{
+            onsMetadata({
+                "classes": "ons-u-mb-no",
+                "termCol": "5",
+                "descriptionCol": "7",
+                "itemsList": [
+                    {
+                        "term": "Submitted on:",
+                        "descriptions": [
+                            {
+                                "description": "25 June 2021 at 15:49"
+                            }
+                        ]
+                    },
+                    {
+                        "term": "Submission reference:",
+                        "descriptions": [
+                            {
+                                "description": "226B - AD12 - 13F4 - 4OC5"
+                            }
+                        ]
+                    }
+                ]
+            })
+        }}
+    {% endcall %}
+    <p class="ons-u-mt-m">Your response will help inform decision-makers how best to support the UK population and economy at this challenging time.</p>
+    <p><a href="#0">Learn more about how we use this data</a></p>
+    <hr>
+    <h2 class="ons-u-mt-m">Get confirmation text message</h2>
+    <p>If you would like to be sent confirmation that you have completed this study, enter your mobile number</p>
+
+    {{
+        onsInput({
+            "id": "telephone",
+            "classes": "ons-u-mb-m",
+            "type": "tel",
+            "autocomplete": "password",
+            "width": "15",
+            "label": {
+                "text": "UK mobile number",
+                "description": "This will not be stored and only used once to send your confirmation"
+            }
+        })
+    }}
+    {{ onsButton({
+        "classes": "ons-u-mb-m",
+        "text": 'Send confirmation'
+        })
+    }}
+
+    {{
+        onsFeedback({
+            "id": "feedback",
+            "classes": "ons-u-mt-l",
+            "heading": "What do you think about this service?",
+            "content": "Your comments will help us make improvements",
+            "url": "#0",
+            "linkText": "Give feedback"
+        })
+    }}
+
+    <script>
+        const addZero = i => {
+            if (i < 10) {
+                i = "0" + i
+            }
+            return i;
+        }
+
+        const date = new Date();
+        const dateStamp = document.querySelector(".ons-metadata__value");
+        const month = new Array();
+        month[0] = "January";
+        month[1] = "February";
+        month[2] = "March";
+        month[3] = "April";
+        month[4] = "May";
+        month[5] = "June";
+        month[6] = "July";
+        month[7] = "August";
+        month[8] = "September";
+        month[9] = "October";
+        month[10] = "November";
+        month[11] = "December";
+
+        let name = month[date.getMonth()];
+        let day = addZero(date.getDate());
+        let hour = addZero(date.getHours());
+        let mins = addZero(date.getMinutes());
+
+        dateStamp.innerHTML = day + ' ' + name + ' at ' + hour + ':' + mins;
+
+        function hideBreadcrumbs() {
+            const breadcrumbs = document.querySelector('.ons-breadcrumb');
+            breadcrumbs.classList.add('ons-u-d-no');
+        }
+
+        function storeNumber() {
+            const submitBtn = document.querySelector('button[type="submit"]');
+
+            console.log(submitBtn);
+
+            document.addEventListener("keyup", function(e) {
+                if (e.keyCode === 13) {
+                    e.preventDefault();
+                    submitBtn.click();
+                }
+            })
+
+            submitBtn.addEventListener("click", function(e) {
+                let numberInput = document.getElementById('telephone').value;
+
+                e.preventDefault();
+                sessionStorage.setItem('phoneNumber', numberInput);
+                window.location = "confirmation-confirm.html";
+            });
+        }
+
+        hideBreadcrumbs();
+        storeNumber();
+    </script>
+{% endblock %}

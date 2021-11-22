@@ -1,0 +1,85 @@
+---
+version: 44.0.0
+layout: ds-features-nov2021/views/_master
+---
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/fieldset/_macro.njk" import onsFieldset %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
+
+{% set questionTitle = "Have you achieved any qualifications?" %}
+{% set prevPage = "autosuggest-occupation" %}
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/summary.html"
+    }
+} %}
+
+{% block main %}
+    {% call onsQuestion({
+        "title": questionTitle,
+        "description": 'This could be equivalent qualifications achieved anywhere outside England and Wales',
+        "legendIsQuestionTitle": true
+    }) %}
+
+    {{ onsCheckboxes({
+        "id": "central-heating-answers",
+        "dontWrap": true,
+        "checkboxesLabel": "Select all that apply",
+        "name": "mutually-exclusive",
+        "checkboxes": [
+            {
+                "id": "gcse",
+                "label": {
+                    "text": "GCSEs"
+                },
+                "value": "GCSEs"
+            },
+            {
+                "id": "a-level",
+                "label": {
+                    "text": "A or AS levels"
+                },
+                "value": "A or AS levels"
+            },
+            {
+                "id": "nvq",
+                "label": {
+                    "text": "NVQ or equivalent"
+                },
+                "value": "NVQ or equivalent"
+            },
+            {
+                "id": "degree",
+                "label": {
+                    "text": "Degree level or above"
+                },
+                "value": "Degree level or above"
+            }
+        ],
+        "mutuallyExclusive": {
+            "or": "Or",
+            "deselectMessage": "Selecting this will uncheck all other checkboxes",
+            "deselectGroupAdjective": "deselected",
+            "deselectCheckboxAdjective": "deselected",
+            "checkbox": {
+                "id": "none",
+                "label": {
+                    "text": "I have none of these qualifications"
+                },
+                "value": "I have none of these qualifications"
+            }
+        }
+    })
+    }}
+
+    {% endcall %}
+
+    {{ onsButton({
+        "text": "Save and continue",
+        "classes": "ons-u-mt-xl"
+    }) }}
+
+{% endblock %}

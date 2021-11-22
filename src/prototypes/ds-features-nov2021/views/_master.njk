@@ -1,0 +1,44 @@
+{% extends "page-templates/_template.njk" %}
+
+{% set pageConfig = {
+    "cdn": {
+      "version": '44.0.0'
+    },
+    "header": {
+        "logoHref": '/',
+        "titleLogoHref": pageInfo.rootPath + '#0'
+    },
+    "title": "Prototype",
+    "footer": {
+        "OGLLink": {
+            "pre": 'All content is available under the',
+            "link": 'Open Government Licence v3.0',
+            "url": 'https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/',
+            "post": ', except where otherwise stated'
+        }
+    },
+    "breadcrumbs": {
+        "ariaLabel": 'Breadcrumbs',
+        "itemsList": [
+            {
+                "linkClasses": "ons-js-previous" if prevPage != 'accordions' else '',
+                "url": pageInfo.rootPath + "/" + prevPage + '.html',
+                "text": backLink | default ('Previous')
+            }
+        ]
+    }
+} %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ pageInfo.rootPath }}/styles.css" />
+{% endblock %}
+
+{% block preMain %}
+{% endblock %}
+
+{% block main %}
+{% endblock %}
+
+{% block bodyEnd %}
+    <script src="{{ pageInfo.rootPath }}/index.js"></script>
+{% endblock %}
