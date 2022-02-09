@@ -1,0 +1,20 @@
+{% extends "page-templates/_template.njk" %}
+
+{% block head %}
+{% endblock %}
+
+{% set page = { 
+    "title": "BICS",
+    "footer": {
+        "OGLLink": {
+            "pre": 'All content is available under the',
+            "link": 'Open Government Licence v3.0',
+            "url": 'https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/',
+            "post": ', except where otherwise stated'
+        }
+    }
+} %}
+
+{% block bodyEnd %}
+    <script src="{{ pageInfo.rootPath }}/scripts/index.js"></script>
+{% endblock %}

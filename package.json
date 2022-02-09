@@ -142,6 +142,7 @@
     "fuse.js": "^3.4.5",
     "node-fetch": "^2.6.0",
     "querystring-helpers": "^1.0.2",
+    "rebuild": "^0.1.2",
     "uuid": "^3.3.2",
     "yarn": "^1.22.4"
   }

@@ -1,0 +1,144 @@
+---
+group: RAS/RM - Frontstage
+title: User self serve
+version: 35.0.3
+layout: user-self-serve/views/version-10/_master-internal-respondent
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/metadata/_macro.njk" import onsMetadata %}
+
+{% block main %}
+    <div class="grid">
+        <div class="grid__col col-10@m">
+        <p><a href="index.html">Back to respondent</a></p>
+            <section>
+            <p class="field">
+                <h1 class="u-mt-l">Shared surveys details</h1>
+                {{
+                    onsMetadata({
+                        "metadataLabel": "Shared survey",
+                        "termCol": "4",
+                        "descriptionCol": "8",
+                        "itemsList": [
+                            {
+                                "term": "Shared by:",
+                                "descriptions": [
+                                    {
+                                        "description": "Gareth Poole (gareth.poole@ons.gov.uk)"
+                                    }
+                                ]
+                            },
+                            {
+                                "term": "Recipient's email address:",
+                                "descriptions": [
+                                    {
+                                        "description": "jane.doe@example.com"
+                                    }
+                                ]
+                            },
+                            {
+                                "term": "Date and time shared:",
+                                "descriptions": [
+                                    {
+                                        "description": "2nd June, 2021 at 10:40"
+                                    }
+                                ]
+                            },
+                            {
+                                "term": "Date and time share request expires:",
+                                "descriptions": [
+                                    {
+                                        "description": "5th June, 2021 at 10:39"
+                                    }
+                                ]
+                            },
+                            {
+                                "term": "Business 1:",
+                                "descriptions": [
+                                    {
+                                        "description": "Sparks and Menser"
+                                    }
+                                ]
+                            },
+                            {
+                                "term": "Business 1 trading as:",
+                                "descriptions": [
+                                    {
+                                        "description": "Sparks and Menser"
+                                    }
+                                ]
+                            },
+                            {
+                                "term": "Surveys for business 1:",
+                                "descriptions": [
+                                    {
+                                        "description": "Monthly business survey"
+                                    },
+                                    {
+                                        "description": "Quarterly Acquisitions and Disposal of Capital Assets Survey"
+                                    },
+                                    {
+                                        "description": "Business Register and Employment Survey"
+                                    }
+                                ]
+                            },
+                            {
+                                "term": "Business 2:",
+                                "descriptions": [
+                                    {
+                                        "description": "Dabanhams Limited"
+                                    }
+                                ]
+                            },
+                            {
+                                "term": "Business 2 trading as:",
+                                "descriptions": [
+                                    {
+                                        "description": "Dabanhams Limited"
+                                    }
+                                ]
+                            },
+                            {
+                                "term": "Surveys for business 2:",
+                                "descriptions": [
+                                    {
+                                        "description": "Monthly business survey"
+                                    },
+                                    {
+                                        "description": "Quarterly Acquisitions and Disposal of Capital Assets Survey"
+                                    },
+                                    {
+                                        "description": "Business Register and Employment Survey"
+                                    }
+                                ]
+                            }
+                        ]
+                    })
+                }}
+            </p>
+            <p class="field u-mt-l">
+                <div class="btn-group">
+                    {{ 
+                        onsButton({
+                            "type": 'button',
+                            "text": 'Resend email',
+                            "classes": 'btn--secondary btn-group__btn',
+                            "url": "/prototypes/user-self-serve/version-10/signed-in/10-message-sent.html"
+                        }) 
+                    }}
+                    {{ 
+                        onsButton({
+                            "type": 'button',
+                            "text": 'Cancel share request',
+                            "classes": 'btn--secondary btn-group__btn',
+                            "url": "/prototypes/user-self-serve/version-10/signed-in/00-surveys-list.html"
+                        }) 
+                    }}
+                </div>
+            </p>
+
+            </section>
+        </div>
+    </div>
+{% endblock %}

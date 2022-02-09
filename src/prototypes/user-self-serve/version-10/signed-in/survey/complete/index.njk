@@ -1,0 +1,173 @@
+---
+group: RAS/RM - Frontstage
+title: E-commerce Survey
+version: 35.0.3
+layout: user-self-serve/views/version-10/_master-survey
+---
+{% from "components/feedback/_macro.njk" import onsFeedback %}
+{% from "user-self-serve/version-10/components/metadata/_macro.njk" import onsMetadata %}
+{% block preMain %}
+<div class="container">
+    {{
+        onsBreadcrumb({
+            "ariaLabel": 'Back to my surveys',
+            "itemsList": [
+                {
+                    "url": pageInfo.rootPath + '/version-10/sign-in-again',
+                    "id": 'back',
+                    "text": 'Back to surveys'
+                }
+            ]
+        })
+    }}
+</div>
+{% endblock %}
+{% block main %}
+<form class="js-question-no-summary"></form>
+
+    <div class="grid">
+        <div class="grid__col col-8@m">
+            {% call onsPanel({
+                    "type": 'success',
+                    "id": 'success-id',
+                    "icon": 'check',
+                    "iconSize": 'xl'
+                }) %}
+                <h1>Thank you for completing the E-commerce Survey</h1>
+                <p>Your answers have been submitted for ACME Consumer Products.</p>
+                {{
+                    onsMetadata({
+                        "classes": "u-mb-no",
+                        "metadataLabel": "This is an example of the metadata component",
+                        "termCol": "5",
+                        "descriptionCol": "7",
+                        "itemsList": [
+                            {
+                                "term": "Submitted on:",
+                                "descriptions": [
+                                    {
+                                        "description": "25 June 2021 at 15:49"
+                                    }
+                                ]
+                            },
+                            {
+                                "term": "Submission reference:",
+                                "descriptions": [
+                                    {
+                                        "description": "226B - AD12 - 13F4 - 4OC5"
+                                    }
+                                ]
+                            }
+                        ]
+                    })
+                }}
+            {% endcall %}
+            <p class="u-mt-m">Your response will help inform decision-makers how best to support the UK population and economy at this challenging time.</p>
+            <p><a href="#0">Learn more about how we use this data</a></p>
+            <hr>
+            <h2 class="u-mt-m">Get a copy of your answers</h2>
+            <p>You can <a href="save-answers/index.html">save or print your answers</a> for your records.
+            {% call onsPanel({
+                    "type": 'warn',
+                    "id": 'warn-id'
+                }) %}
+                <p class="js-timeout-warning">For security, your answers will only be available to view for another <span class="countdown-minutes"></span> minutes <span class="countdown-seconds"></span> seconds</p>
+            {% endcall %}
+           
+                        <div id="params.id" class="feedback u-mt-l">
+                        <div class="question" id="question">
+                                            <fieldset class="fieldset">
+                                              <legend class="fieldset__legend">
+                                                <h1 class="fieldset__legend-title ">How satisfied are you with this service?</h1>
+                                              </legend>
+                                              <div class="input-items">
+                                                <div class="radios__items">
+                                                  <p class="radios__item">
+                                                    <span class="radio">
+                                                <input type="radio" id="very-satisfied" class="radio__input js-radio" value="very-satisfied" name="satisfaction">
+                            <label class="radio__label  " for="very-satisfied" id="very-satisfied-label">Very satisfied
+                                    </label>
+                                            </span>
+                                                  </p>
+                                                  <br>
+                                                  <p class="radios__item">
+                                                    <span class="radio">
+                                                <input type="radio" id="somewhat-satisfied" class="radio__input js-radio" value="somewhat-satisfied" name="satisfaction">
+                            <label class="radio__label  " for="somewhat-satisfied" id="somewhat-satisfied-label">Somewhat satisfied
+                                    </label>
+                                            </span>
+                                                  </p>
+                                                  <br>
+                                                  <p class="radios__item">
+                                                    <span class="radio">
+                                                <input type="radio" id="neither" class="radio__input js-radio" value="neither" name="satisfaction">
+                            <label class="radio__label  " for="neither" id="neither-label">Neither satisfied or dissatisfied
+                                    </label>
+                                            </span>
+                                                  </p>
+                                                  <br>
+                                                  <p class="radios__item">
+                                                    <span class="radio">
+                                                <input type="radio" id="somewhat-dissatisfied" class="radio__input js-radio" value="somewhat-dissatisfied" name="satisfaction">
+                            <label class="radio__label  " for="somewhat-dissatisfied" id="somewhat-dissatisfied-label">Somewhat dissatisfied
+                                    </label>
+                                            </span>
+                                                  </p>
+                                                  <br>
+                                                  <p class="radios__item">
+                                                    <span class="radio">
+                                                <input type="radio" id="very-dissatisfied" class="radio__input js-radio" value="very-dissatisfied" name="satisfaction">
+                            <label class="radio__label  " for="very-dissatisfied" id="very-dissatisfied-label">Very dissatisfied
+                                    </label>
+                                            </span>
+                                                  </p>
+                                                  <br>
+                                                 {% from "components/textarea/_macro.njk" import onsTextarea %}
+                                                 
+                                                 {{
+                                                     onsTextarea({
+                                                         "id": "textarea",
+                                                         "name": "feedback",
+                                                         "label": {
+                                                             "text": "Please provide some feedback",
+                                                             "description": "For example, describe any difficulties you experienced in the use of this service"
+                                                         }
+                                                     })
+                                                 }}
+                                                  </p>
+                                                </div>
+                                              </div>
+                                            </fieldset>
+                                          </div><br>
+                                          {% from "components/button/_macro.njk" import onsButton %}
+                                          {{
+                                              onsButton({
+                                                  "type": 'button',
+                                                  "text": 'Submit feedback',
+                                                  "id": 'feedback-btn',
+                                                  "variants": 'small'
+                                              })
+                                          }}
+                                          
+                                          <div id="thanks" style="display: none">
+                                          <h1 class="fieldset__legend-title">Thanks for providing feedback.</h1>
+                                          </div>
+                                          </div>
+
+    <script>
+        var initialTimer = "45:01";
+        var interval = setInterval(function() {
+        var timer = initialTimer.split(':');
+        var minutes = parseInt(timer[0], 10);
+        var seconds = parseInt(timer[1], 10);
+        --seconds;
+        minutes = (seconds < 0) ? --minutes : minutes;
+        if (minutes < 0) clearInterval(interval);
+        seconds = (seconds < 0) ? 59 : seconds;
+        seconds = (seconds < 10) ? '0' + seconds : seconds;
+        $('.countdown-minutes').html(minutes);
+        $('.countdown-seconds').html(seconds);
+        initialTimer = minutes + ':' + seconds;
+        }, 1000);
+    </script>
+{% endblock %}

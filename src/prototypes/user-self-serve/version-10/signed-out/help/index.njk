@@ -1,0 +1,94 @@
+---
+group: RAS/RM - Frontstage
+title: User self serve
+version: 35.0.3
+layout: user-self-serve/views/version-10/_master-survey-signed-out
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/breadcrumb/_macro.njk" import onsBreadcrumb %}
+
+{% block main %}
+    <div class="grid">
+        <div id="main" class="grid__col col-12@m u-pt-no u-pb-no">
+            {{ 
+                onsBreadcrumb({
+                    "ariaLabel": 'Breadcrumb',
+                    "itemsList": [
+                        {
+                            "url": '/prototypes/user-self-serve/version-10/index.html',
+                            "text": 'Sign in'
+                        }
+                    ]
+                }) 
+            }}
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+            <h1>Help</h1>
+            <form action="{{ pageInfo.parentPath }}/index.html">
+                <p class="field">
+                    <fieldset class="fieldset">
+                        <legend class="fieldset__legend">Choose an option</legend>
+                        <div class="radios__items">
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                        type="radio"
+                                        id="information-about-ons"
+                                        data-action-url="{{ pageInfo.parentPath }}/help/option-1/option-list.html"
+                                        class="radio__input js-radio"
+                                        value="question--one"
+                                        name="choose-an-option">
+                                    <label class="radio__label" for="information-about-ons">Information about the Office for National Statistics (ONS)</label>
+                                </span>
+                            </p>
+                            <br>
+                            <p class="radios__item">
+                                <span class="radio">
+                                    <input
+                                        type="radio"
+                                        id="help-with-password"
+                                        data-action-url="{{ pageInfo.parentPath }}/help/option-2/option-list.html"
+                                        class="radio__input js-radio"
+                                        value="question--two"
+                                        name="choose-an-option">
+                                    <label class="radio__label" for="help-with-password">Help with my password</label>
+                                </span>
+                            </p>
+                            <br>
+                            <p class="field radios__item">
+                                <span class="radio">
+                                    <input
+                                        type="radio"
+                                        id="something-else"
+                                        data-action-url="{{ pageInfo.parentPath }}/help/option-3/index.html"
+                                        class="radio__input js-radio"
+                                        value="question--three"
+                                        name="choose-an-option">
+                                    <label class="radio__label" for="something-else">Something else</label>
+                                </span>
+                            </p>
+                        </div>
+                    </fieldset>
+                </p>
+                <p class="field">
+                    <div class="btn-group">
+                        <button type="submit" class="btn">
+                            <span class="btn__inner">Continue</span>
+                        </button>
+                        {{ 
+                            onsButton({
+                                "type": 'button',
+                                "text": 'Cancel',
+                                "classes": 'btn--secondary btn-group__btn',
+                                "url": "/prototypes/user-self-serve/version-10/signed-out/00-surveys-list.html"
+                            }) 
+                        }}
+                    </div>
+                </p>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

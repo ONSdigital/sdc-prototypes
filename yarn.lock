@@ -6971,6 +6971,13 @@ opn@^5.5.0:
   dependencies:
     is-wsl "^1.1.0"
 
+optimist@0.3.x:
+  version "0.3.7"
+  resolved "https://registry.yarnpkg.com/optimist/-/optimist-0.3.7.tgz#c90941ad59e4273328923074d2cf2e7cbc6ec0d9"
+  integrity sha1-yQlBrVnkJzMokjB00s8ufLxuwNk=
+  dependencies:
+    wordwrap "~0.0.2"
+
 optionator@^0.8.1, optionator@^0.8.2:
   version "0.8.2"
   resolved "https://registry.yarnpkg.com/optionator/-/optionator-0.8.2.tgz#364c5e409d3f4d6301d6c0b4c05bba50180aeb64"
@@ -8124,6 +8131,13 @@ readline2@^1.0.1:
     code-point-at "^1.0.0"
     is-fullwidth-code-point "^1.0.0"
     mute-stream "0.0.5"
+
+rebuild@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/rebuild/-/rebuild-0.1.2.tgz#03acdea5515130b479092746e093daf8cf883e93"
+  integrity sha1-A6zepVFRMLR5CSdG4JPa+M+IPpM=
+  dependencies:
+    optimist "0.3.x"
 
 redent@^1.0.0:
   version "1.0.0"
@@ -10458,6 +10472,11 @@ window-size@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/window-size/-/window-size-0.1.4.tgz#f8e1aa1ee5a53ec5bf151ffa09742a6ad7697876"
   integrity sha1-+OGqHuWlPsW/FR/6CXQqatdpeHY=
+
+wordwrap@~0.0.2:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/wordwrap/-/wordwrap-0.0.3.tgz#a3d5da6cd5c0bc0008d37234bbaf1bed63059107"
+  integrity sha1-o9XabNXAvAAI03I0u68b7WMFkQc=
 
 wordwrap@~1.0.0:
   version "1.0.0"

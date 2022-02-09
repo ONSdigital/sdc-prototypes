@@ -1,0 +1,63 @@
+---
+group: RAS/RM - Frontstage
+title: E-commerce survey
+version: 35.0.3
+layout: user-self-serve/views/version-10/_master-survey
+---
+
+{% from "components/header/_macro.njk" import onsHeader %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
+
+{% block preMain %}
+<div class="container">
+    {{
+        onsBreadcrumb({
+            "ariaLabel": 'Back',
+            "itemsList": [
+                {
+                    "linkClasses": 'js-previous',
+                    "url":  pageInfo.rootPath + '/version-10/signed-in/00-surveys-list.html',
+                    "id": "back",
+                    "text": 'Surveys'
+                }
+            ]
+        })
+    }}
+</div>
+{% endblock %}
+{% block main %}
+<form class="js-question-no-summary"></form>
+    <div class="grid">
+        <div class="grid__col col-8@m">
+            <h1 class="u-fs-xl">You are completing this for <span>ACME Consumer Products</span></h1>
+            <p class="u-fs-r" data-qa="details-changed-title">
+                    If the company details or structure have changed contact us on <a href="tel:03001234931">0300 1234 931</a> or email <a href="mailto:surveys@ons.gov.uk?subject=Change%20of%20details%20reference%2011110000001H"  aria-describedby="details-changed-title">surveys@ons.gov.uk</a>
+            </p>
+            <div id="use-of-information" class="u-mb-s">
+                <ul>
+                    <li>Data should relate to all sites in the UK (including foreign owned businesses) unless otherwise stated. The UK consists of England, Wales, Scotland, and Northern Ireland and excludes the Channel Islands and the Isle of Man.</li>
+                    <li>You can provide informed estimates if actual figures aren’t available.</li>
+                    <li>We will treat your data securely and confidentially.</li>
+                </ul>
+            </div>
+            <h3 class="u-fs-m" data-qa="legal-response">Your response is legally required</h3>
+            <p class="u-fs-r u-mb-m" data-qa="legal-basis">Notice is given under section 1 of the Statistics of Trade Act 1947.</p>
+            {{ 
+                onsButton({
+                    "type": 'button',
+                    "text": 'Start survey',
+                    "url": pageInfo.parentPath + '/survey/' + 'use-of-computers/' + 'index.html'
+                }) 
+            }}
+            <br><br>
+                <p class="u-mb-m"><a href="https://www.ons.gov.uk/surveys/informationforbusinesses/businesssurveys/detailedguidancetohelpcompletetheecommercesurvey" target="_blank">View or print the questions you will be asked in this survey</a></p>
+                <h3>How we use your data</h3>
+                <ul>
+                    <li>You cannot appeal your selection. Your business was selected to give us a comprehensive view of the UK economy.</li>
+                    <li>The information you provide is used to measure how businesses are adopting new technology and engaging in e-commerce, as part of the digital economy.</li>
+                </ul>
+        </div>
+    </div>
+
+{% endblock %}

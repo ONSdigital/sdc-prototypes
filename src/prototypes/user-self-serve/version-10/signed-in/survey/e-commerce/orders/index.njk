@@ -1,0 +1,127 @@
+---
+group: RAS/RM - Frontstage
+title: E-commerce Survey
+version: 35.0.3
+layout: user-self-serve/views/version-10/_master-survey-question
+---
+
+{% block preMain %}
+<div class="container">
+    {{
+        onsBreadcrumb({
+            "ariaLabel": 'Previous',
+            "itemsList": [
+                {
+                    "linkClasses": 'js-previous',
+                    "url": pageInfo.parentPath + '/index.html',
+                    "id": 'previous',
+                    "text": 'Previous'
+                }
+            ]
+        })
+    }}
+</div>
+{% endblock %}
+{% block main %}
+    <div class="grid">
+        <div id="main" class="grid__col col-8@m u-pt-no u-pb-no">
+            <form action="{{ pageInfo.rootPath }}/version-10/signed-in/survey/hub/index.html">
+
+            {% call onsQuestion({
+                "legendIsQuestionTitle": true,
+                "classes": 'u-mt-no',
+                "title": 'During 2018, did <em class="highlight">ACME Consumer Products</em> receive any orders from customers for goods or services via a website or ‘app’?'
+            }) %}
+                {% call onsPanel({
+                    "classes": 'u-mb-m'
+                }) %}
+                    <h2 class="u-fs-r--b">Include</h2> 
+                    {{
+                        onsList({
+                            "itemsList": [
+                                {
+                                    "text": 'Orders received for utilities, goods, materials or services via an online store, web forms on a website or extranet or ‘app’'
+                                }
+                            ]
+                        })
+                    }}
+                    <h2 class="u-fs-r--b">Exclude</h2> 
+                    {{
+                        onsList({
+                            "itemsList": [
+                                {
+                                    "text": 'Manually typed email, EDI, fax, automated telephone entry, phone (person to person), and conventional fax'
+                                },
+                                {
+                                    "text": 'Enquiries or reservations that did not result in receiving an order'
+                                }
+                            ]
+                        })
+                    }}
+                {% endcall %}
+                {{
+                    onsRadios({
+                        "name": "have-internet-access",
+                        "dontWrap": true,
+                        "radios": [
+                            {
+                                "id": "yes",
+                                "label": {
+                                    "text": "Yes"
+                                },
+                                "value": "yes"
+                            },
+                            {
+                                "id": "no",
+                                "label": {
+                                    "text": "No"
+                                },
+                                "value": "no"
+                            }
+                        ]
+                    })
+                }}
+            {% endcall %}
+            {{ onsButton({
+                "id": "js-continue",
+                "text": "Save and continue",
+                "classes": "u-mt-xl"
+            }) }}
+            </form>
+            <p class="u-mt-xl"><a href="{{ pageInfo.rootPath }}/version-10/signed-in/survey/hub/index.html" id="js-return-later">Choose another section and return to this later</a></p>
+        </div>
+    </div>
+    <script>
+        var returnLaterLink = document.getElementById('js-return-later');
+        var continueButton = document.getElementById('js-continue');
+
+        returnLaterLink.onclick = function setSectionStatus() {
+            var newSectionStatus = new Object();
+
+            newSectionStatus.bookmark = window.location.pathname;
+            newSectionStatus.status = "started";
+
+            if(sessionStorage.sectionSix) {
+                sessionStorage.removeItem('sectionSix');
+                sectionSix = JSON.parse(sessionStorage.getItem('sectionSix'));
+            } else {
+                sectionSix = [];
+            }
+            var sectionSix = newSectionStatus;
+
+            sessionStorage.setItem('sectionSix', JSON.stringify(sectionSix));
+        }
+
+        continueButton.onclick = function sectionComplete() {
+
+            var newSectionStatus = new Object();
+
+            newSectionStatus.bookmark = '';
+            newSectionStatus.status = "complete";
+
+            var sectionSix = newSectionStatus;
+
+            sessionStorage.setItem('sectionSix', JSON.stringify(sectionSix));
+        }
+    </script>
+{% endblock %}

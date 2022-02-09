@@ -1,0 +1,122 @@
+---
+group: RAS/RM - Frontstage
+title: User self serve
+version: 35.0.3
+layout: user-self-serve/views/version-10/_master-internal
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/metadata/_macro.njk" import onsMetadata %}
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+{% from "components/message/_macro.njk" import onsMessage %}
+
+{% block main %}
+
+{% from "components/panel/_macro.njk" import onsPanel %}
+{{
+    onsPanel({
+        "type": 'success',
+        "id": 'success-id',
+        "icon": 'check',
+        "body": 'The category has been successfully updated.'
+    })
+}}
+
+    <div class="grid u-mt-l">
+        <div class="grid__col col-8@m">
+            <h1>Help with my account</h1>
+            <dl class="metadata metadata__list grid grid--gutterless u-cf u-mb-l" title="This is an example of the metadata component" aria-label="This is an example of the metadata component">
+                <dt class="metadata__term grid__col col-3@m">Survey:</dt>
+                <dd class="metadata__value grid__col col-9@m">Technical <a href="/prototypes/user-self-serve/version-10/00-internal/assigned/10-choose-survey.html">Change category or assign a survey</a></dd>
+                <dt class="metadata__term grid__col col-3@m">RU Ref:</dt>
+                <dd class="metadata__value grid__col col-9@m">11100000110</dd>
+                <dt class="metadata__term grid__col col-3@m">Business:</dt>
+                <dd class="metadata__value grid__col col-9@m">Bolts &amp; Ratchets Ltd.</dd>
+                <dt class="metadata__term grid__col col-3@m">To:</dt>
+                <dd class="metadata__value grid__col col-9@m">ONS Surveys</dd>
+            </dl>
+
+            <p class="field">
+                {% call onsMessage({"type": 'sent', "fromLabel": 'From', "fromValue": 'Jackie Turner', "sentLabel": 'Sent', "sentValue": 'Today at 13:15'})
+ %}
+                <p>Hi, <br>I am trying to log into my account but the password's not working. I followed the instuctions but I am still getting an error message. Can you help?
+                    <br><br>Thanks, Jacky</p>
+                {% endcall %}
+            </p>
+
+            <!--
+             <p class="field">
+                {% from "components/radios/_macro.njk" import onsRadios %}
+                {{ 
+                    onsRadios({
+                        "legend": "What is your message about?",
+                        "name": "category",
+                        "radios": [
+                            {
+                                "id": "data-query",
+                                "label": {
+                                    "text": "A data query"
+                                },
+                                "value": "data-query"
+                            },
+                            {
+                                "id": "response-chase",
+                                "label": {
+                                    "text": "Response chase"
+                                },
+                                "value": "response-chase"
+                            },
+                            {
+                                "id": "other-checkbox",
+                                "label": {
+                                    "text": "Something else"
+                                },
+                                "value": "other",
+                                "other": {
+                                    "id": "other-textbox",
+                                    "name": "other-answer",
+                                    "label": {
+                                        "text": "Please specify"
+                                    }
+                                }
+                            }
+                        ]
+                    }) 
+                }}
+            </p>
+            -->
+
+            <p class="field">
+                {{
+                onsTextarea({
+                    "id": "textarea",
+                    "name": "feedback",
+                    "label": {
+                        "text": "Reply"
+                    }
+                })
+            }}
+            </p>
+            <p class="field">
+                <div class="btn-group">
+                    {{
+                        onsButton({
+                            "type": 'button',
+                            "text": 'Send message',
+                            "classes": 'btn-group__btn'
+                        })
+                    }}
+                    {{
+                        onsButton({
+                            "type": 'button',
+                            "text": 'Cancel',
+                            "classes": 'btn--secondary btn-group__btn'
+                        })
+                    }}
+                </div>
+            </p>
+        </div>
+    </div>
+
+{% endblock %}

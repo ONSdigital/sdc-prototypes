@@ -1,0 +1,72 @@
+---
+group: RAS/RM - Frontstage
+title: User self serve
+version: 35.0.3
+layout: user-self-serve/views/version-10/_master-survey
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+{% from "components/metadata/_macro.njk" import onsMetadata %}
+{% from "components/input/_macro.njk" import onsInput %}
+
+{% block main %}
+
+    <div class="grid">
+        <div id="main" class="grid__col col-8@m u-pt-no u-pb-no">
+            <h1>Create message</h1>
+            <div class="panel panel--info panel--simple u-mb-m">
+                <div class="panel__body">
+                    <p>You can update your contact details, share surveys with colleagues or change your business details in <a href="/prototypes/user-self-serve/version-10/help/30-my-account.html">your account</a>.</p>
+                </div>
+            </div>
+            <p>To: ONS Business surveys team</p>
+        </div>
+        <div class="grid__col col-8@m u-pt-no">
+            {{ 
+                        onsInput({
+                            "id": "subject",
+                            "label": {
+                                "text": "Subject"
+                            }
+                        }) 
+                    }}
+
+            <div class="field">
+                <p>
+                    {{
+                        onsTextarea({
+                            "id": "textarea",
+                            "name": "feedback",
+                            "label": {
+                                "text": "Message"
+                            }
+                        })
+                    }}
+                </p>
+            </div>
+            <p class="field">
+                <div class="btn-group">
+                    {{ 
+                        onsButton({
+                            "type": 'button',
+                            "text": 'Send message',
+                            "classes": 'btn-group__btn',
+                            "url": "/prototypes/user-self-serve/version-10/help/10-message-sent.html"
+                        }) 
+                    }}
+                    {{ 
+                        onsButton({
+                            "type": 'button',
+                            "text": 'Cancel',
+                            "classes": 'btn--secondary btn-group__btn',
+                            "url": "/prototypes/user-self-serve/version-10/help/00-surveys-list.html"
+                        }) 
+                    }}
+                </div>
+            </p>
+        </div>
+    </div>
+
+{% endblock %}

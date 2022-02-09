@@ -1,0 +1,168 @@
+---
+group: RAS/RM - Frontstage
+title: User self serve
+version: 35.0.3
+layout: user-self-serve/views/version-10/_master-internal-respondent
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% block main %}
+    <div class="grid">
+        <div class="grid__col col-12@m">
+        {% from "components/panel/_macro.njk" import onsPanel %}
+        {{
+            onsPanel({
+                "type": 'success',
+                "id": 'success-id',
+                "icon": 'check',
+                "classes": 'u-mb-m',
+                "body": 'You have successfully deleted the share request.'
+            })
+        }}
+
+            <section>
+                <h1 id="respondent-name">Garethh Poolee</h1>
+                <div class="grid grid--gutterless">
+                    <div class="grid__col col-10@m">
+                        <dl class="metadata metadata__list grid grid--gutterless u-cf u-mb-l" title="Information about the respondant" aria-label="Information about the respondant">
+                            <dt class="metadata__term grid__col col-3@m">Email:</dt>
+                            <dd id="respondent-email" class="metadata__value grid__col col-9@m">gareth.poole@ons.gov.uk</dd>
+                            <dt class="metadata__term grid__col col-3@m">New Email:</dt>
+                            <dd id="respondent-email" class="metadata__value grid__col col-9@m">garethpoole.ons@gmail.com<br>
+                                <a id="resend-verification-email-btn" href="/respondents/resend_verification/adb8d32e-a80a-463d-9af9-6a059f349301">Re-send verification email</a>
+                            </dd>
+                            <dt class="metadata__term grid__col col-3@m">Tel:</dt>
+                            <dd id="respondent-phone" class="metadata__value grid__col col-9@m">07799007159</dd>
+                            <dd class="metadata__value grid__col col-9@m">
+                                <a id="edit-contact-details" href="/respondents/edit-contact-details/adb8d32e-a80a-463d-9af9-6a059f349301">Edit contact details</a>
+                            </dd>
+                            <dt class="metadata__term grid__col col-3@m">Account:</dt>
+                            <dd id="respondent-account-status" class="metadata__value grid__col col-9@m">  Active <br>
+                            </dd>
+                            <dd class="metadata__value grid__col col-9@m">
+                                <a id="delete-respondent" href="/respondents/delete-respondent/adb8d32e-a80a-463d-9af9-6a059f349301">Delete respondent</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2 class="u-mt-l u-mb-no">Enrolments</h2>
+                <table class="table table--dense">
+                    <thead class="table__head">
+                        <tr class="table__row">
+                            <th scope="col" class="table__header ">
+                                <span>RU Reference</span>
+                            </th>
+                            <th scope="col" class="table__header ">
+                                <span>Reporting unit name</span>
+                            </th>
+                            <th scope="col" class="table__header ">
+                                <span>Trading as</span>
+                            </th>
+                            <th scope="col" class="table__header ">
+                                <span>Survey</span>
+                            </th>
+                            <th scope="col" class="table__header ">
+                                <span>Enrolment status</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="table__body">
+                        <tr class="table__row">
+                            <td class="table__cell ">
+                                <a href="/reporting-units/11110000015#survey-MBS">11110000015</a>
+                            </td>
+                            <td class="table__cell ">  ONS RU Name 1 ONS RU Name 2 ONS RU Name 3 </td>
+                            <td class="table__cell "></td>
+                            <td class="table__cell ">  009 MBS </td>
+                            <td class="table__cell "> Enabled <a href="/reporting-units/11110000015/change-enrolment-status?ru_name=ONS+RU+Name+1+ONS+RU+Name+2+ONS+RU+Name+3&amp;survey_id=0b1f8376-28e9-4884-bea5-acf9d709464e&amp;survey_name=MBS&amp;respondent_id=adb8d32e-a80a-463d-9af9-6a059f349301&amp;respondent_first_name=Garethh&amp;respondent_last_name=Poolee&amp;business_id=5d229bcb-01b0-45b8-b99d-3711fd405aa7&amp;trading_as=&amp;change_flag=DISABLED&amp;tab=respondents" id="change-enrolment-status">Disable</a>
+                            </td>
+                        </tr>
+                        <tr class="table__row">
+                            <td class="table__cell ">
+                                <a href="/reporting-units/11110000005#survey-MBS">11110000005</a>
+                            </td>
+                            <td class="table__cell ">  ONS RU Name 1 ONS RU Name 2 ONS RU Name 3 </td>
+                            <td class="table__cell "></td>
+                            <td class="table__cell ">  009 MBS </td>
+                            <td class="table__cell "> Enabled <a href="/reporting-units/11110000005/change-enrolment-status?ru_name=ONS+RU+Name+1+ONS+RU+Name+2+ONS+RU+Name+3&amp;survey_id=0b1f8376-28e9-4884-bea5-acf9d709464e&amp;survey_name=MBS&amp;respondent_id=adb8d32e-a80a-463d-9af9-6a059f349301&amp;respondent_first_name=Garethh&amp;respondent_last_name=Poolee&amp;business_id=c926fe96-b926-4b18-aca7-8186a64d9876&amp;trading_as=&amp;change_flag=DISABLED&amp;tab=respondents" id="change-enrolment-status">Disable</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section>
+                <h2 class="u-mt-l u-mb-no">Shared surveys</h2>
+                <table class="table table--dense  table--responsive">
+                    <thead class="table__head">
+                        <tr class="table__row">
+                            <th scope="col" class="table__header ">
+                                <span>Recipient's email address</span>
+                            </th>
+                            <th scope="col" class="table__header " style="width:25%">
+                                <span>Shared surveys</span>
+                            </th>
+                            <th scope="col" class="table__header ">
+                                <span>Time</span>
+                            </th>
+                            <th scope="col" class="table__header ">
+                                <span>Status</span>
+                            </th>
+                            <th scope="col" class="table__header ">
+                                <span>Action</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="table__body">
+                        <tr class="table__row">
+                            <td class="table__cell" data-th="Shared to">gareth.poole@ons.gov.uk</td>
+                            <td class="table__cell" data-th="Shared surveys">
+                                <strong>ADSA:</strong> MBS, QCAS, BRES<br>
+                                <strong>Dabanhams Limited:</strong> MBS, QCAS, BRES
+                            </td>
+                            <td class="table__cell" data-th="Time">28th May  2021 at 13:21</td>
+                            <td class="table__cell" data-th="Status">Email sent <a href="/prototypes/user-self-serve/version-10/00-internal/respondent/index-resend-email.html">Resend email</a></td>
+                            <td class="table__cell" data-th="Action"><a href="#">Delete</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section>
+                <h2 class="u-mt-l u-mb-no">Transferred surveys</h2>
+                <table class="table table--dense  table--responsive">
+                    <thead class="table__head">
+                        <tr class="table__row">
+                            <th scope="col" class="table__header ">
+                                <span>Recipient's email address</span>
+                            </th>
+                            <th scope="col" class="table__header " style="width:25%">
+                                <span>Transferred surveys</span>
+                            </th>
+                            <th scope="col" class="table__header ">
+                                <span>Time</span>
+                            </th>
+                            <th scope="col" class="table__header ">
+                                <span>Status</span>
+                            </th>
+                            <th scope="col" class="table__header ">
+                                <span>Action</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="table__body">
+                        <tr class="table__row">
+                            <td class="table__cell" data-th="Shared to">jeremy.gillies@ext.ons.gov.uk</td>
+                            <td class="table__cell" data-th="Shared surveys">
+                                <strong>Dlidl:</strong> MBS
+                            </td>
+                            <td class="table__cell" data-th="Time">2nd June, 2021 at 10:40</td>
+                            <td class="table__cell" data-th="Status">Email sent <a href="/prototypes/user-self-serve/version-10/00-internal/respondent/index-resend-email.html">Resend email</a></td>
+                            <td class="table__cell" data-th="Action"><a href="#">Delete</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+{% endblock %}
