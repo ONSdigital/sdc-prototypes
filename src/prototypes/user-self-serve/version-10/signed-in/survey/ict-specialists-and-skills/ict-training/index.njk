@@ -42,6 +42,9 @@ layout: user-self-serve/views/version-10/_master-survey-question
                                 "label": {
                                     "text": "Training for ICT or IT specialists"
                                 },
+                                    "attributes": {
+                                        "onclick": "uncheckElements();"
+                                    },
                                 "value": "training-ict"
                             },
                             {
@@ -49,6 +52,9 @@ layout: user-self-serve/views/version-10/_master-survey-question
                                 "label": {
                                     "text": "Training for other employees"
                                 },
+                                    "attributes": {
+                                        "onclick": "uncheckElements();"
+                                    },
                                 "value": "training-other"
                             }
                         ],
@@ -62,11 +68,22 @@ layout: user-self-serve/views/version-10/_master-survey-question
                                 "label": {
                                     "text": "No training provided"
                                 },
+                                    "attributes": {
+                                        "onclick": "uncheckElements();"
+                                    },
                                 "value": "no-training"
                             }
                         }
                     })
                 }}
+                <p class="checkboxes--mutually-exclusive__item u-mt-s">
+                                            <span class="checkboxes__label u-fs-r--b" aria-hidden="true">Or</span>
+                                            <span class="checkbox ">
+                        <input onclick="uncheckOtherCheckboxes();" type="checkbox" id="not-sure" class="checkbox__input js-exclusive-checkbox notsure" value="not-sure" data-deselect-message="Selecting this will uncheck all other checkboxes">
+                    <label class="checkbox__label  " for="not-sure" id="not-sure-label"><span class="u-vh">Or, </span> Not sure
+                                            </label>
+                                            </span>
+                                          </p>
             {% endcall %}
             {{ onsButton({
                 "id": "js-continue",
@@ -98,4 +115,30 @@ layout: user-self-serve/views/version-10/_master-survey-question
         }
 
     </script>
+        <script>   
+            function uncheckElements()
+            {
+              var uncheck=document.getElementsByClassName('notsure');
+              for(var i=0;i<uncheck.length;i++)
+              {
+                if(uncheck[i].type=='checkbox')
+                {
+                  uncheck[i].checked=false;
+                }
+              }
+            }
+        </script>
+        <script>   
+            function uncheckOtherCheckboxes()
+            {
+              var uncheck=document.getElementsByClassName('js-checkbox');
+              for(var i=0;i<uncheck.length;i++)
+              {
+                if(uncheck[i].type=='checkbox')
+                {
+                  uncheck[i].checked=false;
+                }
+              }
+            }
+        </script>   
 {% endblock %}

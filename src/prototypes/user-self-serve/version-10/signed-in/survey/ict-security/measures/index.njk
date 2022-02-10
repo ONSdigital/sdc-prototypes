@@ -56,11 +56,13 @@ layout: user-self-serve/views/version-10/_master-survey-question
                         "checkboxes": [
                             {
                                 "id": "strong-password-authentication",
-                                "inputClasses": "hideNeeded",
                                 "label": {
                                     "text": "Strong password authentication",
                                     "description": "For example a minimum length of 8 mixed (alpha and numeric) characters, periodic change."
                                 },
+                                    "attributes": {
+                                        "onclick": "uncheckRadios();"
+                                    },
                                 "value": "strong-password-authentication"
                             },
                             {
@@ -69,6 +71,9 @@ layout: user-self-serve/views/version-10/_master-survey-question
                                     "text": "User identification and authentication via biometric methods implemented in the business",
                                     "description": "For example based on fingerprints, voices, faces"
                                 },
+                                    "attributes": {
+                                        "onclick": "uncheckRadios();"
+                                    },
                                 "value": "biometric"
                             },
                             {
@@ -76,6 +81,9 @@ layout: user-self-serve/views/version-10/_master-survey-question
                                 "label": {
                                     "text": "Encryption techniques for data, documents or email"
                                 },
+                                    "attributes": {
+                                        "onclick": "uncheckRadios();"
+                                    },
                                 "value": "encryption"
                             },
                             {
@@ -84,6 +92,9 @@ layout: user-self-serve/views/version-10/_master-survey-question
                                     "text": "Access control to business network",
                                     "description": "For example management of user rights"
                                 },
+                                    "attributes": {
+                                        "onclick": "uncheckRadios();"
+                                    },
                                 "value": "access-control"
                             },
                             {
@@ -92,6 +103,9 @@ layout: user-self-serve/views/version-10/_master-survey-question
                                     "text": "VPN (Virtual Private Network)",
                                     "description": "This extends a private network across a public network to enable secure exchange of data over public network"
                                 },
+                                    "attributes": {
+                                        "onclick": "uncheckRadios();"
+                                    },
                                 "value": "vpn"
                             }
                         ]
@@ -107,18 +121,23 @@ layout: user-self-serve/views/version-10/_master-survey-question
                             "radios": [
                                 {
                                     "id": "house",                                
-                                    "inputClasses": "hideCheckbox",
                                     "label": {
                                         "text": "Not applicable"
                                     },
-                                    "value": "house"
+                                    "attributes": {
+                                        "onclick": "uncheckElements();"
+                                    },
+                                    "value": "select"
                                 },
                                 {
                                     "id": "flat",
                                     "label": {
                                         "text": "Prefer not to say"
                                     },
-                                    "value": "flat"
+                                    "attributes": {
+                                        "onclick": "uncheckElements();"
+                                    },
+                                    "value": "select"
                                 }
                             ]
                         })
@@ -165,4 +184,30 @@ layout: user-self-serve/views/version-10/_master-survey-question
             sessionStorage.setItem('sectionFive', JSON.stringify(sectionFive));
         }
     </script>
+    <script>   
+        function uncheckElements()
+        {
+          var uncheck=document.getElementsByClassName('checkbox__input');
+          for(var i=0;i<uncheck.length;i++)
+          {
+            if(uncheck[i].type=='checkbox')
+            {
+              uncheck[i].checked=false;
+            }
+          }
+        }
+    </script>
+    <script>   
+        function uncheckRadios()
+        {
+          var uncheck=document.getElementsByClassName('radio__input');
+          for(var i=0;i<uncheck.length;i++)
+          {
+            if(uncheck[i].type=='radio')
+            {
+              uncheck[i].checked=false;
+            }
+          }
+        }
+    </script>    
 {% endblock %}
