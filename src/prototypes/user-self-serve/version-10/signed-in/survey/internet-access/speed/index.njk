@@ -29,7 +29,7 @@ layout: user-self-serve/views/version-10/_master-survey-question
 
             {% call onsQuestion({
                 "classes": 'u-mt-no',
-                "title": 'What is the maximum contracted download speed of the fastest fixed internet connection of the business?'
+                "title": 'What is the maximum contracted download and upload speed of the fastest fixed internet connection of the business?'
             }) %}
                 {{
                     onsInput({
@@ -40,6 +40,9 @@ layout: user-self-serve/views/version-10/_master-survey-question
                         "label": {
                             "text": "Download speed"
                         },
+"attributes": {
+                                        "oninput": "uncheckElements();"
+                                    },                        
                         "required": true,
                         "suffix": {
                             "title": "megabits per second",
@@ -47,6 +50,33 @@ layout: user-self-serve/views/version-10/_master-survey-question
                         }
                     })
                 }}
+                {{
+                    onsInput({
+                        "id": "percentage2",
+                        "type": "number",
+                        "classes": "input-number--w-3",
+                        "autocomplete": "off",
+                        "label": {
+                            "text": "Upload speed"
+                        },
+"attributes": {
+                                        "oninput": "uncheckElements();"
+                                    },                        
+                        "required": true,
+                        "suffix": {
+                            "title": "megabits per second",
+                            "text": "Mbps"
+                        }
+                    })
+                }}           
+            <p class="checkboxes--mutually-exclusive__item u-mt-s">
+                                    <span class="checkboxes__label u-fs-r--b" aria-hidden="true">Or</span>
+                                    <span class="checkbox ">
+                                    <input onclick="uncheckOtherCheckboxes();" type="checkbox" id="not-sure" class="checkbox__input js-exclusive-checkbox notsure" value="not-sure" data-deselect-message="Selecting this will uncheck all other checkboxes">
+                                <label class="checkbox__label  " for="not-sure" id="not-sure-label"><span class="u-vh">Or, </span> Not sure
+                                    </label>
+                                    </span>
+                                  </p>      
             {% endcall %}
             {{ onsButton({
                 "id": "js-continue",
@@ -78,4 +108,28 @@ layout: user-self-serve/views/version-10/_master-survey-question
         }
 
     </script>
+            <script>   
+                function uncheckElements()
+                {
+                  var uncheck=document.getElementsByClassName('notsure');
+                  for(var i=0;i<uncheck.length;i++)
+                  {
+                    if(uncheck[i].type=='checkbox')
+                    {
+                      uncheck[i].checked=false;
+                    }
+                  }
+                }
+            </script>
+            <script>   
+                function uncheckOtherCheckboxes()
+                {
+                  var uncheck=document.getElementsByClassName('input-number--w-3');
+                  for(var i=0;i<uncheck.length;i++)
+                  {
+                      uncheck[i].value='';
+                    
+                  }
+                }
+            </script>  
 {% endblock %}
