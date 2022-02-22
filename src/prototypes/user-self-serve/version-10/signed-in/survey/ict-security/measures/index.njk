@@ -1,0 +1,213 @@
+---
+group: RAS/RM - Frontstage
+title: E-commerce Survey
+version: 35.0.3
+layout: user-self-serve/views/version-10/_master-survey-question
+---
+
+{% block preMain %}
+<div class="container">
+    {{
+        onsBreadcrumb({
+            "ariaLabel": 'Previous',
+            "itemsList": [
+                {
+                    "linkClasses": 'js-previous',
+                    "url": pageInfo.parentPath + '/index.html',
+                    "id": 'previous',
+                    "text": 'Previous'
+                }
+            ]
+        })
+    }}
+</div>
+{% endblock %}
+{% block main %}
+    <div class="grid">
+        <div id="main" class="grid__col col-8@m u-pt-no u-pb-no">
+            <form action="{{ pageInfo.rootPath }}/version-10/signed-in/survey/hub/index.html">
+
+            {% call onsQuestion({
+                "legendIsQuestionTitle": true,
+                "classes": 'u-mt-no',
+                "title": 'Which ICT security measures does <em class="highlight">ACME Consumer Products</em> use?'
+            }) %}
+                {{
+                    onsCollapsible({
+                        "id": "collapsible",
+                        "title": "What we mean by “ICT Security”",
+                        "titleTag": "h2",
+                        "content": "<p>ICT security refers to measures, controls and procedures applied to ICT systems in order to ensure integrity, authenticity, availability and confidentiality of data and systems.</p>",
+                        "button": {
+                            "close": "Hide this",
+                            "contextSuffix": "content",
+                            "attributes": {
+                                "aria-hidden": "true"
+                            }
+                        }
+                    })
+                }}
+                {{
+                    onsCheckboxes({
+                        "legend": "Which ICT security measures does ACME Consumer Products use?",
+                        "legendClasses": "u-d-no",
+                        "checkboxesLabel": "Select all that apply",
+                        "name": "ict-security-measures",
+                        "checkboxes": [
+                            {
+                                "id": "strong-password-authentication",
+                                "label": {
+                                    "text": "Strong password authentication",
+                                    "description": "For example a minimum length of 8 mixed (alpha and numeric) characters, periodic change."
+                                },
+                                    "attributes": {
+                                        "onclick": "uncheckRadios();"
+                                    },
+                                "value": "strong-password-authentication"
+                            },
+                            {
+                                "id": "biometric",
+                                "label": {
+                                    "text": "User identification and authentication via biometric methods implemented in the business",
+                                    "description": "For example based on fingerprints, voices, faces"
+                                },
+                                    "attributes": {
+                                        "onclick": "uncheckRadios();"
+                                    },
+                                "value": "biometric"
+                            },
+                            {
+                                "id": "encryption",
+                                "label": {
+                                    "text": "Encryption techniques for data, documents or email"
+                                },
+                                    "attributes": {
+                                        "onclick": "uncheckRadios();"
+                                    },
+                                "value": "encryption"
+                            },
+                            {
+                                "id": "access-control",
+                                "label": {
+                                    "text": "Access control to business network",
+                                    "description": "For example management of user rights"
+                                },
+                                    "attributes": {
+                                        "onclick": "uncheckRadios();"
+                                    },
+                                "value": "access-control"
+                            },
+                            {
+                                "id": "vpn",
+                                "label": {
+                                    "text": "VPN (Virtual Private Network)",
+                                    "description": "This extends a private network across a public network to enable secure exchange of data over public network"
+                                },
+                                    "attributes": {
+                                        "onclick": "uncheckRadios();"
+                                    },
+                                "value": "vpn"
+                            }
+                        ]
+                    })
+                }}
+            {% endcall %}
+            <br>
+                <span class="ons-checkboxes__label ons-u-fs-r--b" aria-hidden="true" style="font-weight:800">Or</span>
+                    {{
+                        onsRadios({
+                            "name": "property-type",
+                            "dontWrap": true,
+                            "radios": [
+                                {
+                                    "id": "house",                                
+                                    "label": {
+                                        "text": "Not applicable"
+                                    },
+                                    "attributes": {
+                                        "onclick": "uncheckElements();"
+                                    },
+                                    "value": "select"
+                                },
+                                {
+                                    "id": "flat",
+                                    "label": {
+                                        "text": "Prefer not to say"
+                                    },
+                                    "attributes": {
+                                        "onclick": "uncheckElements();"
+                                    },
+                                    "value": "select"
+                                }
+                            ]
+                        })
+                    }}
+            {{ onsButton({
+                "id": "js-continue",
+                "text": "Save and continue",
+                "classes": "u-mt-xl"
+            }) }}
+            </form>
+            <p class="u-mt-xl"><a href="{{ pageInfo.rootPath }}/version-10/signed-in/survey/hub/index.html" id="js-return-later">Choose another section and return to this later</a></p>
+        </div>
+    </div>
+    <script>
+        var returnLaterLink = document.getElementById('js-return-later');
+        var continueButton = document.getElementById('js-continue');
+
+        returnLaterLink.onclick = function setSectionStatus() {
+            var newSectionStatus = new Object();
+
+            newSectionStatus.bookmark = window.location.pathname;
+            newSectionStatus.status = "started";
+
+            if(sessionStorage.sectionFive) {
+                sessionStorage.removeItem('sectionFive');
+                sectionFive = JSON.parse(sessionStorage.getItem('sectionFive'));
+            } else {
+                sectionFive = [];
+            }
+            var sectionFive = newSectionStatus;
+
+            sessionStorage.setItem('sectionFive', JSON.stringify(sectionFive));
+        }
+
+        continueButton.onclick = function sectionComplete() {
+
+            var newSectionStatus = new Object();
+
+            newSectionStatus.bookmark = '';
+            newSectionStatus.status = "complete";
+
+            var sectionFive = newSectionStatus;
+
+            sessionStorage.setItem('sectionFive', JSON.stringify(sectionFive));
+        }
+    </script>
+    <script>   
+        function uncheckElements()
+        {
+          var uncheck=document.getElementsByClassName('checkbox__input');
+          for(var i=0;i<uncheck.length;i++)
+          {
+            if(uncheck[i].type=='checkbox')
+            {
+              uncheck[i].checked=false;
+            }
+          }
+        }
+    </script>
+    <script>   
+        function uncheckRadios()
+        {
+          var uncheck=document.getElementsByClassName('radio__input');
+          for(var i=0;i<uncheck.length;i++)
+          {
+            if(uncheck[i].type=='radio')
+            {
+              uncheck[i].checked=false;
+            }
+          }
+        }
+    </script>    
+{% endblock %}

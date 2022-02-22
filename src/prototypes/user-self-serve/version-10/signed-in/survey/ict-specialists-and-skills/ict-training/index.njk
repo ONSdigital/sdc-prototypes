@@ -1,0 +1,144 @@
+---
+group: RAS/RM - Frontstage
+title: E-commerce Survey
+version: 35.0.3
+layout: user-self-serve/views/version-10/_master-survey-question
+---
+
+{% block preMain %}
+<div class="container">
+    {{
+        onsBreadcrumb({
+            "ariaLabel": 'Previous',
+            "itemsList": [
+                {
+                    "linkClasses": 'js-previous',
+                    "url": pageInfo.parentPath + '/index.html',
+                    "id": 'previous',
+                    "text": 'Previous'
+                }
+            ]
+        })
+    }}
+</div>
+{% endblock %}
+{% block main %}
+    <div class="grid">
+        <div id="main" class="grid__col col-8@m u-pt-no u-pb-no">
+            <form action="{{ pageInfo.rootPath }}/version-10/signed-in/survey/ict-specialists-and-skills/recruit-specialists/index.html">
+            {% call onsQuestion({
+                "legendIsQuestionTitle": true,
+                "classes": 'u-mt-no',
+                "title": 'During 2020, did the business provide any type of training to develop ICT or IT related skill of its employees?'
+            }) %}
+                {{
+                    onsCheckboxes({
+                        "dontWrap": true,
+                        "checkboxesLabel": "Select all that apply",
+                        "name": "mutually-exclusive",
+                        "checkboxes": [
+                            {
+                                "id": "training-ict",
+                                "label": {
+                                    "text": "Training for ICT or IT specialists"
+                                },
+                                    "attributes": {
+                                        "onclick": "uncheckElements();"
+                                    },
+                                "value": "training-ict"
+                            },
+                            {
+                                "id": "training-other",
+                                "label": {
+                                    "text": "Training for other employees"
+                                },
+                                    "attributes": {
+                                        "onclick": "uncheckElements();"
+                                    },
+                                "value": "training-other"
+                            }
+                        ],
+                        "mutuallyExclusive": {
+                            "or": "Or",
+                            "deselectMessage": "Selecting this will uncheck all other checkboxes",
+                            "deselectGroupAdjective": "deselected",
+                            "deselectCheckboxAdjective": "deselected",
+                            "checkbox": {
+                                "id": "no-training",
+                                "label": {
+                                    "text": "No training provided"
+                                },
+                                    "attributes": {
+                                        "onclick": "uncheckElements();"
+                                    },
+                                "value": "no-training"
+                            }
+                        }
+                    })
+                }}
+                <p class="checkboxes--mutually-exclusive__item u-mt-s">
+                                            <span class="checkboxes__label u-fs-r--b" aria-hidden="true">Or</span>
+                                            <span class="checkbox ">
+                        <input onclick="uncheckOtherCheckboxes();" type="checkbox" id="not-sure" class="checkbox__input js-exclusive-checkbox notsure" value="not-sure" data-deselect-message="Selecting this will uncheck all other checkboxes">
+                    <label class="checkbox__label  " for="not-sure" id="not-sure-label"><span class="u-vh">Or, </span> Not sure
+                                            </label>
+                                            </span>
+                                          </p>
+            {% endcall %}
+            {{ onsButton({
+                "id": "js-continue",
+                "text": "Save and continue",
+                "classes": "u-mt-xl"
+            }) }}
+            </form>
+            <p class="u-mt-xl"><a href="{{ pageInfo.rootPath }}/version-10/signed-in/survey/hub/index.html" id="js-return-later">Choose another section and return to this later</a></p>
+        </div>
+    </div>
+    <script>
+        var returnLaterLink = document.getElementById('js-return-later');
+
+        returnLaterLink.onclick = function setSectionStatus() {
+            var newSectionStatus = new Object();
+
+            newSectionStatus.bookmark = window.location.pathname;
+            newSectionStatus.status = "started";
+
+            if(sessionStorage.sectionTwo) {
+                sessionStorage.removeItem('sectionTwo');
+                sectionTwo = JSON.parse(sessionStorage.getItem('sectionTwo'));
+            } else {
+                sectionTwo = [];
+            }
+            var sectionTwo = newSectionStatus;
+
+            sessionStorage.setItem('sectionTwo', JSON.stringify(sectionTwo));
+        }
+
+    </script>
+        <script>   
+            function uncheckElements()
+            {
+              var uncheck=document.getElementsByClassName('notsure');
+              for(var i=0;i<uncheck.length;i++)
+              {
+                if(uncheck[i].type=='checkbox')
+                {
+                  uncheck[i].checked=false;
+                }
+              }
+            }
+        </script>
+        <script>   
+            function uncheckOtherCheckboxes()
+            {
+              var uncheck=document.getElementsByClassName('js-checkbox');
+              for(var i=0;i<uncheck.length;i++)
+              {
+                if(uncheck[i].type=='checkbox')
+                {
+                  uncheck[i].checked=false;
+                }
+              }
+            }
+        </script>   
+{% endblock %}

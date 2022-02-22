@@ -1,0 +1,41 @@
+.previous-link {
+  line-height: 1;
+}
+
+.field__description {
+  margin-top: 1rem;
+}
+
+.scrolldiv {
+  max-height: 325px;
+  overflow-y: scroll;
+}
+
+.radiowidth {
+  padding: 0.2em;
+  max-width: 98%;
+}
+
+.panel {
+  &--off {
+    padding: 0;
+    border-left: 0;
+    background: transparent;
+  }
+
+  &--off & {
+    &__list {
+      display: none;
+    }
+  }
+}
+
+.scrolldiv::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+.scrolldiv::-webkit-scrollbar-thumb {
+  border: 2px solid white; /* should match background, can't be transparent */
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.5);
+}

@@ -1,0 +1,115 @@
+---
+group: RAS/RM - Frontstage
+title: E-commerce Survey
+version: 35.0.3
+layout: user-self-serve/views/version-10/_master-survey-question
+---
+
+{% block preMain %}
+<div class="container">
+    {{
+        onsBreadcrumb({
+            "ariaLabel": 'Previous',
+            "itemsList": [
+                {
+                    "linkClasses": 'js-previous',
+                    "url": pageInfo.parentPath + '/index.html',
+                    "id": 'previous',
+                    "text": 'Previous'
+                }
+            ]
+        })
+    }}
+</div>
+{% endblock %}
+{% block main %}
+    <div class="grid">
+        <div id="main" class="grid__col col-8@m u-pt-no u-pb-no">
+            <form action="{{ pageInfo.rootPath }}/version-10/signed-in/survey/ict-specialists-and-skills/ict-training/index.html">
+
+            {% call onsQuestion({
+                "legendIsQuestionTitle": true,
+                "classes": 'u-mt-no',
+                "title": 'Does <em class="highlight">ACME Consumer Products</em> employ ICT or IT specialists?'
+            }) %}
+                {{
+                    onsCollapsible({
+                        "id": "collapsible",
+                        "title": "What we mean by “ICT or IT”",
+                        "titleTag": "h2",
+                        "content": "<p>ICT or IT is the employees’ main function. ICT or IT specialist skills involve developing, operating, or maintaining ICT or IT systems or applications.</p>",
+                        "button": {
+                            "close": "Hide this",
+                            "contextSuffix": "content",
+                            "attributes": {
+                                "aria-hidden": "true"
+                            }
+                        }
+                    })
+                }}
+                {% call onsPanel({
+                    "classes": 'u-mb-m'
+                }) %}
+                    <h2 class="u-fs-r--b">Include</h2>
+                    <ul>
+                        <li>all agency staff on your payroll</li>
+                    </ul>
+                    <h2 class="u-fs-r--b">Exclude</h2>
+                    <ul>
+                        <li>agency staff not on your payroll</li>
+                    </ul>
+                {% endcall %}
+                {{
+                    onsRadios({
+                        "name": "employ-specialists",
+                        "dontWrap": true,
+                        "radios": [
+                            {
+                                "id": "yes",
+                                "label": {
+                                    "text": "Yes"
+                                },
+                                "value": "yes"
+                            },
+                            {
+                                "id": "no",
+                                "label": {
+                                    "text": "No"
+                                },
+                                "value": "no"
+                            }
+                        ]
+                    })
+                }}
+            {% endcall %}
+            {{ onsButton({
+                "id": "js-continue",
+                "text": "Save and continue",
+                "classes": "u-mt-xl"
+            }) }}
+            </form>
+            <p class="u-mt-xl"><a href="{{ pageInfo.rootPath }}/version-10/signed-in/survey/hub/index.html" id="js-return-later">Choose another section and return to this later</a></p>
+        </div>
+    </div>
+    <script>
+        var returnLaterLink = document.getElementById('js-return-later');
+
+        returnLaterLink.onclick = function setSectionStatus() {
+            var newSectionStatus = new Object();
+
+            newSectionStatus.bookmark = window.location.pathname;
+            newSectionStatus.status = "started";
+
+            if(sessionStorage.sectionTwo) {
+                sessionStorage.removeItem('sectionTwo');
+                sectionTwo = JSON.parse(sessionStorage.getItem('sectionTwo'));
+            } else {
+                sectionTwo = [];
+            }
+            var sectionTwo = newSectionStatus;
+
+            sessionStorage.setItem('sectionTwo', JSON.stringify(sectionTwo));
+        }
+
+    </script>
+{% endblock %}

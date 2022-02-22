@@ -1,0 +1,119 @@
+---
+title: Multiple mutually exclusive
+group: Multiple mutually exclusive
+version: 10.0.1
+layout: multiple-mutually-exclusive/views/_master
+---
+
+{% block main %}
+{% from "components/accordion/_macro.njk" import onsAccordion %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/label/_macro.njk" import onsLabel %}
+
+<script type="text/javascript">
+function writeResult(text){
+    document.getElementById("text").value=text;
+}
+</script>
+
+{% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
+{% from "components/question/_macro.njk" import onsQuestion %}
+
+{% call onsQuestion({
+    "title": "Over the last month, applicants for your business's vacancies have been in which of the following age categories?",
+    "legendIsQuestionTitle": true
+}) %}
+    {{
+        onsCheckboxes({
+            "id": "central-heating-answers",
+            "dontWrap": true,
+            "checkboxesLabel": "Select all that apply",
+            "name": "mutually-exclusive",
+                        "checkboxes": [
+                            {
+                                "id": "gas",
+                                "label": {
+                                    "text": "Applicants aged 16 to 29 years"
+                                },
+                                "value": "checked"
+                            },
+                            {
+                                "id": "electric",
+                                "label": {
+                                    "text": "Applicants aged 30 to 49 years"
+                                },
+                                "value": "checked"
+                            },
+                            {
+                                "id": "solid-fuel",
+                                "label": {
+                                    "text": "Applicants aged 50 years or over"
+                                },
+                                "value": "checked"
+                            },
+                            {
+                                "id": "other-fuel",
+                                "label": {
+                                    "text": "Not sure"
+                                },
+                                "value": "checked"
+                            }
+                        ]
+        })
+    }}
+    <span class="ons-checkboxes__label ons-u-fs-r--b" aria-hidden="true" style="font-weight:800">Or</span>
+        {{
+            onsRadios({
+                "name": "property-type",
+                "dontWrap": true,
+                "radios": [
+                    {
+                        "id": "house",
+                        "label": {
+                            "text": "Not applicable"
+                        },
+                        "value": "house"
+                    },
+                    {
+                        "id": "flat",
+                        "label": {
+                            "text": "Prefer not to say"
+                        },
+                        "value": "flat"
+                    }
+                ]
+            })
+        }}
+    <span class="ons-checkboxes__label ons-u-fs-r--b" aria-hidden="true" style="font-weight:800">Or</span>
+        {{
+            onsRadios({
+                "name": "property-type",
+                "dontWrap": true,
+                "radios": [
+                    {
+                        "id": "house",
+                        "label": {
+                            "text": "Not applicable"
+                        },
+                        "value": "house"
+                    },
+                    {
+                        "id": "flat",
+                        "label": {
+                            "text": "Prefer not to say"
+                        },
+                        "value": "flat"
+                    }
+                ]
+            })
+        }}        
+        {{
+            onsButton({
+                "text": "Save and continue"
+            })
+        }}
+{% endcall %}
+
+{% endblock %}

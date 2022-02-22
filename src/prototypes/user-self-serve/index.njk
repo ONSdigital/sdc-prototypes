@@ -17,57 +17,69 @@ layout: user-self-serve/views/_index
     <div class="grid">
         <div class="grid__col col-12@m">
             <h2>Current version</h2>
-            {{ 
-                onsButton({
-                    "type": 'button',
-                    "text": 'Version 9',
-                    "classes": 'u-mb-l',
-                    "url": "/prototypes/user-self-serve/version-9/index.html"
-                }) 
-            }}
 
-            <p>Updated transfer surveys</p>
-            <ul class="list ">
-                <li class="list__item "><a href="/prototypes/user-self-serve/version-9/signed-in/account/04-transfer-my-surveys/index.html">Start</a></li>
-                <li class="list__item "><a href="/prototypes/user-self-serve/version-9/signed-in/account/04-transfer-my-surveys/05-confirm-surveys.html">Confirm surveys</a></li>
-                <li class="list__item "><a href="/prototypes/user-self-serve/version-9/signed-in/account/04-transfer-my-surveys/06-transfered-surveys-complete.html">Survey transfer complete</a></li>
-                <li class="list__item "><a href="/prototypes/user-self-serve/version-9/signed-in/account/04-transfer-my-surveys/07-transfered-surveys-denied.html">Survey transfer denied</a></li>
-            </ul>
-
-            <ul class="list ">
-                <li class="list__item ">Reverted to <a href="/prototypes/user-self-serve/version-9/signed-in/account/03-share-access-to-my-surveys/00-select-business.html">select multiple business</a> when sharing</li>
-                <li class="list__item ">Updated <a href="/prototypes/user-self-serve/version-9/signed-out/help/index.html">signed out help</a> content</li>
-            </ul>
-
-            <p>Added Change business details</p>
-            <ul class="list ">
-                    <li class="list__item ">Single business owner <a href="/prototypes/user-self-serve/version-9/signed-in/account/05-change-business-details/scenario-1/01-summary.html">change the address for one survey</a></li>
-                    <li class="list__item ">Single business owner <a href="/prototypes/user-self-serve/version-9/signed-in/account/05-change-business-details/scenario-2/01-summary.html">change the addresses for multiple surveys to the same address</a></li>
-                    <!-- <li class="list__item ">Single business owner <a href="/prototypes/user-self-serve/version-9/signed-in/account/05-change-business-details/scenario-3/01-summary.html">change the addresses for multiple surveys to different addresses</a></li> -->
-                    <!-- <li class="list__item ">Single business owner <a href="/prototypes/user-self-serve/version-9/signed-in/account/05-change-business-details/scenario-4/01-summary.html">notify you of winding down of a single business</a></li> -->
-                    <!-- <li class="list__item ">Multiple businesses owner <a href="/prototypes/user-self-serve/version-9/signed-in/account/05-change-business-details/scenario-5/01-summary.html">change the address for one survey</a></li> -->
-                    <!-- <li class="list__item ">Multiple businesses owner <a href="/prototypes/user-self-serve/version-9/signed-in/account/05-change-business-details/scenario-6/01-summary.html">change the addresses for multiple surveys to the same address</a></li> -->
-                    <li class="list__item ">Multiple businesses owner <a href="/prototypes/user-self-serve/version-9/signed-in/account/05-change-business-details/scenario-7/01-summary.html">change the addresses for multiple surveys to different addresses</a></li>
-                    <!-- <li class="list__item ">Multiple businesses owner <a href="/prototypes/user-self-serve/version-9/signed-in/account/05-change-business-details/scenario-8/01-summary.html">notify you of winding down of a single business</a></li> -->
-            </ul>
+                        {{ 
+                                       onsButton({
+                                            "type": 'button',
+                                            "text": 'Version 10',
+                                            "classes": 'btn--large u-mb-l',
+                                            "url": "/prototypes/user-self-serve/version-10/index.html"
+                                        }) 
+                                    }}
+                           
             
-            <h3>Internal</h3>
-            <ul class="list ">
-                <li class="list__item ">Updated labels of <a href="/prototypes/user-self-serve/version-9/00-internal/unassigned/00-send-message.html">assigning category to unassigned messages</a>, <a href="/prototypes/user-self-serve/version-9/00-internal/assigned/00-send-message.html">assigning category to assigned messages</a> and <a href="/prototypes/user-self-serve/version-9/00-internal/10-filter-messages.html">choosing which messages to show</a></li>
-            </ul>
-            <p><strong>Added shared/transfered survey actions:</strong></p>
-            <ul class="list ">
-                <li class="list__item "><a href="/prototypes/user-self-serve/version-9/00-internal/respondent/index.html">All details/actions on respondent screen</a> </li>
-                <del><li class="list__item "><a href="/prototypes/user-self-serve/version-9/00-internal/respondent/_index-OLD.html">Show details on respondent screen</a>
-                    <ul class="list ">
-                        <li class="list__item ">List details <a href="/prototypes/user-self-serve/version-9/00-internal/respondent/_detail-2-OLD.html">respondent screen</a> </li>
-                        <li class="list__item ">Styled details <a href="/prototypes/user-self-serve/version-9/00-internal/respondent/_detail-OLD.html">respondent screen</a> </li>
-                    </ul>
-                </li></del>
-            </ul>
-
-            <hr class="u-mb-l">
             <h2>Version history</h2>
+            
+            {{ 
+                           onsButton({
+                                "type": 'button',
+                                "text": 'Version 9',
+                                "classes": 'btn--secondary btn--small u-mb-s',
+                                "url": "/prototypes/user-self-serve/version-9/index.html"
+                            }) 
+                        }}
+            
+                        <p>Updated transfer surveys</p>
+                        <ul class="list ">
+                            <li class="list__item "><a href="/prototypes/user-self-serve/version-9/signed-in/account/04-transfer-my-surveys/index.html">Start</a></li>
+                            <li class="list__item "><a href="/prototypes/user-self-serve/version-9/signed-in/account/04-transfer-my-surveys/05-confirm-surveys.html">Confirm surveys</a></li>
+                            <li class="list__item "><a href="/prototypes/user-self-serve/version-9/signed-in/account/04-transfer-my-surveys/06-transfered-surveys-complete.html">Survey transfer complete</a></li>
+                            <li class="list__item "><a href="/prototypes/user-self-serve/version-9/signed-in/account/04-transfer-my-surveys/07-transfered-surveys-denied.html">Survey transfer denied</a></li>
+                        </ul>
+            
+                        <ul class="list ">
+                            <li class="list__item ">Reverted to <a href="/prototypes/user-self-serve/version-9/signed-in/account/03-share-access-to-my-surveys/00-select-business.html">select multiple business</a> when sharing</li>
+                            <li class="list__item ">Updated <a href="/prototypes/user-self-serve/version-9/signed-out/help/index.html">signed out help</a> content</li>
+                        </ul>
+            
+                        <p>Added Change business details</p>
+                        <ul class="list ">
+                                <li class="list__item ">Single business owner <a href="/prototypes/user-self-serve/version-9/signed-in/account/05-change-business-details/scenario-1/01-summary.html">change the address for one survey</a></li>
+                                <li class="list__item ">Single business owner <a href="/prototypes/user-self-serve/version-9/signed-in/account/05-change-business-details/scenario-2/01-summary.html">change the addresses for multiple surveys to the same address</a></li>
+                                <!-- <li class="list__item ">Single business owner <a href="/prototypes/user-self-serve/version-9/signed-in/account/05-change-business-details/scenario-3/01-summary.html">change the addresses for multiple surveys to different addresses</a></li> -->
+                                <!-- <li class="list__item ">Single business owner <a href="/prototypes/user-self-serve/version-9/signed-in/account/05-change-business-details/scenario-4/01-summary.html">notify you of winding down of a single business</a></li> -->
+                                <!-- <li class="list__item ">Multiple businesses owner <a href="/prototypes/user-self-serve/version-9/signed-in/account/05-change-business-details/scenario-5/01-summary.html">change the address for one survey</a></li> -->
+                                <!-- <li class="list__item ">Multiple businesses owner <a href="/prototypes/user-self-serve/version-9/signed-in/account/05-change-business-details/scenario-6/01-summary.html">change the addresses for multiple surveys to the same address</a></li> -->
+                                <li class="list__item ">Multiple businesses owner <a href="/prototypes/user-self-serve/version-9/signed-in/account/05-change-business-details/scenario-7/01-summary.html">change the addresses for multiple surveys to different addresses</a></li>
+                                <!-- <li class="list__item ">Multiple businesses owner <a href="/prototypes/user-self-serve/version-9/signed-in/account/05-change-business-details/scenario-8/01-summary.html">notify you of winding down of a single business</a></li> -->
+                        </ul>
+                        
+                        <h3>Internal</h3>
+                        <ul class="list ">
+                            <li class="list__item ">Updated labels of <a href="/prototypes/user-self-serve/version-9/00-internal/unassigned/00-send-message.html">assigning category to unassigned messages</a>, <a href="/prototypes/user-self-serve/version-9/00-internal/assigned/00-send-message.html">assigning category to assigned messages</a> and <a href="/prototypes/user-self-serve/version-9/00-internal/10-filter-messages.html">choosing which messages to show</a></li>
+                        </ul>
+                        <p><strong>Added shared/transfered survey actions:</strong></p>
+                        <ul class="list ">
+                            <li class="list__item "><a href="/prototypes/user-self-serve/version-9/00-internal/respondent/index.html">All details/actions on respondent screen</a> </li>
+                            <del><li class="list__item "><a href="/prototypes/user-self-serve/version-9/00-internal/respondent/_index-OLD.html">Show details on respondent screen</a>
+                                <ul class="list ">
+                                    <li class="list__item ">List details <a href="/prototypes/user-self-serve/version-9/00-internal/respondent/_detail-2-OLD.html">respondent screen</a> </li>
+                                    <li class="list__item ">Styled details <a href="/prototypes/user-self-serve/version-9/00-internal/respondent/_detail-OLD.html">respondent screen</a> </li>
+                                </ul>
+                            </li></del>
+                        </ul>
+            
+                        <hr class="u-mb-l">
 
             <section class="u-mb-l">
                 {{ 

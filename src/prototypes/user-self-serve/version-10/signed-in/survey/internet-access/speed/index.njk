@@ -1,0 +1,133 @@
+---
+group: RAS/RM - Frontstage
+title: E-commerce Survey
+version: 35.0.3
+layout: user-self-serve/views/version-10/_master-survey-question
+---
+
+{% block preMain %}
+<div class="container">
+    {{
+        onsBreadcrumb({
+            "ariaLabel": 'Previous',
+            "itemsList": [
+                {
+                    "linkClasses": 'js-previous',
+                    "url": pageInfo.parentPath + '/index.html',
+                    "id": 'previous',
+                    "text": 'Previous'
+                }
+            ]
+        })
+    }}
+</div>
+{% endblock %}
+{% block main %}
+    <div class="grid">
+        <div id="main" class="grid__col col-8@m u-pt-no u-pb-no">
+            <form action="{{ pageInfo.rootPath }}/version-10/signed-in/survey/internet-access/website/index.html">
+
+            {% call onsQuestion({
+                "classes": 'u-mt-no',
+                "title": 'What is the maximum contracted download and upload speed of the fastest fixed internet connection of the business?'
+            }) %}
+                {{
+                    onsInput({
+                        "id": "percentage",
+                        "type": "number",
+                        "classes": "input-number--w-3",
+                        "autocomplete": "off",
+                        "label": {
+                            "text": "Download speed"
+                        },
+                        "attributes": {
+                            "oninput": "uncheckElements();"
+                        },                        
+                        "suffix": {
+                            "title": "megabits per second",
+                            "text": "Mbps"
+                        }
+                    })
+                }}
+                {{
+                    onsInput({
+                        "id": "percentage2",
+                        "type": "number",
+                        "classes": "input-number--w-3",
+                        "autocomplete": "off",
+                        "label": {
+                            "text": "Upload speed"
+                        },
+                        "attributes": {
+                            "oninput": "uncheckElements();"
+                        },                        
+                        "suffix": {
+                            "title": "megabits per second",
+                            "text": "Mbps"
+                        }
+                    })
+                }}           
+            <p class="checkboxes--mutually-exclusive__item u-mt-s">
+                                    <span class="checkboxes__label u-fs-r--b" aria-hidden="true">Or</span>
+                                    <span class="checkbox ">
+                                    <input onclick="uncheckOtherCheckboxes();" type="checkbox" id="not-sure" class="checkbox__input js-exclusive-checkbox notsure" value="not-sure" data-deselect-message="Selecting this will uncheck all other checkboxes">
+                                <label class="checkbox__label  " for="not-sure" id="not-sure-label"><span class="u-vh">Or, </span> Not sure
+                                    </label>
+                                    </span>
+                                  </p>      
+            {% endcall %}
+            {{ onsButton({
+                "id": "js-continue",
+                "text": "Save and continue",
+                "classes": "u-mt-xl"
+            }) }}
+            </form>
+            <p class="u-mt-xl"><a href="{{ pageInfo.rootPath }}/version-10/signed-in/survey/hub/index.html" id="js-return-later">Choose another section and return to this later</a></p>
+        </div>
+    </div>
+    <script>
+        var returnLaterLink = document.getElementById('js-return-later');
+
+        returnLaterLink.onclick = function setSectionStatus() {
+            var newSectionStatus = new Object();
+
+            newSectionStatus.bookmark = window.location.pathname;
+            newSectionStatus.status = "started";
+
+            if(sessionStorage.sectionThree) {
+                sessionStorage.removeItem('sectionThree');
+                sectionThree = JSON.parse(sessionStorage.getItem('sectionThree'));
+            } else {
+                sectionThree = [];
+            }
+            var sectionThree = newSectionStatus;
+
+            sessionStorage.setItem('sectionThree', JSON.stringify(sectionThree));
+        }
+
+    </script>
+            <script>   
+                function uncheckElements()
+                {
+                  var uncheck=document.getElementsByClassName('notsure');
+                  for(var i=0;i<uncheck.length;i++)
+                  {
+                    if(uncheck[i].type=='checkbox')
+                    {
+                      uncheck[i].checked=false;
+                    }
+                  }
+                }
+            </script>
+            <script>   
+                function uncheckOtherCheckboxes()
+                {
+                  var uncheck=document.getElementsByClassName('input-number--w-3');
+                  for(var i=0;i<uncheck.length;i++)
+                  {
+                      uncheck[i].value='';
+                    
+                  }
+                }
+            </script>  
+{% endblock %}

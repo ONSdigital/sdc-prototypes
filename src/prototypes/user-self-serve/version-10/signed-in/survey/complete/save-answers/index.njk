@@ -1,0 +1,191 @@
+---
+group: RAS/RM - Frontstage
+title: E-commerce Survey
+version: 35.0.3
+layout: user-self-serve/views/version-10/_master-survey
+---
+{% from "components/summary/_macro.njk" import onsSummary %}
+{% from "components/metadata/_macro.njk" import onsMetadata %}
+
+{% block preMain %}
+<div class="container">
+    {{
+        onsBreadcrumb({
+            "ariaLabel": 'Back',
+            "itemsList": [
+                {
+                    "linkClasses": 'js-previous',
+                    "url":  pageInfo.rootPath + '/version-10/signed-in/survey/complete/index.html',
+                    "id": "back",
+                    "text": 'Back'
+                }
+            ]
+        })
+    }}
+</div>
+{% endblock %}
+{% block main %}
+<form class="js-question-no-summary"></form>
+<div class="js-summary"></div>
+    <div class="grid">
+        <div class="grid__col col-8@m">
+            <h1 class="u-mb-l">Answers submitted for ACME Consumer Products</h1>
+            {{
+                onsMetadata({
+                    "metadataLabel": "This is an example of the metadata component",
+                    "termCol": "5",
+                    "descriptionCol": "7",
+                    "itemsList": [
+                        {
+                            "term": "Submitted on:",
+                            "descriptions": [
+                                {
+                                    "description": "25 June 2021 at 15:49"
+                                }
+                            ]
+                        },
+                        {
+                            "term": "Submission reference:",
+                            "descriptions": [
+                                {
+                                    "description": "226B - AD12 - 13F4 - 4OC5"
+                                }
+                            ]
+                        }
+                    ]
+                })
+            }}
+            <div class="btn-group">
+                {{
+                    onsButton({
+                        "type": 'button',
+                        "classes": 'btn--small',
+                        "text": 'Print answers',
+                        "buttonStyle": "print"
+                    })
+                }}
+                {{
+                    onsButton({
+                        "type": 'button',
+                        "classes": 'btn--small',
+                        "text": 'Save answers as PDF',
+                        "buttonStyle": "download"
+                    })
+                }}
+            </div>
+            {{
+                onsSummary({
+                    "classes": 'u-mt-l',
+                    "summaries": [
+                        {
+                            "groups": [
+                                {
+                                    "groupTitle": "Use of computers",
+                                    "headers":["Question", "Answer given"],
+                                    "rows": [
+                                        {
+                                            "rowTitle": 'Does ACME Consumer Products use computers?',
+                                            "rowItems": [
+                                                {
+                                                    "attributes": {
+                                                        "id": "js-answer-1"
+                                                    },
+                                                    "valueList": [
+                                                        {
+                                                            "text": "no answer provided"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "rowTitle": 'What percentage of people in the business use computers for their work?',
+                                            "rowItems": [
+                                                {
+                                                    "valueList": [
+                                                        {
+                                                            "classes": 'js-answer-2',
+                                                            "text": "no answer provided"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "groupTitle": "ICT specialists and skills",
+                                    "headers":["Question", "Answer given"],
+                                    "rows": [
+                                        {
+                                            "rowTitle": 'Does ACME Consumer Products use computers?',
+                                            "rowItems": [
+                                                {
+                                                    "valueList": [
+                                                        {
+                                                            "classes": 'js-answer-1',
+                                                            "text": "no answer provided"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "rowTitle": 'What percentage of people in the business use computers for their work?',
+                                            "rowItems": [
+                                                {
+                                                    "valueList": [
+                                                        {
+                                                            "classes": 'js-answer-2',
+                                                            "text": "no answer provided"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "groupTitle": "Access and use of the internet",
+                                    "headers":["Question", "Answer given"],
+                                    "rows": [
+                                        {
+                                            "rowTitle": 'Does ACME Consumer Products use computers?',
+                                            "rowItems": [
+                                                {
+                                                    "valueList": [
+                                                        {
+                                                            "classes": 'js-answer-1',
+                                                            "text": "no answer provided"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "rowTitle": 'What percentage of people in the business use computers for their work?',
+                                            "rowItems": [
+                                                {
+                                                    "valueList": [
+                                                        {
+                                                            "classes": 'js-answer-2',
+                                                            "text": "no answer provided"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                })
+            }}
+
+        </div>
+    </div>
+    <script>
+
+    </script>
+{% endblock %}
