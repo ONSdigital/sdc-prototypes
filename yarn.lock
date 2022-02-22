@@ -1037,20 +1037,7 @@
     "@ons/design-system" "^13.3.0"
     fuse.js "^3.4.6"
 
-"@ons/design-system/17.2.0@npm:@ons/design-system@17.2.0":
-  version "17.2.0"
-  resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-17.2.0.tgz#9be26142651baac94a296c803748ed682fa6e9de"
-  integrity sha512-UmCMnV835bK9eO4iHcdiWyJKRcUPCWNxZZ+ftp9/kAdm4AHGBq8C5G3bY/jKvCQcHfJyiZlqVpKLH+HiHAKLoA==
-  dependencies:
-    "@ons/design-system" "^13.3.0"
-    fuse.js "^3.4.6"
-
-"@ons/design-system/17.2.0@npm:@ons/design-system@17.3.1":
-  version "35.0.4"
-  resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-35.0.4.tgz#ffeede248d7b2f06b7e070ee4e412533d93cbe1c"
-  integrity sha512-RpKHCi3+lg8aGquA02OT/7XUhl6BKu5BlGnX/WQjW+8UCqI0XI++1IX8cj0sQ4lVvNQrgfTEZybXydcZVyo1tA==
-
-"@ons/design-system/17.3.1@npm:@ons/design-system@17.3.1", "@ons/design-system/35.0.3@npm:@ons/design-system@35.0.3":
+"@ons/design-system/17.2.0@npm:@ons/design-system@17.3.1", "@ons/design-system/17.3.1@npm:@ons/design-system@17.3.1", "@ons/design-system/17.3.1@npm:@ons/design-system@35.0.3", "@ons/design-system/35.0.3@npm:@ons/design-system@35.0.3":
   version "35.0.3"
   resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-35.0.3.tgz#43b162a3b5b37afdc7464e6b6cc4b2441690d737"
   integrity sha512-rmPY/fBfwIYTNB3HyzyXnqmL6LbZqw93KyDRYuEsQQdhnEkyeNk+4Lq0Xltf2MawOuVW/9iXMtnPeBD25DolFg==
